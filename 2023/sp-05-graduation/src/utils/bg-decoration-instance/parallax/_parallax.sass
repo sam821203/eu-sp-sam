@@ -1,0 +1,21 @@
+// parallax css
+// =================================
+.decoration--background
+  display: none
+  +pos-set(absolute !important, zero, 0, 0)
+  overflow: hidden
+  pointer-events: none
+
+  +breakpoint-min($min-width-xxl)
+    display: block
+
+.decoration__wrap
+  width: 100%
+.decoration__item
+  top: 0
+  left: 0
+  width: 100%
+  +breakpoint-min($min-width-xxl)
+    width: auto
+  img
+    +pos-set(relative, zero)

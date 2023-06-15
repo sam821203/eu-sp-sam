@@ -1,0 +1,209 @@
+.hero
+  +pos-set(relative, base)
+  overflow: hidden
+  .hero__zone
+    +aspect-ratio(960, 940)
+    +breakpoint-min($min-width-xl)
+      +aspect-ratio(960, 860)
+    .hero__title
+      +pos-set(absolute, second, 10%, 1.2%)
+      width: 96%
+      opacity: 0
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 467.5px)
+        width: auto
+      .js-loading &
+        animation: bounceInBig .6s cubic-bezier(0.2, -1.13, 0.27, 1.55) forwards 1
+
+      .title--text
+        +pos-set(absolute, base, 6.8%, 13%)
+        width: 80%
+        +breakpoint-min($min-width-xl)
+          left: calc(50% - 338px)
+          width: auto
+        img
+          mask: url(event/2nd/e-main/components/hero-section/title-mask.png)
+          mask-size: 1900% 100%
+          mask-position: 0 0
+          .js-loading &
+            animation: calligraphy 1.4s .5s steps(18) forwards
+
+  .decor__item
+    position: absolute
+    z-index: map-get($zindex, second)
+    &--left
+      top: 22%
+      left: 8%
+      // +size(72px)
+      +size(20vw)
+      opacity: 0
+      +bg-set(url("event/2nd/e-main/components/hero-section/etcat.png"), 100%)
+      transform: scale(10) translate(-400px, -400px)
+      +breakpoint-min($min-width-xl)
+        +size(209px)
+        +bg-set(url("event/2nd/e-main/components/hero-section/etcat.png"), auto)
+      .js-loading &
+        animation: mahjong-stamp 6s .6s forwards infinite
+
+    &--message-1
+      top: 36%
+      left: 1%
+      z-index: map-get($zindex, second)
+      // +size(40px, 110px)
+      +size(11.5vw, 33vw)
+      +bg-set(url("event/2nd/e-main/components/hero-section/decor-hero-message-1-1.png"), 100%)
+      opacity: 0
+      transform-origin: top right
+      +breakpoint-min($min-width-xl)
+        top: 330px
+        left: calc(50% - 458px)
+        +size(102px, 279px)
+        background-size: auto
+      .js-loading &
+        animation: zoomIn-message 6s .7s linear forwards infinite
+        
+    &--etrabbit
+      top: 66%
+      right: 3%
+      z-index: map-get($zindex, second)
+      width: 20%
+      opacity: 0
+      transform: translateX(100%)
+      +breakpoint-min($min-width-xl)
+        top: 600px
+        left: calc(50% + 260px)
+        width: fit-content
+      .js-loading &
+        animation: moveX .6s .4s ease-out 1 forwards, normal-jump 1.8s 1.4s infinite forwards
+
+    &--message-2
+      top: 43%
+      right: 1%
+      z-index: map-get($zindex, second)
+      width: 11.5%
+      opacity: 0
+      transform-origin: bottom left
+      +breakpoint-min($min-width-xl)
+        top: 390px
+        left: calc(50% + 355px)
+        width: auto
+      .js-loading &
+        animation: zoomIn-title .4s .7s linear both
+
+@import event/2nd/e-main/components/hero-section/hero-video/_hero-video.sass
+
+@keyframes bounceInBig
+  0%, 20%, 40%, 60%, 80%, to
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+  0%
+    opacity: 0
+    transform: scale3d(.6, .6, .6)
+  20%
+    transform: scale3d(2.2, 2.2, 2.2)
+  40%
+    transform: scale3d(.85, .85, .85)
+  60%
+    opacity: 1
+    transform: scale3d(1.03, 1.03, 1.03)
+  80%
+    transform: scale3d(.97, .97, .97)
+  to
+    opacity: 1
+    transform: scale3d(1, 1, 1)
+
+@keyframes calligraphy
+  0%
+    mask-position: 0 0
+  100%
+    mask-position: 100% 0
+
+@keyframes mahjong-stamp
+  0%
+    background-image: url("event/2nd/e-main/components/hero-section/etcat.png")
+    opacity: 0
+    transform: scale(10) translate(-400px, -400px)
+  2%, 52%
+    opacity: 1
+  3.5%, 53.5%
+    opacity: 1
+    transform: scale(.8) translate(0px, 0px)
+  4.5%, 34%, 54.5%, 84%
+    top: 22%
+    left: 8%
+    z-index: 2
+    opacity: 1
+    transform: scale(1) translate(0px, 0px)
+  35%, 85%
+    top: 13%
+    left: 4%
+    z-index: 2
+    opacity: 1
+    transform: scale(1) translate(0px, 0px)
+  35.5%, 85.5%
+    z-index: 1
+  37.5%, 87.5%
+    top: 22%
+    left: 8%
+    z-index: 1
+    opacity: 0
+    transform: scale(1) translate(0px, 0px)
+  49%
+    background-image: url("event/2nd/e-main/components/hero-section/etcat.png")
+  50%
+    background-image: url("event/2nd/e-main/components/hero-section/etman.png")
+    opacity: 0
+    transform: scale(10) translate(-400px, -400px)
+  99%
+    background-image: url("event/2nd/e-main/components/hero-section/etman.png")
+  100%
+    opacity: 0
+    transform: scale(10) translate(-400px, -400px)
+
+@keyframes zoomIn-message
+  0%
+    background-image: url("event/2nd/e-main/components/hero-section/decor-hero-message-1-1.png")
+    opacity: 0
+    transform: scale3d(.3,.3,.3)
+  3%, 55%
+    opacity: 1
+    transform: scaleX(1)
+  4.5%, 33%, 55.5%, 83%
+    opacity: 1
+  42%
+    background-image: url("event/2nd/e-main/components/hero-section/decor-hero-message-1-1.png")
+    opacity: 0
+  50%, 93%
+    background-image: url("event/2nd/e-main/components/hero-section/decor-hero-message-1-2.png")
+    opacity: 0
+  100%
+    opacity: 0
+
+@keyframes moveX
+  0%
+    opacity: 0
+    transform: translateX(100%) skewX(-15deg)
+  60%
+    opacity: 1
+    transform: skewX(10deg)
+  80%
+    opacity: 1
+    transform: skewX(-3deg)
+  100%
+    opacity: 1
+    transform: translateZ(0)
+
+@keyframes zoomIn-title
+  0%
+    opacity: 0
+    transform: scale3d(.3,.3,.3)
+  100%
+    opacity: 1
+    transform: scaleX(1)
+
+@keyframes normal-jump
+  0%, 20%, 40%, 100%
+    transform: scale(1) translateY(0)
+  10%
+    transform: scale(1.025) translateY(-8%)
+  30%
+    transform: scale(1.01) translateY(-4%)

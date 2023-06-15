@@ -1,0 +1,49 @@
+.promo__group--my-team
+  @import event/1st/e-main/components/include/team-table/_team-table
+
+  .team__info
+    padding: 15px
+    color: $gray-deep-dark
+    background-color: $gray-light
+    border-radius: 8px
+    font-size: 16px
+    .info__name
+      margin-bottom: 10px
+      font-size: 20px
+      font-weight: bold
+    .info__number
+      color: $gray-dark
+
+    +breakpoint-min($min-width-xl)
+      display: flex
+      .info__title,
+      .info__number
+        padding-top: 3px
+      .info__title
+        width: 10%
+      .info__name
+        flex-grow: 1
+        margin-bottom: 0
+      .info__number
+        width: 20%
+
+  .team__total
+    display: flex
+    justify-content: flex-end
+    padding: 5px 15px
+    background-color: $gray-light
+    font-size: 16px
+    text-align: right
+    span
+      color: $main-deep-dark
+      font-weight: bold
+      &:first-child
+        font-size: 24px
+    .total__title
+      margin-right: 10px
+      padding-top: 6px
+      color: $gray-dark
+
+    &.disabled
+      display: none
+

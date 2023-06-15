@@ -1,0 +1,67 @@
+.promo__group--slider-w1m1
+  +pos-set(relative, zero)
+  overflow: hidden
+  +breakpoint-min($min-width-xl)
+    margin-top: -55px
+  .decor__item
+    pointer-events: none
+    &--title
+      +pos-set(absolute, zero, 0%, 10%)
+      width: 80%
+      +breakpoint-min($min-width-xl)
+        top: 15px
+        left: calc( 50% - 366px )
+    &--left
+      +pos-set(absolute, zero, 2%, 1%)
+      width: 22%
+      +breakpoint-min($min-width-xl)
+        top: 65px
+        left: calc( 50% - 426px )
+    &--light
+      +pos-set(absolute, zero, 2%, 1%)
+      width: 22%
+      background: none 0% 0% / auto repeat scroll padding-box border-box rgba(0, 0, 0, 0)
+      -webkit-mask-size: 300% 200%
+      -webkit-mask-image: -webkit-linear-gradient( -45deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 60%)
+      filter: brightness(2)
+      transition: -webkit-mask-position 
+      transition-duration: 3s
+      overflow: hidden
+      &.active
+        animation: shining-title 1.5s ease-out infinite
+      +breakpoint-min($min-width-xl)
+        top: 65px
+        left: calc( 50% - 426px )
+    &--right
+      +pos-set(absolute, zero, 9%)
+      right: 6%
+      width: 14%
+      +breakpoint-min($min-width-xl)
+        top: 115px
+        right: calc( 50% - 405px )
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .promo__zone
+    +aspect-ratio(960, 1249)
+  .promo__block
+    padding: 32% 1% 0%
+
+
+
+@keyframes tada
+  0%
+    transform: scaleX(1)
+  10%, 20%
+    transform: scale3d(1, 1, 1) rotate(-3deg)
+  30%, 50%, 70%, 90%
+    transform: scale3d(1.05, 1.05, 1.05) rotate(3deg)
+  40%, 60%, 80%
+    transform: scale3d(1.05, 1.05, 1.05) rotate(-3deg)
+  to
+    transform: scaleX(1)
+
+@keyframes shining-title
+  0%
+    mask-position: 0% 0%
+  100%
+    mask-position: 150% 0%

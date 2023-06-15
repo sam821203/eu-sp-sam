@@ -1,0 +1,361 @@
+// ==========================================================================
+// Plugins
+// ==========================================================================
+// // @import vendors/animate
+// @import vendors/style/swiper-slider-custom
+@import vendors/style/swiper-safari-polyfill
+
+// ==========================================================================
+// first screen need
+// ==========================================================================
+// hero section
+// @import utils/bg-decoration-instance/parallax/_parallax
+@import event/2nd/e-main/components/hero-section/_hero-section
+
+// @import utils/bg-decoration-instance/css-firework-2/_css-firework-2
+
+// ==========================================================================
+// components
+// ==========================================================================
+// dynamic product 假宮格共用CSS
+@import layout/dynamic-product/_dynamic-product.sass
+
+// 一般components
+@import event/2nd/e-main/components/promo-event/_promo-event
+// @import event/2nd/e-main/components/daily-slider/_daily-slider
+@import event/2nd/e-main/components/slider-w1m1/_slider-w1m1
+@import event/2nd/e-main/components/slider-w3m3/_slider-w3m3
+@import event/2nd/e-main/components/event-w4m2/_event-w4m2
+@import event/2nd/e-main/components/tab-section/_tab-section
+@import event/2nd/e-main/components/event-w3m3/_event-w3m3
+@import event/2nd/e-main/components/dynamic-slider/_dynamic-slider
+@import event/2nd/e-main/components/tab-section2/_tab-section2
+// @import event/2nd/e-main/components/promo-slider/_promo-slider
+// @import event/2nd/e-main/components/dynamic-slider-half/_dynamic-slider-half
+@import event/2nd/e-main/components/daily-time/_daily-time
+@import event/2nd/e-main/components/dynamic-slider-w2m2/_dynamic-slider-w2m2
+@import event/2nd/e-main/components/bn-slider/_bn-slider
+@import event/2nd/e-main/components/bn-section/_bn-section
+@import event/2nd/e-main/components/promo-special/_promo-special
+@import event/2nd/e-main/components/bn-section-2/_bn-section-2
+
+// ==========================================================================
+// Page
+// ==========================================================================
+body
+  +pos-set(relative)
+  background-color: $main-e-background-color-2nd
+  overflow-x: hidden
+  // height: 1000vh
+
+.decor__bg
+  +pos-set(fixed, under, 0%, 0%)
+  +bg-set(url(event/2nd/e-main/pages/index/bg.jpg), 100%)
+  +breakpoint-min($min-width-xl)
+    +pos-set(fixed, under, 0%, 0%)
+    +bg-set(url(event/2nd/e-main/pages/index/bg-web.jpg), auto)
+    // background-position: center 
+
+// 移出 body 外以便使用 .js-loading
+.decor__bottom
+  +pos-set(fixed)
+  +size(100%, 100vh)
+  text-align: center
+  overflow: hidden
+  .bg__wrap
+    +size(100%, 150vh)
+    +bg-set(url(event/2nd/e-main/pages/index/decor-bottom.png), 100%)
+    transform: scale(1.5, 1.1)
+    transform-origin: top center
+    +breakpoint-min($min-width-xl)
+      +bg-set(url(event/2nd/e-main/pages/index/decor-bottom-web.png), auto)
+    .js-loading &
+      animation: scaling-bg 1.3s forwards 1
+
+.decor__flower,
+.decor__balloon
+  +pos-set(absolute, zero, 0%, 0%)
+  +size(100%, 100vh)
+  text-align: center
+  overflow: hidden
+  +breakpoint-min($min-width-xl)
+    +size(100%, 100vw)
+  img
+    width: auto
+
+.decor__flower
+  .bg__wrap
+    +size(100%, 50vh)
+    +bg-set(url(event/2nd/e-main/pages/index/decor-flower.png), 100%)
+    opacity: 0
+    transform: scale(0)
+    transform-origin: 50% calc(100vw * .3 )
+    +breakpoint-min($min-width-xl)
+      height: 150vh
+      +bg-set(url(event/2nd/e-main/pages/index/decor-flower-web.png), auto)
+    .js-loading &
+      animation: grow-flower 1.2s 1.4s ease-in-out forwards, floatY-flower 2.4s 2.6s ease-in-out infinite
+      +breakpoint-min($min-width-xl)
+        animation: grow-flower 1.2s 1.4s ease-in-out forwards, floatY-flower 4s 2.6s ease-in-out infinite
+
+.decor__balloon
+  .bg__wrap
+    +size(100%, 150vh)
+    +bg-set(url(event/2nd/e-main/pages/index/decor-balloon.png), 100%)
+    opacity: 0
+    transform: translateY(-15vw) scale(1.5, 1.1)
+    transform-origin: top center
+    +breakpoint-min($min-width-xl)
+      +bg-set(url(event/2nd/e-main/pages/index/decor-balloon-web.png), auto)
+    .js-loading &
+      animation: scaling-balloon 2.4s .1s forwards 1
+
+.decor__chair
+  +pos-set(absolute, zero, 0%, 0%)
+  +bg-set(url(event/2nd/e-main/pages/index/decor-chair.png), 110%, 76%)
+  +size(100%, calc(100vw * 1.5))
+  +breakpoint-min($min-width-xl)
+    +bg-set(url(event/2nd/e-main/pages/index/decor-chair-web.png), auto)
+
+
+.decor__figures
+  +pos-set(absolute, zero, 0%, 0%)
+  display: none
+  width: 100%
+  height: 1280px
+  +breakpoint-min($min-width-xl)
+    display: block
+    height: 2560px
+
+  > div
+    position: absolute
+    width: fit-content
+    transform-origin: bottom
+    transform: scale(1, 0)
+
+    &::before
+      +pos-set(absolute, zero)
+      +size(40%, 20%)
+      +breakpoint-min($min-width-xl)
+        +size(106px, 107px)
+
+      .js-loading &
+        animation: heartBeat-instrument 1.6s 2.8s ease infinite
+
+  .figure-1
+    top: 61vw
+    left: -3%
+    width: 26%
+    +breakpoint-min($min-width-xl)
+      top: 19.8%
+      left: calc(50% - 612px)
+      width: auto
+    +breakpoint-min($min-width-xxl)
+      left: calc(50% - 702px)
+    &::before
+      content: ''
+      top: -13.8%
+      left: 94%
+      background: url('event/2nd/e-main/pages/index/decor-flute-left.png') center no-repeat
+      background-size: 100%
+      transform-origin: 0% 90%
+      +breakpoint-min($min-width-xl)
+        left: calc(50% + 121px)
+        background-size: auto
+
+    img
+      transform: scaleX(-1)
+    .js-loading &
+      animation: grow1 0.6s 2.8s cubic-bezier(0.08, 0.72, 0.71, 1.27) forwards, figure-dancing1 1.6s 3.7s ease-in-out infinite
+  
+  .figure-2
+    top: 22.8%
+    left: calc(50% - 1010px)
+    display: none
+    +breakpoint-min($min-width-4xl)
+      display: block
+    &::before
+      content: ''
+      top: -13.7%
+      left: 3%
+      background: url('event/2nd/e-main/pages/index/decor-flute-left.png') center no-repeat
+      background-size: 100%
+      transform-origin: 0% 90%
+      +breakpoint-min($min-width-xl)
+        left: calc(50% + 121px)
+        background-size: auto
+    img
+      transform: scaleX(-1)
+    .js-loading &
+      animation: grow2 0.6s 2.6s cubic-bezier(0.08, 0.72, 0.71, 1.27) forwards, figure-dancing2 1.6s 3.7s ease-in-out infinite
+
+  .figure-3
+    top: 61vw
+    left: 75.5%
+    width: 26%
+    +breakpoint-min($min-width-xl)
+      top: 19.8%
+      left: calc(50% + 242px)
+      width: auto
+    +breakpoint-min($min-width-xxl)
+      left: calc(50% + 370px)
+    +breakpoint-min($min-width-3xl)
+      left: calc(50% + 420px)
+    &::before
+      content: ''
+      top: -13.6%
+      left: -35%
+      background: url('event/2nd/e-main/pages/index/decor-flute.png') center no-repeat
+      background-size: 100%
+      transform-origin: 92% 90%
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 228px)
+        background-size: auto
+    .js-loading &
+      animation: grow1 0.6s 3s cubic-bezier(0.08, 0.72, 0.71, 1.27) forwards, figure-dancing3 1.6s 3.7s ease-in-out infinite
+
+  .figure-4
+    top: 22.8%
+    left: calc(50% + 670px)
+    display: none
+    +breakpoint-min($min-width-4xl)
+      display: block
+    &::before
+      content: ''
+      top: -13.9%
+      left: 3%
+      background: url('event/2nd/e-main/pages/index/decor-flute.png') center no-repeat
+      background-size: 100%
+      transform-origin: 92% 90%
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 228px)
+        background-size: auto
+    .js-loading &
+      animation: grow2 0.6s 3.2s cubic-bezier(0.08, 0.72, 0.71, 1.27) forwards, figure-dancing4 1.6s 3.7s ease-in-out infinite
+
+.decor__audience
+  +pos-set(absolute, second, 13.4vw, 0%)
+  +size(100%, 1280px)
+  pointer-events: none
+  overflow: hidden
+  transform: translateY(0)
+  transform-origin: 50% 100%
+  +breakpoint-min($min-width-xl)
+    top: 0
+    height: 2560px
+  .js-loading &
+    animation: cheer-mobile 1.6s 2.8s forwards ease-in-out infinite
+    +breakpoint-min($min-width-xl)
+      animation: cheer-web 1.6s 3.7s forwards ease-in-out infinite
+
+  .audience-left--1
+    +pos-set(absolute, zero)
+    +size(100vw)
+    background: url("event/2nd/e-main/pages/index/decor-audience.png")
+    background-size: 200% 100%
+    opacity: 0
+    transform-origin: 50% 100%
+    transform: scale(1.5, 1.1)
+    +breakpoint-min($min-width-xl)
+      left: calc(50% - 1275px)
+      background: url("event/2nd/e-main/pages/index/decor-audience-web.png")
+      +size(2560px, 1712px)
+    .js-loading &
+      animation: scaling-audience 1.5s .3s forwards 1, step-audience 1.6s 2.6s steps(2) infinite
+      +breakpoint-min($min-width-xl)
+        animation: scaling-audience 1.5s .3s forwards 1, step-audience 1.6s 3.6s steps(2) infinite
+
+// TODO: 修改EU nav佔位高度(影響logo距離上方高度，U每次要改)
+.navRightBar
+  height: 39px
+  +breakpoint-min($min-width-xl)
+    height: auto
+
+.decoration--top,
+.decor--top
+  +pos-set(absolute)
+  pointer-events: none
+  +breakpoint-min($min-width-xl)
+    width: auto
+
+.sp-icon-fixed
+  position: fixed
+  z-index: 18
+  right: 4px
+  bottom: 157px
+  display: none
+  padding: 0
+  width: 20%
+  border: 0
+  transition: all 0.4s linear
+  opacity: 0
+  cursor: pointer
+  pointer-events: none
+  &.is-visible
+    display: block
+    opacity: 1
+    pointer-events: auto
+  +breakpoint-min($min-width-lg)
+    right: 4px
+    width: 120px
+  +breakpoint-min($min-width-xl)
+    bottom: 84px
+    width: 84px
+  +breakpoint-min($min-width-3xl)
+    bottom: 94px
+    width: 140px
+  +breakpoint-min($min-width-4xl)
+    bottom: 157px
+    width: 150px
+
+section:not(.note)
+  // 有parallax scroll時圖層有relative就有預設z-index可能會遮到宮格，因此使用這個讓宮格也能有預設z-index
+  +pos-set(relative)
+  a
+    display: block
+    
+@keyframes opacity-change
+  0%, 25%
+    opacity: 1
+  75%, 100%
+    opacity: 0
+  
+@keyframes step-audience
+  0%
+    background-position: 0
+  50%, 100%
+    background-position: -200%
+
+@keyframes grow-flower
+  0%
+    opacity: 0
+    transform: scale(0)
+  25%
+    opacity: 1
+    transform: scale(80%)
+  75%
+    opacity: 1
+    transform: scale(75%)
+  100%
+    opacity: 1
+    transform: scale(1)
+
++floatY(flower, 0%, -1.6vw)
+
++heartBeat(instrument, 1.3, 1.24)
+
++cheer(mobile)
++cheer(web)
+
++scaling(bg, 1, 1.5, 1.1)
++scaling(balloon, 0, -15vw, 1.5, 1.1)
++scaling(audience, 0, 0, 1.5, 1.1)
+
++grow(1, 0.7, 0.9, 0.75)
++grow(2, 0.9, 1.2)
++grow(3, 1.005, 1.03)
+
++figure-dancing(1, 0.75, 0.78, 0.8, 0, 2, -3)
++figure-dancing(2, 1, 1.05, 1.08, 0, 2, -3)
++figure-dancing(3, 0.75, 0.78, 0.8, 0, -2, 3)
++figure-dancing(4, 1, 1.05, 1.08, 0, -2, 3)

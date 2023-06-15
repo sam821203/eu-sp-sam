@@ -1,0 +1,186 @@
+.hero
+  +pos-set(relative, base)
+  overflow: hidden
+  .hero__decor
+    pointer-events: none
+    &--spotlightL
+      +pos-set(absolute, zero, -14%, -19%)
+      width: 70%
+      transform-origin: 60px 80px
+      animation: key-rotate-from-to 5s 2s linear infinite alternate
+      // display: none
+      +breakpoint-min($min-width-xl)
+        // display: block
+        top: -120px
+        left: calc( 50% - 720px )
+
+    &--spotlightR
+      +pos-set(absolute, base, -14%)
+      right: -57%
+      width: 70%
+      transform-origin: 60px 80px
+      transform: scaleX(-1)
+      animation: key-rotate-from-to-reverse 5s 2s linear infinite alternate
+      +breakpoint-min($min-width-xl)
+        z-index: 2
+        top: -120px
+        right: calc(50% - 1200px)
+
+    &--arrowL
+      display: none
+      +breakpoint-min($min-width-xl)
+        display: block
+        mix-blend-mode: screen
+      img
+        &:first-child
+          +pos-set(absolute, base, 292px, calc( 50% - 869px ))
+          transform: scaleX(-1)
+          animation: showItem-arrow 4s .5s linear infinite
+        &:nth-child(2)
+          +pos-set(absolute, base, 292px, calc( 50% - 779px ))
+          transform: scaleX(-1)
+          animation: showItem-arrow 4s 1s linear infinite
+        &:last-child
+          +pos-set(absolute, base, 292px, calc( 50% - 689px ))
+          transform: scaleX(-1)
+          animation: showItem-arrow 4s 1.5s linear infinite
+
+    &--arrowR
+      display: none
+      +breakpoint-min($min-width-xl)
+        display: block
+        mix-blend-mode: screen
+      img
+        &:first-child
+          +pos-set(absolute, base, 292px)
+          right: calc( 50% - 869px )
+          // opacity: 0
+          animation: showItem-arrow 4s .5s linear infinite
+        &:nth-child(2)
+          +pos-set(absolute, base, 292px)
+          right: calc( 50% - 779px )
+          // opacity: 0
+          animation: showItem-arrow 4s 1s linear infinite
+        &:last-child
+          +pos-set(absolute, base, 292px)
+          right: calc( 50% - 689px )
+          opacity: 0
+          animation: showItem-arrow 4s 1.5s linear infinite
+
+    &--right1
+      +pos-set(absolute, zero, 49%)
+      right: 0%
+      width: 14%
+      transform-origin: right bottom
+      .js-loading &
+        animation: rotate-reverse 2.6s ease-in-out infinite alternate
+      +breakpoint-min($min-width-xl)
+        top: 520px
+        right: calc(50% - 470px)
+    &--right2
+      +pos-set(absolute, base, 63%)
+      right: 0%
+      width: 20%
+      +breakpoint-min($min-width-xl)
+        top: 656px
+        right: calc(50% - 480px)
+    &--light
+      +pos-set(absolute, second)
+      bottom: 0%
+      left: 0%
+      +breakpoint-min($min-width-xl)
+        left: calc( 50% - 480px )
+    +breakpoint-min($min-width-xl)
+      width: auto
+
+  .hero__zone
+    +aspect-ratio(960, 1040)
+  .hero__title
+    &--main
+      +pos-set(absolute, base, 4%, 5%)
+      width: 90%
+      opacity: 0
+      .js-loading &
+        animation: bounceInDown 1s cubic-bezier(.12,.46,.75,.93) 1 forwards
+      +breakpoint-min($min-width-xl)
+        left: calc( 50% - 424px )
+  .hero__item
+    &--dog
+      +pos-set(absolute, base, 46%, 2%)
+      width: 40%
+      .js-loading &
+        animation: move-poli-right-hero 3.2s ease-in infinite
+    &--blink
+      +pos-set(absolute, base, 0%, 0%)
+      //   width: 40%
+          // .js-loading &
+      animation: showItem 3s 3s steps(1) infinite
+
+    &--stage
+      +pos-set(absolute, base)
+      bottom: 5%
+      right: 7%
+      width: 55%
+  .hero__slider
+    padding: 50% 9% 0 42%
+    +breakpoint-min($min-width-xl)
+      padding: 480px 85px 0 415px
+    // display: none
+
+  
+@keyframes bounceInDown
+  0%, 60%, 75%, 90%, to
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+  0%
+    opacity: 0
+    transform: translate3d(0, -3000px, 0) scaleY(3)
+  60%
+    opacity: 1
+    transform: translate3d(0, 25px, 0) scaleY(.9)
+  75%
+    transform: translate3d(0, -10px, 0) scaleY(.95)
+  90%
+    transform: translate3d(0, 5px, 0) scaleY(.985)
+  to
+    transform: translateZ(0)
+    opacity: 1
+
+@keyframes showItem
+  0%, 100%
+    opacity: 0
+  50%
+    opacity: 1
+
+@keyframes rotate-reverse
+  0%, 48%
+    transform: rotate(0deg)
+  10%, 22%
+    transform: rotate(-5deg)
+  16%, 28%, 40%
+    transform: rotate(3deg)
+
+@keyframes move-poli-right-hero
+  0%, 100%
+    transform: translate(0, 0)
+  10%, 22%
+    transform: translate(5%, -3%)
+  16%, 28%
+    transform: translate(5%, 0)
+  40%
+    transform: translate(2%, -3%)
+  48%
+    transform: translate(0, 0)
+
++key-rotate-from-to(50, -20)
+
+@keyframes showItem-arrow
+  0%, 39%
+    opacity: 0
+  40%, 100%
+    opacity: 1
+
+@keyframes key-rotate-from-to-reverse
+  0%
+    transform: rotate(-50deg) scaleX(-1)
+  100%
+    transform: rotate(20deg) scaleX(-1)

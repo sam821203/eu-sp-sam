@@ -1,0 +1,150 @@
+-
+  var promoEventData = [
+    [
+      {
+        link: "",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-1-1.png",
+        alt: "註冊新會員拿500東森幣",
+      },
+    ],
+    [
+      {
+        link: "",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-2-1.png",
+        alt: "全站消費滿萬送ONE BOY冰鋒衣",
+      },
+    ],
+    [
+      {
+        link: "https://www.etmall.com.tw/member/taskActivity",
+        class: 'js-change-link',
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-3-1.png",
+        alt: "挑戰任務拿樂透金",
+      },
+      {
+        link: "https://www.etmall.com.tw/Activity/CouponReceiveAll",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-3-2.png",
+        alt: "一鍵全領限量折價券",
+      },
+    ],
+    [
+      {
+        link: "",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-4-1.png",
+        alt: "會員專屬天天免費抽樂透金",
+      },
+      {
+        link: "",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-4-2.png",
+        alt: "訂單滿額抽200東森幣",
+      },
+    ],
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/22871/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-5-1.png",
+        alt: "可口可樂 畢業快樂 天天投票拿東森幣",
+      },
+      {
+        link: "",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-5-2.png",
+        alt: "離島配送 累積滿額贈168枚樂透金",
+      },
+    ],
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/23589/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-6-1.png",
+        alt: "滿額登記即享AsiaYo全網95折券",
+      },
+      {
+        link: "",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-6-2.png",
+        alt: "單筆消費$618即享UrMart 100元折價券",
+      },
+      {
+        link: "",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-6-3.png",
+        alt: "加「瑪」歡慶，獨家週邊滿額抽 !",
+      },
+    ],
+    [
+      {
+        link: "https://www.etmall.com.tw/Activity/CollectPointExchangeActivity/202305f5f8baa5",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-7-1.png",
+        alt: "集點加價購",
+      },
+      {
+        link: "https://www.etmall.com.tw/Activity/GroupSale",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-7-2.png",
+        alt: "幸福集氣購",
+      },
+    ],
+  ]
+
+//- TODO: 如果promo不和hero綁一起時要有自己的section和layout--main
+section.promo__group.promo-event
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item
+        img(src="event/1st/e-main/components/promo-event/decor-promo-event.png", alt="")
+      
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          .promo__box
+            .event__item
+              .swiper-container.container--promo-event
+                ul.swiper-wrapper
+                  each item, itemIndex in promoEventData[0]
+                    li.swiper-slide
+                      a(href= item.link, title= item.alt)
+                        img(src=  item.imgSrc, alt= item.alt)
+            .event__item
+              .swiper-container.container--promo-event
+                ul.swiper-wrapper
+                  each item, itemIndex in promoEventData[1]
+                    li.swiper-slide
+                      a(href=  item.link, title= item.alt)
+                        img(src=  item.imgSrc, alt= item.alt)
+
+            .event__item
+              .swiper-container.container--promo-event
+                ul.swiper-wrapper
+                  each item, itemIndex in promoEventData[2]
+                    li.swiper-slide
+                      a(href=  item.link, title= item.alt, class= item.class)
+                        img(src=  item.imgSrc, alt= item.alt)
+
+            .event__item
+              .swiper-container.container--promo-event
+                ul.swiper-wrapper
+                  each item, itemIndex in promoEventData[3]
+                    li.swiper-slide
+                      a(href=  item.link, title= item.alt)
+                        img(src=  item.imgSrc, alt= item.alt)
+
+            .event__item
+              .swiper-container.container--promo-event
+                ul.swiper-wrapper
+                  each item, itemIndex in promoEventData[4]
+                    li.swiper-slide
+                      a(href=  item.link, title= item.alt)
+                        img(src=  item.imgSrc, alt= item.alt)
+
+
+            .event__item
+              .swiper-container.container--promo-event
+                ul.swiper-wrapper
+                  each item, itemIndex in promoEventData[5]
+                    li.swiper-slide
+                      a(href=  item.link, title= item.alt)
+                        img(src=  item.imgSrc, alt= item.alt)
+
+            .event__item
+              .swiper-container.container--promo-event
+                ul.swiper-wrapper
+                  each item, itemIndex in promoEventData[6]
+                    li.swiper-slide
+                      a(href=  item.link, title= item.alt)
+                        img(src=  item.imgSrc, alt= item.alt)

@@ -1,0 +1,100 @@
+.promo__group--w4m2
+  +pos-set(relative, zero)
+  overflow: hidden
+
+  .decor__item
+    &--flower
+      +pos-set(absolute, zero, 2%, 14.6%)
+      width: 72%
+      transition: transform .1s
+      +breakpoint-min($min-width-xl)
+        top: 3%
+        left: calc( 50% - 271px )
+    &--title
+      +pos-set(absolute, zero, 0, 6.2%)
+      width: 88%
+      transition: transform .1s
+      will-change: transform
+      +breakpoint-min($min-width-xl)
+        left: calc( 50% - 390px )
+    &--left
+      +pos-set(absolute, zero, 1%, 2%)
+      width: 17.5%
+      +breakpoint-min($min-width-xl)
+        top: 0%
+        left: calc( 50% - 450px )
+      &.active
+        animation: scale-shine-right 1.8s linear infinite
+    &--right
+      +pos-set(absolute, zero, 1%)
+      right: 2%
+      width: 19%
+      +breakpoint-min($min-width-xl)
+        top: 2%
+        right: calc( 50% - 470px )
+      &.active
+        animation: scale-shine-left 1.8s linear infinite
+    +breakpoint-min($min-width-xl)
+      width: auto
+
+  .promo__wrap
+    position: relative
+    margin-top: 18.6%
+    +breakpoint-min($min-width-xl)
+      margin-top: 19.6%
+
+  .promo__zone
+    +aspect-ratio(960, 1800)
+    +breakpoint-min($min-width-xl)
+      +aspect-ratio(960, 980)
+
+  .promo__block
+    padding: 21.5% 1% 0
+    +breakpoint-min($min-width-xl)
+      padding-top: 18%
+
+  .bn__wrap
+    display: block
+    justify-content: space-between
+    margin-bottom: 2%
+    +breakpoint-min($min-width-xl)
+      display: flex
+    .bn__box
+      width: 100%
+      +breakpoint-min($min-width-xl)
+        width: calc( 50% - 7.5px )
+      &:first-child
+        margin-bottom: 3%      
+        +breakpoint-min($min-width-xl)
+          margin-bottom: 0   
+
+  .swiper-wrapper
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    li
+      width: 25%
+      +padding-x(0.6%)
+      margin-bottom: 1%
+      a
+        transition: all 0.5s
+        &:hover,
+        &.active
+          transform: scale(0.95)
+          filter: contrast(1.1)
+
+@keyframes scale-shine-right
+  0%, 100%
+    transform: rotate(-10deg) scale(1)
+    filter: brightness(1)
+  50%
+    transform: rotate(6deg) scale(1.1)
+    filter: brightness(1.2)
+
+@keyframes scale-shine-left
+  0%, 100%
+    transform: rotate(10deg) scale(1)
+    filter: brightness(1)
+  50%
+    transform: rotate(-6deg) scale(1.1)
+    filter: brightness(1.2)

@@ -1,0 +1,64 @@
+.table__group
+  .decor__bg
+    padding: 0 4%
+    background-image: url(event/current/components/time-table/decor-time-bg.png)
+    background-size: 100%
+
+  .event__item
+    display: flex
+    &:nth-child(odd)
+      background-color: $gray-deep-light
+    &:nth-child(even)
+      background-color: $main-gray-light
+
+  .event__item,
+  .event__item a
+    font-size: 16px
+    +breakpoint-min($min-width-lg)
+      font-size: 32px
+
+  .item__name,
+  .item__time
+    padding: 1em 10px
+    text-align: center
+    +breakpoint-min($min-width-lg)
+      padding: 15px 10px
+
+  .item__name
+    flex: 0 0 21%
+    background: $main-gradient-2
+    border-bottom: 1px solid $main-color-4
+    font-weight: bold
+
+  .item__time
+    flex: 1 1 50% 
+    border-right: 1px solid $main-gray-medium
+
+  .item__cta
+    flex: 0 0 29%
+    padding: 10px 1.5%
+  
+    .btn--table
+      display: none
+      padding: 5px 10px
+      color: $gray-deep-light
+      background-color: $main-gray-medium
+      border-radius: 1em
+      text-align: center
+      &:first-child
+        display: block
+
+    &.start
+      .btn--table
+        &:first-child
+          display: none
+        &:nth-child(2)
+          display: block
+          background-color: $main-color-5
+    &.end
+      .btn--table
+        &:first-child
+          display: none
+        &:last-child
+          display: block
+          background-color: $gray-dark         

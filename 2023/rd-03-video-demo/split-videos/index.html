@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>整點搶紅包demo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul,
+    ol {
+      list-style: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    body {
+      background: center 0 url(bg.jpg) no-repeat;
+      background-size: 100%;
+    }
+
+    @media screen and (min-width: 960px) {
+      body {
+        background: center 0 url(bg-web.jpg) no-repeat;
+        background-size: auto;
+      }
+    }
+
+    .layout--main {
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      max-width: 960px;
+    }
+
+    .result {
+      position: absolute;
+      z-index: 0;
+      width: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    .video__box video {
+      nav-left: auto;
+      margin-right: auto;
+      width: 100%;
+    }
+
+    .cta__wrap {
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    .result__wrap {
+      position: relative;
+      z-index: 1;
+      top: 50%;
+      left: 50%;
+      width: 200px;
+      transform: translate(-50%, -50%);
+    }
+
+    .result__box {
+      margin-bottom: 24px;
+      width: 100%;
+      transition: all 0.3s;
+    }
+
+    .modal {
+      position: fixed;
+      z-index: 19;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100vh;
+    }
+
+    .modal .modal__overlay {
+      position: absolute;
+      z-index: 0;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      border: none;
+      -webkit-backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px);
+    }
+
+    .modal .modal__close {
+      margin-left: auto;
+      margin-right: auto;
+      width: 44px;
+    }
+
+    .video__box,
+    .cta__box,
+    .cta__box .btn__cta--active,
+    .cta__box.active .btn__cta,
+    .modal {
+      display: none;
+    }
+
+    .video__box.active,
+    .cta__box.standby,
+    .cta__box.active,
+    .cta__box.active .btn__cta--active,
+    .modal.modal-open {
+      display: block;
+    }
+
+    body.modal-open {
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <main id="heroWrap" class="hero__wrap">
+    <div class="layout--main">
+      <img src="title.png" alt="">
+    </div>
+  </main>
+  <section class="play__wrap">
+    <div class="layout--main">
+      <div class="video__wrap">
+        <div class="video__box waiting active">
+          <video id="videoWaiting" class="video" autoplay loop muted playsinline poster="post-waiting.png">
+            <source src="waiting.mov" type="video/mp4; codecs=&quot;hvc1&quot;">
+            <source src="waiting.webm" type="video/webm">
+          </video>
+        </div>
+        <div class="video__box action">
+          <video id="videoAction" class="video" autoplay loop muted playsinline preload="auto">
+            <source src="action.mov" type="video/mp4; codecs=&quot;hvc1&quot;">
+            <source src="action.webm" type="video/webm">
+          </video>
+        </div>
+        <div class="video__box result">
+          <video id="videoResult" class="video" autoplay muted playsinline preload="auto">
+            <source src="result.mov" type="video/mp4; codecs=&quot;hvc1&quot;">
+            <source src="result.webm" type="video/webm">
+          </video>
+        </div>
+      </div>
+      <div id="ctaWrap" class="cta__wrap">
+        <div class="layout--main">
+          <div id="btnWaiting" class="cta__box waiting">
+            <img class="btn__cta" src="btn-waiting.png" alt="">
+            <img class="btn__cta--active" src="btn-waiting-active.png" alt="">
+          </div>
+          <div id="btnAction" class="cta__box action">
+            <img class="btn__cta" src="btn-action.png" alt="">
+            <img class="btn__cta--active" src="btn-action-active.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div id="modal" class="modal">
+    <div id="modalOverlay" class="modal__overlay"></div>
+    <div class="result__wrap">
+      <div class="result__box">
+        <img src="gift.png" alt="">
+      </div>
+      <div id="modalClose" class="modal__close">
+        <img src="close-btn.svg" alt="">
+      </div>
+    </div>
+  </div>
+  <script>
+    const videos = Array.apply(null, document.querySelectorAll('.video'));
+    const videoWaiting = document.getElementById('videoWaiting');
+    const videoAction = document.getElementById('videoAction');
+    const videoResult = document.getElementById('videoResult');
+    const btnWaiting = document.getElementById('btnWaiting');
+    const btnAction = document.getElementById('btnAction');
+    const btnResult = document.getElementById('btnResult');
+    const modal = document.getElementById('modal');
+    const modalOverlay = document.getElementById('modalOverlay');
+    const modalClose = document.getElementById('modalClose');
+    // 計算load完成的影片數量
+    let loadedVideoCount = 0;
+
+    // 當所有影片load完才出現遊戲開始的按鈕
+    videos.forEach((video, index) => {
+      video.addEventListener('canplaythrough', () => {
+        loadedVideoCount += 1;
+        // 因iOS不預載媒體檔(不吃preload屬性)，須用autoplay屬性強制預載，所以不要autoplay的要暫停
+        if (index !== 0) video.pause();
+        if (loadedVideoCount === videos.length) setState(btnWaiting, 'standby');
+      }, { once: true });
+    });
+
+    // 第一階段待機按鈕
+    btnWaiting.addEventListener('click', () => {
+      // 按了把自身切換到active狀態（切換成已按下效果）
+      setState(btnWaiting, 'active');
+
+      // 關掉loop(才能抓到ended)
+      videoWaiting.loop = false;
+      // 防止iOS省電模式不執行影片播放
+      videoWaiting.play();
+      videoWaiting.addEventListener('ended', () => {
+        // 影片結束時隱藏影片、顯示第二段影片、第二段影片開始播放、顯示第二階段按鈕
+        setState(videoWaiting.parentNode);
+        setState(videoAction.parentNode, 'active');
+        videoAction.play();
+        setState(btnWaiting);
+        setState(btnAction, 'standby');
+      });
+    });
+
+    // 第二階段玩遊戲按鈕
+    btnAction.addEventListener('click', () => {
+      // 按了把自身切換到active狀態（切換成已按下效果）
+      setState(btnAction, 'active');
+
+      // 關掉loop(才能抓到ended)
+      videoAction.loop = false;
+      videoAction.addEventListener('ended', () => {
+        // 影片結束時隱藏影片、顯示第三段影片、第三段影片開始播放
+        setState(videoAction.parentNode);
+        setState(btnAction);
+        setState(videoResult.parentNode, 'active');
+        videoResult.play();
+      });
+    });
+
+    // 當第三階段影片播放完後彈出結果
+    videoResult.addEventListener('ended', () => {
+      setState(modal, 'modal-open');
+    });
+
+    modalOverlay.addEventListener('click', reset);
+    modalClose.addEventListener('click', reset);
+
+    // 不給第二個參數就會全數拔除，回到預設狀態
+    function setState(element, state) {
+      element.classList.remove('standby');
+      element.classList.remove('active');
+      element.classList.remove('modal-open');
+      document.body.classList.remove('modal-open');
+
+      if (state === 'modal-open') document.body.classList.add('modal-open');
+      if (state) element.classList.add(state);
+    }
+
+    function reset() {
+      // rest video (不做此step的話在不load重複玩時有機率閃現最後一幀再從頭跑影片，像鬼影)
+      videos.forEach(video => video.currentTime = 0);
+
+      // reset waiting
+      videoWaiting.loop = true;
+      videoWaiting.play();
+      setState(videoWaiting.parentNode, 'active');
+      // 此處不開讓按鈕不顯示，開了就能完全回到從頭，可一直玩
+      setState(btnWaiting, 'standby');
+
+      // reset action
+      videoAction.loop = true;
+
+      // reset result
+      setState(modal);
+      setState(videoResult.parentNode);
+    }
+  </script>
+</body>
+</html>

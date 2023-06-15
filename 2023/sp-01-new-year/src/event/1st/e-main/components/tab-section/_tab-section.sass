@@ -1,0 +1,103 @@
+// tab layout
+.promo__group--tab-section
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__item
+    &--title
+      +pos-set(absolute, base, 1%, 1%)
+      width: 95%
+      transform-origin: left bottom
+      // transform: rotate(10deg)
+      +breakpoint-min($min-width-xl)
+        left: calc( 50% - 473px )
+    &--decor
+      +pos-set(absolute, second, 7%, 10%)
+      width: 15%
+      &.active
+        animation: move-poli-right 3.2s ease-in 5
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 338px)
+    +breakpoint-min($min-width-xl)
+      width: auto
+
+  .promo__wrap
+    +aspect-ratio(960, 1494)
+  .promo__zone
+    +bg-set(url("event/1st/e-main/components/tab-section/bg-tab-section.png"), 100%)
+  .promo__block
+    padding: 40% 6% 0
+  .pagination
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    // margin-bottom: 1%
+  .swiper-pagination-bullets .swiper-pagination-bullet
+    display: block
+    width: 32%
+    height: auto
+    margin: 0
+    background: transparent
+    text-align: center
+    opacity: .9
+    filter: brightness(0.5)
+    transition: all .5s
+    margin-bottom: 2%
+    &.swiper-pagination-bullet-active
+      filter: brightness(1)
+      opacity: 1
+
+  .swiper-wrapper
+    padding-top: 2%
+    +breakpoint-min($min-width-xl)
+      padding-top: 25px
+
+  .swiper-slide
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+
+  .dynamic__item--tab
+    width: 33%
+    margin-bottom: 2%
+    +breakpoint-min($min-width-xl)
+      margin-bottom: 15px
+    &.decor--etman
+      img
+        padding-top: 9%
+        padding-right: 2%
+        +breakpoint-min($min-width-xl)
+          padding-top: 10px
+          padding-right: 10px
+
+  .product.product--dynamic
+    +margin-x(auto)
+    width: 95%
+    +breakpoint-min($min-width-xl)
+      width: 95%
+    .product__name
+      margin-bottom: 0px
+      background-color: #fff
+      +breakpoint-min($min-width-xl)
+        font-size: 26px
+        height: 2.43em
+    .product__price
+      background-color: #fff
+      border-radius: 0 0 2vw 2vw
+      +breakpoint-min($min-width-xl)
+        border-radius: 0 0 20px 20px
+      span
+        &:last-child
+          +breakpoint-min($min-width-xl)
+            font-size: 36px
+
+@keyframes move-poli-right
+  0%, 100%
+    transform: translate(0, 0)
+  10%, 22%
+    transform: translate(20%, -12%) scaleY(1.05)
+  16%, 28%
+    transform: translate(20%, 0) rotate(0deg)
+  40%
+    transform: translate(10%, -12%) rotate(3deg)
+  48%
+    transform: translate(0, 0)

@@ -1,0 +1,73 @@
+.bn-slider
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__item
+    &--left
+      +pos-set(absolute, zero, 2%, 4%)
+      width: 18%
+      transform-origin: bottom 
+      +breakpoint-min($min-width-xl)
+        top: 25px
+        left: calc(50% - 430px)
+    &--right
+      +pos-set(absolute, zero, 0)
+      right: 1%
+      width: 20%
+      transform-origin: bottom
+      +breakpoint-min($min-width-xl)
+        right: calc(50% - 465px)
+
+    +breakpoint-min($min-width-xl)
+      width: auto
+
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/bn-slider/bg-bn-slider.png), 100%)
+  .promo__zone
+    +aspect-ratio(960, 1010)
+  .promo__block
+    padding: 0 1%
+    overflow: hidden
+    .promo__box
+      margin: 28% auto 0
+      // +pos-set(absolute, zero, 26%, 7.5%)
+      width: 86%
+      +breakpoint-min($min-width-xl)
+        // top: 130px
+    .promo__slider
+      margin-top: 8%
+      // +pos-set(absolute, zero)
+      // bottom: 0%
+      // left: 2.5%
+      // width: 95%
+      .swiper-container
+        overflow: visible
+
+      .swiper-slide-visible
+        a
+          transition: all 0.6s
+
+      .swiper-slide-visible.swiper-slide-next
+        a
+          transition: all 0.6s
+          transform: translateY(-15%)
+
+@keyframes bounceInRight
+  0%,
+  60%,
+  75%,
+  90%,
+  to
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+  0%
+    opacity: 0
+    transform: translate3d(3000px, 0, 0) scaleX(3)
+  60%
+    opacity: 1
+    transform: translate3d(-25px, 0, 0) scaleX(1)
+  75%
+    transform: translate3d(10px, 0, 0) scaleX(0.98)
+  90%
+    transform: translate3d(-5px, 0, 0) scaleX(0.995)
+  to
+    opacity: 1
+    transform: translateZ(0)

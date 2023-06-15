@@ -1,0 +1,96 @@
+-
+  var promoEventData = [
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/20687/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-1.png",
+        alt: "全家取件送仙女紅茶加碼抽好禮",
+      },
+    ],
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/20971/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-2-1.png",
+        alt: "不限金額登記送PILI影音線上體驗序號",
+      },
+      {
+        link: "https://media.etmall.com.tw/sp/21184/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-2-2.png",
+        alt: "霹靂專區滿額送好禮",
+      },
+    ],
+    [
+      {
+        link: "https://www.etmall.com.tw/member/taskActivity",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-3-1.png",
+        alt: "挑戰任務拿$850",
+      },
+      {
+        link: "",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-3-2.png",
+        alt: "訂單滿額抽$888",
+      },
+      {
+        link: "",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-3-3.png",
+        alt: "會員專屬天天免費抽",
+      },
+      {
+        link: "",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-3-4.png",
+        alt: "全站折價券，限量開搶",
+      },
+    ],
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/21184/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-4-1.png",
+        alt: "離島配送滿額贈88枚樂透金",
+      },
+      {
+        link: "https://www.etmall.com.tw/Activity/CollectPointExchangeActivity/202212db4fb10f",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-4-2.png",
+        alt: "集點加價購",
+      },
+      {
+        link: "https://www.etmall.com.tw/Activity/GroupSale",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-4-3.png",
+        alt: "幸福集氣購",
+      },
+    ],
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/20182/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-5.png",
+        alt: "滿2500折200指定商品100%東森幣回饋",
+      },
+    ],
+  ]
+
+//- TODO: 如果promo不和hero綁一起時要有自己的section和layout--main
+section.promo__group.promo-event
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          ul.item__box
+            each data, index in promoEventData
+              if (index > 2)
+                li.event__item(id="promoEventItem" + (index + 3))
+                  .swiper-container.container--promo-event
+                    ul.swiper-wrapper
+                      each item, itemIndex in data
+                        li.swiper-slide.promo__item
+                          a(href=  item.link, title= item.alt)
+                            img(src=  item.imgSrc,  item.alt)
+
+          ul.promo__box
+            each data, index in promoEventData
+              if (index < 3)
+                li.event__item(id="promoEventItem" + (index + 1))
+                  .swiper-container.container--promo-event
+                    ul.swiper-wrapper
+                      each item, itemIndex in data
+                        li.swiper-slide.promo__item
+                          a(href=  item.link, title= item.alt)
+                            img(src=  item.imgSrc,  item.alt)

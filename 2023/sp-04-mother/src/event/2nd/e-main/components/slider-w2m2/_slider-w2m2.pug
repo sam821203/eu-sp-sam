@@ -1,0 +1,35 @@
+-
+  var sliderW2M2Data = [
+    [  //1
+      {
+        link1: "https://www.etmall.com.tw/i/2534545" ,
+        link2: "https://www.etmall.com.tw/i/4089190" ,
+        imgSrc: "event/2nd/e-main/components/slider-w2m2/item/p1.png",
+        alt1: "SevenStar七星級 首席之座全包覆氣壓按摩椅 SC-395",
+        alt2: "輝葉 追夢椅Lite (HY-7066)",
+      },
+    ],
+  ]
+
+section.promo__group.promo__group--slider-w2m2.m-bottom--lg(data-title="娘娘御用大牌")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--title#decorW2M2Title
+        img(src="event/2nd/e-main/components/slider-w2m2/decor-slider-w2m2-title.png" alt="")
+      .decor__item.decor__item--left#decorW2M2Left
+        img(src="event/2nd/e-main/components/slider-w2m2/decor-slider-w2m2-left.png" alt="")
+      .decor__item.decor__item--right#decorW2M2Right
+        img(src="event/2nd/e-main/components/slider-w2m2/decor-slider-w2m2-right.png" alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          .promo__slider.full-parent
+            .swiper-container#sliderW2M2Item
+              ul.swiper-wrapper
+                each data, index in sliderW2M2Data
+                  li.swiper-slide
+                    each item, itemIndex in  data
+                      .swiper-box
+                        img(src= item.imgSrc, alt="")
+                        a(href= item.link1, title=item.alt1)
+                        a(href= item.link2, title=item.alt2)

@@ -1,0 +1,49 @@
+.promo__group--w3m3
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__wrap
+    padding-bottom: 8%
+  .decor__item
+    &--left
+      +pos-set(absolute, under, 2%, 0%)
+      width: 100%
+      &.active
+        animation: figure-enlarge 0.6s ease-out 1, figure-moveX 2s .6s linear infinite
+      +breakpoint-min($min-width-xl)
+        left: calc( 50% - 460px )
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .promo__wrap
+    +bg-set(url(event/2nd/e-main/components/event-w3m3/bg-event-w3m3.png), 100%)
+    margin-top: 28.5%
+  .promo__zone
+    +aspect-ratio(959, 960)
+  .promo__block
+    padding-top: 14.2%
+    padding-left: 1%
+    .good__wrap
+      display: flex
+      flex-wrap: wrap
+      justify-content: center
+      li
+        width: 31%
+        a
+          transition: all 0.5s
+          &:hover,
+          &.active
+            transform: scale(0.95)
+            filter: contrast(1.1)
+
+@keyframes figure-enlarge
+  0%, 100%
+    transform: scale(1)
+  50%
+    transform: scale(1.05)
+
+@keyframes figure-moveX
+  0%, 50%, 100%
+    transform: translateX(0%)
+  25%
+    transform: translateX(10%)
+  75%
+    transform: translateX(-8%)

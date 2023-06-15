@@ -1,0 +1,160 @@
+-
+  var promoEventData = [
+    [
+      {
+        link: "https://www.etmall.com.tw/Activity/dl/VoteActivityMethod/54",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-1-1.png",
+        alt: "女王駕到-投票抽訂單金額100%樂透金",
+      },
+    ],
+    [
+      {
+        link: "https://www.etmall.com.tw/Activity/Reg/220",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-2-1.png",
+        alt: "全站消費滿額抽萬元美妝豪禮",
+      },
+    ],
+    [
+      {
+        link: "https://www.etmall.com.tw/member/taskActivity",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-3-1.png",
+        alt: "挑戰任務滿額拿$1250",
+      },
+      {
+        link: "https://www.etmall.com.tw/Activity/dl/LuckyDraw/784f9595182b037c80409ac98d032ae7",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-3-2.png",
+        alt: "會員專屬天天免費抽",
+      },
+      {
+        link: "https://www.etmall.com.tw/Activity/CouponReceiveAll",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-3-3.png",
+        alt: "一鍵全領限量折價券",
+      },
+      {
+        link: "https://www.etmall.com.tw/Activity/GroupSale",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-3-4.png",
+        alt: "幸福集氣購",
+      },
+    ],
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/21674/m/index.html",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-4-1.png",
+        alt: "全家取件送健達繽紛樂",
+      },
+      {
+        link: "https://media.etmall.com.tw/sp/21699/m/index.html",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-4-2.png",
+        alt: "Hami書城超狂雙重福利任你拿",
+      },
+    ],
+    [
+      {
+        link: "https://m.etmall.com.tw/Activity/Lottery/7899035d623cdb34442c13c95bd2f1bf",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-5-1.png",
+        alt: "全站消費滿額抽388枚樂透金",
+      },
+    ],
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/21230/m/index.html",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-6-1.png",
+        alt: "嘉尚好禮 消費滿$1300折$100",
+      },
+    ],
+    //- 名人推薦
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/21969/m/index.html",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-7-1.png",
+        alt: "離島配送 累積滿額贈68枚樂透金",
+      },
+      {
+        link: "https://www.etmall.com.tw/Activity/dl/VoteActivityMethod/50",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-7-2.png",
+        alt: "投票就抽Apple Airpods Pro 2",
+      },
+      {
+        link: "https://media.etmall.com.tw/sp/19552/m/index.html",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-7-3.png",
+        alt: "新會員十元購",
+      },
+      {
+        link: "https://www.etmall.com.tw/Activity/CollectPointExchangeActivity/202302811fecc3",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-7-4.png",
+        alt: "集點加價購",
+      },
+    ],
+  ]
+
+//- TODO: 如果promo不和hero綁一起時要有自己的section和layout--main
+section.promo__group.promo-event
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          .promo__box
+            .item__box
+              .event__item
+                .swiper-container.container--promo-event
+                  ul.swiper-wrapper
+                    each item, itemIndex in promoEventData[0]
+                      li.swiper-slide.promo__item
+                        a(href=  item.link, title= item.alt)
+                          img(src=  item.imgSrc,  item.alt)
+              .event__item
+                .swiper-container.container--promo-event
+                  ul.swiper-wrapper
+                    each item, itemIndex in promoEventData[1]
+                      li.swiper-slide.promo__item
+                        a(href=  item.link, title= item.alt)
+                          img(src=  item.imgSrc,  item.alt)
+
+            .item__box
+                .event__item
+                  .swiper-container.container--promo-event
+                    ul.swiper-wrapper
+                      each item, itemIndex in promoEventData[2]
+                        li.swiper-slide.promo__item
+                          a(href=  item.link, title= item.alt)
+                            img(src=  item.imgSrc,  item.alt)
+
+          .promo__box
+            .item__box
+              .event__item
+                .swiper-container.container--promo-event
+                  ul.swiper-wrapper
+                    each item, itemIndex in promoEventData[3]
+                      li.swiper-slide.promo__item
+                        a(href=  item.link, title= item.alt)
+                          img(src=  item.imgSrc,  item.alt)
+            .item__box
+              .event__item
+                .swiper-container.container--promo-event
+                  ul.swiper-wrapper
+                    each item, itemIndex in promoEventData[4]
+                      li.swiper-slide.promo__item
+                        a(href=  item.link, title= item.alt)
+                          img(src=  item.imgSrc,  item.alt)
+
+            .item__box
+              .event__item
+                .swiper-container.container--promo-event
+                  ul.swiper-wrapper
+                    each item, itemIndex in promoEventData[5]
+                      li.swiper-slide.promo__item
+                        a(href=  item.link, title= item.alt)
+                          img(src=  item.imgSrc,  item.alt)
+
+        .promo__block
+          //- .promo__title
+          //-   img(src="event/2nd/e-main/components/promo-event/promo-event-title.png", alt="名人推薦")
+          .promo__box
+            .item__box
+              .event__item
+                .swiper-container.container--promo-event
+                  ul.swiper-wrapper
+                    each item, itemIndex in promoEventData[6]
+                      li.swiper-slide.promo__item
+                        a(href=  item.link, title= item.alt)
+                          img(src=  item.imgSrc,  item.alt)

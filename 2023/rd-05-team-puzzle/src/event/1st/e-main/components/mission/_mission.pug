@@ -1,0 +1,67 @@
+-
+  var promoMission = [
+    {
+      name: "團結力量大",
+      myValue: 20,
+      teamValue: 100,
+    },
+    {
+      name: "618購起來",
+      myValue: 0,
+      teamValue: 0,
+    },
+    {
+      name: "百萬大富翁",
+      myValue: 20,
+      teamValue: 100,
+    },
+    {
+      name: "邀請新朋友​",
+      myValue: 30,
+      teamValue: 60,
+    },
+    {
+      name: "人氣投票​",
+      myValue: 20,
+      teamValue: 20,
+    },
+    {
+      name: "天天簽到​",
+      myValue: 20,
+      teamValue: 20,
+    },
+  ]
+
+section.section--cell.promo__group.promo__group--mission.m-bottom--xl
+  .layout--main
+    .group__wrap
+      .group__title.block--center.m-bottom--lg
+        img(src="event/1st/e-main/components/mission/title-mission.png", alt="拚圖任務")
+
+      .mission__info.m-bottom--lg
+        h3 每位會員加入團隊後即可開始挑戰6項拼圖任務，每項拼圖任務積分達100時即可獲得對應拼圖，合計6塊拼圖。
+
+      .group__zone
+        .group__block.m-bottom--lg
+          .group__mission
+              each data in promoMission
+                .mission__item(class= (data.teamValue== 100 ? "completed" : ""))
+                  .btn--intro
+                    img(src="event/1st/e-main/components/mission/mission-intro.svg", alt="任務詳情")
+                  .mission__title= data.name
+                  .mission__progress
+                    .progress__wrap
+                      .progress__box(style="width:" + data.teamValue + "%")
+                  .mission__value 
+                    .value--my
+                      span 我的積分：
+                      span= data.myValue
+                    .value--team
+                      span 團隊積分：
+                      span= data.teamValue
+                  .mission__cta
+                    a(href= (data.teamValue== 100 ? "javscript:void(0)" : "#"), title= data.name) 
+                      .btn--mission= (data.teamValue== 100 ? "已收集" : "去收集")
+
+        .group__block
+          include /event/1st/e-main/components/include/puzzle/_puzzle

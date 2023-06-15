@@ -1,0 +1,37 @@
+.promo__group--slider-w1m1
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__item
+    pointer-events: none
+    &--item
+      +pos-set(absolute, second)
+      bottom: 11%
+      right: 1%
+      width: 35%
+      transform-origin: bottom
+      animation: tada 2.6s linear infinite
+      +breakpoint-min($min-width-xl)
+        bottom: 120px
+        right: calc( 50% - 460px )
+        width: auto
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/slider-w1m1/bg-slider-w1m1.png), 100%)
+  .promo__zone
+    +aspect-ratio(960, 1092)
+  .promo__block
+    padding: 27% 13% 0% 6%
+  .promo__slider
+    width: 90%
+
+
+@keyframes tada
+  0%
+    transform: scaleX(1)
+  10%, 20%
+    transform: scale3d(1, 1, 1) rotate(-3deg)
+  30%, 50%, 70%, 90%
+    transform: scale3d(1.05, 1.05, 1.05) rotate(3deg)
+  40%, 60%, 80%
+    transform: scale3d(1.05, 1.05, 1.05) rotate(-3deg)
+  to
+    transform: scaleX(1)

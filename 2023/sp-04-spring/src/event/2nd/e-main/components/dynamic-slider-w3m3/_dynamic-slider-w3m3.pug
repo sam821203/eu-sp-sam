@@ -1,0 +1,42 @@
+-
+  var sliderW3M3 = [
+    { // 1
+      link: "https://www.etmall.com.tw/i/4152651",
+      imgSrc: "event/2nd/e-main/components/dynamic-slider-w3m3/img/dynamic-1.jpg",
+      alt: "女王百搭所有造型"
+    },
+    { // 2
+      link: "https://www.etmall.com.tw/c3/154497",
+      imgSrc: "event/2nd/e-main/components/dynamic-slider-w3m3/img/dynamic-2.jpg",
+      alt: "熱穿透氣旋氣炸鍋"
+    },
+    { // 3
+      link: "https://www.etmall.com.tw/i/3170925",
+      imgSrc: "event/2nd/e-main/components/dynamic-slider-w3m3/img/dynamic-3.jpg",
+      alt: "靠得住太空棉6包"
+    },
+  ]
+
+section.promo__group.dynamic-slider-w3m3.m-bottom--lg(data-title="春遊踏青")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--left#decorDynamic2Left
+        img(src="event/2nd/e-main/components/dynamic-slider-w3m3/decor-dynamic-w3m3-left.png", alt="")
+      .decor__item.decor__item--left2
+        img(src="event/2nd/e-main/components/dynamic-slider-w3m3/decor-dynamic-w3m3-left2.png", alt="")
+      .decor__item.decor__item--right#decorDynamic2Right
+        img(src="event/2nd/e-main/components/dynamic-slider-w3m3/decor-dynamic-w3m3-right.png", alt="")
+      .decor__item.decor__item--bottom#decorDynamic2Bottom
+        img(src="event/2nd/e-main/components/dynamic-slider-w3m3/decor-dynamic-w3m3-bottom.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block.full-parent
+          .promo__box
+            .swiper-container#dynamicSliderW3M3Bn
+              ul.swiper-wrapper
+                each data in sliderW3M3
+                  li.swiper-slide
+                    a(href= data.link, title=data.alt)
+                      img(src= data.imgSrc, alt=data.alt)
+          .promo__slider.swiper-container#DynamicSliderBlock2
+            .swiper-wrapper

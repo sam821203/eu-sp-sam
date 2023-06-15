@@ -1,0 +1,77 @@
+.btn--record
+  +pos-set(fixed, nav)
+  bottom: 0
+  left: 50%
+  display: flex
+  height: 2.25em
+  font-size: 16px
+  transform: translateX(-50%)
+
+.record__block
+  width: 7.5em
+  color: $gray-dark
+  background-color: $gray-deep-light
+  line-height: 2.5em
+  text-align: center
+  img
+    width: 1.25em
+    margin-right: 0.2em
+  span
+    vertical-align: middle
+
+.decor__left
+  margin-right: -1px
+.decor__right
+  margin-left: -2px
+  transform: scaleX(-1)
+
+.decor__left,
+.decor__right
+  img
+    height: 100%
+
+.record--web
+  display: none
+  +pos-set(fixed, nav)
+  top: 182px
+  right: 0
+
+.record__nav
+  padding: 30px 20px 30px 36px
+  width: 136px
+  border-radius: 20px 0px 0px 20px
+  background: rgba($gray-deep-dark, 0.8)
+  box-shadow: 0px 0px 8px rgba($gray-deep-light, 0.4)
+  li
+    padding: 10px 0
+    text-align: center
+    &:not(:last-child)
+      border-bottom: 1px solid $gray-deep-light
+
+  a
+    +pos-set(relative, zero)
+    color: $gray-deep-light
+    font-size: 16px
+    line-height: 21px
+    &:hover
+      color: $main-color-6
+      &::before
+        display: block
+        content: ''
+        +pos-set(absolute, zero)
+        top: 3px
+        left: -19px
+        width: 16px
+        height: 16px
+        +bg-set(url(event/1st/e-main/components/bet-record/icon-record-hover.svg), 100%)
+
++breakpoint-min($min-width-lg)
+  .btn--record
+    font-size: 24px
+
++breakpoint-min($min-width-xl)
+  .btn--record
+    display: none
+  .record--web
+    display: block
+

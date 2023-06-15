@@ -1,0 +1,36 @@
+body
+  padding-top: 38px
+  .info__wrap
+    position: fixed
+    z-index: 18
+    top: 0
+    left: 0
+    width: 100%
+    background-color: $main-color-3
+
+    .info__box
+      padding: 5px 0
+      width: 100%
+      font-size: 20px
+      text-align: center
+      span
+        &:nth-child(1)
+          color: $gray-deep-light
+        &:nth-child(2),
+        &:nth-child(3)
+          color: $main-color-2
+
+  +breakpoint-min($min-width-lg)
+    padding-top: 65px
+    .info__wrap
+      .info__box
+        padding: 10px 0
+        font-size: 32px
+
+  +breakpoint-min($min-width-xl)
+    padding-top: 0
+    .info__wrap
+      position: static
+      border-radius: 40px
+
+

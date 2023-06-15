@@ -1,0 +1,88 @@
+.dynamic-slider-w2m2
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__item
+    &--title
+      +pos-set(absolute, zero, 13.6%, 1.5%)
+      width: 97%
+      +breakpoint-min($min-width-xl)
+        top: 190px
+        left: calc( 50% - 452px )
+    &--item
+      +pos-set(absolute, zero, 0%, 27%)
+      width: 51%
+      transform-origin: bottom
+      &.active
+        animation: swing 3s 1s linear infinite
+      +breakpoint-min($min-width-xl)
+        left: calc( 50% - 220px )
+    &--left
+      +pos-set(absolute, zero, 4%, 12%)
+      width: 20%
+      opacity: 0
+      &.active
+        animation: plane-fly-right .6s ease-in-out forwards
+      +breakpoint-min($min-width-xl)
+        top: 40px 
+        left: calc( 50% - 380px )
+    &--right
+      +pos-set(absolute, zero, 7%)
+      right: 10%
+      width: 20%
+      opacity: 0
+      &.active
+        animation: plane-fly-left .6s .2s ease-in-out forwards
+      +breakpoint-min($min-width-xl)
+        top: 65px 
+        right: calc( 50% - 430px )
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/dynamic-slider-w2m2/bg-dynamic-slider-w2m2.png), 100%)
+  .promo__zone
+    +aspect-ratio(960, 1358)
+  .promo__block
+    padding: 40% 6% 0
+    +breakpoint-min($min-width-xl)
+      padding-top: 380px
+  .promo__box
+    margin-bottom: 1%
+  .promo__slider
+    .product__block
+      .product__img
+        img
+          width: 100%
+      .product__name
+        padding: 0 4%
+
+  // border
+  .product.product--dynamic
+    border: 4px solid $main-e-background-color-1st-2
+    border-radius: 1.2vw
+    +breakpoint-min($min-width-xl)
+      border: 10px solid $main-e-background-color-1st-2
+      border-radius: 20px
+
+@keyframes swing
+  10%
+    transform: rotate(5deg)
+  30%
+    transform: rotate(-5deg)
+  50%, 100%
+    transform: rotate(0deg)
+
+@keyframes plane-fly-right
+  0%
+    transform: translate(200%, 300%)
+    opacity: 0
+  100%
+    transform: translate(0%, 0%)
+    opacity: 1
+
+@keyframes plane-fly-left
+  0%
+    transform: translate(-200%, 300%)
+    opacity: 0
+  100%
+    transform: translate(0%, 0%)
+    opacity: 1

@@ -1,0 +1,79 @@
+.dynamic-slider-w2m2
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__wrap
+    padding-bottom: 10%
+    +breakpoint-min($min-width-xl)
+      padding-bottom: 110px
+  .decor__item
+    &--item
+      +pos-set(absolute, zero, 0%, 34%)
+      width: 32%
+      transform-origin: bottom
+      animation: shakeX-mirror 3s 1s linear infinite alternate
+      +breakpoint-min($min-width-xl)
+        left: calc( 50% - 149px )
+    &--star
+      +pos-set(absolute, zero, 1%, 1.5%)
+      width: 97%
+      &.active
+        animation: flash 1s steps(1) infinite alternate
+      +breakpoint-min($min-width-xl)
+        top: 25px
+        left: calc( 50% - 462px )
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/dynamic-slider-w2m2/bg-dynamic-slider-w2m2.png), 100%)
+  .promo__zone
+    +aspect-ratio(960, 1392)
+  .promo__block
+    padding: 32% 4% 0
+    +breakpoint-min($min-width-xl)
+      padding-top: 300px
+  .promo__box
+    margin-bottom: 9%
+    width: 100%
+    height: 33%
+    +breakpoint-min($min-width-xl)
+      margin-bottom: 80px
+  .promo__slider
+    .product__img
+      img
+        width: 100%
+    .product__name
+      padding: 0 4%
+      font-size: 4vw
+      +breakpoint-min($min-width-xl)
+        font-size: 28px
+    .product__price
+      +breakpoint-min($min-width-xl)
+        padding-bottom: 10px
+      span
+        &:first-child
+          font-size: 3vw
+          +breakpoint-min($min-width-xl)
+            font-size: 38px
+        &:last-child
+          font-size: 5vw
+          +breakpoint-min($min-width-xl)
+            font-size: 46px
+
+
+
+@keyframes flash
+  0%, 100%
+    opacity: 1
+  50%
+    opacity: 0
+
+@keyframes shakeX-mirror
+  0%, 20%, 40%
+    transform: translateY(5%) scaleX(1)
+  10%, 30%, 50%
+    transform: translateY(0%) scaleX(1)
+  60%, 80%, 100%
+    transform: translateY(5%) scaleX(-1)
+  70%, 90%
+    transform: translateY(0%) scaleX(-1)
+

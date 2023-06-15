@@ -1,0 +1,219 @@
+// ==========================================================================
+// Plugins
+// ==========================================================================
+// // @import vendors/animate
+// @import vendors/style/swiper-slider-custom
+@import vendors/style/swiper-safari-polyfill
+
+// ==========================================================================
+// first screen need
+// ==========================================================================
+// hero section
+// @import utils/bg-decoration-instance/parallax/_parallax
+@import event/2nd/e-main/components/hero-section/_hero-section
+
+// @import utils/bg-decoration-instance/css-firework-2/_css-firework-2
+
+// ==========================================================================
+// components
+// ==========================================================================
+// dynamic product 假宮格共用CSS
+@import layout/dynamic-product/_dynamic-product.sass
+
+// 一般components
+@import event/2nd/e-main/components/promo-event/_promo-event
+@import event/2nd/e-main/components/slider-w2m2/_slider-w2m2
+@import event/2nd/e-main/components/dynamic-slider-w2m2-2/_dynamic-slider-w2m2-2
+@import event/2nd/e-main/components/tab-section/_tab-section
+@import event/2nd/e-main/components/event-w4m2/_event-w4m2
+@import event/2nd/e-main/components/daily-slider/_daily-slider
+@import event/2nd/e-main/components/tab-section2/_tab-section2
+@import event/2nd/e-main/components/slider-w3m3/_slider-w3m3
+@import event/2nd/e-main/components/promo-slider/_promo-slider
+@import event/2nd/e-main/components/daily-time/_daily-time
+@import event/2nd/e-main/components/dynamic-slider-w2m2/_dynamic-slider-w2m2
+@import event/2nd/e-main/components/bn-slider/_bn-slider
+@import event/2nd/e-main/components/bn-section/_bn-section
+@import event/2nd/e-main/components/promo-special/_promo-special
+@import event/2nd/e-main/components/bn-section-2/_bn-section-2
+
+// ==========================================================================
+// Page
+// ==========================================================================
+body
+  +pos-set(relative)
+  background-color: $main-e-background-color-2nd
+  overflow-x: hidden
+  // height: 1000vh
+
+.decor__bg
+  +pos-set(fixed, under, 0%, 0%)
+  +bg-set(url(event/2nd/e-main/pages/index/bg.jpg), 100%)
+  +breakpoint-min($min-width-xl)
+    +bg-set(url(event/2nd/e-main/pages/index/bg-web.jpg), auto)
+    // background-position: center 
+
+.decor__light
+  +pos-set(absolute, zero, 0%, 0%)
+  +size(100%, 1060px)
+  +bg-set(url(event/2nd/e-main/pages/index/decor-light.jpg), 100%)
+  +breakpoint-min($min-width-xl)
+    +pos-set(absolute, zero, 0%, 0%)
+    +bg-set(url(event/2nd/e-main/pages/index/decor-light-web.jpg), auto)
+    // background-position: center 
+  .decor__light2
+    +size(100%, 1060px)
+    +bg-set(url(event/2nd/e-main/pages/index/decor-light2.jpg), 100%)
+    +breakpoint-min($min-width-xl)
+      +bg-set(url(event/2nd/e-main/pages/index/decor-light2-web.jpg), auto)
+    .js-loading &
+      animation: bg-flash 3s steps(1) infinite
+
+.decor__frame--inner,
+.decor__flowers,
+.decor__cloud
+  transition: transform .8s
+  will-change: transform
+
+.decor__frame
+  +pos-set(absolute, zero, 0, 0)
+  +size(100%)
+  overflow: hidden
+  .decor__frame--inner
+    +size(100%)
+    display: none
+    transform: scale(1.2)
+    transform-origin: center top
+    +breakpoint-min($min-width-lg)
+      display: block
+      +bg-set(url(event/2nd/e-main/pages/index/decor-frame-web.png), auto)
+      background-position: center top
+    .js-loading &
+      animation: move-up-frame 1s ease-out 1 forwards
+
+.decor__flowers
+  +pos-set(absolute, zero, 47.5vw, 0%)
+  +size(100%, 560px)
+  overflow: hidden
+  +breakpoint-min($min-width-lg)
+    top: 53.5vw
+  +breakpoint-min($min-width-xl)
+    top: 510px
+  .decor__flower
+    +bg-set(url(event/2nd/e-main/pages/index/decor-flowers.png), 100%)
+    transform: translateY(8vw)
+    transform-origin: bottom center
+    +breakpoint-min($min-width-xl)
+      +bg-set(url(event/2nd/e-main/pages/index/decor-flowers-web.png), auto)
+    .js-loading &
+      animation: move-up-flower 1s .2s ease-out 1 forwards
+
+.decor__clouds
+  position: absolute
+  +size(100%, 108vw)
+  text-align: center
+  overflow: hidden
+  +breakpoint-min($min-width-xl)
+    height: 1060px
+  
+  .decor__cloud
+    +bg-set(url(event/2nd/e-main/pages/index/decor-clouds.png), 100%)
+    transform: scale(1.2)
+    +breakpoint-min($min-width-xl)
+      +bg-set(url(event/2nd/e-main/pages/index/decor-clouds-web.png), auto)
+    .js-loading &
+      animation: scaling-in 1.2s .2s ease-out 1 forwards
+
+.decor__fg
+  +pos-set(absolute, zero, 0%, 0%)
+  +bg-set(url(event/2nd/e-main/pages/index/fg.png), 100%)
+  +breakpoint-min($min-width-xl)
+    +pos-set(absolute, zero, 0%, 0%)
+    +bg-set(url(event/2nd/e-main/pages/index/fg-web.png), auto)
+
+.decor__detector
+  position: absolute
+  top: 99vh
+
+.decor__etcat
+  +pos-set(fixed, under, 0%, 0%)
+  display: none
+  transform: translate(-200%, 20%)
+  +breakpoint-min($min-width-xl)
+    top: 480px
+    left: calc(50vw - 1093px)
+    display: block
+  &.active
+    animation: fly-with-etcat 1s ease-out forwards 1
+
+.decor__etman
+  +pos-set(fixed, under, 0%)
+  display: none
+  transform: translate(150%, 100%)
+  +breakpoint-min($min-width-xl)
+    top: 414px
+    right: calc(50vw - 1056px)
+    display: block
+  &.active
+    animation: fly-with-etman 1.2s .2s cubic-bezier(.19,.74,.64,.36) forwards 1
+
+// TODO: 修改EU nav佔位高度(影響logo距離上方高度，U每次要改)
+.navRightBar
+  height: 39px
+  +breakpoint-min($min-width-xl)
+    height: auto
+
+.decoration--top,
+.decor--top
+  +pos-set(absolute)
+  pointer-events: none
+  +breakpoint-min($min-width-xl)
+    width: auto
+
+section:not(.note)
+  // 有parallax scroll時圖層有relative就有預設z-index可能會遮到宮格，因此使用這個讓宮格也能有預設z-index
+  +pos-set(relative)
+  a
+    display: block
+
+@keyframes fly-with-etcat
+  0%
+    transform: translate(-200%, 20%)
+  100%
+    transform: translate(0, 0)
+
+@keyframes fly-with-etman
+  0%
+    transform: translate(150%, 100%)
+  100%
+    transform: translate(0, 0)
+
+@keyframes bg-flash
+  0%, 50%, to
+    opacity: 1
+  25%, 75%
+    opacity: 0
+
+@keyframes scaling-in
+  0%
+    transform: scale(1.2)
+  100%
+    transform: scale(1)
+
+// @keyframes scaling-out
+//   0%
+//     transform: translateY(-7.2vw) scale(0.8)
+//   100%
+//     transform: translateY(-7.2vw) scale(1)
+
+@keyframes move-up-flower
+  0%
+    transform: translateY(8vw)
+  100%
+    transform: translateY(0)
+
+@keyframes move-up-frame
+  0%
+    transform: scale(1.2)
+  100%
+    transform: scale(1)

@@ -1,0 +1,72 @@
+.promo-special
+  overflow: hidden
+  .decor__item
+    pointer-events: none
+    &--left
+      +pos-set(absolute, zero, 5%, 1%)
+      width: 20%
+      +breakpoint-min($min-width-xl)
+        top: 50px
+        left: calc( 50% - 460px )
+    &--right
+      +pos-set(absolute, zero, 7%)
+      right: 1%
+      width: 20%
+      +breakpoint-min($min-width-xl)
+        top: 70px
+        right: calc( 50% - 470px )
+    +breakpoint-min($min-width-xl)
+        width: auto
+
+  .promo__wrap
+    +bg-set(url(event/2nd/e-main/components/promo-special/bg-promo-special.png), 100%)
+    background-position: bottom
+  .promo__zone
+    +aspect-ratio(960, 975)
+  .promo__block
+    padding: 32% 5% 0
+    +breakpoint-min($min-width-xl)
+      padding-top: 305px
+  .event__block
+    display: flex
+    justify-content: space-between
+    margin-bottom: 5%
+    +breakpoint-min($min-width-xl)
+      margin-bottom: 50px
+    .special__item
+      width: 36%
+      transition: .3s
+      &:hover
+        transform: scale(0.95)
+        filter: contrast(1.2)
+    .promo__slider
+      width: 61%
+
+
+
+@keyframes shining-title
+  0%
+    mask-position: 150% 0px
+  100%
+    mask-position: 0% 0px
+
+@keyframes feather
+  0%
+    transform: rotate(-3deg) translate(20px, -100px)
+    opacity: 0
+  30%
+    transform: rotate(8deg) translate(-20px, -100px)
+    opacity: 1
+  62%
+    transform: rotate(-5deg) translate(20px, -40px)
+  95%
+    transform: rotate(-1deg) translate(0px, 0px)
+  100%
+    transform: rotate(0deg) translate(0px, 0px)
+    opacity: 1
+
+@keyframes open
+  0%
+    transform: scaleY(0)
+  100%
+    transform: scaleY(1)

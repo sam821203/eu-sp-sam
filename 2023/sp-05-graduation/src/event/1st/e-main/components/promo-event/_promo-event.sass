@@ -1,0 +1,74 @@
+.promo-event
+  z-index: 1
+  overflow: hidden
+  margin-top: -43%
+  +breakpoint-min($min-width-xl)
+    margin-top: -406px
+
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/promo-event/bg-promo-event.png), 100%) 
+    +breakpoint-min($min-width-xl)
+      background-size: auto 
+      
+  .promo__zone
+    +aspect-ratio(960, 1230)
+
+  .promo__block
+    padding: 13% 8.6% 0 8.6%
+    +breakpoint-min($min-width-xl)
+      padding: 16% 8% 0
+
+    .promo__box
+      display: flex
+      justify-content: space-between
+
+      &:first-child
+        margin-bottom: 9.8%
+        .item__box
+          &:first-child
+            width: 54%
+            margin-top: 3%
+            margin-left: 2%
+            margin-right: 3%
+            +breakpoint-min($min-width-xl)
+              margin-top: 0.6%
+              margin-left: 3%
+          &:last-child
+            width: 46%
+            margin-top: 5%
+            +breakpoint-min($min-width-xl)
+              margin-top: 10px
+
+      &:nth-child(2)
+        margin-bottom: 16%
+        padding: 2.3% 5% 0%
+        +breakpoint-min($min-width-xl)
+          padding-top: 20px
+        .item__box
+          width: 100%
+      
+      &:last-child
+        justify-content: start
+        .item__box
+          width: 40%
+          &:first-child
+            margin-left: 2.5%
+            margin-right: 4%
+          &:last-child
+            width: 30%
+
+  .event__item 
+    width: 100%
+    text-align: center
+    transition: all .5s
+
+  .promo__box
+    .swiper-container
+      max-width: 100%
+      li
+        text-align: center
+
+.animate
+  transition: all 0.5s
+  transform: scale(0.95)
+  filter: contrast(1.2)

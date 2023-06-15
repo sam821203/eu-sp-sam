@@ -1,0 +1,91 @@
+.promo__group--w1m1
+  +pos-set(relative, second)
+  margin-top: -12%
+  padding-top: 8%
+
+  +breakpoint-min($min-width-xl)
+    margin-top: -300px
+    padding-bottom: 2%
+    +bg-set(url(event/2nd/e-main/components/event-w1m1/bg-calendar-web.png), auto, 50%, 35%)
+  
+  .event__wrap
+    +aspect-ratio(960, 953)
+
+  .decor__calendar
+    +pos-set(absolute, base, 35%, 6%)
+    width: 10%
+    .js-loading &
+      animation: tada 3s infinite
+
+  .decor__calendar--web
+    display: none
+
+    +breakpoint-min($min-width-xl)
+      display: block
+      &-left
+        top: 115px
+        left: calc( 50% - 705px )
+        .js-loading &
+          animation: rotate-jump 1.75s 1.25s both
+      &-right
+        top: -100px
+        right: calc( 50% - 950px)
+        transform-origin: left bottom
+        .js-loading &
+          animation: lightSpeedInRight 1s 1.25s both
+
+@keyframes zoomInUp
+  0%
+    opacity: 0
+    transform: scale3d(.1, .1, .1) translate3d(0, 1000px, 0)
+    animation-timing-function: cubic-bezier(.55, .055, .675, .19)
+  60%
+    opacity: 1
+    transform: scale3d(.475, .475, .475) translate3d(0, -60px, 0)
+    animation-timing-function: cubic-bezier(.175, .885, .32, 1)
+
+@keyframes tada
+  0%
+    transform: scaleX(1)
+  10%, 20%
+    transform: scale3d(.5, .5, .5) rotate(-3deg)
+  30%, 50%, 70%, 90%
+    transform: scale3d(1.5, 1.5, 1.5) rotate(3deg)
+  40%, 60%, 80%
+    transform: scale3d(1.5, 1.5, 1.5) rotate(-3deg)
+  to
+    transform: scaleX(1)
+
+@keyframes lightSpeedInRight
+  0%
+    transform: translate3d(100%, 0, 0) skewX(-30deg)
+    opacity: 0
+  1%
+    opacity: 1
+  60%
+    transform: skewX(20deg)
+  80%
+    transform: skewX(-5deg)
+  to
+    opacity: 1
+    transform: translateZ(0)
+
+@keyframes rotate-jump
+  0%
+    transform: translate(-100%, -50%) rotate(-360deg) 
+    opacity: 0
+  1%
+    opacity: 1
+  40%
+    transform: translate(0, 0) rotate(0)
+  50%
+    transform: translate(0, 15%) rotate(0) scale(1.5, 0.75)
+  65%
+    transform: translate(0, -200%) rotate(0) scale(1)
+  85%
+    transform: translate(0, 0) rotate(0) scale(1)
+  97.5%
+    transform: translate(0, 15%) rotate(0) scale(1.5, 0.75)
+  to
+    transform: translate(0, 0) rotate(0) scale(1)
+    opacity: 1

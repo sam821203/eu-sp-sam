@@ -1,0 +1,30 @@
+.video__wrap
+  top: 0
+  z-index: map-get($zindex, base)
+  
+.hero__video
+  width: 100%
+  text-align: center
+  margin-top: 45%
+
+.video__box
+  width: 100%
+  opacity: 0
+  transform: scale(0)
+  transform-origin: bottom center
+  +breakpoint-min($min-width-xl)
+    width: auto
+  .js-loading &
+    animation: video-enlarge 1s .4s ease-out 1 forwards
+
+@keyframes video-enlarge
+  0%
+    opacity: 0
+    transform: scale(0)
+  50%
+    opacity: 1
+    transform: scale(1.05)
+  60%, 100%
+    opacity: 1
+    transform: scale(1)
+  

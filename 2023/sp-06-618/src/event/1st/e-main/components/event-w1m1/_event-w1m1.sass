@@ -1,0 +1,36 @@
+.promo__group--w1m1
+  margin-top: -12%
+  padding-top: 3.5%
+  padding-bottom: 5%
+  +bg-set(url(event/1st/e-main/components/event-w1m1/bg-calendar.png), 100%, 50%, 95%)
+  z-index: map-get($zindex, second)
+  +breakpoint-min($min-width-xl)
+    margin-top: -230px
+    +bg-set(url(event/1st/e-main/components/event-w1m1/bg-calendar-web.png), auto, 49%, 6%)
+  
+  .event__wrap
+    +aspect-ratio(960, 557)
+
+  .decor__calendar
+    +pos-set(absolute, base, 24%, 6%)
+    width: 10%
+
+  .decor__calendar--web
+    display: none
+
+    +breakpoint-min($min-width-xl)
+      display: block
+      top: -220px
+      left: calc( 50% - 1050px )
+      .js-loading &
+        animation: zoomInUp 1s 1.25s both
+
+@keyframes zoomInUp
+  0%
+    opacity: 0
+    transform: scale3d(.1, .1, .1) translate3d(0, 1000px, 0)
+    animation-timing-function: cubic-bezier(.55, .055, .675, .19)
+  60%
+    opacity: 1
+    transform: scale3d(.475, .475, .475) translate3d(0, -60px, 0)
+    animation-timing-function: cubic-bezier(.175, .885, .32, 1)

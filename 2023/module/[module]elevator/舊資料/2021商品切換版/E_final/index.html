@@ -1,0 +1,226 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116205/animate.min.css">
+  <link rel="stylesheet" href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.css">
+<!-- [電梯步驟1] 電梯CSS 不用就關掉 -->
+  <!-- 商品左電梯CSS，要使用還要在步驟3開啟左電梯data資料 -->
+  <!-- <link id="localElevatorLeft" rel="stylesheet" href="sp-elevator-left.css"> -->
+
+  <!-- 商品右電梯CSS，步驟3有測試div可以測試 -->
+  <!-- <link id="localElevatorRight" rel="stylesheet" href="sp-elevator-right.css"> -->
+<!-- [電梯步驟1] 電梯CSS END -->
+
+  <style>
+    body {
+      background-color: #ffb9cc;
+    }
+
+    @media screen and (min-width: 960px) {
+      .visual__block1 {
+        background: url(bg_01.jpg) center 0 no-repeat;
+      }
+    }
+
+    .sp__main {
+      position: relative;
+      z-index: 0;
+    }
+
+    .promo__slider {
+      position: absolute;
+      z-index: 1;
+      top: 15.1%;
+      left: -1.5%;
+      width: 90%;
+      max-width: 960px;
+      overflow: hidden;
+      padding-bottom: 2%;
+    }
+
+    .promo__slider .slide__block {
+      display: flex;
+    }
+
+    .promo__slider .slide__block a {
+      display: block;
+    }
+
+    .promo__slider .slide__block img {
+      max-width: 100%
+    }
+
+    @media screen and (min-width: 960px) {
+      .promo__slider {
+        left: calc(50% - 430px);
+        overflow: visible;
+      }
+    }
+
+    .animate__wrap {
+      position: relative;
+      z-index: 1;
+    }
+
+    .animate__wrap .animate__obj--01 {
+      position: absolute;
+      top: 28.5vw;
+      left: 30vw;
+      width: 40%;
+    }
+
+    @media screen and (min-width: 960px) {
+      .animate__wrap .animate__obj--01 {
+        top: 275px;
+        left: calc(50% - 208px);
+        width: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- [電梯步驟2] 電梯 html 無論如何都要有 -->
+  <div class="elevatorHome js--main--dialog" id="elevatorHome"></div>
+  <div class="navRightBar" id="navRightBar"></div>
+<!-- [電梯步驟2] 電梯 html END -->
+
+  <div id="barHome"></div>
+  <div id="iconHome" class="layout--main home--icon"></div>
+
+  <div id="spWrap" class="sp__wallper">
+    <div class="animate__wrap">
+    </div>
+    <main class="sp__main">
+      <div class="layout--main home--logo">
+        <a href="#ccc"><img class="logo" src="ehs-logo.png" alt="東森購物"></a>
+      </div>
+      <section class="sp__visual visual__block1">
+        <div class="layout--main">
+          <ul class="visual--auto clearfix">
+            <li class="visual__fragment width--auto">
+              <a href="https://www.etmall.com.tw/gp/147692" target="_blank">
+                <img src="index_01.jpg" alt="煥顏養成女神肌 秋冬攻略6折起">
+              </a>
+            </li>
+            <li class="visual__fragment width--auto">
+              <img src="index_02.jpg" alt="煥顏養成女神肌 秋冬攻略6折起">
+            </li>
+            <li class="visual__fragment width--auto">
+              <img src="index_03.jpg" alt="煥顏養成女神肌 秋冬攻略6折起">
+            </li>
+            <li class="visual__fragment width--auto">
+              <a href="https://www.etmall.com.tw/i/3091636" target="_blank">
+                <img src="index_04.jpg" alt="煥顏養成女神肌 秋冬攻略6折起">
+              </a>
+            </li>
+            <li class="visual__fragment width--auto">
+              <a href="https://www.etmall.com.tw/i/3198912" target="_blank">
+                <img src="index_05.jpg" alt="煥顏養成女神肌 秋冬攻略6折起">
+              </a>
+            </li>
+            <li class="visual__fragment width--auto">
+              <a href="https://www.etmall.com.tw/i/2776874" target="_blank">
+                <img src="index_06.jpg" alt="煥顏養成女神肌 秋冬攻略6折起">
+              </a>
+            </li>
+            <li class="visual__fragment width--auto">
+              <img src="index_07.jpg" alt="煥顏養成女神肌 秋冬攻略6折起">
+            </li>
+            <li class="visual__fragment width--auto">
+              <a href="https://www.etmall.com.tw/gp/147695" target="_blank">
+                <img src="index_08.jpg" alt="煥顏養成女神肌 秋冬攻略6折起">
+              </a>
+            </li>
+            <li class="visual__fragment width--auto">
+              <a href="https://www.etmall.com.tw/gp/147693" target="_blank">
+                <img src="index_09.jpg" alt="煥顏養成女神肌 秋冬攻略6折起">
+              </a>
+            </li>
+          </ul>
+          <div class="promo__slider">
+            <div class="swiper-container" id="sliderMany">
+              <ul class="swiper-wrapper">
+                <li class="swiper-slide">
+                  <div class="slide__block">
+                    <div class="slide__box">
+                      <a href="https://www.etmall.com.tw/i/3199494" target="_blank">
+                        <img src="product_01-l.png" alt="美妝">
+                      </a>
+                    </div>
+                    <div class="slide__box">
+                      <a href="https://www.etmall.com.tw/i/2865823" target="_blank">
+                        <img src="product_01-r.png" alt="美妝">
+                      </a>
+                    </div>
+                  </div>
+                </li>
+                <li class="swiper-slide">
+                  <div class="slide__block">
+                    <div class="slide__box">
+                      <a href="https://www.etmall.com.tw/i/2899709" target="_blank">
+                        <img src="product_02-l.png" alt="美妝">
+                      </a>
+                    </div>
+                    <div class="slide__box">
+                      <a href="https://www.etmall.com.tw/i/3202844" target="_blank">
+                        <img src="product_02-r.png" alt="美妝">
+                      </a>
+                    </div>
+                  </div>
+                </li>
+                <li class="swiper-slide">
+                  <div class="slide__block">
+                    <div class="slide__box">
+                      <a href="https://www.etmall.com.tw/i/3158247" target="_blank">
+                        <img src="product_03-l.png" alt="美妝">
+                      </a>
+                    </div>
+                    <div class="slide__box">
+                      <a href="https://www.etmall.com.tw/i/3165856" target="_blank">
+                        <img src="product_03-r.png" alt="美妝">
+                      </a>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+  </div>
+  <script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+  <script src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116205/swiper.min.js"></script>
+  <script id="generateScript"
+    src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.js"></script>
+
+<!--[電梯步驟3] 電梯 JS -->
+  <!-- 商品左電梯單機版資料，不用就關掉，要使用還要上方步驟1開啟商品左電梯CSS -->
+  <!-- <script id="dataElevatorLeft" src="data-elevator.js"></script> -->
+
+  <!-- 測試商品右電梯用，上線前必須關掉-->
+  <!-- <div data-title="ccc"></div> -->
+
+  <!-- 線上自動切換電梯，無論如何都要有 -->
+  <script id="checkElevator" src="https://media.etmall.com.tw/sp/11911/check-elevator.js"></script>
+<!-- [電梯步驟3] 電梯 JS END -->
+
+  <script>
+    var sliderMany = new Swiper( "#sliderMany", {
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      },
+      grabCursor: true,
+      loop: true,
+      speed: 1000,
+    } );
+  </script>
+</body>
+</html>

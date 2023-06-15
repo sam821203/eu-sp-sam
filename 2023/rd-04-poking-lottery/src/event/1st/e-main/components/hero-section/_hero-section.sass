@@ -1,0 +1,109 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero
+  +pos-set(relative, zero)
+  margin-top: 39px
+  overflow: hidden
+
+  .decor__item
+    &--figures
+      +pos-set(absolute, zero, -2%, 0.2%)
+      width: 100%
+      +breakpoint-min($min-width-xl)
+        top: -6%
+        left: calc( 50% - 480px )
+        width: auto
+
+.hero__zone
+  +aspect-ratio(960, 969)
+  +breakpoint-min($min-width-xl)
+    +aspect-ratio(960, 927)
+
+.hero__box
+  +pos-set(relative, zero)
+
+.hero__title
+  &--logo
+    width: 80%
+    margin-left: 12%
+    +breakpoint-min($min-width-xl)
+      margin-left: 14%
+  &--main
+    margin-top: -7%
+    margin-left: 6.5%
+    width: 86%
+    text-align: center
+    transform-origin: center
+    +breakpoint-min($min-width-xl)
+      width: auto
+      margin-top: -60px
+      margin-left: -20px
+  &--sub
+    margin-top: -1%
+    margin-left: 7%
+    width: 28%
+    +breakpoint-min($min-width-xl)
+      width: 34%
+      max-width: 569px
+      margin-top: -20px
+      margin-left: 110px
+  &--sub2
+    margin-top: -1%
+    margin-left: 8%
+    width: 84%
+    +breakpoint-min($min-width-xl)
+      width: auto
+      margin-top: -10px
+      margin-left: 120px
+      
+.hero__btn
+  display: inline-block
+  width: 50%
+
+@keyframes zoomInUp
+  0%
+    opacity: 0
+    transform: scale3d(.1, .1, .1) translate3d(0, 500px, 0)
+    animation-timing-function: cubic-bezier(.55, .055, .675, .19)
+  60%
+    opacity: 1
+    transform: scale3d(.475, .475, .475) translate3d(0, -60px, 0)
+    animation-timing-function: cubic-bezier(.175, .885, .32, 1)
+
+@keyframes bounceInRight
+  0%, 60%, 75%, 90%, to
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+  0%
+    opacity: 0
+    transform: translate3d(800px, 0, 0) scaleX(3)
+  60%
+    opacity: 1
+    transform: translate3d(-25px, 0, 0) scaleX(1)
+  75%
+    transform: translate3d(10px, 0, 0) scaleX(.98)
+  90%
+    transform: translate3d(-5px, 0, 0) scaleX(.995)
+  to
+    transform: translateZ(0)
+    opacity: 1
+
+@keyframes rotate-ball
+  0%
+    transform: rotate(0deg)
+  30%, 50%, 100%
+    transform: rotate(720deg)
+
+@keyframes title-grow
+  0%
+    opacity: 0
+    transform: scale(0)
+  50%
+    opacity: 1
+    transform: scale(20%)
+  90%
+    opacity: 1
+    transform: scale(1.1)
+  100%
+    opacity: 1
+    transform: scale(1)

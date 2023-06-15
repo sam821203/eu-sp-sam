@@ -1,0 +1,114 @@
+.dynamic-slider-half
+  overflow: hidden
+  .decor__item
+
+    &--title
+      +pos-set(absolute, zero, 8%, 18%)
+      width: 60%
+      +breakpoint-min($min-width-xl)
+        left: calc( 50% - 285px )
+
+    &--left
+      +pos-set(absolute, zero, 12%, 5%)
+      width: 13%
+      +breakpoint-min($min-width-xl)
+        left: calc( 50% - 398px )
+      .js-loading &
+        animation: jump 2s cubic-bezier(0.280, 0.840, 0.420, 1) infinite
+        +breakpoint-min($min-width-xl)
+          animation: jump-web 2s cubic-bezier(0.280, 0.840, 0.420, 1) infinite
+  
+    &--right
+      +pos-set(absolute, zero, 0%)
+      right: 1.2%
+      width: 26%
+      +breakpoint-min($min-width-xl)
+        right: calc( 50% - 425px )
+      img
+        &:first-child
+          position: absolute
+          filter: brightness(85%)
+          mask-image: url(event/2nd/e-main/components/dynamic-slider-half/decor-half-right-mask.png)
+          mask-repeat: no-repeat
+          mask-size: 100%
+          .js-loading &
+            animation: eyes-brightness 1.4s ease-out infinite 
+  
+    +breakpoint-min($min-width-xl)
+      width: auto
+
+  .promo__wrap
+    +bg-set(url(event/2nd/e-main/components/dynamic-slider-half/bg-dynamic-slider-half.png), 100%)
+  .promo__zone
+    +aspect-ratio(960, 1160)
+  .promo__block--wrap
+    padding-top: 22%
+    +breakpoint-min($min-width-xl)
+      padding-top: 686px
+  .promo__block
+    display: flex
+    justify-content: center
+    margin-bottom: 6.7%
+    +breakpoint-min($min-width-xl)
+      margin-bottom: 70px
+  .promo__box
+    width: 30%
+    margin-top: 1.5%
+  .slider__box
+    width: 100%
+    padding: 50% 4% 0 4.2%
+    +breakpoint-min($min-width-xl)
+      padding-top: 2%
+    .product--dynamic
+      width: 100%
+      padding-left: 2%
+      padding-right: 2%
+    .product__name
+      padding-top: 2%
+      height: 8.5vw
+      font-size: 3.3vw
+      +breakpoint-min($min-width-xl)
+        margin-bottom: 0
+        padding: 3%
+        height: 60px
+        font-size: 22px
+    .product__price
+      padding: 1% 2%
+      +breakpoint-min($min-width-xl)
+        span
+          &:last-child
+            font-size: 36px
+
+@keyframes jump
+  0%, 64%, 100%
+    transform: scale(1, 1) translateY(0)
+  10%
+    transform: scale(1.05, .95) translateY(0)
+  30%
+    transform: scale(.95, 1.05) translateY(-14vw)
+  50%
+    transform: scale(1.025, .975) translateY(0)
+  57%
+    transform: scale(1, 1) translateY(-1vw)
+
+@keyframes jump-web
+  0%, 64%, 100%
+    transform: scale(1, 1) translateY(0)
+  10%
+    transform: scale(1.05, .95) translateY(0)
+  30%
+    transform: scale(.95, 1.05) translateY(-120px)
+  50%
+    transform: scale(1.025, .975) translateY(0)
+  57%
+    transform: scale(1, 1) translateY(-5px)
+
+@keyframes eyes-brightness
+  0%, 100%
+    filter: brightness(85%)
+  10%
+    filter: brightness(150%)
+  20%
+    filter: brightness(120%)
+  50%
+    filter: brightness(200%)

@@ -1,0 +1,87 @@
+.promo-event
+  z-index: 1
+  margin-top: -17%
+  overflow: hidden
+  +breakpoint-min($min-width-lg)
+    margin-top: -165px
+  
+  .decor__wrap
+    padding-bottom: 7%
+  .decor__item
+    +pos-set(absolute, zero, 0%, 1%)
+    width: 98%
+    opacity: 0
+    .js-loading &
+      animation: fadeInUp 1s ease-in forwards
+    +breakpoint-min($min-width-xl)
+      left: calc( 50% - 368px )
+      width: auto
+
+  .promo__wrap
+    +aspect-ratio(960, 1292)
+  .promo__zone
+    +bg-set(url(event/2nd/e-main/components/promo-event/bg-promo-event.png), 100%)
+
+  .promo__block
+    padding: 8% 8% 0
+
+    .promo__box
+      display: flex
+      justify-content: space-between
+      &:first-child
+        padding: 0.8% 0 0
+        .item__box
+          &:first-child
+            width: 50%
+            .event__item
+              &:last-child
+                padding: 4% 3% 3%
+          &:last-child
+            margin: auto 0
+            padding: 1%
+            width: 49.5%
+      &:nth-child(2)
+        margin-top: 2.5%
+        padding-left: 1%
+        padding-right: 2%
+        .item__box
+          width: 100%
+      
+      &:last-child
+        margin-top: 2%
+        .item__box
+          &:first-child
+            padding-top: 1.5%
+            width: 40%
+          &:last-child
+            padding: 2%
+            width: 60%
+
+
+  .event__item 
+    width: 100%
+    text-align: center
+    transition: all .5s
+    &:hover,
+    &:active
+      transform: scale(0.95)
+      filter: contrast(1.2)
+
+  .promo__box
+    .swiper-container
+      max-width: 100%
+      li
+        text-align: center
+
+.animate
+  transition: all 0.5s
+  transform: scale(0.95)
+  filter: contrast(1.2)
+
+@keyframes fadeInUp
+  0%
+    opacity: 0
+    transform: translate3d(0, 100%, 0)
+  to
+    opacity: 1
+    transform: translateZ(0)

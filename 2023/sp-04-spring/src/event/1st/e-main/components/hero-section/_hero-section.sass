@@ -1,0 +1,95 @@
+.hero
+  +pos-set(relative, zero)
+  .hero__zone
+    +aspect-ratio(960, 840)
+    overflow: hidden
+    .title
+      &--main
+        +pos-set(absolute, second, 5%, 10%)
+        width: 80%
+        animation: rotateIn .7s linear 1 forwards
+        +breakpoint-min($min-width-xl)
+          left: calc( 50% - 338px )
+      &--decor
+        +pos-set(absolute, base, 8%, 21%)
+        width: 65%
+        opacity: 0
+        .js-loading &
+          animation: show-item .3s .5s ease-in 1 forwards, heartBeat-hero 5s 1.5s linear infinite
+        +breakpoint-min($min-width-xl)
+          left: calc(50% - 230px)
+
+    
+  .decor__item
+    &--flower1
+      z-index: map-get($zindex, zero)
+      top: 3%
+      left: 8%
+      width: 90%
+      opacity: 0
+      .js-loading &
+        animation: show-item 1s linear 1 forwards
+      +breakpoint-min($min-width-xl)
+        top: 30px
+        left: calc( 50% - 390px )
+
+    &--flower2
+      z-index: map-get($zindex, zero)
+      top: 0%
+      left: calc( 50% - 910px )
+      opacity: 0
+      .js-loading &
+        animation: show-item 1s linear 1 forwards
+
+    &--frontR
+      +pos-set(fixed, zero, 620px)
+      right: calc( 50% - 1230px )
+    
+    &--front-flowerR
+      position: fixed
+      z-index: map-get($zindex, under)
+      top: 250px
+      right: calc( 50% - 1050px )
+      transform-origin: right bottom
+      .js-loading &
+        animation: key-wind-rotate 14s linear infinite 
+    &--front-flowerL
+      position: fixed
+      z-index: map-get($zindex, base)
+      top: 500px
+      left: calc(50% - 940px)
+      transform-origin: left bottom
+      .js-loading &
+        animation: key-wind-rotate 10s 2s linear infinite 
+
+
+
+
+@import event/1st/e-main/components/hero-section/hero-video/_hero-video.sass
+
+
+@keyframes heartBeat-hero
+  0%, 100%
+    transform: scale(0.95)
+  7%
+    transform: scale(1.05)
+  14%
+    transform: scale(0.95)
+  21%
+    transform: scale(1.05)
+  35%
+    transform: scale(0.95)
+
+@keyframes show-item
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+@keyframes rotateIn
+  0%
+    transform: rotate(-200deg)
+    opacity: 0
+  to
+    transform: translateZ(0)
+    opacity: 1

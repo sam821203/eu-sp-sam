@@ -1,0 +1,85 @@
+-
+  var w4m2Data = [
+    { // 1
+      link: "https://www.etmall.com.tw/i/3432782",
+      imgSrc: "event/1st/e-main/components/event-w4m2/items/depart-1.png",
+      alt: "石墨烯護脊獨立筒"
+    },
+    { // 2
+      link: "https://www.etmall.com.tw/i/3571991",
+      imgSrc: "event/1st/e-main/components/event-w4m2/items/depart-2.png",
+      alt: "春風柔韌感抽取衛生紙110抽x12包x6串"
+    },
+    { // 3
+      link: "https://www.etmall.com.tw/i/3368796",
+      imgSrc: "event/1st/e-main/components/event-w4m2/items/depart-3.png",
+      alt: "【紅牛】全家人高鈣奶粉膠原蛋白配方2.2kgX2罐"
+    },
+    { // 4
+      link: "https://www.etmall.com.tw/gp/138084",
+      imgSrc: "event/1st/e-main/components/event-w4m2/items/depart-4.png",
+      alt: "【台酒生技】黑酵母酒粕全能精萃乳保濕超值組(100ml*4)"
+    },
+    { // 5
+      link: "https://www.etmall.com.tw/p/214355",
+      imgSrc: "event/1st/e-main/components/event-w4m2/items/depart-5.png",
+      alt: "【娘家】大紅麴三盒組(30粒/盒)"
+    },
+    { // 6
+      link: "https://www.etmall.com.tw/i/4403772",
+      imgSrc: "event/1st/e-main/components/event-w4m2/items/depart-6.png",
+      alt: "Switch OLED+健身拳擊 2"
+    },
+    { // 7
+      link: "https://www.etmall.com.tw/i/3450597",
+      imgSrc: "event/1st/e-main/components/event-w4m2/items/depart-7.png",
+      alt: "飛利浦吹風機"
+    },
+    { // 8
+      link: "https://www.etmall.com.tw/i/3963285",
+      imgSrc: "event/1st/e-main/components/event-w4m2/items/depart-8.png",
+      alt: "旅行簡易便攜茶具"
+    },
+  ]
+
+section.promo__group.promo__group--w4m2.m-bottom--lg(data-title="媽咪的購物清單")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--flower#decorEventW4M2Flower
+        a(href="") 
+          img(src="event/1st/e-main/components/event-w4m2/decor-event-w4m2-flower.png", alt="")
+      .decor__item.decor__item--title#decorEventW4M2Title
+        a(href="") 
+          img(src="event/1st/e-main/components/event-w4m2/decor-event-w4m2-title.png", alt="")
+      .decor__item.decor__item--left#decorEventW4M2Left
+        a(href="") 
+          img(src="event/1st/e-main/components/event-w4m2/decor-event-w4m2-left.png", alt="")
+      .decor__item.decor__item--right#decorEventW4M2Right
+        a(href="") 
+          img(src="event/1st/e-main/components/event-w4m2/decor-event-w4m2-right.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          //- .bn__wrap 
+          //-   .bn__box
+          //-     a(href="")
+          //-       img(src="event/1st/e-main/components/event-w4m2/bn-event-w4m2-1.jpg", alt="")
+          //-   .bn__box
+          //-     a(href="")
+          //-       img(src="event/1st/e-main/components/event-w4m2/bn-event-w4m2-2.jpg", alt="")
+          #w4m2Wrap.event__wrap
+            .swiper-container#sliderEventW4M2
+              ul.swiper-wrapper
+                each data, index in w4m2Data
+                  li.swiper-slide
+                    a(href= data.link, title= data.alt)
+                      - var hasImg = data.imgSrc ? true : false
+                      if (hasImg)
+                        img(src= data.imgSrc, alt= data.alt)
+
+              //- each data, index in w4m2Data
+              //-   li
+              //-     a(href= data.link, title= data.alt)
+              //-       - var hasImg = data.imgSrc ? true : false
+              //-       if (hasImg)
+              //-         img(src= data.imgSrc, alt= data.alt)

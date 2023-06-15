@@ -1,0 +1,56 @@
+.bn-section
+  overflow: hidden
+  .decor__wrap
+    // padding-bottom: 3%
+  .decor__item
+    pointer-events: none
+
+    &--title
+      +pos-set(absolute, base, 0%)
+      right: 6.6%
+      width: 86%
+      opacity: 0
+      +breakpoint-min($min-width-xl)
+        right: calc( 50% - 400px )
+      &.active
+        animation: stamp .3s both
+
+    &--left
+      +pos-set(absolute, zero, 4%, 0%)
+      width: 100%
+      +breakpoint-min($min-width-xl)
+        top: 80px
+        left: calc(50% - 483px)
+        width: auto
+
+    +breakpoint-min($min-width-xl)
+      width: auto
+      
+  .promo__wrap
+    margin-top: 19%
+    +breakpoint-min($min-width-xl)
+      margin-top: 18%
+    .promo__zone
+      +aspect-ratio(960, 560)
+      +breakpoint-min($min-width-xl)
+        +aspect-ratio(974, 624)
+    .promo__box
+      text-align: center
+      cursor: pointer
+      &:hover
+        transition: all 0.6s ease
+        transform: translateY(-1%)
+        filter: contrast()(1.2)
+
+@keyframes stamp
+  0%
+    opacity: 0
+    transform: scale(10)
+  1%
+    opacity: 1
+  80%
+    opacity: 1
+    transform: scale(.8)
+  100%
+    opacity: 1
+    transform: scale(1)

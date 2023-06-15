@@ -1,0 +1,32 @@
+//- 這是利用三個SVG遮罩將模糊化的box-shadow再做遮罩處理後用動畫移動，
+//- 不用SVG本身CSS也很像雲，藉由SVG濾出像棉花的蓬鬆感、利用CSS動畫移動
+//- 注意定位用的外層內不要包含到SVG(因外層有用flext處理內層)，SVG可以放置在整個html最底部
+.decoration__smoke.full-parent
+  .smoke__box.full-parent
+
+<svg width="0" height="0" >
+  <defs>
+    <filter id="goo">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" id="blurFilter"/>
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -5" result="goo" />
+      <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+    </filter>
+  </defs>
+</svg>
+
+<svg width="0" height="0" >
+  <defs>
+    <filter id="scatter">
+      <feTurbulence baseFrequency="10.9" type="fractalNoise" numOctaves="1"/>
+      <feDisplacementMap in="SourceGraphic" xChannelSelector="G" yChannelSelector="B" scale="20"/>
+      <feComposite operator="in" in2="finalMask"/>
+    </filter>
+  </defs>
+</svg>
+
+<svg width="0" height="0" >
+  <filter id="fog">
+    <feTurbulence type="fractalNoise" baseFrequency=".01" numOctaves="10" />
+    <feDisplacementMap in="SourceGraphic" scale="180" />
+  </filter>
+</svg>

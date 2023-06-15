@@ -1,0 +1,54 @@
+-
+  var promoSliderItem = [
+    {
+      link: "https://www.etmall.com.tw/c3/60698" ,
+      imgSrc: "event/2nd/e-main/components/slider-w1m1/item/item-p-1.png",
+      alt: "PP波瑟楓妮 舒曼波助眠被+舒曼波眼罩",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2910701" ,
+      imgSrc: "event/2nd/e-main/components/slider-w1m1/item/item-p-2.png",
+      alt: "Plenitud 護得住超乾爽吸水棉 漏尿專用 ( 19cm/23cm /28cm /35cm) x 6包/組",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3367240" ,
+      imgSrc: "event/2nd/e-main/components/slider-w1m1/item/item-p-3.png",
+      alt: "日立一級能效冷暖冷氣",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/213383" ,
+      imgSrc: "event/2nd/e-main/components/slider-w1m1/item/item-p-4.png",
+      alt: "UAG iphone14全系列",
+    },
+    {
+      link: "https://www.etmall.com.tw/c3/45113" ,
+      imgSrc: "event/2nd/e-main/components/slider-w1m1/item/item-p-5.png",
+      alt: "AMIINO安美諾 美白修護霜30ml x1入",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/172884" ,
+      imgSrc: "event/2nd/e-main/components/slider-w1m1/item/item-p-6.png",
+      alt: "【ivenor】十時塑燃脂茶10盒",
+    },
+  ]
+
+section.promo__group.promo__group--slider-w1m1.m-bottom--lg(data-title="名人推薦")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--title#titleSliderW1m1
+        img(src="event/2nd/e-main/components/slider-w1m1/title-slider-w1m1.png", alt="")
+      .decor__item.decor__item--left#decorSliderW1m1Left
+        img(src="event/2nd/e-main/components/slider-w1m1/decor-slider-w1m1-left.png", alt="")
+      .decor__item.decor__item--light#decorSliderW1m1Light
+        img(src="event/2nd/e-main/components/slider-w1m1/decor-slider-w1m1-left.png", alt="")
+      .decor__item.decor__item--right#decorSliderW1m1Right
+        img(src="event/2nd/e-main/components/slider-w1m1/decor-slider-w1m1-right.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          .promo__slider.swiper-container#sliderW1M1Item
+            ul.swiper-wrapper
+              each data in promoSliderItem
+                li.swiper-slide
+                  a(href= data.link, title=data.alt)
+                    img(src= data.imgSrc, alt=data.alt)

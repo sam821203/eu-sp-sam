@@ -1,0 +1,56 @@
+.bn-section-2
+  overflow: hidden
+  .decor__wrap
+    padding-bottom: 2%
+    +breakpoint-min($min-width-xl)
+      padding-bottom: 0
+  .decor__item
+    pointer-events: none
+
+    &--title
+      +pos-set(absolute, under, 0%)
+      right: 4.8%
+      width: 92%
+      +breakpoint-min($min-width-xl)
+        // top: 15px
+        right: calc(50% - 400px)
+      &.active
+        // animation: shakeX-horse 4s linear infinite
+
+    &--left
+      +pos-set(absolute, zero, 0%, 0%)
+      width: 100%
+      +breakpoint-min($min-width-xl)
+        top: 5px
+        left: calc(50% - 482px)
+      &.active
+        animation: shakeX-horse 2.8s linear infinite
+
+    
+
+    +breakpoint-min($min-width-xl)
+      width: auto
+
+  .promo__wrap
+    // +bg-set(url("event/2nd/e-main/components/bn-section-2/bg-bn-section-2.png"), 100%)
+    margin-top: 21%
+    +breakpoint-min($min-width-xl)
+      margin-top: 24%
+
+  .promo__zone
+    +aspect-ratio(960, 520)
+  .promo__box
+    text-align: center
+    cursor: pointer
+    &:hover
+      transition: all 0.6s ease
+      transform: translateY(-1%)
+      filter: contrast(1.2)
+
+@keyframes shakeX-horse
+  0%, 50%
+    transform: translateZ(0)
+  5%, 15%, 25%, 35%, 45%
+    transform: translate3d(-0.6%, 0, 0)
+  10%, 20%, 30%, 40%
+    transform: translate3d(0.6%, 0, 0)

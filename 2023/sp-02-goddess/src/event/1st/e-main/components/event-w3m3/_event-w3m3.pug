@@ -1,0 +1,54 @@
+-
+  var w3m3Data = [
+    { // 1
+      link: "https://www.etmall.com.tw/i/4152651",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart2-1.png",
+      alt: "女王百搭所有造型"
+    },
+    { // 2
+      link: "https://www.etmall.com.tw/c3/154497",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart2-2.png",
+      alt: "熱穿透氣旋氣炸鍋"
+    },
+    { // 3
+      link: "https://www.etmall.com.tw/i/3170925",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart2-3.png",
+      alt: "靠得住太空棉6包"
+    },
+    { // 4
+      link: "https://www.etmall.com.tw/i/2028739",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart2-4.png",
+      alt: "愛之味純濃燕麥"
+    },
+    { // 5
+      link: "https://www.etmall.com.tw/i/4176890",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart2-5.png",
+      alt: "eve舒摩兒青春極潤組(私密緊實青春露2入+全肌防護浴潔露59ml)-網"
+    },
+    { // 6
+      link: "https://www.etmall.com.tw/p/207217",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart2-6.png",
+      alt: "森下仁丹晶球長益菌-加強保健-超值3盒入(30包/盒)-網"
+    },
+  ]
+
+section.promo__group.promo__group--w3m3.m-bottom--lg(data-title="女王圖鑑")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--left1#decorEventW3M3Left
+        //- img(src="event/1st/e-main/components/event-w3m3/decor-event-w3m3-beauty1.png", alt="")
+      //- .decor__item.decor__item--left2#decorEventW3M3Left2
+      //-   img(src="event/1st/e-main/components/event-w3m3/decor-event-w3m3-beauty2.png", alt="")
+      .decor__item.decor__item--right#decorEventW3M3Right
+        img(src="event/1st/e-main/components/event-w3m3/decor-event-w3m3-right.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          #w3m3Wrap.event__wrap
+            ul.good__wrap
+              each data, index in w3m3Data
+                li
+                  a(href= data.link, title= data.alt)
+                    - var hasImg = data.imgSrc ? true : false
+                    if (hasImg)
+                      img(src= data.imgSrc, alt= data.alt)

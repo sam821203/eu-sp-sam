@@ -1,0 +1,63 @@
+-
+  var sliderW2M2Data = [
+    { //1
+    link: "https://www.etmall.com.tw/i/6439210" ,
+    imgSrc: "event/2nd/e-main/components/slider-w2m2/item/p1.png",
+    alt: "LG 27吋 27MP400-B FHD IPS護眼電競顯示器",
+    },
+    { //2
+    link: "https://www.etmall.com.tw/p/220521" ,
+    imgSrc: "event/2nd/e-main/components/slider-w2m2/item/p2.png",
+    alt: "日本MIDORI美多莉高風速溫控負離子吹風機",
+    },
+    { //3
+    link: "https://www.etmall.com.tw/i/3649924" ,
+    imgSrc: "event/2nd/e-main/components/slider-w2m2/item/p3.png",
+    alt: "SK-II 青春露230ml*2入",
+    },
+    {
+    link: "https://www.etmall.com.tw/i/4173126" ,
+    imgSrc: "event/2nd/e-main/components/slider-w2m2/item/p4.png",
+    alt: "常溫滴雞精16入*3盒組(50ml/入)",
+    },
+    {
+    link: "https://www.etmall.com.tw/i/4798004" ,
+    imgSrc: "event/2nd/e-main/components/slider-w2m2/item/p5.png",
+    alt: "YAMAHA 山葉機車 GRYPHUS 新勁戰125 雙碟 UBS-2023新車-網",
+    },
+    {
+    link: "https://media.etmall.com.tw/sp/23653/m/index.html" ,
+    imgSrc: "event/2nd/e-main/components/slider-w2m2/item/p6.png",
+    alt: "【PERFECT理想】316湯鍋20cm+【CLARE】不沾平底鍋20cm",
+    },
+    { 
+    link: "https://www.etmall.com.tw/i/6506756" ,
+    imgSrc: "event/2nd/e-main/components/slider-w2m2/item/p7.png",
+    alt: "【Coca-Cola 可口可樂】英雄登場可樂0糖隨型組(48入)",
+    },
+    {
+    link: "https://www.etmall.com.tw/gp/116998" ,
+    imgSrc: "event/2nd/e-main/components/slider-w2m2/item/p8.png",
+    alt: "【PP 波瑟楓妮】石墨烯塑崩褲氣動版造型褲裙2件(全新氣動紗 林美秀吳淡如代言 國民美人褲 花甲少年趣旅行冠名-網",
+    },
+  ]
+
+section.promo__group.promo__group--slider-w2m2.m-bottom--lg(data-title="強檔推薦")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--title#decorSliderW2M2Title
+        img(src="event/2nd/e-main/components/slider-w2m2/title-slider-w2m2.png" alt="")
+      .decor__item.decor__item--left#decorSliderW2M2Left
+        img(src="event/2nd/e-main/components/slider-w2m2/decor-slider-w2m2-left.png" alt="")
+      .decor__item.decor__item--right#decorSliderW2M2Right
+        img(src="event/2nd/e-main/components/slider-w2m2/decor-slider-w2m2-right.png" alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          .promo__slider.full-parent
+            .swiper-container#sliderW2M2Item
+              ul.swiper-wrapper
+                each data in sliderW2M2Data
+                  li.swiper-slide
+                    a(href= data.link, title=data.alt)
+                      img(src= data.imgSrc, alt=data.alt)

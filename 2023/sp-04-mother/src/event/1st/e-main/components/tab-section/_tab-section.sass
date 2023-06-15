@@ -1,0 +1,132 @@
+// tab layout
+.promo__group--tab-section
+  +pos-set(relative, zero)
+  overflow: hidden
+  // .decor__wrap
+  //   padding-bottom: 6%
+  //   +breakpoint-min($min-width-xl)
+  //     padding-bottom: 40px
+  .decor__item
+    transition: transform .3s
+    will-change: transform
+    &--left
+      +pos-set(absolute, zero, 7%, 8%)
+      width: 14%
+      transform-origin: 100% 96%
+      &.active
+        animation: tada 1.6s linear infinite
+      +breakpoint-min($min-width-xl)
+        left: calc( 50% - 396px )
+        
+    &--right
+      +pos-set(absolute, zero, 7%)
+      right: 4.5%
+      width: 19%
+      &.active
+        animation: key-wind-rotate 3s linear infinite 
+      +breakpoint-min($min-width-xl)
+        right: calc( 50% - 410px )
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .promo__wrap
+    +bg-set(url("event/1st/e-main/components/tab-section/bg-tab-section.png"), 100%)
+  .promo__zone
+    +aspect-ratio(960, 1430)
+  .promo__block
+    padding: 29% 2% 0 2.6%
+
+  .swiper-wrapper
+    padding-top: 1%
+    +breakpoint-min($min-width-xl)
+      padding-top: 7px
+  .pagination
+    display: flex
+    justify-content: space-around
+    margin-bottom: 1%
+  .swiper-pagination-bullets .swiper-pagination-bullet
+    display: block
+    width: 25%
+    height: auto
+    background: transparent
+    opacity: 1
+    filter: brightness(0.5)
+    transition: all .5s
+    +breakpoint-min($min-width-xl)
+      width: auto
+    &.swiper-pagination-bullet-active
+      filter: brightness(1.05)
+      +breakpoint-min($min-width-xl)
+        margin-top: 0
+
+  .swiper-slide
+    display: flex
+    justify-content: space-around
+    flex-wrap: wrap
+    +breakpoint-min($min-width-xl)
+      border-radius: 35px
+      padding-top: 8px
+  +breakpoint-min($min-width-xl)
+    margin-bottom: 2%
+
+  .dynamic__item--tab
+    width: 33.33%
+    text-align: center
+    margin-bottom: 2%
+    
+    &.decor
+      img
+        padding-top: 0
+        padding-right: 2%
+        transform: scale(.9)
+        +breakpoint-min($min-width-xl)
+          padding-top: 10px
+          margin-left: 20px
+    +breakpoint-min($min-width-xl)
+      margin-bottom: 8px
+  .product.product--dynamic
+    margin-right: auto
+    margin-left: auto
+    width: 95%
+    border: 2px solid #000
+    border-radius: 1.2vw
+    +breakpoint-min($min-width-xl)
+      width: 97%
+      border: 4px solid #000
+      border-radius: 16px
+    .product__name
+      margin-bottom: 0px
+      background-color: #fff
+      +breakpoint-min($min-width-xl)
+        font-size: 26px
+        height: 2.43em
+    .product__price
+      background-color: #fff
+      border-radius: 0 0 2vw 2vw
+      +breakpoint-min($min-width-xl)
+        border-radius: 0 0 20px 20px
+
+@keyframes grow
+  0%
+    opacity: 0
+    transform: scale(0)
+  50%
+    opacity: 1
+    transform: scale(20%)
+  95%
+    transform: scale(1.2)
+  100%
+    transform: scale(1)
+
+@keyframes tada
+  0%
+    transform: scaleX(1)
+  10%, 20%
+    transform: scale3d(1, 1, 1) rotate(-3deg)
+  30%, 50%, 70%, 90%
+    transform: scale3d(1.05, 1.05, 1.05) rotate(3deg)
+  40%, 60%, 80%
+    transform: scale3d(1.05, 1.05, 1.05) rotate(-3deg)
+  to
+    transform: scaleX(1)
+
++key-wind-rotate(-5, 5)

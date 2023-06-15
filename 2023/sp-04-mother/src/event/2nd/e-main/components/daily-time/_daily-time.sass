@@ -1,0 +1,115 @@
+.daily-time
+  overflow: hidden
+
+  .decor__wrap
+    padding-top: 4%
+    +breakpoint-min($min-width-xl)
+      padding-top: 2%
+
+  .decor__item
+    &--left
+      +pos-set(absolute, under, 0, 17%)
+      width: 21%
+      +breakpoint-min($min-width-xl)
+        left: calc( 50% - 335px )
+      &.active
+        animation: shake-box 2s forwards infinite
+    &--right
+      +pos-set(absolute, zero, 6%)
+      right: 1%
+      width: 98%
+      transition: transform .2s
+      will-change: transform
+      +breakpoint-min($min-width-xl)
+        top: 70px
+        right: calc( 50% - 440px )
+    +breakpoint-min($min-width-xl)
+      width: auto
+
+  .promo__wrap
+    +bg-set(url(event/2nd/e-main/components/daily-time/bg-daily-time.png), 100%)
+
+  .promo__zone
+    +aspect-ratio(960, 880)
+    +breakpoint-min($min-width-xl)
+      +aspect-ratio(960, 840)
+
+  .promo__block
+    padding: 31.5% 2% 0
+    +breakpoint-min($min-width-xl)
+      padding-top: 302px
+
+  .product__wrap
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-around
+    > div
+      width: 33.33%
+      &:nth-child(1)
+        .product__time
+          +bg-set(url(event/2nd/e-main/components/daily-time/daily-time-hour-1.png), 90%)
+      &:nth-child(2)
+        .product__time
+          +bg-set(url(event/2nd/e-main/components/daily-time/daily-time-hour-2.png), 90%)
+      &:nth-child(3)
+        .product__time
+          +bg-set(url(event/2nd/e-main/components/daily-time/daily-time-hour-3.png), 90%)
+
+  .product__block
+    padding: 0% 2%
+
+  .product--dynamic
+    width: 100%
+    margin-top: -145%
+    +breakpoint-min($min-width-xl)
+      margin-top: -445px
+
+  .product__time
+    padding-bottom: 184%
+    filter: brightness(50%)
+    margin-left: 5%
+    +breakpoint-min($min-width-xl)
+      margin-left: 15px
+    + .product
+      filter: brightness(50%)
+    &.active
+      filter: grayscale(0)
+      + .product
+        filter: grayscale(0)
+
+  .product--dynamic
+    .product__img
+      border: 2px solid $gray-deep-dark
+      border-bottom: none
+      +breakpoint-min($min-width-xl)
+        border-width: 4px
+    .product__text
+      border: 2px solid $gray-deep-dark
+      border-top: none
+      +breakpoint-min($min-width-xl)
+        border-width: 4px
+      .product__name
+        +pos-set(relative, zero)
+        font-size: 12px
+        margin: 0% 3%
+        height: 2.43em
+        line-height: 125%
+        +breakpoint-min($min-width-xl)
+          padding-top: 33px
+          height: 2.83em
+          font-size: 22px
+
+  .product__price
+    span
+      &:last-child
+        font-size: 4vw
+        +breakpoint-min($min-width-xl)
+          font-size: 32px
+
+@keyframes shake-box
+  0%, 50%, to
+    transform: translateZ(0) rotate(0)
+  5%, 15%, 25%, 35%, 45%
+    transform: translate3d(-0.4%, -0.2%, 0) rotate(-3deg)
+  10%, 20%, 30%, 40%
+    transform: translate3d(0.4%, 0.2%, 0) rotate(2deg)

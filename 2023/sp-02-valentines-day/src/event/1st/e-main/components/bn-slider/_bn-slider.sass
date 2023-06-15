@@ -1,0 +1,89 @@
+.bn-slider
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__wrap
+    padding-bottom: 2%
+    +breakpoint-min($min-width-xl)
+      padding-bottom: 0
+  .decor__item
+    &--left
+      +pos-set(absolute, zero, 1%, 14%)
+      width: 20%
+      +breakpoint-min($min-width-xl)
+        top: 10px
+        left: calc(50% - 325px)
+
+    &--right
+      +pos-set(absolute, zero, 11%)
+      right: 17%
+      width: 8%
+      +breakpoint-min($min-width-xl)
+        top: 110px
+        right: calc(50% - 310px)
+
+    &--arrow1
+      +pos-set(absolute, zero, 3%)
+      right:22%
+      width: 13%
+      opacity: 0
+      &.active
+        animation: arrow1 1s ease-in-out 1 forwards
+      +breakpoint-min($min-width-xl)
+        top: 20px
+        right: calc(50% - 255px)
+
+    &--arrow2
+      +pos-set(absolute, zero, 3%)
+      right: 22%
+      width: 12%
+      transform: rotate(135deg)
+      opacity: 0
+      &.active
+        animation: arrow2 1s ease-in-out 1 forwards
+      +breakpoint-min($min-width-xl)
+        max-width: 106px
+        top: 20px
+        right: calc(50% - 255px)
+
+    +breakpoint-min($min-width-xl)
+      width: auto
+
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/bn-slider/bg-bn-slider.png), 100%)
+  .promo__zone
+    +aspect-ratio(960, 1088)
+  .promo__block
+    padding: 0 6%
+    .promo__box
+      +pos-set(absolute, zero, 19%, 12.5%)
+      width: 75%
+    .promo__slider
+      +pos-set(absolute, zero)
+      bottom: 4.5%
+      left: 2.9%
+      width: 95%
+      .swiper-slide
+        padding: 2%
+      .swiper-slide-visible
+        a
+          transition: all 0.6s
+      .swiper-slide-visible.swiper-slide-next
+        a
+          transition: all 0.6s
+          filter: brightness(105%)
+
+@keyframes arrow1
+  0%
+    transform: translate(-60%, 80%)
+    opacity: 0
+  100%
+    transform: translate(0%, 0%)
+    opacity: 1
+
+@keyframes arrow2
+  0%
+    transform: rotate(135deg) translate(-60%, 100%)
+    opacity: 0
+  100%
+    transform: rotate(135deg) translate(0%, 0%)
+    opacity: 1

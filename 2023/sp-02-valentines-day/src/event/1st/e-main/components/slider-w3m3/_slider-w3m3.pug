@@ -1,0 +1,66 @@
+-
+  var promoSliderItem = [
+    { // 1
+      link: "https://www.etmall.com.tw/p/200141" ,
+      imgSrc: "event/1st/e-main/components/slider-w3m3/item/p1.png",
+      alt: "暖手抱枕被子兩用辦公室午睡枕頭學生捂手毯子二合一冬天插手趴睡",
+    },
+    { // 2
+      link: "https://www.etmall.com.tw/p/196420" ,
+      imgSrc: "event/1st/e-main/components/slider-w3m3/item/p2.png",
+      alt: "東風極柔2層抽取衛生紙(150抽x12包x6串)",
+    },
+    { // 3
+      link: "https://www.etmall.com.tw/c3/47251" ,
+      imgSrc: "event/1st/e-main/components/slider-w3m3/item/p3.png",
+      alt: "舒摩兒私密保養入門組(晶凝露104ml+甜美香氛浴潔露59mlx2)",
+    },
+    {
+      link: "https://www.etmall.com.tw/p/203767" ,
+      imgSrc: "event/1st/e-main/components/slider-w3m3/item/p4.png",
+      alt: "【象印】0.48L 超輕量OneTouch不鏽鋼真空保溫杯",
+    },
+    { 
+      link: "https://www.etmall.com.tw/p/205861" ,
+      imgSrc: "event/1st/e-main/components/slider-w3m3/item/p5.png",
+      alt: "《穆拉德》 一氧化氮戰動力PLUS膠囊5盒-網",
+    },
+    { 
+      link: "https://www.etmall.com.tw/gp/205579" ,
+      imgSrc: "event/1st/e-main/components/slider-w3m3/item/p6.png",
+      alt: "Golden Concept 買限量錶殼加3,999就得Watch?",
+    },
+    { 
+      link: "https://www.etmall.com.tw/gp/199808" ,
+      imgSrc: "event/1st/e-main/components/slider-w3m3/item/p7.png",
+      alt: "9成新【LV】絕版古董包 經典老花EVA肩背腋下包 ",
+    },
+    { 
+      link: "https://www.etmall.com.tw/gp/205623" ,
+      imgSrc: "event/1st/e-main/components/slider-w3m3/item/p8.png",
+      alt: "MONS 名媛精品修身輕薄風衣外套 (3色任選)",
+    },
+    { 
+      link: "https://www.etmall.com.tw/gp/129125" ,
+      imgSrc: "event/1st/e-main/components/slider-w3m3/item/p9.png",
+      alt: "【Nespresso】膠囊咖啡機 Lattissima One 瓷白色",
+    },
+  ]
+
+section.promo__group.promo__group--slider-w3m3.m-bottom--lg(data-title="戀愛補給站")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--left#decorW3M3Left
+        img(src="event/1st/e-main/components/slider-w3m3/decor-slider-w3m3-left.png", alt="")
+      .decor__item.decor__item--right#decorW3M3Right
+        img(src="event/1st/e-main/components/slider-w3m3/decor-slider-w3m3-right.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          .promo__slider.full-parent
+            .swiper-container#sliderW3M3Item
+              ul.swiper-wrapper
+                each data in promoSliderItem
+                  li.swiper-slide
+                    a(href= data.link, title=data.alt)
+                      img(src= data.imgSrc, alt=data.alt)

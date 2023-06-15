@@ -1,0 +1,82 @@
+.promo-special
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__wrap
+    padding-bottom: 27%
+    +breakpoint-min($min-width-xl)
+      padding-bottom: 210px
+  .decor__item
+    &--title
+      +pos-set(absolute, base, 6%, 21.5%)
+      width: 57%
+      +breakpoint-min($min-width-xl)
+        top: 30px
+        left: calc(50% - 284px)
+    &--left
+      +pos-set(absolute, zero, 2%, 2%)
+      width: 25%
+      +breakpoint-min($min-width-xl)
+        top: 20px
+        left: calc( 50% - 445px )
+    &--right
+      +pos-set(absolute, base, 0%)
+      right: 4%
+      width: 24%
+      &.active
+        animation: shakeY 2s linear infinite
+      +breakpoint-min($min-width-xl)
+        right: calc( 50% - 425px )
+    +breakpoint-min($min-width-xl)
+        width: auto
+
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/promo-special/bg-promo-special.png), 100%)
+  .promo__zone
+    +aspect-ratio(959, 917)
+  .promo__block
+    padding: 10% 3% 0
+    +breakpoint-min($min-width-xl)
+      // padding: 555px 5% 0
+  .promo__box
+    margin-bottom: 4%
+    padding-right: 7%
+    padding-left: 7%
+    transition: all .5s
+  .event__block
+    display: flex
+    justify-content: center
+    flex-wrap: wrap
+    .special__item
+      width: 33%
+      transition: all .5s
+      &:first-child
+        padding: 18% 0% 0 2.5%
+      &:nth-child(2)
+        padding: 0% 2% 0 2%
+      &:nth-child(3)
+        padding: 15% 0% 0 3.5%
+      &:last-child
+        margin-top: -13%
+        padding-left: 1.5%
+        // padding: 0% 1% 0
+
+
+@keyframes shakeY
+  0%, 50%, to
+    transform: translateZ(0)
+  5%, 15%, 25%, 35%, 45%
+    transform: translate3d(0, 0px, 0)
+  10%, 20%, 30%, 40%
+    transform: translate3d(0, 15px, 0)
+
+@keyframes bounceDown
+  0%, 20%, 53%, to
+    transform: translateZ(0)
+  40%, 43%
+    transform: translate3d(0, 30px, 0) scaleY(1.1)
+  70%
+    transform: translate3d(0, 15px, 0) scaleY(1.05)
+  80%
+    transform: translateZ(0) scaleY(.95)
+  90%
+    transform: translate3d(0, 4px, 0) scaleY(1.02)

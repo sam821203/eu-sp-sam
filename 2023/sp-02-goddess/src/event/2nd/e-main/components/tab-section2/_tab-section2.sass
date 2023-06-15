@@ -1,0 +1,154 @@
+// tab layout
+.promo__group--tab-section2
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__item
+    +pos-set(absolute, zero, 2.3%, 1.8%)
+    width: 96%
+
+    &--left
+      &.active
+        animation: rotating 3s ease-in-out infinite
+
+    &--right
+      &.active
+        animation: instrument-heartBeat 2s ease infinite
+
+    +breakpoint-min($min-width-xl)
+      left: calc(50% - 440px)
+      width: auto
+        
+  .promo__wrap
+    +aspect-ratio(938, 1430)
+    +breakpoint-min($min-width-xl)
+      +aspect-ratio(938, 1340)
+    margin-top: 33%
+
+  .promo__zone
+    +bg-set(url("event/2nd/e-main/components/tab-section2/bg-tab-section2.png"), 100%)
+    +breakpoint-min($min-width-xl)
+      +bg-set(url("event/2nd/e-main/components/tab-section2/bg-tab-section2-web.png"), 100%)
+
+  .promo__block
+    padding: 4% 4% 0
+    +breakpoint-min($min-width-xl)
+      padding-top: 8%
+  .promo__slider
+    padding: 1% 4.2% 0 3%
+    +breakpoint-min($min-width-xl)
+      padding-left: 2%
+
+  .swiper-wrapper
+    padding-top: 0
+
+  .pagination
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    margin-bottom: 1%
+    +breakpoint-min($min-width-xl)
+      margin-bottom: 5%
+
+  .swiper-pagination-bullets .swiper-pagination-bullet
+    position: relative
+    display: block
+    +size(50%, auto)
+    margin: 0
+    background: transparent
+    text-align: center
+    opacity: 1
+    transition: all .5s
+
+    .tab2--top
+      position: absolute
+      top: 0%
+      left: 0%
+      opacity: 0
+      cursor: pointer
+      transition: all .5s
+      +breakpoint-min($min-width-xl)
+        width: 100%
+
+    &.swiper-pagination-bullet-active
+      .tab2--top
+        opacity: 1
+
+  .swiper-slide
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    margin-bottom: 1.2%
+    padding: 1% 4% 0 5.8%
+    border-radius: 4vw
+    // box-shadow: 1px 1px 3px inset $gray-light-opacity, 2px 2px 4px 1px $main-e-background-color-3rd-2
+    +breakpoint-min($min-width-xl)
+      border-radius: 35px
+      padding-left: 8.8%
+      // padding-top: 30px
+  +breakpoint-min($min-width-xl)
+    margin-bottom: 2%
+
+  // .tab--1
+  //   background-color: $main-e-background-color-2nd-3
+  // .tab--2
+  //   background-color: $main-e-background-color-2nd-4
+  // .tab--3
+  //   background-color: $main-e-background-color-2nd-5
+  // .tab--4
+  //   background-color: $main-e-background-color-2nd-6
+  // .tab--5
+  //   background-color: $main-e-background-color-2nd-7
+  // .tab--6
+  //   background-color: $main-e-background-color-2nd-8
+
+  .dynamic__item--tab
+    width: calc(50% - 2.5px)
+    margin-bottom: 2%
+    +breakpoint-min($min-width-xl)
+      margin-bottom: 15px
+    &.decor--etman
+      img
+        padding-top: 9%
+        padding-right: 2%
+        +breakpoint-min($min-width-xl)
+          padding-top: 10px
+          padding-right: 10px
+
+  .product.product--dynamic
+    +margin-x(auto)
+    width: 100%
+    +breakpoint-min($min-width-xl)
+      width: 92%
+    .product__name
+      margin-bottom: 0px
+      background-color: #fff
+      +breakpoint-min($min-width-xl)
+        font-size: 26px
+        height: 2.43em
+    .product__price
+      background-color: #fff
+      border-radius: 0 0 2vw 2vw
+      +breakpoint-min($min-width-xl)
+        border-radius: 0 0 20px 20px
+      span
+        &:last-child
+          +breakpoint-min($min-width-xl)
+            font-size: 36px
+
+@keyframes instrument-heartBeat
+  0%, 100%
+    transform: scale(1, 1)
+  7%
+    transform: scale(1.06, 1.1)
+  14%
+    transform: scale(1, 1)
+  21%
+    transform: scale(1.06, 1.1)
+  35%
+    transform: scale(1, 1)
+
+@keyframes rotating
+  0%, 100%
+    transform: rotate(-2deg)
+  50%
+    transform: rotate(2deg)

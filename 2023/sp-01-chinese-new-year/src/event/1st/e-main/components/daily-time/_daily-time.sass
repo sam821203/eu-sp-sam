@@ -1,0 +1,94 @@
+.daily-time
+  overflow: hidden
+  .decor__item
+
+    &--left
+      +pos-set(absolute, base, 9.2%, 11%)
+      width: 80%
+      +breakpoint-min($min-width-xl)
+        left: calc( 50% - 348px )
+      &.active
+        animation: wobble 1s linear infinite
+
+    +breakpoint-min($min-width-xl)
+      width: auto
+
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/daily-time/bg-daily-time.png), 100%)
+  .promo__zone
+    +aspect-ratio(930, 800)
+  .promo__block
+    padding: 30% 5%
+    +breakpoint-min($min-width-xl)
+      padding-top: 290px
+  .product__wrap
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-around
+    > div
+      width: 33%
+      &:nth-child(1)
+        .product__time
+          +bg-set(url(event/1st/e-main/components/daily-time/daily-time-hour-1.png), 100%)
+      &:nth-child(2)
+        .product__time
+          +bg-set(url(event/1st/e-main/components/daily-time/daily-time-hour-2.png), 100%)
+      &:nth-child(3)
+        .product__time
+          +bg-set(url(event/1st/e-main/components/daily-time/daily-time-hour-3.png), 100%)
+
+  .product__block
+    padding: 0 2%
+  .product--dynamic
+    width: 90%
+    margin-top: -142%
+    margin-left: 4.6%
+    +breakpoint-min($min-width-xl)
+      margin-top: -391px
+  .product__time
+    padding-bottom: 187%
+    filter: brightness(50%)
+    + .product
+      filter: brightness(50%)
+    &.active
+      filter: grayscale(0)
+      + .product
+        filter: grayscale(0)
+
+  .product--dynamic
+    .product__name
+      +pos-set(relative, zero)
+      font-size: 12px
+      margin: 0% 3%
+      height: 2.43em
+      line-height: 125% !important
+      +breakpoint-min($min-width-xl)
+        padding-top: 3%
+        height: 2.83em
+        font-size: 22px
+
+  .product__price
+    // margin: 3%
+    span
+      &:last-child
+        font-size: 4vw
+        +breakpoint-min($min-width-xl)
+          font-size: 32px
+
++key-rotate-from-to(-10, 10)
+
+@keyframes wobble
+  0%
+    transform: translateZ(0)
+  7.5%
+    transform: translate3d(-20%, 0, 0) rotate(-5deg)
+  15%
+    transform: translate3d(15%, 0, 0) rotate(3deg)
+  22.5%
+    transform: translate3d(-10%, 0, 0) rotate(-3deg)
+  30%
+    transform: translate3d(5%, 0, 0) rotate(2deg)
+  37.5%
+    transform: translate3d(0%, 0, 0) rotate(-1deg)
+  40%
+    transform: translateZ(0)

@@ -1,0 +1,89 @@
+.promo__group--slider-w2m2
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__wrap
+    padding-top: 6%
+  .decor__item
+    transition: transform .3s
+    will-change: transform
+    &--title
+      +pos-set(absolute, second, 1.5%)
+      right: 15%
+      width: 70%
+      // &.active
+      //   animation: self-rotate-left 2s linear infinite alternate-reverse
+      +breakpoint-min($min-width-xl)
+        top: 20px
+        right: calc( 50% - 275px )
+    &--left
+      +pos-set(absolute, second, 21%, 9%)
+      width: 10%
+      transform: translate(24%, -6%) rotate(4deg)
+      +breakpoint-min($min-width-xl)
+        top: 220px
+        left: calc( 50% - 338px )
+      &.active
+        animation: thunder-shock-right .6s cubic-bezier(0,.46,.57,1.01) forwards infinite alternate 
+    &--right
+      +pos-set(absolute, second, 1.5%)
+      right: 6%
+      width: 9%
+      transform: translate(-24%, -6%) rotate(-4deg)
+      +breakpoint-min($min-width-xl)
+        top: 20px
+        right: calc( 50% - 357px )
+      &.active
+        animation: thunder-shock-left .6s .4s cubic-bezier(0,.46,.57,1.01) forwards infinite alternate 
+    +breakpoint-min($min-width-xl)
+      width: auto
+
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/slider-w2m2/bg-slider-w2m2.png), 97%)
+    +breakpoint-min($min-width-xl)
+      background-size: auto
+  .promo__zone
+    +aspect-ratio(960, 980)
+  .promo__block
+    padding: 28% 0 0
+  .promo__slider
+    +padding-x(2%)
+    .swiper-slide
+      display: flex
+      justify-content: space-between
+      .swiper-box
+        position: relative
+        width: 100%
+        text-align: center
+        a
+          position: absolute
+          top: 0
+          width: 50%
+          height: 100%
+          &:first-child
+            left: 0
+          &:last-child
+            right: 0
+
+@keyframes thunder-shock-left
+  0%, 100%
+    transform: translate(24%, -6%) rotate(4deg)
+  2%, 10%, 18%, 26%
+    transform: translate(-1px, -1px)
+  4%, 12%, 20%, 28%
+    transform: translate(-1px, 1px)
+  6%, 14%, 22%, 30%
+    transform: translate(1px, 1px)
+  8%, 16%, 24%, 32%
+    transform: translate(1px, -1px)
+
+@keyframes thunder-shock-right
+  0%, 100%
+    transform: translate(-24%, -6%) rotate(-4deg)
+  2%, 10%, 18%, 26%
+    transform: translate(-1px, -1px)
+  4%, 12%, 20%, 28%
+    transform: translate(-1px, 1px)
+  6%, 14%, 22%, 30%
+    transform: translate(1px, 1px)
+  8%, 16%, 24%, 32%
+    transform: translate(1px, -1px)

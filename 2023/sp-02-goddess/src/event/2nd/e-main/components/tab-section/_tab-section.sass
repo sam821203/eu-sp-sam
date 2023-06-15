@@ -1,0 +1,125 @@
+// tab layout
+.promo__group--tab-section
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__wrap
+    padding-top: 4%
+  .decor__item
+    &--left
+      width: 100%
+      height: 0
+      +breakpoint-min($min-width-xl)
+        height: 90px
+      .hand1
+        +pos-set(absolute, second, 0.6%, 31.5%)
+        width: 20%
+        +breakpoint-min($min-width-xl)
+          left: calc(50% - 140px)
+          width: auto
+        .js-loading &
+          animation: rotate-hands 1.6s infinite
+
+      .hand2
+        +pos-set(absolute, zero, 2.6%, 45.2%)
+        width: 16%
+        transform-origin: top
+        +breakpoint-min($min-width-xl)
+          left: calc(50% - 7px)
+          width: auto
+        .js-loading &
+          animation: rotate-hands2 1.6s infinite
+        
+    // +breakpoint-min($min-width-xl)
+    //   width: auto
+  .promo__wrap
+    +aspect-ratio(909, 1535)
+    margin-top: 6%
+    +breakpoint-min($min-width-xl)
+      // margin-top: 64px
+      margin-top: -36px
+    .promo__zone
+      +bg-set(url("event/2nd/e-main/components/tab-section/bg-tab-web.png"), 100%)
+
+      .tab__wrap
+        padding: 17.4% .5% 0
+        +breakpoint-min($min-width-xl)
+          padding-top: 167px
+        .tab__box
+          display: flex
+          justify-content: space-between
+          flex-wrap: wrap
+          margin: 0 auto
+          .tab__item
+            position: relative
+            width: calc( 25% - 2.5px )
+            margin-bottom: 3%
+            +breakpoint-min($min-width-xl)
+              margin-bottom: 2%
+              img
+                width: 100%
+            &:nth-child(2)
+              margin-left: -0.6%
+            &--top
+              position: absolute
+              top: 0%
+              left: 0%
+              opacity: 0
+              cursor: pointer
+              +breakpoint-min($min-width-xl)
+                width: 100%
+            .active
+              opacity: 1
+        .content__zone
+          // margin-top: -1%
+          .content__block
+            padding: 2.5% 3.2% 0 4.5%
+            +breakpoint-min($min-width-xl)
+              padding: 7.5% 2% 0 3.5%
+          .content__box
+            display: none
+            &.active
+              display: block
+            .tab__slider
+              // width: 99%
+              .swiper-wrapper
+                flex-wrap: wrap
+                // margin: 2% auto
+                .swiper-slide
+                  margin-bottom: 1.2%
+                  .product.product--dynamic
+                    margin-right: auto
+                    margin-left: auto
+                    width: 95%
+                    .product__name
+                      margin-bottom: 0px
+                      // height: 4.4vw
+                      // padding-top: 5%
+                      padding-bottom: 5%
+                      background-color: #fff
+                      +breakpoint-min($min-width-xl)
+                        // padding-bottom: 0
+                        font-size: 24px
+                    .product__price
+                      padding-bottom: 2%
+                      padding-top: 1%
+                      background-color: #fff
+                      border-radius: 0 0 1.2vw 1.2vw
+                      +breakpoint-min($min-width-xl)
+                        border-radius: 0 0 12px 12px
+                      span
+                        &:last-child
+                          font-size: 4.5vw
+                          +breakpoint-min($min-width-xl)
+                            font-size: 26px
+
+@keyframes rotate-hands
+  0%, 100%
+    transform: rotate(0)
+  50%
+    transform: rotate(-10deg)
+
+@keyframes rotate-hands2
+  0%, 100%
+    transform: translate(0, 0) scaleX(1)
+  50%
+    transform: translate(0%, -10%) scaleX(1.2)

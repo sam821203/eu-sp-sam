@@ -1,0 +1,9 @@
+.animate__wrap
+  +pos-set(relative, base)
+  .animate__obj--01
+    +pos-set(absolute, under, 10.2vw, 22vw)
+    width: 36%
+    +breakpoint-min($min-width-xl)
+      top: 112px
+      left: calc( 50% - 250px )
+      width: auto

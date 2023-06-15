@@ -1,0 +1,11 @@
+.logo
+  +pos-set(relative, zero)
+  margin-left: 4%
+  width: 27%
+  pointer-events: auto
+  &.logo--e
+    max-width: 200px
+  &.logo--u
+    max-width: 220px
+  +breakpoint-min($min-width-xl)
+    left: calc(50% - 480px)

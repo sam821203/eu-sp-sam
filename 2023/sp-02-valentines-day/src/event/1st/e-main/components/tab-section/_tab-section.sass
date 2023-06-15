@@ -1,0 +1,116 @@
+// tab layout
+.promo__group--tab-section
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__wrap
+    padding-bottom: 6%
+    +breakpoint-min($min-width-xl)
+      padding-bottom: 40px
+  .decor__item
+    &--left
+      +pos-set(absolute, zero, 0%, 16%)
+      width: 23%
+      &.active
+        // animation: grow .8s forwards, rotate-reverse 4s .8s linear infinite
+      +breakpoint-min($min-width-xl)
+        left: calc( 50% - 300px )
+        
+    &--right
+      +pos-set(absolute, zero, -1%)
+      right: 18%
+      width: 18%
+      &.active
+        // animation: grow .8s .4s ease-out forwards, rotate-reverse 4s 1.2s linear infinite
+      +breakpoint-min($min-width-xl)
+        top: -10px
+        right: calc( 50% - 285px )
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .promo__wrap
+    +bg-set(url("event/1st/e-main/components/tab-section/bg-tab-section.png"), 100%)
+  .promo__zone
+    +aspect-ratio(960, 1113)
+  .promo__block
+    padding: 14% 4% 0 5%
+
+  .swiper-wrapper
+    padding-top: 1%
+    +breakpoint-min($min-width-xl)
+      padding-top: 7px
+  .pagination
+    display: flex
+    justify-content: space-around
+  .swiper-pagination-bullets .swiper-pagination-bullet
+    display: block
+    width: 31%
+    height: auto
+    background: transparent
+    opacity: 1
+    filter: brightness(0.5)
+    transition: all .5s
+    +breakpoint-min($min-width-xl)
+      width: auto
+    &.swiper-pagination-bullet-active
+      filter: brightness(1.05)
+      +breakpoint-min($min-width-xl)
+        margin-top: 0
+
+  .swiper-slide
+    display: flex
+    justify-content: space-around
+    flex-wrap: wrap
+    +breakpoint-min($min-width-xl)
+      border-radius: 35px
+      padding-top: 8px
+  +breakpoint-min($min-width-xl)
+    margin-bottom: 2%
+
+  .dynamic__item--tab
+    width: 32%
+    margin-bottom: 2%
+    text-align: center
+    &.decor
+      img
+        padding-top: 0
+        padding-right: 2%
+        transform: scale(.9)
+        +breakpoint-min($min-width-xl)
+          padding-top: 10px
+          margin-left: 20px
+    +breakpoint-min($min-width-xl)
+      margin-bottom: 17px
+  .product.product--dynamic
+    margin-right: auto
+    margin-left: auto
+    width: 95%
+    +breakpoint-min($min-width-xl)
+      width: 95%
+    .product__name
+      margin-bottom: 0px
+      background-color: #fff
+      +breakpoint-min($min-width-xl)
+        font-size: 26px
+        height: 2.43em
+    .product__price
+      background-color: #fff
+      border-radius: 0 0 2vw 2vw
+      +breakpoint-min($min-width-xl)
+        border-radius: 0 0 20px 20px
+
+@keyframes grow
+  0%
+    opacity: 0
+    transform: scale(0)
+  50%
+    opacity: 1
+    transform: scale(20%)
+  95%
+    transform: scale(1.2)
+  100%
+    transform: scale(1)
+
+@keyframes rotate-reverse
+  0%
+    transform: rotate(0)
+  100%
+    transform: rotate(-1turn)

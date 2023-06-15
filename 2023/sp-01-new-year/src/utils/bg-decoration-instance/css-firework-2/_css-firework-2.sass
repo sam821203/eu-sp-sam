@@ -1,0 +1,63 @@
+
+  .firework__wrap
+    z-index: map-get($zindex, fifth)
+    top: 0
+    left: 0
+    .decor--firework
+      width: 20%
+      .firework
+        top: 0
+        left: 0
+        .js-loading &
+          animation: firework-grow 4s infinite both
+      &--1
+        top: -2.5%
+        left: 40%
+        .firework
+          animation-delay: 2.1s
+        +breakpoint-min($min-width-xl)
+          top: 0
+          left: calc(50% - 78px)
+          transform: translate(650px, 550px) scale(0.8)
+          .js-loading &
+            animation: random-pos-size 12s infinite steps(1)
+      &--2
+        top: 33%
+        left: 80%
+        .firework
+          .js-loading &
+            animation-delay: 2.6s
+        +breakpoint-min($min-width-xl)
+          top: 325px
+          left: calc(50% + 325px)
+      &--3
+        top: 50%
+        left: -5%
+        .firework
+          .js-loading &
+            animation-delay: 3.1s
+        +breakpoint-min($min-width-xl)
+          top: 410px
+          left: calc(50% - 480px)
+
+@keyframes firework-grow
+  0%
+    opacity: 0
+  1%
+    opacity: 1
+  0%, 50%
+    transform: translateY(15%) scale(0)
+  75%
+    transform: translateY(0) scale(1)
+    opacity: 1
+  100%
+    transform: translateY(15%) scale(0.95)
+    opacity: 0
+
+@keyframes random-pos-size
+    0%, 100%
+      transform: translate(0, 0) scale(1)
+    33%
+        transform: translate(-650px, 270px) scale(1.2)
+    66%
+        transform: translate(650px, 550px) scale(0.8)

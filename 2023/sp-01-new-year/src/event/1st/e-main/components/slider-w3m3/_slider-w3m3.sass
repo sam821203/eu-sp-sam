@@ -1,0 +1,78 @@
+.promo__group--slider-w3m3
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__wrap
+    // padding-bottom: 5%
+  .decor__item
+    &--left
+      +pos-set(absolute, zero, 16%, 4%)
+      width: 20%
+      opacity: 0
+      animation: firework-grow 2s infinite both
+      +breakpoint-min($min-width-xl)
+        // top: 50px
+        left: calc( 50% - 430px )
+    &--right
+      +pos-set(absolute, zero, 16%)
+      right: 4%
+      width: 20%
+      opacity: 0
+      animation: firework-grow 2s .6s infinite both
+      +breakpoint-min($min-width-xl)
+        // top: 0
+        right: calc( 50% - 430px )
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .promo__zone
+    +bg-set(url(event/1st/e-main/components/slider-w3m3/bg-slider-w3m3.png), 100%)
+  .promo__zone
+    +aspect-ratio(960, 1126)
+  .promo__block
+    padding: 31% 2% 0%
+    +breakpoint-min($min-width-xl)
+      // padding: 7% 14% 0%
+    .swiper-container
+      height: 80%
+    .swiper-slide,
+    .swiper-slide-duplicate
+      +aspect-ratio(391, 624, relative, zero, a)
+      width: 30%
+      a
+        // transition: all 0.3s
+        filter: brightness(50%)
+        // transform: translate(-3%,18%) scale(0.9)
+
+    .swiper-slide-next
+      a
+        transition: all 0.6s
+        transform: translate(5%, 4%) scale(0.9)
+    .swiper-slide-prev
+      a
+        transition: all 0.6s
+        transform: translate(-5%, 4%) scale(0.9)
+
+    .swiper-slide-active,
+    .swiper-slide-duplicate-active
+      z-index: map-get($zindex, base)
+      a
+        transition: all 0.6s
+        transform: translate(0%, 8%) scale(1.15)
+        filter: brightness(105%)
+        // opacity: 1
+
+
++key-rotate-self(370)
+
+@keyframes firework-grow
+  0%
+    opacity: 0
+  1%
+    opacity: 1
+  0%, 50%
+    transform: translateY(15%) scale(0)
+  75%
+    transform: translateY(0) scale(1)
+    opacity: 1
+  100%
+    transform: translateY(15%) scale(0.95)
+    opacity: 0

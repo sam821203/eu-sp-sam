@@ -1,0 +1,41 @@
+.promo-special
+  overflow: hidden
+  margin-top: -84%
+  +breakpoint-min($min-width-xl)
+    margin-top: -820px
+  .promo__wrap
+    margin-top: 0
+  .promo__zone
+    +aspect-ratio(960, 800)
+  .promo__block
+    padding: 2%
+    +breakpoint-min($min-width-xl)
+      padding: 25px 0 0
+  .promo__slider
+    display: flex
+    flex-wrap: wrap
+  .event__item
+    text-align: center
+    &:first-child
+      width: 100%
+      transform: scale(0.9)
+      +breakpoint-min($min-width-xl)
+        transform: scale(0.95)
+      img
+        border-radius: 80px
+    
+    &:nth-child(2), 
+    &:nth-child(3), 
+    &:nth-child(4)
+      width: 33%
+      padding-top: 0
+      text-align: center
+      transition: .2s
+      +breakpoint-min($min-width-xl)
+        padding-top: 2%
+
+    &:last-child
+      width: 100%      
+      margin-top: -4.2%
+      +breakpoint-min($min-width-xl)
+        margin-top: 0

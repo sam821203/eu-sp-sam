@@ -1,0 +1,152 @@
+// // ==========================================================================
+// // Plugins
+// // ==========================================================================
+// // @import "vendors/animate"
+// @import "vendors/style/swiper-slider-custom"
+
+// hero section
+// ===========================
+@import "event/1st/e-main/components/hero-section/_hero-section"
+
+// // ==========================================================================
+// // components
+// // ==========================================================================
+@import "event/1st/e-main/components/bet-section/_bet-section"
+@import "event/1st/e-main/components/awards-section/_awards-section"
+
+// @import "event/1st/e-main/components/bet-record/_bet-record"
+
+// RD的彈窗樣式，CSS可以客製但必須要display none，CSS合併承單隻檔案
+@import "event/1st/e-main/components/modal-template/_modal"
+
+// // ==========================================================================
+// // Page
+// // ==========================================================================
+body
+  +pos-set(relative, zero)
+  background-color: $main-color
+  color: $gray-deep-dark-opacity-2 // RD底層有設定預設CSS樣式，必須設好避免覆蓋
+
+  nav
+    position: fixed
+    z-index: 600
+    top: 0
+    right: 0
+    left: 0
+    width: 100%
+    margin: auto
+    ul
+      display: flex
+      flex-wrap: nowrap
+      justify-content: center
+      width: 100%
+      margin: 0
+      padding: 0
+      background: #288E9D
+      color: #fff
+      list-style: none
+    .sp-nav__record
+      display: inline-block
+      text-align: center
+      font-size: 16px
+      max-height: 39px
+      overflow-y: hidden
+      a
+        display: inline-block
+        position: static
+        z-index: 1
+        overflow: hidden
+        min-width: 87px
+        height: 39px
+        line-height: 200%
+        text-decoration: none
+        color: #fff
+        span
+          vertical-align: middle
+        img
+          padding: 0 4px
+          vertical-align: middle
+
+  .decor__bg
+    +pos-set(fixed, under, 0%, 0%)
+    +bg-set(url(event/1st/e-main/pages/index/bg.jpg), 100%)
+    +breakpoint-min($min-width-xl)
+      +bg-set(url(event/1st/e-main/pages/index/bg-web.jpg), auto)
+
+  .m-bottom--collect
+    margin-bottom: 20px
+    +breakpoint-min($min-width-lg)
+      margin-bottom: 30px
+    +breakpoint-min($min-width-xl)
+      margin-bottom: 50px
+
+  .game__group
+    margin-left: auto
+    margin-right: auto
+    max-width: 960px
+
+  .bg-container .first-layer,
+  .bg-container .second-layer,
+  .bg-container .third-layer
+    position: fixed
+    z-index: 0
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    height: 100vh
+    width: 100%
+    max-width: 100%
+    overflow: hidden
+    pointer-events: none
+
+  .bg-container
+    > div
+      display: block
+      position: absolute
+      z-index: 0
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+
+    .bg--first
+      background: url(event/1st/e-main/pages/index/bg-animate-1.png) center 0
+      animation: falling-down linear infinite
+      animation-duration: 52s
+    .bg--second
+      background: url(event/1st/e-main/pages/index/bg-animate-2.png) center 0
+      transform: translate3d(0, -100%, 0)
+      animation: falling-down-2 linear infinite
+      animation-duration: 28s
+    .bg--third
+      background: url(event/1st/e-main/pages/index/bg-animate-3.png) center 0
+      transform: translate3d(0, -100%, 0)
+      animation: falling-down-3 linear infinite
+      animation-duration: 20s
+
+@keyframes falling-down
+  0%
+    background-position: 0 0
+    opacity: 0
+  10%,
+  90%
+    opacity: 1
+  100%
+    background-position: 100% 150vh
+    opacity: 0
+
+@keyframes falling-down-2
+  0%
+    transform: translate3d(0, -100%, 0)
+  to
+    transform: translate3d(15%, 100%, 0)
+
+@keyframes falling-down-3
+  0%
+    transform: translate3d(0, -100%, 0)
+  50%
+    transform: translate3d(-10%, 0, 0)
+  to
+    transform: translate3d(15%, 100%, 0)
+

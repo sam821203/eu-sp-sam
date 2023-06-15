@@ -1,0 +1,104 @@
+-
+  var sliderW3M2Item = [
+    { // 1
+      link: "https://www.etmall.com.tw/i/4398800",
+      imgSrc: "event/2nd/e-main/components/slider-w3m2/item/slider-item-1.png",
+      alt: "SLOCCITANE 歐舒丹淡香水75ml任選-玫瑰/櫻花 春季愛用香水",
+    },
+    { // 2
+      link: "https://www.etmall.com.tw/i/2291145" ,
+      imgSrc: "event/2nd/e-main/components/slider-w3m2/item/slider-item-2.png",
+      alt: "日本味王葉黃素7盒 送葉黃素7粒",
+    },
+    { // 3
+      link: "https://www.etmall.com.tw/i/3611708" ,
+      imgSrc: "event/2nd/e-main/components/slider-w3m2/item/slider-item-3.png",
+      alt: "Terra 24型 VA面板 不閃屏抗藍光螢幕 春季限時下殺",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3092567" ,
+      imgSrc: "event/2nd/e-main/components/slider-w3m2/item/slider-item-4.png",
+      alt: "飛利浦 空氣清淨機 防疫雙機組",
+    },
+    { 
+      link: "https://www.etmall.com.tw/i/2160442" ,
+      imgSrc: "event/2nd/e-main/components/slider-w3m2/item/slider-item-5.png",
+      alt: "【黑松】茶花綠茶580ml (24入)(健康雙認證) 開蓋立即送",
+    },
+    { 
+      link: "https://www.etmall.com.tw/i/4423098" ,
+      imgSrc: "event/2nd/e-main/components/slider-w3m2/item/slider-item-6.png",
+      alt: "【古馳】兩用包 品牌熱銷款",
+    },
+        { 
+      link: "https://www.etmall.com.tw/i/3918473" ,
+      imgSrc: "event/2nd/e-main/components/slider-w3m2/item/slider-item-7.png",
+      alt: "日系文藝亞麻長衫 舒服好穿有型",
+    },
+  ]
+
+-
+  var sliderW3M2Tab = [
+    { // 1
+      link: "https://www.etmall.com.tw/i/4398800",
+      imgSrc: "event/2nd/e-main/components/slider-w3m2/item/slider-tab-1.png",
+      alt: "SLOCCITANE 歐舒丹淡香水75ml任選-玫瑰/櫻花 春季愛用香水",
+    },
+    { // 2
+      link: "https://www.etmall.com.tw/i/2291145" ,
+      imgSrc: "event/2nd/e-main/components/slider-w3m2/item/slider-tab-2.png",
+      alt: "日本味王葉黃素7盒 送葉黃素7粒",
+    },
+    { // 3
+      link: "https://www.etmall.com.tw/i/3611708" ,
+      imgSrc: "event/2nd/e-main/components/slider-w3m2/item/slider-tab-3.png",
+      alt: "Terra 24型 VA面板 不閃屏抗藍光螢幕 春季限時下殺",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3092567" ,
+      imgSrc: "event/2nd/e-main/components/slider-w3m2/item/slider-tab-4.png",
+      alt: "飛利浦 空氣清淨機 防疫雙機組",
+    },
+    { 
+      link: "https://www.etmall.com.tw/i/2160442" ,
+      imgSrc: "event/2nd/e-main/components/slider-w3m2/item/slider-tab-5.png",
+      alt: "【黑松】茶花綠茶580ml (24入)(健康雙認證) 開蓋立即送",
+    },
+    { 
+      link: "https://www.etmall.com.tw/i/4423098" ,
+      imgSrc: "event/2nd/e-main/components/slider-w3m2/item/slider-tab-6.png",
+      alt: "【古馳】兩用包 品牌熱銷款",
+    },
+        { 
+      link: "https://www.etmall.com.tw/i/3918473" ,
+      imgSrc: "event/2nd/e-main/components/slider-w3m2/item/slider-tab-7.png",
+      alt: "日系文藝亞麻長衫 舒服好穿有型",
+    },
+  ]
+
+section.promo__group.promo__group--slider-w3m2.m-bottom--lg(data-title="初春初登場")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--title#decorW3M2Title
+        img(src="event/2nd/e-main/components/slider-w3m2/title-slider-w3m2.png", alt="")
+      .decor__item.decor__item--left#decorW3M2Left
+        img(src="event/2nd/e-main/components/slider-w3m2/decor-slider-w3m2-left.png", alt="")
+
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          .promo__slider.full-parent
+            .swiper-container.gallery-item
+              ul.swiper-wrapper
+                each data in sliderW3M2Item
+                  li.swiper-slide
+                    a(href= data.link, title=data.alt)
+                      img(src= data.imgSrc, alt=data.alt)
+              .swiper-button-next
+              .swiper-button-prev
+            .swiper-container.gallery-tab
+              ul.swiper-wrapper
+                each data in sliderW3M2Tab
+                  li.swiper-slide
+                    img(src= data.imgSrc, alt=data.alt)
+

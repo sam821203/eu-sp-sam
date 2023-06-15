@@ -1,0 +1,323 @@
+// ==========================================================================
+// Animations -- 較像程式碼所以用.scss保留{ }，用mixin型態可保證沒有用到的不會dist出去
+// ==========================================================================
+@use "sass:math";
+
+@mixin key-show-hide($from: 0, $to: 1, $key-show-hide: key-show-hide) {
+  @keyframes #{$key-show-hide} {
+    from {
+      opacity: $from;
+    }
+    to {
+      opacity: $to;
+    }
+  }
+}
+
+@mixin key-rotate-self($degree, $key-rotate-self: key-rotate-self) {
+  @keyframes #{$key-rotate-self} {
+    to {
+      transform: rotate($degree + deg);
+    }
+  }
+}
+
+// spotlight
+@mixin key-rotate-from-to($from-degree, $to-degree, $key-rotate-from-to: key-rotate-from-to) {
+  @keyframes #{$key-rotate-from-to} {
+    from {
+      transform: rotate($from-degree + deg);
+    }
+    to {
+      transform: rotate($to-degree + deg);
+    }
+  }
+}
+
+// 風吹、氣球搖曳
+@mixin key-wind-rotate($rotare-degree, $skew-degree, $key-wind-rotate: key-wind-rotate) {
+  @keyframes #{$key-wind-rotate} {
+    20% {
+      transform: rotate3d(0, 0, 1, $rotare-degree + deg) skew($skew-degree + deg);
+    }
+    40% {
+      transform: rotate3d(0, 0, 1, -($rotare-degree * 0.8) + deg) skew( -($skew-degree * 0.8) + deg);
+    }
+    60% {
+      transform: rotate3d(0, 0, 1, ($rotare-degree * 0.4) + deg) skew(($skew-degree * 0.4) + deg);
+    }
+    80% {
+      transform: rotate3d(0, 0, 1, -($rotare-degree * 0.2) + deg) skew(-($skew-degree * 0.2) + deg);
+    }
+    to {
+      transform: rotate3d(0, 0, 1, 0deg);
+    }
+  }
+}
+
+@mixin key-fade-right {
+  @keyframes key-fade-right {
+    from {
+      opacity: 0;
+      transform: translate3d(100%, 0, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}
+
+@mixin key-fade-top {
+  @keyframes key-fade-top {
+    from {
+      opacity: 0;
+      transform: translate3d(0, -100%, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}
+
+@mixin key-marquee-y {
+  @keyframes key-marquee-y {
+    from {
+      transform: translateY(1.3em)
+    }
+    to {
+      transform: translateY(-100%)
+    }
+  }
+}
+
+@mixin key-marquee-x {
+  @keyframes key-marquee-x{
+    from {
+      left: 100%;
+      transform: translateX(0);
+    }
+    to {
+      left: 0;
+      transform: translateX(-100%);
+    }
+  }
+}
+
+@mixin key-fall-turn ($top-start, $top-final, $key-fall-turn: key-fall-turn){
+  @keyframes #{$key-fall-turn} {
+    from {
+      top: $top-start;
+      transform: rotate(15deg);
+    }
+    80% {
+      top: $top-final;
+      transform: rotate(-10deg);
+    }
+    84% {
+      top: $top-final;
+      transform: rotate(-9deg);
+    }
+    86% {
+      top: $top-final;
+      transform: rotate(-8deg);
+    }
+    88% {
+      top: $top-final;
+      transform: rotate(-7deg);
+    }
+    90% {
+      top: $top-final;
+      transform: rotate(-6deg);
+    }
+    92% {
+      top: $top-final;
+      transform: rotate(-5deg);
+    }
+    to {
+      top: $top-final;
+      transform: rotate(0);
+    }
+  }
+}
+
+@mixin key-shake-self-x($degree, $key-shake-self: key-shake-self-x) {
+  @keyframes #{$key-shake-self} {
+    from {
+      transform: translateX(-$degree);
+    }
+    to {
+      transform: translateX($degree);
+    }
+  }
+}
+
+@mixin key-shake-self-y($degree, $key-shake-self: key-shake-self-y) {
+  @keyframes #{$key-shake-self} {
+    from {
+      transform: translateY(-$degree + px);
+    }
+    to {
+      transform: translateY($degree + px);
+    }
+  }
+}
+
+@mixin key-bg-pos($posX, $posY,  $key-bg-pos: key-bg-pos) {
+  @keyframes #{$key-bg-pos} {
+    to {
+      background-position: $posX, $posY;
+    }
+  }
+}
+
+@mixin figure-dancing($index, $scale-start, $scale-middle, $scale-end, $skew-start, $skew-middle, $skew-end) {
+  @keyframes figure-dancing#{$index} {
+    0%, 50%, 100% {
+      transform: scale($scale-start) skew($skew-start + deg);
+    }
+    25% {
+      transform: scale($scale-middle) skew($skew-middle + deg);
+    }
+    75% {
+      transform: scale($scale-end) skew($skew-end + deg);
+    }
+  }
+}
+
+@mixin grow($index, $scale-middleX, $scale-middleY, $scale-end: 1) {
+  @keyframes grow#{$index} {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale($scale-middleX, $scale-middleY);
+    }
+    100% {
+      transform: scale($scale-end);
+    }
+  }
+}
+
+@mixin step($el, $position) {
+  @keyframes step-#{$el}{
+    from {
+      background-position: 0;
+    }
+    to {
+      background-position: $position;
+    }
+  }
+}
+
+@mixin floatY($el, $degree-start, $degree-end) {
+  @keyframes floatY-#{$el} {
+    from, to {
+      transform: translateY($degree-start);
+    }
+    50% {
+      transform: translateY($degree-end);
+    }
+  }
+}
+
+@mixin heartBeat($el, $degree-x, $degree-y) {
+  @keyframes heartBeat-#{$el} {
+    from, 24%, 46%, to {
+      transform: scale(1, 1);
+    }
+    12%, 36% {
+      transform: scale($degree-x, $degree-y);
+    }
+  }
+}
+
+@mixin scaling($el, $opacity-start, $degree, $scale-x-start, $scale-y-start: $scale-x-start) {
+  @keyframes scaling-#{$el} {
+    from {
+      opacity: $opacity-start;
+      transform: translateY($degree) scale($scale-x-start, $scale-y-start);
+    }
+    to {
+      opacity: 1;
+      transform: translate(0) scale(1)
+    }
+  }
+}
+
+@mixin bounce-in($direction) {
+  @if $direction == left {
+    @keyframes bounce-in-#{$direction} {
+      from, 60%, 75%, 90%, to {
+        animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+      }
+      0% {
+        opacity: 0;
+        transform: translate3d(-3000px, 0, 0) scaleX(3)
+      }
+      60% {
+        opacity: 1;
+        transform: translate3d(25px, 0, 0) scaleX(1)
+      }
+      75% {
+        transform: translate3d(-10px, 0, 0) scaleX(.98)
+      }
+      90% {
+        transform: translate3d(5px, 0, 0) scaleX(.995)
+      }
+      to {
+        transform: translateZ(0)
+      }
+    }
+  }
+  @else if $direction == right {
+    @keyframes bounce-in-#{$direction} {
+      0%, 60%, 75%, 90%, to {
+        animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+      }
+      0% {
+        opacity: 0;
+        transform: translate3d(3000px, 0, 0) scaleX(3)
+      }
+      60% {
+        opacity: 1;
+        transform: translate3d(-25px, 0, 0) scaleX(1)
+      }
+      75% {
+        transform: translate3d(10px, 0, 0) scaleX(.98)
+      }
+      90% {
+        transform: translate3d(-5px, 0, 0) scaleX(.995)
+      }
+      to {
+        opacity: 1;
+        transform: translateZ(0);
+      }
+    }
+  } 
+  @else {
+    @error "Unknown direction #{$direction}.";
+  }
+}
+
+@mixin cheer($device, $degree: -2.4vw) {
+  @if $device == mobile {
+    $degree: $degree;
+  } 
+  @else if $device == web {
+    $degree: math.div($degree, 3);
+  } 
+  @else {
+    @error "Unknown device #{$device}.";
+  }
+
+  @keyframes cheer-#{$device} {
+    0%, 24%, 46%, 100% {
+      transform: translateY(0)
+    }
+    12%, 36% {
+      transform: translateY($degree)
+    }
+  }
+}

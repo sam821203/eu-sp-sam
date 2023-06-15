@@ -1,0 +1,76 @@
+.promo-special
+  overflow: hidden
+  // margin-top: -5%
+  // +breakpoint-min($min-width-xl)
+  //   margin-top: -70px
+  .decor__item
+    pointer-events: none
+    &--title
+      +pos-set(absolute, zero, 0%, 27.5%)
+      width: 45%
+      +breakpoint-min($min-width-xl)
+        // top: 5%
+        left: calc( 50% - 214px )
+    &--left
+      +pos-set(absolute, base, 1%, 11%)
+      width: 21%
+      +breakpoint-min($min-width-xl)
+        left: calc( 50% - 332px )
+    &--light
+      +pos-set(absolute, base, 1%, 11%)
+      width: 21%
+      background: none 0% 0% / auto repeat scroll padding-box border-box rgba(0, 0, 0, 0)
+      -webkit-mask-size: 300% 200%
+      -webkit-mask-image: -webkit-linear-gradient( -45deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 60%)
+      filter: brightness(2)
+      transition: -webkit-mask-position 
+      transition-duration: 3s
+      animation: shining-title 1.5s ease-out infinite
+      overflow: hidden
+      +breakpoint-min($min-width-xl)
+        left: calc( 50% - 332px )
+    &--right
+      +pos-set(absolute, base, 2%)
+      right: 11%
+      width: 20%
+      +breakpoint-min($min-width-xl)
+        right: calc( 50% - 368px )
+    +breakpoint-min($min-width-xl)
+        width: auto
+
+  
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/promo-special/bg-promo-special.png), 100%)
+    background-position: bottom
+  .promo__zone
+    +aspect-ratio(960, 1080)
+  .promo__block
+    padding: 22% 2% 0
+    +breakpoint-min($min-width-xl)
+      padding-top: 180px
+  .event__block
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    margin-bottom: 2%
+    li
+      width: calc(25% - 2px)
+      transition: .3s
+      &:hover
+        transform: translateY(-2%)
+        filter: contrast(1.2)
+      &:nth-child(even)
+        margin-top: 2%
+  .promo__slider
+    padding: 16% 6% 0
+    +breakpoint-min($min-width-xl)
+      padding: 190px 90px 0
+
+
+@keyframes shining-title
+  0%
+    // -webkit-mask-position: 150% 0px
+    mask-position: 150% 0px
+  100%
+    // -webkit-mask-position: 0% 0px
+    mask-position: 0% 0px

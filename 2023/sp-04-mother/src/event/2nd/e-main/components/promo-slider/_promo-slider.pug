@@ -1,0 +1,66 @@
+-
+  var promoSliderItem = [
+    {
+      link: "https://www.etmall.com.tw/gp/138084" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/item-p-1.png",
+      alt: "【台酒生技】黑酵母酒粕逆齡活膚青春露好評暢銷組 (120ml*5)",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2887911" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/item-p-2.png",
+      alt: "華齊堂 蜂王乳燕窩晶露禮盒買一送一組-網",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/4453858" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/item-p-3.png",
+      alt: "SAMSUNG三星 Galaxy Watch5 R910 44mm (藍牙) 智慧手錶 (拆封未使用全新品)",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/4312308" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/item-p-4.png",
+      alt: "Dyson VVIP封館慶 精品限定吹風機",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/4405614" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/item-p-5.png",
+      alt: "DIY數字油畫風景唯美星空夜景",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/4367418" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/item-p-6.png",
+      alt: "【ACheter】簡約翻領插袋寬鬆棉麻長襯衫",
+    },
+    {
+      link: "https://www.etmall.com.tw/p/212173" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/item-p-7.png",
+      alt: "【毛寶】天然植萃PM2.5洗衣精(2200gX6入)",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/22874/m/index.html" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/item-p-8.png",
+      alt: "【泰山】 養生珍饌紫米薏仁 255g(6入*4)-網",
+    },
+    {
+      link: "https://www.etmall.com.tw/p/216442" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/item-p-9.png",
+      alt: "【IDEA】義式現代縫線紋皮革沙發床(加大)",
+    },
+  ]
+
+section.promo__group.promo__group--promo-slider.m-bottom--lg(data-title="老媽專屬")
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        .decor__wrap.full-parent
+          .decor__item.decor__item--left#decorPromoSliderLeft
+            img(src="event/2nd/e-main/components/promo-slider/decor-promo-slider-left.png", alt="")
+          .decor__item.decor__item--right#decorPromoSliderRight
+            img(src="event/2nd/e-main/components/promo-slider/decor-promo-slider-right.png", alt="")
+
+      .promo__block
+        .promo__slider.swiper-container#promoSliderItem
+          ul.swiper-wrapper
+            each data in promoSliderItem
+              li.swiper-slide
+                a(href= data.link, title=data.alt)
+                  img(src= data.imgSrc, alt=data.alt)

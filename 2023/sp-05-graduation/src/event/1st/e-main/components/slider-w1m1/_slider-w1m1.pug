@@ -1,0 +1,53 @@
+-
+  var promoSliderItem = [
+    {
+      link: "https://media.etmall.com.tw/sp/22835/m/index.html" ,
+      imgSrc: "event/1st/e-main/components/slider-w1m1/item/item-p-1.png",
+      alt: "山葉AXIS Z勁豪125 現省4千+樂透金3000",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/4728068" ,
+      imgSrc: "event/1st/e-main/components/slider-w1m1/item/item-p-2.png",
+      alt: "美國康寧經典平盤 東森獨家餐盤組",
+    },
+    {
+      link: "https://www.etmall.com.tw/p/217725" ,
+      imgSrc: "event/1st/e-main/components/slider-w1m1/item/item-p-3.png",
+      alt: "AHC防曬乳 滿額現折100",
+    },
+    {
+      link: "https://www.etmall.com.tw/p/217457" ,
+      imgSrc: "event/1st/e-main/components/slider-w1m1/item/item-p-4.png",
+      alt: "ivenor-日晚安塑崩(3+3)盒 日燃燒+夜代謝",
+    },
+    {
+      link: "https://www.etmall.com.tw/c2/109924" ,
+      imgSrc: "event/1st/e-main/components/slider-w1m1/item/item-p-5.png",
+      alt: "GoPro HERO11 限時$15,999",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/9765/m/index.html" ,
+      imgSrc: "event/1st/e-main/components/slider-w1m1/item/item-p-6.png",
+      alt: "鍋寶 東森獨家送樂透金",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3768506" ,
+      imgSrc: "event/1st/e-main/components/slider-w1m1/item/item-p-7.png",
+      alt: "玉珠拼接設計手鍊 金砂珠銅串珠",
+    },
+  ]
+
+section.promo__group.promo__group--slider-w1m1.m-bottom--lg(data-title="學生方案")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--item
+        img(src="event/1st/e-main/components/slider-w1m1/decor-slider-w1m1.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          .promo__slider.swiper-container#sliderW1M1Item
+            ul.swiper-wrapper
+              each data in promoSliderItem
+                li.swiper-slide
+                  a(href= data.link, title=data.alt)
+                    img(src= data.imgSrc, alt=data.alt)

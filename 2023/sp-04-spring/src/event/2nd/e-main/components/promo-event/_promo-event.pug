@@ -1,0 +1,160 @@
+-
+  var promoEventData = [
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/19552/m/index.html",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-1-1.png",
+        alt: "領入會禮註冊送500枚東森幣+10元專區折價券",
+      },
+      {
+        link: "https://media.etmall.com.tw/sp/19552/m/index.html",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-1-2.png",
+        alt: "首購滿額抽瞬熱式熱水器",
+      },
+      {
+        link: "https://media.etmall.com.tw/sp/21885/m/index.html",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-1-3.png",
+        alt: "推薦好友1送1 全家經典美式免費拿",
+      },
+    ],
+    [
+      {
+        link: "https://www.etmall.com.tw/Activity/dl/VoteActivityMethod/55",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-2-1.png",
+        alt: "寶貝七逃趣萌寶票選火熱進行中投票抽100枚樂透金",
+      },
+      {
+        link: "https://www.etmall.com.tw/Activity/dl/VoteActivityMethod/55",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-2-2.png",
+        alt: "寶貝七逃趣人氣影片徵件中，前100名投稿贈50枚樂透金",
+      },
+    ],
+    [
+      {
+        link: "https://www.etmall.com.tw/member/taskActivity",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-3-1.png",
+        alt: "挑戰任務拿$1300",
+      },
+      {
+        link: "https://www.etmall.com.tw/Activity/dl/LuckyDraw/73d475c48cb2130eb245f5c2aeba6d93",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-3-2.png",
+        alt: "會員專屬天天免費抽樂透金",
+      },
+      {
+        link: "https://m.etmall.com.tw/Activity/Lottery/50dc4fcbaa2f8f8cfc5d35f910729328",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-3-3.png",
+        alt: "全站消費滿額抽666枚東森幣",
+      },
+    ],
+    [
+      {
+        link: "https://www.etmall.com.tw/Activity/Reg/220",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-4-1.png",
+        alt: "消費滿額抽雙人住宿券",
+      },
+      {
+        link: "https://media.etmall.com.tw/sp/22638/m/index.html",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-4-2.png",
+        alt: "離島配送 累積滿額贈120枚樂透金",
+      },
+    ],
+    [
+      {
+        link: "https://www.etmall.com.tw/Activity/CollectPointExchangeActivity/202302811fecc3",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-5-1.png",
+        alt: "集點加價購",
+      },
+      {
+        link: "https://www.etmall.com.tw/Activity/GroupSale",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-5-2.png",
+        alt: "幸福集氣購",
+      },
+    ],
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/22401/m/index.html",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-6-1.png",
+        alt: "消費滿$1,800折200，東森幣加碼回饋100%",
+      },
+      {
+        link: "https://media.etmall.com.tw/sp/22362/m/index.html",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-6-2.png",
+        alt: "7-ELEVEN取件送太妃焦糖風味瑪奇朵(大冰)",
+      },
+      {
+        link: "https://media.etmall.com.tw/sp/22488/m/index.html",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-6-3.png",
+        alt: "酷聖石冰淇淋中杯以上+原味脆餅買一送一",
+      },
+      {
+        link: "https://media.etmall.com.tw/sp/22489/m/index.html",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-6-4.png",
+        alt: "LINE WEBTOON 限量好禮三重送",
+      },
+    ],
+  ]
+
+//- TODO: 如果promo不和hero綁一起時要有自己的section和layout--main
+section.promo__group.promo-event
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item#decorPromoEvent
+        img(src="event/2nd/e-main/components/promo-event/decor-promo-event.png", alt="")
+
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          .promo__box
+            .item__box
+              .event__item
+                .swiper-container.container--promo-event
+                  ul.swiper-wrapper
+                    each item, itemIndex in promoEventData[0]
+                      li.swiper-slide.promo__item
+                        a(href=  item.link, title= item.alt)
+                          img(src=  item.imgSrc, alt= item.alt)
+              .event__item
+                .swiper-container.container--promo-event
+                  ul.swiper-wrapper
+                    each item, itemIndex in promoEventData[1]
+                      li.swiper-slide.promo__item
+                        a(href=  item.link, title= item.alt)
+                          img(src=  item.imgSrc, alt= item.alt)
+
+            .item__box
+                .event__item
+                  .swiper-container.container--promo-event
+                    ul.swiper-wrapper
+                      each item, itemIndex in promoEventData[2]
+                        li.swiper-slide.promo__item
+                          a(href=  item.link, title= item.alt)
+                            img(src=  item.imgSrc, alt= item.alt)
+
+          .promo__box
+            .item__box
+              .event__item
+                .swiper-container.container--promo-event
+                  ul.swiper-wrapper
+                    each item, itemIndex in promoEventData[3]
+                      li.swiper-slide.promo__item
+                        a(href=  item.link, title= item.alt)
+                          img(src=  item.imgSrc, alt= item.alt)
+
+          .promo__box
+            .item__box
+              .event__item
+                .swiper-container.container--promo-event
+                  ul.swiper-wrapper
+                    each item, itemIndex in promoEventData[4]
+                      li.swiper-slide.promo__item
+                        a(href=  item.link, title= item.alt)
+                          img(src=  item.imgSrc, alt= item.alt)
+
+            .item__box
+              .event__item
+                .swiper-container.container--promo-event
+                  ul.swiper-wrapper
+                    each item, itemIndex in promoEventData[5]
+                      li.swiper-slide.promo__item
+                        a(href=  item.link, title= item.alt)
+                          img(src=  item.imgSrc, alt= item.alt)

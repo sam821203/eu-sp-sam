@@ -1,0 +1,73 @@
+-
+  var sliderW2M2Data = [
+    { //1
+    link: "https://www.etmall.com.tw/p/220620" ,
+    imgSrc: "event/1st/e-main/components/slider-w2m2/item/p1.png",
+    alt: "妙管家 瞬潔洗碗精(果香葡萄柚)500g(12入/箱)",
+    },
+    { //2
+    link: "https://www.etmall.com.tw/p/220521" ,
+    imgSrc: "event/1st/e-main/components/slider-w2m2/item/p2.png",
+    alt: "【CookPower 鍋寶】316可微波不鏽鋼保鮮盒-5入組-網",
+    },
+    { //3
+    link: "https://www.etmall.com.tw/i/4679353" ,
+    imgSrc: "event/1st/e-main/components/slider-w2m2/item/p3.png",
+    alt: " 現+預【大嬸婆】客家經典肉粽任選15-16顆組(野薑花粽/北部粽/南部粽/客家粄粽/艾草粄粽)",
+    },
+    {
+    link: "https://www.etmall.com.tw/gp/220699" ,
+    imgSrc: "event/1st/e-main/components/slider-w2m2/item/p4.png",
+    alt: "蘭陵涼爽瘦7分褲",
+    },
+    {
+    link: "https://www.etmall.com.tw/i/4632236" ,
+    imgSrc: "event/1st/e-main/components/slider-w2m2/item/p5.png",
+    alt: "微軟 Surface Laptop 5 觸控筆電",
+    },
+    {
+    link: "https://media.etmall.com.tw/sp/23150/m/index.html" ,
+    imgSrc: "event/1st/e-main/components/slider-w2m2/item/p6.png",
+    alt: "Panasonic國際牌 4-6坪 RX頂級旗艦系列變頻冷專分離式冷氣 CS-RX36JA2/CU-RX36JCA2-庫(F)",
+    },
+    { 
+    link: "https://www.etmall.com.tw/i/4864783" ,
+    imgSrc: "event/1st/e-main/components/slider-w2m2/item/p7.png",
+    alt: "氣質天絲牛仔連身裙",
+    },
+    {
+    link: "https://www.etmall.com.tw/i/4926950" ,
+    imgSrc: "event/1st/e-main/components/slider-w2m2/item/p8.png",
+    alt: "藍牙磁吸無線充電支架",
+    },
+    { 
+    link: " https://www.etmall.com.tw/gp/138084" ,
+    imgSrc: "event/1st/e-main/components/slider-w2m2/item/p9.png",
+    alt: "【台酒生技】黑酵母酒粕逆齡活膚青春露好評暢銷組 (120ml*5)",
+    },   
+    { 
+    link: "https://www.etmall.com.tw/i/3590270" ,
+    imgSrc: "event/1st/e-main/components/slider-w2m2/item/p10.png",
+    alt: "【娘家】大紅麴三盒組(30粒/盒)",
+    },
+  ]
+
+section.promo__group.promo__group--slider-w2m2.m-bottom--lg(data-title="強檔推薦")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--title#decorSliderW2M2Title
+        img(src="event/1st/e-main/components/slider-w2m2/title-slider-w2m2.png" alt="")
+      .decor__item.decor__item--left#decorSliderW2M2Left
+        img(src="event/1st/e-main/components/slider-w2m2/decor-slider-w2m2-left.png" alt="")
+      .decor__item.decor__item--right#decorSliderW2M2Right
+        img(src="event/1st/e-main/components/slider-w2m2/decor-slider-w2m2-right.png" alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          .promo__slider.full-parent
+            .swiper-container#sliderW2M2Item
+              ul.swiper-wrapper
+                each data in sliderW2M2Data
+                  li.swiper-slide
+                    a(href= data.link, title=data.alt)
+                      img(src= data.imgSrc, alt=data.alt)

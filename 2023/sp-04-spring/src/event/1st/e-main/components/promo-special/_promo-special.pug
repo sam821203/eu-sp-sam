@@ -1,0 +1,70 @@
+-
+  var promoSpecialSlider = [
+    { // 1
+      link: "https://media.etmall.com.tw/sp/21604/m/index.html#citi",
+      imgSrc: "event/1st/e-main/components/promo-special/items/bn-p-special-1.png",
+      alt: "花旗銀行 單件商品分期滿$12,000送$1,500 東森提貨券"
+    },
+    { // 2
+      link: "https://media.etmall.com.tw/sp/21604/m/index.html#dbs",
+      imgSrc: "event/1st/e-main/components/promo-special/items/bn-p-special-2.png",
+      alt: "星展 累積分期滿$35,000送$3,000"
+    },
+    { // 3
+      link: "https://media.etmall.com.tw/sp/21604/m/index.html#fartrust",
+      imgSrc: "event/1st/e-main/components/promo-special/items/bn-p-special-3.png",
+      alt: "遠信 單件商品分期滿$25,000送$2,000"
+    },
+    { // 4
+      link: "https://media.etmall.com.tw/sp/21604/m/index.html#zingala",
+      imgSrc: "event/1st/e-main/components/promo-special/items/bn-p-special-4.png",
+      alt: "zingala銀角零卡 單件商品滿$30,000回饋$2,400東森提貨券"
+    },
+    { // 5
+      link: "https://media.etmall.com.tw/sp/21604/m/index.html#icashPay",
+      imgSrc: "event/1st/e-main/components/promo-special/items/bn-p-special-5.png",
+      alt: "icash Pay 單筆訂單滿$200回饋10% OPEN POINT"
+    },
+    { // 6
+      link: "https://media.etmall.com.tw/sp/18729/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-special/items/bn-p-special-6.png",
+      alt: "遠東 週三 刷《遠東樂家+卡》指定館別回饋$100"
+    },
+  ]
+
+section.promo__group.promo-special.m-bottom--lg(data-title="銀行支付")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--left#decorPromoSpLeft
+        img(src="event/1st/e-main/components/promo-special/decor-promo-sp-left.png", alt="")
+      .decor__item.decor__item--right#decorPromoSpRight
+        img(src="event/1st/e-main/components/promo-special/decor-promo-sp-right.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          ul.event__block
+            li.special__item
+              a(href="https://media.etmall.com.tw/sp/21604/m/index.html#citi", title="花旗銀行 最高回饋12%")
+                img(src="event/1st/e-main/components/promo-special/items/item-p-special-1.png", alt="花旗銀行 最高回饋12%")
+            li.promo__slider
+              .slider__wrap
+                .swiper-container.container--promo-special
+                  ul.swiper-wrapper
+                    each data, index in promoSpecialSlider
+                      if index >= 0  && index < 3 
+                        li.swiper-slide
+                          a(href= data.link, title=data.alt)
+                            img(src= data.imgSrc, alt=data.alt)
+          ul.event__block
+            li.promo__slider
+              .slider__wrap
+                .swiper-container.container--promo-special
+                  ul.swiper-wrapper
+                    each data, index in promoSpecialSlider
+                      if index >= 3  
+                        li.swiper-slide
+                          a(href= data.link, title=data.alt)
+                            img(src= data.imgSrc, alt=data.alt)
+            li.special__item
+              a(href="https://media.etmall.com.tw/sp/21604/m/index.html#esun", title="玉山銀行 最高回饋10%")
+                img(src="event/1st/e-main/components/promo-special/items/item-p-special-2.png", alt="玉山銀行 最高回饋10%")

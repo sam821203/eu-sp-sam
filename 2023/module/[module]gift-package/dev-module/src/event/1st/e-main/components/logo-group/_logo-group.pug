@@ -1,0 +1,68 @@
+-
+  var logoGroupItem = [
+    {
+      link: "#" ,
+      imgSrc: "event/1st/e-main/components/logo-group/logo-item-1.png",
+      alt: "第一個logo",    
+    },
+    {
+      link: "#" ,
+      imgSrc: "event/1st/e-main/components/logo-group/logo-item-2.png",
+      alt: "第二個logo",    
+    },
+    {
+      link: "#" ,
+      imgSrc: "event/1st/e-main/components/logo-group/logo-item-3.png",
+      alt: "第三個logo",    
+    },
+    {
+      link: "#" ,
+      imgSrc: "event/1st/e-main/components/logo-group/logo-item-4.png",
+      alt: "第四個logo",    
+    },
+  ]
+
+section.logo__group--w4m2
+  .layout--main
+    .banner__title
+    .logos__wrap
+      .logos__block
+        ul.logos__item
+          each data in logoGroupItem
+            li.logo__item
+              a(href= data.link, alt=data.alt)
+                img(src=data.imgSrc, alt=data.alt)
+    
+
+
+
+  //- <section class="logo__group logo__group--w4m2">
+  //-   <div class="layout--main">
+  //-     <div class="logos__wrap">
+  //-       <div class="logos__block">
+  //-         <ul class="logos__items">
+  //-           <li class="logo__item">
+  //-             <a href="https://www.etmall.com.tw/c2/159040">
+  //-               <img src="logo-item-1.png" alt="">
+  //-             </a>
+  //-           </li>
+  //-           <li class="logo__item">
+  //-             <a href="https://www.etmall.com.tw/c2/159032">
+  //-               <img src="logo-item-2.png" alt="">
+  //-             </a>
+  //-           </li>
+  //-           <li class="logo__item">
+  //-             <a href="https://www.etmall.com.tw/c2/22654">
+  //-               <img src="logo-item-3.png" alt="">
+  //-             </a>
+  //-           </li>
+  //-           <li class="logo__item">
+  //-             <a href="https://www.etmall.com.tw/c2/159037">
+  //-               <img src="logo-item-4.png" alt="">
+  //-             </a>
+  //-           </li>
+  //-         </ul>
+  //-       </div>
+  //-     </div>
+  //-   </div>
+  //- </section>

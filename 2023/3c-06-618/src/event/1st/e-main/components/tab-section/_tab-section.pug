@@ -1,0 +1,148 @@
+-
+  var tabItemData = [
+    [
+      {
+        link: "",
+        imgSrc: "event/1st/e-main/components/tab-section/items/tab-item-1.png",
+        alt: "集點加價購"
+      },
+      {
+        link: "",
+        imgSrc: "event/1st/e-main/components/tab-section/items/tab-item-2.png",
+        alt: "集點加價購"
+      },
+      {
+        link: "",
+        imgSrc: "event/1st/e-main/components/tab-section/items/tab-item-3.png",
+        alt: "集點加價購"
+      },
+    ],
+    [
+      {
+        link: "",
+        imgSrc: "event/1st/e-main/components/tab-section/items/tab-item-4.png",
+        alt: "集點加價購"
+      },
+      {
+        link: "",
+        imgSrc: "event/1st/e-main/components/tab-section/items/tab-item-5.png",
+        alt: "集點加價購"
+      },
+      {
+        link: "",
+        imgSrc: "event/1st/e-main/components/tab-section/items/tab-item-6.png",
+        alt: "集點加價購"
+      },
+    ],
+    [
+      {
+        link: "",
+        imgSrc: "event/1st/e-main/components/tab-section/items/tab-item-7.png",
+        alt: "集點加價購"
+      },
+      {
+        link: "",
+        imgSrc: "event/1st/e-main/components/tab-section/items/tab-item-8.png",
+        alt: "集點加價購"
+      },
+      {
+        link: "",
+        imgSrc: "event/1st/e-main/components/tab-section/items/tab-item-9.png",
+        alt: "集點加價購"
+      },
+    ],
+    [
+      {
+        link: "",
+        imgSrc: "event/1st/e-main/components/tab-section/items/tab-item-10.png",
+        alt: "集點加價購"
+      },
+      {
+        link: "",
+        imgSrc: "event/1st/e-main/components/tab-section/items/tab-item-11.png",
+        alt: "集點加價購"
+      },
+      {
+        link: "",
+        imgSrc: "event/1st/e-main/components/tab-section/items/tab-item-12.png",
+        alt: "集點加價購"
+      },
+    ],
+    [
+      {
+        link: "",
+        imgSrc: "event/1st/e-main/components/tab-section/items/tab-item-13.png",
+        alt: "集點加價購"
+      },
+      {
+        link: "",
+        imgSrc: "event/1st/e-main/components/tab-section/items/tab-item-14.png",
+        alt: "集點加價購"
+      },
+      {
+        link: "",
+        imgSrc: "event/1st/e-main/components/tab-section/items/tab-item-15.png",
+        alt: "集點加價購"
+      },
+    ]
+  ]
+
+section.promo__group.promo__group--tab-section.m-bottom--sm(data-title="整點爆品")#tabSectionDate1
+  .layout--main
+    .promo__wrap
+      .promo__zone 
+        ul.tab__wrap
+          li.tab__zone
+            ul#tabBox.tab__box
+              li.tab__item(title="")
+                img(src="event/1st/e-main/components/tab-section/items/tab/tab-1-2.png", alt="")
+                .tab__item--top.active
+                  img(src="event/1st/e-main/components/tab-section/items/tab/tab-1.png", alt="")
+              li.tab__item(title="")
+                img(src="event/1st/e-main/components/tab-section/items/tab/tab-2-2.png", alt="")
+                .tab__item--top
+                  img(src="event/1st/e-main/components/tab-section/items/tab/tab-2.png", alt="")
+              li.tab__item(title="")
+                img(src="event/1st/e-main/components/tab-section/items/tab/tab-3-2.png", alt="")
+                .tab__item--top
+                  img(src="event/1st/e-main/components/tab-section/items/tab/tab-3.png", alt="")
+              li.tab__item(title="")
+                img(src="event/1st/e-main/components/tab-section/items/tab/tab-4-2.png", alt="")
+                .tab__item--top
+                  img(src="event/1st/e-main/components/tab-section/items/tab/tab-4.png", alt="")
+              li.tab__item(title="")
+                img(src="event/1st/e-main/components/tab-section/items/tab/tab-5-2.png", alt="")
+                .tab__item--top
+                  img(src="event/1st/e-main/components/tab-section/items/tab/tab-5.png", alt="")
+            li.content__zone
+              ul.content__block#tabContentBlock
+                .content__wrap
+                  li.content__box.swiper-slide.active(data-start="2023/06/05 10:00:00" data-end="2023/06/08 10:00:00")
+                    .content__overlay
+                    each data, index in tabItemData[0]
+                      a(href=data.link, title=data.alt)
+                        img(src=data.imgSrc, alt="")
+
+                  li.content__box.swiper-slide(data-start="2023/06/08 10:00:00" data-end="2023/06/12 10:00:00")
+                    .content__overlay
+                    each data, index in tabItemData[1]
+                      a(href= data.link, title= data.alt)
+                        img(src= data.imgSrc, alt="")
+
+                  li.content__box.swiper-slide(data-start="2023/06/12 10:00:00" data-end="2023/06/15 10:00:00")
+                    .content__overlay
+                    each data, index in tabItemData[2]
+                      a(href= data.link, title= data.alt)
+                        img(src= data.imgSrc, alt="")
+
+                  li.content__box.swiper-slide(data-start="2023/06/15 10:00:00" data-end="2023/06/18 00:00:00")
+                    .content__overlay
+                    each data, index in tabItemData[3]
+                      a(href= data.link, title= data.alt)
+                        img(src= data.imgSrc, alt="")
+                        
+                  li.content__box.swiper-slide(data-start="2023/06/18 00:00:00" data-end="2023/06/19 10:00:00")
+                    .content__overlay
+                    each data, index in tabItemData[4]
+                      a(href= data.link, title= data.alt)
+                        img(src= data.imgSrc, alt="")

@@ -1,0 +1,136 @@
+// ==========================================================================
+// Plugins
+// ==========================================================================
+// // @import vendors/animate
+// @import vendors/style/swiper-slider-custom
+@import vendors/style/swiper-safari-polyfill
+
+// ==========================================================================
+// first screen need
+// ==========================================================================
+// hero section
+// @import utils/bg-decoration-instance/parallax/_parallax
+@import event/1st/e-main/components/hero-section/_hero-section
+
+// @import utils/bg-decoration-instance/css-firework-2/_css-firework-2
+
+// ==========================================================================
+// components
+// ==========================================================================
+// dynamic product 假宮格共用CSS
+@import layout/dynamic-product/_dynamic-product.sass
+
+// 一般components
+
+@import event/1st/e-main/components/promo-event/_promo-event
+@import event/1st/e-main/components/daily-slider/_daily-slider
+// @import event/1st/e-main/components/dynamic-slider-w2m2-2/_dynamic-slider-w2m2-2
+// @import event/1st/e-main/components/event-w3m3-2/_event-w3m3-2
+@import event/1st/e-main/components/tab-section/_tab-section
+@import event/1st/e-main/components/dynamic-slider-w2m2/_dynamic-slider-w2m2
+@import event/1st/e-main/components/event-w3m3/_event-w3m3
+@import event/1st/e-main/components/dynamic-slider-w3m3/_dynamic-slider-w3m3
+
+@import event/1st/e-main/components/slider-w3m3/_slider-w3m3
+@import event/1st/e-main/components/dynamic-slider-half/_dynamic-slider-half
+@import event/1st/e-main/components/daily-time/_daily-time
+@import event/1st/e-main/components/bn-section/_bn-section
+@import event/1st/e-main/components/bn-slider/_bn-slider
+@import event/1st/e-main/components/promo-special/_promo-special
+@import event/1st/e-main/components/bn-section-2/_bn-section-2
+// @import event/1st/e-main/components/bn-section-3/_bn-section-3
+
+// ==========================================================================
+// Page
+// ==========================================================================
+body
+  +pos-set(relative)
+  background-color: $main-e-background-color-1st
+  overflow-x: hidden
+  // height: 1000vh
+
+  .decor__bg
+    +pos-set(fixed, under, 0%, 0%)
+    +bg-set(url(event/1st/e-main/pages/index/bg.jpg), 100%)
+    +breakpoint-min($min-width-xl)
+      +bg-set(url(event/1st/e-main/pages/index/bg-web.jpg), auto)
+      background-position: center 
+      // background-position: 50%
+
+    &--disco-ball
+      +pos-set(absolute, base, 7vw, 30%)
+      width: 23%
+      height: 35vw
+      max-height: 221px
+      opacity: 0
+      animation: fadeInDown 1.5s 2s ease-in 1 forwards
+      +breakpoint-min($min-width-xl)
+        top: 65px
+        left: calc( 50% - 190px )
+        width: auto
+
+    &--disco-light
+      +pos-set(absolute, base, 7vw, 22%)
+      width: 32%
+      height: 35vw
+      max-height: 253px
+      mix-blend-mode: screen
+      opacity: 0
+      animation: fadeIn 1s 3.5s linear 1 forwards, moveX 2s 5s linear infinite alternate
+      +breakpoint-min($min-width-xl)
+        top: 30px
+        left: calc( 50% - 190px )
+        width: auto
+
+  .decor__fg
+    +pos-set(absolute, zero, 0%, 0%)
+    +bg-set(url(event/1st/e-main/pages/index/bg-top.png), 100%)
+    +breakpoint-min($min-width-xl)
+      +pos-set(absolute, zero, 0%, 0%)
+      +bg-set(url(event/1st/e-main/pages/index/bg-top-web.png), auto)
+
+// TODO: 修改EU nav佔位高度(影響logo距離上方高度，U每次要改)
+.navRightBar
+  height: 39px
+  +breakpoint-min($min-width-xl)
+    height: auto
+
+.decoration--top,
+.decor--top
+  +pos-set(absolute)
+  pointer-events: none
+  +breakpoint-min($min-width-xl)
+    width: auto
+
+section:not(.note)
+  // 有parallax scroll時圖層有relative就有預設z-index可能會遮到宮格，因此使用這個讓宮格也能有預設z-index
+  +pos-set(relative)
+  a
+    display: block
+
+
+@keyframes moveX
+  0%
+    transform: translateX(60%)
+    opacity: 0
+  50%
+    transform: translateX(0%)
+    opacity: 1
+  100%
+    transform: translateX(-60%)
+    opacity: 0
+
+
+@keyframes fadeInDown
+  0%
+    opacity: 0
+    transform: translate3d(0, -100%, 0)
+  to
+    opacity: 1
+    transform: translateZ(0)
+
+@keyframes fadeIn
+  0%
+    opacity: 0
+  to
+    opacity: 1

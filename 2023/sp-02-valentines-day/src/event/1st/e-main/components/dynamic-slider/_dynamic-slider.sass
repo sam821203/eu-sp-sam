@@ -1,0 +1,117 @@
+.dynamic-slider
+  // +pos-set(relative, zero)
+  overflow: hidden
+  .decor__wrap
+    padding-bottom: 1%
+    +breakpoint-min($min-width-xl)
+      padding-bottom: 0
+  .decor__item
+
+    &--left
+      +pos-set(absolute, zero, 0%, 13%)
+      width: 23%
+      +breakpoint-min($min-width-xl)
+        top: 20px
+        left: calc(50% - 320px)
+      &.active
+        animation: up-down 2.6s ease-in-out infinite 
+
+    &--right
+      +pos-set(absolute, zero, 4%)
+      right: 11%
+      width: 25%
+      +breakpoint-min($min-width-xl)
+        top: 35px
+        right: calc( 50% - 340px )
+      &.active
+        animation: up-down 2.6s 1.3s ease-in-out infinite 
+
+    &--bottom
+      +pos-set(absolute, second)
+      bottom: 27%
+      left: 1%
+      width: 23%
+      transform-origin: bottom
+      animation: tada 2s linear infinite
+      +breakpoint-min($min-width-xl)
+        left: calc( 50% - 474px )
+
+    +breakpoint-min($min-width-xl)
+      width: auto
+
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/dynamic-slider/bg-dynamic-slider.png), 100%)
+    margin-top: 2%
+  .promo__zone
+    +aspect-ratio(960, 1011)
+  .promo__block
+    padding: 10.5% 9.5% 0
+    +breakpoint-min($min-width-xl)
+      padding-top: 123px
+  .promo__slider
+    overflow: hidden
+    height: 90vw
+    max-height: 800px
+    +breakpoint-min($min-width-xl)
+      height: 77vw
+
+    .dynamic__item
+      .product__img
+        border-radius: 0
+      .product__name
+        margin-top: 0
+        margin-bottom: 0
+        +breakpoint-min($min-width-xl)
+          .product__name
+            margin-top: 5px
+            margin-bottom: 15px
+
+      .product__text
+        background-color: transparent
+
+      &:first-child
+        margin: 6% auto 0
+        width: 36%
+        +breakpoint-min($min-width-xl)
+          margin-top: 35px
+        .product--dynamic
+          padding-bottom: 0%
+        .product__text
+          display: none
+
+      &:nth-child(2)
+        +pos-set(absolute, zero, 30%, .9%)
+        width: 44%
+        +breakpoint-min($min-width-xl)
+          top: 236px
+          left: 1px
+          // width: 45%
+
+      &:last-child
+        +pos-set(absolute, zero, 40%)
+        right: 0%
+        width: 44%
+        +breakpoint-min($min-width-xl)
+          top: 316px
+          // width: 45%
+
+    .swiper-slide-prev
+      opacity: 0
+      
+@keyframes tada
+  0%
+    transform: scaleX(1)
+  10%, 20%
+    transform: scale3d(1, 1, 1) rotate(-3deg)
+  30%, 50%, 70%, 90%
+    transform: scale3d(1.05, 1.05, 1.05) rotate(3deg)
+  40%, 60%, 80%
+    transform: scale3d(1.05, 1.05, 1.05) rotate(-3deg)
+  to
+    transform: scaleX(1)
+
+@keyframes up-down
+  0%, 100%
+    transform: translateY(0%)
+  50%
+    transform: translateY(13%)

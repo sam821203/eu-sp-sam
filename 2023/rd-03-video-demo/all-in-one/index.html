@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>整點搶紅包demo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    ul,
+    ol {
+      list-style: none;
+    }
+    img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+    }
+    body {
+      background: center 0 url(bg.jpg) no-repeat;
+      background-size: 100%;
+    }
+    @media screen and (min-width: 960px) {
+      body {
+        background: center 0 url(bg-web.jpg) no-repeat;
+        background-size: auto;
+      }
+    }
+    .layout--main {
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      max-width: 960px;
+    }
+
+    .video__box video {
+      width: 100%;
+    }
+    .cta__wrap {
+      position: absolute;
+      z-index: 1;
+      top: 80%;
+      left: 0;
+      width: 100%;
+      cursor: pointer;
+    }
+    .cta__box.action {
+      position: absolute;
+      z-index: 0;
+      width: 100%;
+      top: 0;
+      left: 0;
+    }
+    .cta__box {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .cta__box .btn__cta--active{
+      display: none;
+    }
+    .cta__box.active .btn__cta {
+      display: none;
+    }
+    .cta__box.active .btn__cta--active {
+      display: block;
+    }
+    .result_box {
+      position: fixed;
+      z-index: 5;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(ellipse 80% 80% at center,rgba(255, 255, 255, 0.7) 35% ,rgba(100, 100, 100, 0.1) 70%, transparent 75%, transparent 100%);
+      transform: scale(0);
+      opacity: 0;
+      transition: all 0.3s;
+    }
+    .result_box img {
+      margin: 50vh auto 0;
+      width: 50%;
+      max-width: 250px;
+      transform: translateY(-50%);
+    }
+    .cta__box.standby,
+    .cta__box.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .result_box.active{
+      opacity: 1;
+      transform: scale(1);
+    }
+  </style>
+</head>
+<body>
+  <main class="hero__wrap">
+    <div class="layout--main">
+      <img src="title.jpg" alt="">
+    </div>
+  </main>
+  <section class="play__wrap">
+    <div class="layout--main">
+      <div class="video__wrap">
+        <div class="video__box">
+          <video id="gameVideo" class="video" autoplay loop muted playsinline poster="post-waiting.png">
+            <source src="hero.mov" type="video/mp4; codecs=&quot;hvc1&quot;">
+            <source src="hero.webm" type="video/webm">
+          </video>
+        </div>
+      </div>
+      <div class="cta__wrap">
+        <div class="layout--main">
+          <div id="btnWaiting" class="cta__box waiting">
+            <img class="btn__cta" src="btn-waiting.png" alt="">
+          </div>
+          <div id="btnAction" class="cta__box action">
+            <img class="btn__cta" src="btn-action.png" alt="">
+            <img class="btn__cta--active" src="btn-action-active.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div id="resultBox" class="result_box">
+    <img src="gift.jpg" alt="">
+  </div>
+  <script>
+    // 單一影片長度，用以控制迴圈（單位：秒）
+    const videoDuration = {
+      // 待機loop片段的秒數
+      waiting: 3,
+      // 由於觸發監聽不是每次都剛搞好影格斷點，需要微調秒數
+      waitingAdjustment: -0.15,
+      // 玩遊戲前loop片段的秒數
+      action: 2,
+      // 第二段需要微調秒數
+      actionAdjustment: -0.1,
+    };
+    let isWaitingClicked = false;
+    let isActionClicked = false;
+
+    // 當影片load完才出現遊戲開始的按鈕
+    gameVideo.addEventListener('loadeddata', ()=>{
+      if (gameVideo.readyState == 4) btnWaiting.classList.add('standby');
+    });
+    // 隨影片時間控制
+    gameVideo.addEventListener('timeupdate', function (e) {
+      // console.log(this.currentTime);
+
+      // 如果還沒按開始按鈕則在待機loop
+      if (!isWaitingClicked && this.currentTime >=  (videoDuration.waiting + videoDuration.waitingAdjustment)) {
+        this.currentTime = 0;
+
+      // 按開始按鈕後會開始跑第二段之後的影片
+      } else {
+        // 如果按了第一階段待機按鈕等第一階段影片跑完再出現第二階段玩遊戲按鈕
+        if(isWaitingClicked && this.currentTime >=  (videoDuration.waiting - 0.15)){
+          btnAction.classList.add('standby');
+        }
+        // 如果第二階段玩遊戲按鈕還沒按則影片在第二階段loop
+        if(!isActionClicked && this.currentTime >= (videoDuration.waiting + videoDuration.action + videoDuration.actionAdjustment)) {
+          this.currentTime = videoDuration.waiting;
+        }
+      }
+    });
+
+    // 第一階段待機按鈕按了就隱藏
+    btnWaiting.addEventListener('click', function (e) {
+      isWaitingClicked = true;
+      this.classList.remove('standby');
+    });
+
+    // 第二階段玩遊戲按鈕按了就把loop關掉，並且把自身切換到active狀態（切換成已按下效果）
+    btnAction.addEventListener('click', function (e) {
+      isActionClicked = true;
+      gameVideo.loop = false;
+      this.classList.remove('standby');
+      this.classList.add('active');
+    });
+
+    // 當第三階段影片播放完後彈出結果
+    gameVideo.addEventListener('ended', function (e){
+      resultBox.classList.add('active');
+    });
+  </script>
+</body>
+</html>

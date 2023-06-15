@@ -1,0 +1,132 @@
+<style>
+  :root {
+    --change-pseudo-top: 0;
+  }
+
+  /* 背景色default */
+  .bar--top {
+    background-color: #000;
+  }
+
+  .bar--top .layout--main {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 960px;
+  }
+
+  .bar--top img {
+    display: block;
+    max-width: 100%;
+  }
+
+  a {
+    display: block;
+  }
+
+  /* 修改::before用 */
+  .js-pseudo-top::before {
+    top: var(--change-pseudo-top);
+  }
+</style>
+
+<!-- 決議是統一使用黑色背景(default)，若要各BN有各自底色，寫行內顏色即可 -->
+<!-- <section class="bar--top" style="background-color: #100f28"> -->
+<section class="bar--top">
+  <div class="layout--main">
+    <a href="https://www.etmall.com.tw/Activity/dl/2023WBC">
+      <img src="960x100-1.jpg" alt="ETMAll全民瘋棒球">
+    </a>
+  </div>
+</section>
+
+<script>
+  // 因為是整段code進組版做第二主視覺，會被掛最多三次(決議最多三個BN)，因此需要用var做變數讓下一段重複的script蓋過相同的變數，使用const、let會遇到重複宣告的問題
+
+  // 檢查total bar高度，用typeof預防被重複宣告
+  if (typeof barHeightTotal === 'undefined') var barHeightTotal = 0;
+
+  // 因為每張圖被load完成的時間不同，使用img load無法掌控最終total高度(可能第二張圖最後load完高度就被覆蓋成只有1+2的高)，因此使用全圖load完再跑檢查高度
+  window.addEventListener('load', () => {
+    var barImage = document.querySelector('.bar--top img');
+
+    // TODO: 行銷主視覺需要加上「js-main-page」此class做辨識用
+    var isMainPage = document.body.classList.contains('js-main-page');
+
+    // 累加所有BN的高度
+    barHeightTotal += barImage.clientHeight;
+
+    // 判斷是主活動還是禮包，並傳入最終要將背景下推的高度
+    if (isMainPage) changeMainPage(barHeightTotal)
+    else changePackageBg(barHeightTotal);
+  });
+
+  // 改變禮包背景高度
+  function changePackageBg(topValue) {
+    // 偽元素不是DOM無法由JS直接獲取，需要hack
+    // 取得body::before CSS資料中的position
+    var bodyBeforePosition = window.getComputedStyle(document.body, "::before").position;
+
+    // 偽元素不是DOM無法由JS直接更動，只能更動預先準備的class內的CSS變數值，再在目標元素上加上該class
+    document.body.style.setProperty('--change-pseudo-top', topValue + 'px');
+    document.body.classList.add('js-pseudo-top');
+
+    // 如果是不固定背景就結束了，下方不用跑listener省資源
+    if (bodyBeforePosition !== 'fixed') return false;
+
+    // 避免被重複掛三個listener的檢查機制
+    if (typeof isPseudoTopBindScroll === 'undefined') var isPseudoTopBindScroll = false;
+
+    // 如果是固定背景，由於BN本身沒有固定但背景固定，在scroll後BN上移，會露出已經下推的固定背景上方的body底色，因此要讓背景隨著scroll一起上移，直到所有BN都scroll走後才固定背景
+    document.addEventListener('scroll', () => {
+      isPseudoTopBindScroll = true;
+
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+
+      // 讓背景跟著scroll移動到固定高度後再固定有兩種作法，一種是先讓背景正常滾動(absolute)，到目標高度後再fixed；一種是一邊滾動一邊改變fixed的top值，滾多少扣多少，到目標高度後fixed的背景top應該為0
+      // 由於背景已經固定，採用上述第二種作法較省事，背景未固定時，只要到達目標高度add class fixed即可
+      if (scrollTop <= topValue) {
+        var changeTop = topValue;
+        changeTop -= scrollTop;
+        document.body.style.setProperty('--change-pseudo-top', changeTop + 'px');
+      } else {
+        // 由於滾動有時間差，有時無法使背景精準切齊上緣，使用超過目標高度後指定為0做保險
+        document.body.style.setProperty('--change-pseudo-top', 0);
+      }
+    });
+  }
+
+  // 改變主活動背景高度
+  function changeMainPage(topValue) {
+    var mainPageHeader = document.querySelector('header.header__wrap');
+    var mainPageDecorBg = document.querySelector('.decor__bg');
+
+    // 主活動有header(裝logo)、decor bg兩層要做調整
+    mainPageHeader.style.top = topValue + 'px';
+    mainPageDecorBg.style.top = topValue + 'px';
+
+    if (typeof isMainBgBindScroll === 'undefined') var isMainBgBindScroll = false;
+
+    if (isMainBgBindScroll) return false;
+
+    document.addEventListener('scroll', () => {
+      isMainBgBindScroll = true;
+
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+
+      if (scrollTop <= topValue) {
+        var changeTop = topValue;
+        changeTop -= scrollTop;
+
+        // 因為logo沒有fixed，因此只有fixed bg需要作scroll處理 
+        mainPageDecorBg.style.top = changeTop + 'px';
+        // 備註：如果logo也加上去，會有parallax效果～
+        // mainPageHeader.style.top = changeTop + 'px';
+      } else {
+        mainPageDecorBg.style.top = 0;
+        // 要玩logo parallax這邊也要加
+        // mainPageHeader.style.top = 0;
+      }
+    });
+  }
+</script>

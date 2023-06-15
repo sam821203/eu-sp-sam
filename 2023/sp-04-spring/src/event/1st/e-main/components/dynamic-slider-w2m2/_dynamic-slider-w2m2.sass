@@ -1,0 +1,109 @@
+.dynamic-slider-w2m2
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__wrap
+    padding-bottom: 9%
+    +breakpoint-min($min-width-xl)
+      padding-bottom: 55px
+  .decor__item
+    &--title1
+      +pos-set(absolute, zero, 13.5%, 8%)
+      width: 29%
+      opacity: 0
+      &.active
+        animation: stamp .3s both
+      +breakpoint-min($min-width-xl)
+        top: 165px
+        left: calc(50% - 385px)
+    &--title2
+      +pos-set(absolute, zero, 13%)
+      right: 8%
+      width: 29%
+      opacity: 0
+      &.active
+        animation: stamp .3s .2s both
+      +breakpoint-min($min-width-xl)
+        top: 160px
+        right: calc(50% - 375px)
+    &--item
+      +pos-set(absolute, zero, 0%, 30%)
+      width: 40%
+      transform-origin: bottom
+      &.active
+        animation: swing 4s 1s linear infinite
+      +breakpoint-min($min-width-xl)
+        left: calc( 50% - 175px )
+    &--flower
+      +pos-set(absolute, zero, 9%, 2%)
+      width: 72%
+      +breakpoint-min($min-width-xl)
+        top: 120px
+        left: calc(50% - 420px)
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/dynamic-slider-w2m2/bg-dynamic-slider-w2m2.png), 100%)
+  .promo__zone
+    +aspect-ratio(960, 1238)
+  .promo__block
+    padding: 20% 2% 0
+    +breakpoint-min($min-width-xl)
+      padding-top: 200px
+  .promo__box
+    margin: -1% 0% 1% 0.3%
+    width: 96.1%
+    +breakpoint-min($min-width-xl)
+      margin: -10px 0% 20px 1px
+      width: auto
+  .promo__slider
+    padding: 0 4%
+    +breakpoint-min($min-width-xl)
+      padding-left: 60px
+      padding-right: 60px
+    .swiper-slide
+      display: flex
+      justify-content: space-around
+      flex-wrap: wrap
+
+    .product__block
+      background-color: $gray-deep-light
+      border-radius: 1.2vw
+      +breakpoint-min($min-width-xl)
+        border-radius: 12px
+      .product__img
+        width: 90%
+        margin: 0 auto
+        border-radius: 0
+        +breakpoint-min($min-width-xl)
+          width: 100%
+          img
+            width: 100%
+            border-radius: 12px 12px 0 0
+      .product__name
+        padding: 0 4%
+
+
+@keyframes stamp
+  0%
+    opacity: 0
+    transform: scale(10)
+  1%
+    opacity: 1
+  80%
+    opacity: 1
+    transform: scale(.8)
+  100%
+    opacity: 1
+    transform: scale(1)
+
+@keyframes swing
+  10%
+    transform: rotate(5deg)
+  20%
+    transform: rotate(-5deg)
+  30%
+    transform: rotate(5deg)
+  40%
+    transform: rotate(-5deg)
+  50%, 100%
+    transform: rotate(0deg)

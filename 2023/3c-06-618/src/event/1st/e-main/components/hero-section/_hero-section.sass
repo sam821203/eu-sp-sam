@@ -1,0 +1,42 @@
+.hero
+  +pos-set(relative, zero)
+  overflow: hidden
+  .hero__zone
+    +aspect-ratio(960, 640)
+    .hero__title
+      +pos-set(absolute, base, 14%, 2.5%)
+      width: 96%
+      user-select: none
+      transform: translate3d(3000px, 0, 0) scaleX(3)
+      .js-loading &
+        animation: bounceInRight 0.7s both 1, flash-title 2.6s 1s infinite
+      +breakpoint-min($min-width-xl)
+        top: 11%
+        left: calc(50% - 480px)
+        width: auto
+
+@keyframes bounceInRight
+  0%, 60%, 75%, 90%, to
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+  0%
+    opacity: 0
+    transform: translate3d(3000px, 0, 0) scaleX(3)
+  60%
+    opacity: 1
+    transform: translate3d(-25px, 0, 0) scaleX(1)
+  75%
+    transform: translate3d(10px, 0, 0) scaleX(.98)
+  90%
+    transform: translate3d(-5px, 0, 0) scaleX(.995)
+  to
+    transform: translateZ(0)
+
+@keyframes flash-title
+  0%, 10%, 20%, 30%, 100%
+    filter: brightness(100%)
+  0%, 100%
+    transform: translateY(0)
+  5%, 15%, 25%
+    filter: brightness(135%)
+  50%
+    transform: translateY(-2%)

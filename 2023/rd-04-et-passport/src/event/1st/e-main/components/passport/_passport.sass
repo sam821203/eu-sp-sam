@@ -1,0 +1,80 @@
+.passport
+  +pos-set(relative, zero)
+.passport__zone
+  +aspect-ratio(960, 593)
+.passport__block
+  +bg-set(url(event/1st/e-main/components/passport/passport-bg.png), 100%)
+  filter: drop-shadow(0px 0px 12px rgba(0, 0, 0, 0.7))
+
+.passport__item
+  display: flex
+  justify-content: center
+  padding: 16% 12% 0
+  +breakpoint-min($min-width-xl)
+    padding: 160px 100px 0
+  &--text
+    color: $main-color-2
+    +breakpoint-min($min-width-xl)
+      width: 55%
+  &--content
+    display: flex
+    margin-bottom: 6%
+    // align-items: center
+  .text__name
+    &--logo
+      margin-right: 4%
+      width: 40%
+      max-width: 140px
+    &--content
+      margin-top: 2%
+      .passport--id
+        font-size: 3vw
+        margin-bottom: 2%
+        +breakpoint-min($min-width-xl)
+          font-size: 32px
+      .passport--name
+        font-size: 6.6vw
+        +breakpoint-min($min-width-lg)
+          font-size: 5vw
+        +breakpoint-min($min-width-xl)
+          font-size: 60px
+
+  .start__time,
+  .end__time
+    margin-bottom: 2%
+    font-size: 3vw
+    +breakpoint-min($min-width-lg)
+      font-size: 2.5vw
+    +breakpoint-min($min-width-xl)
+      font-size: 30px
+    span
+      &:last-child
+        margin-left: 2%
+
+  &--img
+    width: 45%
+    max-width: 275px
+    min-width: 102px
+
+.click__item--passport
+  +pos-set(absolute, base, 16%)
+  right: 9%
+  width: 10%
+  filter: drop-shadow(1.30312px 1.30312px 1.30312px rgba(0, 0, 0, 0.2))
+  cursor: pointer
+
+.expired
+  display: none
+  +pos-set(absolute, base)
+  bottom: 12%
+  right: 6%
+  width: 20%
+  max-width: 160px
+  &.active
+    display: block
+  +breakpoint-min($min-width-xl)
+    bottom: 90px
+    right: 100px
+
+
+

@@ -1,0 +1,79 @@
+-
+  var w4m2Data = [
+    { // 1
+      link: "https://www.etmall.com.tw/i/3223886",
+      imgSrc: "event/1st/e-main/components/event-w4m2/items/depart-1.png",
+      alt: "資生堂 百優精純乳霜75ml"
+    },
+    { // 2
+      link: "https://www.etmall.com.tw/i/3956725",
+      imgSrc: "event/1st/e-main/components/event-w4m2/items/depart-2.png",
+      alt: "理膚寶水 B5全面修復霜100mlx3入"
+    },
+    { // 3
+      link: "https://www.etmall.com.tw/i/3700736",
+      imgSrc: "event/1st/e-main/components/event-w4m2/items/depart-3.png",
+      alt: "Jo Malone 香水30ml-英國梨與小蒼蘭(盒裝)*2"
+    },
+    { // 4
+      link: "https://www.etmall.com.tw/i/3504513",
+      imgSrc: "event/1st/e-main/components/event-w4m2/items/depart-4.png",
+      alt: "AMIRO時光機拉提美容儀"
+    },
+    { // 5
+      link: "https://www.etmall.com.tw/i/2193558",
+      imgSrc: "event/1st/e-main/components/event-w4m2/items/depart-5.png",
+      alt: "Angel LaLa 天使娜拉_EX活顏膠原粉(莓果風味/15包/盒x6盒) 賴雅妍代言-網"
+    },
+    { // 6
+      link: "https://www.etmall.com.tw/i/4167831",
+      imgSrc: "event/1st/e-main/components/event-w4m2/items/depart-6.png",
+      alt: "【亞洲健康王】第二代 AHA 增股密 關捷挺固立 專利健股複方  郭子乾代言 (15瓶/盒)"
+    },
+    { // 7
+      link: "https://www.etmall.com.tw/i/3570396",
+      imgSrc: "event/1st/e-main/components/event-w4m2/items/depart-7.png",
+      alt: "葡萄王 認證易得纖 益生菌膠囊 30粒*4瓶-網"
+    },
+    { // 8
+      link: "https://www.etmall.com.tw/i/4094459",
+      imgSrc: "event/1st/e-main/components/event-w4m2/items/depart-8.png",
+      alt: "限量贈星巴克飲品兌換券【正官庄】天鹿御方精華飲(50mlx30包)(未附提袋)-網"
+    },
+  ]
+
+section.promo__group.promo__group--w4m2.m-bottom--lg(data-title="女王降臨")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--title#decorEventW4M2Title
+        a(href="") 
+          img(src="event/1st/e-main/components/event-w4m2/decor-event-w4m2-title.png", alt="")
+      .decor__item.decor__item--right#decorEventW4M2Right
+        a(href="") 
+          img(src="event/1st/e-main/components/event-w4m2/decor-event-w4m2-right.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          .bn__wrap 
+            .bn__box
+              a(href="")
+                img(src="event/1st/e-main/components/event-w4m2/bn-event-w4m2-1.jpg", alt="")
+            .bn__box
+              a(href="")
+                img(src="event/1st/e-main/components/event-w4m2/bn-event-w4m2-2.jpg", alt="")
+          #w4m2Wrap.event__wrap
+            .swiper-container#sliderEventW4M2
+              ul.swiper-wrapper
+                each data, index in w4m2Data
+                  li.swiper-slide
+                    a(href= data.link, title= data.alt)
+                      - var hasImg = data.imgSrc ? true : false
+                      if (hasImg)
+                        img(src= data.imgSrc, alt= data.alt)
+
+              //- each data, index in w4m2Data
+              //-   li
+              //-     a(href= data.link, title= data.alt)
+              //-       - var hasImg = data.imgSrc ? true : false
+              //-       if (hasImg)
+              //-         img(src= data.imgSrc, alt= data.alt)

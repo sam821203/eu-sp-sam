@@ -1,0 +1,150 @@
+-
+  var betSliderThumbs = [
+    { // 1
+      link: "" ,
+      imgSrc: "event/1st/e-main/components/bet-section/bet-section-thumbs-1.png",
+      alt: "素還真",
+    },
+    { // 2
+      link: "" ,
+      imgSrc: "event/1st/e-main/components/bet-section/bet-section-thumbs-2.png",
+      alt: "葉小釵",
+    },
+    { // 3
+      link: "" ,
+      imgSrc: "event/1st/e-main/components/bet-section/bet-section-thumbs-3.png",
+      alt: "一頁書",
+    },
+    { // 4
+      link: "" ,
+      imgSrc: "event/1st/e-main/components/bet-section/bet-section-thumbs-4.png",
+      alt: "亂世狂刀",
+    },
+    { // 5
+      link: "" ,
+      imgSrc: "event/1st/e-main/components/bet-section/bet-section-thumbs-5.png",
+      alt: "風采鈴",
+    },
+    { // 6
+      link: "" ,
+      imgSrc: "event/1st/e-main/components/bet-section/bet-section-thumbs-6.png",
+      alt: "棄天帝",
+    },
+    { // 7
+      link: "" ,
+      imgSrc: "event/1st/e-main/components/bet-section/bet-section-thumbs-7.png",
+      alt: "疏樓龍宿",
+    },
+    { // 8
+      link: "" ,
+      imgSrc: "event/1st/e-main/components/bet-section/bet-section-thumbs-8.png",
+      alt: "解鋒鏑",
+    },
+    { // 9
+      link: "" ,
+      imgSrc: "event/1st/e-main/components/bet-section/bet-section-thumbs-9.png",
+      alt: "談無欲",
+    },
+    { // 10
+      link: "" ,
+      imgSrc: "event/1st/e-main/components/bet-section/bet-section-thumbs-10.png",
+      alt: "吞佛童子",
+    },
+  ]
+
+-
+  var betSliderBottom = [
+    { // 1
+      link: "" ,
+      imgSrc: "event/1st/e-main/components/bet-section/bet-section-bottom-1.jpg",
+      alt: "素還真",
+    },
+    { // 2
+      link: "" ,
+      imgSrc: "event/1st/e-main/components/bet-section/bet-section-bottom-2.jpg",
+      alt: "葉小釵",
+    },
+    { // 3
+      link: "" ,
+      imgSrc: "event/1st/e-main/components/bet-section/bet-section-bottom-3.jpg",
+      alt: "一頁書",
+    },
+    { // 4
+      link: "" ,
+      imgSrc: "event/1st/e-main/components/bet-section/bet-section-bottom-4.jpg",
+      alt: "亂世狂刀",
+    },
+    { // 5
+      link: "" ,
+      imgSrc: "event/1st/e-main/components/bet-section/bet-section-bottom-5.jpg",
+      alt: "風采鈴",
+    },
+    { // 6
+      link: "" ,
+      imgSrc: "event/1st/e-main/components/bet-section/bet-section-bottom-6.jpg",
+      alt: "棄天帝",
+    },
+    { // 7
+      link: "" ,
+      imgSrc: "event/1st/e-main/components/bet-section/bet-section-bottom-7.jpg",
+      alt: "疏樓龍宿",
+    },
+    { // 8
+      link: "" ,
+      imgSrc: "event/1st/e-main/components/bet-section/bet-section-bottom-8.jpg",
+      alt: "解鋒鏑",
+    },
+    { // 9
+      link: "" ,
+      imgSrc: "event/1st/e-main/components/bet-section/bet-section-bottom-9.jpg",
+      alt: "談無欲",
+    },
+    { // 10
+      link: "" ,
+      imgSrc: "event/1st/e-main/components/bet-section/bet-section-bottom-10.jpg",
+      alt: "吞佛童子",
+    },
+  ]
+
+.bet__wrap.layout--main
+  .bet__block
+    .decor__top
+      img(src="event/1st/e-main/components/bet-section/bet-section-title.png", alt="")
+
+    .bet__slider.bet__slider--container.gallery-thumbs
+      ul.bet__slider--wrap
+        each data, index in betSliderThumbs
+          li.bet__slider--item.active
+            a(href= data.link, title=data.alt)
+              img(src= data.imgSrc, alt=data.alt)
+
+    .bet__slider.bet__slider--container.gallery-bottom
+      ul.bet__slider--wrap
+        each data, index in betSliderBottom
+          li(class=`bet__slider--item bet__slider--item-${index + 1}`).active
+            img(src= data.imgSrc, alt=data.alt)
+            ul.lottery-container
+              - var n = 70;
+              - for (var i = 0; i < n; i++)
+                li(class=`item item-${i + 1}`)
+            .lottery-info
+              span
+                | 第
+                span.round 2
+                | 輪&nbsp /
+              span
+                | &nbsp&nbsp還剩
+                span.draw 13
+                | 張可抽
+            .copyright-info 
+              span © 2022 PILI CO., LTD.
+
+    //- 按鈕
+    form(action="" class="bet__btns")
+      button.bet__btn.bet__btn--left(href="")
+        span 重新選擇
+      button.bet__btn.bet__btn--right(href="")
+        span 一張
+        img(src="event/1st/e-main/components/bet-section/e-coin.png", alt="")
+        span 100
+        div 我要選這張

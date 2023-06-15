@@ -1,0 +1,181 @@
+.hero
+  +pos-set(relative, base)
+  overflow: hidden
+  .hero__zone
+    +aspect-ratio(960, 1150)
+    +breakpoint-min($min-width-xl)
+      +aspect-ratio(960, 1000)
+    .hero__title
+      +pos-set(relative, zero)
+      +size(100%)
+      > div
+        position: absolute
+
+      .title--left
+        top: 8%
+        left: 3%
+        width: 34%
+        opacity: 0
+        transform: translate3d(-3000px, 0, 0) scaleX(3)
+        +breakpoint-min($min-width-xl)
+          top: 5%
+          left: calc(50% - 448px)
+          width: auto
+        .js-loading &
+          animation: bounceInLeft .6s 1.2s ease forwards 1, title-heartBeat 3s 2.6s ease infinite
+
+      .title--right
+        z-index: 1
+        top: 16%
+        left: 52%
+        width: 40%
+        opacity: 0
+        transform: translate3d(3000px, 0, 0) scaleX(3)
+        +breakpoint-min($min-width-xl)
+          top: 11%
+          left: calc(50% + 5px)
+          width: auto
+        .js-loading &
+          animation: bounceInRight .6s 1.4s ease forwards 1, title-heartBeat 3s 3.1s ease infinite
+        
+      .decor__wrap
+        top: 0
+        +size(100%)
+        
+        .decor__item
+          position: absolute
+          text-align: center
+          &--top
+            top: 4%
+            left: 16%
+            +size(72%, calc(72% * 1.21))
+            background: url("event/1st/e-main/components/hero-section/decor-hero-top.png")
+            background-size: 300% 100%
+            opacity: 0
+            transform: scale(1.7) rotate(2deg)
+            +breakpoint-min($min-width-xl)
+              left: calc(50% - 319px)
+              +size(640px, 928px)
+            .js-loading &
+              animation: queen-scaling 1.4s cubic-bezier(.1,.54,.64,.92) forwards 1, step-queen 1.5s 2s steps(3) infinite
+
+          &--bottom
+            top: 4%
+            z-index: -1
+
+          // +breakpoint-min($min-width-xl)
+          //   width: auto
+
+    .sub__title
+      +pos-set(absolute, zero)
+      bottom: 36%
+      left: 32%
+      width: 50%
+      opacity: 0
+      .js-loading &
+        animation: move-x 0.6s 3s ease-out both
+
+// @import event/1st/e-main/components/hero-section/hero-video/_hero-video.sass
+
+@keyframes move-x
+  0%
+    transform: translateX(500%)
+    opacity: 0
+  20%, 80%
+    opacity: 1
+  100%
+    transform: translateX(0)
+    opacity: 1
+
+@keyframes bounceInRight
+  0%,
+  60%,
+  75%,
+  90%,
+  to
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+  0%
+    opacity: 0
+    transform: translate3d(3000px, 0, 0) scaleX(3)
+  60%
+    opacity: 1
+    transform: translate3d(-25px, 0, 0) scaleX(1)
+  75%
+    transform: translate3d(10px, 0, 0) scaleX(0.98)
+  90%
+    transform: translate3d(-5px, 0, 0) scaleX(0.995)
+  to
+    opacity: 1
+    transform: translateZ(0)
+
+@keyframes bounceInLeft
+  0%,
+  60%,
+  75%,
+  90%,
+  to
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+  0%
+    opacity: 0
+    transform: translate3d(-3000px, 0, 0) scaleX(3)
+  60%
+    opacity: 1
+    transform: translate3d(25px, 0, 0) scaleX(1)
+  75%
+    transform: translate3d(-10px, 0, 0) scaleX(0.98)
+  90%
+    transform: translate3d(5px, 0, 0) scaleX(0.995)
+  to
+    opacity: 1
+    transform: translateZ(0)
+
+@keyframes bounceLeft
+  0%,
+  20%,
+  26%,
+  32%,
+  38%,
+  to
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+  0%
+    transform: translate3d(0, 0, 0) scaleX(1)
+  20%
+    transform: translate3d(-30px, 0, 0) scaleX(1)
+  26%
+    transform: translate3d(20px, 0, 0) scaleX(0.98)
+  32%
+    transform: translate3d(-5px, 0, 0) scaleX(0.995)
+  38%, 100%
+    opacity: 1
+    transform: translateZ(0)
+
+@keyframes title-heartBeat
+  0%
+    transform: scale(1)
+  3%
+    transform: scale(1.06)
+  6%
+    transform: scale(1)
+  12%
+    transform: scale(1.06)
+  24%, 100%
+    transform: scale(1)
+
+@keyframes queen-scaling
+  0%
+    top: 4%
+    left: 16%
+    opacity: 0
+    transform: scale(1.7) rotate(2deg)
+  65%
+    top: 4%
+    left: 16%
+    opacity: 1
+    transform: scale(1) rotate(2deg)
+  100%
+    top: 6%
+    left: 14%
+    opacity: 1
+    transform: scale(1) rotate(0)
+
++step(queen, -300%)

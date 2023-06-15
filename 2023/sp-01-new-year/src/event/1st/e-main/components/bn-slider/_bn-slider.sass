@@ -1,0 +1,73 @@
+.bn-slider
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__wrap
+    // padding-bottom: 18.4%
+  .decor__item
+    &--title
+      +pos-set(absolute, zero, 20%, 25%)
+      width: 50%
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 223px)
+    &--star1
+      +pos-set(absolute, zero, 17%, 10%)
+      width: 9%
+      animation: flash 1s steps(1) infinite alternate
+      +breakpoint-min($min-width-xl)
+        top: 185px
+        left: calc(50% - 370px)
+    &--star2
+      +pos-set(absolute, zero, 7%, 25%)
+      width: 9%
+      animation: flash 1s 1.5s steps(1) infinite alternate
+      +breakpoint-min($min-width-xl)
+        top: 85px
+        left: calc(50% - 230px)
+    &--star3
+      +pos-set(absolute, zero, 1%, 50%)
+      width: 16%
+      transform: translateX(-50%)
+    &--star4
+      +pos-set(absolute, zero, 7%)
+      right: 25%
+      width: 9%
+      animation: flash 1s 1.5s steps(1) infinite alternate
+      +breakpoint-min($min-width-xl)
+        top: 85px
+        right: calc(50% - 230px)
+    &--star5
+      +pos-set(absolute, zero, 17%)
+      right: 10%
+      width: 9%
+      animation: flash 1s steps(1) infinite alternate
+      +breakpoint-min($min-width-xl)
+        top: 185px
+        right: calc(50% - 370px)
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/bn-slider/bg-bn-slider.png), 100%)
+  .promo__zone
+    +aspect-ratio(960, 1024)
+  .promo__block
+    padding: 0 6%
+  .promo__box
+    +pos-set(absolute, zero, 34%, 8%)
+    width: 84%
+    img
+      border-radius: 2vw
+      +breakpoint-min($min-width-xl)
+        border-radius: 16px
+    // overflow: hidden
+  .promo__slider
+    +pos-set(absolute, zero)
+    bottom: 5.7%
+    left: 7.5%
+    width: 85%
+
+
+@keyframes flash
+  0%, 100%
+    opacity: 1
+  50%
+    opacity: 0

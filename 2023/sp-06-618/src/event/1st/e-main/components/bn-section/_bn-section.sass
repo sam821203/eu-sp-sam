@@ -1,0 +1,52 @@
+.bn-section
+  overflow: hidden
+  .decor__wrap
+    padding-bottom: 2%
+    +breakpoint-min($min-width-xl)
+      padding-bottom: 0px
+  .decor__item
+    pointer-events: none
+    &--left
+      +pos-set(absolute, zero, 0%, 5%)
+      width: 23%
+      &.active
+        animation: tada 5s 2.5s ease-in-out forwards infinite
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 425px)
+    &--right
+      +pos-set(absolute, zero, 6%)
+      right: 4%
+      width: 23.5%
+      &.active
+        animation: tada 5s ease-in-out forwards infinite
+      +breakpoint-min($min-width-xl)
+        top: 35px
+        right: calc( 50% - 430px )
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/bn-section/bg-bn-section.png), 100%, center, center)
+  .promo__zone
+    +aspect-ratio(960, 695)
+  .promo__box
+    +pos-set(absolute, zero, 35%, 0%)
+    width: 100%
+    height: 70%
+    cursor: pointer
+    a
+      width: 100%
+      height: 100%
+      
+
+
+@keyframes tada
+  0%, 100%
+    transform: scaleX(1)
+  2.5%, 5%
+    transform: scale3d(.85, .85, .85) rotate(-3deg)
+  7.5%, 12.5%, 17.5%
+    transform: scale3d(1, 1, 1) rotate(3deg)
+  10%, 15%, 20%
+    transform: scale3d(1, 1, 1) rotate(-3deg)
+  25%, 50%
+    transform: scaleX(1)

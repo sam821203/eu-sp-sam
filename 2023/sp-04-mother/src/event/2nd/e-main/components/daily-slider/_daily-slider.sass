@@ -1,0 +1,139 @@
+.promo__group--daily-slider
+  +pos-set(relative, zero)
+  overflow: hidden
+
+  .decor__item
+    &--left
+      +pos-set(absolute, zero, -2.1%, -8%)
+      width: 90%
+      clip-path: polygon(-0.8% 20%, 34% 3%, 39% 88%, -5% 110%)
+      transform: rotate(-41deg)
+      +breakpoint-min($min-width-lg)
+        top: -1.6%
+        clip-path: polygon(0.2% 0%, 31% -83%, 38.5% 88%, -5% 110%)
+      +breakpoint-min($min-width-xl)
+        top: -2.8%
+        left: calc(50% - 564px)
+        clip-path: polygon(0% 0%, 34% 17%, 42.2% 226%, -4% 110%)
+      img
+        transform: translateX(38%)
+        .js-loading &
+          animation: marquee-x 5.6s .5s forwards infinite linear
+    &--right
+      +pos-set(absolute, zero, 11%)
+      right: 5%
+      width: 21%
+      transition: transform .2s
+      +breakpoint-min($min-width-xl)
+        right: calc(50% - 430px)
+    +breakpoint-min($min-width-xl)
+      width: auto
+
+  .title__text
+    +pos-set(absolute, third, 86.5%, 26.5%)
+    +breakpoint-min($min-width-xl)
+      top: 1112px
+      left: calc(50% - 214px)
+
+  .daily__countdown
+    display: flex
+    justify-content: space-between
+    width: 57%
+    +breakpoint-min($min-width-xl)
+      width: 540px
+    .time__block
+      +flex-container
+      width: 24%
+      font-size: 7vw
+      font-weight: 700
+      letter-spacing: -1px
+      font-style: italic
+      +breakpoint-min($min-width-xl)
+        font-size: 76px
+        font-weight: 500
+        letter-spacing: 0
+      .time__box
+        &:first-child
+          width: 30%
+        &:last-child
+          width: 40%
+      &:first-child
+        margin-right: 12.5%
+        +breakpoint-min($min-width-xl)
+          margin-right: 60px
+        .time__box
+          &:first-child
+            margin-right: 2%
+          &:last-child
+            margin-left: 0%
+      &:nth-child(2)
+        .time__box
+          &:first-child
+            margin-left: 2%
+          &:last-child
+            margin-left: 2%
+      &:last-child
+        .time__box
+          &:first-child
+            +margin-x(-2%, 2%)
+          &:last-child
+            margin-left: 0%
+      .time__box
+        color: #f567d6
+
+  .promo__wrap
+    +bg-set(url(event/2nd/e-main/components/daily-slider/bg-daily-slider.png), 100%, center, center)
+
+  .promo__zone
+    +aspect-ratio(497, 670)
+    
+  .promo__block
+    padding: 49% 3% 0%
+    +breakpoint-min($min-width-xl)
+      padding-top: 464px
+    .swiper-slide
+      display: flex
+      justify-content: space-around
+      flex-wrap: wrap
+      height: calc((100% - 10px) / 2)
+    .dynamic__item
+      width: 46%
+      margin-bottom: 2%
+      background-color: $gray-deep-light
+      border: 2px solid $gray-deep-dark
+      border-radius: 1.6vw
+      +breakpoint-min($min-width-xl)
+        border-width: 4px
+        border-radius: 16px
+    .product--dynamic
+      +pos-set(relative, zero)
+      padding-bottom: 8%
+      +breakpoint-min($min-width-xl)
+        padding-bottom: 0%
+    .product__img
+      margin: 0 auto
+      width: 100%
+      img
+        width: 100%
+    .product__name
+      height: 1.23em
+      font-size: 14px
+      +breakpoint-min($min-width-xl)
+        +margin-y(5px)
+        height: 60px
+        font-size: 24px
+    .product__price
+      height: 10vw
+      +breakpoint-min($min-width-xl)
+        height: 110px
+      span
+        &:last-child
+          font-size: 4.5vw
+          +breakpoint-min($min-width-xl)
+            font-size: 48px
+
+@keyframes marquee-x
+  from
+    transform: translateX(38%)
+  to 
+    transform: translateX(-100%)

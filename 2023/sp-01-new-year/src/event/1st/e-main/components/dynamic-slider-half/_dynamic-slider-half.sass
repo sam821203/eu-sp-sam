@@ -1,0 +1,93 @@
+.dynamic-slider-half
+  overflow: hidden
+  .decor__wrap
+    padding-bottom: 5%
+  .decor__item
+    &--left
+      +pos-set(absolute, zero, 5%, 8%)
+      width: 26%
+      opacity: 0
+      &.active
+        animation: stamp .3s linear both
+      +breakpoint-min($min-width-xl)
+        top: 35px
+        left: calc( 50% - 385px )
+    &--right
+      +pos-set(absolute, zero, 5%)
+      right: 11%
+      width: 24%
+      opacity: 0
+      &.active
+        animation: stamp .3s .6s linear both
+      +breakpoint-min($min-width-xl)
+        right: calc(50% - 370px)
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/dynamic-slider-half/bg-dynamic-slider-half.png), 100%)
+  .promo__zone
+    +aspect-ratio(960, 842)
+  .promo__block
+    display: flex
+    justify-content: center
+    padding: 23% 5% 0
+  .promo__box
+    width: 42%
+    margin-right: 1%
+    img
+      border-radius: 2vw
+      border: 3px solid $main-e-background-color-1st-3
+    &--btn
+      margin: 4% auto 0
+      width: 97%
+  .slider__box
+    width: 58%
+    .product--dynamic
+      width: 100%
+      padding-left: 2%
+      padding-right: 2%
+    .product__name
+      padding-top: 2%
+      height: 8.5vw
+      font-size: 3.3vw
+      +breakpoint-min($min-width-xl)
+        margin-bottom: 0
+        padding: 3%
+        height: 60px
+        font-size: 22px
+    .product__price
+      padding: 1% 2%
+      +breakpoint-min($min-width-xl)
+        span
+          &:last-child
+            font-size: 36px
+
+@keyframes stamp
+  0%
+    opacity: 0
+    transform: scale(5)
+  1%
+    opacity: 1
+  80%
+    opacity: 1
+    transform: scale(.8)
+  100%
+    opacity: 1
+    transform: scale(1)
+
+
+@keyframes shakeY
+  0%, 50%, to
+    transform: translateZ(0)
+  5%, 15%, 25%, 35%, 45%
+    transform: translate3d(0, -5px, 0)
+  10%, 20%, 30%, 40%
+    transform: translate3d(0, 10px, 0)
+
+@keyframes fadeInTopLeft
+  0%
+    opacity: 0
+    transform: translate3d(-100%, -100%, 0)
+  to
+    opacity: 1
+    transform: translateZ(0)

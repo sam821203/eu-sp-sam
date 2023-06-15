@@ -1,0 +1,47 @@
+-
+  var tableData = [
+    {
+        name: "上班場",
+        time: "09:00/10:00/11:00",
+        isEnd: true
+    },
+    {
+        name: "午休場",
+        time: "12:00/13:00/14:00",
+        isStart: true
+    },
+    {
+        name: "午茶場",
+        time: "15:00/16:00/17:00",
+    },
+    {
+        name: "下班場",
+        time: "18:00/19:00/20:00",
+    },
+    {
+        name: "宵夜場",
+        time: "21:00/22:00/23:00",
+    },
+  ]
+
+section.table__group.m-bottom--xl
+  .layout--main
+    .event__block
+      .decor__top
+        img(src="event/current/components/time-table/decor-time-top.png" alt="")
+      .decor__bg
+        ul
+          each data, index in tableData
+            li.event__item
+              .item__name= data.name
+              .item__time= data.time
+              .item__cta(class= data.isStart ? "start" : "")(class= data.isEnd ? "end" : "")
+                - sectionId = "#section" + (index + 1)
+                a(href= sectionId)
+                  p.btn--table.btn__table--1 時段未到
+                  p.btn--table.btn__table--2 我要抽獎
+                  p.btn--table.btn__table--3 抽獎結果
+
+
+      .decor__bottom
+        img(src="event/current/components/time-table/decor-time-bottom.png" alt="")

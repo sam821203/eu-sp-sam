@@ -1,0 +1,73 @@
+-
+  var sliderW2M2Data = [
+    { //1
+    link: "https://www.etmall.com.tw/p/217941" ,
+    imgSrc: "event/1st/e-main/components/slider-w2m2/item/p1.png",
+    alt: "伊絲婷香水洗髮精 買3送2",
+    },
+    { //2
+    link: "https://www.etmall.com.tw/i/4681238" ,
+    imgSrc: "event/1st/e-main/components/slider-w2m2/item/p2.png",
+    alt: "全游離升級葉黃素",
+    },
+    { //3
+    link: "https://media.etmall.com.tw/sp/22405/m/index.html" ,
+    imgSrc: "event/1st/e-main/components/slider-w2m2/item/p3.png",
+    alt: "新天鵝堡快手疊杯",
+    },
+    {
+    link: "https://www.etmall.com.tw/i/4303492" ,
+    imgSrc: "event/1st/e-main/components/slider-w2m2/item/p4.png",
+    alt: "靠得住太空棉日用",
+    },
+    {
+    link: "https://www.etmall.com.tw/bs/182710" ,
+    imgSrc: "event/1st/e-main/components/slider-w2m2/item/p5.png",
+    alt: "職人綜合濾掛咖啡",
+    },
+    {
+    link: "https://www.etmall.com.tw/i/4603001" ,
+    imgSrc: "event/1st/e-main/components/slider-w2m2/item/p6.png",
+    alt: "XPG電競主機",
+    },
+    { 
+    link: "https://media.etmall.com.tw/sp/23330/m/index.html" ,
+    imgSrc: "event/1st/e-main/components/slider-w2m2/item/p7.png",
+    alt: "電動牙刷",
+    },
+    {
+    link: "https://www.etmall.com.tw/i/3782694" ,
+    imgSrc: "event/1st/e-main/components/slider-w2m2/item/p8.png",
+    alt: "淡水珍珠手鏈",
+    },
+    { 
+    link: "https://www.etmall.com.tw/i/3815493" ,
+    imgSrc: "event/1st/e-main/components/slider-w2m2/item/p9.png",
+    alt: "心意吊墜項鏈",
+    },   
+    { 
+    link: "https://www.etmall.com.tw/p/218019" ,
+    imgSrc: "event/1st/e-main/components/slider-w2m2/item/p10.png",
+    alt: "機能單人沙發",
+    },
+  ]
+
+section.promo__group.promo__group--slider-w2m2.m-bottom--lg(data-title="學妹這送你")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--title#decorW2M2Title
+        img(src="event/1st/e-main/components/slider-w2m2/title-slider-w2m2.png" alt="")
+      .decor__item.decor__item--item#decorW2M2Item
+        img(src="event/1st/e-main/components/slider-w2m2/decor-slider-w2m2-item.png" alt="")
+      .decor__item.decor__item--right#decorW2M2Right
+        img(src="event/1st/e-main/components/slider-w2m2/decor-slider-w2m2-right.png" alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          .promo__slider.full-parent
+            .swiper-container#sliderW2M2Item
+              ul.swiper-wrapper
+                each data in sliderW2M2Data
+                  li.swiper-slide
+                    a(href= data.link, title=data.alt)
+                      img(src= data.imgSrc, alt=data.alt)

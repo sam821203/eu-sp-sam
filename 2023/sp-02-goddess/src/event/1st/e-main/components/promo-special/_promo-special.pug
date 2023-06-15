@@ -1,0 +1,84 @@
+//- -
+//-   var promoSpecialData = [
+//-     { // 1
+//-       link: "https://media.etmall.com.tw/sp/19733/m/index.html#zingala",
+//-       imgSrc: "event/1st/e-main/components/promo-special/items/item-p-special-1.png",
+//-       alt: "zingala銀角零卡 最高回饋11%"
+//-     },
+//-     { // 2
+//-       link: "https://media.etmall.com.tw/sp/19581/m/index.html",
+//-       imgSrc: "event/1st/e-main/components/promo-special/items/item-p-special-2.png",
+//-       alt: "玉山 最高回饋10%"
+//-     },
+//-     { // 3
+//-       link: "https://media.etmall.com.tw/sp/19733/m/index.html#one",
+//-       imgSrc: "event/1st/e-main/components/promo-special/items/item-p-special-3.png",
+//-       alt: "第一 最高回饋10%"
+//-     },
+//-   ]
+
+-
+  var promoSpecialSlider = [
+    { // 1
+      link: "https://media.etmall.com.tw/sp/21105/m/index.html#aftee",
+      imgSrc: "event/1st/e-main/components/promo-special/items/bn-p-special-1.png",
+      alt: "最高回饋10%"
+    },
+    { // 2
+      link: "https://media.etmall.com.tw/sp/21105/m/index.html#citi",
+      imgSrc: "event/1st/e-main/components/promo-special/items/bn-p-special-2.png",
+      alt: "單件商品分期滿$15,000送$1,800 東森提貨券"
+    },
+    { // 3
+      link: "https://media.etmall.com.tw/sp/21105/m/index.html#esun",
+      imgSrc: "event/1st/e-main/components/promo-special/items/bn-p-special-3.png",
+      alt: "累積分期滿$7,000送$700"
+    },
+    { // 4
+      link: "https://media.etmall.com.tw/sp/21105/m/index.html#ctbc",
+      imgSrc: "event/1st/e-main/components/promo-special/items/bn-p-special-4.png",
+      alt: "單件商品分期滿$12,000送$800"
+    },
+    { // 5
+      link: "https://media.etmall.com.tw/sp/21105/m/index.html#dbs",
+      imgSrc: "event/1st/e-main/components/promo-special/items/bn-p-special-5.png",
+      alt: "累積分期滿$38,000送$3,200"
+    },
+    { // 6
+      link: "https://media.etmall.com.tw/sp/21105/m/index.html#fartrust",
+      imgSrc: "event/1st/e-main/components/promo-special/items/bn-p-special-6.png",
+      alt: "單件商品分期滿$25,000送$2,000"
+    },
+    { // 7
+      link: "https://media.etmall.com.tw/sp/18972/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-special/items/bn-p-special-7.png",
+      alt: "《玉山數位e卡 》天天享5%"
+    },
+  ]
+
+section.promo__group.promo-special.m-bottom--lg(data-title="銀行支付")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--left#decorPromoSpLeft
+        img(src="event/1st/e-main/components/promo-special/decor-promo-sp-left.png", alt="")
+      //- .decor__item.decor__item--right1#decorPromoSpRight
+      //-   img(src="event/1st/e-main/components/promo-special/decor-promo-sp-right1.png", alt="")
+      //- .decor__item.decor__item--right2#decorPromoSpRight2
+      //-   img(src="event/1st/e-main/components/promo-special/decor-promo-sp-right2.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block#promoSpFirst
+          ul.event__block
+            li
+              a(href='https://media.etmall.com.tw/sp/21105/m/index.html#citi', title='最高回饋12%')
+            li
+              a(href='https://media.etmall.com.tw/sp/21105/m/index.html#esun', title='最高回饋10%')
+          .promo__slider
+            .slider__wrap
+              .swiper-container.container--promo-special
+                ul.swiper-wrapper
+                  each data in promoSpecialSlider
+                    li.swiper-slide
+                      a(href= data.link, title=data.alt)
+                        img(src= data.imgSrc, alt=data.alt)
+

@@ -1,0 +1,89 @@
+.promo__group--mission
+  .mission__info
+    font-size: 16px
+    text-align: center
+
+  .group__mission
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+
+  .mission__item
+    flex: 0 0 49%
+    +pos-set(relative, zero) 
+    margin-bottom: 2.5%
+    padding: 20px 10px 10px
+    background-color: $main-color-3
+    border-radius: 8px
+    box-shadow: 0px 4px 0px $main-color-6
+    .btn--intro
+      +pos-set(absolute, zero, 5px)
+      right: 5px
+      cursor: pointer
+    a
+      display: block
+
+    .mission__title,
+    .mission__progress,
+    .mission__value
+      margin-bottom: 10px
+
+    .progress__wrap,
+    .progress__box
+      height: 16px
+      border-radius: 16px
+
+    .mission__title
+      margin-bottom: 10px
+      color: $gray-deep-light
+      font-size: 20px
+      text-align: center
+
+    .progress__wrap
+      width: 100%
+      background-color: $main-color-4
+      box-shadow: inset 0px 1px 2px rgba($gray-deep-dark, 0.25)
+
+    .progress__box
+      background-color: $main-color-2
+      box-shadow: 0px 0px 10px 2px rgba($main-color-2, 0.3)
+
+    .value--my
+      margin-bottom: 5px
+
+    .value--my,
+    .value--team
+      font-size: 16px
+      span
+        &:first-child
+          color: $gray-deep-light
+        &:last-child
+          color: $main-color-5
+
+    .btn--mission
+      padding: 5px 15px
+      color: $main-color-3
+      background-color: $main-gray-light
+      border-radius: 16px
+      font-size: 16px
+      text-align: center
+
+    &.completed
+      a
+        cursor: default
+      .btn--mission
+        color: $gray-light
+        background-color: $gray-medium
+        
+.promo__group--mission
+  @import "event/1st/e-main/components/include/puzzle/_puzzle"
+
+  +breakpoint-min($min-width-xl)
+    .group__zone
+      display: flex
+      gap: 15px
+      .group__block
+        &:first-child
+          flex: 5
+        &:last-child
+          flex: 7

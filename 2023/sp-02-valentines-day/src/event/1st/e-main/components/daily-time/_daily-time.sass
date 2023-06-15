@@ -1,0 +1,124 @@
+.daily-time
+  overflow: hidden
+  .decor__item
+
+    &--left1
+      +pos-set(absolute, base, 0%, 18%)
+      width: 13%
+      +breakpoint-min($min-width-xl)
+        top: 10px
+        left: calc( 50% - 290px )
+      &.active
+        animation: daily-time-tada 4s linear infinite
+    &--left2
+      +pos-set(absolute, zero, 8%, 25%)
+      width: 9%
+      +breakpoint-min($min-width-xl)
+        top: 60px
+        left: calc( 50% - 225px )
+    &--right
+      +pos-set(absolute, zero, 0%)
+      right: 15%
+      width: 20%
+      +breakpoint-min($min-width-xl)
+        top: 5px
+        right: calc( 50% - 330px )
+
+    +breakpoint-min($min-width-xl)
+      width: auto
+
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/daily-time/bg-daily-time.png), 100%)
+  .promo__zone
+    +aspect-ratio(960, 744)
+  .promo__block
+    padding: 17% 4% 0
+    +breakpoint-min($min-width-xl)
+      padding-top: 170px
+  .product__wrap
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-around
+    > div
+      width: 33%
+      &:nth-child(1)
+        .product__time
+          +bg-set(url(event/1st/e-main/components/daily-time/daily-time-hour-1.png), 100%)
+      &:nth-child(2)
+        .product__time
+          +bg-set(url(event/1st/e-main/components/daily-time/daily-time-hour-2.png), 100%)
+      &:nth-child(3)
+        .product__time
+          +bg-set(url(event/1st/e-main/components/daily-time/daily-time-hour-3.png), 100%)
+
+  .product__block
+    padding: 0 2%
+  .product--dynamic
+    width: 100%
+    margin-top: -149%
+    // margin-left: 4.6%
+    +breakpoint-min($min-width-xl)
+      margin-top: -430px
+  .product__time
+    padding-bottom: 187%
+    filter: brightness(50%)
+    + .product
+      filter: brightness(50%)
+    &.active
+      filter: grayscale(0)
+      + .product
+        filter: grayscale(0)
+
+  .product--dynamic
+    .product__name
+      +pos-set(relative, zero)
+      font-size: 12px
+      margin: 0% 3%
+      height: 2.43em
+      line-height: 125% !important
+      +breakpoint-min($min-width-xl)
+        padding-top: 3%
+        height: 2.83em
+        font-size: 22px
+
+  .product__price
+    // margin: 3%
+    span
+      &:last-child
+        font-size: 4vw
+        +breakpoint-min($min-width-xl)
+          font-size: 32px
+
++key-rotate-from-to(-10, 10)
+
+@keyframes wobble
+  0%
+    transform: translateZ(0)
+  7.5%
+    transform: translate3d(-20%, 0, 0) rotate(-5deg)
+  15%
+    transform: translate3d(15%, 0, 0) rotate(3deg)
+  22.5%
+    transform: translate3d(-10%, 0, 0) rotate(-3deg)
+  30%
+    transform: translate3d(5%, 0, 0) rotate(2deg)
+  37.5%
+    transform: translate3d(0%, 0, 0) rotate(-1deg)
+  40%
+    transform: translateZ(0)
+
+@keyframes daily-time-tada
+  0%, 100%
+    transform: scaleX(1)
+  5%, 10%, 40%
+    transform: scale3d(1, 1, 1) rotate(-5deg)
+  15%, 25%, 45%
+    transform: scale3d(1.05, 1.05, 1.05) rotate(5deg)
+  20%, 30%
+    transform: scale3d(1.05, 1.05, 1.05) otate(-5deg)
+  50%
+    transform: scale3d(1, 1, 1) rotate(180deg)
+  51%, 75%, 95%
+    transform: scale3d(1.05, 1.05, 1.05) rotate(185deg)
+  60%, 70%, 80%
+    transform: scale3d(1.05, 1.05, 1.05) rotate(175deg)

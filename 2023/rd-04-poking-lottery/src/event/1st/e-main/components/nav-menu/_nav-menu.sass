@@ -1,0 +1,22 @@
+.nav__wrap
+  +breakpoint-min($min-width-xl)
+    margin-top: -170px
+.nav__block
+  img
+    display: block
+    margin: 0 auto
+.nav__item
+  +pos-set(absolute, base, 89.5%, 50%)
+  line-height: 21px
+  color: $main-color-7
+  font-size: 18px
+  text-align: center
+  transform: translateX(-50%)
+  +breakpoint-min($min-width-xl)
+    top: 710px
+    font-size: 48px
+  &:first-child
+    // +breakpoint-min($min-width-xl)
+      // top: 645px
+
+

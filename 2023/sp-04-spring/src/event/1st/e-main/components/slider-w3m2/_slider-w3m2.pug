@@ -1,0 +1,114 @@
+-
+  var sliderW3M2Item = [
+    { // 1
+      link: "https://www.etmall.com.tw/i/3590407",
+      imgSrc: "event/1st/e-main/components/slider-w3m2/item/slider-item-1.png",
+      alt: "SK-II 青春露230ml 初春保養首選",
+    },
+    { // 2
+      link: "https://www.etmall.com.tw/gp/203623" ,
+      imgSrc: "event/1st/e-main/components/slider-w3m2/item/slider-item-2.png",
+      alt: "【【娘家】益生菌二盒組(60包/盒) 銷售第一益生菌",
+    },
+    { // 3
+      link: "https://www.etmall.com.tw/i/3649014" ,
+      imgSrc: "event/1st/e-main/components/slider-w3m2/item/slider-item-3.png",
+      alt: "INSTA 360 X3 全景360度運動相機 紀錄美好生活",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3077718" ,
+      imgSrc: "event/1st/e-main/components/slider-w3m2/item/slider-item-4.png",
+      alt: "大金 變頻冷氣 一級能效",
+    },
+    { 
+      link: "https://www.etmall.com.tw/c3/140774" ,
+      imgSrc: "event/1st/e-main/components/slider-w3m2/item/slider-item-5.png",
+      alt: "300織天絲兩用被床包組 春季經典新款",
+    },
+    { 
+      link: "https://www.etmall.com.tw/i/3684246" ,
+      imgSrc: "event/1st/e-main/components/slider-w3m2/item/slider-item-6.png",
+      alt: "優德莎莉滴雞精 超值量販組",
+    },
+        { 
+      link: "https://www.etmall.com.tw/gp/209278" ,
+      imgSrc: "event/1st/e-main/components/slider-w3m2/item/slider-item-7.png",
+      alt: "《QIN指靜脈保險箱 好禮三選一",
+    },
+    { 
+      link: "https://www.etmall.com.tw/p/210254" ,
+      imgSrc: "event/1st/e-main/components/slider-w3m2/item/slider-item-8.png",
+      alt: "超薄款透氣防曬衣 輕鬆防曬",
+    },
+  ]
+
+-
+  var sliderW3M2Tab = [
+    { // 1
+      link: "https://www.etmall.com.tw/i/3590407",
+      imgSrc: "event/1st/e-main/components/slider-w3m2/item/slider-tab-1.png",
+      alt: "SK-II 青春露230ml 初春保養首選",
+    },
+    { // 2
+      link: "https://www.etmall.com.tw/gp/203623" ,
+      imgSrc: "event/1st/e-main/components/slider-w3m2/item/slider-tab-2.png",
+      alt: "【【娘家】益生菌二盒組(60包/盒) 銷售第一益生菌",
+    },
+    { // 3
+      link: "https://www.etmall.com.tw/i/3649014" ,
+      imgSrc: "event/1st/e-main/components/slider-w3m2/item/slider-tab-3.png",
+      alt: "INSTA 360 X3 全景360度運動相機 紀錄美好生活",
+    },
+    { // 4
+      link: "https://www.etmall.com.tw/i/3077718" ,
+      imgSrc: "event/1st/e-main/components/slider-w3m2/item/slider-tab-4.png",
+      alt: "大金 變頻冷氣 一級能效",
+    },
+    { 
+      link: "https://www.etmall.com.tw/p/205861" ,
+      imgSrc: "event/1st/e-main/components/slider-w3m2/item/slider-tab-5.png",
+      alt: "300織天絲兩用被床包組 春季經典新款",
+    },
+    { 
+      link: "https://www.etmall.com.tw/gp/205579" ,
+      imgSrc: "event/1st/e-main/components/slider-w3m2/item/slider-tab-6.png",
+      alt: "優德莎莉滴雞精 超值量販組",
+    },
+    { 
+      link: "https://www.etmall.com.tw/p/205861" ,
+      imgSrc: "event/1st/e-main/components/slider-w3m2/item/slider-tab-7.png",
+      alt: "《QIN指靜脈保險箱 好禮三選一",
+    },
+    { 
+      link: "https://www.etmall.com.tw/gp/205579" ,
+      imgSrc: "event/1st/e-main/components/slider-w3m2/item/slider-tab-8.png",
+      alt: "超薄款透氣防曬衣 輕鬆防曬",
+    },
+  ]
+
+section.promo__group.promo__group--slider-w3m2.m-bottom--lg(data-title="初春初登場")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--title#decorW3M2Title
+        img(src="event/1st/e-main/components/slider-w3m2/title-slider-w3m2.png", alt="")
+      .decor__item.decor__item--left#decorW3M2Left
+        img(src="event/1st/e-main/components/slider-w3m2/decor-slider-w3m2-left.png", alt="")
+
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          .promo__slider.full-parent
+            .swiper-container.gallery-item
+              ul.swiper-wrapper
+                each data in sliderW3M2Item
+                  li.swiper-slide
+                    a(href= data.link, title=data.alt)
+                      img(src= data.imgSrc, alt=data.alt)
+              .swiper-button-next
+              .swiper-button-prev
+            .swiper-container.gallery-tab
+              ul.swiper-wrapper
+                each data in sliderW3M2Tab
+                  li.swiper-slide
+                    img(src= data.imgSrc, alt=data.alt)
+

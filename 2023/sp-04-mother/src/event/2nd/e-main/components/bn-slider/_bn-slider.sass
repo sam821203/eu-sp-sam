@@ -1,0 +1,53 @@
+.bn-slider
+  +pos-set(relative, zero)
+  overflow: hidden
+
+  .decor__item
+    &--top
+      +pos-set(absolute, zero, 0)
+      right: 0
+      width: 100%
+      // transform-origin: bottom
+      +breakpoint-min($min-width-xl)
+        top: 3.6%
+        right: calc(50% - 442px)
+        transform: scale(1.085)
+    &--left
+      +pos-set(absolute, zero, 43.8%)
+      right: 0
+      width: 100%
+      +breakpoint-min($min-width-xl)
+        top: 45%
+        right: calc(50% - 442px)
+        transform: scale(1.085)
+    +breakpoint-min($min-width-xl)
+      width: auto
+
+  .promo__wrap
+    +bg-set(url(event/2nd/e-main/components/bn-slider/bg-bn-slider.png), 100%)
+
+  .promo__zone
+    +aspect-ratio(960, 1060)
+    
+  .promo__block
+    +padding-x(6%)
+    .promo__box
+      +pos-set(absolute, zero, 10.5%, 2.5%)
+      +size(95%, 35%)
+      text-align: center
+      +breakpoint-min($min-width-xl)
+        top: 130px
+      a
+        height: 100%
+    .promo__slider
+      +pos-set(absolute, zero)
+      bottom: 2%
+      left: 2.5%
+      width: 95%
+      .swiper-slide-visible
+        a
+          transition: all 0.6s
+      .swiper-slide-visible.swiper-slide-next
+        a
+          transition: all 0.6s
+          filter: brightness(105%)

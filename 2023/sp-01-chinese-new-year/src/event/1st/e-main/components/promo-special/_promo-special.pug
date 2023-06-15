@@ -1,0 +1,113 @@
+-
+  var promoSpecialData = [
+    [
+      {
+        link: "https://www.etmall.com.tw/gp/124090",
+        imgSrc: "event/1st/e-main/components/promo-special/items/bn-p-special-1.jpg",
+        alt: "美妝",
+      },
+      {
+        link: "https://www.etmall.com.tw/c3/134815",
+        imgSrc: "event/1st/e-main/components/promo-special/items/bn-p-special-2.jpg",
+        alt: "保健",
+      },
+      {
+        link: "https://media.etmall.com.tw/sp/10019/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-special/items/bn-p-special-3.jpg",
+        alt: "生活流行",
+      }, 
+      {
+        link: "https://www.etmall.com.tw/gp/204509",
+        imgSrc: "event/1st/e-main/components/promo-special/items/bn-p-special-4.jpg",
+        alt: "生活流行",
+      },
+      {
+        link: "https://media.etmall.com.tw/sp/20331/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-special/items/bn-p-special-5.jpg",
+        alt: "生活流行",
+      },
+      {
+        link: "https://www.etmall.com.tw/p/204191",
+        imgSrc: "event/1st/e-main/components/promo-special/items/bn-p-special-6.jpg",
+        alt: "環球",
+      },
+      {
+        link: "https://media.etmall.com.tw/sp/21172/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-special/items/bn-p-special-7.jpg",
+        alt: "3C",
+      },
+      {
+        link: "https://media.etmall.com.tw/sp/19659/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-special/items/bn-p-special-8.jpg",
+        alt: "家電",
+      },
+    ],
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/20625/m/index.html#citi",
+        imgSrc: "event/1st/e-main/components/promo-special/items/item-p-special-1.png",
+        alt: "最高回饋12%",
+      },
+    ],
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/19581/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-special/items/item-p-special-2.png",
+        alt: "最高回饋10%",
+      },
+    ],
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/20625/m/index.html#sinopac",
+        imgSrc: "event/1st/e-main/components/promo-special/items/item-p-special-3.png",
+        alt: "最高回饋10%",
+      },
+    ],
+    [
+      { // 1
+        link: "https://media.etmall.com.tw/sp/18593/m/index.html#cathay",
+        imgSrc: "event/1st/e-main/components/promo-special/items/bn2-p-special-1.png",
+        alt: "單件商品分期滿$15,000送$1,800 東森提貨券"
+      },
+      { // 2
+        link: "https://media.etmall.com.tw/sp/18593/m/index.html#AEP",
+        imgSrc: "event/1st/e-main/components/promo-special/items/bn2-p-special-2.png",
+        alt: "《玉山數位e卡 》天天享5%"
+      },
+      { // 3
+        link: "https://media.etmall.com.tw/sp/18593/m/index.html#bot",
+        imgSrc: "event/1st/e-main/components/promo-special/items/bn2-p-special-3.png",
+        alt: "累積分期滿$25,000送$2,000"
+      },
+      { // 4
+        link: "https://media.etmall.com.tw/sp/18593/m/index.html#dbs",
+        imgSrc: "event/1st/e-main/components/promo-special/items/bn2-p-special-4.png",
+        alt: "單件商品分期滿$5,000送$250"
+      },
+      { // 5
+        link: "https://media.etmall.com.tw/sp/18960/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-special/items/bn2-p-special-5.png",
+        alt: "累積分期滿$12,000送$1,000"
+      },
+      { // 6
+        link: "https://media.etmall.com.tw/sp/18593/m/index.html#fartrust",
+        imgSrc: "event/1st/e-main/components/promo-special/items/bn2-p-special-6.png",
+        alt: "累積分期滿$25,000回饋$2,000"
+      },
+    ],
+  ]
+
+section.promo__group.promo-special
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          ul.promo__slider
+            each data, index in promoSpecialData
+              li.event__item(id="promoSpecialItem" + (index + 1))
+                .swiper-container.container--promo-special
+                  ul.swiper-wrapper
+                    each item, itemIndex in data
+                      li.swiper-slide.promo__item
+                        a(href=  item.link, title= item.alt)
+                          img(src=  item.imgSrc,  item.alt)

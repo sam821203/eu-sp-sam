@@ -1,0 +1,55 @@
+-
+  var promoSliderItem = [
+    { // 1
+      link: "https://www.etmall.com.tw/gp/138084" ,
+      imgSrc: "event/1st/e-main/components/slider-w1m1/item/p1.png",
+      alt: "破盤75折up",
+    },
+    { // 2
+      link: "https://www.etmall.com.tw/gp/203959" ,
+      imgSrc: "event/1st/e-main/components/slider-w1m1/item/p2.png",
+      alt: "指定品送好禮",
+    },
+    { // 3
+      link: "https://www.etmall.com.tw/i/3104610" ,
+      imgSrc: "event/1st/e-main/components/slider-w1m1/item/p3.png",
+      alt: "輝葉  律動奇機",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/200010" ,
+      imgSrc: "event/1st/e-main/components/slider-w1m1/item/p4.png",
+      alt: "電子票券即買即用",
+    },
+    { 
+      link: "https://media.etmall.com.tw/sp/21194/m/index.html" ,
+      imgSrc: "event/1st/e-main/components/slider-w1m1/item/p5.png",
+      alt: "買指定型號筆電",
+    },
+    { 
+      link: "https://www.etmall.com.tw/gp/129125" ,
+      imgSrc: "event/1st/e-main/components/slider-w1m1/item/p6.png",
+      alt: "Nespresso 膠囊咖啡機",
+    },
+  ]
+
+section.promo__group.promo__group--slider-w1m1(data-title="年貨大街")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--left#decorW1m1Left
+        img(src="event/1st/e-main/components/slider-w1m1/decor-slider-w1m1-left.png", alt="")
+      .decor__item.decor__item--right#decorW1m1Right
+        img(src="event/1st/e-main/components/slider-w1m1/decor-slider-w1m1-right.png", alt="")
+      .decor__item.decor__item--bottom#decorW1m1Bottom
+        img(src="event/1st/e-main/components/slider-w1m1/decor-slider-w1m1-bottom.png", alt="")
+      .decor__item.decor__item--bottom2#decorW1m1Bottom2
+        img(src="event/1st/e-main/components/slider-w1m1/decor-slider-w1m1-bottom2.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          .promo__slider.full-parent
+            .swiper-container#sliderW1m1Item
+              ul.swiper-wrapper
+                each data in promoSliderItem
+                  li.swiper-slide
+                    a(href= data.link, title=data.alt)
+                      img(src= data.imgSrc, alt=data.alt)

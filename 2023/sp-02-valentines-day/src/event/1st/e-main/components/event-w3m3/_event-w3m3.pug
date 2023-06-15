@@ -1,0 +1,54 @@
+-
+  var w3m3Data = [
+    { // 1
+      link: "https://media.etmall.com.tw/sp/20924/m/index.html",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-1.png",
+      alt: "【西雅圖】貝瑞斯塔雪克榛奶茶(榛果風味)x兩盒組-(25g/50入/盒)"
+    },
+    { // 2
+      link: "https://www.etmall.com.tw/Activity/CouponReceiveAll#%e7%be%8e%e9%a3%9f",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-2.png",
+      alt: "紅牛乳清蛋白 超值組合下殺優惠"
+    },
+    { // 3
+      link: "https://media.etmall.com.tw/sp/9337/m/index.html",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-3.png",
+      alt: "君爵柔膚電鬍刀"
+    },
+    { // 4
+      link: "https://www.etmall.com.tw/gp/204768",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-4.png",
+      alt: "BenQ 指定螢幕送好禮!"
+    },
+    { // 5
+      link: "https://www.etmall.com.tw/p/204304",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-5.png",
+      alt: "國際牌電池 滿額贈鋼彈好禮"
+    },
+    { // 6
+      link: "https://media.etmall.com.tw/sp/16651/m/index.html",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-6.png",
+      alt: "SK-II青春露 國際專櫃3折UP"
+    },
+  ]
+
+section.promo__group.promo__group--w3m3.m-bottom--lg(data-title="暖男必備")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--left1#decorEventW3m3Left
+        img(src="event/1st/e-main/components/event-w3m3/decor-event-w3m3-flower1.png", alt="")
+      .decor__item.decor__item--left2#decorEventW3m3Left2
+        img(src="event/1st/e-main/components/event-w3m3/decor-event-w3m3-flower2.png", alt="")
+      .decor__item.decor__item--right#decorEventW3m3Right
+        img(src="event/1st/e-main/components/event-w3m3/decor-event-w3m3-right.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          #w3m3Wrap.event__wrap
+            ul.good__wrap
+              each data, index in w3m3Data
+                li
+                  a(href= data.link, title= data.alt)
+                    - var hasImg = data.imgSrc ? true : false
+                    if (hasImg)
+                      img(src= data.imgSrc, alt= data.alt)

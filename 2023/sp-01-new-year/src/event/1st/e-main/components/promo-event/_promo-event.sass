@@ -1,0 +1,106 @@
+.promo-event
+  // margin-top: -11%
+  overflow: hidden
+  +breakpoint-min($min-width-xl)
+    // margin-top: -100px
+
+  .decor__wrap
+    // padding-bottom: 12%
+  .decor__item
+    &--left1
+      +pos-set(absolute, base, 0%, 0%)
+      width: 17%
+      transform-origin: right bottom
+      opacity: 0
+      &.active
+        animation: promo-scale 2s ease-in infinite both
+      +breakpoint-min($min-width-xl)
+        left: calc( 50% - 460px )
+    &--left2
+      +pos-set(absolute, zero, 5%, 12%)
+      width: 16%
+      +breakpoint-min($min-width-xl)
+        top: 80px
+        left: calc( 50% - 350px )
+    &--right
+      +pos-set(absolute, base, 0%)
+      right: 9%
+      width: 24%
+      +breakpoint-min($min-width-xl)
+        right: calc(50% - 410px)
+      &.active
+        animation: floating-down-up 2s ease-in-out infinite
+    +breakpoint-min($min-width-xl)
+      width: auto
+
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/promo-event/bg-promo-event.png), 100%)
+    +breakpoint-min($min-width-xl)
+      +bg-set(url(event/1st/e-main/components/promo-event/bg-promo-event-web.png), 100%)
+  .promo__zone
+    +aspect-ratio(960, 1320)
+  .promo__block
+    padding: 26% 5.5% 0
+  .promo__box
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    // width: 30%
+    li
+      width: 52%
+      .swiper-container
+        li
+          width: 100%
+          text-align: center
+    .event__item
+      transition: all .5s
+      &:nth-child(3)
+        margin-top: -70%
+        margin-left: 50%
+        padding: 3%
+      &:nth-child(4),
+      &:nth-child(5),
+      &:nth-child(6)
+        padding-top: 5%
+        width: 33%
+      &:nth-child(7)
+        padding-top: 4.2vw
+        width: 100%
+        +breakpoint-min($min-width-xl)
+          padding-top: 47px
+          margin-left: 10px
+          max-width: 640px
+        img
+          border-radius: 5vw
+          +breakpoint-min($min-width-xl)
+            border-radius: 20px
+    .promo__item
+      transition: all 0.5s
+      &:hover,
+      &:active
+        transform: scale(0.95)
+        filter: contrast(1.2)
+        
+
+.animate
+  transition: all 0.5s
+  transform: scale(.95)
+  filter: contrast(1.2)
+
+
+@keyframes floating-down-up
+  0%, 100%
+    transform: translateY(0)
+  50% 
+    transform: translateY(28%)
+
+@keyframes promo-scale
+  0%, 100%
+    transform: scale(.5)
+    opacity: 0
+  20%, 90%
+    transform: scale(1)
+    opacity: 1
+  95%
+    transform: scale(1)
+    opacity: 0

@@ -1,0 +1,106 @@
+-
+  var promoSpecialItems = [
+    [ // 1
+      { 
+        link: "https://media.etmall.com.tw/sp/19483/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-special/items/item-p-special-1-1.png",
+        alt: "最高回饋25%"
+      },
+      { 
+        link: "https://media.etmall.com.tw/sp/22194/m/index.html#citi",
+        imgSrc: "event/1st/e-main/components/promo-special/items/item-p-special-1-2.png",
+        alt: "最高回饋12%"
+      },
+      { 
+        link: "https://media.etmall.com.tw/sp/22194/m/index.html#esun",
+        imgSrc: "event/1st/e-main/components/promo-special/items/item-p-special-1-3.png",
+        alt: "最高回饋10%"
+      },
+    ],
+    [ // 2
+      { 
+        link: "https://media.etmall.com.tw/sp/22194/m/index.html#zingala",
+        imgSrc: "event/1st/e-main/components/promo-special/items/item-p-special-2-1.png",
+        alt: "最高回饋$2,400"
+      },
+      { 
+        link: "https://media.etmall.com.tw/sp/19483/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-special/items/item-p-special-2-2.png",
+        alt: "單筆滿$2,000送$250 東森樂透金"
+      },
+      { 
+        link: "https://media.etmall.com.tw/sp/22194/m/index.html#citi",
+        imgSrc: "event/1st/e-main/components/promo-special/items/item-p-special-2-3.png",
+        alt: "單筆分期滿$15,000送$1,800 東森提貨券"
+      },
+    ],
+    [ // 3
+      { 
+        link: "https://media.etmall.com.tw/sp/22194/m/index.html#esun",
+        imgSrc: "event/1st/e-main/components/promo-special/items/item-p-special-3-1.png",
+        alt: "累積分期滿3,800元送380元"
+      },
+      { 
+        link: "https://media.etmall.com.tw/sp/22194/m/index.html#sinopac",
+        imgSrc: "event/1st/e-main/components/promo-special/items/item-p-special-3-2.png",
+        alt: "累積分期滿$52,000送$5,200"
+      },
+    ],
+    [ // 1
+      { 
+        link: "https://media.etmall.com.tw/sp/22194/m/index.html#ctbc",
+        imgSrc: "event/1st/e-main/components/promo-special/items/item-p-special-4-1.png",
+        alt: "單件商品滿NT$15,000送$1,000"
+      },
+      { 
+        link: "https://media.etmall.com.tw/sp/22194/m/index.html#zingala",
+        imgSrc: "event/1st/e-main/components/promo-special/items/item-p-special-4-2.png",
+        alt: "單件商品滿$30,000回饋$2,400東森提貨券"
+      },
+    ],
+  ]
+
+section.promo__group.promo-special.m-bottom--lg(data-title="銀行支付")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--left#decorPromoSpLeft
+        img(src="event/1st/e-main/components/promo-special/decor-promo-sp-left.png", alt="")
+      .decor__item.decor__item--right#decorPromoSpRight
+        img(src="event/1st/e-main/components/promo-special/decor-promo-sp-right.png", alt="")
+    .promo__wrap
+      
+      a(href="https://media.etmall.com.tw/sp/22194/m/index.html", title="22家銀行 最高回饋12%") 
+      .promo__zone
+        .promo__block
+          ul.event__block
+            li.special__item#specialItem1
+              .swiper-container.container--promo-special
+                ul.swiper-wrapper
+                  each item, itemIndex in promoSpecialItems[0]
+                    li.swiper-slide.promo__item
+                      a(href=  item.link, title= item.alt)
+                        img(src=  item.imgSrc, alt= item.alt)
+
+            li.special__item#specialItem2
+              .swiper-container.container--promo-special
+                ul.swiper-wrapper
+                  each item, itemIndex in promoSpecialItems[1]
+                    li.swiper-slide.promo__item
+                      a(href=  item.link, title= item.alt)
+                        img(src=  item.imgSrc, alt= item.alt)
+
+            li.special__item#specialItem3
+              .swiper-container.container--promo-special
+                ul.swiper-wrapper
+                  each item, itemIndex in promoSpecialItems[2]
+                    li.swiper-slide.promo__item
+                      a(href=  item.link, title= item.alt)
+                        img(src=  item.imgSrc, alt= item.alt)
+
+            li.special__item#specialItem4
+              .swiper-container.container--promo-special
+                ul.swiper-wrapper
+                  each item, itemIndex in promoSpecialItems[3]
+                    li.swiper-slide.promo__item
+                      a(href=  item.link, title= item.alt)
+                        img(src=  item.imgSrc, alt= item.alt)

@@ -1,0 +1,50 @@
+-
+  var w3m3Data = [
+    { // 1
+      link: "https://www.etmall.com.tw/Activity/CouponReceiveAll#%e5%b1%85%e5%ae%b6%e7%94%9f%e6%b4%bb",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-1.png",
+      alt: "居家生活"
+    },
+    { // 2
+      link: "https://www.etmall.com.tw/Activity/CouponReceiveAll#%e7%be%8e%e9%a3%9f",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-2.png",
+      alt: "美食"
+    },
+    { // 3
+      link: "https://www.etmall.com.tw/Activity/CouponReceiveAll#%e6%b5%81%e8%a1%8c%e6%9c%8d%e9%a3%be",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-3.png",
+      alt: "流行服飾"
+    },
+    { // 4
+      link: "https://www.etmall.com.tw/Activity/CouponReceiveAll#3C",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-4.png",
+      alt: "3C"
+    },
+    { // 5
+      link: "https://www.etmall.com.tw/Activity/CouponReceiveAll#%e5%ae%b6%e9%9b%bb",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-5.png",
+      alt: "家電"
+    },
+    { // 6
+      link: "https://www.etmall.com.tw/Activity/CouponReceiveAll#%e7%be%8e%e5%a6%9d",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-6.png",
+      alt: "美妝保健"
+    },
+  ]
+
+section.promo__group.promo__group--w3m3.m-bottom--lg(data-title="品牌神券")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--left#decorEventW3m3Left
+        img(src="event/1st/e-main/components/event-w3m3/decor-event-w3m3-left.png", alt="")
+      .decor__item.decor__item--right#decorEventW3m3Right
+        img(src="event/1st/e-main/components/event-w3m3/decor-event-w3m3-right.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          #w3m3Wrap.event__wrap
+            ul.good__wrap
+              each data, index in w3m3Data
+                li
+                  a(href= data.link, title= data.alt)
+                    img(src= data.imgSrc, alt= data.alt)

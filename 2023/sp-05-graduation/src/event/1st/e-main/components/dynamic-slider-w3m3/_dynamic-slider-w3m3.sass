@@ -1,0 +1,97 @@
+.dynamic-slider-w3m3
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__wrap
+    padding-bottom: 2%
+    +breakpoint-min($min-width-xl)
+      padding-bottom: 0px
+  .decor__item
+    &--title
+      +pos-set(absolute, base, 21%, 5%)
+      width: 55%
+      // &.active
+        // animation: swing 2s linear infinite
+      +breakpoint-min($min-width-xl)
+        top: 300px
+        left: calc(50% - 435px)
+    &--left1
+      +pos-set(absolute, zero, 11%, 2%)
+      width: 18%
+      animation: flash 4s .5s linear infinite
+      +breakpoint-min($min-width-xl)
+        top: 180px
+        left: calc( 50% - 450px )
+    &--left2
+      +pos-set(absolute, zero, 3.5%, 15%)
+      width: 11%
+      transform: rotate(30deg)
+      animation: flash 4s 1s linear infinite
+      +breakpoint-min($min-width-xl) 
+        top: 40px
+        left: calc(50% - 370px)
+        transform: rotate(30deg) scale(0.7)
+    &--left3
+      +pos-set(absolute, zero, 1%, 5%)
+      width: 7%
+      animation: flash 4s 1.5s linear infinite
+      +breakpoint-min($min-width-xl) 
+        top: 0px
+        left: calc(50% - 490px)
+        transform: scale(0.4)
+    &--right1
+      +pos-set(absolute, base, 0%)
+      right: 0%
+      width: 40%
+      +breakpoint-min($min-width-xl)
+        right: calc( 50% - 456px )
+    &--right2
+      +pos-set(absolute, zero, 15%)
+      right: 35%
+      width: 25%
+      transform-origin: right bottom
+      animation: wave 1.5s linear infinite alternate
+      +breakpoint-min($min-width-xl)
+        top: 233px
+        right: calc( 50% - 125px )
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/dynamic-slider-w3m3/bg-dynamic-slider-w3m3.png), 100%)
+  .promo__zone
+    +aspect-ratio(960, 1487)
+  .promo__block
+    padding: 54% 2% 0
+    +breakpoint-min($min-width-xl)
+      padding-top: 535px
+  .promo__box
+    margin: 0 auto
+    +breakpoint-min($min-width-xl)
+      img
+        width: 100%
+  .promo__slider
+    // margin-top: 7%
+    // +breakpoint-min($min-width-xl)
+      // margin-top: 75px
+    .product--dynamic
+      width: 95%
+      margin-bottom: 6%
+
+  .product.product--dynamic
+    border: 2px solid $main-e-background-color-1st-3
+    border-radius: 1.2vw
+    +breakpoint-min($min-width-xl)
+      border: 4px solid $main-e-background-color-1st-3
+      border-radius: 14px
+
+
+@keyframes wave
+  0%
+    transform: rotate(5deg)
+  100%
+    transform: rotate(-10deg)
+
+@keyframes flash
+  0%, 39%
+    opacity: 0
+  40%, 100%
+    opacity: 1

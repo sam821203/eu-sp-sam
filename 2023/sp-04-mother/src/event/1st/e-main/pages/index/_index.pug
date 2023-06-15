@@ -1,0 +1,93 @@
+//- TODO: 打開u-mall選項會自動轉換成U的logo和連結、電梯(預設etmall)
+//- - var isU = true
+
+doctype html
+html(lang='zh-Hant-TW')
+  head
+    meta(name='viewport' content="width=device-width, initial-scale=1")
+
+    //- TODO: CSS檔案注意要放到assets內
+    //- nav CSS (main left & right、sp left & right)
+    //- ===========================
+    //- 行銷主視覺用電梯(main)
+    link(rel="stylesheet" href="main-elevator-left.css")
+    link(rel="stylesheet" href="main-elevator-right.css")
+    //- 商品館、禮包等需要被霸道電梯蓋過去的電梯(sp)
+    //- link#localElevatorLeft(rel="stylesheet" href="sp-elevator-left.css")
+    //- link#localElevatorRight(rel="stylesheet" href="sp-elevator-right.css")
+
+  body.js-main-pages
+    //- header (logo + share tools)
+    //- ===========================
+    include /layout/header/_header
+
+    .decor__bg.full-parent
+    .decor__light
+      .decor__light2
+    .decor__frame#decorFrame
+    .decor__city
+    .decor__clouds.full-parent
+      .decor__cloud.full-parent#decorCloud
+    .decor__fg.full-parent#decorFrontBackground
+
+    .decor__etcat#decorEtcat
+      img(src="event/1st/e-main/pages/index/decor-etcat.png", alt="")
+    .decor__etman#decorEtman
+      img(src="event/1st/e-main/pages/index/decor-etman.png", alt="")
+
+    //- main block (hero + promo section)
+    //- ===========================
+    main#spWrap.sp__wrap
+      //- include /utils/bg-decoration-instance/parallax/_parallax
+      include /event/1st/e-main/components/hero-section/_hero-section
+      include /event/1st/e-main/components/promo-event/_promo-event
+
+    //- other components
+    //- ===========================
+    //- 右sticky電梯定位點，可置放在各處
+    #navRightBar.navRightBar
+    include /event/1st/e-main/components/slider-w2m2/_slider-w2m2
+    include /event/1st/e-main/components/tab-section/_tab-section
+    include /event/1st/e-main/components/event-w4m2/_event-w4m2
+    include /event/1st/e-main/components/daily-slider/_daily-slider
+    include /event/1st/e-main/components/tab-section2/_tab-section2
+    include /event/1st/e-main/components/slider-w3m3/_slider-w3m3
+    include /event/1st/e-main/components/promo-slider/_promo-slider
+    include /event/1st/e-main/components/daily-time/_daily-time
+    include /event/1st/e-main/components/dynamic-slider-w2m2/_dynamic-slider-w2m2
+    include /event/1st/e-main/components/bn-slider/_bn-slider
+    include /event/1st/e-main/components/bn-section/_bn-section
+    include /event/1st/e-main/components/promo-special/_promo-special
+    include /event/1st/e-main/components/bn-section-2/_bn-section-2
+
+    //- 左固定電梯定位點，也可移動，但在ajax要重繪的物件放底部可以讓上方load更快
+    #elevatorHome.elevatorHome.js--main--dialog
+
+    //- footer
+    //- ===========================
+    //- include /layout/footer/_footer
+
+    //- script區
+    include /utils/pug/include/_general.pug
+
+    //- TODO: 以下資源注意要放到assets內
+    //- nav JS (main left & right、sp left & right)
+    //- ===========================
+    //- 行銷主視覺用電梯(main)
+    script(src="main-elevator.js")
+    //- 商品館、禮包等需要被霸道電梯蓋過去的電梯(sp)
+    //- script#checkElevator(src="https://media.etmall.com.tw/sp/11911/check-elevator.js")
+
+    //- data區
+    script#dataTab(src='data-tab.js')
+    script#dataDailySlider(src='data-daily-slider.js')
+
+    script#dataTab2(src='data-tab2.js')
+    //- script#dataDynamicSliderW3M3(src='data-dynamic-slider-2.js')
+    //- script#dataDynamicSlider(src='data-dynamic-slider.js')
+    script#dataDailyTime(src='data-daily-time.js')
+    //- script#dataDynamicHalf(src='data-dynamic-half.js')
+    script#dataDynamicSliderW2M2(src='data-dynamic-slider-w2m2.js')
+
+
+    //- script#checkElevator(src="https://media.etmall.com.tw/sp/11911/check-elevator.js")

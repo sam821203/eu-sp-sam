@@ -1,0 +1,52 @@
+-
+  var promoPuzzle = [
+    {
+      imgSrc: "event/1st/e-main/components/include/puzzle/items/puzzle_01.png",
+      alt: "組隊拚圖賽"
+    },
+    {
+      imgSrc: "event/1st/e-main/components/include/puzzle/items/puzzle_02.png",
+      alt: "組隊拚圖賽"
+    },
+    {
+      imgSrc: "event/1st/e-main/components/include/puzzle/items/puzzle_03.png",
+      alt: "組隊拚圖賽"
+    },
+    {
+      imgSrc: "event/1st/e-main/components/include/puzzle/items/puzzle_04.png",
+      alt: "組隊拚圖賽"
+    },
+    {
+      imgSrc: "event/1st/e-main/components/include/puzzle/items/puzzle_05.png",
+      alt: "組隊拚圖賽"
+    },
+    {
+      imgSrc: "event/1st/e-main/components/include/puzzle/items/puzzle_06.png",
+      alt: "組隊拚圖賽"
+    },
+  ]
+
+//- section.section--cell.promo__group.promo__group--puzzle.m-bottom--xl
+//-   .layout--main
+//-     .group__wrap
+//-       .group__title.block--center.m-bottom--lg
+//-         img(src="event/1st/e-main/components/include/puzzle/title-puzzle.png", alt="拚圖區")
+      
+.group__puzzle.m-bottom--md
+  .puzzle__zone.m-bottom--xs
+    .puzzle__block
+      .puzzle__box
+        each data, index in promoPuzzle
+          if index <=1
+            .puzzle__box--item(class= (index == 0 ? "completed" : ""))
+              img(src= data.imgSrc, alt= data.alt)
+      .puzzle__box
+        each data, index in promoPuzzle
+          if index > 1 && index <= 3
+            .puzzle__box--item(class= (index == 2 ? "completed" : ""))
+              img(src= data.imgSrc, alt= data.alt)
+      .puzzle__box
+        each data, index in promoPuzzle
+          if index >3 && index <= 5
+            .puzzle__box--item
+              img(src= data.imgSrc, alt= data.alt)

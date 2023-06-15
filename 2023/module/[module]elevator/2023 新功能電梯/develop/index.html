@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- ============== 輪播css ============== -->
+  <link rel="stylesheet" href="https://media.etmall.com.tw/sp/12500/swiper.min.css">
+<!-- ============== 共用css ============== -->
+  <link rel="stylesheet" href="https://media.etmall.com.tw/sp/12500/animate.min.css">
+  <link rel="stylesheet" href="https://media.etmall.com.tw/sp/12500/generate_v1.3.1.css">
+
+  <!-- [電梯步驟1] 電梯CSS 不用就關掉 -->
+  <!-- 商品左電梯CSS，要使用還要在步驟2開啟左電梯data資料 -->
+  <!-- <link id="localElevatorLeft" rel="stylesheet" href="sp-elevator-left.css"> -->
+
+  <!-- 商品右電梯CSS，步驟2有測試div可以測試 -->
+  <link id="localElevatorRight" rel="stylesheet" href="sp-elevator-right.css">
+  <!-- [電梯步驟1] 電梯CSS END -->
+
+  <!-- 背景特效區塊的css -->
+  <!-- <link rel="stylesheet" href="./style.css"> -->
+
+  <style>
+
+    body {
+      position: relative;
+    /* 背景顏色 */
+      background-color: #210330;
+    }
+
+    body:before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url(bg-m.jpg) center 0 no-repeat;
+      background-size: 100%;
+    }
+
+    @media screen and (min-width:960px) {
+      body:before {
+        background: url(bg.jpg) center 0 no-repeat;
+        background-size: auto;
+      }
+    }
+
+    body.bg-fixed:before {
+      position: fixed;
+      height: 100vh;
+    }
+
+    /* 調整logo位置大小 */
+    /* .logo {
+      top: 1%;
+      left: 1%;
+      width: 30%;
+      max-width: 220px;
+    } */
+
+      /* 連結測試 */
+      /* .sp__visual a{
+        filter: brightness(500%);
+      } */
+
+      /* 切片測試 */
+      /* .visual__fragment::before {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        border: 1px solid #00f;
+        pointer-events: none;
+      } */
+
+    /* --- 動畫小物件 --- */
+    .animate__wrap {
+      position: relative;
+      z-index: 1;
+      transform: translateZ(0);
+    }
+
+    /*-- 手機版：設定物件距離左邊與上邊的位置，單位可以使用"%"或"vw";width:建議電腦版可以使用auto，手機版則可使用%調整 --*/
+    .animate__wrap .animate__obj--01 {
+      position: absolute;
+      z-index: -1;
+      top: 10.2vw;
+      left: 22vw;
+      width: 36%;
+    }
+
+    /*-- 電腦版：設定物件距離左邊與上邊的位置，單位可以使用"px"，左邊可以挑整clac()後面的px值;width:建議電腦版可以使用auto，手機版則可使用%調整 --*/
+    @media screen and (min-width:960px) {
+      .animate__wrap .animate__obj--01 {
+        top: 112px;
+        left: calc(50% - 250px);
+        width: auto;
+      }
+    }
+
+    /* 滾到位置才會出現的動畫 */
+    .decor__item {
+      position: absolute;
+      z-index: 1;
+      /* 小網位置 */
+      top: 80%;
+      left: 25%;
+      width: 70%;
+      pointer-events: none;
+    }
+
+    /* 滾到位置時要加入的動畫，從animate.css找就可以 */
+    .animate__scroll--01 {
+      animation: jackInTheBox 1s linear 1;
+    }
+
+    @media screen and (min-width:960px) {
+      .decor__item {
+        /* 大網位置 */
+        top: 2140px;
+        left: calc(50% - 200px);
+        width: auto;
+      }
+    }
+    /* --- 動畫小物件 end --- */
+  </style>
+</head>
+
+<!-- 是否要固定背景，不要就拿掉class -->
+<body class="bg-fixed">
+
+  <div class="navRightBar" id="navRightBar"></div>
+  <div class="elevatorHome js--main--dialog" id="elevatorHome"></div>
+  <div id="barHome"></div>
+  <div class="home--icon layout--main" id="iconHome"></div>
+
+  <!-- ====== 背景飄落 start ====== -->
+  <!-- <div class="bg-container">
+    <div class="first-layer bg--first"></div>
+    <div class="second-layer bg--second"></div>
+    <div class="third-layer bg--third"></div>
+  </div> -->
+  <!-- ====== 背景飄落 end ====== -->
+
+  <div class="sp__wallper" id="spWrap">
+    <div class="animate__wrap">
+      <a href="">
+        <img class="animate__animated animate__obj--01 animate__headShake animate__infinite animate__delay-1s" src="ani.png" alt="測試用文字 正式上線要拿掉">
+      </a>
+        
+    </div>
+    <main class="sp__main">
+      <div class="layout--main home--logo">
+        <a href="https://www.etmall.com.tw"><img class="logo" src="ehs-logo.png" alt="東森購物"></a>
+      </div>
+
+      <section class="sp__visual">
+        <div class="layout--main">
+          <ul class="visual--auto clearfix" >
+            <li class="visual__fragment width--auto"><a href="#"><img src="index_01.png" alt="94划算"></a></li>
+            <li class="visual__fragment width--auto"><a href="https://www.etmall.com.tw"><img src="index_02.png" alt="好神拖"></a></li>
+            <li class="visual__fragment width--auto"><a href="https://www.etmall.com.tw"><img src="index_03.png" alt="3M"></a></li>
+            <li class="visual__fragment width--auto"><a href="https://www.etmall.com.tw"><img src="index_04.png" alt="買一送一"></a></li>
+            <li class="visual__fragment width--auto"><a href="https://www.etmall.com.tw"><img src="index_05.png" alt="舒酸定"></a></li>
+            <li class="visual__fragment width--auto"><a href="https://www.etmall.com.tw"><img src="index_12.jpg" alt="舒酸定"></a></li>
+            <li class="visual__fragment width--auto"><a href="https://www.etmall.com.tw"><img src="index_13.jpg" alt="舒酸定"></a></li>
+            <li class="visual__fragment width--auto"><a href="https://www.etmall.com.tw"><img src="index_14.jpg" alt="舒酸定"></a></li>
+          </ul>
+
+        <!-- ====== 滾動動畫 start ====== -->
+          <!-- 滾動動畫要加class名稱 wow，才會判斷位置 -->
+          <div class="decor__item wow animate__scroll--01">
+          <!-- 內層class可以設定到點之後的動畫，如果不需要就全部class都拿掉 -->
+            <div class="animate__animated">
+              <img src="decor-item.png" alt="測試用文字 正式上線要拿掉">
+            </div>
+          </div>
+        <!-- ====== 滾動動畫 end ====== -->
+
+        </div>
+      </section>
+    </main>
+  
+    <section class="bn-w4m2">
+      <div class="layout--main">
+        <div class="banner__title" style="background-image: url(bar.png);"></div>
+        <ul class="banner__wrap clearfix">
+          <li class="banner__item"><a href="#"><img src="menu_01.png" alt="banner"></a></li>
+          <li class="banner__item"><a href="#"><img src="menu_02.png" alt="banner"></a></li>
+          <li class="banner__item"><a href="#"><img src="menu_03.png" alt="banner"></a></li>
+          <li class="banner__item"><a href="#"><img src="menu_04.png" alt="banner"></a></li>
+        </ul>
+      </div>
+    </section>
+
+      <section class="bn-w2m1">
+        <div class="layout--main">
+          <div class="banner__title" style="background-image: url(bar.png);"></div>
+          <ul class="banner__wrap clearfix">
+            <li class="banner__item"><a href="#" title="第一個banner"><img src="750x328_1.jpg" alt="第一個banner"></a></li>
+            <li class="banner__item"><a href="#" title="第二個banner"><img src="750x328_2.jpg" alt="第二個banner"></a></li>
+            <li class="banner__item"><a href="#" title="第三個banner"><img src="750x328_3.jpg" alt="第三個banner"></a></li>
+            <li class="banner__item"><a href="#" title="第四個banner"><img src="750x328_4.jpg" alt="第四個banner"></a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="bn-w2m1">
+        <div class="layout--main">
+          <div class="banner__title" style="background-image: url(bar.png);"></div>
+          <ul class="banner__wrap clearfix">
+            <li class="banner__item"><a href="#" title="第一個banner"><img src="800x300_1.jpg" alt="第一個banner"></a></li>
+            <li class="banner__item"><a href="#" title="第二個banner"><img src="800x300_2.jpg" alt="第二個banner"></a></li>
+            <li class="banner__item"><a href="#" title="第三個banner"><img src="800x300_3.jpg" alt="第三個banner"></a></li>
+            <li class="banner__item"><a href="#" title="第四個banner"><img src="800x300_4.jpg" alt="第四個banner"></a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="bn-w1m1">
+        <div class="layout--main">
+          <div class="banner__title" style="background-image: url(bar.png);"></div>
+          <ul class="banner__wrap clearfix">
+            <li class="banner__item"><a href="#" title="第一個banner"><img src="1015x300.jpg" alt="第一個banner"></a></li>
+            <li class="banner__item"><a href="#" title="第二個banner"><img src="1260x320.jpg" alt="第二個banner"></a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="bn-random">
+        <div class="layout--main">
+          <div class="banner__title" style="background-image: url(bar.png);"></div>
+          <ul class="banner__wrap clearfix">
+            <!-- 大網需要改為2個的BN，class名稱加上 banner__item--half -->
+            <li class="banner__item banner__item--half"><a href="#" title="第一個banner"><img src="750x328_1.jpg" alt="第一個banner"></a></li>
+            <li class="banner__item banner__item--half"><a href="#" title="第二個banner"><img src="750x328_2.jpg" alt="第二個banner"></a></li>
+            <li class="banner__item banner__item--half"><a href="#" title="第三個banner"><img src="800x300_3.jpg" alt="第三個banner"></a></li>
+            <li class="banner__item banner__item--half"><a href="#" title="第四個banner"><img src="800x300_4.jpg" alt="第四個banner"></a></li>
+            <li class="banner__item"><a href="#" title="第四個banner"><img src="1015x300.jpg" alt="第四個banner"></a></li>
+            <li class="banner__item"><a href="#" title="第四個banner"><img src="1260x320.jpg" alt="第四個banner"></a></li>
+          </ul>
+        </div>
+      </section>
+
+
+  </div>
+  <!-- ============== 共用JS ============== -->
+  <script src="https://media.etmall.com.tw/sp/12500/jquery-3.6.0.min.js"></script>
+  <script id="generateScript" src="https://media.etmall.com.tw/sp/12500/generate_v1.2.js"></script>
+
+  <!--[電梯步驟2] 電梯 JS -->
+  <!-- 商品左電梯單機版資料，不用就關掉，要使用還要上方步驟1開啟商品左電梯CSS -->
+  <!-- <script id="dataElevatorLeft" src="data-elevator.js"></script> -->
+
+  <!-- TODO: 此為測試線上現的霸道電梯檢查檔位置 -->
+  <script id="checkElevator" src="test-check/check-elevator.js"></script>
+  <!-- [電梯步驟2] 電梯 JS END -->
+
+  <!-- [測試區] -->
+  <!-- 測試商品右電梯用，上線前必須關掉-->
+  <div data-title="ccc"></div>
+  <!-- 測試霸道電梯用，開啟時上方自動切換電梯要關閉，這支正式上線時需關閉、上方的要開啟回來 -->
+  <!-- <script id="checkElevator" src="https://media.etmall.com.tw/sp/14841/test-elevator.js?87"></script> -->
+
+
+  <!-- ============== 滾動動畫 start ============== -->
+  <script src="wow.min.js"></script>
+  <script>
+    new WOW().init();
+  </script>
+  <!-- ============== 滾動動畫 end ============== -->
+
+  <!-- ============== 輪播 start ============== -->
+  <script src="https://media.etmall.com.tw/sp/12500/swiper.min.js"></script>
+  <script>
+
+    var promoSliderItem = new Swiper('#swiperstyBanner', {
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      },
+      grabCursor: true,
+      lazy: {
+        loadPrevNext: true,
+      },
+      loop: true,
+      perspective: true,
+      // effect: "flip",
+      // flipEffect: {
+      //   slideShadows: false,
+      // },
+      slidesPerView: 1,
+      speed: 600,
+      watchSlidesProgress : true,
+      watchSlidesVisibility : true,
+    } );
+  </script>
+  <!-- ============== 輪播 end ============== -->
+</body>
+
+</html>

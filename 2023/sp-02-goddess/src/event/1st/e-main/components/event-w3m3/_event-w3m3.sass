@@ -1,0 +1,70 @@
+.promo__group--w3m3
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__item
+    &--left1
+      +pos-set(absolute, zero, 20.4%, 18%)
+      +size(59.8%, calc(59.8% * 1.17))
+      background: url("event/1st/e-main/components/event-w3m3/decor-event-w3m3-beauty1.png")
+      background-size: 200% 100%
+      +breakpoint-min($min-width-xl)
+        top: 18.6%
+        left: calc( 50% - 300px )
+        +size(575px, 1190px)
+
+      .js-loading &
+        animation: step-figure 2.2s steps(2) infinite
+
+    &--right
+      +pos-set(absolute, zero, 14.6%)
+      right: 0.1%
+      width: 100%
+      +breakpoint-min($min-width-xl)
+        right: calc( 50% - 480px )
+        width: auto
+
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/event-w3m3/bg-event-w3m3.png), 100%)
+  .promo__zone
+    +aspect-ratio(960, 1660)
+  .promo__block
+    padding: 31% 3% 0 3.2%
+  .good__wrap
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    li
+      width: 31%
+      height: fit-content
+      a
+        text-align: center
+        transition: all 0.5s
+        &:hover,
+        &.active
+          transform: scale(0.95)
+          filter: contrast(1.1)
+
+      &:nth-child(2)
+        margin-top: 32.2%
+      
+      &:nth-child(2n + 4)
+        margin-top: -19%
+
+      &:nth-child(5)
+        margin-top: 13.2%
+
+@keyframes figure-enlarge
+  0%, 100%
+    transform: scale(1)
+  50%
+    transform: scale(1.05)
+
+@keyframes figure-moveX
+  0%, 50%, 100%
+    transform: translateX(0%)
+  25%
+    transform: translateX(10%)
+  75%
+    transform: translateX(-8%)
+
++step(figure, -200%)

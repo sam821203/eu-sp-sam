@@ -1,0 +1,85 @@
+-
+  var promoSpecialData = [
+    { // 1
+      link: "https://media.etmall.com.tw/sp/19733/m/index.html#zingala",
+      imgSrc: "event/1st/e-main/components/promo-special/items/item-p-special-1.png",
+      alt: "zingala銀角零卡 最高回饋11%"
+    },
+    { // 2
+      link: "https://media.etmall.com.tw/sp/19581/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-special/items/item-p-special-2.png",
+      alt: "玉山 最高回饋10%"
+    },
+    { // 3
+      link: "https://media.etmall.com.tw/sp/19733/m/index.html#one",
+      imgSrc: "event/1st/e-main/components/promo-special/items/item-p-special-3.png",
+      alt: "第一 最高回饋10%"
+    },
+    { // 4
+      link: "https://media.etmall.com.tw/sp/19733/m/index.html#citi",
+      imgSrc: "event/1st/e-main/components/promo-special/items/item-p-special-4.png",
+      alt: "花旗 單件商品分期滿$10,000送$800"
+    },
+  ]
+
+-
+  var promoSpecialSlider = [
+    { // 1
+      link: "https://media.etmall.com.tw/sp/18972/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-special/items/bn-p-special-1.png",
+      alt: "週四《玉山數位e卡 》最高享10%現金回饋"
+    },
+    { // 2
+      link: "https://media.etmall.com.tw/sp/19733/m/index.html#shinkong",
+      imgSrc: "event/1st/e-main/components/promo-special/items/bn-p-special-2.png",
+      alt: "新光 累積分期滿$12,000送$1,200"
+    },
+    { // 3
+      link: "https://media.etmall.com.tw/sp/19733/m/index.html#entie",
+      imgSrc: "event/1st/e-main/components/promo-special/items/bn-p-special-3.png",
+      alt: "安泰 累積分期滿$10,000送$1,000"
+    },
+  ]
+
+section.promo__group.promo-special.m-bottom--lg
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--title
+        img(src="event/1st/e-main/components/promo-special/title-promo-special.png", alt="")
+      .decor__item.decor__item--left
+        img(src="event/1st/e-main/components/promo-special/decor-promo-sp-left.png", alt="")
+      .decor__item.decor__item--light
+        img(src="event/1st/e-main/components/promo-special/decor-promo-sp-left.png", alt="")
+      .decor__item.decor__item--right#decorPromoSpRight
+        img(src="event/1st/e-main/components/promo-special/decor-promo-sp-right.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block#promoSpFirst
+          ul.event__block
+            each data, index in promoSpecialData
+              li(id="promoSpecialItem" + (index + 1))
+                a(href= data.link, title=data.alt)
+                  img(src= data.imgSrc, alt=data.alt)
+          .promo__slider
+            .slider__wrap
+              .swiper-container.container--promo-special
+                ul.swiper-wrapper
+                  each data in promoSpecialSlider
+                    li.swiper-slide
+                      a(href= data.link, title=data.alt)
+                        img(src= data.imgSrc, alt=data.alt)
+        .promo__block(style="display:none;")#promoSpSec
+          ul.event__block
+            each data, index in promoSpecialData
+              li(id="promoSpecialItem" + (index + 1))
+                a(href= data.link, title=data.alt)
+                  img(src= data.imgSrc, alt=data.alt)
+          .promo__slider
+            .slider__wrap
+              .swiper-container.container--promo-special
+                ul.swiper-wrapper
+                  each data in promoSpecialSlider
+                    li.swiper-slide
+                      a(href= data.link, title=data.alt)
+                        img(src= data.imgSrc, alt=data.alt)
+

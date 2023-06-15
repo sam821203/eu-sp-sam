@@ -1,0 +1,93 @@
+.mission-card
+  +pos-set(relative, zero)
+  overflow: hidden
+.mission__bg
+  &--center
+    +bg-set(url(event/1st/e-main/components/mission-card/mission-center.png), 100%)
+    background-repeat: repeat
+
+.mission__block
+  width: 75%
+  padding-left: 12%
+
+.mission__text 
+  padding-bottom: 1%
+  color: $gray-deep-light
+  font-size: 4vw
+  &.flex
+    display: flex
+    span
+      &:first-child
+        min-width: 20%
+  +breakpoint-min($min-width-xl)
+    font-size: 36px
+    &:nth-child(1)
+      font-size: 40px
+
+
+.mission__box
+  display: flex
+  margin-top: 3%
+  &--text
+    color: $gray-deep-light
+    font-size: 4vw
+    line-height: 16px
+    +breakpoint-min($min-width-xl)
+      font-size: 36px
+      line-height: 41px
+
+.mission__item
+  display: inline-block
+  width: 65%
+  max-width: 484px
+  height: 15px
+  background-color: $main-color-6
+  border-radius: 15px
+  overflow: hidden
+  +breakpoint-min($min-width-xl)
+    height: 40px
+  &--active
+    display: inline-block
+    width: 50%
+    height: 15px
+    background-color: $main-color-4
+    border-radius: 15px 0 0 15px
+    +breakpoint-min($min-width-xl)
+      height: 40px
+
+
+.click__item--card
+  +pos-set(absolute, base, 8%)
+  right: 5%
+  width: 10%
+  cursor: pointer
+  +breakpoint-min($min-width-xl)
+    top: 40px
+    right: calc( 50% - 420px )
+    width: auto
+
+.mission__stamp
+  +pos-set(absolute, base, 50%)
+  right: 9%
+  width: 15%
+  max-width: 150px
+  transform: translateY(-50%)
+  +breakpoint-min($min-width-xl)
+    right: calc( 50% - 390px )
+    width: auto
+
+  &--completed
+    +pos-set(absolute, second, 0%, 0%)
+    display: none
+    &.active
+      display: block
+
+.font-size--sm
+  font-size: 3vw
+  +breakpoint-min($min-width-xl)
+    font-size: 28px
+
+.font-size--lg
+  font-size: 4.5vw
+  +breakpoint-min($min-width-xl)
+    font-size: 40px

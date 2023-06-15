@@ -1,0 +1,50 @@
+-
+  var myTeamData = [
+    {
+      name: "*A↗HA↘HA↗HA*",
+      price: "999,999,999",
+    },
+    {
+      name: "*欸*",
+      price: "999,999",
+    },
+    {
+      name: "*卍霸氣a中二乂*",
+      price: "99,999",
+      isActive: true,
+    },
+    {
+      name: "*嫩*",
+      price: "9,999",
+    },
+    {
+      name: "*哇*",
+      price: "999",
+    },
+  ]
+
+- var tableHead = ["名次", "團員名稱", ]
+- var tableData = myTeamData
+
+section.section--cell.promo__group.promo__group--my-team.m-bottom--xl
+  .layout--main
+    .group__wrap
+      .group__title.block--center.m-bottom--lg
+        img(src="event/1st/e-main/components/my-team/title-team.png", alt="團隊積分")
+
+      .group__table.m-bottom--md
+        .team__info.m-bottom--lg
+          .info__title 團隊名稱
+          .info__name 一二三四五六七八九十一二三四
+          .info__number
+            span 團隊編號：
+            span EHS5487
+
+        include /event/1st/e-main/components/include/team-table/_team-table
+
+        .team__total
+          .total__title 團隊總累計
+          .total__price
+            span 99,999,999
+            span 分
+

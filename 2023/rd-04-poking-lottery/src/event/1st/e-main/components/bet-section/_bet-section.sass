@@ -1,0 +1,201 @@
+.bet__block
+  .decor__top
+    margin: 0 auto 20px
+    +breakpoint-min($min-width-xl)
+      margin-bottom: 16px
+  .bet__slider
+    margin: 0 auto
+    +breakpoint-min($min-width-xl)
+      margin-bottom: 20px
+  .bet__slider--container
+    margin-bottom: 1%
+    overflow-x: hidden
+    +breakpoint-min($min-width-xl)
+      margin-bottom: 0
+
+    &.gallery-thumbs
+      .bet__slider--wrap
+        position: relative
+        display: flex
+        width: 220vw
+        height: 28vw
+        +breakpoint-min($min-width-xl)
+          width: 2087px
+          height: 266px
+        .bet__slider--item
+          position: relative
+          width: 100%
+          height: 100%
+          filter: brightness(0.7)
+          +breakpoint-min($min-width-xl)
+            width: calc( 960px / 4.6  )
+          &::after
+            position: absolute
+            bottom: 6%
+            left: 45%
+            z-index: 1
+            width: 12%
+            height: 12%
+            +bg-set(url(event/1st/e-main/components/bet-section/bet-slider-active.png), contain)
+            background-repeat: no-repeat
+            background-position: center bottom
+            +breakpoint-min($min-width-xl)
+              bottom: 8%
+          a
+            display: inline-block
+            width: 100%
+            height: 100%
+          &.active
+            filter: brightness(1)
+            &::after
+              content: ""
+
+    &.gallery-bottom
+      margin-bottom: 2%
+      .bet__slider--wrap
+        position: relative
+        display: flex
+        width: 1000vw
+        height: 118vw
+        +breakpoint-min($min-width-lg)
+          height:110vw
+        +breakpoint-min($min-width-xl)
+          width: 9600px
+          height: 100%
+        .bet__slider--item
+          position: relative
+          width: 100%
+          height: 100%
+          overflow: hidden
+          filter: brightness(0.7)
+          a
+            display: inline-block
+            width: 100%
+            height: 100%
+          &.active
+            filter: brightness(1)
+        .lottery-container
+          +pos-set(absolute, base, 0, 0)
+          display: grid
+          grid-template-rows: repeat(10, 1fr)
+          grid-template-columns: repeat(7, 1fr)
+          width: 100%
+          height: 100.5vw
+          border: 1px solid rgba(0,0,0,.3)
+          +breakpoint-min($min-width-xl)
+            width: auto
+            height: auto
+          .item
+            width: calc(100vw / 7)
+            height: calc(100vw / 10)
+            border-right: 1px solid rgba(0, 0, 0, 0.5)
+            border-top: 1px solid rgba(0, 0, 0, 0.5)
+            user-select: none
+            cursor: pointer
+            background-image: url(event/1st/e-main/components/bet-section/item-corner.png)
+            background-size: cover
+            clip-path: inset(0)
+            +breakpoint-min($min-width-xl)
+              width: calc(960px / 7)
+              height: calc(960px / 10)
+            &:nth-child(-n+7)
+              border-top: none
+            > img
+              width: 100%
+              height: 100%
+            &.selected
+              background-image: linear-gradient(rgba(255, 0, 0, 0.5), rgba(255, 0, 0, 0.5))
+              // animation: drawing .8s ease-in forwards 1
+            &.occupied
+              background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4))
+              user-select: none
+              cursor: not-allowed
+      .lottery-info
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 100%
+        height: 46px
+        font-size: 16px
+        font-weight: 700
+        +breakpoint-min($min-width-lg)
+          height: 66px
+          font-size: 20px
+        .round,
+        .draw
+          color: $primary-medium
+        span:nth-child(2)
+          color: #288E9D
+
+      .copyright-info
+        position: absolute
+        bottom: 2%
+        width: 100%
+        font-weight: 400
+        text-align: center
+        +breakpoint-min($min-width-lg)
+          bottom: 0
+        +breakpoint-min($min-width-xl)
+          bottom: 2.3%
+          text-align: right
+
+  .bet__btns
+    display: flex
+    justify-content: space-around
+    width: 100%
+    height: 16vw
+    opacity: 0
+    pointer-events: none
+    +breakpoint-min($min-width-xl)
+      justify-content: center
+      height: 140px
+    
+    .bet__btn
+      display: inline-block
+      width: 48%
+      padding: 0
+      background-color: transparent
+      border: none
+      text-align: center
+      background-image: url(event/1st/e-main/components/bet-section/bet-btn.png)
+      background-repeat: no-repeat
+      background-position: center center
+      background-size: 100%
+      +breakpoint-min($min-width-xl)
+        background-size: auto
+      span,
+      div
+        font-size: 4.5vw
+        font-weight: 700
+        letter-spacing: 1px
+        line-height: 100%
+        +breakpoint-min($min-width-lg)
+          font-size: 24px
+        +breakpoint-min($min-width-xl)
+          font-size: 32px
+          line-height: 140%
+
+      img
+        width: 9%
+        margin-left: 1%
+        margin-right: 1%
+        margin-bottom: 2%
+        transform: none
+        +breakpoint-min($min-width-lg)
+          width: 7%
+        +breakpoint-min($min-width-xl)
+          width: auto
+          transform: scale(1.5)
+
+@keyframes drawing
+  0% 
+    clip-path: inset(0)
+  50%
+    background-image: url(event/1st/e-main/components/bet-section/item-corner.png)
+    clip-path: inset(0 100% 0 0)
+  52%
+    background-image: linear-gradient(rgba(255, 0, 0, 0.5), rgba(255, 0, 0, 0.5))
+    clip-path: inset(0 100% 0 0)
+  100% 
+    background-image: linear-gradient(rgba(255, 0, 0, 0.5), rgba(255, 0, 0, 0.5))
+    clip-path: inset(0)

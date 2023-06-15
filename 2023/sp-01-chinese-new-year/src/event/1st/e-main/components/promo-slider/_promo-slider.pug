@@ -1,0 +1,61 @@
+-
+  var promoSliderItem = [
+    {
+      link: "https://www.etmall.com.tw/i/2078845" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/item-p-1.png",
+      alt: "東風極柔2層抽取衛生紙(150抽x12包x6串)",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/20834/m/index.html" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/item-p-2.png",
+      alt: "【盛香珍】開心果禮桶420g×2桶",
+    },
+    {
+      link: "https://www.etmall.com.tw/bc3/177172" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/item-p-3.png",
+      alt: "【靜思書軒】淨斯 穀糧(12入/盒)",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/118822" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/item-p-4.png",
+      alt: "享食尚滴雞精10入(45ml/入)*2盒-TVBS女人我最大藍心湄推薦NO.1",
+    },
+    {
+      link: "https://www.etmall.com.tw/p/202985" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/item-p-5.png",
+      alt: "",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/11914/m/index.html" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/item-p-6.png",
+      alt: "指定聲寶家電",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/204539" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/item-p-7.png",
+      alt: "",
+    },
+    {
+      link: "https://www.etmall.com.tw/p/204590" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/item-p-8.png",
+      alt: "倍思充電寶10000毫安小巧便攜自帶線手機移動電源一萬pd快充迷你小型適用于蘋果小米華為iphone11大功率12",
+    },
+  ]
+
+section.promo__group.promo__group--promo-slider(data-title="年貨補給站")
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        .decor__wrap.full-parent
+          .decor__item.decor__item--bottom#decorPromoSliderBottom
+            img(src="event/1st/e-main/components/promo-slider/decor-promo-slider-bottom.png", alt="")
+          .decor__item.decor__item--right#decorPromoSliderRight
+            img(src="event/1st/e-main/components/promo-slider/decor-promo-slider-right.png", alt="")
+
+      .promo__block
+        .promo__slider.swiper-container#promoSliderItem
+          ul.swiper-wrapper
+            each data in promoSliderItem
+              li.swiper-slide
+                a(href= data.link, title=data.alt)
+                  img(src= data.imgSrc, alt=data.alt)

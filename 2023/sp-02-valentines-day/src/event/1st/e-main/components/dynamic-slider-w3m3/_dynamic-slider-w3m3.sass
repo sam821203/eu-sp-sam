@@ -1,0 +1,48 @@
+.dynamic-slider-w3m3
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__item
+    &--left
+      +pos-set(absolute, zero, 1%, 25%)
+      width: 11%
+      +breakpoint-min($min-width-xl)
+        top: 30px
+        left: calc(50% - 240px)
+    &--right
+      +pos-set(absolute, zero, 0%)
+      right: 8%
+      width: 28%
+      +breakpoint-min($min-width-xl)
+        top: 15px
+        right: calc(50% - 380px)
+    &--item
+      +pos-set(absolute, base, 0%, 15%)
+      width: 22%
+      &.active
+        animation: key-shake-self-y 1s infinite alternate
+      +breakpoint-min($min-width-xl)
+        top: 10px
+        left: calc(50% - 350px)
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/dynamic-slider-w3m3/bg-dynamic-slider-w3m3.png), 100%)
+  .promo__zone
+    +aspect-ratio(960, 1003)
+  .promo__block
+    padding: 51% 5% 0
+  .promo__box
+    img
+      width: 100%
+      border-radius: 2vw
+      +breakpoint-min($min-width-xl)
+        border-radius: 16px
+  .promo__slider
+    padding-top: 6%
+    .swiper-slide
+      display: flex
+      justify-content: space-around
+      flex-wrap: wrap
+
+
++key-shake-self-y(5)

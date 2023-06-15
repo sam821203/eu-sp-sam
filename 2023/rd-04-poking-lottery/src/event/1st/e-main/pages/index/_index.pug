@@ -1,0 +1,56 @@
+doctype html
+html(lang="zh-Han-TW")
+  head
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="main-elevator-right.css")
+    
+    //- 共用 CSS
+    link(rel='stylesheet' href='https://media.etmall.com.tw/sp/12500/animate.min.css')
+
+  body
+    //- include /layout/header/_header
+    
+    .decor__bg.full-parent
+
+    #navRightBar.navRightBar
+
+    .bg-container
+      .first-layer.bg--first
+      .second-layer.bg--second
+      .third-layer.bg--third
+
+    main.sp__wrap
+      nav
+        ul
+          li.sp-nav__record
+            a.m-top--xs(href='' title='您的東森幣')
+              span 您的東森幣
+              img(src='assets/current/e-coin.png' alt='')
+              span 99,999
+
+      //- hero section
+      //- ===========================
+      include /event/1st/e-main/components/hero-section/_hero-section
+
+    //- other components
+    //- ===========================
+    //- TODO: 如果promo不用和hero綁在一起時放這
+    section.game__group
+      include /event/1st/e-main/components/bet-section/_bet-section
+
+    include /event/1st/e-main/components/awards-section/_awards-section
+    
+    //- include /event/1st/e-main/components/bet-record/_bet-record
+
+    //- script區
+    include /utils/pug/include/_general.pug
+    //- script(src="main-elevator.js")
+
+    //- RD的彈窗結構，HTML必須要放並且display none，結構有三處共用兩組結構
+    include /event/1st/e-main/components/modal-template/_modal-record-list
+    include /event/1st/e-main/components/modal-template/_modal-record-info
+    include /event/1st/e-main/components/modal-template/_modal-animation
+    include /event/1st/e-main/components/modal-template/_modal-3D-animation
+    include /event/1st/e-main/components/modal-template/_modal-awards-img
+
+    //- include /event/1st/e-main/components/modal-template/_modal-alert

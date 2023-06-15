@@ -1,0 +1,207 @@
+.hero
+  +pos-set(relative)
+  +bg-set(url(event/2nd/e-main/components/hero-section/bg-hero.jpg), 100%)
+  overflow: hidden
+
+  .fg--items
+    display: none
+
+  +breakpoint-min($min-width-xl)
+    padding-bottom: 2.6%
+    +bg-set(url(event/2nd/e-main/components/hero-section/bg-hero-web.jpg), auto)
+
+    .fg--scenes,
+    .fg--items
+      width: 100%
+      .fg
+        +pos-set(absolute, zero, 0, 0)
+        width: 100%
+        will-change: auto
+    .fg--scenes
+      .fg--1
+        +bg-set(url(event/2nd/e-main/components/hero-section/fg-1.png), auto)
+        background-position: 49% 50%
+        .js-loading &
+          animation: bounceInUp 1s both
+      .fg--2
+        +bg-set(url(event/2nd/e-main/components/hero-section/fg-2.png), auto)
+        background-position: 54% 130px
+        .js-loading &
+          animation: bounceInUp 1s 0.1s both
+      .fg--3
+        +bg-set(url(event/2nd/e-main/components/hero-section/fg-3.png), auto)
+        .js-loading &
+          transform-style: preserve-3d
+          animation: slideInDown 0.75s 0.15s both, flag-skew 5s 1s both ease-in-out alternate infinite
+
+    .fg--items
+      display: block
+      .fg--4
+        top: 145px
+        left: calc( 50% - 800px )
+        transform-origin: 50% 25%
+        width: 273px
+        .js-loading &
+          animation: rotateInUpRight 2s 1.75s both, rotateRight 3s 3.75s linear alternate infinite
+
+      .fg--5
+        top: 330px
+        left: calc( 50% + 560px )
+        width: 334px
+        transform-origin: 40% 80%
+        .js-loading &
+          animation: lightSpeedInRight 0.75s 1.5s both, upDown 3s 3s linear alternate infinite
+
+  .hero__wrap
+    +aspect-ratio(960, 1230)
+    z-index: map-get($zindex, base)
+    .hero__title
+      overflow: hidden
+    .title
+      &--main
+        +pos-set(relative, second)
+        margin-top: 3%
+        margin-left: 13.5%
+        width: 75%
+        +breakpoint-min($min-width-xl)
+          margin-top: 23px
+      &__block
+        display: flex
+        justify-content: center
+        &:first-child
+          opacity: 0
+          & .title__box
+            width: 70%
+            margin-left: 2%
+
+          .js-loading &
+            opacity: 1
+            animation: bounceInUp 0.75s 0.5s both
+
+        &:last-child
+          margin-top: -13%
+          & .title__box
+            flex: 0 0 38%
+            opacity: 0
+            &:nth-child(1)
+              .js-loading &
+                opacity: 1
+                animation: bounceInUp 1s 0.55s both
+            &:nth-child(2)
+              +pos-set(relative, base)
+              margin-left: -8%
+              margin-right: -4.5%
+              .js-loading &
+                opacity: 1
+                animation: bounceInUp 1s 0.65s both 
+            &:nth-child(3)
+              .js-loading &
+                opacity: 1
+                animation: bounceInUp 1s 0.75s both 
+        +breakpoint-min($min-width-xl)
+          &:first-child
+            & .title__box
+              margin-left: 22px
+          &:last-child
+            margin-top: -89px
+            & .title__box
+              flex-basis: 42%
+              &:nth-child(2)
+                margin-top: 10px
+                margin-left: -75px
+                margin-right: -55px
+              
+      &--decor-1
+        +pos-set(absolute, zero)
+        top: 16%
+        right: 0%
+        width: 95%
+        opacity: 0
+        .js-loading &
+          opacity: 1
+          animation: bounceInUp 1s 0.25s both
+        +breakpoint-min($min-width-xl)
+          left: calc(50% - 448px)
+      &--decor-2
+        +pos-set(absolute, second)
+        top: 6.5%
+        right: 0.5%
+        width: 22%
+        opacity: 0
+        transform-origin: left bottom
+        .js-loading &
+          opacity: 1
+          animation: big-small 0.2s 1.25s both, rotateRight 3s 2s linear infinite
+        +breakpoint-min($min-width-xl)
+          top: 65px
+          right: calc(50% - 448px)
+
+
+  .video--decor
+    +pos-set(absolute, under)
+    top: 17%
+    left: -0.5%
+    width: 100%
+    +breakpoint-min($min-width-xl)
+      top: 160px
+
+  .title--sub
+    +pos-set(absolute, under)
+    top: 47.5%
+    left: 19.5%
+    width: 60.25%
+    +breakpoint-min($min-width-xl)
+      top: 535px
+
+@import event/2nd/e-main/components/hero-section/hero-video/_hero-video.sass
+
+
+@keyframes bounceInUp
+  0%, 60%, 75%, 90%, to
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+  0%
+    opacity: 0
+    transform: translate3d(0, 3000px, 0) scaleY(5)
+  60%
+    opacity: 1
+    transform: translate3d(0, -20px, 0) scaleY(.9)
+  75%
+    transform: translate3d(0, 10px, 0) scaleY(.95)
+  90%
+    transform: translate3d(0, -5px, 0) scaleY(.985)
+  to
+    transform: translateZ(0)
+
+@keyframes slideInDown
+  0%
+    transform: translate3d(0, -100%, 0)
+    visibility: visible
+  to
+    transform: translateZ(0)
+
+@keyframes rotateRight
+  0%, 50%, 100%
+    transform: translateZ(0)
+  25%
+    transform: rotate(-5deg)
+  75%
+    transform: rotate(3deg)
+
+@keyframes upDown
+  0%
+    transform: translateY(0)
+  to
+    transform: translateY(-10%)
+
+@keyframes flag-skew
+  100%
+    transform: rotate(2deg) skew(0deg, -2deg) scaleX(102%) translate(-2%, 0)
+
+@keyframes big-small
+  0%
+    opacity: 0
+    transform: scale(5)
+  1%
+    opacity: 1
+  100%
+    transform: scale(1)

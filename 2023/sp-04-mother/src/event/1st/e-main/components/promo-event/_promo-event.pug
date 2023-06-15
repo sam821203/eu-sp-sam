@@ -1,0 +1,160 @@
+-
+  var promoEventData = [
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/19552/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-1-1.png",
+        alt: "新會員限定-領券享10元超慧購",
+      },
+      {
+        link: "https://media.etmall.com.tw/sp/19552/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-1-2.png",
+        alt: "首購滿額抽Haier海爾 瞬熱式淨水器(市價$7,990元)",
+      },
+      {
+        link: "https://www.etmall.com.tw/Activity/Reg/220",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-1-3.png",
+        alt: "東森請客喝咖啡-揪好友1送1",
+      },
+    ],
+    [
+      {
+        link: "https://www.etmall.com.tw/Activity/Reg/220",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-2-1.png",
+        alt: "全站滿額抽bakkarat極致包覆臀感按摩椅(+圖)",
+      },
+    ],
+    [
+      {
+        link: "https://www.etmall.com.tw/member/taskActivity",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-3-1.png",
+        alt: "AI畫我心目中的超人媽咪 票選活動",
+      },
+      {
+        link: "https://m.etmall.com.tw/Activity/Lottery/14cf446626d33874478dc7064588ba1e",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-3-2.png",
+        alt: "滿額加碼抽 母親節當日最高100%樂透金回饋",
+      },
+    ],
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/22862/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-4-1.png",
+        alt: "全家取件送全家購物金30元",
+      },
+      {
+        link: "https://media.etmall.com.tw/sp/22489/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-4-2.png",
+        alt: "LINE WEBTOON好禮四重送",
+      },
+      {
+        link: "https://media.etmall.com.tw/sp/22558/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-4-3.png",
+        alt: "霹靂Q俠授權聯名",
+      },
+    ],
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/22638/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-5-1.png",
+        alt: "離島配送 累積滿額贈120枚樂透金",
+      },
+      {
+        link: "https://www.etmall.com.tw/Activity/CollectPointExchangeActivity/2023031262a26a",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-5-2.png",
+        alt: "集點換豪禮",
+      },
+      {
+        link: "https://www.etmall.com.tw/Activity/GroupSale",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-5-3.png",
+        alt: "幸福集氣購",
+      },
+    ],
+    [
+      {
+        link: "https://www.etmall.com.tw/member/taskActivity",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-6-1.png",
+        alt: "挑戰任務拿$550",
+      },
+      {
+        link: "https://www.etmall.com.tw/Activity/dl/LuckyDraw/1ea6eeb1e267af528279303809797f3b",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-6-2.png",
+        alt: "會員專屬天天免費抽樂透金",
+      },
+    ],
+  ]
+
+//- TODO: 如果promo不和hero綁一起時要有自己的section和layout--main
+section.promo__group.promo-event
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--cloak#decorPromoCloak
+        img(src="event/1st/e-main/components/promo-event/decor-promo-event-cloak.png", alt="")
+      .decor__item.decor__item--figure#decorPromoFigure
+        img(src="event/1st/e-main/components/promo-event/decor-promo-event-figure.png", alt="")
+      .decor__item.decor__item--right
+        img(src="event/1st/e-main/components/promo-event/decor-promo-event-right.png", alt="")
+      .decor__item.decor__item--1
+        img(src="event/1st/e-main/components/promo-event/decor-promo-event-item-1.png", alt="")
+      .decor__item.decor__item--2
+        img(src="event/1st/e-main/components/promo-event/decor-promo-event-item-2.png", alt="")
+      
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          .promo__box
+            .item__box
+              .event__item
+                .swiper-container.container--promo-event
+                  ul.swiper-wrapper
+                    each item, itemIndex in promoEventData[0]
+                      li.swiper-slide.promo__item
+                        a(href=  item.link, title= item.alt)
+                          img(src=  item.imgSrc, alt= item.alt)
+            .item__box
+              .event__item
+                .swiper-container.container--promo-event
+                  ul.swiper-wrapper
+                    each item, itemIndex in promoEventData[1]
+                      li.swiper-slide.promo__item
+                        a(href=  item.link, title= item.alt)
+                          img(src=  item.imgSrc, alt= item.alt)
+
+          .promo__box
+            .item__box
+              .event__item
+                .swiper-container.container--promo-event
+                  ul.swiper-wrapper
+                    each item, itemIndex in promoEventData[2]
+                      li.swiper-slide.promo__item
+                        a(href=  item.link, title= item.alt)
+                          img(src=  item.imgSrc, alt= item.alt)
+
+          .promo__box
+            .item__box
+              .event__item
+                .swiper-container.container--promo-event#decorPromoEvent
+                  ul.swiper-wrapper
+                    each item, itemIndex in promoEventData[3]
+                      li.swiper-slide.promo__item
+                        a(href=  item.link, title= item.alt)
+                          img(src=  item.imgSrc, alt= item.alt)
+
+            .item__box
+              .event__item
+                .swiper-container.container--promo-event
+                  ul.swiper-wrapper
+                    each item, itemIndex in promoEventData[4]
+                      li.swiper-slide.promo__item
+                        a(href=  item.link, title= item.alt)
+                          img(src=  item.imgSrc, alt= item.alt)
+
+          .promo__box
+            .item__box
+              .event__item
+                .swiper-container.container--promo-event
+                  ul.swiper-wrapper
+                    each item, itemIndex in promoEventData[5]
+                      li.swiper-slide.promo__item
+                        a(href=  item.link, title= item.alt)
+                          img(src=  item.imgSrc, alt= item.alt)

@@ -1,0 +1,92 @@
+.dynamic-slider
+  // +pos-set(relative, zero)
+  overflow: hidden
+  .decor__wrap
+    padding-bottom: 1%
+    +breakpoint-min($min-width-xl)
+      padding-bottom: 0
+  .decor__item
+    &--title
+      +pos-set(absolute, zero, 13%, 14.5%)
+      width: 70%
+      opacity: 0
+      +breakpoint-min($min-width-xl)
+        top: 186px
+        left: calc(50% - 335px)
+      &.active
+        animation: bounce-in-right .6s ease forwards 1
+
+    +breakpoint-min($min-width-xl)
+      width: auto
+
+  .promo__wrap
+    +bg-set(url(event/2nd/e-main/components/dynamic-slider/bg-dynamic-slider.png), 100%)
+  .promo__zone
+    +aspect-ratio(960, 1450)
+  .promo__block
+    padding: 33.5% 9% 0 8.2%
+    +breakpoint-min($min-width-xl)
+      padding-top: 312px
+  .promo__slider
+    overflow: hidden
+    height: 90vw
+    max-height: 800px
+    +breakpoint-min($min-width-xl)
+      height: 77vw
+
+    .dynamic__item
+      .product__name
+        margin-top: 0
+        margin-bottom: 0
+        +breakpoint-min($min-width-xl)
+          .product__name
+            margin-top: 5px
+            margin-bottom: 15px
+
+      &:first-child
+        width: 100%
+        margin: 0% auto 0
+        +breakpoint-min($min-width-xl)
+          margin-top: 35px
+        .product--dynamic
+          padding-bottom: 0%
+          .product__img
+            &:before
+              padding-bottom: 44%
+            img
+              left: 0%
+              +breakpoint-min($min-width-xl)
+                left: 2.5%
+            &:first-child
+              img
+                border-radius: 1.2vw
+                +breakpoint-min($min-width-xl)
+                  border-radius: 12px
+
+        .product__text
+          display: none
+
+      &:nth-child(2),
+      &:nth-child(3),
+      &:last-child
+        +pos-set(absolute, zero, 43%)
+        width: calc(33.33% - 2.5px)
+        +breakpoint-min($min-width-xl)
+          top: 380px
+          width: calc(33.33% - 7.5px)
+        
+      &:nth-child(2)
+        left: 0
+
+      &:nth-child(3)
+        left: 33.8%
+        +breakpoint-min($min-width-xl)
+          left: 269px
+
+      &:last-child
+        right: 0
+
+    .swiper-slide-prev
+      opacity: 0
+
++bounce-in(right)

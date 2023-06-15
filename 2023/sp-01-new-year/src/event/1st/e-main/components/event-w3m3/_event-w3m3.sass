@@ -1,0 +1,83 @@
+.promo__group--w3m3
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__wrap
+    // padding-bottom: 4%
+  .decor__item
+
+    &--left
+      +pos-set(absolute, zero, 1%, 5%)
+      width: 14%
+      // transform: translateX(-12%)
+      +breakpoint-min($min-width-xl)
+        top: 20px
+        left: calc( 50% - 430px )
+      &.active
+        animation: scale-shine 1.8s .9s linear infinite
+
+    &--right
+      +pos-set(absolute, zero, 2%)
+      right: 4%
+      width: 14%
+      +breakpoint-min($min-width-xl)
+        top: 20px
+        right: calc( 50% - 440px )
+      &.active
+        .js-loading &
+          animation: scale-shine 1.8s linear infinite
+
+    +breakpoint-min($min-width-xl)
+      width: auto
+      
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/event-w3m3/bg-event-w3m3.png), 100%)
+  .promo__zone
+    +aspect-ratio(960, 1013)
+  .promo__block
+    padding: 19% 5% 0
+    .good__wrap
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-evenly
+      li
+        width: 31%
+        margin-bottom: 1%
+        a
+          transition: all 0.5s
+          &:hover
+            transform: translateY(-12px)
+            filter: saturate(105%)
+          img
+            filter: brightness(95%)
+          &.active
+            transition: transform .4s
+            transform: translateY(-4px)
+            +breakpoint-min($min-width-xl)
+              transform: translateY(-12px)e
+            img
+              filter: saturate(105%)
+
+@keyframes scale-shine
+  0%, 100%
+    transform: rotate(-10deg) scale(1)
+    filter: brightness(1)
+  50%
+    transform: rotate(6deg) scale(1.1)
+    filter: brightness(1.2)
+
+@keyframes ice-shine
+  0%, 65%
+    opacity: 0
+    left: -50%
+  75%
+    opacity: 1
+    left: 75%
+  76%
+    opacity: 0
+    left: 75%
+  90%
+    opacity: 0
+    left: -50%
+  100%
+    opacity: 1
+    left: 75%

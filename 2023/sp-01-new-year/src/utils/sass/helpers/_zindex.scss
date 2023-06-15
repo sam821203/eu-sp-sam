@@ -1,0 +1,47 @@
+// ==========================================================================
+// Management z-index setting -- 為了vscode渲染色正常所以用.scss
+// ==========================================================================
+
+// Common z-index setting
+//   ========================================================================
+$zindex: (
+	up-overlay: 20,
+	overlay: 19,
+	go-top: 18,
+	logo: 17,
+	nav: 17,
+	// 9k-30: 9030,
+	// modal: 9000,
+	// overlay-2: 8002,
+	// overlay-1: 8001,
+	// overlay: 8000,
+	// dropdown: 7000,
+	// 7k1 : 7001,
+	// 7k: 7000,
+	// backTop: 6000,
+	// 6k: 6000,
+	// 5k: 5000,
+	// bnElems: 500,
+	twenty: 20, // 大於overlay(大於overlay主物件、overlay上的nav)
+	nineteen: 19, // overlay
+	eighteen: 18, // go top
+	seventeen: 17, // 小於overlay的最上層(nav、logo等)
+	sixteen: 16,
+	fifteen: 15,
+	fourteen: 14,
+	thirteen: 13,
+	twelve: 12,
+	eleven: 11,
+	ten: 10,
+	ninth: 9,
+	eighth: 8,
+	seventh: 7,
+	sixth: 6,
+	fifth: 5,
+	fourth: 4,
+	third: 3,
+	second: 2,
+	base: 1,
+	zero: 0,
+	under: -1
+);

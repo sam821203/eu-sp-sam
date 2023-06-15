@@ -1,0 +1,29 @@
+.video__wrap
+  +pos-set(relative, fifth, 0)
+  margin-top: -30%
+  
+.hero__video
+  width: 100%
+  text-align: center
+
+.video__box
+  width: 100%
+  // opacity: 0
+  // transform: scale(0)
+  // transform-origin: bottom center
+  // .js-loading &
+  //   animation: video-enlarge 1s .4s ease-out 1 forwards
+  // +breakpoint-min($min-width-xl)
+  //   width: auto
+
+@keyframes video-enlarge
+  0%
+    opacity: 0
+    transform: scale(0)
+  50%
+    opacity: 1
+    transform: scale(1.05)
+  60%, 100%
+    opacity: 1
+    transform: scale(1)
+  

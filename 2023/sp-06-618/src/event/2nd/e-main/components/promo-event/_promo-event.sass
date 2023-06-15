@@ -1,0 +1,110 @@
+.promo-event
+  +pos-set(relative, base)
+  overflow: hidden
+  margin-top: -8.5%
+  +breakpoint-min($min-width-xl)
+    margin-top: -7.9%
+  +breakpoint-min($min-width-4xl)
+    margin-top: -6.6%
+
+  .decor__item
+    +pos-set(absolute, fifth, 0%, 2%)
+    width: 96%
+    pointer-events: none
+    // animation: flash 4s .5s linear infinite
+    +breakpoint-min($min-width-xl)
+      left: calc( 50% - 464px )
+      width: auto
+  .promo__wrap
+    +bg-set(url(event/2nd/e-main/components/promo-event/bg-promo-event.png), 100%) 
+    +breakpoint-min($min-width-xl)
+      background-size: auto 
+      
+  .promo__zone
+    +aspect-ratio(960, 1098)
+
+  .promo__block
+    padding: 4% 4.1% 0
+    +breakpoint-min($min-width-xl)
+      // padding: 16% 8% 0
+
+  .promo__box
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+  
+  .event__item
+    transition: all .5s
+    // filter: contrast(0.95)
+    &.animate
+      filter: brightness(1.1)
+    &:nth-child(1)
+      width: 42%
+      z-index: map-get($zindex, fourth)
+      &.animate
+        transform: translate(-2%, 8%) scale(1.02)
+    &:nth-child(2)
+      margin-left: -10%
+      width: 67.3%
+      z-index: map-get($zindex, fourth)
+      &.animate
+        transform: translate(-3%, 7%) scale(1.03)
+    &:nth-child(3)
+      margin-top: -19%
+      width: 100%
+      z-index: map-get($zindex, third)
+      &.animate
+        transform: translate(0%, 7%) scale(1.02)
+    &:nth-child(4)
+      margin-top: -17%
+      width: 42%
+      z-index: map-get($zindex, second)
+      &.animate
+        transform: translate(1%, 8%) scale(1.03)
+    &:nth-child(5)
+      margin-top: -24%
+      margin-left: -11%
+      width: 67%
+      z-index: map-get($zindex, second)
+      &.animate
+        transform: translate(-1%, 6%) scale(1.02)
+    &:nth-child(6)
+      margin-top: -22%
+      width: 66%
+      z-index: map-get($zindex, base)
+      &.animate
+        transform: translate(1%, 5%) scale(1.03)
+    &:nth-child(7)
+      margin-top: -22%
+      margin-left: -15%
+      width: 49%
+      z-index: map-get($zindex, zero)
+      &.animate
+        transform: translate(1%, 4%) scale(1.01)
+
+
+// .animate
+//   transition: all 0.5s
+//   transform: scale(0.95)
+//   filter: contrast(1.2)
+
+
+@keyframes backOutUp
+  0%
+    transform: scale(1)
+    opacity: 1
+  20%
+    transform: translateY(0) scale(.7)
+    opacity: .7
+  to
+    transform: translateY(-700px) scale(.7)
+    opacity: .7
+
+@keyframes backInDown
+  0%
+    transform: translateY(-300px) scale(.7)
+  80%
+    transform: translateY(0) scale(.7)
+  to
+    transform: scale(1)
+    opacity: 1

@@ -1,0 +1,32 @@
+.note__box
+  padding: 2% 8% 0
+  width: 100%
+  +bg-set(url(event/current/components/note/decor-note-bg.png), 100%, null, null, repeat)
+  overflow: hidden
+  color: $gray-deep-light
+  .note__part
+    h3
+      margin-bottom: 16px
+      +font-styling(24px, 700)
+      line-height: 140%
+    ol
+      list-style: decimal
+      li
+        margin-left: 8px
+        margin-bottom: 8px
+        padding-left: 4px
+        +font-styling(16px, 400)
+        p
+          margin-top: 4px
+          margin-bottom: 4px
+        +breakpoint-min($min-width-lg)
+          margin-bottom: 16px
+          +font-styling(18px)
+          line-height: 140%
+          p
+            margin-top: 8px
+            margin-bottom: 8px
+
+        +breakpoint-min($min-width-xl)
+          margin-left: 52px
+

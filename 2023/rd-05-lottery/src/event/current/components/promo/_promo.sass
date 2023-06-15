@@ -1,0 +1,361 @@
+.promo__w3m3
+  .promo__block
+    .decor__bg
+      +bg-set(url(event/current/components/promo/decor-promo-bg.png), 100%, null, null, repeat)
+      .promo__items
+        +flex-container(space-around)
+        +size(100%)
+        +padding-x(2%)
+        .promo__item
+          +size(30%, 100%)
+          max-width: 282px
+          max-height: 616px
+          border-radius: 8px
+
+          // ========== time__wrap ==========
+          .time__wrap
+            +flex-container
+            +layout-center
+            +size(80%, 8vw)
+            padding: 3%
+            background-color: $warning-500
+            border-radius: 1vw 1vw 0 0
+            +breakpoint-min($min-width-md)
+              height: 6vw
+            +breakpoint-min($min-width-xl)
+              max-height: 80px
+              border-radius: 12px 12px 0 0
+            .time__text
+              +flex-container
+              +size(100%)
+              +font-styling(3.5vw, 500)
+              +breakpoint-min($min-width-xxl)
+                font-size: 42px
+                transform: translateY(0)
+              .time__icon
+                height: 100%
+                img
+                  +size(100%)
+                  vertical-align: baseline
+              .time__block
+                +flex-container
+                +size(30%, 100%)
+                .time__box
+                  +flex-container
+                  +margin-x(2%)
+                  +size(40%, 80%)
+                  background-color: $gray-deep-light
+                  span
+                    line-height: 1
+              .time__colon
+                +margin-x(1%)
+                color: $gray-deep-light
+
+          // ========== card__title ==========
+          .card__title
+            margin: auto
+            +size(100%, 6vw)
+            max-height: 52px
+            background-color: $warning-500
+            border-radius: 2vw 2vw 0 0
+            +font-styling(16px, 500, center)
+            color: $gray-deep-light
+            +breakpoint-min($min-width-xl)
+              border-radius: 20px 20px 0 0
+            .card__overlay
+              height: 52px
+              border-radius: 2vw 2vw 0 0
+              background-color: $gray-deep-dark-opacity40
+              +breakpoint-min($min-width-xl)
+                border-radius: 20px 20px 0 0
+              span
+                +font-styling(4vw, 700)
+                line-height: 140%
+                +breakpoint-min($min-width-xl)
+                  +font-styling(38px, 700)
+                  line-height: 130%
+              .card__num
+                +margin-x(2%)
+                font-family: $font-family-arial
+                +font-styling(4vw, 700)
+                line-height: 120%
+                +breakpoint-min($min-width-xl)
+                  +font-styling(42px, 700)
+                line-height: 114%
+
+          // ========== card__wrap ==========
+          .card__wrap
+            +pos-set(relative, zero)
+            +flex-container
+            flex-direction: column
+            height: 36.5vw
+            background-color: $warning-500
+            border-radius: 0 0 8% 8%
+            +breakpoint-min($min-width-sm)
+              height: 38vw
+            +breakpoint-min($min-width-md)
+              height: 39vw
+            +breakpoint-min($min-width-xl)
+              max-height: 326px
+              background-size: 28px 4px
+              border-radius: 0 0 20px 20px
+            .card__register
+              display: none
+              +pos-set(absolute, base, -8%, 2%)
+              width: 38%
+              max-width: 200px
+            .card__box
+              +layout-center(84%)
+              background-color: $gray-deep-light
+              border-radius: 1.5vw
+              box-shadow: $shadow-deep-dark-opacity20
+              text-align: center
+              +breakpoint-min($min-width-xl)
+                border-radius: 16px
+              img
+                width: 75%
+
+            .card__cta
+              width: 86%
+
+            .card__waiting
+              display: none
+              width: 100%
+              +margin-y(12%, 13%)
+              +font-styling(14px, 700, center, 0.25px)
+              color: $gray-deep-light
+              font-size: 4vw
+              +breakpoint-min($min-width-lg)
+                +margin-y(18%, 20%)
+                font-size: 32px
+              +breakpoint-min($min-width-xl)
+                +margin-y(36px, 40px)
+              .time__text
+                +flex-container
+                .time__block
+                  display: flex
+                  .time__box
+                    +margin-x(4%)
+                .time__colon
+                  +margin-x(8px, 4px)
+            .card__result
+              display: none
+              +layout-center($width: 86%)
+              +margin-y(7.5%, 10%)
+              background: $main-gradient-1
+              border-radius: 8px
+              text-align: center
+              +breakpoint-min($min-width-lg)
+                +margin-y(12%, 20%)
+                border-radius: 20px
+              +breakpoint-min($min-width-xl)
+                +margin-y(16px, 18px)
+              .winner__label
+                +padding-y(1%)
+                background-color: $gray-deep-dark-opacity60
+                font-size: 12px
+                line-height: 20px
+                color: $gray-deep-light
+                +breakpoint-min($min-width-lg)
+                  +padding-y(10px)
+                  font-size: 28px
+                +breakpoint-min($min-width-xl)
+                  +padding-y(16px)
+                  font-size: 32px
+              .winner__name
+                +padding-y(5%)
+                +font-styling(16px, 700, center)
+                line-height: 125%
+                font-size: 16px
+                +breakpoint-min($min-width-lg)
+                  font-size: 32px
+                +breakpoint-min($min-width-xl)
+                  +padding-y(15px)
+                  font-size: 42px
+            .people__count
+              width: 100%
+              .card__people
+                display: none
+                +margin-y(4%, 2%)
+                +font-styling(3vw, 700, center)
+                line-height: 18px
+                color: $primary-200
+                +breakpoint-min($min-width-md)
+                  +margin-y(4%)
+                +breakpoint-min($min-width-xl)
+                  font-size: 32px
+                  +margin-y(12px, 6%)
+              .card__count
+                display: none
+                +layout-center(84%)
+                +padding-y(2%)
+                margin-bottom: 4px
+                background-color: $gray-deep-dark-opacity40
+                border-radius: 50px
+                +font-styling(14px, 700, center)
+                line-height: 140%
+                white-space: nowrap
+                color: $gray-deep-light
+                +breakpoint-min($min-width-md)
+                  font-size: 3vw
+                +breakpoint-min($min-width-xl)
+                  +padding-y(1px)
+                  font-size: 38px
+                  margin-bottom: 12px
+
+          // ========== btn__wrap ==========
+          .btn__wrap
+            border-radius: 2vw
+            text-align: center
+            +breakpoint-min($min-width-xl)
+              border-radius: 20px
+            button.btn__title
+              +padding-y(8px)
+              background-color: $main-gray-medium
+              border: none
+              border-radius: 2vw
+              +font-styling(16px, 500, center)
+              color: $gray-dark
+              pointer-events: none
+              +breakpoint-min($min-width-lg)
+                +padding-y(20px)
+                border-radius: 20px
+                font-size: 36px
+              +breakpoint-min($min-width-xl)
+                font-size: 42px
+              p
+                display: none
+                &:first-child
+                  display: block
+
+            .btn__info
+              +flex-container
+              +padding-y(1.5vw)
+              +font-styling(12px, 400, center)
+              line-height: 20px
+              color: $main-gray-light
+              +breakpoint-min($min-width-lg)
+                +padding-y(28px)
+                font-size: 24px
+              +breakpoint-min($min-width-xl)
+                font-size: 32px
+              .time__label
+                display: flex
+                margin-right: 4%
+                white-space: nowrap
+                p
+                  display: none
+                  &:first-child
+                    display: block
+              .time__colon
+                +margin-x(2%)
+              .time__block
+                display: flex
+
+          // ========== app ========== 
+          &.app
+            .btn__wrap
+              .btn__title
+                background-color: $main-color-2
+                p[class^="btn__title"]
+                  display: none
+                  &:nth-child(2)
+                    display: block
+            // app 狀態加 active
+            &:active
+              .btn__title
+                background: darken($main-color-2,10%)
+                p
+                  transform: translateY(2px)
+
+          // ========== start ========== 
+          &.start
+            .time__wrap, .card__title, .card__wrap
+              background-color: $primary-600
+            .card__wrap
+              // +flex-container(space-around, start)
+              +padding-y(4%)
+              +breakpoint-min($min-width-xl)
+                height: 30vw
+                padding-bottom: 0
+              .card__people, .card__count
+                display: block
+            .btn__wrap
+              .btn__title
+                background-color: $main-color-6
+                pointer-events: auto
+                p[class^="btn__title"]
+                  display: none
+                  &:nth-child(3)
+                    display: block
+                    color: $gray-deep-light
+              .time__label
+                p[class^="time__label"]
+                  display: none
+                  &:nth-child(2)
+                    display: block
+              // start 狀態加 active
+              &:hover,
+              &:active
+                .btn__title 
+                  background-color: darken($main-color-6, 10%)
+                  p
+                    transform: translateY(2px)
+            // start 狀態後的 register 狀態
+            &.register
+              .btn__wrap
+                button.btn__title
+                  background-color: $primary-800
+                  pointer-events: none
+                  p[class^="btn__title"]
+                    display: none
+                    &:nth-child(4)
+                      display: block
+                      color: $primary-200
+                .time__label
+                  p[class^="time__label"]
+                    display: none
+                    &:nth-child(3)
+                      display: block
+              &:hover,
+              &:active
+                .btn__title p
+                  transform: translateY(0px)  
+
+          // ========== end 狀態 ==========
+          &.end
+            .time__wrap, .card__title, .card__wrap
+              background-color: $main-gray-dark
+            .card__wrap
+              +breakpoint-min($min-width-xl)
+              .card__waiting, .card__people, .card__count
+                display: block
+              .card__people
+                color: $gray-deep-light
+            .btn__wrap
+              display: none
+            // end 狀態後的 register 狀態
+            &.register
+              .card__wrap
+                .card__register
+                  display: block
+            // end 狀態後的 reveal 狀態
+            &.reveal
+              .time__wrap, .card__title, .card__wrap
+                background-color: $gray-deep-dark-opacity80
+              .card__wrap
+                .card__waiting
+                  display: none
+                .card__result
+                  display: block
+              .card__title,
+              .card__count
+                background-color: $main-gray-dark
+              // end reveal 狀態 後的 register 狀態
+              &.register
+                .card__wrap
+                  .card__register
+                    display: block
+
+
+

@@ -1,0 +1,74 @@
+-
+  var w4m2Data = [
+    { // 1
+      link: "https://www.etmall.com.tw/p/170805?pinProdSaleNo=2593615",
+      imgSrc: "event/2nd/e-main/components/event-w4m2/items/depart-1.png",
+      alt: "寬鬆柔軟連身睡裙"
+    },
+    { // 2
+      link: "https://media.etmall.com.tw/sp/22908/m/index.html",
+      imgSrc: "event/2nd/e-main/components/event-w4m2/items/depart-2.png",
+      alt: "【維義】頭等100%純油(高溫適用*1瓶+低溫適用*1瓶)"
+    },
+    { // 3
+      link: "https://www.etmall.com.tw/i/3570129",
+      imgSrc: "event/2nd/e-main/components/event-w4m2/items/depart-3.png",
+      alt: "28CM不沾深平底鍋"
+    },
+    { // 4
+      link: "https://www.etmall.com.tw/i/3996026",
+      imgSrc: "event/2nd/e-main/components/event-w4m2/items/depart-4.png",
+      alt: "緋紅逆時光澤爆水粉餅"
+    },
+    { // 5
+      link: "https://www.etmall.com.tw/gp/203959",
+      imgSrc: "event/2nd/e-main/components/event-w4m2/items/depart-5.png",
+      alt: "亞培 原味安素"
+    },
+    { // 6
+      link: "https://www.etmall.com.tw/i/4656570",
+      imgSrc: "event/2nd/e-main/components/event-w4m2/items/depart-6.png",
+      alt: "鍋寶11人份電鍋"
+    },
+    { // 7
+      link: "https://www.etmall.com.tw/i/2729595",
+      imgSrc: "event/2nd/e-main/components/event-w4m2/items/depart-7.png",
+      alt: "飛利浦吹風機"
+    },
+    { // 8
+      link: "https://www.etmall.com.tw/i/3705480",
+      imgSrc: "event/2nd/e-main/components/event-w4m2/items/depart-8.png",
+      alt: "Amii不規則修身露肩洋裝"
+    },
+  ]
+
+section.promo__group.promo__group--w4m2.m-bottom--lg(data-title="購物清單")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--flower#decorEventW4M2Flower
+        img(src="event/2nd/e-main/components/event-w4m2/decor-event-w4m2-flower.png", alt="")
+      .decor__item.decor__item--title#decorEventW4M2Title
+        img(src="event/2nd/e-main/components/event-w4m2/decor-event-w4m2-title.png", alt="")
+      .decor__item.decor__item--left#decorEventW4M2Left
+        img(src="event/2nd/e-main/components/event-w4m2/decor-event-w4m2-left.png", alt="")
+      .decor__item.decor__item--right#decorEventW4M2Right
+        img(src="event/2nd/e-main/components/event-w4m2/decor-event-w4m2-right.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          //- .bn__wrap 
+          //-   .bn__box
+          //-     a(href="")
+          //-       img(src="event/2nd/e-main/components/event-w4m2/bn-event-w4m2-1.jpg", alt="")
+          //-   .bn__box
+          //-     a(href="")
+          //-       img(src="event/2nd/e-main/components/event-w4m2/bn-event-w4m2-2.jpg", alt="")
+          #w4m2Wrap.event__wrap
+            .swiper-container#sliderEventW4M2
+              ul.swiper-wrapper
+                each data, index in w4m2Data
+                  li.swiper-slide
+                    a(href= data.link, title= data.alt)
+                      - var hasImg = data.imgSrc ? true : false
+                      if (hasImg)
+                        img(src= data.imgSrc, alt= data.alt)

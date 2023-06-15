@@ -1,0 +1,74 @@
+.bn-section
+  overflow: hidden
+  .decor__wrap
+    // padding-bottom: 3%
+  .decor__item
+    pointer-events: none
+
+    &--title
+      +pos-set(absolute, second, 4%, 18%)
+      width: 64%
+      opacity: 0
+      &.active
+        animation: flipInX .5s .2s forwards 1
+      +breakpoint-min($min-width-xl)
+        top: 50px
+        left: calc( 50% - 303px )
+
+    &--left
+      +pos-set(absolute, base, 10%, 0.5%)
+      width: 22%
+      &.active
+        animation: up-down 2.6s ease-in-out infinite 
+      +breakpoint-min($min-width-xl)
+        top: 100px
+        left: calc(50% - 445px)
+
+    &--right
+      +pos-set(absolute, base, 8%)
+      right: 1%
+      width: 23%
+      &.active
+        animation: up-down 2.6s 1.3s ease-in-out infinite 
+      +breakpoint-min($min-width-xl)
+        top: 95px
+        right: calc(50% - 445px)
+
+    +breakpoint-min($min-width-xl)
+      width: auto
+      
+  // .promo__wrap
+  .promo__zone
+    +aspect-ratio(960, 797)
+  .promo__box
+    text-align: center
+    cursor: pointer
+    &:hover
+      transition: all 0.6s ease
+      transform: translateY(-1%)
+      filter: contrast(1.2)
+
+
+@keyframes flipInX
+  0%
+    transform: perspective(400px) rotateX(90deg)
+    animation-timing-function: ease-in
+    opacity: 0
+  40%
+    transform: perspective(400px) rotateX(-20deg)
+    animation-timing-function: ease-in
+  60%
+    transform: perspective(400px) rotateX(10deg)
+    opacity: 1
+  80%
+    transform: perspective(400px) rotateX(-5deg)
+  to
+    transform: perspective(400px)
+    opacity: 1
+
+
+@keyframes up-down
+  0%, 100%
+    transform: translateY(0%)
+  50%
+    transform: translateY(13%)

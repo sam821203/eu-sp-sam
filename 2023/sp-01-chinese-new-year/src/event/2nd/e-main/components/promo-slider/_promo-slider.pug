@@ -1,0 +1,56 @@
+-
+  var promoSliderItem = [
+    {
+      link: "https://www.etmall.com.tw/p/198518" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/item-p-1.png",
+      alt: "[阿瘦集團]effie 輕快律動-美鑽閃耀飛織氣墊鞋",
+    },
+    {
+      link: "https://www.etmall.com.tw/c3/174488" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/item-p-2.png",
+      alt: "[Philo 飛樂] 2023全新Z2雙向版 錄影續航8小時 藍牙主被動連線行車紀錄器_送32G-網",
+    },
+    {
+      link: "https://www.etmall.com.tw/c3/104200" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/item-p-3.png",
+      alt: "【CSD中衛】雙鋼印醫療口罩-丹寧牛仔1盒入(30片/盒)-網",
+    },
+    {
+      link: "https://www.etmall.com.tw/p/204114?pinProdSaleNo=3114637&SortType=2&MoneyMinimum=&MoneyMaximum=&Keyword=&FilterType=" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/item-p-4.png",
+      alt: "La roche posay理膚寶水 極速修復奇肌組",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/129125" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/item-p-5.png",
+      alt: "【Nespresso】膠囊咖啡機 Lattissima One 瓷白色",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/205594" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/item-p-6.png",
+      alt: "SONY",
+    },
+    {
+      link: "https://www.etmall.com.tw/np/205873" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/item-p-7.png",
+      alt: "美的電熱水壺便攜式旅行宿舍學生小型家用燒水壺水杯家用M102",
+    },
+  ]
+
+section.promo__group.promo__group--promo-slider(data-title="年貨補給站")
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        .decor__wrap.full-parent
+          .decor__item.decor__item--bottom#decorPromoSliderBottom
+            img(src="event/2nd/e-main/components/promo-slider/decor-promo-slider-bottom.png", alt="")
+          .decor__item.decor__item--right#decorPromoSliderRight
+            img(src="event/2nd/e-main/components/promo-slider/decor-promo-slider-right.png", alt="")
+
+      .promo__block
+        .promo__slider.swiper-container#promoSliderItem
+          ul.swiper-wrapper
+            each data in promoSliderItem
+              li.swiper-slide
+                a(href= data.link, title=data.alt)
+                  img(src= data.imgSrc, alt=data.alt)

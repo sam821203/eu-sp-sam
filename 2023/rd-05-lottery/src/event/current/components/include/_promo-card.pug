@@ -1,0 +1,88 @@
+- sectionId = "section" + (index + 1)
+section.promo__group.promo__w3m3.m-bottom--xl(id= sectionId)
+  .layout--main
+    .promo__block 
+      .decor__top
+        - imgSrc = "event/current/components/promo/decor-promo-top-" + (index + 1) + ".png"
+        img(src= imgSrc alt="")
+      .decor__bg
+        ul.promo__items
+          - n = 1
+          while n <= 3
+            - if (index == 4 && n == 2) {status += " reveal"} else if (index == 4 && n == 3) {status += " register"}
+            li.promo__item(class= (status == undefined || false) ? "" : status)
+              .time__wrap
+                .time__text
+                  .time__icon
+                    img(src="event/current/components/promo/icon-time.png")
+                  .time__block
+                    .time__box 
+                      span= time2 + n - 1 > 9 ? time1 + 1 : time1 
+                    .time__box 
+                      span= time2 + n - 1 > 9 ? time2 + n - 1 - 10 : time2 + n - 1
+                  .time__colon :
+                  .time__block
+                    .time__box 
+                      span 0
+                    .time__box 
+                      span 0
+              .card__title
+                .card__overlay
+                  span 第
+                  span.card__num= 3 * index + n++
+                  span 場 
+              .card__wrap
+                .card__register
+                  img(src="event/current/components/promo/register-stamp.png" alt="")
+
+                .card__waiting
+                  div.time__label 得獎結果公佈
+                  div.time__text
+                    .time__block
+                      .time__box 
+                        span 0
+                      .time__box 
+                        span 0
+                    .time__colon :
+                    .time__block
+                      .time__box 
+                        span 0
+                      .time__box 
+                        span 0
+
+                .card__cta
+                  .btn__wrap 
+                    button.btn__title.full-parent 
+                      p.btn__title--1 尚未開始
+                      p.btn__title--2 提醒我
+                      p.btn__title--3 登記抽獎
+                      p.btn__title--4 完成登記
+
+                    .btn__info
+                      .time__label
+                        p.time__label--1 登記開始
+                        p.time__label--2 登記截止
+                        p.time__label--3 結果公布
+                      .time__block
+                        .time__box
+                          span 0
+                        .time__box
+                          span 0
+                      .time__colon :
+                      .time__block
+                        .time__box
+                          span 0
+                        .time__box
+                          span 0
+
+                .card__result 
+                  .winner__label 中獎者
+                  .winner__name= (winnerName == undefined || false) ? "" : winnerName
+                .people__count
+                  .card__people 參加人數
+                  .card__count
+                    span= (peopleCount == undefined || false) ? "" : peopleCount
+                    span 人
+
+      .decor__bottom
+        img(src="event/current/components/promo/decor-promo-bottom.png" alt="")

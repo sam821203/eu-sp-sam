@@ -1,0 +1,107 @@
+.dynamic-slider-logo
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__wrap
+    padding-bottom: 23%
+    +breakpoint-min($min-width-xl)
+      padding-bottom: 195px
+  .decor__item
+    &--title
+      +pos-set(absolute, base, 4.5%, 21.5%)
+      width: 57%
+      +breakpoint-min($min-width-xl)
+        top: 15px
+        left: calc(50% - 284px)
+    &--left
+      +pos-set(absolute, zero, 0%, 5%)
+      width: 22%
+      &.active
+        animation: rubberBand 2s linear infinite
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 430px)
+    &--right
+      +pos-set(absolute, base, 1%)
+      right: 3%
+      width: 25%
+      +breakpoint-min($min-width-xl)
+        top: 5px
+        right: calc(50% - 455px)
+    +breakpoint-min($min-width-xl)
+      width: auto
+
+  .promo__wrap
+    +bg-set(url(event/2nd/e-main/components/dynamic-slider-logo/bg-dynamic-slider-logo.png), 100%)
+  .promo__zone
+    +aspect-ratio(960, 1121)
+  .promo__block
+    padding: 10% 4% 0
+  .promo__slider
+    overflow: hidden
+    height: 90%
+    max-height: 1070px
+  .dynamic__item
+    text-align: center
+    +breakpoint-min($min-width-xl)
+      .product__name
+        margin-top: 5px
+        margin-bottom: 15px
+      .product__price
+        span
+          &:last-child
+            font-size: 32px
+    .product--dynamic
+      .product__img
+        img
+          width: 100%
+      .product__name
+        font-size: 14px
+        +breakpoint-min($min-width-xl)
+          margin-top: 10px
+          font-size: 24px
+      .product__price
+        padding-bottom: 2%
+        +breakpoint-min($min-width-xl)
+          padding-bottom: 30px
+        span
+          &:last-child
+            font-size: 5vw
+            +breakpoint-min($min-width-xl)
+              font-size: 36px
+    &:first-child
+      margin: 1% auto 0
+      pointer-events: none
+      .product--dynamic
+        padding-bottom: 0%
+      .product__text
+        display: none
+    &:nth-child(2)
+      +pos-set(absolute, zero, 33%, 0%)
+      width: 49%
+      max-width: 426px
+      +breakpoint-min($min-width-xl)
+        top: 300px
+        left: calc(50% - 440px)
+    &:last-child
+      +pos-set(absolute, zero, 33%)
+      right: 0%
+      width: 49%
+      max-width: 426px
+      +breakpoint-min($min-width-xl)
+        top: 300px
+        right: calc(50% - 440px)    
+
+@keyframes rubberBand
+  0%
+    transform: scaleX(1)
+  15%
+    transform: scale3d(0.75, 1, 1)
+  20%
+    transform: scale3d(1.05, 1, 1)
+  25%
+    transform: scale3d(.85, 1, 1)
+  32.5%
+    transform: scale3d(1.05, 1, 1)
+  37.5%
+    transform: scale3d(.95, 1, 1)
+  50%, to
+    transform: scaleX(1)

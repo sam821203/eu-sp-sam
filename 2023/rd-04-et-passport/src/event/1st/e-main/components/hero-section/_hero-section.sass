@@ -1,0 +1,16 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero
+  +pos-set(relative, zero)
+.hero__zone
+  +aspect-ratio(960, 273)
+
+.hero__title
+  &--main
+    margin-top: 2%
+    margin-mottom: 2%
+    text-align: center
+    transform-origin: center
+  +breakpoint-min($min-width-xl)
+    margin-top: 0

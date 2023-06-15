@@ -1,0 +1,66 @@
+-
+  var promoSliderItem = [
+    {
+      link: "https://www.etmall.com.tw/i/4553646" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/item-p-1.png",
+      alt: "【買1送1】LOCCITANE 歐舒丹淡香水75ml 任選 - 玫瑰/櫻花",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2411123" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/item-p-2.png",
+      alt: "【YM BIOMED 陽明生醫】一家人益生菌S強酵升級版100包超值組",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/4391673" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/item-p-3.png",
+      alt: "SAMSUNG Galaxy S23+ 5G (8G/256G)",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/4070704" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/item-p-4.png",
+      alt: "25L 微波爐",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3904325" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/item-p-5.png",
+      alt: "HOMEDICS腿部按摩器小腿氣壓熱敷肌肉按摩儀",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3659967" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/item-p-6.png",
+      alt: "【桂格】超能多穀力-金黃5籽x 5穀(無添加糖) 390g*3罐超值組",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/116998" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/item-p-7.png",
+      alt: "塑崩未來撞色褲x2+送舒曼波科技圍脖",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3909841" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/item-p-8.png",
+      alt: "大王GOO.N 肌快適UJ迪士尼系列-褲型XL (46片x3串/箱)",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2646170" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/item-p-9.png",
+      alt: "OSIM 腿樂樂2 OS-393+背樂樂2 OS-290  (DIY按摩椅/美腿機/按摩背墊)",
+    },
+  ]
+
+section.promo__group.promo__group--promo-slider.m-bottom--lg(data-title="老媽專屬")
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        .decor__wrap.full-parent
+          .decor__item.decor__item--left#decorPromoSliderLeft
+            img(src="event/1st/e-main/components/promo-slider/decor-promo-slider-left.png", alt="")
+          .decor__item.decor__item--right#decorPromoSliderRight
+            img(src="event/1st/e-main/components/promo-slider/decor-promo-slider-right.png", alt="")
+
+      .promo__block
+        .promo__slider.swiper-container#promoSliderItem
+          ul.swiper-wrapper
+            each data in promoSliderItem
+              li.swiper-slide
+                a(href= data.link, title=data.alt)
+                  img(src= data.imgSrc, alt=data.alt)

@@ -1,0 +1,114 @@
+-
+  var promoSpecialItems = [
+    [ // 1
+      { 
+        link: "https://media.etmall.com.tw/sp/23282/m/index.html#Taishin",
+        imgSrc: "event/1st/e-main/components/promo-special/items/item-p-special-1-1.png",
+        alt: "台新 最高回饋10%"
+      },
+      { 
+        link: "https://media.etmall.com.tw/sp/22220/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-special/items/item-p-special-1-2.png",
+        alt: "台灣Pay 最高回饋15%"
+      },
+      { 
+        link: "https://media.etmall.com.tw/sp/19483/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-special/items/item-p-special-1-3.png",
+        alt: "全盈+Pay 單筆滿$2,000送250元全盈儲值金"
+      },
+    ],
+    [ // 2
+      { 
+        link: "https://media.etmall.com.tw/sp/23282/m/index.html#sinopac",
+        imgSrc: "event/1st/e-main/components/promo-special/items/item-p-special-2-1.png",
+        alt: "永豐 最高回饋10%"
+      },
+      { 
+        link: "https://media.etmall.com.tw/sp/23476/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-special/items/item-p-special-2-2.png",
+        alt: "全支付 滿額回饋10%"
+      },
+    ],
+    [ // 3
+      { 
+        link: "https://media.etmall.com.tw/sp/23282/m/index.html#sinopac",
+        imgSrc: "event/1st/e-main/components/promo-special/items/item-p-special-3-1.png",
+        alt: "永豐 累積分期滿$38,000送$3,800"
+      },
+      { 
+        link: "https://media.etmall.com.tw/sp/23282/m/index.html#Taichung",
+        imgSrc: "event/1st/e-main/components/promo-special/items/item-p-special-3-2.png",
+        alt: "台中 單件商品滿$10,000送$2,000"
+      },
+      { 
+        link: "https://media.etmall.com.tw/sp/23282/m/index.html#fareasten",
+        imgSrc: "event/1st/e-main/components/promo-special/items/item-p-special-3-3.png",
+        alt: "遠東 指定日 單件分期滿$8,888回饋$888"
+      },
+    ],
+    [ // 4
+      { 
+        link: "https://media.etmall.com.tw/sp/23282/m/index.html#esun",
+        imgSrc: "event/1st/e-main/components/promo-special/items/item-p-special-4-1.png",
+        alt: "玉山 累積分期滿$3,000回饋5%"
+      },
+      { 
+        link: "https://media.etmall.com.tw/sp/23282/m/index.html#one",
+        imgSrc: "event/1st/e-main/components/promo-special/items/item-p-special-4-2.png",
+        alt: "第一 單件商品滿$1,000送$100"
+      },
+      { 
+        link: "https://media.etmall.com.tw/sp/23282/m/index.html#icashPay",
+        imgSrc: "event/1st/e-main/components/promo-special/items/item-p-special-4-3.png",
+        alt: "icash Pay 單筆訂單滿$200回饋10% OPEN POINT"
+      },
+    ],
+  ]
+
+section.promo__group.promo-special.m-bottom--lg(data-title="銀行支付")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--title
+        img(src="event/1st/e-main/components/promo-special/title-promo-sp.png", alt="")
+      .decor__item.decor__item--left#decorPromoSpLeft
+        img(src="event/1st/e-main/components/promo-special/decor-promo-sp-left.png", alt="")
+      .decor__item.decor__item--right#decorPromoSpRight
+        img(src="event/1st/e-main/components/promo-special/decor-promo-sp-right.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          .promo__box
+            a(href="https://media.etmall.com.tw/sp/22815/m/index.html", title="23家銀行 最高回饋15%")
+              img(src="event/1st/e-main/components/promo-special/bn-promo-sp.png", alt="")
+          ul.event__block
+            li.special__item#specialItem1
+              .swiper-container.container--promo-special
+                ul.swiper-wrapper
+                  each item, itemIndex in promoSpecialItems[0]
+                    li.swiper-slide
+                      a(href=  item.link, title= item.alt)
+                        img(src=  item.imgSrc, alt= item.alt)
+
+            li.special__item#specialItem2
+              .swiper-container.container--promo-special
+                ul.swiper-wrapper
+                  each item, itemIndex in promoSpecialItems[1]
+                    li.swiper-slide
+                      a(href=  item.link, title= item.alt)
+                        img(src=  item.imgSrc, alt= item.alt)
+
+            li.special__item#specialItem3
+              .swiper-container.container--promo-special
+                ul.swiper-wrapper
+                  each item, itemIndex in promoSpecialItems[2]
+                    li.swiper-slide
+                      a(href=  item.link, title= item.alt)
+                        img(src=  item.imgSrc, alt= item.alt)
+
+            li.special__item#specialItem4
+              .swiper-container.container--promo-special
+                ul.swiper-wrapper
+                  each item, itemIndex in promoSpecialItems[3]
+                    li.swiper-slide
+                      a(href=  item.link, title= item.alt)
+                        img(src=  item.imgSrc, alt= item.alt)

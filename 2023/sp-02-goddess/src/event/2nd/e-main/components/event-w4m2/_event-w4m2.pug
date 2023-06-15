@@ -1,0 +1,79 @@
+-
+  var w4m2Data = [
+    { // 1
+      link: "https://www.etmall.com.tw/i/4203074",
+      imgSrc: "event/2nd/e-main/components/event-w4m2/items/depart-1.png",
+      alt: "【DV 麗彤生醫】 全新升級-醇耀妍 PLUS+ 濃萃飲 20ml (10包/盒)x5盒"
+    },
+    { // 2
+      link: "https://www.etmall.com.tw/i/2757117",
+      imgSrc: "event/2nd/e-main/components/event-w4m2/items/depart-2.png",
+      alt: "沈文程有感代言  都會新貴嚴選 鱘熹王 專利K2鱘龍複方膠囊 (60/顆x4盒;共240顆)"
+    },
+    { // 3
+      link: "https://www.etmall.com.tw/i/2355002",
+      imgSrc: "event/2nd/e-main/components/event-w4m2/items/depart-3.png",
+      alt: "Angel LaLa 天使娜拉_專利非洲芒果新陳代謝咖啡(15包/盒x8盒) "
+    },
+    { // 4
+      link: "https://www.etmall.com.tw/i/3590270",
+      imgSrc: "event/2nd/e-main/components/event-w4m2/items/depart-4.png",
+      alt: "【娘家】大紅麴三盒組(30粒/盒)"
+    },
+    { // 5
+      link: "https://www.etmall.com.tw/i/4137832",
+      imgSrc: "event/2nd/e-main/components/event-w4m2/items/depart-5.png",
+      alt: "OZIO歐姬兒蜂王乳凝露2入"
+    },
+    { // 6
+      link: "https://www.etmall.com.tw/i/3667233",
+      imgSrc: "event/2nd/e-main/components/event-w4m2/items/depart-6.png",
+      alt: "蓓蔓 SPA百合蜂王乳磨砂X超植萃沐浴露3+1件組"
+    },
+    { // 7
+      link: "https://www.etmall.com.tw/i/3672485",
+      imgSrc: "event/2nd/e-main/components/event-w4m2/items/depart-7.png",
+      alt: "MUF極光蜜粉"
+    },
+    { // 8
+      link: "https://www.etmall.com.tw/i/3560058",
+      imgSrc: "event/2nd/e-main/components/event-w4m2/items/depart-8.png",
+      alt: "BIO UP 自然美根源強健豐盈洗髮精500ml(5入)"
+    },
+  ]
+
+section.promo__group.promo__group--w4m2.m-bottom--lg(data-title="女王降臨")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--title#decorEventW4M2Title
+        a(href="") 
+          img(src="event/2nd/e-main/components/event-w4m2/decor-event-w4m2-title.png", alt="")
+      .decor__item.decor__item--right#decorEventW4M2Right
+        a(href="") 
+          img(src="event/2nd/e-main/components/event-w4m2/decor-event-w4m2-right.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          .bn__wrap 
+            .bn__box
+              a(href="https://media.etmall.com.tw/sp/21385/m/index.html")
+                img(src="event/2nd/e-main/components/event-w4m2/bn-event-w4m2-1.jpg", alt="美妝")
+            .bn__box
+              a(href="https://media.etmall.com.tw/sp/21719/m/index.html")
+                img(src="event/2nd/e-main/components/event-w4m2/bn-event-w4m2-2.jpg", alt="保健")
+          #w4m2Wrap.event__wrap
+            .swiper-container#sliderEventW4M2
+              ul.swiper-wrapper
+                each data, index in w4m2Data
+                  li.swiper-slide
+                    a(href= data.link, title= data.alt)
+                      - var hasImg = data.imgSrc ? true : false
+                      if (hasImg)
+                        img(src= data.imgSrc, alt= data.alt)
+
+              //- each data, index in w4m2Data
+              //-   li
+              //-     a(href= data.link, title= data.alt)
+              //-       - var hasImg = data.imgSrc ? true : false
+              //-       if (hasImg)
+              //-         img(src= data.imgSrc, alt= data.alt)

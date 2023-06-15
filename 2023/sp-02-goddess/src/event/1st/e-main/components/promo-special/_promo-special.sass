@@ -1,0 +1,99 @@
+.promo-special
+  overflow: hidden
+  .decor__wrap
+    padding-bottom: 1%
+    +breakpoint-min($min-width-xl)
+      padding-bottom: 16px
+  .decor__item
+    pointer-events: none
+    &--left
+      +pos-set(absolute, base, 0, 0.7%)
+      width: 100%
+      perspective: 1000px
+      transform: scaleY(0)
+      transform-origin: bottom center
+      +breakpoint-min($min-width-xl)
+        left: calc( 50% - 488px )
+
+      &.active
+        animation: open .3s forwards ease-out 1
+
+    &--right1
+      +pos-set(absolute, base, 4%)
+      right: 18%
+      width: 15%
+      +breakpoint-min($min-width-xl)
+        top: 30px
+        right: calc( 50% - 310px )
+    &--right2
+      +pos-set(absolute, base, 6%)
+      right: 14%
+      width: 15%
+      opacity: 0
+      &.active
+        animation: feather 1.3s linear forwards
+      +breakpoint-min($min-width-xl)
+        top: 40px
+        right: calc( 50% - 350px )
+    +breakpoint-min($min-width-xl)
+        width: auto
+
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/promo-special/bg-promo-special.png), 100%)
+    background-position: bottom
+  .promo__zone
+    +aspect-ratio(960, 945)
+  .promo__block
+    padding: 28% 2% 0
+    +breakpoint-min($min-width-xl)
+      padding-top: 255px
+  .event__block
+    display: flex
+    justify-content: space-evenly
+    flex-wrap: wrap
+    +size(100%, 25vw)
+    margin-bottom: 2%
+    +breakpoint-min($min-width-xl)
+      height: 260px
+    li
+      width: calc( 50% - 10px )
+      transition: .3s
+      &:hover
+        transform: scale(0.95)
+        filter: contrast(1.2)
+      a 
+        +size(100%)
+  .promo__slider
+    padding: 13.5% 12% 0 14%
+    +breakpoint-min($min-width-xl)
+      padding: 114px 100px 0 120px
+
+
+@keyframes shining-title
+  0%
+    // -webkit-mask-position: 150% 0px
+    mask-position: 150% 0px
+  100%
+    // -webkit-mask-position: 0% 0px
+    mask-position: 0% 0px
+
+@keyframes feather
+  0%
+    transform: rotate(-3deg) translate(20px, -100px)
+    opacity: 0
+  30%
+    transform: rotate(8deg) translate(-20px, -100px)
+    opacity: 1
+  62%
+    transform: rotate(-5deg) translate(20px, -40px)
+  95%
+    transform: rotate(-1deg) translate(0px, 0px)
+  100%
+    transform: rotate(0deg) translate(0px, 0px)
+    opacity: 1
+
+@keyframes open
+  0%
+    transform: scaleY(0)
+  100%
+    transform: scaleY(1)

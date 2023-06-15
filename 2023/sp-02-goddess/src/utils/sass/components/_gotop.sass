@@ -1,0 +1,48 @@
+.go-top
+  display: none
+  +pos-set(fixed, go-top)
+  bottom: 90px
+  right: 10px
+  padding: 0
+  width: 48px
+  height: 48px
+  background: rgba($gray-deep-dark, 0.7)
+  border: 0
+  border-radius: 50%
+  transition: all 0.4s linear
+  opacity: 0
+  cursor: pointer
+  pointer-events: none
+  svg
+    stroke-dasharray: 151
+  svg stop
+    transition: all 0.4s linear
+
+  +breakpoint-min($min-width-xl)
+    bottom: 30px
+    &:hover
+      background: rgba($gray-deep-dark, 1)
+      svg
+        animation: svg-stroke 0.4s both linear
+        stop
+          stop-opacity: 0.7
+  +breakpoint-min($min-width-4xl)
+    bottom: 90px
+
+.go-top.is-visible
+  display: block
+  opacity: 1
+  pointer-events: auto
+
+.go-top:focus
+  outline: 0
+
+/* fix umall "position:fixed" not working */
+.main,.side
+  transform: none
+
+@keyframes svg-stroke
+  0%
+    stroke-dashoffset: 60
+  100%
+    stroke-dashoffset: 0

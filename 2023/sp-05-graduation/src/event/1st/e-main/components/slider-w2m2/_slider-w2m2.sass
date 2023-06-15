@@ -1,0 +1,42 @@
+.promo__group--slider-w2m2
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__item
+    &--title
+      +pos-set(absolute, base, 15%, 15%)
+      width: 70%
+      +breakpoint-min($min-width-xl)
+        top: 200px
+        left: calc( 50% - 347px )
+    &--item
+      +pos-set(absolute, base, 18%, 0%)
+      width: 99.5%
+      +breakpoint-min($min-width-xl)
+        top: 230px
+        left: calc( 50% - 482px )
+    &--right
+      +pos-set(absolute, base, 27%)
+      right: 12%
+      width: 13%
+      animation: rotate-self 5s ease-in-out infinite
+      +breakpoint-min($min-width-xl)
+        top: 360px
+        right: calc( 50% - 370px )
+    +breakpoint-min($min-width-xl)
+      width: auto
+
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/slider-w2m2/bg-slider-w2m2.png), 100%)
+    +breakpoint-min($min-width-xl)
+      background-size: auto
+  .promo__zone
+    +aspect-ratio(960, 1279)
+  .promo__block
+    padding: 48% 3% 0
+  // .promo__slider
+
+@keyframes rotate-self
+  0%, 5%, 95%, 100%
+    transform: rotate(0)
+  50%
+    transform: rotate(360deg)

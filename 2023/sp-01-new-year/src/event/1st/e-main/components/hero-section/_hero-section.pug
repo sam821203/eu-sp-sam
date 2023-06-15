@@ -1,0 +1,81 @@
+-
+  var heroItemData = [
+    {
+      link: "https://www.etmall.com.tw/gp/104343",
+      imgSrc: "event/1st/e-main/components/hero-section/item/hero-p-1.png",
+      alt: "SK-II 青春露230ml*2入(公司貨)",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/199676",
+      imgSrc: "event/1st/e-main/components/hero-section/item/hero-p-2.png",
+      alt: "船井burner倍熱 極纖錠480顆黑色運動限定版",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2342026",
+      imgSrc: "event/1st/e-main/components/hero-section/item/hero-p-3.png",
+      alt: "【Coca Cola 可口可樂】可樂雪碧食尚雙享組 350ml(12入/箱)",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/13058/m/index.html",
+      imgSrc: "event/1st/e-main/components/hero-section/item/hero-p-4.png",
+      alt: "Switch OLED ",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/10591/m/index.html",
+      imgSrc: "event/1st/e-main/components/hero-section/item/hero-p-5.png",
+      alt: "18Kg WiFi 蒸洗脫洗衣機+16Kg免曬衣乾衣機",
+    },
+  ]
+
+section.hero
+  .decor__wrap
+    .hero__decor.hero__decor--spotlightL
+      img(src="event/1st/e-main/pages/index/decor-spotlight.png", alt="")
+    .hero__decor.hero__decor--spotlightR
+      img(src="event/1st/e-main/pages/index/decor-spotlight.png", alt="")
+
+    .hero__decor.hero__decor--arrowL
+      img(src="event/1st/e-main/pages/index/arrow-1.png", alt="")
+      img(src="event/1st/e-main/pages/index/arrow-1.png", alt="")
+      img(src="event/1st/e-main/pages/index/arrow-1.png", alt="")
+
+    .hero__decor.hero__decor--arrowR
+      img(src="event/1st/e-main/pages/index/arrow-1.png", alt="")
+      img(src="event/1st/e-main/pages/index/arrow-1.png", alt="")
+      img(src="event/1st/e-main/pages/index/arrow-1.png", alt="")
+    //- .hero__decor.hero__decor--left1
+      //- img(src="event/1st/e-main/components/hero-section/decor-disco.png", alt="")
+    //- .hero__decor.hero__decor--left2
+      //- img(src="event/1st/e-main/components/hero-section/decor-disco-light.png", alt="")
+    .hero__decor.hero__decor--right1
+      img(src="event/1st/e-main/components/hero-section/decor-etcat.png", alt="")
+    .hero__decor.hero__decor--right2
+      img(src="event/1st/e-main/components/hero-section/decor-dj.png", alt="")
+    .hero__decor.hero__decor--light 
+      img(src="event/1st/e-main/components/hero-section/decor-light.png", alt="")
+
+  .layout--main
+    .hero__wrap
+      .hero__zone
+        //- .video__wrap
+          //- include /event/1st/e-main/components/hero-section/hero-video/_hero-video.pug
+        .hero__block
+          .hero__title.hero__title--main
+            a(href="")
+              img(src="event/1st/e-main/components/hero-section/title.png" alt="愛呦尾牙")
+          //- .light
+            //- img(src="event/1st/e-main/components/hero-section/title-light.png", alt="")
+          .hero__box
+            .hero__item.hero__item--dog
+              img(src="event/1st/e-main/components/hero-section/hero-item-1.png" alt="")
+              .hero__item--blink
+                img(src="event/1st/e-main/components/hero-section/hero-item-2.png" alt="")
+            .hero__item.hero__item--stage
+              img(src="event/1st/e-main/components/hero-section/stage.png" alt="")
+          .hero__slider 
+            .swiper-container#heroSlider
+              ul.swiper-wrapper
+                each data, index in heroItemData
+                  li.swiper-slide
+                    a(href= data.link, title= data.alt)
+                      img(src= data.imgSrc, alt= data.alt)

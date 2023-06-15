@@ -1,0 +1,69 @@
+.promo__group--slider-w3m3
+  +pos-set(relative, zero)
+  overflow: hidden
+
+  .decor__item
+    &--title
+      +pos-set(absolute, base, 0%, 18.5%)
+      width: 64%
+      transform: scaleX(0)
+      &.active
+        animation: flipY-title 8s forwards infinite
+      +breakpoint-min($min-width-xl)
+        left: calc( 50% - 295px )
+        width: auto
+
+  .promo__wrap
+    +bg-set(url(event/2nd/e-main/components/slider-w3m3/bg-slider-w3m3.png), 100%)
+    margin-top: -0.4%
+  .promo__zone
+    +aspect-ratio(960, 1120)
+  .promo__block
+    padding: 27% 0% 0%
+    +breakpoint-min($min-width-xl)
+      padding: 15% 0% 0%
+    .swiper-container
+      &:first-child
+        height: 65%
+      &:last-child
+        height: 35%
+
+    .swiper-slide,
+    .swiper-slide-duplicate,
+    .swiper-slide-active,
+    .swiper-slide-duplicate-active
+      display: flex
+      justify-content: center
+      transition: all 0.6s
+
+    .gallery-top 
+      .swiper-slide,
+      .swiper-slide-duplicate,
+      .swiper-slide-active,
+      .swiper-slide-duplicate-active
+        align-items: end
+        width: 40%
+        +breakpoint-min($min-width-xl)
+          width: auto
+        a
+          padding: 20% 11% 0 10%
+          
+    .gallery-thumbs 
+      .swiper-slide,
+      .swiper-slide-duplicate,
+      .swiper-slide-active,
+      .swiper-slide-duplicate-active
+        width: 50%
+
+      .swiper-slide-next,
+      .swiper-slide-prev,
+      .swiper-slide-duplicate-next,
+      .swiper-slide-duplicate-prev
+        filter: brightness(0.5)
+
+
+@keyframes flipY-title
+  0%, 30%, 100%
+    transform: rotateY(0deg)
+  15% 
+    transform: rotateY(360deg)

@@ -1,0 +1,77 @@
+.promo__group--slider-w1m1
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__wrap
+    padding-top: 4%
+    +breakpoint-min($min-width-xl)
+      padding-top: 0
+
+  .decor__item
+    opacity: 0
+    transform: translate3d(3000px, 0, 0) scaleX(3)
+
+    &--title
+      +pos-set(absolute, second, 2%, 19%)
+      width: 60%
+      +breakpoint-min($min-width-xl)
+        left: calc( 50% - 240px )
+      &.active
+        animation: bounce-in-right .6s ease forwards 1
+
+    &--right
+      +pos-set(absolute, second, 9.1%)
+      right: 21%
+      width: 62%
+      mask: url(event/2nd/e-main/components/slider-w1m1/decor-slider-w1m1-mask.png)
+      mask-size: 300% 100%
+      mask-position: 0 0
+      transition: .6s
+      +breakpoint-min($min-width-xl)
+        top: 6.1%
+        right: calc( 50% - 240px )
+      &.active
+        animation: bounce-in-right .6s ease forwards 1, calligraphy 1.8s .6s steps(2) infinite
+
+    +breakpoint-min($min-width-xl)
+      width: auto
+
+  .promo__wrap
+    margin-top: 8%
+  .promo__zone
+    +bg-set(url(event/2nd/e-main/components/slider-w1m1/bg-slider-w1m1.png), 100%)
+  .promo__zone
+    +aspect-ratio(951, 1020)
+    .promo__block
+      padding: 30% 4% 0
+      +breakpoint-min($min-width-xl)
+        padding: 27% 0 0 3%
+    .promo__slider
+      text-align: center
+
+    .swiper-slide
+      opacity: 1
+      transition: all 0.5s
+
+    .swiper-slide-prev,
+    .swiper-slide-next
+      a
+        opacity: 0
+        transition: all 0.5s
+        transform-origin: bottom center 
+        transform: scale(.3)
+
+@keyframes fadeInOut
+  0% 
+    opacity: 1
+  50% 
+    opacity: 0
+  100% 
+    opacity: 1
+
+@keyframes calligraphy
+  0%, 100%
+    mask-position: 0 0
+  50%
+    mask-position: 100% 0
+
++bounce-in(right)

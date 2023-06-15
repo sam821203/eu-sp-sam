@@ -1,0 +1,52 @@
+-
+  var bnSliderItemData = [
+    {
+      link: "",
+      imgSrc: "event/1st/e-main/components/bn-slider/items/collect-1.png",
+      alt: "集點加價購"
+    },
+    {
+      link: "",
+      imgSrc: "event/1st/e-main/components/bn-slider/items/collect-2.png",
+      alt: "集點加價購"
+    },
+    {
+      link: "",
+      imgSrc: "event/1st/e-main/components/bn-slider/items/collect-3.png",
+      alt: "集點加價購"
+    },
+    {
+      link: "",
+      imgSrc: "event/1st/e-main/components/bn-slider/items/collect-4.png",
+      alt: "集點加價購"
+    },
+  ]
+section#bnSlider.promo__group.bn-slider.m-bottom--lg(data-title="集點加價購")
+  .layout--main 
+    .decor__wrap.full-parent
+      .decor__item.decor__item--title#decorBnSliderTitle
+        img(src="event/1st/e-main/components/bn-slider/title-bn-slider.png", alt="")
+      .decor__item.decor__item--star1
+        img(src="event/1st/e-main/components/bn-slider/decor-bn-star-1.png", alt="")
+      .decor__item.decor__item--star2
+        img(src="event/1st/e-main/components/bn-slider/decor-bn-star-2.png", alt="")
+      .decor__item.decor__item--star3
+        img(src="event/1st/e-main/components/bn-slider/decor-bn-star-3.png", alt="")
+      .decor__item.decor__item--star4
+        img(src="event/1st/e-main/components/bn-slider/decor-bn-star-4.png", alt="")
+      .decor__item.decor__item--star5
+        img(src="event/1st/e-main/components/bn-slider/decor-bn-star-5.png", alt="")
+
+    .promo__wrap
+      .promo__zone
+        .promo__block.full-parent
+          .promo__box
+            a(href="") 
+              img(src="event/1st/e-main/components/bn-slider/bn-slider.jpg", alt="")
+          .promo__slider
+            .swiper-container#sliderBn
+              ul.swiper-wrapper
+                each data in bnSliderItemData
+                  li.swiper-slide
+                    a(href= data.link, title= data.alt)
+                      img.swiper-lazy(data-src= data.imgSrc, alt="")

@@ -1,0 +1,131 @@
+.promo-event
+  z-index: 1
+  overflow: hidden
+
+  .decor__wrap
+    padding-top: 24%
+
+  .decor__item
+    &--cloak
+      +pos-set(absolute, base, 7.2%, 3.6%)
+      width: 94%
+      transform: scale(1)
+      +breakpoint-min($min-width-xl)
+        top: 8.2%
+        left: calc( 50% - 420px )
+        transform: scale(0)
+      img
+        transform: rotateX(0deg)
+      &.active
+        animation: up-down-3 2.2s ease-in-out infinite
+        img
+          animation: cloak-scaling 2s infinite linear forwards
+    &--figure
+      +pos-set(absolute, second, 1%, 15.5%)
+      width: 70%
+      transform: scale(1)
+      +breakpoint-min($min-width-xl)
+        top: 0%
+        left: calc( 50% - 342px )
+        transform: scale(0)
+    &--right
+      +pos-set(absolute, base, 14.5%)
+      right: 9%
+      width: 12%
+      +breakpoint-min($min-width-xl)
+        top: 15.5%
+        right: calc( 50% - 372px )
+    &--1
+      +pos-set(absolute, base)
+      bottom: 8%
+      left: 10%
+      display: none
+      +breakpoint-min($min-width-xl)
+        left: calc( 50% - 428px )
+        display: block
+      .js-loading &
+        animation: up-down 2.6s ease-in-out infinite
+    &--2
+      +pos-set(absolute, base)
+      bottom: 10.5%
+      right: 10%
+      display: none  
+      +breakpoint-min($min-width-xl)
+        right: calc( 50% - 470px )
+        display: block
+      .js-loading &
+        animation: up-down 2.6s 1.3s ease-in-out infinite
+    +breakpoint-min($min-width-xl)
+      width: auto
+
+  .promo__wrap
+    +bg-set(url(event/2nd/e-main/components/promo-event/bg-promo-event.png), 100%) 
+    +breakpoint-min($min-width-xl)
+      +bg-set(url(event/2nd/e-main/components/promo-event/bg-promo-event-web.png), auto)
+
+  .promo__zone
+    +aspect-ratio(960, 1080)
+    +breakpoint-min($min-width-xl)
+      +aspect-ratio(960, 953)
+
+  .promo__block
+    padding: 4% 2.6% 0
+    +breakpoint-min($min-width-xl)
+      padding: 4.5% 5% 0
+    .promo__box
+      display: flex
+      justify-content: space-between
+      &:first-child,
+      &:nth-child(3)
+        .item__box
+          width: 49.5%
+          margin: auto 0
+      &:nth-child(2)
+        .item__box
+          width: 100%
+      &:last-child
+        justify-content: center
+        .item__box
+          &:first-child
+            width: 100%
+
+  .event__item 
+    width: 100%
+    text-align: center
+    transition: all .5s
+
+  .promo__box
+    .swiper-container
+      max-width: 100%
+      li
+        text-align: center
+
+.animate
+  transition: all 0.5s
+  transform: scale(0.95)
+  filter: contrast(1.2)
+
+@keyframes up-down
+  0%, 100%
+    transform: translateY(0%)
+  50%
+    transform: translateY(13%)
+
+@keyframes up-down-3
+  0%, 100%
+    transform: translateY(0%)
+  50%
+    transform: translateY(-8%)
+
+@keyframes cloak-scaling
+  0%, 100%
+    transform: rotateX(0deg)
+  10%, 30%, 60%, 90%
+    transform: rotateX(20deg)
+  20%, 40%, 80%
+    transform: rotateX(8deg)
+  50%
+    transform: rotateX(32deg)
+  70%
+    transform: rotateX(12deg)
+  

@@ -1,0 +1,59 @@
+.promo__group--slider-w19
+  +pos-set(relative, zero)
+  overflow: hidden
+
+  .decor__item
+    pointer-events: none
+    &--light
+      +pos-set(absolute, second, 39%, 10%)
+      width: 80%
+      +breakpoint-min($min-width-xl)
+        top: 330px
+        left: calc( 50% - 366px )
+        width: auto
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/slider-w19/bg-slider-w19.png), 100%)
+  .promo__zone
+    +aspect-ratio(960, 1790)
+    +breakpoint-min($min-width-xl)
+      +aspect-ratio(960, 1760)
+  .promo__block
+    padding: 17.6% 2% 0 2.4%
+    +breakpoint-min($min-width-xl)
+      padding-left: 3.4%
+  .slide__box
+    &--bn
+      padding: 0% 12% 0% 9.8%
+    &--item
+      display: flex
+      justify-content: center
+      flex-wrap: wrap
+      margin-top: 10%
+      +breakpoint-min($min-width-xl)
+        margin-top: 106px
+      .item__box
+        width: calc( 100% / 3  )
+        max-width: 296px
+        &:nth-child(3n + 2)
+          transform: scale(1.003)
+          transform-origin: top center
+          +breakpoint-min($min-width-xl)
+            transform: scale(1)
+        &:nth-child(3n + 1)
+          img
+            margin-left: 0%
+          +breakpoint-min($min-width-xl)
+            img
+              margin-left: 0.5%
+        
+  .swiper-button-next,
+  .swiper-button-prev
+    top: 11%
+    width: 5%
+    height: 4%
+    &::after
+      content: ''
+  .swiper-button-prev
+    left: 2.8%
+  .swiper-button-next
+    right: 4.8%

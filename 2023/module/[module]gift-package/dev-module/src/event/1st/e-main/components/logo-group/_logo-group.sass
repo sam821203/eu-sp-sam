@@ -1,0 +1,35 @@
+section.logo__group--w4m2
+  margin-bottom: 24px
+  +breakpoint-min($min-width-xl)
+    margin-bottom: 32px
+  .banner__title
+    +bg-set(url(event/1st/e-main/components/logo-group/logo-bar.png), 100%)
+    +breakpoint-min($min-width-xl)
+      background-size: contain
+  .logos__wrap
+    // background: none
+    +breakpoint-min($min-width-xl)
+      +bg-set(url(event/1st/e-main/components/logo-group/bg-brand.png), 100%)
+  .logos__item
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    padding: 4% 4% 2.5%
+  .logo__item
+    width: 49%
+    margin-bottom: 2%
+    +breakpoint-min($min-width-xl)
+      width: 23%
+
+
+
+// .logo__group--w4m2 .logo__item {
+//   width: 49%;
+//   margin-bottom: 2%;
+// }
+
+// @media screen and (min-width: 960px) {
+//   .logo__group--w4m2 .logo__item {
+//     width: 23%;
+//   }
+// }

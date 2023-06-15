@@ -1,0 +1,40 @@
+@import "event/1st/e-main/components/include/user-info/_user-info"
+
+.promo__group--main-menu
+  .group__promo
+    +bg-set(url(event/1st/e-main/components/main-menu/bg-menu.png), 100%)
+    ul
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-around
+      padding: 7% 2% 3.5%
+      li
+        width: 33%
+        text-align: center
+
+  .group__nav
+    display: flex
+    justify-content: space-around
+    padding: 0 1.5%
+    .btn--nav
+      display: block
+      font-size: 16px
+      transition: transform 0.5s
+      cursor: pointer
+      &:hover,
+      &:active
+        transform: scale(1.05)
+        filter: brightness(120%)
+
+    +breakpoint-min($min-width-md)
+      .btn--nav
+        width: 150px
+        font-size: 20px
+    +breakpoint-min($min-width-lg)
+      padding: 0 15%
+    +breakpoint-min($min-width-xl)
+      padding: 0 125px
+      .btn--nav
+        width: 200px
+        font-size: 28px
+

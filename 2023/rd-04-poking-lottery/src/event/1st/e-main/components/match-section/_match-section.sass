@@ -1,0 +1,67 @@
+.match__zone
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-evenly
+  .match__block
+    +pos-set(relative, zero)
+    width: 100%
+    +breakpoint-min($min-width-xl)
+      width: 400px
+
+  .decor__top
+    margin-bottom: 24px
+
+  .decor__text--wrap
+    +pos-set(absolute, zero, 0%, calc(50% - 55px))
+    width: 110px
+    .decor__text
+      display: flex
+      justify-content: space-around
+      span
+        font-size: 24px
+        color: $gray-deep-light
+  .decor__countdown
+    +pos-set(absolute, zero, 7.6%, calc(50% - 83px))
+    width: 166px
+    height: 20px
+    border-radius: 4px
+    text-align: center
+    span
+      font-size: 14px
+      color: $gray-deep-light
+      &.countdown-time
+        color: $main-color-4
+
+  .match__box
+    margin: 0 auto 18px
+    padding: 40px 16px 16px
+    width: 328px
+    height: 185px
+    background: radial-gradient(98.48% 326.98% at 0% 3.35%, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%)
+    backdrop-filter: blur(21px)
+    border-radius: 8px
+    border: 2px solid $main-color-5
+  .match__title
+    +pos-set(absolute, zero, 0%, 0%)
+    width: 100%
+    background: linear-gradient(90deg, rgba(24, 75, 134, 0) 0%, #5990CF 51.56%, rgba(24, 75, 134, 0) 100%)
+    text-align: center
+    padding: 2px 4px
+    span
+      margin-right: 1%
+      font-size: 16px
+      line-height: 24px
+      font-weight: 700
+      color: $gray-deep-light
+
+  .match__item--wrap
+    display: flex
+    justify-content: space-between
+    align-items: center
+  .match__item
+    padding: 7px 6px
+    width: 100px
+    border-radius: 8px
+  .match__vs
+    width: 65px
+

@@ -1,0 +1,150 @@
+-
+  var promoEventData = [
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/19552/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-1-1.png",
+        alt: "註冊新會員現領500枚東森幣",
+      },
+    ],
+    [
+      {
+        link: "https://www.etmall.com.tw/Activity/dl/LuckyDraw/8b56076ca75fb5512e02004c50d4a5c8",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-2-1.png",
+        alt: "會員限定，天天免費抽$520",
+      },
+    ],
+    [
+      {
+        link: "https://www.etmall.com.tw/Activity/CouponReceiveAll",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-3-1.png",
+        alt: "全站折價券，限量開搶",
+      },
+      {
+        link: "https://www.etmall.com.tw/member/taskActivity",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-3-2.png",
+        alt: "消費滿額拿$1,314",
+      },
+      {
+        link: "https://www.etmall.com.tw/Activity/CouponReceiveAll",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-3-3.png",
+        alt: "全站折價券，限量開搶",
+      },
+      {
+        link: "https://www.etmall.com.tw/member/taskActivity",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-3-4.png",
+        alt: "消費滿額拿$1,314",
+      },
+    ],
+    [
+      {
+        link: "",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-4-1.png",
+        alt: "離島配送滿額贈100枚樂透金",
+      },
+    ],
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/21486/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-5-1.png",
+        alt: "不限金額送必勝客&KFC優惠券",
+      },
+    ],
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/21486/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-6-1.png",
+        alt: "不限金額送必勝客&KFC優惠券",
+      },
+    ],
+    //- 名人推薦
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/17190/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-7-1.png",
+        alt: "石墨烯塑崩未來褲x2",
+      },
+      {
+        link: "https://media.etmall.com.tw/sp/17190/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-7-2.png",
+        alt: "怡漾鹼性離子水",
+      },
+      {
+        link: "https://media.etmall.com.tw/sp/17190/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-7-3.png",
+        alt: "AHC超能玻尿酸保溼肌亮精華30ml",
+      },
+    ],
+  ]
+
+//- TODO: 如果promo不和hero綁一起時要有自己的section和layout--main
+section.promo__group.promo-event
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          .promo__box
+            .item__box
+              .event__item
+                .swiper-container.container--promo-event
+                  ul.swiper-wrapper
+                    each item, itemIndex in promoEventData[0]
+                      li.swiper-slide.promo__item
+                        a(href=  item.link, title= item.alt)
+                          img(src=  item.imgSrc,  item.alt)
+              .event__item
+                .swiper-container.container--promo-event
+                  ul.swiper-wrapper
+                    each item, itemIndex in promoEventData[1]
+                      li.swiper-slide.promo__item
+                        a(href=  item.link, title= item.alt)
+                          img(src=  item.imgSrc,  item.alt)
+
+            .item__box
+                .event__item
+                  .swiper-container.container--promo-event
+                    ul.swiper-wrapper
+                      each item, itemIndex in promoEventData[2]
+                        li.swiper-slide.promo__item
+                          a(href=  item.link, title= item.alt)
+                            img(src=  item.imgSrc,  item.alt)
+
+          .promo__box
+            .item__box
+              .event__item
+                .swiper-container.container--promo-event
+                  ul.swiper-wrapper
+                    each item, itemIndex in promoEventData[3]
+                      li.swiper-slide.promo__item
+                        a(href=  item.link, title= item.alt)
+                          img(src=  item.imgSrc,  item.alt)
+            .item__box
+              .event__item
+                .swiper-container.container--promo-event
+                  ul.swiper-wrapper
+                    each item, itemIndex in promoEventData[4]
+                      li.swiper-slide.promo__item
+                        a(href=  item.link, title= item.alt)
+                          img(src=  item.imgSrc,  item.alt)
+
+            .item__box
+              .event__item
+                .swiper-container.container--promo-event
+                  ul.swiper-wrapper
+                    each item, itemIndex in promoEventData[5]
+                      li.swiper-slide.promo__item
+                        a(href=  item.link, title= item.alt)
+                          img(src=  item.imgSrc,  item.alt)
+
+        .promo__block
+          //- .promo__title
+          //-   img(src="event/1st/e-main/components/promo-event/promo-event-title.png", alt="名人推薦")
+          .promo__box
+            .item__box
+              .event__item
+                .swiper-container.container--promo-event
+                  ul.swiper-wrapper
+                    each item, itemIndex in promoEventData[6]
+                      li.swiper-slide.promo__item
+                        a(href=  item.link, title= item.alt)
+                          img(src=  item.imgSrc,  item.alt)

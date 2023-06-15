@@ -1,0 +1,57 @@
+.bn-section
+  overflow: hidden
+  .decor__item
+    pointer-events: none
+
+    &--title
+      +pos-set(absolute, base, 2%, 20%)
+      width: 60%
+      +breakpoint-min($min-width-xl)
+        top: 24px
+        left: calc(50% - 290px)
+        width: auto
+
+    &--left
+      +pos-set(absolute, base, 1%, 4%)
+      width: 19%
+      transform-origin: 50% 100%
+      +breakpoint-min($min-width-xl)
+        top: 23.5px
+        left: calc(50% - 435px)
+        width: auto
+      &.active
+        animation: tumbler-shaking 0.8s ease-in-out infinite alternate
+
+    &--right
+      +pos-set(absolute, zero, 1%)
+      right: 4%
+      width: 19%
+      transform-origin: 50% 100%
+      +breakpoint-min($min-width-xl)
+        top: 24px
+        right: calc( 50% - 405px )
+      &.active
+        animation: tumbler-shaking 0.8s ease-in-out infinite alternate-reverse
+
+    +breakpoint-min($min-width-xl)
+      width: auto
+      
+  .promo__wrap
+    +bg-set(url("event/1st/e-main/components/bn-section/bg-bn-section.png"), 100%)
+    .promo__zone
+      +aspect-ratio(960, 735)
+    .promo__box
+      margin: 35% auto 0
+      width: 78%
+      text-align: center
+      cursor: pointer
+      &:hover
+        transition: all 0.6s ease
+        transform: translateY(-1%)
+        filter: contrast()(1.2)
+
+@keyframes tumbler-shaking
+  from 
+    transform: translateX(1%) rotate(10deg)
+  to 
+    transform: translateX(-1%) rotate(-10deg)
