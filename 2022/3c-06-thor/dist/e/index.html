@@ -1,0 +1,1877 @@
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1"
+/><!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      id="localElevatorRight"
+      rel="stylesheet"
+      href="sp-elevator-right.css"
+    />
+    <link href="vendor-bundle.css" rel="stylesheet" />
+    <link href="app-bundle.css" rel="stylesheet" />
+  </head>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    *:before,
+    *:after {
+      box-sizing: border-box;
+    }
+    a {
+      display: block;
+      text-decoration: none;
+    }
+    ul {
+      list-style: none;
+    }
+    img {
+      width: 100%;
+      border: 0;
+    }
+    article,
+    main,
+    nav,
+    section {
+      display: block;
+    }
+    body {
+      margin: 0;
+      font-family: PingFangTC-regular, "LiHei Pro", -apple-system,
+        BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+        "Noto Sans", "Source Han Sans TC", "Microsoft JhengHei", sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+    }
+    .body-color {
+      /* 外部背景底色 */
+      background-color: #ff5f5f;
+    }
+    .sp--960 {
+      position: relative;
+      z-index: 0;
+      max-width: 960px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    /*-- note start --*/
+    .note {
+      font-size: 15px;
+      word-break: break-all;
+      line-height: 150%;
+    }
+    .note article {
+      padding: 1.5%;
+      /* 內部背景底色 */
+      background-color: #ffffff;
+      border-radius: 5px;
+    }
+    .note article a {
+      display: inline;
+      color: #ce2212;
+      text-decoration: underline;
+      word-break: break-all;
+    }
+    .note article a:hover {
+      text-decoration: none;
+    }
+    .note li {
+      padding: 5px;
+    }
+    .note ol > li {
+      margin-left: 30px;
+    }
+    .act_name {
+      font-size: 32px;
+      color: #fff;
+      /* 主標底色 */
+      background-color: #15151d;
+      line-height: 32px;
+      text-align: center;
+      letter-spacing: 2px;
+      font-weight: bold;
+      padding: 15px;
+      border-radius: 5px;
+    }
+    .h2_style {
+      font-size: 24px;
+      /* 活動名稱顏色 */
+      color: #9b2121;
+      line-height: 30px;
+      margin-top: 15px;
+    }
+    @media (max-width: 700px) {
+      .act_name {
+        font-size: 24px;
+        line-height: 24px;
+      }
+      .h2_style {
+        font-size: 20px;
+        line-height: 24px;
+      }
+    }
+    .p-notice {
+      font-size: 24px;
+      color: #555555;
+      line-height: 42px;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+    @media (max-width: 700px) {
+      .p-notice {
+        font-size: 20px;
+      }
+    }
+    .p-notice-words {
+      color: #555555;
+    }
+    .note .decimal-type {
+      /* 阿拉伯數字 */
+      list-style-type: decimal;
+    }
+    .note .lower-alpha-type {
+      /* 小寫英文字母 */
+      list-style-type: lower-alpha;
+    }
+    .note .none-type {
+      /* 不顯示符號 */
+      list-style-type: none;
+      margin-left: -10px;
+    }
+    .note .disc-type {
+      /* 實心圓形 */
+      list-style-type: disc;
+    }
+    .btn_a1 {
+      /* 按鈕底色 */
+      background-color: #ce2212;
+      padding: 5px 30px;
+      border-radius: 5px;
+    }
+    .btn_p1 {
+      font-size: 24px;
+      line-height: 52px;
+      font-weight: bold;
+      margin: 0 0 5px 35px;
+    }
+    .note article .btn_p1 a {
+      color: #fff;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .note article .btn_p1 a:hover {
+      /* 滑鼠移過 按鈕底色 */
+      background-color: #ff5747;
+    }
+    /*-- rwd table --*/
+    .note table.rwd-table {
+      width: 100%;
+      border: none;
+      border-collapse: collapse;
+      background-color: #eeeeee;
+      overflow: hidden;
+      margin: 0 0 10px 0;
+    }
+    .note table.rwd-table th {
+      display: none;
+    }
+    .note table.rwd-table td {
+      display: block;
+      text-align: left;
+    }
+    .note table.rwd-table td:before {
+      content: attr(data-th) " ";
+      display: inline-block;
+      margin: 5px 5px 5px 0;
+      color: #9b2121;
+      font-weight: bold;
+    }
+    .note table.rwd-table tr:nth-child(even) {
+      background-color: #dadada;
+    }
+    .note table.rwd-table th,
+    .rwd-table td {
+      margin: 0.5em 1em;
+    }
+
+    /* #note-top {
+      display: block;
+      width: 100%;
+    } */
+
+    @media (min-width: 700px) {
+      .note table.rwd-table {
+        width: 95%;
+        border: 1px solid #15151d;
+        background-color: #fff;
+        margin: 0 auto 15px;
+      }
+      .note table.rwd-table tr:nth-child(even) {
+        background: transparent;
+      }
+      .note table.rwd-table th {
+        /* 表頭底色 */
+        background-color: #ffe39a;
+      }
+      .note table.rwd-table th,
+      .note table.rwd-table td {
+        border: 1px solid #15151d;
+      }
+      .note table.rwd-table td:nth-child(4) {
+        border: 1px solid #15151d;
+      }
+      .note table.rwd-table td:before {
+        display: none;
+      }
+      .note table.rwd-table th,
+      .note table.rwd-table td {
+        display: table-cell;
+        padding: 0.25em 0.5em;
+        text-align: center;
+      }
+      .note table.rwd-table th,
+      .note table.rwd-table td {
+        padding: 0.8em !important;
+      }
+    }
+    /* 插入圖片 */
+    .photo_style {
+      display: block;
+      margin: 0 auto;
+      max-width: 800px;
+      padding: 20px;
+    }
+
+    @media (max-width: 700px) {
+      .photo01 {
+        display: none;
+      }
+    }
+    @media (min-width: 700px) {
+      .photo02 {
+        display: none;
+      }
+    }
+    /*-- note end --*/
+
+    /* 禮物盒giftbox圖 */
+    .bn-w3m1 .banner__wrap {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .bn-w3m1 .banner__item {
+      flex: 0 0 25%;
+      padding: 5px;
+      list-style: none;
+    }
+    @media screen and (max-width: 769px) {
+      ul.banner__wrap {
+        margin: 0;
+      }
+      .bn-w3m1 .banner__item {
+        flex: 1 0 50%;
+      }
+    }
+  </style>
+  <body>
+    <header class="header__wrap">
+      <div class="layout--main">
+        <div class="header__zone">
+          <a class="logo logo--e" href="https://www.etmall.com.tw/"
+            ><img src="logo-white.png" alt="東森購物"
+          /></a>
+        </div>
+      </div>
+    </header>
+    <main class="sp__wrap" id="spWrap">
+      <header class="header__wrap">
+        <div class="layout--main">
+          <div class="header__zone">
+            <a class="logo logo--e" href="https://www.etmall.com.tw/"
+              ><img src="logo-white.png" alt="東森購物"
+            /></a>
+          </div>
+        </div>
+      </header>
+      <div class="bg-web full-parent"></div>
+      <div class="bg__item--1"><img src="decor.png" alt="" /></div>
+      <div class="bg__item--2"><img src="decor.png" alt="" /></div>
+      <div class="layout--main">
+        <div class="hero__wrap">
+          <div class="hero__zone">
+            <div class="hero__block">
+              <div
+                class="hero__title hero__title--main block--center"
+                title="618奇幻旅程，驚．喜．全．場！"
+              >
+                <img
+                  id="heroTitle"
+                  src="title.png"
+                  alt="618奇幻旅程，驚．喜．全．場！"
+                />
+              </div>
+              <div class="hero__title hero__title--figure" title="">
+                <img src="figure.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="promo__group promo__group--promo-event">
+        <div class="layout--main">
+          <div class="promo__wrap">
+            <div class="promo__decor"><img src="decor-promo-event.png" /></div>
+            <div class="promo__zone">
+              <div class="promo__item--1">
+                <a href="#note-003"> <img src="promo-event-1.png" /></a>
+              </div>
+              <div class="promo__block">
+                <div class="promo__item--2">
+                  <a href="#note-002"><img src="promo-event-2.png" /></a>
+                </div>
+                <div class="promo__box">
+                  <div class="promo__item--3">
+                    <a href=""><img src="promo-event-3.png" /></a>
+                  </div>
+                  <div class="promo__item--4">
+                    <a href="#note-004"><img src="promo-event-4.png" /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <section class="promo__group promo__group--daily-tab" data-title="每日精選">
+      <div class="layout--main">
+        <div class="promo__wrap">
+          <div class="promo__zone">
+            <ul class="tab__wrap">
+              <li class="tab__zone">
+                <ul class="tab__box drag-overflow" id="dailyTab"></ul>
+              </li>
+              <li class="content__zone">
+                <ul class="content__block" id="dailyTabContent">
+                  <li class="content__box">
+                    <div class="content__item">
+                      <div class="item__wrap">
+                        <div class="tab__slider swiper-container">
+                          <ul class="swiper-wrapper">
+                            <li class="swiper-slide">
+                              <div class="item__box">
+                                <a href="" title="每日精選商品">
+                                  <div class="item__intro">
+                                    喜傑獅 Dreambook
+                                  </div>
+                                  <div class="item__intro item__intro--2">
+                                    14N Lite 黑
+                                  </div>
+                                  <div class="item__pic block--center">
+                                    <img
+                                      src="tab-0613-1.png"
+                                      alt="每日精選商品"
+                                    />
+                                  </div>
+                                  <div class="item__description">
+                                    <div class="item__decor">
+                                      <img src="decor-item.png" alt="" />
+                                    </div>
+                                    <div class="item__price">
+                                      <div class="price__box">
+                                        <span>$</span><span>12,900</span>
+                                      </div>
+                                      <div class="price__box">
+                                        <span>$</span><span>11,399</span>
+                                      </div>
+                                    </div>
+                                  </div></a
+                                >
+                              </div>
+                            </li>
+                            <li class="swiper-slide">
+                              <div class="item__box">
+                                <a href="" title="每日精選商品">
+                                  <div class="item__intro">品名品名品名品</div>
+                                  <div class="item__intro item__intro--2">
+                                    品名品名品名品
+                                  </div>
+                                  <div class="item__pic block--center">
+                                    <img
+                                      src="tab-0613-1.png"
+                                      alt="每日精選商品"
+                                    />
+                                  </div>
+                                  <div class="item__description">
+                                    <div class="item__decor">
+                                      <img src="decor-item.png" alt="" />
+                                    </div>
+                                    <div class="item__price">
+                                      <div class="price__box">
+                                        <span>$</span><span>12,900</span>
+                                      </div>
+                                      <div class="price__box">
+                                        <span>$</span><span>11,399</span>
+                                      </div>
+                                    </div>
+                                  </div></a
+                                >
+                              </div>
+                            </li>
+                            <li class="swiper-slide">
+                              <div class="item__box">
+                                <a href="" title="每日精選商品">
+                                  <div class="item__intro">品名品名品名品</div>
+                                  <div class="item__intro item__intro--2">
+                                    品名品名品名品
+                                  </div>
+                                  <div class="item__pic block--center">
+                                    <img
+                                      src="tab-0613-1.png"
+                                      alt="每日精選商品"
+                                    />
+                                  </div>
+                                  <div class="item__description">
+                                    <div class="item__decor">
+                                      <img src="decor-item.png" alt="" />
+                                    </div>
+                                    <div class="item__price">
+                                      <div class="price__box">
+                                        <span>$</span><span>12,900</span>
+                                      </div>
+                                      <div class="price__box">
+                                        <span>$</span><span>11,399</span>
+                                      </div>
+                                    </div>
+                                  </div></a
+                                >
+                              </div>
+                            </li>
+                            <li class="swiper-slide">
+                              <div class="item__box">
+                                <a href="" title="每日精選商品">
+                                  <div class="item__intro">品名品名品名品</div>
+                                  <div class="item__intro item__intro--2">
+                                    品名品名品名品
+                                  </div>
+                                  <div class="item__pic block--center">
+                                    <img
+                                      src="tab-0613-1.png"
+                                      alt="每日精選商品"
+                                    />
+                                  </div>
+                                  <div class="item__description">
+                                    <div class="item__decor">
+                                      <img src="decor-item.png" alt="" />
+                                    </div>
+                                    <div class="item__price">
+                                      <div class="price__box">
+                                        <span>$</span><span>12,900</span>
+                                      </div>
+                                      <div class="price__box">
+                                        <span>$</span><span>11,399</span>
+                                      </div>
+                                    </div>
+                                  </div></a
+                                >
+                              </div>
+                            </li>
+                            <li class="swiper-slide">
+                              <div class="item__box">
+                                <a href="" title="每日精選商品">
+                                  <div class="item__intro">品名品名品名品</div>
+                                  <div class="item__intro item__intro--2">
+                                    品名品名品名品
+                                  </div>
+                                  <div class="item__pic block--center">
+                                    <img
+                                      src="tab-0613-1.png"
+                                      alt="每日精選商品"
+                                    />
+                                  </div>
+                                  <div class="item__description">
+                                    <div class="item__decor">
+                                      <img src="decor-item.png" alt="" />
+                                    </div>
+                                    <div class="item__price">
+                                      <div class="price__box">
+                                        <span>$</span><span>12,900</span>
+                                      </div>
+                                      <div class="price__box">
+                                        <span>$</span><span>11,399</span>
+                                      </div>
+                                    </div>
+                                  </div></a
+                                >
+                              </div>
+                            </li>
+                            <li class="swiper-slide">
+                              <div class="item__box">
+                                <a href="" title="每日精選商品">
+                                  <div class="item__intro">品名品名品名品</div>
+                                  <div class="item__intro item__intro--2">
+                                    品名品名品名品
+                                  </div>
+                                  <div class="item__pic block--center">
+                                    <img
+                                      src="tab-0613-1.png"
+                                      alt="每日精選商品"
+                                    />
+                                  </div>
+                                  <div class="item__description">
+                                    <div class="item__decor">
+                                      <img src="decor-item.png" alt="" />
+                                    </div>
+                                    <div class="item__price">
+                                      <div class="price__box">
+                                        <span>$</span><span>12,900</span>
+                                      </div>
+                                      <div class="price__box">
+                                        <span>$</span><span>11,399</span>
+                                      </div>
+                                    </div>
+                                  </div></a
+                                >
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content__box">
+                    <div class="content__item">
+                      <div class="item__wrap">
+                        <div class="tab__slider swiper-container">
+                          <ul class="swiper-wrapper">
+                            <li class="swiper-slide">
+                              <div class="item__box">
+                                <a href="" title="每日精選商品">
+                                  <div class="item__intro">品名品名品名品</div>
+                                  <div class="item__intro item__intro--2">
+                                    品名品名品名品
+                                  </div>
+                                  <div class="item__pic block--center">
+                                    <img
+                                      src="tab-0613-1.png"
+                                      alt="每日精選商品"
+                                    />
+                                  </div>
+                                  <div class="item__description">
+                                    <div class="item__decor">
+                                      <img src="decor-item.png" alt="" />
+                                    </div>
+                                    <div class="item__price">
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                    </div>
+                                  </div></a
+                                >
+                              </div>
+                            </li>
+                            <li class="swiper-slide">
+                              <div class="item__box">
+                                <a href="" title="每日精選商品">
+                                  <div class="item__intro">品名品名品名品</div>
+                                  <div class="item__intro item__intro--2">
+                                    品名品名品名品
+                                  </div>
+                                  <div class="item__pic block--center">
+                                    <img
+                                      src="tab-0613-1.png"
+                                      alt="每日精選商品"
+                                    />
+                                  </div>
+                                  <div class="item__description">
+                                    <div class="item__decor">
+                                      <img src="decor-item.png" alt="" />
+                                    </div>
+                                    <div class="item__price">
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                    </div>
+                                  </div></a
+                                >
+                              </div>
+                            </li>
+                            <li class="swiper-slide">
+                              <div class="item__box">
+                                <a href="" title="每日精選商品">
+                                  <div class="item__intro">品名品名品名品</div>
+                                  <div class="item__intro item__intro--2">
+                                    品名品名品名品
+                                  </div>
+                                  <div class="item__pic block--center">
+                                    <img
+                                      src="tab-0613-1.png"
+                                      alt="每日精選商品"
+                                    />
+                                  </div>
+                                  <div class="item__description">
+                                    <div class="item__decor">
+                                      <img src="decor-item.png" alt="" />
+                                    </div>
+                                    <div class="item__price">
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                    </div>
+                                  </div></a
+                                >
+                              </div>
+                            </li>
+                            <li class="swiper-slide">
+                              <div class="item__box">
+                                <a href="" title="每日精選商品">
+                                  <div class="item__intro">品名品名品名品</div>
+                                  <div class="item__intro item__intro--2">
+                                    品名品名品名品
+                                  </div>
+                                  <div class="item__pic block--center">
+                                    <img
+                                      src="tab-0613-1.png"
+                                      alt="每日精選商品"
+                                    />
+                                  </div>
+                                  <div class="item__description">
+                                    <div class="item__decor">
+                                      <img src="decor-item.png" alt="" />
+                                    </div>
+                                    <div class="item__price">
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                    </div>
+                                  </div></a
+                                >
+                              </div>
+                            </li>
+                            <li class="swiper-slide">
+                              <div class="item__box">
+                                <a href="" title="每日精選商品">
+                                  <div class="item__intro">品名品名品名品</div>
+                                  <div class="item__intro item__intro--2">
+                                    品名品名品名品
+                                  </div>
+                                  <div class="item__pic block--center">
+                                    <img
+                                      src="tab-0613-1.png"
+                                      alt="每日精選商品"
+                                    />
+                                  </div>
+                                  <div class="item__description">
+                                    <div class="item__decor">
+                                      <img src="decor-item.png" alt="" />
+                                    </div>
+                                    <div class="item__price">
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                    </div>
+                                  </div></a
+                                >
+                              </div>
+                            </li>
+                            <li class="swiper-slide">
+                              <div class="item__box">
+                                <a href="" title="每日精選商品">
+                                  <div class="item__intro">品名品名品名品</div>
+                                  <div class="item__intro item__intro--2">
+                                    品名品名品名品
+                                  </div>
+                                  <div class="item__pic block--center">
+                                    <img
+                                      src="tab-0613-1.png"
+                                      alt="每日精選商品"
+                                    />
+                                  </div>
+                                  <div class="item__description">
+                                    <div class="item__decor">
+                                      <img src="decor-item.png" alt="" />
+                                    </div>
+                                    <div class="item__price">
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                    </div>
+                                  </div></a
+                                >
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content__box">
+                    <div class="content__item">
+                      <div class="item__wrap">
+                        <div class="tab__slider swiper-container">
+                          <ul class="swiper-wrapper">
+                            <li class="swiper-slide">
+                              <div class="item__box">
+                                <a href="" title="每日精選商品">
+                                  <div class="item__intro">品名品名品名品</div>
+                                  <div class="item__intro item__intro--2">
+                                    品名品名品名品
+                                  </div>
+                                  <div class="item__pic block--center">
+                                    <img
+                                      src="tab-0613-1.png"
+                                      alt="每日精選商品"
+                                    />
+                                  </div>
+                                  <div class="item__description">
+                                    <div class="item__decor">
+                                      <img src="decor-item.png" alt="" />
+                                    </div>
+                                    <div class="item__price">
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                    </div>
+                                  </div></a
+                                >
+                              </div>
+                            </li>
+                            <li class="swiper-slide">
+                              <div class="item__box">
+                                <a href="" title="每日精選商品">
+                                  <div class="item__intro">品名品名品名品</div>
+                                  <div class="item__intro item__intro--2">
+                                    品名品名品名品
+                                  </div>
+                                  <div class="item__pic block--center">
+                                    <img
+                                      src="tab-0613-1.png"
+                                      alt="每日精選商品"
+                                    />
+                                  </div>
+                                  <div class="item__description">
+                                    <div class="item__decor">
+                                      <img src="decor-item.png" alt="" />
+                                    </div>
+                                    <div class="item__price">
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                    </div>
+                                  </div></a
+                                >
+                              </div>
+                            </li>
+                            <li class="swiper-slide">
+                              <div class="item__box">
+                                <a href="" title="每日精選商品">
+                                  <div class="item__intro">品名品名品名品</div>
+                                  <div class="item__intro item__intro--2">
+                                    品名品名品名品
+                                  </div>
+                                  <div class="item__pic block--center">
+                                    <img
+                                      src="tab-0613-1.png"
+                                      alt="每日精選商品"
+                                    />
+                                  </div>
+                                  <div class="item__description">
+                                    <div class="item__decor">
+                                      <img src="decor-item.png" alt="" />
+                                    </div>
+                                    <div class="item__price">
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                    </div>
+                                  </div></a
+                                >
+                              </div>
+                            </li>
+                            <li class="swiper-slide">
+                              <div class="item__box">
+                                <a href="" title="每日精選商品">
+                                  <div class="item__intro">品名品名品名品</div>
+                                  <div class="item__intro item__intro--2">
+                                    品名品名品名品
+                                  </div>
+                                  <div class="item__pic block--center">
+                                    <img
+                                      src="tab-0613-1.png"
+                                      alt="每日精選商品"
+                                    />
+                                  </div>
+                                  <div class="item__description">
+                                    <div class="item__decor">
+                                      <img src="decor-item.png" alt="" />
+                                    </div>
+                                    <div class="item__price">
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                    </div>
+                                  </div></a
+                                >
+                              </div>
+                            </li>
+                            <li class="swiper-slide">
+                              <div class="item__box">
+                                <a href="" title="每日精選商品">
+                                  <div class="item__intro">品名品名品名品</div>
+                                  <div class="item__intro item__intro--2">
+                                    品名品名品名品
+                                  </div>
+                                  <div class="item__pic block--center">
+                                    <img
+                                      src="tab-0613-1.png"
+                                      alt="每日精選商品"
+                                    />
+                                  </div>
+                                  <div class="item__description">
+                                    <div class="item__decor">
+                                      <img src="decor-item.png" alt="" />
+                                    </div>
+                                    <div class="item__price">
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                    </div>
+                                  </div></a
+                                >
+                              </div>
+                            </li>
+                            <li class="swiper-slide">
+                              <div class="item__box">
+                                <a href="" title="每日精選商品">
+                                  <div class="item__intro">品名品名品名品</div>
+                                  <div class="item__intro item__intro--2">
+                                    品名品名品名品
+                                  </div>
+                                  <div class="item__pic block--center">
+                                    <img
+                                      src="tab-0613-1.png"
+                                      alt="每日精選商品"
+                                    />
+                                  </div>
+                                  <div class="item__description">
+                                    <div class="item__decor">
+                                      <img src="decor-item.png" alt="" />
+                                    </div>
+                                    <div class="item__price">
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                    </div>
+                                  </div></a
+                                >
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content__box">
+                    <div class="content__item">
+                      <div class="item__wrap">
+                        <div class="tab__slider swiper-container">
+                          <ul class="swiper-wrapper">
+                            <li class="swiper-slide">
+                              <div class="item__box">
+                                <a href="" title="每日精選商品">
+                                  <div class="item__intro">品名品名品名品</div>
+                                  <div class="item__intro item__intro--2">
+                                    品名品名品名品
+                                  </div>
+                                  <div class="item__pic block--center">
+                                    <img
+                                      src="tab-0613-1.png"
+                                      alt="每日精選商品"
+                                    />
+                                  </div>
+                                  <div class="item__description">
+                                    <div class="item__decor">
+                                      <img src="decor-item.png" alt="" />
+                                    </div>
+                                    <div class="item__price">
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                    </div>
+                                  </div></a
+                                >
+                              </div>
+                            </li>
+                            <li class="swiper-slide">
+                              <div class="item__box">
+                                <a href="" title="每日精選商品">
+                                  <div class="item__intro">品名品名品名品</div>
+                                  <div class="item__intro item__intro--2">
+                                    品名品名品名品
+                                  </div>
+                                  <div class="item__pic block--center">
+                                    <img
+                                      src="tab-0613-1.png"
+                                      alt="每日精選商品"
+                                    />
+                                  </div>
+                                  <div class="item__description">
+                                    <div class="item__decor">
+                                      <img src="decor-item.png" alt="" />
+                                    </div>
+                                    <div class="item__price">
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                    </div>
+                                  </div></a
+                                >
+                              </div>
+                            </li>
+                            <li class="swiper-slide">
+                              <div class="item__box">
+                                <a href="" title="每日精選商品">
+                                  <div class="item__intro">品名品名品名品</div>
+                                  <div class="item__intro item__intro--2">
+                                    品名品名品名品
+                                  </div>
+                                  <div class="item__pic block--center">
+                                    <img
+                                      src="tab-0613-1.png"
+                                      alt="每日精選商品"
+                                    />
+                                  </div>
+                                  <div class="item__description">
+                                    <div class="item__decor">
+                                      <img src="decor-item.png" alt="" />
+                                    </div>
+                                    <div class="item__price">
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                    </div>
+                                  </div></a
+                                >
+                              </div>
+                            </li>
+                            <li class="swiper-slide">
+                              <div class="item__box">
+                                <a href="" title="每日精選商品">
+                                  <div class="item__intro">品名品名品名品</div>
+                                  <div class="item__intro item__intro--2">
+                                    品名品名品名品
+                                  </div>
+                                  <div class="item__pic block--center">
+                                    <img
+                                      src="tab-0613-1.png"
+                                      alt="每日精選商品"
+                                    />
+                                  </div>
+                                  <div class="item__description">
+                                    <div class="item__decor">
+                                      <img src="decor-item.png" alt="" />
+                                    </div>
+                                    <div class="item__price">
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                    </div>
+                                  </div></a
+                                >
+                              </div>
+                            </li>
+                            <li class="swiper-slide">
+                              <div class="item__box">
+                                <a href="" title="每日精選商品">
+                                  <div class="item__intro">品名品名品名品</div>
+                                  <div class="item__intro item__intro--2">
+                                    品名品名品名品
+                                  </div>
+                                  <div class="item__pic block--center">
+                                    <img
+                                      src="tab-0613-1.png"
+                                      alt="每日精選商品"
+                                    />
+                                  </div>
+                                  <div class="item__description">
+                                    <div class="item__decor">
+                                      <img src="decor-item.png" alt="" />
+                                    </div>
+                                    <div class="item__price">
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                    </div>
+                                  </div></a
+                                >
+                              </div>
+                            </li>
+                            <li class="swiper-slide">
+                              <div class="item__box">
+                                <a href="" title="每日精選商品">
+                                  <div class="item__intro">品名品名品名品</div>
+                                  <div class="item__intro item__intro--2">
+                                    品名品名品名品
+                                  </div>
+                                  <div class="item__pic block--center">
+                                    <img
+                                      src="tab-0613-1.png"
+                                      alt="每日精選商品"
+                                    />
+                                  </div>
+                                  <div class="item__description">
+                                    <div class="item__decor">
+                                      <img src="decor-item.png" alt="" />
+                                    </div>
+                                    <div class="item__price">
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                    </div>
+                                  </div></a
+                                >
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content__box">
+                    <div class="content__item">
+                      <div class="item__wrap">
+                        <div class="tab__slider swiper-container">
+                          <ul class="swiper-wrapper">
+                            <li class="swiper-slide">
+                              <div class="item__box">
+                                <a href="" title="每日精選商品">
+                                  <div class="item__intro">品名品名品名品</div>
+                                  <div class="item__intro item__intro--2">
+                                    品名品名品名品
+                                  </div>
+                                  <div class="item__pic block--center">
+                                    <img
+                                      src="tab-0613-1.png"
+                                      alt="每日精選商品"
+                                    />
+                                  </div>
+                                  <div class="item__description">
+                                    <div class="item__decor">
+                                      <img src="decor-item.png" alt="" />
+                                    </div>
+                                    <div class="item__price">
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                    </div>
+                                  </div></a
+                                >
+                              </div>
+                            </li>
+                            <li class="swiper-slide">
+                              <div class="item__box">
+                                <a href="" title="每日精選商品">
+                                  <div class="item__intro">品名品名品名品</div>
+                                  <div class="item__intro item__intro--2">
+                                    品名品名品名品
+                                  </div>
+                                  <div class="item__pic block--center">
+                                    <img
+                                      src="tab-0613-1.png"
+                                      alt="每日精選商品"
+                                    />
+                                  </div>
+                                  <div class="item__description">
+                                    <div class="item__decor">
+                                      <img src="decor-item.png" alt="" />
+                                    </div>
+                                    <div class="item__price">
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                    </div>
+                                  </div></a
+                                >
+                              </div>
+                            </li>
+                            <li class="swiper-slide">
+                              <div class="item__box">
+                                <a href="" title="每日精選商品">
+                                  <div class="item__intro">品名品名品名品</div>
+                                  <div class="item__intro item__intro--2">
+                                    品名品名品名品
+                                  </div>
+                                  <div class="item__pic block--center">
+                                    <img
+                                      src="tab-0613-1.png"
+                                      alt="每日精選商品"
+                                    />
+                                  </div>
+                                  <div class="item__description">
+                                    <div class="item__decor">
+                                      <img src="decor-item.png" alt="" />
+                                    </div>
+                                    <div class="item__price">
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                    </div>
+                                  </div></a
+                                >
+                              </div>
+                            </li>
+                            <li class="swiper-slide">
+                              <div class="item__box">
+                                <a href="" title="每日精選商品">
+                                  <div class="item__intro">品名品名品名品</div>
+                                  <div class="item__intro item__intro--2">
+                                    品名品名品名品
+                                  </div>
+                                  <div class="item__pic block--center">
+                                    <img
+                                      src="tab-0613-1.png"
+                                      alt="每日精選商品"
+                                    />
+                                  </div>
+                                  <div class="item__description">
+                                    <div class="item__decor">
+                                      <img src="decor-item.png" alt="" />
+                                    </div>
+                                    <div class="item__price">
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                    </div>
+                                  </div></a
+                                >
+                              </div>
+                            </li>
+                            <li class="swiper-slide">
+                              <div class="item__box">
+                                <a href="" title="每日精選商品">
+                                  <div class="item__intro">品名品名品名品</div>
+                                  <div class="item__intro item__intro--2">
+                                    品名品名品名品
+                                  </div>
+                                  <div class="item__pic block--center">
+                                    <img
+                                      src="tab-0613-1.png"
+                                      alt="每日精選商品"
+                                    />
+                                  </div>
+                                  <div class="item__description">
+                                    <div class="item__decor">
+                                      <img src="decor-item.png" alt="" />
+                                    </div>
+                                    <div class="item__price">
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                    </div>
+                                  </div></a
+                                >
+                              </div>
+                            </li>
+                            <li class="swiper-slide">
+                              <div class="item__box">
+                                <a href="" title="每日精選商品">
+                                  <div class="item__intro">品名品名品名品</div>
+                                  <div class="item__intro item__intro--2">
+                                    品名品名品名品
+                                  </div>
+                                  <div class="item__pic block--center">
+                                    <img
+                                      src="tab-0613-1.png"
+                                      alt="每日精選商品"
+                                    />
+                                  </div>
+                                  <div class="item__description">
+                                    <div class="item__decor">
+                                      <img src="decor-item.png" alt="" />
+                                    </div>
+                                    <div class="item__price">
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                    </div>
+                                  </div></a
+                                >
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content__box">
+                    <div class="content__item">
+                      <div class="item__wrap">
+                        <div class="tab__slider swiper-container">
+                          <ul class="swiper-wrapper">
+                            <li class="swiper-slide">
+                              <div class="item__box">
+                                <a href="" title="每日精選商品">
+                                  <div class="item__intro">品名品名品名品</div>
+                                  <div class="item__intro item__intro--2">
+                                    品名品名品名品
+                                  </div>
+                                  <div class="item__pic block--center">
+                                    <img
+                                      src="tab-0613-1.png"
+                                      alt="每日精選商品"
+                                    />
+                                  </div>
+                                  <div class="item__description">
+                                    <div class="item__decor">
+                                      <img src="decor-item.png" alt="" />
+                                    </div>
+                                    <div class="item__price">
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                    </div>
+                                  </div></a
+                                >
+                              </div>
+                            </li>
+                            <li class="swiper-slide">
+                              <div class="item__box">
+                                <a href="" title="每日精選商品">
+                                  <div class="item__intro">品名品名品名品</div>
+                                  <div class="item__intro item__intro--2">
+                                    品名品名品名品
+                                  </div>
+                                  <div class="item__pic block--center">
+                                    <img
+                                      src="tab-0613-1.png"
+                                      alt="每日精選商品"
+                                    />
+                                  </div>
+                                  <div class="item__description">
+                                    <div class="item__decor">
+                                      <img src="decor-item.png" alt="" />
+                                    </div>
+                                    <div class="item__price">
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                    </div>
+                                  </div></a
+                                >
+                              </div>
+                            </li>
+                            <li class="swiper-slide">
+                              <div class="item__box">
+                                <a href="" title="每日精選商品">
+                                  <div class="item__intro">品名品名品名品</div>
+                                  <div class="item__intro item__intro--2">
+                                    品名品名品名品
+                                  </div>
+                                  <div class="item__pic block--center">
+                                    <img
+                                      src="tab-0613-1.png"
+                                      alt="每日精選商品"
+                                    />
+                                  </div>
+                                  <div class="item__description">
+                                    <div class="item__decor">
+                                      <img src="decor-item.png" alt="" />
+                                    </div>
+                                    <div class="item__price">
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                    </div>
+                                  </div></a
+                                >
+                              </div>
+                            </li>
+                            <li class="swiper-slide">
+                              <div class="item__box">
+                                <a href="" title="每日精選商品">
+                                  <div class="item__intro">品名品名品名品</div>
+                                  <div class="item__intro item__intro--2">
+                                    品名品名品名品
+                                  </div>
+                                  <div class="item__pic block--center">
+                                    <img
+                                      src="tab-0613-1.png"
+                                      alt="每日精選商品"
+                                    />
+                                  </div>
+                                  <div class="item__description">
+                                    <div class="item__decor">
+                                      <img src="decor-item.png" alt="" />
+                                    </div>
+                                    <div class="item__price">
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                    </div>
+                                  </div></a
+                                >
+                              </div>
+                            </li>
+                            <li class="swiper-slide">
+                              <div class="item__box">
+                                <a href="" title="每日精選商品">
+                                  <div class="item__intro">品名品名品名品</div>
+                                  <div class="item__intro item__intro--2">
+                                    品名品名品名品
+                                  </div>
+                                  <div class="item__pic block--center">
+                                    <img
+                                      src="tab-0613-1.png"
+                                      alt="每日精選商品"
+                                    />
+                                  </div>
+                                  <div class="item__description">
+                                    <div class="item__decor">
+                                      <img src="decor-item.png" alt="" />
+                                    </div>
+                                    <div class="item__price">
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                    </div>
+                                  </div></a
+                                >
+                              </div>
+                            </li>
+                            <li class="swiper-slide">
+                              <div class="item__box">
+                                <a href="" title="每日精選商品">
+                                  <div class="item__intro">品名品名品名品</div>
+                                  <div class="item__intro item__intro--2">
+                                    品名品名品名品
+                                  </div>
+                                  <div class="item__pic block--center">
+                                    <img
+                                      src="tab-0613-1.png"
+                                      alt="每日精選商品"
+                                    />
+                                  </div>
+                                  <div class="item__description">
+                                    <div class="item__decor">
+                                      <img src="decor-item.png" alt="" />
+                                    </div>
+                                    <div class="item__price">
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                    </div>
+                                  </div></a
+                                >
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="content__box">
+                    <div class="content__item">
+                      <div class="item__wrap">
+                        <div class="tab__slider swiper-container">
+                          <ul class="swiper-wrapper">
+                            <li class="swiper-slide">
+                              <div class="item__box">
+                                <a href="" title="每日精選商品">
+                                  <div class="item__intro">品名品名品名品</div>
+                                  <div class="item__intro item__intro--2">
+                                    品名品名品名品
+                                  </div>
+                                  <div class="item__pic block--center">
+                                    <img
+                                      src="tab-0613-1.png"
+                                      alt="每日精選商品"
+                                    />
+                                  </div>
+                                  <div class="item__description">
+                                    <div class="item__decor">
+                                      <img src="decor-item.png" alt="" />
+                                    </div>
+                                    <div class="item__price">
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                    </div>
+                                  </div></a
+                                >
+                              </div>
+                            </li>
+                            <li class="swiper-slide">
+                              <div class="item__box">
+                                <a href="" title="每日精選商品">
+                                  <div class="item__intro">品名品名品名品</div>
+                                  <div class="item__intro item__intro--2">
+                                    品名品名品名品
+                                  </div>
+                                  <div class="item__pic block--center">
+                                    <img
+                                      src="tab-0613-1.png"
+                                      alt="每日精選商品"
+                                    />
+                                  </div>
+                                  <div class="item__description">
+                                    <div class="item__decor">
+                                      <img src="decor-item.png" alt="" />
+                                    </div>
+                                    <div class="item__price">
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                    </div>
+                                  </div></a
+                                >
+                              </div>
+                            </li>
+                            <li class="swiper-slide">
+                              <div class="item__box">
+                                <a href="" title="每日精選商品">
+                                  <div class="item__intro">品名品名品名品</div>
+                                  <div class="item__intro item__intro--2">
+                                    品名品名品名品
+                                  </div>
+                                  <div class="item__pic block--center">
+                                    <img
+                                      src="tab-0613-1.png"
+                                      alt="每日精選商品"
+                                    />
+                                  </div>
+                                  <div class="item__description">
+                                    <div class="item__decor">
+                                      <img src="decor-item.png" alt="" />
+                                    </div>
+                                    <div class="item__price">
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                    </div>
+                                  </div></a
+                                >
+                              </div>
+                            </li>
+                            <li class="swiper-slide">
+                              <div class="item__box">
+                                <a href="" title="每日精選商品">
+                                  <div class="item__intro">品名品名品名品</div>
+                                  <div class="item__intro item__intro--2">
+                                    品名品名品名品
+                                  </div>
+                                  <div class="item__pic block--center">
+                                    <img
+                                      src="tab-0613-1.png"
+                                      alt="每日精選商品"
+                                    />
+                                  </div>
+                                  <div class="item__description">
+                                    <div class="item__decor">
+                                      <img src="decor-item.png" alt="" />
+                                    </div>
+                                    <div class="item__price">
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                    </div>
+                                  </div></a
+                                >
+                              </div>
+                            </li>
+                            <li class="swiper-slide">
+                              <div class="item__box">
+                                <a href="" title="每日精選商品">
+                                  <div class="item__intro">品名品名品名品</div>
+                                  <div class="item__intro item__intro--2">
+                                    品名品名品名品
+                                  </div>
+                                  <div class="item__pic block--center">
+                                    <img
+                                      src="tab-0613-1.png"
+                                      alt="每日精選商品"
+                                    />
+                                  </div>
+                                  <div class="item__description">
+                                    <div class="item__decor">
+                                      <img src="decor-item.png" alt="" />
+                                    </div>
+                                    <div class="item__price">
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                    </div>
+                                  </div></a
+                                >
+                              </div>
+                            </li>
+                            <li class="swiper-slide">
+                              <div class="item__box">
+                                <a href="" title="每日精選商品">
+                                  <div class="item__intro">品名品名品名品</div>
+                                  <div class="item__intro item__intro--2">
+                                    品名品名品名品
+                                  </div>
+                                  <div class="item__pic block--center">
+                                    <img
+                                      src="tab-0613-1.png"
+                                      alt="每日精選商品"
+                                    />
+                                  </div>
+                                  <div class="item__description">
+                                    <div class="item__decor">
+                                      <img src="decor-item.png" alt="" />
+                                    </div>
+                                    <div class="item__price">
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012</span>
+                                      </div>
+                                      <div class="price__box">
+                                        <span>$</span><span>1,012 </span>
+                                      </div>
+                                    </div>
+                                  </div></a
+                                >
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="navRightBar" id="navRightBar"></div>
+    <section class="promo__group promo__group--cover">
+      <div class="layout--main">
+        <div class="info__cover" id="infoCover">
+          <div class="info__decor"><img src="info-decor.png" /></div>
+          <div class="info__box info--web">
+            <img src="info-qrcode-web.png" alt="" />
+          </div>
+          <div class="info__box info--main">
+            <a
+              class="btn--download"
+              href="https://play.google.com/store/apps/details?id=com.hyxen.app.etmall&amp;hl=zh_TW"
+              title="到Google Play下載東森購物APP"
+              ><img
+                src="info-google-play.png"
+                alt="到Google Play下載東森購物APP" /></a
+            ><a
+              class="btn--download"
+              href="https://apps.apple.com/tw/app/ehs%E6%9D%B1%E6%A3%AE%E8%B3%BC%E7%89%A9/id974433138"
+              title="到App Store下載東森購物APP"
+              ><img src="info-app-store.png" alt="到App Store下載東森購物APP"
+            /></a>
+          </div>
+          <div class="info__box info--mobile">
+            <a
+              class="btn--app"
+              href="etmall://open?pgid=44&amp;url=https%3a%2f%2fmedia.etmall.com.tw%2fsp%2f9697%2fm%2fapp.html"
+              title="到東森購物APP中玩遊戲！"
+              ><img src="info-app.png" alt="到東森購物APP中玩遊戲！"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="promo__group promo__group--game m-bottom--sm">
+      <div class="layout--main">
+        <div class="game__wrap" id="gameWrap">
+          <div class="game__block" id="gameBlock">
+            <div class="game__box" id="gameBox">
+              <canvas id="gamePuzzle"></canvas>
+            </div>
+            <div class="info__decor"><img src="info-decor.png" /></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="promo__group promo__group--card m-bottom--sm">
+      <div class="layout--main">
+        <div class="card__wrap" id="cardWrap">
+          <ul class="card__box" id="cardBox">
+            <li class="card__item">
+              <div class="card__front">
+                <a><img /></a>
+              </div>
+            </li>
+          </ul>
+          <div class="info__decor"><img src="info-decor.png" /></div>
+        </div>
+      </div>
+    </section>
+    <section class="promo__group promo__group--bn-section" data-title="扭一下">
+      <div class="layout--main">
+        <div class="decor__wrap">
+          <div
+            class="decor__item decor__item--title full-parent"
+            id="titleBnSection"
+          >
+            <img src="title-bn-section.png" alt="" />
+          </div>
+        </div>
+        <div class="promo__wrap">
+          <div class="promo__zone">
+            <div class="promo__block">
+              <div class="promo__box--1">
+                <a href=""> <img src="bn-section-item-1.png" alt="" /></a>
+              </div>
+              <div class="promo__box--2">
+                <a href=""> <img src="bn-section-item-2.png" alt="" /></a>
+              </div>
+              <div class="promo__box--3">
+                <a href=""> <img src="bn-section-item-3.png" alt="" /></a>
+              </div>
+              <div class="promo__box--4">
+                <a href=""> <img src="bn-section-item-4.png" alt="" /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div id="spWrap" class="sp__wallper">
+      <section class="note body-color" name="note">  
+        <div class="sp--960" style="padding:1% 0 3% 0;">
+          <article>
+            <a name="note-top" id="note-top"></a>
+            <!-- <p class="act_name">廚電節</p> -->
+            <div id="note-001">
+              <h2 class="act_name">【玩拼圖拿$68起神器-APP限定】</h2>     
+              <ol class="decimal-type left 10px;">
+                <li>活動期間:111/06/10 10:00~111/6/19 10:00</li>
+                <li>活動內容：活動期間內於東森購物APP進入此活動頁面，並完成驚喜拼圖，即有機會以最低2折將商品帶走，趕緊來挑戰吧！</li>
+                <li>幸運獎項出現時間及內容如下</li>				
+                <img class="photo_style" src="template.jpg" />
+              </ol>
+              <h2 style="font-size: 24px;	color: #000; line-height: 30px; margin-top: 15px;">注意事項：</h2>
+              <ol style="color:#000;">	
+                <li>驚喜商品內容皆隨機出現，且為限量，售完為止。</li>		
+                <li>因數量有限，完成拼圖所顯示之商品不代表必定得以該價格購買，實際以結帳為主。</li>					
+                <li>完成驚喜拼圖後，皆未出現幸運大獎，則可直接將頁面拉到最上面，往下滑更新，不需重啟APP或跳出再進入(僅iOS適用)。</li>    
+              </ol>
+            </div>
+
+            
+            <div id="note-002">
+              <h2 class="act_name">【全站累積滿$1,618拚1元iPhone 13】</h2>  
+              <ol class="decimal-type left 10px;">
+                <li>活動期間:111/06/10 10:00-111/06/20 10:00</li>
+                <li>活動內容：
+                <ol class="none-type" style="margin: 0 0 0 -30px;">
+                  <li>活動期間於東森購物網全站累積消費滿$1,618並無取消/退貨，即可抽1元iPhone 13。</li>
+                  <li>例:訂單金額為$3,500 (3,500/1,618=2.2) 小數點無條件捨去後，可享2次抽獎機會，訂單可累積抽獎次數，活動結束後將由系統隨機抽出中獎人。</li>
+                  <li>抽獎公布:111/07/11(一)-111/07/16(六)每日12:00公佈一名中獎人於東森購物網站，$25,899元折價券將歸戶於會員帳號，歸戶後即可使用$25,899元折價券購買iPhone 13 128G(同等於$1元購入)，折價券使用效期至111/07/31 23:59。</li>
+                  <li>獎項:iPhone 13 128G，價值:$25,900，限量6支，可使用$25,899元折價券購入。</li>
+                </ol>
+              </ol>
+            </div>
+            
+            <div id="note-003">
+              <h2 class="act_name">6月指定銀行 刷卡金再回饋</h2>  
+              <h2 class="h2_style">指定銀行滿1,000元回饋</h2>        
+              <ol class="decimal-type left 10px;">
+                <ol class="disc-type">
+                  <li><b>Atome</b>-單筆滿$1,000送$150</li>
+                  <li><b>第一銀行</b>-單件商品滿$1,500 送$100</li>
+                  <li><b>臺灣銀行</b>-週三 單件商品滿$1,000 送$100</li>
+                  <li><b>遠東銀行</b>-週四 單件商品滿$1,288送$100</li>
+                </ol>
+              </ol>
+
+              <h2 class="h2_style">指定銀行滿3,000元回饋</h2>        
+              <ol class="decimal-type left 10px;">
+                <ol class="disc-type">
+                  <li><b>中國信託</b>-單件商品分期滿$3,000享3%</li>
+                  <li><b>聯邦銀行</b>-週五 單件商品滿$3,000 送$200</li>
+                  <li><b>合作金庫</b>-單件商品分期滿$3,500送$200</li>
+                  <li><b>安泰銀行</b>-累積分期滿$3,000送$240</li>
+                </ol>
+              </ol>
+
+              <h2 class="h2_style">指定銀行滿5,000元回饋</h2>        
+              <ol class="decimal-type left 10px;">
+                <ol class="disc-type">
+                  <li><b>第一銀行</b>-單件商品分期滿$5,000 送$200</li>
+                  <li><b>聯邦銀行</b>-累積分期滿$5,000 送$200</li>
+                  <li><b>花旗銀行</b>-單件商品分期滿$5,000送$300</li>
+                  <li><b>凱基銀行</b>-單件商品分期滿$5,000享1.5%</li>
+                </ol>
+              </ol>   
+
+              <h2 class="h2_style">指定銀行滿10,000元回饋</h2>        
+              <ol class="decimal-type left 10px;">
+                <ol class="disc-type">
+                  <li><b>安泰銀行</b>-累積分期滿$10,000送$500</li>
+                  <li><b>新光銀行</b>-累積分期滿$10,000送$600</li>
+                  <li><b>花旗銀行</b>-單件商品分期滿$15,000送$1,800</li>
+                  <li><b>星展銀行</b>-累積分期滿$15,000送$1,100</li>
+                </ol>
+              </ol>
+              
+              <h2 class="h2_style">指定銀行滿20,000↑回饋</h2>        
+              <ol class="decimal-type left 10px;">
+                <ol class="disc-type">
+                  <li><b>華南銀行</b>-單件商品分期滿$20,000送$1,200</li>
+                  <li><b>第一銀行</b>-累積分期滿$25,000送$1,000</li>
+                  <li><b>樂天信用卡</b>-累積分期滿$28,000送$450</li>
+                  <li><b>星展銀行</b>-單件商品分期滿$22,000送$2,500</li>
+                  <p class="btn_p1" id="note-009"><a class="btn_a1" href="https://media.etmall.com.tw/sp/14386/m/index.html" target="_blank">詳情及銀行優惠</a></p><!-- 最多8字，超過會破版 -->
+                </ol>
+              </ol>
+            </div>
+            
+            <div id="note-004">
+              <h2 class="act_name">【挑戰任務滿$6,180最高送1,436】</h2>     
+              <ol class="decimal-type left 10px;">
+                <ol class="decimal-type">
+                  <li>活動期間:111/06/10 10:00-111/06/20 10:00</li>
+                  <li>活動內容：
+                  <ol class="none-type" style="margin: 0 0 0 -30px;">
+                    <li>【挑戰任務1一APP累積滿$3,618送68枚東森幣】</li>
+                    <li>★ 活動期間於東森購物APP消費累積訂單發票實付金額滿$3,618，無取消/退貨，達成任務後於111/06/20 AM10:00前在任務牆點選 【登記領取】，可獲68枚東森幣，每一會員限贈送乙次。</li>
+                    <li>【挑戰任務2一全站累積滿$6,180送250枚樂透金】</li>
+                    <li>★ 活動期間於東森購物全站消費累積訂單發票實付金額滿$6,180，無取消/退貨，達成任務後於111/06/20 AM10:00前在任務牆點選 【登記領取】，可獲250枚樂透金，每一會員限贈送乙次。</li>
+                    <li>【挑戰任務3一全站累積滿$16,180送618枚東森幣】</li>
+                    <li>★ 活動期間於東森購物全站消費累積訂單發票實付金額滿$16,180，無取消/退貨，達成任務後於111/06/20 AM10:00前在任務牆點選 【登記領取】，可獲618枚東森幣，每一會員限贈送乙次。</li>
+                    <li>【挑戰任務4一全站累積5次單筆滿$1,618送500元折價券】</li>
+                    <li>★ 活動期間於東森購物全站累積消費5筆訂單且每一筆訂單發票實付金額皆滿$1,618，無取消/退貨，達成任務後於111/06/20 AM10:00前在任務牆點選 【登記領取】，可獲500元折價券，每一會員限贈送乙次。</li>
+                  </ol>
+                </ol>
+              </ol>
+            </div>
+
+            <!-- 最多8字，超過會破版 -->
+            <p class="btn_p1" id="note-003"><a class="btn_a1" href="https://www.etmall.com.tw/member/taskActivity" target="_blank">電腦版點我詳情</a></p>
+            <!-- 最多8字，超過會破版 -->
+            <p class="btn_p1" id="note-003"><a class="btn_a1" href="etmall://open?pgid=43&url=https%3A%2F%2Fm.etmall.com.tw%2FMember%2FTaskActivity&t=%E6%9C%83%E5%93%A1%E4%BB%BB%E5%8B%99%E7%89%86" target="_blank">手機版點我詳情</a></p>
+        
+          </article>
+        </div>
+      </section>
+    </div>
+    <script type="text/javascript" src="vendor-bundle.js"></script>
+    <script type="text/javascript" src="app-bundle.js"></script>
+  </body>
+</html>
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script id="check" src="check.js"></script>
+<script
+  id="checkElevator"
+  src="https://media.etmall.com.tw/sp/11911/check-elevator.js"
+></script>

@@ -1,0 +1,61 @@
+// 背景花
+.decoration--flower
+  display: none
+  +breakpoint-min($min-width-xxl)
+    display: block
+    +pos-set(absolute, zero)
+    top: 13%
+    left: 50%
+    transform: translateX(-50%)
+    min-width: 1245px
+    img
+      margin-left: 0
+      margin-right: 0
+      will-change: scroll-position
+    &.move__2
+      top: 25%
+    &.move__3
+      top: 0
+
+.decoration--top
+  display: block
+  +pos-set(relative, zero)
+  top: 0
+  left: 50%
+  transform: translateX(-50%)
+  width: 100%
+  img
+    +pos-set(absolute, zero)
+    top: 0
+    margin-left: 0
+    margin-right: 0
+    will-change: scroll-position
+    width: 100%
+    margin-top: 60px
+  +breakpoint-min($min-width-xxl)
+    display: none
+
+img.decoration__bird
+  +pos-set(absolute, zero)
+  top: 30px
+  right: 28vw
+  width: 23%
+  will-change: scroll-position
+  //margin-top: 30px
+  animation: swing 3s infinite ease-out
+  +breakpoint-min($min-width-xxl)
+    display: none
+
+
+@keyframes swing
+  20%
+    transform: rotate(8deg)
+  40%
+    transform: rotate(-5deg)
+  60%
+    transform: rotate(3deg)
+  80%
+    transform: rotate(-3deg)
+  to
+    transform: rotate(0deg)
+

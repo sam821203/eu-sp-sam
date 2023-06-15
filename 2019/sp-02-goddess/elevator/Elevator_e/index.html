@@ -1,0 +1,53 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/javascript" src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="sp-20190223.css">
+<script src="linkData.js"></script>
+<script type="text/javascript" src="sp-script20190223.js" defer></script>
+<style type="text/css">
+	*{
+		box-sizing: border-box;
+	}
+</style>
+<div id="spWrap" class="sp__wallper">
+    <div id="spContainer" style="height: 2000px;"><!-- 主情境 -->
+
+    </div>
+    <div id="elevatorHome"></div>
+    <!--<div class="" style="height: 2000px;"></div>-->
+</div>
+
+<!-- 教學 -->
+
+<!--
+這包是電梯的js檔
+1. 掛著這隻js就可以自動產生這包裡面的小網電梯
+   以後只要在程式碼最下方掛這行就好：
+
+   <script id="scriptIconFloat" src="上傳位置/generateVersion20190223.js"></script>
+
+2. 斜角標以後換擋只要檔名一樣蓋過，上傳到這個位置沒問題了！
+
+3. 這隻js會自動判斷：
+	a. 如果有id="spWrap"，會抓這個id的地方自動放在最上方。
+
+       所以記得在想外框的父層設id是比較好控制的。
+
+	** jing備註:第一次修改因為直接掛html(非使用js)為了怕衝突，把id改掉造成後面無法自己產生出來問題(需另外加html)。
+
+
+4. 如果要修改電梯的(連結/館別名稱)，可在"sp-script20190223.js"這支js裡面搜尋
+   navContent[
+    {
+       "linkUrl": "連結",
+       "words"  : "館別名稱"
+     },
+    ]
+     第一個固定是主會場，其他則看該月要連結到什麼館別。
+
+5. 欲修改網址有幾個地方需要修改，「index.html」裡面的"CSS/JS"的URL,「generateVersion20190223.js」這支裡面的"CSS/JS"的URL。
+
+6. 最後，這是for小網自適應電梯，預設是直接出現在上面，變大的呈現方式也是一樣~
+
+	have fun~     by Jing Chen
+-->

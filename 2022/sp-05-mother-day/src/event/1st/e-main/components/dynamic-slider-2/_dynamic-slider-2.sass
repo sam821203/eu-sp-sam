@@ -1,0 +1,59 @@
+.promo__group--dynamic-slider-2
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__wrap
+    pointer-events: none
+    .decor__item
+      &--title
+        +pos-set(absolute, second, 11%, 10%)
+        width: 80%
+        +breakpoint-min($min-width-xl)
+          top: 14%
+          left: calc(50% - 382px)
+      &--left
+        +pos-set(absolute, base, 3%, 12%)
+        width: 16%
+        animation: up-down 3s ease-in-out infinite
+        +breakpoint-min($min-width-xl)
+          left: calc(50% - 370px)
+      &--right
+        +pos-set(absolute, third, 0%)
+        right: 3%
+        width: 35%
+        animation: up-down 3s 1.5s linear infinite
+        +breakpoint-min($min-width-xl)
+          right: calc(50% - 460px)
+      +breakpoint-min($min-width-xl)
+        width: auto
+  .promo__wrap
+    +bg-set(url("event/1st/e-main/components/dynamic-slider-2/bg-dynamic-slider-2.png"), 100%)
+    // margin-top: 23%
+    .promo__zone
+      +aspect-ratio(960, 1266)
+      margin-top: 3%
+      .promo__block
+        padding: 32% 5% 0
+        +breakpoint-min($min-width-xl)
+          padding-top: 37%
+        .swiper-container
+          .swiper-wrapper
+            .swiper-slide
+              width: 30%
+              padding: .5%
+              .product__block
+                border: 1.5px solid $gray-deep-dark
+                border-radius: 2vw
+                +breakpoint-min($min-width-xl)
+                  border: 2.5px solid $gray-deep-dark
+                  border-radius: 22px
+
+
+
+
+@keyframes up-down
+  0%
+    transform: translateY(0%)
+  50%
+    transform: translateY(15%)
+  100%
+    transform: translateY(0%)

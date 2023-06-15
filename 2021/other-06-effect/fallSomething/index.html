@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- 原本css 不用複製 -->
+  <style>
+    body {
+
+      background: #cceef7;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    img {
+      width: 100%
+    }
+
+    .layout--main {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 960px
+    }
+
+  </style>
+
+
+  <style>
+    /* 步驟1 加掉落某東西 CSS */
+    .fall__something {
+      position: absolute;
+      /* 預設為第一屏的全視窗，可自行調整位置 */
+      top: 0;
+      left: 0;
+      /* 預設為第一屏的全視窗，可自行調整大小 */
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    /*-- 電腦版 --*/
+    @media screen and (min-width: 960px) {
+      .fall__something {
+        /* 預設為第一屏的全視窗，可自行調整位置 */
+        top: 0;
+        left: 50%;
+        /* 預設為第一屏的全視窗，可自行調整大小 */
+        width: 50%;
+        height:350px;
+      }
+    }
+
+    /* 步驟1 加CSS end */
+  </style>
+</head>
+<body>
+
+<!-- 步驟2 加入 掉落某東西 的html 會希望放在最前面 -->
+<div class="fallSomthing__outwrap">
+  <!-- 目前是掉落三個東西，可自行更換 -->
+  <div id="fallSomthingMain" class="fall__something"></div>
+</div>
+<!-- 步驟2 end -->
+
+<main class="sp__wrap" id="spWrap">
+  <div class="layout--main">
+    <img src="demo__index.png" alt="">
+  </div>
+</main>
+
+<!-- 步驟3 在最後面加入javascript，記得要把去檔案夾中複製到SP頁的檔案夾裡面 -->
+<!-- 通常大禮包已經有這支檔案，如果沒有須自行加連結 -->
+<script type="text/javascript" src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<!-- 新增的js連結 -->
+<script src="jquery-fallSomething.js"></script>
+<script src="effects-fallSomething.js"></script>
+<!-- 步驟3 end -->
+
+</body>
+</html>

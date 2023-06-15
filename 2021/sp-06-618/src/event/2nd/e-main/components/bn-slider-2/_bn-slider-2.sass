@@ -1,0 +1,29 @@
+.promo__group--bn-2
+  +pos-set(relative, zero)
+  .title__decoration
+    transform-origin: right
+    pointer-events: none
+  .promo__wrap
+    +aspect-ratio(891, 530)
+  .promo__zone
+    +pos-set(relative, zero)
+    padding: 25.5% 5% 6%
+    +bg-set(url("event/2nd/e-main/components/bn-slider-2/bg-bn-slider-2.png"), 100%)
+    .promo__bn
+      margin-bottom: 3%
+    .swiper-slide
+      +aspect-ratio(250, 257, relative, zero, a)
+      width: 33%
+      text-align: center
+      transition: all 0.5s
+      &:hover,
+      &:active
+        transform: scale(0.95)
+
+  +breakpoint-min($min-width-xl)
+    .promo__zone
+      padding: 255px 60px 70px
+
+
+
+

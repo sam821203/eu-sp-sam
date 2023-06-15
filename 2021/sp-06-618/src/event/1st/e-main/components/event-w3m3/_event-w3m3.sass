@@ -1,0 +1,24 @@
+.promo__group--w3m3
+  +pos-set(relative, zero)
+  .promo__wrap
+    +bg-set(url("event/1st/e-main/components/event-w3m3/bg-event-w3m3.png"), 100% auto)
+    .good__wrap
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-around
+      padding: 11.2% 12% 3% 13%
+      li
+        margin-bottom: 4%
+        width: 26%
+        // padding: 1% .5%
+        a
+          transition: transform 0.5s
+        &:hover a,
+        a.active
+          transform: scale(1.1)
+          filter: brightness(120%)
+
+    +breakpoint-min($min-width-xl)
+      width: 100%
+      max-width: 960px
+      margin: 0 auto

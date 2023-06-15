@@ -1,0 +1,31 @@
+//- TODO: 切換EU
+//- - var isU = true
+//- TODO: 各家廠商中英的設定(alt用)
+-
+  var partnerTWData = {
+    apple: "Apple",
+    mi: "小米",
+  }
+
+//- TODO: 切換各家廠商
+- var partner = "mi"
+- var mainPartnerClassName = "sp__wrap--" + partner
+
+include /components/overlay/_overlay
+
+main#spWrap.sp__wrap(class= mainPartnerClassName)
+  header.sp__header
+    .layout--main
+      include /layout/header/_header
+      include /layout/nav-partner/_nav-partner
+  include /components/partner-list/_partner-list
+  //- components start
+  include /components/hero-slider/_hero-slider
+  include /components/marquee/_marquee
+  //- components end
+
+//- script區
+include /utils/pug/_total-script
+
+//- 模擬組版
+//- include /pages/_note/hot/_hot

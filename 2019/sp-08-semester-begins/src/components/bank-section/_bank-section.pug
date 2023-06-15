@@ -1,0 +1,39 @@
+- var bankData = {etmall: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201908/SP_1107836/w/index.html", umall: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201908/SP_1104315/w/index.html"}
+- var bankInfo = isU ? bankData.umall : bankData.etmall
+
+section.promo__group.promo__group--bank
+  .layout--main
+    .promo__zone.lazyload(data-src="960bg-05.jpg")
+      .promo__title.block--center.m-bottom--xs
+        img.lazyload(data-src="section-bn-05.png", src="~utils/img/1x1_low.png", alt="銀行回饋")
+      .promo__wrap
+        .promo__slider
+          #sliderBank.swiper-container
+            ul.swiper-wrapper
+              li.swiper-slide
+                a(href= bankInfo, title="點我看點我看銀行回饋")
+                  img(src="~components/bank-section/items/bank-01.png", alt="點我看銀行回饋")
+              li.swiper-slide
+                a(href= bankInfo, title="點我看銀行回饋")
+                  img(src="~components/bank-section/items/bank-02.png", alt="點我看銀行回饋")
+              li.swiper-slide
+                a(href= bankInfo, title="點我看銀行回饋")
+                  img(src="~components/bank-section/items/bank-03.png", alt="點我看銀行回饋")
+              li.swiper-slide
+                a(href= bankInfo, title="點我看銀行回饋")
+                  img(src="~components/bank-section/items/bank-04.png", alt="點我看銀行回饋")
+              li.swiper-slide
+                a(href= bankInfo, title="點我看銀行回饋")
+                  img(src="~components/bank-section/items/bank-05.png", alt="點我看銀行回饋")
+              li.swiper-slide
+                a(href= bankInfo, title="點我看銀行回饋")
+                  img(src="~components/bank-section/items/bank-06.png", alt="點我看銀行回饋")
+              li.swiper-slide
+                a(href= bankInfo, title="點我看銀行回饋")
+                  img(src="~components/bank-section/items/bank-07.png", alt="點我看銀行回饋")
+              li.swiper-slide
+                a(href= bankInfo, title="點我看銀行回饋")
+                  img(src="~components/bank-section/items/bank-08.png", alt="點我看銀行回饋")
+            #sliderBankPager.swiper-pager-white.swiper-pagination
+          #sliderBankPrev.swiper-button-white.swiper-button-prev
+          #sliderBankNext.swiper-button-white.swiper-button-next

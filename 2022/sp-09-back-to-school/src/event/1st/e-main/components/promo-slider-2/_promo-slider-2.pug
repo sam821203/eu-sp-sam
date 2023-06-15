@@ -1,0 +1,46 @@
+-
+  var promoSliderItem = [
+    { // 1
+      link: "https://www.etmall.com.tw/gp/186485" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-2/item/p1.png",
+      alt: "紅配綠登記抽",
+    },
+    { // 2
+      link: "https://www.etmall.com.tw/gp/116998" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-2/item/p2.png",
+      alt: "4重送/東幣現折15%",
+    },
+    { // 3
+      link: "https://www.etmall.com.tw/gp/138084" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-2/item/p3.png",
+      alt: "國營口碑品牌75折起",
+    },
+    { // 4
+      link: "https://www.etmall.com.tw/p/187384" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-2/item/p4.png",
+      alt: "滿額送雙重好禮",
+    },
+    { // 5
+      link: "https://www.etmall.com.tw/gp/175374" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-2/item/p5.png",
+      alt: "限時折500",
+    },
+    { // 6
+      link: "https://media.etmall.com.tw/sp/11914/m/index.html" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-2/item/p6.png",
+      alt: "下單抽55型電視!",
+    },
+  ]
+
+section.promo__group.promo__group--promo-slider-2.m-bottom--lg(data-title="強檔推薦")
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          .promo__slider.full-parent
+            .swiper-container#promoSliderItem2
+              ul.swiper-wrapper
+                each data in promoSliderItem
+                  li.swiper-slide
+                    a(href= data.link, title=data.alt)
+                      img(src= data.imgSrc, alt=data.alt)

@@ -1,0 +1,37 @@
+.decoration__smoke
+  +pos-set(absolute, ten)
+  top: 50%
+  left: 50%
+  display: flex
+  justify-content: center
+  align-items: center
+  // width: 100%
+  // height: 100%
+  transform: translate(-50%, -50%)
+
+.smoke__box
+  // width: 100%
+  // height: 100%
+  border-radius: 50%
+  box-shadow: -156px 492px 123px -252px #f00
+  filter: url(#fog)
+  min-width: 600px
+  min-height: 600px
+  animation: steamAnimation 4s infinite ease-in-out
+  will-change: transform, opacity
+  @media (max-width: 600px)
+    top: -80%
+    box-shadow: -156px 492px 123px -252px #f00
+  @media (max-width: 480px)
+    top: -160%
+    box-shadow: -166px 492px 53px -272px #f00
+
+@keyframes steamAnimation
+  0%
+    transform: translate(30%, -70%)
+    opacity: 0
+  50%
+    opacity: 0.5
+  100%
+    transform: translate(60%, -90%)
+    opacity: 0

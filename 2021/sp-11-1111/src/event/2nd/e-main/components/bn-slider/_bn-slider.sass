@@ -1,0 +1,39 @@
+.promo__group--bn
+  +pos-set(relative, zero)
+  .title__decoration
+    +pos-set(absolute, zero, 0, 0)
+    width: 100%
+    text-align: center
+  .promo__wrap
+    +aspect-ratio(960, 850)
+  .promo__zone
+    +pos-set(relative, zero)
+    // padding: 0% 12% 0 10%
+    text-align: center
+    +bg-set(url(event/2nd/e-main/components/bn-slider/bg-bn-slider.png), 100%)
+    .promo__bn
+      +pos-set(absolute, base)
+      top: -7%
+      left: 11%
+      margin-bottom: 3.5%
+      width: 75%
+    .decoration__box
+      margin-top: -4%
+    .promo__slider
+      // +aspect-ratio(960, 310)
+      margin: -35% auto 0
+      width: 80%
+      // .swiper-slide
+      // .slide__group
+      //   display: flex
+      //   justify-content: space-between
+      //   height: 100%
+      //   a
+      //     width: 31.5%
+      //     text-align: center
+      //     transition: all 0.5s
+
+    a
+      &:hover,
+      &:active
+        filter: brightness(105%) contrast(105%)

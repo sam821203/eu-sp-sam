@@ -1,0 +1,121 @@
+/*== common style ==*/
+body {
+  margin: 0;
+  padding: 0;
+}
+img {
+  display: block;
+  border: 0
+}
+.l--left{
+    float: left;
+}
+.l--right{
+    float: right;
+}
+.sp--1260 {
+    margin: 0px auto;
+    position: relative;
+    width: 1260px;
+    z-index: 1;
+}
+.logo__sp{
+    background: url(../u-logo.png) 0 0 no-repeat;
+    width:150px;
+    height:40px;
+    position:absolute;
+    z-index:100;
+    left:40%;
+    top:30px;
+    margin-left:-410px;
+}
+.sp-is--hide{opacity: 0;}
+
+.sp-fixed__nav{
+   /* background: url(../nav_bg1128.png) 0 0 no-repeat;*/
+    position: fixed;
+    z-index: 600;
+    width: 120px;
+    /*right: 50%;
+    margin-right: -650px;*/
+    right: 15px;
+    top: 5%;
+    display: none;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.sp-fixed__nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-top: 55px;
+}
+.sp-fixed__nav li{
+    /*text-align: center;*/
+    /*font-size: 16px;*/
+    /*padding-left: 55px;*/
+    /*height: 29px;*/
+}
+.sp-fixed__nav a{
+    background: url(../nav0209_bg.png) 0 0 repeat-y;
+    display: block;
+    color: #333;
+    padding: 8px 0;
+    position: relative;
+    z-index: 1;
+    font-size: 15px;
+    text-decoration: none;
+    text-align: center;
+}
+.sp-fixed__nav a:hover{
+    color: #fff;
+    /*text-decoration: underline;*/
+}
+.sp-fixed__nav a:hover:after{
+    content: "";
+    background-color: #e50036;
+    position: absolute;
+    z-index: -1;
+    width: 90px;
+    height: 29px;
+    top: 2px;
+    left: 20px;
+   
+}
+.sp-fixed__nav li.sp-nav__home {
+    padding-left: 0;
+    /*margin-bottom: 5px;*/
+    height: 81px;
+}
+.sp-fixed__nav li.sp-nav__top{
+    height: 60px;
+}
+.sp-nav__home a{
+    background: url(../nav0209_home.png) 0 0 no-repeat;
+    height: 188px;
+    display: block;
+    white-space: nowrap;
+    text-indent: 1000%;
+    overflow: hidden;
+    /*margin-bottom: -10px;*/
+}
+.sp-nav__home a:hover:after, .sp-nav__top a:hover:after{
+    background: none;
+}
+
+.sp-nav__top a{
+    background: url(../nav0209_top.png) 0 0 no-repeat;
+    height: 85px;
+    white-space: nowrap;
+    text-indent: 1000%;
+    overflow: hidden;
+}
+/*.sp-nav__home a:hover, .sp-nav__top a:hover{
+    background-position: right 0;
+}*/
+
+
+/*== common style ==*/

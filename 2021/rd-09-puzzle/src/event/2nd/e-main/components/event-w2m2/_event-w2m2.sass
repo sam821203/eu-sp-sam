@@ -1,0 +1,39 @@
+.promo__group--w3m3
+  +pos-set(relative, zero)
+  .promo__wrap
+    +aspect-ratio(960, 900)
+    .promo__block
+      // outline: 1px solid blue
+      display: flex
+      justify-content: center
+      flex-wrap: wrap
+      .promo__box
+        width: 44%
+        &:nth-child(3)
+          margin-top: -2%
+          
+        // width: 
+  // .promo__zone
+  //   +bg-set(url("event/2nd/e-main/components/event-w3m3/bg-event-w3m3.png"), 100%)
+  //   .event__wrap
+  //     padding: 20.5% 6.5% 0
+  //   .good__wrap
+  //     display: flex
+  //     flex-wrap: wrap
+  //     justify-content: space-between
+  //     li
+  //       margin-bottom: 2%
+  //       width: 32%
+  //       a
+  //         transition: transform 0.5s
+  //         &:hover
+  //           transform: scale(1.05)
+  //           filter: brightness(120%)
+  //         &.active
+  //           animation: fade-up-3 1s
+    // .promo__block
+
+@keyframes fade-up-3
+  50%, 100%
+      transform: scale(1.05)
+      filter: brightness(120%)

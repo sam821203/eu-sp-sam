@@ -1,0 +1,44 @@
+.slider-w4m3-2
+  overflow: hidden
+  .decor__wrap
+    pointer-events: none
+    padding-bottom: 3%
+    +breakpoint-min($min-width-xl)
+      padding-bottom: 30px
+  .decor__item
+    &--left
+      +pos-set(absolute, zero, 0%, 8%)
+      width: 23%
+      animation: up-down-2 2s ease-in-out infinite
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 380px)
+    &--right
+      +pos-set(absolute, zero, 0%)
+      right: 5%
+      width: 30%
+      +breakpoint-min($min-width-xl)
+        right: calc(50% - 400px)
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .promo__wrap
+    +bg-set(url("event/2nd/e-main/components/slider-w4m3-2/bg-slider-w4m3-2.png"), 100%)
+    // margin-top: 15%
+    +breakpoint-min($min-width-xl)
+      +bg-set(url("event/2nd/e-main/components/slider-w4m3-2/bg-web-slider-w4m3-2.png"), 100%)
+      // margin-top: 100px
+    .promo__zone
+      +aspect-ratio(960, 884)
+      +breakpoint-min($min-width-xl)
+        +aspect-ratio(959, 715)
+      .promo__block
+        padding: 18% 4% 0 5%
+        +breakpoint-min($min-width-xl)
+          padding-top: 190px
+
+    
+@keyframes up-down-2
+  0%, 100%
+    transform: translateY(10%)
+  50%
+    transform: translateY(-10%)
+

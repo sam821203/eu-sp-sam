@@ -1,0 +1,172 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero__wrap
+  +pos-set(relative, second)
+  overflow: hidden
+
+  .hero__zone
+    +pos-set(relative, zero)
+        
+  // .hero__block
+
+  .hero__box
+    +pos-set(relative, zero)                        
+
+  .hero__title
+    &--main
+      +pos-set(relative, zero)
+      padding: 18% 19%
+      overflow: hidden
+      &.animated
+        animation: small-open 1s both ease-out
+
+  .title-decoration__wrap
+    +pos-set(absolute, zero, 0, 0)
+    width: 100%
+    height: 100%
+    pointer-events: none
+    .title__decoration
+      +pos-set(absolute, zero)
+      &--top
+        top: 20%
+        left: 40%
+        padding-top: 8%
+        width: 8%
+        animation: butterfly-moving 2s both infinite alternate
+        .decoration--butterfly
+          +pos-set(absolute, zero, 0, 0)
+          width: 100%
+          height: 100%
+          +bg-set(url(~event/3rd/u-main/components/hero-section/decoration-butterfly.png), contain)
+          animation: butterfly-shaking 0.6s infinite
+
+      &--bottom
+        bottom: -15%
+        right: 2%
+        padding-top: 22%
+        width: 22%
+        .decoration--car
+          +pos-set(absolute, zero, 0, 0)
+          width: 100%
+          height: 100%
+          +bg-set(url(~event/3rd/u-main/components/hero-section/decoration-car.png), contain)
+          transform-origin: left
+          animation: car-shaking 0.2s infinite
+        &.animated
+          animation: bounceInRight 3s 1s both
+
+      // +breakpoint-min($min-width-xl)
+        // &--top
+        //   top: 92px
+        // &--bottom
+        //   top: 145px
+
+  .block-decoration
+    +pos-set(absolute, base)
+    pointer-events: none
+    &.decoration--left
+      top: 46%
+      left: -40%
+      padding-top: 56.15%
+      width: 68%
+      +bg-set(url(~event/3rd/u-main/components/hero-section/decoration-flower-l.png), contain)
+      transform-origin: bottom
+      animation: key-wind-rotate 10s infinite ease-in-out
+      
+    &.decoration--right
+      top: -26%
+      right: -32%
+      padding-top: 59.9%
+      width: 68.2%
+      +bg-set(url(~event/3rd/u-main/components/hero-section/decoration-flower-r.png), contain)
+      // transform-origin: top
+      animation: key-wind-rotate 10s 0.5s infinite ease-in-out
+
+
+  .promo__block
+    // +pos-set(relative, second)
+    // padding-top: 11.5%
+    // +bg-set(url(~event/3rd/u-main/components/hero-section/bg-promo-event.png), cover)
+
+    // .promo__box
+    //   padding: 3.5% 10% 3.5%
+
+    // +breakpoint-min($min-width-xl)
+    //   // padding-top: 120px
+    //   +bg-set(url(~event/3rd/u-main/components/hero-section/bg-promo-event-web.png))
+    //   .promo__zone
+    //     +display-flex(">div")
+    //     padding: 0 20px 8px 60px
+
+    //   .goods__wrap--flip
+    //     +flex(0, 0, 49%)
+    //   .promo__box
+    //     +flex(0, 0, 51%)
+    //     padding: 10px 0 0 0
+
++key-wind-rotate(-2, -2)
+
+@keyframes small-open
+  from
+    transform: scale(0)
+    opacity: 0
+  to
+    transform: scale(1)
+    opacity: 1
+
+@keyframes butterfly-moving
+  from
+    transform: translate(0, 0)
+  25%
+    transform: translate(10%, 5%)
+  50%
+    transform: translate(0%, 10%)
+  75%
+    transform: translate(-10%, 5%)
+  to
+    transform: translates(0, 0)
+
+@keyframes butterfly-shaking
+  from
+    transform: rotateY(0)
+  33%
+    transform: rotateY(70deg)
+  66%
+    transform: rotateY(-50deg)
+  to
+    transform: rotateY(0)
+
+@keyframes car-shaking
+  from
+    transform: translateY(0)
+  50%
+    transform: translateY(0.5%)
+  to
+    transform: translateY(-0.5%)
+
+@keyframes bounceInRight
+  from,
+  60%,
+  75%,
+  90%,
+  to
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+
+  from
+    opacity: 0
+    transform: translate3d(3000px, 0, 0) rotate(0)
+
+  60%
+    opacity: 1
+    transform: translate3d(-10px, 0, 0) rotate(-10deg)
+
+  75%
+    transform: translate3d(3px, 0, 0) rotate(3deg)
+
+  90%
+    transform: translate3d(-1px, 0, 0) rotate(0)
+
+  to
+    transform: translate3d(0, 0, 0) rotate(0)
+

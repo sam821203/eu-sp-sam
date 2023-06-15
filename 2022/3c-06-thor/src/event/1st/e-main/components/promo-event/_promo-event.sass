@@ -1,0 +1,56 @@
+.promo__group--promo-event
+  +pos-set(relative)
+  margin-top: 28%
+  height: 76vw
+  +breakpoint-min($min-width-xl)
+    margin-top:240px
+    height: 720px
+  .promo__wrap
+    +aspect-ratio(952, 818)
+    .promo__decor
+      +pos-set(absolute)
+      width: 100%
+      transform: scale(0.9)
+      +breakpoint-min($min-width-xl)
+        width: auto
+    .promo__zone  
+      +pos-set(absolute)
+      +flex-container
+      .promo__item--1
+        width: 33%
+        img
+          width: 100%
+          +breakpoint-min($min-width-xl)
+            width: auto
+      .promo__block
+        +flex-container(center, start)
+        flex-direction: column
+        margin-left: -8%
+        width: 66%
+        .promo__item--2
+          padding-left: 7%
+          margin-bottom: -4%
+          width: 80%
+          img
+            width: 100%
+            +breakpoint-min($min-width-xl)
+              width: auto
+        .promo__box
+          +flex-container(start, end)
+          width: 100%
+          padding-bottom: 0
+          +breakpoint-min($min-width-xl)
+            padding-bottom: 4%
+          .promo__item--3,
+          .promo__item--4
+            width: 50%
+          .promo__item--4
+            margin-left: -7%
+            img
+              width: 100%
+              +breakpoint-min($min-width-xl)
+                width: auto
+      [class^="promo__item"]
+        transition: filter .2s
+        &:hover
+          filter: brightness(1.4)          

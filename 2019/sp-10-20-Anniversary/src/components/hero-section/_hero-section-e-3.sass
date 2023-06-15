@@ -1,0 +1,211 @@
+// // ==========================================================================
+// // 裝飾
+// // ==========================================================================
+@keyframes ball-down
+  0%
+    opacity: 0
+    transform: translateY(-100%) rotate(270deg)
+  100%
+    opacity: 1
+    transform: translateY(0) rotate(0)
+
+
+@keyframes ball-jump-left
+  0%
+    top: -400px
+    transform: scale(0.4)
+    opacity: 0
+    left: calc(50% - 860px)
+  16%
+    transform: scale(0.4)
+  20%
+    top: 15%
+    opacity: 1
+    transform: scale(1.2)
+    //max-height: 150px
+    //background-size: 352px 150px
+  36%
+    transform: scale(1.2)
+  40%
+    top: 0
+    transform: scale(0.5)
+  50%
+    top: 4%
+    //max-height: 100px
+    //background-size: 352px 100px
+    transform: scale(1.1)
+    opacity: 1
+  70%, 100%
+    top: 2%
+    left: calc(50% - 860px)
+    opacity: 1
+    transform: scale(1)
+    //max-height: 378px
+    //background-size: 352px 378px
+
+
+@keyframes ball-jump-right
+  0%
+    top: -400px
+    transform: scale(0.4)
+    opacity: 0
+    right: calc(50% - 1030px)
+  16%
+    transform: scale(0.4)
+  20%
+    top: 30%
+    transform: scale(1)
+    //max-height: 50px
+    //background-size: 460px 50px
+  36%
+    transform: scale(1.2)
+  40%
+    top: 10%
+    transform: scale(0.5)
+  50%
+    top: 20%
+    transform: scale(1.1)
+    opacity: 1
+    //max-height: 200px
+    //background-size: 460px 200px
+  70%, 100%
+    top: 13%
+    right: calc(50% - 1030px)
+    opacity: 1
+    transform: scale(1)
+    //max-height: 430px
+    //background-size: 460px 430px
+
+@keyframes title-down
+  0%
+    opacity: 0
+    transform: translateY(calc(-100vw * .5))
+  70%, 80%
+    transform: translateY(0) scale(1.2)
+  75%, 100%
+    transform: translateY(0) scale(1)
+  100%
+    opacity: 1
+//+breakpoint-min($min-width-xl)
+.header__decoration
+  +pos-set(absolute, zero)
+  height: 0
+  &.header__decoration--left
+    +bg-set(url("~components/hero-section/hero-decoration-e-3-ball-yellow.png"), 140%)
+    padding-top: 105px
+    width: 38%
+    max-width: 104px
+    max-height: 105px
+    top: 130px
+    left: calc(50% - 692px)
+    animation: 3s 1s ball-down both
+    //transform-origin: left top
+  &.header__decoration--left-2
+    +bg-set(url("~components/hero-section/hero-decoration-e-3-ball-white.png"), 100%)
+    padding-top: 220px
+    width: 48%
+    max-width: 223px
+    max-height: 220px
+    top: 421px
+    left: calc(50% - 572px)
+    z-index: 3
+    animation: 1.5s 2s ball-down both
+  &.header__decoration--right
+    +bg-set(url("~components/hero-section/hero-decoration-e-3-ball-yellow.png"), 100%)
+    padding-top: 105px
+    width: 38%
+    max-width: 104px
+    max-height: 105px
+    top: 50px
+    left: calc(50% + 540px)
+    animation: 1.5s 3s ball-down 1 both
+  &.header__decoration--star
+    +bg-set(url("~components/hero-section/hero-decoration-e-3-star.png"), 100%)
+    padding-top: 88px
+    position: absolute
+    top: 71px
+    left: calc(50% - 8px)
+    width: 100%
+    max-width: 71px
+    max-height: 71px
+    animation: 3s 1s ball-down both
+// // ==========================================================================
+// // main
+// // ==========================================================================
+
+.hero__wrap
+  +pos-set(relative, null)
+  overflow: hidden
+  .hero__zone
+    +pos-set(relative, zero)
+    // +bg-set(url("~components/hero-section/960bg-01.jpg"), 100%)
+    padding-top: 0
+
+  .hero__title
+    z-index: 2
+    position: relative
+    &--main
+      padding-top: 3.8%
+      img
+        animation: 1s 1s title-down both ease-out
+        width: 100%
+        &:nth-child(1)
+          display: none
+        &:nth-child(2)
+          display: block
+
+  +breakpoint-min($min-width-xl)
+    // +bg-set(url("~components/hero-section/2560bg-01.jpg"))
+    .hero__zone
+      padding-top: 10px
+
+    .hero__title
+      padding-top: 65px
+      &--main
+        img
+          margin-left: 10px
+          width: auto
+          padding: 0
+          &:nth-child(1)
+            display: block
+          &:nth-child(2)
+            display: none
+    .hero__block
+      +display-flex(">div")
+      flex-wrap: wrap
+      +pos-set(relative, zero)
+    .hero__box
+      +flex(0, 0, 60%)
+    .goods__wrap
+      +flex(0, 1, 66%)
+      +pos-set(absolute, under, 15px, null, null, -155px)
+    .promo__event
+      +flex(0, 1, 52%)
+      +pos-set(relative, fourth)
+    .goods__wrap--flip
+      +flex(0, 1, 62%)
+      +pos-set(absolute, second, 600px, null, null, -135px)
+  //padding: 50px
+
+  // decoration
+  .hero__decoration
+    display: none
+    +breakpoint-min($min-width-xl)
+      display: block
+      +pos-set(absolute, base)
+      top: 450px
+      width: 100%
+      pointer-events: none
+
+.promo__title
+  img
+    width: 90%
+    padding: 0 5%
+  +breakpoint-min($min-width-xl)
+    img
+      width: auto
+      padding: 0
+
++key-wind-rotate(-4, 4)
++key-wind-rotate(5, -4, key-wind-rotate2)
++key-rotate-self(2)

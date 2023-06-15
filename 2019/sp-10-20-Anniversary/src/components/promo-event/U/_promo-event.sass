@@ -1,0 +1,29 @@
+.promo__event
+  +pos-set(relative, null)
+  padding: 0 5%
+  +breakpoint-min($min-width-xl)
+    padding: 0
+    margin: -170px auto 40px 0
+  .event__wrap
+    +display-flex
+    flex-wrap: wrap
+    width: 100%
+    li
+      margin-right: 0
+      padding: 0
+      width: 48%
+      +breakpoint-min($min-width-xl)
+        width: 25%
+  .event__wrap
+    li
+      transition: all .5s
+      &:hover,
+      &:active
+        transform: scale(1.05)
+        transform-origin: center bottom
+
+    a
+      transition: all 0.5s
+      &:hover,
+      &:active
+        filter: brightness(120%)

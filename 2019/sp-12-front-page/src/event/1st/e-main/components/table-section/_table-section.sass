@@ -1,0 +1,41 @@
+.table__title
+  text-align: center
+  img
+    width: 80%
+    +breakpoint-min($min-width-lg)
+      width: auto
+.table__box
+  margin-left: 2%
+  margin-right: 2%
+  border-radius: 5px
+  overflow: hidden
+  table
+    width: 100%
+    +font-size(16)
+    text-align: center
+  tr
+    border-bottom: 1px solid $gray-deep-dark
+    &:first-child,
+    &:last-child
+      border-bottom: 0
+
+  th
+    padding: 2%
+    color: $main-e-second-medium
+    background-color: $main-e-third-dark
+  td
+    padding: 2%
+    color: $gray-deep-dark
+    background-color: $gray-deep-light
+    border-right: 1px solid $gray-deep-dark
+    &:last-child
+      border-bottom: 0
+
+  +breakpoint-max($max-width-xxs)
+    th,
+    td
+      padding: 1%
+  
+  +breakpoint-min($min-width-lg)
+    table
+      +font-size(24)

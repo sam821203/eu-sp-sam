@@ -1,0 +1,26 @@
+.go-top
+  display: none
+  +pos-set(fixed, go-top)
+  right: 15px
+  bottom: 90px
+  padding-top: 4px
+  width: 48px
+  height: 48px
+  background: rgba($gray-deep-dark, 0.7)
+  border: none
+  border-radius: 50%
+  transition: opacity 0.4s linear
+  opacity: 0
+  +breakpoint-min($min-width-lg)
+    bottom: 155px
+
+.go-top.is-visible
+  display: block
+  opacity: 1
+
+.go-top:focus,
+.go-top i:focus
+  outline: 0
+
+.js--go-top
+  cursor: pointer

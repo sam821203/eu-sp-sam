@@ -1,0 +1,42 @@
+.promo__group--daily
+  .promo__title
+    +pos-set(relative, zero)
+    .title__text
+      +pos-set(absolute, base)
+      top: 0
+
+    .daily__text
+      left: 19%
+      color: $gray-deep-light
+      font-size: 7vw
+      font-weight: bold
+      transform: translateY(13%)
+      span
+        &:nth-child(2)
+          font-size: 3vw
+    .daily__countdown
+      left: 66%
+      font-size: 5vw
+      color: $gray-deep-dark
+      transform: translateY(37%)
+
+    +breakpoint-min($min-width-xl)
+      .daily__text
+        font-size: 60px
+        transform: translateY(16px)
+        span
+          &:nth-child(2)
+            font-size: 28px
+      .daily__countdown
+        left: 66%
+        font-size: 48px
+        transform: translateY(26px)
+
+  .promo__wrap
+    padding: 19% 2% 5.5%
+    +bg-set(url(~event/2nd/e-main/components/daily-change/bg-daily.png), 100%)
+    text-align: center
+    &:hover,
+    &:active
+      a
+        transform: translateY(5%) scale(0.95)

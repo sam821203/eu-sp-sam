@@ -1,0 +1,36 @@
+//- TODO: 注意為了主標preload，在head內有準備好兩種方法，為了減少修改，統一把主標命名為「title.png」
+section.hero__wrap
+  .hero__zone
+    .layout--web
+      .decoration--top.decoration--hero
+        img(src="event/1st/e-main/components/hero-section/decoration-hero-web.png", alt="")
+      .hero__title.hero__title--web(title="爸氣男神節感恩特惠1折up")
+        //- 標題
+        h1
+          img(src="event/1st/e-main/components/hero-section/title-web.png", alt="爸氣男神節感恩特惠1折up")
+          .decoration--top.decoration--title
+            img(src="event/1st/e-main/components/hero-section/title-1.png", alt="")
+
+    .layout--main
+      .hero__block
+        .hero__box
+          .decoration--top.decoration--hero
+            img(src="event/1st/e-main/components/hero-section/decoration-hero.png", alt="")
+          .hero__title.hero__title--main(title="爸氣男神節感恩特惠1折up")
+            //- 標題
+            h1
+              img(src="event/1st/e-main/components/hero-section/title.png", alt="爸氣男神節感恩特惠1折up")
+              .decoration--top.decoration--title
+                img(src="event/1st/e-main/components/hero-section/title-1.png", alt="")
+
+//-   //- TODO: 如果hero和promo要共用主視覺時這樣放
+//-   //- .promo__zone
+//-     //- .layout--main
+//-       //- .promo__block
+//-         //- 行銷誘因
+//-         //- include /event/1st/e-main/components/promo-event/_promo-event
+
+//-         //- 商品輪播
+//-           //- 副標
+//-         //- .hero__small__zone
+//-           //- include /event/1st/e-main/components/hero-small-slider/_hero-small-slider

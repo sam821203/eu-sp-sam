@@ -1,0 +1,90 @@
+// .promo__group--bn-special
+//   margin-left: auto
+//   margin-right: auto
+
+//.one__slider-web--bg
+//  +breakpoint-min($min-width-xl)
+//    position: absolute
+//    +bg-set(url("~event/2nd/e-main/components/one-item-slider/one__slider-bg-web.png"))
+//    background-size: 1168px 777px
+//    left: 50%
+//    transform: translateX(-50%)
+//    width: 100%
+//    height: 777px
+.promo__slider.one__slider
+  top: 0
+  position: relative
+  padding-top: 0
+  padding-bottom: 0
+  background: center 0 url("~event/2nd/e-main/components/one-item-slider/bg-mother-new.png") no-repeat
+  background-size: 100% auto
+  height: 131vw
+  .one__slider__wrap-1
+    position: relative
+    padding-top: 0
+  .swiper-container
+    margin-left: auto
+    margin-right: auto
+    width: 100%
+    .swiper-slide
+      &:hover,
+      &:active
+        filter: contrast(120%)
+      img
+        display: block
+        margin-left: auto
+        margin-right: auto
+  +breakpoint-min($min-width-xl)
+    background-size: 960px 1228px
+    height: 1228px
+    margin-bottom: 40px
+
+.slider__one__item__prev,
+.slider__one__item__next
+  //width: 5vw
+  //height: 6vw
+  //margin-top: -3.5vw
+  opacity: 0
+  &::after
+    font-size: 7vw
+  +breakpoint-min($min-width-xl)
+    width: 58px
+    height: 68px
+    margin-top: -13px
+    &::after
+      font-size: 60px
+
+.slider__one__item__prev
+  left: 2vw
+  +breakpoint-min($min-width-xl)
+    left: 15px
+.slider__one__item__next
+  right: 1vw
+  +breakpoint-min($min-width-xl)
+    right: 15px
+  //.one__slider-pager
+  //  left: 50%
+  //  transform: translateX(-50%)
+  //  .swiper-pagination-bullet
+  //    margin: 0 4px
+  //  .swiper-pagination-bullet-active
+  //    width: 20px
+  //    height: 7px
+  //    vertical-align: middle
+  //    background-color: #3d161b
+  //    border: 0px
+  //    border-radius: 6px
+  //.one__slider-pager
+  //  bottom: -5%
+  //+breakpoint-min($min-width-xl)
+  //  top: 20px
+  //  background: none
+  //  height: 785px
+  //  .one__slider__wrap-1
+  //    padding-top: 187px
+  //    margin: 0 auto
+  //    max-width: 960px
+  //  .one__slider-pager
+  //    bottom: -3%
+
+

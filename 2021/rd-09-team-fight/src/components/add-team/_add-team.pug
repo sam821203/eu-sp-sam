@@ -1,0 +1,40 @@
+section.section--cell.promo__group.promo__group--add.m-bottom--xl
+  .layout--main
+    .group__wrap
+      .group__title.block--center.m-bottom--lg
+        img(src="~components/add-team/title-add.png", alt="加入團隊")
+
+      .group__zone.block--center
+        .group__form
+          form(action="")
+            .form__box.m-bottom--lg
+              .label__box
+                label.label--main(for="addTeam") 團隊編號
+              .input__box
+                .check__wrap
+                  input#addTeam.shape--active.input--main.input--main-color.input--check(name="addTeam", placeholder="請輸入您欲加入的團隊編號")
+                  .input__error.show 團隊不存在，請重新輸入
+                a.btn--check.shape--active 驗證編號
+
+            .form__box.m-bottom--lg
+              .label__box
+                .label--main 團隊名稱
+              .name__box
+                .shape--active 輸入團隊編號後會自動帶入團隊名稱
+
+            .form__rule.m-bottom--xl
+              .rule__title.m-bottom--xs 貼心提醒！
+              article.rule__content
+                .rule__part
+                  p 活動時間：
+                  p 110/10/14 AM10:00-110/10/20 PM23:59
+                .rule__part
+                  p 團隊成立時間：
+                  p 110/10/14 AM10:00-110/10/19 PM23:59(10/19 PM23:59後不可成立新團隊)
+                .rule__part
+                  p 可換團時間：
+                  p 110/10/14 AM10:00-110/10/20 PM12:00
+
+            - var textSubmit = "加入團隊"
+            include /components/include/form-cta/_form-cta
+

@@ -1,0 +1,110 @@
+.dynamic-slider-w2m2
+  // +pos-set(relative, zero)
+  overflow: hidden
+  .decor__wrap
+    padding-bottom: 14.5%
+
+  .decor__item
+    &--title
+      +pos-set(absolute, under, 5.6%, 14.5%)
+      width: 70%
+      +breakpoint-min($min-width-xl)
+        top: 1.8%
+        left: calc(50% - 332px)
+
+    &--left
+      +pos-set(absolute, under, 1%, 12%)
+      width: 21%
+      transform-origin: bottom right
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 300px)
+      &.active
+        .js-loading &
+          animation: instrument-heartBeat 1.8s ease-in infinite
+
+    &--right
+      +pos-set(absolute, under, 1%)
+      right: 15%
+      width: 18%
+      +breakpoint-min($min-width-xl)
+        top: 4px
+        right: calc( 50% - 297px )
+      &.active
+        .js-loading &
+          animation: shining 2s ease-in infinite
+
+    +breakpoint-min($min-width-xl)
+      width: auto
+
+  .promo__wrap
+    +bg-set(url(event/2nd/e-main/components/dynamic-slider-w2m2/bg-dynamic-slider-w2m2.png), 100%)
+    margin-top: 6.6%
+    +breakpoint-min($min-width-xl)
+      margin-top: 2%
+
+  .promo__zone
+    +aspect-ratio(921, 910)
+
+  .promo__block
+    padding: 0 6.5%
+    +breakpoint-min($min-width-xl)
+      padding-top: 6px
+
+  .promo__slider
+    overflow: hidden
+    height: 77vw
+    max-height: 760px
+    .dynamic__item
+      text-align: center
+      +breakpoint-min($min-width-xl)
+        .product__name
+          margin-top: 5px
+          margin-bottom: 15px
+        .product__price
+          span
+            &:last-child
+              font-size: 32px
+      .product--dynamic
+        width: 93% !important
+        margin-left: -1%
+      &:first-child
+        margin: 2.5% 3% 0
+        width: 100%
+        .product--dynamic
+          padding-bottom: 0%
+        .product__text
+          display: none
+      &:nth-child(2)
+        +pos-set(absolute, zero, 28.6%, 4.9%)
+        width: 44%
+        +breakpoint-min($min-width-xl)
+          left: calc(50% - 381px)
+          width: 45%
+      &:last-child
+        +pos-set(absolute, zero, 28.6%)
+        right: 1.1%
+        width: 44%
+        +breakpoint-min($min-width-xl)
+          right: calc(50% - 413px)
+          width: 45%
+    .swiper-slide-prev
+      opacity: 0
+
+@keyframes instrument-heartBeat
+  0%, 100%
+    transform: scale(1)
+  7%
+    transform: scale(1.12)
+  14%
+    transform: scale(1)
+  21%
+    transform: scale(1.12)
+  35%
+    transform: scale(1)
+
+@keyframes shining
+  0%, 100%
+    z-index: 1
+    filter: brightness(1)
+  50%
+    filter: brightness(1.3)

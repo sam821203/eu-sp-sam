@@ -1,0 +1,50 @@
+-
+  var w4m4DataE = [
+  {link: "https://www.etmall.com.tw/c2/26776",
+  imgSrc: "~event/2nd/e-main/components/event-w4m4/items/zone8_1.png",
+  alt: "限時搶購"},
+  {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202010/SP_1116492/w/index.html",
+  imgSrc: "~event/2nd/e-main/components/event-w4m4/items/zone8_2.png",
+  alt: "美食週年慶"},
+  {link: "https://www.etmall.com.tw/c3/98722",
+  imgSrc: "~event/2nd/e-main/components/event-w4m4/items/zone8_3.png",
+  alt: "維持好身材"},
+  {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202010/SP_1116510/w/index.html",
+  imgSrc: "~event/2nd/e-main/components/event-w4m4/items/zone8_4.png",
+  alt: "美妝週年慶"},
+  {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202010/SP_1116583/w/index.html",
+  imgSrc: "~event/2nd/e-main/components/event-w4m4/items/zone8_5.png",
+  alt: "保健5折起"},
+  {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202009/SP_1116538/w/index.html",
+  imgSrc: "~event/2nd/e-main/components/event-w4m4/items/zone8_6.png",
+  alt: "戴森狂降"},
+  {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202005/SP_1115505/w/index.html",
+  imgSrc: "~event/2nd/e-main/components/event-w4m4/items/zone8_7.png",
+  alt: "Apple新品"},
+  {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202009/SP_1116456/w/index.html",
+  imgSrc: "~event/2nd/e-main/components/event-w4m4/items/zone8_8.png",
+  alt: "送三星手機"},
+  ]
+
+-
+  var w4m4DataU = [
+  {link: "https://www.u-mall.com.tw/c1/45051", imgSrc: "~event/2nd/u-main/components/event-w4m4/items/event-w4m4-img-1.png", alt: "開架保養"},
+  {link: "https://www.u-mall.com.tw/np/73924", imgSrc: "~event/2nd/u-main/components/event-w4m4/items/event-w4m4-img-2.png", alt: "關鍵保健"},
+  {link: "notyet", imgSrc: "~event/2nd/u-main/components/event-w4m4/items/event-w4m4-img-3.png", alt: "notyet"},
+  {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202002/SP_1106075/w/index.html", imgSrc: "~event/2nd/u-main/components/event-w4m4/items/event-w4m4-img-4.png", alt: "豪禮狂送"},
+  {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202002/SP_1106076/w/index.html", imgSrc: "~event/2nd/u-main/components/event-w4m4/items/event-w4m4-img-5.png", alt: "女王家居"},
+  {link: "https://www.u-mall.com.tw/np/77121", imgSrc: "~event/2nd/u-main/components/event-w4m4/items/event-w4m4-img-6.png", alt: "流行精選"},
+  {link: "notyet", imgSrc: "~event/2nd/u-main/components/event-w4m4/items/event-w4m4-img-7.png", alt: "notyet"},
+  {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202002/SP_1106001/w/index.html", imgSrc: "~event/2nd/u-main/components/event-w4m4/items/event-w4m4-img-8.png", alt: "Fun心出遊"},
+  ]
+
+- var w4m4Data = isU? w4m4DataU : w4m4DataE
+
+
+section.promo__group.promo__group--w4m4(data-title="熱搜關鍵字")
+  .promo__wrap
+    ul.good__wrap
+      each data in w4m4Data
+        li
+          a(href= data.link, title= data.alt)
+            img(src= data.imgSrc, alt= data.alt)

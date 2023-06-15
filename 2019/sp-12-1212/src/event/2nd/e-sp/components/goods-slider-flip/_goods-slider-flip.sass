@@ -1,0 +1,34 @@
+.goods__wrap--flip
+  padding-top: calc(100vw * 0.19)
+  .promo__slider
+    // margin-top: -50%
+    width: 100%
+    height: 90%
+    img
+      width: 100%
+    .swiper-container
+      width: 100%
+      height: 100%
+    .swiper-slide
+      width: 100%
+    // #sliderGoodsFlipPrev.swiper-button-prev,
+    // #sliderGoodsFlipNext.swiper-button-next
+    //   width: 15px
+    //   height: 35px
+    //   margin-top: 102px
+    //   z-index: 10
+    //   background-size: 15px 35px
+    //   opacity: 0
+
+    // #sliderGoodsFlipPrev.swiper-button-prev
+    //   left: 13px
+    // #sliderGoodsFlipNext.swiper-button-next
+    //   right: 42px
+
+  +breakpoint-min($min-width-xl)
+    padding-top: 200px
+    .promo__slider
+      img
+        width: auto
+// +key-rotate-self(55)
+// +key-rotate-from-to(25, -30)

@@ -1,0 +1,16 @@
+.hero__wrap
+  +pos-set(relative, zero)
+  overflow: hidden
+
+  .hero__zone
+    +aspect-ratio(960, 333)
+
+  .hero__title
+    text-align: center
+
++breakpoint-min($min-width-xl)
+  // 若是有promo，高度要包含promo
+  main
+    +bg-set(url(event/1st/e-main/components/hero-section/bg-hero.png), auto)
+    &.fixed
+      background-attachment: fixed

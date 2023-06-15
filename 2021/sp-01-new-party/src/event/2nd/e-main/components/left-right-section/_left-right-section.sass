@@ -1,0 +1,38 @@
+.promo__group--left-right
+  .left-right__wrap
+    display: flex
+    justify-content: space-around
+    padding: 20% 6% 12%
+    +bg-set(url(~event/2nd/e-main/components/left-right-section/bg-left-right.png), 100%)
+    +breakpoint-min($min-width-xl)
+      padding: 210px 6% 120px
+    .block--left,
+    .block--right
+      width: 48%
+      img
+        margin-left: auto
+        margin-right: auto
+  .item__box
+    &:hover,
+    &:active
+      > a
+        > img
+          filter: contrast(105%) brightness(105%)
+    &.close
+      +pos-set(relative, zero)
+      filter: grayscale(100%)
+      pointer-events: none
+      &::before
+        content: '尚未開始'
+        +pos-set(absolute, base)
+        top: 48%
+        left: 8%
+        width: 82%
+        padding: 2% 10%
+        color: $gray-deep-dark
+        background-color: $gray-deep-light
+        border: 5px double $gray-deep-dark
+        border-radius: 10px
+        font-size: 22px
+        text-align: center
+        transform: rotate(-10deg)

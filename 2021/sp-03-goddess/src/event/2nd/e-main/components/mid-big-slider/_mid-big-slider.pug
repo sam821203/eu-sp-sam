@@ -1,0 +1,88 @@
+-
+  var midBigDataE = [
+    {
+      link: "https://www.etmall.com.tw/i/2886152",
+      imgSrc: "~event/2nd/e-main/components/mid-big-slider/items/mid-big-1.png",
+      alt: "味丹【味丹】百事可樂600ml(24入/箱)"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2553086",
+      imgSrc: "~event/2nd/e-main/components/mid-big-slider/items/mid-big-2.png",
+      alt: "CITIZEN	星辰L系列光動能女錶"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/8403/m/index.html",
+      imgSrc: "~event/2nd/e-main/components/mid-big-slider/items/mid-big-3.png",
+      alt: "曼黛瑪璉 春漾新品全場3折up"
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/111997",
+      imgSrc: "~event/2nd/e-main/components/mid-big-slider/items/mid-big-4.png",
+      alt: "Ma:nyo 魔女工廠	新品上市84折up"
+    },
+    {
+      link: "https://www.etmall.com.tw/c3/139425",
+      imgSrc: "~event/2nd/e-main/components/mid-big-slider/items/mid-big-5.png",
+      alt: "ANGFA	ANGFA品牌7折起"
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/108745",
+      imgSrc: "~event/2nd/e-main/components/mid-big-slider/items/mid-big-6.png",
+      alt: "大研生醫 獨家組合7折up"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2732790",
+      imgSrc: "~event/2nd/e-main/components/mid-big-slider/items/mid-big-7.png",
+      alt: "Sodastream Spirit	Sodastream Spirit 自動扣瓶氣泡水機(珊瑚橘)"
+    },
+    {
+      link: "https://www.etmall.com.tw/c2/114393",
+      imgSrc: "~event/2nd/e-main/components/mid-big-slider/items/mid-big-8.png",
+      alt: "VIVO 女神的選擇 拍出真清晰"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2818484",
+      imgSrc: "~event/2nd/e-main/components/mid-big-slider/items/mid-big-9.png",
+      alt: "OMIX 獨特渲染 真無線運動藍牙耳機"
+    },
+  ]
+
+-
+  var midBigDataU = [
+    {
+      link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202008/SP_1106087/w/index.html",
+      imgSrc: "~event/2nd/u-main/components/mid-big-slider/items/mid-big-1.png",
+      alt: "20間銀行最高回饋10%"
+    },
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale",
+      imgSrc: "~event/2nd/u-main/components/mid-big-slider/items/mid-big-2.png",
+      alt: "整點最便宜"
+    },
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale?Day=Up",
+      imgSrc: "~event/2nd/u-main/components/mid-big-slider/items/mid-big-3.png",
+      alt: "天天最激殺"
+    },
+  ]
+
+- var midBigData = isU ? midBigDataU : midBigDataE
+
+section.promo__group.promo__group--mid-big.m-bottom--md(data-title="女神帶逛")
+  .decoration--mid-big.decoration--mid-big-1
+    img#scrollMidBig(src="event/2nd/e-main/components/mid-big-slider/decoration-mid-big-1.png", alt="")
+  .decoration--mid-big.decoration--mid-big-2
+    img#scrollMidBig2(src="~event/2nd/e-main/components/mid-big-slider/decoration-mid-big-2.png", alt="")
+  .layout--main
+    .promo__wrap
+      #sliderMidBig.promo__slider.swiper-container
+        ul.swiper-wrapper
+          each data in midBigData
+            li.swiper-slide
+              a(href= data.link, title= data.alt)
+                img.swiper-lazy(data-src= data.imgSrc, alt="")
+                .swiper-lazy-preloader.swiper-lazy-preloader-black
+
+        //- #sliderMidBigPrev.swiper-button-white.swiper-button-prev.mid-big__nav.mid-big__nav--prev
+        //- #sliderMidBigNext.swiper-button-white.swiper-button-next.mid-big__nav.mid-big__nav--next
+      #sliderMidBigPager.mid-big__pager.swiper-pagination

@@ -1,0 +1,277 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+@import "~utils/sass/helpers/_keyframe.sass"
+.hero__wrap
+  +pos-set(relative, second)
+  overflow: hidden
+
+  .hero__zone
+    +pos-set(relative, zero)
+    padding-top: 58%
+
+  .block__decoration
+    //&--main
+    //  +pos-set(absolute, zero, -5%, 25%)
+    //  padding-top: 53%
+    //  width: 53%
+    //  height: 0
+    //  animation: key-rotate-self 30s infinite linear, flash-breath 3s infinite alternate both linear
+    &--arrow
+      +pos-set(absolute, base, 43.5%, 19%)
+      padding-top: 10%
+      width: 12%
+      +bg-set(url("~event/2nd/e-sp/components/hero-section/arrow--effect.png"), 100%, 0, 0%)
+      animation: bg-animation 1s steps(2) infinite
+      //animation-timing-function: step-start
+      &--right
+        +pos-set(absolute, base, 43.5%, 68%)
+        transform: rotate(180deg)
+
+  .hero__block
+    +pos-set(absolute, zero, 0, 0)
+    width: 100%
+
+  .hero__box
+    +pos-set(relative, zero)
+    padding-top: 13%
+    width: 100%
+    +breakpoint-min($min-width-xl)
+      padding-top: 0
+
+  .hero__title
+    &--main
+      +pos-set(relative, zero)
+      margin-top: 3%
+      padding: 0
+  .title__mask
+    position: absolute
+    left: 0
+    top: 0
+    animation: 4s flash-breath infinite both linear
+  .promo__block
+    +pos-set(relative, second)
+  .promo__event
+    +pos-set(relative, second, 0, 0, null, null)
+    width: 100%
+    +breakpoint-min($min-width-xl)
+      +pos-set(relative, second, 0, 0, null, null)
+
+  +breakpoint-min($min-width-xl)
+    .hero__zone
+      padding-top: 545px
+
+    .hero__title
+      &--main
+        padding: 0
+        transform: scale(1) translateY(0)
+        margin: 10% auto 0 20px
+
+    .block__decoration
+      padding-top: 7.3%
+      width: 9.5%
+      &--arrow
+        +pos-set(absolute, base, 36.5%, calc(50% - 139px))
+        &--right
+          +pos-set(absolute, base, 36.5%, calc(50% + 79px))
+
+.wrap--sp-sub
+  +display-flex(">div")
+  +pos-set(relative, zero)
+  padding: 0 3%
+  .hero__zone
+    +flex(0, 0, 50%)
+  .hero__item
+    +flex(0, 0, 50%)
+    max-width: 50%
+  +breakpoint-min($min-width-xl)
+    padding: 0 0
+    .hero__zone
+      +flex(0, 0, 55%)
+    .hero__item
+      +flex(0, 0, 50%)
+      transform: translateX(-30px)
+
+  .background__decoration--hero
+    +pos-set(absolute, under, 0, 0)
+    width: 100%
+    height: 100%
+
+.hero__item
+  img
+    display: block
+    +pos-set(relative, zero, 25%)
+    margin-left: auto
+    margin-right: auto
+    width: 83%
+
++key-rotate-self(360)
++key-rotate-self(-45, key-rotate-self-2)
++key-rotate-self(45, key-rotate-self-3)
+
+@keyframes big-open
+  from
+    transform: scale(5)
+  to
+    transform: scale(1)
+
+@keyframes flash-breath
+  0%, 70%
+    opacity: 1
+    filter: brightness(100%)
+  60%
+    opacity: 1
+    filter: brightness(250%) blur(3px)
+
+@keyframes scale-breath
+  from
+    transform: rotate(0) scale(1)
+  25%
+    transform: rotate(90deg) scale(0.8)
+  50%
+    transform: rotate(180deg) scale(1)
+  75%
+    transform: rotate(270deg) scale(0.9)
+  to
+    transform: rotate(360deg) scale(1)
+
+@keyframes shake-me
+  from
+    transform: rotate(0)
+  20%
+    transform: rotate(0)
+  21.5%
+    transform: rotate(5deg)
+  23%
+    transform: rotate(0)
+  24.5%
+    transform: rotate(-4deg)
+  26%
+    transform: rotate(0)
+  27%
+    transform: rotate(3deg)
+  28%
+    transform: rotate(0)
+  28.5%
+    transform: rotate(-2deg)
+  29%
+    transform: rotate(0)
+  to
+    transform: rotate(0)
+
+@keyframes ufo-patrol
+  from
+    transform: translateX(0)
+  30%
+    transform: translateX(10%)
+  40%
+    transform: translateX(-10%)
+  50%
+    transform: translateX(10%)
+  60%
+    transform: translateX(0)
+  to
+    transform: translateX(0)
+
+@keyframes ufo-patrol-y
+  from
+    transform: translateY(0)
+  25%
+    transform: translateY(10%)
+  50%
+    transform: translateY(-10%)
+  75%
+    transform: translateY(10%)
+  100%
+    transform: translateY(0)
+
+@keyframes bg-animation
+  0%
+    background-position-y: 0
+    opacity: 1
+  100%
+    background-position-y: 200%
+    opacity: 1
+
+@keyframes ufo-m-1
+  from
+    transform: translate(-40vw, 2vh)
+  53%
+    transform: translate(2vw, 4vh)
+  74%
+    transform: translate(10vw, 8vh)
+  to
+    transform: translate(0, 0)
+
+@keyframes ufo-r-1
+  from
+    transform: translate(36vw, -10vh)
+
+  63%
+    transform: translate(-10vw, 0vh)
+  76%
+    transform: translate(-5vw, -2vh)
+  to
+    transform: translate(0, 0)
+
+@keyframes fadeInDown
+  from
+    opacity: 0
+    -webkit-transform: translate3d(0, -100%, 0)
+    transform: translate3d(0, -100%, 0)
+  to
+    opacity: 1
+    -webkit-transform: translate3d(0, 0, 0)
+    transform: translate3d(0, 0, 0)
+
+@keyframes flipInX
+  from
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg)
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg)
+    -webkit-animation-timing-function: ease-in
+    animation-timing-function: ease-in
+    opacity: 0
+  40%
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg)
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg)
+    -webkit-animation-timing-function: ease-in
+    animation-timing-function: ease-in
+  60%
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg)
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg)
+    opacity: 1
+  80%
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg)
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg)
+  to
+    -webkit-transform: perspective(400px)
+    transform: perspective(400px)
+
+@keyframes breathing-light
+  0%, 100%
+    filter: brightness(100%)
+
+  25%
+    filter: brightness(200%) blur(2px)
+
+  50%
+    filter: brightness(300%) blur(4px)
+
+  75%
+    filter: brightness(200%) blur(2px)
+
+@keyframes rotate-light-left
+  from
+    //left: calc(50% - 796px)
+    transform: rotate(5deg)
+  to
+    transform: rotateY(-30deg)
+    filter: brightness(200%)
+
+@keyframes rotate-light
+  from
+    //left: calc(50% - 796px)
+    transform: rotate(-5deg)
+  to
+    transform: rotateY(30deg)
+    filter: brightness(200%)

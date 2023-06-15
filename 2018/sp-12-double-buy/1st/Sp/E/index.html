@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" rel="stylesheet">
+    <link href="slick.css" rel="stylesheet">
+    <!--<link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" rel="stylesheet">-->
+    <!--<link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" rel="stylesheet">-->
+    <link href="slick-theme.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <style type="text/css">
+        @media screen and (min-width: 641px) {
+            .n-sp__box .sp__wrap img,
+            .main-info img,
+            .firstInfo a img {
+                width: auto;
+            }
+        }
+
+        @media screen and (max-width: 320px) {
+            .sp__visual a{
+                width: 120px;
+                height: 70px;
+                top: -260px;
+                right: 0px;
+                /* 測試用 */
+                /*border: 1px solid #f00;*/
+            }
+        }
+        @media screen and (min-width: 321px) and (max-width: 375px) {
+            .sp__visual a{
+                width: 140px;
+                height: 80px;
+                top: -305px;
+                right: calc(50% - 185px);
+            }
+        }
+
+        @media screen and (min-width: 376px) and (max-width: 426px) {
+            .sp__visual a{
+                width: 145px;
+                height: 80px;
+                top: -325px;
+                right: calc(50% - 195px);
+            }
+        }
+
+        @media screen and (min-width: 427px) and (max-width: 768px) {
+            .sp__visual a{
+                width: 180px;
+                height: 110px;
+                top: -410px;
+                right: calc(50% - 240px);
+            }
+        }
+
+        @media screen and (min-width: 769px) and (max-width: 1259px) {
+            .sp__visual a{
+                width: 180px;
+                height: 110px;
+                top: -410px;
+                right: calc(50% - 240px);
+            }
+        }
+
+        @media screen and (min-width: 1260px) {
+
+            .sp__visual a{
+                width: 350px;
+                height: 210px;
+                top: -810px;
+                right: calc(50% - 480px);
+                /* 測試用
+                border: 1px solid #f00;*/
+            }
+        }
+
+    </style>
+</head>
+
+<body class="sp_page sp-page_1e">
+
+<div id="iconHome"></div>
+<div id="elevatorHome"></div>
+
+<main id="spWrap" class="sp__wrap">
+    <section class="upper_layer" style="background-image: url(top181126.jpg);">
+        <div id="openItem" class="logo">
+            <a href="https://www.etmall.com.tw/">
+                <img src="logo.png" />
+            </a>
+        </div>
+        <canvas id="firefork" class="firefork-wrap" width="1260px" height="600px"></canvas>
+    </section>
+
+    <!-- 副標連結 -->
+    <div class="sp__visual">
+        <a class="visual__main" href="#example"></a>
+    </div>
+
+    <section class="sp-content wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+        <aside class="incentive_layer">
+            <img src="incentive-line.png" class="incentive-line">
+            <div class="incentive-dot"></div>
+            <img src="incentive-line.png" class="incentive-line incentive-line__mo">
+            <div class="incentive-dot incentive-dot__mo"></div>
+            <div class="incentive__block ib-1">
+                <div class="incentive__block-sub">
+                    <img class="img01" src="incentive-01-sub.png"/>
+                </div>
+                <div class="incentive">
+                    <a href="https://www.etmall.com.tw/Activity/WebSP?SubPage=DMSetting/Final/209901/SP_1103173/p2_sm.html">
+                        <img class="incentive-main" src="E-1.png" alt="刷卡最高送$2300"></a>
+                    <img class="light-card lc-1" src="box-light.png">
+                    <img src="box.png"></div>
+            </div>
+            <div class="incentive__block ib-2">
+                <div class="incentive__block-sub">
+                    <img class="img02" src="incentive-02-sub.png"/>
+                </div>
+                <div class="incentive">
+                    <a href="#ecoin">
+                        <img class="incentive-main" src="E-2.png" alt="超好用東森幣 最高送$2212"></a>
+                    <img class="light-card lc-2" src="box-light.png">
+                    <img src="box.png"></div>
+            </div>
+            <div class="incentive__block ib-3">
+                <div class="incentive__block-sub">
+                    <img class="img03" src="incentive-03-sub.png"/>
+                </div>
+                <div class="incentive">
+                    <a href="https://www.etmall.com.tw/c3/123680">
+                        <img class="incentive-main" src="E-3.png" alt="寶藏這裡挖">
+                    </a>
+                    <img class="light-card lc-3" src="box-light.png">
+                    <img src="box.png">
+                </div>
+            </div>
+            <div class="incentive__block ib-4">
+                <div class="incentive__block-sub">
+                    <img class="img04" src="incentive-04-sub.png"/>
+                </div>
+                <div class="incentive">
+                    <a href="#prize">
+                        <img class="incentive-main" src="E-4.png" alt="滿額抽盛世公主雙人遊"/></a>
+                    <img class="light-card lc-4" src="box-light.png">
+                    <img src="box.png">
+                </div>
+            </div>
+        </aside>
+
+        <aside class="carousel_layer carousel_layer-d">
+            <div class="carousel__wrap">
+                <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201812/SP_1106515/index.html">
+                    <img src="BN-1.jpg"/>
+                </a>
+            </div>
+            <div class="carousel__wrap">
+                <a href="https://www.etmall.com.tw/c3/123657">
+                    <img src="BN-2.jpg"/>
+                </a>
+            </div>
+            <div class="carousel__wrap">
+                <a href="https://www.etmall.com.tw/c1/107570">
+                    <img src="BN-3.jpg"/>
+                </a>
+            </div>
+        </aside>
+
+        <!--mobile-->
+        <aside class="carousel_layer carousel_layer-m">
+            <div class="carousel__wrap">
+                <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201812/SP_1106515/index.html">
+                    <img src="BN-m-1.jpg"/>
+                </a>
+            </div>
+            <div class="carousel__wrap">
+                <a href="https://m.etmall.com.tw/c3/123657">
+                    <img src="BN-m-2.jpg"/>
+                </a>
+            </div>
+            <div class="carousel__wrap">
+                <a href="https://ｍ.etmall.com.tw/c1/107570">
+                    <img src="BN-m-3.jpg"/>
+                </a>
+            </div>
+        </aside>
+    </section>
+
+
+</main>
+
+<div id="goTopWrap"></div>
+<!--<script id="loadJS" src="load-indicator.js"></script>-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+<!----- 輪播 ----->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>-->
+<script src="slick.min.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+<!----- canva ----->
+<script src="fireworks.js"></script>
+
+<!----- 浮水印 ----->
+<script id="scriptIconFloat"
+        src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106244/float-icon.js"></script>
+
+<!----- 電梯 ----->
+<!-- 電梯測試 -->
+<!--<script type="text/javascript" src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106595/generateVersion20181019.js"></script>-->
+<!-- 電梯正式 -->
+<script type="text/javascript"
+        src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105567/generateVersion20181019.js"></script>
+
+<!-- goTop -->
+<script type="text/javascript"
+        src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106349/generateVersion20181019.js"></script>
+
+<script type="text/javascript">
+    var isUiWebview = /(WebView|(iPhone|iPod|iPad)(?!.*Safari\/))/gi.test(navigator.userAgent);
+    if (!isUiWebview) {
+        new WOW().init();
+    }
+
+    // 輪播
+    $('.carousel_layer').slick({
+        autoplay: true,
+        autoplaySpeed: 3000,
+    });
+
+    // 高度過高問題
+    var winWt = $(document).width();
+
+    function pageHt(moreHt) {
+        var titleHt = $('.upper_layer').outerHeight();
+//        var isTitleHt = (logoHt > 285) ? logoHt : 285;
+        var pageHt = $('.sp-content').outerHeight() + titleHt - moreHt;
+        $('.sp__wrap').css('height', pageHt);
+    }
+
+    setTimeout(function () {
+        if (winWt <= 320) {
+            pageHt(130)
+        }
+        else if (321 < winWt && winWt <= 375) {
+            pageHt(170)
+        }
+        else if (376 < winWt && winWt <= 425) {
+            pageHt(180)
+        }
+        else if (426 < winWt && winWt <= 768) {
+            pageHt(230)
+        }
+        else if (769 < winWt && winWt <= 1024) {
+            pageHt(230)
+        }
+        else if (1025 < winWt) {
+            pageHt(450)
+        }
+        else {
+            pageHt(130)
+        }
+    }, 3000);
+
+    $(window).resize(function () {
+        pageHt(130);
+    });
+
+    // canva resize
+    function draw() {
+        var canvas = document.getElementById('firefork');
+        var ctx = canvas.getContext('2d');
+        ctx.canvas.width  = window.innerWidth;
+    }
+    draw();
+
+</script>
+</body>
+</html>

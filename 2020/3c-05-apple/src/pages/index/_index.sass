@@ -1,0 +1,51 @@
+// ==========================================================================
+// Collection Helpers
+// ==========================================================================
+// @import "utils/sass/helpers/_collection"
+// @import "~utils/sass/_common"
+@import "~utils/bg-decoration-instance/canvas-firwork/_canvas-firwork"
+
+// // ==========================================================================
+// // Plugins
+// // ==========================================================================
+// // @import "vendors/animate"
+
+// // ==========================================================================
+// // layout
+// // ==========================================================================
+@import "~layout/header/_header"
+@import "~layout/nav-apple/_nav-apple"
+
+// // ==========================================================================
+// // components
+// // ==========================================================================
+@import "~components/overlay/_overlay"
+@import "~components/apple-list/_apple-list"
+@import "~components/hero-slider/_hero-slider"
+@import "~components/marquee/_marquee"
+
+// // ==========================================================================
+// // Page
+// // ==========================================================================
+body
+  +bg-set(url(~pages/index/bg.jpg), 100%, center, 0, no-repeat, $event-color-1)
+  +breakpoint-min($min-width-xl)
+    background: center 0 url(~pages/index/bg.jpg) no-repeat, $event-color-1 center 0 url(~pages/index/bg-web.jpg) no-repeat
+    background-size: auto 1280px, auto 1510px
+
+// common switch setting
+.sp__header
+  .info--apple
+    display: inline-block
+    padding-top: 1px
+    font-weight: bold
+  span:last-child
+    display: none
+.nav__apple
+  display: none
+
+// page scroll test
+// body
+  // height: 10000px
+  // .sp__wrap
+    // height: 5000px

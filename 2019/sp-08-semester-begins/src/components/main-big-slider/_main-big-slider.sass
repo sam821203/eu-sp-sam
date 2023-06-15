@@ -1,0 +1,27 @@
+.promo__group--rank
+  .promo__zone
+    +bg-set(url("~components/main-big-slider/960bg-02.jpg"), 100%)
+  .promo__title
+    margin-top: -0.5%
+  .promo__wrap
+    padding-top: 70%
+    .swiper-slide
+      a
+        transition: transform 0.6s
+        transform: translateY(-27%) scale(0.6)
+    +breakpoint-min($min-width-lg)
+      .swiper-slide,
+      .swiper-slide-duplicate
+        a
+          transform: translateY(70%) scale(0.5)
+        img
+          transition: filter 0.6s
+          filter: grayscale(100%)
+      .swiper-slide-active,
+      .swiper-slide-duplicate-active
+        a
+          transform: translateY(20%) scale(1.8)
+        img
+          filter: grayscale(0)
+  +breakpoint-min($min-width-xl)
+    +bg-set(url("~components/main-big-slider/2560bg-02.jpg"))

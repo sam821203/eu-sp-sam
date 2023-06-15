@@ -1,0 +1,296 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero__wrap
+  +pos-set(relative, zero)
+  width: 100%
+  overflow: hidden
+  // +bg-set(url("~event/1st/u-main/components/hero-section/bg-hero-web.jpg"), 100%)
+  // overflow: hidden
+  // +breakpoint-min($min-width-xl)
+  //   background-size: auto
+
+  .hero__block
+    +pos-set(relative, zero)
+    padding-top: 0
+
+  .hero__box
+    +pos-set(relative, zero)
+    .hero__title--main
+      margin-left: 0
+      z-index: 10
+      height: 77vw
+      width: 94%
+      margin-left: 3%
+      img
+        position: absolute
+        &:nth-child(1)
+          width: 55vw
+          top: 5vw
+          left: 5vw
+          animation: bounceInDown .5s 1.5s both , heartBeat 1s 2s both linear
+          //animation: key-wind-rotate-3 15s 5s infinite ease-in-out
+        //&:nth-child(2)
+        //  width: 41vw
+        //  left: 13vw
+        //  top: 18.5vw
+        //  animation: bounceInDown .5s 1.5s both , heartBeat 1s 2s both linear
+      +breakpoint-min($min-width-xl)
+        height: 855px
+        img
+          &:nth-child(1)
+            width: auto
+            top: 20px
+            left: calc(50% - 166px)
+            position: relative
+            z-index: 2
+          //&:nth-child(2)
+          //  width: auto
+          //  top: 184px
+          //  left: calc(50% - 279px)
+    +breakpoint-min($min-width-xl)
+      z-index: 2
+      width: 77%
+      left: calc(50% - 645px)
+      .hero__title--main
+        width: 100%
+        margin-left: 0
+
+
+  .decoration__title
+    +pos-set(absolute, base)
+    width: 100%
+    pointer-events: none
+    top: 0
+    left: 0
+    .decoration--wrap
+      img
+        position: absolute
+        &:nth-child(1)
+          width: 41vw
+          top: -3vw
+          left: 39vw
+          transform-origin: top right
+          animation: key-wind-rotate-2 8s infinite ease-in-out
+        &:nth-child(2)
+          top: 28vw
+          right: -15vw
+          width: 57vw
+          animation: key-wind-rotate-3 7s infinite ease-in-out
+          transform-origin: top right
+        &:nth-child(3)
+          top: 21vw
+          left: -2vw
+          width: 32vw
+          animation: key-wind-rotate 9s infinite ease-in-out
+          transform-origin: bottom left
+        &:nth-child(4)
+          //animation: key-wind-rotate-2 10s infinite ease-in-out
+          //transform-origin: top left
+          width: 81vw
+          top: 0
+          right: -44vw
+    .decoration--wrap-web
+      display: none
+    +breakpoint-min($min-width-xl)
+      .decoration--wrap
+        img
+          //filter: brightness(0.5)
+          &:nth-child(1)
+            width: auto
+            top: -2px
+            left: calc(50% + 200px)
+            transform-origin: top left
+            animation: key-wind-rotate-web-2 8s infinite ease-in-out
+          &:nth-child(2)
+            width: auto
+            top: 229px
+            left: calc(50% + 324px)
+            z-index: 2
+            //transform-origin: top center
+            //animation: key-wind-rotate-web-2 10s infinite ease-in-out
+          &:nth-child(3)
+            width: auto
+            top: 200px
+            left: calc(50% - 281px)
+            animation: key-wind-rotate-web-1 12s infinite ease-in-out
+            transform-origin: center
+          &:nth-child(4)
+            width: auto
+            top: 0
+            right: calc(50% - 1152px)
+            //animation: key-wind-rotate-web-2 9s infinite ease-in-out
+            //transform-origin: top right
+          &:nth-child(5)
+            width: auto
+            top: 339px
+            right: calc(50% - 1439px)
+            animation: key-wind-rotate-web-1 7s infinite ease-in-out
+            transform-origin: center
+      .decoration--wrap-web
+        display: block
+        img
+          position: absolute
+          width: auto
+          top: 235px
+          right: calc(50% - 1217px)
+          z-index: 2
+          //animation: key-wind-rotate-web-2 8s infinite ease-in-out
+          transform-origin: bottom right
+
+  .hero__title
+    &--main
+      +pos-set(relative, zero)
+      margin-left: 7%
+      width: 80%
+      // text-align: center
+      transform-origin: center
+
+// .decoration__title
+//   +pos-set(absolute, zero)
+//   bottom: 17%
+//   left: 0
+//   width: 100%
+//   img:last-child
+//     +pos-set(absolute, base)
+//     top: 20%
+//     left: 24%
+//     width: 53%
+
+//   +breakpoint-min($min-width-xl)
+//     bottom: 74px
+
+//@keyframes bounceInUp
+//  0%, 60%, 75%, 90%, to
+//    animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+//  0%
+//    opacity: 0
+//    transform: translate3d(0, 50px, 0) scale(0)
+//  60%
+//    opacity: 1
+//    transform: translate3d(0, -10px, 0) scale(1.1)
+//  75%
+//    opacity: 1
+//    transform: translate3d(0, 5px, 0) scale(.985)
+//  90%
+//    opacity: 1
+//    transform: translate3d(0, -2px, 0) scale(1.05)
+//  to
+//    opacity: 1
+//    transform: translateZ(0)
+
++key-wind-rotate(-6, 8)
++key-wind-rotate(-2, 4, key-wind-rotate-2)
++key-wind-rotate(1, -2, key-wind-rotate-3)
++key-wind-rotate(-3, 4, key-wind-rotate-web-1)
++key-wind-rotate(1, 2, key-wind-rotate-web-2)
+@keyframes bounceInUp
+  from, 60%, 75%, 90%, to
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+  from
+    opacity: 0
+    -webkit-transform: translate3d(0, 3000px, 0)
+    transform: translate3d(0, 3000px, 0)
+  60%
+    opacity: 1
+    -webkit-transform: translate3d(0, -20px, 0)
+    transform: translate3d(0, -20px, 0)
+  75%
+    -webkit-transform: translate3d(0, 10px, 0)
+    transform: translate3d(0, 10px, 0)
+  90%
+    -webkit-transform: translate3d(0, -5px, 0)
+    transform: translate3d(0, -5px, 0)
+  to
+    -webkit-transform: translate3d(0, 0, 0)
+    transform: translate3d(0, 0, 0)
+
+@keyframes bounceInDown
+  0%, 60%, 75%, 90%, to
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+  0%
+    opacity: 0
+    transform: translate3d(0, -3000px, 0) scaleY(3)
+  60%
+    opacity: 1
+    transform: translate3d(0, 25px, 0) scaleY(.9)
+  75%
+    transform: translate3d(0, -10px, 0) scaleY(.95)
+  90%
+    transform: translate3d(0, 5px, 0) scaleY(.985)
+  to
+    opacity: 1
+    transform: translateZ(0)
+
+@keyframes bounceInRight
+  0%, 60%, 75%, 90%, to
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+  0%
+    opacity: 0
+    transform: translate3d(3000px, 0, 0) scaleX(3)
+  60%
+    opacity: 1
+    transform: translate3d(-25px, 0, 0) scaleX(1)
+  75%
+    transform: translate3d(10px, 0, 0) scaleX(.98)
+  90%
+    transform: translate3d(-5px, 0, 0) scaleX(.995)
+  to
+    opacity: 1
+    transform: translateZ(0)
+
+@keyframes bounceInLeft
+  0%, 60%, 75%, 90%, to
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+  0%
+    opacity: 0
+    transform: translate3d(-3000px, 0, 0) scaleX(3)
+  60%
+    opacity: 1
+    transform: translate3d(25px, 0, 0) scaleX(1)
+  75%
+    transform: translate3d(-10px, 0, 0) scaleX(.98)
+  90%
+    transform: translate3d(5px, 0, 0) scaleX(.995)
+  to
+    opacity: 1
+    transform: translateZ(0)
+
+@keyframes heartBeat
+  0%
+    transform: scale(1)
+
+  14%
+    transform: scale(1.3)
+
+  28%
+    transform: scale(1)
+
+  42%
+    transform: scale(1.3)
+
+  70%
+    transform: scale(1)
+@keyframes fadeInDown
+  0%
+    opacity: 0
+    transform: translate3d(0, -100%, 0)
+
+  to
+    opacity: 1
+    transform: translateZ(0)
+@keyframes rotateXY
+  10%,20%,30%,40%,50%
+    transform: rotate(0)
+  15%,35%
+   transform: rotate(10deg)
+  25%,45%
+   transform: rotate(-10deg)
+
+// TODO: 如果hero和promo要共用主視覺時的共用區塊背景設定 
+  // .promo__zone
+    // margin-top: 8%
+    //background-color: $gray-deep-light
+    // +breakpoint-min($min-width-xl)
+      // background-color: transparent

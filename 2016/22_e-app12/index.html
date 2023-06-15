@@ -1,0 +1,180 @@
+﻿<!doctype html>
+<html>
+<head>
+<title>雙12巨獻 全館1.2折起</title><strong></strong>
+<link href="layout.css" rel="stylesheet" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<style type="text/css">
+body {
+          width: 100%;
+          height: auto;
+          overflow-x: hidden;
+        }
+.e-sp__countdown, .e-sp__countdown2{
+  background: none;
+  position: relative;
+  width: 100%;
+}
+.clock__wrap, .clock__wrap2{
+  background: none;
+  /*width: 80%;*/
+  margin-left: auto;
+  margin-right: auto;
+}
+.clock__wrap p, .clock__wrap2 p{
+  background: none;
+  padding-top: 3px;
+  margin: auto;
+  position: absolute;
+  color: #333;
+  font-size: 80%;
+}
+.clock__wrap span, .clock__wrap2 span{
+  background: none;
+}
+.clock__wrap p, .clock__wrap2 p{
+  padding: 0;
+  padding-top: 6px;
+  right: 50%;
+}
+
+@media (max-width: 480px) {
+  .clock__wrap p, .clock__wrap2 p{
+    padding-top: 3px;
+    margin-right: -150px;
+  }
+  .clock__wrap2 p{
+    margin-right: -165px;
+  }
+  .clock__wrap span, .clock__wrap2 span{
+    margin-right: 5px;
+  }
+}
+@media (max-width: 320px){
+  .clock__wrap2 p{
+    margin-right: -145px;
+  }
+}
+@media (min-width: 640px) {
+  .clock__wrap p, .clock__wrap2 p{
+    padding-top: 10px;
+    margin-right: -180px;
+  }
+  .clock__wrap2 p{
+    margin-right: -250px;
+  }
+}
+@media (min-width: 768px) {
+  .clock__wrap p, .clock__wrap2 p{
+    font-size: 160%;
+    padding-top: 6px;
+    margin-right: -220px;
+  }
+  .clock__wrap2 p{
+    margin-right: -300px;
+  }
+}
+@media (min-width: 1024px) {
+  .clock__wrap p, .clock__wrap2 p{
+    font-size: 200%;
+    padding-top: 10px;
+    margin-right: -280px;
+  }
+  .clock__wrap2 p{
+    margin-right: -380px;
+  }
+}
+</style>
+<script type="text/javascript">
+window.onload = function () {
+  
+  function espCountDown() {
+    var now = new Date();
+    var days = now.getDate();
+    var hours = 23 - now.getHours();
+    var min = 60 - now.getMinutes();
+    var sec = 60 - now.getSeconds();
+
+
+    var espCountdownWrap = document.getElementById('espCountdownWrap');
+    var espCountdownWrap2 = document.getElementById('espCountdownWrap2');
+    var spClock = document.getElementById('spClock');
+    var spClock2 = document.getElementById('spClock2');
+
+    if (min.toString().length === 1) {
+        min = '0' + min;
+    }
+    if (sec.toString().length === 1) {
+        sec = '0' + sec;
+    }
+    if (hours.toString().length === 1) {
+        hours = '0' + hours;
+    }
+
+    if ( days === 12 ) {
+      espCountdownWrap2.style.display = 'none';
+      espCountdownWrap.style.display = 'block';
+    }
+    if ( days === 13 ) {
+      espCountdownWrap.style.display = 'none';
+      espCountdownWrap2.style.display = 'block';
+    }
+    
+
+    spClock.innerHTML = '<span>' + hours + '</span>' + '<span class="clock__words">時</span>' + '<span>' + min + '</span>'  + '<span class="clock__words">分</span>' + '<span>' + sec + '</span>' + '<span class="clock__words">秒</span>';
+
+    spClock2.innerHTML = '<span>' + hours + '</span>' + '<span class="clock__words">時</span>' + '<span>' + min + '</span>'  + '<span class="clock__words">分</span>' + '<span>' + sec + '</span>' + '<span class="clock__words">秒</span>';
+
+  }
+
+  var startClock = setInterval( espCountDown, 1000 );
+
+}
+
+</script>
+</head>
+<body>
+<div id="espCountdownWrap" class="e-sp__countdown">
+  <div id="spCountdown" class="clock__wrap">
+    <p id="spClock"></p>
+  </div>
+  <img style="width: 100%" src="images/e-clock-mobil.jpg" alt="">
+</div>
+<div id="espCountdownWrap2" class="e-sp__countdown2">
+  <div class="clock__wrap2">
+      <p id="spClock2"></p>
+  </div>
+  <img style="width: 100%" src="images/e-clock2-mobil.jpg" alt="">
+</div>
+<div style="width:100%;"><img src="images/betty-121202-mobil_01.jpg" width="100%" alt="">
+</div>
+
+<div style="width:100%;"><a href="etmall://goto?type=6&url=/pages/Mobile_SP.aspx?SPID=2384&t=" target="_blank"><img src="images/betty-121202-mobil_02.jpg" alt="" width="100%" border="0"></a></div>
+
+<div style="width:100%;"><a href="etmall://goto?type=5&ed=2&p=1" target="_blank"><img src="images/betty-121202-mobil_03.jpg" alt="" width="100%" border="0"></a></div>
+
+<div style="width:100%;"><a href="etmall://goto?type=7&ed=2&sd=31771&cd=94731" target="_blank"><img src="images/betty-121202-mobil_04.jpg" alt="" width="100%" border="0"></a></a></div>
+
+<div style="width:100%;"><a href="etmall://goto?type=6&url=%2Fpages%2FMobile_SP.aspx%3FSPID%3D2405&t=" target="_blank"><img src="images/betty-121202-mobil_05.jpg" alt="" width="50%" border="0"></a><a href="etmall://goto?type=6&url=%2Fpages%2FMobile_SP.aspx%3FSPID%3D2415&t=" target="_blank"><img src="images/betty-121202-mobil_05-2.jpg" alt="" width="50%" border="0"></a></div>
+
+<div style="width:100%;"><a href="etmall://goto?type=6&url=%2Fpages%2FMobile_SP.aspx%3FSPID%3D2423&t=" target="_blank"><img src="images/betty-121202-mobil_06.jpg" alt="" width="50%" border="0"></a><a href="etmall://goto?type=6&url=/pages/Mobile_SP.aspx?SPID=1833&t=" target="_blank"><img src="images/betty-121202-mobil_06-2.jpg" alt="" width="50%" border="0"></a></div>
+<div style="width:100%;"><a href="etmall://goto?type=6&url=/pages/Mobile_SP.aspx?SPID=2420&t=" target="_blank"><img src="images/betty-121202-mobil_07.jpg" alt="" width="50%" border="0"></a><a href="etmall://goto?type=6&url=%2Fpages%2FMobile_SP.aspx%3FSPID%3D2425&t=" target="_blank"><img src="images/betty-121202-mobil_07-2.jpg" alt="" width="50%" border="0"></a></div>
+<div style="width:100%;"><a href="etmall://goto?type=6&url=%2Fpages%2FMobile_SP.aspx%3FSPID%3D2426&t=" target="_blank"><img src="images/betty-121202-mobil_08.jpg" alt="" width="50%" border="0"></a><a href="etmall://goto?type=6&url=%2Fpages%2FMobile_SP.aspx%3FSPID%3D2428&t=" target="_blank"><img src="images/betty-121202-mobil_08-2.jpg" alt="" width="50%" border="0"></a></div>
+<div style="width:100%;"><a href="etmall://goto?type=6&url=%2Fpages%2FMobile_SP.aspx%3FSPID%3D2408&t=" target="_blank"><img src="images/betty-121202-mobil_09.jpg" alt="" width="50%" border="0"></a><a href="etmall://goto?type=6&url=%2Fpages%2FMobile_SP.aspx%3FSPID%3D2418&t=" target="_blank"><img src="images/betty-121202-mobil_09-2.jpg" alt="" width="50%" border="0"></a></div>
+<div style="width:100%;"><a href="etmall://goto?type=6&url=%2Fpages%2FMobile_SP.aspx%3FSPID%3D2265&t=" target="_blank"><img src="images/betty-121202-mobil_10.jpg" alt="" width="50%" border="0"></a><a href="etmall://goto?type=6&url=%2Fpages%2FMobile_SP.aspx%3FSPID%3D2427&t=" target="_blank"><img src="images/betty-121202-mobil_10-2.jpg" alt="" width="50%" border="0"></a></div>
+<div style="width:100%;"><a href="etmall://goto?type=6&url=%2Fpages%2FMobile_SP.aspx%3FSPID%3D2422&t="><img src="images/betty-121202-mobil_11.jpg" alt="" width="50%" border="0"></a><a href="etmall://goto?type=6&url=%2Fpages%2FMobile_SP.aspx%3FSPID%3D2424&t="><img src="images/betty-121202-mobil_11-2.jpg" alt="" width="50%" border="0"></a></div>
+<div style="width:100%;"><a href="etmall://goto?type=6&url=%2Fpages%2FMobile_SP.aspx%3FSPID%3D2404&t=" target="_blank"><img src="images/betty-121202-mobil_12.jpg" alt="" width="50%" border="0"></a><a href="etmall://goto?type=6&url=%2Fpages%2FMobile_SP.aspx%3FSPID%3D2273&t=" target="_blank"><img src="images/betty-121202-mobil_12-2.jpg" alt="" width="50%" border="0"></a></div>
+<div class="eacw-note-list">
+          <h2>活動辦法</h2>
+        <h2 class="eacw-border-left">活動期間</h2>
+         <p class="sub-list">105年12月13日 00:00起至105年12月13日23:59止。</p>
+</div>
+          <div class="eacw-note-list">
+        <h2 class="eacw-border-left">活動說明</h2>
+        <p class="sub-list">1. 優惠價格以購物車結帳金額為準，若未顯示優惠價，即表示該商品並未參加本活動。<br>2. 加價購、服務性票券、驚爆商品、機車、旅遊、保險、電視頻道商品、禮券等專案商品，恕不參加折扣優惠活動。優惠活動不得合併使用(如: 折價券或其他折價活動等) <br>3. 活動期間登入東森購物網，每會員(帳號)可領取東森購物網500元折扣金，活動活動期間所發送之折扣金使用效期統一至105/12/13 23:59 到期，逾期未使用完折扣金自動歸0。<br> 4. 更多關於折扣金使用說明及規範請至東森購物網折扣金說明。
+<br>5. 如遇不可抗拒之狀況產生，東森購物保留更換、更改或是停止活動之權利。</p>
+      </div>
+
+</body>
+</html>

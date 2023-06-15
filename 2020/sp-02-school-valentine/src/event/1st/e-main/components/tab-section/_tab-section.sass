@@ -1,0 +1,187 @@
+.promo__group--tab
+  .tab__wrap
+    +display-flex
+    //+bg-set(url("~event/1st/e-main/components/tab-section/bg-tab-m.png"), 99%)
+    display: block
+    height: calc(100vw * 2.65)
+    +bg-set(url("~event/1st/e-main/components/tab-section/bg-tab.png"), 100% auto)
+
+    .tab__zone
+      padding: 0
+      width: 90%
+      //+flex(0, 1, 34.2%)
+      //padding: 1.1%
+      &.tab__wrap-two
+        margin-top: calc(100vw * 0.069)
+      .tab__box
+        +display-flex
+        flex-wrap: wrap
+        justify-content: center
+        position: relative
+        top: calc(100vw * 0.32)
+        left: calc(100vw * 0.045)
+    .content__zone
+      +flex(0, 1, 100%)
+      padding: 20% 0 2% 0
+      .content__block,
+      .content__box,.content__box_group2
+        width: 100%
+        height: 100%
+      .content__box,.content__box_group2
+        width: calc(100% - (100vw * 0.02))
+        height: calc(100vw * 0.645)
+
+  .tab__item,.tab__item_group2
+    // +flex(0, 0, 25%)
+    padding: 0
+    width: 24%
+    img
+      &:first-child
+        display: block
+      &:last-child
+        display: none
+    &.active
+      img
+        &:first-child
+          display: none
+        &:last-child
+          display: block
+    &:active,
+    &:hover
+      filter: brightness(120%)
+    &.active
+      &:active,
+      &:hover
+        filter: brightness(100%)
+
+  .content__box,.content__box_group2
+    display: none
+    top: calc(100vw * 0.35)
+    left:  calc(100vw * 0.02)
+    position: relative
+    &.active
+      display: block
+    .content__item
+      float: left
+      padding: 0
+      width: 31%
+      margin: .5% .7%
+      &:active,
+      &:hover
+        filter: contrast(150%)
+      a
+        &:first-child
+          margin-left: -2%
+      .content__tag
+        font-weight: 700
+        //padding-top: calc(100vw * 0.02)
+        //padding-bottom: calc(100vw * 0.02)
+        height: calc(100vw * 0.06)
+        line-height: calc(100vw * 0.06)
+        overflow-y: hidden
+        text-align: center
+        font-size: 1.3rem
+      .content__text
+        font-size: 11px
+        margin-top: calc(100vw * 0.044)
+        line-height: 1.2
+        height: calc(1.3em * 2)
+        overflow-y: hidden
+        text-overflow: ellipsis
+        white-space: nowrap
+        display: -webkit-box
+        -webkit-line-clamp: 2 //行數
+        -webkit-box-orient: vertical
+        white-space: normal
+      .content__price
+        color: #cc1e05
+        font-size: 1.5rem
+
+
+    .content__title
+      width: calc(100vw * 0.22)
+      top: calc(100vw * -0.1)
+      position: absolute
+    .content__hastag
+      position: absolute
+      top: calc(100vw * 0.57)
+      left: 0
+      width: 95%
+      color: #4482ab
+      height: calc(100vw * 0.05)
+      overflow-y: hidden
+      text-overflow: ellipsis
+      white-space: nowrap
+      display: -webkit-box
+      -webkit-line-clamp: 2 //行數
+      a
+        display: inline-block
+        margin-right: 0.5%
+
+  +breakpoint-min($min-width-lg)
+    .content__box,.content__box_group2
+      .content__item
+        .content__text
+          font-size: 1.6rem
+          height: 38px
+        .content__price
+          font-size: 2.2rem
+  +breakpoint-min($min-width-xl)
+    .tab__wrap
+      display: block
+      height: 2375px
+      margin-top: -47px
+      +bg-set(url("~event/1st/e-main/components/tab-section/bg-tab-d.png"), 963px 2353px, center, 14px)
+
+      .tab__zone
+        width: 80%
+        &.tab__wrap-two
+          margin-top: 86px
+        .tab__box
+          +display-flex
+          flex-wrap: wrap
+          justify-content: center
+          top: 310px
+          left: calc(50% - 289px)
+      .content__zone
+        margin: auto
+        padding: 0 1%
+        width: 100%
+        .content__box,.content__box_group2
+          width: 92%
+          height: 661px
+          padding: 0 3%
+          top: 380px
+          left: calc(50% - 432px)
+    .tab__item,.tab__item_group2
+      // +flex(0, 0, 25%)
+      padding: 0
+      width: 25%
+      img
+        margin: 0 auto
+
+    .content__box,.content__box_group2
+      padding: 5px 20px 15px
+      .content__item
+        width: 32%
+        margin: .5% .6%
+        margin-top: 124px
+        .content__tag
+          height: 50px
+          line-height: 48px
+          font-size: 2rem
+        .content__text
+          margin-top: 45px
+      .content__title
+        width: auto
+        top: 34px
+        left: calc(50% - 394px)
+      .content__hastag
+        width: 94%
+        height: 55px
+        white-space: inherit
+        top: 595px
+        font-size: 2rem
+        left: calc(50% - 400px)
+        a
+          margin-right: 1.5%

@@ -1,0 +1,80 @@
+.promo__group
+  max-width: 960px
+  margin: 0 auto
+  .content__zone
+    +flex(0, 1, 100%)
+    padding: 20.5% 3% 2% 6%
+    .content__block,
+    .content__box
+      width: 100%
+      height: 100%
+      &.goods__wrap
+        width: 96%
+        margin: 0 auto
+
+  .content__box
+    padding: 0
+    display: flex
+    justify-content: center
+    align-items: flex-start
+    flex-wrap: wrap
+    .content__item
+      padding: 0
+      width: 300px
+      margin: 10px 20px 10px 10px
+      //+flex(0, 1, 31%)
+      &:nth-child(3n+2)
+        margin: 10px 0 10px 0
+      &:nth-child(3n+3)
+        margin: 10px 10px 10px 20px
+
+
+
+.goods__wrap
+  font-weight: 700
+  text-align: center
+  .content__item
+    border: 1px solid #000
+    height: 480px
+    //height: 40vw
+    img
+      width: 250px
+      height: 250px
+      margin: 2%
+    .good__title
+      font-size: 27px
+      height: 78px
+      //line-height: 3.8vw
+      //height: 7.5vw
+      padding: 0 4%
+      overflow: hidden
+      color: #000
+      margin-top: 5px
+    .good__title-sub
+      background-color: #000000
+      color: #fff
+      font-size: 30px
+      height: 50px
+      line-height: 50px
+    .good__original__price
+      font-size: 25px
+      text-decoration: line-through
+      line-height: 1
+      height: 26px
+      overflow-y: hidden
+    .good__price
+      display: flex
+      justify-content: center
+      margin: 0 auto 3% auto
+      font-size: 50px
+      color: #cc1e05
+      font-weight: 700
+      align-items: baseline
+      line-height: 1
+      height: 50px
+      overflow-y: hidden
+      .price__init
+        font-size: 30px
+        font-weight: 500
+        padding-right: 1%
+        vertical-align: baseline

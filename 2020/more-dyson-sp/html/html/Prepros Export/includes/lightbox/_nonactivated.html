@@ -1,0 +1,32 @@
+<div class="lbblock lb-draw">
+
+  <img src="./images/lb/nonactivated.png" alt="">
+  <div class="btn-box">
+    <a href="javascript:" class="toShare"></a>
+    <a href="javascript:" class="toSongList lbbtn" data-lb="_song-list"></a>
+    <a href="./" class="toInd"></a>
+  </div>
+</div>
+<script>
+  function menuOut() {
+		$('.menu').fadeOut();
+	}
+	$('.lbbtn').on('click', openlb);
+	function openlb() {
+    var thislb = $(this).data('lb');
+		menuOut();
+		if($('.lightbox').hasClass('show')){
+      $('.lbblock').fadeOut().promise().done(function () {
+        $('.lbblock').remove();
+        $('.lb-content').load('includes/lightbox/' + thislb + '.html', function(){
+          console.log('lightbox loaded!');
+        });
+      })
+		}else{
+      $('.lb-content').load('includes/lightbox/' + thislb + '.html', function(){
+        console.log('lightbox loaded!');
+        $('.lightbox').addClass('show').fadeIn();
+      });
+    }
+	}
+</script>

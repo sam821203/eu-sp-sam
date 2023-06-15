@@ -1,0 +1,48 @@
+-
+  var heroTitleE = [
+    {
+      link: "#note",
+      imgSrc: "event/1st/e-main/components/hero-section/sub-title-1.png",
+      alt: "全站滿額贈禮物卡",
+    },
+    {
+      link: "",
+      imgSrc: "event/1st/e-main/components/hero-section/sub-title-2.png",
+      alt: "挑戰任務領東森幣",
+    },
+  ]
+section.hero
+
+  //- .decor--top.decor--hero
+  .layout--main
+    .decor__wrap.full-parent
+      //- .decor__item.decor__item--item
+        img(src="event/1st/e-main/components/hero-section/hero-item.png", alt="")
+      //- .decor__item.decor__item--bg
+        img(src="event/1st/e-main/components/hero-section/title-bg.png", alt="")
+      .decor__item.decor__item--left
+        img(src="event/1st/e-main/components/hero-section/decor-hero-left.png", alt="")
+      .decor__item.decor__item--right
+        img(src="event/1st/e-main/components/hero-section/decor-hero-right.png", alt="")
+      .decor__item.decor__item--left-w
+        img(src="event/1st/e-main/components/hero-section/decor-web-left.png", alt="")
+      .decor__item.decor__item--right-w
+        img(src="event/1st/e-main/components/hero-section/decor-web-right.png", alt="")
+    .hero__wrap
+      .hero__zone
+        .hero__block
+          .hero__title.hero__title--main
+            a(href="") 
+              img(src="event/1st/e-main/components/hero-section/title-main.png", alt="線上狂歡")
+          .hero__title.hero__title--item
+            img(src="event/1st/e-main/components/hero-section/hero-item.png", alt="")
+          .hero__title.hero__title--bg
+            img(src="event/1st/e-main/components/hero-section/title-bg.png", alt="")
+        
+        .video__wrap
+          .video__block
+            include /event/1st/e-main/components/hero-section/hero-video/_hero-video.pug
+
+
+//- 前景滑鼠parallax相關
+//- include /utils/bg-decoration-instance/parallax/_parallax

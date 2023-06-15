@@ -1,0 +1,98 @@
+// ==========================================================================
+// variables -- 為了可以用!default使用.scss
+// ==========================================================================
+// Primary series
+// ==========================================================================
+$primary-medium: #cc1e05;
+// ==========================================================================
+// EU main series
+// ==========================================================================
+$main-color-yellow-1: #FFEDB3;
+$main-color-yellow-2: #FFF4DA;
+$main-color-yellow-3: #FCCF65;
+$main-color-yellow-4: #FFE17F;
+$main-color-blue-1: #43CCFA;
+$main-color-blue-2: #007AA3;
+$main-color-pink-1: #EB67AA;
+$main-color-pink-2: #F25A93;
+$main-color-pink-3: #FF748E;
+$main-color-pink-4: #C8275C;
+$main-color-pink-5: #DA2B82;
+
+$btn-color-yellow-1: $main-color-yellow-1;
+$btn-color-yellow-2: $main-color-yellow-3;
+$btn-color-yellow-3: #F9AF00;
+$btn-color-blue-1: $main-color-blue-1;
+$btn-color-blue-2: $main-color-blue-2;
+$btn-color-pink-1: $main-color-pink-1;
+$btn-color-pink-2: $main-color-pink-2;
+$btn-color-pink-3: $main-color-pink-4;
+$btn-color-pink-4: #FEC8D2;
+$btn-color-orange-1: #EF8356;
+$btn-color-orange-2: #E16730;
+$btn-color-purple-1: #736CE6;
+$btn-color-purple-2: #5F58CD;
+
+// Gray series
+// ==========================================================================
+$gray-deep-dark: #000000;
+$gray-dark: #616161;
+$gray-medium: #999999;
+$gray-light: #eeeeee;
+$gray-deep-light: #ffffff;
+
+// material design shadow color
+$gray-deep-dark-opacity: rgba(0, 0, 0, 0.25);
+
+// Font family setting -- powered by bootstrap
+// ========================================================================== */
+$font-family-sans-serif: PingFangTC-regular, "LiHei Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Source Han Sans TC", "Microsoft JhengHei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base: $font-family-sans-serif !default;
+// Font siez setting
+// ========================================================================== */
+$fz-60: 60;
+$fz-56: 56;
+$fz-48: 48;
+$fz-40: 40;
+$fz-36: 36;
+$fz-32: 32;
+$fz-28: 28;
+$fz-26: 26;
+$fz-24: 24;
+$fz-22: 22;
+$fz-20: 20;
+$fz-18: 18;
+$fz-16: 16;
+$fz-15: 15;
+$fz-13: 13;
+$fz-12: 12;
+// Breakpoint min & max value
+// ========================================================================== */
+$min-width-xxs: 320px;
+$min-width-xs: 360px;
+$min-width-md: 480px;
+$min-width-lg: 768px;
+$min-width-xl: 960px;
+$min-width-xxl: 1260px;
+$min-width-3xl: 1368px;
+$min-width-4xl: 1920px;
+$min-width-5xl: 2556px;
+$min-width-6xl: 3840px;
+
+$max-width-xxs: 320px;
+$max-width-xs: 396px;
+$min-width-sm: 408px;
+$max-width-md: 540px;
+$max-width-lg: 768px;
+$max-width-xl: 960px;
+$max-width-xxl: 1260px;
+$max-width-3xl: 1440px;
+$min-width-4xl: 1920px;
+$max-width-5xl: 2568px;
+$min-width-6xl: 3840px;
+
+// main layout value
+$layout-switch-width-xl: 960px;
+$layout-switch-width-xxl: 1260px;
+$layout-switch-width: $layout-switch-width-xl;

@@ -1,0 +1,97 @@
+.promo__group--add
+  .group__zone
+    padding-top: 8px
+    max-width: 600px
+  .form__box
+    .label__box
+      margin-bottom: 8px
+    +breakpoint-min($min-width-xl)
+      display: flex
+      align-items: flex-start
+      .label__box
+        margin-bottom: 0
+        padding: 15px
+        text-align: center
+      .input__box
+        flex-grow: 1
+
+  .input__box
+    display: flex
+  .check__wrap
+    flex-grow: 1
+  .input--check
+    margin-bottom: 5px
+    height: 52px
+    border-radius: 8px 0 0 8px
+  .btn--check
+    +pos-set(relative, zero)
+    width: 29%
+    max-width: 100px
+    height: 52px
+    color: $gray-deep-light
+    background-color: $main-medium
+    border-radius: 0 8px 8px 0
+    font-weight: normal
+    text-align: center
+    transition: filter 0.5s
+    cursor: pointer
+    overflow: hidden
+    &::before
+      content: ''
+      +pos-set(absolute, zero, 100% , 0)
+      width: 100%
+      height: 100%
+      background-color: $main-medium
+      border-radius: 0 8px 8px 0
+      transition: all 0.5s
+    &::after
+      content: ''
+      +pos-set(absolute, zero, 150% , 50%)
+      width: 20px
+      height: 20px
+      background: url(~components/add-team/checked.svg) no-repeat
+      transform: translate(-50%, -50%)
+      transition: all 0.5s
+    &:hover,
+    &:active
+      filter: brightness(120%)
+
+    &.checked
+      pointer-events: none
+      &::before
+        top: 0
+      &::after
+        top: 50%
+
+    &.error
+      background-color: $main-light
+      pointer-events: none
+
+  .input__error
+    width: 100%
+    color: $main-deep-dark
+    font-size: 16px
+    opacity: 0
+    &.show
+      opacity: 1
+
+  .name__box
+    .shape--active
+      +breakpoint-max($max-width-xl)
+        background-color: $gray-light
+
+  .form__rule
+    margin-left: auto
+    margin-right: auto
+    padding: 15px 15px 30px
+    color: $gray-dark
+    background-color: $gray-light
+    border-radius: 8px
+    .rule__title
+      font-size: 20px
+    .rule__content
+      font-size: 16px
+    .rule__part
+      margin-bottom: 10px
+
+  @import components/include/form-cta/_form-cta

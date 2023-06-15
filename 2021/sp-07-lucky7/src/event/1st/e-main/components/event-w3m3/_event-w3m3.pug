@@ -1,0 +1,65 @@
+- var link = "https://media.etmall.com.tw/sp/9862/m/index.html"
+- var preImgSrc = "event/1st/e-main/components/event-w3m3/items/depart-"
+- var alt = "Bingo配對購"
+//- -
+//-   var w3m3Data = [
+//-     {
+//-       link: "https://media.etmall.com.tw/sp/9338/m/index.html",
+//-       imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-1.png",
+//-       alt: "迎夏5折天這夏要購美"
+//-     },
+//-     {
+//-       link: "https://media.etmall.com.tw/sp/9447/m/index.html",
+//-       imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-2.png",
+//-       alt: "省購健康8折起"
+//-     },
+//-     {
+//-       link: "https://www.etmall.com.tw/gp/129067",
+//-       imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-3.png",
+//-       alt: "防潮家指定品8折起"
+//-     },
+//-     {
+//-       link: "https://www.etmall.com.tw/c2/107796",
+//-       imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-4.png",
+//-       alt: "Reno5系列 登入送好禮"
+//-     },
+//-     {
+//-       link: "https://media.etmall.com.tw/sp/9421/m/index.html",
+//-       imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-5.png",
+//-       alt: "涼夏家電東森幣加碼送"
+//-     },
+//-     {
+//-       link: "https://www.etmall.com.tw/gp/122952",
+//-       imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-6.png",
+//-       alt: "歐系精品特惠4折起"
+//-     },
+//-     {
+//-       link: "https://www.etmall.com.tw/p/122603",
+//-       imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-7.png",
+//-       alt: "舒潔2件折$100"
+//-     },
+//-     {
+//-       link: "https://www.etmall.com.tw/gp/117679",
+//-       imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-8.png",
+//-       alt: "品牌水飲任你喝"
+//-     },
+//-     {
+//-       link: "https://media.etmall.com.tw/sp/9429/m/index.html",
+//-       imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-9.png",
+//-       alt: "涼夏傢寢早享受35折up"
+//-     },
+//-   ]
+
+//-   賓果配對
+section.promo__group.promo__group--w3m3.m-bottom--sm(data-title="" style="display:none;")
+  .layout--main
+    .promo__wrap
+      ul#w3m3Wrap.good__wrap
+        //- each data in w3m3Data
+        //-   li
+        //-     a(href= link, title= data.alt)
+        //-       img(src= data.imgSrc, alt= data.alt)
+        each item in [1,2,3,4,5,6,7,8,9]
+          li
+            a(href= link, title= alt)
+              img(src= preImgSrc + item + '.png', alt= alt)

@@ -1,0 +1,206 @@
+<!-- 會觸發所有瀏覽器使用標準模式（包含IE6）因此以後只用這個 -->
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  <!-- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />的簡寫，IE6亦支援，不用再寫這一長串了 -->
+  <meta charset="UTF-8">
+  <!-- title 上限19/34中文字(手機/桌機)，建議19中文字以內 -->
+  <title>母親節 - 東森購物</title>
+  <!-- 防止XSS攻擊，設置外部資源允許範圍，可以在網頁設定，也可以在server設定 -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
+
+  <!-- 手機用 -->
+  <!-- viewport不寫SEO不好(手機體驗不佳) 注意不要設定max=1 user=no，UX不好 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 讓手機不會輸入數字就自動帶超連結開啟電話簿(iOS.Android都支援)，若真的需要開啟，在<a>內下
+    <a href="tel:0912345678">撥號</a>
+    <a href="sms:0912345678">傳送簡訊</a>
+    即可自動打開相對應的系統app -->
+  <meta name="format-detection" content="telephone=no">
+  <!-- 有電話就也有下面email和一起禁的，但通常只禁數字轉成電話 -->
+  <meta name="format-detection" content="email=no">
+  <meta name="format-detection" content="telphone=no, email=no">
+  <!-- iOS用 -->
+  <!-- 隱藏底部 iPhone button bar，看起來更像 iPhone App -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <!-- 更改 status bar 樣式，要依賴上個參數，上個參數要下才有作用 -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <!-- 當網頁被加到桌面時，打開要不要預設全螢幕 -->
+  <meta name="apple-touch-fullscreen" content="yes">
+  <!-- iOS設備打開我們的網頁時如果有裝我們的app就會詢問要不要用app開 -->
+  <!-- iOS: 商品的 URL Scheme  -->
+  <meta property="al:ios:url" content="etmall://open?pgid=2">
+  <!-- iOS: App Store ID，這可以讓使用者在未安裝的時候連結至安裝連結 -->
+  <meta property="al:ios:app_store_id" content="974433138">
+  <!-- iOS: App 名稱，這會出現在使用者未安裝 App，叫你去下載某某 App 的那個文案 -->
+  <meta property="al:ios:app_name" content="EHS東森購物">
+  <!-- FB for iOS用，要在使用者未安裝 App 的時候自動 fallback 帶使用者到網頁版嗎？預設是 true，若設為 false，
+    則 Facebook 會問使用者是否要下載該 App，或是直接去網頁。如果網站只有桌機版或是要強調app則要設true -->
+  <meta property="al:web:should_fallback" content="false">
+  <!-- 這裡開始的下兩行og和fb的og一樣，如果FB有寫og則不用寫 -->
+  <meta property="og:title" content="example page title">
+  <meta property="og:type" content="website">
+  <!-- Android用 -->
+  <!-- Android設備打開我們的網頁時如果有裝我們的app就會詢問要不要用app開 -->
+  <!-- 網址為Android: 商品的 URL Scheme -->
+  <meta property="al:android:url" content="etmall://open?pgid=2">
+  <!-- Android Package Name，這可以讓使用者在未安裝的時候連結至安裝連結 -->
+  <meta property="al:android:package" content="com.hyxen.app.etmall">
+  <!-- Android: App名稱，這會出現在使用者未安裝App，叫你去下載某某App的那個文案 -->
+  <meta property="al:android:app_name" content="EHS東森購物">
+  <!-- 這裡開始的下兩行og和fb的og一樣，如果FB有寫og則不用寫 -->
+  <meta property="og:title" content="example page title">
+  <meta property="og:type" content="website">
+  <!-- 在app列表時的標題顏色 -->
+  <meta name="theme-color" content="#cc1e05">
+  <!-- 將你的網頁定義為 Web app -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <!-- 手持裝置時用如果user選擇網頁開啟的替代網頁 -->
+  <link rel="alternate" href="etmall://open?pgid=2" media="handheld">
+  <!-- 把網頁加到桌面版的圖片，屬性跟favicon一樣，只有size不同 -->
+  <link rel="icon" sizes="192x192" href="highres-icon.png">
+
+  <!-- 功能性 -->
+  <!-- 字面意思為"http等同於"，X-UA是IE專屬設定，IE=edge不是指用edge開，而是用此電腦最新版本IE開，chrome=1是chrome在IE9為IE出過google chrome frame(GCF)可以讓IE9以下用chrome內核開以支援特效，在IE10以上不支援此設定，且GCF在2014停止更新，目前世界IE3%台灣6%，之後這行或chrome這參數應該可拿掉 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <!-- dns-prefetch(DNS預抓取)dns解析是個耗流量低但是延遲高的事情，在移動端的情況下分秒必爭所以可以開啟來加速，chrome會自動對網頁內所有的<a>連結做解析
+  但https和其他的瀏覽都不會，因此可以下這道x-dns-prefetch-control:on來讓chrome在https下和其他瀏覽器在http與https時開啟dns-prefetch -->
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <!-- dns-prefetch是在網頁上連結會到"不同domain"時用(包括好幾個圖片伺服器如img1.aa.com/img2.aa.com此種情形也能用)，否則只是徒增延遲，link內連結
+    href="//host.com"和href="http://host.com"意義相同的， 前面是否加協定不影響(因此若不確定協定是否有改https，使用//比較保險且萬用)，使用時機為：
+  1.對靜態資源的域名做手動dns prefetching(如：img)
+  2.對js裡會發起的跳轉、請求做手動dns prefetching
+  3.不用對超鏈接(a內的link)做手動dns prefetching，因為chrome會自動做dns prefetching
+  4.對重定向跳轉的新域名做手動dns prefetching，比如：頁面上有個A域名的鏈接，但訪問A會重定向到B域名的鏈接，這麼在當前頁對B域名做手動dns prefetching是有意義的(如下方預先準備好FB的prefetch)
+  5.假設頁面Head裡面有個css鏈接, 在當前頁的Head裡加上對應的手動dns prefetching的link標籤，實際上並沒有好處(可能造成css檔案延遲載入)
+  6.普遍來說合理的dns prefetching能對頁面性能帶來50ms ~ 300ms的提升
+  7.dns-prefetch需慎用，多頁面重複DNS預解析會增加重複DNS查詢次數(前頁已經預解析過後面頁就不用，chrome會自動記憶)
+  8.相關的還有preconnect(預連結)可以先行tcp握手、prerender(預渲染)確定對方一定會點後面a頁的話先在這頁預渲染好a頁，而資源預載入subresource因bug已廢棄-->
+  <!-- 此為windows server -->
+  <link rel="dns-prefetch" href="https://rec.scupio.com">
+  <link rel="dns-prefetch" href="https://www.facebook.com">
+  <!-- 這個等同www.facebook.com -->
+  <link rel="dns-prefetch" href="https://connect.facebook.net">
+  <!-- 東森整合行銷 -->
+  <link rel="dns-prefetch" href="https://dcs.eimi.com.tw">
+  <link rel="dns-prefetch" href="//media.etmall.com.tw">
+  <!-- 此為IE與firfox的自訂搜尋功能，可在瀏覽器的搜尋框以東森內部來搜尋，需另外在後端server寫xml才能支援 -->
+  <link rel="search" type="application/opensearchdescription+xml" title="東森購物" href="/opensearch_etmall.xml">
+
+  <!-- favicon -->
+  <link rel="icon" href="https://www.etmall.com.tw/favicon.ico">
+  <!-- apple-touch-icon-precomposed的圖示不會被用上apple預設的圓角及打光 -->
+  <link rel="apple-touch-icon-precomposed" href="/static/images/identity/HTML5_Badge_64.png">
+  <!-- 設定iOS web app 載入時圖片 -->
+  <link rel="apple-touch-startup-image" href="/startup.png">
+  <!-- apple home screen icon -->
+  <link rel="apple-touch-icon" href="Resource/img201703/favicon/apple-icon-180x180.png">
+  <!-- 可用size屬性告訴apple大小讓機器分開使用(以現代來說通常只要準備114和144的就行，apple沒有size會往大size抓，Android建議用192x192，所以直接用192就好) -->
+  <link rel="apple-touch-icon" sizes="57x57" href="touch-icon-old-iphone.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="touch-icon-ipad.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="touch-icon-retina-iphone.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="touch-icon-ipad3.png">
+
+  <!-- 搜尋引擎用 -->
+  <!-- description 上限58/72中文字(手機/桌機)，建議58中文字以內(範例剛好58字) 超過在SERP(搜尋引擎結果頁)會截斷出現"..." -->
+  <meta name="description" content="母親節禮物主題頁推薦你各種適合送給母親的禮物，不論你的母親是喜歡品嚐美食，或走在時尚尖端，又或是注重保養的媽咪，快來買唷！">
+  <!-- keywords 建議2~3個即可，至多5個，無上限但是google排名已不依據，給幾個關鍵字符合語意即可 -->
+  <meta name="keywords" content="ETMALL,母親節">
+  <!-- rel="canonical"(字義：標準化/規範)指定多個重複或內容相似的網頁要以哪一個網頁為標準，譬如指定原本活動網址和中文化網址，以中文化為標準，
+  注意被宣告的頁面是不會被爬蟲收錄的！爬蟲只會去收錄指定的那頁，所以把平凡頁或類別頁指定去landing頁會害類別頁找不到，另外同一頁內設定超過
+  一個rel="canonical"會被視同全部的都無效，這頁照收錄 -->
+  <link rel="canonical" href="www.etmall.com.tw">
+  <!-- 字義：替代，可和canonical成對使用，當網站有桌機版和行動版時，在桌機版用alternate指出當螢幕小於640時手機版m網址是桌機版www網址
+  的替代，而在手機版m網址的head內要設定canonical將其流量導回桌機版www網址，alternate要和canonicaly在兩個網站成對存在(兩站各一)，
+  當alternate單獨存在時是指出備用網站的網址，通常用於多語言為不同網站時 -->
+  <link rel="alternate" media="only screen and (max-width:640px)" href="https://m.etmall.com.tw">
+  <!-- 告訴爬蟲這篇文章的上一篇在哪，通常用於長文被切成好幾頁如:example.com/article.html?page=2 這種網址在用 -->
+  <link rel="prev" href="www.etmall.com.tw/topic/母親節禮物"> 
+  <!-- 同上，告訴爬蟲這篇文章的下一篇在哪，通常用於長文被切成好幾頁用 -->
+  <link rel="next" href="www.etmall.com.tw/topic/母親節禮物">   
+  <!-- 以下沒那麼重要，可不寫 -->
+  <!-- Schema.org 標記語言markup for Google+ 雖然G+不重要了 但Schema.org語意化網頁很重要 --> 
+  <meta itemprop="name" content="The Name or Title Here"> 
+  <meta itemprop="description" content="This is the page description"> 
+  <meta itemprop="image" content="http://www.example.com/image.jpg">
+
+  <!-- facebook用 -->
+  <!-- og:title上限16/30個中文字(手機/桌機) 建議16個中文字以內，可與title同，超過會截斷出現"..." -->
+  <meta property="og:title" content="母親節禮物">
+  <!-- og:description上限18/35個中文字(手機/桌機) 建議18個手機中文字以內(範例剛好18字)，可與description同，超過會截斷出現"..." -->
+  <meta property="og:description" content="本母親節主題頁推薦你各種送媽媽好禮！">
+  <!-- og:url會回傳此頁的按讚數到設定的網址（若每頁的網址和主站一樣才能將各頁的讚都加總起來，會看起來更多讚 -->
+  <meta property="og:url" content="https://www.etmall.com.tw">
+  <!-- og:image分享的預覽圖，要在200*200以上且5MB以下否則不會引用會抓頁面隨機的圖，建議至少600*315，最佳為1200*630，1.91:1或正方形(600*600)以上，東森：563x296 -->
+  <meta property="og:image" content="https://www.etmall.com.tw/XML/content/DMSetting/Final/201709/SP_1101556/images/index_fb.jpg">
+  <!-- 以下不重要和分享沒關可不加 -->
+  <!-- 預設website可以改成article -->
+  <meta property="og:type" content="website">
+  <meta property ="og:site_name" content="ETmall">
+  <!-- 語系設定，可以讓其他語系看此文章轉換語系 -->
+  <meta property="og:locale" content="zh_TW">
+  <!-- 有id就可以看FB的洞察報告 -->
+  <meta property ="fb:admins" content="Facebook數字ID">
+  <!-- app_id似乎可以不加，和粉絲團結合用 -->
+  <meta property="fb:app_id" content="703585513015307">
+  <!-- 以下FB文章相關 -->
+  <meta property="article:published_time" content="2013-09-17T05:59:00+01:00"> 
+  <meta property="article:modified_time" content="2013-09-16T19:08:47+01:00"> 
+  <meta property="article:section" content="Article Section"> 
+  <meta property="article:tag" content="Article Tag"> 
+  <!-- 以下為FB出現價格相關寫法 -->
+  <meta property="og:price:amount" content="15.00">
+  <meta property="og:price:currency" content="USD">
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary">
+  <!-- 下面沒那麼重要可不放 -->
+  <meta name="twitter:site" content="@publisher_handle">
+  <meta name="twitter:title" content="Page Title">
+  <meta name="twitter:description" content="Page description less than 200 characters">
+  <meta name="twitter:creator" content="@author_handle">
+  <!-- Twitter Summary card images 至少120x120px 建議280x150以上 -->
+  <meta name="twitter:image" content="http://www.example.com/image.jpg">
+  <!-- 以下為Twitter商品價格寫法 -->
+  <meta name="twitter:data1" content="$3">
+  <meta name="twitter:label1" content="Price">
+  <meta name="twitter:data2" content="Black">
+  <meta name="twitter:label2" content="Color">
+
+  <!-- 語意結構化之資料抽離用的介紹，google建議放在head內，但在body內亦可，注意內容只能用"雙引號"，不能用'單引號' -->
+  <script type="application/ld+json">
+    {
+     "@context": "http://schema.org",
+     "@type": "Product",   
+     "audience" : "東森購物",
+     "description": "本母親節禮物主題頁推薦你各種適合送給母親的禮物，不論你的母親是喜歡品嚐美食，或是走在時尚尖端，又或者是注重保養的媽咪，想要買個具有價值又有意義的禮物送給偉大的母親大人，請上東森購物。",
+     "image": "www.etmall.com.tw/topic/母親節禮物/images/top.jpg",   
+     "name" : "母親節禮物",      
+     "url": "www.etmall.com.tw/topic/母親節禮物" 
+    }
+  </script>
+  
+  <!-- 以下千萬不要再加了，已廢棄 -->
+  <!-- <meta name="title" content="ETMall東森購物"> 沒有title這個屬性 爬蟲都爬<title> -->
+  <!-- <meta name="robots" content="all">預設就等於all，除非要bot不要爬否則不用寫這行 -->
+  <!-- <meta name="rating" content="…">  這個 meta 並不存在，不用寫這行 -->
+  <!-- <meta name="copyright" content="…">根本沒有這個屬性，不用寫，替代是1.自己寫版權頁2.footer放copyright(大部分用法)3.<link rel="copyright"> -->
+  <!-- <meta property="et:sid" content="14583_195"> 不清楚這是什麼，是et:sid還是get:sid的筆誤，暫不加 -->
+
+</head>
+<body>
+
+  <!-- 以下不要再用了，很久以前有些瀏覽器了解 <script> 標籤，有些則否。不認識的瀏覽器有時把應該作為程式的文字，解讀成純文字。所以曾經有下面這兩種寫法讓認識的認識，不認識的當註解，但如今幾乎沒用處了，正常寫script或是用src外連結可。 -->
+  <script>
+    <!-- 
+      // code here
+    // -->
+  </script>
+  <script type="text/javascript">
+    <!--//--><![CDATA[//><!--
+      // code here
+    //--><!]]>
+  </script>
+</body>
+</html>
+    

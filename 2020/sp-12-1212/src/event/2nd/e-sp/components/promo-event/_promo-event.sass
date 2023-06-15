@@ -1,0 +1,28 @@
+.promo__event
+  margin-top: -21vw
+  margin-left: 2vw
+  width: 54%
+  +pos-set(relative, base)
+  // margin-top: -1%
+  .event__wrap
+    display: flex
+    flex-wrap: wrap
+    padding: 2% 2% 0
+    align-items: flex-end
+    li
+      flex: 1 0 49%
+      padding: 1%
+      a
+        text-align: center
+        transition: all 0.5s
+        &:hover,
+        &:active
+          transform: translateY(2%)
+
+  +breakpoint-min($min-width-xl)
+    margin-top: -200px
+    margin-left: 30px
+    .event__wrap
+      li
+        padding: 0
+

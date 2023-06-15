@@ -1,0 +1,215 @@
+// ==========================================================================
+// Button
+// ==========================================================================
+button
+  border: 0
+  outline: 0
+
+.btn--capsule
+  +capsule-set
+
+.btn--capsule-pad
+  +breakpoint-min($min-width-lg)
+    +capsule-set
+
+.btn--blur
+  +pos-set(relative, zero)
+  &::before
+    content: ''
+    +pos-set(absolute, base)
+    top: 8%
+    left: 50%
+    width: 70%
+    height: 15%
+    border-radius: 50%
+    background-color: $gray-light
+    transform: translateX(-50%)
+    opacity: 0.5
+    filter: blur(3px)
+
+.btn--blur-pad
+  +breakpoint-min($min-width-lg)
+    +pos-set(relative, zero)
+    &::before
+      content: ''
+      +pos-set(absolute, base)
+      top: 8%
+      left: 50%
+      width: 70%
+      height: 15%
+      border-radius: 50%
+      background-color: $gray-light
+      transform: translateX(-50%)
+      opacity: 0.5
+      filter: blur(3px)
+
+.btn--radius
+  +radius-set
+
+// Button style
+// ==========================================================================
+.btn--gray
+  background-color: $gray-light
+  &:active,
+  &:hover
+    background-color: $gray-medium
+
+// .btn--yellow-1
+//   background-color: $btn-color-yellow-1
+//   &:active,
+//   &:hover
+//     background-color: $btn-color-yellow-2
+
+// .btn--yellow-2
+//   background-color: $btn-color-yellow-2
+//   &:active,
+//   &:hover
+//     background-color: $btn-color-yellow-3
+
+// .btn--blue
+//   background-color: $btn-color-blue-1
+//   &:active,
+//   &:hover
+//     background-color: $btn-color-blue-2
+
+// .btn--pink
+//   background-color: $btn-color-pink-1
+//   &:active,
+//   &:hover
+//     background-color: $btn-color-pink-2
+
+// .btn--orange
+//   background-color: $btn-color-orange-1
+//   &:active,
+//   &:hover
+//     background-color: $btn-color-orange-2
+
+// .btn--purple
+//   background-color: $btn-color-purple-1
+//   &:active,
+//   &:hover
+//     background-color: $btn-color-purple-2
+
+// .btn--fab-purple
+//   background-color: $btn-color-purple-1
+//   box-shadow: 4px 2px 6px $btn-color-purple-1
+//   &:active,
+//   &:hover
+//     background-color: $btn-color-purple-2
+
+// .btn--tab
+//   +bg-set(url(~components/rank-section/btn-tab.png), cover)
+//   &:active,
+//   &:hover,
+//   &.action
+//     +bg-set(url(~components/rank-section/btn-tab-action.png), cover)
+
+// Button core
+// ==========================================================================
+.btn--submit
+  padding-top: 6%
+  padding-bottom: 6%
+  width: 100%
+  border: 0
+  font-size: 1.5em
+
+// .btn--tab
+//   +aspect-ratio(251, 83)
+//   width: 100%
+//   max-width: 251px
+//   span
+//     +pos-set(absolute, base)
+//     top: 52%
+//     left: 52%
+//     color: $gray-dark
+//     font-size: 13px
+//     font-weight: bold
+//     white-space: nowrap
+//     transform: translate(-50%, -50%)
+//     +breakpoint-min($min-width-lg)
+//       font-size: 2em
+
+// .btn--search
+//   width: 100%
+//   vertical-align: middle
+//   img,
+//   span
+//     vertical-align: middle
+//   img
+//     display: inline-block
+//     margin-right: 3%
+//     width: 15px
+//   span
+//     color: $gray-deep-light
+//     white-space: nowrap
+//   +breakpoint-min($min-width-lg)
+//     img
+//       width: 20px
+
+.btn--dynamic
+  display: block
+  padding: 10px 0
+  width: 52%
+  max-width: 220px
+  color: $gray-dark
+  font-size: 16px
+  +breakpoint-min($min-width-lg)
+    font-size: 24px
+
+// Team color style
+// ==========================================================================
+.btn--fab
+  padding: 15%
+  width: 72px
+  height: 72px
+  color: $gray-deep-light
+  border-radius: 50%
+  font-size: 18px
+  font-weight: bold
+
+.btn--cta
+  display: flex
+  margin-left: auto
+  margin-right: auto
+  padding: 5px
+  width: 100%
+  color: $gray-deep-light
+  justify-content: space-between
+  .cta__text
+    // width: calc(100% - 24px)
+    width: 100%
+    font-size: 16px
+    text-align: center
+  // .team__icon
+  //   width: 24px
+  //   height: 24px
+
+  +breakpoint-min($min-width-lg)
+    .cta__text
+      // width: calc(100% - 36px)
+      font-size: 26px
+    // .team__icon
+    //   width: 36px
+    //   height: 36px
+
+// .player--dog
+//   .btn--vote,
+//   .btn--cta
+//     background-color: $btn-color-blue-1
+//     &:active,
+//     &:hover
+//       background-color: $btn-color-blue-2
+//   .btn--cta
+//     .team__icon
+//       +bg-set(url(~components/player-section/icon-dog.svg), cover)
+
+// .player--cat
+//   .btn--vote,
+//   .btn--cta
+//     background-color: $btn-color-pink-1
+//     &:active,
+//     &:hover
+//       background-color: $btn-color-pink-2
+//   .btn--cta
+//     .team__icon
+//       +bg-set(url(~components/player-section/icon-cat.svg), cover)

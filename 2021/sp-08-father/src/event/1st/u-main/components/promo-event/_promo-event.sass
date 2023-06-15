@@ -1,0 +1,84 @@
+.promo__group--promo-event
+  +pos-set(relative, zero)
+  // margin-top: -25%
+  overflow: hidden
+
+  .promo__title
+    +pos-set(relative, base)
+    // padding-bottom: 17%
+  .decoration--top
+    &-left
+      top: 23px
+      left: -1%
+      width: 23%
+      pointer-events: none
+      // animation: key-rotate-self-2 20s infinite linear
+  +breakpoint-min($min-width-xl)
+    // margin-top: -245px
+    overflow: visible
+    .decoration--top
+      &-left
+        top: 35px
+        right: -30px
+
+  .promo__wrap
+    +aspect-ratio(960, 957)
+  .promo__zone
+    +pos-set(relative, zero)
+    padding: 21% 6% 0
+    +bg-set(url(event/1st/u-main/components/promo-event/bg-promo.png), 100%)
+    .event__wrap
+      padding: 4% 4.5% 0
+    .promo__block
+      > ul
+        display: flex
+        justify-content: space-between
+      li
+        text-align: center
+        &:active,
+        &:hover
+          a
+            transform: translateY(3%)
+            filter: hue-rotate(-15deg)
+      a
+        &.animation
+          animation: 0.5s shakeX
+        &.animation2
+          animation: 0.5s shakeY
+
+      &:first-child
+        li
+          width: 49%
+      &:nth-child(2)
+        li
+          width: 100%
+
+    .promo__slider
+      +aspect-ratio(743, 173)
+    .swiper-container
+      padding: 0 4.5%
+      li
+        margin-bottom: 0
+        text-align: center
+
+    // +breakpoint-min($min-width-xl)
+    //   .event__wrap
+        // padding: 2.5% 52px 0
+      // .swiper-container
+      //   padding: 18px 60px 0 90px
+
+@keyframes shakeX
+  0%,80%, to
+    transform: translateZ(0)
+  30%, 50%, 70%
+    transform: translate3d(-10px, 0, 0)
+  40%, 60%
+    transform: translate3d(10px, 0, 0)
+
+@keyframes shakeY
+  0%,80%, to
+    transform: translateZ(0)
+  30%, 50%, 70%
+    transform: translate3d(0, -10px, 0)
+  40%, 60%
+    transform: translate3d(0, 10px, 0)

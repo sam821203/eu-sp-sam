@@ -1,0 +1,64 @@
+//- 打開u-mall選項會自動轉換成U的logo和連結(預設etmall)
+//- 打開sp選項以切換行銷主視覺或是商品SP頁(main/ sp、預設是main)
+//- - var isU = true
+//- var isSp = true
+- var isEven = true
+
+// background
+style(type='text/css').
+    .main_group {
+        background-image: url('bg-960-01.jpg');
+    }
+
+    .sp__outFrame {
+        background-color: #ecbdc1;
+    }
+
+    @media screen and (min-width: 960px) {
+        .sp__outFrame {
+            background-image: url('bg-2560-01.jpg');
+        }
+    }
+
+
+.sp__outFrame
+    main#spWrap.sp__wrap
+        section.hero.header__wrap
+            .layout--main
+
+                include /layout/logo/_logo.pug
+
+                .main_group
+                    .main_title.block--center
+                        h1(title="東森購物20週年慶")
+                            img(src="~pages/index-sp-e/img/1-title.jpg", alt="東森購物20週年慶" class="partial__title")
+
+            section.promo__event
+                .layout--main
+                    ul.event__wrap
+                        li.incentive--01
+                            a#changeAnchor(href="NoYet", title="台塑回饋")
+                                img#changeImg(src="~pages/index-sp-e/img/2-Button_01.png", alt="台塑回饋")
+                        li.incentive--02
+                            a(href="NoYet", title="白蘭氏滿額送")
+                                img(src="~pages/index-sp-e/img/2-Button_02.png", alt="白蘭氏滿額送")
+                        li.incentive--03
+                            a(href="NoYet", title="船井極孅人生")
+                                img(src="~pages/index-sp-e/img/2-Button_03.png", alt="船井極孅人生")
+                        li.incentive--04
+                            a(href="NoYet", title="享食堂8折")
+                                img(src="~pages/index-sp-e/img/2-Button_04.png", alt="享食堂8折")
+
+    .layout--main.bn-special-frame
+        include /components/bn-special/_bn-special.pug
+//- script區
+//- polyfill 一般共用
+include /utils/pug/include/_polyfill-js.pug
+//- General 一般共用
+include /utils/pug/include/_general.pug
+//- 電梯
+include /utils/pug/include/_elevator-link.pug
+//- 浮水印
+include /utils/pug/include/_float-icon.pug
+//- 輪播cdn
+include /utils/pug/include/_slider-cdn-js.pug

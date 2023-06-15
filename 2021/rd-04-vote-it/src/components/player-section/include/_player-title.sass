@@ -1,0 +1,90 @@
+.promo__group--player
+  +pos-set(relative, base)
+  margin-top: -8%
+  .promo__head
+    pointer-events: none
+  .promo__title
+    max-width: 288px
+  .head__zone
+    padding-left: 5%
+    padding-right: 5%
+  .title__block
+    display: flex
+    align-items: center
+    .decoration__title
+      width: 68.27%
+  .search__box
+    display: flex
+    margin-top: -8%
+    background-color: $main-color-yellow-4
+    pointer-events: auto
+    .input__box
+      width: 75%
+      .input__search
+        -webkit-appearance: none
+        padding: 3.8% 3%
+        width: 100%
+        border: 0
+        border-radius: 4px
+        background-color: $gray-deep-light
+        outline: 0
+        vertical-align: middle
+        &:focus
+          box-shadow: 0 0 12px $main-color-pink-4
+        &::placeholder
+          color: $gray-medium
+    .submit__box
+      width: 25%
+      .btn--search
+        padding: 8.8% 0
+        font-size: 14px
+    .record__box
+      +pos-set(fixed, twenty)
+      right: 5%
+      bottom: 5%
+
+  +breakpoint-min($min-width-lg)
+    margin-top: -60px
+    .head__zone
+      display: flex
+    .title__block
+      display: block
+      width: 33.33%
+      .decoration__title
+        width: 100%
+        margin-left: -15%
+      .promo__title
+        margin-top: -25%
+    .search__block
+      padding-top: 13.5%
+      width: 66.66%
+    .search__box
+      margin-top: 0
+      margin-left: -15%
+      padding: 15px
+      width: 115%
+      box-shadow: 4px 6px 0px $main-color-pink-4
+      .input__box
+        padding-left: 15px
+        width: 50%
+        .input__search
+          padding: 11px 10px
+          font-size: 20px
+      .submit__box
+        .btn--search
+          padding: 10px 0
+          font-size: 20px
+      .record__box
+        position: static
+        padding-left: 15px
+        width: 25%
+        // border-radius: 50%
+        font-size: 18px
+        font-weight: bold
+        .btn--fab
+          padding: 11px 0
+          width: 100%
+          height: auto
+          border-radius: 50px
+          font-size: 20px
+          box-shadow: 0 0 0 transparent

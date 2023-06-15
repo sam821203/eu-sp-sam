@@ -1,0 +1,1366 @@
+/* ============= reset ============= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*:before, *:after {
+    box-sizing: border-box;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+}
+
+h1 {
+    line-height: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    border: 0;
+}
+
+main, header, footer, section {
+    display: block;
+}
+
+/* ============= global ============= */
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-size: 100% 100%;
+    /*background-image: url(bg--sp-2.png),linear-gradient(to bottom right, #3670fb, #1daafc);*/
+    /*background-position: 0 200px;*/
+}
+
+body, td, th {
+    font-family: Helvetica, Arial, LiHei, "Microsoft JhengHei", "微軟正黑體", sans-serif;
+}
+
+.clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+    *zoom: 1;
+}
+
+.opacity--0 {
+    opacity: 0;
+}
+
+/* ================= 總體 ================= */
+
+.sp__wrap {
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    background: center top no-repeat;
+    display: block;
+    background-size: 100% auto;
+    /*max-width: 640px;*/
+    width: 100%;
+    background-position-x: center;
+    position: relative;
+    /*box-shadow: 0 5px 16px rgba(0, 0, 0, 0.25), 0 12px 2px rgba(0, 0, 0, 0.22);*/
+}
+
+.logo {
+    position: absolute;
+    top: 10px;
+    left: calc(50% - 300px);
+    z-index: 200;
+}
+
+.logo img {
+    width: 46%;
+    height: auto;
+}
+
+/* ================= 主視覺 ================= */
+.upper_layer {
+    background-repeat: no-repeat;
+    background-size: 1280px 330px;
+    background-position: center;
+    max-width: 1280px;
+    height: 330px;
+    /*max-width: 2560px;*/
+    /*height: 1400px;*/
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+}
+
+.upper_layer .light {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.upper_layer .light img {
+    width: 300px;
+}
+
+.main_title,
+.main_title__slogan {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*width: 1161px;*/
+    /*height: 550px;*/
+}
+
+.main_title img,
+.main_title__slogan img {
+    /*width: 47%;*/
+    width: 580px;
+    height: auto;
+    display: block;
+    padding-top: 1%;
+    margin-left: -20px;
+}
+
+.main_title__slogan img {
+    width: 470px;
+    margin-top: -55px;
+}
+
+.upper_layer .object-01 {
+    position: absolute;
+    top: 95px;
+    right: calc(50% - 395px);
+    background: url(object-01-bg.png) no-repeat;
+    width: 223px;
+    height: 342px;
+    background-size: 47% auto;
+}
+
+.upper_layer .object-01 img {
+    width: 24%;
+    position: absolute;
+    top: 11px;
+    left: 37.5px;
+    transform-origin: center;
+    animation: 4s 2s lipai-scale infinite ease-in-out;
+}
+
+.upper_layer .object-02 {
+    position: absolute;
+    top: 164px;
+    right: calc(50% + 98px);
+    background: url(object-02-bg.png) no-repeat;
+    width: 191px;
+    height: 144px;
+    background-size: 47% auto;
+}
+
+.upper_layer .object-02 img {
+    width: 46%;
+    position: absolute;
+    top: -45px;
+    left: 4px;
+    transform-origin: center;
+    animation: 20s 0s ferris-rotate infinite linear;
+}
+
+/* ================= 誘因 ================= */
+.sp-content {
+    position: relative;
+    z-index: 20;
+    margin-top: 10px;
+    overflow: hidden;
+    width: 610px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.incentive_layer {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /*background: url(incentive-line.png) no-repeat;*/
+    background-size: contain;
+    background-position: 50% 10%;
+}
+
+.incentive_layer .incentive-line,
+.incentive_layer .incentive-dot {
+    position: absolute;
+    top: 24px;
+    left: 0;
+    height: 10px;
+}
+
+.incentive_layer .incentive-line {
+    width: 610px;
+}
+
+.incentive_layer .incentive-dot {
+    /*width: 610px;*/
+    width: 20px;
+    background: #fff;
+    opacity: .8;
+    border-radius: 10px;
+    animation: 7s 1.8s lightSpot-move infinite;
+}
+
+.incentive_layer .incentive-line__mo,
+.incentive_layer .incentive-dot__mo {
+    display: none;
+}
+
+.incentive_layer .incentive__block {
+    width: calc(610px / 4 - 8px);
+}
+
+.incentive_layer .incentive {
+    position: relative;
+    top: -20px;
+}
+
+.incentive_layer .incentive__block img {
+    width: 100%;
+}
+
+.incentive__block .incentive__block-sub {
+    text-align: center;
+    position: relative;
+    z-index: 30;
+    margin: 0 auto;
+}
+
+.incentive__block .incentive__block-sub img {
+    text-align: center;
+    display: inline-block;
+}
+
+.incentive__block .light-card {
+    position: absolute;
+    top: 0;
+}
+
+.incentive__block .incentive .incentive-main {
+    z-index: 1000;
+    position: absolute;
+}
+
+.incentive__block .incentive .incentive-main:hover {
+    transform-origin: center;
+    animation: .5s .5s incentive-scale;
+}
+
+.incentive__block .img01,
+.incentive__block .lc-1 {
+    animation: 7s 3s card-twinkling infinite;
+    z-index: 29;
+}
+
+.incentive__block .img02,
+.incentive__block .lc-2 {
+    animation: 7s 4.2s card-twinkling infinite;
+    z-index: 29;
+}
+
+.incentive__block .img03,
+.incentive__block .lc-3 {
+    animation: 7s 5.4s card-twinkling infinite;
+    z-index: 29;
+}
+
+.incentive__block .img04,
+.incentive__block .lc-4 {
+    animation: 7s 6.6s card-twinkling infinite;
+    z-index: 29;
+}
+
+.incentive__block .incentive__block-sub img {
+    width: 45%;
+    position: relative;
+    z-index: 30;
+}
+
+/* ================= 裝飾 ================= */
+.firefork-wrap {
+    margin-top: -100px;
+}
+
+.ballon {
+    position: absolute;
+    top: 370px;
+}
+
+.ballon img {
+    width: 50%;
+}
+
+.ballon_left {
+    left: calc(50% - 550px);
+    transform: scaleX(-1);
+}
+
+.ballon_right {
+    right: calc(50% - 550px);
+}
+
+/* ================= 輪播 ================= */
+.carousel_layer {
+    width: 100%;
+    background: url(carousel-box.png) no-repeat;
+    background-size: 100% 100%;
+    background-position: 50% 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel_layer,
+.carousel_layer .carousel__wrap {
+    height: 102px;
+}
+
+.carousel_layer .slick-list {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.carousel_layer .carousel__wrap {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel_layer img {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    /*transform: scale(1.25, 1.25);*/
+    transition: all 500ms ease-in-out;
+}
+
+.carousel_layer .slick-active img {
+    transform: scale(1, 1);
+}
+
+.carousel_layer .slick-next,
+.carousel_layer .slick-prev {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.carousel_layer .slick-next {
+    right: 35px;
+    opacity: 0;
+}
+
+.carousel_layer .slick-prev {
+    left: 35px;
+    opacity: 0;
+}
+
+.carousel_layer-m {
+    display: none;
+}
+
+.carousel_layer-d {
+    display: block;
+    width: 96%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ================= 動畫 ================= */
+
+/* 立牌 */
+@keyframes lipai-scale {
+    0%, 50%, 100% {
+        transform: scaleX(1);
+    }
+    25%, 75% {
+        transform: scaleX(-1);
+    }
+}
+
+/* 誘因hover */
+@keyframes incentive-scale {
+    0%, 100% {
+        transform: scaleX(1);
+    }
+    50% {
+        transform: scaleX(-1);
+    }
+}
+
+/* 摩天輪 */
+@keyframes ferris-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* process */
+@keyframes lightSpot-move {
+    0% {
+        transform: translateX(-40px);
+        filter: brightness(500%);
+        opacity: .8;
+    }
+    20% {
+        transform: translateX(73px);
+        filter: brightness(500%);
+        opacity: .8;
+    }
+    40% {
+        transform: translateX(220px);
+        filter: brightness(500%);
+        opacity: .8;
+    }
+    60% {
+        transform: translateX(390px);
+        filter: brightness(500%);
+        opacity: .8;
+    }
+    80% {
+        transform: translateX(525px);
+        filter: brightness(500%);
+        opacity: .8;
+    }
+    100% {
+        transform: translateX(615px);
+        filter: brightness(100%);
+        opacity: .8;
+    }
+}
+
+@keyframes lightSpot-move-mo {
+    0% {
+        transform: translateX(-40px);
+        filter: brightness(500%);
+        opacity: .8;
+    }
+    20% {
+        transform: translateX(80px);
+        filter: brightness(500%);
+        opacity: .8;
+    }
+    40% {
+        transform: translateX(270px);
+        filter: brightness(500%);
+        opacity: .8;
+    }
+    60% {
+        transform: translateX(600px);
+        filter: brightness(500%);
+        opacity: .8;
+    }
+    80% {
+        transform: translateX(625px);
+        filter: brightness(500%);
+        opacity: .8;
+    }
+    100% {
+        transform: translateX(615px);
+        filter: brightness(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes lightSpot-move-mo-425 {
+    0% {
+        transform: translateX(-40px);
+        filter: brightness(500%);
+        opacity: .8;
+    }
+    20% {
+        transform: translateX(100px);
+        filter: brightness(500%);
+        opacity: .8;
+    }
+    40% {
+        /* change */
+        transform: translateX(300px);
+        filter: brightness(500%);
+        opacity: .8;
+    }
+    60% {
+        transform: translateX(450px);
+        filter: brightness(500%);
+        opacity: .8;
+    }
+    80% {
+        transform: translateX(550px);
+        filter: brightness(500%);
+        opacity: .8;
+    }
+    100% {
+        transform: translateX(700px);
+        filter: brightness(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes lightSpot-move-l {
+    0% {
+        transform: translateX(-40px) scale(1);
+        filter: brightness(500%);
+        opacity: .8;
+    }
+    20% {
+        transform: translateX(73px) scale(1);
+        filter: brightness(300%);
+        opacity: .8;
+    }
+    40% {
+        transform: translateX(300px) scale(1);
+        filter: brightness(300%);
+        opacity: .8;
+    }
+    60% {
+        transform: translateX(480px) scale(1);
+        filter: brightness(500%);
+        opacity: .8;
+    }
+    80% {
+        transform: translateX(650px) scale(1);
+        filter: brightness(200%);
+        opacity: .8;
+    }
+    100% {
+        transform: translateX(769px) scale(1);
+        filter: brightness(100%);
+        opacity: .8;
+    }
+}
+
+@keyframes lightSpot-move-xl {
+    0% {
+        transform: translateX(-40px) scale(1);
+        filter: brightness(500%);
+        opacity: .8;
+    }
+    20% {
+        transform: translateX(130px) scale(1);
+        filter: brightness(300%);
+        opacity: .8;
+    }
+    40% {
+        /* change */
+        transform: translateX(450px) scale(1);
+        filter: brightness(300%);
+        opacity: .8;
+    }
+    60% {
+        transform: translateX(780px) scale(1);
+        filter: brightness(500%);
+        opacity: .8;
+    }
+    80% {
+        transform: translateX(1090px) scale(1);
+        filter: brightness(200%);
+        opacity: .8;
+    }
+    100% {
+        transform: translateX(1260px) scale(1);
+        filter: brightness(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes card-twinkling {
+    0% {
+        /*opacity: 1;*/
+        filter: brightness(500%);
+    }
+    25% {
+        /*opacity: .8;*/
+        filter: brightness(100%);
+    }
+    50% {
+        /*opacity: .8;*/
+        filter: brightness(100%);
+    }
+    75% {
+        /*opacity: .8;*/
+        filter: brightness(100%);
+    }
+    100% {
+        /*opacity: .8;*/
+        filter: brightness(100%);
+    }
+}
+
+@keyframes self-rotate {
+    0%, 100% {
+        opacity: 1;
+        transform: rotate(0);
+    }
+    25% {
+        transform: rotate(20deg);
+    }
+    75% {
+        transform: rotate(-20deg);
+    }
+}
+
+/* 閃爍 */
+@keyframes breathing-light {
+    0%, 100% {
+        filter: brightness(100%);
+    }
+    25% {
+        filter: brightness(200%);
+    blur(2 px);
+    }
+    50% {
+        filter: brightness(300%);
+    blur(4 px);
+    }
+    75% {
+        filter: brightness(200%);
+    blur(2 px);
+    }
+}
+
+@keyframes cycle-flash {
+    0% {
+        opacity: 1;
+        filter: contrast(200%);
+    }
+    100% {
+        opacity: .8;
+        cursor: pointer;
+    }
+}
+
+/* ================= 商品SP 特別 ================= */
+/* 設定前景 */
+.sp__visual {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+}
+
+.sp__visual a {
+    display: block;
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    top: -800px;
+    right: 170px;
+}
+
+/* ================= mobile size ================= */
+
+@media screen and (max-width: 320px) {
+    body {
+        background-size: auto;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    /* ================= 主視覺 ================= */
+    .upper_layer .light {
+        transform: translateX(-75%);
+    }
+
+    .upper_layer .light img {
+        max-width: 140%;
+    }
+
+    .main_title img, .main_title__slogan img {
+        /*width: 135%;*/
+        max-width: 430px;
+        padding-top: 1%;
+        margin-left: -5px;
+    }
+
+    .main_title__slogan img {
+        width: 100%;
+        padding-top: 6%;
+    }
+
+    .upper_layer {
+        background-size: 840px 217px;
+        background-position: center;
+        max-width: 840px;
+        height: 217px;
+    }
+
+    /* ================= 誘因 ================= */
+    .sp-content {
+        width: 100%;
+    }
+
+    .incentive_layer {
+        flex-wrap: wrap;
+    }
+
+    .incentive_layer .incentive {
+        top: -18px;
+    }
+
+    .incentive__block .incentive__block-sub img {
+        width: 42%;
+    }
+
+    .incentive_layer .incentive__block {
+        width: calc(100% / 2 - 25px);
+    }
+
+    .incentive_layer .incentive__block.ib-3,
+    .incentive_layer .incentive__block.ib-4 {
+        top: -10px;
+        position: relative;
+    }
+
+    .incentive_layer .incentive-line__mo,
+    .incentive_layer .incentive-dot__mo {
+        display: block;
+        top: 52.5%;
+    }
+
+    .incentive_layer .incentive-dot__mo {
+        animation: 7s 4.8s lightSpot-move infinite;
+        opacity: 0;
+    }
+
+    .incentive__block .img01,
+    .incentive__block .lc-1 {
+        animation: 7s 3s card-twinkling infinite;
+        z-index: 29;
+    }
+
+    .incentive__block .img02,
+    .incentive__block .lc-2 {
+        animation: 7s 4.2s card-twinkling infinite;
+        z-index: 29;
+    }
+
+    .incentive__block .img03,
+    .incentive__block .lc-3 {
+        animation: 7s 5.9s card-twinkling infinite;
+        z-index: 29;
+    }
+
+    .incentive__block .img04,
+    .incentive__block .lc-4 {
+        animation: 7s 6.9s card-twinkling infinite;
+        z-index: 29;
+    }
+
+    /* ================= 裝飾 ================= */
+    .ballon {
+        display: none;
+    }
+
+    /* ================= 輪播 ================= */
+    .carousel_layer,
+    .carousel_layer .carousel__wrap {
+        height: 72px;
+    }
+
+    .carousel_layer .slick-list {
+        width: 87%;
+    }
+
+    .carousel_layer-d {
+        display: none;
+    }
+
+    .carousel_layer-m {
+        display: block;
+        width: 96%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -15px;
+    }
+
+    .carousel_layer-m.carousel_layer {
+        background: url(carousel-box-m.png) no-repeat;
+        background-size: 100% 100%;
+        background-position: 50% 8%;
+    }
+
+    .carousel_layer .slick-next,
+    .carousel_layer .slick-prev {
+        width: 20px;
+        height: 40px;
+    }
+
+    .carousel_layer .slick-next {
+        right: 0px;
+        opacity: 0;
+    }
+
+    .carousel_layer .slick-prev {
+        left: 0px;
+        opacity: 0;
+    }
+
+}
+
+@media screen and (min-width: 321px) and (max-width: 375px) {
+    body {
+        background-size: auto;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    /* ================= 主視覺 ================= */
+    .upper_layer .light {
+        transform: translateX(-75%);
+    }
+
+    .upper_layer .light img {
+        width: 140%;
+    }
+
+    .main_title img, .main_title__slogan img {
+        max-width: 515px;
+        padding-top: 1%;
+        margin-left: -5px;
+    }
+
+    .main_title__slogan img {
+        width: 100%;
+        padding-top: 4%;
+    }
+
+    .upper_layer {
+        background-size: 960px 248px;
+        max-width: 960px;
+        height: 248px;
+    }
+
+    /* ================= 誘因 ================= */
+    .sp-content {
+        width: 100%;
+    }
+
+    .incentive_layer {
+        flex-wrap: wrap;
+    }
+
+    .incentive_layer .incentive {
+        top: -18px;
+    }
+
+    .incentive__block .incentive__block-sub img {
+        width: 42%;
+    }
+
+    .incentive_layer .incentive__block {
+        width: calc(100% / 2 - 25px);
+    }
+
+    .incentive_layer .incentive-line,
+    .incentive_layer .incentive-dot {
+        position: absolute;
+        top: 32px;
+        left: 0;
+    }
+
+    .incentive_layer .incentive__block.ib-3,
+    .incentive_layer .incentive__block.ib-4 {
+        top: -10px;
+        position: relative;
+    }
+
+    .incentive_layer .incentive-line__mo,
+    .incentive_layer .incentive-dot__mo {
+        display: block;
+        top: 52.5%;
+    }
+
+    .incentive_layer .incentive-dot {
+        animation: 8s 2s lightSpot-move-mo infinite;
+    }
+
+    .incentive_layer .incentive-dot__mo {
+        animation: 8s 5s lightSpot-move-mo infinite;
+        opacity: 0;
+    }
+
+    .incentive__block .img01,
+    .incentive__block .lc-1 {
+        animation: 8s 3s card-twinkling infinite;
+        z-index: 29;
+    }
+
+    .incentive__block .img02,
+    .incentive__block .lc-2 {
+        animation: 8s 4.5s card-twinkling infinite;
+        z-index: 29;
+    }
+
+    .incentive__block .img03,
+    .incentive__block .lc-3 {
+        animation: 8s 6s card-twinkling infinite;
+        z-index: 29;
+    }
+
+    .incentive__block .img04,
+    .incentive__block .lc-4 {
+        animation: 8s 7.5s card-twinkling infinite;
+        z-index: 29;
+    }
+
+    /* ================= 裝飾 ================= */
+    .ballon {
+        display: none;
+    }
+
+    /* ================= 輪播 ================= */
+    .carousel_layer,
+    .carousel_layer .carousel__wrap {
+        height: 84px;
+    }
+
+    .carousel_layer .slick-list {
+        width: 87%;
+    }
+
+    .carousel_layer-d {
+        display: none;
+    }
+
+    .carousel_layer-m {
+        display: block;
+        width: 96%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -15px;
+    }
+
+    .carousel_layer-m.carousel_layer {
+        background: url(carousel-box-m.png) no-repeat;
+        background-size: 100% 100%;
+        background-position: 50% 8%;
+    }
+
+    .carousel_layer .slick-next,
+    .carousel_layer .slick-prev {
+        width: 20px;
+        height: 40px;
+    }
+
+    .carousel_layer .slick-next {
+        right: 0px;
+        opacity: 0;
+    }
+
+    .carousel_layer .slick-prev {
+        left: 0px;
+        opacity: 0;
+    }
+}
+
+@media screen and (min-width: 376px) and (max-width: 426px) {
+    body {
+        background-size: auto;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    /* ================= 主視覺 ================= */
+    .upper_layer .light {
+        transform: translateX(-75%);
+    }
+
+    .upper_layer .light img {
+        max-width: 140%;
+    }
+
+    .main_title img, .main_title__slogan img {
+        max-width: 590px;
+        padding-top: 1%;
+        margin-left: -5px;
+    }
+
+    .main_title__slogan img {
+        width: 100%;
+        padding-top: 2%;
+    }
+
+    .upper_layer {
+        background-size: 1024px 264px;
+        max-width: 1024px;
+        height: 264px;
+    }
+
+    /* ================= 誘因 ================= */
+    .sp-content {
+        width: 100%;
+    }
+
+    .incentive_layer {
+        flex-wrap: wrap;
+    }
+
+    .incentive_layer .incentive {
+        top: -18px;
+    }
+
+    .incentive__block .incentive__block-sub img {
+        width: 42%;
+    }
+
+    .incentive_layer .incentive__block {
+        width: calc(100% / 2 - 25px);
+    }
+
+    .incentive_layer .incentive-line,
+    .incentive_layer .incentive-dot {
+        position: absolute;
+        top: 32px;
+        left: 0;
+        height: 10px;
+    }
+
+    .incentive_layer .incentive__block.ib-3,
+    .incentive_layer .incentive__block.ib-4 {
+        top: -10px;
+        position: relative;
+    }
+
+    .incentive_layer .incentive-line__mo,
+    .incentive_layer .incentive-dot__mo {
+        display: block;
+        top: 52.5%;
+    }
+
+    .incentive_layer .incentive-dot {
+        animation: 7s 1.8s lightSpot-move-mo-425 infinite;
+    }
+
+    .incentive_layer .incentive-dot__mo {
+        animation: 7s 4.8s lightSpot-move-mo-425 infinite;
+        opacity: 0;
+    }
+
+    .incentive__block .img01,
+    .incentive__block .lc-1 {
+        animation: 7s 3s card-twinkling infinite;
+        z-index: 29;
+    }
+
+    .incentive__block .img02,
+    .incentive__block .lc-2 {
+        animation: 7s 4.2s card-twinkling infinite;
+        z-index: 29;
+    }
+
+    .incentive__block .img03,
+    .incentive__block .lc-3 {
+        animation: 7s 5.9s card-twinkling infinite;
+        z-index: 29;
+    }
+
+    .incentive__block .img04,
+    .incentive__block .lc-4 {
+        animation: 7s 6.9s card-twinkling infinite;
+        z-index: 29;
+    }
+
+    /* ================= 裝飾 ================= */
+    .ballon,
+    .object-01,
+    .object-02 {
+        display: none;
+    }
+
+    /* ================= 輪播 ================= */
+    .carousel_layer,
+    .carousel_layer .carousel__wrap {
+        height: 90px;
+    }
+
+    .carousel_layer .slick-list {
+        width: 87%;
+    }
+
+    .carousel_layer-d {
+        display: none;
+    }
+
+    .carousel_layer-m {
+        display: block;
+        width: 96%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -15px;
+    }
+
+    .carousel_layer-m.carousel_layer {
+        background: url(carousel-box-m.png) no-repeat;
+        background-size: 100% 100%;
+        background-position: 50% 8%;
+    }
+
+    .carousel_layer .slick-next,
+    .carousel_layer .slick-prev {
+        width: 20px;
+        height: 40px;
+    }
+
+    .carousel_layer .slick-next {
+        right: 0px;
+        opacity: 0;
+    }
+
+    .carousel_layer .slick-prev {
+        left: 0px;
+        opacity: 0;
+    }
+}
+
+@media screen and (min-width: 427px) and (max-width: 800px) {
+    .logo {
+        display: none;
+    }
+
+    /* ================= 主視覺 ================= */
+    /* ================= 誘因 ================= */
+    .sp-content {
+        width: 100%;
+    }
+
+    .incentive_layer {
+        flex-wrap: wrap;
+    }
+
+    .incentive_layer .incentive {
+        top: -18px;
+    }
+
+    .incentive__block .incentive__block-sub img {
+        width: 42%;
+    }
+
+    .incentive_layer .incentive__block {
+        width: calc(100% / 4 - 15px);
+    }
+
+    .incentive_layer .incentive-line,
+    .incentive_layer .incentive-dot {
+        position: absolute;
+        top: calc(50% - 40%);
+        left: 0;
+        height: 10px;
+    }
+
+    .incentive_layer .incentive-dot {
+        animation: 7s 1.8s lightSpot-move-l infinite;
+    }
+
+    .incentive_layer .incentive-line {
+        width: 100%;
+    }
+
+    /* ================= 裝飾 ================= */
+    .ballon {
+        display: none;
+    }
+
+    /* ================= 輪播 ================= */
+    .carousel_layer-m {
+        display: none;
+    }
+
+    .carousel_layer-d {
+        width: 96%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .carousel_layer,
+    .carousel_layer .carousel__wrap {
+        height: 120px;
+    }
+
+    .carousel_layer .slick-list {
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 1260px) {
+    .logo {
+        top: 13px;
+        left: calc(50% - 550px);
+    }
+
+    .logo img {
+        width: 70%;
+        height: auto;
+    }
+
+    /* ================= 主視覺 ================= */
+    .upper_layer {
+        background-size: 2560px 660px;
+        max-width: 2560px;
+        height: 660px;
+    }
+
+    .upper_layer .light img {
+        width: 100%;
+    }
+
+    .main_title img,
+    .main_title__slogan img {
+        width: auto;
+    }
+
+    .main_title__slogan img {
+        margin-top: -103px;
+    }
+
+    .upper_layer .object-01 {
+        position: absolute;
+        top: 160px;
+        right: calc(50% - 570px);
+        width: 223px;
+        height: 342px;
+        background-size: 100% auto;
+    }
+
+    .upper_layer .object-01 img {
+        top: 23px;
+        left: 80px;
+        width: auto;
+    }
+
+    .upper_layer .object-02 {
+        top: 339px;
+        right: calc(50% + 394px);
+        background-size: 100% auto;
+    }
+
+    .upper_layer .object-02 img {
+        width: auto;
+        top: -76px;
+        left: 18px;
+    }
+
+    /* ================= 誘因 ================= */
+    .sp-content {
+        width: 1280px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .incentive_layer .incentive-line,
+    .incentive_layer .incentive-dot {
+        position: absolute;
+        top: 9%;
+        left: 0;
+        height: 20px;
+    }
+
+    .incentive_layer .incentive-line {
+        width: 1260px;
+    }
+
+    .incentive_layer .incentive-dot {
+        width: 40px;
+        animation: 7s 1.8s lightSpot-move-xl infinite;
+    }
+
+    .incentive_layer .incentive__block {
+        width: calc(1260px / 4 - 8px);
+    }
+
+    .incentive_layer .incentive {
+        top: -20px;
+    }
+
+    .incentive_layer .incentive__block img {
+        width: auto;
+    }
+
+    .incentive__block .incentive__block-sub img {
+        width: auto;
+    }
+
+    /* ================= 裝飾 ================= */
+    .ballon {
+        position: absolute;
+        top: 750px;
+    }
+
+    .ballon img {
+        width: auto;
+    }
+
+    .ballon_left {
+        left: calc(50% - 900px);
+    }
+
+    .ballon_right {
+        right: calc(50% - 900px);
+    }
+
+    /* ================= 輪播 ================= */
+    .carousel_layer-m {
+        display: none;
+    }
+
+    .carousel_layer,
+    .carousel_layer .carousel__wrap {
+        height: 203px;
+    }
+
+    .carousel_layer {
+        width: 100%;
+        background: url(carousel-box.png) no-repeat;
+        background-size: 100% 100%;
+        background-position: 50% 8%;
+    }
+
+    .carousel_layer .slick-list {
+        width: 80%;
+    }
+
+    .carousel_layer img {
+        width: 100%;
+    }
+
+    .carousel_layer .slick-next,
+    .carousel_layer .slick-prev {
+        width: 65px;
+        height: 65px;
+        cursor: pointer;
+    }
+
+    .carousel_layer .slick-next {
+        right: 75px;
+        opacity: 0;
+    }
+
+    .carousel_layer .slick-prev {
+        left: 75px;
+        opacity: 0;
+    }
+
+    .carousel_layer-d {
+        width: 96%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

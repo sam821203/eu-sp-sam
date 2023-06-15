@@ -1,0 +1,71 @@
+-
+  var w3m3Data = [
+    { // 1
+      link: "https://www.etmall.com.tw/Activity/CouponPage/350",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-1.png",
+      alt: "居家防疫大禮包送您3600"
+    },
+    { // 2
+      link: "https://www.etmall.com.tw/Activity/CouponPage/329",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-2.png",
+      alt: "獨家領券熱銷家電9折折價券"
+    },
+    { // 3
+      link: "https://www.etmall.com.tw/Activity/CouponPage/360",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-3.png",
+      alt: "獨家領券最高現折$3000"
+    },
+    { // 4
+      link: "https://www.etmall.com.tw/Activity/CouponPage/315",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-4.png",
+      alt: "家電就要你便宜買$2222元折價券"
+    },
+    { // 5
+      link: "https://www.etmall.com.tw/Activity/CouponPage/374",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-5.png",
+      alt: "美妝購神券專區領券現折$168"
+    },
+    { // 6
+      link: "https://www.etmall.com.tw/Activity/CouponPage/373",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-6.png",
+      alt: "保健購神券專區領券現折$168"
+    },
+    { // 7
+      link: "https://www.etmall.com.tw/Activity/CouponPage/375",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-7.png",
+      alt: "68神券"
+    },
+    { // 8
+      link: "https://www.etmall.com.tw/Activity/CouponPage/372",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-8.png",
+      alt: "瑞康屋百貨品牌鍋具領券享9折"
+    },
+    { // 9
+      link: "https://www.etmall.com.tw/Activity/CouponPage/371",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-9.png",
+      alt: "內塑衣襪最高現折$2560"
+    },
+  ]
+
+section.promo__group.promo__group--w3m3.m-bottom--lg(data-title="強檔狂折")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--bg
+        img(src="event/2nd/e-main/components/event-w3m3/decor-event-w3m3-bg.png", alt="")
+      .decor__item.decor__item--title#titleEventW3m3
+        img(src="event/2nd/e-main/components/event-w3m3/title-event-w3m3.png", alt="")
+      .decor__item.decor__item--left#decorEventW3M3Left
+        img(src="event/2nd/e-main/components/event-w3m3/decor-event-w3m3-left.png", alt="")
+      .decor__item.decor__item--right#decorEventW3M3right
+        img(src="event/2nd/e-main/components/event-w3m3/decor-event-w3m3-right.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          #w3m3Wrap.event__wrap
+            ul.good__wrap
+              each data, index in w3m3Data
+                li
+                  a(href= data.link, title= data.alt)
+                    - var hasImg = data.imgSrc ? true : false
+                    if (hasImg)
+                      img(src= data.imgSrc, alt= data.alt)

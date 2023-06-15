@@ -1,0 +1,58 @@
+// ==========================================================================
+// Plugins
+// ==========================================================================
+// // @import vendors/animate
+// @import vendors/style/swiper-slider-custom
+@import vendors/style/swiper-safari-polyfill
+
+// ==========================================================================
+// first screen need
+// ==========================================================================
+// hero section
+@import event/1st/e-main/components/hero-section/_hero-section
+// @import utils/bg-decoration-instance/parallax/_parallax
+// @import utils/bg-decoration-instance/css-firework-2/_css-firework-2
+
+// ==========================================================================
+// components
+// ==========================================================================
+// dynamic product 假宮格共用CSS
+// @import layout/dynamic-product/_dynamic-product.sass
+
+// 一般components
+// @import event/1st/e-main/components/slider-w2m2/_slider-w2m2
+@import event/1st/e-main/components/tab-section/_tab-section
+
+
+// ==========================================================================
+// Page
+// ==========================================================================
+body
+  +pos-set(relative)
+  background-color: $main-e-background-color-1st
+  overflow-x: hidden
+  // height: 1000vh
+
+  .decor__bg
+    +pos-set(fixed, under, 0%, 0%)
+    +bg-set(url(event/1st/e-main/pages/index/bg.jpg), 100%)
+    +breakpoint-min($min-width-xl)
+      +pos-set(fixed, under, 0%, 0%)
+      +bg-set(url(event/1st/e-main/pages/index/bg-web.jpg), auto)
+
+// TODO: 修改EU nav佔位高度(影響logo距離上方高度，U每次要改)
+.navRightBar
+  height: 39px
+  +breakpoint-min($min-width-xl)
+    height: auto
+
+.decoration--top,
+.decor--top
+  +pos-set(absolute)
+  pointer-events: none
+
+section:not(.note)
+  // 有parallax scroll時圖層有relative就有預設z-index可能會遮到宮格，因此使用這個讓宮格也能有預設z-index
+  +pos-set(relative)
+  a
+    display: block

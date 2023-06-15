@@ -1,0 +1,184 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero__wrap
+  +pos-set(relative, base)
+  overflow: hidden
+
+  .hero__zone
+    +pos-set(relative, zero)
+    padding-top: 34%
+    +breakpoint-min($min-width-xl)
+      padding-left: 30px
+
+  .hero__block
+    +pos-set(absolute, zero, 0, 0)
+    width: 100%
+
+  .hero__box
+    +pos-set(relative, zero)
+    padding-top: 25%
+    width: 100%
+
+  .hero__promo-link
+    +pos-set(absolute, ten, 0.5%, null, null, 13%)
+    width: 25%
+    transform-origin: right bottom
+    transform: rotate(-25deg)
+
+  .hero__title
+    &--main
+      +breakpoint-min($min-width-lg)
+        transform-origin: left 
+        transform: scale(1.1)
+
+  .promo__block
+    margin-left: auto
+    margin-right: auto
+    width: 90%
+
+.wrap--sp-sub
+  +display-flex(">div")
+  +pos-set(relative, zero)
+  padding: 0 3%
+  .hero__zone
+    +flex(0, 0, 40%)
+  .hero__item
+    +flex(0, 0, 60%)
+    
+  .zone__decoration
+    &--right
+      z-index: map-get($zindex, twenty)
+      top: 0
+      right: 0
+      margin-top: 6%
+      width: 12%
+      pointer-events: none
+      animation: ufo-r-1 2s 3s both, ufo-patrol 10s 7s infinite alternate
+      +breakpoint-min($min-width-lg)
+        margin-top: 20%
+        right: -100px
+
+
+
+  .background__decoration--hero
+    +pos-set(absolute, under, 0, 0)
+    width: 100%
+    height: 100%
+
+.hero__item
+  img
+    display: block
+    +pos-set(relative, zero, 25%)
+    margin-left: auto
+    margin-right: auto
+    width: 83%
+
+.hero__decoration
+  +pos-set(absolute)
+
+.top__decoration
+  z-index: map-get($zindex, under)
+  top: -6%
+  width: 20%
+  height: 100%
+  +bg-set(url("~event/2nd/e-sp/components/hero-section/top-decoration.png"), 100%)
+  transform-origin: top
+  &--left
+    left: -5%
+    animation: key-rotate-self-2 5s infinite alternate linear
+  &--right
+    right: -5%
+    animation: key-rotate-self-3 5s infinite alternate linear
+
+.block__decoration
+  &--main
+    +pos-set(absolute, zero, 1%, null, null, 3%)
+    padding-top: 50%
+    width: 50%
+    height: 0
+    +bg-set(url("~event/2nd/e-sp/components/hero-section/block-decoration.png"), 100%)
+    animation: key-rotate-self 30s infinite linear, flash-breath 3s infinite alternate both linear
+  &--sub
+    +pos-set(absolute, zero, -14%, null, null, -7%)
+    padding-top: 70%
+    width: 70%
+    height: 0
+    +bg-set(url("~event/2nd/e-sp/components/hero-section/block-decoration-2.png"), 100%)
+    animation: scale-breath 20s infinite reverse linear, flash-breath 3s infinite alternate-reverse both linear
+  &--bottom
+    +pos-set(absolute, zero, null, null, -5%, -12%)
+    padding-top: 46%
+    width: 80%
+    height: 0
+    +bg-set(url("~event/2nd/e-sp/components/hero-section/bg-hero-item.png"), contain)
+
+
++key-rotate-self(360)
++key-rotate-self(-45, key-rotate-self-2)
++key-rotate-self(45, key-rotate-self-3)
+
+@keyframes flash-breath
+  from
+    filter: brightness(80%)
+  to
+    filter: brightness(250%)
+
+@keyframes scale-breath
+  from
+    transform: rotate(0) scale(1)
+  25%
+    transform: rotate(90deg) scale(0.8)
+  50%
+    transform: rotate(180deg) scale(1)
+  75%
+    transform: rotate(270deg) scale(0.9)
+  to
+    transform: rotate(360deg) scale(1)
+
+@keyframes shake-me
+  from
+    transform: rotate(0)
+  20%
+    transform: rotate(0)
+  21.5%
+    transform: rotate(5deg)
+  23%
+    transform: rotate(0)
+  24.5%
+    transform: rotate(-4deg)
+  26%
+    transform: rotate(0)
+  27%
+    transform: rotate(3deg)
+  28%
+    transform: rotate(0)
+  28.5%
+    transform: rotate(-2deg)
+  29%
+    transform: rotate(0)
+  to
+    transform: rotate(0)
+
+@keyframes ufo-patrol
+  from 
+    transform: translateY(0)
+  25%
+    transform: translateY(10%)
+  50%
+    transform: translateY(-10%)
+  75%
+    transform: translateY(10%)
+  100%
+    transform: translateY(0)
+  
+@keyframes ufo-r-1
+  from
+    transform: translate(36vw, -10vh)
+
+  63%
+    transform: translate(-10vw, 0vh)
+  86%
+    transform: translate(-5vw, 2vh)
+  to
+    transform: translate(0, 0)

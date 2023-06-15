@@ -1,0 +1,184 @@
+.bg-web
+  +pos-set(absolute, zero, 0%, 0%)
+  +bg-set(url(event/1st/e-main/pages/index/bg-web-01.png), 260%)
+  overflow: hidden
+  &--bottom
+    +pos-set(fixed, under, 0%, 0%)
+    +bg-set(url(event/1st/e-main/pages/index/bg-web-02.png), 260%)
++breakpoint-min($min-width-xl)
+  .bg-web
+    +bg-set(url(event/1st/e-main/pages/index/bg-web-01.png), auto)
+    >div
+      background-size: auto
+    &--bottom
+      background-size: auto
+      // top: 1900px
+  
+  // // ==========================================================================
+// // main
+// // ==========================================================================
+.hero
+  +pos-set(relative, zero)
+  // +bg-set(url(event/1st/e-main/components/hero-section/bg-hero.png), 100%)
+  overflow: hidden
+
+  .hero__wrap
+    +aspect-ratio(960, 776)
+
+  // .hero__zone
+
+  .hero__title
+    z-index: map-get($zindex, second)
+    text-align: center
+    animation: rotateIn 1.2s ease-in-out 1
+    &--main
+      +pos-set(relative)
+      margin: 3% 12% 0
+      width: 66%
+        // animation: stamp-swing 1s both
+      .decor__box
+        +pos-set(absolute, zero, 32%)
+        right: 11%
+        width: 12%
+        animation: key-rotate-self 1.5s 1.5s linear both
+        +breakpoint-min($min-width-xl)
+          top: 33%
+    &--sub
+      +pos-set(absolute, second)
+      bottom: -2%
+      left: 10%
+      width: 70%
+      // height: 10%
+      opacity: 0
+      animation: slideInUp 1s .2s linear 1 forwards
+      +breakpoint-min($min-width-xl)
+        // left: calc(50% - 274px)
+    &--decor
+      .decor__item
+        &:first-child
+          +pos-set(absolute, base, 24%)
+          right: -1%
+          width: 32%
+          animation: slideInRight 1s linear 1
+          +breakpoint-min($min-width-xl)
+            top: 26%
+        &:nth-child(2)
+          +pos-set(absolute, second, 41%, 31%)
+          width: 9%
+          transform: rotate(-5deg)
+          opacity: 0
+          .js-loading &
+            opacity: 1
+            animation: zoomInRight 2s 1.2s linear both
+        &:last-child
+          +pos-set(absolute, second, 50%, 4%)
+          width: 15%
+          transform: rotate(28deg)
+          opacity: 0
+          .js-loading &
+            opacity: 1
+            animation: zoomInLeft 2s linear both
+    &--fallen
+      .decor__item
+        &:first-child
+          +pos-set(absolute, zero, 9%)
+          right: 15%
+          width: 13%
+          animation: slideInDown 2s .3s linear both
+        &:nth-child(2)
+          +pos-set(absolute, zero, 0%, 33%)
+          width: 17%
+          animation: slideInDown 1s 1.7s linear both
+        &:last-child
+          +pos-set(absolute, zero, 17%, 4%)
+          width: 11%
+          animation: slideInDown 1.5s .9s linear both
+
+
+
+  .hero__block
+    .hero__box 
+      +pos-set(absolute, base, 50%)
+      right: 5%
+      width: 25%
+      // animation: rotate 20s linear infinite
+    .hero__item
+      +pos-set(absolute, base, 53.4%)
+      right: 10.6%
+      width: 13.7%
+
+
+@keyframes rotateIn
+  0%
+    transform: rotate(270deg) scale(.2)
+    opacity: 0
+  to
+    transform: translateZ(0) scale(1)
+    opacity: 1
+
+@keyframes zoomInRight 
+  0% 
+    opacity: 0
+    transform: scale3d(1, 1, 1) translate3d(200px, 0, 0) rotate(-45deg)
+    // animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190)
+  30%
+    opacity: .7
+    transform: scale3d(1, 1, 1) translate3d(100px, 20px, 0) rotate(45deg)
+    // animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190)
+  60% 
+    opacity: 1
+    transform: scale3d(1.2, 1.2, 1.2) translate3d(-10px, 30px, 0)
+    // animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1)
+  80%
+    opacity: 1
+    transform: scale3d(1.2, 1.2, 1.2) translate3d(0, 10px, 0) rotate(45deg)
+
+
+@keyframes zoomInLeft
+  0% 
+    opacity: 0
+    transform: scale3d(1, 1, 1) translate3d(-20px, 50px, 0) rotate(15deg)
+    // animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190)
+  30%
+    opacity: .3
+    transform: scale3d(1, 1, 1) translate3d(10px, 20px, 0) rotate(-15deg)
+    // animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190)
+  70%
+    opacity: 1
+    transform: scale3d(1.2, 1.2, 1.2) translate3d(0, 10px, 0) rotate(-5deg)
+
+@keyframes slideInDown
+  0%
+    transform: translate3d(0, -100%, 0) skew(10deg)
+    visibility: visible
+  50%
+    transform: translate3d(0, -30%, 0) skew(-10deg)
+  to
+    transform: translateZ(0)
+
++key-rotate-self(450)
+
+@keyframes rotate
+  0%
+    transform: rotate(0)
+  to
+    transform: rotate(360deg)
+
+
+@keyframes slideInRight
+  0%
+    transform: translate3d(30%, 0, 0)
+    // opacity: 0
+    // visibility: visible
+  to
+    transform: translateZ(0)
+    // opacity: 1
+
+@keyframes slideInUp
+  0%
+    transform: translate3d(0, 15%, 0) scale(.4)
+    opacity: .4
+    // visibility: visible
+  to
+    transform: translateZ(0) scale(1)
+    opacity: 1

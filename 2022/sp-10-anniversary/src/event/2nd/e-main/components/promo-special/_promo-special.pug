@@ -1,0 +1,29 @@
+-
+  var promoSpecialData = [
+    { // 1
+      link: "",
+      imgSrc: "event/2nd/e-main/components/promo-special/items/item-p-special-1.png",
+      alt: "生活流行商品回饋10%東森幣"
+    },
+    { // 2
+      link: "",
+      imgSrc: "event/2nd/e-main/components/promo-special/items/item-p-special-2.png",
+      alt: "3C.家電滿額贈299枚東森幣"
+    },
+    { // 3
+      link: "",
+      imgSrc: "event/2nd/e-main/components/promo-special/items/item-p-special-3.png",
+      alt: "美妝、保健東森幣折抵20%up"
+    },
+  ]
+
+section.promo__group.promo-special
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          ul.event__block
+            each data, index in promoSpecialData
+              li(id="promoSpecialItem" + (index + 1))
+                a(href= data.link, title=data.alt)
+                  img(src= data.imgSrc, alt=data.alt)

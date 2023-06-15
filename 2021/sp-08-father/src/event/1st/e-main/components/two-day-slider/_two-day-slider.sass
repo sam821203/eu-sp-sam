@@ -1,0 +1,72 @@
+.promo__group--two-day
+  overflow: hidden
+  .promo__wrap
+    +aspect-ratio(960, 609)
+  .promo__zone
+    display: flex
+    justify-content: space-between
+    +pos-set(relative, zero)
+    padding: 5.5% 5%
+    +bg-set(url(event/1st/e-main/components/two-day-slider/bg-two-day.png), 100%)
+    .pic__box
+      padding-top: 0.7%
+      flex: 0 0 36.8%
+    .slider__box
+      width: 61%
+      .promo__slider
+        +pos-set(relative, zero)
+        width: 100%
+      .product__name
+        margin-bottom: 0
+
+    .promo__date
+      +pos-set(relative, zero)
+      margin-bottom: 4.5%
+      padding: 0.5% 0
+      color: $gray-deep-dark
+      // +bg-set(url(event/1st/e-main/components/two-day-slider/bg-two-day-date.png), 100%)
+      font-size: 5vw
+      text-align: center
+    .swiper-slide
+      padding: 1% 1.5%
+      width: 50%
+      +bg-set(url(layout/dynamic-product/bg-dynamic-item.png), 100%)
+
+    .product--dynamic
+      // .product__name
+      //   font-size: 3.1vw
+      .product__price
+        span
+          &:last-child
+            font-size: 3.4vw
+
+    +breakpoint-min($min-width-md)
+      .product__name
+        font-size: 3.3vw
+      .product--dynamic
+        .product__price
+          span
+            &:last-child
+              font-size: 3.3vw
+
+    +breakpoint-min($min-width-xl)
+      padding: 60px 50px
+      .promo__date
+        background-size: auto
+        font-size: 44px
+      .pic__box
+        padding-top: 0
+      .slider__box
+        .promo__slider
+          .swiper-slide
+            padding: 6px
+          .product__name
+            font-size: 24px
+            margin-bottom: 7px
+          .product__price
+            span
+              &:last-child
+                font-size: 36px
+
+  .product--dynamic a
+    pointer-events: none

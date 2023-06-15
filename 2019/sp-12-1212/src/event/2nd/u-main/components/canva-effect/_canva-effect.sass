@@ -1,0 +1,40 @@
+
+canvas
+  display: none
+  width: 100%
+  max-width: 100%
+  overflow: hidden
+  position: absolute !important
+  z-index: 1
+  top: -20%
+  left: 0
+  transform: skewX(-30deg) scale(.6)
+  /* width: 100%; */
+  height: 30%
+  filter: blur(6px) drop-shadow(0 0 30px rgba(51,180,172,1))
+  transform-origin: 0 100%
+  animation: fadein 6s 1
+
++breakpoint-min($min-width-xl)
+  canvas
+    display: block
+    width: 100%
+    max-width: 100%
+    overflow: hidden
+    position: absolute !important
+    z-index: 1
+    top: -50%
+    margin-top: -20%
+    height: auto
+    left: 0
+    transform: skewX(-20deg) scale(.84)
+    /* width: 100%; */
+    /* height:50%; */
+    filter: blur(6px) drop-shadow(0 0 30px rgba(51,180,172,1))
+    transform-origin: 0 100%
+    animation: fadein 6s 1
+
+
+@keyframes fadein
+  0%
+    opacity: 0

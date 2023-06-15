@@ -1,0 +1,407 @@
+<meta name="viewport" content="width=device-width">
+<meta charset="utf-8">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  *:before, *:after {
+    box-sizing: border-box; }
+  a {
+    display: block;
+    text-decoration: none;
+  }
+  ul {
+    list-style: none;
+  }
+  img {
+    width: 100%;
+    border: 0;
+    display: block;
+  }
+  article,
+  main,
+  nav,
+  section {
+    display: block;
+  }
+  body {
+    margin:0;
+    background-color:#c48438;
+  }
+  .sp--1260 {
+    
+    position: relative;
+    z-index: 0;
+    max-width: 1260px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .sp--1260.icon_Home{
+    z-index: auto;
+  }
+  .box{
+    /*background: url(bg.jpg);*/
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+  /* 主視覺 */
+  /* ======================================== */
+  .logo a,
+  .sp__visual a{
+    display: block;
+  }
+  .logo {
+    position: absolute;
+    z-index: 1;
+    /* 調整logo位置 */
+    top: 1%;
+    left: 1%;
+    width: 30%;
+    max-width: 220px;
+  }
+  /* 設定背景 */
+  .sp__main {
+   background: url(bg.jpg) center 0 no-repeat;
+  }
+  /* 設定前景 */
+  .sp__visual {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+  }
+  /*...........................................................示意線條拿掉start*/
+  /*.visual__main a{
+    border: 1px solid #f00;
+  }*/
+  /*...........................................................示意線條拿掉end*/
+  .visual__anchor,
+  .visual__main,
+  .visual__nav {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .visual__anchor {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }
+  .visual__main a,
+  .visual__nav a {
+    flex-grow: 1;
+  }
+  /* 主視覺 */
+  /*...........................................................紅框區高度*/
+  .visual__main {
+    height: 100%;
+  }
+  /*...........................................................紅框區寬度*/
+  .visual__main a:nth-child(1) {
+    flex-grow: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+
+  /* 自適應banner組 */
+  /* ======================================== */
+  .banner__title {
+    height: 65px;
+    background: center top no-repeat;
+  }
+  .banner__wrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .banner__item {
+    transition: all 0.3s;
+  }
+  .banner__item img {
+    /*width: 90%;*/
+  }
+  /* ...............................................................4變2 */
+  .bn-w4m2 .banner__item {
+    flex: 1 0 25%;
+  }
+  /* 設定點下去與hover動畫 */
+  .bn-w4m2 .banner__item:hover,
+  .bn-w4m2 .banner__item:active {
+    /* 變大(>1時變大) */
+    transform: scale(1.05);
+    /* 亮度調亮(>100%時變亮) */
+    filter: brightness(115%);
+  }
+  @media screen and (max-width: 1260px) {
+    .bn-w4m2 {
+      padding: 1.5% 0 2%;
+      background: #c2833f center 0 url(bg2.jpg) no-repeat;
+      background-size: 100%;
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    /* 設定手機時一列2個 */
+    .bn-w4m2 .banner__item {
+      flex: 1 0 50%;
+      padding: 0.5%;
+    }
+  }
+  @media screen and (min-width: 641px) {
+      .n-sp__box .sp__wrap img,
+      .main-info img,
+      .firstInfo a img {
+          width: auto;
+      }
+  }
+  /*...............................................................4變2*/
+
+</style>
+<!--[if IE 9]>
+<style>
+  .visual__anchor,
+  .visual__main,
+  .visual__nav {
+    -js-display: flex;
+  }
+  .visual__anchor {
+    position: absolute !important;
+    height: 114.28% \ ;
+  }
+  .visual__main a,
+  .visual__nav a {
+    background-color: rgba(0, 0, 0, .0);
+    /*height: 100% !important \ ;*/
+  }
+  .build__anchor {
+    -js-display: flex;
+  }
+  .build-nav__item {
+    width: 12.5% \ ;
+  }
+  .banner__wrap {
+    -js-display: flex;
+    width: 100% \ ;
+  }
+  .bn-w2m1 .banner__item {
+    width: 50% \ ;    
+  }
+  .bn-w4m2 .banner__item {
+    width: 25% \ ;
+  }
+  .bn-w2m1.item--3 li:last-child {
+    width: 100% \ ;
+  }
+  .bn-w3m1 .banner__item {
+    width: 33.33% \ ;    
+  }
+  @media screen and (max-width: 1024px) {
+    .bn-w2m1 .banner__item {
+      width: 100% \ ;
+    }
+    .bn-w4m2 .banner__item {
+      width: 50% \ ;
+    }
+    .bn-w3m1 .banner__item {
+      width: 100% \ ; 
+    }
+  }
+</style>
+<![endif]-->
+<div id="spWrap" class="sp__wallper">
+  <!-- 主視覺 -->
+  <div class="sp--1260 icon_Home"><!-- 浮水印start(勿刪)-->
+    <div id="iconHome"></div>
+  </div>                          <!-- 浮水印end(勿刪)-->
+  <main class="sp__main">
+    <div class="sp--1260 box">
+      <a href="https://www.u-mall.com.tw/" class="logo"><img src="sensen-logo.png" alt="森森購物"></a> 
+      <div class="sp__visual">
+        <div class="visual__anchor"><!-- 紅框區 設定第一個a和第二個a的寬度會推擠後面a的寬度-->
+          <div class="visual__main">
+            <a></a>
+          </div>
+        </div>
+        <img src="index.jpg">
+      </div>
+      <!-- 自適應banner組 --><!-- .................................................4變2 start -->
+          <section class="sp--1260 bn-w4m2">
+            <ul class="banner__wrap">
+              <li class="banner__item">
+                <a href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201902/SP_1103673/w/index.html">
+                  <img id="chgImg1" src="promot-12.png" alt="banner">
+                </a>
+              </li>
+              <li class="banner__item">
+                <a href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1103167/w/index.html">
+                  <img src="promot-2.png" alt="banner">
+                </a>
+              </li>
+              <li class="banner__item">
+                <a href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201902/SP_1103673/w/index.html">
+                  <img src="promot-3.png" alt="banner">
+                </a>
+              </li>
+              <li class="banner__item">
+                <a href="#note">
+                  <img src="promot-4.png" alt="banner">
+                </a>
+              </li>            
+            </ul>
+          </section>
+          <!-- ............................................................4變2 end -->
+    </div>
+    <div class="carousel_frame">
+    <aside class="carousel_layer carousel_layer-d">
+        <div class="carousel__wrap">
+            <a href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201902/SP_1103691/w/index.html">
+                <img src="BN-1.jpg"/>
+            </a>
+        </div>
+        <div class="carousel__wrap">
+            <a href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1103167/w/index.html">
+                <img src="BN-2.jpg"/>
+            </a>
+        </div>
+        <div class="carousel__wrap">
+            <a href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201902/SP_1103673/w/index.html">
+                <img src="BN-3.jpg"/>
+            </a>
+        </div>
+    </aside>
+
+    <!--mobile-->
+    <aside class="carousel_layer carousel_layer-m">
+        <div class="carousel__wrap">
+            <a href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201902/SP_1103691/w/index.html">
+                <img src="BN-m-1.jpg"/>
+            </a>
+        </div>
+        <div class="carousel__wrap">
+            <a href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1103167/w/index.html">
+                <img src="BN-m-2.jpg"/>
+            </a>
+        </div>
+        <div class="carousel__wrap">
+            <a href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201902/SP_1103673/w/index.html">
+                <img src="BN-m-3.jpg"/>
+            </a>
+        </div>
+    </aside>
+</div>
+  </main>
+  
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+<!----- 輪播 ----->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+<script type="text/javascript">
+  $('.carousel_layer').slick({
+      autoplay: true,
+      autoplaySpeed: 3000,
+  });
+  function spTimeLimit() {
+    var dateNowDate = new Date().getDate();
+    var dateNowHours = new Date().getHours();
+
+    switch (dateNowDate) {
+      case 1:
+        switch (dateNowHours) {
+          case 0:
+          case 1:
+          case 2:
+          case 3:
+          case 4:
+          case 5:
+          case 6:
+          case 7:
+          case 8:
+          case 9:
+            $('.carousel_layer').slick('slickRemove', 2);
+            break;
+          default:
+            break;
+        }
+        break;
+      case 26:
+      case 27:
+      case 28:
+      case 29:
+      case 30:
+      case 31:
+        $('.carousel_layer').slick('slickRemove', 2);
+        break;
+      default:
+        break;
+    }
+  }
+  spTimeLimit();
+</script>
+
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script>$('a[href^="#"]').on('click',function(e){var target=$('a[name='+this.getAttribute('href').split('#')[1]+']');if(target.length){e.preventDefault();$('html,body').stop().animate({scrollTop:target.offset().top},500);}});</script>
+<!-- 浮水印 -->
+<script id="scriptIconFloat" src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105264/float-icon.js"></script>
+<!--[if IE 9]>
+  <script src="flexibility.js"></script>
+  <script>flexibility(document.documentElement);</script>
+<![endif]-->
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+<script id="scriptTimeCount">
+  function changePromo(el, attr, value) {
+  el.setAttribute(attr, value);
+}
+
+function spTimeLimit() {
+  var dateNowDate = new Date().getDate();
+  var dateNowHours = new Date().getHours();
+  var script = document.getElementById('scriptTimeCount');
+
+  var chgImg1 = document.getElementById('chgImg1');
+
+  if(script) {
+    switch (dateNowDate) {
+      case 1:
+        switch (dateNowHours) {
+          case 0:
+          case 1:
+          case 2:
+          case 3:
+          case 4:
+          case 5:
+          case 6:
+          case 7:
+          case 8:
+          case 9:
+            changePromo(chgImg1, 'src', 'promot-11.png');
+            script.parentElement.removeChild(script);
+            break;
+          default:
+            script.parentElement.removeChild(script);
+            break;
+        }
+        break;
+      case 26:
+      case 27:
+      case 28:
+      case 29:
+      case 30:
+      case 31:
+          changePromo(chgImg1, 'src', 'promot-11.png');
+          break;
+      default:
+        script.parentElement.removeChild(script);
+        break;
+    }
+  } else {
+    script.parentElement.removeChild(script);
+  }
+}
+spTimeLimit();
+</script>

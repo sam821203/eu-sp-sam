@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <!--<style>-->
+        <!--/*可拖移廣告icon*/-->
+        <!--.Area_hammerAD {-->
+            <!--z-index: 300;-->
+            <!--display: none;-->
+            <!--position: fixed;-->
+            <!--bottom: 0;-->
+            <!--right: 0;-->
+            <!--/*transform: translate3d(0, 200px, 0);*/-->
+            <!--/*background-color: rgba(0,0,0,0.5);*/-->
+        <!--}-->
+
+        <!--.Area_hammerAD .box {-->
+            <!--position: relative;-->
+            <!--margin-right: 10px;-->
+            <!--opacity: 1;-->
+        <!--}-->
+
+        <!--.Area_hammerAD img {-->
+            <!--width: 100%;-->
+            <!--height: auto;-->
+        <!--}-->
+
+        <!--.Area_hammerAD .closeButton a {-->
+            <!--display: block;-->
+            <!--cursor: pointer;-->
+            <!--position: absolute;-->
+            <!--width: 20px;-->
+            <!--height: 20px;-->
+            <!--border-radius: 50%;-->
+            <!--font: bold 20px/1em "Century Gothic";-->
+            <!--color: #FFF;-->
+            <!--text-align: center;-->
+            <!--background-color: rgba(0%, 0%, 0%, 0.5);-->
+            <!--text-decoration: none;-->
+            <!--z-index: 2-->
+        <!--}-->
+
+        <!--@media screen and (min-width: 768px) {-->
+            <!--.Area_hammerAD {-->
+                <!--display: none;-->
+                <!--width: 90px;-->
+            <!--}-->
+
+            <!--.Area_hammerAD .closeButton a {-->
+                <!--top: 0;-->
+                <!--right: 0;-->
+            <!--}-->
+        <!--}-->
+
+        <!--@media screen and (max-width: 767px) {-->
+            <!--.Area_hammerAD {-->
+                <!--display: block;-->
+                <!--width: 22%;-->
+            <!--}-->
+
+            <!--.Area_hammerAD .closeButton a {-->
+                <!--top: 1vw;-->
+                <!--right: 1vw;-->
+            <!--}-->
+        <!--}-->
+
+    <!--</style>-->
+</head>
+<body>
+<div id="spWrap"></div>
+<div class="" style="height: 20000px;"></div>
+<!-- 因為上傳系統限制而產生的無用index檔，裡面來寫教學好了 -->
+
+<!-- 
+這包是自動斜角標的js檔
+1. 掛著這隻js就可以自動產生這包裡面的斜角標
+   以後只要在程式碼最下方掛這行就好：
+
+   <script id="scriptIconFloat" src="上傳位置/float-icon.js"></script>
+
+2. 斜角標以後換擋只要檔名一樣蓋過，上傳到這個位置沒問題了！圖片尺寸大小可以任意變動沒有關係，會自動對齊。
+
+3. 這隻js會自動判斷：
+	a. 如果有id="iconHome"，會抓這個id的地方當外框定位靠右並空15px，
+
+   	b. 沒有這個id，會找尋有沒有table切版，有的話，就會抓上面第一個table當外框定位靠右並空15px，
+
+   	c. 如果上兩個都沒有就會自己抓畫面最上方中間960px的地方靠右並空15px定位。
+
+   所以記得在想要的父層設id是比較好控制的。
+
+4. 圖片外面有個a連結，行銷每檔活動要自己去js中第一行下，注意網址外面要有『' '』包住。
+
+5. 最後，如果位置和連結不理想，這隻js也允許使用者在每頁自行修改連結和位置。
+   a. 要改連結：在整個程式碼最下面貼上：
+
+      <script>iconFloat('https://www.etmall.com.tw');</script>
+
+      這樣會讓連結改成連往https://www.etmall.com.tw，而不是行銷預設的連結，注意網址外圍要有『' '』包著。
+
+   b. 如果對位置不滿意，可以自己更改位置，在整個程式碼最下面貼上：
+
+      <script>iconFloat(0,20,30);</script>
+
+      這樣就會改定位在螢幕或者外框(視有沒有加id有沒有table而定)上方數下來20px、螢幕或者外框左邊數過來30px的位置，注意前面要加上『0,』。
+
+   c. 如果網址和位置都要改，在整個程式碼最下面貼上：
+
+      <script>iconFloat('https://www.etmall.com.tw',20,30);</script>
+
+      這樣會讓連結改成連往https://www.etmall.com.tw，並且改定位在螢幕或者外框上方數下來20px、螢幕或者外框左邊數過來30px的位置。 
+
+	have fun~     by JackDou
+-->
+<!--<div class="Area Area_hammerAD" id="Area_hammerAD">-->
+    <!--&lt;!&ndash;<div class="closeButton">&ndash;&gt;-->
+    <!--&lt;!&ndash;<a href="javascript:void(0);">×</a>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+
+    <!--<div class="box">-->
+        <!--&lt;!&ndash;<a data-title="品類日" href="https://www.momoshop.com.tw/edm/cmmedm.jsp?lpn=O3UMgBIr5Jp&amp;n=1">&ndash;&gt;-->
+        <!--<img src="https://img1.momoshop.com.tw/ecm/img/online/10/007/07/949/images/200x200_0616.png?t=1592295603085">-->
+        <!--&lt;!&ndash;</a>&ndash;&gt;-->
+    <!--</div>-->
+
+<!--</div>-->
+
+
+<!--<div class="Area Area_hammerAD" id="Area_hammerAD" style="touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); right: 0px; transform: translate3d(0px, -150px, 0px); transition-duration: 300ms;">-->
+<!--&lt;!&ndash;<div class="closeButton">&ndash;&gt;-->
+<!--&lt;!&ndash;<a href="javascript:void(0);">×</a>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+
+<!--<div class="box" style="" data-timeswitch_start="2020/06/16 00:00:00" data-timeswitch_end="2020/06/16 23:59:59" data-timeswitch_myswitch="1">-->
+<!--&lt;!&ndash;<a data-title="品類日" href="https://www.momoshop.com.tw/edm/cmmedm.jsp?lpn=O3UMgBIr5Jp&amp;n=1">&ndash;&gt;-->
+<!--<img data-size="0,0,200,200" class="lazy lazy-loaded" data-original="https://img1.momoshop.com.tw/ecm/img/online/10/007/07/949/images/200x200_0616.png?t=1592295603085" alt="" style="" src="https://img1.momoshop.com.tw/ecm/img/online/10/007/07/949/images/200x200_0616.png?t=1592295603085" data-was-processed="true">-->
+<!--&lt;!&ndash;</a>&ndash;&gt;-->
+<!--</div>-->
+
+<!--</div>-->
+
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script src="https://hammerjs.github.io/dist/hammer.min.js"></script>
+<script id="scriptIconFloat" src="float-icon.js"></script>
+
+
+
+<!--<script src="hammer-main.js" defer></script>-->
+
+</body>
+</html>

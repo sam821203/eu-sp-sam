@@ -1,0 +1,106 @@
+.modal__wrap.modal-record
+  max-width: 500px
+  border-radius: 20px
+  // border: 1px solid #000
+  // margin: 0 auto
+  // transform: translateY(-50%)
+  .modal__head
+    padding-top: 40px
+    padding-bottom: 20px
+    background-color: $gray-deep-light
+    font-size: 30px
+    text-align: center
+    border-radius: 20px 20px 0 0
+    overflow: hidden
+    img
+      // outlidvvvne: 1px solid red
+      padding: 1% 8% 0% 
+      +breakpoint-min($min-width-xl)
+        padding: 1% 12% 0%
+      // width: 80%
+
+  .modal__body
+    +pos-set(relative, zero)
+    padding-bottom: 40px
+    color: $gray-dark
+    background-color: $gray-deep-light
+    border-radius: 0 0 20px 20px
+    font-size: 16px
+    .data-record__wrap
+      padding: 0 20px
+      height: 396px
+      font-size: 16px
+      overflow: auto
+      +breakpoint-min($min-width-xl)
+        padding: 0 20px
+    .data--none
+      display: none
+      +pos-set(absolute, zero)
+      top: 50%
+      left: 50%
+      width: 100%
+      text-align: center
+      transform: translate(-50%, -50%)
+    &.none
+      .data--none
+        display: block
+    .modal__info
+      // outline: 1px solid red
+      margin: 20px auto 0
+      padding: 10px 15px
+      width: 303px
+      height: 48px
+      border: 1px solid $main-color-4
+      border-radius: 100px
+      text-align: center
+      +breakpoint-min($min-width-lg)
+        width: 200px
+      span
+        color: $main-color-4
+        font-size: 20px
+
+.data-record__wrap
+  table
+    width: 100%
+    color: $gray-deep-dark
+    tr
+      height: 36px
+      line-height: 36px
+      text-align: center
+      &:first-child
+        height: 40px
+        line-height: 40px
+        color: $gray-deep-dark
+        th
+          position: sticky
+          top: 0
+          left: 0
+          width: 170px
+          font-size: 20px
+          background-color: $gray-medium
+          box-shadow: 0 -2px 0 $gray-dark inset
+      &:nth-child(2n-1)
+        background-color: $gray-light
+      &:last-child
+        position: sticky
+        bottom: 0
+        left: 0
+        background-color: $main-color-3
+        td
+          font-weight: 600
+          &:first-child
+            text-align: right
+            span
+              padding: 0 2%
+              color: $main-color-6
+          &:last-child
+            text-align: left
+
+
+
+
+
+  // table
+    // > tr
+      // &:nth-child(2n)
+        // background-color: $main-color-5

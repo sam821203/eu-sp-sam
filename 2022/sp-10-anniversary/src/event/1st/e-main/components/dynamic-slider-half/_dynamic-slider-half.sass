@@ -1,0 +1,119 @@
+.dynamic-slider-half
+  overflow: hidden
+  .decor__wrap
+    // padding-bottom: 10%
+  .decor__item
+    &--title1
+      +pos-set(absolute, zero, 8.5%, 45%)
+      width: 11%
+      &.active
+        animation: bounce 1.2s ease-in 3
+      +breakpoint-min($min-width-xl)
+        left: calc( 50% - 45px )
+    &--title2
+      +pos-set(absolute, zero, 8.5%, 55%)
+      width: 11%
+      &.active
+        animation: bounce 1.2s .6s ease-in 3
+      +breakpoint-min($min-width-xl)
+        left: calc( 50% + 50px )
+    &--left
+      +pos-set(absolute, zero, 0%, 2%)
+      width: 17%
+      &.active
+        animation: heartBeat 2.2s ease-in infinite
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 460px)
+    &--right
+      +pos-set(absolute, zero, 5%)
+      right: 0%
+      width: 29%
+      transform-origin: bottom center
+      &.active
+        animation: rotateRightTop 1.6s linear infinite
+      +breakpoint-min($min-width-xl)
+        right: calc(50% - 470px)
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/dynamic-slider-half/bg-dynamic-slider-half.png), 100%)
+  .promo__zone
+    +aspect-ratio(960, 1273)
+    .promo__block--wrap
+      padding: 35.5% 0% 0% 2%
+    .promo__block
+      display: flex
+      justify-content: center
+      margin-bottom: 4.4%
+      .promo__box
+        width: 15%
+        margin-top: 1.5%
+      .slider__box
+        width: 85%
+        margin-top: .6%
+        +breakpoint-min($min-width-xl)
+          margin-top: 2%
+        .promo__slider
+          .product--dynamic
+            width: 100%
+            .product__block
+              padding: 1.5% 3%
+              .product__img
+                // border: 1px solid $main-e-background-color-1st-3
+                // border-bottom: none
+              .product__text
+                // border: 1px solid $main-e-background-color-1st-3
+                // border-top: none
+              +breakpoint-min($min-width-xl)
+                .product__img,
+                .product__text
+                  border-width: 2px
+              .product__name
+                padding-top: 2%
+                height: 9vw
+                font-size: 3.3vw
+                +breakpoint-min($min-width-xl)
+                  margin-bottom: 0
+                  padding: 3%
+                  height: 60px
+                  font-size: 22px
+              .product__price
+                padding: 1% 2%
+                +breakpoint-min($min-width-xl)
+                  span
+                    &:last-child
+                      font-size: 36px
+
+@keyframes rotateRightTop
+  0%, 31%, 50%
+    transform: rotate(0deg)
+  18%, 43%
+    transform: rotate(-5deg)
+
+@keyframes heartBeat
+  0%, 15.5%, 30%, 100%
+    transform: scale(1)
+  9%, 21.5%
+    transform: scale(1.2)
+
+@keyframes large-moveY
+  0%, 100%
+    transform: translateY(0%) scale(1)
+  50%
+    transform: translateY(-5%)
+
+@keyframes bounce
+  0%, 20%, 53%, to
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+    transform: translateZ(0)
+  40%, 43%
+    animation-timing-function: cubic-bezier(.755, .05, .855, .06)
+    transform: translate3d(0, -30px, 0) scaleY(1.1)
+  70%
+    animation-timing-function: cubic-bezier(.755, .05, .855, .06)
+    transform: translate3d(0, -15px, 0) scaleY(1.05)
+  80%
+    transition-timing-function: cubic-bezier(.215, .61, .355, 1)
+    transform: translateZ(0) scaleY(.95)
+  90%
+    transform: translate3d(0, -4px, 0) scaleY(1.02)

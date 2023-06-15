@@ -1,0 +1,26 @@
+//- TODO: API:
+//- data-src="CustPoint"，點數值，值限為0
+//- class="jsLoginText"，登入提示訊息
+
+section#loyaltyCard.loyalty__wrap.m-bottom--collect(data-title="我的集點卡")
+  .layout--main
+    .loyalty__block
+      .decor__top
+        img(src="event/1st/e-main/components/loyalty-card/decor-card-top.png", alt="")
+
+      .loyalty__box
+        .point__wrap
+          .point__head 我的點數
+          .point__body
+            .point__box
+              span.point(data-src="CustPoint") 0
+              span 點
+            .login__error.jsLoginText
+              span 請登入會員
+        .rule__wrap
+          .rule__box
+            img(src="event/1st/e-main/components/loyalty-card/collect-rule.png", alt="集點規則")
+
+      .decor__bottom
+        img(src="event/1st/e-main/components/loyalty-card/decor-card-bottom.png", alt="")
+

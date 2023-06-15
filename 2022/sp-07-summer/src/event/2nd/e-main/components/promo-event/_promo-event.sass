@@ -1,0 +1,164 @@
+.promo__group--promo-event
+  +pos-set(relative)
+  .decor__wrap
+    .decor__item
+      +pos-set(absolute, base, -6%, 5%)
+      width: 90%
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 404px)
+        width: auto
+  .promo__wrap
+    +aspect-ratio(960, 1106)
+  .promo__zone
+    +pos-set(relative, zero)
+    padding: 5% 4% 0
+    +bg-set(url(event/2nd/e-main/components/promo-event/bg-promo-event.png), 100%)
+    .promo__block
+      padding-top: 3.5%
+      img
+        width: 100%
+        +breakpoint-min($min-width-xl)
+          width: auto
+      li:first-child,
+      li:last-child
+        margin: auto
+        &:hover
+          transform: translateY(-2px)
+          filter: brightness(1.1)
+      li:nth-child(2)
+        .promo__item:hover
+          transform: translateY(-2px)
+          filter: brightness(1.1)
+      .promo__box
+        display: flex
+        justify-content: space-around
+        margin-bottom: 6.5%
+        li:first-child,
+        li:nth-child(3)
+          width: 22%
+        li:first-child
+          img
+            padding: 6% 8% 0% 14%
+            +breakpoint-min($min-width-xl)
+              padding: 21% 6.5% 10% 15%
+        li:last-child
+          img
+            padding: 3% 18% 0% 16%
+            +breakpoint-min($min-width-xl)
+              padding: 6% 16% 0% 14%
+        .promo__items
+          width: 56%
+          .promo__item:first-child
+            padding-top: 4%
+            margin-bottom: 28%
+            img
+              +padding-x(24.5%, 26%)
+          .promo__item:last-child
+            padding: 0 4% 4% 0
+            img
+              +padding-x(5.5%, 2%)
+      .event__wrap
+        display: flex
+        padding-top: 8%
+        >ul
+          +flex-container
+          width: 24%
+        ul:nth-child(2)
+          width: 52%
+          padding-bottom: 5%
+          .promo__item
+            width: 31%
+            margin-bottom: 2%
+        .event__item
+          padding-bottom: 8%
+        .swiper-container
+          width: 90%
+          .swiper-slide
+            padding: 0 12%
+            a
+              +flex-container
+.sand-flash-shake
+  animation: sand-flash-shake 1s infinite ease-in
+
+@keyframes moveY
+  0%
+    transform: scale(1)
+    filter: brightness(1) saturate(1)
+  50%
+    transform: scale(.95)
+    filter: brightness(1.2) saturate(1.2)
+  100%
+    transform: scale(1)
+    filter: brightness(1) saturate(1)
+
+@keyframes jackInTheBox
+  0%
+    opacity: 0
+    transform: scale(.1) rotate(20deg)
+    transform-origin: center bottom
+  50%
+    transform: rotate(-10deg)
+  70%
+    transform: rotate(3deg)
+  to
+    opacity: 1
+    transform: scale(1)
+
+@keyframes jackInTheBox2
+  0%
+    opacity: 0
+    transform: scale(.1) rotate(10deg)
+    transform-origin: center bottom
+  50%
+    transform: rotate(-10deg)
+  70%
+    transform: rotate(3deg)
+  to
+    opacity: 1
+    transform: scale(1)
+
+@-webkit-keyframes sand-flash-shake
+  0%
+    -webkit-transform: translateX(0)
+    transform: translateX(0)
+  6.5%
+    -webkit-transform: translateX(-2px)
+    transform: translateX(-2px)
+  18.5%
+    -webkit-transform: translateX(1px)
+    transform: translateX(1px)
+  31.5%
+    -webkit-transform: translateX(-1px)
+    transform: translateX(-1px)
+  43.5%
+    -webkit-transform: translateX(1px)
+    transform: translateX(1px)
+  50%
+    -webkit-transform: translateX(0)
+    transform: translateX(0)
+  66% 
+    -webkit-transform: translateX(1px)
+    transform: translateX(1px)
+
+@keyframes sand-flash-shake
+  0%
+    -webkit-transform: translateX(0)
+    transform: translateX(0)
+  6.5%
+    -webkit-transform: translateX(-2px)
+    transform: translateX(-2px)
+  18.5%
+    -webkit-transform: translateX(1px)
+    transform: translateX(1px)
+  31.5%
+    -webkit-transform: translateX(-1px)
+    transform: translateX(-1px)
+  43.5%
+    -webkit-transform: translateX(1px)
+    transform: translateX(1px)
+  50%
+    -webkit-transform: translateX(0)
+    transform: translateX(0)
+  72% 
+    -webkit-transform: translateX(1px)
+    transform: translateX(1px)

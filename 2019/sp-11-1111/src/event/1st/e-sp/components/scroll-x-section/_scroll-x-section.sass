@@ -1,0 +1,26 @@
+.scroll-x
+  +bg-set(url("~event/1st/e-sp/components/scroll-x-section/bg-scroll-x-m.png"), 99%)
+  .scroll-x__wrap
+    padding: 0.75% 0
+    width: 96.8%
+    .scroll-x__zone
+      +display-flex
+      +nav-overflow-x
+      li
+        +flex(1, 0, 28%)
+
+  +breakpoint-min($min-width-xl)
+    +bg-set(url("~event/1st/e-sp/components/scroll-x-section/bg-scroll-x.png"))
+    .scroll-x__wrap
+      margin-left: auto
+      margin-right: auto
+      padding: 0
+      width: 864px
+      .scroll-x__zone
+        overflow-x: visible
+        li
+          +flex(1, 0, 20%)
+          padding: 7px 0
+          img
+            width: 100%
+

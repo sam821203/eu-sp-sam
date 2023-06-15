@@ -1,0 +1,46 @@
+.promo__group--bn-section
+  +pos-set(relative, zero)
+  overflow: hidden
+  .promo__decor
+    +pos-set(relative, zero)
+    .decor__item
+      +pos-set(absolute, under, 0%, 0%)
+
+  .promo__wrap
+    +aspect-ratio(960, 800)
+    +bg-set(url("~event/2nd/e-main/components/bn-section/bg-bn-section.png"), 100%)
+    .promo__zone
+      .decor__wrap
+        +pos-set(relative, zero)
+        pointer-events: none
+      // .promo__decor
+
+    .promo__block
+      display: flex
+      justify-content: space-around
+      padding: 49% 4% 0
+      .promo__box
+        width: 30%
+        cursor: pointer
+        &:last-child
+          width: 20%
+        &:hover
+          transition: all 0.6s ease
+          transform: translateY(-1%)
+          filter: brightness(1.2)
+
+.shakeY
+  animation: shakeY 1s both 1
+
+@keyframes shakeY
+  0%, 100%
+    transform: translateY(0%)
+  25%
+    transform: translateY(2%)
+    filter: brightness(1.2)
+  50%
+    transform: translateY(0%)
+    filter: brightness(1.2)
+  75%
+    transform: translateY(-2%)
+    filter: brightness(1.2)

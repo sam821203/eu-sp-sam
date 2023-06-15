@@ -1,0 +1,154 @@
+// ==========================================================================
+// Button
+// ==========================================================================
+// Button core
+// ==========================================================================
+.btn
+  display: inline-block
+  zoom: 1
+  line-height: normal
+  white-space: nowrap
+  vertical-align: middle
+  text-align: center
+  cursor: pointer
+  -webkit-user-drag: none
+  user-select: none
+
+.btn::-moz-focus-inner
+  padding: 0
+  border: 0
+
+// Button Style
+// ==========================================================================
+.btn
+  border: 1px solid transparent
+  padding: 0 0.4rem
+  text-align: center
+  @include font-size($fz-16)
+
+.btn:focus
+  outline: 0
+
+.btn-hidden
+  display: none
+
+.btn--primary
+  color: $primary-medium
+  border-color: $primary-medium
+  font-weight: bold
+  &:hover, &:focus
+    color: lighten($primary-medium, 10%)
+    border-color: lighten($primary-medium, 10%)
+
+// .bt-lv
+// 	background-color: $gr2-dp-light
+// 	border: 1px solid $pr-medium
+// 	color: $pr-medium
+// 	@include border-radius(2px)
+
+// .bt-lv2
+// 	&:hover, &:focus
+// 		background-color: rgba($pr-medium, 0.1)
+// 		color: $pr-medium
+
+// .bt-lv
+// 	background-color: $gr2-dp-light
+// 	border: 1px solid $gr-dark
+// 	color: $gr-dark
+// 	@include border-radius(2px)
+
+// .bt-lv3
+// 	&:hover, &:focus
+// 		background-color: rgba($gr-darkest, 0.1)
+// 		color: $gr-dark
+
+// .bt-black
+// 	background-color: rgba($gr-dp-dark, 0.8)
+// 	color: $gr2-dp-light
+// 	@include border-radius(2px)
+// 	&:hover, &:focus
+// 		background-color: rgba($gr-dp-dark, 0.9)
+
+// // .bt-black
+// // 	&:hover, &:focus
+// // 		background-color: rgba($pr-medium, 1)
+// //
+// //
+
+// .bt-normal
+// 	background-color: $gr-dp-light
+// 	border: 1px solid $gr-lightest
+// 	color: $gr-dark
+// 	@include border-radius(2px)
+
+// .bt-normal
+// 	&:hover, &:focus
+// 		color: $gr-dark
+// 		background-color: $gr-lighter
+// 		border: 1px solid $gr-light
+
+// .bt-primary, .bt-primary-active
+// 	&:hover, &:focus
+// 		background-color: $pr-dark
+
+// .bt-disabled
+// 	background-color: $gr2-lighter
+// 	border: 1px solid $gr-lightest
+// 	cursor: not-allowed
+// 	color: $gr-medium
+// 	@include border-radius(2px)
+// 	&:hover, &:focus, &:activee
+// 		cursor: not-allowed
+// 		color: $gr-medium
+// 		background-color: $gr2-lighter
+// 		border: 1px solid $gr-lightest
+
+// .bt-fb
+// 	color: $gr2-dp-light
+// 	background-color: $th-darker
+// 	@include border-radius(2px)
+// 	&:hover, &:focus
+// 		color: $gr2-dp-light
+// 		background-color: $th-darkest
+// 		border: 1px solid $th-darkest
+
+// // Button Size
+// // ==========================================================================
+
+// .bt-smal
+// 	@include font-size($fz-13)
+// 	padding: 5px 10px
+
+// .bt-larg
+// 	@include font-size($fz-18)
+
+// // .btns-cente
+// // 	text-align: center
+// // 	.bt
+// // 		margin: 0 5px
+// //
+// //
+
+// // Button theme of search
+// // ==========================================================================
+// .bt-search
+// 	background-color: $pr-darker
+// 	@include border-radius(2px)
+// 	&:hover, &:focus
+// 		background-color: $pr-darkest
+
+// .bt-search24
+// 	background-color: $pr-lighter
+// 	@include border-radius(2px)
+// 	&:hover, &:focus
+// 		background-color: $pr-light
+
+
+// // Button theme of increase-price
+// // ==========================================================================
+// .bt-transparent
+// 	background-color: transparent
+// 	@include border-radius(2px)
+// 	border: 1px solid $gr2-dp-light
+// 	&:hover, &:focus
+// 		background-color: $th-darkest

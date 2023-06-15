@@ -1,0 +1,41 @@
+.promo__group--promo-event
+  +pos-set(relative, zero)
+  overflow: hidden
+  .promo__body
+    +pos-set(relative, zero)
+    +bg-set(url("~event/2nd/e-sp/components/promo-event/bg-promo.png"), 100%)
+    .event__wrap
+      display: flex
+      padding: 2.3% 10% 5%
+      justify-content: space-between
+      > li
+        width: 49.5%
+        a
+          text-align: center
+        &:active,
+        &:hover
+          filter: hue-rotate(-15deg)
+      +breakpoint-min($min-width-xl)
+        padding: 2.3% 8.4% 5%
+        > li
+          width: 50%
+
+    .decoration--promo
+      +pos-set(absolute, second)
+      bottom: 11%
+      right: 1%
+      width: 15%
+      pointer-events: none
+
+    +breakpoint-min($min-width-xl)
+      .event__wrap
+        padding: 2.3% 8.4% 5%
+        > li
+          width: 50%
+
+      .decoration--promo
+        +pos-set(absolute, second)
+        bottom: 9%
+        right: -4%
+        width: 20%
+        pointer-events: none

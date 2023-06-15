@@ -1,0 +1,106 @@
+.promo__event
+  padding: 6.8% 6% 11%
+  +bg-set(url(~event/3rd/e-main/components/promo-event/bg-promo.png), 98%)
+  .event__wrap
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    padding: 0
+    li
+      flex: 0 0 49.5%
+      transition: all 0.5s
+      &:hover
+        transform: translateY(-3%)
+        filter: brightness(130%)
+    li.promo__discount
+      position: relative
+      .promo__go, .promo__good
+        width: auto
+        position: absolute
+        z-index: 11
+      .promo__go
+        right: calc(100vw * 0.02)
+        top: calc(100vw * 0.163)
+        width: 22%
+      .promo__good
+        right: calc(100vw * 0.012)
+        top: calc(100vw * 0.014)
+        width: 47%
+      &:hover
+        filter: none
+        transform: translateY(0)
+        .promo__go, .promo__good
+          animation: tada 1s
+  +breakpoint-min($min-width-xl)
+    padding: 78px 50px 102px
+    .event__wrap
+      li.promo__discount
+        position: relative
+        .promo__go, .promo__good
+          position: absolute
+          z-index: 11
+        .promo__go
+          right: 45px
+          top: 175px
+        .promo__good
+          right: 12px
+          top: 12px
+        &:hover
+          filter: none
+          transform: translateY(0)
+          .promo__go, .promo__good
+            animation: tada 1s
+    .wrap__pt
+      padding-top: 75px
+.title__decoration--move
+  position: relative
+  z-index: 2
+  pointer-events: none
+  //+bg-set(url("~event/3rd/e-main/components/hero-section/decoration-step-3.png"))
+  background-repeat: no-repeat
+  display: block
+  margin: -18% auto calc(100vw * 0.07) calc(100vw * 0.29)
+  width: calc(100vw * 0.545)
+  height: calc(100vw * 0.228)
+  //background-size: 100%
+  //animation: men-move-mo 1s infinite step-start
+  +breakpoint-min($min-width-xl)
+    //animation: men-move 1s infinite step-start
+    background-size: auto
+    margin: -20% auto 0 270px
+    width: 523px
+    height: 219px
+@keyframes men-move-mo
+  0%
+    background-position: 0 0
+  50%
+    background-position: 0 calc(100vw * -0.228)
+@keyframes men-move
+  0%
+    background-position: 0 0
+  50%
+    background-position: 0 -219px
+@keyframes tada
+  from
+    -webkit-transform: scale3d(1, 1, 1)
+    transform: scale3d(1, 1, 1)
+  10%,
+  20%
+    -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg)
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg)
+
+  30%,
+  50%,
+  70%,
+  90%
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)
+
+  40%,
+  60%,
+  80%
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)
+  to
+    -webkit-transform: scale3d(1, 1, 1)
+    transform: scale3d(1, 1, 1)

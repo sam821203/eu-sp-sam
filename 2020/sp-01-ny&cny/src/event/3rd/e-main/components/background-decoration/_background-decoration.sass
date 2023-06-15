@@ -1,0 +1,44 @@
+// parallax css
+// =================================
+.deoration--background
+  display: none
+  // z-index: base(1)以上可蓋在主視覺上，zero(0)可在主視覺下，預設都在logo下(logo是500)
+  +pos-set(absolute !important, zero, 0, 0)
+  overflow: hidden
+  pointer-events: none
+
+  +breakpoint-min($min-width-3xl)
+    display: block
+
+.decoration__wrap
+  width: 100%
+  +breakpoint-min($min-width-3xl)
+    height: 100%
+
+.decoration__item
+  +breakpoint-min($min-width-3xl)
+    // TODO: 每次修改parallax img的寬以符合實際圖片尺寸
+    position: absolute
+
+    &.item--left
+      top: -3%
+      left: -0.5%
+      .item__box
+        width: 671px
+        height: 351px
+        +bg-set(url(~event/3rd/e-main/components/background-decoration/decoration-sakura-l.png))
+        transform-origin: left
+        animation: key-wind-rotate-2 10s 0.5s infinite ease-in-out
+    &.item--right
+      position: absolute
+      top: -1%
+      right: 0
+      .item__box
+        width: 518px
+        height: 259px
+        +bg-set(url(~event/3rd/e-main/components/background-decoration/decoration-sakura-r.png))
+        transform-origin: top right
+        animation: key-wind-rotate-2 10s infinite ease-in-out
+
++key-wind-rotate(-4, 6, key-wind-rotate-2)
+

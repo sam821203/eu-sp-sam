@@ -1,0 +1,20 @@
+- var goodsFlipDataE = [{link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201911/SP_1113897/w/index.html", imgSrc: "~event/2nd/e-sp/components/goods-slider-flip/items/pic-1-min.png", alt: "專櫃大牌狂降1折up"},{link: "", imgSrc: "~event/2nd/e-sp/components/goods-slider-flip/items/pic-1-min.png", alt: ""},{link: "", imgSrc: "~event/2nd/e-sp/components/goods-slider-flip/items/pic-3-min.png", alt: ""},{link: "", imgSrc: "~event/2nd/e-sp/components/goods-slider-flip/items/pic-2-min.png", alt: ""},{link: "", imgSrc: "~event/2nd/e-sp/components/goods-slider-flip/items/pic-5-min.png", alt: ""},{link: "", imgSrc: "~event/2nd/e-sp/components/goods-slider-flip/items/pic-4-min.png", alt: ""},{link: "", imgSrc: "~event/2nd/e-sp/components/goods-slider-flip/items/pic-7-min.png", alt: ""},{link: "", imgSrc: "~event/2nd/e-sp/components/goods-slider-flip/items/pic-1-min.png", alt: ""}, ]
+
+- var goodsFlipDataU = [{link: "http://www.u-mall.com.tw/XML/content/DMSetting/Final/201909/SP_1105066/w/index.html", imgSrc: "~event/2nd/e-sp/components/goods-slider-flip/items/product-1.png", alt: "好神拖-全館8折起搞定居家大小事"}, {link: "https://www.u-mall.com.tw/p/68011", imgSrc: "~event/2nd/e-sp/components/goods-slider-flip/items/product-2.png", alt: "台塑生醫Dr’s Formula全館55折起買大送小"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201909/SP_1105098/w/index.html", imgSrc: "~event/2nd/e-sp/components/goods-slider-flip/items/product-3.png", alt: "亞培-滿萬送吸塵器"}, {link: "https://www.u-mall.com.tw/c3/111115", imgSrc: "~event/2nd/e-sp/components/goods-slider-flip/items/product-4.png", alt: "Samsung Galaxy Note10/10+新機上市，開賣好禮登錄送"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201909/SP_1105061/w/index.html", imgSrc: "~event/2nd/e-sp/components/goods-slider-flip/items/product-5.png", alt: "Acer筆電滿兩萬登記抽Switch lite"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201909/SP_1105075/w/index.html", imgSrc: "~event/2nd/e-sp/components/goods-slider-flip/items/product-6.png", alt: "Panasonic登記送王品餐券/氣炸鍋"}, {link: "https://www.u-mall.com.tw/c3/56009", imgSrc: "~event/2nd/e-sp/components/goods-slider-flip/items/product-7.png", alt: "AL老工匠-名媛AA頂級羊真皮水餃包"}, {link: "https://www.u-mall.com.tw/np/67351", imgSrc: "~event/2nd/e-sp/components/goods-slider-flip/items/product-8.png", alt: "麗星郵輪玩日本"}, ]
+
+- var goodsFlipData = isU? goodsFlipDataU : goodsFlipDataE
+
+.goods__wrap--flip
+  //- .goods__decoration.goods__decoration--right
+  //- .goods__decoration.goods__decoration--left
+  .promo__slider
+    #sliderGoodsFlip.swiper-container
+      ul.swiper-wrapper
+        each data in goodsFlipData
+          li.swiper-slide
+            a(href= data.link, title= data.alt)
+              img(src= data.imgSrc, alt= data.alt)
+      //- #sliderGoodsFlipPager.swiper-pager-white.swiper-pagination
+    //- #sliderGoodsFlipPrev.swiper-button-white.swiper-button-prev
+    //- #sliderGoodsFlipNext.swiper-button-white.swiper-button-next
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 1. 加CSS link -->
+    <link href="overlay.css" rel="stylesheet">
+    <!-- 1. end -->
+
+    <style>*{box-sizing:border-box;margin:0;padding:0}img{width:100%}.layout--main{margin-left:auto;margin-right:auto;max-width: 960px}</style>
+  </head>
+  <body>
+
+    <!-- 2. 在main tag前面貼上overlay區塊，並填上網址、title、alt -->
+    <div class="overlay__wrap" id="overlayWrap">
+      <div class="overlay__mask" id="overlayMask"></div>
+      <div class="overlay__decoration"><canvas class="canvas--firework" id="canvasFirework"></canvas></div>
+      <div class="overlay__body" id="overlayBody"><button class="btn--close" id="btnClose"></button><a href="https://www.etmall.com.tw" title="東森購物"><img src="overlay-content.png" alt="東森購物"></a></div>
+    </div>
+    <!-- 2. end -->
+
+    <main class="sp__wrap sp__wrap--apple" id="spWrap">
+      <div class="layout--main"><img src="demo.jpg" alt=""></div>
+    </main>
+
+    <!-- 3. 在</body>前面貼上script，並在ot=後填蓋板持續時間的毫秒數(範例是3000毫秒=3秒，填0或是少了ot這行會是預設7000毫秒=7秒) -->
+    <script>var ot=3000;</script>
+    <script src="overlay.js"></script>
+    <!-- 3. end -->
+
+  </body>
+</html>

@@ -1,0 +1,28 @@
+doctype html
+html(lang='zh-Hant-TW')
+  head
+    include /utils/pug/_total-head
+  body
+    main#spWrap.sp__wrap
+      - var firstItem = "我要報名"
+      include /layout/header/_header
+
+      //- hero section
+      //- ===========================
+      - var info = true //- TODO: 切換報名貓掌鈕
+
+      include /components/hero-section/_hero-section
+        if info
+        .cta__box
+          a.btn--cta(href="", title="點我報名")
+            img(src="~components/hero-section/btn-cta.png", alt="點我報名")
+
+        .decoration__wrap
+          img(src="~pages/info/decoration-vote.png", alt="")
+
+      //- //- other components
+      //- //- ===========================
+      include /components/time-section/_time-section
+      include /components/info-section/_info-section
+      include /components/rule-section/_rule-section
+

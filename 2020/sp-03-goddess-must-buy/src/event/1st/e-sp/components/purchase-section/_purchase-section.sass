@@ -1,0 +1,40 @@
+.purchase__group
+  margin-top: -4%
+  .purchase__zone
+    // +bg-set(null, cover)
+  .purchase__title
+    margin-top: 2%
+
+  .purchase__wrap
+    //padding-top: 65%
+    +bg-set(url("~event/1st/e-sp/components/purchase-section/purchase__bg.png"),100%)
+    text-align: center
+    margin: 0 auto
+    height: calc(100vw * 0.67)
+    ul
+      margin: 0 auto
+      display: flex
+      width: 86%
+      justify-content: center
+      .purchase__li
+        width: 31%
+        flex: 1 0 31%
+        margin: 1.5%
+        margin-top: 19%
+        transition: all 0.5s
+        &:hover,
+        &:active
+          filter: brightness(120%)
+          img
+            transition: all 0.5s
+            transform: rotateY(360deg)
+  +breakpoint-min($min-width-lg)
+    .purchase__zone
+      background-size: auto
+      //padding-top: 30%
+  +breakpoint-min($min-width-xl)
+    margin-top: -20px
+    .purchase__wrap
+      height: 650px
+    // +bg-set(url("~components/bank-section/2560bg-05.jpg"))
+

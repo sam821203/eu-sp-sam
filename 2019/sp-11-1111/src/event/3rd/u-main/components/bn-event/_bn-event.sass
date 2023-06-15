@@ -1,0 +1,94 @@
+
+.promo__group
+  .promo__zone
+    overflow: hidden
+  .promo__wrap
+    +pos-set(relative, zero)
+    .promo__slider
+      +pos-set(absolute, base, 0, 0)
+      width: 100%
+      height: 100%
+  +breakpoint-min($min-width-xl)
+    background-size: auto
+
+
+.promo__group-7
+  margin-top: 2%
+  padding: 0 2%
+  a
+    display: block
+  .promo__wrap
+    background: center 0 url("~components/bn-event/bg-bn.png") no-repeat
+    background-size: contain
+    padding-top: 68%
+    .promo__slider
+      top: 30%
+      width: 90%
+      height: 64%
+      left: 50%
+      transform: translateX(-50%)
+      .swiper-slide
+        a
+          transform: translateY(-2.5%) scale(0.9)
+        +breakpoint-min($min-width-xl)
+          width: 50%
+          a
+            transform: scale(0.95) translateY(33%)
+    .promo__bngroup-prev, .promo__bngroup-next
+      width: calc(100vw * 0.04)
+      height: calc(100vw * 0.04)
+      margin-top: calc(100vw * 0.055)
+      background-size: calc(100vw * 0.04) calc(100vw * 0.06)
+      opacity: 0
+    .promo__bngroup-prev
+      margin-left: 0
+    .promo__bngroup-next
+      margin-right: 0
+    .promo-pager
+      bottom: calc(100vw * 0.065)
+      left: 50%
+      transform: translateX(-50%)
+      .swiper-pagination-bullet
+        margin: 0 2px
+        width: 6px
+        height: 6px
+        opacity: .8
+        background-color: #ffffff
+      .swiper-pagination-bullet-active
+        background-color: #ff82bc
+        opacity: 1
+
+  +breakpoint-min($min-width-lg)
+    margin-top: 30px
+    .promo__wrap
+      padding-top: 62%
+      background: center 0 url("~components/bn-event/bg-bn-web.png") no-repeat
+      background-size: 100% auto
+      padding-top: 43%
+      .promo__slider
+        top: 33%
+        img
+          width: 100%
+      .promo__bngroup-prev, .promo__bngroup-next
+        width: 27px
+        height: 44px
+        margin-top: -20px
+        background-size: 27px 44px
+      .promo__bngroup-prev
+        margin-left: 15px
+      .promo__bngroup-next
+        margin-right: 15px
+
+      .promo-pager
+        bottom: 70px
+        left: 50%
+        transform: translateX(-50%)
+        .swiper-pagination-bullet
+          margin: 0 4px
+          width: 10px
+          height: 10px
+
+  +breakpoint-min($min-width-xl)
+    .promo__wrap
+      .promo__slider
+        top: 15%

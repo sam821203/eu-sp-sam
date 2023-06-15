@@ -1,0 +1,26 @@
+.promo__group--bn-section
+  +pos-set(relative, zero)
+  overflow: hidden
+  .promo__wrap
+    +aspect-ratio(960, 764)
+    +bg-set(url("~event/1st/e-main/components/bn-section/bg-bn-section.png"), 100%)
+    margin-top: -22%
+    .promo__zone
+      // .promo__decor
+    .decor__wrap
+      +pos-set(absolute, zero, 4%, 0%)
+      width: 36%
+
+    .promo__block
+      padding: 9.4% 2.7% 0 1.7%
+      // +breakpoint-min($min-width-xl)
+      //   padding-right: 
+      //   padding-left: 
+      .promo__box
+        cursor: pointer
+        &:hover
+          transition: all 0.6s ease
+          transform: translateY(-1%)
+          filter: brightness(1.2)
+
+    

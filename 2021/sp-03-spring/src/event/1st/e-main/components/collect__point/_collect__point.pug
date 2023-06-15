@@ -1,0 +1,43 @@
+//- TODO: 給別的component引入時不需要前兩行要切換
+//- section.promo__group.promo__group--bn-special.m-bottom--md
+//- 集點加價購
+- var collectPointUrl = {etmall: "https://www.etmall.com.tw/Activity/CollectPointExchangeActivity/20210367db50d5"}
+
+- var collectPointLink = collectPointUrl.etmall
+.promo__slider.collect__point
+  .decoration--flower.move__2
+    img#scrollDoubleSlider_2(src="~assets/img/scroll__tree.png", alt="")
+  .promo__style3--bg
+  .layout--main
+    section.collect__point__wrap-1
+      #sliderCollectPoint-block1.swiper-container
+        ul.swiper-wrapper
+          li.swiper-slide
+            a(href= collectPointLink, title="集點加價購")
+              img(src="~event/1st/e-main/components/collect__point/items/collect__point-promo-01-1.png", alt="集點加價購")
+
+      //#sliderCollectPointPager-block1.collect__point-pager.swiper-pagination
+
+    section.collect__point__wrap-2
+      #sliderCollectPoint-block2.swiper-container
+        ul.swiper-wrapper
+          li.swiper-slide
+            a(href=collectPointLink, title="東森幣150枚")
+              img.swiper-lazy(data-src="~event/1st/e-main/components/collect__point/items/collect__point-promo-02-1.png", alt="東森幣150枚",src="~assets/img/1x1_low.png")
+          li.swiper-slide
+            a(href=collectPointLink, title="契爾氏冰河醣蛋白保濕露")
+              img.swiper-lazy(data-src="~event/1st/e-main/components/collect__point/items/collect__point-promo-02-2.png", alt="契爾氏冰河醣蛋白保濕露",src="~assets/img/1x1_low.png")
+          li.swiper-slide
+            a(href=collectPointLink, title="PowerFalcon智能充電器")
+              img.swiper-lazy(data-src="~event/1st/e-main/components/collect__point/items/collect__point-promo-02-3.png", alt="PowerFalcon智能充電器",src="~assets/img/1x1_low.png")
+          li.swiper-slide
+            a(href=collectPointLink, title="全站折價券100元")
+              img.swiper-lazy(data-src="~event/1st/e-main/components/collect__point/items/collect__point-promo-02-4.png", alt="全站折價券100元" ,src="~assets/img/1x1_low.png")
+          li.swiper-slide
+            a(href=collectPointLink, title="亞培安素綜合嚐鮮組")
+              img.swiper-lazy(data-src="~event/1st/e-main/components/collect__point/items/collect__point-promo-02-5.png", alt="亞培安素綜合嚐鮮組",src="~assets/img/1x1_low.png")
+          li.swiper-slide
+            a(href=collectPointLink, title="全家美式咖啡")
+              img.swiper-lazy(data-src="~event/1st/e-main/components/collect__point/items/collect__point-promo-02-6.png", alt="全家美式咖啡",src="~assets/img/1x1_low.png")
+
+      #sliderCollectPointPager-block2.collect__point-pager-2.swiper-pagination

@@ -1,0 +1,23 @@
+- var scrollXSectionE = [{link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201910/SP_1113980/w/index.html", imgSrc: "~event/1st/e-main/components/scroll-x-section/items/brand-logo-1.jpg", alt: "Dyson"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201911/SP_1114078/w/index.html", imgSrc: "~event/1st/e-main/components/scroll-x-section/items/brand-logo-2.jpg", alt: "LG"}, {link: "https://www.etmall.com.tw/p/84351", imgSrc: "~event/1st/e-main/components/scroll-x-section/items/brand-logo-3.jpg", alt: "歐舒丹"}, {link: "https://www.etmall.com.tw/p/67031", imgSrc: "~event/1st/e-main/components/scroll-x-section/items/brand-logo-4.jpg", alt: "EASY SHOP"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201910/SP_1113987/w/index.html", imgSrc: "~event/1st/e-main/components/scroll-x-section/items/brand-logo-5.jpg", alt: "象印"}, {link: "https://www.etmall.com.tw/np/83936", imgSrc: "~event/1st/e-main/components/scroll-x-section/items/brand-logo-6.jpg", alt: "台塑生醫"}, {link: "https://www.etmall.com.tw/p/84924", imgSrc: "~event/1st/e-main/components/scroll-x-section/items/brand-logo-7.jpg", alt: "Samsonite"}, {link: "https://www.etmall.com.tw/p/84429", imgSrc: "~event/1st/e-main/components/scroll-x-section/items/brand-logo-8.jpg", alt: "妙管家"}, {link: "https://www.etmall.com.tw/c3/133209", imgSrc: "~event/1st/e-main/components/scroll-x-section/items/brand-logo-9.jpg", alt: "realme"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201911/SP_1113972/w/index.html", imgSrc: "~event/1st/e-main/components/scroll-x-section/items/brand-logo-10.jpg", alt: "日立"},]
+
+- var scrollXSectionU = [{link: "notyet", imgSrc: "~event/1st/e-main/components/scroll-x-section/items/brand-logo-1.jpg", alt: ""}, {link: "notyet", imgSrc: "~event/1st/e-main/components/scroll-x-section/items/brand-logo-2.jpg", alt: ""}, {link: "notyet", imgSrc: "~event/1st/e-main/components/scroll-x-section/items/brand-logo-3.jpg", alt: ""}, {link: "notyet", imgSrc: "~event/1st/e-main/components/scroll-x-section/items/brand-logo-4.jpg", alt: ""}, ]
+
+- var scrollXSection = isU? scrollXSectionU : scrollXSectionE
+
+section.promo__group.promo__group--scroll-x.m-bottom--xs(data-title="品牌活動")
+  .layout--main
+    #sliderScrollX.scroll-x__wrap.swiper-container
+      ul.scroll-x__zone.swiper-wrapper
+        each data, index in scrollXSection
+          //- - var anchorId = 'scrollXAnchor' + (index + 1)
+          //- - var imgId = 'scrollXImg' + (index + 1)
+          //- li
+          //-   a(id= anchorId, href= data.link, title= data.alt)
+          //-     img(id= imgId, src= data.imgSrc, alt= data.alt)
+          li.swiper-slide
+            a(href= data.link, title= data.alt)
+              img(src= data.imgSrc, alt= data.alt)
+      //- #sliderScrollXPager.swiper-pagination-white.swiper-pagination
+    //- #sliderScrollXPrev.swiper-button-white.swiper-button-prev
+    //- #sliderScrollXNext.swiper-button-white.swiper-button-next
+

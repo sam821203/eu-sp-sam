@@ -1,0 +1,28 @@
+.header__sub-nav
+  background-color: $main-color-7
+  .sub-nav__wrap
+    display: flex
+    padding: 2.5% 5%
+    overflow-x: auto
+    &::-webkit-scrollbar
+      display: none
+    +breakpoint-min($min-width-xl)
+      position: absolute
+      z-index: map-get($zindex, zero)
+      top: 10px
+      right: 100px
+      padding: 10px 20px
+
+  .sub-nav__item
+    display: inline-block
+    white-space: nowrap
+    &:not(:last-child)
+      margin-right: 15px
+      +breakpoint-max($max-width-xxs)
+        margin-right: 3%
+  a
+    color: $gray-deep-light
+    font-size: 16px
+    &:hover,
+    &.active
+      border-bottom: 1px solid $gray-deep-light

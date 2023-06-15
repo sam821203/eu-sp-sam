@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<head>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		* {
+ 		 box-sizing: border-box; }
+  		*:before, *:after {
+    		box-sizing: border-box; }
+	    a {
+	    	display: block;
+	    	text-decoration: none;
+	    }
+		header a, section a {
+			line-height: 0;
+		}
+	    h1 {
+	    	line-height: 0;
+	    }
+		ul {
+			list-style: none;
+		}
+		img {
+			border: 0;
+		}
+		main, header, footer, section {
+			display: block;
+		}
+		body {
+			margin: 0;
+  			padding: 0;
+  			width: 100%;
+  			min-width: 1260px;
+			background-color: #ffddb1;
+		}
+
+		body, td, th {
+		font-family: Arial, Helvetica, LiHei, "Microsoft JhengHei", PMingLiU, "微軟正黑體", "新細明體", sans-serif;
+		}
+
+		.clearfix:after {
+			content: '';
+			display: block;
+			clear: both;
+			*zoom: 1;
+		}
+
+		.sp__wrap {
+			position: relative;
+			z-index: 0;
+			background: center top url(background-3.png) no-repeat;
+			background-size: 100% 85%;
+			overflow: hidden;
+		}
+
+		.sp__wrap:before {
+			content: '';
+			position: fixed;
+			z-index: -2;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 50%;
+			background: url(background-2.png)  repeat-y;
+		}
+
+		.sp__wrap:after {
+			content: '';
+			position: absolute;
+			z-index: -1;
+			top: 8%;
+			width: 100%;
+			min-width: 1260px;
+			height: 100%;
+			background: center 0 url(background-1.png)  no-repeat;
+		}
+
+		@media screen and (min-width: 1681px) and (max-width: 1920px) {
+			.sp__wrap:after {
+				background-size: 115%;
+				background-position: 50% 10%;
+			}			
+		}
+
+		.sp--1260 {
+			position: relative;
+			max-width: 1260px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+/* ============= decoration ============= */
+		.bg-decoration {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+
+		.flare {
+			position: absolute;
+			z-index: 0;
+		}
+
+		.flare1 {
+			top: -555px;
+			left: calc(50% - 855px);
+			width: 700px;
+			height: 826px;
+			background-image: url(lens-flare-1.png);
+			background-size: contain;
+			animation: 2s self-rotate;
+		}
+
+
+		.flare2 {
+			top: -245px;
+			left: calc(50% - 480px);
+			width: 317px;
+			height: 397px;
+			background-image: url(lens-flare-2.png);
+			animation: 2s self-rotate;
+		}
+
+		@keyframes self-rotate {
+			from {
+				top: -300px;
+				transform: rotate(-60deg);
+				opacity: 0;
+			}
+		}
+
+
+		.leaf {
+			position: absolute;
+			z-index: -1;
+		}
+
+		.leaf1 {
+			top: -105px;
+			left: calc(50% - 780px);
+			width: 406px;
+			height: 322px;
+			background-image: url(foreground-1.png);
+			transform-origin: right bottom;
+			animation: 20s 3.5s wind-rotate infinite ease-in-out;
+		}
+
+		.leaf2 {
+			top: 200px;
+			right: calc(50% - 800px);
+			width: 330px;
+			height: 350px;
+			background-image: url(foreground-2.png);
+			transform-origin: center bottom;
+			animation: 22s 3.6s wind-rotate infinite ease-in-out;
+		}
+
+		.leaf3 {
+			top: 80px;
+			left: -60px;
+			width: 188px;
+			height: 367px;
+			background-image: url(foreground-3.png);
+			transform-origin: left bottom;
+			animation: 15s 2.7s wind-rotate infinite ease-in-out;
+		}
+
+		.leaf4 {
+			top: -60px;
+			right: calc(50% - 500px);
+			width: 364px;
+			height: 138px;
+			background-image: url(foreground-4.png);
+			transform-origin: left top;
+			animation: 18s 3.1s wind-rotate infinite ease-in-out;
+		}
+
+		@keyframes wind-rotate {
+		  20% {
+		    transform: rotate3d(0, 0, 1, 8deg);
+		  }
+
+		  40% {
+		    transform: rotate3d(0, 0, 1, -5deg);
+		  }
+
+		  60% {
+		    transform: rotate3d(0, 0, 1, 4deg);
+		  }
+
+		  80% {
+		    transform: rotate3d(0, 0, 1, -2deg);
+		  }
+
+		  to {
+		    transform: rotate3d(0, 0, 1, 0deg);
+		  }
+		}
+
+		.crab__wrap {
+			position: absolute;
+			z-index: 1;
+			left: -161px;
+			bottom: 0;
+			width: 161px;
+			animation: 15s 5s crab-move infinite alternate ease-in-out
+		}
+		.animate-crab {
+			height: 124px;	
+			background-image: url(animate-crab.png);
+			filter: drop-shadow(0 18px 15px #8c4c23);
+			animation: 1s crab-act infinite steps(2), 1s crab-act2 infinite step-end;
+		}
+
+		@keyframes crab-act {
+			to {
+				background-position: 322px;
+			}
+		}
+
+		@keyframes crab-act2 {
+			25% {
+				transform: rotate(5deg);
+			}
+			50% {
+				transform: rotate(0deg);
+			}
+			75% {
+				transform: rotate(-5deg);
+			}
+			to {
+				transform: rotate(0deg);
+			}
+		}
+
+		@keyframes crab-move {
+
+			40% {
+				bottom: 160px;
+			}
+			49.9% {
+				transform: scale(1, 1);
+			}
+			50% {
+				transform: scale(-1, 1);
+				bottom: 160px;
+			}
+			to {
+				transform: scale(-1, 1);
+				bottom: 0px;
+				left: 100.5%;
+			}
+		}
+/* ================= header ================= */
+		.sp-logo {
+			position: absolute;
+			z-index: 20;
+			top: 20px;
+			left: 0;
+			cursor: pointer;
+		}
+		.side-info {
+			position: absolute;
+			z-index: 30;
+			top: 585px;
+			right: 10px;
+			width: 186px;
+		}
+
+		@media screen and (min-width: 1921px) {
+			.side-info {
+				top: 600px;
+			}		
+		}
+
+		.side-info img {
+			width: 100%;
+		}
+
+		.side-info a {
+			position: absolute;
+			z-index: 21;
+			left: 0;
+			width: 100%;
+		}
+
+		.side-info a:nth-child(2) {
+			top: 0;
+			height: 50%;
+		}
+
+		.side-info a:nth-child(3) {
+			bottom: 0;
+			height: 50%;
+		}
+		
+/* ================= main-visual ================= */
+		.sp-title {
+			position: relative;
+			z-index: 0;
+			padding-top: 40px;
+			height: 550px;
+		}
+
+		.animation__group img {
+			transform-style: preserve-3d;
+			animation: flip infinite alternate;
+		}
+
+		.animation__group img:first-child {
+			animation-duration: 10s;
+			animation-delay: 2.8s;
+		}
+
+		.animation__group img:nth-child(2) {
+			animation-duration: 11s;
+			animation-delay: 3s;
+		}
+
+		.animation__group img:nth-child(3) {
+			animation-duration: 10s;
+			animation-delay: 3.2s;
+		}
+
+		.animation__group img:last-child {
+			transform-origin: 68px;
+			animation-duration: 9s;
+			animation-delay: 3.5s;
+		}
+
+		/*!
+		 * animate.css -http://daneden.me/animate
+		 * Version - 3.6.0
+		 * Licensed under the MIT license - http://opensource.org/licenses/MIT
+		 *
+		 * Copyright (c) 2018 Daniel Eden
+		 */
+		@keyframes flip {
+		  from {
+		    transform: rotate3d(0, 1, 0, -360deg);
+		    animation-timing-function: ease-out;
+		  }
+
+		  10% {
+		    transform: rotate3d(0, 1, 0, -360deg);
+		    animation-timing-function: ease-out;
+		  }
+
+		  40% {
+		    transform: translate3d(0, 0, 150px) rotate3d(0, 1, 0, -190deg);
+		    animation-timing-function: ease-out;
+		  }
+
+		  45% {
+		    transform: translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg);
+		    animation-timing-function: ease-in;
+		  }
+
+		  55% {
+		    transform: translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg);
+		    animation-timing-function: ease-in;
+		  }
+
+		  90% {
+		    transform: translate3d(0, 0, 0) rotate3d(0, 1, 0, 0);
+		    animation-timing-function: ease-in;
+		  }
+		}
+
+		.animation__group img:first-child {
+			margin-left: calc(50% - 390px);
+		}
+
+		.main-title > img:last-child {
+			margin-left: calc(50% - 340px);
+		}
+
+		.title--animation {
+			position: absolute;
+			z-index: -1;
+			top: 100px;
+			left: calc(50% + 40px);
+			width: 289px;
+			height: 290px;
+			background-image: url(discount.png);
+			animation: 2.5s 2.5s bg-move infinite steps(6);
+		}
+
+		@keyframes bg-move {
+			to {
+				background-position: -1734px;
+			}
+		}
+
+/* ================= subtitle ================= */
+		.subtitle {
+			position: absolute;
+			z-index: 1;
+			top: 65px;
+			right: calc(50% - 610px);
+			width: 270px;
+			height: 483px;
+			padding: 55px 10px 10px;
+			background: url(background-sub-title.png);
+		}
+
+		@media screen and (min-width: 1921px) {
+			.subtitle {
+				top: 70px;
+			}		
+		}
+
+		.top-card {
+			margin-left: auto;
+			margin-right: auto;
+			padding: 5px;
+			background-color: #fff;
+			transition: all 0.3s;
+		}
+
+		.top-card:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 8px 13px rgba(0,0,0,0.2), 0 3px 3px rgba(0,0,0,0.35);
+		}
+
+		.more-info {
+			position: absolute;
+			z-index: 1;
+			bottom: -30px;
+			left: 10px;
+		}
+
+		.more-info:hover {
+			transform: rotate(-5deg);
+		}
+
+/* ================= main0 ================= */
+		.main0 {
+			position: relative;
+			z-index: 1;
+			padding-top: 60px;
+			width: 100%;
+			height: 190px;
+		}
+
+		@media screen and (min-width: 1921px) {
+			.main0 {
+				padding-top: 85px;
+			}		
+		}
+
+
+		.main0--bg {
+			position: relative;
+			z-index: 0;
+			margin-left: 10%;
+			padding-top: 25px;
+			padding-bottom: 25px;
+			width: 68%;
+			background-color: #93a2ff;
+			text-align: right;
+		}
+
+		.main0--bg:before, .main0--bg:after {
+			content: '';
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			width: 145px;
+			height: 145px;
+			background-color: #93a2ff;
+			border-radius: 50%;
+		}
+
+		.main0--bg:before {
+			left: 100%;
+			transform: translateX( -50%);
+		}
+
+		.main0--bg:after {
+			right: 100%;
+			transform: translateX( 50%);
+		}
+
+		.main0--info-a {
+			position: absolute;
+			z-index: 1;
+			top: -95px;
+			left: -10px;
+			width: 400px;
+		}
+
+		.main0--info-a img {
+			position: relative;
+			z-index: 1;
+		}
+
+		.main0--info-a:before {
+			content: '';
+			position: absolute;
+			z-index: 0;
+			top: 30%;
+			left: -10%;
+			width: 372px;
+			height: 140px;
+			background: url(game-intro-bg.png) no-repeat;
+		}
+
+/* ================= main-content ================= */
+		.sp-content	{
+			position: relative;
+			z-index: 20;
+			margin-top: 25px;
+			overflow: hidden;
+		}
+
+		@media screen and (min-width: 1921px) {
+			.sp-content {
+				margin-top: 50px;
+			}		
+		}
+		.main-info {
+			padding: 35px 0; 
+			height: 495px;
+			background: center top url(background-main.png) no-repeat;
+			border-radius: 70px;
+		}
+
+		.main--info-a {
+			position: relative;
+			z-index: 2;
+			float: left;
+			padding: 1.5% 2%;
+			transition: all 0.2s ease-in-out;
+		}
+
+		.main--info-a + .main--info-a {
+			margin-left: 2%;
+		}
+
+		.main--info-a:nth-child(1) {
+			margin-left: 65px;
+		}
+
+		.main--info-a:nth-child(2) {
+			padding-bottom: 2.7%;
+		}
+
+		.main--info-a:nth-child(3) {
+			margin-left: calc(65px + 0.4%);
+		}
+
+		.main--info-a:nth-child(4) {
+			margin-left: 1%;
+		}
+
+		.main--info-a:nth-child(5) {
+			margin-left: 0%;
+		}
+
+		.main--info-a:hover {
+			z-index: 10;
+			transform: scale(1.03);
+			filter: invert(100%);
+		}
+
+		.banner {
+			display: none;
+			position: relative;
+			z-index: 1;
+			transition: transform 0.3s, filter 0.3s;
+		}
+		.banner:hover {
+			transform: scale(1.02);
+			transform-origin: center;
+			filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2)) drop-shadow( 0 3px 3px rgba(0,0,0,0.35));			
+		}
+
+/* ================= table hover setting ================= */
+		td[width^="2"] {
+			transition: all 0.3s;
+		}
+
+		td[width^="2"] a {
+			transition: all 0.3s;
+		}
+
+		td[width^="2"] td {
+			transition: all 0.3s;
+		}
+
+		td[width^="2"]:hover {
+			transform: translateY(-6px);
+			box-shadow: 0 5px 10px rgba(0,0,0,0.2), 0 3px 3px rgba(0,0,0,0.35);
+		}
+		td[width^="2"]:hover a {
+			color: #68d9d7 !important;
+		}
+
+		td[width^="2"]:hover td {
+			color: #68d9d7 !important;
+		}
+
+    </style>
+
+</head>
+<body>
+	<main id="spWrap" class="sp__wrap">
+		<div class="bg-decoration">
+			<div class="flare flare1"></div>
+			<div class="flare flare2"></div>
+			<div class="leaf leaf2"></div>
+			<div class="leaf leaf3"></div>
+			<div class="leaf leaf4"></div>
+			<div class="crab__wrap"><div class="animate-crab"></div></div>
+		</div>
+		<header>
+			<div class="sp--1260">
+				<div class="sp-logo">
+					<a href="https://www.etmall.com.tw/" title="東森嚴選 -- ETMall東森購物網" target="_top">
+						<img src="logo.png" alt="東森嚴選 -- ETMall東森購物網">
+					</a>
+			  	</div>
+				<aside class="side-info">
+					<img id="lineImg" src="line-and-app.png" alt="LINE's & APP's QR-code">
+					<a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201805/SP_1104306/index.html" target="_blank"></a>
+					<a href="https://www.etmall.com.tw/Activity/WebSP?SubPage=DMSetting/Final/209912/SP_1103498/index.html" target="_blank"></a>
+				</aside>
+				<div class="subtitle">
+					<a id="ASRC" href="" title="點我購買APP專屬優惠商品！">
+						<div class="top-card">
+							<img id="IMGSRC" src="product.jpg" alt="APP專屬優惠商品">
+						</div>
+						<a href="https://www.etmall.com.tw/Activity/WebSP?SubPage=DMSetting/Final/209912/SP_1103498/index.html"><img class="more-info" src="one-more-thing.png" alt="APP滿3張訂單再送東森x大同迷你小電鍋"></a>
+					</a>
+				</div>
+				<div class="sp-title">
+					<h1 class="main-title" title="玩轉一夏，06/19-07/02暢享低價五折起，年中慶送黃金 -- ETMall東森購物網">
+						<div class="animation__group">
+							<img class="animation" src="animation-title-1.png" alt="玩">
+							<img class="animation" src="animation-title-2.png" alt="轉">
+							<img class="animation" src="animation-title-3.png" alt="一">
+							<img class="animation" src="animation-title-4.png" alt="夏">
+						</div>
+						<img src="title.png" alt="暢享低價，年中慶送黃金">
+					</h1>
+					<div class="title--animation"></div>
+				</div>
+			</div>
+		</header>
+		<section class="main0">
+			<div class="leaf leaf1"></div>
+			<div class="sp--1260">
+				<div id="main0Bg" class="main0--bg">
+					<a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201806/SP_1104718/index.html" class="main0--info-a" title="點我進入刮金塊活動頁面！">
+					<img id="main0Img" src="game-intro-1.png" alt="點我刮金塊">
+				</a>
+				<img class="main0-title" src="promo-intro.png" alt="消費不限金額即享APP抽獎機會1次">
+				</div>
+			</div>
+		</section>
+		<section class="sp-content">
+			<div class="sp--1260">
+				<div id="banner" class="banner"><a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201805/SP_1104306/index.html" target="_blank" title="LINE購物，全館最高5%回饋！"><img src="line-banner.png" alt="LINE購物，全館最高5%回饋！"></a></div>
+			</div>
+			<div class="main-info clearfix">
+				<div class="sp--1260">
+					<a href="https://www.etmall.com.tw/Activity/WebSP?SubPage=DMSetting/Final/201806/SP_1104716/index.html" class="main--info-a" title="單日累計送">
+						<img src="main-intro-1.png" alt="滿2000送600折扣金">
+					</a>
+					<a href="https://www.etmall.com.tw/Activity/WebSP?SubPage=DMSetting/Final/209912/SP_1103498/index.html" class="main--info-a" title="APP下載優惠">
+						<img src="main-intro-2.png" alt="首次登入就送，首購再送！">
+					</a>
+					<a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201806/SP_1104717/index.html" class="main--info-a" title="登入免費送">
+						<img src="main-intro-3.png" alt="萬元無敵折價券登入免費送">
+					</a>
+					<a href="https://www.etmall.com.tw/Activity/WebSP?SubPage=DMSetting/Final/201806/SP_1104370/index.html" class="main--info-a" title="刷卡享好康">
+						<img src="main-intro-4.png" alt="刷台新，滿額登錄送550折扣金">
+					</a>
+					<a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201812/SP_1104455/index.html" class="main--info-a" title="新北政府補助，全國人民共享">
+						<img src="main-intro-5.png" alt="節能家電新北政府50%省很大，購買冷氣再加碼">
+					</a>
+				</div>
+			</div>
+		</section>
+	</main>
+<script>
+	function spTimeOut() {
+		var dateNow = Date.now();
+		var dateTimeOut = new Date(2018,5,19);
+		var dateTimeOut2 = new Date(2018,5,20);
+		var banner = document.querySelector("#banner");
+		var line = document.querySelector("#lineImg");
+
+		if(dateTimeOut < dateNow && dateNow < dateTimeOut2) {
+				banner.style.display = 'block';
+				line.setAttribute('src','line-and-app-2.png');
+		}
+		setTimeout(function(){
+			line.style.opacity = 1;
+		}, 0);		
+	}		
+	spTimeOut();
+
+	function apngControl() {
+		var main0 = document.querySelector('#main0Bg');
+		var img = document.querySelector('#main0Img');
+		main0.addEventListener('mouseenter', function(){
+				hintBrowser(img);
+				img.src = 'game-intro-2.png';
+		});
+
+		main0.addEventListener('mouseleave', function(){
+				img.src = 'game-intro-1.png';
+		});
+
+		main0.addEventListener('animationEnd', removeHint);
+
+		function hintBrowser(el) {
+		  el.style.willChange = 'transform';
+		}
+
+		function removeHint() {
+		  this.style.willChange = 'auto';
+		}
+	}
+	apngControl();
+</script>
+</body>
+</html>

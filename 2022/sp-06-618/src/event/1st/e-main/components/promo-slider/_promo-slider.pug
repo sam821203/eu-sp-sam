@@ -1,0 +1,97 @@
+-
+  var promoSliderItem = [
+    {
+      link: "https://media.etmall.com.tw/sp/11425/m/index.html" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p1.png",
+      alt: "國際滿額送萬元樂透金",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/11920/m/index.html" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p2.png",
+      alt: "BOSCH超殺家電天天送",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/11387/m/index.html" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p3.png",
+      alt: "小米我家就是你家",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/14901/m/index.html" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p4.png",
+      alt: "微星完美顯色真實體驗",
+    },
+    {
+      link: "https://www.etmall.com.tw/p/170237" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p5.png",
+      alt: "台塑髮品下單送禮",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/174107" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p6.png",
+      alt: "亞培滿額送好禮",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/174187" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p7.png",
+      alt: "康寧滿額送保鮮盒",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/14680/m/index.html" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p8.png",
+      alt: "加倍享樂送樂透金",
+    },
+    {
+      link: "https://www.etmall.com.tw/p/174078" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p9.png",
+      alt: "滿額贈推車",
+    },
+    {
+      link: "https://m.etmall.com.tw/bc3/166959" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p10.png",
+      alt: "石墨烯塑崩褲二代2.5折",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/172444" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p11.png",
+      alt: "全館88折滿額送琺瑯杯",
+    },
+    {
+      link: "https://www.etmall.com.tw/bs/168847" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p12.png",
+      alt: "指定品送東森幣5%",
+    },
+    {
+      link: "https://www.etmall.com.tw/c3/167660" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p13.png",
+      alt: "滿$618送米餅球",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/14815/m/index.html" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p14.png",
+      alt: "毛孩時代滿贈再抽",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/14406/m/index.html" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p15.png",
+      alt: "FUN暑假下殺5折up",
+    },
+  ]
+
+
+section.promo__group.promo__group--promo-slider.m-bottom--lg(data-title="強檔推薦")
+  .layout--main
+    .promo__wrap
+      .decor__wrap.full-parent
+        .decor__item.decor__item--title#titlePromoSlider
+          img(src="event/1st/e-main/components/promo-slider/title-promo-slider.png", alt="")
+        .decor__item.decor__item--item#decorPromoSliderItem
+          img(src="event/1st/e-main/components/promo-slider/decor-promo-slider.png", alt="")
+      .promo__zone
+        .promo__block
+          .promo__slider.full-parent
+            .swiper-container#promoSliderItem
+              ul.swiper-wrapper
+                each data in promoSliderItem
+                  li.swiper-slide
+                    a(href= data.link, title=data.alt)
+                      img(src= data.imgSrc, alt=data.alt)

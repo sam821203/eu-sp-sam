@@ -1,0 +1,58 @@
+// ==========================================================================
+// first screen need
+// ==========================================================================
+// hero section
+@import event/current/components/hero/_hero
+
+// 一般components
+@import event/current/components/awards/_awards
+@import event/current/components/promo/_promo
+@import event/current/components/note/_note
+
+
+// ==========================================================================
+// Page
+// ==========================================================================
+body
+  +pos-set(relative)
+  background-color: $main-e-background-color-current
+  overflow-x: hidden 
+  &::before
+    content: ""
+    +pos-set(absolute, zero, 0, 0)
+    +bg-set(url(event/current/pages/index/bg-app.png), 100%)
+    +size(100%, 100%)
+    +breakpoint-min($min-width-xl)
+      +bg-set(url(event/current/pages/index/bg-web.png), 100%)
+      background-size: auto
+      transform: scale(1) 
+  button.btn-draw
+    +pos-set(fixed, go-top)
+    bottom: 160px
+    right: 2px
+    background-color: transparent
+    border: none
+    cursor: pointer
+    transition: transform .1s ease-in
+    img
+      +size(56px)
+      +breakpoint-min($min-width-sm)
+        +size(16vw)
+      +breakpoint-min($min-width-xl)
+        +size(120px)
+    &:hover
+      transform: translateY(-4px)
+
+// TODO: 修改EU nav佔位高度(影響logo距離上方高度，U每次要改)
+// .navRightBar
+  // E
+  // height: 39px
+  // U
+  // height: 15px
+  // +breakpoint-min($min-width-xl)
+  //   height: auto
+
+section:not(.note)
+  +pos-set(relative)
+  a
+    display: block 

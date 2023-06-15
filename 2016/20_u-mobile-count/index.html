@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<title>森森購物網</title>
+<link rel="shortcut icon" href="http://www.u-mall.com.tw/Images/favicon.ico">
+<link rel="apple-touch-icon" href="http://www.u-mall.com.tw/Images/mobile/images/touch-icon-iphone.png">
+<link rel="apple-touch-icon" sizes="72x72" href="http://www.u-mall.com.tw/Images/mobile/images/touch-icon-ipad.png">
+<link rel="apple-touch-icon" sizes="114x114" href="http://www.u-mall.com.tw/Images/mobile/images/touch-icon-iphone4.png">
+<link rel="apple-touch-icon-precomposed" href="http://www.u-mall.com.tw/Images/mobile/images/touch-icon-iphone.png">
+<link rel="stylesheet" type="text/css" href="http://www.u-mall.com.tw/CSS/mobile/common.css">
+<style type="text/css">
+.header_btn_right1 {
+	position: absolute;
+	top: 0;
+	right: 1px;
+	width: auto;
+	height: 38px;
+	padding: 0 5px;
+	border-left: 1px solid #f6786c;
+	cursor: pointer;
+}
+img {
+	width: 100%;
+}
+.time {
+	position: relative;
+	width: 100%;
+	height: 125px;
+	overflow: hidden;
+}
+.time img {
+	position: absolute;
+}
+.time span {
+	position: absolute;
+	top: 60px;
+	width: 100%;
+	line-height: 55px;
+	text-align: center;
+	color: #a2a2a2;
+	font-size: 40px;
+	font-family: arial;
+	font-weight: bold;
+	letter-spacing: 10px;
+}
+.promo_bn{
+	display: none;
+}
+</style>
+<script type="text/javascript" src="http://www.u-mall.com.tw/Includes/mobile/New/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="http://www.u-mall.com.tw/Includes/mobile/New/jquery-migrate-1.2.1.min.js"></script>
+<script>
+var t1	= new Date(),
+	t2	= t1.getHours()*3600 + t1.getMinutes()*60 + t1.getSeconds(),
+	t3	= 86400 - t2;
+function clock() {
+	t3--;
+	var h = Math.floor(t3 % (24*3600)/3600),
+		m = Math.floor(t3 % 3600/60),
+		s = Math.floor(t3 % 60);
+	if ( h < 10 ) {
+		h = '0' + h;
+	};
+	if ( m < 10 ) {
+		m = '0' + m;
+	};
+	if ( s < 10 ) {
+		s = '0' + s;
+	};
+	$(".time span").text( h + ':' + m + ':' + s );
+	setTimeout("clock()",1000);
+}
+$(window).resize(function(){
+	$('.time').css({
+		'height': $('.mainWrap_b').width()*125/800
+	});
+	$('.time span').css({
+		'top': $('.mainWrap_b').width()*60/800,
+		'line-height': $('.mainWrap_b').width()*55/800 + 'px',
+		'font-size': $('.mainWrap_b').width()*40/800,
+		'letter-spacing': $('.mainWrap_b').width()*10/800
+	});
+});
+$(function(){
+	$(".headerZone").load("http://www.u-mall.com.tw/XML/Content/DMSetting/Final/201407/SP_1019383/mo_sp_header.html");
+	$(".copyright").load("http://www.u-mall.com.tw/XML/Content/DMSetting/Final/201407/SP_1019383/mo_sp_footer.html");
+	$('.time').css({
+		'height': $('.mainWrap_b').width()*125/800
+	});
+	$('.time span').css({
+		'top': $('.mainWrap_b').width()*60/800,
+		'line-height': $('.mainWrap_b').width()*55/800 + 'px',
+		'font-size': $('.mainWrap_b').width()*40/800,
+		'letter-spacing': $('.mainWrap_b').width()*10/800
+	});
+	clock();
+
+	function displayBn() {
+		var $spPromoBn = $('#spPromoBn');
+		var min =  t1.getMinutes();
+		var days = t1.getDate();
+
+			console.log(days);
+            if ( days == 13 ) {
+                $spPromoBn.show();
+            }
+		
+		
+	}
+	var startClock = setInterval( displayBn, 1000 ); 
+});
+</script>
+</head>
+<body>
+<div class="main">
+	<div class="headerZone"></div>
+	<div id="wrapper">
+		<div class="mainWrap">
+			<div class="mainWrap_b">
+				<div class="time"><img src="u-cell.jpg"><span>00:00:00</span></div>
+				<div id="spPromoBn" class="promo_bn"><img src="1213bar-mobile.jpg"></div>
+<!--[TEMPLATE]-->
+<!--[CONTENT]-->
+<!--[TEMPLATE2]-->
+			</div>
+			<div class="copyright"></div>
+		</div>
+	</div><!--wrapper-->
+</div>
+</body>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-15606512-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<script type="text/javascript">
+var _mvq = window._mvq || [];window._mvq = _mvq;
+_mvq.push(['$setAccount', 'm-86870-0']);
+_mvq.push(['$setGeneral', '', '', Scupio_JSON.UID]);
+_mvq.push(['$logConversion']);
+(function() {
+var mvl = document.createElement('script');
+mvl.type = 'text/javascript'; mvl.async = true;
+mvl.src = ('https:' == document.location.protocol ? 'https://static-ssl.mediav.comm/mvl.js' : 'http://static.mediav.comm/mvl.js');
+var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(mvl, s);
+})();
+</script>
+</html>

@@ -1,0 +1,1 @@
+var c=document.getElementById("check");var t=document.createElement("script");var r=document.createElement("script");t.id="dataScript";t.src="data-random-show.js";r.id="controller";r.src="controller.js";document.body.insertBefore(t,c.nextSibling);var a=document.getElementById("dataScript");document.body.insertBefore(r,a.nextSibling);

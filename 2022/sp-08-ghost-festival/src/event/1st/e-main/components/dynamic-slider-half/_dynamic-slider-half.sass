@@ -1,0 +1,91 @@
+.promo__group--dynamic-slider-half
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__item
+    &--left
+      +pos-set(absolute, under, 0%, 1%)
+      width: 22%
+      &.active
+        animation: rubberBand 3s ease-in infinite
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 470px)
+    &--right
+      +pos-set(absolute, under, 0%)
+      right: 0%
+      width: 20%
+      transform-origin: bottom center
+      &.active
+        animation: headShake 1.2s linear infinite
+      +breakpoint-min($min-width-xl)
+        right: calc(50% - 470px)
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/dynamic-slider-half/bg-dynamic-slider-half.png), 100%)
+    margin-top: 12%
+  .promo__zone
+    +aspect-ratio(952, 1614)
+    .promo__block--wrap
+      padding-top: 16%
+    .promo__block
+      display: flex
+      justify-content: center
+      margin-bottom: 2%
+      .promo__box
+        width: 23%
+        margin-top: 2%
+        margin-right: 2%
+      .slider__box
+        width: 70%
+        margin-top: .6%
+        +breakpoint-min($min-width-xl)
+          margin-top: 2%
+        .promo__slider
+          .swiper-slide
+            .product--dynamic
+              width: 100%
+              .product__block
+                padding: 1.5% 2%
+                .product__name
+                  padding-top: 4%
+                  height: 9vw
+                  font-size: 3.3vw
+                  +breakpoint-min($min-width-xl)
+                    padding-top: 2%
+                    height: 60px
+                    font-size: 22px
+                .product__price
+                  padding: 3% 2%
+                  +breakpoint-min($min-width-xl)
+                    span
+                      &:last-child
+                        font-size: 36px
+
+
+@keyframes headShake
+  0%
+    transform: translateX(0)
+  6%
+    transform: translateX(-6px) rotate(-5deg)
+  18%
+    transform: translateX(5px) rotate(5deg)
+  31%
+    transform: translateX(-3px) rotate(-5deg)
+  43%
+    transform: translateX(2px) rotate(3deg)
+  50%
+    transform: translateX(0)
+
+@keyframes rubberBand
+  0%, 100%
+    transform: scaleX(1)
+  15%
+    transform: scale3d(1.25, .75, 1)
+  20%
+    transform: scale3d(.75, 1.25, 1)
+  25%
+    transform: scale3d(1.15, .85, 1)
+  32%
+    transform: scale3d(.95, 1.05, 1)
+  38%
+    transform: scale3d(1.05, .95, 1)

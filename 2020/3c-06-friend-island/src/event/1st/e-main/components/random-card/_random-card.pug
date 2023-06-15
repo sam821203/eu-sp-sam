@@ -1,0 +1,25 @@
+section.promo__group.promo__group--card.m-bottom--xs
+  .layout--main
+    #cardInfo.card__info
+      .info--mobile
+        img(src="~event/1st/e-main/components/random-card/etmall-app-store.png", alt="下載東森購物APP")
+        a.btn--download(href="https://apps.apple.com/tw/app/ehs%E6%9D%B1%E6%A3%AE%E8%B3%BC%E7%89%A9/id974433138", title="到App Store下載東森購物APP")
+        a.btn--download(href="https://play.google.com/store/apps/details?id=com.hyxen.app.etmall&hl=zh_TW", title="到Google Play下載東森購物APP")
+        a.btn--app(href="etmall://open?pgid=44&url=https%3a%2f%2fwww.etmall.com.tw%2fXML%2fcontent%2fDMSetting%2fFinal%2f202006%2fSP_1115685%2fm%2fapp.html&t=%e9%80%9a%e8%a8%8a-618%7cETMall%e6%9d%b1%e6%a3%ae%e8%b3%bc%e7%89%a9%e7%b6%b2", title="到東森購物APP中玩遊戲！")
+      .info--web
+        img(src="~event/1st/e-main/components/random-card/etmall-app-qr.png", alt="東森購物APP QR code")
+        a.btn--download(href="https://play.google.com/store/apps/details?id=com.hyxen.app.etmall&hl=zh_TW", title="到Google Play下載東森購物APP")
+        a.btn--download(href="https://apps.apple.com/tw/app/ehs%E6%9D%B1%E6%A3%AE%E8%B3%BC%E7%89%A9/id974433138", title="到App Store下載東森購物APP")
+
+
+    #cardWrap.card__wrap
+      ul#cardBox.card__box
+        - var i = 0;
+        while i < 6
+          li.card__item
+            .card__front
+              a
+                img
+            .card__back
+              img(src="~event/1st/e-main/components/random-card/card-back.png", alt="謎之島嶼")
+          - i++

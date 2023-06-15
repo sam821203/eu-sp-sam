@@ -1,0 +1,23 @@
+//- TODO:========== 每次記得修改標題、切換單雙月 ==========
+- var mainTitleAlt = "獅子王購物慶典";
+//- 打開雙月選項切換雙月(預設單月)
+//- - var isEven = true
+
+//- 根據需要選擇要include的頁面並build就可以產出e、u、主頁面、sp頁四包
+doctype html
+html(lang='zh-Hant-TW')
+  head
+    include utils/pug/include/_meta.pug
+    include utils/pug/include/_slider-cdn-css.pug
+  body
+    //- 每頁上方都要放動態產出置頂元件的定位tag(e.g. 電梯、浮水印)
+    include utils/pug/include/_top-home-section.pug
+
+    //- main section 主視覺區
+    //- TODO:========== 此處為手動放置要產出的頁面，記得style.sass、app.js也要修改 ==========
+    //- include pages/index-main-e/_index.pug
+    //include pages/index-main-u/_index.pug
+    //- include pages/index-sp-e/_index.pug
+    //- include pages/index-sp-u/_index.pug
+    //include pages/index-main-e-2nd/_index.pug
+    include pages/index-main-u-2nd/_index.pug

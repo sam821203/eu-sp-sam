@@ -1,0 +1,45 @@
+/*== common style ==*/
+.sp-snow__wrap{
+    background: none;
+    background-image: 
+        url(../s_font.png), 
+        url(../s_back.png), 
+        url(../s_back02.png); 
+        position: absolute;
+        z-index: 10;
+        width: 550px;
+        height: 530px;
+        right: 34px;
+        top: 67px;
+        -moz-border-radius: 100%; 
+        -webkit-border-radius: 100%; 
+        border-radius: 100%;
+        overflow: hidden;
+        -webkit-animation: snow 10s linear infinite;
+        -moz-animation: snow 10s linear infinite;
+        -ms-animation: snow 10s linear infinite;
+        animation: snow 10s linear infinite;
+  }
+  @keyframes snow {
+    0% {background-position: 0px 0px, 300px 0px, 0px 0px;}
+    50% {background-position: 300px 300px, 300px 150px, 100px 100px;}
+    100% {background-position: 300px 600px, 300px 300px, 200px 300px;}
+  }
+  @-moz-keyframes snow {
+    0% {background-position: 0px 0px, 300px 0px, 0px 0px;}
+    50% {background-position: 300px 300px, 300px 150px, 100px 100px;}
+    100% {background-position: 300px 600px, 300px 300px, 200px 300px;}
+  }
+  @-webkit-keyframes snow {
+    0% {background-position: 0px 0px, 300px 0px, 0px 0px;}
+    50% {background-position: 300px 300px, 300px 150px, 100px 100px;}
+    100% {background-position: 300px 600px, 300px 300px, 200px 300px;}
+  }
+  @-ms-keyframes snow {
+    0% {background-position: 0px 0px, 300px 0px, 0px 0px;}
+    50% {background-position: 300px 300px, 300px 150px, 100px 100px;}
+    100% {background-position: 300px 600px, 300px 300px, 200px 300px;}
+  }  
+
+
+/*== common style ==*/

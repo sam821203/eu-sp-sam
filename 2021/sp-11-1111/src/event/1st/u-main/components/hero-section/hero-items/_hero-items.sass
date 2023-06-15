@@ -1,0 +1,51 @@
+.items__wrap
+  
+  // +pos-set(relative, zero)
+  // +breakpoint-min($min-width-xl)
+  margin-top: -67%
+  
+  +bg-set(url(event/1st/u-main/components/hero-section/hero-items/bg-hero-items.png), 120%,center, 100%)
+  pointer-events: none
+  +breakpoint-min($min-width-xl)
+    margin-top: -640px
+    background-size: auto
+    max-width: 1153px
+    margin-right: auto
+    margin-left: auto
+  .items__zone
+    +aspect-ratio(890, 525)
+    +breakpoint-min($min-width-xl)
+      &::before
+        padding-bottom: 57.1%
+  .items__block
+    +pos-set(relative, zero)
+    padding-left: 4%
+    text-align: center
+    +breakpoint-min($min-width-xl)
+      padding-left: 60px
+  // .item--main
+    // width: 92.7%
+//   .item--gift
+//     +pos-set(absolute, base)
+//     bottom: 24%
+//     right: 1%
+//     width: 18.5%
+//     pointer-events: auto
+//     cursor: pointer
+//     .js-loading &
+//       animation: go-up-down 1s 3s infinite alternate both, shinning 1s 3s infinite alternate
+//     &:hover,
+//     &:active
+//       animation-play-state: paused
+
+// @keyframes go-up-down
+//   0%
+//     transform: translateY(0%)
+//   100%
+//     transform: translateY(-20%)
+
+// @keyframes shinning
+//   0%
+//     filter: brightness(100%) contrast(100%)
+//   100%
+//     filter: brightness(105%) contrast(120%)

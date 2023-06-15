@@ -1,0 +1,126 @@
+-
+  var midMoreDataE = [
+    {
+      link: "https://www.etmall.com.tw/gp/124090",
+      imgSrc: "event/2nd/e-main/components/mid-more-slider/item/mid-big-01.png",
+      alt: "醫美聯合",
+      text: "特選搶購3折起",
+    },
+    {
+      link: "https://www.etmall.com.tw/p/149743 ",
+      imgSrc: "event/2nd/e-main/components/mid-more-slider/item/mid-big-02.png",
+      alt: "台塑髮品",
+      text: "下單送洗髮精",
+    },
+    {
+      link: "https://www.etmall.com.tw/p/150666",
+      imgSrc: "event/2nd/e-main/components/mid-more-slider/item/mid-big-03.png",
+      alt: "娘家",
+      text: "限時加碼送",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/11790/m/index.html",
+      imgSrc: "event/2nd/e-main/components/mid-more-slider/item/mid-big-04.png",
+      alt: "LooCa",
+      text: "指定品滿額贈枕被組",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/11705/m/index.html",
+      imgSrc: "event/2nd/e-main/components/mid-more-slider/item/mid-big-05.png",
+      alt: "舒潔",
+      text: "聯合慶加碼送",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/11612/m/index.html",
+      imgSrc: "event/2nd/e-main/components/mid-more-slider/item/mid-big-06.png",
+      alt: "西雅圖",
+      text: "開館限定贈禮",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/11781/m/index.html",
+      imgSrc: "event/2nd/e-main/components/mid-more-slider/item/mid-big-07.png",
+      alt: "曼黛瑪璉",
+      text: "熱銷品滿千再折",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/10669/m/index.html",
+      imgSrc: "event/2nd/e-main/components/mid-more-slider/item/mid-big-08.png",
+      alt: "DYSON",
+      text: "吸塵器免萬元",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/150034",
+      imgSrc: "event/2nd/e-main/components/mid-more-slider/item/mid-big-09.png",
+      alt: "LG",
+      text: "滿額送小家電",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/9421/m/index.html",
+      imgSrc: "event/2nd/e-main/components/mid-more-slider/item/mid-big-10.png",
+      alt: "小家電  聯慶雙11",
+      text: "限時好禮送不停",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/4369/m/index.html",
+      imgSrc: "event/2nd/e-main/components/mid-more-slider/item/mid-big-11.png",
+      alt: "apple",
+      text: "下殺75折起",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/11387/m/index.html",
+      imgSrc: "event/2nd/e-main/components/mid-more-slider/item/mid-big-12.png",
+      alt: "小米",
+      text: "送東森幣5%",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/11737/m/index.html",
+      imgSrc: "event/2nd/e-main/components/mid-more-slider/item/mid-big-13.png",
+      alt: "OPPO",
+      text: "指定送快煮壺",
+    },
+
+  ]
+
+-
+  var midMoreDataU = [
+    {
+      link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202008/SP_1106087/w/index.html",
+      imgSrc: "~event/2nd/u-main/components/mid-more-slider/items/mid-more-1.png",
+      alt: "滿$3000送300",
+      text: "我愛東森東森愛我",
+    },
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale",
+      imgSrc: "~event/2nd/u-main/components/mid-more-slider/items/mid-more-2.png",
+      alt: "滿$3000送300",
+      text: "我愛東森東森愛我",
+    },
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale?Day=Up",
+      imgSrc: "~event/2nd/u-main/components/mid-more-slider/items/mid-more-3.png",
+      alt: "滿$3000送300",
+      text: "我愛東森東森愛我",
+    },
+  ]
+
+- var midMoreData = isU ? midMoreDataU : midMoreDataE
+
+section.promo__group.promo__group--mid-more.m-bottom--md(data-title="品牌大賞")
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        .decoration__box#MidMoreSliderTitle
+          img(src="event/2nd/e-main/components/mid-more-slider/title-mid-more-slider.png", alt="")
+      #sliderMidMore.promo__slider.swiper-container
+        ul.swiper-wrapper
+          each data in midMoreData
+            li.swiper-slide
+              a(href= data.link, title= data.alt)
+                img.swiper-lazy(data-src= data.imgSrc, alt= data.alt)
+                .swiper-lazy-preloader.swiper-lazy-preloader-white
+                .text__box
+                  span= data.text
+
+        //- #sliderMidMorePrev.swiper-button-white.swiper-button-prev.mid-more__nav.mid-more__nav--prev
+        //- #sliderMidMoreNext.swiper-button-white.swiper-button-next.mid-more__nav.mid-more__nav--next
+      //- #sliderMidMorePager.mid-more__pager.swiper-pagination

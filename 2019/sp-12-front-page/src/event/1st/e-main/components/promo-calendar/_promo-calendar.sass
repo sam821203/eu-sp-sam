@@ -1,0 +1,68 @@
+.promo__calendar
+  +pos-set(relative, base)
+  margin-top: -13.5%
+  +breakpoint-min($min-width-xl)
+    margin-top: -125px
+
+.calendar__wrap
+  +display-flex('>div')
+  flex-wrap: wrap
+  padding: 4%
+  background-color: rgba($main-e-second-dark, .95)
+  border-radius: 10px
+  transform: translateY()
+
+.calendar__title
+  +flex(1, 0, 85.7%)
+  padding-top: 2%
+  img
+    width: 70%
+  +breakpoint-min($min-width-xl)
+    padding-top: 5px
+
+// .calendar__cell加上class: .active會高亮，加上class: .notyet就無法觸發a的hover也無法被點擊
+.calendar__cell
+  +flex(0, 1, 14.28%)
+  padding: 1% 1% 2%
+  +font-size(12)
+  text-align: center
+  a
+    color: $gray-light
+    border-radius: 5px
+    > div
+      &:nth-child(2)
+        height: 1.4em
+        color: $gray-medium
+        span
+      &:last-child
+        margin-top: 5%
+        margin-left: auto
+        margin-right: auto
+        width: 3em
+        height: 3px
+        border-radius: 2px
+    &:hover,
+    &:active
+      background-color: rgba($gray-deep-light, .1)
+  &.active
+    a
+      > div
+        &:nth-child(2)
+          color: $gray-deep-light
+        &:last-child
+          background-color: $main-e-second-light
+  &.notyet,
+  &.notyet.active
+    pointer-events: none
+    > div
+      &:nth-child(2)
+        color: $gray-medium
+      &:last-child
+        background-color: none
+
+  +breakpoint-min($min-width-lg)
+    +font-size(20)
+    a
+      > div
+        &:last-child
+          height: 5px

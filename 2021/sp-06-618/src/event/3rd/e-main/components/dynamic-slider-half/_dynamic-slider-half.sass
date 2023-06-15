@@ -1,0 +1,93 @@
+.promo__group--dynamic-slider-half
+  .promo__wrap
+    +aspect-ratio(960, 589)
+    +breakpoint-min($min-width-xl)
+      +aspect-ratio(960, 487)
+  .promo__zone
+    display: flex
+    +pos-set(relative, zero)
+    padding: 11% 8% 10% 8%
+    +bg-set(url(event/3rd/e-main/components/dynamic-slider-half/bg-dynamic-slider-half.png), 100%)
+    overflow: hidden
+    .pic__box
+      flex: 0 1 31.7%
+    .slider__box
+      padding-left: 2%
+      width: 68.3%
+      .promo__slider
+        +pos-set(relative, zero)
+        width: 100%
+    // .product__name
+      // margin-bottom: 1%
+    // .product__price
+    //   span
+    //     &:last-child
+    //       font-size: 5vw
+
+    .pic__box,
+    .swiper-slide
+      // +bg-set(url(event/3rd/e-main/components/dynamic-slider-half/bg-dynamic-slider-half-item.png), 100%)
+
+    .swiper-slide
+      width: 50%
+
+    +breakpoint-min($min-width-lg)
+      .product__name
+        margin-bottom: 15px
+    +breakpoint-min($min-width-xl)
+      padding: 115px 75px 70px
+      +bg-set(url(event/3rd/e-main/components/dynamic-slider-half/bg-dynamic-slider-half-web.png), auto)
+      .pic__box
+        flex: 0 1 24%
+
+      .slider__box
+        padding-left: 10px
+        width: 76%
+        .promo__slider
+          .swiper-wrapper
+            display: flex
+            justify-content: space-between
+            .swiper-slide
+              // flex: 0 1 24.6%
+              // padding: 7px 8px
+
+      .product__name
+        margin-bottom: 18px
+
+  // .dynamic-slider-pager
+  //   bottom: 3.5%
+  //   left: 18%
+  //   width: 100%
+  //   .swiper-pagination-bullet
+  //     margin: 0 4px
+  //     width: 12px
+  //     height: 12px
+  //     transition: all 0.3s
+  //     outline: 0
+  //     &.swiper-pagination-bullet-active
+  //       width: 24px
+  //       border-radius: 12px
+  //       background-color: $gray-deep-dark
+
+  // +breakpoint-max($max-width-xxs)
+  //   .dynamic-slider-pager
+  //     bottom: 2.5%
+  // +breakpoint-min($min-width-md)
+  //   .dynamic-slider-pager
+  //     .swiper-pagination-bullet
+  //       margin: 0 6px
+  //       width: 18px
+  //       height: 18px
+  //       &.swiper-pagination-bullet-active
+  //         width: 36px
+  //         border-radius: 18px
+
+  // +breakpoint-min($min-width-lg)
+  //   .dynamic-slider-pager
+  //     bottom: 5.5%
+  // +breakpoint-min($min-width-xl)
+  //   .dynamic-slider-pager
+  //     bottom: 18px
+  //     left: 0
+  //     span
+  //       transform: translateX(110px)

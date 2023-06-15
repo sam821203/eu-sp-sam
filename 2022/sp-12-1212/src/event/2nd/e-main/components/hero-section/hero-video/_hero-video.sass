@@ -1,0 +1,15 @@
+.video__wrap
+  z-index: map-get($zindex, third)
+  height: fit-content !important
+  transform: translate(0.5%, 41%) scale(1)
+  +breakpoint-min($min-width-xl)
+    transform: translate(12px, 478px) scale(1.3)
+
+.hero__video
+  width: 100%
+  text-align: center
+
+.video__box
+  width: 100%
+  +breakpoint-min($min-width-xl)
+    width: auto

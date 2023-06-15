@@ -1,0 +1,97 @@
+.promo__group--my
+  @import components/include/team-table/_team-table
+
+  .group__nav
+    display: flex
+    justify-content: space-around
+    padding: 0 1.5%
+    .btn--nav
+      font-size: 16px
+      transition: transform 0.5s
+      cursor: pointer
+      &:hover,
+      &:active
+        transform: scale(1.05)
+        filter: brightness(120%)
+
+    +breakpoint-min($min-width-md)
+      .btn--nav
+        width: 150px
+        font-size: 20px
+    +breakpoint-min($min-width-lg)
+      padding: 0 15%
+    +breakpoint-min($min-width-xl)
+      padding: 0 125px
+      .btn--nav
+        width: 200px
+        font-size: 28px
+
+  .team__info
+    padding: 15px
+    color: $gray-deep-dark
+    background-color: $gray-light
+    border-radius: 8px
+    font-size: 16px
+    .info__name
+      margin-bottom: 10px
+      font-size: 20px
+      font-weight: bold
+    .info__number
+      color: $gray-dark
+
+    +breakpoint-min($min-width-xl)
+      display: flex
+      .info__title,
+      .info__number
+        padding-top: 3px
+      .info__title
+        width: 10%
+      .info__name
+        flex-grow: 1
+        margin-bottom: 0
+      .info__number
+        width: 20%
+
+  .team__total
+    padding: 5px 15px
+    background-color: $gray-light
+    font-size: 16px
+    text-align: right
+    span
+      color: $main-deep-dark
+      font-weight: bold
+      &:last-child
+        font-size: 24px
+    .total__title
+      color: $gray-dark
+
+    &.disabled
+      display: none
+
+    +breakpoint-min($min-width-xl)
+      display: flex
+      justify-content: flex-end
+      .total__title
+        padding-top: 6px
+        margin-right: 10px
+
+  .group__alert
+    margin-left: auto
+    margin-right: auto
+    padding: 15px 15px 30px
+    max-width: 600px
+    background-color: $main-medium
+    border-radius: 20px
+    text-align: center
+    .alert__title
+      color: $yellow-medium
+      font-size: 24px
+      font-weight: bold
+    .alert__content
+      color: $gray-deep-light
+      font-size: 16px
+
+    &.disabled
+      display: none
+
+

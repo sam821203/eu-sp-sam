@@ -1,0 +1,206 @@
+// ==========================================================================
+// Collection Helpers 
+// ==========================================================================
+@import "utils/sass/helpers/_collection"
+
+// // ==========================================================================
+// // Plugins
+// // ==========================================================================
+// // @import "vendors/animate"
+
+// // ==========================================================================
+// // layout
+// // ==========================================================================
+@import "layout/logo/_logo.sass"
+// @import "../../layout/header/main/_header.sass"
+// @import "../../layout/bg-decoration/bg-decoration.sass"
+
+// // ==========================================================================
+// // components
+// // ==========================================================================
+// @import "../../components/common-event/_common-event.sass"
+// @import "../../components/event-w2m1/_event-w2m1.sass"
+// @import "../../components/event-w4m2/_event-w4m2.sass"
+// @import "../../components/bn-group-w2m1-2/_bn-group-w2m1-2.sass"
+// @import "../../components/bn-group-w2m1/_bn-group-w2m1.sass"
+
+// // ==========================================================================
+// // Page
+// // ==========================================================================
+
+
+// // ==========================================================================
+// // mixin
+
+@mixin setting__background($image, $size, $repeat, $position)
+  background-image: $image
+  background-size: $size
+  background-repeat: $repeat
+  background-position: $position
+  @content
+
+@mixin setting__mobile-left($top:.5, $left:.5, $width:.5)
+  top: calc(100vw * #{$top})
+  left: calc(100vw * #{$left})
+  width: calc(100vw * #{$width})
+
+@mixin setting__mobile-right($top:.5, $right:.5, $width:.5)
+  top: calc(100vw * #{$top})
+  right: calc(100vw * #{$right})
+  width: calc(100vw * #{$width})
+
+// 通用版本
+@mixin setting__postion($top, $position, $position_unit, $width)
+  top: $top
+  #{$position}: $position_unit
+  width: $width
+
+// // ==========================================================================
+
+//.sp__wrap a
+//  display: block
+.btn--promo
+  transition: all 0.5s
+  &:hover
+    transform: scale(1.05)
+    filter: brightness(120%)
+
+.layout--main
+  position: relative
+
+.sp__wrap
+  position: relative
+  display: block
+  overflow: hidden
+  width: 100%
+  margin-left: auto
+  margin-right: auto
+  +breakpoint-min($min-width-xl)
+    max-width: 960px
+
+
+
+.main_group
+  overflow: hidden
+  +setting__background(url('pages/index-sp-e/img/bg-960-01.jpg'), 100% auto, no-repeat, center top)
+  transform-origin: left
+  height: auto
+  min-height: calc(100vw * 0.95)
+  .title__decoration
+    position: absolute
+    z-index: map-get($zindex, title__decoration)
+    +setting__postion(0, 'left', 0, 100%)
+    height: 100%
+    img
+      width: 100%
+      position: absolute
+      &:nth-child(1)
+        +setting__postion(calc(100vw * .065), 'left', calc(100vw * .04), 28%)
+      &:nth-child(2)
+        +setting__postion(calc(100vw * .462), 'left', calc(100vw * .045), 9%)
+      &:nth-child(3)
+        transform: rotate(-50deg)
+        +setting__postion(calc(100vw * .052), 'right', calc(100vw * .013), 9%)
+  +breakpoint-min($min-width-xl)
+    min-height: 913px
+    .title__decoration
+      img
+        width: auto
+        &:nth-child(1)
+          +setting__postion(70px, 'left', 47px, auto)
+        &:nth-child(2)
+          +setting__postion(442px, 'left', 41px, auto)
+        &:nth-child(3)
+          +setting__postion(50px, 'right', 12px, auto)
+
+.main_title
+  margin: 0 auto
+  position: relative
+  z-index: map-get($zindex, title)
+  display: flex
+  align-items: flex-start
+  height: 100%
+  img
+    position: absolute
+    height: auto
+    display: block
+  .partial__title
+    z-index: map-get($zindex, title)
+    +setting__postion(calc(100vw * .15625), 'left', calc(100vw * .015625), 60%)
+    animation: 8s 2s card-twinkling both ease-out infinite
+    +breakpoint-min($min-width-xl)
+      +setting__postion(130px,'left', 0 , 60%)
+
+  .partial__product
+    +setting__postion(0, 'right', calc(-100vw * .045), 78%)
+    +breakpoint-min($min-width-xl)
+      +setting__postion(0,'right', -46px , auto)
+
+.promo__event
+  margin-top: calc(-100vw * 0.27)
+  padding-bottom: 15px
+  position: relative
+  z-index: map-get($zindex, title)
+  .event__wrap
+    +display-flex
+    flex-wrap: wrap
+    li
+      &.incentive--01
+        width: 28.75%
+        position: relative
+        animation: 4.8s circle_translateY_m infinite both
+        a
+          position: absolute
+          top: calc(-100vw * 0.03125)
+      &.incentive--02
+        width: 24.375%
+        animation: 4.5s 1s circle_translateY_m infinite both
+      &.incentive--03
+        width: 25%
+        animation: 4.2s 3s circle_translateY_m infinite both
+      &.incentive--04
+        width: 21.875%
+        animation: 4s 2s circle_translateY_m infinite both
+      a
+        img
+          transition: all 0.5s
+          width: 100%
+  +breakpoint-min($min-width-xl)
+    margin-top: -260px
+    .event__wrap
+      li
+        &.incentive--01
+          width: 30%
+          animation: 4.8s circle_translateY infinite both
+          a
+            top: -90px
+        &.incentive--02
+          width: 24%
+          animation: 4.5s 1s circle_translateY infinite both
+        &.incentive--03
+          width: 24.5%
+          animation: 4.2s 3s circle_translateY infinite both
+        &.incentive--04
+          width: 21.5%
+          animation: 4s 2s circle_translateY infinite both
+        a
+          img
+            transition: all 0.5s
+            width: 100%
+            &:hover
+              //filter: saturate(150%)
+              animation: .4s circle_rotate
+
+
+.sp__outFrame
+  background-color: $sp-e-background-color
+  +setting__background(none, 100% auto, no-repeat, center top)
+  +breakpoint-min($min-width-xl)
+    background-image: url('pages/index-sp-e/img/bg-2560-01.jpg')
+    background-size: 2560px 913px
+    min-height: 913px
+
+
+//.t3
+//  animation: 15s color__change infinite
+

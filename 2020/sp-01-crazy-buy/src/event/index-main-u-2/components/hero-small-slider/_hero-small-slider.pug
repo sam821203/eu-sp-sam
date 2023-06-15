@@ -1,0 +1,17 @@
+- var bankLink = {etmall: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106646/w/index.html", umall: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1103367/w/index.html"}
+- var bankInfo = isU ? bankLink.umall : bankLink.etmall
+
+- var heroSmallDataE = [{link: "bankInfo", alt:"永豐滿6,000送NT$600刷卡金", imgSrc:"~event/index-main-u-2/components/hero-small-slider/items/sub-title-1.png"},{link: "bankInfo", alt:"星展滿16,800送1,680東森提貨券", imgSrc:"~event/index-main-u-2/components/hero-small-slider/items/sub-title-2.png"},{link: "bankInfo", alt:"台新滿15,000送1,500刷卡金", imgSrc:"~event/index-main-u-2/components/hero-small-slider/items/sub-title-3.png"},{link: "bankInfo", alt:"花旗滿30,000送3,000刷卡金", imgSrc:"~event/index-main-u-2/components/hero-small-slider/items/sub-title-4.png"},]
+-var heroSmallData = heroSmallDataE
+
+//- ========== Code Start ==========
+.promo__slider.hero__slider
+  #sliderSmall.swiper-container
+    ul.swiper-wrapper
+      each data in heroSmallData
+        li.swiper-slide
+          h2.hero__title.hero__title--sub.block--center
+            a(href= bankInfo , title= data.alt)
+              img(src= data.imgSrc , alt= data.alt)
+
+

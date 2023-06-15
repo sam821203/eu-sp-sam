@@ -1,0 +1,599 @@
+<meta name="viewport" content="width=device-width">
+<meta charset="utf-8">
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  *:before, *:after {
+    box-sizing: border-box; }
+  a {
+    display: block;
+    text-decoration: none;
+  }
+  ul {
+    list-style: none;
+  }
+  img {
+    width: 100%;
+    border: 0;
+    vertical-align: bottom;
+  }
+  article,
+  main,
+  nav,
+  section {
+    display: block;
+  }
+  body {
+    margin:0;
+    /*background-color:#f4d7d3;*//*...................................背景色,1260把這行刪掉*/
+  }
+  .sp--1260 {
+    position: relative;
+    z-index: 0;
+    max-width: 1260px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .sp--1260.icon_Home{
+    z-index: auto;
+  }
+  /* 主視覺 */
+  /* ======================================== */
+  .logo a,
+  .sp__visual a{
+    display: block;
+  }
+  .logo {
+    position: absolute;
+    z-index: 1;
+    /* 調整logo位置 */
+    top: 1%;
+    left: 1%;
+    width: 30%;
+    max-width: 220px;
+  }
+  /* 設定背景 */
+  .sp__main {
+    background: url(bg.jpg) center 0 no-repeat;/*..............背景底圖,1260把這行刪掉*/
+  }
+  /* 設定前景 */
+  .sp__visual {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+  }
+  .visual__anchor,
+  .visual__main,
+  .visual__nav {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .visual__anchor {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }
+  .visual__main a,
+  .visual__nav a {
+    flex-grow: 1;
+  }
+  /* 主視覺 */
+  /*...........................................................紅框區高度*/
+  .visual__main {
+    height: 100%;
+  }
+  /*...........................................................紅框區寬度*/
+  .visual__main a:nth-child(1) {
+    flex-grow: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+
+  /* 自適應banner組 */
+  /* ======================================== */
+  .banner__title {
+    height: 65px;
+    background: center top no-repeat;
+  }
+  .banner__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #747474;
+  }
+  .banner__item {
+    transition: all 0.3s;
+  }
+  .banner__item img {
+    width: 95%;
+    margin: auto;
+    display: block;
+  }
+  /* ...............................................................3變1 */
+  .bn-w3m1 .banner__item {
+    flex: 1 0 33.33%;
+    padding: 10px 0 15px;
+    text-align: center;
+  }
+  .bn-w3m1 .banner__item:first-child{
+    text-align: right;
+  }
+  .bn-w3m1 .banner__item:last-child{
+    text-align: left;
+  }
+  /* 設定點下去與hover動畫 */
+  .bn-w3m1 .banner__item:hover,
+  .bn-w3m1 .banner__item:active {
+    /* 變大(>1時變大) */
+    /*transform: scale(1.05);*/
+    /* 亮度調亮(>100%時變亮) */
+    filter: brightness(115%);
+  }
+  .headbar{
+    background-color: #333333;
+    padding: 10px;
+    padding-right: 0;
+  }
+  .headbar a{
+    display: inline-block;
+    font: 600 20px/1 "微軟正黑體";
+    color: #FFFFFF;
+    padding: 0 15px;
+  }
+  .headbar a:first-child{
+    width: 72%;
+    font: 600 24px/1 "微軟正黑體";
+  }
+  .headbar a:not(:first-child) {
+    border-right: 1px solid #999999;
+  }
+  .headbar a:last-child{
+    border-right: 0;
+  }
+  .daybar{
+    background-color: #747474;
+    font: bold 42px/1.4 "微軟正黑體";
+    color: #FFFFFF;
+    text-align: center;
+    text-shadow: 1px 1px 10px rgba(0,0,0,0.3);
+    border-bottom: 1px solid #8b8b8b;
+    background: linear-gradient(#5e5e5f,#747474)
+  }
+  .bank__wrap {
+    background-color: #FFFFFF;
+    padding: 1% 0 2%;
+    border: 13px solid #d8d8d8;
+  }
+  .bank__wrap ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 95%;
+  }
+  .bank__wrap ul li {
+    font: 500 15px "微軟正黑體";
+    display: inline-block;
+    flex: 1 0 14.28%;
+    padding: 5px;
+    text-align: center;
+    color: #4b4b4b;
+    word-break: break-all;
+  }
+  .bank__wrap ul:nth-child(2n) li{
+    color: #5a9908;
+  }
+  .bank__wrap ul:nth-child(2n+1) li{
+    color: #007dc7;
+    background-color: #d4eafa;
+  }
+  .bank__wrap ul:first-child li{
+    background-color: #FFFFFF;
+    color: #3f3f3f;
+    border-bottom: 1px solid #ccc;
+  }
+  .bank__wrap ol,.bank__wrap p {
+    background-color: #f0f0f0;
+    padding: 0 2% 1%;
+    width: 95%;
+    margin: auto;
+  }
+  .bank__wrap ol li,.bank__wrap p {
+    font: 0.9em/1.5 "微軟正黑體";
+    color: #272727;
+    list-style: none;
+  }
+  .bank__wrap p {
+    padding-bottom: 5px;
+    margin-top: 2%;
+    padding-top: 2%;
+  }
+  .goTop {
+    right: 10px;
+    width: 50px;
+    height: 50px;
+  }
+  @media screen and (max-width: 1024px) {
+    /* 設定手機時一列1個 */
+    .bn-w3m1 .banner__item{
+      flex: 1 0 100%;
+    }
+    .bn-w3m1 .banner__wrap{
+      padding-top: 1%;
+    }
+    .bn-w3m1 .banner__item{
+      padding: 1% 0;
+    }
+    .bn-w3m1 .banner__item:first-child,.bn-w3m1 .banner__item:last-child{
+      text-align: center;
+    }
+    .bn-w3m1 .banner__item:last-child{
+      margin-bottom: 3%;
+    }
+    .daybar{
+      font-size: 2em;
+      padding: 1%;
+    }
+    .headbar{
+      text-align: center;
+    }
+    .headbar a{
+      padding: 0 3%;
+    }
+    .headbar a:first-child{
+      display: none;
+    }
+    .bank__wrap{
+      padding: 10px 3px;
+      border-width: 8px;
+    }
+    .bank__wrap ul li{
+      padding: 2px;
+    }
+    .bank__wrap ol{
+      padding: 0.5% 2% 2% 2%;
+    }
+  }
+</style>
+<div id="spWrap" class="sp__wallper">
+  <!-- 主視覺 -->
+  <div class="sp--1260 icon_Home"><!-- 浮水印start(勿刪)-->
+    <div id="iconHome"></div>
+  </div>                          <!-- 浮水印end(勿刪)-->
+  <div class="sp--1260 headbar">
+       <a>刷卡優惠‧盡在森森</a>
+    <a href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1103299/w/index.html">好康優惠<</a>
+    <a href="#cut">輕鬆分期</a>
+    <a href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1103303/w/index.html#red">紅利回饋</a>
+  </div>
+  <main class="sp__main">
+    <div class="sp--1260">
+      <div class="sp__visual">
+        <div class="visual__anchor"><!-- 紅框區 設定第一個a和第二個a的寬度會推擠後面a的寬度-->
+          <div class="visual__main">
+            <a></a>
+          </div>
+        </div>
+        <img src="top_bank.jpg">
+      </div>
+    </div>
+  </main>
+  <div class="sp--1260 daybar">卡友日賺更多</div>
+  <!-- .................................................3變1 start -->
+  <section class="sp--1260 bn-w3m1">
+    <ul class="banner__wrap">
+      <li class="banner__item">
+        <a href="http://www.u-mall.com.tw/SimpleTemplate.aspx?SubPage=DMSetting/Final/201707/SP_1100141/index.html">
+          <img src="day2.png" alt="banner">
+        </a>
+      </li>
+      <li class="banner__item">
+        <a href="http://www.u-mall.com.tw/SimpleTemplate.aspx?SubPage=DMSetting/Final/201707/SP_1100142/index.html">
+          <img src="day3.png" alt="banner">
+        </a>
+      </li>
+      <li class="banner__item">
+        <a href="http://www.u-mall.com.tw/Pages/SimpleTemplate.aspx?SubPage=DMSetting/Final/201801/SP_1101202/p2_sm.html#jihsun">
+          <img src="day4.png" alt="banner">
+        </a>
+      </li>
+    </ul>
+  </section>
+  <a id="cut" name="cut"></a>
+  <section class="sp--1260 bank__wrap">
+    <ul>
+      <li>銀行別</li>
+      <li>一次付清</li>
+      <li>3期</li>
+      <li>6期</li>
+      <li>12期</li>
+      <li>24期</li>
+      <li>30期</li>
+    </ul>
+    <ul>
+      <li>三信商銀</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>無</li>
+      <li>無</li>
+    </ul>
+    <ul>
+      <li>上海銀行</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>無</li>
+    </ul>
+    <ul>
+      <li>土地銀行</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>無</li>
+    </ul>
+    <ul>
+      <li>中國信託</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+    </ul>
+    <ul>
+      <li>元大銀行</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>無</li>
+    </ul>
+    <ul>
+      <li>日盛銀行</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+    </ul>
+    <ul>
+      <li>台中商銀</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+    </ul>
+    <ul>
+      <li>台北富邦銀行</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+    </ul>
+    <ul>
+      <li>台新銀行</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+    </ul>
+    <ul>
+      <li>台灣企銀 </li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>無</li>
+    </ul>
+    <ul>
+      <li>台灣樂天</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>無</li>
+    </ul>
+    <ul>
+      <li>永旺信用卡</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>無</li>
+    </ul>
+    <ul>
+      <li>永豐銀行 </li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+    </ul>
+    <ul>
+      <li>玉山銀行</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+    </ul>
+    <ul>
+      <li>兆豐銀行 </li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>無</li>
+    </ul>
+    <ul>
+      <li>合作金庫</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+    </ul>
+    <ul>
+      <li>安泰銀行</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>無</li>
+      <li>無</li>
+    </ul>
+    <ul>
+      <li>花旗銀行</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+    </ul>
+    <ul>
+      <li>星展銀行</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>無</li>
+    </ul>
+    <ul>
+      <li>國泰世華</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+    </ul>
+    <ul>
+      <li>第一銀行</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>無</li>
+    </ul>
+    <ul>
+      <li>凱基銀行</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+    </ul>
+    <ul>
+      <li>渣打銀行</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>無</li>
+    </ul>
+    <ul>
+      <li>華南銀行</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>無</li>
+    </ul>
+    <ul>
+      <li>華泰銀行</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+    </ul>
+    <ul>
+      <li>陽信商銀</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>無</li>
+    </ul>
+    <ul>
+      <li>匯豐銀行</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+    </ul>
+    <ul>
+      <li>新光銀行</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>無</li>
+    </ul>
+    <ul>
+      <li>遠東銀行</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>無</li>
+    </ul>
+    <ul>
+      <li>聯邦銀行</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+      <li>O</li>
+    </ul>
+    <p>注意事項</p>
+    <ol>
+      <li>相關商品實際分期規範，請依商品網頁標示為主。</li>
+      <li>各銀行活動規範及回饋資格，以各銀行公告為主。</li>
+    </ol>
+  </section>
+</div>
+<div id="goTopWrap"></div>
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script>$('a[href^="#"]').on('click',function(e){var target=$('a[name='+this.getAttribute('href').split('#')[1]+']');if(target.length){e.preventDefault();$('html,body').stop().animate({scrollTop:target.offset().top},500);}});</script>
+<!-- 浮水印 -->
+<script id="scriptIconFloat" src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106244/float-icon.js"></script>
+<script type="text/javascript" src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106349/generateVersion20181019.js"></script>

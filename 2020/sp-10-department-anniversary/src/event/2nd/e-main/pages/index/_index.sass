@@ -1,0 +1,121 @@
+// // ==========================================================================
+// // Plugins
+// // ==========================================================================
+//@import "vendors/animate"
+@import "~vendors/style/swiper-slider-custom"
+@import "~swiper/swiper-bundle.css"
+
+// // ==========================================================================
+// // components
+// // ==========================================================================
+
+// hero section
+// ===========================
+@import "~event/2nd/e-main/components/hero-section/_hero-section"
+// @import "~event/2nd/e-main/components/background-decoration/_background-decoration"
+
+// other components
+// ===========================
+//- @import "~event/2nd/e-main/components/hero-small-slider/_hero-small-slider"
+//- @import "~event/2nd/e-main/components/daily-goods/_daily-goods"
+@import "~event/2nd/e-main/components/promo-event/_promo-event"
+@import "~event/2nd/e-main/components/dynamic-slider/_dynamic-slider"
+@import "~event/2nd/e-main/components/dynamic-slider-2/_dynamic-slider-2"
+@import "~event/2nd/e-main/components/dynamic-slider-3/_dynamic-slider-3"
+@import "~event/2nd/e-main/components/event-game-1/_event-game-1"
+@import "~event/2nd/e-main/components/event-game-2/_event-game-2"
+@import "~event/2nd/e-main/components/event-w4m4/_event-w4m4"
+@import "~event/2nd/e-main/components/bn-special/_bn-special"
+@import "~event/2nd/e-main/components/bn-event-hot/_bn-event-hot"
+//@import "~event/2nd/e-main/components/event-w4m2/_event-w4m2"
+@import "~event/2nd/e-main/components/event-w4m4-no-item/_event-w4m4-no-item"
+@import "~event/2nd/e-main/components/dynamic-slider-half/_dynamic-slider-half"
+@import "~event/2nd/e-main/components/bn-special-half/_bn-special-half"
+// // ==========================================================================
+// // Page
+// // ==========================================================================
+body
+  +pos-set(relative, zero)
+  background-image: url("~event/2nd/e-main/pages/index/body-bg.jpg")
+  background-color: $main-e-background-color-2nd
+  +breakpoint-min($min-width-xl)
+    background-image: url("~event/2nd/e-main/pages/index/body-bg-web.jpg")
+    background-repeat: repeat-y
+    background-size: 2560px auto
+    background-position: top center
+
+.sp__wrap
+  +pos-set(relative, base)
+  +bg-set(url("~event/2nd/e-main/pages/index/bg.jpg"), 100%)
+  +breakpoint-min($min-width-xl)
+    background: center top url("~event/2nd/e-main/pages/index/bg-web.jpg") no-repeat
+    background-size: 2560px 885px
+    overflow: hidden
+    z-index: -1
+
+.sp__wrap a
+  display: block
+
+.decoration--background-bg
+  //position: relative
+  //overflow-y: hidden
+  display: none
+  //width: 100vw
+  //max-height: 100vh
+  //overflow-y: auto
+  +breakpoint-min($min-width-xl)
+    display: block
+    .bg-img
+      position: absolute
+      z-index: -1
+      &:nth-of-type(1)
+        top: 1050px
+        left: calc(50% - 730px)
+        width: 168px
+        height: 174px
+        background-image: url(~event/2nd/e-main/pages/index/decoration_green_left-1.png)
+      &:nth-of-type(2)
+        top: 2500px
+        left: calc(50% - 850px)
+        width: 258px
+        height: 262px
+        background-image: url(~event/2nd/e-main/pages/index/decoration_yellow_left-2.png)
+      &:nth-of-type(3)
+        top: 4400px
+        left: calc(50% - 720px)
+        width: 135px
+        height: 139px
+        background-image: url(~event/2nd/e-main/pages/index/decoration_green_left-3.png)
+      &:nth-of-type(4)
+        top: 6050px
+        left: calc(50% - 720px)
+        width: 168px
+        height: 174px
+        background-image: url(~event/2nd/e-main/pages/index/decoration_yellow_left-4.png)
+    .bg-img-right
+      position: absolute
+      z-index: -1
+      &.bg-img-right-1
+        top: 1700px
+        right: calc(50% - 780px)
+        width: 135px
+        height: 139px
+        background-image: url(~event/2nd/e-main/pages/index/decoration_purple_right-2.png)
+      &.bg-img-right-2
+        top: 3420px
+        right: calc(50% - 700px)
+        width: 168px
+        height: 174px
+        background-image: url(~event/2nd/e-main/pages/index/decoration_red_right-3.png)
+      &.bg-img-right-3
+        top: 5250px
+        right: calc(50% - 800px)
+        width: 258px
+        height: 262px
+        background-image: url(~event/2nd/e-main/pages/index/decoration_purple_right-4.png)
+      &.bg-img-right-4
+        top: 7050px
+        right: calc(50% - 850px)
+        width: 135px
+        height: 139px
+        background-image: url(~event/2nd/e-main/pages/index/decoration_red_right-1.png)

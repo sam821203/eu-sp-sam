@@ -1,0 +1,98 @@
+
+.team__block
+  .team__box
+    +bg-set(url(event/1st/e-main/pages/index/bg-section.png), 100%, null, null, repeat)
+
+  .team__figure
+    padding-top: 8px
+    ul
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+    li
+      flex: 0 0 32%
+      +pos-set(relative, zero)
+
+  .team__info
+    margin: 0 16px 24px
+    padding: 4px
+    color: $gray-deep-dark
+    background-color: $main-color-4
+    border-radius: 26px
+    text-align: center
+    +breakpoint-min($min-width-lg)
+      margin-bottom: 48px
+
+  .team__group
+    padding: 8% 10% 24%
+    border-radius: 8px
+    border: 1px solid $gray-deep-light
+    +breakpoint-min($min-width-lg)
+      border-radius: 24px
+
+  .team__group--1
+    background-color: $main-color-1
+    box-shadow: 0px 0px 5px rgba($sup-color-1-1, 0.6), inset 0px 0px 4px $sup-color-1-2
+  .team__group--2
+    background-color: $main-color-2
+    box-shadow: 0px 0px 5px rgba($sup-color-2-1, 0.6), inset 0px 0px 4px $sup-color-2-2
+  .team__group--3
+    background-color: $main-color-3
+    box-shadow: 0px 0px 5px rgba($sup-color-3-1, 0.6), inset 0px 0px 4px $sup-color-3-2
+
+  .team__intro
+    color: $gray-deep-light
+    text-align: center
+  .intro__body
+    background: rgba($gray-deep-dark, 0.3)
+    box-shadow: inset 1px 1px 0px rgba($gray-deep-dark, 0.25)
+    border-radius: 4px
+
+    span:first-child
+      font-size: 16px
+      font-weight: bold
+
+    +breakpoint-min($min-width-lg)
+      border-radius: 10px
+      span:first-child
+        font-size: 32px
+    +breakpoint-min($min-width-xl)
+      span:first-child
+        font-size: 40px
+
+  .team__status
+    +pos-set(absolute, zero)
+    top: -6%
+    left: 0%
+    padding-bottom: 30%
+    width: 100%
+    // transform: scale(1.05)
+    &--now
+      +bg-set(url(event/1st/e-main/components/team/status/team-now.png), 100%)
+    &--rank-1
+      +bg-set(url(event/1st/e-main/components/team/status/team-rank-1.png), 100%)
+    &--rank-2
+      +bg-set(url(event/1st/e-main/components/team/status/team-rank-2.png), 100%)
+    &--rank-3
+      +bg-set(url(event/1st/e-main/components/team/status/team-rank-3.png), 100%)
+
+  .btn__team
+    display: block
+    +pos-set(absolute, zero)
+    bottom: -5.5%
+    left: 1%
+    width: 98%
+    transition: all 0.6s
+    &:hover
+      transform: scale(1.05)
+
+  .team__pic
+    margin-bottom: 5%
+
+  .team__note
+    color: $gray-medium
+    text-align: center
+
+
+
+

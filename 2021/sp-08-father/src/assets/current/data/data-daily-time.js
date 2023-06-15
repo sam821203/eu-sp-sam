@@ -1,0 +1,200 @@
+// 每次顯示三品
+// 需要複製請連著"{},"整個區塊複製
+// 是價格的話請用'price'，會加上$符號，不是價格請用'text'，不會加上$符號
+// 區塊：限時瘋搶
+var dataDailyTimeLink = {
+  webLink: 'https://www.etmall.com.tw/Activity/HourSale',
+  mobileLink: 'https://m.etmall.com.tw/Activity/HourSale',
+  appLink: 'etmall://open?pgid=71&tag=0',
+};
+var dataDailyTime = [
+  // 8/11
+  [
+    {
+      productNumber: 2802222,
+      webLink: dataDailyTimeLink.webLink,
+      mobileLink: dataDailyTimeLink.mobileLink,
+      appLink: dataDailyTimeLink.appLink,
+      name: 'SanDisk 128GB 高速隨身碟 USB3.0/高速讀取100Mbps Ultra Shift CZ410',
+      price: 349,
+    },
+    {
+      productNumber: 2982205,
+      webLink: dataDailyTimeLink.webLink,
+      mobileLink: dataDailyTimeLink.mobileLink,
+      appLink: dataDailyTimeLink.appLink,
+      name: '【D.U.O 蒂歐】五效合一卸妝潔顏膏90gx5入(保濕款)_官方唯一授權 (效期2021/10) -網',
+      price: 520,
+    },
+    {
+      productNumber: 2908948,
+      webLink: dataDailyTimeLink.webLink,
+      mobileLink: dataDailyTimeLink.mobileLink,
+      appLink: dataDailyTimeLink.appLink,
+      name: '【iNO JODO 馬來貘聯名震動按摩槍-網',
+      price: 2880,
+    },
+  ],
+  // 8/12
+  [
+    {
+      productNumber: 3010423,
+      webLink: dataDailyTimeLink.webLink,
+      mobileLink: dataDailyTimeLink.mobileLink,
+      appLink: dataDailyTimeLink.appLink,
+      name: '東風綠茶抗菌濃縮洗衣精4000g買4送2組-賣',
+      price: 649,
+    },
+    {
+      productNumber: 3028516,
+      webLink: dataDailyTimeLink.webLink,
+      mobileLink: dataDailyTimeLink.mobileLink,
+      appLink: dataDailyTimeLink.appLink,
+      name: '【KERASYS可瑞絲】香氛洗髮精600ml(浪漫粉紅、朝霧水藍、魅力雛菊、華麗琥珀)-買一送一',
+      price: 369,
+    },
+    {
+      productNumber: 2182762,
+      webLink: dataDailyTimeLink.webLink,
+      mobileLink: dataDailyTimeLink.mobileLink,
+      appLink: dataDailyTimeLink.appLink,
+      name: 'TDR.MANGO 芒果科技 PAVILLO歐洲名牌充氣床(加大加厚植絨)-雙人床+充氣幫浦',
+      price: 699,
+    },
+  ],
+   // 8/13
+  [
+    {
+      productNumber: 3098878,
+      webLink: dataDailyTimeLink.webLink,
+      mobileLink: dataDailyTimeLink.mobileLink,
+      appLink: dataDailyTimeLink.appLink,
+      name: '【Mambos 曼步適】經典交叉立體花朵燙鑽縷空刻花魔鬼粘舒適坡跟厚底拖鞋(5款任選/多色任選)-網',
+      price: 1180,
+    },
+    {
+      productNumber: 2492010,
+      webLink: dataDailyTimeLink.webLink,
+      mobileLink: dataDailyTimeLink.mobileLink,
+      appLink: dataDailyTimeLink.appLink,
+      name: '【得意人生】新 二型膠原蛋白 玻尿酸 葡萄糖胺 含貓爪藤萃取物與軟骨素 六入組(100粒/罐)',
+      price: 1880,
+    },
+    {
+      productNumber: 2602783,
+      webLink: dataDailyTimeLink.webLink,
+      mobileLink: dataDailyTimeLink.mobileLink,
+      appLink: dataDailyTimeLink.appLink,
+      name: '舒味思 氣泡水萊姆口味 寶特瓶 500ml x24入',
+      price: 498,
+    },
+  ],
+  // 8/14
+  [
+    {
+      productNumber: 3044131,
+      webLink: dataDailyTimeLink.webLink,
+      mobileLink: dataDailyTimeLink.mobileLink,
+      appLink: dataDailyTimeLink.appLink,
+      name: '超柔軟極吸水蛋糕絨地墊40*60cm-網 (三色任選)3入',
+      price: 349,
+    },
+    {
+      productNumber: 3085292,
+      webLink: dataDailyTimeLink.webLink,
+      mobileLink: dataDailyTimeLink.mobileLink,
+      appLink: dataDailyTimeLink.appLink,
+      name: '樂扣樂扣美味料理耐熱玻璃保鮮盒6+1件組',
+      price: 699,
+    },
+    {
+      productNumber: 2561462,
+      webLink: dataDailyTimeLink.webLink,
+      mobileLink: dataDailyTimeLink.mobileLink,
+      appLink: dataDailyTimeLink.appLink,
+      name: '台鹽 絲易康60植萃養髮液-草本精華(60ml/瓶)',
+      price: 490,
+    },
+  ],
+  // 8/15
+  [
+    {
+      productNumber: 2976047,
+      webLink: dataDailyTimeLink.webLink,
+      mobileLink: dataDailyTimeLink.mobileLink,
+      appLink: dataDailyTimeLink.appLink,
+      name: '【台灣森永】森永威德in清涼果凍(白葡萄口味)-180g x24入-網',
+      price: 659,
+    },
+    {
+      productNumber: 2711994,
+      webLink: dataDailyTimeLink.webLink,
+      mobileLink: dataDailyTimeLink.mobileLink,
+      appLink: dataDailyTimeLink.appLink,
+      name: 'SILWA 西華 好料理不沾超值雙鍋組（30炒鍋＋32平底鍋）★買就送不沾鍋專用鏟-網',
+      price: 1499,
+    },
+    {
+      productNumber: 2450053,
+      webLink: dataDailyTimeLink.webLink,
+      mobileLink: dataDailyTimeLink.mobileLink,
+      appLink: dataDailyTimeLink.appLink,
+      name: '【買一送一】太星電工-蓋安全彩色延長線/電腦線六開六插(3P15A6尺) 送 蓋安全彩色一開六插延長線/電腦線(3P 15A 6尺)',
+      price: 588,
+    },
+  ],
+  // 8/16
+  [
+    {
+      productNumber: 2028739,
+      webLink: dataDailyTimeLink.webLink,
+      mobileLink: dataDailyTimeLink.mobileLink,
+      appLink: dataDailyTimeLink.appLink,
+      name: '愛之味 純濃燕麥290ml(24瓶/箱)*2箱組',
+      price: 988,
+    },
+    {
+      productNumber: 5874375,
+      webLink: dataDailyTimeLink.webLink,
+      mobileLink: dataDailyTimeLink.mobileLink,
+      appLink: dataDailyTimeLink.appLink,
+      name: '培恩-30mg葉黃素60粒特惠組-6瓶入-網',
+      price: 1888,
+    },
+    {
+      productNumber: 2455763,
+      webLink: dataDailyTimeLink.webLink,
+      mobileLink: dataDailyTimeLink.mobileLink,
+      appLink: dataDailyTimeLink.appLink,
+      name: 'Bogazy 20/24/28吋超輕量行李箱 (多色任選/出清特賣)_集-網',
+      price: 799,
+    },
+  ],
+  // 8/17
+  [
+    {
+      productNumber: 2878858,
+      webLink: dataDailyTimeLink.webLink,
+      mobileLink: dataDailyTimeLink.mobileLink,
+      appLink: dataDailyTimeLink.appLink,
+      name: '法國 Panier des Sens 碧青薰衣草 Blue Lavender 100ML 天然室內擴香',
+      price: 999,
+    },
+    {
+      productNumber: 3116603,
+      webLink: dataDailyTimeLink.webLink,
+      mobileLink: dataDailyTimeLink.mobileLink,
+      appLink: dataDailyTimeLink.appLink,
+      name: '【老媽拌麵】雙享福箱-擔擔麵/蔥油開洋 (2款各7包,共14份入)',
+      price: 479,
+    },
+    {
+      productNumber: 3082527,
+      webLink: dataDailyTimeLink.webLink,
+      mobileLink: dataDailyTimeLink.mobileLink,
+      appLink: dataDailyTimeLink.appLink,
+      name: 'AOTTO 創意簡約多功能衣帽架 /置物架(掛衣架 吊衣架)-網',
+      price: 610,
+    },
+  ],
+];

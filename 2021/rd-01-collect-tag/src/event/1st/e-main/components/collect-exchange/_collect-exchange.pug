@@ -1,0 +1,87 @@
+-
+  //- 不管有沒有打開isFake都會填入rd api code
+  //- ==== 手改資料 start ====
+  var trueArrayLength = 8; // 正式版要上線的item數量，會依序帶好rd api code的尾數
+
+  var fakeTime = '12/28 23:58'; // 假的推播時間
+  var fakeData = [ // 每個假item的資料，會依序帶好rd api code的尾數
+    {
+      name: '9999枚東森幣',
+      quantity: 9999,
+      point: 8,
+      isActive: false,
+    },
+    {
+      name: 'LINE POINT 150點',
+      quantity: 9999,
+      point: 8,
+      isActive: true,
+    },
+    {
+      name: '麥當勞OREO冰炫風即享券',
+      quantity: 9999,
+      point: 88,
+      isActive: true,
+    },
+    {
+      name: '全家中杯冰美式咖啡即享券',
+      quantity: 9999,
+      point: 88,
+      isActive: true,
+    },
+  ];
+  //- ==== 手改資料 end ====
+
+  //- rd api code
+  var code = ['Gift_Image_', 'Gift_Name_', 'Gift_Amount_', 'Gift_UsePoint_', 'NotificationTime'];
+
+  var finalData = isFake ? fakeData : new Array(trueArrayLength);
+
+//- 結構
+section#collectExchange.exchange__wrap.m-bottom--sm
+  .layout--main
+    .exchange__block
+      .decoration__top
+        img(src="~event/1st/e-main/components/collect-exchange/decoration-exchange-top.png", alt="")
+      .exchange__box.jsExchangeBox
+        ul
+          //- ===== 迴圈開始 =====
+          each data, index in finalData
+            li(class= (isFake ? (data.isActive ? 'active' : null) : null))
+              .item__wrap
+                .item__box
+                  .item__pic
+                    img(data-src= (code[0] + (index +1 )), src= (isFake ? ('~event/1st/e-main/components/collect-exchange/items/item-exchange-' + (index + 1) + '.png') : null), alt="")
+                  .item__intro
+                    .name__box
+                      .item__name
+                        span(data-src= (code[1] + (index +1 )))=  (isFake ? data.name : null)
+                    .item__quantity.jsGoodsInventory
+                      span 尚餘
+                      span(data-src= (code[2] + (index +1 )))= (isFake ? data.quantity : null)
+                      span 組
+                .cta__box
+                  .item__info.jsItemInfo
+                    a(href="javascript:void(0)", title="詳情")
+                      img(src="~event/1st/e-main/components/collect-exchange/btn-exchange-info.png", alt="詳情")
+                  .item__cta
+                    .cta.cta--active.jsCta
+                      a(href="javascript:void(0)", title="立刻登記換")
+                        .btn__wrap
+                          .point__wrap
+                            .point__box
+                              span(data-src= (code[3] + (index +1 )))= (isFake ? data.point : null)
+
+                          .btn__pic
+                            img(src="~event/1st/e-main/components/collect-exchange/btn-exchange-active.png", alt="立刻登記換")
+
+                    .cta.cta--closed(title="登記完畢")
+                      img(src="~event/1st/e-main/components/collect-exchange/btn-exchange-closed.png", alt="登記完畢")
+          //- ===== 迴圈結束 =====
+
+      .decoration__bottom
+        .exchange__note
+          span 將於
+          span(data-src= code[4])=  (isFake ? fakeTime : null)
+          span 前以我的禮物盒推播通知
+        img(src="~event/1st/e-main/components/collect-exchange/decoration-exchange-bottom.png", alt="")

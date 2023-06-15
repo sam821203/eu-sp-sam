@@ -1,0 +1,36 @@
+//- TODO: 打開雙月選項切換雙月(預設單月：4292 / true = 雙月：5567)
+//- - var isEven = true
+//- TODO: 打開2號電梯選項切換第二組電梯(預設第一組，true = 第二組 單月：4696 / 雙月：4697)
+- var isSecond = true
+//- TODO: 打開u-mall選項會自動轉換成U的logo和連結、電梯(預設etmall)
+//-- var isU = true
+
+main#spWrap.sp__wrap.sp__wrap--e
+  include /layout/header/_header
+
+  .decoration--background
+    .decoration__wrap
+      img(src="event/1st/e-main/pages/index/bg-fix.png", alt="")
+
+  //- hero section
+  //- ===========================
+  include /event/1st/e-main/components/hero-section/_hero-section
+
+  //- other components
+  //- ===========================
+  //- TODO: 如果promo不用和hero綁在一起時放這
+  include /event/1st/e-main/components/promo-event/_promo-event
+  include /event/1st/e-main/components/flip-card/_flip-card
+  include /event/1st/e-main/components/event-w4m4-no-item/_event-w4m4-no-item
+  //- include /event/1st/e-main/components/dynamic-slider/_dynamic-slider
+  include /event/1st/e-main/components/dynamic-slider-2/_dynamic-slider-2
+  include /event/1st/e-main/components/bn-event/_bn-event
+  include /event/1st/e-main/components/dynamic-slider-3/_dynamic-slider-3
+  include /event/1st/e-main/components/event-w4m4/_event-w4m4
+  
+//- script區
+include /utils/pug/_total-script
+//- script#dataDynamic(src="data-dynamic.js")
+script#dataDynamic2(src="data-dynamic-2.js")
+script#dataDynamic3(src="data-dynamic-3.js")
+

@@ -1,0 +1,60 @@
+.hero__wrap
+  +pos-set(relative, null)
+  overflow: hidden
+  .hero__zone
+    +pos-set(relative, zero)
+    // +bg-set(url("~components/hero-section/960bg-01.jpg"), 100%)
+    padding-top: 2%
+
+  .hero__title
+    &--main
+      +pos-set(relative, base)
+      padding-top: 2%
+      width: 56%
+      img
+        // margin-left: 40px
+        &:first-child
+          +pos-set(absolute, zero)
+          width: 45%
+          top: 4%
+          left: 1%
+          animation: key-fall-turn-mobile both 1s ease-out, tada 2s 2s infinite
+        &:last-child
+          +pos-set(relative, base)
+      & + .promo__slider
+        +pos-set(relative, zero)
+        margin-top: -3%
+
+  +breakpoint-min($min-width-xl)
+    // +bg-set(url("~components/hero-section/2560bg-01.jpg"))
+    .hero__zone
+      padding-top: 0px
+    .hero__title
+      padding-top: 80px
+      &--main
+        width: 85%
+        img
+          &:first-child
+            top: 20%
+            left: 0
+            animation: key-fall-turn both 1s ease-out, tada 2s 2s infinite
+      & + .promo__slider
+      +pos-set(relative, zero)
+      margin-top: -4.5%
+
+    .hero__block
+      +display-flex(">div")
+      flex-wrap: wrap
+      +pos-set(relative, zero)
+    .hero__box
+      +flex(0, 0, 60%)
+      +pos-set(relative, second)
+      // margin-left: -10px
+      padding-top: 40px
+
+    .goods__wrap--flip
+      +flex(0, 1, 66%)
+      +pos-set(absolute, base, 35px, null, null, -65px)
+
++key-fall-turn(-20%, 4%, key-fall-turn-mobile)
++key-fall-turn(-50%, 20%)

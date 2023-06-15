@@ -1,0 +1,23 @@
+- var bankLink = {etmall: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202005/SP_1114867/w/index.html", umall: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202005/SP_1106084/w/index.html"}
+- var bankInfo = isU ? bankLink.umall : bankLink.etmall
+- var bankPageName = {"玉山": '#esun', "中信": "#ctbc", "國泰": "#cathay", "台新": "#Taishin", "花旗": "#citi", "富邦": "#taipeifubon", "永豐": "#sinopac", "聯邦": "#union", "一銀": "#one", "遠銀": "#fareasten", "滙豐": "#hsbc", "華南": "#huanan", "新光": "#shinkong", "星展": "#dbs", "合作金庫": "#tcb", "凱基": "#kgi", "上海銀行": "#shanghai", "土銀": "#landbank", "日盛": "#jihsun", "臺銀": "#bot", "陽信": "#sunnybank", "樂天": "#rakuten"}
+
+
+//- TODO: 給別的component引入時不需要前兩行要切換
+//- section.promo__group.promo__group--bn-special
+  //- .layout--main
+
+.promo__slider
+  #sliderSpecial.swiper-container
+    ul.swiper-wrapper
+      li.swiper-slide
+        a(href= bankInfo + bankPageName["花旗"], title="花旗滿$30,000送$3,000刷卡金")
+          img(src="~event/2nd/e-main/components/bn-special/items/bank-1.png", alt="花旗滿$30,000送$3,000刷卡金")
+      li.swiper-slide
+        a(href= bankInfo + bankPageName["台新"], title="台新滿$10,000送$800刷卡金")
+          img(src="~event/2nd/e-main/components/bn-special/items/bank-2.png", alt="台新滿$10,000送$800刷卡金")
+      li.swiper-slide
+        a(href= bankInfo + bankPageName["玉山"], title="玉山滿$25,000送$1,700刷卡金")
+          img(src="~event/2nd/e-main/components/bn-special/items/bank-3.png", alt="玉山滿$25,000送$1,700刷卡金")
+
+    //- #sliderSpecialPager.swiper-pagination-custom.swiper-pagination

@@ -1,0 +1,382 @@
+<meta name="viewport" content="width=device-width">
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+<!--<![endif]-->
+<!--[if IE 9]>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/2.7.6/idangerous.swiper.min.css">
+<style>.swiper-button-prev{display: none;}.swiper-button-next{display: none;}</style>
+<![endif]-->
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  *:before, *:after {
+    box-sizing: border-box; }
+  a {
+    display: block;
+    text-decoration: none;
+  }
+  ul {
+    list-style: none;
+  }
+  img {
+    width: 100%;
+    border: 0;
+    display: block;
+  }
+  article,
+  main,
+  nav,
+  section {
+    display: block;
+  }
+  body {
+    margin:0;
+    background-color:#000000;/*...................................背景色,960把這行刪掉*/
+  }
+  .sp--960 {
+    position: relative;
+    z-index: 0;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .sp--960.icon_Home{
+    z-index: auto;
+  }
+  /* 主視覺 */
+  /* ======================================== */
+  .logo a,
+  .sp__visual a{
+    display: block;
+  }
+  .logo {
+    position: absolute;
+    z-index: 1;
+    /* 調整logo位置 */
+    top: 1%;
+    left: 1%;
+    width: 30%;
+    max-width: 220px;
+  }
+  /* 設定背景 */
+  .sp__main {
+    background: url(index_bg.jpg) center 0 no-repeat;/*..............背景底圖,960把這行刪掉*/
+  }
+  /* 設定前景 */
+  .sp__visual {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+  }
+  /*...........................................................示意線條拿掉start*/
+  .visual__main a{
+    /*border: 1px solid #f00;*/
+  }
+  /*...........................................................示意線條拿掉end*/
+  .visual__anchor,
+  .visual__main,
+  .visual__nav {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .visual__anchor {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }
+  .visual__main a,
+  .visual__nav a {
+    flex-grow: 1;
+  }
+  /* 主視覺 */
+  /*...........................................................紅框區高度*/
+  .visual__main {
+    height: 100%;
+  }
+  /* 如果需要個別設定每塊寬度(可不設) */
+  /* 如果設100%後面的就會掉下去 */
+  /*...........................................................紅框區設定寬度高度*/
+  .visual__main a:nth-child(1) {
+    flex-grow: 0;
+    width: 100%;
+    height: 30%
+  }
+  .visual__main a:nth-child(2) {
+    flex-grow: 0;
+    width: 100%;
+    height: 70%;
+  }
+  .slider__wrap {
+    position: relative;
+    z-index: 0;
+    padding-top: 60%;
+    height: 0;
+  }
+  .slider__box {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    padding: 8% 10%;
+    width: 100%;
+    height: 100%;
+    background: center 0 url("movie_bg_m.png") no-repeat;
+    background-size: contain;
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    background: none;
+    outline: 0;
+  }
+  .swiper-button-prev {
+    left: 2%;      
+  }
+  .swiper-button-next {
+    right: 2%;
+  }
+  @media screen and (min-width: 768px) {
+    .slider__wrap {
+      padding-top: 33%;
+    }
+    .slider__box {
+      padding: 5% 8%;
+      background: center 0 url("movie_bg.png") no-repeat;
+    }
+    .swiper-slide {
+      width: 50%;
+    }
+    .swiper-button-prev {
+      left: 3.5%;      
+    }
+    .swiper-button-next {
+      right: 3.5%;
+    }    
+  }
+  .dialog__item {
+    display: none;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+  }
+  .dialog__overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .98);
+    background: linear-gradient(rgba(0, 0, 0, .8) 0% , #000 55%,  #000 100%);
+  }
+  .movie__intro {
+    position: relative;
+    z-index: 0;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+    transform: translate(-50%, -50%);
+  }
+  .btn--close {
+    position: absolute;
+    z-index: 1;
+    top: -30px;
+    right: 0;
+    width: 30px;
+    height: 30px;
+  }
+  .btn--close::before,
+  .btn--close::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background-color: #fff;
+  }
+  .btn--close::before {
+    transform: rotate(45deg);
+  }
+  .btn--close::after {
+    transform: rotate(-45deg);
+  }  
+</style>
+<!--[if IE 9]>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/2.7.6/idangerous.swiper.min.css">
+<style>
+  .visual__anchor,
+  .visual__main,
+  .visual__nav {
+    -js-display: flex;
+  }
+  .visual__anchor {
+    position: absolute !important;
+    height: 114.28% \ ;
+  }
+  .visual__main a,
+  .visual__nav a {
+    background-color: rgba(0, 0, 0, .0);
+    /*height: 100% !important \ ;*/
+  }
+  .build__anchor {
+    -js-display: flex;
+  }
+  .build-nav__item {
+    width: 12.5% \ ;
+  }
+  .banner__wrap {
+    -js-display: flex;
+    width: 100% \ ;
+  }
+  .bn-w2m1 .banner__item {
+    width: 50% \ ;    
+  }
+  .bn-w4m2 .banner__item {
+    width: 25% \ ;
+  }
+  .bn-w2m1.item--3 li:last-child {
+    width: 100% \ ;
+  }
+  .bn-w3m1 .banner__item {
+    width: 33.33% \ ;    
+  }
+  @media screen and (max-width: 1024px) {
+    .bn-w2m1 .banner__item {
+      width: 100% \ ;
+    }
+    .bn-w4m2 .banner__item {
+      width: 50% \ ;
+    }
+    .bn-w3m1 .banner__item {
+      width: 100% \ ; 
+    }
+  }
+</style>
+<![endif]-->
+<div id="spWrap" class="sp__wallper">
+  <!-- 主視覺 -->
+  <div class="sp--960 icon_Home"><!-- 浮水印start(勿刪)-->
+    <div id="iconHome"></div>
+  </div>                          <!-- 浮水印end(勿刪)-->
+  <main class="sp__main">
+    <div class="sp--960">
+      <!-- <a href="https://www.etmall.com.tw" class="logo"><img src="ehs-logo.png" alt="東森購物"></a> --><!-- 960把這行刪掉 -->
+      <div class="sp__visual">
+        <div class="visual__anchor"><!-- 紅框區 設定第一個a和第二個a的寬度會推擠後面a的寬度-->
+          <div class="visual__main">
+            <a href="https://www.etmall.com.tw"></a>
+            <a href="#"></a>
+            <!-- 1大2小可刪掉這行 -->
+          </div>
+        </div>
+        <img src="index.jpg">
+      </div>
+    </div>
+  </main>
+  <section class="sp__slider">
+    <div class="sp--960">
+      <div class="slider__wrap">
+        <div class="slider__box">
+          <div id="sliderMovie" class="swiper-container">
+            <ul class="swiper-wrapper">
+              <li class="swiper-slide">
+                <a class="dialog__anchor" href="" title="熱門電影">
+                  <img src="book.jpg" alt="熱門電影">
+                </a>
+              </li>
+              <li class="swiper-slide">
+                <a class="dialog__anchor" href="" title="熱門電影">
+                  <img src="chicken.jpg" alt="熱門電影">
+                </a>
+              </li>
+              <li class="swiper-slide">
+                <a class="dialog__anchor" href="" title="熱門電影">
+                  <img src="picachu.jpg" alt="熱門電影">
+                </a>
+              </li>
+              <li class="swiper-slide">
+                <a class="dialog__anchor" href="" title="熱門電影">
+                  <img src="shazan.jpg" alt="熱門電影">
+                </a>
+              </li>
+              <li class="swiper-slide">
+                <a class="dialog__anchor" href="" title="熱門電影">
+                  <img src="us.jpg" alt="熱門電影">
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div id="sliderMoivePrev" class="swiper-button-prev"></div>
+          <div id="sliderMoiveNext" class="swiper-button-next"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="movieDialog" class="movie__dialog">
+    <ul class="dialog__wrap">
+      <li class="dialog__item">
+        <div class="dialog__overlay">
+          <div class="movie__intro">
+            <div class="btn--close"></div>
+            <img src="movie-intro-book.jpg" alt="電影介紹">
+          </div>
+        </div>
+      </li>
+      <li class="dialog__item">
+        <div class="dialog__overlay">
+          <div class="movie__intro">
+            <div class="btn--close"></div>
+            <img src="movie-intro-chicken.jpg" alt="電影介紹">
+          </div>
+        </div>
+      </li>
+      <li class="dialog__item">
+        <div class="dialog__overlay">
+          <div class="movie__intro">
+            <div class="btn--close"></div>
+            <img src="movie-intro-picachu.jpg" alt="電影介紹">
+          </div>
+        </div>
+      </li>
+      <li class="dialog__item">
+        <div class="dialog__overlay">
+          <div class="movie__intro">
+            <div class="btn--close"></div>
+            <img src="movie-intro-shazan.jpg" alt="電影介紹">
+          </div>
+        </div>
+      </li>
+      <li class="dialog__item">
+        <div class="dialog__overlay">
+          <div class="movie__intro">
+            <div class="btn--close"></div>
+            <img src="movie-intro-us.jpg" alt="電影介紹">
+          </div>
+        </div>
+      </li>
+    </ul>
+  </section>
+</div>
+<script src="https://polyfill.io/v3/polyfill.min.js"></script>
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script>$('a[href^="#"]').on('click',function(e){var target=$('a[name='+this.getAttribute('href').split('#')[1]+']');if(target.length){e.preventDefault();$('html,body').stop().animate({scrollTop:target.offset().top},500);}});</script>
+<!-- 浮水印 -->
+<script id="scriptIconFloat" src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107917/float-icon.js"></script>
+<!--[if IE 9]>
+  <script src="flexibility.js"></script>
+  <script>flexibility(document.documentElement);</script>
+<![endif]-->
+<!--[if !IE]><!-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+<!--<![endif]-->
+<!--[if IE 9]>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/2.7.6/idangerous.swiper.min.js"></script>
+<![endif]-->
+<script src="index.js"></script>

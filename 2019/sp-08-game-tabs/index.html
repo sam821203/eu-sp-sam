@@ -1,0 +1,628 @@
+<meta name="viewport" content="width=device-width">
+<meta charset="utf-8">
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*:before, *:after {
+  box-sizing: border-box;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+  border: 0;
+  vertical-align: bottom;
+}
+
+article,
+main,
+nav,
+section {
+  display: block;
+}
+
+body {
+  margin: 0;
+  background-color: #feec7e;
+  font-family: PingFangTC-regular, Roboto, "LiHei Pro", "Source Han Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, "Microsoft JhengHei", sans-serif;  
+}
+
+.sp--1260 {
+  position: relative;
+  z-index: 0;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.sp--1260.icon_Home{
+  z-index: auto;
+}
+/* 主視覺 */
+/* ======================================== */
+.logo a,
+.sp__visual a{
+  display: block;
+}
+.logo {
+  position: absolute;
+  z-index: 1;
+  /* 調整logo位置 */
+  top: 2%;
+  left: 3%;
+  width: 30%;
+  max-width: 173px;
+}
+  @media screen and (max-width: 850px) {
+	.logo {
+	  width: 20%;
+	}
+  }
+.step_area {
+  position:relative;	
+}
+.regi {
+  position: absolute;
+  z-index: 9;
+  bottom: 7%;
+  right: 11%;
+  width: 30%;
+  max-width: 300px;  
+}
+/* 設定背景 */
+.sp__main {
+  background: url(bg.jpg) center 0 no-repeat;/*..............背景底圖,1260把這行刪掉*/
+}
+/* 設定前景 */
+.sp__visual {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+}
+/*...........................................................示意線條拿掉start*/
+ /* .visual__main a{
+    border: 1px solid #f00;
+    }*/
+    /*...........................................................示意線條拿掉end*/
+    .visual__anchor,
+    .visual__main,
+    .visual__nav {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+    .visual__anchor {
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+    }
+    .visual__main a,
+    .visual__nav a {
+      flex-grow: 1;
+     /* 測試用 
+     border: 1px solid #f00;*/
+   }
+   /* 主視覺 */
+   /*...........................................................紅框區高度*/
+   .visual__main {
+    height: 100%;
+  }
+  /*...........................................................紅框區寬度*/
+  .visual__main a:nth-child(1) {
+    flex-grow: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+
+  /* 自適應banner組 */
+  /* ======================================== */
+  .banner__title {
+    height: 65px;
+    background: center top no-repeat;
+  }
+  .banner__wrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .banner__item {
+    transition: all 0.3s;
+  }
+  .banner__item img {
+    width: 100%;
+  }
+  /* ...............................................................4變2 */
+  .bn-w4m2 .banner__item {
+    flex: 1 0 25%;
+  }
+  .banner__item--light label {
+    cursor: pointer;
+  }
+  /* 設定點下去與hover動畫 */
+  .banner__item--light:hover,
+  .banner__item--light:active {
+    /* 變大(>1時變大) */
+    transform: scale(1);
+    /* 亮度調亮(>100%時變亮) */
+    filter: brightness(130%);
+  }  
+  @media screen and (max-width: 1024px) {
+    /* 設定手機時一列2個 */
+    .bn-w4m2 .banner__item {
+      flex: 1 0 50%;
+    }
+  }
+  /* note*/
+  /* ======================================== */
+  .note {
+    word-break: break-all;
+  }
+
+  .note article {
+    background-color: #ff981e;
+    font: normal 1em/1.5 '微軟正黑體', Arial;
+    color: #331818;
+    padding-bottom: 3%;
+  }
+  .note2 article {
+    background-color: #e33834;
+    color: #ffdeb8;
+  }
+
+  .note article a{
+    display: inline;
+  }
+  
+  .note hr {
+    background-color: #ff801e;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 15px;
+    height: 8px;
+    border: 0;
+  }
+  .note2 hr {
+    background-color: #e33834;
+  }
+
+  .note h2 {
+    font-size: 1.5em;
+    line-height: 1.2;
+    margin: 5px 3% 5px 3%;
+  }
+
+  .note p {
+    line-height: 1.2;
+    padding: 0 5%;
+    margin: 0;
+  }
+
+  .note ol, .note ul {
+    padding: 0;
+    margin: auto;
+    margin: 0 5% 0 7%;
+    list-style: decimal;
+  }
+
+  .note ul {
+    list-style: disc;
+  }
+
+  .note table {
+    color: #331818;
+    border: 1px solid #c76218;
+    border-right: 0;
+    border-bottom: 0;
+    width: 90%;
+    margin: 1% 0 2% 5.5%;
+    background-color: #fff3b6;
+    font-size: 0.9em;
+  }
+  .note2 table {
+    color: #331818;
+    border: 1px solid #bf231f;
+    background-color: #fff3b6;
+  }
+
+  .note table td {
+    border-right: 1px solid #c76218;
+    border-bottom: 1px solid #c76218;
+    padding: 5px;
+    text-align: center;
+  }
+  .note2 table td {
+    border-right: 1px solid #bf231f;
+    border-bottom: 1px solid #bf231f;
+  }
+
+  .note table tr:first-child td, .note ol table tr:first-child td {
+    text-align: center;
+    background-color: #b53d02;
+    color: #fff;
+  }
+  .note2 table tr:first-child td, .note2 ol table tr:first-child td {
+    background-color: #a20400;
+    color: #fff;
+  }
+  .note ol table {
+    margin: 0;
+    width: 100%;
+    margin: 2% 0;
+  }
+
+  .note ol table td {
+    text-align: left;
+  }
+
+  .note ol table tr:first-child td {
+    white-space: nowrap;
+  }
+  .phone {
+	  max-width: 300px;
+	  padding:1%;
+  }
+  @media screen and (max-width: 1024px) {
+    .note ol, .note ul {
+      margin: 0 5% 0 10%;
+    }
+    .note table {
+      margin: 0 3%;
+      width: 94%;
+    }
+  }
+  /* 圖片 */
+  /* ======================================== */
+  .img--container {
+    display: inline-block;
+    width: 50%;	
+    text-align: center;
+    margin-bottom: 10px;
+    float: left;
+  }
+  .note2  .img--container {
+    width: 100%;	
+  }
+  
+  .img--container img{
+	max-width:330px;  
+	}
+
+  /*.img--container img:nth-child(1),
+  .img--container img:nth-child(2),
+  .img--container img:nth-child(3) {
+    width: calc(100% / 3 - 4px);
+    display: inline-block;
+  }*/
+  @media screen and (max-width: 768px) {
+
+    .img--container {
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+    }
+    .img--container img:nth-child(1),
+    .img--container img:nth-child(2),
+    .img--container img:nth-child(3) {
+      width: 94%;
+      margin-left: 3%;
+      margin-right: 3%;
+    }
+  }
+  /* 浮水印 */
+  /* ======================================== */
+  @media screen and (max-width: 959px) {
+    body {
+      padding-top: calc(0.15625 * 100vw);
+    }
+  }
+  .icon--float:last-child {
+    display: none;
+  }
+  .anchor--float {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  @media screen and (min-width: 960px) {
+    .anchor--float {
+      left: auto;
+      right: calc(50% - 482px);
+      max-width: 132px;
+    }
+    .icon--float:first-child {
+      display: none;
+    }
+    .icon--float:last-child {
+      display: block;
+    }
+  }
+  /* Tab */
+  /* ======================================== */
+  .note__box {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+  }
+  .input--tab {
+    position: absolute;
+    opacity: 0;
+  }
+  .input--tab + .note{
+    display: none;
+  } 
+  .input--tab:checked + .note{
+    display: block;
+  }
+  /* 中獎名單 */
+  /* ======================================== */ 
+  .list__wrap {
+    display: none;
+  }
+</style>
+<div id="spWrap" class="sp__wallper">
+  <!-- 主視覺 -->
+  <div class="sp--1260 icon_Home"><!-- 浮水印start(勿刪)-->
+    <a class="anchor--float" href="">
+      <img class="icon--float" src="float-icon-mobile.png" alt="回填資料抽大獎">
+      <img class="icon--float" src="float-icon.png" alt="回填資料抽大獎">
+    </a>
+  </div>                          <!-- 浮水印end(勿刪)-->
+  <main class="sp__main">
+    <div class="sp--1260">
+      <a href="https://www.etmall.com.tw" class="logo"><img src="logo.png" alt="東森購物"></a>
+      <div class="sp__visual">
+        <div class="visual__anchor"><!-- 紅框區 設定第一個a和第二個a的寬度會推擠後面a的寬度-->
+          <div class="visual__main"><a></a></div>
+        </div>
+        <img src="index_02.jpg">
+      </div>
+    </div>
+  </main>
+  <section class="sp--1260 bn-w4m2">
+    <ul class="banner__wrap">
+      <li class="banner__item">
+        <label for="mainTab">
+          <img src="index_04.png" alt="banner">
+        </label>
+      </li>
+      <li class="banner__item">
+        <label for="asideTab">
+          <img src="index_05.png" alt="banner">
+        </label>
+      </li>
+    </ul>
+  </section>
+</div>
+<section class="note__wrap">
+  <div class="sp--1260">
+    <div class="note__box">
+      <input type="radio" name="tab" id="mainTab" class="input--tab" checked>
+      <div class="note" name="note" id="note">
+        <div class="sp--1260">
+          <article>
+            <a id="note" name="note"></a>
+            <div class="step_area">
+              <a href="#" class="regi"><img src="btn_go.png" alt="登記"></a>
+              <img src="step_06.jpg" alt="">
+            </div>
+            <div id="listWrap1" class="list__wrap">
+              <img src="list_07.jpg" alt="">
+              <table cellpadding="0" cellspacing="0">
+                <tr>
+                  <td>姓名</td>
+                  <td>電話</td>
+                </tr>
+                <tr>
+                  <!-- <td>王小明</td> -->
+                  <!-- <td>0912345678</td> -->
+                </tr>
+                <tr>
+                  <!-- <td>王大明</td> -->
+                  <!-- <td>0923456789</td> -->
+                </tr>
+              </table>
+            </div>
+            <h2 style="text-align:center;">參與小額奪寶並揪朋友在自己的公開貼文按"讚"就有機會獲得！</h2>
+            <div class="img--container">
+              <table cellpadding="0" cellspacing="0" style="background-color: #fff ;">
+                <tr>
+                  <td style="font-size: 1.5em;font-weight: bold;">第一階段獎勵<br />BO Beoplay E8<br />限量特別版 真無線入耳耳機</td>
+                </tr>
+                <tr>
+                  <td><img src="p-1.jpg" alt=""></td>
+                </tr>
+              </table>
+            </div>
+            <div class="img--container">
+              <table cellpadding="0" cellspacing="0" style="background-color: #fff ;">
+                <tr>
+                  <td style="font-size: 1.5em;font-weight: bold;">第二階段獎勵<br />Apple Watch<br />Nike+ S4(GPS)44mm</td>
+                </tr>
+                <tr>
+                  <td> <img src="p-2.jpg" alt=""></td>
+                </tr>
+              </table>
+            </div>
+            <h2 style="clear: both;">【活動一：麻吉相挺按"讚"】</h2>
+            <p style="font-weight: bold;font-size:18px;padding-top:1%;">活動時間：2019/9/1上午00:00~2019/9/30下午23:59</p>
+            <p style="font-weight: bold;font-size:18px;padding-top:1%;">活動辦法：</p>
+            <ol>
+              <li>活動分為兩階段：</br>I. 第一階段：9/1上午00:00~9/15下午23:59</br>II.第二階段：9/16上午00:00~9/30下午23:59</li>
+              <li>於各階段期間參與小額奪寶後，在自己的FB公開小額奪寶的參與截圖，依照指定格式貼文大聲說出最想要的獎項，獲得10個好友按讚，就有抽獎資格哦！</li>
+              <li>兩階段活動都需要參與小額奪寶並在自己的FB發佈「公開」貼文，以及累積「10個」好友按讚；兩階段活動參與遊戲的截圖不可重複使用。</li>
+              <li>貼文格式：「拜託大家幫忙按個讚，東森免費抽大獎，我最想抽到__________(活動網址：http://xxxxxx)」</li>
+              <li>活動方式：
+                <br />Step 1.在「個人臉書」發佈參與「小額奪寶」的貼文。
+                <br />Step 2.「小額奪寶」貼文獲得「10個(含)」以上好友按讚。
+                <br />Step 3.於指定連結回填「姓名、東森會員門號、FB帳號」。
+                <br />Step 4.「貼文」的圖片內容需有小額奪寶「已參加」字樣，如下圖紅框。
+                <br /><img class="phone" src="phone-2.png" />
+              </li>
+              <li>第一階段活動結束後將從名單中抽出1名幸運兒送獎品「BO Beoplay E8 限量特別版 真無線入耳耳機」。</li>
+              <li>第一階段獎勵將於9/20前抽出，並於本活動頁公佈得獎名單。</li>
+              <li>第二階段活動結束後將從名單中抽出1名幸運兒送獎品「Apple Watch Nike+ S4(GPS)44mm」。</li>
+              <li>第二階段獎勵將於10/4前抽出，並於本活動頁公佈得獎名單。例：
+                <br />1. 小明於活動第一階段在自己的臉書發佈參與「小額奪寶」的貼文，並且貼文按讚數獲得「10個(含)」以上，於指定頁面回填資料，符合抽獎資格。
+                <br />2. 小明於活動第一階段在自己的臉書發佈參與「小額奪寶」的貼文，並且貼文按讚獲得「10個(含)」以上，但是「沒有」在指定頁面回填資料，不符合抽獎資格。
+                <br />3. 小王於活動第一階段在自己的臉書發佈參與「小額奪寶」的貼文，並且貼文按讚數僅獲得「9個」，於指定頁面回填資料，不符合抽獎資格。
+                <br />4. 小王在第二階段開放後，於指定頁面回填資料，官方人員查詢發文日期為活動第一階段，不符合抽獎資格。
+              </li>
+            </ol>
+            <p style="font-weight: bold;font-size:18px;padding-top:1%;">活動資格：</p>
+            <ol>
+              <li>全體東森會員。</li>
+            </ol>
+            <p style="font-weight: bold;font-size:18px;padding-top:1%;">注意事項：</p>
+            <ol>
+              <li>個人貼文需設定「公開」，若官方人員無法查證到貼文時，將取消其抽獎資格。</li>
+              <li>得獎名單將於本活動網頁公告。</li>
+              <li>會員資料回填錯誤將不另行通知。</li>
+              <li>新會員註冊時間依據系統記錄為主。</li>
+              <li>東森購物保有贈獎/活動變更、修改或終止本活動之權利。</li>
+              <li>活動獎勵實體獎項於10/11前由專人聯繫兌獎作業於10/16陸續寄出。</li>
+              <li>
+                本活動獎項將於兌獎流程後16個工作天寄出。獎項詳細內容與規格以實物為準，獎項均不得轉換、轉讓或折換現金，中獎資格不可轉讓予第三人。領獎後獎品之使用與維護，東森購物概不負責，若因不可抗力因素造成贈品無法交件，東森購物可將贈品內容更換成等值商品做為替換。
+              </li>
+              <li>兌獎流程將由專人主動與得獎人聯繫。依稅法規定，若得獎人於東森購物兌換贈（獎）品金額達新台幣（下同）1,001元以上未達20,010元，將於次年初開立免扣繳憑單予得獎人並向主管稽徵機關申報。</li>
+              <li>
+                活動限在台灣地區（包含金門、馬祖、澎湖）設有住居所之本國人參加。本獎品配送區域限臺灣本島地區(外、離島地區請利用臺灣親友地址作為收貨地址)，部分偏遠地區需加收額外運費(區域及實際運費由物流判定)。若因會員資料填寫不完整者，或活動後變更資料(如姓名、手機、地址等)，導致無法收到，恕不補發。
+              </li>
+              <li>活動頁開放至10/11上午10:00關閉。</li>
+            </ol>
+          </article>
+        </div>
+      </div>
+    </div>
+    <div class="note__box">
+      <input type="radio" name="tab" id="asideTab" class="input--tab">
+      <div class="note note2" name="note" id="note">
+        <div class="sp--1260">
+          <article>
+            <a id="note" name="note"></a>
+            <div id="listWrap2" class="list__wrap">
+              <div class="step_area">
+                <img src="list_07-2_07.jpg" alt="">
+              </div>
+              <table cellpadding="0" cellspacing="0">
+                <tr>
+                  <td>姓名</td>
+                  <td>電話</td>
+                </tr>
+                  <!-- <td>王小明</td> -->
+                  <!-- <td>0912345678</td> -->
+                </tr>
+                <tr>
+                  <!-- <td>王大明</td> -->
+                  <!-- <td>0923456789</td> -->
+                </tr>
+              </table>
+            </div>
+            <hr />
+            <h2 style="text-align:center;">新會員參加「小額奪寶」就有機會抽最新款「任天堂 Switch Lite」！</h2>
+            <div class="img--container">
+              <table cellpadding="0" cellspacing="0" style="background-color: #fff ;">
+                <tr>
+                  <td style="font-size: 1.5em;font-weight: bold;">任天堂<br />Switch Lite主機</td>
+                </tr>
+                <tr>
+                  <td><img src="p-3.jpg" alt=""></td>
+                </tr>
+              </table>
+            </div>
+            <h2>【活動二：新會員玩就送】</h2>
+            <p style="font-weight: bold;font-size:18px;padding-top:1%;color:#fff;">活動時間：2019/9/1上午00:00~2019/9/30下午23:59</p>
+            <p style="font-weight: bold;font-size:18px;padding-top:1%;color:#fff;">活動辦法：</p>
+            <ol>
+              <li>於活動期間「2019/9/1上午00:00~2019/9/30下午23:59」註冊的新會員。</li>
+              <li>新會員在活動期間有參與小額奪寶。</li>
+              <li>活動結束後將從「新會員」名單中抽出1名幸運兒贈送獎品「任天堂 Switch Lite主機」。</li>
+              <li>活動結束後將於本活動頁公佈得獎名單。獎名單。例：
+                <br />1.小明於9/1註冊新帳號，並且在活動期間有參與小額奪寶，符合抽獎資格。
+                <br />2.小安於8/31註冊新帳號，並且在活動期間有參與小額奪寶，由於小安的帳號是在活動開始前註冊，因此不符合抽獎資格料，不符合抽獎資格。
+              </li>
+            </ol>
+            <p style="font-weight: bold;font-size:18px;padding-top:1%;color:#fff;">活動資格：</p>
+            <ol>
+              <li>新註冊東森會員。</li>
+            </ol>
+            <p style="font-weight: bold;font-size:18px;padding-top:1%;color:#fff;">注意事項：</p>
+            <ol>
+              <li>新會員註冊時間依據系統記錄為主。</li>
+              <li>得獎名單將於本活動網頁公告。</li>
+              <li>東森購物保有贈獎/活動變更、修改或終止本活動之權利。</li>
+              <li>活動獎勵實體獎項於10/11前由專人聯繫兌獎作業於10/16陸續寄出。</li>
+              <li>
+                本活動獎項將於兌獎流程後16個工作天寄出。獎項詳細內容與規格以實物為準，獎項均不得轉換、轉讓或折換現金，中獎資格不可轉讓予第三人。領獎後獎品之使用與維護，東森購物概不負責，若因不可抗力因素造成贈品無法交件，東森購物可將贈品內容更換成等值商品做為替換。
+              </li>
+              <li>兌獎流程將由專人主動與得獎人聯繫。依稅法規定，若得獎人於東森購物兌換贈（獎）品金額達新台幣（下同）1,001元以上未達20,010元，將於次年初開立免扣繳憑單予得獎人並向主管稽徵機關申報。</li>
+              <li>
+                活動限在台灣地區（包含金門、馬祖、澎湖）設有住居所之本國人參加。本獎品配送區域限臺灣本島地區(外、離島地區請利用臺灣親友地址作為收貨地址)，部分偏遠地區需加收額外運費(區域及實際運費由物流判定)。若因會員資料填寫不完整者，或活動後變更資料(如姓名、手機、地址等)，導致無法收到，恕不補發。
+              </li>
+              <li>活動頁開放至10/11上午10:00關閉。</li>
+            </ol>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script>$('a[href^="#"]').on('click',function(e){var target=$('a[name='+this.getAttribute('href').split('#')[1]+']');if(target.length){e.preventDefault();$('html,body').stop().animate({scrollTop:target.offset().top},500);}});</script>
+<!-- 浮水印
+<script id="scriptIconFloat" src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107917/float-icon.js"></script> -->
+<!--[if IE 9]>
+  <script src="flexibility.js"></script>
+  <script>flexibility(document.documentElement);</script>
+<![endif]-->
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+<script>
+  function showList(){
+    var listWraps = Array.apply(null, document.getElementsByClassName("list__wrap"));
+
+    listWraps.forEach(function (el, index) {
+      var listItems = Array.apply(null, listWraps[index].querySelectorAll(".list__wrap td"));
+
+      if (listItems.length <= 2) return;
+      el.style.display = "block";
+    });
+  }
+  showList();
+
+  function initTabHover(){
+    var tabBtns = Array.apply(null, document.getElementsByClassName("banner__item"));
+    var radioInputs = Array.apply(null, document.getElementsByClassName("input--tab"));
+
+    function tabAddClass(){
+      radioInputs.forEach(function (el, index) {
+        tabBtns[index].classList.add("banner__item--light");
+        
+        if (el.checked) {
+          tabBtns[index].classList.remove("banner__item--light");
+        }
+      });
+    }
+ 
+    tabAddClass();
+    radioInputs.forEach(function (el) {
+      el.addEventListener("change", tabAddClass);
+    });
+  }
+  initTabHover();
+</script>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <!--<title>選擇您的賀卡</title>-->
+    <title>送您一份祝福</title>
+    <meta property="og:title" content="送您一份祝福">
+    <meta property="og:image" content="card.jpg">
+    <meta property="og:description" content="送您一份祝福">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        /* reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        *:before,
+        *:after {
+            box-sizing: border-box;
+        }
+
+        a {
+            display: block;
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            border: 0;
+        }
+
+        main, article, aside, details, figcaption, figure,
+        footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-size: 14px;
+            font-family: PingFangTC-regular, Roboto, "LiHei Pro", "Source Han Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, "Microsoft JhengHei", sans-serif;
+            /*background-color: #3B419D;*/
+        }
+
+        table img {
+            max-width: 100%;
+        }
+
+        input {
+            padding: 0;
+        }
+        /* rwd title */
+
+        .main-card {
+            max-width: 1620px;
+            max-height: 1458px;
+            margin: 0 auto;
+            position: relative;
+            background-color: #3B419D;
+            /*background-image: url('card-bg.jpg');*/
+            /*background-size: 1620px 1458px;*/
+            background-repeat: no-repeat;
+            background-position: top center;
+            text-align: center;
+        }
+
+        .input-outer {
+            /*left: calc(50% - 364px);*/
+            background-color: #3B419D;
+            max-width: 1620px;
+            margin: 0 auto;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        .input-group {
+            width: 500px;
+            margin: 10px auto;
+        }
+        .input-group:before,
+        .input-group:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .input-group .input-box {
+            width: 90%;
+            height: 34px;
+        }
+
+
+        /*.community__ico {*/
+        /*float: right;*/
+        /*}*/
+        .input-block, .share-block {
+            float: left;
+        }
+
+        .input-block {
+            width: calc(90% - 85px);
+        }
+        .input-block input{
+            font-size: 18px;
+        }
+
+        .share-block {
+            width: 85px;
+        }
+
+        .header__ico img {
+            height: 45px;
+            width: auto;
+            padding-left: 5px;
+        }
+
+        .bg-line a {
+            width: 35px;
+            height: 35px;
+            background: url('https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106167/line.jpg') no-repeat;
+            background-size: 35px, 35px;
+            border-radius: 5px;
+        }
+
+        .bg-facebook a {
+            width: 35px;
+            height: 35px;
+            background: url('facebook.png') no-repeat;
+            background-size: 35px, 35px;
+        }
+
+        .community__ico li {
+            display: inline-block;
+            cursor: pointer;
+            line-height: 40px;
+            margin-right: 5px;
+        }
+
+        .input-group.input-group-another {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .fgc-refresh {
+            width: 200px;
+            font-size: 1.4rem;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #ffa522;
+            color: #fff;
+            border: 0;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s linear 0s;
+            position: relative;
+            text-decoration: none;
+            text-transform: capitalize;
+            overflow: hidden;
+            text-transform: capitalize;
+        }
+
+        .fgc-refresh:before {
+             content: "\f0a4";
+             font-family: FontAwesome;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             position: absolute;
+             top: 0;
+             right: -30px;
+             width: 30px;
+             height: 100%;
+             background-color: rgba(255,255,255,0.3);
+             border-radius: 0px 4px 4px 0px;
+             transition: all 0.2s linear 0s;
+             text-align: center;
+         }
+        .fgc-refresh:hover {
+
+            text-indent: -30px;
+          }
+        .fgc-refresh:hover:before {
+            right: 0;
+            text-indent: 0px;
+          }
+
+        @media screen and (max-width: 895px) {
+            .main-card img {
+                width: 100%;
+            }
+            .input-group {
+                width: 100%;
+            }
+            .fgc-refresh {
+
+                margin-left: 3%;
+            }
+            .input-group .input-box {
+                width: 90%;
+                margin-left: 4%;
+            }
+            .input-block {
+                width: calc(100% - 85px);
+            }
+        }
+    </style>
+    <style type="text/css">
+        /* festive greeting card */
+        body {
+            background-color: #3B419D;
+        }
+        .fgc-temp-all {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .fgc-choice-temp {
+            justify-content: space-around;
+            width: calc(100% / 4 - 20px);
+            margin: auto 10px;
+        }
+        /*.fgc-choice-temp:hover {*/
+            /*transform: scale(2);*/
+        /*}*/
+        .fgc-choice-temp input {
+            opacity: 0;
+        }
+        .fgc-choice-temp img{
+            width: 100%;
+            border: 1px solid #eee;
+            box-shadow: 3px 3px 5px rgba(238,238,238,0.4);
+            padding: 4px;
+        }
+        .fgc-choice-temp:hover img{
+            opacity: 0.6;
+            transition: 0.5s;
+        }
+        .fgc-choice-temp .fgc-temp__text{
+            display: flex;
+            justify-content: center;
+        }
+        .input-box {
+            height: 40px;
+        }
+        .fgc-title {
+            font-size: 24px;
+            margin: 10px auto 10px 10px;
+        }
+        @media  screen and (max-width: 768px) {
+            .fgc-choice-temp {
+                justify-content: space-around;
+                width: calc(100% / 2 - 10px);
+                margin: auto 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+<script>
+    var fbhtml_url = window.location.toString();
+</script>
+<section class="fgc-temp-all" id="fgcTempAll"></section>
+<div class="main-card" id="fgcＭainCard"></div>
+<div id="fgcMainInput"></div>
+</body>
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script>
+</script>
+<script src="main.js"></script>
+<script></script>
+</html>

@@ -1,0 +1,29 @@
+.product--dynamic
+  width: 100%
+
+  .product__img
+    +aspect-ratio(500, 500, relative, zero, span)
+    img
+      +pos-set(absolute, base, 0, 0)
+
+  .product__name
+    display: -webkit-box
+    -webkit-line-clamp: 2
+    -webkit-box-orient: vertical
+    text-overflow: ellipsis
+    color: $gray-deep-dark
+    line-height: 120%
+    height: 2.71em
+    overflow: hidden
+
+  .product__price
+    padding: 0 2%
+    color: $gray-deep-light
+    background-color: $gray-deep-dark
+    font-weight: bold
+    text-align: center
+    span
+      &:nth-child(2)
+        font-size: 0.6em
+      &:last-child
+        font-size: 1.2em

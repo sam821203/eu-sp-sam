@@ -1,0 +1,561 @@
+/* ============= reset =============*/
+$font-def: PingFangTC-regular, "LiHei Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Source Han Sans TC", "Microsoft JhengHei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default
+
+$main-color: #6D0284
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  &:before, &:after
+    box-sizing: border-box
+
+a
+  display: block
+  text-decoration: none
+
+h1
+  line-height: 0
+
+ul
+  list-style: none
+
+img
+  border: 0
+
+main, header, footer, section
+  display: block
+
+a:focus,
+a:active,
+a:hover
+  outline: 0
+
+/* ============= global =============*/
+body
+  margin: 0
+  padding: 0
+  width: 100%
+  //background-color: $main-color
+  background-size: 100% 100%
+  /*background-image: linear-gradient(to bottom right, #04017F,#04017F 20%, #8028bd)
+  font-family: $font-def
+
+td, th
+  font-family: $font-def
+
+.clearfix:after
+  content: ''
+  display: block
+  clear: both
+  *zoom: 1
+
+.opacity--0
+  opacity: 0
+
+/* ================= mixin =================*/
+@import modules/_mixin.sass
+
+/* ================= sass 模組 =================*/
+$zIndexs: ("overlay": 8001, "logo":101, "spContent": 20, "title": 21, "title__decoration": 10, "shakeDecoration": 9, "third_Incentive_a": 6, "third_Incentive": 5, "third": 3, "second": 2, "base": 1, "zero": 0, "under": -1)
+
+$font-weights: ("regular": 400, "medium": 500, "bold": 700)
+
+/* ================= 主視覺 =================*/
+.upper_layer
+  position: relative
+  background-image: none
+  min-height: auto
+  margin-right: auto
+  margin-left: auto
+
+.main_group
+  overflow: hidden
+  +setting__background(url('upper_bg__mobile.jpg'), 100% auto, no-repeat, center top)
+  margin-left: auto
+  margin-right: auto
+  transform-origin: left
+  height: auto
+  min-height: calc(100vw * 1.16)
+  .title__decoration
+    position: absolute
+    z-index: map-get($zIndexs, title__decoration)
+    +setting__postion(0, 'left', 0, 100%)
+    height: 100%
+    [class^="decoration"]
+      position: absolute
+    img
+      width: 100%
+    .decoration
+      &--left
+        +setting__mobile-left(.07, .18, .09)
+      &--right
+        +setting__mobile-right(.17, .16, .1)
+      &--light
+        position: relative
+        img
+          position: absolute
+          &:first-child
+            top: -20px
+            animation: light-rotate both 2s, blink linear infinite 5s 1s
+        //
+        .light
+          top: 0
+          left: 0
+  +breakpoint-min($min-width-xl)
+    min-height: 1305px
+    .title__decoration
+      .decoration
+        &--left
+          +setting__postion(67.2px, 'left', 173px, auto)
+          img
+            width: auto
+        &--right
+          +setting__postion(165px, 'right', 155px, auto)
+        &--light
+          img:first-child
+            top: 10px
+
+.main_title
+  margin: 0 auto
+  position: relative
+  z-index: map-get($zIndexs, title)
+  display: flex
+  align-items: flex-start
+  height: 100%
+  img
+    position: absolute
+    height: auto
+    display: block
+  .partial__title
+    z-index: map-get($zIndexs, title)
+    +setting__mobile-left(.025, .23, .5)
+    animation: .8s 1s title-down both ease-out, 4s 5s title-color both infinite alternate-reverse
+    +breakpoint-min($min-width-xl)
+      top: 20px
+      left: 22.5%
+      width: auto
+  .partial__sub
+    position: absolute
+    animation: 2s 2s partial__sub both ease-out
+    transition: all 0.5s
+    &:hover
+      filter: brightness(120%)
+    +setting__postion(calc(100vw * .37), 'left', 52%, 60%)
+    transform: translateX(-50%) rotate(4deg)
+  +breakpoint-min($min-width-xl)
+    .partial__sub
+      +setting__postion(382px, 'left', calc(50% + 22px), auto)
+/* ================= 裝飾 =================*/
+//氣球
+.parallax-decoration,
+.decoration__wrap,
+.decoration
+  width: 100%
+  height: 100%
+  pointer-events: none
+  overflow: hidden
+
+.parallax-decoration
+  .decoration__wrap
+    position: absolute
+    z-index: map-get($zIndexs, shakeDecoration)
+    overflow-x: hidden
+    .decoration img
+      width: 100%
+      position: relative
+      left: 50%
+      transform: translateX(-50%)
+    .decoration1, .decoration2
+      display: none !important
+  +breakpoint-min($min-width-xl)
+    .decoration__wrap
+      .decoration img
+        width: auto
+      .decoration1, .decoration2
+        display: block !important
+      .decoration1
+        z-index: map-get($zIndexs, third)
+      .decoration2
+        z-index: map-get($zIndexs, second)
+        img
+          top: -3%
+/* ================= 誘因 =================*/
+.sp-content
+  position: relative
+  z-index: map-get($zIndexs, spContent)
+  top: 0
+  width: 100%
+  height: auto
+  margin: calc(-100vw * 0.68) auto 0 auto
+  +breakpoint-min($min-width-xl)
+    margin: -830px auto 0 auto
+
+// 抽郵輪
+.sec__incentive
+  display: flex
+  justify-content: space-between
+  a
+    width: 48%
+    img
+      width: 100%
+      transition: all 0.5s
+      &:hover
+        transform: scale(1.05)
+        filter: contrast(120%)
+
+// 滿額登記送
+.third__incentive
+  margin: 0 auto
+  text-align: center
+  position: relative
+  .third__main
+    position: relative
+    z-index: map-get($zIndexs, third_Incentive)
+    width: 90%
+    margin: 0 auto
+  .third__desc
+    position: absolute
+    +setting__mobile-left(.05, .01, .06)
+    z-index: map-get($zIndexs, zero)
+  a
+    position: absolute
+    height: calc(100vw * 0.225)
+    top: calc(100vw * 0.025)
+    left: 5%
+    z-index: map-get($zIndexs, third_Incentive_a)
+  +breakpoint-min($min-width-xl)
+    .third__desc
+      +setting__postion(48px, 'left', 10px, auto)
+    a
+      top: 20px
+      height: 230px
+/* ================= 熱銷精選 =================*/
+.bn-group__wrap--w2m1
+  .layout--main
+    position: relative
+    .btn--prev-bn-group-w2m1,
+    .btn--next-bn-group-w2m1
+      position: absolute
+      z-index: map-get($zIndexs, base)
+      top: 43%
+      width: 8%
+      height: 25%
+    .btn--prev-bn-group-w2m1
+      left: calc(100vw * 0.06)
+    .btn--next-bn-group-w2m1
+      right: calc(100vw * 0.06)
+    +breakpoint-min($min-width-lg)
+      .btn--prev-bn-group-w2m1,
+      .btn--next-bn-group-w2m1
+        width: 5%
+        top: 38%
+    +breakpoint-min($min-width-xl)
+      .btn--prev-bn-group-w2m1,
+      .btn--next-bn-group-w2m1
+        width: 5%
+        top: 38%
+      .btn--prev-bn-group-w2m1
+        left: 58px
+      .btn--next-bn-group-w2m1
+        right: 58px
+  .bn-group__zone
+    +setting__background(url('bn-group-w2m1-bg-m.png'), 92% auto, no-repeat, center top)
+    .slick-list
+      width: 92%
+      margin: 0 auto 10px auto
+    .slick-slide img
+      width: 80%
+      transform: translateY(calc(100vw * 0.14))
+      padding-bottom: calc(100vw * 0.175)
+      text-align: center
+      margin: 0 auto
+    .slick-dots
+      bottom: calc(100vw * 0.031)
+      width: 92%
+      li
+        width: 5px
+        height: 5px
+    &.slick-dotted.slick-slider
+      margin-bottom: 0
+    +breakpoint-min($min-width-lg)
+      padding: 5.3% 5% 1%
+      background-image: url("bn-group-w2m1-bg-d.png")
+      a
+        transition: all 0.5s
+        &:hover
+          transform: scale(1.05)
+          filter: contrast(120%)
+      .slick-slide img
+        width: 95%
+        transform: translateY(29px)
+        padding-bottom: 54px
+      .slick-dots
+        bottom: calc(100vw * 0.053)
+        width: 92%
+        li
+          width: 8px
+          height: 8px
+    +breakpoint-min($min-width-xl)
+      .slick-dots
+        bottom: 36px
+        width: 92%
+        li
+          width: 10px
+          height: 10px
+/* ================= 超夯強檔 =================*/
+.titlebar
+  padding: 1% 15% 0
+  img
+    width: 100%
+    margin-left: auto
+    margin-right: auto
+  &.bank-title,
+  &.bn-group-c2-title
+    padding: 0 13%
+    margin: 5px auto calc(-100vw * 0.012) auto
+  +breakpoint-min($min-width-lg)
+    &.bank-title,
+    &.bn-group-c2-title
+      padding: 0 22%
+      margin: 5px auto calc(-100vw * 0.009) auto
+  +breakpoint-min($min-width-xl)
+    &.bank-title,
+    &.bn-group-c2-title
+      margin: 5px auto -8.6px auto
+.banner__wrap
+  display: flex
+  flex-wrap: wrap
+  width: 100%
+  margin: 0 auto
+/* ....4變2(設定手機時一列2個).... */
+.bn-w4m2
+  .banner__item
+    flex: 1 0 45%
+    justify-content: space-between
+    transition: all 0.3s
+    img
+      width: 100%
+    &:nth-child(n+3)
+      margin-top: 2%
+    div
+      width: 95%
+      margin-left: auto
+      margin-right: auto
+    /* 設定點下去與hover動畫 */
+    &:hover, &:active
+      /* 變大(>1時變大) */
+      transform: scale(1.05)
+  /* 亮度調亮(>100%時變亮) */
+  /*filter: brightness(115%);*/
+  +breakpoint-min($min-width-lg)
+    .banner__item
+      flex: 1 0 23%
+      position: relative
+      a
+        padding-top: 5%
+        height: 100%
+      &:nth-child(n+3)
+        margin-top: 0
+
+/* ================= 銀行 =================*/
+.event__wrap--w4m2
+  .layout--main
+    position: relative
+    .tilte__zone--event
+      padding: 2% 18% 3%
+    .btn--prev-event-w4m2,
+    .btn--next-event-w4m2
+      position: absolute
+      z-index: map-get($zIndexs, zero)
+      top: 46%
+      width: 6.5%
+      height: 15%
+      +breakpoint-min($min-width-lg)
+        width: 5%
+        top: 53%
+    .btn--prev-event-w4m2
+      left: 4%
+    .btn--next-event-w4m2
+      right: 4%
+  .event__zone
+    padding: 6% 5% calc(100vw * 0.06)
+    +setting__background(url('bank-m.png'), 96% auto, no-repeat, center top)
+    .slick-list
+      border-radius: 20px
+      overflow: hidden
+      //transform: translateY(100vw * 0.125)
+      width: 92%
+      margin: 0 auto
+    .slick-slide
+      padding: 0 2px
+    .slick-cloned,
+    .slick-active
+      animation: rotate-self2 1s both
+      transition: transform 300ms ease-in-out
+    a
+      transition: all 0.5s
+      &:hover
+        transform: scale(0.95)
+        filter: brightness(120%)
+    +breakpoint-min($min-width-lg)
+      padding: 4%
+      +setting__background(url('bank-d.png'), 100% auto, no-repeat, center top)
+      min-height: calc(100vw * 0.33)
+      display: flex
+      align-items: center
+      justify-content: center
+      -ms-flex-pack: center
+      .slick-list
+        //transform: translateY(calc(100vw * 0.05))
+        width: 100%
+      .slick-slide
+        padding: 0 5px
+    +breakpoint-min($min-width-xl)
+      min-height: 310px
+      height: 310px  // for ie
+  .slick-slide img
+    width: 100%
+  .event__zone.event__zone--2
+    background: url("bn-group-c2-w2m1-bg-m.png") no-repeat
+    .slick-cloned,
+    .slick-active
+      animation: none
+    +breakpoint-min($min-width-lg)
+      background: url("bn-group-c2-w2m1-bg-m.png") no-repeat
+
+/* ================= 超值活動 ================= */
+.bn-group__wrap--w2m1.w2m1__carousel2
+  .layout--main
+    position: relative
+    .btn--prev-bn-group-w2m1,
+    .btn--next-bn-group-w2m1
+      position: absolute
+      z-index: map-get($zIndexs, base)
+      top: 48%
+      width: 3%
+      height: 25%
+    .btn--prev-bn-group-w2m1
+      left: calc(100vw * 0.03)
+    .btn--next-bn-group-w2m1
+      right: calc(100vw * 0.03)
+    +breakpoint-min($min-width-lg)
+      .btn--prev-bn-group-w2m1,
+      .btn--next-bn-group-w2m1
+        width: 3%
+        top: 52%
+      .btn--prev-bn-group-w2m1
+        left: calc(100vw * 0.02)
+      .btn--next-bn-group-w2m1
+        right: calc(100vw * 0.02)
+    +breakpoint-min($min-width-xl)
+      .btn--prev-bn-group-w2m1
+        left: 24px
+      .btn--next-bn-group-w2m1
+        right: 24px
+  .bn-group__zone
+    display: flex
+    align-items: center
+    -ms-flex-pack: center
+    justify-content: flex-start
+    min-height: calc(100vw * 0.54)
+    width: 100%
+    margin: 0 auto
+    +setting__background(url('bn-group-c2-w2m1-bg-m.png'), 96% auto, no-repeat, center top)
+    .slick-list
+      width: 80%
+      margin: 0 auto
+      text-align: center
+    //transform: translateY(calc(100vw * 0.06))
+    .slick-slide img
+      width: 100%
+      margin-top: 0
+      margin-right: auto
+      margin-left: auto
+      padding-left: 2px
+      transition: all 500ms ease-in-out
+      border-radius: 5px
+      transform: translateY(0)
+      padding-bottom: 0
+    .slick-dots
+      bottom: calc(100vw * 0.049)
+      width: 96%
+    +breakpoint-min($min-width-lg)
+      +setting__background(url('bn-group-c2-w2m1-bg-d.png'), 100% auto, no-repeat, center top)
+      min-height: calc(100vw * 0.33)
+      max-width: 1260px
+      padding: 0 5%
+      margin-bottom: 30px
+      .slick-list
+        width: 100%
+        img
+          padding-left: 2%
+          padding-right: 2%
+      a
+        transition: all 0.5s
+        &:hover
+          transform: scale(1.05)
+          filter: contrast(120%)
+      .slick-dots
+        bottom: calc(100vw * 0.05)
+        width: 92%
+        li
+          width: 15px
+          height: 15px
+    +breakpoint-min($min-width-xl)
+      min-height: 305px
+      height: 305px   // for ie
+      .slick-dots
+        bottom: 35px
+        width: 92%
+        li
+          width: 15px
+          height: 15px
+
+//TODO 第一張會跑掉
+//.slick-slide img
+//  transform: scale(.9)
+//  transform-origin: center
+//.slick-active img
+//  transform: scale(1)
+//  transform-origin: center
+/* ================= 總體 =================*/
+.logo
+  display: none
+  +breakpoint-min($min-width-xl)
+    display: block
+    position: absolute
+    top: 10px
+    left: calc(50% - 450px)
+    z-index: map-get($zIndexs, logo)
+    img
+      width: 70%
+      height: auto
+
+.sp__page
+  background-image: none
+  background-color: $main-color
+  background-position: center top
+
+.sp__wrap
+  position: relative
+  display: block
+  overflow: hidden
+  width: 100%
+  margin-left: auto
+  margin-right: auto
+  +breakpoint-min($min-width-xl)
+    max-width: 960px
+
+.upper_layer img
+  width: auto
+
+.sp__outFrame
+  +setting__background(none, 100% auto, no-repeat, center top)
+  +breakpoint-min($min-width-xl)
+    background-image: url('upper_bg.jpg')
+    background-size: 2560px 1305px
+
+/* ================= 動畫 =================*/
+@import modules/_keyframe.sass
+
+

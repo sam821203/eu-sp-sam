@@ -1,0 +1,110 @@
+.hero__wrap
+  +pos-set(relative, null)
+  overflow: hidden
+  .hero__zone
+    +pos-set(relative, zero)
+    // +bg-set(url("~components/hero-section/960bg-01.jpg"), 100%)
+    padding-top: 8%
+  .header__decoration
+    +pos-set(absolute, zero)
+    height: 0
+    &.header__decoration--left
+      +bg-set(url("~components/hero-section/hero-decoration-2.png"), contain)
+      top: -0.5%
+      left: -3.5%
+      padding-top: 43.2%
+      width: 27%
+      animation: key-wind-rotate2 12s infinite
+      transform-origin: left top
+    &.header__decoration--right
+      +bg-set(url("~components/hero-section/hero-decoration.png"), contain)
+      top: 1.2%
+      right: -3%
+      padding-top: 22.87%
+      width: 27%
+      animation: key-wind-rotate 12s infinite
+      transform-origin: right bottom
+
+  .hero__title
+    &--main
+      padding-top: 3.8%
+      img
+        margin-left: 12.5%
+        width: 87%
+
+  +breakpoint-min($min-width-xl)
+    // +bg-set(url("~components/hero-section/2560bg-01.jpg"))
+    .hero__zone
+      padding-top: 10px
+    .header__decoration
+      &.header__decoration--left
+        +bg-set(url("~components/hero-section/hero-decoration-web-2.png"))
+        top: -5px
+        left: -18%
+        padding-top: 0
+        width: 365px
+        height: 215px
+        animation: key-wind-rotate 12s infinite
+      &.header__decoration--right
+        +bg-set(url("~components/hero-section/hero-decoration-web.png"))
+        top: -12px
+        right: -18%
+        padding-top: 0
+        width: 286px
+        height: 122px
+        animation: key-wind-rotate 12s infinite
+        transform-origin: right top
+
+    .hero__title
+      padding-top: 20px
+      &--main
+        img
+          margin-left: 20%
+          width: 100%
+    .hero__block
+      +display-flex(">div")
+      flex-wrap: wrap
+      +pos-set(relative, zero)
+    .hero__box
+      +flex(0, 0, 60%)
+    .goods__wrap
+      +flex(0, 1, 66%)
+      +pos-set(absolute, base, 15px, null, null, -140px)
+    .promo__event
+      +flex(0, 1, 52%)
+      +pos-set(relative, second)
+    .goods__wrap--flip
+      +flex(0, 1, 62%)
+      +pos-set(absolute, base, 565px, null, null, -70px)
+      padding: 50px
+
+  // decoration
+  .hero__decoration
+    display: none
+    +breakpoint-min($min-width-xl)
+      display: block
+      +pos-set(absolute, base)
+      top: 450px
+      width: 100%
+      pointer-events: none
+      .decoration__box
+        +pos-set(relative, zero)
+        &:first-child
+          +bg-set(url("~components/hero-section/on-water-1.png"), auto)
+          left: 50%
+          margin-left: -1130px
+          width: 1755px
+          height: 240px
+          animation: key-rotate-self 6s infinite both alternate
+        &:last-child
+          +bg-set(url("~components/hero-section/on-water-2.png"), auto)
+          left: 50%
+          margin-top: -140px
+          margin-left: -770px
+          width: 2006px
+          height: 115px
+          animation: key-rotate-self 12s 2s infinite both alternate ease-out
+
++key-wind-rotate(-4, 4)
++key-wind-rotate(5, -4, key-wind-rotate2)
++key-rotate-self(2)

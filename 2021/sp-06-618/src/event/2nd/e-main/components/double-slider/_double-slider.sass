@@ -1,0 +1,42 @@
+.promo__group--double-slider
+  +pos-set(relative, zero)
+  .promo__wrap
+    +aspect-ratio(960, 520)
+  .promo__zone
+    +bg-set(url(event/2nd/e-main/components/double-slider/bg-double-slider.png), contain, center, 115%)
+  .double-slider__wrap
+    +pos-set(relative, zero)
+    padding: 0 8% 5%
+
+    +breakpoint-min($min-width-xl)
+      padding: 0 80px 50px
+    .double-slider__tab
+      margin-bottom: 2%
+      .swiper-slide
+        width: 33%
+        // transition: all 0.3s
+        img
+          &:last-child
+            +pos-set(absolute, base, 0, 0)
+            width: 100%
+            opacity: 0
+            // transition: all 0.6s
+        &.active
+          img
+            &:last-child
+              opacity: 1
+
+    .double-slider__content
+      margin-left: auto
+      margin-right: auto
+      width: 95%
+      .swiper-slide
+        +aspect-ratio(630, 940, relative, zero, a)
+        width: 33%
+        a
+          transition: all 0.3s
+        &:hover,
+        &:active,
+          a
+            filter: brightness(105%)
+

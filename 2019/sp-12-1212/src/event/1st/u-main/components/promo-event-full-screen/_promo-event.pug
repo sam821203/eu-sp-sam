@@ -1,0 +1,25 @@
+- var promoDataU = [{link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201912/SP_1104319/w/index.html", imgSrc: "~event/1st/u-main/components/promo-event-full-screen/items/promo-1-min.png", alt: "20間銀行最高回饋10%"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1103167/w/index.html", imgSrc: "~event/1st/u-main/components/promo-event-full-screen/items/promo-2-min.png", alt: "瘋搶撇步"},]
+
+
+- var promoDataU_2 = [{link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201912/SP_1105778/w/index.html", imgSrc: "~event/1st/u-main/components/promo-event-full-screen/items/promo-3-min.png", alt: "萊爾富超取送焙茶可可"}, {link: "https://www.u-mall.com.tw/Activity/HourSale", imgSrc: "~event/1st/u-main/components/promo-event-full-screen/items/promo-4-min.png", alt: "天天最激殺"},]
+
+
+//- var promoData = isU? promoDataU : promoDataU
+
+.promo__event
+  ul.event__wrap
+    each data, index in promoDataU
+      - var anchorId = 'promoAnchor' + (index + 1)
+      - var imgId = 'promoImg' + (index + 1)
+      li
+        a(id= anchorId, href= data.link, title= data.alt)
+          img(id= imgId, src= data.imgSrc, alt= data.alt)
+
+
+  ul.event__wrap
+    each data, index in promoDataU_2
+      - var anchorId = 'promoAnchorE_2' + (index + 1)
+      - var imgId = 'promoImgE_2' + (index + 1)
+      li
+        a(id= anchorId, href= data.link, title= data.alt)
+          img(id= imgId, src= data.imgSrc, alt= data.alt)

@@ -1,0 +1,269 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero__wrap
+  +pos-set(relative, zero)
+  padding-bottom: 14%
+  overflow: hidden
+  +breakpoint-min($min-width-xl)
+    padding-bottom: 75px
+
+  .background--hero
+    +pos-set(fixed, under)
+    width: 100%
+    height: 100%
+    background: center 0 no-repeat
+    transition: all 0.1s
+    &-1
+      background-image: url(event/1st/e-main/components/hero-section/bg.jpg)
+      background-size: 100%
+      +breakpoint-min($min-width-xl)
+        background-image: url(event/1st/e-main/components/hero-section/bg-web.jpg)
+        background-size: auto
+    &-2
+      background-image: url(event/1st/e-main/components/hero-section/bg-hero.png)
+      background-size: 100%
+      +breakpoint-min($min-width-xl)
+        background-image: url(event/1st/e-main/components/hero-section/bg-hero-web.png)
+        background-size: auto
+
+  .hero__zone
+    +pos-set(relative, zero)
+    padding-top: 1%
+
+  .hero__block
+    cursor: grab
+
+  .hero__box
+    +pos-set(relative)
+
+  .hero__title
+    &--main
+      +aspect-ratio(780, 460, absolute, zero, h1)
+      top: 23%
+      left: 9%
+      width: 75%
+      pointer-events: none
+      opacity: 0
+      +breakpoint-min($min-width-xl)
+        top: 215px
+        left: calc(50% - 375px)
+      .js-loading &
+        opacity: 1
+        animation: zoom-in 0.5s ease-in both
+
+      .title__icon
+        top: 24%
+        left: 11%
+        width: 13%
+        opacity: 0
+        .js-loading &
+          animation: go-left-up 1s 1.8s both
+
+      .title__box
+        +pos-set(relative)
+        &.title--decor
+          display: flex
+          padding-left: 27%
+          .decoration--title
+            width: 23%
+            .js-loading &
+              opacity: 1
+              animation: bounceInUp 0.5s both
+              .decor__box
+                animation: bounce 4s 3s infinite
+            &:nth-child(1)
+              padding-top: 11%
+              animation-delay: 0.6s
+              .decor__box
+                animation-delay: 0.6s
+            &:nth-child(2)
+              padding-top: 4%
+              animation-delay: 0.8s
+              .decor__box
+                animation-delay: 0.8s
+              img
+                transform: translateX(-22.5%)
+            &:nth-child(3)
+              padding-top: 8.5%
+              animation-delay: 0.7s
+              .decor__box
+                animation-delay: 0.7s
+              img
+                transform: translateX(-55%)
+            &:nth-child(4)
+              animation-delay: 0.9s
+              .decor__box
+                animation-delay: 0.9s
+              img
+                transform: translateX(-75%)
+
+        &.title--main
+          margin-top: -13.7%
+          margin-left: 8.5%
+          width: 91.5%
+          z-index: map-get($zindex, base)
+          .js-loading &
+            animation: jello 4s 1.2s infinite
+
+        &.title--sub
+          margin-top: -14.7%
+          width: 100%
+
+        +breakpoint-min($min-width-xl)
+          &.title--decor
+            padding-left: 200px
+            .decoration--title
+              width: 22%
+          &.title--main
+            margin-top: -92px
+            margin-left: 75px
+          &.title--sub
+            margin-top: -100px
+
+  .decoration__background
+    z-index: map-get($zindex, zero)
+    top: 65%
+    padding-bottom: 11%
+    width: 100%
+    background: url(event/1st/e-main/components/hero-section/decor-background.png) no-repeat
+    background-size: auto 100%
+    animation: bg-left-right 10s 3s infinite linear both
+    +breakpoint-min($min-width-xl)
+      top: 785px
+      padding-bottom: 100px
+      background-size: auto
+      animation: bg-left-right-web 10s 3s infinite linear both
+
+  .decoration__foreground
+    z-index: map-get($zindex, base)
+    bottom: 0
+    padding-bottom: 33%
+    width: 100%
+    background: url(event/1st/e-main/components/hero-section/decor-foreground.png) no-repeat
+    background-size: auto 100%
+    animation: fg-right-left 10s 3s infinite linear both
+    +breakpoint-min($min-width-xl)
+      padding-bottom: 250px
+      background-size: auto
+      animation: fg-right-left-web 10s 3s infinite linear both
+
+  .decoration--hero
+    display: none
+    top: 0
+    left: 0
+    pointer-events: none
+    overflow: hidden
+    +breakpoint-min($min-width-xxl)
+      display: block
+    .decoration--cracker
+      &:first-child
+        top: 100px
+        width: 2518px
+      &:last-child
+        top: 250px
+        width: 2401px
+
+
+  @import event/1st/e-main/components/hero-section/ferris/_ferris
+  @import event/1st/e-main/components/hero-section/hero-items/_hero-items
+  @import event/1st/e-main/components/hero-section/decor-web/_decor-web
+
+@keyframes bounceInUp
+  0%, 60%, 75%, 90%, to
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+  0%
+    opacity: 0
+    transform: translate3d(0, 160%, 0) scaleY(4)
+  60%
+    opacity: 1
+    transform: translate3d(0, -20%, 0) scaleY(.9)
+  75%
+    transform: translate3d(0, 10%, 0) scaleY(.95)
+  90%
+    transform: translate3d(0, -5%, 0) scaleY(.985)
+  to
+    transform: translateZ(0)
+
+@keyframes bounce
+  0%, 2%, 5.3%, to
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+    transform: translateZ(0)
+  4%, 4.3%
+    animation-timing-function: cubic-bezier(.755, .05, .855, .06)
+    transform: translate3d(0, -30px, 0) scaleY(1.1)
+  7%
+    animation-timing-function: cubic-bezier(.755, .05, .855, .06)
+    transform: translate3d(0, -15px, 0) scaleY(1.05)
+  8%
+    transition-timing-function: cubic-bezier(.215, .61, .355, 1)
+    transform: translateZ(0) scaleY(.95)
+  9%
+    transform: translate3d(0, -4px, 0) scaleY(1.02)
+  10%
+    transform: translate3d(0, 0px, 0) scaleY(1)
+
+@keyframes zoom-in
+  0%
+    transform: scale(0)
+    opacity: 0
+  80%
+    transform: scale(1.2)
+    opacity: 1
+  100%
+    transform: scale(1)
+    opacity: 1
+
+@keyframes go-left-up
+  0%
+    transform: translate(100%, 200%) rotate(-45deg)
+    opacity: 0
+  1%
+    opacity: 1
+  100%
+    transform: translate(0, 0) rotate(0deg)
+    opacity: 1
+
+@keyframes fg-right-left
+  0%
+    background-position-x: 675%
+  50%, 100%
+    background-position-x: -575%
+
+@keyframes fg-right-left-web
+  0%
+    background-position-x: calc(100% + 650px)
+  50%, 100%
+    background-position-x: -650px
+
+@keyframes bg-left-right
+  0%, 50%
+    background-position-x: -50%
+  100%
+    background-position-x: 150%
+
+@keyframes bg-left-right-web
+  0%, 50%
+    background-position-x: -300px
+  100%
+    background-position-x: calc(100% + 300px)
+
+@keyframes jello
+  0%, 3%, 27%, to
+    transform: translateZ(0)
+  6%
+    transform: skewX(-12.5deg) skewY(-12.5deg)
+  9%
+    transform: skewX(6.25deg) skewY(6.25deg)
+  12%
+    transform: skewX(-3.125deg) skewY(-3.125deg)
+  15%
+    transform: skewX(1.5625deg) skewY(1.5625deg)
+  18%
+    transform: skewX(-.78125deg) skewY(-.78125deg)
+  21%
+    transform: skewX(.390625deg) skewY(.390625deg)
+  24%
+    transform: skewX(-.1953125deg) skewY(-.1953125deg)
+
+

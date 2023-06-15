@@ -1,0 +1,805 @@
+<meta name="viewport" content="width=device-width">
+<meta charset="utf-8">
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    *:before, *:after {
+        box-sizing: border-box;
+    }
+
+    a {
+        display: block;
+        text-decoration: none;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    img {
+        width: 100%;
+        border: 0;
+        vertical-align: bottom;
+    }
+
+    article,
+    main,
+    nav,
+    section {
+        display: block;
+    }
+
+    body {
+        margin: 0;
+        background-color: #ffdfb4;
+        font-size: 14px;
+        font-family: PingFangTC-regular, Roboto, "LiHei Pro", "Source Han Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, "Microsoft JhengHei", sans-serif;
+    }
+
+    .sp--1260 {
+        position: relative;
+        z-index: 0;
+        max-width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .sp--1260.icon_Home {
+        z-index: auto;
+    }
+
+    /* 主視覺 */
+    /* ======================================== */
+    .logo a,
+    .sp__visual a {
+        display: block;
+    }
+
+    .logo {
+        position: absolute;
+        z-index: 1;
+        /* 調整logo位置 */
+        top: 0;
+        left: 0;
+        width: 30%;
+        max-width: 270px;
+        height: 3.5%;
+    }
+
+    /* 設定背景 */
+    .sp__main {
+        background: url(top190619bg.jpg) center 0 no-repeat;
+    }
+
+    /* 設定前景 */
+    .sp__visual {
+        position: relative;
+        z-index: 0;
+        width: 100%;
+    }
+
+    /*...........................................................示意線條拿掉start*/
+    /*.visual__main a{
+        border: 1px solid #f00;
+      }*/
+    /*...........................................................示意線條拿掉end*/
+    .visual__anchor,
+    .visual__main,
+    .visual__nav {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .visual__anchor {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+    }
+
+    .visual__main a,
+    .visual__nav a {
+        flex-grow: 1;
+    }
+
+    /* 主視覺 */
+    /*...........................................................紅框區高度*/
+    .visual__main {
+        height: 100%;
+    }
+
+    /* 如果需要個別設定每塊寬度(可不設) */
+    /* 如果設100%後面的就會掉下去 */
+    /*...........................................................紅框區設定寬度高度*/
+    .visual__main a:nth-child(1) {
+        flex-grow: 0;
+        width: 100%;
+        height: 100%
+    }
+
+    /*排站*/
+    .build--1260 {
+        max-width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .margin-top-sm {
+        margin-top: 2%;
+    }
+
+    .margin-bottom-sm {
+        margin-bottom: 2%;
+    }
+
+    .margin-bottom-md {
+        margin-bottom: 4%;
+    }
+
+    .build__wrap {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .card--small-space .build__item {
+        margin-top: 0.4%;
+        margin-bottom: 0.4%;
+        background-color: #fff;
+        border: 1px solid #EDEDED;
+        transition: transform 0.16s;
+    }
+
+    .card--small-space .build__item:active,
+    .card--small-space .build__item:hover {
+        transform: scale(1.03);
+    }
+
+    @media screen and (min-width: 768px) {
+        .card--small-space .build__item {
+            margin-top: 0.2%;
+            margin-bottom: 0.2%;
+        }
+    }
+
+    .card--small-space .item__push span:before,
+    .card--small-space .item__push span:after {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #999;
+    }
+
+    .card--small-space .item__push span:before {
+        top: 0;
+    }
+
+    .card--small-space .item__push span:after {
+        bottom: 0;
+    }
+
+    /* ===== card--small-space setting end ===== */
+    /* ===== card--small-space item *4 setting start ===== */
+    .card--small-space.item--4 .build__item {
+        width: 48%;
+        margin-bottom: 5px;
+        border-radius: 5px;
+    }
+
+    @media screen and (min-width: 768px) {
+        .card--small-space.item--4 .build__item {
+            width: 24%;
+            margin-bottom: 10px;
+        }
+    }
+
+    /* ===== card--small-space item *4 setting end ===== */
+    .build__item a {
+        color: #5d5d5d;
+    }
+
+    .item__pic {
+        position: relative;
+        z-index: 0;
+        padding-top: 100%;
+        overflow: hidden;
+    }
+
+    .item__img {
+        display: block;
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    .item__info {
+        padding: 3%;
+    }
+
+    .item__push {
+        width: 100%;
+        height: 28px;
+        text-align: center;
+    }
+
+    .item__push span {
+        display: block;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        position: relative;
+        z-index: 0;
+        margin: 0 3%;
+        max-height: 28px;
+        line-height: 200%;
+        color: #cc1e05;
+        font-weight: bold;
+        overflow: hidden;
+    }
+
+    .item__name {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        text-overflow: ellipsis;
+        height: 36px;
+        line-height: 120%;
+        font-size: 15px;
+        overflow: hidden;
+    }
+
+    .item__price span:last-child {
+        color: #ff3a3a;
+        font-size: 22px;
+    }
+
+    .prices {
+        text-decoration: line-through;
+    }
+
+    .note {
+        word-break: break-all;
+    }
+
+    .note article {
+        /*background-color: #4e3516;*/
+        font: normal 1em/1.5 '微軟正黑體', Arial;
+        color: #9c6a34;
+        padding-bottom: 3%;
+        /*padding-top: 10px;*/
+        margin-top: 10px;
+    }
+
+    .note hr {
+        background-color: #eeb87f;
+        width: 100%;
+        margin: 0;
+        margin-bottom: 15px;
+        height: 8px;
+        border: 0;
+    }
+
+    .note h2 {
+        font-size: 1em;
+        line-height: 2;
+        margin: 5px 0 5px 3%;
+    }
+
+    .note p {
+        line-height: 1.5;
+        padding: 0 5%;
+        margin: 0;
+    }
+
+    .note ol, .note ul {
+        padding: 0;
+        margin: auto;
+        margin: 0 5% 0 6.5%;
+        list-style: decimal;
+    }
+
+    .note ul {
+        list-style: disc;
+    }
+
+    .note ol a {
+        color: #eea1dd;
+        text-decoration: underline;
+        display: inline-block;
+    }
+
+    @media screen and (max-width: 1024px) {
+        .note ul {
+            list-style: disc;
+            margin: 0 5% 0 11%;
+        }
+    }
+</style>
+<link rel="stylesheet" href="pop--window.css">
+
+
+<!-- pop__window內容 -->
+<div class="big--photo dialog--content-sm dialog__wrap" id="goToStrawberrynet">
+    <div class="content">
+        <p>親愛的東森會員您好：</p>
+        <p>您即將前往<span class="company__color">東森集團旗下</span></p>
+        <p class="company__color company__font">草莓網</p>
+    </div>
+    <a class="immediately__go" href="https://www.strawberrynet.com/zh-hant-tw/main.aspx">立即前往</a>
+    <p class="timer__tips"><span id="countDown__num">3</span>秒後跳轉</p>
+</div>
+<!-- pop__window內容 -->
+
+
+<div id="spWrap" class="sp__wallper">
+    <!-- 主視覺 -->
+    <div class="sp--1260 icon_Home"><!-- 浮水印start(勿刪)-->
+        <div id="iconHome"></div>
+    </div>                          <!-- 浮水印end(勿刪)-->
+    <main class="sp__main">
+        <div class="sp--1260">
+            <a href="https://www.etmall.com.tw" class="logo"><!-- <img src="ehs-logo.png" alt="東森購物"> --></a>
+            <div class="sp__visual">
+                <div class="visual__anchor">
+                    <div class="visual__main">
+                        <a href="https://www.strawberrynet.com/zh-hant-tw/main.aspx" class="open-bigPhoto"
+                           data-dialog="goToStrawberrynet"></a>
+                    </div>
+                </div>
+                <img src="top190619_02.jpg">
+                <img src="top190619_04.jpg">
+                <img src="top190619_05.jpg">
+                <img src="top190619_06.jpg">
+                <img src="top190619_07.jpg">
+            </div>
+        </div>
+    </main>
+    <section class="build__wrap build--1260  card--small-space item--4">
+        <div class="build__item">
+
+            <a href="https://www.strawberrynet.com/zh-hant-tw/main.aspx" class="open-bigPhoto"
+               data-dialog="goToStrawberrynet">
+                <div class="item__box">
+                    <div class="item__pic">
+                        <img class="item__img" src="36.jpg" alt="">
+                    </div>
+                    <div class="item__info">
+                        <p class="item__name margin-bottom-md">BENEFIT 貝玲妃 嘖嘖稱齊毛孔隱形露22ml/0.75oz</p>
+                        <div class="prices">
+                            <span>$1,259</span>
+                        </div>
+                        <div class="item__price margin-bottom-sm">
+                            <span>$</span>
+                            <span>999</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="build__item">
+            <a href="https://www.strawberrynet.com/zh-hant-tw/main.aspx" class="open-bigPhoto"
+               data-dialog="goToStrawberrynet">
+                <div class="item__box">
+                    <div class="item__pic">
+                        <img class="item__img" src="41.jpg" alt="">
+                    </div>
+                    <div class="item__info">
+                        <p class="item__name margin-bottom-md">GUERLAIN 嬌蘭24K純金光水感隔離凝露30ml/1.1oz</p>
+                        <div class="prices">
+                            <span>$2,735</span>
+                        </div>
+                        <div class="item__price margin-bottom-sm">
+                            <span>$</span>
+                            <span>1,618</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="build__item">
+            <a href="https://www.strawberrynet.com/zh-hant-tw/main.aspx" class="open-bigPhoto"
+               data-dialog="goToStrawberrynet">
+                <div class="item__box">
+                    <div class="item__pic">
+                        <img class="item__img" src="25.jpg" alt="">
+                    </div>
+                    <div class="item__info">
+                        <p class="item__name margin-bottom-md">CLINIQUE 倩碧 透感控油隔離霜SPF25 40ml/1.4oz</p>
+                        <div class="prices">
+                            <span>$847</span>
+                        </div>
+                        <div class="item__price margin-bottom-sm">
+                            <span>$</span>
+                            <span>618</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="build__item">
+            <a href="https://www.strawberrynet.com/zh-hant-tw/main.aspx" class="open-bigPhoto"
+               data-dialog="goToStrawberrynet">
+                <div class="item__box">
+                    <div class="item__pic">
+                        <img class="item__img" src="37.jpg" alt="">
+                    </div>
+                    <div class="item__info">
+                        <p class="item__name margin-bottom-md">MAKE UP FOR EVER晶漾防曬氣墊粉餅 SPF35 2x15g/0.52oz</p>
+                        <div class="prices">
+                            <span>$1,424</span>
+                        </div>
+                        <div class="item__price margin-bottom-sm">
+                            <span>$</span>
+                            <span>1,209</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+    <section class="build__wrap build--1260  card--small-space item--4">
+
+        <div class="build__item">
+            <a href="https://www.strawberrynet.com/zh-hant-tw/main.aspx" class="open-bigPhoto"
+               data-dialog="goToStrawberrynet">
+                <div class="item__box">
+                    <div class="item__pic">
+                        <img class="item__img" src="40.jpg" alt="">
+                    </div>
+                    <div class="item__info">
+                        <p class="item__name margin-bottom-md">CLINIQUE 倩碧 無油光淨痘粉餅10g/0.35oz</p>
+                        <div class="prices">
+                            <span>$1,154</span>
+                        </div>
+                        <div class="item__price margin-bottom-sm">
+                            <span>$</span>
+                            <span>798</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="build__item">
+            <a href="https://www.strawberrynet.com/zh-hant-tw/main.aspx" class="open-bigPhoto"
+               data-dialog="goToStrawberrynet">
+                <div class="item__box">
+                    <div class="item__pic">
+                        <img class="item__img" src="43.jpg" alt="">
+                    </div>
+                    <div class="item__info">
+                        <p class="item__name margin-bottom-md">KIEHL'S 契爾氏 激光極淨白淡斑精華50ml/1.7oz</p>
+                        <div class="prices">
+                            <span>$3,072</span>
+                        </div>
+                        <div class="item__price margin-bottom-sm">
+                            <span>$</span>
+                            <span>2,389</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="build__item">
+            <a href="https://www.strawberrynet.com/zh-hant-tw/main.aspx" class="open-bigPhoto"
+               data-dialog="goToStrawberrynet">
+                <div class="item__box">
+                    <div class="item__pic">
+                        <img class="item__img" src="44.jpg" alt="">
+                    </div>
+                    <div class="item__info">
+                        <p class="item__name margin-bottom-md">ESTEE LAUDER 雅詩蘭黛 特潤超導修護露50ml/1.7oz</p>
+                        <div class="prices">
+                            <span>$3,396</span>
+                        </div>
+                        <div class="item__price margin-bottom-sm">
+                            <span>$</span>
+                            <span>2,049</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="build__item">
+            <a href="https://www.strawberrynet.com/zh-hant-tw/main.aspx" class="open-bigPhoto"
+               data-dialog="goToStrawberrynet">
+                <div class="item__box">
+                    <div class="item__pic">
+                        <img class="item__img" src="6.jpg" alt="">
+                    </div>
+                    <div class="item__info">
+                        <p class="item__name margin-bottom-md">KIEHL'S 契爾氏 金盞花植物精華化妝水500ml/16.9oz
+                        </p>
+                        <div class="prices">
+                            <span>$2,442</span>
+                        </div>
+                        <div class="item__price margin-bottom-sm">
+                            <span>$</span>
+                            <span>1,799</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+    <section class="build__wrap build--1260  card--small-space item--4">
+        <div class="build__item">
+            <a href="https://www.strawberrynet.com/zh-hant-tw/main.aspx" class="open-bigPhoto"
+               data-dialog="goToStrawberrynet">
+                <div class="item__box">
+                    <div class="item__pic">
+                        <img class="item__img" src="11.jpg" alt="">
+                    </div>
+                    <div class="item__info">
+                        <p class="item__name margin-bottom-md">JURLIQUE 茱莉蔻 玫瑰活膚露 化妝水100ml/3.3oz
+                        </p>
+                        <div class="prices">
+                            <span>$1,167</span>
+                        </div>
+                        <div class="item__price margin-bottom-sm">
+                            <span>$</span>
+                            <span>948</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="build__item">
+            <a href="https://www.strawberrynet.com/zh-hant-tw/main.aspx" class="open-bigPhoto"
+               data-dialog="goToStrawberrynet">
+                <div class="item__box">
+                    <div class="item__pic">
+                        <img class="item__img" src="13.jpg" alt="">
+                    </div>
+                    <div class="item__info">
+                        <p class="item__name margin-bottom-md">KIEHL'S 契爾氏 極限男性活膚潔面露 250ml/8.4oz</p>
+                        <div class="prices">
+                            <span>$847</span>
+                        </div>
+                        <div class="item__price margin-bottom-sm">
+                            <span>$</span>
+                            <span>618</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="build__item">
+            <a href="https://www.strawberrynet.com/zh-hant-tw/main.aspx" class="open-bigPhoto"
+               data-dialog="goToStrawberrynet">
+                <div class="item__box">
+                    <div class="item__pic">
+                        <img class="item__img" src="14.jpg" alt="">
+                    </div>
+                    <div class="item__info">
+                        <p class="item__name margin-bottom-md">BIOTHERM 碧兒泉 雙效去油光潔顏泥125ml/4.22oz</p>
+                        <div class="prices">
+                            <span>$1,193</span>
+                        </div>
+                        <div class="item__price margin-bottom-sm">
+                            <span>$</span>
+                            <span>618</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="build__item">
+            <a href="https://www.strawberrynet.com/zh-hant-tw/main.aspx" class="open-bigPhoto"
+               data-dialog="goToStrawberrynet">
+                <div class="item__box">
+                    <div class="item__pic">
+                        <img class="item__img" src="16.jpg" alt="">
+                    </div>
+                    <div class="item__info">
+                        <p class="item__name margin-bottom-md">HUGO BOSS 雨果博斯 自信男性體香膏75ml/2.5oz</p>
+                        <div class="prices">
+                            <span>$795</span>
+                        </div>
+                        <div class="item__price margin-bottom-sm">
+                            <span>$</span>
+                            <span>599</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+    <section class="build__wrap build--1260  card--small-space item--4">
+        <div class="build__item">
+            <a href="https://www.strawberrynet.com/zh-hant-tw/main.aspx" class="open-bigPhoto"
+               data-dialog="goToStrawberrynet">
+                <div class="item__box">
+                    <div class="item__pic">
+                        <img class="item__img" src="15.jpg" alt="">
+                    </div>
+                    <div class="item__info">
+                        <p class="item__name margin-bottom-md">CLARINS 克蘭詩 身體調和護理油100ml/3.3oz</p>
+                        <div class="prices">
+                            <span>$2,404</span>
+                        </div>
+                        <div class="item__price margin-bottom-sm">
+                            <span>$</span>
+                            <span>1,099</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="build__item">
+            <a href="https://www.strawberrynet.com/zh-hant-tw/main.aspx" class="open-bigPhoto"
+               data-dialog="goToStrawberrynet">
+                <div class="item__box">
+                    <div class="item__pic">
+                        <img class="item__img" src="20.jpg" alt="">
+                    </div>
+                    <div class="item__info">
+                        <p class="item__name margin-bottom-md">SABON沐浴油-香蘋薰衣草500ml/17.59oz</p>
+                        <div class="prices">
+                            <span>$849</span>
+                        </div>
+                        <div class="item__price margin-bottom-sm">
+                            <span>$</span>
+                            <span>699</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="build__item">
+            <a href="https://www.strawberrynet.com/zh-hant-tw/main.aspx" class="open-bigPhoto"
+               data-dialog="goToStrawberrynet">
+                <div class="item__box">
+                    <div class="item__pic">
+                        <img class="item__img" src="1.jpg" alt="">
+                    </div>
+                    <div class="item__info">
+                        <p class="item__name margin-bottom-md">MONTBLANC 萬寶龍Presence 星辰女性淡香水 75ml/2.5oz</p>
+                        <div class="prices">
+                            <span>$2,717</span>
+                        </div>
+                        <div class="item__price margin-bottom-sm">
+                            <span>$</span>
+                            <span>1,049</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="build__item">
+            <a href="https://www.strawberrynet.com/zh-hant-tw/main.aspx" class="open-bigPhoto"
+               data-dialog="goToStrawberrynet">
+                <div class="item__box">
+                    <div class="item__pic">
+                        <img class="item__img" src="30.jpg" alt="">
+                    </div>
+                    <div class="item__info">
+                        <p class="item__name margin-bottom-md">LANCOME 蘭蔻 清柔卸妝乳400ml/13.5oz</p>
+                        <div class="prices">
+                            <span>$2,015</span>
+                        </div>
+                        <div class="item__price margin-bottom-sm">
+                            <span>$</span>
+                            <span>999</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="build__item">
+            <a href="https://www.strawberrynet.com/zh-hant-tw/main.aspx" class="open-bigPhoto"
+               data-dialog="goToStrawberrynet">
+                <div class="item__box">
+                    <div class="item__pic">
+                        <img class="item__img" src="32.jpg" alt="">
+                    </div>
+                    <div class="item__info">
+                        <p class="item__name margin-bottom-md">BORGHESE 貝佳斯 美膚泥漿面膜430ml/17.6oz</p>
+                        <div class="prices">
+                            <span>$3,393</span>
+                        </div>
+                        <div class="item__price margin-bottom-sm">
+                            <span>$</span>
+                            <span>999</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="build__item">
+            <a href="https://www.strawberrynet.com/zh-hant-tw/main.aspx" class="open-bigPhoto"
+               data-dialog="goToStrawberrynet">
+                <div class="item__box">
+                    <div class="item__pic">
+                        <img class="item__img" src="33.jpg" alt="">
+                    </div>
+                    <div class="item__info">
+                        <p class="item__name margin-bottom-md">KIEHL'S 契爾氏 亞馬遜白泥淨緻毛孔面膜142g/5oz</p>
+                        <div class="prices">
+                            <span>$1,182</span>
+                        </div>
+                        <div class="item__price margin-bottom-sm">
+                            <span>$</span>
+                            <span>968</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="build__item">
+            <a href="https://www.strawberrynet.com/zh-hant-tw/main.aspx" class="open-bigPhoto"
+               data-dialog="goToStrawberrynet">
+                <div class="item__box">
+                    <div class="item__pic">
+                        <img class="item__img" src="35.jpg" alt="">
+                    </div>
+                    <div class="item__info">
+                        <p class="item__name margin-bottom-md">ORIGINS 品木宣言 奇蹟抗痘面膜100ml/3.4oz</p>
+                        <div class="prices">
+                            <span>$1,015</span>
+                        </div>
+                        <div class="item__price margin-bottom-sm">
+                            <span>$</span>
+                            <span>619</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="build__item">
+            <a href="https://www.strawberrynet.com/zh-hant-tw/main.aspx" class="open-bigPhoto"
+               data-dialog="goToStrawberrynet">
+                <div class="item__box">
+                    <div class="item__pic">
+                        <img class="item__img" src="34.jpg" alt="">
+                    </div>
+                    <div class="item__info">
+                        <p class="item__name margin-bottom-md">Borghese 貝佳斯 活力亮采美膚泥漿面膜430ml/17.6oz</p>
+                        <div class="prices">
+                            <span>$3,393</span>
+                        </div>
+                        <div class="item__price margin-bottom-sm">
+                            <span>$</span>
+                            <span>998</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+    <section class="note" name="note" id="note">
+        <div class="sp--1260">
+            <article>
+                <hr>
+                <a id="coin" name="coin"></a>
+                <h2>好禮三重送</h2>
+                <p>活動期間:6/24 10:00-7/15 10:00</p>
+                <ul>
+                    <li>第1重　指定全家便利商店取貨下單享95折+OREO酷繽沙(限量300份，數量有限，送完為止)。</li>
+                    <li>第2重 LINE Points 1%回饋(單一商品上限500點)，經由『LINE購物』進入『草莓網』完成消費 ; 逢五倍數日更享有最高10%高回饋。</li>
+                    <li>第3重　不限金額，首購第一筆免運費!非首購需滿千免運!</li>
+                </ul>
+                <h2>注意事項</h2>
+                <ol>
+                    <li>免運費僅限於台灣地區下單購買。</li>
+                    <li>香水及頭髮護理產品，由於其易燃性和重量而需要進行特殊處理。訂單如包含香水或頭髮護理產品，需要少許附加費。<a
+                            href="https://tw.strawberrynet.com/customer-service/delivery" target="_blank">詳見</a></li>
+                </ol>
+            </article>
+        </div>
+    </section>
+</div>
+
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script src="popwindow.js"></script>
+<!-- 浮水印 -->
+<!-- <script id="scriptIconFloat" src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106244/float-icon.js"></script> -->

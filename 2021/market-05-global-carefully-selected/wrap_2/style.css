@@ -1,0 +1,125 @@
+body {
+    /* 自行修正背景顏色 */
+    background-color: #ccf4fe;
+}
+
+/* 調整logo位置大小 */
+/* .logo {
+  top: 1%;
+  left: 1%;
+  width: 30%;
+  max-width: 220px;
+} */
+
+/* 連結測試 */
+/* .sp__visual a{
+  filter: brightness(500%);
+} */
+
+.home--logo {
+    position: absolute;
+    width: 29vw;
+    height: 12vw;
+    top: 0;
+    left: 3vw;
+}
+
+.sp__main__bg1:after,
+.sp__main__bg3:after,
+.sp__main__bg2:after {
+    background: none;
+    width: auto;
+    height: auto;
+}
+
+/* 大網各區塊背景  */
+@media screen and (min-width: 960px) {
+    .home--logo {
+        width: 280px;
+        height: 120px;
+        left: calc(50% - 470px);
+    }
+
+    .sp__main__bg1, .sp__main__bg2, .sp__main__bg3 {
+        position: relative;
+        overflow-x: hidden;
+    }
+
+    .sp__main__bg1:after,
+    .sp__main__bg3:after,
+    .sp__main__bg2:after {
+        position: absolute;
+        content: '';
+        clear: both;
+        display: block;
+        z-index: -1;
+        top: 0;
+        left: 50%;
+        width: 2560px;
+        transform: translateX(-50%);
+    }
+
+    .sp__main__bg1:after {
+        background: url(bg_01.jpg) no-repeat;
+        background-size: 2560px 1506px;
+        height: 1506px;
+    }
+
+    .sp__main__bg2:after {
+        background: url(bg_02.jpg) no-repeat;
+        background-size: 2560px 670px;
+        height: 670px;
+    }
+
+    .sp__main__bg3:after {
+        background: url(bg_03.jpg) no-repeat;
+        background-size: 2560px 848px;
+        height: 848px;
+    }
+}
+
+/* [區塊-背景固定] 只有大網有背景，需固定的背景圖可另行製作 */
+@media screen and (min-width: 960px) {
+    .top__center {
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+        background-size: 100% auto;
+        background: url(bg_01.jpg) center 0 no-repeat;
+        width: 2560px;
+        height: 828px;
+    }
+
+    .top--0 {
+        top: 0;
+    }
+}
+
+/* 倒數計時CSS範例 start */
+.timer {
+    position: absolute;
+    top: 74vw;
+    left: 46.5vw;
+    font-size: 4vw;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.timer span {
+    display: inline-block;
+    color: #d4708a;
+    vertical-align: middle;
+    padding: 0 2.2vw;
+}
+
+@media screen and (min-width: 960px) {
+    .timer {
+        font-size: 36px;
+        top: 712.5px;
+        left: calc(50% - 35px);
+    }
+
+    .timer span {
+        padding: 0 22.5px;
+    }
+}

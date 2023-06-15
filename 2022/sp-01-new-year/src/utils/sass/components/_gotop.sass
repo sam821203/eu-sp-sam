@@ -1,0 +1,27 @@
+.go-top
+  position: fixed
+  z-index: 999
+  right: 10px
+  bottom: 90px
+  transform: translateY(-50%)
+  padding: 10px 12px
+  color: $gray-deep-light
+  background: rgba($gray-deep-dark, 0.5)
+  border: none
+  opacity: 0
+  transition: opacity 0.4s linear
+  border-radius: 100px
+  cursor: pointer
+  display: none
+
+.go-top.is-visible
+  display: block
+  opacity: 1
+
+.go-top:focus,
+.go-top i:focus
+  outline: 0
+
+/* fix umall "position:fixed" not working */
+.main,.side
+  transform: none

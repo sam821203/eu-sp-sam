@@ -1,0 +1,111 @@
+// 範例彈窗
+.modal-on
+  overflow: hidden
+
+.modal
+  display: none
+  +pos-set(fixed, overlay, 0, 0, 0, 0)
+  width: 100%
+  height: 100vh
+  &.active
+    display: block
+
+  .modal__overlay
+    +pos-set(absolute, zero, 0, 0)
+    border: none
+    -webkit-backdrop-filter: blur(4px)
+    backdrop-filter: blur(4px)
+    .overlay__block
+      background-color: rgba($gray-deep-dark, 0.5)
+
+  .dialog__block
+    +pos-set(relative, second)
+    top: 50%
+    margin: 0 auto
+    width: 330px
+    color: $gray-deep-dark
+    background-color: $gray-deep-light
+    border-radius: 6px
+    box-shadow: 0px 24px 38px rgba($gray-deep-dark, 0.14), 0px 9px 46px rgba($gray-deep-dark, 0.12), 0px 11px 15px rgba($gray-deep-dark, 0.2)
+    text-align: left
+    transform: translateY(-50%)
+    overflow: hidden
+    .scroll-section
+      max-height: calc(70vh - 140px)
+      overflow-y: auto
+      min-height: 60px
+
+  .area-title
+    margin-bottom: 16px
+    padding-top: 24px
+    text-align: center
+
+  .area-content
+    padding-bottom: 24px
+    font-size: 16px
+    text-align: center
+
+  .area-content hr
+    width: 95%
+    height: 2px
+    border: 0
+    background-color: $gray-medium
+
+  .area-subtitle
+    text-align: center
+
+  .area-clickBtn
+    display: flex
+    border-top: 1px solid $gray-medium
+    text-align: center
+    .cta__box
+      flex: 0 0 50%
+    .n-btn
+      padding: 12px 0
+      width: 100%
+      color: $primary-medium
+      background-color: $gray-deep-light
+      border: 1px solid transparent
+      font-size: 18px
+      &:focus
+        outline: 0
+      &:hover
+        color: $main-color-2
+      &.n-btn--cancel
+        color: $gray-medium
+        &:hover
+          color:  $gray-dark
+
+.modal.invite
+  .dialog__block.invite__modal
+    +pos-set(relative, zero)
+    width: 300px
+    background-color: transparent
+    box-shadow: none
+
+    .modal__close
+      +pos-set(absolute, zero)
+      top: 2%
+      right: 4%
+      width: 36px
+
+    .cta__box
+      +pos-set(absolute, zero)
+      bottom: 10%
+      left: 17%
+      padding-bottom: 20%
+      width: 65%
+      a
+        display: block
+        +pos-set(absolute, zero, 0, 0)
+        width: 100%
+        height: 100%
+
+    .modal__close,
+    .n-btn
+      cursor: pointer
+
+    +breakpoint-min($min-width-lg)
+        width: 500px
+        .modal__close
+          width: 60px

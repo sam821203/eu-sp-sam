@@ -1,0 +1,21 @@
+.bn-special__wrap
+  margin-bottom: 2%
+  li > a
+    > img:last-child
+      display: none
+
+  .promo__slider
+    height: 30vw
+    .swiper-container
+      height: 100%
+
+  +breakpoint-min($min-width-xl)
+    margin-bottom: 20px
+    li > a
+      > img:first-child
+        display: none
+      > img:last-child
+        display: block
+
+    .promo__slider
+      height: 120px

@@ -1,0 +1,210 @@
+// 範例彈窗
+.modal-on
+  overflow: hidden
+
+.modal
+  display: none
+  +pos-set(fixed, overlay, 0, 0, 0, 0)
+  width: 100%
+  height: 100vh
+  &.active
+    display: block
+
+  .modal__overlay
+    +pos-set(absolute, zero, 0, 0)
+    border: none
+    -webkit-backdrop-filter: blur(4px)
+    backdrop-filter: blur(4px)
+    .overlay__block
+      background-color: rgba($gray-deep-dark, 0.5)
+
+  .dialog__block
+    +pos-set(relative, second)
+    top: 50%
+    margin: 0 auto
+    width: 330px
+    color: $gray-deep-dark
+    background-color: $gray-deep-light
+    border-radius: 6px
+    box-shadow: 0px 24px 38px rgba($gray-deep-dark, 0.14), 0px 9px 46px rgba($gray-deep-dark, 0.12), 0px 11px 15px rgba($gray-deep-dark, 0.2)
+    text-align: left
+    transform: translateY(-50%)
+    overflow: hidden
+    .scroll-section
+      padding: 0 16px
+      max-height: calc(70vh - 140px)
+      overflow-y: auto
+      min-height: 60px
+
+  .area-title
+    padding: 16px
+    font-size: 18px
+    font-weight: bold
+    text-align: center
+
+  .area-subtitle
+    margin-bottom: 8px
+    padding: 8px 4px
+    background: $gray-light
+    border-radius: 8px
+    font-size: 16px
+    font-weight: bold
+    text-align: center
+
+  .area-content
+    padding-bottom: 24px
+    font-size: 16px
+    line-height: 150%
+
+  .area-content hr
+    display: none
+    // width: 100%
+    // height: 2px
+    // border: 0
+    // background-color: $gray-medium
+
+  .area-clickBtn
+    display: flex
+    border-top: 1px solid $gray-medium
+    text-align: center
+    .cta__box
+      flex: 0 0 50%
+    .n-btn
+      padding: 12px 0
+      width: 100%
+      color: $primary-medium
+      background-color: $gray-deep-light
+      border: 1px solid transparent
+      font-size: 18px
+      &:focus
+        outline: 0
+      &:hover
+        color: $main-color-2
+      &.n-btn--cancel
+        color: $gray-medium
+        &:hover
+          color:  $gray-dark
+        +breakpoint-min($min-width-xxl)
+          order: 1
+
+// 兌換紀錄彈窗
+.record-list
+  display: none
+  .record-list__modal
+    margin-left: 15px
+    margin-right: 15px
+    width: calc( 100% - 30px )
+    background-color: transparent
+    box-shadow: none
+
+    .list__head
+      +pos-set(relative, zero)
+
+    .modal__close
+      +pos-set(absolute, zero)
+      top: 16px
+      right: 5%
+      width: 20px
+
+    .list-title
+      padding-top: 15px
+      padding-bottom: 15px
+      color: $gray-dark
+      background-color: $main-color-6
+      font-size: 16px
+      font-weight: bold
+      text-align: center
+
+    .list__body
+      padding: 15px
+      background-color: rgba($gray-deep-dark, 0.6)
+
+    .list-content
+      +pos-set(relative, zero)
+      min-height: 100px
+      max-height: 60vh
+      overflow-y: auto
+
+    .record-list-table
+      +pos-set(relative, base)
+      width: 100%
+      font-size: 14px
+      th,
+      td
+        padding: 10px
+        text-align: center
+        vertical-align: middle
+      thead
+        tr
+          background-color: $gray-deep-dark
+        th
+          color: $gray-deep-light
+      tbody
+        tr
+          background-color: $gray-deep-light
+          &:nth-child(odd)
+            background-color: $gray-light
+        td
+          padding: 10px
+          color: $gray-deep-dark
+
+    .list-alert
+      +pos-set(absolute, zero)
+      top: 40px
+      left: 0
+      width: 100%
+      height: 60px
+      line-height: 60px
+      color: $gray-deep-dark
+      background-color: $gray-light
+      font-size: 14px
+      text-align: center
+
+    .list-note
+      padding-top: 15px
+      color: $gray-deep-light
+      font-size: 14px
+
+    .modal__close,
+    .n-btn
+      cursor: pointer
+
+    +breakpoint-min($min-width-lg)
+      margin-left: auto
+      margin-right: auto
+      max-width: 700px
+      .list-title
+        padding-top: 10px
+        padding-bottom: 10px
+        font-size: 16px
+
+      .modal__close
+        top: 9px
+
+      .list__body
+        padding: 30px
+
+      .record-list-table
+        font-size: 16px
+        th,
+        td
+          padding: 12px
+        th
+          font-size: 20px
+
+      .list-note
+        padding-top: 20px
+        color: $gray-deep-light
+        font-size: 16px
+        text-align: center
+
+      .list-alert
+        top: 52px
+        height: 42px
+        line-height: 42px
+        font-size: 16px
+
+    // +breakpoint-min($min-width-lg)
+    //     width: 500px
+    //     .modal__close
+    //       width: 60px

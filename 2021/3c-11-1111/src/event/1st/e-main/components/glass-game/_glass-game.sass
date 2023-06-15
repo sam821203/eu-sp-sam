@@ -1,0 +1,172 @@
+.promo__group--poking
+  +pos-set(relative, zero)
+  .promo__wrap
+    +aspect-ratio(960, 1200)
+    .promo__zone
+      // padding: 10% 5% 5% 5%
+      // +bg-set(url(event/1st/e-main/components/glass-game/game/poking-game-bg.png), 100%)
+      .promo__title
+        margin: -3% auto 0
+        width: 60%
+      .item--click
+        position: absolute
+        bottom: 10%
+        left: 27%
+        width: 50%
+        height: 30px
+        cursor: pointer
+        // background-color: #f0ff17
+        // border: 1px solid #f0ff17
+        +breakpoint-min($min-width-xl)
+          height: 10vw
+
+      .promo__block
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+        // padding: 10% 5% 5% 5%
+        +pos-set(absolute, base)
+        top: 6.9%
+        left: 5.4%
+        width: 90%
+        .promo__box
+          // margin-bottom: 3%
+          width: 32% 
+          a
+            +pos-set(relative)
+            &.active
+              filter: brightness(1.3)
+              animation: flash2 1s linear, bounce 0.5s
+            .promo__box--top
+              // display: none
+              opacity: 0
+              +pos-set(absolute, 2, 3%, 4%)
+              width: 92%
+              img
+                display: block
+                transform: scale(1.1)
+              &.active
+                animation: wrapItemShow 1s
+                animation-delay: 1.3s
+                animation-fill-mode: forwards
+            .foot--print
+              // display: none
+              opacity: 0
+              +pos-set(absolute, 2, 3%, 4%)
+              width: 92%
+              img
+                display: block
+                transform: scale(1.1)
+              &.active
+                animation: wrapItemShow 1s
+                animation-delay: 4s
+                animation-fill-mode: forwards
+            // .promo__box--product
+            //   opacity: 0
+            //   +pos-set(absolute, 2, 3%, 4%)
+            //   width: 92%
+            //   img
+            //     display: block
+            //     transform: scale(1.1)
+            //   &.active
+            //     // display: block
+            //     // opacity: 1
+            //     animation: wrapItemShow ease-in 1s
+            //     animation-delay: 4.2s
+            //     animation-fill-mode: forwards
+      .popup__wrap
+        display: none
+        +pos-set(absolute, base)
+        top: -4%
+        left: 0
+        width: 100%
+        background-color: $gray-deep-dark-low-transparency
+        // z-index: 5
+        &.active
+          display: block
+          animation: zoom-in2 .6s 0.3s both linear
+          // animation-delay: .6s
+          .popup__overlay
+            // animation-delay: 5s
+          img
+            // animation-delay: 5s
+            animation: zoom-in 1.5s 0.5s both
+
+
+        .popup__overlay
+          // height: 100%
+        // opacity: 0.8
+        .popup__block
+          padding-top: 11% 
+          padding-bottom: 16%
+          animation: zoom-in2 .6s 0.3s both linear
+          img
+            opacity: 1
+            animation: zoom-in .6s 0.5s both
+        .popup__alert
+          +pos-set(absolute, 5, 50%, 50%)
+          padding: 2%
+          width: 40%
+          color: $gray-deep-light
+          background-color: $gray-medium
+          border: 1px solid $gray-deep-light
+          border-radius: 100px
+          font-size: 5vw
+          text-align: center
+          transition: opacity 0.3s ease-out
+          transform: translate(-50%, -50%)
+          pointer-events: none
+          opacity: 0
+          &.active
+            opacity: 1
+          +breakpoint-min($min-width-xl)
+            font-size: 28px
+
+
+
+.brightness
+  transition: 1s
+  filter: brightness(2)
+  // animation: 0.5s shakeY
+
+@keyframes shakeY
+  0%, 80%, to
+    transform: translateZ(0)
+  30%, 50%, 70%
+    transform: translate3d(0, -10%, 0)
+  40%, 60%
+    transform: translate3d(0, 10%, 0)
+
+@keyframes flash2
+  0%, 20%, 40%, 50%, 60%, 64%, 68%,72%, 76%, 80%, 82%, 84%, 86%, 88%, 90%, 92%, 94%, 96%, 98%, 100%
+    filter: brightness(90%)
+    opacity: 0.9
+  10%, 30%, 45%, 55%, 62%, 66%, 70%, 74%, 78%, 81%, 83%, 85%, 87%, 89%, 91%, 93%, 95%, 97%, 99%
+      filter: brightness(120%)
+      opacity: 1
+
+
+@keyframes wrapItemShow
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+@keyframes zoom-in2
+  0%
+    border-radius: 50%
+    transform: scale(0)
+  30%
+    border-radius: 50%
+  100%
+    border-radius: 0
+    transform: scale(1)
+
+
+@keyframes footPrintShow
+  0%
+    opacity: 0
+  1%
+    opacity: 1
+  100%
+    opacity: 1

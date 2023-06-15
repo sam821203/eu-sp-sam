@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<head>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		* {
+ 		 box-sizing: border-box; }
+  		*:before, *:after {
+    		box-sizing: border-box; }
+	    a {
+	    	display: block;
+	    	text-decoration: none;
+	    }
+		header a, section a {
+			line-height: 0;
+		}
+	    h1 {
+	    	line-height: 0;
+	    }
+		ul {
+			list-style: none;
+		}
+		img {
+			border: 0;
+		}
+		main, header, footer, section {
+			display: block;
+		}
+		body {
+			width: 100%;
+			min-width: 1260px;
+			margin: 0;
+  			padding: 0;
+			background-color: #b0f0f1;
+		}
+		body, td, th {
+		font-family: Arial, Helvetica, LiHei, "Microsoft JhengHei", PMingLiU, "微軟正黑體", "新細明體", sans-serif;
+		}
+		.clearfix:after {
+			content: '';
+			display: block;
+			clear: both;
+			*zoom: 1;
+		}
+
+		.sp__wrap {
+			position: relative;
+			width: 100%;
+			background: center top url(bg.png) no-repeat;
+			overflow: hidden;
+		}
+
+		.sp__wrap:before, .sp__wrap:after {
+			content: '';
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			left: calc((100% - 2000px)/2 + 2000px);
+			width: calc((100% - 2000px)/2);
+			height: 100%;
+			background: center top url(outbg.png) repeat-x;
+		}
+
+		.sp__wrap:before {
+			left: 0;
+			background: center top url(outbg2.png) repeat-x;
+		}
+
+		.sp--1260 {
+			position: relative;
+			width: 1260px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+/* ================= bg-dec ================= */
+		.bg-dec {
+			position: fixed;
+			z-index: -2;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100vh;
+		}
+
+		.bg-cloud {
+			height: 25%;
+			background: url(bg-cloud.png) no-repeat;
+			background-size: contain;
+			animation: move-right-left infinite linear;
+		}
+
+		.cloud1 {
+			background-position-x: 145%; 
+			animation-duration: 36s;
+		}
+
+		.cloud2 {
+			margin-top: -5%;
+			margin-bottom: 5%;
+			background-position-x: 163%; 
+			animation-duration: 40s;
+			animation-delay: 1s;
+		}
+
+		.cloud3 {
+			background-position-x: 173%; 
+			animation-duration: 34s;
+			animation-delay: 3s;
+		}
+
+		.cloud4 {
+			background-position-x: 153%; 
+			animation-duration: 30s;
+			animation-delay: 5s;
+		}
+
+		@keyframes move-right-left {
+			to {
+				background-position-x: -55%;
+			}
+		}		
+
+		.stage {
+			position: absolute;
+			z-index: -1;
+			top: 122px;
+			left: calc(50% - 740px);
+			opacity: 0;
+			animation: 0.1s 0.1s show step-end forwards;
+		}
+		@keyframes show {
+			to {
+				opacity: 1;
+			}
+		} 
+
+		.queen {
+			position: absolute;
+			z-index: 0;
+			top: -80px;
+			left: 125px;
+			filter: drop-shadow( -1px 2px 1px rgba(0, 0, 0, .15));
+			opacity: 0;
+			animation: 3s 0.3s move-left-right forwards;
+		}
+
+		@keyframes move-left-right {
+			from {
+				top: 0;
+				left: 0;
+				opacity: 1;
+			}
+			to {
+				top: -80px;
+				left: 125px;
+				opacity: 1;
+			}
+		}
+
+		.spot {
+			position: absolute;
+			z-index: 1;
+			top: -140px;
+			left: -130px;
+			opacity: 0;
+			animation:1s 3s show forwards;
+		}
+
+/* ================= header ================= */
+		.sp-logo {
+			position: absolute;
+			z-index: 20;
+			top: 20px;
+			left: 0;
+			cursor: pointer;
+		}
+
+		.side-info {
+			position: absolute;
+			z-index: 30;
+			top: 519px;
+			right: 5%;
+			width: 186px;
+			filter: drop-shadow(-5px -1px 4px rgba(0,0,0,.35));;
+		}
+
+		.side-info img {
+			width: 100%;
+		}
+
+		.side-info a {
+			position: absolute;
+			z-index: 21;
+			left: 0;
+			width: 100%;
+		}
+
+		.side-info a:nth-child(2) {
+			top: 0;
+			height: 50%;
+		}
+
+		.side-info a:nth-child(3) {
+			bottom: 0;
+			height: 50%;
+		}
+		
+/* ================= main-visual ================= */
+
+		.sp-title {
+			position: relative;
+			z-index: 1;
+			padding-top: 7px;
+			height: 500px;
+		}
+
+		.main-title {
+			position: relative;
+			z-index: 5;
+		}
+
+		.main-title > img:first-child {
+			position: relative;
+			z-index: 0;
+			left: 42%;
+			transform: translateX(-50%);
+		}
+
+		.main-title > a {
+			position: absolute;
+			z-index: 9;
+			top: 9%;
+			left: 42%;
+		}
+		.main-title > a:hover {
+			transform: scale(1.05); 
+		}
+		.main-title > a:hover img {
+			filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2)) drop-shadow( 0 3px 3px rgba(0,0,0,0.35));
+		}
+		.main-title > a > img:nth-child(1) {
+			animation: 3s 0.5s self-shake ease-out infinite;
+		}
+		.main-title > a > img:nth-child(2) {
+			position: absolute;
+			z-index: 9;
+			top: 12%;
+			left: 58.5%;
+			animation: 3s 0.5s self-scale ease-out infinite;
+		}
+
+		@keyframes self-scale {
+			from ,50%, to{
+				transform: scale(1)  translateX(0)
+			} 
+
+			3.5% {
+			transform: scale(1) translateX(-6px) rotateY(-9deg);
+			}
+
+			9.5% {
+			transform: scale(1) translateX(5px) rotateY(7deg);
+			}
+
+			16.5% {
+			transform: scale(1) translateX(-3px) rotateY(-5deg);
+			}
+
+			22.5% {
+			transform: scale(1) translateX(2px) rotateY(3deg);
+			}
+			25% {
+			transform: scale(1) translateX(0);
+			}
+			62% {
+			transform: scale(1.2) translateX(0);
+			}
+			75% {
+			transform: scale(1) translateX(0);
+			}
+			87% {
+			transform: scale(1.2) translateX(0);
+			}
+		}
+
+		@keyframes self-shake {
+		  0% {
+		    transform: translateX(0);
+		  }
+
+		  3.5% {
+		    transform: translateX(-6px) rotateY(-9deg);
+		  }
+
+		  9.5% {
+		    transform: translateX(5px) rotateY(7deg);
+		  }
+
+		  16.5% {
+		    transform: translateX(-3px) rotateY(-5deg);
+		  }
+
+		  22.5% {
+		    transform: translateX(2px) rotateY(3deg);
+		  }
+
+		  25% {
+		    transform: translateX(0);
+		  }
+		}
+/* ================= subtitle ================= */
+		.subtitle {
+			position: absolute;
+			z-index: 5;
+			top: 7px;
+			right: 2%;
+			height: 490px;
+			color: #fff;
+			font-size: 15px;
+			text-align: center;
+			overflow: hidden;
+		}
+
+		.subtitle h2 {
+			position: absolute;
+			z-index: 1;
+			top: 85px;
+			left: 215px;
+			font-weight: normal;
+			transition: color 0.3s;
+		}
+
+		.out-dec {
+			width: 560px;
+			height: 530px;
+			background-image: url(bg-subtitle.png);
+		}
+
+		.subtitle a {
+			position: absolute;
+			z-index: 5;
+			top: 0;
+			right: 60px;
+			width: 390px;
+			height: 465px;
+			border-radius: 50%;
+		}
+
+		.subtitle a:hover + h2 {
+			color: #e0bbcc;
+		}
+
+		.img-outer {
+			position: absolute;
+			z-index: -1;
+			top: 108px;
+			right: 90px;
+			width: 328px;
+			height: 327px;
+			border-radius: 25%;
+			transition: all 0.3s;
+			overflow: hidden;
+		}
+
+		.subtitle img:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 8px 13px rgba(0,0,0,0.2), 0 3px 3px rgba(0,0,0,0.35);
+		}
+
+/* ================= main0 ================= */
+		.main0 {
+			position: relative;
+			z-index: 1;
+			width: 100%;
+			min-width: 1260px;
+			height: 206px;
+		}
+
+		.main0--info-a {
+			position: absolute;
+			z-index: 1;
+			top: -130px;
+			left: -258px;
+			width: 600px;
+			height: 350px;
+		}
+
+		.main0--info-a img {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 100%;
+		}
+
+		.main0--info-a img:first-child {
+			z-index: 3;
+			filter: drop-shadow(-3px 2px 4px rgba(0,0,0,.35));
+			
+		}
+		.main0--info-a img:last-child {
+			z-index: 1;
+		}
+
+		.main0-title {
+			position: relative;
+			top: 15px;
+			left: 52%;
+			transform: translateX(-50%);
+		}
+
+		@keyframes self-rotate {
+			from {
+				transform: rotate(0deg);
+			}
+			to {
+				transform: rotate(720deg);
+			}
+		}
+
+/* ================= main-content ================= */
+		.sp-content	{
+			position: relative;
+			z-index: 20;
+			top: 0;
+			overflow: hidden;
+		}
+
+		.main-info {
+			position: relative;
+			z-index: 0;
+			height: 426px;
+			padding-left: 10px;
+			background: center top url(bg-main.jpg) no-repeat;			
+		}
+
+		.main--info-a {
+			position: relative;
+			z-index: 2;
+			float: left;
+			padding: 50px 25px 20px;
+			transition: all 0.2s ease-in-out;
+		}
+
+		.main-dec {
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			left: calc(50% - 150px);
+			width: 299px;
+			height: 47px;
+			background-image: url(main1.2.png); 
+			transition: all 0.2s ease-in-out;
+		}
+
+		.main--info-a:nth-child(1) {
+			white-space: nowrap;
+		}
+		.main--info-a:nth-child(2) {
+			padding: 35px 13px 12px;
+		}
+		.main--info-a:nth-child(2) img {
+			display: inline-block;
+		}
+		.main--info-a:nth-child(2) img + img{
+			margin-left: 20px;
+		}
+		.main--info-a:nth-child(3) {
+			margin-top: -2px;
+			padding: 0 11px 30px;
+		}
+		.main--info-a:nth-child(4) {
+			margin-top: -2px;
+			padding: 0 19px 18px;
+		}
+		.main--info-a:nth-child(5) {
+			margin-top: -2px;
+			padding: 0px 14px 30px;
+		}
+
+		.main--info-a:nth-child(1):hover ~ .main-dec, .main--info-a:nth-child(2):hover ~ .main-dec {
+			transform: scale(1.03);
+			transform-origin: center;
+			filter: brightness(115%) hue-rotate(5deg);
+		}
+
+		.main--info-a:hover {
+			transform: scale(1.03);
+			transform-origin: center;
+			filter: brightness(115%) hue-rotate(5deg);
+		}
+
+		.banner {
+			position: relative;
+			z-index: 1;
+			transition: all 0.3s;
+		}
+		.banner:hover {
+			transform: scale(1.02);
+			transform-origin: center;
+			filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2)) drop-shadow( 0 3px 3px rgba(0,0,0,0.35));			
+		}
+/* ================= front-dec  ================= */
+		.curtain {
+			position: absolute;
+			z-index: 10;
+			top: -100px;
+			pointer-events: none;
+		}
+
+		.curtain1 {
+			width: 532px;
+			height: 998px;
+			left: calc(50% - 1320px);
+			background-image: url(front-curtain-l.png);
+			transform-origin: top;
+			animation: 10s curtain-left infinite alternate; 
+		}
+
+		.curtain2 {
+			width: 485px;
+			height: 830px;
+			left: calc(50% + 790px);
+			background-image: url(front-curtain-r.png);
+			animation: 10s curtain-right infinite alternate; 
+		}
+
+		@keyframes curtain-left {
+			to {
+				transform: scale(0.9, 0.95) rotate(8deg) translateX(10%);  
+			}
+		}
+
+		@keyframes curtain-right {
+			to {
+				transform: scale(0.9, 1.02) rotate(-10deg) translateX(5%);
+			}
+		}
+
+/* ================= table hover setting ================= */
+		td[width^="2"] {
+			transition: all 0.3s;
+		}
+
+		td[width^="2"] a {
+			transition: all 0.3s;
+		}
+
+		td[width^="2"] td {
+			transition: all 0.3s;
+		}
+
+		td[width^="2"]:hover {
+			transform: translateY(-6px);
+			box-shadow: 0 5px 10px rgba(0,0,0,0.2), 0 3px 3px rgba(0,0,0,0.35);
+		}
+		td[width^="2"]:hover a {
+			color: #e0bbcc !important;
+		}
+
+		td[width^="2"]:hover td {
+			color: #e0bbcc !important;
+		}
+    </style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+	<div class="bg-dec">
+		<div class="bg-cloud cloud1"></div>
+		<div class="bg-cloud cloud2"></div>
+		<div class="bg-cloud cloud3"></div>
+		<div class="bg-cloud cloud4"></div>
+	</div>
+	<main id="spWrap" class="sp__wrap">
+		<div class="stage">
+			<img src="bg-stairs.png" alt="" class="stairs">
+			<img src="bg-girl.png" alt="" class="queen">
+			<img src="spotlight.png" alt="" class="spot">
+			<div class="spotlight"></div>
+		</div>
+		<header>
+			<div class="sp--1260">
+				<div class="sp-logo">
+					<a href="https://www.etmall.com.tw/" title="東森嚴選 -- ETMall東森購物網" target="_top">
+						<img src="logo.png" alt="東森嚴選 -- ETMall東森購物網">
+					</a>
+			  	</div>
+				<aside class="side-info">
+					<img src="line.png" alt="LINE's & APP's QR-code">
+					<a href="https://www.etmall.com.tw/Activity/WebSP?SubPage=DMSetting/Final/209912/SP_1103498/index.html" target="_blank"></a>
+					<a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201804/SP_1104083/index.html" target="_blank"></a>
+				</aside>
+				<div class="subtitle">
+					<a id="ASRC" href="" title="點我購買APP專屬優惠商品！"></a>
+					<h2>APP專屬優惠商品</h2>
+					<div class="out-dec"></div>					
+					<div class="img-outer">
+						<img id="IMGSRC" src="" alt="APP專屬優惠商品">
+					</div>
+				</div>
+				<div class="sp-title">
+					<h1 class="main-title" title="女王價到 -- ETMall東森購物網">
+						<img src="title.png" alt="">
+						<a id="timeOut" href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201804/SP_1104083/index.html" target="_blank" title="LINE購物，全館5%回饋！">
+							<img src="title-line.png" alt="LINE購物，全館都回饋！">
+							<img src="title-sp.png" alt="5%">
+						</a>
+					</h1>
+				</div>
+			</div>
+		</header>
+		</div>
+		<section class="main0">
+			<div class="sp--1260">
+				<a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201805/SP_1104066/index.html" class="main0--info-a" title="點我進入抓抓樂活動頁面！">
+					<img id="main0Img" src="main0-1.png" alt="">
+					<img src="main0-2.png" alt="">	
+				</a>
+				<img class="main0-title" src="main0.png" alt="下單玩瘋狂抓抓樂抽豪禮">
+			</div>
+		</section>
+		<section class="sp-content">
+			<div class="sp--1260">
+				<div class="banner"><a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201804/SP_1104083/index.html" target="_blank" title="LINE購物，全館5%回饋！"><img src="banner.png" alt="LINE購物，全館5%回饋！"></a></div>
+				<div class="main-info clearfix">
+					<a href="https://www.etmall.com.tw/Activity/WebSP?SubPage=DMSetting/Final/209912/SP_1103498/index.html" class="main--info-a" title="APP下載優惠">
+						<img src="main1.png" alt="APP下載優惠">
+					</a>
+					<a href="https://www.etmall.com.tw/Activity/WebSP?SubPage=DMSetting/Final/201805/SP_1104092/index.html" class="main--info-a" title="消費滿額抽蛋糕，滿三單再送小電鍋">
+						<img src="main2-1.png" alt="消費滿額抽蛋糕"><img src="main2-2.png" alt="滿三單再送小電鍋">
+					</a>
+					<a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201805/SP_1104064/index.html" class="main--info-a" title="刷卡享好康">
+						<img src="main3.png" alt="刷卡享好康">
+					</a>
+					<a href="https://www.etmall.com.tw/Activity/WebSP?SubPage=DMSetting/Final/201805/SP_1104063/index.html" class="main--info-a" title="單日累計送">
+						<img src="main4.png" alt="單日累計送">
+					</a>
+					<a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201805/SP_1104065/index.html" class="main--info-a" title="會員專屬優惠"><img src="main5.png" alt="會員專屬優惠"></a>
+					<div class="main-dec"></div>
+				</div>
+			</div>
+		</section>
+		<div class="curtain curtain1"></div>
+		<div class="curtain curtain2"></div>
+	</main>
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1104292/generateVersion20180425.js" defer></script>
+<script>
+	function apngControl() {
+		var main0 = document.querySelector('.main0');
+		var img = document.querySelector('#main0Img');
+		main0.addEventListener('mouseenter', function(){
+				img.src = 'main0-3.png';
+		});
+		main0.addEventListener('mouseleave', function(){
+				img.src = 'main0-1.png';
+		});	
+	}
+	apngControl();
+
+	function spTimeOut() {
+		var dateNow = Date.now();
+		var dateTimeOut = new Date(2018,4,10);
+		var $timeOut = $('#timeOut');
+		var $banner = $('.banner');
+
+		if( dateNow > dateTimeOut ) {
+			$timeOut.hide();
+			$banner.hide();
+		}
+	}
+	spTimeOut();
+</script>	
+<script>
+		  var time = new Date();	  
+		  var days = time.getDate();
+		  var min = time.getMinutes();
+		  var n = time.getDate(); 
+         if(n>14)
+		  {	 
+			document.getElementById("IMGSRC").src ="e-product-10.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href ="https://www.etmall.com.tw/i/1991628"
+		  
+		  }
+		  else if(n>12)
+		  {	 
+			document.getElementById("IMGSRC").src ="e-product-9.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href ="https://www.etmall.com.tw/i/1991628"
+		  }
+		  else if(n>9)
+		  {	
+			document.getElementById("IMGSRC").src ="e-product-7.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href ="https://www.etmall.com.tw/i/5988828"
+		  }
+		
+		  else if(n>6)
+		  {	
+			document.getElementById("IMGSRC").src ="e-product-5.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href ="https://www.etmall.com.tw/i/1761135"
+		  }
+		  
+		  else if(n>3)
+		  {	
+			document.getElementById("IMGSRC").src ="e-product-2.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href ="https://www.etmall.com.tw/i/1472876"
+		  }
+		 
+		  else if(n>1)
+		  {
+			document.getElementById("IMGSRC").src ="e-product-1.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href ="https://www.etmall.com.tw/i/6244016"
+		  }
+</script>	
+</body>
+</html>

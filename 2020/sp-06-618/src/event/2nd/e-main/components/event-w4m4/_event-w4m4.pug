@@ -1,0 +1,34 @@
+-
+  var w4m2DataE = [
+  {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202005/SP_1115475/w/index.html", imgSrc: "~event/2nd/e-main/components/event-w4m4/items/event-w4m4-img-1.png", alt: "初夏美妝"},
+  {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202006/SP_1115655/w/index.html", imgSrc: "~event/2nd/e-main/components/event-w4m4/items/event-w4m4-img-2.png", alt: "健康首選"},
+  {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202006/SP_1115538/w/index.html", imgSrc: "~event/2nd/e-main/components/event-w4m4/items/event-w4m4-img-3.png", alt: "家電補助"},
+  {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202005/SP_1115505/w/index.html", imgSrc: "~event/2nd/e-main/components/event-w4m4/items/event-w4m4-img-4.png", alt: "Apple"},
+  {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202005/SP_1115449/w/index.html", imgSrc: "~event/2nd/e-main/components/event-w4m4/items/event-w4m4-img-5.png", alt: "華碩筆電"},
+  {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202006/SP_1115666/w/index.html", imgSrc: "~event/2nd/e-main/components/event-w4m4/items/event-w4m4-img-6.png", alt: "日用好物"},
+  {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202005/SP_1115603/w/index.html", imgSrc: "~event/2nd/e-main/components/event-w4m4/items/event-w4m4-img-7.png", alt: "流行精品"},
+  {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202006/SP_1115509/w/index.html", imgSrc: "~event/2nd/e-main/components/event-w4m4/items/event-w4m4-img-8.png", alt: "線上旅展"},
+  ]
+
+-
+  var w4m2DataU = [
+  {link: "https://www.u-mall.com.tw/c1/45051", imgSrc: "~event/2nd/u-main/components/event-w4m4/items/event-w4m4-img-1.png", alt: "開架保養"},
+  {link: "https://www.u-mall.com.tw/np/73924", imgSrc: "~event/2nd/u-main/components/event-w4m4/items/event-w4m4-img-2.png", alt: "關鍵保健"},
+  {link: "notyet", imgSrc: "~event/2nd/u-main/components/event-w4m4/items/event-w4m4-img-3.png", alt: "notyet"},
+  {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202002/SP_1106075/w/index.html", imgSrc: "~event/2nd/u-main/components/event-w4m4/items/event-w4m4-img-4.png", alt: "豪禮狂送"},
+  {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202002/SP_1106076/w/index.html", imgSrc: "~event/2nd/u-main/components/event-w4m4/items/event-w4m4-img-5.png", alt: "女王家居"},
+  {link: "https://www.u-mall.com.tw/np/77121", imgSrc: "~event/2nd/u-main/components/event-w4m4/items/event-w4m4-img-6.png", alt: "流行精選"},
+  {link: "notyet", imgSrc: "~event/2nd/u-main/components/event-w4m4/items/event-w4m4-img-7.png", alt: "notyet"},
+  {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202002/SP_1106001/w/index.html", imgSrc: "~event/2nd/u-main/components/event-w4m4/items/event-w4m4-img-8.png", alt: "Fun心出遊"},
+  ]
+
+- var w4m2Data = isU? w4m2DataU : w4m2DataE
+
+
+section.promo__group.promo__group--w4m4.m-bottom--lg(data-title="分館活動")
+  .promo__wrap
+    ul.good__wrap
+      each data in w4m2Data
+        li
+          a(href= data.link, title= data.alt)
+            img(src= data.imgSrc, alt= data.alt)

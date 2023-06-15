@@ -1,0 +1,46 @@
+.items__wrap
+  +pos-set(relative, base)
+  margin-top: -33%
+  +bg-set(url(event/2nd/e-main/components/hero-section/hero-items/bg-hero-items.png), 120%,center, 100%)
+  pointer-events: none
+  +breakpoint-min($min-width-xl)
+    margin-top: -315px
+    background-size: auto
+  .items__zone
+    +aspect-ratio(890, 525)
+    +breakpoint-min($min-width-xl)
+      &::before
+        padding-bottom: 57.1%
+  .items__block
+    +pos-set(relative, zero)
+    padding-left: 4%
+    text-align: center
+    +breakpoint-min($min-width-xl)
+      padding-left: 60px
+  .item--special
+    +pos-set(absolute, base)
+    bottom: 29%
+    right: 1%
+    width: 23%
+    pointer-events: auto
+    cursor: pointer
+    .js-loading &
+      animation: go-up-down 1s 3s infinite alternate both, shinning 1s 3s infinite alternate
+    &:hover,
+    &:active
+      animation-play-state: paused
+    +breakpoint-min($min-width-xl)
+      bottom: 33%
+      right: 0
+      width: 30%
+@keyframes go-up-down
+  0%
+    transform: translateY(0%)
+  100%
+    transform: translateY(-10%)
+
+@keyframes shinning
+  0%
+    filter: brightness(100%) contrast(100%)
+  100%
+    filter: brightness(105%) contrast(120%)

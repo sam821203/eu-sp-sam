@@ -1,0 +1,77 @@
+// // ==========================================================================
+// // Plugins
+// // ==========================================================================
+// // @import "vendors/animate"
+@import "~vendors/style/swiper-slider-custom"
+
+// // ==========================================================================
+// // components
+// // ==========================================================================
+
+// hero section
+// ===========================
+@import "~event/1st/e-main/components/hero-section/_hero-section"
+@import "~event/1st/e-main/components/background-decoration/_background-decoration"
+
+// other components
+// ===========================
+@import "~event/1st/e-main/components/hero-small-slider/_hero-small-slider"
+@import "~event/1st/e-main/components/goods-slider-flip-full-screen/_goods-slider-flip"
+@import "~event/1st/e-main/components/promo-event-full-screen/_promo-event"
+//@import "~event/1st/e-main/components/scroll-x-section/_scroll-x-section"
+@import "~event/1st/e-main/components/tab-section/_tab-section"
+@import "~event/1st/e-main/components/bn-event-2/_bn-event-2"
+@import "~event/1st/e-main/components/countdown-section/_countdown-section"
+@import "~event/1st/e-main/components/canva-effect/_canva-effect"
+//@import "~event/1st/e-main/components/bn-special/_bn-special"
+//@import "~event/1st/e-main/components/game-map/_game-map"
+
+// @import "~components/goods-slider/_goods-slider"
+// @import "~components/video-section/_video-section.sass"
+// @import "~components/bank-section/_bank-section"
+// @import "~components/event-w4m2/_event-w4m2"
+// @import "~components/bn-event/_bn-event"
+// // ==========================================================================
+// // Page
+// // ==========================================================================
+body
+  +pos-set(relative, zero)
+  background-color: $main-e-background-color
+  +breakpoint-min($min-width-xl)
+    .icon__home
+      right: -50px
+.bg__city
+  background-image: url("~event/1st/e-main/pages/index/bg-city.jpg")
+  background-repeat: no-repeat
+  background-attachment: fixed
+  background-size: 100% auto
+  background-position: center center
+
+.parallax__background
+  +pos-set(absolute, under)
+  padding-top: 105%
+  width: 100%
+  +bg-set(url("~event/1st/e-main/pages/index/bg-960.jpg"), 100%)
+  // transform: translateY(-10%)
+  //animation: flash-burst 4s infinite
+  pointer-events: none
+  will-change: scroll-position
+
+  +breakpoint-min($min-width-xl)
+    //padding-top: 26.17%
+    height: 1000px
+    +bg-set(url("~event/1st/e-main/pages/index/bg.jpg"), 2560px 1000px, center , top)
+
+.sp__wrap
+  +pos-set(relative, base)
+
+.sp__wrap a
+  display: block
++breakpoint-min($min-width-xl)
+
+
+
+// IE10 看不到集點那版位
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+  .promo__group.promo__group--countdown
+    display: none

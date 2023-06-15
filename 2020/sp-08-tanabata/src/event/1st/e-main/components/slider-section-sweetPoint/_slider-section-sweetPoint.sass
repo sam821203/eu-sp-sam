@@ -1,0 +1,94 @@
+.slider__sweet__point
+  .sweet__point__wrap
+    +bg-set(url("~~event/1st/e-main/components/slider-section-sweetPoint/sweet_bg.png"), 96% auto)
+    padding: 8.5% 6% 2% 6%
+    .sweet__slider__wrap
+      display: flex
+      width: 92%
+      li
+        //flex: 0 0 24%
+        margin-top: 1vw
+        padding: 0 2.5% 2%
+        opacity: 1
+        transition: transform 0.5s
+        a
+          transition: transform 0.5s
+        &.swiper-slide-prev, &.swiper-slide-next
+          opacity: 0.6
+          transform: scale(0.8)
+        &:hover
+          a
+            //transform: scale(1.1)
+            filter: brightness(120%)
+
+    //.swiper-button-prev, .swiper-button-next
+    //  width: 4.1vw
+    //  height: 6vw
+    //  top: 12vw
+    //  margin-top: 0
+    //  background-size: 4.1vw 6vw
+    ////opacity: 0
+    //.swiper-button-prev
+    //  left: 5vw
+    //.swiper-button-next
+    //  right: 5vw
+    +breakpoint-min($min-width-xl)
+      width: 100%
+      max-width: 960px
+      margin: 0 auto
+      //height: 770px
+  .gallery-top
+    height: 14vw
+    box-sizing: border-box
+    padding: 5px 0 0 0
+    .swiper-slide
+      height: 100%
+  +breakpoint-min($min-width-xl)
+    .sweet__point__wrap
+      padding: 100px 4% 0
+      height: 698px
+      .sweet__slider__wrap
+        width: 100%
+    .gallery-top
+      height: 108px
+
+
+//.slide-1
+//  background-image: url("~event/1st/e-main/components/slider-section-sweetPoint/items/sweet_but1.png")
+//  background-size: 100% auto
+//  background-repeat: no-repeat
+//
+//.slide-2
+//  background-image: url("~event/1st/e-main/components/slider-section-sweetPoint/items/sweet_but2.png")
+//  background-size: 100% auto
+//  background-repeat: no-repeat
+//
+//.slide-3
+//  background-image: url("~event/1st/e-main/components/slider-section-sweetPoint/items/sweet_but3.png")
+//  background-size: 100% auto
+//  background-repeat: no-repeat
+//
+//.slide-4
+//  background-image: url("~event/1st/e-main/components/slider-section-sweetPoint/items/sweet_but4.png")
+//  background-size: 100% auto
+//  background-repeat: no-repeat
+//
+//.slide-5
+//  background-image: url("~event/1st/e-main/components/slider-section-sweetPoint/items/sweet_but5.png")
+//  background-size: 100% auto
+//  background-repeat: no-repeat
+//
+//.slide-6
+//  background-image: url("~event/1st/e-main/components/slider-section-sweetPoint/items/sweet_but6.png")
+//  background-size: 100% auto
+//  background-repeat: no-repeat
+//
+//.slide-7
+//  background-image: url("~event/1st/e-main/components/slider-section-sweetPoint/items/sweet_but7.png")
+//  background-size: 100% auto
+//  background-repeat: no-repeat
+//
+//.slide-8
+//  background-image: url("~event/1st/e-main/components/slider-section-sweetPoint/items/sweet_but8.png")
+//  background-size: 100% auto
+//  background-repeat: no-repeat

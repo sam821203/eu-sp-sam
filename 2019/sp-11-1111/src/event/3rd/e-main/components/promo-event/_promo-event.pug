@@ -1,0 +1,14 @@
+- var promoDataE = [{link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html", imgSrc: "~event/3rd/e-main/components/promo-event/items/promo-1.png", alt: "新會員送鍋寶陶瓷保溫杯"}, {link: "https://www.etmall.com.tw/Activity/GroupSale", imgSrc: "~event/3rd/e-main/components/promo-event/items/promo-2.png", alt: "幸福集氣最低1折起"}, {link: "#note", imgSrc: "~event/3rd/e-main/components/promo-event/items/promo-3.png", alt: "天天抽電動滑板車"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201911/SP_1107839/w/index.html", imgSrc: "~event/3rd/e-main/components/promo-event/items/promo-4.png", alt: "20間銀行最高回饋10%"},]
+
+- var promoDataU = [{link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201911/SP_1105668/w/index.html", imgSrc: "~event/3rd/u-main/components/promo-event/items/promo-1.png", alt: "萊爾富超取送加價購熱巧克力牛奶"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201911/SP_1105663/w/index.html", imgSrc: "~event/3rd/u-main/components/promo-event/items/promo-2.png", alt: "全家超取抽賓士"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201911/SP_1104318/w/index.html", imgSrc: "~event/3rd/u-main/components/promo-event/items/promo-3.png", alt: "20間銀行最高10%回饋"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1103167/w/index.html", imgSrc: "~event/3rd/u-main/components/promo-event/items/promo-4.png", alt: "瘋搶撇步"}, ]
+
+- var promoData = isU? promoDataU : promoDataE
+
+.promo__event
+  ul.event__wrap
+    each data, index in promoData
+      - var anchorId = 'promoAnchor' + (index + 1)
+      - var imgId = 'promoImg' + (index + 1)
+      li
+        a(id= anchorId, href= data.link, title= data.alt)
+          img(id= imgId, src= data.imgSrc, alt= data.alt)

@@ -1,0 +1,87 @@
+// 依附在別的section時
+.promo__group--bn-bank
+  margin-bottom: 2vw
+  .promo__wrap
+    +pos-set(relative, zero)
+    height: 65vw
+    padding: 9.5% 6% 24% 6%
+    +bg-set(url("~event/1st/e-line/components/bn-bank/bg-bank-p.png"), 100%)
+    //+bg-set(null, 100%)  // 用JS判斷哪個月用哪個背景，要放在assets裡
+    .promo__slider
+      +pos-set(relative, zero)
+      width: 100%
+      height: 46vw
+      .swiper-container
+        display: flex
+        width: 100%
+        height: 100%
+        padding: 6% 0
+        .swiper-slide
+          // background-color: #faf
+          text-align: center
+          padding: 0 2%
+        // a
+        //   transition: transform 0.6s
+        //   transform: translateY(-27%) scale(0.6)
+        .swiper-slide,
+        .swiper-slide-duplicate
+          a,
+          img
+            transition: all 0.6s
+          a
+            transform: scale(1.05) translateY(20%)
+          img
+            filter: grayscale(100%)
+        .swiper-slide-active,
+        .swiper-slide-duplicate-active
+          z-index: map-get($zindex, ten)
+          a
+            transform: scale(1.5) translateY(10%)
+          img
+            filter: grayscale(0)
+  // lazyLoad CSS end
+
+    display: block
+    margin-left: auto
+    margin-right: auto
+
+  +breakpoint-min($min-width-xl)
+    margin-top: -55px
+    margin-bottom: 15px
+    .promo__wrap
+      height: 630px
+      .promo__slider
+        height: 430px
+        max-width: 960px
+        overflow: hidden
+
+  .bn__bank__nav
+    top: 49.5%
+    outline: 1
+    &::after
+      font-size: 5vw
+
+    &--prev
+      left: 1%
+    &--next
+      right: 1%
+    +breakpoint-min($min-width-xl)
+      &--prev, &--next
+        top: 49%
+      &::after
+        font-size: 40px
+
+    +breakpoint-min($min-width-lg)
+// .swiper-pagination-custom
+//   .swiper-pagination-bullet
+//     margin: 0 6px
+//     width: 14px
+//     height: 14px
+
+// +breakpoint-min($min-width-xl)
+  // .swiper-pagination-custom
+  //   bottom: -30px
+  //   .swiper-pagination-bullet
+  //     margin: 0 8px
+  //     width: 16px
+  //     height: 16px

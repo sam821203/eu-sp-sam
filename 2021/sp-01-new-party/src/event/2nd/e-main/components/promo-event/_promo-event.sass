@@ -1,0 +1,60 @@
+.promo__group--promo-event
+  // margin-top: -18%
+  // overflow: hidden
+  // +breakpoint-min($min-width-xl)
+  //   margin-top: -150px
+  .promo__body
+    +bg-set(url("~event/2nd/e-main/components/promo-event/bg-promo.png"), 100%)
+    .event__wrap
+      display: flex
+      flex-wrap: wrap
+      padding: 2% 10%
+    li
+      padding: 0.5%
+      width: 49%
+      &:active,
+      &:hover
+        filter: hue-rotate(-15deg)
+    .promo__slider
+      +pos-set(relative, zero)
+      padding: 7% 8.5% 2.5% 7%
+      .swiper-button-white
+        &::after
+          font-size: 20px
+      .swiper-button-white
+        top: 52%
+      .swiper-button
+        &-prev
+          left: 6%
+        &-next
+          right: 8%
+      +breakpoint-min($min-width-lg)
+        .swiper-button-white
+          &::after
+            font-size: 40px
+        .swiper-button
+          &-prev
+            left: 9%
+          &-next
+            right: 10%
+
+  .animation1
+    animation: shakeX 0.75s
+  .animation2
+    animation: shakeY 0.75s
+
+@keyframes shakeX
+  0%, to
+    transform: translateZ(0)
+  10%, 30%, 50%, 70%, 90%
+    transform: translate3d(-10px, 0, 0)
+  20%, 40%, 60%, 80%
+    transform: translate3d(10px, 0, 0)
+
+@keyframes shakeY
+  0%, to
+    transform: translateZ(0)
+  10%, 30%, 50%, 70%, 90%
+    transform: translate3d(0, -10px, 0)
+  20%, 40%, 60%, 80%
+    transform: translate3d(0, 10px, 0)

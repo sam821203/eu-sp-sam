@@ -1,0 +1,96 @@
+.promo__group--bank
+  padding: 0 2%
+  .promo__zone
+    // +bg-set(null, cover)
+  .promo__title
+    margin-top: 2%
+    text-align: center
+
+  .promo__wrap
+    padding-top: 50%
+
+    .promo__slider
+      padding: 0 2%
+      width: 100%
+    .swiper-container
+      width: 85%
+      height: 100%
+      margin-top: 2%
+    .swiper-slide
+      width: 40%
+      // opacity: 0.3
+      // filter: grayscale(100%)
+      a
+        transform: scale(0.95)
+    .swiper-slide-active,
+    .swiper-slide-duplicate-active
+      opacity: 1
+      filter: grayscale(0)
+    .swiper-slide-shadow
+      &-left,
+      &-right
+        transform: translateY(-4%) scale(0.8)
+
+    .swiper-slide-visible
+      a
+        // opacity: 1
+    .swiper-button-prev, .swiper-button-next
+      width: calc(100vw * 0.06)
+      height: calc(100vw * 0.09)
+      margin-top: calc(-100vw * 0.05)
+      background-size: calc(100vw * 0.06) calc(100vw * 0.09)
+    //opacity: 0
+    .swiper-button-prev
+      left: -2px
+    .swiper-button-next
+      right: -2px
+  .swiper-container
+    .swiper-pager-white
+      bottom: calc(100vw * 0.05)
+      .swiper-pagination-bullet
+        margin: 0 3px
+        width: 6px
+        height: 6px
+  +breakpoint-min($min-width-lg)
+    .promo__zone
+      background-size: 100% auto
+    .promo__wrap
+      padding-top: 26%
+      .promo__slider
+        padding: 0 2%
+        .swiper-container
+          width: 100%
+          height: 100%
+          margin-top: 1%
+        .swiper-slide
+          width: 25%
+          height: 70%
+        .swiper-slide-shadow
+          &-left,
+          &-right
+            transform: translateY(-5%) scale(0.8)
+    .swiper-button-prev,
+    .swiper-button-next
+      display: none
+  +breakpoint-min($min-width-xl)
+    .promo__wrap
+      padding-top: 25%
+      .promo__slider
+        .swiper-container
+          margin-top: 0%
+          img
+            width: 100%
+
+
+// 為了u 特別加 確認e 是否正確
+.promo__group
+  .promo__zone
+    overflow: hidden
+  .promo__wrap
+    +pos-set(relative, zero)
+    .promo__slider
+      +pos-set(absolute, base, 0, 0)
+      width: 100%
+      height: 100%
+  +breakpoint-min($min-width-xl)
+    background-size: auto

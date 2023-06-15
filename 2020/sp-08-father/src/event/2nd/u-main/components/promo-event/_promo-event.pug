@@ -1,0 +1,94 @@
+- 
+  var promoDataE = [
+    {
+      link: "https://www.etmall.com.tw/i/2589550",
+      imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-1.png",
+      alt: "主打品"
+    }, 
+    {
+      link: "#note",
+      imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-2.png",
+      alt: ""
+    }, 
+    {
+      link: "#note", 
+      imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-3.png",
+      alt: "滿$3,000送$888"
+    }, 
+    {
+      link: "#note",
+      imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-4.png",
+      alt: "滿$888抽$5,288"
+    }, 
+    {
+      link: "#note",
+      imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-5.png",
+      alt: "登記抽東風衛生紙"
+    }, 
+    {
+      link: "#note",
+      imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-6.png",
+      alt: "下單送限量虛寶"
+    },
+    {
+      link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202007/SP_1115832/w/index.html",
+      imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-7.png",
+      alt: "台中購物節 讓你開好車住豪宅"
+    }, 
+    {
+      link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202007/SP_1116048/w/index.html",
+      imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-8.png",
+      alt: "萊爾富超取請你喝"
+    },
+  ]
+
+- 
+  var promoDataU = [
+    {
+      link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202007/SP_1106086/w/index.html", 
+      imgSrc: "~event/2nd/u-main/components/promo-event/items/promo-1.png",
+      alt: "20間銀行最高回饋10%"
+    }, 
+    {
+      link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202007/SP_1106703/w/index.html", 
+      imgSrc: "~event/2nd/u-main/components/promo-event/items/promo-2.png",
+      alt: "台中購物節 讓你開好車住豪宅"
+    }, 
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale", 
+      imgSrc: "~event/2nd/u-main/components/promo-event/items/promo-3.png",
+      alt: "整點最便宜"
+    }, 
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale?Day=Up", 
+      imgSrc: "~event/2nd/u-main/components/promo-event/items/promo-4.png",
+      alt: "天天最激殺"
+    }, 
+  ]
+
+- var promoData = isU ? promoDataU : promoDataE
+
+//- TODO: 如果promo不和hero綁一起時要有自己的section和layout--main
+section.promo__group.promo__group--promo-event(data-title="爸氣登場")
+  .layout--main
+    //- .promo__head.promo__title
+    //-   img(src="", alt="")
+
+    .promo__body
+      .promo__event
+        ul.event__wrap.event__wrap--top
+          li.promo__discount
+            a#promoAnchor(href= promoData[0].link, title= promoData[0].alt)
+              img(src= promoData[0].imgSrc, alt= promoData[0].alt)
+          li
+            a(href= promoData[1].link, title= promoData[1].alt)
+              img(src= promoData[1].imgSrc, alt= promoData[1].alt)
+          li
+            a(href= promoData[2].link, title= promoData[2].alt)
+              img(src= promoData[2].imgSrc, alt= promoData[2].alt)
+          li
+            a(href= promoData[3].link, title= promoData[3].alt)
+              img(src= promoData[3].imgSrc, alt= promoData[3].alt)
+
+        include /event/2nd/u-main/components/bn-special/_bn-special
+

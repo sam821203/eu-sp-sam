@@ -1,0 +1,43 @@
+.promo__event
+  +pos-set(relative, null)
+  padding-top: 2%
+  +breakpoint-min($min-width-xl)
+    padding: 0
+    margin: 20px auto
+    max-width: 740px
+  .event__wrap
+    +display-flex
+    flex-wrap: wrap
+    justify-content: center
+    width: 100%
+    li
+      margin-right: 0
+      padding: 0
+      width: 33%
+      +breakpoint-min($min-width-xl)
+        width: 31%
+        margin: 0 0.5%
+  .event__wrap
+    li
+      padding: 3% 0 7%
+      transform-origin: bottom
+      img
+        transition: all .5s
+      &:hover,
+      &:active
+        img
+          transform: translateY(-5%)
+      &:nth-child(1)
+        +bg-set(url("~event/index-main-u-2/components/promo-event/items/bg-promo-1.png"), 100%, center, 100%)
+          
+      &:nth-child(2)
+        +bg-set(url("~event/index-main-u-2/components/promo-event/items/bg-promo-2.png"), 100%, center, 100%)
+
+      &:nth-child(3)
+        +bg-set(url("~event/index-main-u-2/components/promo-event/items/bg-promo-3.png"), 100%, center, 100%)
+
+    a
+      transition: all 0.5s
+      &:hover,
+      &:active
+        filter: brightness(120%)

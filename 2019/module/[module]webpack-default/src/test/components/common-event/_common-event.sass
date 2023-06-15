@@ -1,0 +1,28 @@
+.event__wrap--common
+  .event__zone
+    +flex
+    &--e
+      padding: 3.5% 1.8%
+      background: url(../components/common-event/event-background-e.png) no-repeat
+      background-size: 100%
+      a
+        margin: 0 1%
+        
+    &--u
+      padding: 1.5% 1.8%
+      background: url(../components/common-event/event-background-u.png) no-repeat
+      background-size: 100%
+      a
+        padding: 2.4% 3.5%
+        &:first-child
+          text-align: center
+          > img
+            width: 92.5%
+    &--sp
+      background: url(../components/common-event/event-background-e.png) no-repeat
+      background-size: 100%
+    a
+      transition: all 0.5s
+      &:hover
+        transform: scale(1.05)
+        filter: brightness(120%)

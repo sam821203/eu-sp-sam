@@ -1,0 +1,128 @@
+.promo__group--form
+  .promo__body
+    font-size: 16px
+    +breakpoint-max($max-width-xxs)
+      font-size: 12px
+    +breakpoint-min($min-width-sm)
+      font-size: 18px
+    +breakpoint-min($min-width-md)
+      font-size: 24px
+
+    .form__block
+      &:nth-child(1)
+        padding-top: 5%
+        padding-bottom: 5%
+        background-color: $main-e-color-1st
+        color: $main-e-color-1st-2
+        .block__title
+          img
+            width: 70%
+
+      &:nth-child(2)
+        padding-top: 5%
+        .block__title
+          margin-top: 0
+          img
+            width: 91%
+
+      &:nth-child(2),
+      &:nth-child(3),
+        background-color: $main-e-color-1st-3
+        color: $main-e-color-1st
+      .block__wrap
+        margin-left: auto
+        margin-right: auto
+        width: 92%
+        max-width: 520px
+
+      +breakpoint-min($min-width-xl)
+        &:nth-child(1),
+        .form__submit
+          padding-top: 40px
+          padding-bottom: 40px
+        &:nth-child(2)
+          padding-top: 40px
+
+  .block__hr
+    margin-top: 5%
+    margin-bottom: 5%
+    padding-bottom: 5%
+    +bg-set(url(~event/1st/e-main/components/form-section/decoration-block.png), cover)
+    +breakpoint-min($min-width-xl)
+      margin-top: 40px
+      margin-bottom: 40px
+      padding-bottom: 40px
+
+  .form__list
+    select,
+    input
+      width: 73%
+    select
+      padding: 0.07em
+    label
+      display: inline-block
+      width: 25%
+      vertical-align: middle
+      text-align: right
+    .double__input
+      width: calc(34% - 0.8em)
+      + span
+        margin-left: 2.5%
+        margin-right: 2.5%
+        color: $gray-deep-light
+        font-size: 1.6em
+      +breakpoint-min($min-width-xl)
+        width: 161px
+
+  .block__title
+    +pos-set(relative, zero)
+    margin-top: 5%
+    margin-bottom: 3%
+    text-align: center
+
+    img
+      width: 70%
+    .title__box
+      +pos-set(absolute, base, 0, 0)
+      width: 100%
+      span
+        font-size: 1.3em
+
+  ol.form__list
+    margin-left: 3%
+    padding-left: 3%
+    list-style: decimal
+
+  .form__check
+    text-align: center
+    input
+      margin-right: 0.15em
+      transform: scale(1.5)
+      +breakpoint-min($min-width-md)
+        margin-right: 0.25em
+        transform: scale(2)
+    label
+      vertical-align: middle
+      a
+        display: inline
+        color: $main-e-color-1st
+        text-decoration: underline
+        &:hover,
+        &:active,
+          text-decoration: none
+
+  .form__submit
+    padding-top: 5%
+    padding-bottom: 5%
+    text-align: center
+    button
+      width: 40%
+      line-height: 160%
+      color: $main-e-color-1st-3
+      background: linear-gradient($main-e-color-1st-4, $main-e-color-1st-5)
+      border: 0
+      border-radius: 14px
+      font-size: 1.6em
+      +breakpoint-min($min-width-xl)
+        width: 240px
+        border-radius: 20px

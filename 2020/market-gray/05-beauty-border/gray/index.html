@@ -1,0 +1,406 @@
+<meta name="viewport" content="width=device-width">
+<meta charset="utf-8">
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    *:before, *:after {
+        box-sizing: border-box;
+    }
+
+    a {
+        display: block;
+        text-decoration: none;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    img {
+        width: 100%;
+        border: 0;
+        display: block;
+    }
+
+    article,
+    main,
+    nav,
+    section {
+        display: block;
+    }
+
+    body {
+        margin: 0;
+        background-color: #8be2ff; /*...................................背景色,1260把這行刪掉*/
+    }
+
+    .layout--main {
+        position: relative;
+        z-index: 0;
+        max-width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .layout--main.icon_Home {
+        z-index: auto;
+    }
+
+    /* 主視覺 */
+    /* ======================================== */
+    .logo a,
+    .sp__visual a {
+        display: block;
+    }
+
+    .logo {
+        position: absolute;
+        z-index: 1;
+        /* 調整logo位置 */
+        top: 1%;
+        left: 1%;
+        width: 30%;
+        max-width: 220px;
+    }
+
+    /* 設定背景 */
+    .sp__main {
+        background: url(bg20200408.jpg) center 0 no-repeat; /*..............背景底圖,1260把這行刪掉*/
+    }
+
+    /* 設定前景 */
+    .sp__visual {
+        position: relative;
+        z-index: 0;
+        width: 100%;
+    }
+
+    /*...........................................................示意線條拿掉start*/
+    /*.visual__main a{
+      border: 1px solid #f00;
+    }*/
+    /*...........................................................示意線條拿掉end*/
+    .visual__anchor,
+    .visual__main,
+    .visual__nav {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .visual__anchor {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+    }
+
+    .visual__main a,
+    .visual__nav a {
+        flex-grow: 1;
+    }
+
+    /* 主視覺 */
+    /*...........................................................紅框區高度*/
+    .visual__main {
+        height: 100%;
+    }
+
+    /*...........................................................紅框區寬度*/
+    /*.visual__main a:nth-child(1) {*/
+        /*flex-grow: 0;*/
+        /*width: 100%;*/
+        /*height: 100%;*/
+    /*}*/
+
+    /* 自適應banner組 */
+    /* ======================================== */
+    .banner__title {
+        height: 65px;
+        background: center top no-repeat;
+    }
+
+    .banner__wrap {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .banner__item {
+        transition: all 0.3s;
+    }
+
+    .banner__item img {
+        width: 100%;
+    }
+
+    /* ...............................................................4變2 */
+    .bn-w4m3 .banner__item {
+        flex: 1 0 25%;
+    }
+
+    /* 設定點下去與hover動畫 */
+    .bn-w4m3 .banner__item:hover,
+    .bn-w4m3 .banner__item:active {
+        /* 變大(>1時變大) */
+        transform: scale(1.05);
+        /* 亮度調亮(>100%時變亮) */
+        filter: brightness(115%);
+    }
+
+    @media screen and (max-width: 1024px) {
+        /* 設定手機時一列2個 */
+        .bn-w4m3 .banner__item {
+            flex: 1 0 33.33%;
+        }
+    }
+
+
+    /*main 層*/
+    .visual__main a.incentive__layer--1 {
+        position: absolute;
+        width: 50vw;
+        height: 23vw;
+        top: 66vw;
+    }
+    .visual__main a.incentive__01--1 {
+        left: 0;
+    }
+    .visual__main a.incentive__01--2 {
+        left: 50%;
+    }
+
+    /*品牌 層*/
+    .visual__main a.incentive__layer--2 {
+        position: absolute;
+        top: 20vw;
+        width: 22.5vw;
+        height: 11vw;
+    }
+    .visual__main a.incentive__layer--3 {
+        position: absolute;
+        top: 32vw;
+        width: 22.5vw;
+        height: 11vw;
+    }
+    .visual__main a.incentive__02--1,
+    .visual__main a.incentive__03--1 {
+        left: 5vw;
+    }
+    .visual__main a.incentive__02--2,
+    .visual__main a.incentive__03--2 {
+        left: 28vw;
+    }
+    .visual__main a.incentive__02--3,
+    .visual__main a.incentive__03--3 {
+        left: 50.5vw;
+    }
+    .visual__main a.incentive__02--4,
+    .visual__main a.incentive__03--4 {
+        left: 73vw;
+    }
+
+    @media screen and (min-width: 960px) {
+        /*main 層*/
+        .visual__main a.incentive__layer--1 {
+            position: absolute;
+            top: 629px;
+            width: 465px;
+            height: 220px;
+        }
+        .visual__main a.incentive__01--1 {
+            left: calc(50% - 463px);
+        }
+        .visual__main a.incentive__01--2 {
+            left: calc(50% + 3px);
+        }
+
+        /*品牌 層*/
+        .visual__main a.incentive__layer--2 {
+            position: absolute;
+            top: 198px;
+            width: 210px;
+            height: 105px;
+        }
+        .visual__main a.incentive__layer--3 {
+            position: absolute;
+            top: 309px;
+            width: 210px;
+            height: 105px;
+        }
+        .visual__main a.incentive__02--1,
+        .visual__main a.incentive__03--1 {
+            left: calc(50% - 427px);
+        }
+        .visual__main a.incentive__02--2,
+        .visual__main a.incentive__03--2 {
+            left: calc(50% - 207px);
+        }
+        .visual__main a.incentive__02--3,
+        .visual__main a.incentive__03--3 {
+            left: calc(50% + 8px);
+        }
+        .visual__main a.incentive__02--4,
+        .visual__main a.incentive__03--4 {
+            left: calc(50% + 224px);
+        }
+    }
+    /*
+    .bn-w2m1 .banner__item2 {
+    flex: 1 0 96%;
+    margin: 2%;
+  }
+*/
+    /* delete css bg gray */
+    body {
+        /* overflow: hidden; */
+        background-color: #c9c9c9;
+    }
+    .gray__bg {
+        filter: grayscale(1);
+        background-color: #c9c9c9;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+    }
+    .act__title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        color: #fff;
+        border: 10px double #fff;
+        border-radius: 10px;
+        font-size: 60px;
+        z-index: 9999;
+        text-align: center;
+        letter-spacing: 2px;
+        width: 80vw;
+        background: #000;
+        padding: 2vw 10vw;
+        white-space: nowrap;
+
+    }
+    @media screen and (max-width: 960px) {
+        .act__title {
+            white-space: normal;
+            font-size: calc(12vw);
+        }
+    }
+</style>
+<div id="gray__bg" class="gray__bg">
+    <div class="act__title">5/14 PM12:00 活動開始</div>
+<div id="spWrap" class="sp__wallper">
+    <!-- 主視覺 -->
+    <div class="layout--main icon_Home"><!-- 浮水印start(勿刪)-->
+        <div id="iconHome"></div>
+    </div>                          <!-- 浮水印end(勿刪)-->
+    <main class="sp__main">
+        <div class="layout--main">
+            <a href="https://www.etmall.com.tw" class="logo"><img src="ehs-logo.png" alt="東森購物"></a><!-- 1260把這行刪掉 -->
+            <div class="sp__visual">
+                <div class="visual__anchor"><!-- 紅框區 設定第一個a和第二個a的寬度會推擠後面a的寬度-->
+                    <div class="visual__main">
+                        <a class="incentive__layer--1 incentive__01--1"></a>
+                        <a class="incentive__layer--1 incentive__01--2"></a>
+                    </div>
+                </div>
+                <img src="index20200408.jpg">
+            </div>
+        </div>
+    </main>
+    <!-- 自適應banner組 --><!-- .................................................4變2 start -->
+    <section class="layout--main bn-w4m3">
+        <ul class="banner__wrap">
+            <li class="banner__item">
+                <a>
+                    <img src="menu_01.png" alt="超值活動">
+                </a>
+            </li>
+            <li class="banner__item">
+                <a>
+                    <img src="menu_02.png" alt="家電館">
+                </a>
+            </li>
+            <li class="banner__item">
+                <a>
+                    <img src="menu_03.png" alt="美妝館">
+                </a>
+            </li>
+            <li class="banner__item">
+                <a>
+                    <img src="menu_04.png" alt="保健館">
+                </a>
+            </li>
+            <li class="banner__item">
+                <a>
+                    <img src="menu_05.png" alt="電腦館">
+                </a>
+            </li>
+            <li class="banner__item">
+                <a>
+                    <img src="menu_06.png" alt="運動/女鞋">
+                </a>
+            </li>
+            <li class="banner__item">
+                <a>
+                    <img src="menu_07.png" alt="快銷館">
+                </a>
+            </li>
+            <li class="banner__item">
+                <a>
+                    <img src="menu_08.png" alt="美食館">
+                </a>
+            </li>
+            <li class="banner__item">
+                <a>
+                    <img src="menu_9.png" alt="傢寢館">
+                </a>
+          </li>
+            <li class="banner__item">
+                <a>
+                    <img src="menu_10.png" alt="品牌內衣">
+                </a>
+            </li>
+            <li class="banner__item">
+                <a>
+                    <img src="menu_11.png" alt="手機館">
+                </a>
+            </li>
+            <li class="banner__item">
+                <a>
+                    <img src="menu_12.png" alt="休閒館">
+                </a>
+            </li>
+        </ul>
+    </section>
+    <!-- ............................................................4變2 end -->
+
+    <div class="layout--main">
+        <div class="sp__visual">
+            <div class="visual__anchor"><!-- 紅框區 設定第一個a和第二個a的寬度會推擠後面a的寬度-->
+                <div class="visual__main">
+                    <a class="incentive__layer--2 incentive__02--1" alt="鍋寶"></a>
+                    <a class="incentive__layer--2 incentive__02--2" alt="理想"></a>
+                    <a class="incentive__layer--2 incentive__02--3" alt="西華"></a>
+                    <a class="incentive__layer--2 incentive__02--4" alt="Brita"></a>
+                    <a class="incentive__layer--3 incentive__03--1" alt="Cuoco"></a>
+                    <a class="incentive__layer--3 incentive__03--2" alt="Tefal"></a>
+                    <a class="incentive__layer--3 incentive__03--3" alt="keepcup"></a>
+                    <a class="incentive__layer--3 incentive__03--4" alt="Dyson"></a>
+                </div>
+            </div>
+            <img src="logo20200408.jpg">
+        </div>
+    </div>
+</div>
+</div> <!-- gray end -->
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<!-- 浮水印 -->
+<script id="scriptIconFloat" src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105264/float-icon.js"></script>
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>

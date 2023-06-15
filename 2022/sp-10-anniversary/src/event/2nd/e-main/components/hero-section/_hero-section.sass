@@ -1,0 +1,134 @@
+.hero
+  +pos-set(relative, base)
+  overflow: hidden
+  .hero__zone
+    +aspect-ratio(960, 680)
+
+    .hero__title
+      +pos-set(absolute, zero, 12%, 0%)
+      // width: 100%
+      // opacity: 0
+      .js-loading &
+        animation: zoomInDown 1s ease-out forwards
+        // +breakpoint-min($min-width-xl)
+          // animation: runIn-web 1.2s 1.4s ease-out forwards
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 475px)
+        width: auto
+      .title--sub
+        +pos-set(absolute, second, 0, 0)
+        width: 100%
+        .js-loading &
+          // animation: sub-tada 3.4s 2.8s ease-in-out infinite
+
+    .decor__title
+      &--light1
+        z-index: map-get($zindex, zero)
+        top: 13%
+        left: 0%
+        .js-loading &
+          animation: flash 1s 1s steps(1) infinite
+      &--light2
+        z-index: map-get($zindex, zero)
+        top: 12%
+        left: 0%
+        .js-loading &
+          animation: flash 1s 1.5s steps(1) infinite
+        +breakpoint-min($min-width-xl)
+          left: calc(50% - 470px)
+          width: auto
+      &--left
+        z-index: map-get($zindex, zero)
+        top: 12%
+        left: 3%
+        width: 12%
+        transform: rotate(-45deg)
+        .js-loading &
+          animation: zoomIn 1s ease-in 1 forwards
+        +breakpoint-min($min-width-xl)
+          top: 220px
+          left: calc( 50% - 690px )
+          max-width: 189px
+          transform: rotate(-35deg)
+          .js-loading &
+            animation: fadeInDownBig 1s ease-in 1, drone1 2s 1s linear infinite alternate
+
+      &--right
+        z-index: map-get($zindex, zero)
+        top: 3%
+        right: 3%
+        width: 22%
+        .js-loading &
+          animation: zoomIn .8s ease-out 1 forwards
+        +breakpoint-min($min-width-xl)
+          top: 30px
+          right: calc( 50% - 340px )
+          max-width: 129px
+          transform: rotate(-15deg)
+          .js-loading &
+            animation: fadeInDownBig 1s linear 1,drone2 2s 1s linear infinite alternate
+      &--outer
+        display: none
+        +breakpoint-min($min-width-xl)
+          display: block
+          z-index: map-get($zindex, zero)
+          top: 190px
+          right: calc( 50% - 830px )
+          width: 259px
+          .js-loading &
+            animation: fadeInDownBig 1s ease-in-out 1, drone3 2s 1s linear infinite alternate
+
+    .decor--top
+      +breakpoint-min($min-width-xl)
+        width: auto
+
+// @import event/2nd/e-main/components/hero-section/hero-video/_hero-video.sass
+
+@keyframes drone1
+  0%
+    transform: translate(0, 0) rotate(-35deg)
+  50%
+    transform: translate(20%, 30%) rotate(-25deg)
+  100%
+    transform: translate(40%, 0) rotate(-35deg)
+
+@keyframes drone2
+  0%
+    transform: translate(0, 0) rotate(-15deg)
+  50%
+    transform: translate(0%, -20%) rotate(-25deg)
+  100%
+    transform: translate(0%, 0) rotate(-15deg)
+
+@keyframes drone3
+  0%
+    transform: translate(0, 0)
+  50%
+    transform: translate(-10%, -20%) rotate(-15deg) scale(.85)
+  100%
+    transform: translate(-5%, -10%) scale(.75) rotate(5deg)
+
+@keyframes fadeInDownBig
+  0%
+    opacity: 0
+    transform: translate3d(0, -1000px, 0)
+  to
+    opacity: 1
+    transform: translateZ(0)
+
+@keyframes zoomIn
+  0%
+    opacity: 0
+    transform: scale3d(.3, .3, .3)
+  50%
+    opacity: 1
+
+@keyframes zoomInDown
+  0%
+    opacity: 0
+    transform: scale3d(.1, .1, .1) translate3d(0, -1000px, 0)
+    animation-timing-function: cubic-bezier(.55, .055, .675, .19)
+  60%
+    opacity: 1
+    transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0)
+    animation-timing-function: cubic-bezier(.175, .885, .32, 1)

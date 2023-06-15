@@ -1,0 +1,7 @@
+//- 可在頁面上用isU = true控制logo與連結網址
+- var siteData = {etmall: {link: "https://www.etmall.com.tw/", imgSrc: "~layout/logo/e/logo-white-small.png", alt: "東森購物"}, umall: {link: "https://www.u-mall.com.tw/", imgSrc: "~layout/logo/u/logo-white-small.png", alt: "森森購物"}}
+- var siteInfo = isU ? siteData.umall : siteData.etmall
+
+//- 切換EU的logo
+a.logo(href= siteInfo.link, class= isU ? "logo--u" : "logo--e")
+  img(src= siteInfo.imgSrc, alt= siteInfo.alt)

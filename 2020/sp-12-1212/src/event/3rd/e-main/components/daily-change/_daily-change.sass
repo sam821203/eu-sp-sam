@@ -1,0 +1,85 @@
+.promo__group--daily
+  //margin-top: -18%
+  overflow: hidden
+  +breakpoint-min($min-width-xl)
+    //margin-top: -150px
+
+  .promo__wrap
+    +pos-set(relative, zero)
+    .title__text
+      +pos-set(absolute, base)
+
+
+    // .daily__text
+    //   left: 19%
+    //   color: $gray-deep-light
+    //   font-size: 7vw
+    //   font-weight: bold
+    //   transform: translateY(13%)
+    //   span
+    //     &:nth-child(2)
+    //       font-size: 3vw
+    .daily__change
+      width: 83%
+      margin: 0px auto 0 5%
+      margin-top: 18%
+
+    .daily__countdown
+      top: 56%
+      right: 14.5%
+      padding-top: 0.05em
+      width: 46%
+      font-size: 6vw
+      color: $gray-deep-light
+      //letter-spacing: 0.15em
+      pointer-events: none
+      // border: 1px solid #f00
+      top: 34%
+      right: 17.1%
+      padding-top: 0.05em
+      width: 32%
+      font-size: 3.8vw
+      .time__block
+        display: flex
+        padding-left: 2%
+        width: 26%
+        text-align: right
+        .time__box
+          width: 50%
+        &:nth-child(2),
+        &:nth-child(3)
+          +pos-set(absolute, zero)
+          top: 2.7%
+        &:nth-child(2)
+          left: 37.2%
+        &:nth-child(3)
+          right: -1.8%
+
+
+    +breakpoint-min($min-width-xl)
+      // .daily__text
+      //   font-size: 60px
+      //   transform: translateY(16px)
+      //   span
+      //     &:nth-child(2)
+      //       font-size: 28px
+      .daily__countdown
+        top: 109px
+        right: 192px
+        width: 298px
+        font-size: 39px
+        //.time__box
+        //  &:nth-child(1)
+            // padding-left: 5%
+
+  .promo__wrap
+    // padding: 19% 2% 5.5%
+    //+bg-set(url(~event/3rd/e-main/components/daily-change/bg-daily.png), 100%)
+    text-align: center
+    &:hover,
+    &:active
+      a
+        filter: brightness(105%) contrast(120%)
+
+    +breakpoint-min($min-width-xl)
+      background-size: auto

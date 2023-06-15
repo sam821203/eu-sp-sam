@@ -1,0 +1,47 @@
+.hero__wrap
+  +pos-set(relative, zero)
+  +bg-set(url(event/1st/e-main/components/hero-section/bg-hero.png), 145%, center, 120%)
+  opacity: 0
+  overflow: hidden
+  .js-loading &
+    animation: zoom-in 0.16s 0.16s both ease-out
+
+  .hero__zone
+    +aspect-ratio(960, 750)
+  .hero__box
+    padding-top: 7.4%
+
+  .hero__title
+    width: 96%
+    text-align: center
+    img
+      opacity: 0
+      .js-loading &
+        animation: 1s 0.24s jumpInLeft both
+
+  +breakpoint-min($min-width-xl)
+    background-position-y: -35px
+    background-size: auto
+
+@keyframes zoom-in
+  0%
+    opacity: 0
+    transform: scale(0)
+  100%
+    opacity: 1
+    transform: scale(1)
+
+
+@keyframes jumpInLeft
+  0%
+    opacity: 0
+    transform: scale3d(0.5, 0.5, 0.5) rotate(-90deg)
+  50%
+    opacity: 1
+    transform: scale3d(1.2, 1.2, 1.2) rotate(10deg)
+  70%
+    opacity: 1
+    transform: scale3d(0.9, 0.9, 0.9) rotate(-5deg)
+  90%, 100%
+    opacity: 1
+    transform: scale3d(1, 1, 1) rotate(0deg)

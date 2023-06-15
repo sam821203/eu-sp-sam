@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+    <style>
+    body {
+        font-family: PingFangTC-regular, "LiHei Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Source Han Sans TC", "Microsoft JhengHei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
+
+    .layout__main {
+        max-width: 960px;
+        margin: 0 auto;
+    }
+    .table__title {
+        width: 100%;
+        margin: 5px 0 5px 0;
+        padding-left: 3px;
+        font-size: 1.5em;
+        letter-spacing: 1.5px;
+        background-color: #137bff;
+        color: #fff;
+    }
+
+    .table__container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .table__container table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .table__container table td {
+        border: 1px solid #333;
+        padding: 3px;
+    }
+    .table__container table tr:last-child {
+        border-top: 0;
+    }
+
+    .table__container table td:first-child {
+        width: 75%;
+    }
+
+    .table__container table td:last-child {
+        color: #cc1e05;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    @media screen and (min-width: 960px) {
+        .table__title {
+            font-size: 2em;
+        }
+        .table__container table {
+            width: 50%;
+        }
+        .table__container table td:first-child {
+            width: 80%;
+        }
+    }
+
+    </style>
+</head>
+<body>
+<div class="layout__main">
+    <div class="table__container">
+        <p class="table__title">[金門/澎湖/馬祖]跳島5日</p>
+        <table>
+            <tbody>
+                <tr>
+                    <td>陽台艙</td>
+                    <td>$24,900</td>
+                </tr>
+                <tr>
+                    <td>迷你套房艙</td>
+                    <td>$27,900</td>
+                </tr>
+                <tr>
+                    <td>景觀套房艙</td>
+                    <td>$28,900</td>
+                </tr>
+                <tr>
+                    <td>頂級套房艙</td>
+                    <td>$33,900</td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <tbody>
+                <tr>
+                    <td>至尊套房艙</td>
+                    <td>$43,900</td>
+                </tr>
+                <tr>
+                    <td>家庭套房艙(4人1室)</td>
+                    <td>$25,900</td>
+                </tr>
+                <tr>
+                    <td>家庭套房艙(5人1室)</td>
+                    <td>$22,900</td>
+                </tr>
+                <tr>
+                    <td>家庭套房艙(6人1室)</td>
+                    <td>$20,900</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

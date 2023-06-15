@@ -1,0 +1,227 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero__wrap
+  +pos-set(relative, base)
+  overflow: hidden
+
+  .hero__decoration
+    +pos-set(absolute)
+    pointer-events: none
+    &.top__decoration
+      z-index: map-get($zindex, zero)
+    &.zone__decoration
+      z-index: map-get($zindex, base) 
+
+  .hero__zone
+    +pos-set(relative, zero)
+    padding-top: 40%
+  
+    // decoration
+    .top__decoration
+      top: -6%
+      width: 20%
+      height: 100%
+      +bg-set(url("~event/1st/e-main/components/hero-section/top-decoration.png"), 100%)
+      transform-origin: top
+      
+      &--left
+        left: -5%
+        animation: key-rotate-self-2 5s infinite alternate linear
+      &--right
+        right: -5%
+        animation: key-rotate-self-3 5s infinite alternate linear
+
+    .zone__decoration
+      will-change: scroll-position
+      &--middle
+        top: 0
+        left: -5%
+        margin-top: 8%
+        width: 20%
+        animation: ufo-m-1 2s 3s both, ufo-patrol 10s 7s infinite
+      &--right
+        top: 0
+        right: -2%
+        margin-top: 35%
+        width: 15%
+        animation: ufo-r-1 2s 3s both, ufo-patrol 10s 7s infinite alternate
+
+  .block__decoration
+    +pos-set(absolute, under, -17%, 25%)
+    padding-top: 53%
+    width: 53%
+    height: 0
+    +bg-set(url("~event/1st/e-main/components/hero-section/block-decoration.png"), 100%)
+    animation: key-rotate-self 30s infinite linear, flash-breath 3s infinite alternate both linear
+
+  .hero__block
+    +pos-set(absolute, zero, 0, 0)
+    width: 100%
+    height: 100%
+
+  .hero__box
+    +pos-set(relative, zero)
+    +breakpoint-min($min-width-xl)
+      padding-top: 38px
+
+  // .hero__promo-link
+  //   +pos-set(absolute, base, 10%, null, null, 6%)
+  //   width: 27%
+  //   transform-origin: right bottom
+  //   animation: shake-me 3.75s infinite
+
+  .hero__title
+    &--main
+      +pos-set(relative, zero)
+      padding: 3% 13% 0
+    .title__decoration
+      top: 0
+      left: 0
+      margin: 3% 10.5% 0
+      +aspect-ratio(687, 324, absolute)
+      width: 77%
+      .decoration--flash
+        top: 7%
+        left: 1%
+        width: 100%
+        +bg-set(url("~event/1st/e-main/components/hero-section/title-light.png"), 100%, 0, 0%)
+        animation: bg-animation 3.75s steps(6) infinite 
+
+      +breakpoint-min($min-width-xl)
+        margin: 3% 13% 0
+        width: 73.5%
+        .decoration--flash
+          top: -1%
+          left: 0
+          width: 100%
+          +bg-set(url("~event/1st/e-main/components/hero-section/title-light.png"))
+          animation: bg-animation-web 3.75s steps(7) infinite
+
+  .promo__block
+    // +display-flex(">div")
+  .promo__event
+    margin-left: auto
+    margin-right: auto
+    width: 50%
+    // +flex(0, 1, 50%)
+    // +pos-set(absolute, second, null, null, null, 2%)
+  // .goods__wrap--flip
+  //   +flex(0, 1, 70%)
+
+  +breakpoint-min($min-width-xl)
+    .hero__zone
+      padding-top: 360px
+
+    .hero__title
+      &--main
+        padding: 0
+        text-align: center
+
+    .block__decoration
+      top: -55px
+      left: 27%
+      padding-top: 50%
+      width: 50%
+
+    // .hero__promo-link
+    //   top: 45px
+    //   right: 70px
+
++key-rotate-self(360)
++key-rotate-self(-45, key-rotate-self-2)
++key-rotate-self(45, key-rotate-self-3)
+
+@keyframes flash-breath
+  from
+    filter: brightness(50%)
+  to
+    filter: brightness(200%)
+
+
+// @keyframes shake-me
+//   from
+//     transform: rotate(0)
+//   20%
+//     transform: rotate(0)
+//   21.5%
+//     transform: rotate(5deg)
+//   23%
+//     transform: rotate(0)
+//   24.5%
+//     transform: rotate(-4deg)
+//   26%
+//     transform: rotate(0)
+//   27%
+//     transform: rotate(3deg)
+//   28%
+//     transform: rotate(0)
+//   28.5%
+//     transform: rotate(-2deg)
+//   29%
+//     transform: rotate(0)
+//   to
+//     transform: rotate(0)
+
+@keyframes ufo-patrol
+  from 
+    transform: translateX(0)
+  30%
+    transform: translateX(10%)
+  40%
+    transform: translateX(-10%)
+  50%
+    transform: translateX(10%)
+  60%
+    transform: translateX(0)
+  to
+    transform: translateX(0)
+
+@keyframes bg-animation
+  0%
+    background-position-y: 0%
+    opacity: 0
+  0.1%
+    background-position-y: 0%
+    opacity: 1
+  20%
+    background-position-y: 100%
+    opacity: 1
+  20.1%
+    background-position-y: 100%
+    opacity: 0
+  100%
+    background-position-y: 0%
+    opacity: 0
+
+@keyframes bg-animation-web
+  0%
+    background-position-y: 0%
+  20%
+    background-position-y: -2268px
+    opacity: 0
+  100%
+    background-position-y: -2268px
+    opacity: 0
+
+@keyframes ufo-m-1
+  from
+    transform: translate(-40vw, 2vh)
+  53%
+    transform: translate(2vw, 4vh)
+  74%
+    transform: translate(10vw, 8vh)  
+  to
+    transform: translate(0, 0)
+  
+  
+@keyframes ufo-r-1
+  from
+    transform: translate(36vw, -10vh)
+
+  63%
+    transform: translate(-10vw, 0vh)
+  86%
+    transform: translate(-5vw, 2vh)
+  to
+    transform: translate(0, 0)

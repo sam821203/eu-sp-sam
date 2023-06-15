@@ -1,0 +1,180 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero__wrap
+  +pos-set(relative, base)
+  overflow: hidden
+
+  .hero__decoration
+    +pos-set(absolute)
+    pointer-events: none
+    &.top__decoration
+      z-index: map-get($zindex, zero)
+    &.zone__decoration
+      z-index: map-get($zindex, base) 
+
+  .hero__zone
+    +pos-set(relative, zero)
+  
+    // decoration
+    .top__decoration
+      top: -6%
+      width: 20%
+      height: 100%
+      +bg-set(url("~event/1st/e-sp-big/components/hero-section/top-decoration.png"), 100%)
+      transform-origin: top
+      
+      &--left
+        left: -5%
+        animation: key-rotate-self-2 5s infinite alternate linear
+      &--right
+        right: -5%
+        animation: key-rotate-self-3 5s infinite alternate linear
+
+    .zone__decoration
+      &--middle
+        width: 20%
+        top: 8%
+        left: -5%
+        will-change: transform
+        animation: ufo-m-1 3s 3s linear forwards, ufo-m-2 3s 6s ease-out forwards, ufo-m-3 2.5s 9s ease-in forwards, ufo-m-4 1.5s 11.5s linear forwards, ufo-m-5 0.5s 13s 5 ease-out alternate forwards
+      &--right
+        width: 15%
+        top: 35%
+        right: -2%
+        will-change: transform
+        animation: ufo-r-1 3s 3.2s linear forwards, ufo-r-2 3s 6.4s ease-out forwards, ufo-r-3 2.5s 9.6s ease-in forwards, ufo-r-4 1.5s 12.3s linear forwards, ufo-r-5 0.5s 14s 3 ease-out alternate forwards
+
+
+
+  .block__decoration
+    +pos-set(absolute, under, -17%, 25%)
+    padding-top: 53%
+    width: 53%
+    height: 0
+    +bg-set(url("~event/1st/e-sp-big/components/hero-section/block-decoration.png"), 100%)
+    animation: 30s key-rotate-self infinite linear
+  .hero__box
+    +pos-set(relative, zero)
+
+  .hero__promo-link
+    +pos-set(absolute, base, 10%, null, null, 6%)
+    width: 27%
+    transform-origin: right bottom
+    animation: shake-me 3.75s infinite
+
+  .hero__title
+    &--main
+      +pos-set(relative, zero)
+      padding: 3% 13% 0
+
+      +breakpoint-min($min-width-xl)
+        margin: 3% 13% 0
+        width: 73.5%
+        .decoration--flash
+          top: -1%
+          left: 0
+          width: 100%
+          +bg-set(url("~event/1st/e-sp-big/components/hero-section/title-light.png"))
+          animation: bg-animation-web 3.75s steps(7) infinite 
+  .promo__block
+    +display-flex(">div")
+  .promo__event
+    +flex(0, 1, 50%)
+    +pos-set(absolute, second, null, null, null, 2%)
+  .goods__wrap--flip
+    +flex(0, 1, 70%)
+
+  +breakpoint-min($min-width-xl)
+    .hero__zone
+      padding-top: 30px
+
+    .hero__title
+      &--main
+        padding: 0
+        text-align: center
+
+    .block__decoration
+      top: -55px
+      left: 27%
+      padding-top: 50%
+      width: 50%
+
+    .hero__promo-link
+      top: 10px
+      right: 70px
+
++key-rotate-self(360)
++key-rotate-self(-45, key-rotate-self-2)
++key-rotate-self(45, key-rotate-self-3)
+
+@keyframes ufo-m-1
+  to
+    transform: translate(90vw, 20vh)
+
+@keyframes ufo-m-2
+  from
+    transform: translate(90vw, 20vh)
+
+  to
+    transform: translate(-70vw, 2vh)
+
+
+@keyframes ufo-m-3
+  from
+    transform: translate(-70vw, 2vh)
+  
+  to
+    transform: translate(70vw, 40vh)
+
+
+@keyframes ufo-m-4
+  from
+    transform: translate(70vw, 40vh)
+  
+  to
+    transform: translate(40vw, -2vh)
+  
+
+@keyframes ufo-m-5
+  from
+    transform: translate(40vw, -2vh)
+  
+  to
+    transform: translate(0, 0)
+  
+  
+@keyframes ufo-r-1
+  to
+    transform: translate(-90vw, -20vh)
+
+@keyframes ufo-r-2
+  from
+    transform: translate(-90vw, -20vh)
+
+  to
+    transform: translate(70vw, -2vh)
+
+
+@keyframes ufo-r-3
+  from
+    transform: translate(70vw, -2vh)
+  
+  to
+    transform: translate(-70vw, -40vh)
+
+
+@keyframes ufo-r-4
+  from
+    transform: translate(-70vw, -40vh)
+  
+  to
+    transform: translate(-40vw, 2vh)
+  
+
+@keyframes ufo-r-5
+  from
+    transform: translate(-40vw, 2vh)
+  
+  to
+    transform: translate(0, 0)

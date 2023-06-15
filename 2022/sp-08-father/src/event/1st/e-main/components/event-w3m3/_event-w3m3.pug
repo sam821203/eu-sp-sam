@@ -1,0 +1,70 @@
+-
+  var w3m3Data = [
+    { // 1
+      link: "https://www.etmall.com.tw/Activity/CouponPage/406",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-1.png",
+      alt: "佳麗寶★盛夏保養領券再9折"
+    },
+    { // 2
+      link: "https://www.etmall.com.tw/Activity/CouponPage/407",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-2.png",
+      alt: "PowerHero勁漢英雄 父親節現折$200"
+    },
+    { // 3
+      link: "https://www.etmall.com.tw/Activity/CouponPage/315",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-3.png",
+      alt: "家電獨家指定限折$1111"
+    },
+    { // 4
+      link: "https://www.etmall.com.tw/Activity/CouponPage/350",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-4.png",
+      alt: "居家辦公最高折抵1200元"
+    },
+    { // 5
+      link: "https://www.etmall.com.tw/Activity/CouponPage/405",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-5.png",
+      alt: "SingBee欣美電腦椅全館85折"
+    },
+    { // 6
+      link: "https://www.etmall.com.tw/Activity/CouponPage/403",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-6.png",
+      alt: "瑞康屋領券享9折"
+    },
+    { // 7
+      link: "https://www.etmall.com.tw/Activity/CouponPage/331",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-7.png",
+      alt: "東森小食堂最高折$100"
+    },
+    { // 8
+      link: "https://www.etmall.com.tw/Activity/CouponPage/401",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-8.png",
+      alt: "涼夏防曬指定品 折$100"
+    },
+    { // 9
+      link: "https://www.etmall.com.tw/Activity/CouponPage/404",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-9.png",
+      alt: "環球嚴選 護理防曬全館88折"
+    },
+  ]
+
+section.promo__group.promo__group--w3m3.m-bottom--xxl(data-title="霸氣神券")
+  .layout--main
+    .decor__wrap.full-parent
+      //- .decor__item.decor__item--title#titleEventW3m3
+      //-   img(src="event/1st/e-main/components/event-w3m3/title-event-w3m3.png" alt="")
+      .decor__item.decor__item--left#decorEventW3M3Left
+        img(src="event/1st/e-main/components/event-w3m3/decor-event-w3m3-left.png" alt="")
+      .decor__item.decor__item--right#decorEventW3M3Right
+        img(src="event/1st/e-main/components/event-w3m3/decor-event-w3m3-right.png" alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          #w3m3Wrap.event__wrap
+            ul.good__wrap
+              each data, index in w3m3Data
+                li
+                  a(href= data.link, title= data.alt)
+                    .ice-shine
+                    - var hasImg = data.imgSrc ? true : false
+                    if (hasImg)
+                      img(src= data.imgSrc, alt= data.alt)

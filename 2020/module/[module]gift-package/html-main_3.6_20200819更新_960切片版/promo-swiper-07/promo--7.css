@@ -1,0 +1,79 @@
+
+.promo__group .promo__wrap {
+    position: relative;
+    z-index: 0;
+}
+
+.promo__group .promo__wrap .promo__slider,
+.promo__group .promo__wrap .video__wrap {
+    position: absolute;
+    z-index: 1;
+    top: 20%;
+    left: 0;
+    width: 100%;
+    height: 80%;
+}
+
+@media screen and (min-width: 960px) {
+    .promo__group {
+        background-size: auto;
+    }
+}
+
+.promo__group-7 {
+    background: center 3% url("7-bar.png") no-repeat, center 0 url("pattern-mobile.jpg");
+    background-size: 83%, auto;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.promo__group-7 .promo__wrap {
+    left: 1%;
+    padding-top: 58%;
+    width: 98%;
+}
+
+.promo__group-7 .promo__wrap .promo__slider {
+    top: 22%;
+    height: 78%;
+    background: center 0 url("7-bg_03-mobile.png") no-repeat;
+    background-size: contain;
+}
+
+.promo__group-7 .promo__wrap .promo__slider .swiper-slide {
+    width: 50%;
+}
+
+.promo__group-7 .promo__wrap .promo__slider .swiper-slide a {
+    transform: translateY(-1%) scale(0.75);
+}
+
+.promo__group-7 .promo__wrap .swiper-button-white {
+    top: 60%;
+    transform: scale(0.8);
+    opacity: 0.7;
+}
+
+@media screen and (min-width: 960px) {
+    .promo__group-7 .promo__wrap {
+        padding-top: 42%;
+    }
+
+    .promo__group-7 .promo__wrap .promo__slider {
+        margin-left: 1%;
+        width: 98%;
+        background: center url("7-bg_03.png") no-repeat;
+    }
+
+    .promo__group-7 .promo__wrap .promo__slider .swiper-slide a {
+        transform: scale(0.85) translateY(28%);
+    }
+
+    .promo__group-7 .promo__wrap .swiper-button-prev {
+        left: 15px;
+    }
+
+    .promo__group-7 .promo__wrap .swiper-button-next {
+        right: 15px;
+    }
+}

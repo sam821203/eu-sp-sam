@@ -1,0 +1,60 @@
+// ==========================================================================
+// Base
+// ==========================================================================
+@import "~utils/sass/_common"
+
+// // ==========================================================================
+// // Plugins
+// // ==========================================================================
+// // @import "vendors/animate"
+@import "vendors/style/swiper-slider-custom.sass"
+
+// // ==========================================================================
+// // layout
+// // ==========================================================================
+@import "~layout/header/_header"
+@import "~layout/background-decoration/_background-decoration"
+
+// // ==========================================================================
+// // components
+// // ==========================================================================
+@import "~components/hero-section/_hero-section"
+@import "~components/hero-small-slider/_hero-small-slider"
+@import "~components/goods-slider/_goods-slider"
+@import "~components/promo-event/_promo-event"
+@import "~components/goods-slider-flip/_goods-slider-flip"
+@import "~components/bn-special/_bn-special"
+@import "~components/two-medium-slider/_two-medium-slider"
+@import "~components/bank-section/_bank-section"
+@import "~components/event-w4m2/_event-w4m2"
+@import "~components/bn-event/_bn-event"
+// // ==========================================================================
+// // Page
+// // ==========================================================================
+body
+  background-color: $main-e-background-color
+
+.sp__wrap
+  +pos-set(relative, zero)
+  +bg-set(url("~utils/img/960bg.jpg"), 100%)
+  +breakpoint-min($min-width-xl)
+    +bg-set(url("~utils/img/bg.jpg"))
+.sp__wrap a
+  display: block
+
+.promo__group
+  .promo__zone
+    overflow: hidden
+  .promo__title
+    margin-top: 6%
+    margin-bottom: 2%
+    height: 72px
+  .promo__wrap
+    +pos-set(relative, zero)
+    .promo__slider,
+    .video__wrap,
+      +pos-set(absolute, base, 0, 0)
+      width: 100%
+      height: 100%
+  +breakpoint-min($min-width-xl)
+    background-size: auto

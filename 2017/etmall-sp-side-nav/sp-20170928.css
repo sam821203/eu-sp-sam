@@ -1,0 +1,132 @@
+== initial style ==*/
+
+body{
+  font-family: Arial, Helvetica, 'LiHei', "Microsoft JhengHei", "PMingLiU", "微軟正黑體", "新細明體", sans-serif;  
+  margin: 0;
+  padding: 0;
+}
+img {
+  display: block;
+  border: 0
+}
+
+.l--left{
+    float: left;
+}
+.l--right{
+    float: right;
+}
+
+.sp--1260 {
+    margin: 0px auto;
+    position: relative;
+    width: 1260px;
+}
+.logo__sp {
+    background: url(u-logo.png) 0 0 no-repeat;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 500;
+    width: 150px;
+    height: 55px;
+}
+/*== initial style ==*/
+
+/*== nav style ==*/
+
+.sp-is--hide{opacity: 0;}
+
+/*側選單位置設定:right左右位置+寬度*/
+.sp-fixed__nav{
+    position: fixed;
+    z-index: 600;
+    width: 120px;
+    right: 50%;
+    margin-right: -720px;
+    top: 5%;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.sp-fixed__nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+/*側選單子選項設定:文字大小*/
+.sp-fixed__nav li{
+    text-align: center;
+    font-size: 16px;
+}
+/*側選單子選項設定:底圖+底色+上下距*/
+.sp-fixed__nav a{
+    background: url(nav_bg.jpg) 0 0 repeat-y;
+    display: block;
+    color: #4a4a4a;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: relative;
+    z-index: 1;
+    text-decoration: none
+}
+.sp-fixed__nav a:hover{
+    color: #fff;
+}
+/*側選單子選項設定:滑過去的底色*/
+.sp-fixed__nav a:hover:after{
+    content: "";
+    background-color: #4a4a4a;
+    /*background: rgba(245, 52, 32, 0.9);*/
+    position: absolute;
+    z-index: -1;
+    width: 101px;
+    height: 31px;
+    top: 0;
+    right: 9px;
+   
+}
+/*側選單活動1設定*/
+.sp-fixed__nav li.sp-nav__1 a{
+    background: url(nav_bgbk.jpg) 0 0 repeat-y;
+    color: #FFFFFF;
+}
+/*側選單活動2設定*/
+.sp-fixed__nav li.sp-nav__2 a{
+    background: url(nav_bgbk.jpg) 0 0 repeat-y;
+    color: #FFFFFF;
+}
+/*側選單活動3設定*/
+.sp-fixed__nav li.sp-nav__3 a{
+    background: url(nav_bgbk.jpg) 0 0 repeat-y;
+    color: #FFFFFF;
+}
+.sp-fixed__nav li.sp-nav__1 a:hover:after,.sp-fixed__nav li.sp-nav__2 a:hover:after,.sp-fixed__nav li.sp-nav__3 a:hover:after{
+    height: 50px;
+}
+/*側選單表頭設定:底圖+高*/
+.sp-nav__home a{
+    background: url(nav_home.png) 0 0 no-repeat;
+    height: 122px;
+    white-space: nowrap;
+    text-indent: 1000%;
+    overflow: hidden;
+    margin-bottom: -10px;
+}
+.sp-nav__home a:hover:after, .sp-nav__top a:hover:after{
+    background: none;
+}
+/*側選單表底設定:底圖+高*/
+.sp-nav__top a{
+    background: url(nav_top.png) 0 0 no-repeat;
+    height: 135px;
+    white-space: nowrap;
+    text-indent: 1000%;
+    overflow: hidden;
+}
+
+
+
+/*== nav style ==

@@ -1,0 +1,22 @@
+- var hotDataE = [{link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202001/SP_1114466/w/index.html", imgSrc: "~event/index-main-e-2/components/two-medium-slider/items/4-1.png", alt: "新春煥顏福袋1折up"}, {link: "https://www.etmall.com.tw/np/72755", imgSrc: "~event/index-main-e-2/components/two-medium-slider/items/4-2.png", alt: "保健人氣王暢銷必buy"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114457/w/index.html", imgSrc: "~event/index-main-e-2/components/two-medium-slider/items/4-3.png", alt: "迎接2020希望來領"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201911/SP_1114156/w/index.html", imgSrc: "~event/index-main-e-2/components/two-medium-slider/items/4-4.png", alt: "發燒3C激搶64折起"}, {link: "https://www.etmall.com.tw/np/89705", imgSrc: "~event/index-main-e-2/components/two-medium-slider/items/4-5.png", alt: "女裝保暖外套$599up"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114305/index.html", imgSrc: "~event/index-main-e-2/components/two-medium-slider/items/4-6.png", alt: "幸福好味 團圓年在一起"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114460/w/index.html", imgSrc: "~event/index-main-e-2/components/two-medium-slider/items/4-7.png", alt: "icon熱銷百萬台 日虎滾輪泡腳機"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114508/w/index.html", imgSrc: "~event/index-main-e-2/components/two-medium-slider/items/4-8.png", alt: "旅遊年終慶 買1送1"}, ]
+
+- var hotDataU = [{link: "http://www.u-mall.com.tw/XML/content/DMSetting/Final/201908/SP_1105057/w/index.html", imgSrc: "~event/index-main-e-2/event/index-main-e-2/components/two-medium-slider/items/4-1.png", alt: "烤肉食器必BUY 65折起"}, {link: "https://www.u-mall.com.tw/bs/93635", imgSrc: "~event/index-main-e-2/components/two-medium-slider/items/4-2.png", alt: "Dr.Wu達爾膚Dr.Wu達爾膚"}, {link: "https://www.u-mall.com.tw/np/67639", imgSrc: "~event/index-main-e-2/components/two-medium-slider/items/4-3.png", alt: "船井生醫完勝體脂肪83折up"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201907/SP_1104925/w/index.html", imgSrc: "~event/index-main-e-2/components/two-medium-slider/items/4-4.png", alt: "Apple最高下殺$7,000"}, {link: " https://www.u-mall.com.tw/c3/130145", imgSrc: "~event/index-main-e-2/components/two-medium-slider/items/4-5.png", alt: "運動攝影機滿萬登記送888折扣金"}, {link: "https://www.u-mall.com.tw/c3/89165", imgSrc: "~event/index-main-e-2/components/two-medium-slider/items/4-6.png", alt: "麗克特烤盤/調理鍋送烤盅+料理夾"}, {link: "https://www.u-mall.com.tw/p/68132", imgSrc: "~event/index-main-e-2/components/two-medium-slider/items/4-7.png", alt: "HENIS 休閒T-SHIRT $880/5件"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201908/SP_1104993/w/index.html", imgSrc: "~event/index-main-e-2/components/two-medium-slider/items/4-8.png", alt: "秋季旅展送600"}, ]
+
+- var hotData = isU? hotDataU : hotDataE
+
+section.promo__group.promo__group--hot
+  .layout--main
+    //- .promo__zone.lazyload(data-src="960bg-04.jpg")
+    .promo__zone
+      //-.promo__title.block--center.m-bottom--xs
+        //- img.lazyload(data-src="section-bn-03.png", src="~utils/img/1x1_low.png", alt="超夯強檔推薦")
+      .promo__wrap
+        #sliderHot.promo__slider.swiper-container
+          ul.swiper-wrapper
+            each data in hotData
+              li.swiper-slide
+                a(href= data.link, title= data.alt)
+                  img(src= data.imgSrc, alt= data.alt)
+        //-  #sliderHotPager.swiper-pager-white.swiper-pagination
+        //-#sliderHotPrev.swiper-button-white.swiper-button-prev
+        //-#sliderHotNext.swiper-button-white.swiper-button-next

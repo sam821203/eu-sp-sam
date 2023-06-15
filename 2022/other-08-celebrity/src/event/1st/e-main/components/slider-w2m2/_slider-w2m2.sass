@@ -1,0 +1,16 @@
+.slider-w2m2
+  +pos-set(relative, zero)
+  overflow: hidden
+  .promo__wrap
+    padding-top: 3%
+    padding-bottom: 4%
+    +breakpoint-min($min-width-lg)
+      padding-top: 9%
+      padding-bottom: 8%
+    +breakpoint-min($min-width-xl)
+      padding-top: 126px
+      padding-bottom: 110px
+  .promo__zone
+    +aspect-ratio(960, 692)
+    .swiper-slide
+      display: flex

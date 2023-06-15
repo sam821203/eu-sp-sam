@@ -1,0 +1,65 @@
+.promo__group--two-item
+  +pos-set(relative, zero)
+  padding-top: 5%
+  overflow: hidden
+  .decoration--flower
+    +pos-set(absolute, zero)
+    bottom: 10%
+    left: 0
+    transform-origin: bottom
+    img
+      will-change: scroll-position
+  .promo__wrap
+    +pos-set(relative, zero)
+    padding: 30% 13.5% 10.5%
+    +bg-set(url("~event/2nd/e-main/components/two-item-slider/bg-two-item.png"), 100%)
+
+    .promo__slider
+    .swiper-slide
+      width: 50%
+      text-align: center
+      transition: all 0.5s
+      &:hover,
+      &:active
+        filter: brightness(105%) contrast(105%)
+
+  .two-item__pager
+    bottom: 0
+    left: 0
+    width: 100%
+    .swiper-pagination-bullet
+      margin: 0 4px
+      width: 12px
+      height: 12px
+      transition: all 0.3s
+      outline: 0
+      &.swiper-pagination-bullet-active
+        width: 24px
+        border-radius: 12px
+        background-color: $gray-deep-dark
+
+  +breakpoint-min($min-width-md)
+    .promo__wrap
+      padding-bottom: 9%
+    .two-item__pager
+      .swiper-pagination-bullet
+        margin: 0 6px
+        width: 18px
+        height: 18px
+        &.swiper-pagination-bullet-active
+          width: 36px
+          border-radius: 18px
+  +breakpoint-min($min-width-xl)
+    padding-top: 50px
+
+    .decoration--flower
+      bottom: 55px
+      left: calc(50% - 480px)
+    .promo__wrap
+      padding: 295px 120px 85px
+      .promo__slider
+    .two-item__pager
+      bottom: 0
+
+
+

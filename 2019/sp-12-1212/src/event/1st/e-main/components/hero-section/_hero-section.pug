@@ -1,0 +1,30 @@
+- var heroBankData = {etmall: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201908/SP_1107836/w/index.html", umall: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201908/SP_1104315/w/index.html"}
+- var heroBankInfo = isU ? heroBankData.umall : heroBankData.etmall
+include /event/1st/e-main/components/canva-effect/_canva-effect.pug
+section.hero__wrap.m-bottom--sm
+  .layout--main
+    .hero__zone
+      #heroBlock.hero__block
+        .hero__box.wow
+          // icon
+          .hero__decoration.block__decoration.block__decoration--arrow
+          .hero__decoration.block__decoration.block__decoration--arrow.block__decoration--arrow--right
+
+          // 標題
+          h1.hero__title.hero__title--main.block--center(title="雙12超級buy")
+            img(src="~event/1st/e-main/components/hero-section/title.png", alt="雙12超級buy")
+            img(src="~event/1st/e-main/components/hero-section/title_super.png", alt="雙12超級buy" class="hero__title--super fadeInDown wow")
+            img(src="~event/1st/e-main/components/hero-section/title_buy.png", alt="雙12超級buy" class="hero__title--buy fadeInDown wow")
+
+          // 副標
+          include /event/1st/e-main/components/hero-small-slider/_hero-small-slider
+
+      .promo__block
+        // 行銷誘因
+        include /event/1st/e-main/components/promo-event-full-screen/_promo-event
+        // 商品輪播
+        include /event/1st/e-main/components/goods-slider-flip-full-screen/_goods-slider-flip
+
+      //- include /event/1st/e-main/components/goods-slider/_goods-slider
+
+      include /event/1st/e-main/components/bn-special/_bn-special.pug

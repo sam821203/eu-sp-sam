@@ -1,0 +1,56 @@
+.promo__group--game-w2m2
+  +pos-set(relative, zero)
+  +breakpoint-min($min-width-xl)
+    margin-top: 7%
+  .promo__wrap
+    +aspect-ratio(931, 772)
+    .decoration__box
+      +pos-set(absolute, base)
+      top: -11%
+      left: 18%
+      width: 65%
+      +breakpoint-min($min-width-xl)
+        left: 20%
+      &--top
+        +pos-set(absolute, base)
+        top: -14%
+        left: 5%
+        width: 95%
+        +breakpoint-min($min-width-xl)
+          left: 10%
+          width: 90%
+    .promo__zone
+      margin-top: 10%
+      padding: 10% 9% 15% 8%
+      +bg-set(url( event/1st/e-main/components/game-w2m2/bg-gamew2m2.png), 100%)
+      .promo__block
+        display: flex
+        justify-content: space-between
+        .promo__item
+          // border: 1px solid #333
+          width: 48%
+          height: 55vw
+          // background-color: #fff
+          // opacity: .6
+          cursor: pointer
+          +breakpoint-min($min-width-xl)
+            height: 500px
+
+@keyframes bounceInDown
+  0%, 60%, 75%, 90%, to
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+  0%
+    opacity: 0
+    transform: translate3d(0, -3000px, 0) scaleY(3)
+  60%
+    opacity: 1
+    transform: translate3d(0, 25px, 0) scaleY(.9)
+  75%
+    opacity: 1
+    transform: translate3d(0, -10px, 0) scaleY(.95)
+  90%
+    opacity: 1
+    transform: translate3d(0, 5px, 0) scaleY(.985)
+  to
+    opacity: 1
+    transform: translateZ(0)

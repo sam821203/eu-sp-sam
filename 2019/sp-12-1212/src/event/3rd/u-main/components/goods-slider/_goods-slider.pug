@@ -1,0 +1,14 @@
+- var goodsDataE = [{link: "https://www.etmall.com.tw/c3/125140", imgSrc: "~event/3rd/e-main/components/goods-slider/items/product-1.png", alt: "聖誕狂歡慶專櫃3折up"}, {link: "https://www.etmall.com.tw/np/87843", imgSrc: "~event/3rd/e-main/components/goods-slider/items/product-2.png", alt: "IVENOR 贏得孅姬 79折UP"}, {link: "https://www.etmall.com.tw/c2/107789", imgSrc: "~event/3rd/e-main/components/goods-slider/items/product-3.png", alt: "MacBook 省萬元$57,900"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114228/w/index.html", imgSrc: "~event/3rd/e-main/components/goods-slider/items/product-4.png", alt: "無痛升G再享豪禮送"}, {link: "https://www.etmall.com.tw/np/65333", imgSrc: "~event/3rd/e-main/components/goods-slider/items/product-5.png", alt: "COACH 時尚趴下殺5折"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114310/w/index.html", imgSrc: "~event/3rd/e-main/components/goods-slider/items/product-6.png", alt: "聖誕跨年趴 迎新超值購"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114198/w/index.html", imgSrc: "~event/3rd/e-main/components/goods-slider/items/product-7.png", alt: "5.2L氣炸鍋　驚喜價"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114205/w/index.html", imgSrc: "~event/3rd/e-main/components/goods-slider/items/product-8.png", alt: "寒假春節 現折5千"},]
+
+- var goodsDataU = [{link: "https://www.u-mall.com.tw/p/73232", imgSrc: "~event/3rd/u-main/components/goods-slider/items/product-1.png", alt: "DR.WU年度必敗599up"}, {link: "https://www.u-mall.com.tw/p/72803", imgSrc: "~event/3rd/u-main/components/goods-slider/items/product-2.png", alt: "日本味王↘38折up"}, {link: "https://www.u-mall.com.tw/c3/63320", imgSrc: "~event/3rd/u-main/components/goods-slider/items/product-3.png", alt: "Apple Watch 92折起"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201912/SP_1105726/w/index.html", imgSrc: "~event/3rd/u-main/components/goods-slider/items/product-4.png", alt: "儲值MyCard爽送70%"}, {link: "https://www.u-mall.com.tw/np/72340", imgSrc: "~event/3rd/u-main/components/goods-slider/items/product-5.png", alt: "輕塑美膚內衣3折up"},{link: "https://www.u-mall.com.tw/np/73491", imgSrc: "~event/3rd/u-main/components/goods-slider/items/product-6.png", alt: "威猛先生全系利8折起"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201912/SP_1105700/w/index.html", imgSrc: "~event/3rd/u-main/components/goods-slider/items/product-7.png", alt: "5.2L氣炸鍋　驚喜價"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201912/SP_1105704/w/index.html", imgSrc: "~event/3rd/u-main/components/goods-slider/items/product-8.png", alt: "寒假春節 現折5千"}, ]
+
+- var goodsData = isU? goodsDataU : goodsDataE
+
+.goods__wrap
+  .promo__slider
+    #sliderGoods.swiper-container
+      ul.swiper-wrapper
+        each data in goodsData
+          li.swiper-slide
+            a(href= data.link, title= data.alt)
+              img(src= data.imgSrc, alt= data.alt)

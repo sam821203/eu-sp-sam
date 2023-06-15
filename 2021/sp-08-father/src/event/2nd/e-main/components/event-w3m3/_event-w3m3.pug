@@ -1,0 +1,76 @@
+-
+  var w3m3Data = [
+    {
+      link: "https://www.etmall.com.tw/gp/140905",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-1.png",
+      alt: "24Bottles-Valentine's Day"
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/139649",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-2.png",
+      alt: "服飾鞋包 愛放閃5折起"
+    },
+    {
+      link: "https://www.etmall.com.tw/c2/73580",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-3.png",
+      alt: "鮮嫩美食 味濃情厚"
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/141115",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-4.png",
+      alt: "女友最愛首選筆電"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/10717/m/index.html",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-5.png",
+      alt: "最美新機OPPO Reno6"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/10644/m/index.html",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-6.png",
+      alt: "保健夏末線上特賣會"
+    },
+    {
+      link: "https://www.etmall.com.tw/c2/132921",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-7.png",
+      alt: "告白秘密武器年中夏殺"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/10570/m/index.html",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-8.png",
+      alt: "放閃肌! 浪漫送禮77折起"
+    },
+  ]
+
+section.promo__group.promo__group--w3m3.m-bottom--lg(data-title="老爸必備")
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        #w3m3Wrap.event__wrap
+          .promo__block.m-bottom--xs
+            ul.good__wrap
+              each data, index in w3m3Data
+                if index < 3
+                  li
+                    a(href= data.link, title= data.alt)
+                      - var hasImg = data.imgSrc ? true : false
+                      if (hasImg)
+                        img(src= data.imgSrc, alt= data.alt)
+          .promo__block.m-bottom--xs
+            ul.good__wrap
+              each data, index in w3m3Data
+                if index >= 3 && index < 4
+                  li
+                    a(href= data.link, title= data.alt)
+                      - var hasImg = data.imgSrc ? true : false
+                      if (hasImg)
+                        img(src= data.imgSrc, alt= data.alt)
+          .promo__block.m-bottom--xs
+            ul.good__wrap
+              each data, index in w3m3Data
+                if index >= 4 && index < 8
+                  li
+                    a(href= data.link, title= data.alt)
+                      - var hasImg = data.imgSrc ? true : false
+                      if (hasImg)
+                        img(src= data.imgSrc, alt= data.alt)

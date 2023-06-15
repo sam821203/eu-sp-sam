@@ -1,0 +1,62 @@
+-
+  var sliderW4M3Data = [
+    { // 1
+      link: "https://www.etmall.com.tw/Activity/CouponReceiveAll#%e6%b5%81%e8%a1%8c%e6%9c%8d%e9%a3%be",
+      imgSrc: "event/1st/e-main/components/slider-w4m3-2/items/slider2-1.png",
+      alt: "下單享$50優惠"
+    },
+    { // 2
+      link: "https://www.etmall.com.tw/Activity/CouponReceiveAll#%e6%b5%81%e8%a1%8c%e9%85%8d%e4%bb%b6",
+      imgSrc: "event/1st/e-main/components/slider-w4m3-2/items/slider2-2.png",
+      alt: "滿1888可折限專櫃包/流行包"
+    },
+    { // 3
+      link: "https://www.etmall.com.tw/Activity/CouponReceiveAll#%e7%94%9f%e6%b4%bb",
+      imgSrc: "event/1st/e-main/components/slider-w4m3-2/items/slider2-3.png",
+      alt: "指定品滿額折千"
+    },
+    { // 4
+      link: "https://www.etmall.com.tw/Activity/CouponReceiveAll#%e5%af%b5%e7%89%a9%e5%a9%a6%e5%b9%bc",
+      imgSrc: "event/1st/e-main/components/slider-w4m3-2/items/slider2-4.png",
+      alt: "滿1件可折"
+    },
+    { // 5
+      link: "https://www.etmall.com.tw/Activity/CouponReceiveAll#%e7%be%8e%e5%a6%9d",
+      imgSrc: "event/1st/e-main/components/slider-w4m3-2/items/slider2-5.png",
+      alt: "強檔來襲愛美99"
+    },
+    { // 6
+      link: "https://www.etmall.com.tw/Activity/CouponReceiveAll#%e4%bf%9d%e5%81%a5",
+      imgSrc: "event/1st/e-main/components/slider-w4m3-2/items/slider2-6.png",
+      alt: "好禮三重送"
+    },
+    { // 7
+      link: "https://www.etmall.com.tw/Activity/CouponReceiveAll#%e5%ae%b6%e9%9b%bb",
+      imgSrc: "event/1st/e-main/components/slider-w4m3-2/items/slider2-7.png",
+      alt: "滿1件可折/限指定家電"
+    },
+  ]
+
+section.promo__group.slider-w4m3-2.m-bottom--lg(data-title="商品神券")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--left
+        img(src="event/1st/e-main/components/slider-w4m3-2/decor-slider-w4m3-2-left.png", alt="")
+      .decor__item.decor__item--right#decorSlider2W4M3Right
+        img(src="event/1st/e-main/components/slider-w4m3-2/decor-slider-w4m3-2-right.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          .event__wrap.swiper-container#slider2W4M3
+            ul.event__item.swiper-wrapper
+              each data in sliderW4M3Data
+                li.swiper-slide
+                  a(href= data.link, title=data.alt)
+                    img(src= data.imgSrc, alt=data.alt)
+            .swiper-pagination
+
+
+              //- each data, index in w1m1Data
+              //-   li
+              //-     a(href= data.link, title= data.alt)
+              //-       img(src= data.imgSrc, alt= data.alt)

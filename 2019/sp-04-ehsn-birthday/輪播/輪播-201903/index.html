@@ -1,0 +1,180 @@
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="slick.css">
+<style>
+  /* reset */
+  /* ======================================== */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  *:before, *:after {
+    box-sizing: border-box; }
+  a {
+    display: block;
+    text-decoration: none;
+  }
+  ul {
+    list-style: none;
+  }
+  img {
+    display: inline;
+    width: 100%;
+    border: 0;
+    vertical-align: middle;
+  }
+  article,
+  main,
+  nav,
+  section,
+  header {
+    display: block;
+  }
+  body {
+    margin:0;
+    font-family: PingFangTC-regular, Roboto, "LiHei Pro", "Source Han Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, "Microsoft JhengHei", sans-serif;
+  }
+  .sp--1260 {
+    position: relative;
+    z-index: 0;
+    max-width: 1260px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .sp--1260.home__wrap {
+    z-index: 1;
+  }
+
+
+
+  .promo__wrap {
+    background-image: linear-gradient(#fefdfc 73%, rgba(0, 0, 0, 0));
+  }
+  .promo__zone {
+    position: relative;
+    z-index: 1;
+    height: 173px;
+    background: 49% 0 url(slide-background.png) no-repeat;
+  }
+  .promo__slider {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2.1%;
+    width: 63%;
+  }
+  .promo__slider a {
+    height: auto;
+  }
+  .btn--slider {
+    position: absolute;
+    z-index: 0;
+    top: 43%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  .btn--slider:hover {
+    transform: scale(1.3);
+  }
+  .btn--prev {
+    left: 12%;
+  }
+  .btn--next {
+    right: 12%;
+  }
+  .btn--slider img {
+    width: 20px;
+  }
+  @media screen and (max-width: 1024px) {
+    .promo__zone {
+      position: relative;
+      padding-top: 15.94%;
+      height: 0;
+      background: url(slide-background-mobile.jpg) no-repeat;
+      background-size: cover;
+    }
+    .promo__zone .sp--1260 {
+      position: absolute;
+      z-index: 0;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .promo__slider {
+      padding-top: 2.6%;
+      width: 80%;
+    }
+    .btn--slider {
+      top: calc(50% - 20px);
+    }
+    .btn--prev {
+      left: 5%;
+    }
+    .btn--next {
+      right: 5%;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .promo__slider {
+      width: calc(100% - 60px);
+    }
+    .btn--slider {
+      top: calc(50% - 15px);
+      width: 30px;
+    }
+    .btn--prev {
+      left: 0;
+    }
+    .btn--next {
+      right: 0;
+    }
+    .btn--slider img {
+      width: 15px;
+    }
+  }
+</style>
+<!--[if IE 9]>
+<style>
+  .bn-w4m2 .banner__item {
+    width: 25% \ ;
+  }
+  @media screen and (max-width: 1024px) {
+    .bn-w4m2 .banner__item {
+      width: 50% \ ;
+    }
+  }
+</style>
+<![endif]-->
+<body>
+
+<section class="promo__wrap">
+  <div class="promo__zone">
+    <div class="sp--1260">
+      <div id="promoSlider" class="promo__slider">
+        <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201903/SP_1107324/w/index.html" title="超商店取 有拿有賺"><img src="slide-banner-1.jpg" alt="超商店取 有拿有賺"></a>
+        <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201903/SP_1107335/w/index.html" title="首購登記送100東森幣"><img src="slide-banner-2.jpg" alt="首購登記送100東森幣"></a>
+      </div>
+      <a id="sliderPrev" class="btn--slider btn--prev" href="javascript: void(0);"><img src="slide-prev.png" alt="上一頁"></a>
+      <a id="sliderNext" class="btn--slider btn--next" href="javascript: void(0);"><img src="slide-next.png" alt="下一頁"></a>
+    </div>
+  </div>
+</section>
+<!--[if IE 9]>
+  <script src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106742/flexibility.js"></script>
+  <script>flexibility(document.documentElement);</script>
+<![endif]-->
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script src="slick.min.js"></script>
+<script>
+  function initSlider(){
+    $('#promoSlider').slick({
+        autoplay: true,
+        prevArrow: $('#sliderPrev'),
+        nextArrow: $('#sliderNext'),
+    });
+  }
+  initSlider();
+
+</script>

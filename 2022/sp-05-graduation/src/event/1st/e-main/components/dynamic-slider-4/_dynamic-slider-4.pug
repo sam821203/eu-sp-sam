@@ -1,0 +1,71 @@
+-
+  var dataPromoText = [
+    {
+      link: "https://www.etmall.com.tw/Search?keyword=%E5%8F%A3%E7%BD%A9&orderBy=2" ,
+      text: "口罩升級",
+      alt: "口罩升級",
+    },
+    {
+      link: "https://www.etmall.com.tw/bc3/161033" ,
+      text: "統一泡麵",
+      alt: "統一泡麵",
+    },
+    {
+      link: "https://www.etmall.com.tw/c2/26776" ,
+      text: "衛生紙",
+      alt: "衛生紙",
+    },
+    {
+      link: "https://www.etmall.com.tw/c2/88130" ,
+      text: "維他命",
+      alt: "維他命",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/11958/m/index.html" ,
+      text: "抗菌清淨機",
+      alt: "抗菌清淨機",
+    },
+    {
+      link: "https://www.etmall.com.tw/Search?keyword=%E6%8A%91%E8%8F%8C%E8%A5%AA " ,
+      text: "抑菌襪",
+      alt: "抑菌襪",
+    },
+  ]
+
+section.daily__group.promo__group--dynamic-slider.m-bottom--lg(data-title="第四塊")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--title#dynamic4Title
+        img(src="event/1st/e-main/components/dynamic-slider-4/title-dynamic-slider-4.png", alt="")
+      .decor__item.decor__item--left#decorDynamic4Left
+        img(src="event/1st/e-main/components/dynamic-slider/decor-dynamic-slider-left.png", alt="")
+      .decor__item.decor__item--right#decorDynamic4Right
+        img(src="event/1st/e-main/components/dynamic-slider/decor-dynamic-slider-right.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          .promo__slider.swiper-container#dynamicSlider4Block
+            .swiper-wrapper
+    .promo__box
+      .text__wrap
+        ul
+          each data in dataPromoText
+            li.promo__text
+              a(href= data.link, title=data.alt)
+                span= data.text
+
+          //- include /utils/bg-deco dration-instance/threejs-gift/_threejs-gift
+
+//- 版型結構
+//- .dynamic__item
+//-   .product.product--dynamic
+//-     a(href="data.網址", title="data.商品名")
+//-       .product__block
+//-         .product__img
+//-           img.swiper-lazy(alt="", src="")
+//-        .product__text
+//-           .product__name
+//-             span data.商品名data.商品名data.商品名data.商品名data.商品名data.商品名data.商品名
+//-           .product__price
+//-             span $
+//-             span 888,888

@@ -1,0 +1,137 @@
+.buy__wrap
+  img
+    vertical-align: top
+  .buy__box
+    padding-left: 4%
+    padding-right: 4%
+    +bg-set(url(~event/1st/e-main/components/collect-buy/bg-buy.png), 100%, null, null,repeat)
+    > ul
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+      width: 100%
+      li
+        flex: 0 0 100%
+        margin-bottom: 3.5%
+        &:last-child
+          margin-bottom: 0
+    a
+      text-align: center
+      transition: all 0.3s
+      &:hover,
+      &:active
+        filter: brightness(120%)
+
+    .item__cta
+      .cta--active
+        display: none
+    .item__cta.active,
+    .active .item__cta
+      .cta--active
+        display: block
+      .cta--closed
+        display: none
+
+  .item__wrap
+    padding: 3%
+    +bg-set(url(~event/1st/e-main/components/collect-buy/bg-buy-item.png), 100%)
+
+  .item__box
+    display: flex
+    padding: 12% 5.5% 0
+    width: 100%
+
+  .item__pic
+    flex: 0 0 44%
+    +aspect-ratio(350, 350, img)
+  .item__intro
+    flex: 1 1 56%
+    +pos-set(relative, zero)
+    padding-top: 0
+    text-align: center
+    .name__box
+      margin-left: 5%
+      overflow: hidden
+    .item__point
+      color: $primary-medium
+      font-size: 6vw
+      font-weight: bold
+    .item__name
+      display: -webkit-box
+      -webkit-line-clamp: 3
+      -webkit-box-orient: vertical
+      text-overflow: ellipsis
+      color: $gray-deep-dark
+      line-height: 120%
+      height: 3.5em
+      font-size: 4.5vw
+      overflow: hidden
+
+    .item__quantity
+      +pos-set(absolute, zero)
+      left: 0
+      bottom: 5%
+      width: 100%
+      height: 1.35em
+      color: $gray-deep-dark
+      font-size: 4vw
+      font-weight: bold
+      text-align: center
+
+  .cta__box
+    display: flex
+    justify-content: space-between
+    padding: 1% 5.5% 5%
+    +breakpoint-min($min-width-md)
+      padding-bottom: 7%
+
+  .item__info
+    flex: 0 0 43.03%
+    padding-top: 2.4%
+  .item__cta
+    flex: 0 0 55%
+    padding-right: 2%
+    .cta
+      padding: 4.5% 2% 0
+
+  +breakpoint-min($min-width-lg)
+    .buy__box
+      > ul
+        justify-content: space-between
+        li
+          flex: 0 0 49%
+          margin-bottom: 2%
+          &:nth-last-child(2)
+            margin-bottom: 0
+    .item__intro
+      .item__point
+        font-size: 24px
+      .item__name
+        font-size: 18px
+      .item__quantity
+        bottom: 0
+        font-size: 14px
+    .cta__box
+      padding-bottom: 5%
+
+  +breakpoint-min($min-width-xl)
+    .item__intro
+      .item__point
+        font-size: 28px
+      .item__name
+        font-size: 20px
+      .item__quantity
+        font-size: 16px
+
+.decoration__bottom
+  +pos-set(relative, zero)
+  .buy__note
+    +pos-set(absolute, base, 50%, 0)
+    width: 100%
+    color: $main-e-background-color-1st
+    font-size: 3.5vw
+    font-weight: bold
+    text-align: center
+    transform: translateY(-50%)
+    +breakpoint-min($min-width-lg)
+      font-size: 24px

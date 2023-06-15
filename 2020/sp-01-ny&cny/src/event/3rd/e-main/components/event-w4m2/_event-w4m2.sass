@@ -1,0 +1,34 @@
+.promo__group--w4m2
+  .event__zone
+    margin-left: auto
+    margin-right: auto
+    width: 98%
+    text-align: center
+  .event__wrap
+    background: center 0 url("~event/3rd/e-main/components/event-w4m2/bg-event.jpg") repeat-y
+    background-size: contain
+  .event__box
+    +display-flex
+    flex-wrap: wrap
+    padding-left: 2%
+    padding-right: 2%
+    li
+      +flex(1, 0, 48%)
+      padding-bottom: 2%
+      &:hover,
+      &:active
+        transform: translateY(-3%)
+        filter: brightness(110%) contrast(110%)
+      +breakpoint-min($min-width-lg)
+        +flex(1, 0, 24%)
+  .event__decoration--bottom
+    margin-top: -2%
+    transform: translateX(0.15%)
+
+  +breakpoint-min($min-width-xl)
+    .event__wrap
+      // background-image: url("~event/3rd/e-main/components/event-w4m2/bg-event.jpg")
+      background-size: 97.7%
+    .event__box
+      padding-left: 30px
+      padding-right: 30px

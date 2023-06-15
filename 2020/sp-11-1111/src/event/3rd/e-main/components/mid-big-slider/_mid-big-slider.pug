@@ -1,0 +1,97 @@
+- 
+  var midBigDataE = [
+    {
+      link: 2816820,
+      imgSrc: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202011/SP_1116729/mid-big-1.png",
+      alt: "【LANNI 藍尼】現+預 寬鬆休閒風衣外套-四款任選(中長版)"
+    }, 
+    {
+      link: 5860980,
+      imgSrc: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202011/SP_1116729/mid-big-2.png",
+      alt: "黑米豪 彰化溪州黑米 800gX2袋"
+    }, 
+    {
+      link: 2711996, 
+      imgSrc: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202011/SP_1116729/mid-big-3.png",
+      alt: "東風極柔3層抽取衛生紙(90抽x6包x4串)"
+    }, 
+    {
+      link: 2803021,
+      imgSrc: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202011/SP_1116729/mid-big-4.png",
+      alt: "【BabyTiger虎兒寶】比利時 Egmont Toys 艾格蒙繪本風遊戲磁貼書 - 多款任選-網"
+    }, 
+    {
+      link: 2801793,
+      imgSrc: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202011/SP_1116729/mid-big-5.png",
+      alt: "DeMon_全效黃金蜂王面膜買一送一共2盒_雙11限定加購組-網 (加購品銷編2801790)"
+    }, 
+    {
+      link: 2801990,
+      imgSrc: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202011/SP_1116729/mid-big-6.png",
+      alt: "PS韓國美美妍_素顏修修光圈霜_加$111多一瓶光圈霜-KIT"
+    },
+    {
+      link: 2803086,
+      imgSrc: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202011/SP_1116729/mid-big-7.png",
+      alt: "【+111元多一件】聿健 NMN軟硬關鍵活力膠囊3盒+1盒(30粒/盒)共4盒"
+    },
+    {
+      link: 1797669,
+      imgSrc: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202011/SP_1116729/mid-big-8.png",
+      alt: "【船井xHello Kitty】金潤膠原蛋白 2大1小 加-船井 全效專利膠原蛋白7日份"
+    },
+    {
+      link: 2703490,
+      imgSrc: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202011/SP_1116729/mid-big-9.png",
+      alt: "FUNY 萌貓神掌捕蚊拍 白色 (LED紫光誘蚊/捕蚊燈)"
+    },
+    {
+      link: 2622008,
+      imgSrc: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202011/SP_1116729/mid-big-10.png",
+      alt: "Rosa Rugosa 攜帶式 紫外線消毒包"
+    },
+    {
+      link: 2575497,
+      imgSrc: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202011/SP_1116729/mid-big-11.png",
+      alt: "SanDisk Cruzer Fit 極緻小巧 CZ33 16GB USB隨身碟 (黑/16GB/無蓋) [公司貨]"
+    },
+  ]
+
+- 
+  var midBigDataU = [
+    {
+      link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202008/SP_1106087/w/index.html", 
+      imgSrc: "~event/3rd/u-main/components/mid-big-slider/items/mid-big-1.png",
+      alt: "20間銀行最高回饋10%"
+    }, 
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale", 
+      imgSrc: "~event/3rd/u-main/components/mid-big-slider/items/mid-big-2.png",
+      alt: "整點最便宜"
+    }, 
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale?Day=Up", 
+      imgSrc: "~event/3rd/u-main/components/mid-big-slider/items/mid-big-3.png",
+      alt: "天天最激殺"
+    }, 
+  ]
+
+- var midBigData = isU ? midBigDataU : midBigDataE
+
+section.promo__group.promo__group--mid-big.m-bottom--md(data-title="111多1件")
+  .layout--main
+    .promo__title.block--center.text--center
+      img(src="~event/3rd/e-main/components/mid-big-slider/title-mid-big.png", alt="加111元多一件")
+
+    .promo__wrap
+      #sliderMidBig.promo__slider.swiper-container
+        ul.swiper-wrapper
+          each data in midBigData
+            li.swiper-slide
+              a(href=('https://www.etmall.com.tw/i/' + data.link), title= data.alt)
+                img.swiper-lazy(data-src= data.imgSrc, alt="")
+                .swiper-lazy-preloader.swiper-lazy-preloader-white
+
+        #sliderMidBigPrev.swiper-button-white.swiper-button-prev.mid-big__nav.mid-big__nav--prev
+        #sliderMidBigNext.swiper-button-white.swiper-button-next.mid-big__nav.mid-big__nav--next
+      //- #sliderMidBigPager.mid-big__pager.swiper-pagination

@@ -1,0 +1,46 @@
+.promo__group--connect
+  padding: 12% 0 2.5%
+  +bg-set(url(~event/2nd/e-main/components/connect-anchor/bg-connect-anchor.png), cover)
+
+  +breakpoint-min($min-width-xl)
+    padding: 125px 0 35px
+    background-size: 960px
+
+// .anchor__title
+//   text-align: center
+
+.anchor__wrap
+  +display-flex
+  padding: 2% 2%
+  li
+    +flex(0, 1, 20%)
+    padding: 1%
+    &:hover,
+    &:active
+      a
+        animation: tada 1s
+
+@keyframes tada
+  from
+    -webkit-transform: scale3d(1, 1, 1)
+    transform: scale3d(1, 1, 1)
+  10%,
+  20%
+    -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg)
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg)
+
+  30%,
+  50%,
+  70%,
+  90%
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)
+
+  40%,
+  60%,
+  80%
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)
+  to
+    -webkit-transform: scale3d(1, 1, 1)
+    transform: scale3d(1, 1, 1)

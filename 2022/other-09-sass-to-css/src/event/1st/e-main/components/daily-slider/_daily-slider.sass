@@ -1,0 +1,141 @@
+// 天天開搶
+.promo__group--daily-slider
+  overflow: hidden
+  +breakpoint-min($min-width-xl)
+    overflow: visible
+  .decor__wrap
+    padding-top: 0
+    +breakpoint-min($min-width-xl)
+      padding-top: 8%
+    .decor__item
+      &--left
+        +pos-set(absolute, zero, 11%)
+        right: 25%
+        width: 14%
+        +breakpoint-min($min-width-xl)
+          top: 16%
+          right: calc(50% - 230px)
+          width: auto
+      &--right
+        +pos-set(absolute, zero, 0)
+        right: 1%
+        width: 38%
+        transition: transform .6s
+        +breakpoint-min($min-width-xl)
+          right: calc(50% - 470px)
+          width: auto
+  .promo__wrap
+    +aspect-ratio(956, 1152)
+    +bg-set(url(event/1st/e-main/components/daily-slider/bg-daily-slider.png), 100%)
+    margin-top: 2%
+  .promo__zone
+    display: flex
+    justify-content: space-around
+    +pos-set(relative, zero)
+    padding-top: 34%
+  a
+    &:hover,
+    &:active
+      filter: brightness(102%) contrast(105%)
+
+    // 共用類宮格樣式
+  .product--dynamic
+    .product__intro
+      display: none
+    .product__img
+      margin-bottom: 3%
+      width: 100%
+      border-radius: 0
+      text-align: center
+      img
+        width: 100%
+    .product__name
+      color: $gray-deep-dark
+      +breakpoint-min($min-width-xl)
+    .product__price
+      width: 100%
+      color: $main-e-background-color-1st-4
+
+    .product__text
+      width: 100%
+      background-color: transparent
+      // border-radius: 0 3vw 3vw 0
+      border-radius: 0
+    // +breakpoint-min($min-width-xl)
+    //   .product__img
+    //     border-radius: 28px 0 0 28px
+    //   .product__text
+    //     border-radius: 0 28px 28px 0
+      &::before
+        display: block
+        content: ""
+        width: 100%
+        padding-bottom: 100%
+
+  // 雙區塊類宮格差異部分樣式
+  .daily__slider
+    +pos-set(relative, zero)
+    width: 54%
+    padding: 10% 3% 0 1.8%
+    .swiper-container
+      width: 100%
+      li
+        width: 100%
+    .product__block
+      display: flex
+      flex-wrap: wrap
+      background-color: $gray-deep-light
+
+    .product__name
+      margin-bottom: 1%
+      +breakpoint-min($min-width-xl)
+        font-size: 2.2rem
+        padding: 0 3%
+
+    .product__price
+      span
+        &:last-child
+          font-size: 5.5vw
+          +breakpoint-min($min-width-xl)
+            font-size: 60px
+
+  .daily__block
+    width: 40%
+    padding-top: 10%
+    +padding-x(1%, 1.3%)
+    .product--dynamic
+      +pos-set(relative, zero)
+
+    .product__img
+      filter: grayscale(100%)
+      +breakpoint-min($min-width-xl)
+        margin-bottom: 7%
+    .product__text
+      display: flex
+      flex-wrap: wrap
+    .product__name
+      padding: 0 6%
+      +breakpoint-min($min-width-xl)
+        font-size: 2.2rem
+    .product__price
+      display: none
+      span
+        &:last-child
+          font-size: 5.5vw
+          +breakpoint-min($min-width-xl)
+            font-size: 42px
+
+  // 最後一天處理
+  .daily--next
+    &.active
+      .product__img
+        width: 63%
+        filter: none
+      .product__name
+        -webkit-line-clamp: 1
+        margin-top: 0
+        height: 1.2em
+      .product__price
+        display: block
+
+

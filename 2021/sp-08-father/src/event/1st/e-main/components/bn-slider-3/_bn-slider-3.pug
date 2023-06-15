@@ -1,0 +1,76 @@
+-
+  var bnSliderItemData3 = [
+    {
+      link: "https://www.etmall.com.tw/p/91608?pinProdSaleNo=2625187",
+      imgSrc: "event/1st/e-main/components/bn-slider-3/items/super-1.png",
+      alt: "Lucas Maethger MORINO 前CK設計師操刀68折up"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2933817",
+      imgSrc: "event/1st/e-main/components/bn-slider-3/items/super-2.png",
+      alt: "王建民 星辰	星燦藍光動能計時手錶43mm"
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/138554",
+      imgSrc: "event/1st/e-main/components/bn-slider-3/items/super-3.png",
+      alt: "林俊傑 OSIM讓日常更美好"
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/104286",
+      imgSrc: "event/1st/e-main/components/bn-slider-3/items/super-4.png",
+      alt: "亞培 買指定商品送好禮"
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/137869",
+      imgSrc: "event/1st/e-main/components/bn-slider-3/items/super-5.png",
+      alt: "李敏鎬 正官庄	養蔘滿額雙重送"
+    },
+    {
+      link: "https://www.etmall.com.tw/c3/153594",
+      imgSrc: "event/1st/e-main/components/bn-slider-3/items/super-6.png",
+      alt: "謝承均 RENATA-A	漢方肌活養髮系列85折起"
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/138925",
+      imgSrc: "event/1st/e-main/components/bn-slider-3/items/super-7.png",
+      alt: "溫昇豪 飛利浦電鬍刀	滿額登記送小家電"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2926087",
+      imgSrc: "event/1st/e-main/components/bn-slider-3/items/super-8.png",
+      alt: "吳慷仁 伊萊克斯	買1送3好禮"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3045134?Store=107378&Cate=153978",
+      imgSrc: "event/1st/e-main/components/bn-slider-3/items/super-9.png",
+      alt: "林柏昇KID	realme	narzo 30A 4GB/64GB"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2971904",
+      imgSrc: "event/1st/e-main/components/bn-slider-3/items/super-10.png",
+      alt: "E.SO瘦子 Haylou	Haylou超越你的期待"
+    },
+    {
+      link: "https://www.etmall.com.tw/c2/134739",
+      imgSrc: "event/1st/e-main/components/bn-slider-3/items/super-11.png",
+      alt: "吳慷仁 UAG頂級防摔保護殼"
+    },
+  ]
+
+section.promo__group.promo__group--bn-3.m-bottom--lg(data-title="名人帶貨")
+  .layout--main
+    .promo__title
+      img(src="event/1st/e-main/components/bn-slider-3/title-bn-3.png", alt="名人帶貨")
+    .promo__wrap
+      .promo__zone
+        .decoration--top.decoration--bn-3
+          img(src="event/1st/e-main/components/bn-slider-3/decoration-bn-3.png", alt="")
+        #sliderBn3.promo__slider.swiper-container
+          ul.swiper-wrapper
+            each data in bnSliderItemData3
+              li.swiper-slide
+                a(href= data.link, title= data.alt)
+                  img.swiper-lazy(data-src= data.imgSrc, alt="")
+                  .swiper-lazy-preloader.swiper-lazy-preloader-black
+
+      //- #sliderBnPager.bn__pager.swiper-pagination

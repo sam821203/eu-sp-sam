@@ -1,0 +1,110 @@
+//- 打開u-mall選項會自動轉換成U的logo和連結(預設etmall)
+//- - var isU = true
+include /layout/header_s2/_header
+main#spWrap.sp__wrap
+  //<div id="navRightBar" class="navRightBar"></div>
+  nav#navbarAnchor.navbar__anchor(role="navigation")
+  //.navbar__anchor
+  //  ul#navClick.elevator__wrap.js--elevator
+  //    li
+  //      a.active(href="本周強打") 本周強打
+  //    li
+  //      a(href="好康專區") 好康專區
+  //    li
+  //      a(href="熱門活動") 熱門活動
+  //    li
+  //      a(href="全館優惠") 全館優惠
+  //- banner header
+  section.banner__section.bs--01(data-title="本周強打") 本週強打星
+  .week__star
+    img(src="~event/activities__overview/pages/index/640x280-S.jpg")
+    .week__star__info
+      .info--left
+        .star__info__date 2020/2/3 ~ 2020/2/17
+          span.star__info__hastag HOT
+        .star__info__title 開學愛翻天
+        .star__info__txt
+          .txt__1 花旗買30,000送3,000刷卡金
+          .txt__2 買新春商品送肯德基券
+      .info--right
+        .star__info__detail 詳情
+  //- banner header
+  section.banner__section.bs--02(data-title="會員優惠") 會員優惠
+  .member__group
+    .member__title
+      span 會員專屬
+    a.member__wrap
+      .member__wrap__title 卡友回饋專區
+      .member__wrap__txt 最高享<br>10%刷卡金
+      .member__wrap__img
+        img(src="~event/activities__overview/pages/index/member-1.png")
+      .member__wrap__more more
+    a.member__wrap.bg__s2
+      .member__wrap__title.title__s2 登入送好禮
+      .member__wrap__txt 限量優惠<br>搶購中
+      .member__wrap__img
+        img(src="~event/activities__overview/pages/index/member-2.png")
+      .member__wrap__more more
+    a.member__wrap.bg__s3
+      .member__wrap__title.title__s3 AFTEE先買後付
+      .member__wrap__txt 滿700<br>現折200
+      .member__wrap__img
+        img(src="~event/activities__overview/pages/index/member-3.png")
+      .member__wrap__more more
+    a.member__wrap.bg__s4
+      .member__wrap__title 超取送購物金
+      .member__wrap__txt 登記送$200<br>10%購物金
+      .member__wrap__img
+        img(src="~event/activities__overview/pages/index/member-4.png")
+      .member__wrap__more more
+    a.member__wrap.bg__s3
+      .member__wrap__title.title__s2 金門全家超取
+      .member__wrap__txt 選擇全家或萊爾富<br>最高送$150<br>購物金
+      .member__wrap__img
+        img(src="~event/activities__overview/pages/index/member-5.png")
+      .member__wrap__more more
+    a.member__wrap.bg__s4
+      .member__wrap__title.title__s3 登記送588折價券
+      .member__wrap__txt 消費滿$3,000<br>登記送$588折價券
+      .member__wrap__img
+        img(src="~event/activities__overview/pages/index/member-6.png")
+      .member__wrap__more more
+  section(data-title="熱門活動")
+  include /event/activities__overview/pages/bn-special/_bn-special
+  //- banner header
+  section.banner__section.banner__m__hot(data-title="全館優惠") 全館大熱門
+  .shop__group.js-shopGroup
+    section.banner__web__hot
+      i.n-icon--hot-activity
+      span 全館大熱門
+    a#js-form01.shop__list.js-shopList
+      img(src="~event/activities__overview/pages/index/640x280-S.jpg")
+      .shop__list__info ★保健防疫大作戰★
+    a#js-form02.shop__list.js-shopList
+      img(src="~event/activities__overview/pages/index/640x280-S.jpg")
+      .shop__list__info ★開工身調理$999up★
+    a#js-form03.shop__list.js-shopList
+      img(src="~event/activities__overview/pages/index/640x280-S.jpg")
+      .shop__list__info 華為開學消費送禮🎁
+    a#js-form04.shop__list.js-shopList
+      img(src="~event/activities__overview/pages/index/640x280-S.jpg")
+      .shop__list__info ★電視熱銷商品★
+    a#js-form05.shop__list.js-shopList
+      img(src="~event/activities__overview/pages/index/640x280-S.jpg")
+      .shop__list__info 🏫新學期大改造🏫
+    a#js-form06.shop__list.js-shopList
+      img(src="~event/activities__overview/pages/index/640x280-S.jpg")
+      .shop__list__info 送KFC折價券
+    a#js-form07.shop__list.js-shopList
+      img(src="~event/activities__overview/pages/index/640x280-S.jpg")
+      .shop__list__info ★電視熱銷商品★
+    a#js-form08.shop__list.js-shopList
+      img(src="~event/activities__overview/pages/index/640x280-S.jpg")
+      .shop__list__info 🏫新學期大改造🏫
+    a#js-form09.shop__list.js-shopList
+      img(src="~event/activities__overview/pages/index/640x280-S.jpg")
+      .shop__list__info 送KFC折價券
+
+//- script區
+include /utils/pug/_total-script
+script(src="changeTime.js")

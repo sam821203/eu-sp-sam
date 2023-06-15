@@ -1,0 +1,547 @@
+<meta name="viewport" content="width=device-width">
+<meta charset="utf-8">
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    *:before, *:after {
+        box-sizing: border-box;
+    }
+
+    a {
+        display: block;
+        text-decoration: none;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    img {
+        width: 100%;
+        border: 0;
+        display: block;
+    }
+
+    article,
+    main,
+    nav,
+    section {
+        display: block;
+    }
+
+    body {
+        margin: 0;
+        /*background-color:#f4d7d3;*/
+        background-image: url(top190830bgs.jpg);
+        background-position: center;
+        background-repeat: repeat-y;
+        -webkit-background-size:;
+        background-size: 100%;
+    }
+
+    .sp--1260 {
+        position: relative;
+        z-index: 0;
+        max-width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .sp--1260.icon_Home {
+        z-index: auto;
+    }
+
+    /* 主視覺 */
+    /* ======================================== */
+    .logo a,
+    .sp__visual a {
+        display: block;
+    }
+
+    .logo {
+        position: absolute;
+        z-index: 1;
+        /* 調整logo位置 */
+        top: 1%;
+        left: 1%;
+        width: 30%;
+        max-width: 220px;
+    }
+
+    /* 設定背景 */
+    .sp__main {
+        background: url(top190830bg.jpg) center 0 no-repeat; /*..............背景底圖,1260把這行刪掉*/
+    }
+
+    /* 設定前景 */
+    .sp__visual {
+        position: relative;
+        z-index: 0;
+        width: 100%;
+    }
+
+    .visual__anchor,
+    .visual__main,
+    .visual__nav {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .visual__anchor {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+    }
+
+    .visual__main a,
+    .visual__nav a {
+        flex-grow: 1;
+    }
+
+    /* 主視覺 */
+    /*...........................................................紅框區高度*/
+    .visual__main {
+        height: 100%;
+    }
+
+    /* 如果需要個別設定每塊寬度(可不設) */
+    /* 如果設100%後面的就會掉下去 */
+    /*...........................................................紅框區設定寬度高度*/
+    .visual__main a:nth-child(1) {
+        flex-grow: 0;
+        width: 100%;
+        height: 100%
+    }
+
+    /*  .visual__main a:nth-child(2) {
+        flex-grow: 0;
+        width: 50%;
+        height: 34%;
+      }*/
+    .bg_Azone,
+    .bg_Bzone {
+        max-width: 960px;
+        margin: 0 auto;
+    }
+
+    .bg_Azone {
+        background-color: #e43b3b;
+        /*height: 500px;*/
+        /*border-bottom-right-radius: 20px;*/
+    }
+
+    .bg_Bzone {
+        background-color: #ffc21c;
+        /*height: 500px;*/
+        /*border-bottom-left-radius: 20px;*/
+    }
+</style>
+<!--[if IE 9]>
+<style>
+    .visual__anchor,
+    .visual__main,
+    .visual__nav {
+        -js-display: flex;
+    }
+
+    .visual__anchor {
+        position: absolute !important;
+        height: 114.28% \ ;
+    }
+
+    .visual__main a,
+    .visual__nav a {
+        background-color: rgba(0, 0, 0, .0);
+        /*height: 100% !important \ ;*/
+    }
+
+    .build__anchor {
+        -js-display: flex;
+    }
+
+    .build-nav__item {
+        width: 12.5% \ ;
+    }
+
+    .banner__wrap {
+        -js-display: flex;
+        width: 100% \ ;
+    }
+
+    .bn-w2m1 .banner__item {
+        width: 50% \ ;
+    }
+
+    .bn-w4m2 .banner__item {
+        width: 25% \ ;
+    }
+
+    .bn-w2m1.item--3 li:last-child {
+        width: 100% \ ;
+    }
+
+    .bn-w3m1 .banner__item {
+        width: 33.33% \ ;
+    }
+
+    @media screen and (max-width: 1024px) {
+        .bn-w2m1 .banner__item {
+            width: 100% \ ;
+        }
+
+        .bn-w4m2 .banner__item {
+            width: 50% \ ;
+        }
+
+        .bn-w3m1 .banner__item {
+            width: 100% \ ;
+        }
+    }
+</style>
+<![endif]-->
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    ul, li {
+        list-style: none;
+    }
+
+    .is--sticky {
+        position: -webkit-sticky !important;
+        position: sticky !important;
+        height: 110px;
+    }
+
+    .tab__wrap {
+        background-image: url("./top190830_04.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-position: center top;
+        position: relative;
+        top: 0;
+        z-index: 1000;
+        width: 100%;
+    }
+
+    /**
+        * 四種背景圖片
+        */
+    .choice--tabAZone {
+        background-image: url("./top190830_04.jpg");
+    }
+
+    .choice--tabBZone {
+        background-image: url("./top190830_04b.jpg");
+    }
+
+    .choice--tabAZone--m {
+        background-image: url("./sbar_Azone.jpg");
+    }
+
+    .choice--tabBZone--m {
+        background-image: url("./sbar_Bzone.jpg");
+    }
+
+    .tab__wrap,
+    .tab__wrap li,
+    .tab__wrap a {
+        height: calc(100vw * 0.196);
+    }
+
+    .tab__wrap.choice--tabAZone--m,
+    .tab__wrap.choice--tabAZone--m li,
+    .tab__wrap.choice--tabAZone--m a,
+    .tab__wrap.choice--tabBZone--m,
+    .tab__wrap.choice--tabBZone--m li,
+    .tab__wrap.choice--tabBZone--m a {
+        height: calc(100vw * 0.115);
+    }
+
+    .tab__wrap li {
+        float: left;
+        width: 50%;
+    }
+
+    .tab__wrap a {
+        width: 100%;
+    }
+
+    .tab-active a {
+        cursor: default;
+    }
+
+    .go--registration {
+        position: absolute;
+        width: calc(100vw * 0.427);
+        height: calc(100vw * 0.365);
+        top: calc(100vw * 0.154);
+        left: calc(50% - 100vw * 0.21);
+        z-index: 1001;
+    }
+
+    @media screen and (min-width: 960px) {
+        .build__wrap {
+            overflow: hidden;
+        }
+
+        .tab__wrap,
+        .tab__wrap li,
+        .tab__wrap a {
+            height: 189px;
+        }
+
+        .tab__wrap.choice--tabAZone--m,
+        .tab__wrap.choice--tabAZone--m li,
+        .tab__wrap.choice--tabAZone--m a,
+        .tab__wrap.choice--tabBZone--m,
+        .tab__wrap.choice--tabBZone--m li,
+        .tab__wrap.choice--tabBZone--m a {
+            height: 110px;
+        }
+
+        .tab__wrap {
+            background-size: auto;
+        }
+
+        .go--registration {
+            width: 410px;
+            height: 350px;
+            top: 148px;
+            left: calc(50% - 200px);
+        }
+    }
+</style>
+
+
+<div id="spWrap" class="sp__wallper">
+    <!-- 主視覺 -->
+    <main class="sp__main">
+        <div class="sp--1260">
+            <a href="https://www.etmall.com.tw" class="logo"><img src="ehs-logo.png" alt="東森購物"></a>
+            <div class="sp__visual">
+                <div class="visual__anchor">
+                    <div class="visual__main">
+                        <a></a>
+                    </div>
+                </div>
+                <img src="top190830_02.jpg">
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<a class="go--registration" href="https://www.etmall.com.tw/Activity/Reg/54"
+   alt="去登記"></a>
+<ul class="tab__wrap choice--tabAZone js--tab__wrap">
+    <li>
+        <a id="tabA" href="#" class="tab" data-tab="a"></a>
+    </li>
+    <li>
+        <a id="tabB" href="#" class="tab" data-tab="b"></a>
+    </li>
+</ul>
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<!--<script>$('a[href^="#"]').on('click',function(e){var target=$('a[name='+this.getAttribute('href').split('#')[1]+']');if(target.length){e.preventDefault();$('html,body').stop().animate({scrollTop:target.offset().top},500);}});</script>-->
+<!-- 浮水印 -->
+<!-- <script id="scriptIconFloat" src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105264/float-icon.js"></script> -->
+<!--[if IE 9]>
+<script src="flexibility.js"></script>
+<script>flexibility(document.documentElement);</script>
+<![endif]-->
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js"></script>
+<script>
+    var initLazyload = lazyload();
+</script>
+
+<script>
+    $(function () {
+        //
+        function initTab() {
+            var $winWt = $(document).width();
+            var $tabWrap = $(".js--tab__wrap");
+            var $tabWrapOffset = $tabWrap.offset().top;
+            if ($tabWrapOffset == 0) $tabWrapOffset = 409;
+            var $tabHeight = $tabWrap.outerHeight();
+            var hasClassTabA, hasClassStickyTabA, hasClassTabB, hasClassStickyTabB;
+
+            // debug space error
+            $(".tab--region").each(function () {
+                var $thisOriginal = $(this).attr("data-region");
+                if ($thisOriginal != $thisOriginal.trim()) {
+                    $(this).attr("data-region", $(this).attr("data-region").trim());
+                }
+            });
+
+            function isTabA() {
+                $('.tab--region[data-region]').hide();
+                $tabWrap.removeClass("choice--tabBZone").addClass("choice--tabAZone");
+                $('.tab--region[data-region="tabA"]').show().addClass("bg_Azone");
+            }
+
+            function isStickyTabA() {
+                $('.tab--region[data-region]').hide();
+                $tabWrap.removeClass("choice--tabBZone--m").addClass("choice--tabAZone--m");
+                $('.tab--region[data-region="tabA"]').show().addClass("bg_Azone");
+            }
+
+            function isTabB() {
+                $('.tab--region[data-region]').hide();
+                $tabWrap.removeClass("choice--tabAZone").addClass("choice--tabBZone");
+                $('.tab--region[data-region="tabB"]').show().addClass("bg_Bzone");
+            }
+
+            function isStickyTabB() {
+                $('.tab--region[data-region]').hide();
+                $tabWrap.removeClass("choice--tabAZone--m").addClass("choice--tabBZone--m");
+                $('.tab--region[data-region="tabB"]').show().addClass("bg_Bzone");
+            }
+
+            var colorFromUrl = checkUrl();
+            checkUrl();
+            function checkUrl() {
+                // var url = "https://www.etmall.com.tw/aaa.html?color=b"; //for test url
+                // var colorInUrl = url.split("?color=")[1]; //for test url
+                var colorInUrl = location.search.split("?color=")[1];
+
+                if (colorInUrl == "tabB") {
+                    isTabB();
+                    $('.js--tab__wrap li:nth-child(2)').addClass('tab-active');
+                }
+                else if (colorInUrl == "tabA") {
+                    isTabA();
+                    $('.js--tab__wrap li:first').addClass('tab-active');
+                }
+                else {
+                    // Show the first tab by default
+                    $('.tab--region[data-region]').hide();
+                    $('.tab--region[data-region="tabA"]').show().addClass("bg_Azone");
+                    $('.js--tab__wrap li:first').addClass('tab-active');
+                }
+            }
+
+            // Change tab class and display content
+            $(document).on("click", ".js--tab__wrap a.tab", function (ev) {
+                ev.preventDefault();
+                $('.js--tab__wrap li').removeClass('tab-active');
+                $(this).parent().addClass('tab-active');
+
+                var tabId = $(this).attr("id");
+
+                hasClassTabA = $tabWrap.hasClass("choice--tabAZone");
+                hasClassStickyTabA = $tabWrap.hasClass("choice--tabAZone--m");
+                hasClassTabB = $tabWrap.hasClass("choice--tabBZone");
+                hasClassStickyTabB = $tabWrap.hasClass("choice--tabBZone--m");
+//              console.log(tabId, "tabA:", hasClassTabA, "tabB:", hasClassTabB);
+
+                if (tabId == "tabB" && hasClassTabA) isTabB();
+                else if (tabId == "tabB" && hasClassStickyTabA) isStickyTabB();
+                else if (tabId == "tabA" && hasClassTabB) isTabA();
+                else if (tabId == "tabA" && hasClassStickyTabB) isStickyTabA();
+                else console.log("[data-region] is error");
+
+                var colorInUrl = tabId;
+
+                if (colorInUrl) {
+                    var currentState = history.state;
+//                    console.log(currentState);
+                    var hrefSearch = "?color=" + colorInUrl;
+                    var modifyUrl = location.href.split("?color=")[0] + hrefSearch;
+//                    console.log(modifyUrl);
+                    history.replaceState(currentState, null, modifyUrl);
+                }
+
+
+            });
+
+            // 滾動function
+            function bindNav($winWt) {
+
+                var docScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                var $tabTotalHeight = $tabWrapOffset + $tabHeight;
+
+                hasClassTabA = $tabWrap.hasClass("choice--tabAZone");
+                hasClassStickyTabA = $tabWrap.hasClass("choice--tabAZone--m");
+                hasClassTabB = $tabWrap.hasClass("choice--tabBZone");
+                hasClassStickyTabB = $tabWrap.hasClass("choice--tabBZone--m");
+
+                if (hasClassTabA && docScrollTop >= $tabTotalHeight) {
+                    $tabWrap.removeClass("choice--tabAZone").addClass("is--sticky choice--tabAZone--m");
+                }
+                else if (hasClassTabB && docScrollTop >= $tabTotalHeight) {
+                    $tabWrap.removeClass("choice--tabBZone").addClass("is--sticky choice--tabBZone--m");
+                }
+                else if (hasClassStickyTabA && docScrollTop < $tabTotalHeight) {
+                    $tabWrap.removeClass("is--sticky choice--tabAZone--m").addClass("choice--tabAZone");
+                }
+                else if (hasClassStickyTabB && docScrollTop < $tabTotalHeight) {
+                    $tabWrap.removeClass("is--sticky choice--tabBZone--m").addClass("choice--tabBZone");
+                }
+            }
+
+            //
+            $.debounce = function (func, wait, immediate) {
+                var timeout;
+                return function () {
+                    var context = this, args = arguments;
+                    later = function () {
+                        timeout = null;
+                        if (!immediate) func.apply(context, args);
+                    };
+                    var callNow = immediate && !timeout;
+                    clearTimeout(timeout);
+                    timeout = setTimeout(later, wait);
+                    if (callNow) func.apply(context, args);
+                };
+            };
+            $.throttle = function (func, wait) {
+                var context, args, timeout, throttling, more, result;
+                var whenDone = $.debounce(function () {
+                    more = throttling = false;
+                }, wait);
+                return function () {
+                    context = this, args = arguments;
+                    var later = function () {
+                        timeout = null;
+                        if (more) func.apply(context, args);
+                        whenDone();
+                    };
+                    if (!timeout) timeout = setTimeout(later, wait);
+
+                    if (throttling) {
+                        more = true;
+                    } else {
+                        result = func.apply(context, args);
+                    }
+                    ;
+                    whenDone();
+                    throttling = true;
+                    return result;
+                };
+            };
+            var bind__handler = $.throttle(function (e) {
+                bindNav($winWt);
+            }, 200);
+
+            //
+            window.addEventListener('scroll', bind__handler);
+        }
+
+        initTab();
+    })
+</script>

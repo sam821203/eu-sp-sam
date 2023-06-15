@@ -1,0 +1,94 @@
+.countdown__wrap
+  +pos-set(relative, zero)
+  +bg-set(url("~event/2nd/e-main/components/countdown-section/bg-countdown.png"), 100%)
+
+  .swiper-button
+    &-prev,
+    &-next
+      top: 51%
+      width: 4%
+      background-image: none
+    &-prev
+      left: 2.5%
+    &-next
+      right: 2.5%
+
+  .timer__wrap
+    padding: 1.5% 5% 0
+    color: $gray-deep-light
+    font-size: calc(0.95vw + 0.9vh + 0.5vmin)
+    text-align: right
+    > span
+      display: inline-block
+      text-align: left
+      &:first-child
+        width: 2em
+      &:last-child
+        width: 4em
+
+  .product__wrap--countdown
+    margin-left: auto
+    margin-right: auto
+    padding: 2% 0 4.5%
+    width: 86%
+    .product--just-standby,
+    .product--now,
+    .product--over
+      // +flex(0, 1, 33.33%)
+      // padding: 1%
+      a
+        color: $gray-dark
+        font-size: calc(0.5vw + 0.5vh + 0.4vmin)
+        > div
+          margin-bottom: 2% 
+      img
+        width: 100%
+      .product__img
+        padding: 0 6%
+      .product__name
+        +font-size(13) 
+        +text-fool(2.8em)
+      .product__price
+        span
+          &:first-child
+            font-size: 12px 
+          &:last-child
+            +font-size(14) 
+            color: $primary-medium
+            font-weight: bold
+
+  +breakpoint-max($max-width-xxs)
+    .product__wrap--countdown
+      .product--just-standby,
+      .product--now,
+      .product--over
+        .product__img
+          padding: 0 10%
+
+
+  +breakpoint-min($min-width-lg)
+    .product__wrap--countdown
+      padding-bottom: 6.5%
+      .product--just-standby,
+      .product--now,
+      .product--over
+        .product__img
+          padding: 0
+        a
+          font-size: 20px
+        .product__price
+          span
+            &:first-child
+              font-size: 14px 
+            &:last-child
+              color: $primary-medium
+              font-weight: bold
+              font-size: 24px
+
+  +breakpoint-min($min-width-xl)
+    margin-left: auto
+    margin-right: auto
+    width: 95%
+    .timer__wrap
+      padding: 16px 5% 0
+

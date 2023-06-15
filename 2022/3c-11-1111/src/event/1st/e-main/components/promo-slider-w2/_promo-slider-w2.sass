@@ -1,0 +1,33 @@
+.promo__group--promo-slider-w2
+  +pos-set(relative, zero)
+  overflow: hidden
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/promo-slider-w2/bg-promo-slider-w2.png), 100%)
+    background-position: bottom
+    .promo__zone
+      +aspect-ratio(960, 763)
+      .promo__block
+        padding: 7% 6% 0 12%
+        +breakpoint-min($min-width-xl)
+          padding: 7.5% 2% 0 10%
+        ul.swiper-wrapper
+          display: none
+          justify-content: end
+          .date--index
+            display: none
+          &.active
+            display: flex
+          .swiper-slide
+            width: 33%
+            img
+              transform: scale(0.94)
+              +breakpoint-min($min-width-xl)
+                transform: scale(0.85)
+            &:nth-child(2)
+              img  
+                transform-origin: top left
+            &:last-child
+              img
+                transform-origin: top right
+                +breakpoint-min($min-width-xl)
+                  transform-origin: top left

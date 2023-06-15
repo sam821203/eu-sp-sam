@@ -1,0 +1,20 @@
+.share__wrap
+  +display-flex
+  margin: 0 0.5%
+  position: absolute
+  top: calc(100vw * 0.025)
+  right: calc(100vw * 0.0375)
+  li
+    margin: 0 1%
+  +breakpoint-min($min-width-xl)
+    margin: 0 2%
+    top: 10px
+    //right: calc(50% - 640px)
+    right: 0
+  +breakpoint-min($min-width-xxl)
+    right: calc(50% - 640px)
+.share__btn
+  img
+    width: 20px
+    +breakpoint-min($min-width-lg)
+      width: 39px

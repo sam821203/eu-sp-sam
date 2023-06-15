@@ -1,0 +1,115 @@
+.promo__group--promo-event
+  +pos-set(relative)
+  overflow: hidden
+  .decor__wrap
+    pointer-events: none
+    .decor__item
+      &--bg
+        +pos-set(absolute, under, 9%, 2.5%)
+        width: 95%
+        +breakpoint-min($min-width-xl)
+          left: calc(50% - 438px)
+      &--title
+        +pos-set(absolute, zero, 0%, 19%)
+        width: 60%
+        // animation: flash-tab 2s 1s linear infinite
+        +breakpoint-min($min-width-xl)
+          left: calc(50% - 283px)
+      &--left
+        +pos-set(absolute, zero, 15%, 2%)
+        width: 22%
+        // animation: shakeY 2s linear infinite
+        +breakpoint-min($min-width-xl)
+          top: 155px
+          left: calc(50% - 460px)
+      &--star-2
+        +pos-set(absolute, zero, 5%, 7%)
+        width: 10%
+        +breakpoint-min($min-width-xl)
+          top: 50px
+          left: calc(50% - 380px)
+      &--right
+        +pos-set(absolute, zero, 15%)
+        right: 6%
+        width: 22%
+        +breakpoint-min($min-width-xl)
+          top: 160px
+          right: calc(50% - 430px)
+      &--star-1
+        +pos-set(absolute, zero, 4%)
+        right: 8%
+        width: 12%
+        // animation: rotateX 2s linear infinite
+        +breakpoint-min($min-width-xl)
+          top: 50px
+          right: calc(50% - 390px)
+      +breakpoint-min($min-width-xl)
+        width: auto
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/promo-event/bg-promo-event.png), 100%)
+    background-position: bottom
+    margin-top: 25%
+  .promo__zone
+    // +pos-set(relative, zero)
+    +aspect-ratio(960, 929)
+    .promo__block
+      padding: 11% 2% 0
+      li
+        &:hover
+          transform: translateY(-1%)
+          filter: brightness(130%)
+      .promo__box
+        display: flex
+        justify-content: space-between
+        li
+          width: 31%
+          &:nth-child(2)
+            margin-top: -12%
+            width: 36%
+      .event__box
+        display: flex
+        justify-content: space-between
+        margin-top: -26%
+        li
+          margin-bottom: 2%
+          width: 31%
+      .event__block
+        display: flex
+        justify-content: space-between
+        // margin: 3.5% 2% 0
+        li
+          width: 48%
+
+.animate
+  // transition: 2s
+  animation: headShake 1.2s both 1 linear
+
+@keyframes headShake
+  0%
+    transform: translateX(0)
+  6.5%
+    transform: translateX(-6px) rotateY(-9deg)
+  18.5%
+    transform: translateX(5px) rotateY(7deg)
+  31.5%
+    transform: translateX(-3px) rotateY(-5deg)
+  43.5%
+    transform: translateX(2px) rotateY(3deg)
+  50%
+    transform: translateX(0)
+
+@keyframes rotateX
+  0%, 100%
+    transform: rotate(0deg)
+  30%
+    transform: rotate(20deg)
+  65%
+    transform: rotate(-20deg)
+
+@keyframes shakeY
+  0%, to
+    transform: translateZ(0)
+  10%, 30%, 50%, 70%
+    transform: translate3d(0, -10px, 0)
+  20%, 40%, 60%
+    transform: translate3d(0, 10px, 0)

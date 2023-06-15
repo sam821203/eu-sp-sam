@@ -1,0 +1,192 @@
+<style>
+	body {
+		font-family: Helvetica, Arial, '微軟正黑體', sans-serif;
+	}
+	img {
+		border: 0;
+	}
+	.sp__wallper {
+		background-color:#003181;
+ 	  	background-image:url(u-20161209-all-bg.jpg);
+		background-position:center 0;
+		background-repeat:no-repeat;
+		margin: 0px auto;
+		position: relative;
+	}
+	body{
+background:#134;
+margin:0 auto;
+box-shadow:none;
+}
+
+h2{
+color:black;
+font-size:24px;
+margin-top:720px;
+margin-left:20px;
+font-family:'Josefin Sans', sans-serif;  
+}
+
+h1{
+Margin-top:70px;;
+font-family:'Josefin Sans', sans-serif;    
+color:white;
+font-size:52px;
+letter-spacing:9px;
+}
+
+#wrapper{
+width:100%;
+Height:20px;
+}
+
+#snow{
+background:white;
+width:100%;
+min-height:450px;
+margin-top:450px;
+display:inline-block;
+}
+
+
+</style>
+<!-- <script type="text/javascript" src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201509/SP_1021444/js/sp-track.js"></script>
+
+<script type="text/javascript" src="js/generateVersion.js"></script> -->
+<script type="text/javascript" src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201504/SP_1019163/Includes/jquery-1.7.2.js"></script>
+<script>
+
+
+// The variables below edits the snowfall , feel free to edit
+
+	var snowmax = 10;
+	var snowcolor = new Array("#aaaacc", "#ddddff", "#ccccdd", "#f3f3f3", "#f0ffff");
+	var snowtype = new Array("Times", "Arial", "Times", "Verdana");
+
+	//this one in special is funny
+	var snowletter = "X";
+	var sinkspeed = 0.2;
+	var snowmaxsize = 50;
+	var snowminsize = 12;
+	var snowingzone = 1;
+
+	//the real deal starts here
+
+	var snow = new Array();
+	var marginbottom;
+	var marginright;
+	var timer;
+	var i_snow = 0;
+	var x_mv = new Array();
+	var crds = new Array();
+	var lftrght = new Array();
+	var browserinfos = navigator.userAgent
+	var ie5 = document.all && document.getElementById && !browserinfos.match(/Opera/)
+	var ns6 = document.getElementById && !document.all
+	var opera = browserinfos.match(/Opera/)
+	var browserok = ie5 || ns6 || opera
+
+	function randommaker(range) {
+	    rand = Math.floor(range * Math.random())
+	    return rand
+	}
+
+	function initsnow() {
+	    if (ie5 || opera) {
+	        marginbottom = document.body.scrollHeight
+	        marginright = document.body.clientWidth - 15
+	    } else if (ns6) {
+	        marginbottom = document.body.scrollHeight
+	        marginright = window.innerWidth - 15
+	    }
+	    var snowsizerange = snowmaxsize - snowminsize
+	    for (i = 0; i <= snowmax; i++) {
+	        crds[i] = 0;
+	        lftrght[i] = Math.random() * 15;
+	        x_mv[i] = 0.03 + Math.random() / 10;
+	        snow[i] = document.getElementById("s" + i)
+	        snow[i].style.fontFamily = snowtype[randommaker(snowtype.length)]
+	        snow[i].size = randommaker(snowsizerange) + snowminsize
+	        snow[i].style.fontSize = snow[i].size + 'px';
+	        snow[i].style.color = snowcolor[randommaker(snowcolor.length)]
+	        snow[i].style.zIndex = 1000
+	        snow[i].sink = sinkspeed * snow[i].size / 5
+	        if (snowingzone == 1) {
+	            snow[i].posx = randommaker(marginright - snow[i].size)
+	        }
+	        if (snowingzone == 2) {
+	            snow[i].posx = randommaker(marginright / 2 - snow[i].size)
+	        }
+	        if (snowingzone == 3) {
+	            snow[i].posx = randommaker(marginright / 2 - snow[i].size) + marginright / 4
+	        }
+	        if (snowingzone == 4) {
+	            snow[i].posx = randommaker(marginright / 2 - snow[i].size) + marginright / 2
+	        }
+	        snow[i].posy = randommaker(2 * marginbottom - marginbottom - 2 * snow[i].size)
+	        snow[i].style.left = snow[i].posx + 'px';
+	        snow[i].style.top = snow[i].posy + 'px';
+	    }
+	    movesnow()
+	}
+
+	function movesnow() {
+	    for (i = 0; i <= snowmax; i++) {
+	        crds[i] += x_mv[i];
+	        snow[i].posy += snow[i].sink
+	        snow[i].style.left = snow[i].posx + lftrght[i] * Math.sin(crds[i]) + 'px';
+	        snow[i].style.top = snow[i].posy + 'px';
+
+	        if (snow[i].posy >= marginbottom - 2 * snow[i].size || parseInt(snow[i].style.left) > (marginright - 3 * lftrght[i])) {
+	            if (snowingzone == 1) {
+	                snow[i].posx = randommaker(marginright - snow[i].size)
+	            }
+	            if (snowingzone == 2) {
+	                snow[i].posx = randommaker(marginright / 2 - snow[i].size)
+	            }
+	            if (snowingzone == 3) {
+	                snow[i].posx = randommaker(marginright / 2 - snow[i].size) + marginright / 4
+	            }
+	            if (snowingzone == 4) {
+	                snow[i].posx = randommaker(marginright / 2 - snow[i].size) + marginright / 2
+	            }
+	            snow[i].posy = 0
+	        }
+	    }
+	    var timer = setTimeout("movesnow()", 50)
+	}
+
+	for (i = 0; i <= snowmax; i++) {
+	    document.write("<span id='s" + i + "' style='position:absolute;top:-" + snowmaxsize + "'>" + snowletter + "</span>")
+	}
+	if (browserok) {
+	    window.onload = initsnow
+	}
+
+</script>
+<!-- <div id="spWrap" class="sp__wallper">
+	<div class="sp--1260">
+	    <table width="1260" align="center" border="0" cellspacing="0" cellpadding="0">
+	        <tbody>
+	            <tr>
+	                <td>
+	                    <table width="1260" border="0" cellspacing="0" cellpadding="0">
+	                        <tbody>
+	                            <tr>
+	                                <td><img src="u-20161209-all_01.jpg" width="670" height="700" alt="" /></td>
+	                                <td><img src="u-20161209-all_02.jpg" width="590" height="700" alt="" /></td>
+	                            </tr>
+	                        </tbody>
+	                    </table>
+	                </td>
+	            </tr>
+	        </tbody>
+	    </table>
+	</div>
+</div> -->
+
+<div id="wrapper">
+    <div id="snow">
+    </div>
+</div>
+

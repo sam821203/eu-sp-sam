@@ -1,0 +1,282 @@
+<script src="jquery-1.12.0.min.js"></script>
+<style>
+body{width: 100%;margin: 0;padding: 0;}
+.min ,.sec{font-size: 40px;font-family: arial; text-align: center;}
+.number{width: 200px;height: 350px;}
+.number ul{width: 165px;margin: 0 0 0 -23px;}
+.number > ul > li{
+  background: url(number_01.jpg) 0 0 no-repeat;
+  width: 55px;
+  height: 50px;
+  float: left;
+  list-style: none;}
+
+/* add and remove element */
+.number .e-sp--virus{
+  background: url(number_off_01.jpg) 0 0 no-repeat;
+  width: 55px;
+  height: 50px;
+}
+.e-sp__canvas{
+  position: relative;
+  z-index: 1;
+  width: 790px;
+  height: 577px;
+}
+.e-sp--bg{
+  background: url(main-bg.jpg) center 0 no-repeat;
+}
+
+/* change zindex element */
+.e-sp__mask{
+  position: absolute;
+  z-index: 100;
+  width: 790px;
+  height: 577px;
+}
+.e-sp__role{
+  position: absolute;
+  z-index: 10;
+  display: block;
+}
+.role--ashtrav{
+  width: 95px;
+  height: 122px;
+  top: 120px;
+  left: 91px;
+}
+.role--ashtrav:hover{
+  background: url(ashtrav-light.png) 0 0 no-repeat;
+}
+
+/* add and remove element */
+.role--ashtrav-select, .role--ashtrav-select:hover{
+  background: url(ashtrav-off.png) 0 0 no-repeat;
+}
+.role--cosmetic{
+  width: 103px;
+  height: 111px;
+  top: 139px;
+  left: 215px;
+}
+.role--cosmetic:hover{
+  background: url(cosmetic-light.png) 0 0 no-repeat;
+}
+
+/* add and remove element */
+.role--cosmetic-select, .role--cosmetic-select:hover{
+  background:  url(cosmetic-off.png) 0 0 no-repeat;
+}
+.role--scour{
+  width: 102px;
+  height: 140px;
+  top: 11px;
+  right: 7px;
+}
+.role--scour:hover{
+  background: url(scour-light.png) 0 0 no-repeat;
+}
+
+/* add and remove element */
+.role--scour-select, .role--scour-select:hover{
+  background:  url(scour-off.png) 0 0 no-repeat;
+}
+.role--trash{
+  width: 168px;
+  height: 190px;
+  bottom: 19px;
+  left: 18px;
+}
+.role--trash:hover{
+  background: url(trash-light.png) 0 0 no-repeat;
+}
+
+/* add and remove element */
+.role--trash-select, .role--trash-select:hover{
+  background:  url(trash-off.png) 0 0 no-repeat;
+}
+.role--doll{
+  width: 1186px;
+  height: 204px;
+  bottom: 93px;
+  left: 200px;
+}
+.role--doll:hover{
+  background: url(doll-light.png) 0 0 no-repeat;
+}
+
+/* add and remove element */
+.role--doll-select, .role--doll-select:hover{
+  background:  url(doll-off.png) 0 0 no-repeat;
+}
+.role--rug{
+  width: 219px;
+  height: 67px;
+  bottom: 15px;
+  left: 196px;
+}
+.role--rug:hover{
+  background: url(rug-light.png) 0 0 no-repeat;
+}
+
+/* add and remove element */
+.role--rug-select, .role--rug-select:hover{
+  background:  url(rug-off.png) 0 0 no-repeat;
+}
+.e-sp__info{
+  color: #fdd23e;
+  font-size: 13px;
+  position: absolute;
+  width: 160px;
+  margin-left: auto;
+  margin-right: auto;
+  top: 130px;
+  left: 0;
+  right: 0; 
+}
+.e-sp__info span{
+  font-weight: bold;
+  font-size: 20px;
+}
+.e-sp__start{
+  background: url(START-off.png) 0 0 no-repeat;
+  display: block;
+  width: 166px;
+  height: 157px;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: 205px;
+  bottom: 0;
+}
+
+/* add and remove element */
+.e-sp__start--light{
+  background: url(START-on.png) 0 0 no-repeat;
+}
+</style>
+
+<table width="990" border="0" align="center" cellpadding="0" cellspacing="0">
+    <tr>
+        <td colspan="2"><img src="mainU1_01.jpg" width="990" height="303" border="0"></td>
+    </tr>
+    <tr>
+        <td>
+          <!-- <img src="main-bg.jpg" width="790" height="577" border="0">  -->
+          <div id="spCanvas" class="e-sp__canvas e-sp--bg">
+            <div class="e-sp__mask"></div>
+            <a href="" class="e-sp__role role--ashtrav">
+            </a>
+            <a href="" class="e-sp__role role--cosmetic">
+            </a>
+            <a href="" class="e-sp__role role--scour">
+            </a>
+            <a href="" class="e-sp__role role--trash">
+            </a>
+            <a href="" class="e-sp__role role--doll">
+            </a>
+            <a href="" class="e-sp__role role--rug">
+            </a>
+          </div>
+        </td>
+        <td width="200" height="577">
+            <table width="200" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td><img src="mainU1_03.jpg" width="200" height="85" border="0"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <table width="200" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td><img src="mainU1_04.jpg" width="26" height="50" border="0"></td>
+                                <td width="52" height="50">
+                                    <div class="min">00</div>
+                                </td>
+                                <td><img src="mainU1_06.jpg" width="45" height="50" border="0"></td>
+                                <td width="52" height="50">
+                                    <div class="sec">00</div>
+                                </td>
+                                <td><img src="mainU1_08.jpg" width="25" height="50" border="0"></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="mainU1_09.jpg" width="200" height="38" border="0"></td>
+                </tr>
+                <tr>
+                    <td width="200" height="404" style=" background-color:#000; position: relative;  z-index: 1;">
+                        <div class="number">
+                            <ul id="virusCount">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="e-sp__info">
+                          <p>你還需要消滅 <span>6</span> 個污染源</p>
+                        </div>
+                        <a id="spStartBtn" href="" class="e-sp__start"></a>
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <tr>
+            <td height="577" colspan="2" style="position: absolute; cursor: pointer;"><img src="mainU1_D.jpg" width="990" height="120" /></td>
+        <tr>
+</table>
+<script type="text/javascript" src="http://www.u-mall.com.tw/Includes/jquery-1.7.2.js"></script>
+<script type="text/javascript">
+;(function($){
+
+  function spFindVirus(){
+
+    if( !document.getElementById('spCanvas') ) return false;
+
+    var $spCanvas = $('#spCanvas');
+    var $virusCount = $('#virusCount');
+    var $spStartBtn = $('#spStartBtn');
+
+    var $canvasMask = $spCanvas.find('.e-sp__mask');
+    var $canvasRoles = $spCanvas.find('a');
+    var $virusCountLi = $virusCount.find('li');
+
+    
+    // start game
+    $spStartBtn.click(function(e){
+
+      e.preventDefault();
+
+      // add start style
+      $(this).addClass('e-sp__start--light'); 
+
+      // change mask zindex
+      $canvasMask.css('z-index', -1);
+
+    });
+
+
+    // click cockroach effect
+    $canvasRoles.eq(0).click(function(e){
+
+      e.preventDefault();
+
+      // select role style
+      $(this).addClass('role--ashtrav-select');
+
+      // change virus style
+      $virusCountLi.eq(0).addClass('e-sp--virus')
+
+    });
+
+  }
+
+  spFindVirus();
+
+}(jQuery));  
+</script>

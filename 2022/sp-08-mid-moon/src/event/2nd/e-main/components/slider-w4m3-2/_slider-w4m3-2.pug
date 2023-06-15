@@ -1,0 +1,62 @@
+-
+  var sliderW4M3Data = [
+    { // 1
+      link: "https://www.etmall.com.tw/Activity/CouponReceiveAll#%e7%94%9f%e6%b4%bb",
+      imgSrc: "event/2nd/e-main/components/slider-w4m3-2/items/slider2-1.png",
+      alt: "全館9折起"
+    },
+    { // 2
+      link: "https://www.etmall.com.tw/Activity/CouponReceiveAll#%e7%94%9f%e6%b4%bb",
+      imgSrc: "event/2nd/e-main/components/slider-w4m3-2/items/slider2-2.png",
+      alt: "指定商品領券再折"
+    },
+    { // 3
+      link: "https://www.etmall.com.tw/Activity/CouponReceiveAll#%e7%94%9f%e6%b4%bb",
+      imgSrc: "event/2nd/e-main/components/slider-w4m3-2/items/slider2-3.png",
+      alt: "日本KOTSURU再享iNeno領券9折184620"
+    },
+    { // 4
+      link: "https://www.etmall.com.tw/Activity/CouponReceiveAll#%e7%94%9f%e6%b4%bb",
+      imgSrc: "event/2nd/e-main/components/slider-w4m3-2/items/slider2-4.png",
+      alt: "東森小食堂專屬優惠"
+    },
+    { // 5
+      link: "https://www.etmall.com.tw/Activity/CouponReceiveAll#%e7%be%8e%e5%a6%9d",
+      imgSrc: "event/2nd/e-main/components/slider-w4m3-2/items/slider2-5.png",
+      alt: "強檔來襲愛美99"
+    },
+    { // 6
+      link: "https://www.etmall.com.tw/Activity/CouponReceiveAll#%e4%bf%9d%e5%81%a5",
+      imgSrc: "event/2nd/e-main/components/slider-w4m3-2/items/slider2-6.png",
+      alt: "指定品滿1件可折"
+    },
+    { // 7
+      link: "https://www.etmall.com.tw/Activity/CouponReceiveAll#%e5%ae%b6%e9%9b%bb",
+      imgSrc: "event/2nd/e-main/components/slider-w4m3-2/items/slider2-7.png",
+      alt: "滿1件可折/限指定家電"
+    },
+  ]
+
+section.promo__group.slider-w4m3-2.m-bottom--lg(data-title="商品神券")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--left
+        img(src="event/2nd/e-main/components/slider-w4m3-2/decor-slider-w4m3-2-left.png", alt="")
+      .decor__item.decor__item--right#decorSlider2W4M3Right
+        img(src="event/2nd/e-main/components/slider-w4m3-2/decor-slider-w4m3-2-right.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          .event__wrap.swiper-container#slider2W4M3
+            ul.event__item.swiper-wrapper
+              each data in sliderW4M3Data
+                li.swiper-slide
+                  a(href= data.link, title=data.alt)
+                    img(src= data.imgSrc, alt=data.alt)
+            .swiper-pagination
+
+
+              //- each data, index in w1m1Data
+              //-   li
+              //-     a(href= data.link, title= data.alt)
+              //-       img(src= data.imgSrc, alt= data.alt)

@@ -1,0 +1,96 @@
+-
+  var w3m3Data = [
+    { // 1
+      link: "https://media.etmall.com.tw/sp/12334/m/index.html",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-1.png",
+      alt: "美妝禮遇季"
+    },
+    { // 2
+      link: "https://media.etmall.com.tw/sp/12382/m/index.html",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-2.png",
+      alt: "保健總評"
+    },
+    { // 3
+      link: "https://media.etmall.com.tw/sp/12096/m/index.html",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-3.png",
+      alt: "日用加碼抽"
+    },
+    { // 4
+      link: "https://www.etmall.com.tw/gp/135096",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-4.png",
+      alt: "海鮮612up"
+    },
+    { // 5
+      link: "https://media.etmall.com.tw/sp/12051/m/index.html",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-5.png",
+      alt: "傢寢加碼折"
+    },
+    { // 6
+      link: "https://media.etmall.com.tw/sp/10249/m/index.html",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-6.png",
+      alt: "洗冰攻略"
+    },
+    { // 7
+      link: "https://media.etmall.com.tw/sp/12159/m/index.html",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-7.png",
+      alt: "通訊12尾牙季"
+    },
+    { // 8
+      link: "https://media.etmall.com.tw/sp/12158/m/index.html",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-8.png",
+      alt: "3C毫無回意"
+    },
+    { // 9
+      link: "https://media.etmall.com.tw/sp/12330/m/index.html",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-9.png",
+      alt: "聖誕狂歡趴"
+    },
+    { // 10
+      link: "https://media.etmall.com.tw/sp/12251/m/index.html",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-10.png",
+      alt: "年末超值go"
+    },
+    { // 11
+      link: "https://media.etmall.com.tw/sp/12035/m/index.html",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-11.png",
+      alt: "旅遊5折up"
+    },
+    { // 12
+      link: "https://media.etmall.com.tw/sp/12363/m/index.html",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-12.png",
+      alt: "聖誕交換禮"
+    },
+    { // 13
+      link: "https://media.etmall.com.tw/sp/9421/m/index.html",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-13.png",
+      alt: "廚電有購省"
+    },
+    { // 14
+      link: "https://www.etmall.com.tw/gp/153622",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-14.png",
+      alt: "海外熱銷TOP"
+    },
+    { // 15
+      link: "https://media.etmall.com.tw/sp/12435/m/index.html",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-15.png",
+      alt: "神魔之塔"
+    },
+  ]
+
+section.promo__group.promo__group--w3m3.m-bottom--lg(data-title="熱門活動")
+  .layout--main
+    .promo__title
+      .decoration--event-w3m3
+        .decoration__box#decorEventW3M3
+          img(src="event/2nd/e-main/components/event-w3m3/decor-event-w3m3.png", alt="")
+    .promo__wrap
+      .promo__zone
+        #w3m3Wrap.event__wrap
+          .promo__block.m-bottom--xs
+            ul.good__wrap
+              each data, index in w3m3Data
+                li
+                  a(href= data.link, title= data.alt)
+                    - var hasImg = data.imgSrc ? true : false
+                    if (hasImg)
+                      img(src= data.imgSrc, alt= data.alt)

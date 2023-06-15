@@ -1,0 +1,127 @@
+.promo__group--dynamic-slider
+  +pos-set(relative, zero)
+  overflow: hidden
+
+  .promo__wrap
+    +aspect-ratio(960, 850)
+  .promo__zone
+    +pos-set(relative, zero)
+    // padding: 0 1%
+    // +bg-set(url(event/1st/e-main/components/promo-event/bg-promo-event.png), 100%)
+    .promo__block
+      .promo__box
+        margin: 0 auto
+        width: 60%
+      .promo__slide // slide start -----
+        ul
+          .slide__box--date
+            font-size: 5.5vw
+            font-weight: bold
+            text-align: center
+            color: $main-e-background-color-1st-2
+            +breakpoint-min($min-width-xl)
+              font-size: 45px
+          .slide__box--bn
+            +pos-set(relative)
+            margin: -1% auto 0
+            margin-top: 30%
+            width: 100%
+            +breakpoint-min($min-width-xl)
+              margin-top: 33%
+            .bn--mask
+              +pos-set(absolute)
+              top: 0
+              left: 0
+              width: 100%
+              height: 98%
+              // display: none
+          .slide__box--item
+            display: flex
+            justify-content: center
+            margin-top: 61%
+            padding: 1% 1% 1% 2%
+            +breakpoint-min($min-width-xl)
+              margin-top: 59%
+              // justify-content: space-around
+            .item__box
+              margin-left: .5%
+              margin-right: .5%
+              &:hover
+                transform: translateY(2%)
+                filter: brightness(1.05)
+              +breakpoint-min($min-width-xl)
+                width: 22%
+                margin-right: 1%
+                margin-left: 1%
+              // padding: 0% 2%
+
+//輪播樣式設定
+.promo__group--dynamic-slider
+  .promo__slide
+    .swiper-slide,
+    .swiper-slide-duplicate
+      +aspect-ratio(381, 830, relative)
+      opacity: 0
+      -webkit-filter: blur(0px)
+      -moz-filter: blur(0px)
+      -ms-filter: blur(0px)
+      +breakpoint-min($min-width-xl)
+        +aspect-ratio(381, 800, relative)
+    .swiper-slide-active
+      .slide__box--item
+        transition: all 1s
+        display: block
+    .swiper-slide-next
+      transition: all 1s
+      opacity: 1
+      pointer-events: none
+      .slide__box
+        .slide__box--date
+          transform: translate(37%, 30%) rotateY(40deg) skew(0deg, 12deg) scale(0.9)
+        .slide__box--bn
+          transform: translate(41%, 6%) skew(0deg, 20deg) rotateY(82deg) scale(2.1)
+          .bn--mask
+            background: linear-gradient(90deg, rgba(224,224,224,0.9) 0%, rgba(255,255,255,0) 45%)
+            display: block
+        .slide__box--item
+          transform: translateX(200%) scale(3)
+    .swiper-slide-prev
+      opacity: 1
+      transition: all 1s
+      pointer-events: none
+      .slide__box
+        .slide__box--date
+          transition: all 1s
+          transform: translate(-37%, 30%) rotateY(40deg) skew(0deg, -12deg) scale(0.9)
+        .slide__box--bn
+          transition: all 1s
+          transform: translate(-41%, 6%) skew(0deg, -20deg) rotateY(82deg) scale(2.1)
+          .bn--mask
+            background: linear-gradient(-90deg, rgba(224,224,224,0.9) 0%, rgba(255,255,255,0) 45%)
+            display: block
+        .slide__box--item
+          transition: 1s
+          transform: scale(3)
+          transform: translateX(-200%) scale(3)
+          // display: none
+    .swiper-slide-active
+      opacity: 1
+      .slide__box
+        position: absolute
+        top: 0
+        left: 0
+        .slide__box--date
+          transition: all 1s
+        .slide__box--bn
+          transition: all 1s
+          transform: scale(2.5)
+          .bn--mask
+            background: linear-gradient(-90deg, rgba(224,224,224,0) 0%, rgba(255,255,255,0) 45%)
+            display: none
+        .slide__box--item
+          transition: all 1s
+          transform: scale(3)
+          display: block
+
+        // .swiper-slide-shadow-right
+          // background-image: linear-gradient(left,rgba(255,255,255,.5)

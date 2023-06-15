@@ -1,0 +1,102 @@
+.promo__group--daily-time
+  width: 100%
+  .promo__title
+    +pos-set(relative, zero)
+  .decoration--daily-time
+    top: 0
+    &-left
+      right: 72%
+      width: 13%
+      animation: pulse 1s infinite
+    &-right
+      left: 70%
+      width: 12%
+      animation: move-x 5s infinite alternate ease-in-out
+      img
+        animation: rotate-self 5s infinite alternate ease-in-out
+    +breakpoint-min($min-width-xl)
+      &-left
+        right: calc(50% + 215px)
+        width: 113px
+      &-right
+        top: 15px
+        left: calc(50% + 190px)
+        width: 99px
+
+  .promo__wrap
+    +pos-set(relative, zero)
+    padding: 17% 5% 2%
+    +bg-set(url("~event/1st/e-main/components/daily-time/bg-daily-time.png"), 100%)
+  .product__wrap
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    > div
+      width: 32%
+      margin-bottom: 1.5%
+      &:nth-child(1)
+        .product__time
+          +bg-set(url("~event/1st/e-main/components/daily-time/daily-time-hour-1.png"), 100%)
+      &:nth-child(2)
+        .product__time
+          +bg-set(url("~event/1st/e-main/components/daily-time/daily-time-hour-2.png"), 100%)
+      &:nth-child(3)
+        .product__time
+          +bg-set(url("~event/1st/e-main/components/daily-time/daily-time-hour-3.png"), 100%)
+
+  .product__block
+    padding: 5% 6%
+  .product--dynamic
+    width: 100%
+    +bg-set(url("~event/1st/e-main/components/daily-time/item-daily-time.png"), contain)
+  .product__time
+    margin-left: auto
+    margin-right: auto
+    padding-bottom: 30%
+    width: 90%
+    filter: brightness(50%)
+    + .product
+      filter: brightness(50%)
+    &.active
+      filter: grayscale(0)
+      + .product
+        filter: grayscale(0)
+  .product__price
+    span
+      &:last-child
+        font-size: 4vw
+  +breakpoint-max($max-width-xxs)
+    .product__name
+      margin: 0
+  +breakpoint-min($min-width-lg)
+    .product__price
+      span
+        &:last-child
+          font-size: 32px
+  +breakpoint-min($min-width-xl)
+    .product__name
+      margin: 24px 0
+
+@keyframes pulse
+  0%
+    transform: scaleX(1)
+  50%
+    transform: scale3d(1.2, 1.2, 1.2)
+  to
+    transform: scaleX(1)
+
+@keyframes move-x
+  0%
+    transform: translateX(0)
+  100%
+    transform: translateX(100%)
+
+@keyframes rotate-self
+  0%
+    transform: rotate(0)
+  100%
+    transform: rotate(720deg)
+
+
+
+

@@ -1,0 +1,74 @@
+.promo__group--note
+  .group__info
+    padding-top: 5px
+    font-size: 16px
+    ul, ol
+      padding-left: 5%
+      >li
+        margin-bottom: 0.5em
+    h2
+      margin-bottom: 0.5em
+      font-size: 24px
+      font-weight: bold
+
+    h3
+      margin-bottom: 0.5em
+      font-size: 18px
+      font-weight: bold
+
+  .note table
+    word-break: break-all
+  .note .decimal-type
+    /* 阿拉伯數字 */
+    list-style-type: decimal
+  .note .lower-alpha-type
+    /* 小寫英文字母 */
+    list-style-type: lower-alpha
+  .note .none-type
+    /* 不顯示符號 */
+    list-style-type: none
+  .note .disc-type
+    /* 實心圓形 */
+    list-style-type: disc
+
+  /* table */
+  /* ======================================== */
+  .note table
+    color:#141414
+    border: 1px solid #141414
+    width: 90%
+    margin: 1% 0 2% 5.5%
+    background-color: #FFFFFF
+    border-collapse: collapse
+  .note table td, .note table th
+    border: 1px solid #141414
+    padding: 1%
+    text-align: center
+  .note table tr th,.note ol table tr:first-child td
+    text-align: center
+  .note ol table
+    margin: 0
+    width: 100%
+    margin: 2% 0
+  .note ol table td
+    text-align: left
+  /*  .note ol table tr th
+    white-space: nowrap*/
+
+    /* 禮物盒giftbox圖 */
+  .bn-w3m1 .banner__wrap
+      display: flex
+      flex-wrap: wrap
+  .bn-w3m1 .banner__item
+      flex: 0 0 25%
+      padding: 5px
+      list-style: none
+
+  @media screen and (max-width: 769px)
+      ul.banner__wrap
+          margin: 0
+
+      .bn-w3m1 .banner__item
+          flex: 1 0 50%
+
+  /*-- note end --*/

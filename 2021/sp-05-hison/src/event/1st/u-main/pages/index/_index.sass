@@ -1,0 +1,46 @@
+// // ==========================================================================
+// // Plugins
+// // ==========================================================================
+// // @import "vendors/animate"
+// @import "~vendors/style/swiper-slider-custom"
+@import '~vendors/style/swiper-safari-polyfill'
+
+
+// // ==========================================================================
+// // 1st screen need
+// // ==========================================================================
+// hero section
+// ===========================
+@import "~event/1st/u-main/components/hero-section/_hero-section"
+
+// // ==========================================================================
+// // components
+// // ==========================================================================
+
+// dynamic product 假宮格共用CSS
+// ===========================
+@import "~event/1st/u-main/components/promo-event/_promo-event"
+
+// // ==========================================================================
+// // Page
+// // ==========================================================================
+body
+  +pos-set(relative)
+  background: $main-e-background-color-1st center 0 url("~event/1st/u-main/pages/index/bg.jpg") no-repeat
+  background-size: 100%
+  transition: all 0.5s
+
+  +breakpoint-min($min-width-xl)
+    background: $main-e-background-color-1st center 0 url("~event/1st/u-main/pages/index/bg-web.jpg") no-repeat fixed
+    background-size: auto
+
+.sp__wrap
+  +pos-set(relative)
+
+.sp__wrap a
+  display: block
+
+.decoration--top
+  +pos-set(absolute, zero)
+  pointer-events: none
+

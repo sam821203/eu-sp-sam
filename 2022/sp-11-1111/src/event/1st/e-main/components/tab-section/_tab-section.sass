@@ -1,0 +1,125 @@
+// tab layout
+.promo__group--tab-section
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__wrap
+    padding-top: 6%
+    // +breakpoint-min($min-width-xl)
+      // padding-top: 0
+  .decor__item
+    &--left1
+      +pos-set(absolute, under, 0%, 0%)
+      width: 17%
+      &.active
+        animation: bounceDown 1.2s linear 5
+      +breakpoint-min($min-width-xl)
+        left: calc( 50% - 480px )
+    &--left2
+      +pos-set(absolute, base, 0%, 11%)
+      width: 50%
+      +breakpoint-min($min-width-xl)
+        left: calc( 50% - 380px )
+    &--right
+      +pos-set(absolute, under, 0%)
+      right: 0%
+      width: 34%
+      &.active
+        animation: bounceDown 1.2s linear 5
+      +breakpoint-min($min-width-xl)
+        right: calc( 50% - 470px )
+    &--bottom
+      +pos-set(absolute, second)
+      bottom: 0.4%
+      right: .5%
+      width: 16%
+      animation: heartBeat 1.5s ease-in infinite
+      +breakpoint-min($min-width-xl)
+        right: calc( 50% - 490px )
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .promo__wrap
+    +aspect-ratio(911, 1293)
+  .promo__zone
+    +bg-set(url("event/1st/e-main/components/tab-section/bg-tab-section.png"), 100%)
+  .tab__wrap
+    margin-top: 24%
+  .tab__box
+    display: flex
+    justify-content: center
+    margin-left: 2.5%
+    width: 65%
+  .tab__item
+    width: 23%
+    transition: all .5s
+    cursor: pointer
+    &:hover
+      transform: translateY(-2%)
+      filter: contrast(1.2)
+    &.active
+      transform: translateY(-45%)
+      filter: contrast(1.2)
+
+  // 背景圖
+
+  .content__zone
+    padding: 1% 6% 0
+  .content__box
+    display: none
+    padding: 2% 1% .5%
+    border-radius: 4vw
+    box-shadow: 1px 1px 3px inset $gray-light-opacity, 2px 2px 4px 1px $main-e-background-color-1st-2
+    +breakpoint-min($min-width-xl)
+      border-radius: 35px
+    &:first-child
+      background-color: $main-e-background-color-1st-3
+    &:nth-child(2)
+      background-color: $main-e-background-color-1st-4
+    &:nth-child(3)
+      background-color: $main-e-background-color-1st-5
+    &:last-child
+      background-color: $main-e-background-color-1st-6
+
+    &.active
+      display: block
+    .tab__slider
+      width: 97%
+      .swiper-wrapper
+        flex-wrap: wrap
+        margin: 1% auto
+        .swiper-slide
+          margin-bottom: 1.2%
+          +breakpoint-min($min-width-xl)
+            margin-bottom: 2%
+          .product.product--dynamic
+            margin-right: auto
+            margin-left: auto
+            width: 95%
+            +breakpoint-min($min-width-xl)
+              width: 95%
+            .product__name
+              margin-bottom: 0px
+              background-color: #fff
+              +breakpoint-min($min-width-xl)
+                font-size: 26px
+                height: 2.43em
+            .product__price
+              background-color: #fff
+              border-radius: 0 0 2vw 2vw
+              +breakpoint-min($min-width-xl)
+                border-radius: 0 0 20px 20px
+              span
+                &:last-child
+                  +breakpoint-min($min-width-xl)
+                    font-size: 36px
+
+@keyframes bounceDown
+  0%, 20%, 53%, to
+    transform: translateZ(0)
+  40%, 43%
+    transform: translate3d(0, 30px, 0) scaleY(1.1)
+  70%
+    transform: translate3d(0, 15px, 0) scaleY(1.05)
+  80%
+    transform: translateZ(0) scaleY(.95)
+  90%
+    transform: translate3d(0, 4px, 0) scaleY(1.02)

@@ -1,0 +1,80 @@
+-
+  var midBigDataE = [
+    {
+      link: "https://www.etmall.com.tw/p/134989",
+      imgSrc: "event/1st/e-main/components/mid-big-slider/items/mid-big-1.png",
+      alt: "JANET	萬歲牌 天天堅果活力充沛3件88折"
+    },
+    {
+      link: "https://www.etmall.com.tw/c3/133427",
+      imgSrc: "event/1st/e-main/components/mid-big-slider/items/mid-big-2.png",
+      alt: "楊丞琳 tokuyo mini 玩美椅 Pro 按摩沙發按摩椅 TC-296(皮革五年保固)"
+    },
+    {
+      link: "https://www.etmall.com.tw/p/57528",
+      imgSrc: "event/1st/e-main/components/mid-big-slider/items/mid-big-3.png",
+      alt: "周曉涵 思薇爾 夏日內衣$168up"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2972499",
+      imgSrc: "event/1st/e-main/components/mid-big-slider/items/mid-big-4.png",
+      alt: "ELLA ELASTINE 伊絲婷 大師系列彈力洗護頭皮去角質組"
+    },
+    {
+      link: "https://www.etmall.com.tw/p/134852",
+      imgSrc: "event/1st/e-main/components/mid-big-slider/items/mid-big-5.png",
+      alt: "李詠嫻 葡萄王 孅益薑黃100粒x4瓶(共400粒)"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2951465",
+      imgSrc: "event/1st/e-main/components/mid-big-slider/items/mid-big-6.png",
+      alt: "侯怡君 日本味王 金盞花葉黃素膠囊(B群特別版)30粒X4盒-網"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/9581/m/index.html",
+      imgSrc: "event/1st/e-main/components/mid-big-slider/items/mid-big-7.png",
+      alt: "五月天 日立 家電滿額最高送3500東森幣及氣炸鍋"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2961801",
+      imgSrc: "event/1st/e-main/components/mid-big-slider/items/mid-big-8.png",
+      alt: "吳慷仁 Electrolux 伊萊克斯 吸塵器 PQ92-3BWF 硬質地板專家"
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/130107",
+      imgSrc: "event/1st/e-main/components/mid-big-slider/items/mid-big-9.png",
+      alt: "吳珊儒 SODASTREAM	全館滿額最高折500"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2818484",
+      imgSrc: "event/1st/e-main/components/mid-big-slider/items/mid-big-10.png",
+      alt: "曾沛慈 OMIX	獨特渲染真無線半入耳式藍牙耳機"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2971904",
+      imgSrc: "event/1st/e-main/components/mid-big-slider/items/mid-big-11.png",
+      alt: "瘦子E.SO Haylou Solar 智慧手錶台灣版"
+    },
+  ]
+
+section.promo__group.promo__group--mid-big.m-bottom--lg(data-title="名人帶貨")
+  .layout--main
+    .promo__title
+      .decoration--mid-big
+        img(src="event/1st/e-main/components/mid-big-slider/decoration-mid-big.png", alt="")
+      .title__box
+        img(src="event/1st/e-main/components/mid-big-slider/title-mid-big.png", alt="名人帶貨")
+      .decoration--mid-big
+        img(src="event/1st/e-main/components/mid-big-slider/decoration-mid-big.png", alt="")
+    .promo__wrap
+      #sliderMidBig.promo__slider.swiper-container
+        ul.swiper-wrapper
+          each data in midBigDataE
+            li.swiper-slide
+              a(href= data.link, title= data.alt)
+                img.swiper-lazy(data-src= data.imgSrc, alt="")
+                .swiper-lazy-preloader.swiper-lazy-preloader-black
+
+        //- #sliderMidBigPrev.swiper-button-white.swiper-button-prev.mid-big__nav.mid-big__nav--prev
+        //- #sliderMidBigNext.swiper-button-white.swiper-button-next.mid-big__nav.mid-big__nav--next
+      #sliderMidBigPager.mid-big__pager.swiper-pagination

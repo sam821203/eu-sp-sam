@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="tw">
+<head>
+<meta charset="UTF-8">
+<title>marquee effect</title>
+<script type="text/javascript" src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201504/SP_1019163/Includes/jquery-1.7.2.js"></script>
+<style>
+	img{
+		display: block;
+	}
+    .sp-wrap, .sp-wish__wrap:before, .sp-wish__wrap:after,
+    .sp-wish__wrap, .sp-wish__wrap:before, .sp-wish__wrap:after {
+      box-sizing: border-box;
+    }
+    .sp-wrap{
+        background-color: #cb0003;
+        width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        /*padding: 30px 50px;*/
+    }
+	.sp-wish__top{
+        background: url(images/e-sp-pop-top.png) 0 0 no-repeat;
+        height: 278px;
+    }
+    .sp-wish__bottom{
+        background: url(images/e-sp-pop-bottom.png) 0 0 no-repeat;
+        height: 422px;
+    }
+    .sp-wish__input{
+        width: 520px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 218px;
+        position: relative;
+        z-index: 1;
+    }
+    .sp-wish__input [type="text"]{
+        width: 100px;
+        padding: 5px;
+        border: 0;
+        margin-left: 105px;
+    }
+    .sp-wish__input [type="text"]:focus, .sp-wish__input [type="submit"]:focus{
+        outline: none;
+    }
+    .sp-wish__input [type="submit"]{
+        background: url(images/e-sp-btn.png) 0 0 no-repeat;
+        border: 0;
+        cursor: pointer;
+        width: 201px;
+        height: 56px;
+        position: absolute;
+        right: 5px;
+        bottom: -13px;
+    }
+    .sp-wish__input [type="submit"]:hover{
+        opacity: 0.9;
+    }
+</style>
+</head>
+<body>
+
+<div class="sp-wrap">
+    <div class="sp-wish__top">
+        <div class="sp-wish__input">
+            <form action="#">
+                <input type="text" name="" id="">
+                <button type="submit"></button>
+            </form>
+        </div>
+    </div>
+    <div class="sp-wish__bottom"></div>
+</div>
+</body>
+</html>

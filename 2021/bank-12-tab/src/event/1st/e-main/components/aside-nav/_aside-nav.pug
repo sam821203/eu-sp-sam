@@ -1,0 +1,27 @@
+aside#asideNav.aside-nav.bg
+
+  button#btnFixed.btn--fixed
+    span 各大銀行
+    span 關閉
+  #overlay.overlay
+  #asideWrap.aside__wrap
+    .aside__header
+      img(src="event/1st/e-main/components/aside-nav/aside-header-web.png", alt="銀行總覽")
+
+    ul.aside__block
+      li
+        .aside__box(data-bank="one")
+          a.btn--cta(href="") 一銀
+      li
+        .aside__box(data-bank="one")
+          .btn--pop.js--pop 一銀
+
+      - var index = 0
+      while (index < 12)
+        li
+          .aside__box(data-bank="rakuten")
+            .btn--pop.js--pop 樂天
+        - index++
+
+    #elevatorGoTop.aside__footer.js--go-top
+      img(src="event/1st/e-main/components/aside-nav/aside-footer-web.png", alt="回到頂端")

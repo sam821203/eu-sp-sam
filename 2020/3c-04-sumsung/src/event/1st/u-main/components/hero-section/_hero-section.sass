@@ -1,0 +1,84 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero__wrap
+  +pos-set(relative, zero)
+
+  .hero__zone
+    +pos-set(relative, zero)
+    background-color: $gray-deep-light                   
+
+  .hero__block
+    +pos-set(relative, zero)
+
+  .title-decoration__wrap
+    padding-top: 28%
+    width: 100%
+    overflow: hidden
+    // pointer-events: none
+    .title__decoration
+      &--back
+        width: 100%
+        height: 100%
+        .decoration__pic.wow
+          &.animated
+            animation: 0.3s 1.5s small-open both ease-out
+
+      &--front
+        display: flex
+        +pos-set(absolute, base, 0, 0)
+        width: 100%
+        height: 100%
+        .decoration__pic
+          +pos-set(absolute, base)
+          &:first-child
+            top: 34%
+            left: 17%
+            width: 28%
+            &.animated
+              animation: 1s 0.2s title-down both ease-out
+            img
+              animation: 4.5s 2s up-down both ease-out infinite
+          &:nth-child(2)
+            top: 22.5%
+            left: 35%
+            width: 27%
+            &.animated
+              animation: 1s title-down both ease-out
+            img
+              animation: 4.5s 2.2s up-down both ease-out infinite
+          &:last-child
+            top: 40%
+            right: 17%
+            width: 26%
+            &.animated
+              animation: 1s 0.4s title-down both ease-out
+            img
+              animation: 4.5s 2.4s up-down both ease-out infinite
+
+@keyframes title-down
+  0%
+    transform: translateY(calc(-100vw * .5))
+  70%, 80%
+    transform: translateY(0) scale(1.2)
+  75%, 100%
+    transform: translateY(0) scale(1)
+
+@keyframes up-down
+  0, 30%, 100%
+    transform: translateY(0)
+  20%, 40%, 60%
+    transform: translateY(-6%)
+  30%, 45%
+    transform: translateY(0)
+
+@keyframes small-open
+  from
+    transform: scale(0)
+    opacity: 0
+  60%, 90%
+    transform: scale(1.1)
+    opacity: 1
+  85%, to
+    transform: scale(1)
+    opacity: 1

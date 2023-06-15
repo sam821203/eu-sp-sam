@@ -1,0 +1,47 @@
+// 因版型和1一樣所以共用
+.promo__group--text-slider
+  .promo__wrap
+    padding: 8% 10% 11% 21%
+    +bg-set(url("~event/test/e-main/components/text-slider/bg-text-slider.png"), 100%)
+    li
+      flex: 1 1 auto
+      -ms-flex: 0 0 40%
+      text-align: center
+      white-space: nowrap
+      a
+        color: #fff
+        font-size: 5.5vw
+        text-decoration: underline
+  +breakpoint-min($min-width-xl)
+    .promo__wrap
+      li
+        a
+          font-size: 48px
+.dynamic-slider-pager
+  .swiper-pagination-bullet-active
+    background-color: #c87ff1
+    opacity: 1
+
+#sliderDynamicPrev_2.swiper-button-prev,
+#sliderDynamicNext_2.swiper-button-next
+  width: 5vw
+  height: 6vw
+  margin-top: 1.4vw
+  opacity: 0
+  &::after
+    font-size: 3vw
+  +breakpoint-min($min-width-xl)
+    width: 48px
+    height: 58px
+    margin-top: 15px
+    &::after
+      font-size: 29px
+
+#sliderDynamicPrev_2.swiper-button-prev
+  left: .9vw
+  +breakpoint-min($min-width-xl)
+    left: 9px
+#sliderDynamicNext_2.swiper-button-next
+  right: .9vw
+  +breakpoint-min($min-width-xl)
+    right: 9px

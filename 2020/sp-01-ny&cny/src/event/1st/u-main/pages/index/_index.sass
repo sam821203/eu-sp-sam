@@ -1,0 +1,48 @@
+// // ==========================================================================
+// // Plugins
+// // ==========================================================================
+// // @import "vendors/animate"
+@import "~vendors/style/swiper-slider-custom"
+
+// // ==========================================================================
+// // components
+// // ==========================================================================
+
+// hero section
+// ===========================
+@import "~event/1st/u-main/components/hero-section/_hero-section"
+// @import "~event/1st/u-main/components/background-decoration/_background-decoration"
+
+// other components
+// ===========================
+@import "~event/1st/u-main/components/hero-small-slider/_hero-small-slider"
+@import "~event/1st/u-main/components/promo-event/_promo-event"
+@import "~event/1st/u-main/components/goods-slider-flip/_goods-slider-flip"
+@import "~event/1st/u-main/components/bn-special/_bn-special"
+@import "~event/1st/u-main/components/countdown-section/_countdown-section"
+// // ==========================================================================
+// // Page
+// // ==========================================================================
+body
+  +pos-set(relative, zero)
+  background-color: $gray-deep-dark
+
+.sp__wrap
+  +pos-set(relative, base)
+  +bg-set(url("~event/1st/u-main/pages/index/bg.jpg"), 100%)
+  animation: bg-change 1s steps(2) infinite
+  +breakpoint-min($min-width-xl)
+    background: center 0 url("~event/1st/u-main/pages/index/bg.jpg") no-repeat, center 0 url("~event/1st/u-main/pages/index/bg-web.jpg") no-repeat
+    background-size: auto
+    animation: bg-change-web 1s steps(2) infinite
+
+.sp__wrap a
+  display: block
+
+@keyframes bg-change
+  to
+    +bg-set(url("~event/1st/u-main/pages/index/bg-2.jpg"), 100%)
+@keyframes bg-change-web
+  to
+    background: center 0 url("~event/1st/u-main/pages/index/bg-2.jpg") no-repeat, center 0 url("~event/1st/u-main/pages/index/bg-web-2.jpg") no-repeat
+    background-size: auto

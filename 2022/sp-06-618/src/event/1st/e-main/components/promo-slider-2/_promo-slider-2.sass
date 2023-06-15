@@ -1,0 +1,44 @@
+.promo__group--promo-slider-2
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__item
+    &--bg
+      img
+        width: 100%
+    &--title
+      +pos-set(absolute, base, 0%)
+      right: 0%
+      width: 80%
+      max-width: 765px
+      &.active
+        animation: flash-title 3s ease-in infinite
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 310px)
+    &--item
+      +pos-set(absolute, zero, 0%, 5%)
+      width: 23%
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 440px)
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/promo-slider-2/bg-promo-slider-2.png), 100%)
+    background-position: bottom
+    // margin-top: 23%
+    .promo__zone
+      +aspect-ratio(925, 717)
+      // margin-top: -15%
+      // padding-top: 20%
+      .promo__block
+        padding: 5% 1% 0
+        // margin: 37% 3% 0
+        // +pos-set(relative, zero)
+        // height: 100%
+      // .swiper-container
+      //   display: flex
+
+@keyframes flash-title
+  0%, 25%, 100%
+    opacity: 1
+  20%
+    opacity: .3

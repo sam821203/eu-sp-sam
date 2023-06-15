@@ -1,0 +1,36 @@
+.loyalty__block
+  +pos-set(relative, zero)
+  .point__wrap
+    +pos-set(absolute, base)
+    top: 43%
+    left: 9%
+    width: 30%
+    height: 35%
+    text-align: center
+    span
+      color: $main-e-background-color-1st-2
+      line-height: 14vw
+      font-size: 12vw
+      font-weight: bold
+      text-shadow: 1px 1px rgba($gray-dark, 0.5)
+
+  .login__error
+    display: none
+    +pos-set(absolute, base)
+    top: 67.15%
+    left: 9%
+    width: 30%
+    text-align: center
+    span
+      color: $gray-deep-light
+      font-size: 3vw
+    &.active
+      display: block
+
+  +breakpoint-min($min-width-xl)
+    .point__wrap
+      span
+        line-height: 140px
+        font-size: 120px
+        text-shadow: 3px 3px rgba($gray-dark, 0.4)
+

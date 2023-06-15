@@ -1,0 +1,105 @@
+-
+  var promoDataE = [
+    {
+      link: "https://www.etmall.com.tw/Activity/dl/VotePopularityRanking/CarriagePhoto",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-1.png",
+      alt: "捷運車廂 上傳合照拿大獎"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/10563/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-2.png",
+      alt: "新會員首購送超值福袋",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/12372/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-3.png",
+      alt: "萊爾富取件 好禮2選1"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/10141/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-4.png",
+      alt: "桃園樂購節"
+    },
+    {
+      link: "https://www.etmall.com.tw/bs/154029",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-5.png",
+      alt: "嘉義優鮮,088"
+    },
+    //- slider start
+    {
+      link: "https://media.etmall.com.tw/sp/11933/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-6-1.png",
+      alt: "指定銀行最高20%刷卡金"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/11906/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-6-2.png",
+      alt: "指定銀行24、30期 0利率"
+    },
+    //- slider end
+  ]
+
+-
+  var promoDataU = [
+    {
+      link: "https://media.u-mall.com.tw/sp/9704/m/index.html",
+      imgSrc: "event/1st/u-main/components/promo-event/items/promo-1.png",
+      alt: "23家銀行 最高回饋15%"
+    },
+    {
+      link: "https://media.u-mall.com.tw/sp/9704/m/index.html",
+      imgSrc: "event/1st/u-main/components/promo-event/items/promo-2.png",
+      alt: "花旗滿$20,000送$2,000"
+    },
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale",
+      //- imgSrc: "event/1st/u-main/components/promo-event/items/promo-3.png",
+      alt: "限時瘋搶"
+    },
+  ]
+
+- var promoData = isU ? promoDataU : promoDataE
+
+//- TODO: 如果promo不和hero綁一起時要有自己的section和layout--main
+section.promo__group.promo__group--promo-event.m-bottom--lg
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          ul.event__block
+            .event__item
+              each data, index in promoData
+                if index >= 0 && index <= 1
+                  li.promo__item
+                    a(href= data.link, title= data.alt)
+                      img(src= data.imgSrc, alt= data.alt)
+            .event__item 
+              each data, index in promoData
+                if index == 2
+                  li.promo__item.animate
+                    a(href= data.link, title= data.alt)
+                      img(src= data.imgSrc, alt= data.alt)
+          ul.event__wrap
+            each data, index in promoData
+              if index >= 3 && index < 5
+                li.promo__item
+                  a(href= data.link, title= data.alt)
+                    img(src= data.imgSrc, alt= data.alt)
+          ul.event__slide
+            .slide__item.swiper-container#promoEvent
+              ul.swiper-wrapper
+                each data, index in promoData
+                  if index >= 5
+                    li.swiper-slide
+                      a(href= data.link, title=data.alt)
+                        img(src= data.imgSrc, data.alt)          
+
+
+//- .promo__block
+//-   #promoSlider.swiper-container
+//-     ul.swiper-wrapper
+//-       each data, index in promoData
+//-         if index >= 6
+//-           li.swiper-slide
+//-             a(href= data.link, title=data.alt)
+//-               img(src= data.imgSrc, data.alt)

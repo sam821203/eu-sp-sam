@@ -1,0 +1,40 @@
+section#isNewYearTodayClose.promo__group.promo__group--daily-tab(data-title="今日我最牛")
+  .promo__solid-color--bg
+  .promo__daily--bg
+  .layout--main
+    ul.tab__wrap
+      li.tab__zone
+        #dailyTabHead.tab__head--daily.promo__slider.swiper-container
+          ul.swiper-wrapper
+            - var date = 10
+            while date <= 17
+              - var activeClass = 'active--daily'
+              - if (date != 10) activeClass = ''
+              li.swiper-slide(class= activeClass)
+                span 2
+                if date < 10
+                  span= '0' + date++
+                else
+                  span= date++
+            //li.swiper-slide
+            //  span 2
+            //  span 01
+            //li.swiper-slide
+            //  span 2
+            //  span 02
+      li.content__zone
+        ul#dailyTabContent.tab__content--daily
+          - var date = 10
+          while date <= 17
+            - var activeContentClass = 'active'
+            - if (date != 10) activeContentClass = ''
+            li.content__box(class= activeContentClass)
+              .tab__slider--daily.swiper-container
+                ul.item__group__wrap.swiper-wrapper
+            - date++
+          //li.content__box
+          //  .tab__slider--daily.swiper-container
+          //    ul.item__group__wrap.swiper-wrapper
+          //li.content__box
+          //  .tab__slider--daily.swiper-container
+          //    ul.item__group__wrap.swiper-wrapper

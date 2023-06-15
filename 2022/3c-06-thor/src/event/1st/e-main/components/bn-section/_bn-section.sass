@@ -1,0 +1,51 @@
+.promo__group--bn-section
+  +pos-set(relative, zero)
+  .decor__wrap
+    +aspect-ratio(960, 605)
+    .decor__item
+      &--title
+        +pos-set(absolute, zero)
+        width: 100%
+        +breakpoint-min($min-width-xl)
+          width: auto
+  .promo__wrap
+    +pos-set(absolute, base, 24vw, 0)
+    width: fit-content
+    +breakpoint-min($min-width-xl)
+      top: 200px
+      left: 50%
+      transform: translateX(-50%)
+    .promo__zone
+      .promo__block
+        +flex-container(space-between, start, nowrap)
+        [class^='promo__box']
+          width: 25%
+          cursor: pointer
+          transition: filter .2s
+          +breakpoint-min($min-width-xl)
+            width: auto
+          &:hover
+            filter: brightness(1.2)
+      .promo__box--1,
+      .promo__box--3
+        animation: floatingUpDown 4s linear infinite
+      .promo__box--2,
+      .promo__box--4
+        margin-top: 10%
+        animation: floatingDownUp 4s linear infinite
+
+@keyframes floatingUpDown
+  0% 
+    transform: translateY(0)
+  50% 
+    transform: translateY(8%)
+  100% 
+    transform: translateY(0)
+
+@keyframes floatingDownUp
+  0% 
+    transform: translateY(8%)
+  50% 
+    transform: translateY(0)
+  100% 
+    transform: translateY(8%)

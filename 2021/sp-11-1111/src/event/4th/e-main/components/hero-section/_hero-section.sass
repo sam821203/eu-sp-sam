@@ -1,0 +1,103 @@
+.hero__wrap
+  +pos-set(relative, zero)
+  overflow: hidden
+  .hero__zone
+    +aspect-ratio(960, 830)
+    +breakpoint-min($min-width-xl)
+      +aspect-ratio(960, 720)
+    .title__circle
+      -ms-transform: translateX(-50%)
+      -ms-animation: none
+      position: absolute
+      top: -18%
+      left: 50%
+      transform-origin: center
+      transform: translateX(-50%)
+      animation: behind-appear 1s 1s both linear, rotate-title 6s infinite linear
+      &.title__circle-2
+        left: 0
+        // animation: bounceInUpToCenter 1s linear both
+        width: 100vw
+        height: 74vw
+    .hero__title
+      +pos-set(absolute, second)
+      img
+        display: block
+        &:first-child
+          margin: 8% auto 0
+          width: 60%
+          animation: backInDown .3s .5s linear
+          +breakpoint-min($min-width-xl)
+            margin-top: 7%
+            width: 45%
+        &:nth-last-child(2)
+          margin: -4% auto 0
+          width: 75%
+          animation: rubberBand 1.2s .5s linear
+          // animation: name duration timing-function delay iteration-count direction fill-mode
+          +breakpoint-min($min-width-xl)
+            margin-top: -3%
+            width: 60%
+        &:last-child
+          margin: 1.6% auto 0
+          width: 50%
+          animation: bounceIn 3s .5s infinite linear
+          +breakpoint-min($min-width-xl)
+            margin-top: 1%
+            // width: 100%
+    .hero__decoration
+      +pos-set(absolute, base, 48%, 0%)
+      margin: 0 auto
+      +breakpoint-min($min-width-xl)
+        top: 41%
+
+@keyframes rotate-title
+  from
+    transform: translateX(-50%) rotate(0)
+    filter: brightness(100%)
+  50%
+    filter: brightness(150%)
+  to
+    transform: translateX(-50%) rotate(360deg)
+    filter: brightness(100%)
+
+@keyframes bounceIn
+  0%
+    transform: scale3d(1, 1, 1)
+  5%
+    transform: scale3d(1.1, 1.1, 1.1)
+  10%
+    transform: scale3d(.9, .9, .9)
+  15%
+    transform: scale3d(1.2, 1.2, 1.2)
+  20%
+    transform: scale3d(1.03, 1.03, 1.03)
+  to
+    transform: scaleX(1)
+
+@keyframes rubberBand
+  0%
+    transform: scaleX(1)
+    opacity: .5
+  30%
+    transform: scale3d(1.25, .75, 1)
+    opacity: .7
+  40%
+    transform: scale3d(.75, 1.25, 1)
+    opacity: 1
+  50%
+    transform: scale3d(1.15, .85, 1)
+  65%
+    transform: scale3d(.95, 1.05, 1)
+  75%
+    transform: scale3d(1.05, .95, 1)
+  to
+    transform: scaleX(1)
+
+@keyframes backInDown
+  0%
+    transform: translateY(-100px) scale(.7)
+    opacity: .7
+  to
+    transform: scale(1)
+    opacity: 1

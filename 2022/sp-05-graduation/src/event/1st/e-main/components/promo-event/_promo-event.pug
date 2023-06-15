@@ -1,0 +1,171 @@
+-
+  var promoData = [
+    //- 做上翻的輪播好ㄌ
+    {
+      link: "",
+      imgSrc: "event/1st/e-main/components/promo-event/items/box-1.png",
+      alt: ""
+    },
+    {
+      link: "",
+      imgSrc: "event/1st/e-main/components/promo-event/items/box-2.png",
+      alt: "",
+    },
+  ]
+-
+  var promoItemE = [
+    {
+      link: "https://www.etmall.com.tw/Activity/CouponReceiveAll",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-0-1.png",
+      alt: "領折價劵",
+    },
+    {
+      link: "https://www.etmall.com.tw/member/taskActivity",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-0-2.png",
+      alt: "挑戰任務",
+    },
+    //- slider start
+    {
+      link: "#note",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-1.png",
+      alt: "單筆滿額即贈口罩(50片/盒)"
+    },
+    //- {
+    //-   link: "https://media.etmall.com.tw/sp/13474/m/index.html",
+    //-   imgSrc: "event/1st/e-main/components/promo-event/items/promo-1.png",
+    //-   alt: "寵愛新會員首購滿額抽SPA券"
+    //- },
+    //- slider end
+    {
+      link: "https://media.etmall.com.tw/sp/14398/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-2.png",
+      alt: "新會員好禮十選一",
+    },
+    {
+      link: "https://www.etmall.com.tw/member/taskActivity",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-3.png",
+      alt: "挑戰任務拿$200樂透金",
+    },
+    //- slider start
+    {
+      link: "https://media.etmall.com.tw/sp/10080/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-4.png",
+      alt: "防疫專區安心購",
+    },
+    //- {
+    //-   link: "https://media.etmall.com.tw/sp/13263/m/index.html",
+    //-   imgSrc: "event/1st/e-main/components/promo-event/items/promo-4.png",
+    //-   alt: "嘉義優鮮消費不限金額抽哈密瓜",
+    //- },
+    //- slider end
+    {
+      link: "https://media.etmall.com.tw/sp/13755/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-5.png",
+      alt: "彰化好物購週週送月月抽",
+    },
+    {
+      link: "https://www.etmall.com.tw/Activity/dl/VoteActivityMethod/23",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-6.png",
+      alt: "萌寵禮包等你來拿",
+    },
+    //- slider start
+    {
+      link: "https://media.etmall.com.tw/sp/14254/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-7-1.png",
+      alt: "使用Atome最高回饋40%",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/14030/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-7-2.png",
+      alt: "23間銀行最高回饋12%%",
+    },
+    //- slider end
+    //- slider start
+    //- {
+    //-   link: "https://www.etmall.com.tw/activity/dl/votepopularityranking/Localfruit",
+    //-   imgSrc: "event/1st/e-main/components/promo-event/items/promo-8-1.png",
+    //-   alt: "東森農場投票抽好禮",
+    //- },
+    //- {
+    //-   link: "",
+    //-   imgSrc: "event/1st/e-main/components/promo-event/items/promo-8-2.png",
+    //-   alt: "拼出萬元好禮",
+    //- },
+    //- {
+    //-   link: "",
+    //-   imgSrc: "event/1st/e-main/components/promo-event/items/promo-8-3.png",
+    //-   alt: "APP下單滿$1500登記抽氣炸鍋",
+    //- },
+    //- slider end
+  ]
+
+-
+  var promoItemU = [
+    {
+      link: "https://media.u-mall.com.tw/sp/9704/m/index.html",
+      //- imgSrc: "event/1st/u-main/components/promo-event/items/promo-1.png",
+      alt: "23家銀行 最高回饋15%"
+    },
+    {
+      link: "https://media.u-mall.com.tw/sp/9704/m/index.html",
+      //- imgSrc: "event/1st/u-main/components/promo-event/items/promo-2.png",
+      alt: "花旗滿$20,000送$2,000"
+    },
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale",
+      //- imgSrc: "event/1st/u-main/components/promo-event/items/promo-3.png",
+      alt: "限時瘋搶"
+    },
+  ]
+
+//- - var promoItem = isU ? promoItemE : promoItemU
+
+//- TODO: 如果promo不和hero綁一起時要有自己的section和layout--main
+section.promo__group.promo__group--promo-event.m-bottom--lg
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item
+        img(src="event/1st/e-main/components/promo-event/title-promo-event.png", alt="畢業快樂")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          ul.promo__box
+            each data, index in promoItemE
+              if index < 2
+                li.promo__item
+                  a(href= data.link, title= data.alt)
+                    img(src= data.imgSrc, alt= data.alt)
+          .event__wrap
+            ul.event__box
+              each data, index in promoItemE
+                if index >= 2 && index < 8 
+                  li.promo__item
+                    a(href= data.link, title= data.alt)
+                      img(src= data.imgSrc, alt= data.alt)
+          .slider__box#scrollBackGround
+            .swiper-container.container--promo-event
+              ul.swiper-wrapper
+                each data, index in promoItemE
+                  if index >= 8
+                    li.swiper-slide
+                      a(href= data.link, title=data.alt)
+                        img(src= data.imgSrc, data.alt)
+    //- .promo__wrap--special
+    //-   .promo__zone--special
+    //-     .promo__block
+    //-       ul.event__block
+    //-         each data, index in promoData
+    //-           if index == 0
+    //-             li.promo__item
+    //-               a(href= data.link, title= data.alt)
+    //-                 img(src= data.imgSrc, alt= data.alt)
+
+
+//- .promo__block
+//-   #promoSlider.swiper-container
+//-     ul.swiper-wrapper
+//-       each data, index in promoData
+//-         if index >= 6
+//-           li.swiper-slide
+//-             a(href= data.link, title=data.alt)
+//-               img(src= data.imgSrc, data.alt)

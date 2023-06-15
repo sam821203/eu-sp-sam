@@ -1,0 +1,212 @@
+.promo__group--daily-tab
+  +pos-set(relative, zero)
+  overflow: hidden
+  margin-bottom: 3%
+  +breakpoint-min($min-width-xl)
+    margin-bottom: 0
+  
+  .promo__wrap
+    +aspect-ratio(962, 1427)
+
+  .promo__zone
+    +bg-set(url(event/1st/e-main/components/daily-tab/bg-daily-tab.png), 100%)
+    padding-top: 24%
+
+  .tab__zone
+    overflow-x: scroll
+    overflow-y: hidden
+    /* Hide scrollbar for IE, Edge add Firefox */
+    -ms-overflow-style: none
+    scrollbar-width: none
+    +margin-x(auto)
+    width: 94.5%
+    margin-bottom: 1%
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    &::-webkit-scrollbar
+      display: none
+  .tab__box
+    display: flex
+    width: 146%
+    margin-left: 2%
+    margin-bottom: -3%
+  .tab__item
+    +padding-y(6%)
+    width: 24%
+    +bg-set(url(event/1st/e-main/components/daily-tab/date-daily-tab.png), 100%)
+    color: $gray-deep-light
+    font-weight: bold
+    text-align: center
+    cursor: pointer
+    -webkit-touch-callout: none
+    -webkit-user-select: none
+    -khtml-user-select: none
+    -moz-user-select: none
+    -ms-user-select: none
+    user-select: none
+    &--daily
+      +flex-container
+    &.active
+      background-image: url(event/1st/e-main/components/daily-tab/date-daily-tab-active.png)
+      color: $gray-deep-light
+      pointer-events: none
+      transform: translateY(2px)
+    &:hover
+      background-image: url(event/1st/e-main/components/daily-tab/date-daily-tab-active.png)
+      color: $gray-deep-light
+  .date__month, 
+  .date__number
+    +font-styling(6.2vw, 700)
+    line-height: 100%
+    font-style: italic
+    transform: translate(-4%, -21%)
+  +breakpoint-max($min-width-xxs)
+    .date__number
+      font-size: 6.8vw
+  +breakpoint-min($min-width-xl)
+    .tab__box
+      padding: 24px 4px 0 0
+      margin-bottom: -1%
+    .tab__item
+      +padding-y(70px)
+    .date__month,
+    .date__number
+      font-size: 64px
+      transform: translate(-2px, 0)
+
+  .content__zone
+    +breakpoint-min($min-width-xl)
+      margin-top: 0
+  .content__block
+    padding: 0 4%
+  .content__box
+    display: none
+    a
+      pointer-events: none
+    &.today
+      a
+        pointer-events: auto
+    &.active
+      display: block
+
+    a
+      transition: all 0.2s
+
+  .content__item
+    display: flex
+  .pic__box
+    width: 29.5%
+    padding: 3% 1% 3% 2%
+    text-align: center
+  .item__wrap
+    width: 100%
+    .tab__slider
+      .swiper-wrapper
+        +flex-container(space-between, center)
+        .swiper-slide
+          height: 50%
+          &:hover,
+          &:active
+            transform: scale(1.02)
+          
+  .item__box
+    position: relative
+    width: 100%
+    height: 100%
+    padding: 4%
+    +margin-x(auto)
+    +bg-set(url(event/1st/e-main/components/daily-tab/bg-item-daily-tab.png), 100%)
+    +breakpoint-min($min-width-xl)
+      margin-bottom: 0
+      padding-bottom: 0
+    a
+      color: $gray-deep-dark
+  .item__intro
+    width: 100%
+    +margin-x(auto)
+    padding: 0 4%
+    padding-top: 4%
+    line-height: 1.2em
+    font-size: 3.5vw
+    text-align: center
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis 
+    +breakpoint-min($min-width-xl)
+      width: 98%
+    &--2
+      padding-top: 2%
+      font-size: 3.5vw
+      
+  .item__pic
+    // 因跟宮格命名重複，增加權重
+    padding-top: 0 !important
+    width: 80%
+    overflow: hidden
+  .item__description
+    padding: 4%
+    +breakpoint-min($min-width-md)
+      transform: translateY(0%)
+    +breakpoint-min($min-width-lg)
+      padding-top: 6%
+      transform: translateY(-4%)
+    +breakpoint-min($min-width-xl)
+      transform: translateY(-2%)
+    .item__decor
+      +pos-set(absolute, base)
+      bottom: 3.5vw
+      left: 12%
+      img
+        width: 11vw
+        transform: scale(1.2)
+      +breakpoint-min($min-width-xl) 
+        top: 10%
+        img
+          width: 100%
+          transform: scale(1.4)
+    .item__price
+      width: 100%
+      text-align: right
+      .price__box
+        font-weight: 700
+        &:first-child
+          color: $gray-deep-dark !important
+          line-height: 0.6 !important
+          text-decoration: line-through
+          +breakpoint-min($min-width-xl)
+            font-size: 28px !important
+            line-height: 1.2 
+          span:last-child
+            font-size: 3.2vw !important
+            line-height: 0.6 !important
+            color: $gray-deep-dark !important
+            +breakpoint-min($min-width-xl)
+              font-size: 28px !important
+              line-height: 1.2 !important
+
+        &:last-child
+          margin-left: -1%
+          font-size: 5.8vw !important
+          letter-spacing: -1px
+          // 因跟宮格命名重複，增加權重
+          color: $main-e-background-color-1st-2 !important
+          +breakpoint-min($min-width-xl)
+            font-size: 56px !important
+          span:first-child
+            font-size: 3.6vw !important
+            color: $main-e-background-color-1st-2 !important
+            +breakpoint-min($min-width-xl)
+              font-size: 24px !important
+          span:last-child
+            font-size: 5.8vw !important
+            color: $main-e-background-color-1st-2 !important
+            +breakpoint-min($min-width-xl)
+              font-size: 56px !important
+  +breakpoint-min($min-width-xl)
+    .pic__box
+      padding-right: 12px
+      background-size: contain
+    .item__intro
+      width: 92%
+      font-size: 30px
+      &--2
+        padding-top: 4px

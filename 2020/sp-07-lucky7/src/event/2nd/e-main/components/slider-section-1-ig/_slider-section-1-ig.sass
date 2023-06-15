@@ -1,0 +1,96 @@
+
+.slider__collect
+  position: relative
+  padding: 0
+  margin-top: 2%
+  +bg-set(url("~event/2nd/e-main/components/slider-section-1-ig/bg__slider__ig.png"), 100% auto)
+  background-size: 100% auto
+  height: 107vw
+  .swiper-container
+    margin-left: auto
+    margin-right: auto
+    width: 92%
+    padding-bottom: 3%
+    .collect__goods
+      margin-top: 19vw
+      margin-bottom: 1vw
+    .swiper-slide
+      filter: contrast(100%)
+      opacity: 1
+      &:hover,
+      &:active
+        filter: contrast(120%)
+      img
+        display: block
+        margin-left: auto
+        margin-right: auto
+    .swiper-pagination-custom
+      margin-top: 1%
+      .swiper-pagination-bullet
+        width: 2.7vw
+        height: 2.7vw
+        max-width: 12px
+        max-height: 12px
+        margin: 0 5px
+        //background-color: #ffffff
+      .swiper-pagination-bullet-active
+        opacity: 1
+  +breakpoint-min($min-width-xl)
+    width: 100%
+    max-width: 995px
+    margin: 0 auto
+    height: 1065px
+    .swiper-container
+      .collect__goods
+        margin-top: 173px
+      .swiper-pagination-custom
+        bottom: 13px
+        .swiper-pagination-bullet
+          width: 16px
+          height: 16px
+          margin: 0 6px
+.collect__goods
+  .collect__item
+    //+bg-set(url("~event/2nd/e-main/components/slider-section-1-ig/bg__slider__good.png"), 100%)
+    height: 57vw
+    img
+      width: 92%
+      margin-top: 0
+
+  +breakpoint-min($min-width-xl)
+    .collect__item
+      height: 547px
+      margin-top: 16px
+
+.slider__ig__hastag
+  display: flex
+  justify-content: center
+  //flex-wrap: wrap
+  margin-left: 2%
+  margin-top: 2%
+  .hastag__branch
+    background-color: #a3264a
+    margin: 0 .5% 1% .5%
+    padding: .5% .7%
+    border-radius: 6px
+    +breakpoint-max($max-width-xl)
+      max-width: 12vw
+      max-height: 6vw
+      overflow-y: hidden
+    a
+      color: #fff
+      font-size: 3.5vw
+
+.btn__ig__click__more
+  width: 26%
+  text-align: center
+  margin: 2% auto 0 auto
+
++breakpoint-min($min-width-xl)
+  .slider__ig__hastag
+    .hastag__branch
+      padding: 1% .2.5%
+      a
+        font-size: 22px
+  .btn__ig__click__more
+    width: auto

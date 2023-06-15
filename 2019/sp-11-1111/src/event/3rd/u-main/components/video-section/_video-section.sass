@@ -1,0 +1,31 @@
+.promo__group--video
+  // +bg-set(url("~components/video-section/video.png"),100% auto)
+  padding-top: 2%
+  background-color: $gray-deep-light
+  .promo__title
+    margin-top: -0.3%
+  .promo__wrap
+    +aspect-ratio(16, 9.9)
+    .video__wrap
+      +pos-set(absolute, base, 0, 50%)
+      width: 100%
+      height: 100%
+      // transform: translateX(-50%)
+      // padding-bottom: 9%
+      iframe
+        // margin: 4%
+        width: 100%
+        height: 100%
+
+  +breakpoint-min($min-width-xl)
+    margin-top: 0
+    padding-top: 0
+    background: linear-gradient(transparent, transparent 80%, #fff 80%, #fff 100%)
+
+    .promo__wrap
+      .video__wrap
+        padding-bottom: 0
+        iframe
+          margin: 0 5%
+          width: 90%
+          height: 90%

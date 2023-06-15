@@ -1,0 +1,82 @@
+.sp__wrap
+  .promo__group.promo__group--daily
+    position: relative
+    z-index: 1
+    top: -2.5vw
+    right: 0
+    width: 100%
+    overflow: hidden
+    height: 66vw
+    //+bg-set(url(~event/3rd/e-main/components/daily-change/daily-change-bg.png), 100% auto)
+    +bg-set(url(https://media.etmall.com.tw/sp/8249/daily-change-bg.png), 100% auto)
+    +breakpoint-min($min-width-xl)
+      top: -70px
+      right: 0
+      width: auto
+      height: 630px
+
+    .promo__wrap
+      +pos-set(relative, zero)
+      .title__text
+        +pos-set(absolute, base)
+
+
+      // .daily__text
+      //   left: 19%
+      //   color: $gray-deep-light
+      //   font-size: 7vw
+      //   font-weight: bold
+      //   transform: translateY(13%)
+      //   span
+      //     &:nth-child(2)
+      //       font-size: 3vw
+      .daily__countdown
+        display: flex
+        justify-content: space-between
+        top: 36.4vw
+        right: 19.8vw
+        padding-top: 0
+        width: 26.5%
+        font-size: 3.5vw
+        color: $gray-deep-dark
+        letter-spacing: 0.35em
+        pointer-events: none
+        // border: 1px solid #f00
+        .time__block
+          display: flex
+          justify-content: space-between
+          width: 20%
+          // border: 1px solid #fff
+
+          .time__box
+            width: 48%
+            text-align: right
+
+      +breakpoint-min($min-width-xl)
+        .daily__countdown
+          top: 353px
+          right: calc(50% - 286px)
+          width: 26%
+          font-size: 34px
+          .time__block
+            width: 18%
+
+    .promo__wrap
+      padding-top: 0
+      text-align: center
+      &:hover,
+      &:active
+        a
+          filter: brightness(105%) contrast(120%)
+
+      .daily__change
+        position: relative
+        width: 75vw
+        top: 11vw
+        left: 12.5vw
+      +breakpoint-min($min-width-xl)
+        background-size: auto
+        .daily__change
+          width: auto
+          top: 113px
+          left: calc(50% - 480px)

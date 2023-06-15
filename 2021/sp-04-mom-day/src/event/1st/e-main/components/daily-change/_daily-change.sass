@@ -1,0 +1,79 @@
+.super__big
+  position: relative
+.sp__wrap
+  .promo__group.promo__group--daily
+    position: absolute
+    top: -23vw
+    left: 0
+    width: 100%
+    z-index: 1
+    overflow: hidden
+    +breakpoint-max($min-width-xl)
+      .daily__change
+        //margin-top: -3vw
+    +breakpoint-min($min-width-xl)
+      position: absolute
+      top: -391px
+      right: calc(50% - 480px)
+      left: auto
+      width: auto
+
+    .promo__wrap
+      +pos-set(relative, zero)
+      .title__text
+        +pos-set(absolute, base)
+
+
+      // .daily__text
+      //   left: 19%
+      //   color: $gray-deep-light
+      //   font-size: 7vw
+      //   font-weight: bold
+      //   transform: translateY(13%)
+      //   span
+      //     &:nth-child(2)
+      //       font-size: 3vw
+      .daily__countdown
+        display: flex
+        justify-content: space-between
+        top: 25vw
+        right: 15.6vw
+        padding-top: 0
+        width: 30.5%
+        font-size: 4.2vw
+        color: $gray-deep-light
+        letter-spacing: 0.35em
+        pointer-events: none
+        // border: 1px solid #f00
+        .time__block
+          display: flex
+          justify-content: space-between
+          width: 24%
+          // border: 1px solid #fff
+
+          .time__box
+            width: 48%
+            text-align: right
+
+      +breakpoint-min($min-width-xl)
+        .daily__countdown
+          top: 69.4vw
+      +breakpoint-min($min-width-xl)
+        .daily__countdown
+          top: 239px
+          right: calc(50% - 328px)
+          width: 30.5%
+          font-size: 42px
+          .time__block
+            width: 23.5%
+
+    .promo__wrap
+      padding-top: 0
+      text-align: center
+      &:hover,
+      &:active
+        a
+          filter: brightness(105%) contrast(120%)
+
+      +breakpoint-min($min-width-xl)
+        background-size: auto

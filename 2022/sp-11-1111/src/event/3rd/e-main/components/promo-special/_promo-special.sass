@@ -1,0 +1,47 @@
+.promo-special
+  overflow: hidden
+  margin-top: -5%
+  +breakpoint-min($min-width-xl)
+    margin-top: -70px
+  .decor__item
+    &--item
+      +pos-set(absolute, base, 40%, 1%)
+      width: 98%
+      animation: up-down 2.6s linear infinite
+      pointer-events: none
+    +breakpoint-min($min-width-xl)
+      left: calc( 50% - 462px )
+      width: auto
+  .promo__zone
+    +aspect-ratio(960, 525)
+    +breakpoint-min($min-width-xl)
+  .promo__block
+    padding: 0 2%
+    +breakpoint-min($min-width-xl)
+      padding: 25px 10px 0 20px
+  .event__block
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    margin-bottom: 2%
+    li
+      width: 33%
+      transition: .2s
+      &:hover
+        transform: translateY(-2%)
+        filter: contrast(1.2)
+  .promo__slider
+    +pos-set(relative, zero)
+    +bg-set(url(event/3rd/e-main/components/promo-special/bg-promo-sp.png), 80%)
+    background-position: right
+    padding-bottom: 25%
+    +breakpoint-min($min-width-xl)
+      +bg-set(url(event/3rd/e-main/components/promo-special/bg-promo-sp-web.png), auto)
+      background-position: right
+    .slider__wrap
+      +pos-set(absolute, zero, 5%)
+      right: 3%
+      width: 75%
+      +breakpoint-min($min-width-xl)
+        top: 10px
+        right: calc(50% - 450px)

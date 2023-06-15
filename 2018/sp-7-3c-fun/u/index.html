@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<head>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		* {
+ 		 box-sizing: border-box; }
+  		*:before, *:after {
+    		box-sizing: border-box; }
+	    a {
+	    	display: block;
+	    	text-decoration: none;
+	    }
+		header a, section a {
+			line-height: 0;
+		}
+	    h1 {
+	    	line-height: 0;
+	    }
+		ul {
+			list-style: none;
+		}
+		img {
+			border: 0;
+		}
+		main, header, footer, section {
+			display: block;
+		}
+		body {
+			margin: 0;
+  			padding: 0;
+  			width: 100%;
+  			min-width: 1260px;
+			background: #000058 center top url(background.jpg) no-repeat fixed;
+		}
+
+		body, td, th {
+		font-family: Arial, Helvetica, LiHei, "Microsoft JhengHei", PMingLiU, "微軟正黑體", "新細明體", sans-serif;
+		}
+
+		.clearfix:after {
+			content: '';
+			display: block;
+			clear: both;
+			*zoom: 1;
+		}
+
+		.sp__wrap {
+			position: relative;
+			overflow: hidden;
+		}
+
+		.sp--1260 {
+			position: relative;
+			max-width: 1260px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+/* ============= decoration ============= */
+		.bg-decoration, .product__wrap, .symbol__wrap, .decoration, .decoration2 {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+
+		.symbol__wrap {
+			z-index: -1;
+		}
+
+		.symbol {
+			background: 41% top url(background-title-3.png) no-repeat;
+		}
+
+		.decoration--symbol {
+			z-index: 1;
+			background: 41% top url(background-title-1.png) no-repeat;
+			animation: 4s self-flash infinite alternate;
+		}
+
+		.decoration--symbol2 {
+			z-index: 1;
+			background: 41% top url(background-title-2.png) no-repeat;
+			animation: 6s self-flash infinite alternate;
+
+		}
+
+		@media screen and (max-width: 1441px) {
+			.symbol, .decoration--symbol, .decoration--symbol2 {
+				background-position: 32% top;
+			}
+		}
+
+		@media screen and (min-width: 1921px) {
+			.symbol, .decoration--symbol, .decoration--symbol2 {
+				background-position: 45% top;
+			}
+		}
+
+		@keyframes self-flash {
+			from, to {
+				opacity: 1;
+			}
+			50% {
+				opacity: 0;
+			}
+		}
+
+		.decoration__product {
+			z-index: 1;
+			background: 45% 5% url(foreground-1.png) no-repeat;
+		}
+
+		.decoration__shadow {
+			background: 45% 5% url(foreground-1.png) no-repeat;
+			transition: opacity 0.5s 0.1s ease-in-out;
+			filter: blur(7px) contrast(120%) brightness(200%);
+			opacity: 0;
+		}
+
+		@media screen and (max-width: 1815px) {
+			.decoration__product, .decoration__shadow {
+				background-size: contain;
+				background-position: center 22%;
+			}
+		}
+
+/* ================= header ================= */
+		.sp-logo {
+			position: absolute;
+			z-index: 20;
+			top: 20px;
+			left: 0;
+			cursor: pointer;
+		}
+		.side-info {
+			position: absolute;
+			z-index: 30;
+			top: 585px;
+			right: 10px;
+			width: 186px;
+		}
+
+		.side-info img {
+			width: 100%;
+		}
+
+		.side-info a {
+			position: absolute;
+			z-index: 21;
+			left: 0;
+			width: 100%;
+		}
+
+		.side-info a:nth-child(2) {
+			top: 0;
+			height: 50%;
+		}
+
+		.side-info a:nth-child(3) {
+			bottom: 0;
+			height: 50%;
+		}
+		
+/* ================= main-visual ================= */
+		.sp-title {
+			position: relative;
+			z-index: 0;
+			padding-top: 50px;
+			height: 540px;
+		}
+
+		.main-title {
+			position: relative;
+			margin-left: calc(45% - 355px);
+		}
+
+		.main-title img {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		.main-title img:first-child {
+			z-index: 3;
+			margin-top: -5px;
+			margin-left: 4%; 
+		}
+
+		.main-title img:last-child {
+			z-index: 1;
+		}
+
+		.title--animation {
+			position: absolute;
+			z-index: 2;
+			top: 30px;
+			left: 15.4%;
+			width: 50px;
+			height: 50px;
+			background-image: radial-gradient(circle, rgba(255,255,255,0.9) 10%, rgba(4,193,248,0.9) 30%, transparent 70%);
+			border-radius: 50%;
+			animation: 15s move infinite, 10s breath-light infinite;
+		}
+
+		.title__light {
+			width: 100%;
+			height: 100%;
+			animation: 5s breath-light infinite;
+		}
+
+		@keyframes move {
+			33% {
+				transform: translate(616px, 0);
+			}
+			66% {
+				transform: translate(309px, 464px);
+			}
+			to {
+				transform: translate(0, 0);
+			}
+		}
+
+		@keyframes breath-light {
+			from {
+				filter: brightness(100%) hue-rotate(0deg) blur(2px);
+			}
+			25% {
+				filter: brightness(200%) hue-rotate(120deg) blur(0);
+			}
+			50% {
+				filter: brightness(90%) hue-rotate(0deg) blur(2px);
+			}
+			75% {
+				filter: brightness(200%) hue-rotate(-50deg) blur(0);
+			}
+			to {
+				filter: brightness(100%) hue-rotate(0deg) blur(2px);
+			}
+		}
+
+/* ================= subtitle ================= */
+		.subtitle {
+			position: absolute;
+			z-index: 1;
+			top: 65px;
+			right: calc(50% - 610px);
+			width: 283px;
+			height: 403px;
+			padding: 18px 15px 15px;
+			background: url(background-sub-title.png) no-repeat;
+		}
+
+		.subtitle:after {
+			content: '';
+			position: absolute;
+			z-index: 2;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 40px;
+			background: center top url(background-sub-title-head.png) no-repeat;
+
+		}
+
+		.top-card {
+			margin-left: auto;
+			margin-right: auto;
+			width: 100%;
+			border-radius: 15px;
+			transition: all 0.2s;
+			overflow: hidden;
+		}
+
+		.top-card:hover {
+			transform: translateY(-3px) scale(1.01);
+			box-shadow: 0 8px 13px rgba(0,0,0,0.2), 0 3px 3px rgba(0,0,0,0.35);
+		}
+
+		.top-card img {
+			width: 100%;
+		}
+
+/* ================= main0 ================= */
+		.main0 {
+			position: relative;
+			z-index: 1;
+			width: 100%;
+			height: 236px;
+			background: center url(background-intro.png) no-repeat;
+		}
+
+		.main0-title {
+			position: relative;
+			z-index: 0;
+			margin-left: 51%;
+			padding-top: 55px;
+		}
+
+		.main0--info-a {
+			position: absolute;
+			z-index: 1;
+			top: -145px;
+			left: 25px;
+			width: 239px;
+		}
+
+		.main0--info-a img {
+			position: relative;
+			z-index: 1;
+		}
+
+		.main0--info-a:before {
+			content: '';
+			position: absolute;
+			z-index: 0;
+			top: 0;
+			left: 0;
+			width: 239px;
+			height: 388px;
+			background: url(game-intro-bg.png) no-repeat;
+		}
+
+/* ================= main-content ================= */
+		.sp-content	{
+			position: relative;
+			z-index: 20;
+			margin-top: 10px;
+			overflow: hidden;
+		}
+
+		.main-info {
+			padding: 16px 0; 
+			height: 495px;
+			background: center top url(background-main.png) no-repeat;
+		}
+
+		.main--info-a {
+			position: relative;
+			z-index: 2;
+			float: left;
+			transition: all 0.2s ease-in-out;
+		}
+
+		.main--info-a:nth-child(1) {
+			padding: 0 35px 36px 70px;
+		}
+
+		.main--info-a:nth-child(2) {
+			padding: 0 0 36px 26px;
+		}
+
+		.main--info-a:nth-child(3) {
+			margin-top: -2px;
+			padding: 0 30px 58px 70px;
+		}
+
+		.main--info-a:nth-child(4){
+			margin-top: -1px;
+			padding: 0 20px 0 0;
+		}
+
+		.main--info-a:hover {
+			z-index: 10;
+			transform: translateX(5px);
+			filter: brightness(101%) contrast(180%);
+		}
+
+/* ================= table hover setting ================= */
+		td[width^="2"] {
+			transition: all 0.3s;
+		}
+
+		td[width^="2"] a {
+			transition: all 0.3s;
+		}
+
+		td[width^="2"] td {
+			transition: all 0.3s;
+		}
+
+		td[width^="2"]:hover {
+			transform: translateY(-6px);
+			box-shadow: 0 5px 10px rgba(0,0,0,0.2), 0 3px 3px rgba(0,0,0,0.35);
+		}
+		td[width^="2"]:hover a {
+			color: #2f6be5 !important;
+		}
+
+		td[width^="2"]:hover td {
+			color: #2f6be5 !important;
+		}
+
+    </style>
+
+</head>
+<body>
+	<main id="spWrap" class="sp__wrap">
+		<div class="bg-decoration">
+			<div class="symbol__wrap">
+				<div class="decoration symbol"></div>
+				<div class="decoration decoration--symbol"></div>
+				<div class="decoration decoration--symbol2"></div>
+			</div>
+			<div id="productWrap" class="product__wrap">
+				<div class="decoration2 decoration__product" data-depth="0.1"></div>
+				<div id="descShadow" class="decoration2 decoration__shadow" data-depth="0.22"></div>
+			</div>
+		</div>
+		<header>
+			<div class="sp--1260">
+				<div class="sp-logo">
+					<a href="https://www.etmall.com.tw/" title="Umall森森購物網" target="_top">
+						<img src="logo.png" alt="Umall森森購物網">
+					</a>
+			  	</div>
+				<aside class="side-info">
+					<img id="lineImg" src="line-and-app.png" alt="LINE's & APP's QR-code">
+				</aside>
+				<div class="subtitle">
+					<a id="ASRC" href="" title="點我購買森森專屬優惠商品！">
+						<div class="top-card">
+							<img id="IMGSRC" src="product.jpg" alt="森森專屬優惠商品">
+						</div>
+					</a>
+				</div>
+				<div class="sp-title">
+					<h1 class="main-title" title="3C享fun價，07/02-07/17全館家電三折起，下單抽海島奢華遊 -- Umall森森購物網">
+						<img src="title-front.png" alt="3C享fun價，07/02-07/17全館家電三折起，下單抽海島奢華遊">
+						<img src="title-behide.png" alt="">
+					</h1>
+					<div class="title--animation"><div class="title__light"></div></div>
+				</div>
+			</div>
+		</header>
+		<section id="main0Bg" class="main0">
+			<div class="sp--1260">
+				<a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201807/SP_1102150/index.html" class="main0--info-a" title="點我進入刮金塊活動頁面！">
+					<img id="main0Img" src="game-intro-1.png" alt="點我刮金塊">
+				</a>
+				<img class="main0-title" src="promo-intro.png" alt="消費不限金額即享APP抽獎機會1次">
+			</div>
+		</section>
+		<section class="sp-content">
+			<div class="main-info clearfix">
+				<div class="sp--1260">
+					<a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201807/SP_1102149/index.html" class="main--info-a" title="登入免費送">
+						<img src="main-intro-1.png" alt="萬元無敵折價券登入免費送">
+					</a>
+					<a href="http://www.u-mall.com.tw/SimpleTemplate.aspx?SubPage=DMSetting/Final/201807/SP_1102147/index.html" class="main--info-a" title="單日累計送">
+						<img src="main-intro-2.png" alt="滿2000最高送600折扣金，滿7000最高送2550折扣金">
+					</a>
+					<a href="http://www.u-mall.com.tw/SimpleTemplate.aspx?SubPage=DMSetting/Final/201807/SP_1102148/index.html" class="main--info-a" title="刷卡享好康">
+						<img src="main-intro-3.png" alt="刷台新，滿額登錄送550折扣金">
+					</a>
+					<a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201812/SP_1101948/index.html" class="main--info-a" title="新北政府補助">
+						<img src="main-intro-4.png" alt="節能家電新北政府50%省很大">
+					</a>
+				</div>
+			</div>
+		</section>
+	</main>
+<script id="loadJS" src="load-indicator.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+<script>
+	function productParallax() {
+		var bgDesc = document.getElementById('productWrap');
+		var parallaxInstance = new Parallax(bgDesc);
+
+		var descShadow = document.getElementById('descShadow');
+		var timeout;
+
+		document.addEventListener('mousemove', function(){
+			descShadow.style.opacity = 1;
+			
+			clearTimeout(timeout);
+			timeout = setTimeout(function() {
+				descShadow.style.opacity = 0;
+			}, 300);
+		});
+	}
+	requestAnimationFrame(productParallax);
+
+	function apngControl() {
+		var main0 = document.querySelector('#main0Bg');
+		var img = document.querySelector('#main0Img');
+		main0.addEventListener('mouseenter', function(){
+				hintBrowser(img);
+				img.src = 'game-intro-2.png';
+		});
+
+		main0.addEventListener('mouseleave', function(){
+				img.src = 'game-intro-1.png';
+		});
+
+		main0.addEventListener('animationEnd', removeHint);
+
+		function hintBrowser(el) {
+		  el.style.willChange = 'transform';
+		}
+
+		function removeHint() {
+		  this.style.willChange = 'auto';
+		}
+	}
+	apngControl();
+</script>
+</body>
+</html>

@@ -1,0 +1,1502 @@
+<meta name="viewport" content="width=device-width">
+<meta charset="utf-8">
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  *:before, *:after {
+    box-sizing: border-box; }
+  a {
+    display: block;
+    text-decoration: none;
+  }
+  ul {
+    list-style: none;
+  }
+  img {
+    width: 100%;
+    border: 0;
+    vertical-align: bottom;
+  }
+  article,
+  main,
+  nav,
+  section {
+    display: block;
+  }
+  body {
+    margin:0;
+    /*background-color:#f4d7d3;*//*...................................背景色,1260把這行刪掉*/
+  }
+  .sp--1260 {
+    position: relative;
+    z-index: 0;
+    max-width: 1260px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .sp--1260.icon_Home{
+    z-index: auto;
+  }
+  /* 主視覺 */
+  /* ======================================== */
+  .logo a,
+  .sp__visual a{
+    display: block;
+  }
+  .logo {
+    position: absolute;
+    z-index: 1;
+    /* 調整logo位置 */
+    top: 1%;
+    left: 1%;
+    width: 30%;
+    max-width: 220px;
+  }
+  /* 設定背景 */
+  .sp__main {
+    background: url(bg.jpg) center 0 no-repeat;/*..............背景底圖,1260把這行刪掉*/
+  }
+  /* 設定前景 */
+  .sp__visual {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+  }
+  .visual__anchor,
+  .visual__main,
+  .visual__nav {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .visual__anchor {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }
+  .visual__main a,
+  .visual__nav a {
+    flex-grow: 1;
+  }
+  /* 主視覺 */
+  /*...........................................................紅框區高度*/
+  .visual__main {
+    height: 100%;
+  }
+  /*...........................................................紅框區寬度*/
+  .visual__main a:nth-child(1) {
+    flex-grow: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+
+  /* 自適應banner組 */
+  /* ======================================== */
+  .banner__title {
+    height: 65px;
+    background: center top no-repeat;
+  }
+  .banner__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #747474;
+  }
+  .banner__item {
+    transition: all 0.3s;
+  }
+  .banner__item img {
+    width: 95%;
+    margin: auto;
+    display: block;
+  }
+  /* ...............................................................3變1 */
+  .bn-w3m1 .banner__item {
+    flex: 1 0 33.33%;
+    padding: 10px 0 15px;
+    text-align: center;
+  }
+  .bn-w3m1 .banner__item:first-child{
+    text-align: right;
+  }
+  .bn-w3m1 .banner__item:last-child{
+    text-align: left;
+  }
+  /* 設定點下去與hover動畫 */
+  .bn-w3m1 .banner__item:hover,
+  .bn-w3m1 .banner__item:active {
+    /* 變大(>1時變大) */
+    /*transform: scale(1.05);*/
+    /* 亮度調亮(>100%時變亮) */
+    filter: brightness(115%);
+  }
+  .headbar{
+    background-color: #333333;
+    padding: 10px;
+    padding-right: 0;
+  }
+  .headbar a{
+    display: inline-block;
+    font: 600 20px/1 "微軟正黑體";
+    color: #FFFFFF;
+    padding: 0 15px;
+  }
+  .headbar a:first-child{
+    width: 72%;
+    font: 600 24px/1 "微軟正黑體";
+  }
+  .headbar a:not(:first-child) {
+    border-right: 1px solid #999999;
+  }
+  .headbar a:last-child{
+    border-right: 0;
+  }
+  .daybar{
+    background-color: #747474;
+    font: bold 42px/1.4 "微軟正黑體";
+    color: #FFFFFF;
+    text-align: center;
+    text-shadow: 1px 1px 10px rgba(0,0,0,0.3);
+    border-bottom: 1px solid #8b8b8b;
+    background: linear-gradient(#5e5e5f,#747474)
+  }
+  /* ...............................................................4變1 */
+  .bn-w4m1{
+    background-color: #d8d8d8;
+    padding: 13px;
+  }
+  .bankbg{
+    background-color: #FFFFFF;
+    padding: 10px;
+  }
+  .bn-w4m1 .banner__wrap{
+    background-color: #FFFFFF;
+  }
+  .bn-w4m1 hr{
+    width: 98%;
+    margin: 15px auto;
+    border: 0;
+    border-bottom: 1px solid #d8d8d8;
+  }
+  .bn-w4m1 .banner__item {
+    flex: 1 0 25%;
+    padding: 10px 0;
+    text-align: center;
+    background-color: #FFFFFF;
+    border-right: 1px solid #d8d8d8;
+    position: relative;
+    padding-bottom: 50px;
+    display: flex;
+  }
+  .bn-w4m1 .banner__item:nth-of-type(4n){
+    border-right: 0;
+  }
+  .bn-w4m1 .banner__item img {
+    width: auto;
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+  .bn-w4m1 .banner__item a{
+    color: #272727;
+  }
+  .banklogo{
+    height: 55px;
+  }
+  .bn-w4m1 .banklogo img{
+    width: 75%;
+  }
+  .banner__item ul{
+    margin-left: 10%;
+  }
+  .banner__item li{
+    font: 500 1em/1.3 "微軟正黑體";
+    text-align: left;
+    list-style: disc;
+    margin-bottom: 5px;
+    padding-right: 10px;
+  }
+  .banner__item p{
+    font-size: 1.15em;
+  }
+  .banner__item p span{
+    color: #F00;
+  }
+  .banner__item .more{
+    font: normal 12px "微軟正黑體";
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+  }
+  .more img{
+    vertical-align: middle;
+  }
+  .note{
+    background-color:#d8d8d8;
+    padding: 1%;
+    font:13px/1.7 Verdana, Geneva, sans-serif;
+    color:#5f4c4c;
+  }
+ .note ol{
+    list-style: decimal;
+    padding-left: 3%;
+  }
+  .bank__wrap .banklogo {
+    height: auto;
+    margin: 3% 0 0;
+  }
+  .bank__wrap .banklogo img{
+    width: auto;
+    margin: 0 0 5px 15px;
+  }
+  .bank__wrap {
+    background-color: #FFFFFF;
+    padding: 0 0 3%;
+    border: 13px solid #d8d8d8;
+  }
+  .bank__wrap a:link{
+    color: #ff0000;
+    text-decoration: underline;
+    display: inline-block;
+  }
+  .bank__wrap ul,.bank__wrap ol,.bank__wrap p{
+    width: 98%;
+    margin: auto;
+  }
+  .bank__wrap ol{
+    padding-left: 25px;
+  }
+  .bank__wrap p{
+    margin-top: 10px;
+  }
+  .bank__wrap ul li,.bank__wrap ol li,.bank__wrap p{
+    font: 14px/1.5 "微軟正黑體";
+    color: #272727;
+    border-bottom: 1px dashed #9d9d9d;
+    padding: 5px;
+  }
+  .bank__wrap ol li{
+    list-style: decimal;
+  }
+  .bank__wrap ul li:nth-child(2n+1){
+    font-weight: bold;
+  }
+  .goTop {
+    right: 10px;
+    width: 50px;
+    height: 50px;
+  }
+  @media screen and (max-width: 1024px) {
+    /* 設定手機時一列1個 */
+    .bn-w3m1 .banner__item,.bn-w4m1 .banner__item {
+      flex: 1 0 100%;
+    }
+    .bn-w3m1 .banner__wrap{
+      padding-top: 1%;
+    }
+    .bn-w3m1 .banner__item{
+      padding: 1% 0;
+    }
+    .bn-w3m1 .banner__item:first-child,.bn-w3m1 .banner__item:last-child{
+      text-align: center;
+    }
+    .bn-w3m1 .banner__item:last-child{
+      margin-bottom: 3%;
+    }
+    .daybar{
+      font-size: 2em;
+      padding: 1%;
+    }
+    .headbar{
+      text-align: center;
+    }
+    .headbar a{
+      padding: 0 3%;
+    }
+    .headbar a:first-child{
+      display: none;
+    }
+    .bn-w4m1 .banner__item{
+      border-right: 0;
+      border-bottom: 1px solid #d8d8d8;
+    }
+    .banner__item .more{
+      bottom: 10px;
+    }
+    .bn-w4m1 hr{
+      display: none;
+    }
+    .note ol{
+      width: 90%;
+      margin: 0 0 5% 5%;
+    }
+    .bank__wrap .banklogo{
+      text-align: center;
+      height: auto;
+      padding: 5px;
+    }
+    .bank__wrap .banklogo img{
+      margin: auto;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    .bank__wrap ol{
+      padding-left: 8%;
+    }
+  }
+</style>
+<div id="spWrap" class="sp__wallper">
+  <!-- 主視覺 -->
+  <div class="sp--1260 icon_Home"><!-- 浮水印start(勿刪)-->
+    <div id="iconHome"></div>
+  </div>                          <!-- 浮水印end(勿刪)-->
+  <div class="sp--1260 headbar">
+    <a>刷卡優惠‧盡在東森</a>
+    <a>好康優惠</a>
+    <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106556/w/index.html#cut">輕鬆分期</a>
+    <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106549/w/index.html#red">紅利回饋</a>
+  </div>
+  <main class="sp__main">
+    <div class="sp--1260">
+      <div class="sp__visual">
+        <div class="visual__anchor"><!-- 紅框區 設定第一個a和第二個a的寬度會推擠後面a的寬度-->
+          <div class="visual__main">
+            <a></a>
+          </div>
+        </div>
+        <img src="top_bank.jpg">
+      </div>
+    </div>
+  </main>
+  <div class="sp--1260 daybar">卡友日賺更多</div>
+  <!-- .................................................3變1 start -->
+  <section class="sp--1260 bn-w3m1">
+    <ul id="promoHome" class="banner__wrap">
+      <li class="banner__item">
+        <a href="http://www.etmall.com.tw/Pages/MKT_0000001298.aspx">
+          <img src="day1.png" alt="banner">
+        </a>
+      </li>
+      <li class="banner__item">
+        <a href="https://www.etmall.com.tw/Activity/WebSP?SubPage=DMSetting/Final/209901/SP_1103413/index.html">
+          <img src="day2.png" alt="banner">
+        </a>
+      </li>
+      <li class="banner__item">
+        <a href="https://www.etmall.com.tw/Activity/WebSP?SubPage=DMSetting/Final/209901/SP_1103414/index.html">
+          <img src="day3.png" alt="banner">
+        </a>
+      </li>
+    </ul>
+  </section>
+  <!-- .................................................4變1 start -->
+  <section class="sp--1260 bn-w4m1">
+  <div class="bankbg">
+    <ul class="banner__wrap">
+    <li class="banner__item">
+      <a href="#esun">
+          <div class="banklogo"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/esun.png"></div>
+          <img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/logoline.png">
+          <ul>
+            <li>單月累積分期
+            <p>滿$3,800<span>送$100刷卡金</span></p>
+            <p>滿$15,000<span>送$300刷卡金</span></p>
+            </li>
+            <li>歡慶雙12加碼 (12/08-12/12)
+            <p> 單筆分期滿$8,000<span>加贈$800刷卡金</span></p></li>
+          </ul>
+          <div class="more"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/but_more.gif">＊需登錄</div>
+      </a>
+      </li>
+       <li class="banner__item">
+      <a href="#Taishin">
+          <div class="banklogo"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/Taishin.png"></div>
+          <img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/logoline.png">
+          <ul>
+            <li>歡慶雙12活動 (12/10-12/12)             
+              <p>累積滿$12,000<span>送$1,200刷卡金</span></p>            
+            </li>
+            <li>(不含VISA金融卡及@GOGO卡)          
+            </li>
+          </ul>
+          <div class="more"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/but_more.gif">＊需登錄</div>
+      </a>
+      </li>
+     <!--  <li class="banner__item">
+      <a href="#ctbc">
+          <div class="banklogo"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/ctbc.png"></div>
+          <img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/logoline.png">
+          <ul>
+            <li>登錄並綁定中國信託LINE官方帳號<br>
+              <p>單筆滿NT3,000元且分6期以上<br><span>享刷卡金1.5%回饋</span>(限登錄2,000名)</p>
+            </li>
+          </ul>
+          <div class="more"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/but_more.gif">＊需登錄</div>
+      </a>
+      </li> -->
+      
+      <li class="banner__item">
+      <a href="#cathay">
+          <div class="banklogo"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/cathay.png"></div>
+          <img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/logoline.png">
+          <ul>
+            <li>東森購物網及森森購物網</li>
+               <li>單月累積
+                 <p>滿$3,000<span>享2%刷卡金</span>(回饋上限500元)</p>
+               </li>
+               <li>單筆分期
+                <p> 滿$18,000<span>加碼享600元刷卡金</span></p>
+              </li>
+          </ul>
+          <div class="more"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/but_more.gif">＊需登錄</div>
+      </a>
+      </li>
+      <li class="banner__item">
+      <a href="#dbs">
+          <div class="banklogo"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/dbs.png"></div>
+          <img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/logoline.png">
+          <ul>
+             <li>單筆分期
+            <p>滿$5,000且分6期以上<br><span>送$400東森提貨券</span></p>
+            <p>滿$12,000且分6期以上<br><span>送$1,000東森提貨券</span></p>
+            <p>滿$28,000且分12期以上<br><span>送$2,300東森提貨券</span></p>
+            </li>
+                <li>歡慶雙12活動 (12/10-12/13)
+            <p>單筆滿$11,000且分6期以上<br><span>送$1,300東森提貨券</span></p>
+            </li>
+                <li>Panasonic品牌活動 (12/17-12/21)
+            <p> 單筆滿$3,000且分6期以上<br><span>送$300東森提貨券</span></p>
+            <p> 單筆滿$15,000且分6期以上<br><span>送$1,500東森提貨券</span></p>
+            </li>
+          </ul>
+          <div class="more"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/but_more.gif">＊需登錄</div>
+      </a>
+      </li>
+    <hr>
+      <li class="banner__item">
+      <a href="#citi">
+          <div class="banklogo"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/citi.png"></div>
+          <img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/logoline.png">
+          <ul>
+            <li>週二花旗日<p>單件(含一般及分期)消費滿1,288元<span>享$100元全家即享券</span></p></li>
+            <li>分期滿額禮<br>當月累積分期<br>消費滿以下金額享：
+            <p>滿$5,000<br><span>享$100元全家即享券</span></p>
+            <p>滿$15,000<br><span>享$300元全家即享券 </span></p>
+            <p>滿$25,000<br><span>享$800元全家即享券</span></p>
+            </li>
+            <li>上述活動不可重複回饋</li>
+          </ul>
+          <div class="more"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/but_more.gif">＊需登錄</div>
+      </a>
+      </li>
+      <li class="banner__item">
+      <a href="#sinopac">
+          <div class="banklogo"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/sinopac.png"></div>
+          <img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/logoline.png">
+          <ul>
+            <li>累積分期(限分六期以上)
+            <p>滿$3,000<span>送$50刷卡金</span></p>
+            <p>滿$10,000<span>送DeMon面膜1盒</span></p>
+            <p>滿$18,000<span>送DeMon面膜2盒</span></p>
+            </li>
+          </ul>
+          <div class="more"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/but_more.gif">＊需登錄</div>
+      </a>
+      </li>
+      <li class="banner__item">
+      <a href="#union">
+          <div class="banklogo"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/union.png"></div>
+          <img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/logoline.png">
+          <ul>
+           <li>全月累積
+            <p>每滿$5,000<span>送$100刷卡金</span>   (最高贈$800刷卡金)</p>
+            </li>
+            <li>全月單筆分期
+            <p>滿$25,000<span>送$1,000刷卡金</span></p>
+            </li>
+             <li>歡慶雙12活動 (12/12)
+            <p>   單筆滿$1,212<span>送$122刷卡金</span></p>
+            </li>
+          </ul>
+          <div class="more"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/but_more.gif">＊需登錄</div>
+      </a>
+      </li>
+      <li class="banner__item">
+      <a href="#one">
+          <div class="banklogo"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/one.png"></div>
+          <img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/logoline.png">
+          <ul>
+            <li>單筆分期
+            <p>滿$6,000<span>送$200刷卡金</span></p>              
+            <p>滿$15,000<span>送$750刷卡金</span></p>
+            </li>
+          </ul>
+          <div class="more"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/but_more.gif">＊需登錄</div>
+      </a>
+      </li>
+      <hr>
+      <li class="banner__item">
+      <a href="#fareasten">
+          <div class="banklogo"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/fareasten.png"></div>
+          <img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/logoline.png">
+          <ul>
+            <li>單月累積分期
+            <p>滿$3,000(含)以上<span>享2%刷卡金</span></p>
+            </li>
+            <li>歡慶雙12活動 (12/02、12/12、12/22)
+            <p>滿$1,212(含)以上<span>送$121刷卡金</span></p>
+            </li>
+          </ul>
+          <div class="more"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/but_more.gif">＊需登錄</div>
+      </a>
+      </li>
+      <li class="banner__item">
+      <a href="#huanan">
+          <div class="banklogo"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/huanan.png"></div>
+          <img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/logoline.png">
+          <ul>
+            <li>單筆分期
+            <p>滿$3,000<span>送$100刷卡金<span><br>(每月限量100名)</span></span></p>
+            </li>
+          </ul>
+          <div class="more"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/but_more.gif">＊需登錄</div>
+      </a>
+      </li>
+       <li class="banner__item">
+      <a href="#taipeifubon">
+          <div class="banklogo"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/taipeifubon.png"></div>
+          <img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/logoline.png">
+          <ul>
+            <li>累積分期滿額 
+            <p>滿$3,000<span>送$100刷卡金</span></p>
+            <p>滿$12,000<span>送$300刷卡金</span></p>
+            </li>
+            <li>雙12購物節 (12/10-12/12)
+            <p> 單項商品分期滿額 </p>
+            <p>滿$6,000<span>送$720刷卡金</span></p>
+            </li>
+          </ul>
+          <div class="more"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/but_more.gif">＊需登錄</div>
+      </a>
+      </li>
+      <li class="banner__item">
+      <a href="#tcb">
+          <div class="banklogo"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/tcb.png"></div>
+          <img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/logoline.png">
+          <ul>
+            <li>單筆分期
+            <p>滿$30,000<span>送$2,000刷卡金</span></p>
+            </li>
+            <li>歡慶雙12活動 (12/01-12/13)
+            <p> 單筆分期滿$3,000<br><span>送$300刷卡金</span></p>
+            <p>單筆分期滿$10,000<br><span>送$1,000刷卡金</span></p>
+            </li>
+          </ul>
+          <div class="more"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/but_more.gif">＊需登錄</div>
+      </a>
+      </li>      
+    <hr>
+      <li class="banner__item">
+      <a href="#shanghai">
+          <div class="banklogo"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/shanghai.png"></div>
+          <img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/logoline.png">
+          <ul>
+            <li>單筆分期
+            <p>滿$3,000<span>送$100刷卡金</span></p>
+            <p>滿$25,000<span>送$1,500刷卡金</span></p>
+            </li>
+            <li>歡慶雙12限時活動 (12/12-12/14)
+            <p>  滿$10,000<span>送$500刷卡金</span></p>
+            </li>
+          </ul>
+          <div class="more"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/but_more.gif">＊需登錄</div>
+      </a>
+      </li>
+      <li class="banner__item">
+      <a href="#jihsun">
+          <div class="banklogo"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/jihsun.png"></div>
+          <img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/logoline.png">
+          <ul>
+             <li>單店單筆
+            <p> 滿$6,000(含)以上<span>送$300活動金</span></p>
+            </li>
+             <li>單筆
+            <p> 滿$16,000(含)以上<span>送$800活動金</span></p>
+            </li>
+             <li>每週五
+           <p>    單筆滿$1,888(含)以上<span>送$150活動金</span></p>
+            </li>
+          </ul>
+          <div class="more"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/but_more.gif">＊需登錄</div>
+      </a>
+      </li>
+      <li class="banner__item">
+      <a href="#kgi">
+          <div class="banklogo"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/kgi.png"></div>
+          <img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/logoline.png">
+          <ul>
+            <li>累積分期
+            <p>滿$3,000<span>回饋2%刷卡金</span></p>
+            <p>滿$12,000<span>加碼送$400刷卡金</span></p>
+            </li>
+            <li>【週二凱基日】
+            <p>單件滿$1,200<span>送$120刷卡金</span></p>
+            </li>
+          </ul>
+          <div class="more"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/but_more.gif">＊需登錄</div>
+      </a>
+      </li>
+      <li class="banner__item">
+      <a href="#rakuten">
+          <div class="banklogo"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/rakuten.png"></div>
+          <img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/logoline.png">
+          <ul>
+            <li>分期累積滿額 (需登錄)
+            <p>滿$6,666<span>送$200刷卡金</span></p>
+            <p>滿$12,000<span>送$350刷卡金</span></p>
+            <p>滿$30,000<span>送$888刷卡金</span></p></li>
+            <li>雙12年終限時回饋 (12/7-12/12)
+            <p><span>免門檻最高享6.25%刷卡金 </span></p>(需登錄)</li>
+          </ul>
+          <div class="more"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/but_more.gif">＊需登錄</div>
+      </a>
+      </li>
+    <hr>
+      <li class="banner__item">
+      <a href="#landbank">
+          <div class="banklogo"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/landbank.png"></div>
+          <img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/logoline.png">
+          <ul>
+            <li>單筆滿額 
+            <p>滿$2,000<span>送$200東森提貨券</span></p>
+            <p>滿$5,000<span>送$500東森提貨券</span></p>
+            </li>
+            <li>歡慶雙12活動 (12/10-12/12)<br> 單筆滿額 
+            <p> 滿$7,000<span>送$850東森提貨券</span></p>
+            </li>
+             <li>歡慶聖誕活動 (12/22-12/26)<br>單筆滿額
+            <p>滿$2,500<span>送$300東森提貨券</span></p>
+            <p>  滿$3,000<span>送$360東森提貨券</span></p>
+            <p>  滿$5,500<span>送$660東森提貨券</span></p>
+            </li>
+            
+          </ul>
+          <div class="more"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/but_more.gif">＊不需登錄</div>
+      </a>
+      </li>
+      <li class="banner__item">
+      <a href="#hsbc">
+          <div class="banklogo"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/hsbc.png"></div>
+          <img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/logoline.png">
+          <ul>
+            <li>單月累積分期
+            <p>滿$5,000<span>送$300刷卡金</span></p>
+            <p>滿$12,000<span>送$500刷卡金</span></p>
+            </li>
+          </ul>
+          <div class="more"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/but_more.gif">＊需登錄</div>
+      </a>
+      </li>
+      <li class="banner__item">
+      <a href="#shinkong">
+          <div class="banklogo"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/shinkong.png"></div>
+          <img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/logoline.png">
+          <ul>
+            <li>單筆分期
+            <p>滿$6,000<span>送$150刷卡金</span></p>
+            </li>
+          </ul>
+          <div class="more"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/but_more.gif">＊需登錄</div>
+      </a>
+      </li>
+      <li class="banner__item"></li>
+    </ul>
+  </div>
+  </section>
+  <section class="sp--1260 note">
+    <ol>
+    <li>詳細活動辦法依各配合發卡機構網站公告為準，請參閱東森購物網(http://www.etmall.com.tw/)與森森購物網（http://www.u-mall.com.tw/），各配合發卡機構及東森購物(包含森森購物網)保留隨時修改、變更、取消本活動之權利，亦有權對本活動之所有事宜作出解釋或決定，恕不另行通知，並於公告後實施。</li>
+    <li>消費計算以活動期間內「訂單日」(yyyy/mm/dd-mm/dd)為準，並限活動當月完成信用卡授權者為限</li>
+    <li>活動認定資格以實際成交訂單計算，購買保險、生前契約、禮券、贈品、公關、簽證、兵險、機場稅、燃油附加費等訂單將不列入計算範圍，若持卡人如有付款失敗
+    、授權未完成、取消訂單、銷貨退回或回饋當時信用卡發生停卡、延滯繳款或其他違反信用卡契約之情事者，將喪失得獎及領獎資格。</li>
+    <li>活動期間至東森購物、森森購物網消費合併計算，且各家銀行活動均為正、附卡合併計算，每月每戶限回饋一次。</li>
+    <li>若同時遇各銀行其他紅利點數(加倍)優惠活動，則各銀行將"擇優"(不重複)計算回饋點數。</li>
+    <li>以上活動，消費金額以該筆交易金額計算(使用紅利折抵之消費，以折抵後之消費金額為計算基準)</li>
+    </ol>
+  </section>
+  <section class="sp--1260 bank__wrap">
+  <!-- 中國信託
+     <a name="ctbc" id="ctbc"></a>
+      <div class="banklogo"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/p2_ctbc.png"></div>
+      <ul>
+      <li>活動期間：</li>
+      <li>2018/11/01-2018/11/30</li>
+      <li>活動內容：</li>
+      <li>活動期間刷中信卡，登錄並綁定中國信託LINE官方帳號成功享以下優惠：<br>
+      〈分期回饋1.5%〉單筆滿NT3,000元且分6期以上，享刷卡金1.5%回饋 每戶最高回饋NT800元 (限登錄2,000名)<br>
+      ※登錄方式：請上中國信託銀行活動<a href=" https://goo.gl/UezAjo" target="_blank">登錄平台</a> (各活動須分開登錄)  <br>
+      ※中國信託LINE官方帳號綁定方式：<a href="https://goo.gl/feRQrf" target="_blank">上網查詢</a></li>
+      </li>  
+      </ul>
+      <p>注意事項:</p>
+      <ol>
+        <li>本活動消費金額為新臺幣計算，本活動交易消費日需介於活動期間内，且須於消費次月15日前消費店家已完成請款入帳者(不含退貨、取消交易)。客戶須於消費次月15日前依規定綁定中信LINE官方帳號成功始符合最終回饋資格，本活動以前已綁定成功且仍有效者，無須重新綁定。</li>
+        <li>客戶須於消費當月登錄成功者始符合資格，且各活動須分開登錄，本行於2019/1/15起將刷卡金入帳至正卡人帳戶中，正附卡消費金額合併計算，每戶限回饋一次。</li>
+        <li> 以上各活動不重複回饋，若有重複本行將擇優回饋持卡人。若符合本活動消費資格人數超過份數者，將以登錄之順序為準，先登錄者可獲得。</li>
+        <li>使用LINE Pay條碼付結帳恕無法參加本活動。</li>
+        <li>分期滿額回饋資格以實際刷卡總交易金額計算，付款失敗、訂單取消、退貨則該筆交易不得參加本活動。</li>
+        <li>本行之美國運通卡、公司卡、簽帳金融卡等無分期功能之卡片恕無法參加分期活動。</li>
+        <li>本行並未介入商品交付或商品瑕疵等買賣實體關係，相關商品出退貨或服務取消之退款事宜，持卡人應先逕洽商品出售人尋求解決；如無法解決，得要求本行就該筆交易以「帳款疑義之處理程序」處理。</li>
+        <li>如有任何因電腦、網路、電話、技術或不可歸責於本行與活動指定特店購物之事由，而使參加本活動卡友登錄之資料有錯誤、無法辨識，本行與活動指定特店不負任何法律責任，參加者亦不得因此異議。</li>
+        <li>如遇不可抗力或不可歸責之事由，中國信託銀行及合作活動特店保留修改、變更或終止本活動及對本活動所有事宜最終解釋及決定之權利，相關事宜將依信用卡業務機構管理辦法第19條及相關規範辦理。
+        </li>
+      </ol> -->
+  <!-- 凱基 -->
+  <a name="kgi" id="kgi"></a>
+  <div class="banklogo"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/p2_kgi.png"></div>
+  <ul>
+    <li>活動期間：</li>
+    <li>2018/12/01-2018/12/31
+
+  </li>
+    <li>活動內容：</li>
+    <li>【活動一】分期滿額刷卡金<br>
+  〈活動辦法〉活動期間於東森購物及森森購物全通路，分期累積消費<br>
+  ●滿3,000元，回饋2%刷卡金，回饋上限1,000元。<br>
+  ●以6期(含)以上消費滿12,000元，加碼送400元刷卡金。<br>
+  ●每正卡持卡人當月各門檻限回饋乙次。<br>
+ 〈客服專線 / 登錄方式〉<br>
+  ●凱基銀行客服專線：撥打(02)8023-9088按1選擇信用卡業務，輸入身分證字號與生日後按3→1→251→1，並依語音指示說明完成『東森及森森購物刷卡金』活動登錄。<br>
+  ●<a href="https://www.kgibank.com/T04/T0404/T040401/T040401_list.jsp" target="_blank">官網登錄</a><br>
+  <br>
+  【活動二】週二滿額享10%<br>
+  〈活動辦法〉活動期間內每週二於東森購物及森森購物全通路，刷凱基銀行信用卡， <br>
+  ●單件商品消費滿1,200元，送120元刷卡金(每週限量80名)<br>
+  ●每週每正卡持卡人限回饋乙次，當月回饋上限240元。<br>
+  〈客服專線 / 登錄方式〉<br>
+  ●凱基銀行客服專線：撥打(02)8023-9088按1選擇信用卡業務，輸入身分證字號與生日後按3→1→252→1，並依語音指示說明完成『東森及森森購物週二享10%』活動登錄。<br>
+  ●<a href="https://www.kgibank.com/T04/T0404/T040401/T040401_list.jsp" target="_blank">官網登錄</a><br>
+  </li>
+  </ul>
+  <p>注意事項：</p>
+  <ol>
+  <li> 參加本活動須由正卡持卡人於活動期間透過活動網頁登錄或撥打(02)8023-9088選擇信用卡業務，輸入身分證字號與生日後按3→1→活動代碼→1，依指示完成各活動始符合回饋資格，且限於上述各活動期間之新增消費（以實際結帳流程完成之刷卡交易時間為準，LINE PAY/Apple Pay等依行動支付結帳之交易不適用於上述回饋活動），並須於消費日次月15日前入帳。如係紅利點數折抵消費刷卡金額以紅利點數折抵後金額計算、分期付款以整筆刷卡金額計算。</li>
+  <li> 正附卡消費、回饋歸戶合併計算，活動一每正卡持卡人各門檻限回饋乙次；活動二每週限回饋乙次，當月回饋上限240元。</li>
+  <li> 可分期之商品及最低分期金額依各通路及商家公告為準。</li>
+  <li>本活動需完成登錄且限以各活動約定方式付款交易，若付款失敗、訂單取消、退貨，該筆交易將不列入計算範圍。</li>
+  <li>回饋時須為有效流通卡且無逾期未繳之情形；倘回饋時未持有本行任一有效流通卡或違反本行信用卡契約等情事時，將喪失活動回饋資格。</li>
+  <li> 本活動刷卡金預計消費於2019年3月底前回饋至正卡持卡人信用卡帳戶，實際回饋時間將依凱基銀行作業時間為準。</li>
+  <li>使用分期申請人之信用卡帳款若非採全額繳清者，仍可依循環信用方式選擇每月最低應繳金額繳付。如未清償全部之應付帳款時，分期交易之得計息本金，將自當期繳款截止日起依約定利率（信用卡約定條款第十五條第三項之利率），計算至該筆交易結清之日止（元以下四捨五入）。</li>
+  <li>凱基銀行並未介入商品之交付或商品瑕疵等買賣之實體關係，相關商品退貨或服務取消之退款事宜，持卡人應先洽特約商店尋求解決，如無法解決，得要求凱基銀行就該筆交易以「帳款疑義之處理程序」辦理。</li>
+  <li>凱基銀行保留詮釋、裁決與終止本活動辦法之權利，其他未盡事宜將於凱基銀行網站公告後實施。</li>
+  </ol>
+  <!-- 花旗 -->
+  <a name="citi" id="citi"></a>
+  <div class="banklogo"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/p2_citi.png"></div>
+  <ul>
+    <li>活動期間：</li>
+    <li>2018/12/01-2018/12/31
+
+  </li>
+    <li>活動內容：</li>
+    <li>【活動一】週二花旗日_東森購物、森森購物<br>
+  單件(含一般及分期)消費滿1,288元(含)並於消費當月完成登錄，享100元全家即享券<br>
+  (每月共限前500名登錄，每正卡人每月限回饋乙次，活動登錄代碼：201810etmall100)<br>
+  <br>
+  【活動二】分期滿額禮 <br>
+  單月累積分期滿5,000元(含)以上並於消費當月完成登錄，享100元全家即享券 <br>
+  單月累積分期滿15,000元(含)以上並於消費當月完成登錄，享300元全家即享券 <br>
+  單月累積分期滿25,000元(含)以上並於消費當月完成登錄，享800元全家即享券 <br>
+  (每月共限前500名登錄，上述優惠活動不可合併使用且不得跨門檻重複回饋， 每正卡人每月最高回饋800元全家即享券，活動登錄代碼：201810etmall800) 
+  </li>
+  </ul>
+  <p>注意事項：</p>
+  <ol>
+    <li>活動一、活動二不可合併回饋。 </li>
+    <li>活動期間若持卡人持有多張卡於本優惠商店消費，將以最高刷卡金額之卡別計算回饋(正附卡消費合併計算)，且每人每月限回饋乙次，每正卡人每月最高回饋800元刷卡金。 </li>
+    <li> 持卡人需於消費當月至花旗活動網站完成登錄，登錄額滿活動即提前終止。 </li>
+    <li>名額贈完將於本活動網頁及活動優惠商店網站公告；限量回饋名單以成功登錄時間排序，且同時符合各活動消費門檻之成功交易訂單為實際回饋依據。如公告時間有落差，則以花旗(台灣)銀行網站實際符合回饋資格為準。 </li>
+    <li>參加本活動之持卡人，另不得再參加同期間本行與活動優惠商店之其他分期優惠活動，亦不得重複計算消費金額與回饋。  </li>
+    <li>本活動不適用於花旗銀行晶片金融卡及商務信用卡。</li>
+      <li>預計回饋時間：10-12月消費預計最快統一於2019/02/28前回饋。</li>
+  </ol>
+  <!-- 永豐 -->
+  <a name="sinopac" id="sinopac"></a>
+  <div class="banklogo"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/p2_sinopac.png"></div>
+  <ul>
+  <li>活動期間：</li>
+    <li>2018/12/01-2018/12/31
+
+  </li>
+    <li>活動內容：</li>
+    <li>於東森購物全通路﹝含電視、型錄、網路（含東森及森森購物網）、手機購物及MOD﹞刷永豐信用卡，單月累積分期消費滿額且分6期以上並完成登錄最高送1,360元等值商品！<br>
+
+  滿$3,000送$50刷卡金 (每月各限量300名)<br>
+  滿$10,000送DeMon面膜1盒 (每月各限量200名)<br>
+  滿$18,000送DeMon面膜2盒 (每月各限量100名)<br>
+  面膜款式：DeMon蘭花冷淬極潤保濕面膜<br>
+  <br>
+  ●東森購物之累積分期消費合併計算。<br>
+  ●符合限量回饋名單，以符合活動門檻且同時成功登錄時間先後依序擇優回饋，回饋名額額滿狀態請依本活動頁面公告為準。<br>
+  <a href="https://bank.sinopac.com/sinopacBT/personal/credit-card/discount/206360983.html" target="_blank">登錄網址</a>
+  </li>
+  </ul>
+  <p>注意事項：</p>
+  <ol>
+    <li>參加本活動，須由正卡持卡人於活動期間透過永豐銀行網站進行線上登錄，逾期未登錄或資料輸入錯誤者，視同放棄及未符合活動回饋資格，恕無法補登參加。符合限量回饋名單，以符合活動門檻且同時成功登錄時間先後依序擇優回饋，例：滿1萬8千元送DeMon面膜2盒門檻於10號公告額滿，如A客戶於4號消費、11號登錄，恕無法獲得回饋；而B客戶於5號登錄、13號消費，亦恕無法獲得回饋。</li>
+    <li>本活動之消費係以消費日為準，並限於「東森購物全通路(含電視、型錄、網路、手機購物及MOD等) 」之刷卡交易，消費金額以扣除使用東森購物之折價券、折扣金、禮券、提貨券、禮物卡或其他類似性質之電子點數等之實際刷卡金額計算；消費方式限分六期以上；分期付款消費限刷卡交易並同時辦理線上分期交易者(分期GO購樂、永豐購物卡分期、消費自動分期、分期自由選及豐富卡分期不適用)，以該筆分期交易總金額計算，分期交易消費日期需介於活動期間內，且須於消費次月15號前東森購物已完成請款入帳者(不含退貨、取消交易)。一次付清或紅利折抵方式之刷卡交易完成後，以其他方式分改為分期付款者，不符合本次活動回饋資格。</li>
+    <li>活動期間每月每卡戶(正附卡合計)限從優回饋一次。正附卡合併計算消費金額與回饋資格，惟回饋對象為有效之正卡持卡人。</li>
+    <li>本活動贈送之刷卡金將於2019年2月起陸續回饋至有效正卡持卡人信用卡帳戶，折抵新增一般消費，恕不得要求轉讓、提領或兌現。</li>
+    <li> 本活動贈送之DeMon面膜將由東森購物於2019年2月起陸續配送至持卡人於東森購物成立之訂單地址，一旦贈品寄達並經簽收受領後，如有遺失、盜領或自行拋棄、損毀，東森購物與永豐銀行將不負責補發獎品。本行僅提供優惠活動，非贈品製造者及服務提供者，與該商品或服務之提供廠商並無任何代理或合夥關係。如因使用商品或服務產生任何爭議，由該商品或服務之提供廠商自負責任。如因使用信用卡服務、帳務、紅利點數或現金回饋相關之爭議，應由永豐銀行負責解決，概與東森購物無涉。符合贈送面膜資格之持卡人不得要求折換現金、指定或變更獎項或轉讓他人，東森購物與永豐銀行保留等值商品替換獎項之權利及隨時修改、變更及取消本活動之權利。</li>
+    <li>持卡人如於回饋前有發生退貨、取消交易、其他原因須退回消費款項致未達消費門檻或有停卡、延滯繳款或其他違反信用卡契約之情事者，將喪失回饋資格。</li>
+    <li>永豐Prestige美國運通卡、八通卡、公司卡、虛擬卡不適用本活動。</li>
+    <li>本活動分期付款交易係由發卡機構一次墊付消費款項予特約商店，並由持卡人分期繳付予發卡機構。本行並未介入商品之交付或商品瑕疵等買賣之實體關係，相關商品退貨或服務取消之退款事宜，持卡人應先洽特約商店尋求解決，如無法解決，得要求本行就該筆交易以『帳款疑義之處理程序』辦理，不得因此拒付信用卡款項。</li>
+    <li>若持卡人於分期還款期間內有逾期繳款、停卡、不續卡或不接受新卡等情形，則所有未償還之分期金額將視為全部到期，全部列入下期信用卡帳單。</li>
+    <li> 交易一經核准，分期付款總金額將全部佔用持卡人的信用額度，並依所選擇之期數，分期平均攤還，分期付款總金額除以分期期數之餘數，將併至首期繳納。</li>
+    <li>本活動注意事項載明於活動網頁中，參加者於參加本活動之同時，即同意接受本活動注意事項之規範，如有違反本活動注意事項之行為，本行得取消其參加資格，並對於任何破壞本活動之行為保留相關權利。</li>
+   <li>永豐銀行與東森購物保留上述活動修改、終止或變更之權利。</li> 
+  </ol>
+  <!-- 國泰世華 -->
+  <a name="cathay" id="cathay"></a>
+  <div class="banklogo"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/p2_cathay.png"></div>
+  <ul>
+    <li>活動期間：</li>
+    <li>2018/12/01-2018/12/31
+  </li>
+    <li>活動內容：</li>
+    <li>
+  活動期間於東森購物網及森森購物網消費，<br>
+  單月累積滿NT$3,000(含)以上享2%刷卡金回饋，上限為NT$500<br>
+  單筆分期滿NT$18,000(含)以上，加碼享NT$600刷卡金回饋<br>
+     (每月登錄限量28,000名)<br>
+  ●語音登錄專線：(02)2383-1000按847<br>
+  ●<a href="https://www.cathaybk.com.tw/cathaybk/personal/credit-card/discount/event/online-shopping/201812/online-12/" target="_blank">立即登錄</a>
+  <br>
+  <h4 style="color:OrangeRed; margin: 0;">持KOKO COMBO icash聯名卡之指定網購(東森購物網、森森購物網)消費金額享5%現金回饋！(上限300元，需登錄)<a href="https://www.cathaybk.com.tw/cathaybk/personal/credit-card/discount/event/online-shopping/201711/kokocomboicash/" target="_blank">【活動詳情>>】</a></h4>
+  <br>
+  </li>
+  </ul>
+  <p>注意事項：</p>
+  <ol>
+    <li>參加本活動之持卡人須於活動期間至本行活動網頁、國泰優惠APP、撥打(02)2383-1000轉語音820或致電本行客服完成活動登錄始符合資格（限以正卡人資料登錄），活動回饋名額將以登錄成功且同時符合各活動門檻之成功交易訂單為回饋依據，活動每月限量登錄28,000名，若登錄名額額滿將提前關閉登錄系統。</li>
+    <li>所有指定網購特店消費採獨立計算不得累積(東森及森森合併計算)，回饋名單以成功登錄時間排序，且同時符合活動消費門檻之成功交易訂單為實際回饋依據。</li>
+    <li>本活動消費門檻及回饋金額均以新臺幣計算，刷卡金若不足「元」，將四捨五入計算至「元」。</li>
+    <li>本活動商務卡不適用，i刷金融卡不適用分期交易，正附卡交易合併計算。</li>
+    <li>本活動登錄限量名額及回饋限制與海外指定網購12月份促刷活動共用。</li>
+    <li> 所有指定網購特店(含國內外指定網購特店)之累積滿額享2%回饋活動，單一網購特店最高回饋刷卡金NT$500，惟每正卡持卡人(同一身分證字號)每月回饋上限為刷卡金NT$1,000。</li>
+    <li>所有指定網購特店之單筆分期滿額加碼NT$600回饋活動，每正卡持卡人(同一身分證字號)每月限回饋乙次，回饋上限為刷卡金NT$600。</li>
+    <li>17Life、ibon售票系統網站、NBA台灣線上旗鑑店及海外指定網購等特店不適用單筆分期滿額加碼回饋活動。</li>
+    <li>參加本活動需於各指定購物網站結帳頁面選擇「信用卡分期付款」交易，且結帳前總金額須達活動門檻，若遇商品無法提供分期等事項，持卡人應逕各指定購物網站尋求解決。</li>
+    <li>本行不保證及負責上述各指定購物網站商品銷售、購物車結帳請款方式，若遇商品缺貨、瑕疵、購物車是否可合併請款等問題，持卡人請逕洽各指定購物網站尋求解決。</li>
+    <li>本活動分期零手續費、零總費用年百分率。所有網購特店針對分期是否酌收手續費用請依各網購平台「實際付款頁面說明」為準。</li>
+     <li>消費計算以活動期間內「消費日」內為準，且限於次月10日以前請款之消費。分期消費以分期前總金額計算，本活動以實際成功交易計算，若付款失敗、取消交易、退貨，該筆交易金額將不列入計算範圍。</li>
+      <li>本活動預定於活動結束之次次月起陸續回饋至正卡持卡人信用卡帳戶，實際回饋時間、刷卡金相關作業處理、發送方式皆依本行作業時間為準。</li>
+       <li>本活動回饋之刷卡金作業完成後，若本行確認持卡人於事後進行退貨交易時，該筆退貨交易已回饋之刷卡金本行將逕自扣回，不另行通知。</li>
+        <li>紅利折抵交易與分期交易不得同時併用；ｉ刷金融卡不適用分期。信用卡分期付款交易係由本行一次墊付消費款項予特約商店，並由持卡人分期繳付消費帳款予本行。</li>
+         <li>本行並未介入商品之交付或商品瑕疵等買賣之實體關係，相關商品退貨或服務取消之退款事宜，持卡人應先洽特約商店尋求解決，如無法解決，得要求本行就該筆交易以「帳款疑義之處理程序」辦理。</li>
+          <li>優惠提供期間倘因不可歸責於本行之事由，本行得變更或終止優惠內容，並於本行網站上公告。</li>
+    </ol>
+    
+  <!-- 遠東 -->
+  <a name="fareasten" id="fareasten"></a>
+  <div class="banklogo"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/p2_fareasten.png"></div>
+  <ul>
+    <li>活動期間：</li>
+    <li>2018/12/01-2018/12/31
+  </li>
+    <li>活動內容：</li>
+    <li>【活動一】分期滿額禮<br>
+  刷遠東商銀信用卡單月累積分期消費活動：<br>
+  滿NT$3,000(含)以上，回饋2%刷卡金。(回饋上限NT$1,000元，需登錄，限量50名)<br>
+  <br>
+  【活動二】歡慶雙12活動<br>
+  〈活動期間〉2018/12/2、12/12、12/22<br>
+  〈活動內容〉活動當日刷遠東商銀信用卡單筆滿NT$1,212(含)以上，回饋刷卡金NT$121元。<br>(需刷卡當日完成登錄，每日限量200名)
+
+  </li>
+    </ul>
+  <p>注意事項：</p>
+  <ol>
+    <li> 滿額禮2%刷卡金：單一活動特店每月每戶回饋上限NT$1,000，刷卡金若不足「元」，將四捨五入計算至「元」。活動回饋資格限採分期交易，採正附卡合併計算，刷退交易須扣除計算。滿額禮回饋計算舉例說明：若單月於特店單筆刷卡分期NT$3,056，則回饋NT$61刷卡金。</li>
+    <li>符合本活動回饋資格者，須於指定時間至「遠銀官網首頁→信用卡→信用卡優惠→信用卡活動登錄專區」登錄卡號，未於指定期間內登錄，視同放棄回饋資格，限量回饋名額計算以登錄且符合活動門檻之順序為準。刷卡金預計於108年2月底前回饋至正卡持卡人帳上，刷卡金限折抵信用卡帳款，不可折現、退溢付款。本活動不得與本行於單一活動特店之當月其他刷卡優惠活動併用，若同時符合將擇優回饋。</li>
+    <li> 雙12網購月活動期間於指定網購商城每戶限回饋一次，活動回饋資格採正附卡合併計算，刷退交易須扣除計算。本活動不得與本行於單一活動特店之當月其他刷卡優惠活動併用，若同時符合將擇優回饋。</li>
+    <li>本活動之活動辦法及相關注意事項均載明於遠銀官網中，參加者於參加本活動之同時，即視為已詳閱並同意接受本活動之活動辦法及相關注意事項之規範。</li>
+    <li>本活動排除東森購物之消費保險、生前契約、旅遊、簽證、兵險、機場稅、燃油附加費等商品或服務之適用。</li>
+    <li>刷卡金回饋活動不適用工會卡(公會卡)、校園卡、商務卡及各具現金回饋功能之信用卡。回饋時須為有效卡且無逾期繳款或其他違反信用卡約定條款之情事，始具回饋資格。</li>
+    <li>若因市場狀況變動等因素，遠東商銀得於踐行法定程序後，保留變更或終止本活動之權利。</li>
+    <li>信用卡分期付款交易係由發卡機構一次墊付消費款項予特約商店，並由持卡人分期繳付消費帳款予發卡機構，發卡機構並未介入商品之交付或商品瑕疵等買賣之實體關係，相關商品退貨或服務取消之退款事宜，持卡人應先洽特約商店尋求解決，如無法解決，得要求發卡機構就該筆交易以帳款疑義之處理程序辦理。</li>
+    <li>本行非各商品及服務之製造者或提供者，本行與該商品或服務之提供廠商並無任何經銷、代理、合夥或保證關係。若因使用該商品或服務產生爭議，概由該商品或服務之提供廠商負責處理，概與本行無涉。</li>
+    <li>其他未竟事宜依活動官網
+  <a href="https://www.feib.com.tw" target="_blank">遠銀官網</a>快樂分期購物誌注意事項及信用卡會員權益手冊相關規定辦理。</li>
+    <li>上述活動特店分期期數3-24期，實際可分期期數與金額須依特店規定為準。以分期帳款金額10萬元期間1年為例計算，手續費/分期利率/總費用年百分率為0。註：(1)本廣告揭露之年百分率係按主管機關備查之標準計算範例予以計算，實際條件仍以銀行提供之產品為準。且每一客戶實際之年百分率仍視其個別產品及個人信用狀況而有所不同。(2)本總費用年百分率計算基礎日為107年12月1日。
+  </li>
+  </ol>
+  <!-- 上海 -->
+  <a name="shanghai" id="shanghai"></a>
+  <div class="banklogo"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/p2_shanghai.png"></div>
+  <ul>
+    <li>活動期間：</li>
+    <li>2018/12/01-2018/12/31</li>
+    <li>活動內容：</li>
+    <li>活動期間內持上海銀行信用卡於指定網購促刷新增刷卡交易，並於登錄期間內至上海銀行官網分別就下列各活動完成登錄，且符合該活動門檻者：<br>
+  【活動一】<br>
+  單筆分期滿NT$3,000，回饋刷卡金NT$100；限量300名。<br>
+  <br>
+  【活動二】<br>
+  單筆分期滿NT$25,000，回饋刷卡金NT$1,500；限量30名。<br>
+  <br>
+  【活動三】歡慶雙12限時活動<br>
+  〈活動期間〉2018/12/12~2018/12/14<br>
+  單筆分期滿NT$10,000，回饋刷卡金NT$500；月限量10名。<br>
+  <br>
+  ●單筆交易如同時符合活動1、2、3，採擇優擇一回饋。以上各活動每戶限回饋乙次；每戶合計活動回饋上限為NT$2,100。<br>
+  ●登錄期間：2018/12/20上午10點起至2018/12/31下午5點止，以上各活動應分別完成登錄，因各活動名額有限，上海銀行將依持卡人成功登錄名次，由先至後排序。<br>
+
+
+  </li>
+    </ul>
+  <p>注意事項：</p>
+  <ol>
+    <li> 上海銀行信用卡正卡持卡人(本活動稱持卡人)需於登錄期間內至上海銀行官網完成登錄參加，各活動名額有限，持卡人應就各活動分別完成登錄。完成登錄者視為同意本活動內容與注意事項之條款及約定，逾期未完成登錄者，恕無法補登參加。已完成登錄且符合活動門檻之持卡人，回饋順序認定係依持卡人成功登錄各活動之名次由先至後排序，如已成功登錄之持卡人未符合活動門檻者，即未符合資格，上海銀行將依序遞補; 法人卡、公司商務卡、悠遊Debit卡恕無法參加本活動。</li>
+    <li>2018年12月消費登錄開放期間為12/20早上10點起至107/12/31下午5點</li>
+    <li>本活動所稱新增【指定網購平台】之認定，係以新增刷卡消費請款明細上所載商店名稱為準。</li>
+   <li>本活動消費須請款商店在消費次月15日（含）前請款入帳且未取消、退貨退款或有其他爭議者，卡友並應已完成登錄方可視為「成功交易」並符合本活動資格；分期付款交易以該筆消費總金額計算（如新增分期消費總金額為6,000元，以6,000元計。）；退貨交易將扣減該筆刷卡金額。</li>
+   <li>本活動同一信用卡持卡人名下所有正、附卡的消費均合併於正卡持卡人名下計算。</li>
+   <li>符合回饋金資格卡友，上海銀行將於次月30日陸續將刷卡金回饋至正卡持卡人信用卡帳戶（附卡持卡人獲得之刷卡金將併入信用卡正卡持卡人帳單），惟刷卡金回饋時，正卡持卡人須持有任一有效之上海銀行信用卡正卡，持卡人如因任何原因致其全部正卡卡片遭限制或停止使用者，將取消回饋資格。 </li>
+  <li>如有不可歸責於上海銀行之事由，致影響本活動之進行者，上海銀行有權逕行修正、暫停或終止本活動，並於上海銀行<a href="http://www.scsb.com.tw" target="_blank">網站</a>上公告之。</li>
+  </ol>
+  <!-- 星展 -->
+  <a name="dbs" id="dbs"></a>
+  <div class="banklogo"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/p2_dbs.png"/></div>
+  <ul>
+    <li>活動期間：</li>
+    <li>2018/12/01-2018/12/31
+  </li>
+    <li>活動內容：</li>
+    <li>於東森購物全通路（旅遊商品除外）刷星展銀行信用卡單筆分期消費達指定門檻，並於指定網頁及期間內完成登錄，即可享：<br>
+  【活動一】全月活動<br>
+  〈活動期間〉2018/12/01~2018/12/31<br>
+  〈活動內容〉<br>
+  單筆分期達NT$5,000且分6期以上，送東森提貨券400元 (限量80名)<br>
+  單筆分期達NT$12,000且分6期以上，送東森提貨券1,000元 (限量50名) <br>
+  單筆分期達NT$28,000且分12期以上，送東森提貨券2,300元 (限量30名)<br>
+  〈登錄網址〉2018/12/20上午11點開放登錄<br>
+  <br>
+  【活動二】歡慶雙12活動<br>
+  〈活動期間〉2018/12/10~2018/12/13<br>
+  〈活動內容〉單筆分期達NT$11,000且分6期以上，送東森提貨券1,300元 (限量30名) <br>
+  〈登錄網址〉2018/12/20上午11點開放登錄<br>
+  <br>
+  【活動三】Panasonic品牌活動<br>
+  〈活動期間〉2018/12/17~2018/12/21<br>
+  〈活動內容〉活動期間於東森購物全通路購買Panasonic品牌商品<br>
+  單筆分期達NT$3,000且分6期以上，送東森提貨券300元 (限量50名) <br>
+  單筆分期達NT$15,000且分6期以上，送東森提貨券1,500元 (限量50名) <br>
+  〈登錄網址〉2018/12/20上午11點開放登錄<br>
+  <br>
+  ● 12月所有活動需於2018/12/20上午11點後~2018/12/31至東森購物網站登錄，需填寫完整會員及消費資料。每一持卡人／會員上述所有門檻限擇優回饋乙次，恕不重複。<br></ul>
+  <p>注意事項：</p>
+  <ol>
+  <li>本活動限於東森購物全通路（旅遊商品除外）【含電視、型錄、網路（含東森及森森購物網）、手機購物及MOD】刷星展信用卡單筆分期消費達指定門檻且登錄成功即可享東森提貨券回饋。本活動須以東森購物會員身份登錄，每一星展信用卡持卡人／會員上述門檻限擇優回饋乙次，恕不重複回饋。若同時符合活動二與活動三門檻且登錄成功，可各得乙次回饋，但仍不與活動一與活動四重複回饋。</li>
+  <li>請於活動指定期間至東森購物網活動網頁進行登錄，完成登錄後即享有參加本活動之資格，未於指定期間內完成登錄者，視同放棄參加資格。登錄額滿活動即提前終止並公告於登錄網頁。東森購物，12月份活動將於2019/02/28前將東森提貨券回饋至東森購物會員帳戶。回饋之東森提貨券僅限抵扣信用卡一般消費帳款，恕不得要求折現或轉讓予他人。</li>
+  <li>東森購物提貨券說明：<br>
+  （1）提貨券視同現金，可合併商品券、折扣金及促銷活動使用，憑提貨券帳戶金額可向東森購物兌換等值商品，提貨券帳戶金額無使用期限，可分次使用，但不得要求兌換現金或找零及抵扣代收公費、稅捐等業務服務費用，亦不適用於專案商品（如：旅遊、汽機車…等）。<br>
+  （2）以提貨券帳戶進行消費，如有退貨，退貨款項將會再加回到商品購買人之提貨券帳戶內。<br>
+  （3）使用提貨券兌換商品時，東森購物不再開立統一發票。<br>
+  （4）當提貨券帳戶金額不足兌換商品時，持卡人得使用現金或信用卡支付差額。<br>
+  （5）持卡人得至
+  <a href="http://www.etmall.com.tw" target="_blank">東森網站</a>或向東森購物客服中心查詢提貨券使用情形及餘額，使用提貨券如有任何疑問，請洽東森購物客服中心服務專線：0800-666-608。</li>
+  <li> 上述活動消費金額以刷卡交易日為準，且廠商請款入帳日須於活動結束後10天完成，若有付款失敗、訂單取消、分期取消、退貨或授權未完成之情事，該筆交易不得參加本活動。分期付款消費係以該筆交易之總金額歸入交易當月計算。回饋時如遇持卡人有延滯繳款、停卡或其它違反本行信用卡約定條款之情事，本行得取消其回饋資格。</li>
+  <li>紅利折抵交易與分期交易不得同時併用。</li>
+  <li>如有任何因電腦、網路、電話、技術或不可歸責於本行與特約商店之事由，而使參加本活動卡友登錄之資料有錯誤、無法辨識，本行與特約商店不負任何法律責任，持卡人亦不得因此異議。</li>
+  <li>參加分期付款專案時，將由本行就持卡人所購買的商品／服務之全部價款一次墊付予該特約商店，並由持卡人就分期付款本金以每一月為一期，分期償還每月應攤還金額予本行。本行非商品進口人、出售人或經銷人，與特約商店／商品出賣人間亦無代理、合夥關係、本行未就商品提供任何保證，亦未介入商品之交付或商品之瑕疵等買賣之實體交易關係。相關出退貨或服務取消之退款事宜、持卡人應逕洽商品出賣人。若持卡人與特約商店就所購買之商品／服務之品質、數量、金額有所爭議時，應向特約商店尋求解決，如無法解決，得要求本行就該筆交易以「帳款疑義之處理程序」辦理，不得因此拒付信用卡款項。持卡人進行郵購買賣或訪問買賣交易，可依消費者保護法第19條規定向特約商店解除買賣契約。</li>
+  <li>適用特約商店分期付款之期間、門檻、期數及商品如有更改，皆以各特約商店現場或網站公告為準，恕不另行通知。</li>
+  <li>相關活動辦法、未盡事宜或變更，依本行網站或特約商店公告為準。持卡人於參加本活動之同時，即同意接受本活動注意事項之規範，如有違反本活動注意事項之行為，本行得取消其參加資格，並對於任何破壞本活動之行為保留相關權利。</li>
+  <li>星展銀行（台灣）與特約商店保留隨時修改、變更或終止本活動內容之權利。</li>
+  </ol>
+  <!-- 星展 -->
+  <a name="tcb" id="tcb"></a>
+  <div class="banklogo"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/p2_tcb.png"></div>
+  <ul>
+    <li>活動期間：</li>
+    <li>2018/12/01-2018/12/31</li>
+    <li>活動內容：</li>
+    <li>【活動一】全月活動<br>
+  〈適用通路〉<br>
+  東森購物全通路(含電視、網路〔含東森及森森購物網〕、APP、型錄、MOD等)<br>
+  〈活動內容〉<br>
+  活動期間內，持合庫信用卡於東森購物經營之通路刷卡消費且經合庫APP登錄後，可獲得回饋：<br>
+  單筆分期滿30,000元，回饋刷卡金2,000元。(限量20名) <br>
+  <br>
+  【活動二】歡慶雙12活動<br>
+  〈活動期間〉2018/12/01~2018/12/13<br>
+  〈活動內容〉<br>
+  單筆分期滿 3,000元送刷卡金 300元。(限量100名)<br>
+  單筆分期滿 10,000元送刷卡金 1,000元。(限量20名)<br>
+  <br>
+  〈登錄辦法〉<br>
+  活動期間結束前於合作金庫銀行APP先完成登錄作業(合庫APP--信用卡--左上角按一下--行銷活動--活動登錄)，登錄只取得參加活動資格，並非保證獲得回饋，上述活動限量名額以先完成刷卡交易時間為準，限量名額如額滿，合作金庫銀行將關閉登錄功能，如同時符合兩項活動將擇優回饋，不得同時領取，且活動不得累贈，回饋名單以合作金庫銀行資料為主。
+  </li>
+  </ul>
+  <p>注意事項：</p>
+  <ol>
+    <li>正、附卡合併計算，活動期間內，每正卡戶刷卡金限擇優回饋一次，上限為2,000元；持卡人最晚於活動期間結束前至合作金庫銀行APP完成登錄(合庫APP--信用卡--左上角按一下--行銷活動--活動登錄)。<br>
+  （1） 本月活動僅限分期之交易方式始可納入消費回饋範圍。<br>
+  （2） 各門檻登錄頁不同，請至欲參加之門檻登錄，恕不受理人工登錄申請（登錄只取得參加活動資格，並非保證獲得回饋）。<br>
+  （3） 限量刷卡金贈送需符合活動條件(先消費後登錄)，方可享有活動資格，上述活動限量名額以先完成刷卡交易時間為準，名額如額滿，合作金庫銀行將關閉登錄功能，如同時符合多項活動將擇優回饋，不得同時領取，且活動不得累贈，回饋名單以合作金庫銀行資料為主。</li>
+    <li>本行政府網路採購卡、商務卡及VISA金融卡不適用本活動。</li>
+    <li>紅利點數扣抵活動與分期付款活動不得同時使用。</li>
+    <li>回饋金統一於2019年1月下旬回饋至正卡持卡人信用卡帳戶折抵消費。回饋時，該卡片須為有效卡，且無逾期未繳款，或其他違反信用卡約定條款之情況，否則即喪失回饋資格。</li>
+    <li>本行對本分期交易除代墊款項外，並未介入商品之買賣關係及商品的交付或商品瑕疵等實體關係，相關商品退貨或服務取消的退款事宜，持卡人應洽特約商店尋求解決，如洽特店仍無法解決，應依本行帳款疑義之處理程序辦理。</li>
+    <li>以上活動辦法如有變更或其他未盡事宜，以本行網站公告為主。</li>
+    <li>謹慎理財 信用至上 <br>循環利率：本行信用卡4.4%~15%(基準日為104年9月1日)。預借現金手續費：每筆預借現金金額乘以3%加上新台幣150元。其他相關費用依本行網站公告，詳細折扣優惠活動內容請參考本行網站或向各分行查詢，本行保留修改、變更及終止本折扣優惠活動之權利。</li>
+    <li>合作金庫銀行網址:<a href="http:/www.tcb-bank.com.tw" target="_blank">網站</a></li>
+    <li>客服專線：(04)2227-3131、(0800)033-175</li>
+  </ol>
+  <!-- 台新 -->
+  <a name="Taishin" id="Taishin"></a>
+  <div class="banklogo"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/p2_Taishin.png"></div>
+  <ul>
+    <li>活動期間：</li>
+    <li>2018/12/10-2018/12/12</li>
+      <li>活動內容：</li>
+    <li>〈活動對象〉台新銀行信用卡持卡人 (不含台新銀行VISA金融卡及@GOGO卡持卡人)<br>
+  <br>
+  於東森購物旗下各銷售通路 (指東森/森森購物網、東森APP行動購物、型錄、電視購物頻道與中華電信MOD頻道等，部分商品服務不適用*注7)刷台新信用卡 (不含台新銀行VISA金融卡及@GOGO卡持卡人)消費達指定金額，可獲得滿額回饋 <br>
+  <br>
+  12/10-12/12 累積刷滿NT$12,000送刷卡金1,200元 (限量100名)<br>
+  ●需登錄<br>
+  ●12月登錄開放日期：2018/12/29至2018/12/31  <br>
+  ●限量回饋說明：回饋順序將以「a.持卡人成功登錄名次」由先至後進行優先排序，但仍須於活動指定期間內「b.符合本活動消費門檻」之成功交易訂單作為回饋依據。<br> 
+  </li>
+    </ul>
+  <p>注意事項：</p>
+  <ol>
+    <li> 本活動除使用VISA金融卡、@GoGo卡(包含刷卡、錢包/行動支付綁定)及非由特店提供之分期交易恕不適用外，其餘台新銀行信用卡持卡人均可參加本活動。</li>
+    <li>活動登錄參與資格：持卡人需於2018/12/29-2018/12/31期間，透過台新卡得利(CARDaily)APP或致電客服完成本活動登錄作業方為有效，逾時未登錄或資料輸入錯誤者，視同放棄參加活動，恕無法補登錄；持卡人依已登錄人數排序且符合活動門檻已達回饋贈品數量者，台新銀行將有權提前終止活動。</li>
+    <li>限量回饋說明：回饋順序將以「a.持卡人成功登錄名次」由先至後進行優先排序，但仍須於活動指定期間內「b.符合本活動消費門檻」之成功交易訂單作為回饋依據。</li>
+    <li>本活動所稱有效訂單以東森購物之定義為準，且活動單筆消費金額之計算應扣除信用卡持卡人使用東森購物之折扣金、折價券、禮券、禮物卡、提貨券或以台新銀行紅利點數折抵消費金額後之消費金額方可列入計算，即以實際授權金額為準，分期消費依總金額計算。</li>
+    <li>本回饋屬額外回饋，原適用紅利點數及現金回饋者，仍可獲得原有回饋，且回饋資格不得轉讓予他人、變更回饋內容或折換現金等。</li>
+    <li> 本活動回饋之刷卡金，正、附卡之消費合併計算，台新銀行預計於2019年2月28日前統一回饋予正卡持卡人之信用卡帳戶，實際依系統排程為準。</li>
+    <li> 本活動之適用範圍為東森購物旗下各銷售通路 (東森/森森購物網、東森APP行動購物、型錄、電視購物頻道與中華電信MOD頻道)，但不包含保險費代扣繳、生前契約、旅遊、簽證、兵險、機場稅、燃油附加費等商品或服務。</li>
+    <li> 台新銀行並未介入商品之交付或商品瑕疵等買賣之實體關係，相關商品退貨或服務取消之退款事宜，持卡人應洽東森購物尋求解決。</li>
+    <li> 倘信用卡持卡人發生以下事項，則不予回饋：產生簽帳爭議而暫停付款、停卡、掛失不補發、不續卡、遲繳、欠款或違反信用卡會員約定條款事項者。</li>
+    <li> 台新銀行與東森購物均保留審核信用卡持卡人參加本活動資格、交易訂單、付款方式、繳款成功與否及隨時變更本活動內容之權利。</li>
+  </ol>
+  <!-- 第一銀行 -->
+  <a name="one" id="one"></a>
+  <div class="banklogo"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/p2_one.png"></div>
+  <ul>
+    <li>活動期間：</li>
+    <li>2018/12/01-2018/12/31
+  </li>
+    <li>活動內容：</li>
+    <li>單筆分期交易滿6,000元者，可回饋200元（每月限量100名）<br>
+  單筆分期交易滿15,000元者，可回饋750元（每月限量50名）<br>
+  ※每戶每月限回饋一次，最高可回饋刷卡金750元。限分期付款，持卡人須完成登錄始能符合活動資格。<br>
+     <a href="https://ccard.firstbank.com.tw/cmsweb/home/CreditCardActivityApply" target="_blank">登錄網址</a></li>
+  </ul>
+  <p>注意事項：</p>
+  <ol>
+    <li>本活動限使用聯用信用卡中心商店分期功能，來電分期及分期卡自動分期功能不適用（分期卡可使用商店分期）。本活動排除「公司卡」、「VISA金融卡」及「悠遊Debit卡」。</li>
+    <li>本活動交易金額係正附卡合併計算，限正卡持卡人登錄參加。每檔最高可回饋刷卡金750元。限量刷卡金贈送方式以消費日之優先順序為準，如額滿一銀得關閉登錄功能。一銀統一於活動結束後次月中旬前回饋至持卡人信用卡帳戶，持卡人不得轉讓他人亦不得轉換現金。</li>
+    <li>本活動以第一銀行信用卡會員於東森及森森購物全通路(含電視、型錄、網路、手機購物及MOD)之新增消費為準，新增消費不包括取消、銷退、簽證兵險類、購買禮券等消費。活動期間內，正附卡有停卡（含信用卡遭強制停用及申請停用）、延滯繳款或違反信用卡契約等情事者，第一銀行得取消其資格。信用卡會員參與本活動之消費交易於刷卡金回饋前，已取消或銷貨退回者，亦同。</li>
+    <li>  第一銀行於商品、服務買賣中，僅涉及代墊款項之資金關係，商品總價已先行一次墊付予特約商店。第一銀行未介入商品交付或商品瑕疵等買賣實體關係，相關出退貨、服務、價差退款或進行郵購買賣、訪問買賣交易得依消費者保護法第十九條規定向商品出售人解除契約者，持卡人應先洽特約商店尋求解決。如仍無法解決，始得要求本行就該筆交易以「帳款疑義之處理程序」辦理，不得因此拒付信用卡帳款。分期付款詳細注意事項請上第一銀行信用卡網站查詢！</li>
+    <li>  本活動排除東森購物與森森百貨之消費保險、生前契約、旅遊、簽證、兵險、機場稅、燃油附加費等商品或服務之適用。</li>
+    <li>第一銀行保留修改、變更及中止本活動之權利。</li>
+  </ol>
+  <!-- 華南 -->
+  <a name="huanan" id="huanan"></a>
+  <div class="banklogo"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/p2_huanan.png"></div>
+  <ul>
+    <li>活動期間：</li>
+    <li>2018/12/01-2018/12/31
+  </li>
+    <li>活動內容：</li>
+    <li>活動期間持華南銀行信用卡於東森購物台、東森購物全通路〔含電視、型錄、網路(含東森及森森購物網)、手機購物及MOD〕<br>
+  單筆分期滿3,000元以上，送100元刷卡金(每月限量100名)<br>
+  <br>
+  ※需登錄，活動期間每月每戶限回饋一次，擇優計算，限量額滿為止（需於額滿截止前完成消費始得計算）。<br>
+  ※簽帳金融卡、企業商務卡、旅鑽個人商務信用卡、超級現金回饋卡(含HappyCash & HAPPY GO聯名卡)、icash聯名卡、夢時代聯名卡、享利樂活Combo卡及OPENPOINT超級點數聯名卡不適用本活動。</li><br>
+  </ul>
+  <p>注意事項：</p>
+  <ol>
+   <li>本活動係提供予華南銀行信用卡卡友，惟簽帳金融卡、企業商務卡、旅鑽個人商務信用卡、超級現金回饋卡(含HappyCash & HAPPY GO聯名卡)、icash聯名卡、夢時代聯名卡、享利樂活Combo卡及OPENPOINT超級點數聯名卡恕不適用。</li>
+   <li> 本活動限分期付款交易方式始可納入消費回饋範圍。分期付款限持卡人於刷卡同時使用森森購物/東森購物提供之線上分期交易，始享回饋資格。</li>
+   <li>本活動限制與回饋：<br>
+  （1）採登錄制：<br>
+  A.需於活動期間內於華南銀行網站>信用卡>活動登錄入口>選擇本活動網頁登錄，方可獲回饋資格，逾期未登錄者視同放棄，恕無法補登錄。<br>
+  B.活動登錄後即視同同意本注意事項。<br>
+  C.需以正卡持卡人身分登錄，身分證字號有誤導致電腦無法判定，將不獲回饋資格。<br>
+  D.每正卡人僅需登錄乙次。<br>
+  （2）回饋上限與回饋方式：<br>
+  A. 本活動回饋上限為正、附卡消費合併計算，統一回饋予正卡持卡人，每戶限回饋一次，擇優計算。回饋資格不得轉讓予他人，亦不得要求變更回饋內容等。<br>
+  B.刷卡金統一於活動結束後60天內回饋至正卡持卡人信用卡帳戶（以實際作業時間為準）。<br>
+  （3）分期期數及最低消費金額依合作特店公告為準。<br>
+  （4）單筆滿額係指單項商品滿額，若使用「購物車」同時消費多樣  商品，則需其中單一商品達滿額標準，始符合回饋資格。<br>
+  （5）消費計算以活動期間內實際「消費日」為準，分期付款交易係以單筆分期總金額計算。消費金額限以活動期間新增消費適用，實際訂單金額應以扣除卡友使用各項紅利點數折抵或商家優惠後，以「實際授權金額」為準，若有刷卡退貨或取消款項將列為當月累積消費之減項。</li>
+   <li>同一筆消費恕無法同時使用「紅利折抵」與「線上分期付款」。</li>
+   <li> 持卡人於活動期間或回饋前，正、附卡有停卡（含信用卡強制停用及申請停用）、延滯繳款或違反信用卡契約等情事者，將取消回饋資格。</li>
+   <li> 本行有權檢視各交易行為是否涉及人為操作或以任何其他不正當方式意圖獲取利益，如有上揭事實者，本行保有取消回饋資格之權利。</li>
+   <li> 信用卡分期付款交易係由華南銀行一次墊付消費款項予特約商店，並由持卡人分期繳付消費帳款予華南銀行。華南銀行並未介入商品之交付或商品瑕疵等買賣之實體關係，相關退貨或服務取消之退款事宜，持卡人應先洽特約商店尋求解決，如無法解決，得要求華南銀行就該筆交易以「帳款疑義之處理程序」辦理。
+   <li> 森森購物/東森購物與華南銀行保留隨時修改、終止或變更本活動之權利。</li>
+   <li> 本活動內容或限制條件如有變更或其他未盡事宜，將於華南銀行網站最新消息公告。</li>
+   <li> 本活動相關內容如有疑問，請洽華南銀行24小時客戶服務中心：(02)2181-0101。</li>
+  </ol>
+  <!-- 日盛 -->
+  <a name="jihsun" id="jihsun"></a>
+  <div class="banklogo"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/p2_jihsun.png"></div>
+  <ul>
+    <li>活動期間：</li>
+    <li>2018/12/01-2018/12/31
+  </li>
+    <li>活動內容：</li>
+    <li>●單店單筆達6,000元(含)以上送活動金300元(每月限量150名)。<br>
+  ●單筆達16,000元(含)以上並分3期(含)以上送活動金800元(每月限量80名)。<br>
+  ●每週五單筆達1,888元(含)以上送活動金150元(每月限量50名)。<br>
+  <br>
+  每月活動登錄期間：每月1日起<br>
+  各門檻皆需上網登錄<a href="https://netbank.jihsunbank.com.tw/creditcard_AP/ASP/ia1.asp" target="_blank">登錄網址</a>或電話登錄: (02)2951-6000代碼666，登錄方式擇一登錄即可，無須重覆登錄，活動需每月登錄個別登錄，每戶每月限回饋乙次上限800元活動金。</li>
+  </ul>
+  <p>注意事項：</p>
+  <ol>
+       <li>本活動限日盛持卡人於活動期間至各指定特店新增以刷卡分期交易各別累積計算，消費排除保險、生前契約、旅遊、簽證、兵險、機場稅、燃油附加費等商品或服務，並扣除各項購物金、福利金等，及紅利折抵後以刷卡支付金額為準。分期交易以廠商交易日、分期前總金額計算，若有退貨交易、訂單取消或爭議款項則不予計算。</li>
+   <li>本活動正附卡合併計算，各指定特店分別計算累積符合門檻後以活動期間登錄前限量，每戶每月回饋上限800元，登錄順序依系統時間先後為準，逾期未完成登錄者視同放棄，無法適用本活動優惠。</li>
+   <li>活動金預計於2018年12~2019年3月底依各結帳日回饋正卡持卡人信用卡帳戶，活動金回饋時如遇持卡人有停卡、逾期繳款或其他違反信用卡約定條款之情形，即喪失本活動回饋資格，活動金限抵108年5月底前之消費，每月限抵一筆消費(當月如有多筆則取一筆金額較高者折抵)，未折抵完即歸零。</li>
+   <li>本項信用卡分期付款交易係由本行一次墊付消費款予特約商店，並由持卡人分期繳付消費帳款予本行，本行並未介入商品之交付或商品瑕疵等買賣之實體關係，相關商品退貨或服務取消之退款事宜，持卡人應先洽商店尋求解決，如無法解決，得要求本行就該筆交易以『帳款疑義之處理程序』辦理，不得因此拒付信用卡款項。 </li>
+   <li>本行對持卡人使用分期交易購買商品時，會依持卡人之當時信用及往來狀況來核給使用，並保留最後授權與否之權利。</li>
+   <li>本行與合作特店保留最終核准與否、變更、修改或終止本活動之權利。其他未盡事宜，悉依本行信用卡約定條款為準。</li>
+   
+  </ol>
+  <!-- 玉山 -->
+    <a name="esun" id="esun"></a>
+  <div class="banklogo"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/p2_esun.png"></div>
+  <ul>
+    <li>活動期間：</li>
+    <li>2018/12/01-2018/12/31</li>
+    <li>活動內容：</li>
+    <li>【活動一】滿額贈<br>
+  單月累積分期滿$3,800元送$100元刷卡金<br>
+  單月累積分期滿$15,000元送$300元刷卡金<br>
+    (需登錄，活動期間每歸戶回饋上限$300元刷卡金)<br>
+    登錄日期：2018/12/1 開放登錄<br>
+  <a href="https://card.esunbank.com.tw/EsunCreditweb/txnservice/Activity/RegisterEvent?EventId=18S9038
+  " target="_blank">登錄網址</a><br>
+  <br>
+  【活動二】歡慶雙12加碼<br>
+  〈活動期間〉2018/12/08-2018/12/12<br>
+  單筆分期滿$8,000元加贈$800元刷卡金<br>
+  (需登錄，限量1,000名，活動期間每歸戶回饋上限$800元刷卡金)<br>
+  登錄日期：2018/12/20 當日上午10點開放登錄<br>
+  <a href="https://card.esunbank.com.tw/EsunCreditweb/txnservice/Activity/RegisterEvent?EventId=18S9047" target="_blank">登錄網址</a>
+  </li>
+    </ul>
+  <p>注意事項：</p>
+  <ol>
+  <li>需於活動期間於官網登錄活動，【雙12加碼】於12月20日當日上午10點開放登錄(限量1000名)，始符合回饋資格，回饋將於次月15號起陸續回饋於正卡人帳戶，正附卡合併計算，【滿額贈】每月每歸戶回饋上限300元，【雙12加碼】活動期間每歸戶回饋上限800元，活動可重複回饋。</li>
+    <li>  登錄後符合活動資格者，將不再享有原信用卡卡片之紅利點數、現金回饋、家樂福紅利點數、OPENPOINT點數、Dream Card點數、HAPPY GO點數、P幣…等基本回饋及其他專案優惠。</li>
+    <li>倘持卡人發生以下事項，則不予回饋：產生簽帳爭議而暫停付款、停卡、掛失不補發、不續卡、遲繳、欠款或違反玉山銀行信用卡會員約定條款事項者。</li>
+   <li>玉山icash聯名卡、Debit卡、公司卡及採購卡等恕不適用本活動。</li>
+   <li>活動以實際訂單計算，若付款失敗、訂單取消、退貨，該筆訂單將不列入回饋資格，帳單結算時，本人名下若無任何有效卡，將取消回饋資格。</li>
+   <li> 本活動不適用於東森購物與森森百貨之消費保險、生前契約、旅遊、簽證、兵險、機場稅、燃油附加費等商品或服務。</li>
+  <li>玉山銀行與東森購物保留活動修改、變更及終止之權利。</li>
+  </ol>
+
+  <!-- 聯邦 -->
+  <a name="union" id="union"></a>
+  <div class="banklogo"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/p2_union.png"></div>
+  <ul>
+    <li>活動期間：</li>
+    <li>2018/12/01-2018/12/31</li>
+    <li>活動內容：</li>
+    <li>〈活動對象〉聯邦銀行信用卡持卡人且消費當月完成登錄者<br>
+  <br>
+  【活動一】全月活動<br>
+  累積每滿$5,000送$100刷卡金，最高送$800刷卡金 (限量800名/月)<br>
+  單筆分期滿$25,000送$1,000刷卡金 (限量200名/月)<br>
+  <br>
+  【活動二】歡慶雙12活動<br>〈活動期間〉2018/12/12<br>
+  單筆滿$1,212送$122刷卡金(限量100名/月)<br>
+  <br>
+  ●每月每戶擇優回饋乙次，最高贈1,000元刷卡金(含原始回饋)，限抵扣消費月次月一般新增消費，未抵扣完則歸零，統一於消費月次次月16日回饋。<br>
+  ●符合回饋之交易不納入「偶數日2%回饋」計算。
+    </ul>
+  <p>注意事項：</p>
+  <ol>
+   <li>本活動以正卡持卡人為參加活動之名義人，僅適用信用卡(含行動支付)付款之交易，第三方支付(如Line Pay、街口支付、Pi行動錢包、歐付寶...等)恕不適用，不含Visa金融卡、商務卡(個人商務卡之交易仍得參與)、採購卡所為之交易。</li>
+    <li>行動支付係指Apple Pay、Samsung Pay、Google Pay、Hami Pay、Garmin Pay及Fitbit Pay(實際適用之行動支付依購物網站為準)。</li>
+   <li>行動支付現無法分期，僅適用一次付清之活動門檻。</li>
+   <li>正附卡合併計算，每月每戶擇優回饋乙次，最高贈1,000元刷卡金(含原始回饋)，限抵扣消費月次月一般新增消費，未抵扣完則歸零，統一於消費月次次月16日回饋。</li>
+   <li> 符合活動回饋之交易不納入『偶數日2%回饋』計算。</li>
+   <li>活動交易入帳後聯邦登錄系統始開放登錄，因網購平台交易入帳時間不一，建議提早消費以免向隅，如名額額滿系統將提前關閉並於登錄頁面公告。</li>
+   <li>活動回饋範例：<br>
+  A客戶符合12/12贈122元刷卡金、全月贈800元刷卡金、全月單筆分期滿額贈1,000元刷卡金，因本活動每戶擇優回饋乙次，故A客戶獲1,000元刷卡金。</li>
+   <li>本活動所指「含原始回饋」係以活動期間消費之卡別原始回饋，計算扣除金額(刷卡金以元為單位，元以下尾數一律捨去)；相關作業處理、發送方式依本行規定為準，各卡別原始回饋依聯邦銀行信用卡活動網頁公告。</li>
+   <li>新增一般消費定義：為一般刷卡消費及一般郵購交易，惟排除下列交易：<br>
+  (A) Visa金融卡、商務卡(個人商務卡之交易仍得參加本活動)、採購卡所為之交易。<br>
+  (B) 分刷交易：將單一交易金額或同一購物車之商品分割為數筆，分別利用二筆以上之刷卡交易完成者。<br>
+  (C) 其餘排除詳見<a href="https://card.ubot.com.tw/eCard/Faq/q-21/index.htm" target="_blank">聯邦信用卡網站</a> <br>
+  (D) 該交易經取消、退貨交易及退貨之原請款交易、非持卡人本人所為之交易、違反信用卡約定條款之交易、違反國際組織相關規範之交易、非真實之融資性交易或其他不實交易。</li>
+   <li>本活動消費金額之計算係以交易日介於活動期間2018/12/1至2018/12/31止之單月消費，且活動期間之消費商店應於消費月次月10日前完成請款。交易日以帳單所載之『消費日』為準，幣別以新臺幣計，且正附卡歸戶合併累積計算；分期消費以消費總金額計算(計認列1筆)，不包含活動期間前交易之分期每期出帳金額。</li>
+   <li>本活動所稱有效訂單以指定網購通路之定義為準，且消費金額之計算應扣指定網購通路之購物金或以聯邦銀行紅利折抵部分之消費金額方可計入計算，並以實際授權金額為準。</li>
+   <li>凡於活動期間刷卡金及贈品回饋前或回饋後，信用卡正、附卡有遭強制停用、申請停用、掛失不補發、逾期繳款、到期不續卡者、取消交易或其他聯邦銀行依信用卡約定條款停止持卡人使用信用卡之情形者，聯邦銀行得撤銷其回饋資格，如已回饋之刷卡金，將於次期帳單扣回。</li>
+   <li>如有非可歸責於聯邦銀行之事由致活動方式需變更或其他未盡事宜，聯邦銀行保留隨時修改、變更、取消本活動之權利，亦有權對本活動之所有事宜做出解釋或決定，並於聯邦銀行信用卡網站公告後實施。</li>
+
+  </ol>
+  <!-- 樂天 -->
+  <a name="rakuten" id="rakuten"></a>
+  <div class="banklogo"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/p2_rakuten.png"></div>
+  <ul>
+    <li>活動期間：</li>
+    <li>2018/12/01-2018/12/31
+
+  </li>
+    <li>活動內容：</li>
+    <li>【活動一】分期0利率 再享高額刷卡金回饋NT888！<br>
+  ●活動期間內持樂天信用卡登錄並於東森購物全通路使用特店分期結帳成功，享下列滿額回饋！！<br>
+  累積滿額6,666享200元回饋金<br>
+  累積滿額12,000享350元回饋金<br>
+  累積滿額30,000享888元回饋金<br>
+  ●需登錄，不限名額，每戶以符合之最高門檻回饋乙次<br>
+  ●<a href="https://card.rakuten.com.tw/corp/campaign/cpn.xhtml?code=591" target="_blank">登錄網址</a><br>
+  <br>
+  【活動二】樂天卡1212年終狂購限時回饋  無門檻刷卡金最高回饋6.25%<br>
+  〈活動期間〉2018/12/7~2018/12/12<br>
+  ●活動期間內同時登錄樂天信用卡1212年終狂購5%限時回饋活動與全月活動並於指定通路(含東森全通路)刷卡消費，免門檻即可獲得最高6.25%刷卡金回饋(回饋上限最高3,000元)<br>
+  ●需登錄，不限名額，回饋上限最高3,000元<br>
+  ●登錄網址  <a href=" https://card.rakuten.com.tw/corp/campaign/cpn.xhtml?code=625" target="_blank"> 雙12活動</a><br>
+  ●登錄網址  <a href="https://card.rakuten.com.tw/corp/campaign/cpn.xhtml?code=613" target="_blank">全月活動</a> <br>
+  ●（網頁於活動開始日方可連結）
+  </li>
+  </ul>
+  <p>注意事項：【活動一】</p>
+  <ol> 
+    <li>參加本活動樂天信用卡正卡人請務必每月至樂天信用卡會員服務頁面完成登錄方取得刷卡金回饋資格。本活動刷卡金回饋以每月登錄名單為計算基準，未登錄月份恕無法獲得刷卡金回饋，逾期未完成登錄者視同放棄，無法補登參加。每戶以符合之最高門檻回饋乙次。<a href="https://card.rakuten.com.tw/corp/campaign/cpn.xhtml?code=591" target="_blank">登錄網址</a></li>
+    <li>特店分期0利率適用之期間、門檻、期數與商品/服務，以各特約商店公告為準，總費用年百分率為0。</li>
+   <li>特店分期交易係指刷卡消費當下透過特約商店完成之分期付款交易，不含事後透過本公司網站或客服完成分期設定之分期付款交易。</li>
+   <li>活動消費交易以樂天信用卡帳單列示消費日及金額為準，帳單最後入帳日為消費日次月20日前。</li>
+   <li>刷卡金回饋將列示於正卡人次次月帳單明細，以此類推(請參閱樂天信用卡活動說明)</li>
+  </ol>
+  <p>注意事項：【活動二】</p>
+  <p>〈雙12活動〉</p>
+  <ol> 
+    <li>參加本活動樂天信用卡正卡人請務必於活動期間內至樂天信用卡會員服務頁面完成登錄方取得刷卡金回饋資格。</li>
+     <li>刷卡金回饋金額以活動期間內指定通路新增之消費總金額計算5%回饋(實際消費金額依帳單列示為準)，並回饋至正卡持卡人帳戶，回饋上限1,000元。刷卡金將直接折抵信用卡消費帳款，不得折換現金、兌換其他商品或轉讓予第三人。</li>
+      <li>活動消費交易以樂天信用卡帳單列示消費日及金額為準，帳單最後入帳日為當月31日前</li>
+       <li>刷卡金回饋將於2019年1月17日列示於正卡人帳單明細 (請參閱樂天信用卡活動說明)</li>
+  </ol>
+  <p>〈全月活動〉</p>
+  <ol> 
+    <li>參加本活動樂天信用卡正卡人請務必於活動期間內至樂天信用卡會員服務頁面完成登錄方取得刷卡金回饋資格。</li>
+     <li>刷卡金回饋金額以活動期間內新增之國內一般消費總金額計算1.25%回饋(實際消費金額依帳單列示為準)，並回饋至正卡持卡人帳戶，回饋上限3,000元。刷卡金將直接折抵信用卡消費帳款，不得折換現金、兌換其他商品或轉讓予第三人。</li>
+      <li>活動消費交易以樂天信用卡帳單列示消費日及金額為準，帳單最後入帳日為次月20日前。</li>
+       <li>刷卡金回饋將列示於正卡人2019年2月中帳單明細 (請參閱樂天信用卡活動說明)</li>
+  </ol>
+    <!-- 土地銀行 -->
+       <a name="landbank" id="landbank"></a>
+        <div class="banklogo"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/p2_landbank.png"></div>
+        <ul>
+          <li>活動期間：</li>
+    <li>2018/12/01-2018/12/31</li>
+          <li>活動內容：</li>
+          <li>〈活動對象〉臺灣土地銀行發行之信用卡(MASTERCARD金融卡不適用)<br>
+  <br>
+  【活動一】全月活動<br>
+  〈活動期間〉2018/12/01~2018/12/31<br>
+  〈活動內容〉活動期間於東森購物全通路(含電視、網路〔含東森及森森購物網〕、APP、型錄、MOD等)消費<br>
+  單筆滿額$2,000送$200東森提貨券。(不需登錄，限量100名)<br>
+  單筆滿額$5,000送$500東森提貨券。(不需登錄，限量100名)<br>
+  <br>
+  【活動二】歡慶雙12活動<br>
+  〈活動期間〉2018/12/10~2018/12/12<br>
+  〈活動內容〉活動期間於東森購物全通路(含電視、網路〔含東森及森森購物網〕、APP、型錄、MOD等)消費<br>
+  單筆滿額$7,000送$850東森提貨券。(不需登錄，限量100名)<br>
+  <br>
+  【活動三】歡慶聖誕活動<br>
+  〈活動期間〉2018/12/22~2018/12/26<br>
+  〈活動內容〉活動期間於東森購物全通路(含電視、網路〔含東森及森森購物網〕、APP、型錄、MOD等)消費<br>
+  單筆滿額$2,500送$300東森提貨券。(不需登錄，限量150份) <br>
+  單筆滿額$3,000送$360東森提貨券。(不需登錄，限量120份)<br>
+  單筆滿額$5,500送$660東森提貨券。(不需登錄，限量100份)<br>
+  <br>
+  ●限量回饋說明：回饋順序將以活動期間內「符合活動消費門檻之成功交易訂單」由先至後進行排序作為回饋依據。<br>
+  ●每一持卡人上述所有門檻限擇優回饋乙次，恕不重複。
+
+
+          </li>
+        </ul>
+        <p>注意事項:</p>
+        <ol>
+  <li>本活動限於東森購物全通路（旅遊商品除外）【含電視、網路〔含東森及森森購物網〕、APP、型錄、MOD等】刷土地銀行信用卡消費達指定門檻即可享東森提貨券回饋。本活動不需登錄，每持卡人限回饋乙次，恕不重複回饋。</li>
+  <li> 東森購物將於2019/1/31前將東森提貨券回饋至東森購物會員帳戶。回饋之東森提貨券僅限抵扣東森購物網消費帳款，恕不得要求折現或轉讓予他人。</li>
+  <li> 東森購物提貨券說明：<br>
+  （1）提貨券可合併折價券、折扣金及促銷活動使用，憑提貨券帳戶金額可向東森購物兌換等值商品，提貨券帳戶金額無使用期限，可分次使用，但不得要求兌換現金或找零及抵扣代收公費、稅捐等業務服務費用，亦不適用於專案商品(如：旅遊、汽機車、保險…等)。<br>
+  （2）提貨券採無記名方式發行，恕不接受退款或兌換現金。<br>
+  （3）本活動贈送之提貨券以實際成立訂單為給獎認定標準，並以電子郵件方式寄至客戶電子信箱；若該筆訂單事後取消或其他原因致不符合活動資格者，東森購物得逕扣回贈送之提貨券；當您使用提貨券兌換商品，若進行退貨流程，則待商品退貨程序完成後，系統將自動退回該次支付之提貨券金額至您的提貨券帳戶中。<br>
+  （4）提貨券可於東森購物全通路用，亦可選擇全額抵扣，或搭配信用卡或ATM等付款方式合併支付消費金額。<br>
+  （5）以提貨券兌換之商品，同樣可享有鑑賞期等相關客戶權益。<br>
+  （6）提貨券金額之使用期限為終身有效，無時間限制。<br>
+  （7）客戶購物時，如為「全額」以提貨券支付，東森購物均不會再開立發票予客戶；「部份」以提貨券支付，則僅針對差額部份開立發票。<br>
+  （8）提貨券餘額查詢方式：在東森購物網登入後，至[我的優惠]＞[提貨券]中查詢提貨券餘額或撥打客服專線：0800-057-999或來信ehs_service@ehsn.com.tw詢問。</li>
+  <li>上述活動消費金額以刷卡交易日為準，且廠商請款入帳日須於活動結束後10天完成，若有付款失敗、訂單取消、分期取消、退貨或授權未完成之情事，該筆交易不得參加本活動。分期付款消費係以該筆交易之總金額歸入交易當月計算。回饋時如遇持卡人有延滯繳款、停卡或其它違反本行信用卡約定條款之情事，本行得取消其回饋資格。</li>
+  <li>紅利折抵交易與分期交易不得同時併用。</li>
+  <li>參加分期付款專案時，將由本行就持卡人所購買的商品／服務之全部價款一次墊付予該特約商店，並由持卡人就分期付款本金以每一月為一期，分期償還每月應攤還金額予本行。本行非商品進口人、出售人或經銷人，與特約商店／商品出賣人間亦無代理、合夥關係、本行未就商品提供任何保證，亦未介入商品之交付或商品之瑕疵等買賣之實體交易關係。相關出退貨或服務取消之退款事宜、持卡人應逕洽商品出賣人。若持卡人與特約商店就所購買之商品／服務之品質、數量、金額有所爭議時，應向特約商店尋求解決，如無法解決，得要求本行就該筆交易以「帳款疑義之處理程序」辦理，不得因此拒付信用卡款項。持卡人進行郵購買賣或訪問買賣交易，可依消費者保護法第19條規定向特約商店解除買賣契約。</li>
+  <li>適用特約商店分期付款之期間、門檻、期數及商品如有更改，皆以各特約商店現場或網站公告為準，恕不另行通知。</li>
+  <li>相關活動辦法、未盡事宜或變更，依本行網站或特約商店公告為準。持卡人於參加本活動之同時，即同意接受本活動注意事項之規範，如有違反本活動注意事項之行為，本行得取消其參加資格，並對於任何破壞本活動之行為保留相關權利。</li>
+  <li>土地銀行與特約商店保留隨時修改、變更或終止本活動內容之權利。</li>
+
+     </ol>
+   <!-- 匯豐 -->
+       <a name="hsbc" id="hsbc"></a>
+        <div class="banklogo"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/p2_hsbc.png"></div>
+        <ul>
+          <li>活動期間：</li>
+    <li>2018/12/01-2018/12/31
+
+  </li>
+          <li>活動內容：</li>
+          <li>持滙豐信用卡於指定網路平台購物，並完成登錄享以下優惠： <br>
+  ●單一平台分期消費累計滿5,000元(含)以上，送 300元刷卡金  (每月限量250名)<br>
+(於12/04 下午15:00起開放登錄)<br>
+  ●單一平台分期消費累計滿12,000元(含)以上，送 500元刷卡金 (每月限量150名)<br>
+(於12/13 下午15:00起開放登錄)<br>
+  ●<a href="http://shop.hsbc.com.tw/ec/online2" target="_blank">登錄網址</a>
+  <br>
+  (上述活動每月須分別登錄，每人每月擇消費累計最高之單一平台回饋乙次，分期消費以原消費總金額及消費月份計算，LINE Pay付款恕不適用)
+
+
+          </li>
+        </ul>
+        <p>注意事項:</p>
+        <ol>
+  <li>本活動僅限正卡持卡人於指定網路平台購物使用滙豐信用卡刷卡消費者始得參加，惟不含公司卡、商務卡、Visa金融卡持卡人。</li>
+  <li>回饋參加辦法：持卡人須於各指定活動登錄期間內，自行至本行活動網頁完成登錄(如登錄人數額滿將關閉網頁登錄功能)，並於指定網路平台刷滙豐信用卡消費達指定門檻，即可享有回饋。</li>
+  <li>同一身分證號之正卡持卡人每人限回饋一次，附卡之消費併入正卡計算，恕不跨卡、不跨級、不跨月、不跨平台累計，LINE Pay付款恕不適用。</li>
+  <li>回饋方式及相關使用限制：本活動係指交易日於2018.10.01 ~2017.12.31，且廠商需於2018.01.15前請款入帳之刷卡消費始得享有回饋；回饋之刷卡金將自2019.02.20起，陸續回饋至正卡持卡人信用卡帳戶中，其有效期限與持卡人信用卡有效期限同，回饋僅限折抵信用卡之帳單應繳帳款，持卡人不得要求延展期限，亦不得要求折換現金、移轉至他人或更換其他贈品。持卡人之滙豐信用卡於回饋入帳時須為有效卡，若持卡人及其所屬之附卡有停卡（含信用卡強制停用及申請停用）、延滯繳款或違反信用卡契約等情事者，持卡人將喪失回饋資格，回饋如已入帳者滙豐銀行保留取消或追回之權利。若持卡人終止持有該信用卡，將無法參與此項回饋活動，且其所終止信用卡帳戶內所有剩餘尚未折抵之刷卡金回饋亦將同時失效。 </li>
+  <li>本行有權檢視各交易行為是否涉嫌人為操作，對於蓄意偽造、異常多筆交易、違反本行信用卡約定條款、詐欺或以任何其他不正當的方式意圖以進行不實或虛偽交易，或持卡人係特約商店負責人、員工、或其他共謀之人收受客戶買受商品或服務之價款後自行刷卡，持卡人因此或因其以任何其他違反誠信原則之方法所獲得之回饋，本行有權取消並保留相關法律追訴權，獲贈人並應返還獎項或其採購價額。</li>
+  <li>本活動以實際刷卡之消費總金額達消費門檻，始具獲贈資格。若付款失敗、訂單取消、退貨，該筆訂單不列入回饋範圍，本行保留取消或追回回饋之權利。</li>
+  <li>除法律或法令另有規定外，滙豐銀行與指定網路平台保留隨時於網站上公告變更、修改或終止本活動之權利。</li>
+     </ol>
+  <!--富邦 -->
+       <a name="taipeifubon" id="taipeifubon"></a>
+        <div class="banklogo"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/p2_taipeifubon.png"></div>
+        <ul>
+          <li>活動期間：</li>
+    <li>2018/12/01-2018/12/31</li>
+          <li>活動內容：</li>
+          <li>活動期間東森購物旗下各銷售通路 (東森/森森購物網、東森APP行動購物、型錄、電視購物頻道與中華電信MOD頻道等，部分商品服務不適用*注2)刷富邦信用卡享以下優惠：<br>
+  【活動一】全月滿額活動<br>
+  〈活動期間〉2018/12/01~2018/12/31<br>
+  累積分期滿3,000元送100元刷卡金(限800名，語音代碼1230)<br>
+  累積分期滿12,000元送300元刷卡金(限500名，語音代碼1231)                    <br> 
+  (於12/20上午10:00至月底開放登錄，額滿為止)<br>
+  <br>
+  【活動二】雙12購物節 <br>
+  〈活動期間〉2018/12/10~2018/12/12<br>
+  單項商品分期滿6,000元送720元刷卡金(限150名，語音代碼1232)          <br>            
+  (限12/12當日下午15:00起登錄，當日額滿為止)<br>
+  <br>
+  ※上述活動需分別登錄，東森購物及森森購物消費合併計算，全月每歸戶擇優回饋乙筆，上限720元。<br>
+  ※<a href="https://www.fubon.com/banking/event/credit_card/20170718A/index.html" target="_blank">登錄網址</a><br>
+  ※登錄專線（02）8751-1313按777後輸入上述上述語音代碼<br>
+  ※數位生活卡再享2%刷卡金(回饋方式及注意事項請參閱本行官網)<br>
+
+        </ul>
+        <p>注意事項:</p>
+        <ol>
+  <li> 本活動需透過台北富邦銀行網銀信用卡活動登錄網頁或語音完成正卡人資料登錄始符合活動參加資格，請至富邦網銀/行銀登錄或撥打登錄專線。</li>
+  <li>本活動之適用範圍為東森購物旗下各銷售通路 (東森/森森購物網、東森APP行動購物、型錄、電視購物頻道與中華電信MOD頻道)，但不包含保險費代扣繳、生前契約、旅遊、簽證、兵險、機場稅、燃油附加費等商品或服務。</li>
+  <li> 正、附卡消費合併計算回饋，並以正卡持卡人為刷卡金之受贈者，全月每歸戶擇優回饋乙筆。</li>
+  <li>本活動訂單金額應以實際刷卡授權金額為準，刷卡日期以消費日為準，本活動符合回饋資格之訂單需成功刷台北富邦卡付款且未退貨始具有回饋資格。</li>
+  <li>分期交易以其分期前購買總金額歸入首期計算(不適用於「指定消費分期」)。消費金額以實際成功訂單計算且廠商需於次月月底前完成請款，若為付款失敗、訂單取消、銷退等訂單將不列入計算範圍。</li>
+  <li>符合回饋刷卡金資格者，本行預計於消費月份之次次月底前統一撥入正卡持卡人之信用卡帳戶中，持卡人不得要求將刷卡金折換現金或轉讓予他人。</li>
+  <li>被回饋客戶所持之富邦信用卡於回饋當時需為有效卡，若有遭限制或停止使用、延遲繳款或其他違反信用卡約定條款之情事，將喪失回饋資格。</li>
+  <li>消費金額不包含：購物金、滿額再折價之活動折扣或其他信用卡優惠折抵（例如：紅利折抵）。</li>
+  <li>信用卡分期付款交易係由台北富邦銀行一次墊付消費款項予合作商店，並由持卡人分期繳付消費帳款予台北富邦銀行。台北富邦銀行並未介入商品之交付或商品瑕疵等買賣之實體關係，相關商品退貨或服務取消之退款事宜，持卡人應先洽合作商店尋求解決。</li>
+  <li>各商品可分期之期數，依網路商店提供之選項為準；分期0利率：分期利率與總費用年百分率均為0%。</li>
+  <li>台北富邦銀行與網路商店保留修改、變更、取消本活動之權利。</li>
+     </ol>
+  <!-- 新光 -->
+       <a name="shinkong" id="shinkong"></a>
+        <div class="banklogo"><img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105751/p2_shinkong.png"></div>
+        <ul>
+          <li>活動期間：</li>
+    <li>2018/12/01-2018/12/31
+
+  </li>
+          <li>活動內容：</li>
+          <li>單筆分期滿$6,000送$150刷卡金。(限量140名)  <br>
+  ●東森購物&森森購物消費金額合併計算，門檻限回饋乙次。<br>
+  ●正附卡合併計算，商務卡、visa金融卡、分期七卡不適用本優惠<br>
+  ●活動期間每戶每月最高回饋150元刷卡金。
+
+        </ul>
+        <p>注意事項:</p>
+        <ol>
+  <li> 本活動採登錄制，欲參加活動需於活動登錄期間至新光銀行網站完成登錄，逾期或未登錄者恕不適用本活動優惠。</li>
+  <li>東森電視購物全通路包含電視、網路、型錄、MOD、手機購物。</li>
+  <li>新光銀行商務卡、VISA金融卡、分期七卡及使用Line pay或第三方支付付款者不適用本活動</li>
+  <li> 本活動限2018/12/01～2018/12/31於東森&森森購物全通路之新增消費適用，活動期間正、附卡合計每月最高回饋150元刷卡金，並於2019年03月31起陸續將刷卡金回饋至正卡持卡人信用卡帳戶。回饋時須為有效卡，如有停卡、延滯繳款或其他違反信用卡契約之情事者，本行得取消其回饋資格。回饋之刷卡金僅限抵扣信用卡消費帳款，恕不得要求折現或以溢繳款方式領回。</li>
+  <li>本活動採限量回饋，若符合回饋人數超過活動可提供名額，將以登錄之順序且已先消費滿額達門檻之卡友為準。回饋名單以本行活動後實際計算符合回饋資格為準。</li>
+  <li>倘使用東森&森森購物金或新光銀行紅利折抵優惠，金額之計算以扣除購物金或紅利折抵後之剩餘消費金額為準。</li>
+  <li>本活動以實際訂單計算，若付款失敗、訂單取消、退貨，該筆訂單金額將不列入計算範圍。</li>
+  <li>若正卡持卡人終止信用卡、掛失不補發、到期不續卡或遭銀行停止使用信用卡權利、延滯繳款或其他違反信用卡契約等情事時，即喪失回饋資格。 </li>
+  <li>本活動注意事項載明於活動網頁中，參加者於參加本活動之同時，即同意接受本活動注意事項之規範，如有違反本活動注意事項之行為，東森購物、森森購物與新光銀行得取消其參加活動或回饋或得獎資格，並對於任何破壞本活動之行為保留相關權利。</li>
+  <li> 如有任何因電腦、網路、電話、技術或不可歸責東森購物與新光銀行之事由，而使參加者登錄之資料有遲延、遺失、錯誤、無法辨識或毀損之情況，東森購物、森森購物與新光銀行不負任何法律責任，參加者亦不得因此異議。</li>
+  <li>如有不可歸責於本行之事由，本行得踐行法定程序後變更、終止及取消本活動；另本行有權對本活動之所有事宜做出解釋或決定，並於公告後實施。</li>
+     </ol>
+  </section>
+</div>
+<div id="goTopWrap"></div>
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script>$('a[href^="#"]').on('click',function(e){var target=$('a[name='+this.getAttribute('href').split('#')[1]+']');if(target.length){e.preventDefault();$('html,body').stop().animate({scrollTop:target.offset().top},500);}});</script>
+<!-- 浮水印 -->
+<script id="scriptIconFloat" src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106244/float-icon.js"></script>
+<script type="text/javascript" src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106349/generateVersion20181019.js"></script>
+<script>
+var promoLink = [
+                'http://www.etmall.com.tw/Pages/MKT_0000001298.aspx',
+                'https://www.etmall.com.tw/Activity/WebSP?SubPage=DMSetting/Final/209901/SP_1103413/index.html',
+                'https://www.etmall.com.tw/Activity/WebSP?SubPage=DMSetting/Final/209901/SP_1103414/index.html',
+                ];
+var mobileLink = [
+                  'https://m.etmall.com.tw/Activity/JCB2018',
+                  'https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1103413/m.html',
+                  'https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1103414/m.html',
+                ];
+var appLink = [
+              'etmall://open?pgid=44&url=https%3A%2F%2Fm.etmall.com.tw%2FActivity%2FAPPJCB2018&t=JCB%E9%8A%80%E8%A1%8C%E9%A0%81',
+              'etmall://open?pgid=44&url=https%3a%2f%2fwww.etmall.com.tw%2fXML%2fcontent%2fDMSetting%2fFinal%2f209901%2fSP_1103413%2fapp.html&t=Q3%e9%80%b1%e4%b8%89%e8%8a%b1%e6%97%97%e6%97%a5%e2%94%82ETMall%e6%9d%b1%e6%a3%ae%e8%b3%bc%e7%89%a9%e7%b6%b2',
+              'etmall://open?pgid=44&url=https%3a%2f%2fwww.etmall.com.tw%2fXML%2fcontent%2fDMSetting%2fFinal%2f209901%2fSP_1103414%2fapp.html&t=%e9%80%b1%e4%ba%8c%e5%87%b1%e5%9f%ba%e6%97%a5%e2%94%82ETMall%e6%9d%b1%e6%a3%ae%e8%b3%bc%e7%89%a9%e7%b6%b2',
+              ];
+var targetLink = document.querySelectorAll('#promoHome a');
+initDetect();
+function initDetect() {
+    var isUiWebview = /(WebView|(iPhone|iPod|iPad)(?!.*Safari\/)(?!.*Line\/)|Android.*(wv|.0.0.0))(?!.*Line\/)/gi.test(navigator.userAgent);
+    if (isUiWebview) {
+      targetLink.forEach( function(element, index) {
+        element.href = appLink[index];
+      });
+    }
+    else {
+        window.addEventListener('load', isWinWt);
+        window.addEventListener('resize', isWinWt);
+    }
+}
+function isWinWt() {
+    var winWt = document.body.clientWidth;
+    if (winWt >= 1260) {
+      targetLink.forEach( function(element, index) {
+        element.href = promoLink[index];
+      });
+    }
+    else {
+      targetLink.forEach( function(element, index) {
+        element.href = mobileLink[index];
+      });
+    }
+}
+</script>  

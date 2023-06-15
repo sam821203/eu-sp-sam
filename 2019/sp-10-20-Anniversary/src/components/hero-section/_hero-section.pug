@@ -1,0 +1,54 @@
+- var heroBankData = {etmall: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201908/SP_1107836/w/index.html", umall: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201908/SP_1104315/w/index.html"}
+- var heroBankInfo = isU ? heroBankData.umall : heroBankData.etmall
+
+// ========== Title Image ==========
+- var titleImageU = {src:"~components/hero-section/title-u.png", alt:"週年慶"}
+- var titleImageU_third = {src:"~components/hero-section/title-u-2.png", alt:"名品匯"}
+- var titleImageE = {src:"~components/hero-section/title.png", alt:"週年慶"}
+- var titleImageE_third = {imgSrc:"~components/hero-section/title-e-3.png", alt:"名品匯",imgMobileSrc:"~components/hero-section/title-e-3-m.png"}
+if isU && !is_third
+  -var titleImage = titleImageU
+else if isU && is_third
+  -var titleImage = titleImageU_third
+else if !isU && !is_third
+  -var titleImage = titleImageE
+else if !isU && is_third
+  -var titleImage = titleImageE_third
+
+//- ========== Code Start ==========
+//- ========== 第一檔裝飾 ==========
+if !is_third
+  .header__decoration.header__decoration--balls
+section.hero__wrap
+  .bg--light
+  .layout--main
+    .hero__zone
+      //-if !is_third
+      .hero__block
+        .header__decoration.header__decoration--right
+        .header__decoration.header__decoration--left
+        .header__decoration.header__decoration--left-2
+        .header__decoration.header__decoration--star
+        .hero__box
+          h1.hero__title.hero__title--main.block--center(title= titleImage.alt)
+            img(src= titleImage.imgSrc, alt= titleImage.alt)
+            img(src= titleImage.imgMobileSrc, alt= titleImage.alt)
+
+          include /components/hero-small-slider/_hero-small-slider
+
+        include /components/goods-slider/_goods-slider
+
+        include /components/promo-event/_promo-event
+      if !is_third
+        include /components/goods-slider-flip/_goods-slider-flip
+
+      include /components/bn-special/_bn-special
+
+  //.hero__decoration
+  //  .decoration__box
+  //  .decoration__box
+
+  include /layout/background-decoration/_background-decoration.pug
+
+
+  

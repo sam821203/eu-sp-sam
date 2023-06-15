@@ -1,0 +1,193 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero__wrap
+  +pos-set(relative, second)
+  overflow: hidden
+
+  .hero__zone
+    +pos-set(relative, zero)
+        
+  // .hero__block
+
+  .hero__box
+    +pos-set(relative, zero)                        
+
+  .hero__title
+    &--main
+      +pos-set(relative, zero)
+      padding: 5% 5% 0
+      overflow: hidden
+      &.animated
+        animation: small-open 1s both ease-out
+
+  .title-decoration__wrap
+    +pos-set(absolute, second, 0, 0)
+    width: 100%
+    height: 100%
+    pointer-events: none
+    // overflow: hidden
+    .title__decoration
+      +pos-set(absolute, zero)
+      &--top
+        top: 0
+        width: 100%
+        height: 50%
+        .decoration--butterfly
+          +pos-set(absolute, zero)
+          top: 40%
+          left: 16%
+          padding-top: 6%
+          width: 6%
+          animation: butterfly-moving 2s both infinite alternate
+          &::before
+            content: ''
+            +pos-set(absolute, zero, 0, 0)
+            width: 100%
+            height: 100%
+            +bg-set(url(~event/2nd/u-main/components/hero-section/decoration-butterfly.png), contain)
+            animation: butterfly-shaking 0.6s infinite
+
+        .decoration--leaf
+          +pos-set(absolute, zero)
+          top: 60.5%
+          left: 45%
+          padding-top: 9%
+          width: 9%
+          +bg-set(url(~event/2nd/u-main/components/hero-section/decoration-leaf.png), contain)
+          &.animated
+            animation: small-open 0.5s 0.5s both linear
+
+
+      &--bottom
+        bottom: 0
+        width: 100%
+        height: 50%
+        .decoration-squirrel,
+        .decoration-squirrel--2
+          +pos-set(absolute, zero)
+          top: 19.6%
+          left: 9.9%
+          padding-top: 15.5%
+          width: 15.5%
+          +bg-set(url(~event/2nd/u-main/components/hero-section/decoration-squirrel-1.png), contain)
+          animation: opacity-change 1.5s infinite steps(1)
+        .decoration-squirrel--2
+          +bg-set(url(~event/2nd/u-main/components/hero-section/decoration-squirrel-2.png), contain)
+          animation: opacity-change-2 1.5s infinite steps(1)
+        .decoration--bird
+          +pos-set(absolute, zero)
+          bottom: -4.5%
+          right: -16.5%
+          padding-top: 13%
+          width: 28%
+          +bg-set(url(~event/2nd/u-main/components/hero-section/decoration-bird.png), contain)
+          transform-origin: 20% 100%
+          animation: rotate-bird 1.2s infinite alternate
+        // &.animated
+          // animation: bounceInRight 3s 1s both
+
+      +breakpoint-min($min-width-xl)
+        .decoration--leaf
+          left: 41%
+        .decoration-squirrel,
+        .decoration-squirrel--2
+          +pos-set(absolute, zero)
+          top: 26.5%
+          left: 12.7%
+          padding-top: 12%
+          width: 12%
+
+  // .block-decoration
+  //   +pos-set(absolute, base)
+  //   pointer-events: none
+  //   &.decoration--left
+  //     top: 46%
+  //     left: -40%
+  //     padding-top: 56.15%
+  //     width: 68%
+  //     +bg-set(url(~event/2nd/u-main/components/hero-section/decoration-flower-l.png), contain)
+  //     transform-origin: bottom
+  //     animation: key-wind-rotate 10s infinite ease-in-out
+      
+  //   &.decoration--right
+  //     top: -26%
+  //     right: -32%
+  //     padding-top: 59.9%
+  //     width: 68.2%
+  //     +bg-set(url(~event/2nd/u-main/components/hero-section/decoration-flower-r.png), contain)
+  //     // transform-origin: top
+  //     animation: key-wind-rotate 10s 0.5s infinite ease-in-out
+
+
+  // .promo__block
+    // +pos-set(relative, second)
+    // padding-top: 11.5%
+    // +bg-set(url(~event/2nd/u-main/components/hero-section/bg-promo-event.png), cover)
+
+    // .promo__box
+    //   padding: 3.5% 10% 3.5%
+
+    // +breakpoint-min($min-width-xl)
+    //   // padding-top: 120px
+    //   +bg-set(url(~event/2nd/u-main/components/hero-section/bg-promo-event-web.png))
+    //   .promo__zone
+    //     +display-flex(">div")
+    //     padding: 0 20px 8px 60px
+
+    //   .goods__wrap--flip
+    //     +flex(0, 0, 49%)
+    //   .promo__box
+    //     +flex(0, 0, 51%)
+    //     padding: 10px 0 0 0
+
+// +key-wind-rotate(-2, -2)
+
+@keyframes small-open
+  from
+    transform: scale(0)
+    opacity: 0
+  to
+    transform: scale(1)
+    opacity: 1
+
+@keyframes butterfly-moving
+  from
+    transform: translate(0, 0)
+  25%
+    transform: translate(10%, 5%)
+  50%
+    transform: translate(0%, 10%)
+  75%
+    transform: translate(-10%, 5%)
+  to
+    transform: translates(0, 0)
+
+@keyframes butterfly-shaking
+  from
+    transform: rotateY(0)
+  33%
+    transform: rotateY(70deg)
+  66%
+    transform: rotateY(-50deg)
+  to
+    transform: rotateY(0)
+
+@keyframes opacity-change
+  from, 20%
+    opacity: 0
+  15%, 40%, to
+    opacity: 1
+
+@keyframes opacity-change-2
+  from, 20%
+    opacity: 1
+  15%, 40%, to
+    opacity: 0
+
+@keyframes rotate-bird
+  from, 35%
+    transform: rotate(-10deg)
+  13%, 42%, to
+    transform: rotate(0deg)
+

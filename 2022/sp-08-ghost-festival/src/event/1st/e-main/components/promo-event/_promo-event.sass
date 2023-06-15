@@ -1,0 +1,99 @@
+.section__decor--bottom
+  +pos-set(relative, under)
+  width: 100%
+  display: none
+  .decor--bottom
+    width: auto
+    &:first-child
+      +pos-set(fixed, zero, 300px, calc(50% - 900px))
+      opacity: 0
+      max-width: 525px
+      &.active
+        animation: fadeInTopLeft 1s linear 1 forwards
+    &:last-child
+      +pos-set(fixed, zero, 300px)
+      right: calc(50% - 900px)
+      opacity: 0
+      max-width: 403px
+      &.active
+        animation: fadeInTopRight 1s linear 1 forwards
+  +breakpoint-min($min-width-xl)
+    display: block
+  
+.promo__group--promo-event
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__wrap
+    .decor__block
+      +pos-set(absolute, under, 4.5%, 44%)
+      width: 12%
+      pointer-events: none
+      .js-loading &
+        animation: move-round 15s 2s cubic-bezier(0.37,-0.22, 0.68, 1.39) infinite alternate
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 70px)
+        width: auto
+    .decor__item
+      .js-loading &
+        animation: rotate-scale 1s linear infinite alternate
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/promo-event/bg-promo-event.png), 100%)
+    margin-top: 5%
+    padding-bottom: 2%
+  .promo__zone
+    +aspect-ratio(961, 972)
+    +pos-set(relative, zero)
+    padding-top: 0%
+    .promo__block
+      .promo__box
+        display: flex
+        justify-content: space-around
+        flex-wrap: wrap
+        li
+          margin-bottom: 5%
+          width: 33%
+          &.swiper-container
+            li
+              width: 100%
+          &:hover
+            transition: all .5s
+            transform: translateY(-2%)
+            filter: brightness(130%)
+
+.animate
+  animation: shakeY .5s ease-in 3
+
+
+
+@keyframes move-round
+  0%, 80%, 100%
+    transform: translate(0%, 0%)
+    opacity: 1
+  26%
+    transform: translate(360%, 0%)
+  38%
+    transform: translate(360%, 680%)
+    opacity: .8
+    // z-index: 1
+  51%
+    transform: translate(-360%, 680%)
+    opacity: 1
+    z-index: 1
+  64%
+    transform: translate(-360%, 0%)
+    opacity: .6
+    z-index: -1
+
+@keyframes rotate-scale
+  0%
+    transform: rotate(20deg)
+  100%
+    transform: rotate(-10deg)
+    
+
+
+@keyframes shakeY
+  0%, to
+    transform: translateZ(0)
+  50%
+    transform: translate3d(0, -8px, 0)

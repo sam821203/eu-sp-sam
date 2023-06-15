@@ -1,0 +1,31 @@
+.hero__zone
+  .hero__slider
+    width: auto
+    left: 0
+    margin-top: 0
+    // height: 500px
+    +aspect-ratio(720, 180)
+    +bg-set(url("event/index-main-u-2/components/hero-small-slider/bg-small-slider.png"), 60%)
+
+    .hero__title
+      &--sub
+        padding-top: calc(100vw * -0.005)
+        width: 60%
+        +pos-set(relative, third)
+
+    +breakpoint-min($min-width-xl)
+        +aspect-ratio(1058, 180)
+        +bg-set(url("event/index-main-u-2/components/hero-small-slider/bg-small-slider.png"), auto)
+        width: auto
+        top: 0
+        height: auto
+        .hero__title
+          &--sub
+            width: 40%
+
+
+@keyframes openSmallSlider
+  from
+    opacity: 0
+  to
+    opacity: 1

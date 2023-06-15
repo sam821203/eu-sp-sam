@@ -1,0 +1,92 @@
+.promo__group--tab
+  .tab__wrap
+    +display-flex
+    //+bg-set(url("~event/2nd/e-main/components/tab-section/bg-tab-m.png"), 99%)
+    display: block
+    height: calc(100vw * 0.74)
+    +bg-set(url("~event/2nd/e-main/components/tab-section/bg-tab.png"), 95%)
+
+    .tab__zone
+      padding: 0
+      width: 90%
+      //+flex(0, 1, 34.2%)
+      //padding: 1.1%
+      .tab__box
+        +display-flex
+        flex-wrap: wrap
+        justify-content: center
+        position: relative
+        top: calc(100vw * 0.155)
+        left: calc(100vw * 0.045)
+    .content__zone
+      +flex(0, 1, 100%)
+      padding: 20% 3% 2% 6%
+      .content__block,
+      .content__box
+        width: 100%
+        height: 100%
+
+  .tab__item
+    // +flex(0, 0, 25%)
+    padding: 0 2%
+    width: 23%
+    img
+      &:first-child
+        display: block
+      &:last-child
+        display: none
+    &.active
+      img
+        &:first-child
+          display: none
+        &:last-child
+          display: block
+    &:active,
+    &:hover
+      filter: brightness(120%)
+    &.active
+      &:active,
+      &:hover
+        filter: brightness(100%)
+
+  .content__box
+    display: none
+    &.active
+      display: block
+    .content__item
+      float: left
+      padding: 0
+      width: 32%
+      &:active,
+      &:hover
+        filter: contrast(150%)
+
+  +breakpoint-min($min-width-xl)
+    .tab__wrap
+      display: block
+      height: 715px
+      +bg-set(url("~event/2nd/e-main/components/tab-section/bg-tab.png"), 960px 705px, center, 14px)
+
+      .tab__zone
+        .tab__box
+          +display-flex
+          flex-wrap: wrap
+          justify-content: center
+          top: 177px
+          left: 43px
+      .content__zone
+        margin: 202px auto auto auto
+        padding: 0 1%
+        width: 100%
+    .tab__item
+      // +flex(0, 0, 25%)
+      padding: 0
+      width: 25%
+      height: 65px
+      img
+        margin: 0 auto
+
+    .content__box
+      padding: 5px 20px 15px
+      .content__item
+        width: 33.33%

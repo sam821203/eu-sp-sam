@@ -1,0 +1,83 @@
+-
+  var specialW32M31Item = [
+    {
+      link: "#" ,
+      imgSrc: "event/1st/e-main/components/special-w42m21/w42m21-1.png",
+      alt: "第一個logo",    
+    },
+    {
+      link: "#" ,
+      imgSrc: "event/1st/e-main/components/special-w42m21/w42m21-2.png",
+      alt: "第二個logo",    
+    },
+    {
+      link: "#" ,
+      imgSrc: "event/1st/e-main/components/special-w42m21/w42m21-1.png",
+      alt: "第三個logo",    
+    },
+    {
+      link: "#" ,
+      imgSrc: "event/1st/e-main/components/special-w42m21/w42m21-2.png",
+      alt: "第四個logo",    
+    },
+    {
+      link: "#" ,
+      imgSrc: "event/1st/e-main/components/special-w42m21/w42m21-3.png",
+      alt: "第五個logo",    
+    },
+    {
+      link: "#" ,
+      imgSrc: "event/1st/e-main/components/special-w42m21/w42m21-3.png",
+      alt: "第六個logo",    
+    },
+  ]
+
+section.special--w42m21
+  .layout--main
+    .special__wrap
+      .special__block
+        ul.special__items
+          each data, index in specialW32M31Item
+            if index < 4
+              li.special__item
+                a(href= data.link, alt=data.alt)
+                  img(src=data.imgSrc, alt=data.alt)
+          each data, index in specialW32M31Item
+            if index >= 4
+              li.special__item--add
+                a(href= data.link, alt=data.alt)
+                  img(src=data.imgSrc, alt=data.alt)
+    
+
+
+
+  //- <section class="logo__group logo__group--w4m2">
+  //-   <div class="layout--main">
+  //-     <div class="logos__wrap">
+  //-       <div class="logos__block">
+  //-         <ul class="logos__items">
+  //-           <li class="logo__item">
+  //-             <a href="https://www.etmall.com.tw/c2/159040">
+  //-               <img src="logo-item-1.png" alt="">
+  //-             </a>
+  //-           </li>
+  //-           <li class="logo__item">
+  //-             <a href="https://www.etmall.com.tw/c2/159032">
+  //-               <img src="logo-item-2.png" alt="">
+  //-             </a>
+  //-           </li>
+  //-           <li class="logo__item">
+  //-             <a href="https://www.etmall.com.tw/c2/22654">
+  //-               <img src="logo-item-3.png" alt="">
+  //-             </a>
+  //-           </li>
+  //-           <li class="logo__item">
+  //-             <a href="https://www.etmall.com.tw/c2/159037">
+  //-               <img src="logo-item-4.png" alt="">
+  //-             </a>
+  //-           </li>
+  //-         </ul>
+  //-       </div>
+  //-     </div>
+  //-   </div>
+  //- </section>

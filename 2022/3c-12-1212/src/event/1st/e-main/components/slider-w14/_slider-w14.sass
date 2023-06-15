@@ -1,0 +1,45 @@
+.promo__group--slider-w14
+  +pos-set(relative, zero)
+  overflow: hidden
+
+  .decor__item
+    pointer-events: none
+    &--light
+      +pos-set(absolute, second, 39%, 10%)
+      width: 80%
+      +breakpoint-min($min-width-xl)
+        top: 330px
+        left: calc( 50% - 366px )
+        width: auto
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/slider-w14/bg-slider-w14.png), 100%)
+  .promo__zone
+    +aspect-ratio(960, 850)
+  .promo__block
+    padding: 13.5% 2% 0
+  .slide__box
+    &--bn
+      padding: 0% 8%
+    &--item
+      display: flex
+      justify-content: space-between
+      margin-top: 8%
+      +breakpoint-min($min-width-xl)
+        justify-content: space-around
+        margin-top: 80px
+      .item__box
+        width: 24%
+        max-width: 213px
+  .swiper-button-next,
+  .swiper-button-prev
+    top: 3%
+    width: 5%
+    height: 50%
+    &::after
+      content: ''
+    +breakpoint-min($min-width-xl)
+      top: -10px
+  .swiper-button-prev
+    left: 2%
+  .swiper-button-next
+    right: 2%

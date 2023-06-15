@@ -1,0 +1,37 @@
+.promo__group--bn-section-2
+  +pos-set(relative, zero)
+  margin-bottom: 8%
+  overflow: hidden
+  +breakpoint-min($min-width-xl)
+    margin-bottom: 70px
+  .decor__item
+    &--left
+      +pos-set(absolute,zero, 0%, 3%)
+      width: 23%
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 470px)
+    &--right
+      +pos-set(absolute, zero, 7%, 73.5%)
+      width: 24%
+      +breakpoint-min($min-width-xl) 
+        left: calc(50% + 230px)
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .promo__wrap
+    +bg-set(url("~event/1st/e-main/components/bn-section-2/bg-bn-section-2.png"), 100%)
+    margin-top: 6%
+    +breakpoint-min($min-width-xl)
+      margin-top: 8%
+    .promo__zone
+      +aspect-ratio(952, 581)
+      .promo__block
+        padding: 20.5% 1.5% 0
+        .promo__box
+          cursor: pointer
+          &:hover
+            transition: all 0.6s ease
+            transform: translateY(-.5%)
+            filter: brightness(1.1)
+          +breakpoint-min($min-width-xl)
+            img
+              width: auto

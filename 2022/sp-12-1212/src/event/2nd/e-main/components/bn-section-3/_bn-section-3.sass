@@ -1,0 +1,62 @@
+.bn-section-3
+  overflow: hidden
+  .decor__item
+    pointer-events: none
+
+    &--left
+      +pos-set(absolute, zero, 1%, 18%)
+      width: 17%
+      animation: message-heartBeat 1.5s linear infinite
+      +breakpoint-min($min-width-xl)
+        top: 16px
+        left: calc(50% - 275px)
+        width: auto
+
+    &--right
+      +pos-set(absolute, zero, -3%)
+      right: 14.5%
+      width: 18%
+      +breakpoint-min($min-width-xl)
+        top: 4px
+        right: calc(50% - 310px)
+        width: auto
+
+    &--light
+      +pos-set(absolute, zero)
+      bottom: 10%
+      left: 0%
+      width: 100%
+      animation: light-flash 2.2s ease-out infinite
+      +breakpoint-min($min-width-xl)
+        bottom: 53px
+        left: calc(50% - 473px)
+        width: auto
+    +breakpoint-min($min-width-xl)
+      width: auto
+      
+  .promo__wrap
+    +bg-set(url("event/2nd/e-main/components/bn-section-3/bg-bn-section-3.png"), 100%)
+    margin-top: 4%
+    .promo__zone
+      +aspect-ratio(960, 594)
+    .promo__box
+      margin: 16.4% 8.8% 0
+      width: 83.5%
+      text-align: center
+      cursor: pointer
+      &:hover
+        transition: all 0.6s ease
+        transform: translateY(-1%)
+
+@keyframes message-heartBeat
+  0%, 15.5%, 30%, 100%
+    transform: scale(1)
+  9%, 21.5%
+    transform: scale(1.2)
+
+@keyframes light-flash
+  0%, 100%
+    filter: brightness(220%)
+  50%
+    filter: brightness(100%)
+

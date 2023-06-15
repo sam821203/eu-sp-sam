@@ -1,0 +1,58 @@
+import {isIE9} from 'utils/js/detect.js'
+import {detectApp} from 'utils/js/detect.js'
+import {isNeedSlider} from 'utils/js/detect.js'
+// swiper 6.1.2 no IE
+import Swiper from 'swiper/swiper-bundle.min.js';
+export var initSliderSpecial = detectApp(window.addEventListener('load', sliderSpecialReady), sliderSpecialReady);
+
+function sliderSpecialReady() {
+  var sliderSpecial = new Swiper('#sliderSpecial', {
+    autoplay: isIE9() ? 2000 : {
+      delay: 2000,
+      disableOnInteraction: false,
+    },
+    calculateHeight: true, // ie9 prevent float wrong height      
+    grabCursor: true,
+    init: isNeedSlider('#sliderSpecial'),
+    initialSlide: Math.floor(Math.random() * document.querySelectorAll('#sliderSpecial .swiper-slide').length),
+    loop: true,
+    navigation: {
+      nextEl: '#sliderSpecialNext',
+      prevEl: '#sliderSpecialPrev',
+    },
+    // pagination: isIE9() ? '#sliderSpecialPager' : {
+    //     el: '#sliderSpecialPager',
+    //     type: 'bullets',
+    //     clickable: true,
+    // },
+    speed: 600,
+
+  })
+    var sliderFirstPromo = new Swiper('#sliderFirstPromo', {
+        autoplay: isIE9() ? 2000 : {
+            delay: 2000,
+            disableOnInteraction: false,
+        },
+        calculateHeight: true, // ie9 prevent float wrong height
+        grabCursor: true,
+        init: isNeedSlider('#sliderFirstPromo'),
+        initialSlide: Math.floor(Math.random() * document.querySelectorAll('#sliderFirstPromo .swiper-slide').length),
+        loop: true,
+        effect: "flip",
+        flipEffect: {
+          slideShadows: false
+        },
+        // navigation: {
+        //     nextEl: '#sliderSpecialNext',
+        //     prevEl: '#sliderSpecialPrev',
+        // },
+        pagination: isIE9() ? '#sliderFirstPromoPager' : {
+            el: '#sliderFirstPromoPager',
+            type: 'bullets',
+            clickable: true,
+        },
+        speed: 600,
+
+    })
+
+}

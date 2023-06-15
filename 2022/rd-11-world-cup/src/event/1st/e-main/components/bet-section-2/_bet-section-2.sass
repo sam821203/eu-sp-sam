@@ -1,0 +1,114 @@
+.bet__block
+  padding: 16px 16px 0px
+  +breakpoint-min($min-width-xl)
+    padding-bottom: 58px
+
+  .decor__top
+    margin: 0 auto 20px
+    +breakpoint-min($min-width-xl)
+      margin-bottom: 16px
+      max-width: 500px
+
+
+  .bet__text
+    color: $gray-deep-light
+    line-height: 24px
+    font-size: 16px
+    font-weight: 400
+    +breakpoint-min($min-width-xl)
+      text-align: center
+    p
+      &:first-child
+        margin-bottom: 20px
+
+  .bet__item
+    display: flex
+    margin-top: 15px
+    padding: 4px 16px
+    width: 188px
+    height: 32px
+    border: 1px solid $gray-deep-light
+    border-radius: 26px
+    color: $gray-deep-light
+    font-size: 16px
+
+  .decor__countdown
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-around
+    margin: 16px auto 18px
+    padding: 4px 16px
+    width: 287px
+    height: 62px
+    background: linear-gradient(180deg, #319A5B 0%, #113955 85.58%)
+    border-radius: 4px
+    text-align: center
+    span
+      font-size: 16px
+      color: $gray-deep-light
+      &.countdown-time
+        color: $main-color-4
+  .countdown-date
+    width: 100%
+    font-size: 20px
+    line-height: 30px
+
+  .match__box
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    margin: 0 auto
+    max-width: 600px
+  .match__item
+    margin-bottom: 8px
+    width: 23%
+    border-radius: 8px
+    +breakpoint-min($min-width-xl)
+      margin-bottom: 16px
+
+  .match__item--wrap
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    align-items: center
+    +breakpoint-min($min-width-xl)
+      max-width: 600px
+  .match__item
+    padding: 16px
+    width: 156px
+    +bg-set(url(event/1st/e-main/components/match-section/match-item-bg.png), cover)
+    border-radius: 8px
+    +breakpoint-min($min-width-xl)
+      width: 138px
+    &--flag
+      filter: drop-shadow(0px 2.94118px 2.94118px rgba(0, 0, 0, 0.25))
+    &--name
+      padding: 7%
+      font-size: 16px
+      line-height: 17px
+      text-align: center
+      color: $gray-deep-light
+    &--odds
+      display: flex
+      justify-content: space-around
+      align-items: center
+      width: 77px
+      // height: 21px
+      background: #FFEAC1
+      border-radius: 4px
+      box-shadow: inset 1px 1px 0px rgba(0, 0, 0, 0.25)
+      overflow: hidden
+      span
+        display: block
+        padding: 1px 4px
+        &:first-child
+          line-height: 21px
+          background-color: $gray-deep-dark-opacity-3
+          color: $gray-deep-light
+          font-size: 14px
+        &:last-child
+          font-size: 16px
+          line-height: 19px
+      
+    &--btn
+      padding: 9px 22px 0px

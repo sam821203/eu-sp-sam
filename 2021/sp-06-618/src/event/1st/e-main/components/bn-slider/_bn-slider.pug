@@ -1,0 +1,67 @@
+-
+  var bnSliderItemData = [
+    {
+      link: "集井",
+      imgSrc: "event/1st/e-main/components/bn-slider/items/collect-1.png",
+      alt: "2點+$619 Adidas 老帽"
+    },
+    {
+      link: "集井",
+      imgSrc: "event/1st/e-main/components/bn-slider/items/collect-2.png",
+      alt: "10點 618枚東森幣"
+    },
+    {
+      link: "集井",
+      imgSrc: "event/1st/e-main/components/bn-slider/items/collect-3.png",
+      alt: "2點+$539 LOCCITANE經典護手霜"
+    },
+    {
+      link: "集井",
+      imgSrc: "event/1st/e-main/components/bn-slider/items/collect-4.png",
+      alt: "1點 uber eats（2次100元折扣"
+    },
+    {
+      link: "集井",
+      imgSrc: "event/1st/e-main/components/bn-slider/items/collect-5.png",
+      alt: "2點+$590 Xebe集比 櫻桃小丸子造型隨身碟"
+    },
+    {
+      link: "集井",
+      imgSrc: "event/1st/e-main/components/bn-slider/items/collect-6.png",
+      alt: "3點 全站折價券100元"
+    },
+    {
+      link: "集井",
+      imgSrc: "event/1st/e-main/components/bn-slider/items/collect-7.png",
+      alt: "1點+$629 Adidas 肩背包"
+    },
+    {
+      link: "集井",
+      imgSrc: "event/1st/e-main/components/bn-slider/items/collect-8.png",
+      alt: "1點 uber9折券"
+    },
+    {
+      link: "集井",
+      imgSrc: "event/1st/e-main/components/bn-slider/items/collect-9.png",
+      alt: "1點+$618東風柔韌3層抽取式花紋衛生紙"
+    },
+  ]
+
+section.promo__group.promo__group--bn.m-bottom--lg(data-title="集點專區")
+  .layout--main
+    .promo__title
+      #decoBnSlider.title__decoration
+        img(src="event/1st/e-main/components/bn-slider/decoration-bn-slider.png", alt="")
+    .promo__wrap
+      .promo__bn
+        a(href="集井", title="集點加價購")
+          img(src="event/1st/e-main/components/bn-slider/title-bn-slider.png", alt="集點加價購")
+      #sliderBn.promo__slider.swiper-container
+        ul.swiper-wrapper
+          each data in bnSliderItemData
+            li.swiper-slide
+              a(href= data.link, title= data.alt)
+                img.swiper-lazy(data-src= data.imgSrc, alt="")
+                .swiper-lazy-preloader.swiper-lazy-preloader-black
+
+      //- #sliderBnPager.bn__pager.swiper-pagination

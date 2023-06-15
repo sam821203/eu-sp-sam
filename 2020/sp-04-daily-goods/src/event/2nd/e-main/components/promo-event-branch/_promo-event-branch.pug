@@ -1,0 +1,66 @@
+-
+  var promoDataE = [
+  {link: "https://www.etmall.com.tw/np/64075", imgSrc: "~event/2nd/e-main/components/promo-event-branch/items/promo-1-branch-book.png", alt: ""},
+  {link: "https://www.etmall.com.tw/np/64075", imgSrc: "~event/2nd/e-main/components/promo-event-branch/items/promo-1-branch.png", alt: "SHISEIDO 資生堂 百優精純乳霜加大版75ml"},
+  {link: "https://www.etmall.com.tw/p/98212", imgSrc: "~event/2nd/e-main/components/promo-event-branch/items/promo-2-branch.png", alt: "特褔XEMSA 滿額雙重送"},
+  {link: "https://www.etmall.com.tw/p/98212", imgSrc: "~event/2nd/e-main/components/promo-event-branch/items/promo-2-branch-book.png", alt: ""},
+  {link: "https://www.etmall.com.tw/np/96159", imgSrc: "~event/2nd/e-main/components/promo-event-branch/items/promo-3-branch-book.png", alt: ""},
+  {link: "https://www.etmall.com.tw/i/2028458", imgSrc: "~event/2nd/e-main/components/promo-event-branch/items/promo-3-branch.png", alt: "台塑生醫緩釋B群雙層錠60錠6入"},
+  {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202004/SP_1115123/w/index.html", imgSrc: "~event/2nd/e-main/components/promo-event-branch/items/promo-4-branch.png", alt: "安晴氣炸鍋"},
+  {link: "https://www.etmall.com.tw/c3/139709", imgSrc: "~event/2nd/e-main/components/promo-event-branch/items/promo-4-branch-book.png", alt: ""},
+  {link: "https://www.etmall.com.tw/np/77843", imgSrc: "~event/2nd/e-main/components/promo-event-branch/items/promo-5-branch-book.png", alt: ""},
+  {link: "https://www.etmall.com.tw/c2/99198", imgSrc: "~event/2nd/e-main/components/promo-event-branch/items/promo-5-branch.png", alt: "COACH x MK 熱銷包款"},
+  {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202003/SP_1114925/w/index.html", imgSrc: "~event/2nd/e-main/components/promo-event-branch/items/promo-6-branch.png", alt: "SAMSUNG Galaxy S20 最高享 $20,990回饋"},
+  {link: "https://www.etmall.com.tw/s/107378", imgSrc: "~event/2nd/e-main/components/promo-event-branch/items/promo-6-branch-book.png", alt: ""},
+  {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202004/SP_1115195/w/index.html", imgSrc: "~event/2nd/e-main/components/promo-event-branch/items/promo-7-branch-book.png", alt: ""},
+  {link: "https://www.etmall.com.tw/i/2433206", imgSrc: "~event/2nd/e-main/components/promo-event-branch/items/promo-7-branch.png", alt: "食物語抽iPhone11"},
+  {link: "https://www.etmall.com.tw/i/2548236", imgSrc: "~event/2nd/e-main/components/promo-event-branch/items/promo-8-branch.png", alt: "花蓮理想大地 假日不加價"},
+  {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202004/SP_1115074/w/index.html", imgSrc: "~event/2nd/e-main/components/promo-event-branch/items/promo-8-branch-book.png", alt: ""},
+  ]
+
+- var promoDataU = [{link: "https://www.u-mall.com.tw/Activity/HourSale", imgSrc: "~event/2nd/u-main/components/promo-event-branch/items/promo-1.png", alt: "整點最便宜"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1103367/w/index.html", imgSrc: "~event/2nd/u-main/components/promo-event-branch/items/promo-2.png", alt: "20間銀行最高回饋10%"}, {link: "https://www.u-mall.com.tw/Activity/HourSale?Day=Up", imgSrc: "~event/2nd/u-main/components/promo-event-branch/items/promo-3.png", alt: "天天最激殺"}, ]
+
+- var promoData = isU ? promoDataU : promoDataE
+
+.promo__event-branch(data-title="")
+  ul.event__wrap
+    li.branch__item--left
+      a.branch__book(href= promoData[0].link, title= promoData[0].alt)
+        img(src= promoData[0].imgSrc, alt= promoData[0].alt)
+      a.branch__incentive(href= promoData[1].link, title= promoData[1].alt)
+        img(src= promoData[1].imgSrc, alt= promoData[1].alt)
+    li.branch__item--right
+      a.branch__incentive(href= promoData[2].link, title= promoData[2].alt)
+        img(src= promoData[2].imgSrc, alt= promoData[2].alt)
+      a.branch__book(href= promoData[3].link, title= promoData[3].alt)
+        img(src= promoData[3].imgSrc, alt= promoData[3].alt)
+    li.branch__item--left
+      a.branch__book(href= promoData[4].link, title= promoData[4].alt)
+        img(src= promoData[4].imgSrc, alt= promoData[4].alt)
+      a.branch__incentive(href= promoData[5].link, title= promoData[5].alt)
+        img(src= promoData[5].imgSrc, alt= promoData[5].alt)
+    li.branch__item--right
+      a.branch__incentive(href= promoData[6].link, title= promoData[6].alt)
+        img(src= promoData[6].imgSrc, alt= promoData[6].alt)
+      a.branch__book(href= promoData[7].link, title= promoData[7].alt)
+        img(src= promoData[7].imgSrc, alt= promoData[7].alt)
+    li.branch__item--left
+      a.branch__book(href= promoData[8].link, title= promoData[8].alt)
+        img(src= promoData[8].imgSrc, alt= promoData[8].alt)
+      a.branch__incentive(href= promoData[9].link, title= promoData[9].alt)
+        img(src= promoData[9].imgSrc, alt= promoData[9].alt)
+    li.branch__item--right
+      a.branch__incentive(href= promoData[10].link, title= promoData[10].alt)
+        img(src= promoData[10].imgSrc, alt= promoData[10].alt)
+      a.branch__book(href= promoData[11].link, title= promoData[11].alt)
+        img(src= promoData[11].imgSrc, alt= promoData[11].alt)
+    li.branch__item--left
+      a.branch__book(href= promoData[12].link, title= promoData[12].alt)
+        img(src= promoData[12].imgSrc, alt= promoData[12].alt)
+      a.branch__incentive(href= promoData[13].link, title= promoData[13].alt)
+        img(src= promoData[13].imgSrc, alt= promoData[13].alt)
+    li.branch__item--right
+      a.branch__incentive(href= promoData[14].link, title= promoData[14].alt)
+        img(src= promoData[14].imgSrc, alt= promoData[14].alt)
+      a.branch__book(href= promoData[15].link, title= promoData[15].alt)
+        img(src= promoData[15].imgSrc, alt= promoData[15].alt)

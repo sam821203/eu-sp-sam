@@ -1,0 +1,155 @@
+<script type="text/javascript" src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script type="text/javascript" src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1104292/generateVersion20180425.js?56456131561" defer></script>
+<meta charset="utf-8">
+<style>
+body {
+  width: 100%;
+  min-width: 1260px;
+  background: #e6104e url(sp181111bg.jpg) center 0 no-repeat;
+  margin:0;
+}
+.sp__wallper {
+  width: 100%;
+  position: relative;
+}
+.sp__wallper table{
+  margin: 0 auto;
+}
+.anchor-icon img {
+  transition: all 0.3s;
+}
+.anchor-icon:hover img,
+.anchor-icon:active img {
+  transform: scale(1.08);
+  filter: brightness(109%) contrast(118%);
+}
+.foreground,
+.star__wrap {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-width: 1260px;
+  height: 130%;
+  overflow: hidden;
+  pointer-events: none;
+}
+.foreground--star {
+  margin-top: -100px;
+  margin-left: calc(50% - 1110px);
+  width: 2221px;
+  height: 1147px;
+  background: url(foreground-star.png) no-repeat;
+}
+.foreground--light {
+  position: absolute;
+  z-index: 5;
+}
+@media screen and (max-width: 1260px) {
+  .star__wrap {
+    top: 3.5%;
+  }
+  .foreground--light {
+    padding-top: 5%;
+  }
+}
+.light-1 {
+  top: 10px;
+  left: calc(50% - 540px);
+  transform-origin: right bottom;
+  animation: 7s rotate-self infinite alternate ease-out;
+}
+.light-2 {
+  top: 0;
+  right: calc(50% - 540px);
+  transform-origin: left bottom;
+  animation: 8s rotate-self backwards infinite alternate ease-in;
+}
+.light-1 div,
+.light-2 div {
+  width: 495px;
+  height: 457px;
+  background-image: url(foreground-light.png);
+}
+.light-1 div {
+  transform: scale(-1, 1);
+}
+@keyframes rotate-self {
+  from {
+    transform: rotate(-40deg);
+  }
+  to {
+    transform: rotate(30deg);
+  }
+}
+.main-info {
+  position: relative;
+  z-index: 0;
+}
+
+.main-info:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 20%;
+  left: 0;
+  width: 100%;
+  height: 65%;
+  background-color: rgba(0, 0, 0, .5);
+  border: 2px solid #e10082;
+  border-radius: 135px / 81px;
+}
+</style>
+<div id="spWrap" class="sp__wallper">
+   <div id="spContainer"><!-- 主情境 -->
+   <div id="sp_page">
+   <table width="1260" border="0" cellspacing="0" cellpadding="0">
+     <tr>
+       <td><a href="https://www.etmall.com.tw/" target="_blank"><img src="sp181111_02.jpg"></a></td>
+     </tr>
+     <tr>
+       <td><img src="sp181111_04.jpg"></td>
+     </tr>
+     <tr>
+       <td><img src="sp181111_05.jpg"></td>
+     </tr>
+     <tr>
+       <td>
+        <table class="main-info" width="1260" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td>
+              <img src="sp181111_06.png"><a class="anchor-icon" href="#"><img src="sp181111_07.png"></a><a class="anchor-icon" href="#"><img src="sp181111_08.png"></a><a class="anchor-icon" href="#"><img src="sp181111_09.png"></a><a class="anchor-icon" href="#"><img src="sp181111_10.png"></a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img src="sp181111_06.png"><a class="anchor-icon" href="#"><img src="sp181111_07.png"></a><a class="anchor-icon" href="#"><img src="sp181111_08.png"></a><a class="anchor-icon" href="#"><img src="sp181111_09.png"></a><a class="anchor-icon" href="#"><img src="sp181111_10.png"></a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img src="sp181111_06.png"><a class="anchor-icon" href="#"><img src="sp181111_07.png"></a><a class="anchor-icon" href="#"><img  src="sp181111_08.png"></a><a class="anchor-icon" href="#"><img src="sp181111_09.png"></a><a class="anchor-icon" href="#"><img src="sp181111_10.png"></a>
+            </td>
+          </tr>
+        </table>>
+       </td>
+      </tr>
+   </table>
+   </div>
+  </div>
+</div>
+<div class="foreground">
+  <div class="foreground--light light-1">
+    <div></div>
+  </div>
+  <div class="foreground--light light-2">
+    <div></div>
+  </div>
+</div>
+<div id="decrationFg" class="star__wrap">
+  <div class="foreground--star" data-depth="0.1"></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+<script>function decoParallax() {var fgDeco = document.getElementById('decrationFg');var parallaxInstance = new Parallax(fgDeco);}requestAnimationFrame(decoParallax);</script>
+<script id="scriptIconFloat" src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106244/float-icon.js"></script>

@@ -1,0 +1,24 @@
+header.header__wrap--main.m-bottom--xs
+  .layout--main
+    .header__zone
+      a.logo(href= siteInfo.link)
+        img(src= siteInfo.imgSrc, alt= siteInfo.alt)
+      .header__title--main
+        h1.pic
+          if !isU
+            img(src="../layout/header/main/title-e.png", alt= mainTitleAlt ? mainTitleAlt : "超優質活動照過來")
+          else if isU
+            img(src="../layout/header/main/title-u.png", alt= mainTitleAlt ? mainTitleAlt : "超優質活動照過來")
+        .title__decoration
+          .decoration--left
+            img(src="../layout/header/main/title-decoration-left-1.png")
+            img(src="../layout/header/main/title-decoration-left-2.png")
+          .decoration--middle
+            a(href="#", title="手刀快搶")
+              img(src="../layout/header/main/title-decoration-front.png", alt="手刀快搶")
+            .decoration--dog
+              img(src="../layout/header/main/title-decoration-dog-1.png")
+              img(src="../layout/header/main/title-decoration-dog-2.png")
+          .decoration--right
+            img(src="../layout/header/main/title-decoration-right-1.png")
+            img(src="../layout/header/main/title-decoration-right-2.png")

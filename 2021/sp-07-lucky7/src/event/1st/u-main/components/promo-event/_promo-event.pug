@@ -1,0 +1,95 @@
+-
+  var promoDataE = [
+  {
+  link: "#note",
+  imgSrc: "event/1st/e-main/components/promo-event/items/promo-1.png",
+  alt: "滿$777抽Dyson無線吸塵器"
+  },
+  {
+  link: "#note",
+  imgSrc: "event/1st/e-main/components/promo-event/items/promo-2.png",
+  alt: "滿額最高送1,777"
+  },
+  {
+  link: "#note",
+  imgSrc: "event/1st/e-main/components/promo-event/items/promo-3.png",
+  alt: "APP消費滿額(含bt21商品)抽BT21水晶球"
+  },
+  {
+  link: "https://media.etmall.com.tw/sp/10136/m/index.html",
+  imgSrc: "event/1st/e-main/components/promo-event/items/promo-4.png",
+  alt: "全家超取送77乳加巧克力再抽100"
+  },
+  {
+  link: "#note",
+  imgSrc: "event/1st/e-main/components/promo-event/items/promo-5.png",
+  alt: "新會員首購送ASHIYA馬臍帶白皙精華"
+  },
+  {
+  link: "https://media.etmall.com.tw/sp/9941/m/index.html",
+  imgSrc: "event/1st/e-main/components/promo-event/items/promo-6.png",
+  alt: "下單享漢堡王單犇牛堡+20元多一件"
+  },
+  {
+  link: "#game1",
+  imgSrc: "event/1st/e-main/components/promo-event/items/promo-7.png",
+  alt: "下單玩拉霸抽777"
+  },
+  {
+  link: "https://media.etmall.com.tw/sp/8130/m/index.html",
+  imgSrc: "event/1st/e-main/components/promo-event/items/promo-8.png",
+  alt: "最高回饋20%東森幣"
+  },
+  //- slider start
+  {
+  link: "https://www.etmall.com.tw/bs/154029",
+  imgSrc: "event/1st/e-main/components/promo-event/items/promo-slider-1.png",
+  alt: "嘉義優鮮"
+  },
+  //- slider end
+  ]
+
+-
+  var promoDataU = [
+    {
+      link: "https://media.u-mall.com.tw/sp/9162/m/index.html",
+      imgSrc: "event/1st/u-main/components/promo-event/items/promo-1.png",
+      alt: "23家銀行 最高回饋20%"
+    },
+    {
+      link: "https://media.u-mall.com.tw/sp/9162/m/index.html",
+      imgSrc: "event/1st/u-main/components/promo-event/items/promo-2.png",
+      alt: "星展_最高回饋$3,000東森提貨券"
+    },
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale",
+      imgSrc: "event/1st/u-main/components/promo-event/items/promo-3.png",
+      alt: "限時瘋搶"
+    },
+  ]
+
+- var promoData = isU ? promoDataU : promoDataE
+
+//- TODO: 如果promo不和hero綁一起時要有自己的section和layout--main
+section.promo__group.promo__group--promo-event.m-bottom--sm
+  .layout--main
+    .promo__wrap
+      #promoEvent.event__wrap
+        .promo__block
+          ul
+            each data, index in promoData
+              if index < 2
+                li
+                  a(href= data.link, title= data.alt, id= ('promoAnchor' + (index + 1)))
+                    img(src= data.imgSrc, alt= data.alt)
+
+      .promo__slider
+        #sliderPromo.swiper-container
+          ul.swiper-wrapper
+            each data, index in promoData
+              if index > 1
+                li.swiper-slide
+                  a(href= data.link, title=data.alt)
+                    img(src= data.imgSrc, data.alt)
+        //- #sliderPromoPrev.swiper-button--custom.swiper-button-prev
+        //- #sliderPromoNext.swiper-button--custom.swiper-button-next

@@ -1,0 +1,95 @@
+.bn-section
+  overflow: hidden
+  .decor__wrap
+    padding-top: 4%
+    +breakpoint-min($min-width-xl)
+      padding-top: 2%
+  .decor__item
+    pointer-events: none
+    &--title
+      +pos-set(absolute, under, 2%, 15%)
+      width: 70%
+      // &.active
+        // z-index: map-get($zindex, base)
+      +breakpoint-min($min-width-xl)
+        top: 7%
+        left: calc(50% - 315px)
+        width: auto
+    &--left
+      +pos-set(absolute, under, 3%, 16%)
+      width: 18%
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 310px)
+        width: auto
+      &.active
+        .js-loading &
+          animation: scale-shine 1.8s linear infinite
+    &--right
+      +pos-set(absolute, under, 4%)
+      right: 15%
+      width: 18%
+      +breakpoint-min($min-width-xl)
+        top: 8%
+        right: calc( 50% - 300px )
+      &.active
+        animation: tada 2.5s ease-in-out forwards infinite
+    &--coin
+      +pos-set(absolute, base, 0)
+      right: 15%
+      width: 24%
+      transform: scale(0)
+      +breakpoint-min($min-width-xl)
+        right: calc( 50% - 330px )
+      &.active
+        animation: large-small 2.5s ease-in-out infinite
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .promo__wrap
+    +bg-set(url("event/1st/e-main/components/bn-section/bg-bn-section.png"), 100%)
+    margin-top: 12.2%
+    +breakpoint-min($min-width-xl)
+      margin-top: 16%
+    .promo__zone
+      +aspect-ratio(960, 394)
+    .promo__box
+      margin: 4.6% auto 0
+      width: 78%
+      text-align: center
+      cursor: pointer
+      +breakpoint-min($min-width-xl)
+        margin: 5% auto 0
+      img
+        border: 4px solid
+        border-image-source: linear-gradient(to bottom, #FDFDFD, #474948, #FDFDFD)
+        border-image-slice: 1
+      &:hover
+        transition: all 0.6s ease
+        transform: translateY(-1%)
+
+@keyframes tada
+  0%
+    transform: scaleX(1)
+  5%, 10%
+    transform: scale3d(.9, .9, .9) rotate(-3deg)
+  15%, 25%, 35%
+    transform: scale3d(1.1, 1.1, 1.1) rotate(3deg)
+  20%, 30%, 40%
+    transform: scale3d(1.1, 1.1, 1.1) rotate(-3deg)
+  50%, 100%
+    transform: scaleX(1)
+
+@keyframes scale-shine
+  0%, 100%
+    transform: rotate(-10deg) scale(1)
+    filter: brightness(1)
+  50%
+    transform: rotate(6deg) scale(1.1)
+    filter: brightness(1.2)
+
+@keyframes large-small
+  0%, 100%
+    transform: scale(0)
+    opacity: 0
+  20%, 80%
+    transform: scale(1)
+    opacity: 1

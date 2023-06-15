@@ -1,0 +1,51 @@
+.team__table
+  table
+    width: 100%
+  th,
+  td
+    padding: 5px 6px
+    font-weight: bold
+    vertical-align: middle
+    &:first-child
+      width: 17.2%
+      text-align: center
+      +breakpoint-min($min-width-xl)
+        font-size: 20px
+    &:nth-child(2)
+      width: 42.3%
+      text-align: left
+    &:last-child
+      padding-right: 20px
+      width: 40.5%
+      text-align: right
+  th
+    font-size: 20px
+  td
+    height: 56px
+    font-size: 16px
+    border-top: 1px solid $gray-light
+
+    span
+      color: $main-medium
+      &:first-child
+        font-size: 12px
+      &:last-child
+        font-size: 16px
+      +breakpoint-min($min-width-xl)
+        &:first-child
+          font-size: 16px
+        &:last-child
+          font-size: 24px
+  .active
+    td
+      color: $main-deep-dark
+      background-color: $main-deep-light
+      border-top: 0
+      span
+        color: $main-deep-dark
+      &:first-child
+        border-radius: 8px 0 0 8px
+      &:last-child
+        border-radius: 0 8px 8px 0
+    & + tr td
+      border-top: 0

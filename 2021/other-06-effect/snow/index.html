@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- 原本css 不用複製 -->
+  <style>
+    body {
+
+      background: #0c2152;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    img {
+      width: 100%
+    }
+
+    .layout--main {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 960px
+    }
+
+  </style>
+
+
+  <style>
+    /* 步驟1 加雪CSS */
+    .snow__outwrap {
+      position: absolute;
+      /* 預設為第一屏的全視窗，可自行調整位置 */
+      top: 0;
+      left: 0;
+      /* 預設為第一屏的全視窗，可自行調整大小 */
+      width: 100vw;
+      height: 40vh;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .canvas--snow {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      background-color: transparent;
+    }
+
+    /*-- 電腦版： --*/
+    @media screen and (min-width: 960px) {
+      .snow__outwrap {
+        /* 預設為第一屏的全視窗，可自行調整位置 */
+        top: 0;
+        left: 0;
+        /* 預設為第一屏的全視窗，可自行調整大小 */
+        width: 100%;
+        height: 650px;
+      }
+    }
+
+    /* 步驟1 加CSS end */
+  </style>
+</head>
+<body>
+
+<!-- 步驟2 加入雪的html 會希望放在最前面 -->
+<div class="snow__outwrap">
+  <canvas id="canvasSnow" class="canvas--snow"></canvas>
+</div>
+<!-- 步驟2 end -->
+<main class="sp__wrap" id="spWrap">
+  <div class="layout--main">
+    <img src="demo__index.png" alt="">
+  </div>
+</main>
+
+<!-- 步驟3 在最後面加入javascript，記得要把去檔案夾中複製到SP頁的檔案夾裡面 -->
+<script src="effects-snow.js"></script>
+<!-- 步驟3 end -->
+
+</body>
+</html>

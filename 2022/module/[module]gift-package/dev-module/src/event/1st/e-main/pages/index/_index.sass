@@ -1,0 +1,110 @@
+// ==========================================================================
+// Plugins
+// ==========================================================================
+// // @import vendors/animate
+// @import vendors/style/swiper-slider-custom
+@import vendors/style/swiper-safari-polyfill
+
+// ==========================================================================
+// first screen need
+// ==========================================================================
+// hero section
+// @import event/1st/e-main/components/hero-section/_hero-section
+// @import utils/bg-decoration-instance/css-firework-2/_css-firework-2
+
+// ==========================================================================
+// components
+// ==========================================================================
+// dynamic product 假宮格共用CSS
+// @import layout/dynamic-product/_dynamic-product.sass
+
+// 一般components
+@import event/1st/e-main/components/bg-animate/_bg-animate
+@import event/1st/e-main/components/animate-wrap/_animate-wrap
+@import event/1st/e-main/components/sp-visual/_sp-visual
+@import event/1st/e-main/components/bn-w4m2/_bn-w4m2
+@import event/1st/e-main/components/bn-w2m1/_bn-w2m1
+@import event/1st/e-main/components/bn-w1m1/_bn-w1m1
+@import event/1st/e-main/components/bn-random/_bn-random
+// 品牌排排站系列
+@import event/1st/e-main/components/special-w32m31/_special-w32m31
+@import event/1st/e-main/components/special-w42m21/_special-w42m21
+// 輪播
+@import event/1st/e-main/components/slider-w5m3/_slider-w5m3
+
+
+// ==========================================================================
+// Page
+// ==========================================================================
+body
+  +pos-set(relative)
+  // +bg-set($gray-deep-light, 100%)
+  // +bg-set(url(event/1st/e-main/pages/index/bg-m.jpg), 100%)
+  background-color: $main-e-background-color-1st
+  // background-color: $main-e-background-color-1st
+  // background-attachment: fixed
+  // +breakpoint-min($min-width-xl)
+    // +bg-set(url(event/1st/e-main/pages/index/bg-web.jpg), auto)
+    // background-color: $main-e-background-color-1st
+    // background-attachment: auto
+  &::before
+    content: ''
+    +pos-set(absolute, under, 0, 0)
+    width: 100%
+    height: 100vh
+    +bg-set(url(event/1st/e-main/pages/index/bg-m.jpg), 100%)
+    +breakpoint-min($min-width-xl)
+      +bg-set(url(event/1st/e-main/pages/index/bg.jpg), auto)
+      
+
+body.bg-fixed
+  &::before
+    content: ''
+    +pos-set(fixed)
+    height: 100vh
+
+
+
+// TODO: 修改EU nav佔位高度(影響logo距離上方高度，U每次要改)
+.navRightBar
+  // E
+  height: 39px
+  // U
+  // height: 15px
+  +breakpoint-min($min-width-xl)
+    height: auto
+
+.sp__wrap
+  +pos-set(relative)
+  &::before
+    content: ''
+    // +pos-set(fixed, under, 39px, 0)
+    // width: 100%
+    // height: 100vh
+    // background: center 0 $gray-deep-light no-repeat
+    // background-size: 200vh
+    // transition: all 0.5s
+
+    +breakpoint-min($min-width-xxl)
+      // top: 5%
+      // background: center 0 url(event/1st/e-main/pages/index/bg-web.jpg) no-repeat
+      // background-size: cover
+
+.sp__wrap a
+  display: block
+
+.decoration--top
+  +pos-set(absolute, zero)
+  pointer-events: none
+
+section
+  // 有parallax scroll時圖層有relative就有預設z-index可能會遮到宮格，因此使用這個讓宮格也能有預設z-index
+  +pos-set(relative)
+
+
+@keyframes slideInDown
+  0%
+    transform: translate3d(0, -100%, 0)
+    visibility: visible
+  to
+    transform: translateZ(0)

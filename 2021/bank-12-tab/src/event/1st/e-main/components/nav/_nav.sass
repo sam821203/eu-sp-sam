@@ -1,0 +1,62 @@
+.nav
+  +pos-set(fixed, up-overlay)
+  width: 100%
+  bottom: 0
+  background-color: $gray-deep-dark
+
+  .decor__nav
+    +pos-set(absolute, zero, 0, 0)
+    width: 20%
+    height: 100%
+    background-color: $gray-deep-light
+    transition: left 0.3s
+
+  .nav__wrap
+    +pos-set(relative, zero)
+    & ul
+      display: flex
+      justify-content: center
+      color: $gray-deep-light
+      // background-color: $gray-deep-dark
+
+  .nav__item
+    +pos-set(relative, base)
+    flex: 1 0 20%
+    height: 60px
+    line-height: 60px
+    font-size: 16px
+    text-align: center
+    transition: color 0.3s
+    cursor: pointer
+    &.active
+      color: $gray-deep-dark
+      pointer-events: none
+    &::before
+      content:''
+      display: inline-block
+      height: 100%
+      vertical-align: middle
+    span
+      display: inline-block
+      vertical-align: middle
+
+  +breakpoint-min($min-width-lg)
+    .nav__wrap
+      box-shadow:  none
+    .nav__item
+      font-size: 20px
+  +breakpoint-min($min-width-xl)
+    +pos-set(sticky, base)
+    top: 0
+    bottom: auto
+    .nav__item
+      font-size: 24px
+    .nav__item
+      &:not(.active)
+        &:hover
+          background-color: lighten($gray-deep-dark, 30%)
+
+.shadow
+  .nav
+    box-shadow:  0px -6px 12px rgba($gray-dark, 50%)
+

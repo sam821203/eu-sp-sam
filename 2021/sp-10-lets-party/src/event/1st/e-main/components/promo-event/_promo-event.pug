@@ -1,0 +1,172 @@
+-
+  var promoDataE = [
+    {
+      link: "#note",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-1.png",
+      alt: "滿額最高送1,999"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/10563/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-2.png",
+      alt: "新會員註冊送888東森幣"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/10563/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-3.png",
+      alt: "新會員首購送ASHIYA馬臍帶白皙精華"
+    },
+    {
+      link: "#遊戲區塊",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-4.png",
+      alt: "9宮格抽最高800枚東森幣"
+    },
+    //- slider end
+    {
+      link: "https://media.etmall.com.tw/sp/11395/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-5.png",
+      alt: "中租 最高送$1,300提貨券"
+    },
+    //- slider start
+    {
+      link: "https://media.etmall.com.tw/sp/11449/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-6.png",
+      alt: "萊爾富取件送昂列奶茶"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/11274/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-7.png",
+      alt: "台灣Pay上線 滿額最高回饋21%"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/8130/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-8.png",
+      alt: "最高回饋20%東森幣"
+    },
+    //- slider start
+    {
+      link: "https://www.etmall.com.tw/bs/154029",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-bank-1.png",
+      alt: "嘉義優鮮"
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/144544",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-bank-2.png",
+      alt: "彰化好物購"
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/144544",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-bank-3.png",
+      alt: "消費滿額登記送"
+    },
+    //- slider end
+  ]
+
+-
+  var promoDataU = [
+    {
+      link: "https://media.u-mall.com.tw/sp/11082/m/index.html",
+      imgSrc: "event/1st/u-main/components/promo-event/items/promo-1.png",
+      alt: "22家銀行 最高回饋15%"
+    },
+    {
+      link: "https://media.u-mall.com.tw/sp/11082/m/index.html",
+      imgSrc: "event/1st/u-main/components/promo-event/items/promo-2.png",
+      alt: "國泰世華銀行_滿$4,500送$150"
+    },
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale",
+      imgSrc: "event/1st/u-main/components/promo-event/items/promo-3.png",
+      alt: "限時瘋搶"
+    },
+  ]
+
+- var promoData = isU ? promoDataU : promoDataE
+
+//- TODO: 如果promo不和hero綁一起時要有自己的section和layout--main
+section.promo__group.promo__group--promo-event.m-bottom--sm.m-top--xxl
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        #promoEvent
+          .event__wrap
+            .promo__block
+              each data, index in promoData
+                if index <= 7
+                  .promo__box
+                    a(href= data.link, alt= data.alt)
+                      img(src= data.imgSrc, alt= data.alt)
+            .promo__slider
+              #sliderPromo.swiper-container
+                ul.swiper-wrapper
+                  each data, index in promoData
+                    if index >=8 && index <11
+                      li.swiper-slide
+                        a(href= data.link, alt= data.alt)
+                          img(src= data.imgSrc, alt= data.alt)
+          #itemBoxClick.item__box
+            a(href="")
+              img(src="event/1st/e-main/components/promo-event/giftcard_btn.png", alt="")
+        .event__box#eventBox
+          .item__box--overlay
+          .item__box--pop
+            img(src="event/1st/e-main/components/promo-event/giftcard-note.jpg", alt="")
+            .close
+              img(src="event/1st/e-main/components/promo-event/giftcard-note-icon.png") 
+            //- /Users/etDesign007/Documents/eshn_project/eu-sp-event-site/2021/sp-10-lets-party/src/event/1st/e-main/components/promo-event/giftcard_btn.png
+          //-   .promo__slider
+          //-     .swiper-container.container--promo-event
+          //-       ul.swiper-wrapper
+          //-         each data, index in promoData
+          //-           if index < 2
+          //-             li.swiper-slide
+          //-               a(href= data.link, title=data.alt)
+          //-                 img(src= data.imgSrc, data.alt)
+          //-   .promo__slider
+          //-     .swiper-container.container--promo-event
+          //-       ul.swiper-wrapper
+          //-         each data, index in promoData
+          //-           if index >= 2 && index < 4
+          //-             li.swiper-slide
+          //-               a(href= data.link, title=data.alt)
+          //-                 img(src= data.imgSrc, data.alt)
+          //- .promo__block
+          //-   ul
+          //-     each data, index in promoData
+          //-       if index == 4
+          //-         li
+          //-           a(href= data.link, title= data.alt)
+          //-             img(src= data.imgSrc, alt= data.alt)
+          //- .promo__block
+          //-   .promo__slider
+          //-     .swiper-container.container--promo-event
+          //-       ul.swiper-wrapper
+          //-         each data, index in promoData
+          //-           if index >= 5 && index < 6
+          //-             li.swiper-slide
+          //-               a(href= data.link, title=data.alt)
+          //-                 img(src= data.imgSrc, data.alt)
+          //-   .promo__slider
+          //-     .swiper-container.container--promo-event
+          //-       ul.swiper-wrapper
+          //-         each data, index in promoData
+          //-           if index >= 6 && index < 7
+          //-             li.swiper-slide
+          //-               a(href= data.link, title=data.alt)
+          //-                 img(src= data.imgSrc, data.alt)
+          //- .promo__block
+          //-   ul
+          //-     each data, index in promoData
+          //-       if index >= 7 && index < 9
+          //-         li
+          //-           a(href= data.link, title= data.alt)
+          //-             img(src= data.imgSrc, alt= data.alt)
+          //- .promo__block
+          //-   .promo__slider
+          //-     .swiper-container.container--promo-event
+          //-       ul.swiper-wrapper
+          //-         each data, index in promoData
+          //-           if index >= 9
+          //-             li.swiper-slide
+          //-               a(href= data.link, title=data.alt)
+          //-                 img(src= data.imgSrc, data.alt)
+

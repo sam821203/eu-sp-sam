@@ -1,0 +1,25 @@
+.icon-float {
+    position: absolute;
+    z-index: 50;
+    top: 0;
+    left: auto;
+    right: 15px;
+}
+
+.float-icon--mobile {
+    display: none;
+}
+
+@media screen and (max-width: 1024px) {
+    .icon-float {
+        position: static;
+    }
+
+    .float-icon {
+        display: none;
+    }
+
+    .float-icon--mobile {
+        display: block;
+    }
+}

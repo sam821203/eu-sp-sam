@@ -1,0 +1,211 @@
+//- 打開u-mall選項會自動轉換成U的logo和連結(預設etmall)
+//- 打開sp選項以切換行銷主視覺或是商品SP頁(main/ sp、預設是main)
+- var isU = true
+//- - var isSp = true
+
+.sp__outFrame
+  main#spWrap.sp__wrap
+    section.hero.header__wrap
+      .layout--main
+
+        include /layout/logo/_logo.pug
+        .main_group
+          .main_title.block--center
+            h1.title__wrap--main.block--center(title="森森購物ｘ愛你一萬年")
+              img(src="~pages/index--u-88/img/1-title.png", alt="森森購物ｘ愛你一萬年")
+            img(class="title__bg" src="~pages/index--u-88/img/1-title-bg.png", alt="森森購物ｘ愛你一萬年")
+
+            a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201908/SP_1104315/w/index.html", title="指定銀行最高回饋10%")
+              img(class="main__titleSub" src="~pages/index--u-88/img/1-title_sub.png", alt="指定銀行最高回饋10%")
+
+          .title__decoration.block--center
+            //5
+            img(src="~pages/index--u-88/img/1-decoration-1.png", alt="森森購物ｘ愛你嘴唇")
+            //1
+            img(src="~pages/index--u-88/img/1-decoration-2.png", alt="森森購物ｘ愛你三角形")
+            //4
+            img(src="~pages/index--u-88/img/1-decoration-3.png", alt="森森購物ｘ愛你圓形")
+            //2
+            img(src="~pages/index--u-88/img/1-decoration-4.png", alt="森森購物ｘ愛你爸爸")
+            //3
+            img(src="~pages/index--u-88/img/1-decoration-5.png", alt="森森購物ｘ愛你愛心")
+            img(src="~pages/index--u-88/img/1-decoration-6.png", alt="森森購物ｘ愛你愛心")
+            img(src="~pages/index--u-88/img/1-decoration-6.png", alt="森森購物ｘ愛你愛心")
+
+          section.promo__group.promo__group-88
+            .layout--main
+              .limit__wrap
+                .limit__slider
+                  #sliderLimit.promo__slider.swiper-container
+                    ul.swiper-wrapper
+                      li.swiper-slide
+                        a(href="https://www.u-mall.com.tw/Activity/Reg/11", title="消費登記抽 按摩椅")
+                          img(class="main__product" src="~pages/index--u-88/img/1-poster.png", alt= "消費登記抽 按摩椅")
+                      li.swiper-slide
+                        a(href="https://www.u-mall.com.tw/Activity/Reg/11", title="限量商品登記抽")
+                          img(src="~pages/index--u-88/img/1-poster-2.png", alt="限量商品登記抽")
+                    #sliderLimitPrev.swiper-button-white.swiper-button-prev
+                    #sliderLimitNext.swiper-button-white.swiper-button-next
+    .decoration-2-left
+    .decoration-2-right
+
+  section.promo__event
+    .layout--main
+      ul.event__wrap
+        li.incentive--01
+          a(href="https://www.u-mall.com.tw/Activity/Reg/11", title="滿額登記抽千元無敵券")
+            img#changeImg(src="~pages/index--u-88/img/2-Button_01.png", alt="滿額登記抽千元無敵券")
+        li.incentive--02
+          a(href="https://www.u-mall.com.tw/Activity/Reg/11", title="首購送200折價券")
+            img(src="~pages/index--u-88/img/2-Button_02.png", alt="首購送200折價券")
+        li.incentive--03
+          a(href="https://www.u-mall.com.tw/Activity/CollectPointExchange", title="集點加價購")
+            img(src="~pages/index--u-88/img/2-Button_03.png", alt="集點加價購")
+        li.incentive--04
+          a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201908/SP_1104939/w/index.html", title="萊爾富登記送好禮")
+            img(src="~pages/index--u-88/img/2-Button_04.png", alt="萊爾富登記送好禮")
+
+
+  a(class="bar_catchplay" href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201908/SP_1104902/w/index.html", title="消費滿額登記送CATCHPLAY電影兌換券")
+
+  section.promo__group.promo__group-3
+    .layout--main
+      .promo__wrap
+        #sliderRank.promo__slider.swiper-container
+          ul.swiper-wrapper
+            li.swiper-slide
+              a(href="https://www.u-mall.com.tw/np/65817", title="父愛好禮推薦")
+                img(src="~pages/index--u-88/img/3-pp_01.png", alt="父愛好禮推薦")
+            li.swiper-slide
+              a(href="https://www.u-mall.com.tw/np/66672", title="台塑生醫")
+                img(src="~pages/index--u-88/img/3-pp_02.png", alt="台塑生醫")
+            li.swiper-slide
+              a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201908/SP_1104863/w/index.html", title="華碩筆電夏特展")
+                img(src="~pages/index--u-88/img/3-pp_03.png", alt="華碩筆電夏特展")
+            li.swiper-slide
+              a(href="https://www.u-mall.com.tw/c2/63304", title="apple指定商品買送好禮")
+                img(src="~pages/index--u-88/img/3-pp_04.png", alt="apple指定商品買送好禮")
+            li.swiper-slide
+              a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201906/SP_1104731/w/index.html", title="LG送西堤")
+                img(src="~pages/index--u-88/img/3-pp_05.png", alt="LG送西堤")
+            li.swiper-slide
+              a(href="https://www.u-mall.com.tw/np/65998", title="國際精品配飾")
+                img(src="~pages/index--u-88/img/3-pp_06.png", alt="國際精品配飾")
+            li.swiper-slide
+              a(href="https://www.u-mall.com.tw/c3/133612", title="BRITA濾水壺")
+                img(src="~pages/index--u-88/img/3-pp_07.png", alt="BRITA濾水壺")
+            li.swiper-slide
+              a(href="https://www.u-mall.com.tw/c3/48020", title="麗星郵輪搶購價5680")
+                img(src="~pages/index--u-88/img/3-pp_08.png", alt="麗星郵輪搶購價5680")
+          #sliderRankPrev.swiper-button-white.swiper-button-prev
+          #sliderRankNext.swiper-button-white.swiper-button-next
+  section.promo__group.promo__group-4.video
+    .layout--main
+      .promo__wrap
+        .video__wrap
+          <iframe src="https://www.youtube.com/embed/7Mj69rkhxco?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  section.promo__group.promo__group-5
+    .layout--main
+      .promo__wrap
+        #sliderPromo.promo__slider.swiper-container.p-bottom--sm
+          ul.swiper-wrapper
+            li.swiper-slide
+              a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201906/SP_1104654/w/index.html", title="運動攝影機滿萬送888")
+                img(src="~pages/index--u-88/img/5-pp_01.png", alt="運動攝影機滿萬送888")
+            li.swiper-slide
+              a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201908/SP_1104858/index.html", title="3C通訊送好禮限時73折起")
+                img(src="~pages/index--u-88/img/5-pp_02.png", alt="3C通訊送好禮限時73折起")
+            li.swiper-slide
+              a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201908/SP_1104867/w/index.html", title="DeMon精品下殺買就送")
+                img(src="~pages/index--u-88/img/5-pp_03.png", alt="DeMon精品下殺買就送")
+            li.swiper-slide
+              a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201908/SP_1104854/w/index.html", title="船井83折起滿額送好禮")
+                img(src="~pages/index--u-88/img/5-pp_04.png", alt="船井83折起滿額送好禮")
+            li.swiper-slide
+              a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201908/SP_1109900/w/index.html", title="COACH超狂五折起")
+                img(src="~pages/index--u-88/img/5-pp_05.png", alt="COACH超狂五折起")
+            li.swiper-slide
+              a(href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201908/SP_1104851/w/index.html", title="傢寢好眠 精梳純棉 ")
+                img(src="~pages/index--u-88/img/5-pp_06.png", alt="傢寢好眠 精梳純棉")
+            li.swiper-slide
+              a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201907/SP_1104841/index.html", title="NUNA推車送布包")
+                img(src="~pages/index--u-88/img/5-pp_07.png", alt="NUNA推車送布包")
+            li.swiper-slide
+              a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201907/SP_1104855/w/index.html", title="德國百靈5折UP")
+                img(src="~pages/index--u-88/img/5-pp_08.png", alt="德國百靈5折UP")
+            li.swiper-slide
+              a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201908/SP_1104849/w/index.html", title="泰山甜品 甜入心坎裡")
+                img(src="~pages/index--u-88/img/5-pp_09.png", alt="泰山甜品 甜入心坎裡")
+            li.swiper-slide
+              a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201908/SP_1104887/w/index.html", title="旅箱/GPS新上市")
+                img(src="~pages/index--u-88/img/5-pp_10.png", alt="旅箱/GPS新上市")
+            li.swiper-slide
+              a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201908/SP_1104842/w/index.html", title="金秋出遊 早鳥特惠")
+                img(src="~pages/index--u-88/img/5-pp_11.png", alt="金秋出遊 早鳥特惠")
+        //#sliderPromoPrev.swiper-button-white.swiper-button-prev
+        //#sliderPromoNext.swiper-button-white.swiper-button-next
+  section.promo__group.promo__group-6
+    .layout--main
+      .promo__wrap
+        .promo__slider
+          #sliderBank.swiper-container
+            ul.swiper-wrapper
+              li.swiper-slide
+                a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201908/SP_1104315/w/index.html", title="銀行回饋")
+                  img(src="~pages/index--u-88/img/6-bank_01.png", alt="台新銀行 銀行回饋")
+              li.swiper-slide
+                a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201908/SP_1104315/w/index.html", title="銀行回饋")
+                  img(src="~pages/index--u-88/img/6-bank_02.png", alt="花旗銀行 銀行回饋")
+              li.swiper-slide
+                a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201908/SP_1104315/w/index.html", title="銀行回饋")
+                  img(src="~pages/index--u-88/img/6-bank_03.png", alt="永豐銀行 銀行回饋")
+              li.swiper-slide
+                a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201908/SP_1104315/w/index.html", title="銀行回饋")
+                  img(src="~pages/index--u-88/img/6-bank_04.png", alt="星展銀行 銀行回饋")
+              li.swiper-slide
+                a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201908/SP_1104315/w/index.html", title="銀行回饋")
+                  img(src="~pages/index--u-88/img/6-bank_05.png", alt="合作金庫 銀行回饋")
+              li.swiper-slide
+                a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201908/SP_1104315/w/index.html", title="銀行回饋")
+                  img(src="~pages/index--u-88/img/6-bank_06.png", alt="台灣土地銀行 刷8800送800")
+              li.swiper-slide
+                a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201908/SP_1104315/w/index.html", title="銀行回饋")
+                  img(src="~pages/index--u-88/img/6-bank_07.png", alt="玉山銀行 銀行回饋")
+              li.swiper-slide
+                a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201908/SP_1104315/w/index.html", title="銀行回饋")
+                  img(src="~pages/index--u-88/img/6-bank_08.png", alt="台灣土地銀行 刷18000送1500")
+          #sliderBankPrev.swiper-button-white.swiper-button-prev.slider-bank-prev
+          #sliderBankNext.swiper-button-white.swiper-button-next.slider-bank-next
+        #promoSliderPager.promo-pager.swiper-pagination
+  section.promo__group.promo__group-7.promo__bngroup
+    .layout--main
+      .promo__wrap
+        #sliderBn.promo__slider.swiper-container
+          .swiper-wrapper
+            li.swiper-slide
+              a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201908/SP_1104902/w/index.html", title="好康推薦")
+                img(src="~pages/index-main-u/img/640X280-1.jpg", alt="好康推薦")
+            li.swiper-slide
+              a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1104952/w/index.html", title="好康推薦")
+                img(src="~pages/index-main-u/img/640X280-2.jpg", alt="好康推薦")
+            li.swiper-slide
+              a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201908/SP_1104939/w/index.html", title="好康推薦")
+                img(src="~pages/index-main-u/img/640X280-3.jpg", alt="好康推薦")
+        #sliderBnPrev.swiper-button-white.swiper-button-prev.promo__bngroup-prev
+        #sliderBnNext.swiper-button-white.swiper-button-next.promo__bngroup-next
+        #promoSliderPager_sliderBn.promo-pager.swiper-pagination
+
+
+
+
+//- script區
+//- polyfill 一般共用
+include /utils/pug/include/_polyfill-js.pug
+//- General 一般共用
+include /utils/pug/include/_general.pug
+//- 電梯
+include /utils/pug/include/_elevator-link.pug
+//- 浮水印
+//- include /utils/pug/include/_float-icon.pug
+//- 輪播cdn
+include /utils/pug/include/_slider-cdn-js.pug

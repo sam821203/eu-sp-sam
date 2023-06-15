@@ -1,0 +1,144 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero__wrap
+  +pos-set(relative, second)
+  overflow: hidden
+
+  .hero__zone
+    +pos-set(relative, zero)
+
+
+  .hero__box
+    +pos-set(relative, base)
+    overflow: hidden
+    &.animated
+      animation: big-open 0.5s both
+    +breakpoint-min($min-width-xl)
+      padding-top: 0
+
+  .hero__title
+    &--main
+      +pos-set(relative, zero)
+      margin-top: 2.5%
+      width: 80%
+  
+  .decoration__box
+    +pos-set(relative, zero)
+    margin-top: -38.5%
+    width: 100%
+    height: 100%
+    transform-origin: bottom
+    animation: shake-me 8s infinite
+    .title__decoration
+      transform: scale(1.14) translateX(3.8%)
+    .title__decoration--sub
+      +pos-set(absolute, base, 0, -3%)
+      &:nth-child(2)
+        animation: flash-breath 1s both infinite alternate
+      &:nth-child(3)
+        animation: flash-breath 1s both infinite alternate-reverse
+
+  .promo__block
+    margin-top: -4%
+    +breakpoint-min($min-width-lg)
+      +display-flex(">div")
+      padding-left: 2%
+      .promo__event,
+      .goods__wrap
+        +flex(0, 0, 49%)
+      
+  +breakpoint-min($min-width-xl)
+
+    .hero__title
+      &--main
+        padding: 0
+        text-align: center
+        transform: scale(1) translateY(0)
+
+    .hero__promo-link
+      top: 10px
+      right: 90px
+
+.decoration__right
+  top: 17%
+  right: -17%
+  width: 30%
+  +aspect-ratio(200, 300, absolute)
+  transform-origin: 40% 80%
+  animation: right-rotate 4s infinite ease-in-out
+
+  +breakpoint-min($min-width-lg)
+    top: 28%
+  +breakpoint-min($min-width-xl)
+    top: 435px
+    right: calc(50% - 640px)
+    width: 200px
+
+  .decoration__item
+    +bg-set(url(~event/3rd/e-main/components/background-decoration/bg-decoration-right.png), 900% 100%)
+    animation: item-sprite 4s steps(8) infinite
+
+@keyframes big-open
+  from
+    opacity: 0
+    transform: scale(5)
+  to
+    opacity: 1
+    transform: scale(1)
+
+
+@keyframes flash-breath
+  from
+    filter: brightness(80%)
+  to
+    filter: brightness(160%)
+
+@keyframes scale-breath
+  from
+    transform: rotate(0) scale(1)
+  25%
+    transform: rotate(90deg) scale(0.8)
+  50%
+    transform: rotate(180deg) scale(1)
+  75%
+    transform: rotate(270deg) scale(0.9)
+  to
+    transform: rotate(360deg) scale(1)
+
+
+@keyframes shake-me
+  from
+    transform: rotate(0)
+  20%
+    transform: rotate(0)
+  21.5%
+    transform: rotate(5deg)
+  23%
+    transform: rotate(0)
+  24.5%
+    transform: rotate(-4deg)
+  26%
+    transform: rotate(0)
+  27%
+    transform: rotate(3deg)
+  28%
+    transform: rotate(0)
+  28.5%
+    transform: rotate(-2deg)
+  29%
+    transform: rotate(0)
+  to
+    transform: rotate(0)
+
+@keyframes right-rotate
+  from
+    transform: rotate(0)
+  18%
+    transform: rotate(-12deg)
+  27%
+    transform: rotate(-12deg)
+  36%
+    transform: rotate(0)
+  100%
+    transform: rotate(0)

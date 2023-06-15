@@ -1,0 +1,21 @@
+//- TODO: 打開isFake會根據components內的fakeData內的假資料產生item，關閉會根據components內的trueArrayLength決定內容要產生幾個item，並且帶上正式版研發要追加的內容(彈窗modal、go top)
+//- 不管有沒有打開isFake都會填入rd api code
+- var isFake = true;
+
+include /layout/header/_header
+
+//- hero section
+//- ===========================
+include /event/1st/e-main/components/hero-section/_hero-section
+
+//- api components
+//- ===========================
+include /event/1st/e-main/components/loyalty-card/_loyalty-card
+include /event/1st/e-main/components/collect-exchange/_collect-exchange
+include /event/1st/e-main/components/collect-buy/_collect-buy
+include /event/1st/e-main/components/note/_note
+
+//- rd components
+//- ===========================
+if !isFake
+  include /event/1st/e-main/components/rd-part/_rd-part

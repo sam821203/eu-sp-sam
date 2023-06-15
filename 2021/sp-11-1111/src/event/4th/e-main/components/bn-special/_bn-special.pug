@@ -1,0 +1,228 @@
+//- 當需要跨月時(前一個月)，填入的資料由這邊設定，將所有月份資料填上，
+//- 再由JS決定月份顯示哪些li(li.swiper-slide.month--prev、li.swiper-slide.month--now)
+-
+  var bankLinkPrev = {
+    etmall: "https://media.etmall.com.tw/sp/11482/m/index.html",
+    umall: "https://media.u-mall.com.tw/sp/11485/m/index.html"
+  }
+
+-
+  var bankLinkNext = {
+    etmall: "https://media.etmall.com.tw/sp/11482/m/index.html",
+    umall: "https://media.u-mall.com.tw/sp/11485/m/index.html"
+  }
+
+- var bankInfoPrev = isU ? bankLinkPrev.umall : bankLinkPrev.etmall
+- var bankInfoNext = isU ? bankLinkNext.umall : bankLinkNext.etmall
+//- 銀行方便複製貼上用
+-
+  var bankPageName = {
+    "玉山": '#esun',
+    "玉山銀行": '#esun',
+
+    "中信": "#ctbc",
+
+    "國泰": "#cathay",
+    "國泰世華銀行": "#cathay",
+
+    "台新": "#Taishin",
+    "台新銀行": "#Taishin",
+
+    "花旗": "#citi",
+    "花旗銀行": "#citi",
+
+    "富邦": "#taipeifubon",
+    "富邦銀行": "#taipeifubon",
+
+    "永豐": "#sinopac",
+    "永豐銀行": "#sinopac",
+
+    "聯邦": "#union",
+    "聯邦商銀": "#union",
+    "聯邦銀行": "#union",
+
+    "一銀": "#one",
+    "第一銀行": "#one",
+
+    "遠銀": "#fareasten",
+    "遠東銀行": "#fareasten",
+
+    "滙豐": "#hsbc",
+    "滙豐銀行": "#hsbc",
+
+    "華南": "#huanan",
+    "華南銀行": "#huanan",
+
+    "新光": "#shinkong",
+    "新光銀行": "#shinkong",
+
+    "星展": "#dbs",
+    "星展銀行": "#dbs",
+
+    "合庫": "#tcb",
+    "合作金庫": "#tcb",
+    "合作金庫銀行": "#tcb",
+
+    "凱基": "#kgi",
+    "凱基銀行": "#kgi",
+
+    "上銀": "#shanghai",
+    "上海銀行": "#shanghai",
+
+    "土銀": "#landbank",
+    "土地銀行": "#landbank",
+
+    "日盛": "#jihsun",
+    "日盛銀行": "#jihsun",
+
+    "臺灣企銀": "#tbb",
+
+    "臺銀": "#bot",
+    "臺灣銀行": "#bot",
+
+    "陽信": "#sunnybank",
+    "陽信銀行": "#sunnybank",
+
+    "樂天": "#rakuten",
+    "樂天銀行": "#rakuten",
+  }
+
+-
+  var bankItemPrev = [
+    {
+      name: "第一銀行",
+      promo: "全月獻禮滿$1,000送$100",
+      imgSrc: "event/4th/e-main/components/bn-special/items/bank-p-1.png",
+    },
+    {
+      name: "凱基銀行",
+      promo: "全月獻禮滿$8,000送$800",
+      imgSrc: "event/4th/e-main/components/bn-special/items/bank-p-2.png",
+    },
+    {
+      name: "遠東銀行",
+      promo: "期間限定滿$1,111送$111",
+      imgSrc: "event/4th/e-main/components/bn-special/items/bank-p-3.png",
+    },
+    {
+      name: "合作金庫銀行",
+      promo: "全月獻禮滿$3,500送$200",
+      imgSrc: "event/4th/e-main/components/bn-special/items/bank-p-4.png",
+    },
+    {
+      name: "兆豐銀行",
+      promo: "全月獻禮滿$8,000送$650",
+      imgSrc: "event/4th/e-main/components/bn-special/items/bank-p-5.png",
+    },
+    {
+      name: "新光銀行",
+      promo: "全月獻禮滿$20,000送$1,200",
+      imgSrc: "event/4th/e-main/components/bn-special/items/bank-p-6.png",
+    },
+    {
+      name: "臺灣銀行",
+      promo: "全月獻禮滿$10,000送$500",
+      imgSrc: "event/4th/e-main/components/bn-special/items/bank-p-7.png",
+    },
+    {
+      name: "安泰銀行",
+      promo: "期間限定滿$20,000送$800",
+      imgSrc: "event/4th/e-main/components/bn-special/items/bank-p-8.png",
+    },
+    {
+      name: "上海銀行",
+      promo: "全月獻禮滿$111,111送$11,111",
+      imgSrc: "event/4th/e-main/components/bn-special/items/bank-p-9.png",
+    },
+    {
+      name: "星展銀行",
+      promo: "全月獻禮滿$15,000送$1,100",
+      imgSrc: "event/4th/e-main/components/bn-special/items/bank-p-10.png",
+    },
+  ]
+
+//- -
+//-   var bankItemNext = [
+//-     {
+//-       name: "第一銀行",
+//-       promo: "全月獻禮滿$1,500送$100",
+//-       imgSrc: "event/4th/e-main/components/bn-special/items/bank-n-1.png",
+//-     },
+//-     {
+//-       name: "臺灣企銀",
+//-       promo: "全月獻禮滿$1,500送$100",
+//-       imgSrc: "event/4th/e-main/components/bn-special/items/bank-n-2.png",
+//-     },
+//-     {
+//-       name: "臺灣銀行",
+//-       promo: "全月獻禮滿$3,000送$150",
+//-       imgSrc: "event/4th/e-main/components/bn-special/items/bank-n-3.png",
+//-     },
+//-     {
+//-       name: "華南銀行",
+//-       promo: "全月獻禮滿$3,000送$150",
+//-       imgSrc: "event/4th/e-main/components/bn-special/items/bank-n-4.png",
+//-     },
+//-     {
+//-       name: "日盛銀行",
+//-       promo: "全月獻禮滿$3,000送$150",
+//-       imgSrc: "event/4th/e-main/components/bn-special/items/bank-n-5.png",
+//-     },
+//-     {
+//-       name: "陽信銀行",
+//-       promo: "全月獻禮滿$3,000送$150",
+//-       imgSrc: "event/4th/e-main/components/bn-special/items/bank-n-6.png",
+//-     },
+//-     {
+//-       name: "合作金庫銀行",
+//-       promo: "全月獻禮滿$3,500送$200",
+//-       imgSrc: "event/4th/e-main/components/bn-special/items/bank-n-7.png",
+//-     },
+//-     {
+//-       name: "兆豐銀行",
+//-       promo: "全月獻禮滿$5,000送$400",
+//-       imgSrc: "event/4th/e-main/components/bn-special/items/bank-n-8.png",
+//-     },
+//-     {
+//-       name: "凱基銀行",
+//-       promo: "全月獻禮滿$8,000送$800",
+//-       imgSrc: "event/4th/e-main/components/bn-special/items/bank-n-9.png",
+//-     },
+//-     {
+//-       name: "花旗銀行",
+//-       promo: "全月獻禮滿$12,000送$1,000",
+//-       imgSrc: "event/4th/e-main/components/bn-special/items/bank-n-10.png",
+//-     },
+//-   ]
+
+//- TODO: 給別的component引入時不需要前兩行要切換
+section#bnSpecial.promo__group.promo__group--bn-special.m-bottom--lg(data-title="銀行專區")
+  .layout--main
+    .promo__wrap
+      #bnSpecialPromoZone.promo__zone
+        .decor__bn-special
+          .decoration__box#BnSpecialTitle
+            img(src="event/4th/e-main/components/bn-special/title-bn-special.png", alt="")
+          .decoration__box--top#decorBnSpecial
+            img(src="event/4th/e-main/components/bn-special/decoration-special.png", alt="")
+        .slider__box.full-parent
+          .promo__slider.full-parent
+            #sliderSpecial.swiper-container.full-parent
+              ul.swiper-wrapper
+                //- prev
+                each data in bankItemPrev
+                  li.swiper-slide.month--prev
+                    a(href= bankInfoPrev + bankPageName[data.name], title=data.name + data.promo)
+                      img.swiper-lazy(data-src= data.imgSrc, alt="")
+                      .swiper-lazy-preloader.swiper-lazy-preloader-white
+
+                //- next
+                //- each data in bankItemNext
+                //-   li.swiper-slide.month--next
+                //-     a(href= bankInfoNext + bankPageName[data.name], title=data.name + data.promo)
+                //-       img.swiper-lazy(data-src= data.imgSrc, alt="")
+                //-       .swiper-lazy-preloader.swiper-lazy-preloader-white
+
+            //- #sliderSpecialPager.swiper-pagination-custom.swiper-pagination
+          //- #sliderSpecialPrev.swiper-button-white.swiper-button-prev.special__nav.special__nav--prev
+          //- #sliderSpecialNext.swiper-button-white.swiper-button-next.special__nav.special__nav--next

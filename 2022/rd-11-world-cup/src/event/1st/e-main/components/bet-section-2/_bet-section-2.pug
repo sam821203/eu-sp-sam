@@ -1,0 +1,105 @@
+-
+  var betItem = [
+    { // 1
+      link: "" ,
+      imgSrc: "event/1st/e-main/components/match-section/items/Flag_ESP.png",
+      alt: "西班牙",
+      text: '12',
+    },
+    { // 2
+      link: "" ,
+      imgSrc: "event/1st/e-main/components/match-section/items/Flag_ESP.png",
+      alt: "哥斯大黎加",
+      text: '12',
+    },
+    { // 3
+      link: "" ,
+      imgSrc: "event/1st/e-main/components/match-section/items/Flag_ESP.png",
+      alt: "阿根廷",
+      text: '12',
+    },
+    {
+      link: "" ,
+      imgSrc: "event/1st/e-main/components/match-section/items/Flag_ESP.png",
+      alt: "巴西",
+      text: '12',
+    },
+    { 
+      link: "" ,
+      imgSrc: "event/1st/e-main/components/match-section/items/Flag_ESP.png",
+      alt: "西班牙",
+      text: '12',
+    },
+    { 
+      link: "" ,
+      imgSrc: "event/1st/e-main/components/match-section/items/Flag_ESP.png",
+      alt: "西班牙",
+      text: '12',
+    },
+    { 
+      link: "" ,
+      imgSrc: "event/1st/e-main/components/match-section/items/Flag_ESP.png",
+      alt: "西班牙", 
+      text: '12',
+    },
+    { 
+      link: "" ,
+      imgSrc: "event/1st/e-main/components/match-section/items/Flag_ESP.png",
+      alt: "西班牙",
+      text: '12',
+    },
+  ]
+
+
+section#betCard.bet__wrap
+  .layout--main
+    .bet__block
+      .decor__top
+        img(src="event/1st/e-main/components/bet-section-2/bet-section-2-title.png", alt="")
+
+      .bet__box
+        
+        .bet__text
+          p 只要使用50枚東森幣即可參與指定賽事預測，凡預測成功一注即可獲得100枚東森幣
+          p 每日最多可下注1000枚東森幣，下注後無法更改，東森幣於賽事結果公布後1小時統一歸戶
+
+        .decor__countdown
+          .countdown-date.text--bold
+            span 下注截止日
+            span 12
+            span /
+            span 7
+          span 距離截止還剩
+          span.countdown-time 21
+          span 天
+          span.countdown-time 21
+          span 時
+          span.countdown-time 28
+          span 分
+          span.countdown-time 30
+          span 秒
+      
+
+      .match__item--wrap.block--center
+        each data, index in betItem
+          .match__item
+            .match__item--flag
+              a(href= data.link, title=data.alt)
+                img(src= data.imgSrc, alt=data.alt)
+            .match__item--name
+              span #{data.alt}
+            .match__item--odds.block--center.text--center
+              span 人氣
+              span.text--bold #{data.text}%
+            .match__item--btn
+              a(href="") 
+                img(src="event/1st/e-main/components/match-section/match-section-btn.png", alt="")
+      
+      .bet__item.block--center
+        .bet__item--text
+          span 頁面更新時間：
+        .bet__item--time
+          span 18
+          span :
+          span 00
+

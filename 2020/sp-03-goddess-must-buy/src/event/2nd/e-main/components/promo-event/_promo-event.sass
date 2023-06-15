@@ -1,0 +1,41 @@
+.promo__event
+  background-color: $gray-deep-light
+  margin-bottom: 2.25%
+
+  // +bg-set(url(~event/3rd/e-main/components/promo-event/bg-promo.png), contain, 2vw)
+  .event__wrap
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    padding: 4.4% 2%
+    background-color: $main-e-background-color-2nd
+    // 固定位置模式
+    li
+      flex: 0 1 33%
+      padding: 0.2%
+      // transition: all 0.5s
+      text-align: center
+      &:hover,
+      &:active
+        filter: none
+        img
+          transform: scale(1.02)
+          filter: brightness(105%) contrast(110%)
+      &:first-child
+        +pos-set(relative, zero)
+        &::before
+          content: ''
+          +pos-set(absolute, base, 11%, 16%)
+          width: 80%
+          height: 80%
+          +bg-set(url(~event/2nd/e-main/components/promo-event/items/promo-1-pic.png), contain)
+          transform-origin: 50% 40%
+          animation: tada 2s infinite
+
+  // +breakpoint-min($min-width-xl)
+    // padding: 77px 65px 10px 68px
+    // .event__wrap
+      // li
+        // padding-left: 3px
+        // padding-right: 3px
+        // height: 220px

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+	<title>1212年終購物慶 -- Umall森森購物網</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="http://www.u-mall.com.tw/favicon.ico">
+	<meta name="robots" content="index">
+	<meta name="title" content="1212年終購物慶 -- Umall森森購物網">
+	<meta name="description" content="U-mall森森購物網提供數萬種東森嚴選商品，包含保健食品、彩妝、珠寶、服飾、內衣、旅遊、百貨、美食、3C及家電等眾多類別，雙重資訊安全認證，購物最放心、服務最完整。">
+	<meta name="keywords" content="Umall森森購物網">
+	<meta name="author" content="Umall森森購物網">
+	<meta name="copyright" content="EASTERN HOME SHOPPING &amp;amp; LEISURE CO., LTD.">
+	<meta property="og:title" content="Umall森森購物網">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="http://www.u-mall.com.tw/">
+	<meta property="og:description" content="U-mall森森購物網提供數萬種東森嚴選商品，包含保健食品、彩妝、珠寶、服飾、內衣、旅遊、百貨、美食、3C及家電等眾多類別，雙重資訊安全認證，購物最放心、服務最完整。">
+	<meta property="og:image" content="title.png" />
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		* {
+ 		 box-sizing: border-box; }
+  		*:before, *:after {
+    		box-sizing: border-box; }
+	    a {
+	    	text-decoration: none;
+	    }
+		ul {
+			list-style: none;
+		}
+		img {
+			border: 0;
+			display: block;
+		}
+		.clearfix:after {
+			content: '';
+			clear: both;
+			zoom: 1;
+		}
+
+		body {
+			background-color: #0a0508;
+		  	font-family: Arial, Helvetica, 'LiHei', "Microsoft JhengHei", "PMingLiU", "微軟正黑體", "新細明體", sans-serif;  
+			margin: 0;
+  			padding: 0;
+		}
+
+		.sp__wrap {
+			display: block;
+			background: center top url(bg.jpg) no-repeat;
+			background-size: 103%;
+		}
+
+		@media screen and (max-width: 1919px) {
+			.sp__wrap {
+				background-size: cover;
+			}
+		}
+		
+		.sp--1260 {
+			position: relative;
+			z-index: 2;
+			width: 1260px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		canvas {
+			display: block;
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			left: 0;
+			background-color: transparent;
+		}
+/* ================= header ================= */
+		.sp-logo {
+			position: absolute;
+			z-index: 15;
+			top: 0;
+			left: 0;
+			cursor: pointer;
+		}
+
+		.side-info {
+			position: absolute;
+			z-index: 5;
+			top: 40px;
+			right: 0;
+		}
+
+		.side-info a {
+			position: absolute;
+			z-index: 100;
+			left: 0;
+			width: 95%;
+			height: 48%;
+		}
+
+		.side-info a:nth-child(2) {
+			top: 0;
+		}
+
+		.side-info a:nth-child(3) {
+			bottom: 6px;
+			height: 50%;
+		}
+		
+/* ================= main-visual ================= */
+		.sp-title {
+			float: left;
+			position: relative;
+			height: 270px;
+			margin-left: 45px;
+		}
+
+		.sp-title img {
+			position: absolute;
+		}
+
+		.sp-title img:first-child {	
+			z-index: 1;
+		}
+
+		.title-plus {
+			z-index: 2;
+			top: 417px;
+			left: 361px;
+			animation: rotate-self 4s infinite cubic-bezier(0,.75,.54,1);
+		}
+
+		@keyframes rotate-self {
+			75% {
+				transform: rotate(720deg);
+			}
+			to {
+				transform: rotate(720deg);
+			}
+		}		.sp-title img:last-child {	
+			width: 1015px;
+			top: -13px;
+			left: -124px;
+			z-index: 0;
+			animation: breath-light 4s infinite linear;
+		}
+
+		@keyframes breath-light {
+			from {
+				filter: brightness(80%);
+			}
+			50% {
+				filter: brightness(150%);
+			}
+			to {
+				filter: brightness(80%);
+			}
+		}
+		
+		.sp-slider {
+			float: right;
+			width: 381px;
+			height: 612px;
+			margin-top: 27px;
+			margin-right: 107px;
+			background: url(slider-bg.png) no-repeat;
+			overflow: hidden;
+		}
+
+/* ================= product_img-slider ================= */
+		.product-slider {
+			position: relative;
+			z-index: 1;
+			margin-top: 58px;
+			margin-left: 30px;
+			overflow: hidden;
+		}
+/* ================= main-content ================= */
+		.sp-content	{
+			position: relative;
+			width: 100%;
+			padding-top: 270px;
+		}
+
+		.main-info-sp {
+			position: relative;
+			z-index: 0;
+			height: 315px;
+			margin-bottom: 42px; 
+		}
+
+		.main-info-a {
+			position: absolute;
+			z-index: 10;
+			top: 273px;
+			left: -78px;
+			width: 490px;
+			height: 315px;
+
+		}
+
+		.main-info-sp img {
+			position: absolute;
+			z-index: 0;
+			top: 0;
+			left: 0;
+			margin-top: -155px;
+			margin-left: -235px;
+			transition: opacity 0.5s;
+		}
+
+		.main-info-sp img:nth-child(1) {
+			opacity: 0;
+		}
+
+		.main-info {
+			position: relative;
+		}
+
+		.main-info img {
+			transition: all 0.75s;
+		}
+
+		.main-box {
+			display: block;
+			position: absolute;
+			z-index: 2;
+			top: 0;
+			width: 178px;
+			height: 65px;
+			padding: 10px 16px;
+			color: #fff;
+			font-size: 28px;
+			transition: all 0.5s;
+		}
+
+		.main-box2 {
+			left: 84px;
+			
+		}
+
+		.main-box3 {
+			left: 72px;
+			width: 230px;
+		}
+
+		.main-box4 {
+			left: 172px;
+		}
+
+		.main-info:nth-child(2) {
+			margin-left: -95px;
+			margin-bottom: 30px;
+		}
+
+		.main-info:hover .main-box {
+			color: #d89207;
+		}
+
+		.main-info:hover img {
+			filter: saturate(200%);
+		}
+
+		.main-info:nth-child(3) {
+			position: absolute;
+			z-index: 0;
+			top: 626px;
+			right: -100px;
+		}
+
+		.main-info:nth-child(4) {
+			margin-left: 45px;
+		}
+	
+	</style>
+</head>
+<body>
+	<main id="spWrap" class="sp__wrap">
+		<canvas id='canvas'></canvas>
+		<div class="sp--1260 clearfix">
+			<header>
+				<div class="sp-logo">
+					<a href="http://www.u-mall.com.tw/" title="Umall森森購物網" target="_top">
+						<img src="logo.png" alt="Umall森森購物網">
+					</a>
+			  </div>
+				<aside class="side-info">
+					<img src="line.png" alt="QR-code">
+				</aside>
+			</header>
+			<div class="sp-title">
+				<img src="title.png" alt="1212年終購物慶 -- ETMall東森購物網">
+				<img class="title-plus" src="plus.png" alt="">
+				<img src="triangle.png" alt="">
+			</div>
+			<div class="sp-slider">
+ 				<div class="product-slider">
+ 					<a id="ASRC" href=""><img id="IMGSRC" src="" alt=""></a>
+	    		</div>				
+			</div>
+			<a class="main-info-a" href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201712/SP_1101005/index.html" title="" target="_blank"></a>
+			<section class="sp-content">				
+				<div class="main-info-sp">
+					<img src="main1-1.png" alt="">
+					<img src="main1.png" alt="">		
+				</div>
+				<div class="main-info">
+					<a href="http://www.u-mall.com.tw/SimpleTemplate.aspx?SubPage=DMSetting/Final/201712/SP_1101003/index.html" title="" target="_blank">
+						<img src="main2.png" alt="">
+						<span class="main-box main-box2">單日累積送</span>
+					</a>
+				</div>
+				<div class="main-info">
+					<a href="" title="" target="_blank">
+						<img src="main3.png" alt="">
+						<span class="main-box main-box3">剁手手推薦專區</span>
+					</a>
+				</div>
+				<div class="main-info">
+					<a href="http://www.u-mall.com.tw/SimpleTemplate.aspx?SubPage=DMSetting/Final/201712/SP_1101004/index.html" title="" target="_blank">
+						<img src="main4.png" alt="">
+						<span class="main-box main-box4">刷卡享好康</span>
+					</a>
+				</div>
+			</section>
+		</div>
+	</main>
+	<script src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201504/SP_1019163/Includes/jquery-1.7.2.js"></script>
+	<script src="firework.js"></script>
+	<script type="text/javascript" src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201509/SP_1021444/generateVersion20171122.js" defer></script>
+	<script>
+		$(function(){
+
+			var $mainInfoAnchor = $('.main-info-a');
+			var $mainInfoImg1st = $('.main-info-sp > img:first-child');
+
+			$mainInfoAnchor.on('mouseenter', function(){
+				$mainInfoImg1st.css('opacity', 1);
+			});
+			$mainInfoAnchor.on('mouseleave', function(){
+				$mainInfoImg1st.css('opacity', 0);
+			});
+
+		});
+		  var time = new Date();	  
+		  var days = time.getDate();
+		  var min = time.getMinutes();
+		  var n = time.getDate();  
+		  if(n>14)
+		  {	
+			document.getElementById("IMGSRC").src ="product_img15.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href =15
+		  }
+		  else if(n>13)
+		  {	
+			document.getElementById("IMGSRC").src ="product_img14.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href =14
+		  }
+		  else if(n>12)
+		  {	
+			document.getElementById("IMGSRC").src ="product_img13.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href =13
+		  }
+		  else if(n>11)
+		  {	 
+			document.getElementById("IMGSRC").src ="product_img12.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href =12
+		  }
+		  else if(n>10)
+		  {	
+			document.getElementById("IMGSRC").src ="product_img11.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href =11
+		  }
+		  else if(n>9)
+		  {	
+			document.getElementById("IMGSRC").src ="product_img10.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href =10
+		  }
+		  else if(n>8)
+		  {	
+			document.getElementById("IMGSRC").src ="product_img9.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href =9
+		  }
+		  else if(n>7)
+		  {	
+			document.getElementById("IMGSRC").src ="product_img8.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href =8
+		  }		  
+		  else if(n>6)
+		  {	
+			document.getElementById("IMGSRC").src ="product_img7.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href =7
+		  }
+		  else if(n>5)
+		  {	
+			document.getElementById("IMGSRC").src ="product_img6.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href =6
+		  }
+		  else if(n>4)
+		  {	
+			document.getElementById("IMGSRC").src ="product_img5.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href =5
+		  }		
+		  else if(n>3)
+		  {	
+			document.getElementById("IMGSRC").src ="product_img4.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href =4
+		  }
+		  else if(n>2)
+		  {	
+			document.getElementById("IMGSRC").src ="product_img3.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href =3
+		  }
+		  else if(n>1)
+		  {
+			document.getElementById("IMGSRC").src ="product_img2.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href =2
+		  }
+		  else if(n>0)
+		  {
+			document.getElementById("IMGSRC").src ="product_img1.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href =1
+		  }
+		
+	</script>
+</body>
+</html>	

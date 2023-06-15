@@ -1,0 +1,59 @@
+.promo__group--w3m3
+  +pos-set(relative, zero)
+  .promo__wrap
+    +aspect-ratio(960, 1226)
+  .promo__zone
+    +bg-set(url("event/1st/e-main/components/event-w3m3/bg-event-w3m3.png"), 100% auto)
+    .event__wrap
+      display: flex
+      padding: 25% 7% 0
+    .good__wrap
+      li
+        width: 100%
+        a
+          transition: transform 0.5s
+          &:hover
+            transform: scale(1.05)
+            filter: brightness(120%)
+          &.active
+            animation: fade-up-3 1s
+    .promo__block
+      &:first-child
+        padding-top: 10%
+        width: 44%
+        li
+          &:first-child
+            a
+              padding-top: 2%
+              padding-left: 42%
+          &:nth-child(2)
+            padding-right: 14%
+            a
+              padding-top: 83%
+          &:last-child
+            padding-left: 5%
+            width: 54%
+      &:nth-child(2)
+        width: 36%
+        li
+          &:first-child
+            padding-top: 110%
+            padding-bottom: 12%
+            +breakpoint-min($min-width-xl)
+              padding-bottom: 60px
+            a
+              margin-left: -45%
+              padding-top: 55%
+              width: 100%
+          &:last-child
+            padding-left: 8%
+      &:last-child
+        padding-top: 5%
+        width: 20%
+        li
+          margin-bottom: 25%
+
+@keyframes fade-up-3
+  50%, 100%
+      transform: scale(1.1)
+      filter: brightness(120%)

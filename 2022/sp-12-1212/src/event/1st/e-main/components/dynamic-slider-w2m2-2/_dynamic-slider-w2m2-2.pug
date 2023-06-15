@@ -1,0 +1,68 @@
+-
+  var promoBannerSlider = [
+    { // 1
+      link: "https://www.etmall.com.tw/bs/162580",
+      imgSrc: "event/1st/e-main/components/dynamic-slider-w2m2-2/items/bn-w2m22-1.jpg",
+      alt: "可口可樂"
+    },
+    { // 2
+      link: "https://media.etmall.com.tw/sp/19602/m/index.html",
+      imgSrc: "event/1st/e-main/components/dynamic-slider-w2m2-2/items/bn-w2m22-2.jpg",
+      alt: "咖啡嘉年華"
+    },
+    { // 3
+      link: "https://media.etmall.com.tw/sp/19602/m/index.html",
+      imgSrc: "event/1st/e-main/components/dynamic-slider-w2m2-2/items/bn-w2m22-3.jpg",
+      alt: "西雅圖極品咖啡"
+    },
+    { // 4
+      link: "https://media.etmall.com.tw/sp/14055/m/index.html",
+      imgSrc: "event/1st/e-main/components/dynamic-slider-w2m2-2/items/bn-w2m22-4.jpg",
+      alt: "東森火鍋季"
+    },
+    { // 5
+      link: "https://media.etmall.com.tw/sp/14055/m/index.html",
+      imgSrc: "event/1st/e-main/components/dynamic-slider-w2m2-2/items/bn-w2m22-5.jpg",
+      alt: "團圓相揪吃火鍋"
+    },
+    { // 6
+      link: "https://media.etmall.com.tw/sp/19932/m/index.html",
+      imgSrc: "event/1st/e-main/components/dynamic-slider-w2m2-2/items/bn-w2m22-6.jpg",
+      alt: "年菜早鳥預購"
+    },
+    { // 7
+      link: "https://media.etmall.com.tw/sp/19227/m/index.html",
+      imgSrc: "event/1st/e-main/components/dynamic-slider-w2m2-2/items/bn-w2m22-7.jpg",
+      alt: "聯華X御茶園"
+    },
+    { // 8
+      link: "https://www.etmall.com.tw/gp/142381",
+      imgSrc: "event/1st/e-main/components/dynamic-slider-w2m2-2/items/bn-w2m22-8.jpg",
+      alt: "鼎王"
+    },
+  ]
+  
+section.promo__group.dynamic-slider-w2m2-2.m-bottom--lg(data-title="年貨搶先購")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--title#decorDynamicW2M22Title
+        img(src="event/1st/e-main/components/dynamic-slider-w2m2-2/title-dynamic-slider-w2m2-2.png", alt="")
+      .decor__item.decor__item--left#decorDynamicW2M22Left
+        img(src="event/1st/e-main/components/dynamic-slider-w2m2-2/decor-dynamic-slider-w2m2-2-left.png", alt="")
+      .decor__item.decor__item--right#decorDynamicW2M22Right
+        img(src="event/1st/e-main/components/dynamic-slider-w2m2-2/decor-dynamic-slider-w2m2-2-right.png", alt="")
+      .decor__item.decor__item--light#decorDynamicW2M22Light
+        img(src="event/1st/e-main/components/dynamic-slider-w2m2-2/decor-dynamic-slider-w2m2-2-light.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          .banner__slider
+            .slider__wrap
+              .swiper-container#bannerSliderReady
+                ul.swiper-wrapper
+                  each data in promoBannerSlider
+                    li.swiper-slide
+                      a(href= data.link, title=data.alt)
+                        img(src= data.imgSrc, alt=data.alt)
+          .promo__slider.swiper-container#dynamicSliderW2M22Block
+            .swiper-wrapper

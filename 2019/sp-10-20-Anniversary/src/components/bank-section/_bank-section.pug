@@ -1,0 +1,59 @@
+- var bankLink = {etmall: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201910/SP_1107838/w/index.html", umall: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201910/SP_1104317/w/index.html"}
+- var bankInfo = isU ? bankLink.umall : bankLink.etmall
+
+- var bankDataE = [{link: bankInfo, imgSrc: "~components/bank-section/items/e/bank-01.png", alt: "點我看銀行回饋"}, {link: bankInfo, imgSrc: "~components/bank-section/items/e/bank-02.png", alt: "點我看銀行回饋"}, {link: bankInfo, imgSrc: "~components/bank-section/items/e/bank-03.png", alt: "點我看銀行回饋"}, {link: bankInfo, imgSrc: "~components/bank-section/items/e/bank-04.png", alt: "點我看銀行回饋"},  ]
+
+- var bankDataE_third = [{link: bankInfo, imgSrc: "~components/bank-section/items/e-3/bank-01.png", alt: "點我看銀行回饋"}, {link: bankInfo, imgSrc: "~components/bank-section/items/e-3/bank-02.png", alt: "點我看銀行回饋"}, {link: bankInfo, imgSrc: "~components/bank-section/items/e-3/bank-03.png", alt: "點我看銀行回饋"}, {link: bankInfo, imgSrc: "~components/bank-section/items/e-3/bank-04.png", alt: "點我看銀行回饋"},  ]
+
+- var bankDataU = [{link: bankInfo, imgSrc: "~components/bank-section/items/u/bank-01.png", alt: "點我看銀行回饋"}, {link: bankInfo, imgSrc: "~components/bank-section/items/u/bank-02.png", alt: "點我看銀行回饋"}, {link: bankInfo, imgSrc: "~components/bank-section/items/u/bank-03.png", alt: "點我看銀行回饋"}, {link: bankInfo, imgSrc: "~components/bank-section/items/u/bank-04.png", alt: "點我看銀行回饋"} ]
+
+//- var bankDataU_third = [{link: bankInfo, imgSrc: "~components/bank-section/items/e-3/bank-03.png", alt: "u第二檔"}, {link: bankInfo, imgSrc: "~components/bank-section/items/e-3/bank-02.png", alt: "點我看銀行回饋"}, {link: bankInfo, imgSrc: "~components/bank-section/items/e-3/bank-03.png", alt: "點我看銀行回饋"}, {link: bankInfo, imgSrc: "~components/bank-section/items/e-3/bank-04.png", alt: "點我看銀行回饋"},  ]
+
+//- ========== 判斷 是E:U or 是第一檔:第二檔
+//- var bankData = isU ? bankDataU : bankDataE
+if isU && !is_third
+  -var bankData = bankDataU
+else if isU && is_third
+  -var bankData = bankDataU_third
+else if !isU && !is_third
+  -var bankData = bankDataE
+else if !isU && is_third
+  -var bankData = bankDataE_third
+
+//- ========== Code Start ==========
+if is_third
+  section.promo__group.promo__group--bank
+    .layout--main
+      //- .promo__zone.lazyload(data-src="960bg-05.jpg")
+      .promo__zone
+        .promo__title.block--center.m-bottom--xs(data-title="a2")
+          img.lazyload(data-src="section-bn-bank.png", src="~utils/img/1x1_low.png", alt="銀行回饋")
+        .promo__wrap
+          .promo__slider
+            #sliderBank.swiper-container
+              ul.swiper-wrapper
+                each data in bankData
+                  li.swiper-slide
+                    a(href= data.link, title= data.alt)
+                      img(src= data.imgSrc, alt= data.alt)
+              #sliderBankPager.swiper-pager-white.swiper-pagination
+            #sliderBankPrev.swiper-button-white.swiper-button-prev
+            #sliderBankNext.swiper-button-white.swiper-button-next
+else
+  section.promo__group.promo__group--bank
+    .layout--main
+      //- .promo__zone.lazyload(data-src="960bg-05.jpg")
+      .promo__zone
+        .promo__title.block--center.m-bottom--xs(data-title="a1")
+          //- img.lazyload(data-src="section-bn-04.png", src="~utils/img/1x1_low.png", alt="銀行回饋")
+        .promo__wrap
+          .promo__slider
+            #sliderBank.swiper-container
+              ul.swiper-wrapper
+                each data in bankData
+                  li.swiper-slide
+                    a(href= data.link, title= data.alt)
+                      img(src= data.imgSrc, alt= data.alt)
+              #sliderBankPager.swiper-pager-white.swiper-pagination
+            #sliderBankPrev.swiper-button-white.swiper-button-prev
+            #sliderBankNext.swiper-button-white.swiper-button-next

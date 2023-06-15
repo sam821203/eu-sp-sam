@@ -1,0 +1,295 @@
+.build__group
+  display: flex
+  max-width: 960px
+  flex-wrap: wrap
+  margin: 0 auto
+  align-items: flex-start
+  justify-content: center
+  .build__items
+    position: relative
+    display: flex
+    align-items: flex-start
+    justify-content: flex-start
+    order: 1
+    padding: 19% 9%
+    +bg-set(url("~event/1st/e-other-item/components/promo-event/promo-bg-m.png"), 100%)
+    &:before
+      display: block
+      clear: both
+      position: absolute
+      font-family: Arial
+      color: #fffbc1
+      top: 6.3vw
+      left: 37vw
+      font-size: 5.5vw
+      font-weight: 700
+    &:nth-child(1)
+      &:before
+        content: '11/2'
+    &:nth-child(2)
+      &:before
+        content: '11/3'
+    &:nth-child(3)
+      &:before
+        content: '11/4'
+    &:nth-child(4)
+      &:before
+        content: '11/5'
+    &:nth-child(5)
+      &:before
+        content: '11/6'
+    &:nth-child(6)
+      &:before
+        content: '11/7'
+    &:nth-child(7)
+      &:before
+        content: '11/8'
+    &:nth-child(8)
+      &:before
+        content: '11/9'
+    &:nth-child(9)
+      &:before
+        content: '11/10'
+        left: 35vw
+    &:nth-child(10)
+      &:before
+        content: '11/11'
+        left: 35vw
+    &:nth-child(11)
+      &:before
+        content: '11/12'
+        left: 35vw
+
+    .build__item__5a1b4s
+      width: 49%
+      margin: .5% .5% 1%
+      img
+        width: 90%
+        display: block
+        margin: 0 auto
+        text-align: center
+      .item__name
+        font-size: 3.5vw
+        color: #190d04
+        height: 10vw
+        overflow-y: hidden
+        margin: 1% 0
+      .item__price
+        +bg-set(url("~event/1st/e-other-item/components/promo-event/price-bg.png"), 75% auto)
+        color: #ffe67a
+        margin: 0 auto
+        text-align: center
+        line-height: 9vw
+        height: 9vw
+        font-size: 5.5vw
+  +breakpoint-max($min-width-xl)
+    .build__items
+      flex-wrap: wrap
+      .build__item__5a1b4s
+        &:first-child
+          position: relative
+          width: 100%
+          height: 41vw
+          .item__img
+            width: 50%
+          .item__name, .item__price
+            position: absolute
+            left: 44vw
+          .item__name
+            top: 0
+            width: 48%
+            height: 24vw
+            overflow-y: hidden
+          .item__price
+            background-size: 100% auto
+            top: 27vw
+            width: 44%
+            padding: 0
+            line-height: 10vw
+            height: 10vw
+
+  +breakpoint-min($min-width-xl)
+    .build__items
+      +bg-set(url("~event/1st/e-other-item/components/promo-event/promo-bg-web.png"), 100%)
+      background-size: 100% auto
+      padding: 175px 75px 0
+      height: 526px
+      &:before
+        top: 64px
+        left: calc(50% - 109px)
+        font-size: 44px
+      &:nth-child(9)
+        &:before
+          left: calc(50% - 122px)
+      &:nth-child(10)
+        &:before
+          left: calc(50% - 122px)
+      &:nth-child(11)
+        &:before
+          left: calc(50% - 122px)
+
+      .build__item__5a1b4s
+        width: 19%
+        img
+          width: auto
+        .item__name
+          font-size: 15px
+          height: 42px
+
+        .item__price
+          font-size: 22px
+          background-size: 100% auto
+          line-height: 44px
+          height: 44px
+
+.close
+  position: relative
+  pointer-events: none
+  &:after
+    position: absolute
+    display: block
+    clear: both
+    content: ''
+    z-index: 10
+    background-color: rgba(0,0,0,0.5)
+    background-image: url("~event/1st/e-other-item/components/promo-event/soldOut.png")
+    background-size: 80% auto
+    background-position: center
+    background-repeat: no-repeat
+    pointer-events: none
+    top: 0vw
+    left: 0vw
+    width: 100vw
+    height: 188vw
+
+.close__single
+  position: relative
+  pointer-events: none
+  &:after
+    position: absolute
+    display: block
+    clear: both
+    content: ''
+    z-index: 10
+    background-color: rgba(0,0,0,0.5)
+    background-image: url("~event/1st/e-other-item/components/promo-event/soldOut.png")
+    background-size: 80% auto
+    background-position: center
+    background-repeat: no-repeat
+    pointer-events: none
+    top: -1vw
+    left: -3vw
+    width: 43vw
+    height: 57vw
+.build__item__5a1b4s.close__single
+  &:first-child
+    &:after
+      top: -1vw
+      left: -3vw
+      width: 86vw
+      height: 42vw
+  &:nth-child(2n+3)
+    &:after
+      top: -1vw
+      left: -1vw
+
++breakpoint-min($min-width-xl)
+  .close
+    &:after
+      top: 0
+      left: 0
+      width: 960px
+      height: 526px
+      background-size: 50% auto
+
+  .close__single
+    &:after
+      top: 0
+      left: 0
+      width: 155px
+      height: 244px
+  .build__item__5a1b4s.close__single
+    &:first-child
+      position: relative
+      &:after
+        top: 0
+        left: 0
+        width: 155px
+        height: 244px
+    &:nth-child(2n+3)
+      &:after
+        top: 0
+        left: 0
+
+
+
+//&:first-child
+  //  &:before
+  //    position: absolute
+  //    display: block
+  //    clear: both
+  //    content: ''
+  //    z-index: 10
+  //    background-color: rgba(0,0,0,0.5)
+  //    pointer-events: none
+  //    top: -2vw
+  //    left: -3vw
+  //    width: 86vw
+  //    height: 42vw
+  //  &:after
+  //    position: absolute
+  //    display: block
+  //    clear: both
+  //    content: ''
+  //    top: 10vw
+  //    left: 10vw
+  //    width: 10vw
+  //    height: 10vw
+  //    +bg-set(url("~event/1st/e-other-item/components/promo-event/soldOut.png"), 100%)
+  //&:nth-child(2n+2)
+  //  &:before
+  //    position: absolute
+  //    display: block
+  //    clear: both
+  //    content: ''
+  //    z-index: 10
+  //    background-color: rgba(0,0,0,0.5)
+  //    pointer-events: none
+  //    top: -2vw
+  //    left: -3vw
+  //    width: 43vw
+  //    height: 57vw
+  //  &:after
+  //    position: absolute
+  //    display: block
+  //    clear: both
+  //    content: ''
+  //    top: 10vw
+  //    left: 10vw
+  //    width: 10vw
+  //    height: 10vw
+  //    +bg-set(url("~event/1st/e-other-item/components/promo-event/soldOut.png"), 100%)
+  //&:nth-child(2n+3)
+  //  &:before
+  //    position: absolute
+  //    display: block
+  //    clear: both
+  //    content: ''
+  //    z-index: 10
+  //    background-color: rgba(0,0,0,0.5)
+  //    pointer-events: none
+  //    top: -2vw
+  //    left: -1vw
+  //    width: 43vw
+  //    height: 57vw
+  //  &:after
+  //    position: absolute
+  //    display: block
+  //    clear: both
+  //    content: ''
+  //    top: 10vw
+  //    left: 10vw
+  //    width: 10vw
+  //    height: 10vw
+  //    +bg-set(url("~event/1st/e-other-item/components/promo-event/soldOut.png"), 100%)
+

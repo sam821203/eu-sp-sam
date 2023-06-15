@@ -1,0 +1,75 @@
+// 因要拆成note故改成html內style行內操控
+
+// .calendar__wrap
+//   +nav-overflow-x
+//   white-space: nowrap
+// .newly__wrap
+//   position: relative
+//   z-index: map-get($zindex, zero)
+//   padding-top: 16%
+//   height: 0
+//   .newly__item
+//     position: absolute
+//     z-index: map-get($zindex, base)
+//     top: 0
+//     left: 0
+//     width: 12%
+//     max-width: 74px
+//     &.notyet
+//       a
+//         cursor: default
+//   +breakpoint-min($min-width-lg)
+//     padding-top: 95px
+//     .newly__item
+//       width: 75px
+// .timeline__wrap
+//   +breakpoint-min($min-width-3xl)
+//     overflow: hidden
+// .timeline__item
+//   +font-size($fz-13)
+//   display: inline-block
+//   position: relative
+//   z-index: map-get($zindex, zero)
+//   margin-left: -0.3em
+//   padding: 1% 2.8%
+//   &:before
+//     content: ''
+//     position: absolute
+//     z-index: map-get($zindex, under)
+//     top: calc(32% - 1px)
+//     left: 0
+//     width: 100%
+//     height: 2px
+//     background-color: $primary-medium
+//   .timeline__dot
+//     width: 2em
+//     height: 2em
+//     background-image: url("~components/phone-calendar/img/dot.png")
+//     background-size: contain
+//   .timeline__month
+//     margin-left: 0.25em
+//     color: $primary-medium
+//   +breakpoint-min($min-width-lg)
+//     +font-size($fz-20)
+//     padding: 10px 20px
+//     &:before
+//       top: 29px
+
+// custom move  
+// .newly__item:nth-child(1)
+//   left: 10%
+// .newly__item:nth-child(2)
+//   left: 28%
+// .newly__item:nth-child(3)
+//   left: 52%
+// .newly__item:nth-child(4)
+//   left: 68%
+// .newly__item:nth-child(5)
+//   left: 72%
+
+// .timeline__item
+//   width: 1.5%
+// .timeline__item:nth-child(3)
+//   width: 30%
+// .timeline__item:nth-child(6)
+//   width: 30%

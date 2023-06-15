@@ -1,0 +1,28 @@
+//- TODO: 打開雙月選項切換雙月(預設單月)
+- var isEven = true
+//- TODO: 打開2號電梯選項切換第二組電梯(預設第一組)
+- var isSecond = false
+//- TODO: 打開u-mall選項會自動轉換成U的logo和連結、電梯(預設etmall)
+//-- var isU = true
+
+//- 如果放在hero-section會出現重load的感覺
+//#animateWrapHt(style="left:50%;")
+//  .parallax__background
+main#spWrap.sp__wrap.sp__wrap--e
+  //include /layout/header/_header
+  //- #parallaxBg.parallax__background
+  //- .parallax__background
+
+  //- hero section
+
+  //- other components
+  //- ===========================
+  include /event/2nd/e-main/components/tab-section/_tab-section
+  //include /event/2nd/e-main/components/event-w4m2/_event-w4m2
+
+//- script區
+// her宮格線上連結： https://docs.google.com/spreadsheets/d/1Gjvpm9s7KWWx-YPCu7t119YlxRg3jLPBk_cPNxPTLSw/edit#gid=631725176
+include /utils/pug/_total-script
+script(src="sheet-id.js")
+//script(src="data-daily.js")
+

@@ -1,0 +1,73 @@
+-
+  var sliderW2M2Data = [
+    [  //1
+      {
+        link: "https://www.etmall.com.tw/i/3523088" ,
+        imgSrc: "event/2nd/e-main/components/slider-w2m2/item/item-p-1.png",
+        alt: "【Dylce 黛歐絲】仙女系莫代爾面膜蠶絲抑菌中腰內褲(超值8件組-隨機)",
+      },
+      {
+        link: "https://www.etmall.com.tw/i/3532344" ,
+        imgSrc: "event/2nd/e-main/components/slider-w2m2/item/item-p-2.png",
+        alt: "COACH 牛仔布/Kleo 23中款/斜背兩用包_深藍",
+      },
+    ],
+    [  //2
+      {
+        link: "https://www.etmall.com.tw/i/1740985" ,
+        imgSrc: "event/2nd/e-main/components/slider-w2m2/item/item-p-3.png",
+        alt: "奧莉薇閣24+28吋兩件組行李箱 PC大容量硬殼旅行箱",
+      },
+      {
+        link: "https://www.etmall.com.tw/i/2728644" ,
+        imgSrc: "event/2nd/e-main/components/slider-w2m2/item/item-p-4.png",
+        alt: "毛孩時代 腸胃專科益生菌x10盒(貓狗益生菌 貓狗腸胃保健)",
+      },
+    ],
+    [  //3
+      {
+        link: "https://www.etmall.com.tw/i/2422732" ,
+        imgSrc: "event/2nd/e-main/components/slider-w2m2/item/item-p-5.png",
+        alt: "理膚寶水LA Roche-Posay青春潔膚凝膠400ml加贈青春潔膚凝膠50ML",
+      },
+      {
+        link: "https://www.etmall.com.tw/i/3566032" ,
+        imgSrc: "event/2nd/e-main/components/slider-w2m2/item/item-p-6.png",
+        alt: "【大成食品】常溫慢熬雞精10盒組(50mL/包，8包 /盒X10)",
+      },
+    ],
+    [  //4
+      {
+        link: "https://www.etmall.com.tw/i/3598050" ,
+        imgSrc: "event/2nd/e-main/components/slider-w2m2/item/item-p-7.png",
+        alt: "QNAP TS-453Be-4G 網路儲存伺服器",
+      },
+      {
+        link: "https://www.etmall.com.tw/i/3065859" ,
+        imgSrc: "event/2nd/e-main/components/slider-w2m2/item/item-p-8.png",
+        alt: "HITACHI 日立 527公升日本原裝變頻六門冰箱 RHSF53NJ星燦金(CNX)/消光白(SW)",
+      },
+    ],
+  ]
+
+
+section.promo__group.slider-w2m2.m-bottom--lg(data-title="大牌秒殺")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--left#decorSliderW2M2Left
+        img(src="event/2nd/e-main/components/slider-w2m2/decor-slider-w2m2-left.png", alt="")
+      .decor__item.decor__item--right#decorSliderW2M2Right
+        img(src="event/2nd/e-main/components/slider-w2m2/decor-slider-w2m2-right.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block.full-parent
+          .promo__slider.swiper-container#sliderW2M2Item
+            ul.swiper-wrapper
+              each data, index in sliderW2M2Data
+                li.swiper-slide
+                  each item, itemIndex in  data
+                    .swiper-box
+                      a(href= item.link, title=item.alt)
+                        img(src= item.imgSrc, alt=item.alt)
+
+

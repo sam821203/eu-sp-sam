@@ -1,0 +1,98 @@
+-
+  var midBigDataE = [
+  {
+  link: "https://www.etmall.com.tw/gp/105031",
+  imgSrc: "~event/3rd/e-main/components/mid-big-slider/items/mid-big-1.png",
+  alt: "櫥下設備",
+  text: "買就回饋東幣1000枚",
+  },
+  {
+  link: "https://www.etmall.com.tw/np/65333",
+  imgSrc: "~event/3rd/e-main/components/mid-big-slider/items/mid-big-2.png",
+  alt: "HOYACASA",
+  text: "質感寢具$499up",
+  },
+  {
+  link: "https://media.etmall.com.tw/sp/7160/m/index.html",
+  imgSrc: "~event/3rd/e-main/components/mid-big-slider/items/mid-big-3.png",
+  alt: "Michelin米其林",
+  text: "輪胎四入只要9,999",
+  },
+  {
+  link: "https://www.etmall.com.tw/gp/118415",
+  imgSrc: "~event/3rd/e-main/components/mid-big-slider/items/mid-big-4.png",
+  alt: "Kanebo",
+  text: "Kanebo滿額送好禮",
+  },
+  {
+  link: "https://www.etmall.com.tw/gp/118478",
+  imgSrc: "~event/3rd/e-main/components/mid-big-slider/items/mid-big-5.png",
+  alt: "正官庄",
+  text: "正官庄滿額雙重送",
+  },
+  {
+  link: "https://www.etmall.com.tw/p/119325",
+  imgSrc: "~event/3rd/e-main/components/mid-big-slider/items/mid-big-6.png",
+  alt: "妍選洋行",
+  text: "獨家特談下單送",
+  },
+  {
+  link: "https://media.etmall.com.tw/sp/7148/m/index.html",
+  imgSrc: "~event/3rd/e-main/components/mid-big-slider/items/mid-big-7.png",
+  alt: "SAMSUNG",
+  text: "5G星勢力用星相聚",
+  },
+  {
+  link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202005/SP_1115505",
+  imgSrc: "~event/3rd/e-main/components/mid-big-slider/items/mid-big-8.png",
+  alt: "MyCard",
+  text: "狂撒百萬抽Switch",
+  },
+  {
+  link: "https://media.etmall.com.tw/sp/6923/m/index.html",
+  imgSrc: "~event/3rd/e-main/components/mid-big-slider/items/mid-big-9.png",
+  alt: "Dyson",
+  text: "回饋10%東森幣",
+  },
+  ]
+
+-
+  var midBigDataU = [
+  {
+  link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202008/SP_1106087/w/index.html",
+  imgSrc: "~event/3rd/u-main/components/mid-big-slider/items/mid-big-1.png",
+  alt: "20間銀行最高回饋10%"
+  },
+  {
+  link: "https://www.u-mall.com.tw/Activity/HourSale",
+  imgSrc: "~event/3rd/u-main/components/mid-big-slider/items/mid-big-2.png",
+  alt: "整點最便宜"
+  },
+  {
+  link: "https://www.u-mall.com.tw/Activity/HourSale?Day=Up",
+  imgSrc: "~event/3rd/u-main/components/mid-big-slider/items/mid-big-3.png",
+  alt: "天天最激殺"
+  },
+  ]
+
+- var midBigData = isU ? midBigDataU : midBigDataE
+
+section.promo__group.promo__group--mid-big(data-title="品牌大賞")
+  .layout--main
+    //.promo__title.block--center.text--center
+    //  img(src="~event/3rd/e-main/components/mid-big-slider/title-mid-big.png", alt="加111元多一件")
+
+    .promo__wrap
+      #sliderMidBig.promo__slider.swiper-container
+        ul.swiper-wrapper
+          each data in midBigData
+            li.swiper-slide
+              a(href= data.link, title= data.alt)
+                img.swiper-lazy(data-src= data.imgSrc, alt="")
+                .swiper-lazy-preloader.swiper-lazy-preloader-white
+                .text__box
+                  span= data.text
+
+        #sliderMidBigPrev.swiper-button-white.swiper-button-prev.mid-big__nav.mid-big__nav--prev
+        #sliderMidBigNext.swiper-button-white.swiper-button-next.mid-big__nav.mid-big__nav--next
+      //- #sliderMidBigPager.mid-big__pager.swiper-pagination

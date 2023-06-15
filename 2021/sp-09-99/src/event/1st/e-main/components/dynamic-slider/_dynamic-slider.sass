@@ -1,0 +1,42 @@
+// 兩區共用，省檔案大小
+// .promo__group--dynamic-section
+
+.promo__group--dynamic-slider
+  overflow: hidden
+  .decoration__title
+    +pos-set(relative)
+    padding-bottom: 12%
+  .promo__wrap
+    margin-top: -10%
+    +aspect-ratio(960, 700)
+    +bg-set(url(event/1st/e-main/components/dynamic-slider/bg-dynamic-slider.png), 100%)
+  .promo__zone
+    +pos-set(relative, zero)
+    padding: 22.5% 6% 7%
+  .product__block
+    padding: 3%
+  .product--dynamic
+    padding: 2%
+    width: 100%
+    +aspect-ratio(266, 390, relative, zero, a)
+    // +bg-set(url(event/1st/e-main/components/dynamic-slider/item-dynamic-slider.png), 100%)
+
+  .product__img
+    border-radius: 2.5vw 2.5vw 0 0
+  .product__text
+    border-radius: 0 0 2.5vw 2.5vw
+    background-color: $gray-deep-light
+
+  +breakpoint-min($min-width-xl)
+    .product__img
+      border-radius: 25px 25px 0 0
+    .product__text
+      border-radius: 0 0 25px 25px
+
+  .decoration__dynamic-slider
+    width: 100%
+    text-align: center
+  .promo__slider
+    height: 100%
+    .swiper-slide
+      width: 33%

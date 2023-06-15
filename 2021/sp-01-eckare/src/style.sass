@@ -1,0 +1,48 @@
+//- ==========================================================================
+//- Base
+//- ==========================================================================
+
+@import "~utils/sass/_common"
+
+//- =======================================================================
+//- layout
+//- =======================================================================
+@import "~layout/header/_header"
+
+// ==========================================================================
+// Page
+// ==========================================================================
+
+// // ==========================================================================
+// // Plugins
+// // ==========================================================================
+// // @import "vendors/animate"
+// @import "~vendors/style/swiper-slider-custom"
+@import '~vendors/style/swiper-safari-polyfill'
+
+
+// // ==========================================================================
+// // components
+// // ==========================================================================
+@import "~event/eckare/components/login-section/_login-section"
+@import "~event/eckare/components/pop__window-section/_pop__window-section"
+
+// // ==========================================================================
+// // Page
+// // ==========================================================================
+body.default__reset
+  +pos-set(relative)
+  font-family: $font-family-base
+  &.bg-gray
+    background-color: $eckare-background
+.sp__wrap
+  +pos-set(relative)
+  +breakpoint-min($min-width-xl)
+    .promo__group
+      +pos-set(relative, base)
+
+.sp__wrap a
+  display: block
+  .promo__title
+    text-align: center
+// .decoration--background.decoration__wrap

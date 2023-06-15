@@ -1,0 +1,207 @@
+// // ==========================================================================
+// // decoration
+// // ==========================================================================
+@keyframes title-down
+  0%
+    opacity: 0
+    transform: translateY(calc(-100vw * .5))
+  70%, 80%
+    transform: translateY(0) scale(1.2)
+  75%, 100%
+    transform: translateY(0) scale(1)
+  100%
+    opacity: 1
+
+@keyframes key-rotate-stop
+  0%
+    transform: rotate(0)
+  5%
+    transform: rotate(-20deg)
+  10%
+    transform: rotate(0)
+  15%
+    transform: rotate(20deg)
+  20%
+    transform: rotate(0)
+  100%
+    transform: rotate(0)
+
++key-shake-self-y(10)
+
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.parallax__background
+  +pos-set(absolute, zero)
+  //+bg-set(url("~event/index-main-e-2/components/hero-section/960bg.jpg"), 100%, center, 0, no-repeat, $gray-deep-light)
+  background-color: #fff
+  padding-top: 98%
+  width: 100%
+  +breakpoint-min($min-width-xl)
+    +bg-set(url("~event/index-main-e-2/components/hero-section/2560bg.jpg"), 2560px 1869px, center, 0, no-repeat, $gray-deep-light)
+
+.hero__wrap
+  +pos-set(relative, zero)
+  .hero__zone
+    +pos-set(relative, zero)
+  // padding-top: 3%
+
+  .hero__title
+    z-index: 2
+    position: relative
+    &--main
+      padding-top: calc(100vw * 0.11)
+      .title__box
+        +pos-set(absolute, third)
+        &.title__date
+          display: none
+        &.title__decoration
+          top: 18%
+          left: 5%
+          width: 35%
+          // filter: drop-shadow(0 4px $gray-medium)
+          animation: 1s 1s title-down both ease-out
+          img
+            animation: 2s 2s key-rotate-stop both infinite ease-in-out
+      > img
+        &:last-child
+          margin-left: 2%
+          width: 85%
+          text-align: center
+
+  +breakpoint-min($min-width-xl)
+    background: none
+    .hero__zone
+      padding-top: 10px
+
+    .hero__title
+      padding-top: 18px
+      &--main
+        .title__box
+        &.title__date
+          display: block
+          top: 75px
+          left: 50px
+          width: 106px
+        &.title__decoration
+          top: 130px
+          left: 10px
+          width: 175px
+        > img
+          &:last-child
+            margin: 7% auto auto 7%
+            width: auto
+    .hero__block
+      +display-flex(">div")
+      flex-wrap: wrap
+      +pos-set(relative, zero)
+    .hero__box
+      +flex(0, 0, 100%)
+    // padding-left: 12%
+    // .goods__wrap
+    //   +flex(0, 1, 66%)
+    //   +pos-set(absolute, under, 15px, null, null, -140px)
+    .promo__event
+      +flex(0, 1, 100%)
+      +pos-set(relative, second)
+    .goods__wrap--flip
+      +flex(0, 1, 62%)
+      +pos-set(absolute, second, 200px, null, null, -90px)
+//padding: 50px
+.decoration__firework
+  width: 100%
+  position: relative
+  overflow-x: hidden
+  padding-top: 95%
+  +breakpoint-min($min-width-xl)
+    overflow-x: inherit
+    padding-top: 0
+
+.hero__box
+  margin-top: -95%
+  +breakpoint-min($min-width-xl)
+    margin-top: 0
+
+.header__decoration
+  +pos-set(absolute, third)
+  &.header__decoration--one-dollar
+    width: 27%
+    right: calc(100% * 0.1)
+    top: calc(100% * 0.05)
+    animation: 2s 2s key-rotate-stop both infinite ease-in-out
+    +breakpoint-min($min-width-xl)
+      right: 101px
+      top: 55px
+  &.fire--common
+    width: 20%
+    position: absolute
+    transform-origin: center
+    max-width: 257px
+    max-height: 257px
+    opacity: 0
+  &.fire--purple-1
+    top: calc(100vw * 0.159)
+    left: calc(100vw * -0.184)
+    width: 20%
+    animation: 5s 2s firework-effect infinite
+  &.fire--purple-2
+    top: calc(100vw * 0.0625)
+    left: calc(100vw * 0.094)
+    display: none
+    animation: 5.6s 3s firework-effect infinite
+  &.fire--purple-3
+    top: calc(100vw * 0.3125)
+    right: calc(100vw * 0.016)
+    width: 15%
+    animation: 4.2s 2.5s firework-effect infinite
+  &.fire--red-1
+    top: calc(100vw * 0.45)
+    left: calc(100vw * -0.03125)
+    width: 18%
+    animation: 5.8s 3s firework-effect infinite
+  &.fire--red-2
+    top: calc(100vw * 0.122)
+    right: calc(100vw * -0.06875)
+    width: 19%
+    animation: 6.4s 1s firework-effect infinite
+  &.fire--red-3
+    top: calc(100vw * 0.5)
+    right: calc(100vw * -0.0375)
+    width: 20%
+    animation: 7s 3s firework-effect infinite
+  +breakpoint-min($min-width-xl)
+    &.fire--common
+      width: auto
+
+    &.fire--purple-1
+      top: 130px
+      width: 23%
+      left: calc(50% - 663px)
+    &.fire--purple-2
+      top: 594px
+      left: calc(50% - 848px)
+      display: block
+    &.fire--purple-3
+      width: 15%
+      top: 300px
+      right: calc(50% - 466px)
+    &.fire--red-1
+      width: 20%
+      top: 424px
+      left: calc(50% - 524px)
+    &.fire--red-2
+      width: 19%
+      top: 91px
+      right: calc(50% - 550px)
+    &.fire--red-3
+      width: 21%
+      top: 484px
+      right: calc(50% - 553px)
+
+@keyframes firework-effect
+  0%, 10%, 30%, 35%, 55%, 58%, 79%
+    opacity: 0
+    transform: scale(0)
+  20%, 29%, 45%, 54%, 68%, 78%
+    opacity: 1
+    transform: scale(1)

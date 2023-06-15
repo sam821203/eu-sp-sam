@@ -1,0 +1,48 @@
+.promo__group--promo-section
+  +pos-set(relative, zero)
+  overflow: hidden
+  margin-top: -20%
+  +breakpoint-min($min-width-xl)
+    margin-top: -200px
+  .decor__wrap
+    pointer-events: none
+    .decor__item
+      &--title
+        +pos-set(absolute, zero, 0%, 10%)
+        width: 80%
+        +breakpoint-min($min-width-xl)
+          left: calc(50% - 388px)
+      &--item-1
+        +pos-set(absolute, base, 4%)
+        right: 24%
+        width: 9%
+        +breakpoint-min($min-width-xl)
+          top: 16px
+          right: calc(50% - 230px)
+      &--item-2
+        +pos-set(absolute, base, 14%)
+        right: 20%
+        width: 8%
+        +breakpoint-min($min-width-xl)
+          top: 85px
+          right: calc(50% - 270px)
+      +breakpoint-min($min-width-xl)
+        width: auto
+  .promo__wrap
+    .promo__zone
+      +aspect-ratio(932, 240)
+      +breakpoint-min($min-width-xl)
+        +aspect-ratio(932, 300)
+      .promo__block
+        padding: 0% 1% 0
+        +breakpoint-min($min-width-xl)
+          padding: 25px 10px 0 20px
+        .event__block
+          display: flex
+          justify-content: space-between
+          li
+            width: 24.5%
+            img
+              transition: .2s
+            img:hover
+              filter: brightness(1.25)

@@ -1,0 +1,30 @@
+doctype html
+html(lang='zh-Hant-TW')
+  head
+    include /utils/pug/_total-head.pug
+  body.theme--apple
+    //- facebook分享script
+    script
+      | var fbhtml_url = window.location.toString();
+
+    //- 每頁上方都要放動態產出置頂元件的定位tag(e.g. 電梯、浮水印)
+    include /utils/pug/include/_top-home-section.pug
+
+    main#spWrap.sp__wrap.sp__wrap--apple
+      header.sp__header
+        .layout--main
+          include /layout/header/_header
+          include /layout/nav-apple/_nav-apple
+      include /components/apple-list/_apple-list
+      //- components start
+      include /components/hero-slider-main/_hero-slider-main
+      //- include /components/bn-slider/_bn-slider
+      //- components end
+      include /layout/nav-bottom/_nav
+
+    //- script區
+    script(src="data-apple.js")
+    include /utils/pug/_total-script
+
+//- 模擬組版
+//- include /pages/_note/hot/_hot

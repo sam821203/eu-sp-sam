@@ -1,0 +1,60 @@
+-
+  var sliderW2M2Data = [
+    [  //1
+      {
+        link: "" ,
+        imgSrc: "event/1st/e-main/components/slider-w2m2/item/slider-left-1.png",
+        alt: "",
+      },
+      {
+        link: "https://www.etmall.com.tw/i/3490955" ,
+        imgSrc: "event/1st/e-main/components/slider-w2m2/item/slider-right-1.png",
+        alt: "",
+      },
+    ],
+    [  //2
+      {
+        link: "" ,
+        imgSrc: "event/1st/e-main/components/slider-w2m2/item/slider-left-1.png",
+        alt: "",
+      },
+      {
+        link: "https://www.etmall.com.tw/i/3490955" ,
+        imgSrc: "event/1st/e-main/components/slider-w2m2/item/slider-right-1.png",
+        alt: "",
+      },
+    ],
+    [  //3
+      {
+        link: "" ,
+        imgSrc: "event/1st/e-main/components/slider-w2m2/item/slider-left-1.png",
+        alt: "",
+      },
+      {
+        link: "https://www.etmall.com.tw/i/3490955" ,
+        imgSrc: "event/1st/e-main/components/slider-w2m2/item/slider-right-1.png",
+        alt: "",
+      },
+    ],
+  ]
+
+
+section.promo__group.slider-w2m2.m-bottom--lg(data-title="熱門商品")
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        .promo__block.full-parent
+          .promo__slider.swiper-container#sliderW2M2Item
+            ul.swiper-wrapper
+              each data, index in sliderW2M2Data
+                li.swiper-slide
+                  each item, itemIndex in  data
+                    .swiper-box
+                      a(href= item.link, title=item.alt)
+                        img(src= item.imgSrc, alt=item.alt)
+    .decor__wrap.full-parent
+      .decor__item.decor__item--left#decorSliderW2M2Left
+        img(src="event/1st/e-main/components/slider-w2m2/decor-slider-w2m2-left.png", alt="")
+      .decor__item.decor__item--right#decorSliderW2M2Right
+        img(src="event/1st/e-main/components/slider-w2m2/decor-slider-w2m2-right.png", alt="")
+

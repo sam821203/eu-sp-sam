@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>影片Loading測試</title>
+  <style>
+    *{
+      margin:0;
+      padding: 0;
+    }
+    ul, ol {
+      list-style: none;
+    }
+    .bg--test{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      max-width: 960px;
+    }
+    .btn__wrap {
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 960px;
+      color: white;
+      background-color: black;
+      border: 1px solid black;
+
+    }
+    .btn__wrap li{
+      padding: 2%;
+      width: 33%;
+      font-size: 20px;
+      text-align: center;
+      cursor: pointer;
+      border: 1px solid white;
+
+    }
+    .btn__wrap li.active{
+      color: black;
+      background-color: #fff;
+      cursor: default;
+      border: 1px solid black;
+    }
+    .video__wrap li {
+      display: none;
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      left: 50%;
+      width: 40%;
+      max-width: 200px;
+      border-radius: 10px;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+    .video__wrap.active li {
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+    .video__wrap p {
+      opacity: 0;
+    }
+    .video__wrap.active p {
+      opacity: 1;
+    }
+    .video__wrap li.active{
+      display: block;
+    }
+
+    .video__wrap p {
+      margin-bottom: 5%;
+      color: white;
+      text-align: center;
+    }
+    .video__box {
+        width: 100%;
+        padding-top: 74.385%;
+        margin-bottom: 5%;
+    }
+    .video {
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 10%;
+        width: 80%;
+        height: 80%;
+    }
+    .input__wrap{
+      position: fixed;
+      bottom : 0;
+      left: 0;
+      padding: 10px 15px;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.5);
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .input__check {
+      margin-right: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="tab" id="tab">
+    <ul id="btnWrap" class="btn__wrap">
+      <li><div>影片1</div><div>545k</div></li>
+      <li><div>影片2</div><div>318k</div></li>
+      <li><div>影片3</div><div>309k</div></li>
+      <li><div>影片4</div><div>839k</div></li>
+    </ul>
+    <ul id="videoWrap"  class="video__wrap active">
+      <li>
+        <div class="video__box">
+          <video class="video" autoplay loop muted playsinline>
+            <source src="test-1.mov" type="video/mp4; codecs=&quot;hvc1&quot;">
+            <source src="test-1.webm" type="video/webm">
+          </video>
+        </div>
+        <p>頁面載入中...</p>
+      </li>
+      <li>
+        <div class="video__box">
+          <video class="video" autoplay loop muted playsinline>
+            <source src="test-2.mov" type="video/mp4; codecs=&quot;hvc1&quot;">
+            <source src="test-2.webm" type="video/webm">
+          </video>
+        </div>
+        <p>頁面載入中...</p>
+      </li>
+      <li>
+        <div class="video__box">
+          <video class="video" autoplay loop muted playsinline>
+            <source src="test-3.mov" type="video/mp4; codecs=&quot;hvc1&quot;">
+            <source src="test-3.webm" type="video/webm">
+          </video>
+        </div>
+        <p>頁面載入中...</p>
+      </li>
+      <li>
+        <div class="video__box">
+          <video class="video" autoplay loop muted playsinline>
+            <source src="test-4.mov" type="video/mp4; codecs=&quot;hvc1&quot;">
+            <source src="test-4.webm" type="video/webm">
+          </video>
+        </div>
+        <p>頁面載入中...</p>
+      </li>
+    </ul>
+    <img class="bg--test" src="test-bg2.jpg" alt="">
+  </div>
+  <div class="input__wrap" id="inputWrap">
+    <input type="checkbox" id="toggleBg" class="input__check" checked><label for="toggleBg">外框與文字切換</label>
+  </div>
+
+  <script>
+    const tab = document.getElementById('tab');
+    const btnArrays = document.querySelectorAll('#btnWrap li');
+    const videoArrays = document.querySelectorAll('#videoWrap li');
+    const inputCheck = document.getElementById('toggleBg');
+
+    btnArrays.forEach((el, index, thisArray) => {
+      el.addEventListener('click', (e)=>{
+        e.stopPropagation();
+        thisArray.forEach(item => item.classList.remove('active'));
+        videoArrays.forEach(item => item.classList.remove('active'));
+        el.classList.add('active');
+        videoArrays[index].classList.add('active');
+      });
+    });
+
+    tab.addEventListener('click', ()=>{
+      let nextIndex = 0;
+      videoArrays.forEach((el, index, thisArray) => {
+        if (el.classList.contains('active')) {
+          nextIndex = (index + 1 == thisArray.length) ? 0 : index + 1;
+        }
+      });
+      videoArrays.forEach(item => item.classList.remove('active'));
+      btnArrays.forEach(item => item.classList.remove('active'));
+      videoArrays[nextIndex].classList.add('active');
+      btnArrays[nextIndex].classList.add('active');
+    });
+
+    inputCheck.addEventListener('click', ()=>{
+
+      const videoWrap = document.getElementById('videoWrap');
+      videoWrap.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+//- TODO: 各家廠商logo命名：
+//- 位置：layout/logo/
+//- 規則：logo字串 + e or u + 廠商英文名 .png
+//- ==========================================
+
+//- 可在頁面上用isU = true控制logo與連結網址
+- var logoWithPartnerE = "layout/logo/logo-e-" + partner + ".png"
+- var logoWithPartnerU = "layout/logo/logo-u-" + partner + ".png"
+- var logoPartnerClassName = "logo--" + (isU ? 'u' : 'e') + "-" + partner
+- var logoPartnerAlt = partnerTWData[partner]
+-
+  var siteData = {
+    etmall: {
+      link: "https://www.etmall.com.tw/",
+      imgSrc: logoWithPartnerE,
+      alt: "東森購物-" + logoPartnerAlt + "授權經銷商",
+      },
+      umall: {
+        link: "https://www.u-mall.com.tw/",
+        imgSrc: logoWithPartnerU,
+        alt: "森森購物-" + logoPartnerAlt + "授權經銷商"
+      }
+  }
+
+- var siteInfo = isU ? siteData.umall : siteData.etmall
+
+//- 切換EU的logo
+a.logo(href= siteInfo.link, title= siteInfo.alt, class= logoPartnerClassName)
+  img(src= siteInfo.imgSrc, alt= siteInfo.alt)

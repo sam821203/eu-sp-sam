@@ -1,0 +1,133 @@
+// // ==========================================================================
+// // decoration
+// // ==========================================================================
+@keyframes title-down
+  0%
+    opacity: 0
+    transform: translateY(calc(-100vw * .5))
+  70%, 80%
+    transform: translateY(0) scale(1.2)
+  75%, 100%
+    transform: translateY(0) scale(1)
+  100%
+    opacity: 1
+
+@keyframes key-rotate-stop
+  0%
+    transform: rotate(0)
+  5%
+    transform: rotate(-20deg)
+  10%
+    transform: rotate(0)
+  15%
+    transform: rotate(20deg)
+  20%
+    transform: rotate(0)
+  100%
+    transform: rotate(0)
+
++key-shake-self-y(10)
+
++breakpoint-min($min-width-xl)
+  .header__decoration
+    +pos-set(absolute, zero)
+    width: 85px
+    height: 80px
+    &.header__decoration--left
+      +bg-set(url("~components/hero-section/hero-decoration-dialog-1.png"))
+      top: 755px
+      left: -205px
+      animation: 3s key-shake-self-y infinite alternate linear both
+    &.header__decoration--middle
+      +bg-set(url("~components/hero-section/hero-decoration-dialog-2.png"))
+      top: 540px
+      left: 80px
+      animation: 3s key-shake-self-y infinite alternate-reverse linear both
+    &.header__decoration--right
+      +bg-set(url("~components/hero-section/hero-decoration-dialog-3.png"))
+      top: 840px
+      left: 785px
+      animation: 3s key-shake-self-y infinite alternate linear both
+
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero__wrap
+  +pos-set(relative, zero)
+  +bg-set(url("~components/hero-section/960bg.jpg"), 100%, center, 35%, no-repeat, $gray-deep-light)
+  overflow: hidden
+  .hero__zone
+    +pos-set(relative, zero)
+    // padding-top: 3%
+
+  .hero__title
+    z-index: 2
+    position: relative
+    &--main
+      padding-top: 3%
+      .title__box
+        +pos-set(absolute, third)
+        &.title__date
+          display: none
+        &.title__decoration
+          top: 18%
+          left: 5%
+          width: 35%
+          // filter: drop-shadow(0 4px $gray-medium)
+          animation: 1s 1s title-down both ease-out
+          img
+            animation: 2s 2s key-rotate-stop both infinite ease-in-out
+      > img
+        &:last-child
+          margin-left: 35%
+          width: 60%
+
+  +breakpoint-min($min-width-xl)
+    background: none
+    .hero__zone
+      padding-top: 10px
+
+    .hero__title
+      padding-top: 18px
+      &--main
+        .title__box
+          &.title__date
+            display: block
+            top: 75px
+            left: 50px
+            width: 106px
+          &.title__decoration
+            top: 130px
+            left: 10px
+            width: 175px
+        > img
+          &:last-child
+            margin-left: 162px
+            width: 381px
+    .hero__block
+      +display-flex(">div")
+      flex-wrap: wrap
+      +pos-set(relative, zero)
+    .hero__box
+      +flex(0, 0, 60%)
+      // padding-left: 12%
+    // .goods__wrap
+    //   +flex(0, 1, 66%)
+    //   +pos-set(absolute, under, 15px, null, null, -140px)
+    .promo__event
+      +flex(0, 1, 100%)
+      +pos-set(relative, second)
+    .goods__wrap--flip
+      +flex(0, 1, 62%)
+      +pos-set(absolute, second, 200px, null, null, -90px)
+  //padding: 50px
+
+  // decoration
+  // .hero__decoration
+  //   display: none
+  //   +breakpoint-min($min-width-xl)
+  //     display: block
+  //     +pos-set(absolute, base)
+  //     top: 450px
+  //     width: 100%
+  //     pointer-events: none

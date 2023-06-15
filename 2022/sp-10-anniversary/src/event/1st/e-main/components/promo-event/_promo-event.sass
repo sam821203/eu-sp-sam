@@ -1,0 +1,45 @@
+.promo-event
+  overflow: hidden
+  .promo__zone
+    +aspect-ratio(960, 1206)
+    +pos-set(relative, zero)
+    .promo__block
+      .promo__box
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+        padding: 3% 2% 0%
+        +breakpoint-min($min-width-xl)
+          padding-top: 55px
+        li
+          width: 33.5%
+          margin-bottom: 2.2%
+          +breakpoint-min($min-width-xl)
+            margin-bottom: 16px
+          .swiper-container
+            li
+              width: 100%
+              text-align: center
+
+        .event__item
+          // padding: 0 5.5%
+          transition: all .5s
+          &:nth-child(7)
+            margin: -88% auto 0
+            width: 35%
+            +breakpoint-min($min-width-xl)
+              margin-top: -770px
+          &:nth-child(8)
+            padding: .5% 6% 0
+            width: 100%
+            +breakpoint-min($min-width-xl)
+              padding-top: 20px
+
+          &:hover,
+          &:active
+            transform: translateY(-2%)
+            filter: brightness(150%) contrast(120%)
+          &:nth-child(8)
+            &:hover,
+            &:active
+              filter: brightness(100%)

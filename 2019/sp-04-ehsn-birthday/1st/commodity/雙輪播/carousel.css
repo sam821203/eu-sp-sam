@@ -1,0 +1,206 @@
+@charset "UTF-8";
+/* ============= reset =============*/
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; }
+*:before, *:after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; }
+
+a {
+    display: block;
+    text-decoration: none; }
+
+h1 {
+    line-height: 0; }
+
+ul {
+    list-style: none; }
+
+img {
+    border: 0; }
+
+main, header, footer, section {
+    display: block; }
+
+/* ============= global =============*/
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-size: 100% 100%;
+    font-family: Helvetica, Arial, LiHei, "Microsoft JhengHei", "微軟正黑體", sans-serif; }
+
+td, th {
+    font-family: Helvetica, Arial, LiHei, "Microsoft JhengHei", "微軟正黑體", sans-serif; }
+
+.clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+    *zoom: 1; }
+
+.opacity--0 {
+    opacity: 0; }
+
+/* ================= 輪播 =================*/
+.carousel_layer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    height: calc(100vw / 2.13);
+    max-height: 301px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    background-image: url("BN-carousel-m.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: 50% 8%; }
+.carousel_layer .carousel__wrap {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+.carousel_layer .slick-slide {
+    height: auto;
+}
+.carousel_layer .slick-list {
+    width: 83%;
+    margin: 0 auto;
+    text-align: center; }
+.carousel_layer .slick-next, .carousel_layer .slick-prev {
+    width: 20px;
+    height: 40px;
+    cursor: pointer;
+    opacity: 0; }
+.carousel_layer .slick-next {
+    right: 5px; }
+.carousel_layer .slick-prev {
+    left: 5px; }
+.carousel_layer img {
+    width: 100%;
+    margin-top: 0;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 2px;
+    -webkit-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
+    border-radius: 5px; }
+.carousel_layer .slick-list img {
+    -webkit-transform: scale(0.6, 0.6);
+    -ms-transform: scale(0.6, 0.6);
+    transform: scale(0.6, 0.6); }
+.carousel_layer .slick-active img {
+    -webkit-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    transform: scale(1, 1); }
+.carousel_layer .slick-dotted.slick-slider {
+    margin-bottom: 50px;  }
+/* ================= mobile size =================*/
+
+
+@media screen and (max-width: 320px) {
+    /* ================= 輪播 =================*/
+    .carousel_layer .slick-next, .carousel_layer .slick-prev {
+        width: 20px;
+        height: 40px; }
+    .carousel_layer .slick-next {
+        right: 10px; }
+    .carousel_layer .slick-prev {
+        left: 10px; } }
+
+@media screen and (min-width: 321px) and (max-width: 375px) {
+    /* ================= var =================*/
+    /* ================= 輪播 =================*/
+    .carousel_layer .slick-next, .carousel_layer .slick-prev {
+        width: 20px;
+        height: 50px; }
+    .carousel_layer .slick-next {
+        right: 4%; }
+    .carousel_layer .slick-prev {
+        left: 4%; } }
+
+@media screen and (min-width: 376px) and (max-width: 426px) {
+    /* ================= var ================= */
+    /* ================= 輪播 ================= */
+    .carousel_layer .slick-next, .carousel_layer .slick-prev {
+        width: 20px;
+        height: 50px; }
+    .carousel_layer .slick-next {
+        right: 4.5%; }
+    .carousel_layer .slick-prev {
+        left: 4.5%; } }
+
+@media screen and (min-width: 427px) and (max-width: 800px) {
+    /* ================= var ================= */
+    /* ================= 輪播 ================= */
+    .carousel_layer .slick-next, .carousel_layer .slick-prev {
+        width: 30px;
+        height: 50px; }
+    .carousel_layer .slick-next {
+        right: 4%; }
+    .carousel_layer .slick-prev {
+        left: 4%; } }
+
+@media screen and (min-width: 801px) and (max-width: 1024px) {
+    /* ================= 輪播 ================= */
+    .carousel_layer .slick-next, .carousel_layer .slick-prev {
+        top: 55%;
+        width: 35px;
+        height: 80px; }
+    .carousel_layer .slick-next {
+        right: 4%; }
+    .carousel_layer .slick-prev {
+        left: 4%; } }
+
+@media screen and (min-width: 768px) {
+    /* ================= 輪播 ================= */
+    .carousel_layer {
+        background-image: url("BN-carousel.png");
+        height: calc(100vw / 3.33);
+        max-width: 1260px;
+        max-height: 379px;
+        margin-top: calc(100vw *0.25);
+        margin-top: 0;
+        background-size: 100%;
+        background-position: center; }
+    .carousel_layer .slick-list {
+        margin: 30px auto 0 auto; } }
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+    /* ================= 輪播 ================= */
+    .carousel_layer .slick-next, .carousel_layer .slick-prev {
+        top: 55%;
+        width: 40px;
+        height: 80px; }
+    .carousel_layer .slick-next {
+        right: 4.5%; }
+    .carousel_layer .slick-prev {
+        left: 4.5%; } }
+
+@media screen and (min-width: 1280px) {
+    /* ================= 輪播 =================*/
+    .carousel_layer .slick-next, .carousel_layer .slick-prev {
+        width: 50px;
+        height: 80px;
+        top: 210px; }
+    .carousel_layer .slick-prev {
+        left: calc(50% - 575px); }
+    .carousel_layer .slick-next {
+        right: calc(50% - 575px); } }

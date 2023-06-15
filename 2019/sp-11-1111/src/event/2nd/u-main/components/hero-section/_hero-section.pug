@@ -1,0 +1,27 @@
+- var heroBankData = {etmall: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201908/SP_1107836/w/index.html", umall: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201908/SP_1104315/w/index.html"}
+- var heroBankInfo = isU ? heroBankData.umall : heroBankData.etmall
+
+section.hero__wrap.m-bottom--sm
+  .layout--main
+    .hero__zone
+      .hero__decoration.top__decoration.top__decoration--left
+      .hero__decoration.top__decoration.top__decoration--right
+      #ufoMiddle.hero__decoration.zone__decoration.zone__decoration--middle.wow
+        img(src="~event/2nd/u-main/components/hero-section/zone-decoration-m.png", alt="")
+      #ufoRight.hero__decoration.zone__decoration.zone__decoration--right.wow
+        img(src="~event/2nd/u-main/components/hero-section/zone-decoration-r.png", alt="")
+      
+      #heroBlock.hero__block
+        .hero__decoration.block__decoration.block__decoration--main
+        .hero__decoration.block__decoration.block__decoration--sub
+        .hero__box.wow
+          h1.hero__title.hero__title--main.block--center(title="東森購物雙11先搶")
+            img(src="~event/2nd/u-main/components/hero-section/title.png", alt="東森購物雙11先搶")
+            .title__decoration
+              .decoration--flash
+
+      include /event/2nd/u-main/components/hero-small-slider/_hero-small-slider
+
+      .promo__block
+        include /event/2nd/u-main/components/promo-event/_promo-event
+

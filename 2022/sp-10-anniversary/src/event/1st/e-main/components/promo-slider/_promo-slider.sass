@@ -1,0 +1,37 @@
+.promo__group--promo-slider
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__item
+    &--left
+      +pos-set(absolute, zero, 18%, 2%)
+      width: 18%
+      +breakpoint-min($min-width-xl)
+        top: 50px
+        left: calc( 50% - 680px )
+    &--item
+      +pos-set(absolute, zero, 3%, 30%)
+      width: 16%
+      animation: heartBeat-hand 1.2s linear infinite
+      +breakpoint-min($min-width-xl)
+        top: 0
+        left: calc( 50% - 270px )
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .promo__zone
+    +aspect-ratio(960, 710)
+    .promo__block
+      padding: 11% 8% 0% 21%
+      +breakpoint-min($min-width-xl)
+        padding: 7% 14% 0%
+
+@keyframes heartBeat-hand
+  0%
+    transform: scale(1)
+  14%
+    transform: scale(1.3)
+  28%
+    transform: scale(1)
+  42%
+    transform: scale(1.3)
+  70%
+    transform: scale(1)

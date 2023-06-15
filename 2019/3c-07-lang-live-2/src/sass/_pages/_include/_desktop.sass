@@ -1,0 +1,103 @@
++breakpoint($min-desktop)
+  .m-bottom--sm
+    margin-bottom: 10px
+  .sp__wrap
+    //background: url(../img/background.jpg) 56.7% 0 no-repeat
+    background: url(../img/background.jpg) no-repeat center top
+    background-size: 2560px 970px
+  .header__wrap--sp
+    padding: 20px 0 0 0
+  //padding: 2.8% 3.8% 0 4.5%
+  .logo
+    top: 9.8%
+    left: 19.1%
+    width: 34.5%
+    padding-top: 6.6%
+  .header__wrap--sp
+    .title__wrap--header
+      width: 54%
+      position: relative
+      z-index: map-get($zindex, fourth)
+  .slide__item
+    .title__wrap--slide,
+    .item__box--sp
+      width: 54%
+      &.m-item__pic
+        margin-top: 28px
+      .item__image
+        margin-left: 10px
+        width: 90%
+  .item__video--mobile
+    display: none
+  .item__video--desktop
+    display: block
+    position: absolute
+    z-index: map-get($zindex, third)
+    top: 0
+    right: calc(50% - 475px)
+    width: 575px
+
+  .title__wrap--slide
+    .title__box
+      margin-left: 25px
+  .title__date
+    +font-size($fz-50)
+    top: 0.12em
+    width: 1.6em
+    height: 1.6em
+    div
+      top: 0.4em
+      +font-size($fz-36)
+      span:nth-child(2)
+        +font-size($fz-20)
+  .title__slogan
+    h2
+      +font-size($fz-32)
+  .thumb__box
+    .card--current
+      display: inline-block
+      position: relative
+      z-index: map-get($zindex, second)
+      width: 35%
+      cursor: pointer
+    .card--others
+      display: inline-block
+      width: 25%
+      &:first-child
+        transform: translateX(15px)
+      &:last-child
+        transform: translateX(-15px)
+  .marquee__box
+    margin-left: 10px
+  .slick-button-custom
+    //top: calc(-3em - 170px)
+    top: -153px
+    padding-top: 5.5%
+    width: 3.5%
+  .slider__wrap
+    position: relative
+    z-index: map-get($zindex, fourth)
+  .thumb__box
+    margin-top: 30px
+  .slick-button-prev
+    left: 15px
+  .slick-button-next
+    right: 15px
+
++breakpoint($xl-desktop)
+  .item__video--desktop
+    right: calc(50% - 630px)
+    width: 675px
+  .video__main
+    left: 0
+  .video__box
+    //height: 920px
+    .background--decoration
+      .circle--outer
+        left: 10%
+        width: 77.4%
+        height: 64.8%
+      .circle.circle--inner
+        left: 18%
+        width: 63.9%
+        height: 54.9%

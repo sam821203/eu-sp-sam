@@ -1,0 +1,46 @@
+.decoration--web
+  display: none
+  +breakpoint-min($min-width-xxl)
+    display: block
+    height: 100%
+
+.decoration--left
+  left: calc( 50% - 970px)
+  width: 640px
+  .decoration__ballon
+    top: -40px
+    right: 24%
+    .ballon__box
+      transform-origin: 50% 20%
+      animation: ballon-rotate 6s infinite alternate ease-in-out
+  .decoration__slide
+    right: 10%
+    bottom: 100px
+    img
+      display: block
+      &:last-child
+        +pos-set(relative, under)
+        margin-top: -165px
+        margin-left: 4%
+  .decoration__other
+    bottom: 35px
+    right: 28%
+  .decoration__other-2
+    bottom: 50px
+    left: 0
+
+.decoration--right
+  right: calc( 50% - 987px)
+  width: 500px
+  .decoration__carousel
+    bottom: 40px
+    left: 0
+  .decoration__other
+    bottom: -16px
+    left: 0
+
+@keyframes ballon-rotate
+  0%, 5%
+    transform: rotate(0) translate(0, 0)
+  95%, 100%
+    transform: rotate(20deg) translate(-20px, -40px)

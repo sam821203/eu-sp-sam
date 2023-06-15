@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  
+
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  *:before, *:after {
+    box-sizing: border-box; }
+  a {
+    display: block;
+    text-decoration: none;
+  }
+  ul {
+    list-style: none;
+  }
+  img {
+    width: 100%;
+    border: 0;
+  }
+  article,
+  main,
+  nav,
+  section {
+    display: block;
+  }
+  body {
+    margin:0;
+    background-color:#e7b62d;
+    font-family: PingFangTC-regular, Roboto, "LiHei Pro", "Source Han Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, "Microsoft JhengHei", sans-serif;
+  }
+  .sp--960 {
+    position: relative;
+    z-index: 0;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /*------------主視覺------------*/
+  .logo a,
+  .sp__visual a{
+    display: block;
+    /* 測試用 */
+	/* border: 1px solid #f00; */
+  }
+  .logo {
+    position: absolute;
+    z-index: 1;
+    /* 調整logo位置 */
+    top: 0.3%;
+    left: 0.3%;
+    width: 30%;
+    max-width: 220px;
+  }
+  /* 設定背景 */
+  .sp__main {
+    background: url(bg.jpg) center 0 no-repeat;
+  }
+  /* 設定前景 */
+  .sp__visual {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+  }
+  .visual__anchor,
+  .visual__main,
+  .visual__nav {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .visual__anchor {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }
+  .visual__main a,
+  .visual__nav a {
+    flex-grow: 1;
+  }
+  /* 設定高度，記得總和要100% */
+  .visual__main {
+    height: 25%;
+  }
+  .visual__nav.nav1 {
+    height: 75%;
+  }
+  /* 設定寬度，記得總和要100% */
+  .visual__main a:nth-child(1) {
+    flex-grow: 0;
+    width: 100%;
+  }
+  .visual__nav1.nav1 a:nth-child(1) {
+    flex-grow: 0;
+    width: 50%;
+  }
+  /*------------自適應banner組------------*/
+  .banner__title {
+    height: 65px;
+    background: center top no-repeat;
+  }
+  .nav--3c {
+    background-color:#ffffff;
+  }
+  .banner__wrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .banner__item {
+    transition: all 0.3s;
+  }
+  .banner__item img {
+    width: 100%;
+  }
+  /* 設定一列4個 */
+  .bn-w4m2 .banner__item {
+    flex: 1 0 25%;
+  }
+  /* 設定點下去與hover動畫 */
+  .bn-w4m2 .banner__item:hover,
+  .bn-w4m2 .banner__item:active {
+    transform: scale(1.05);
+    filter: brightness(115%);
+  }
+  @media screen and (max-width: 767px) {
+    /* 設定手機時一列2個 */
+    .bn-w4m2 .banner__item {
+      flex: 1 0 50%;
+    }
+  }
+  /*------------countdown------------*/
+  .countdown {
+    margin-top: 30px; 
+    height: 65px;
+    background: center top url(time_09.jpg);
+    overflow: hidden;
+  }
+  .timer {
+    margin-left: calc(50% - 12px);
+    padding-left: 17.5px;
+    width: 185px;
+    height: 70px;
+    line-height: 70px;
+    font-size: 36px;
+    font-weight: bold;
+  }
+  .timer span {
+    display: inline-block;
+    color: #920000;
+    vertical-align: middle;
+	transform:translateY(-4px);
+  }
+  .date--out-range {
+    position: relative;
+    z-index: 0;
+  }
+  .date--out-range:before {
+    content: '>';
+    position: absolute;
+    z-index: 1;
+    top: 4px;
+    left: -12px;
+    font-size: 24px;
+    font-weight: normal;
+  }
+  .timer span:nth-child(2),
+  .timer span:nth-child(4) {
+    padding-left: 2px;
+    padding-right: 2px; 
+    font-size: 28px;
+    font-weight: normal;
+  }
+  /*------------倒數商品------------*/
+  .product__wrap {
+    display: flex;
+    position: relative;
+    z-index: 0;
+    flex-wrap: wrap;
+    border-left: 5px solid #fff;
+    border-right: 5px solid #fff;
+    /* border-bottom: 5px solid #fff; */
+  }
+  .product {
+    width: 25%;
+    border-left: 5px solid #fff;
+    border-right: 5px solid #fff;
+    border-bottom: 5px solid #fff;
+  }
+  .product a {
+    position: relative;
+    z-index: 0;
+    margin: 6%;
+  	background-color:#FFF;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .product img {
+    display: block;
+  }
+  .product__name {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow : ellipsis;
+    padding: 1% 5%;
+    height: 56px;
+    line-height: 130%;
+    color: #fff;
+    background-color: #000;
+    font-size: 20px;
+    overflow: hidden;
+  }
+  .product__price {
+    background-color:#FFF;	
+    padding-bottom:22%;
+  }
+  .product__price span {
+    color: #cc1e05;
+    font-size: 20px;
+  }
+  .product__price span:nth-child(2) {
+    font-size: 12px;
+  }
+  .product__price span:last-child {
+    font-size: 36px;
+  }
+  .product__decoration {
+    padding: 18%;
+    height: 0;
+    border-top: 10px solid #fff;
+  }
+  .product:nth-child(1) .product__decoration {
+    background: center url("1.png") no-repeat;
+    background-size: 24%;
+  }
+  .product:nth-child(2) .product__decoration {
+    background: center url("2.png") no-repeat;
+    background-size: 32%;
+  }
+  .product:nth-child(3) .product__decoration {
+    background: center url("3.png") no-repeat;
+    background-size: 31%;
+  }
+  .product:nth-child(4) .product__decoration {
+    background: center url("4.png") no-repeat;
+    background-size: 35%;
+  }
+  .product--just-standby a {
+    position: relative;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .product--just-standby .product__name {
+    background-color: #666;
+  }
+  .product--just-standby a:before,
+  .product--over a:before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+  }
+  .product--just-standby .product__date,
+  .product--over a:after {
+    position: absolute;
+    z-index: 2;
+    top: 40%;
+    left: 5%;
+    width: 90%;
+    height: 60px;
+    line-height: 60px;
+    color: #fff;
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    transform: rotate(15deg);
+  }
+  .product--just-standby .product__date {
+    background-color: #920000;
+  }
+  .product--over a:after {
+    content: '已結束';
+    background-color: #000;
+  }
+  @media screen and (max-width: 960px) {
+    .countdown {
+      margin-top: 5%; 
+    }
+    .product {
+      width: 50%;
+    }
+    .product:before {
+      height: 28px;
+      line-height: 28px;
+      font-size: 18px;
+    }
+    .product__name {
+      height: 43px;
+      font-size: 16px;
+    }
+    .product__price span {
+      font-size: 14px;
+    }
+    .product__price span:last-child {
+      font-size: 20px;
+    }
+    .product--just-standby a:after {
+      font-size: 20px;
+    }
+    .product:nth-child(4n+3),
+    .product:nth-child(4n+4) {
+      border-top: 5px solid #fff;
+    }
+    .product__decoration {
+      padding: 17.5%;
+    }
+  }
+  @media screen and (max-width: 360px) {
+    .product--just-standby .product__date,
+    .product--over a:after {
+      font-size: 24px;
+    }  
+  }
+  /*------------flip------------*/
+  .intro-promo {
+    position: relative;
+    z-index: 5;
+    height: 176px;
+    margin-bottom: 20px;
+    /*overflow: hidden;*/
+  }
+  .promo {
+    position: absolute;
+    z-index: 10;
+    top: 20px;	
+    width: 240px;
+    height: 136px;
+  }
+  .promo a {
+    position: absolute;
+    z-index: 10;
+    height: 100%;
+  }
+  .promo1 {
+    left: 0px;
+  }
+  .promo2 {
+    left: 240px;
+  }
+  .promo3 {
+    left: 480px;
+  }
+  .promo4 {
+    left: 720px;
+  }
+  .flip-frame .flip{
+    position: relative;
+    height: 100%;
+    -webkit-perspective: 600px;
+    -moz-perspective: 600px;
+    -ms-perspective: 600px;
+    perspective: 600px;
+  }
+  .flip-frame .flip-slide {
+    -webkit-backface-visibility:hidden;
+    -moz-backface-visibility:hidden;
+    -ms-backface-visibility:hidden;
+    backface-visibility:hidden;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -webkit-transform: rotateX(-180deg);
+    -moz-transform: rotateX(-180deg);     
+    -ms-transform: rotateX(-180deg);      
+    transform: rotateX(-180deg);
+    transition: transform 1.2s ease-in-out;
+    overflow: hidden;
+  }
+  .flip-frame .flip-slide.front{
+    z-index: 2;
+    -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);     
+    -ms-transform: rotateX(0deg);      
+    transform: rotateX(0deg);
+  }
+  .flip-frame .flip-slide.back{
+    z-index: 1;
+  }
+  @media screen and (max-width: 960px) {
+    .intro-promo {
+      margin-bottom: 5%;
+      padding: 0.5%;
+      height: auto;
+      overflow: hidden;
+    }
+    .intro-promo  .sp--960 {
+      padding-top: 61.4%;
+    }
+    .promo {
+      top: 0;
+      left: 0.5%;
+      padding-top: 30.7%;
+      width: 49%;
+      height: 0;
+    }
+    .promo2 {
+      left: 50%;
+    }
+    .promo3 {
+      top: 50%;
+    }
+    .promo4 {
+      top: 50%;
+      left: 50%;
+    }
+    .flip-frame .flip {
+      position: absolute;
+      z-index: 1;
+      top: 5%;
+      left: 0;
+      width: 100%;
+    }
+    .flip a {
+      width: 100%;
+    }
+  }
+ /*------------跑馬燈------------*/
+	.marquee_box{
+    margin-top:-1px;
+    margin-bottom:5%;
+    background-color:#FFF;
+    border-bottom: 10px solid #fff;
+    height:42px;
+    width: 100%;
+    overflow-x: hidden;
+    display: inline-block;
+    position: relative;
+    line-height: 1em;
+    white-space: nowrap;
+    will-change: auto;
+    color: #d9aa28;
+    font-size: 26px;
+    font-weight:bold;
+	}
+	.marquee_box div{
+    position: absolute;
+    line-height: 42px;
+	}
+	.marquee_box--active {
+	  animation: marquee 19s linear both infinite;
+	}
+	@keyframes marquee{
+		from{
+		left:100%;
+	/*transform: translateX(100%);*/
+		}
+		to{
+		 left:-100%;
+		 transform: translateX(-100%);
+		}
+	}  
+</style>
+</head>
+<body>
+<div id="spWrap" class="sp__wallper">
+  <main class="sp__main"> <!-- 主視覺 -->
+    <div class="sp--960">
+      <a href="https://www.etmall.com.tw" class="logo" target="_blank"><img src="ehs-logo.png" alt="東森購物"></a>
+      <div class="sp__visual">
+        <div class="visual__anchor">
+          <div class="visual__main">
+            <!-- <a href="https://1.com"></a> -->
+          </div>
+          <div class="visual__nav nav1">
+            <a href="#notetop"></a>
+            <a href="#notetop"></a>
+          </div>
+        </div>      	
+        <img src="index.jpg" alt="等你來搶">
+      </div>
+	</div>
+  </main>
+  <section class="intro-promo flip-frame nav--3c"> <!-- 翻轉tab -->
+    <div class="sp--960">
+      <div class="promo promo1">
+        <div class="flip">
+          <a href="" class="flip-slide" title="">
+            <img src="tab_1.png" alt="">
+          </a>
+          <a href="" class="flip-slide" title="">
+            <img src="tab_5.png" alt="">
+          </a>
+        </div>
+      </div>
+      <div class="promo promo2">
+        <div class="flip">
+          <a href="" class="flip-slide" title="">
+            <img src="tab_2.png" alt="">
+          </a>
+          <a href="" class="flip-slide" title="">
+            <img src="tab_6.png" alt="">
+          </a>                
+        </div>
+      </div>
+      <div class="promo promo3">
+        <div class="flip">
+          <a href="" class="flip-slide" title="">
+            <img src="tab_3.png" alt="">
+          </a>
+          <a href="" class="flip-slide" title="">
+            <img src="tab_7.png" alt="">
+          </a>
+        </div>
+      </div>
+      <div class="promo promo4">
+        <div class="flip">
+          <a href="" class="flip-slide" title="">
+            <img src="tab_4.png" alt="">
+          </a>
+          <a href="" class="flip-slide" title="">
+            <img src="tab_8.png" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="countdown__wrap">	<!-- 倒數+倒數商品 -->
+    <div class="sp--960">
+      <div class="countdown">
+        <div id="timer" class="timer"></div>
+      </div>
+      <div id="productWrap" class="product__wrap"></div>
+    </div>
+  </section>
+  <section>	<!-- 跑馬燈 -->
+    <div class="sp--960">
+      <div class="marquee_box">
+        <div>測試1測試1測試1測試1測試1測試1測試1測試1測試1測試1測試1</div>
+        <div>測試2測試2測試2測試2測試2測試2測試2測試2測試2測試2測試2</div>
+        <div>測試3測試3測試3測試3測試3測試3測試3測試3測試3測試3測試3</div>
+      </div>
+    </div>
+  </section>  
+</div>
+<script>
+  // 間隔時間
+  var animateTime = 15;
+
+  var boxText = document.querySelectorAll('.marquee_box div');
+  var arrayText = Array.apply(null, boxText);
+  function animateRun(){
+    arrayText.forEach(function(el, index) {
+      el.style.opacity = 0;
+      setTimeout(function(){
+        arrayText.forEach(function (el, index) {
+          el.setAttribute('class', '');
+          el.style.opacity = 0;
+        });
+        el.setAttribute('class', 'marquee_box--active');
+        el.style.opacity = 1;
+      }, animateTime*1000*(index));
+    });
+  }
+  animateRun();
+  setInterval(animateRun, animateTime*boxText.length*1000);
+</script>
+<script id="data" src="data.js?20181101"></script>
+<script id="generateData" src="generateData.js?20181101"></script>
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script>$('a[href^="#"]').on('click',function(e){var target=$('a[name='+this.getAttribute('href').split('#')[1]+']')?$('a[name='+this.getAttribute('href').split('#')[1]+']'):$(this.getAttribute('href'));if(target.length){e.preventDefault();$('html,body').stop().animate({scrollTop:target.offset().top},500);}});</script>
+<script>
+  function goTop () {
+    var $goTop = $('#goTop');
+    $(window).on('scroll', function(){
+      var scrollHeight = $(this).scrollTop();
+      if(scrollHeight > 300) {
+        $goTop.fadeIn();
+      } else {
+        $goTop.fadeOut();
+      }
+    });
+    $(window).trigger('scroll');
+    $goTop.on('click', function(){
+      $('html,body').stop().animate({scrollTop:0},500);
+    });
+  }
+  goTop();
+
+  function AddFlipLink() {
+    var flipEl = document.getElementsByClassName('flip-slide');
+    var timeStamp = Math.floor(new Date() / 1000);
+var isApp = initDetect();
+
+    if(isApp ==='Web Browser') {
+      for(var i = 0; i < flipEl.length; i++) {
+        flipEl[i].href = flipLink[i].link;
+        flipEl[i].title = flipLink[i].title;
+        flipEl[i].children[0].src += '?' + timeStamp;
+        flipEl[i].children[0].alt = flipLink[i].title;
+      }
+    } else if(isApp ==='Webview') {
+      for(var i = 0; i < flipEl.length; i++) {
+        flipEl[i].href = flipLink[i].appLink;
+        flipEl[i].title = flipLink[i].title;
+        flipEl[i].children[0].src += '?' + timeStamp;
+        flipEl[i].children[0].alt = flipLink[i].title;
+      }
+    }
+  }
+  AddFlipLink();
+
+  function FlipSlider(options) {
+    // Private Vars
+    var container = options.container,
+        startSlideIndex = options.startIndex || 0,
+        slider = container.querySelector(".flip"),
+        slides = slider.querySelectorAll(".flip-slide"),
+        timeout,
+        frontSlide,
+        backSlide;
+
+    // == public functions == //
+
+    //Next flip
+    this.nextFlip = function() {
+        doFlip(1);
+    };
+
+    // == private functions == //
+
+    // flip slides
+    function doFlip(dir) {
+        if (!container.querySelector(".animate")) {
+            slider.classList.add("animate");
+
+
+            frontSlide = slider.querySelector(".front");
+            backSlide = findBack(dir);
+
+            backSlide.classList.add("back");
+
+            timeout = setTimeout(function() {
+                resetSlides();
+                clearTimeout(timeout);
+            }, 0);
+        }
+    }
+
+    // reset slides on completion
+    function resetSlides() {
+        frontSlide = slider.querySelector(".front");
+        backSlide = slider.querySelector(".back");
+
+        backSlide.classList.add("front");
+        backSlide.classList.remove("back");
+        frontSlide.classList.remove("front");
+        slider.classList.remove("animate");
+    }
+
+    // find slide to set it back-flip
+    function findBack(dir) {
+        var frontIndex,
+            target,
+            slideCount;
+
+        slides = slider.querySelectorAll(".flip-slide");
+        slideCount = slides.length;
+
+        for (var i = 0; i < slideCount; i++) {
+            if (slides[i].classList.contains("front")) {
+                frontIndex = i;
+            }
+        }
+            target = (frontIndex + 1) < slideCount ? slides[frontIndex + 1] : slides[0];
+
+        return target;
+    }
+
+    // Init
+    (function (instance, sliderTime) {
+      var sliderTime = options.sliderTime || 3000;
+        // Setting First Slide
+        startSlideIndex = startSlideIndex >= slides.length ? 0 : startSlideIndex;
+        slides[startSlideIndex].classList.add("front");
+
+        // Event Bindings
+        function Timer(callback, delay) {
+        var timerId, start, remaining = delay;
+
+        this.pause = function() {
+            window.clearInterval(timerId);
+            // remaining -= new Date() - start;
+        };
+
+        this.resume = function() {
+            start = new Date();
+            window.clearInterval(timerId);
+            timerId = window.setInterval(callback, remaining);
+        };
+
+        this.resume();
+    }
+        var timer = new Timer(function(){
+          instance.nextFlip();
+        }, sliderTime);
+
+        slides.forEach(function(el){
+      el.addEventListener('mouseover', function(){
+            timer.pause();
+          }, true);
+
+          el.addEventListener('mouseleave', function(){
+            timer.resume();
+          }, true);
+        })
+    })(this);
+  }
+  // Creating Instance of the slider
+  var flip1 = new FlipSlider({container: document.querySelector(".promo1"), sliderTime: 5000});
+  var flip2 = new FlipSlider({container: document.querySelector(".promo2"), sliderTime: 5000});
+  var flip3 = new FlipSlider({container: document.querySelector(".promo3"), sliderTime: 5000});
+  var flip4 = new FlipSlider({container: document.querySelector(".promo4"), sliderTime: 5000});
+</script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+.promo__group--promo-event
+  +pos-set(relative, zero)
+  overflow: hidden
+
+  .promo__wrap
+    +aspect-ratio(960, 780)
+  .promo__zone
+    +pos-set(relative, zero)
+    padding: 2.5% 4%
+    +bg-set(url(event/1st/e-main/components/promo-event/bg-promo-event.png), 100%)
+    .promo__block
+      a
+        display: block
+        +pos-set(relative, zero)
+        img
+          &:last-child
+            +pos-set(absolute, under, 0, 0)
+        &:hover
+          img
+            transition: opacity 0.3s
+            &:first-child
+              opacity: 0
+      &:first-child,
+      &:last-child
+        display: flex
+        // +breakpoint-min($min-width-xl)
+        //   padding-bottom: 50px
+        .swiper-container
+          width: 100%
+    .event__wrap
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+      > li
+        margin-bottom: 2%
+        width: 49%
+        text-align: center
+        &:active,
+        &:hover
+          filter: hue-rotate(-15deg)
+          a
+            transform: translateY(3%)
+    .swiper-slide
+      text-align: center
+    img
+      // 會被宮格影響成display block導致不吃text align
+      display: inline

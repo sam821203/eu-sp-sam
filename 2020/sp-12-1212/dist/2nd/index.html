@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="vendor-bundle.css" rel="stylesheet">
+    <link href="app-bundle.css" rel="stylesheet">
+    <style>
+        .promo__group--random .promo__wrap .good__wrap li {
+            -ms-flex: 1 0 25%;
+        }
+    </style>
+</head>
+<body>
+<div class="elevatorHome js--main--dialog" id="elevatorHome"></div>
+<div class="navRightBar" id="navRightBar"></div>
+<div class="icon__home layout--main" id="iconHome"></div>
+<div class="bg--decoration">
+    <div class="decoration__wrap decoration--under wow" id="decorationBg">
+        <div class="layout--main">
+            <div class="decoration__block"></div>
+        </div>
+    </div>
+</div>
+<main class="sp__wrap sp__wrap--e" id="spWrap">
+    <header class="header__zone">
+        <div class="layout--main"><a class="logo logo--e" href="https://www.etmall.com.tw/"><img src="logo-white.png"
+                                                                                                 alt="東森購物"></a>
+        </div>
+    </header>
+    <section class="hero__wrap" data-title="">
+        <div class="ball__animated"></div>
+        <div class="hero__zone">
+            <div class="layout--main">
+                <div class="hero__block" id="heroBlock">
+                    <div class="hero__box">
+                        <h1 class="hero__title hero__title--main block--center wow" title="1212激戰狂歡GO"><img
+                                class="title__t1" src="title-t1.png" alt="1212激戰狂歡GO"><img class="title__t3"
+                                                                                           src="title-t3.png"><img
+                                class="title__t2" src="title-t2.png"></h1>
+                    </div>
+                    <div class="promo__slider promo__slider-1">
+                        <div class="swiper-container" id="sliderPromo_1">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide"><a
+                                        href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202011/SP_1116804/w/index.html"
+                                        title="東森幣100枚 抽TOYOTA汽車"><img
+                                        src="promo-slider-1.png" alt="東森幣100枚 抽TOYOTA汽車"></a></li>
+                                <li class="swiper-slide"><a
+                                        href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202011/SP_1116795/w/index.html"
+                                        title="贈BT21心型手拿鏡"><img src="promo-slider-2.png" alt="贈BT21心型手拿鏡"></a></li>
+                                <li class="swiper-slide"><a
+                                        href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1114876/w/index.html"
+                                        title="指定銀行最高回饋$5,200"><img src="promo-slider-3.png" alt="指定銀行最高回饋$5,200"></a>
+                                </li>
+                            </ul>
+                            <!--#sliderSpecialPager.swiper-pagination-custom.swiper-pagination-->
+                        </div>
+                        <div class="swiper-button-white swiper-button-prev" id="sliderSpecialPrev"></div>
+                        <div class="swiper-button-white swiper-button-next" id="sliderSpecialNext"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="title__decoration wow">
+            <!--img(src="~event/2nd/e-main/components/hero-section/decoration__balloon.png")--><img
+                src="https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1116824/decoration__balloon.png">
+        </div>
+        <div class="promo__zone">
+            <div class="promo__event--bg">
+                <div class="layout--main">
+                    <div class="promo__block">
+                        <div class="promo__event" data-title="">
+                            <section class="promo__group promo__group--daily m-bottom--md" data-title="大牌價到">
+                                <div class="layout--main">
+                                    <div class="promo__wrap">
+                                        <div class="title__text daily__countdown">
+                                            <div class="time__block">
+                                                <div class="time__box"><span id="dailyHourTens">0</span></div>
+                                                <div class="time__box"><span id="dailyHourUnits">0</span></div>
+                                            </div>
+                                            <div class="time__block">
+                                                <div class="time__box"><span id="dailyMinTens">0</span></div>
+                                                <div class="time__box"><span id="dailyMinUnits">0</span></div>
+                                            </div>
+                                            <div class="time__block">
+                                                <div class="time__box"><span id="dailySecTens">0</span></div>
+                                                <div class="time__box"><span id="dailySecUnits">0</span></div>
+                                            </div>
+                                        </div>
+                                        <div class="daily__change" id="dailyChange"><a href="" title="大牌駕到"><img
+                                                src="daily-item-1.png" alt="大牌駕到"></a></div>
+                                    </div>
+                                </div>
+                            </section>
+                            <ul class="event__wrap">
+                                <!--li#dailyPromo-->
+                                <!--  span.js-month 10-->
+                                <!--  span.js-date 19-->
+                                <!--  a(href= promoData[0].link, title= promoData[0].alt)-->
+                                <!--    img(src= promoData[0].imgSrc, alt= promoData[0].alt)
+                                //img(class="promo__good" src="~event/2nd/e-main/components/promo-event/items/promo-1-good.png")
+                                //img(class="promo__go" src="~event/2nd/e-main/components/promo-event/items/promo-1-go.png")
+                                -->
+                                <li><a href="#note" title="消費滿額最高送3,200"><img src="promo-1.png" alt="消費滿額最高送3,200"></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202011/SP_1116795/w/index.html"
+                                       title="滿額送BT21心型手拿鏡"><img src="promo-2.png" alt="滿額送BT21心型手拿鏡"></a></li>
+                                <li><a href="#note" title="APP單筆滿額送(foodpanda)九折折扣碼"><img src="promo-3.png"
+                                                                                          alt="APP單筆滿額送(foodpanda)九折折扣碼"></a>
+                                </li>
+
+
+                                <li>
+                                    <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1116813/w/index.html"
+                                       title="首購登記送象印保溫瓶"><img src="promo-4.png" alt="首購登記送象印保溫瓶"></a></li>
+                                <li>
+                                    <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202011/SP_1116792/w/index.html"
+                                       title="滿$1,212看Catchplay"><img src="promo-5.png" alt="滿$1,212看Catchplay"></a>
+                                </li>
+                                <li><a href="#note" title="天天抽 瑞穗天合國際觀光酒店"><img src="promo-6.png" alt="天天抽 瑞穗天合國際觀光酒店"></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202011/SP_1116768/w/index.html"
+                                       title="消費BT21商品滿$899送BT21獨家刺繡貼貼樂"><img src="promo-7.png"
+                                                                              alt="消費BT21商品滿$899送BT21獨家刺繡貼貼樂"></a></li>
+                                <li><a href="#note" title="下單贈(生活大管家)折扣碼"><img src="promo-8.png"
+                                                                               alt="下單贈(生活大管家)折扣碼"></a></li>
+                            </ul>
+                            <div class="promo__slider bn-special">
+                                <div class="swiper-container" id="sliderSpecial">
+                                    <ul class="swiper-wrapper">
+                                        <li class="swiper-slide"><a href="#note" title="單筆滿額送熊媽媽買菜金50元"><img
+                                                src="promo-09-4.png" alt="單筆滿額送熊媽媽買菜金50元"></a></li>
+                                        <li class="swiper-slide"><a
+                                                href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202011/SP_1116794/w/index.html"
+                                                title="全家超取登記送中熱拿"><img src="promo-09-1.png" alt="全家超取登記送中熱拿"></a></li>
+                                        <li class="swiper-slide"><a
+                                                href="https://www.etmall.com.tw/gp/110186"
+                                                title="嘉義優鮮12月折抵22%"><img src="promo-09-2.png" alt="嘉義優鮮12月折抵22%"></a>
+                                        </li>
+                                        <li class="swiper-slide"><a
+                                                href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1116815/w/index.html"
+                                                title="彰化好物購"><img src="promo-09-3.png" alt="彰化好物購"></a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="swiper-button-white swiper-button-prev" id="sliderSpecialPrev"></div>
+                                <div class="swiper-button-white swiper-button-next" id="sliderSpecialNext"></div>
+                            </div>
+                            <section class="promo__group promo__group--text-slider m-bottom--sm" data-title="">
+                                <div class="layout--main">
+                                    <div class="promo__wrap">
+                                        <div class="promo__slider swiper-container" id="textSlider">
+                                            <div class="swiper-wrapper">
+                                                <li class="swiper-slide"><a
+                                                        href="https://www.etmall.com.tw/Search?keyword=醫療口罩">
+                                                    <div class="keyword">#醫療口罩</div>
+                                                </a></li>
+                                                <li class="swiper-slide"><a
+                                                        href="https://www.etmall.com.tw/Search?keyword=MyCard">
+                                                    <div class="keyword">#MyCard</div>
+                                                </a></li>
+                                                <li class="swiper-slide"><a
+                                                        href="https://www.etmall.com.tw/Search?keyword=AirPods">
+                                                    <div class="keyword">#AirPods</div>
+                                                </a></li>
+                                                <li class="swiper-slide"><a
+                                                        href="https://www.etmall.com.tw/Search?keyword=氣炸鍋">
+                                                    <div class="keyword">#氣炸鍋</div>
+                                                </a></li>
+                                                <li class="swiper-slide"><a
+                                                        href="https://www.etmall.com.tw/Search?keyword=健身環大冒險">
+                                                    <div class="keyword">#健身環大冒險</div>
+                                                </a></li>
+                                                <li class="swiper-slide"><a
+                                                        href="https://www.etmall.com.tw/Search?keyword=iPhone">
+                                                    <div class="keyword">#iPhone</div>
+                                                </a></li>
+                                                <li class="swiper-slide"><a
+                                                        href="https://www.etmall.com.tw/Search?keyword=Dyson">
+                                                    <div class="keyword">#Dyson</div>
+                                                </a></li>
+                                                <li class="swiper-slide"><a
+                                                        href="https://www.etmall.com.tw/Search?keyword=%E9%8D%8B%E5%AF%B6">
+                                                    <div class="keyword">#鍋寶</div>
+                                                </a></li>
+                                            </div>
+                                        </div>
+                                        <!--#sliderDynamicPager_2.dynamic-slider-pager.swiper-pagination-->
+                                        <div class="swiper-button-white swiper-button-prev"
+                                             id="sliderDynamicPrev_2"></div>
+                                        <div class="swiper-button-white swiper-button-next"
+                                             id="sliderDynamicNext_2"></div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="promo__group promo__group--daily-slider" data-title="天天開搶">
+        <div class="daily-slider--bg">
+            <div class="layout--main">
+                <div class="promo__wrap">
+                    <div class="promo__zone">
+                        <div class="daily__item" id="dailyItem">
+                            <div class="item__box active"><a href="https://www.etmall.com.tw/i/2692144"
+                                                             title="Normady 諾曼地女鞋MIT台灣製手工鞋 -15款"><img
+                                    src="now-daily-item-1.png" alt="Normady 諾曼地女鞋MIT台灣製手工鞋 -15款"></a></div>
+                            <div class="item__box"><a href="https://www.etmall.com.tw/i/2845934"
+                                                      title="ASHIYA馬胎盤精華液2+1組"><img src="now-daily-item-2.png"
+                                                                                    alt="ASHIYA馬胎盤精華液2+1組"></a></div>
+                            <div class="item__box"><a href="https://www.etmall.com.tw/i/2463744"
+                                                      title="MONS (三件一組)羊毛針織上衣名品經典百搭"><img src="now-daily-item-3.png"
+                                                                                           alt="MONS (三件一組)羊毛針織上衣名品經典百搭"></a>
+                            </div>
+                            <div class="item__box"><a href="https://www.etmall.com.tw/i/2767404"
+                                                      title="Acer i7旗艦觸控筆電加送32吋顯示器"><img src="now-daily-item-4.png"
+                                                                                         alt="Acer i7旗艦觸控筆電加送32吋顯示器"></a>
+                            </div>
+                            <div class="item__box"><a href="https://www.etmall.com.tw/i/2723942"
+                                                      title="WMF PROFISELECT 不沾煎鍋(28CM)+2841361WMF PALMA 餐具四件組(活動用)"><img
+                                    src="now-daily-item-5.png"
+                                    alt="WMF PROFISELECT 不沾煎鍋(28CM)+2841361WMF PALMA 餐具四件組(活動用)"></a></div>
+                            <div class="item__box"><a href="https://www.etmall.com.tw/i/2424091"
+                                                      title="台塑生醫醫之方緩釋B群雙層錠60錠8+1入組(加1元多1件)"><img
+                                    src="now-daily-item-6.png" alt="台塑生醫醫之方緩釋B群雙層錠60錠8+1入組(加1元多1件)"></a></div>
+                            <div class="item__box"><a href="https://www.etmall.com.tw/i/2836296"
+                                                      title="小米手環 5限量送錶帶"><img src="now-daily-item-7.png"
+                                                                               alt="小米手環 5限量送錶帶"></a></div>
+                            <div class="item__box"><a href="https://www.etmall.com.tw/i/2811743"
+                                                      title="Kiehls契爾氏 金盞花植物精華化妝水 250ml"><img src="now-daily-item-8.png"
+                                                                                              alt="Kiehls契爾氏 金盞花植物精華化妝水 250ml"></a>
+                            </div>
+                            <div class="item__box"><a href="https://www.etmall.com.tw/i/2602785"
+                                                      title="舒味思 氣泡水-伯爵紅茶500ml(24入/箱)"><img src="now-daily-item-9.png"
+                                                                                            alt="舒味思 氣泡水-伯爵紅茶500ml(24入/箱)"></a>
+                            </div>
+                            <div class="item__box"><a href="https://www.etmall.com.tw/i/2801207"
+                                                      title="ECOVACS 科沃斯 DEEBOT OZMO 900 智慧清潔掃拖機器人"><img
+                                    src="now-daily-item-10.png" alt="ECOVACS 科沃斯 DEEBOT OZMO 900 智慧清潔掃拖機器人"></a></div>
+                        </div>
+                        <div class="slider__wrap">
+                            <div class="promo__slider swiper-container" id="dailySlider">
+                                <ul class="swiper-wrapper">
+                                    <li class="swiper-slide"><a href="" title="ASHIYA馬胎盤精華液2+1組"
+                                                                style="pointer-events: none"><img class="swiper-lazy"
+                                                                                                  data-src="next-daily-item-2.png"
+                                                                                                  alt=""></a>
+                                        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                    </li>
+                                    <li class="swiper-slide"><a href="" title="MONS (三件一組)羊毛針織上衣名品經典百搭"
+                                                                style="pointer-events: none"><img class="swiper-lazy"
+                                                                                                  data-src="next-daily-item-3.png"
+                                                                                                  alt=""></a>
+                                        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                    </li>
+                                    <li class="swiper-slide"><a href="" title="Acer i7旗艦觸控筆電加送32吋顯示器"
+                                                                style="pointer-events: none"><img class="swiper-lazy"
+                                                                                                  data-src="next-daily-item-4.png"
+                                                                                                  alt=""></a>
+                                        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                    </li>
+                                    <li class="swiper-slide"><a href=""
+                                                                title="WMF PROFISELECT 不沾煎鍋(28CM)+2841361WMF PALMA 餐具四件組(活動用)"
+                                                                style="pointer-events: none"><img class="swiper-lazy"
+                                                                                                  data-src="next-daily-item-5.png"
+                                                                                                  alt=""></a>
+                                        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                    </li>
+                                    <li class="swiper-slide"><a href="" title="台塑生醫醫之方緩釋B群雙層錠60錠8+1入組(加1元多1件)"
+                                                                style="pointer-events: none"><img class="swiper-lazy"
+                                                                                                  data-src="next-daily-item-6.png"
+                                                                                                  alt=""></a>
+                                        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                    </li>
+                                    <li class="swiper-slide"><a href="" title="小米手環 5限量送錶帶"
+                                                                style="pointer-events: none"><img class="swiper-lazy"
+                                                                                                  data-src="next-daily-item-7.png"
+                                                                                                  alt=""></a>
+                                        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                    </li>
+                                    <li class="swiper-slide"><a href="" title="Kiehls契爾氏 金盞花植物精華化妝水 250ml"
+                                                                style="pointer-events: none"><img class="swiper-lazy"
+                                                                                                  data-src="next-daily-item-8.png"
+                                                                                                  alt=""></a>
+                                        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                    </li>
+                                    <li class="swiper-slide"><a href="" title="舒味思 氣泡水-伯爵紅茶500ml(24入/箱)"
+                                                                style="pointer-events: none"><img class="swiper-lazy"
+                                                                                                  data-src="next-daily-item-9.png"
+                                                                                                  alt=""></a>
+                                        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                    </li>
+                                    <li class="swiper-slide"><a href="" title="ECOVACS 科沃斯 DEEBOT OZMO 900 智慧清潔掃拖機器人"
+                                                                style="pointer-events: none"><img class="swiper-lazy"
+                                                                                                  data-src="next-daily-item-10.png"
+                                                                                                  alt=""></a>
+                                        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                    </li>
+                                    <li class="swiper-slide"><a href="" title="活動已結束" style="pointer-events: none"><img
+                                            class="swiper-lazy" data-src="sold-out.png" alt=""></a>
+                                        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="swiper-button-prev daily__nav--slider daily__nav--prev"
+                                 id="dailySliderPrev"></div>
+                            <div class="swiper-button-next daily__nav--slider daily__nav--next"
+                                 id="dailySliderNext"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="promo__group promo__group--tab" data-title="1212">
+        <div class="tab--bg">
+            <div class="layout--main">
+                <ul class="tab__wrap">
+                    <li class="tab__zone">
+                        <ul class="tab__box" id="tabBox">
+                            <li class="tab__item active" title="$12專區">
+                                <!--img(src="~event/2nd/e-main/components/tab-section/items/tab/tab-1.png", alt="$12專區")-->
+                                <!--img(src="~event/2nd/e-main/components/tab-section/items/tab/tab-1-active.png", alt="$12專區")--><img
+                                    src="https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1116824/tab-1.png"
+                                    alt="$12專區"><img
+                                    src="https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1116824/tab-1-active.png"
+                                    alt="$12專區">
+                            </li>
+                            <li class="tab__item" title="$112專區">
+                                <!--img(src="~event/2nd/e-main/components/tab-section/items/tab/tab-2.png", alt="$112專區")-->
+                                <!--img(src="~event/2nd/e-main/components/tab-section/items/tab/tab-2-active.png", alt="$112專區")--><img
+                                    src="https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1116824/tab-2.png"
+                                    alt="$112專區"><img
+                                    src="https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1116824/tab-2-active.png"
+                                    alt="$112專區">
+                            </li>
+                            <li class="tab__item" title="$1,212專區">
+                                <!--img(src="~event/2nd/e-main/components/tab-section/items/tab/tab-3.png", alt="$1,212專區")-->
+                                <!--img(src="~event/2nd/e-main/components/tab-section/items/tab/tab-3-active.png", alt="$1,212專區")--><img
+                                    src="https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1116824/tab-3.png"
+                                    alt="$1,212專區"><img
+                                    src="https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1116824/tab-3-active.png"
+                                    alt="$1,212專區">
+                            </li>
+                            <li class="tab__item" title="$11,212專區">
+                                <!--img(src="~event/2nd/e-main/components/tab-section/items/tab/tab-4.png", alt="$11,212專區")-->
+                                <!--img(src="~event/2nd/e-main/components/tab-section/items/tab/tab-4-active.png", alt="$11,212專區")--><img
+                                    src="https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1116824/tab-4.png"
+                                    alt="$11,212專區"><img
+                                    src="https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1116824/tab-4-active.png"
+                                    alt="$11,212專區">
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="content__zone">
+                        <ul class="content__block" id="tabContentBlock">
+                            <li class="content__box active">
+                                <div class="tab__slider swiper-container">
+                                    <ul class="item__wrap swiper-wrapper"></ul>
+                                </div>
+                            </li>
+                            <li class="content__box">
+                                <div class="tab__slider swiper-container">
+                                    <ul class="item__wrap swiper-wrapper"></ul>
+                                </div>
+                            </li>
+                            <li class="content__box">
+                                <div class="tab__slider swiper-container">
+                                    <ul class="item__wrap swiper-wrapper"></ul>
+                                </div>
+                            </li>
+                            <li class="content__box">
+                                <div class="tab__slider swiper-container">
+                                    <ul class="item__wrap swiper-wrapper"></ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="promo__group promo__group--left-right m-bottom--md" data-title="搶翻遊戲">
+        <div class="layout--main">
+            <div class="left-right__wrap">
+                <div class="block--left">
+                    <div class="item__box not-yet" id="leftRightChange">
+                        <div class="not-yet not-yet__wrap"></div>
+                        <a id="leftRightChangeAnchor" href="javascript:void(0)" style="pointer-events: none;">
+                            <!--img.img--notyet(src="~event/2nd/e-main/components/left-right-section/game-left-notyet.png", alt="遊戲尚未開始", title="遊戲尚未開始")--><img
+                                class="img--notyet"
+                                src="https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1116824/game-left-notyet.png"
+                                alt="遊戲尚未開始" title="遊戲尚未開始">
+                            <!--img(src="~event/2nd/e-main/components/left-right-section/game-left.png", alt="超級紅包搶，中獎率100%", title="超級紅包搶，中獎率100%")-->
+                            <div class="red__envelope__wrap" id="js-red__envelope__wrap"></div>
+                            <img class="img_open"
+                                 src="https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1116824/game-left.png"
+                                 alt="1212無敵紅包" title="1212無敵紅包"></a>
+                    </div>
+                </div>
+                <div class="block--right">
+                    <div class="item__box"><a
+                            href="https://m.etmall.com.tw/Activity/Lottery/202012_ce0d749bc59a02ccab8c86fff4b05ab4"
+                            title="1212瘋扭蛋">
+                        <div class="ball_wrap" id="js-ball__wrap"></div>
+                    </a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="promo__group promo__group--dynamic-slider promo__group--dynamic-slider slider__style1"
+             data-title="BT21">
+        <div class="layout--main">
+            <div class="promo__wrap">
+                <div class="promo__slider swiper-container" id="sliderDynamic">
+                    <div class="swiper-wrapper"></div>
+                </div>
+                <!--#sliderDynamicPager.dynamic-slider-pager.swiper-pagination-->
+                <div class="swiper-button-white swiper-button-prev" id="sliderDynamicPrev_1"></div>
+                <div class="swiper-button-white swiper-button-next" id="sliderDynamicNext_1"></div>
+            </div>
+        </div>
+    </section>
+    <section class="promo__group promo__group--mid-big" data-title="">
+        <div class="layout--main">
+            <!--.promo__title.block--center.text--center-->
+            <!--  img(src="~event/2nd/e-main/components/mid-big-slider/title-mid-big.png", alt="加111元多一件")-->
+            <div class="promo__wrap">
+                <div class="promo__slider swiper-container" id="sliderMidBig">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide"><a href="https://www.etmall.com.tw/gp/105031" title="好神拖"><img
+                                class="swiper-lazy" data-src="mid-big-1.png" alt="">
+                            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                            <div class="text__box"><span>年末特賣7折起</span></div>
+                        </a></li>
+                        <li class="swiper-slide"><a href="https://www.etmall.com.tw/np/65333" title="COACH x MK"><img
+                                class="swiper-lazy" data-src="mid-big-2.png" alt="">
+                            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                            <div class="text__box"><span>熱銷新品限時5折</span></div>
+                        </a></li>
+                        <li class="swiper-slide"><a href="https://media.etmall.com.tw/sp/7160/m/index.html"
+                                                    title="LooCa"><img class="swiper-lazy" data-src="mid-big-3.png"
+                                                                       alt="">
+                            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                            <div class="text__box"><span>抽小米智能家電</span></div>
+                        </a></li>
+                        <li class="swiper-slide"><a href="https://www.etmall.com.tw/gp/118415" title="Kanebo"><img
+                                class="swiper-lazy" data-src="mid-big-4.png" alt="">
+                            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                            <div class="text__box"><span>佳麗寶回饋三重送</span></div>
+                        </a></li>
+                        <li class="swiper-slide"><a href="https://www.etmall.com.tw/gp/118478" title="台塑"><img
+                                class="swiper-lazy" data-src="mid-big-5.png" alt="">
+                            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                            <div class="text__box"><span>狂歡12折起</span></div>
+                        </a></li>
+                        <li class="swiper-slide"><a href="https://www.etmall.com.tw/p/119325" title="LG生活健康"><img
+                                class="swiper-lazy" data-src="mid-big-6.png" alt="">
+                            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                            <div class="text__box"><span>LG生活健康</span></div>
+                        </a></li>
+                        <li class="swiper-slide"><a href="https://media.etmall.com.tw/sp/7148/m/index.html"
+                                                    title="Dyson"><img class="swiper-lazy" data-src="mid-big-7.png"
+                                                                       alt="">
+                            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                            <div class="text__box"><span>戴森回饋10%東森幣</span></div>
+                        </a></li>
+                        <li class="swiper-slide"><a
+                                href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202005/SP_1115505"
+                                title="Apple"><img class="swiper-lazy" data-src="mid-big-8.png" alt="">
+                            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                            <div class="text__box"><span>限時下殺最終戰</span></div>
+                        </a></li>
+                        <li class="swiper-slide"><a href="https://media.etmall.com.tw/sp/6923/m/index.html"
+                                                    title="MyCard"><img class="swiper-lazy" data-src="mid-big-9.png"
+                                                                        alt="">
+                            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                            <div class="text__box"><span>點數卡抽Switch</span></div>
+                        </a></li>
+                    </ul>
+                    <div class="swiper-button-white swiper-button-prev mid-big__nav mid-big__nav--prev"
+                         id="sliderMidBigPrev"></div>
+                    <div class="swiper-button-white swiper-button-next mid-big__nav mid-big__nav--next"
+                         id="sliderMidBigNext"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="promo__group promo__group--random m-bottom--sm promo__group--card" data-title="集點加購">
+        <div class="layout--main">
+            <div class="card__wrap promo__wrap active" id="cardWrap">
+                <ul class="good__wrap" id="randomSelectWrap">
+                    <li class="card__item">
+                        <div class="card__front"><a
+                                href="https://www.etmall.com.tw/activity/collectpointexchange/20201130"
+                                title="100元全站折價券"><img src="1.png" alt="100元全站折價券"></a></div>
+                        <div class="card__back">
+                            <!--img(src="~event/2nd/e-main/components/random-select/card-back.png", alt="")--><img
+                                src="https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1116824/card-back.png"
+                                alt="">
+                        </div>
+                    </li>
+                    <li class="card__item">
+                        <div class="card__front"><a
+                                href="https://www.etmall.com.tw/activity/collectpointexchange/20201130"
+                                title="漢克嚴選 和牛級嫩肩沙朗牛排8包"><img src="2.png" alt="漢克嚴選 和牛級嫩肩沙朗牛排8包"></a></div>
+                        <div class="card__back">
+                            <!--img(src="~event/2nd/e-main/components/random-select/card-back.png", alt="")--><img
+                                src="https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1116824/card-back-2.png"
+                                alt="">
+                        </div>
+                    </li>
+                    <li class="card__item">
+                        <div class="card__front"><a
+                                href="https://www.etmall.com.tw/activity/collectpointexchange/20201130"
+                                title="LINE POINTS 200點"><img src="3.png" alt="LINE POINTS 200點"></a></div>
+                        <div class="card__back">
+                            <!--img(src="~event/2nd/e-main/components/random-select/card-back.png", alt="")--><img
+                                src="https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1116824/card-back.png"
+                                alt="">
+                        </div>
+                    </li>
+                    <li class="card__item">
+                        <div class="card__front"><a
+                                href="https://www.etmall.com.tw/activity/collectpointexchange/20201130"
+                                title="歐舒丹 乳油木護足霜150ml"><img src="4.png" alt="歐舒丹 乳油木護足霜150ml"></a></div>
+                        <div class="card__back">
+                            <!--img(src="~event/2nd/e-main/components/random-select/card-back.png", alt="")--><img
+                                src="https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1116824/card-back-2.png"
+                                alt="">
+                        </div>
+                    </li>
+                    <li class="card__item">
+                        <div class="card__front"><a
+                                href="https://www.etmall.com.tw/activity/collectpointexchange/20201130"
+                                title="1212枚東森幣"><img src="5.png" alt="1212枚東森幣"></a></div>
+                        <div class="card__back">
+                            <!--img(src="~event/2nd/e-main/components/random-select/card-back.png", alt="")--><img
+                                src="https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1116824/card-back.png"
+                                alt="">
+                        </div>
+                    </li>
+                    <li class="card__item">
+                        <div class="card__front"><a
+                                href="https://www.etmall.com.tw/activity/collectpointexchange/20201130"
+                                title="鍋寶 雙層防燙快煮壺1.8L"><img src="6.png" alt="鍋寶 雙層防燙快煮壺1.8L"></a></div>
+                        <div class="card__back">
+                            <!--img(src="~event/2nd/e-main/components/random-select/card-back.png", alt="")--><img
+                                src="https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1116824/card-back-2.png"
+                                alt="">
+                        </div>
+                    </li>
+                    <li class="card__item">
+                        <div class="card__front"><a
+                                href="https://www.etmall.com.tw/activity/collectpointexchange/20201130"
+                                title="LINE POINTS 150點"><img src="7.png" alt="LINE POINTS 150點"></a></div>
+                        <div class="card__back">
+                            <!--img(src="~event/2nd/e-main/components/random-select/card-back.png", alt="")--><img
+                                src="https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1116824/card-back.png"
+                                alt="">
+                        </div>
+                    </li>
+                    <li class="card__item">
+                        <div class="card__front"><a
+                                href="https://www.etmall.com.tw/activity/collectpointexchange/20201130"
+                                title="WMF 牛奶鍋14cm 1.7L"><img src="8.png" alt="WMF 牛奶鍋14cm 1.7L"></a></div>
+                        <div class="card__back">
+                            <!--img(src="~event/2nd/e-main/components/random-select/card-back.png", alt="")--><img
+                                src="https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1116824/card-back-2.png"
+                                alt="">
+                        </div>
+                    </li>
+                    <li class="card__item">
+                        <div class="card__front"><a
+                                href="https://www.etmall.com.tw/activity/collectpointexchange/20201130" title="121枚東森幣"><img
+                                src="9.png" alt="121枚東森幣"></a></div>
+                        <div class="card__back">
+                            <!--img(src="~event/2nd/e-main/components/random-select/card-back.png", alt="")--><img
+                                src="https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1116824/card-back.png"
+                                alt="">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="promo__group promo__group--tab-slider js-add__bg" data-title="各館活動">
+        <div class="layout--main">
+            <ul class="tab__wrap">
+                <li class="tab__zone">
+                    <ul class="tab__box" id="tabSliderBox">
+                        <li class="tab__item active" title="美妝保健">
+                            <!--img(src="~event/2nd/e-main/components/tab-slider-section/items/tab/tab-d1.png", alt="美妝保健")--><img
+                                src="https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1116824/tab-d1.png"
+                                alt="美妝保健">
+                        </li>
+                        <li class="tab__item" title="3C家電">
+                            <!--img(src="~event/2nd/e-main/components/tab-slider-section/items/tab/tab-d2.png", alt="3C家電")--><img
+                                src="https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1116824/tab-d2.png"
+                                alt="3C家電">
+                        </li>
+                        <li class="tab__item" title="流行日用">
+                            <!--img(src="~event/2nd/e-main/components/tab-slider-section/items/tab/tab-d3.png", alt="流行日用")--><img
+                                src="https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1116824/tab-d3.png"
+                                alt="流行日用">
+                        </li>
+                    </ul>
+                </li>
+                <li class="content__zone">
+                    <ul class="content__block" id="tabSliderContentBlock">
+                        <li class="content__box clearfix active">
+                            <ul class="swiper-container slider__tab" id="sliderTab">
+                                <li class="swiper-wrapper">
+                                    <div class="content__item swiper-slide"><a
+                                            href="https://www.etmall.com.tw/gp/118404" title="華陀狂歡再起指定商品$1212起"><img
+                                            src="content-1-1.jpg" alt="華陀狂歡再起指定商品$1212起"></a></div>
+                                    <div class="content__item swiper-slide"><a href="https://www.etmall.com.tw/p/118494"
+                                                                               title="日本味王"><img src="content-1-2.jpg"
+                                                                                                 alt="日本味王"></a></div>
+                                    <div class="content__item swiper-slide"><a
+                                            href="https://www.etmall.com.tw/gp/119055" title="妍選洋行雙12特談組"><img
+                                            src="content-1-3.jpg" alt="妍選洋行雙12特談組"></a></div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="content__box clearfix">
+                            <ul class="swiper-container slider__tab" id="sliderTab_2">
+                                <li class="swiper-wrapper">
+                                    <div class="content__item swiper-slide"><a
+                                            href="https://media.etmall.com.tw/sp/7154/index.html " title="日系洗冰年末瘋殺"><img
+                                            src="content-2-1.jpg" alt="日系洗冰年末瘋殺"></a></div>
+                                    <div class="content__item swiper-slide"><a
+                                            href="https://media.etmall.com.tw/sp/6649/m/index.html"
+                                            title="3C樂玩咖狂送好禮"><img src="content-2-2.jpg" alt="3C樂玩咖狂送好禮"></a></div>
+                                    <div class="content__item swiper-slide"><a
+                                            href="https://media.etmall.com.tw/sp/7142/m/index.html"
+                                            title="聖誕禮來到 省10%享好禮"><img src="content-2-3.jpg" alt="聖誕禮來到 省10%享好禮"></a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="content__box clearfix">
+                            <ul class="swiper-container slider__tab" id="sliderTab_3">
+                                <li class="swiper-wrapper">
+                                    <div class="content__item swiper-slide"><a
+                                            href="https://media.etmall.com.tw/sp/7120/index.html"
+                                            title="狂歡聖誕 水飲5折UP"><img src="content-3-1.jpg" alt="狂歡聖誕 水飲5折UP"></a></div>
+                                    <div class="content__item swiper-slide"><a
+                                            href="https://media.etmall.com.tw/sp/7047/m/index.html"
+                                            title="1212服飾x內衣震撼來臨"><img src="content-3-2.jpg" alt="1212服飾x內衣震撼來臨"></a>
+                                    </div>
+                                    <div class="content__item swiper-slide"><a
+                                            href="https://media.etmall.com.tw/sp/6966/m/index.html"
+                                            title="汽車百貨 年末下殺"><img src="content-3-3.jpg" alt="汽車百貨 年末下殺"></a></div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!--include /event/2nd/e-main/components/dynamic-slider-2/_dynamic-slider-2-->
+    <section class="promo__group promo__group--bn-bank" id="bnSpecial" data-title="">
+        <div class="layout--main">
+            <div class="promo__wrap" id="bnSpecialPromoWrap">
+                <div class="slider__box">
+                    <div class="promo__slider">
+                        <div class="swiper-container" id="sliderBank">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide month--prev"><a
+                                        href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202011/SP_1114875/w/index.html#kgi"
+                                        title=" 凱基銀行期間限定滿$999送$150"><img class="swiper-lazy" data-src="bank-p-1.png"
+                                                                         alt="">
+                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                </a></li>
+                                <li class="swiper-slide month--prev"><a
+                                        href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202011/SP_1114875/w/index.html#one"
+                                        title="第一銀行全月獻禮滿$1,000送$111"><img class="swiper-lazy" data-src="bank-p-2.png"
+                                                                          alt="">
+                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                </a></li>
+                                <li class="swiper-slide month--prev"><a
+                                        href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202011/SP_1114875/w/index.html#tbb"
+                                        title="臺灣企銀全月獻禮滿$3,000送$150"><img class="swiper-lazy" data-src="bank-p-3.png"
+                                                                          alt="">
+                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                </a></li>
+                                <li class="swiper-slide month--prev"><a
+                                        href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202011/SP_1114875/w/index.html#bot"
+                                        title="臺灣銀行全月獻禮滿$3,000送$150"><img class="swiper-lazy" data-src="bank-p-4.png"
+                                                                          alt="">
+                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                </a></li>
+                                <li class="swiper-slide month--prev"><a
+                                        href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202011/SP_1114875/w/index.html#tcb"
+                                        title="合作金庫銀行全月獻禮滿$3,500送$200"><img class="swiper-lazy" data-src="bank-p-5.png"
+                                                                            alt="">
+                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                </a></li>
+                                <li class="swiper-slide month--prev"><a
+                                        href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202011/SP_1114875/w/index.html#huanan"
+                                        title="全月獻禮滿$5,000送$300"><img class="swiper-lazy" data-src="bank-p-6.png"
+                                                                      alt="">
+                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                </a></li>
+                                <li class="swiper-slide month--prev"><a
+                                        href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202011/SP_1114875/w/index.html#sinopac"
+                                        title="全月獻禮滿$6,000送$300"><img class="swiper-lazy" data-src="bank-p-7.png"
+                                                                      alt="">
+                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                </a></li>
+                                <li class="swiper-slide month--prev"><a
+                                        href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202011/SP_1114875/w/index.html#dbs"
+                                        title="全月獻禮滿$6,000送$400"><img class="swiper-lazy" data-src="bank-p-8.png"
+                                                                      alt="">
+                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                </a></li>
+                                <li class="swiper-slide month--prev"><a
+                                        href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202011/SP_1114875/w/index.html#citi"
+                                        title="全月獻禮滿$8,000送$600"><img class="swiper-lazy" data-src="bank-p-9.png"
+                                                                      alt="">
+                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                </a></li>
+                                <li class="swiper-slide month--prev"><a
+                                        href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202011/SP_1114875/w/index.html#Taishin"
+                                        title="全月獻禮滿$10,000送$800"><img class="swiper-lazy" data-src="bank-p-10.png"
+                                                                       alt="">
+                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                </a></li>
+                                <li class="swiper-slide month--next"><a
+                                        href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1114876/w/index.html#bot"
+                                        title="全月獻禮滿$999送$260"><img class="swiper-lazy" data-src="bank-n-1.png" alt="">
+                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                </a></li>
+                                <li class="swiper-slide month--next"><a
+                                        href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1114876/w/index.html#dbs"
+                                        title="期間限定滿$1,000送$200"><img class="swiper-lazy" data-src="bank-n-2.png"
+                                                                      alt="">
+                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                </a></li>
+                                <li class="swiper-slide month--next"><a
+                                        href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1114876/w/index.html#citi"
+                                        title="期間限定滿$1,000送$250"><img class="swiper-lazy" data-src="bank-n-3.png"
+                                                                      alt="">
+                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                </a></li>
+                                <li class="swiper-slide month--next"><a
+                                        href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1114876/w/index.html#kgi"
+                                        title="凱基銀行期間限定滿$1,000送$250"><img class="swiper-lazy" data-src="bank-n-4.png"
+                                                                          alt="">
+                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                </a></li>
+                                <li class="swiper-slide month--next"><a
+                                        href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1114876/w/index.html#one"
+                                        title="期間限定滿$1,000送$250"><img class="swiper-lazy" data-src="bank-n-5.png"
+                                                                      alt="">
+                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                </a></li>
+                                <li class="swiper-slide month--next"><a
+                                        href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1114876/w/index.html#cathay"
+                                        title="期間限定滿$8,888送$888"><img class="swiper-lazy" data-src="bank-n-6.png"
+                                                                      alt="">
+                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                </a></li>
+                                <li class="swiper-slide month--next"><a
+                                        href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1114876/w/index.html#Taishin"
+                                        title="台新銀行全月獻禮滿$10,000送$1,200"><img class="swiper-lazy" data-src="bank-n-7.png"
+                                                                             alt="">
+                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                </a></li>
+                                <li class="swiper-slide month--next"><a
+                                        href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1114876/w/index.html#huanan"
+                                        title="全月獻禮滿$20,000送$2,400"><img class="swiper-lazy" data-src="bank-n-8.png"
+                                                                         alt="">
+                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                </a></li>
+                                <li class="swiper-slide month--next"><a
+                                        href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1114876/w/index.html#sinopac"
+                                        title="期間限定滿$30,000送$3,000"><img class="swiper-lazy" data-src="bank-n-9.png"
+                                                                         alt="">
+                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                </a></li>
+                                <li class="swiper-slide month--next"><a
+                                        href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1114876/w/index.html#union"
+                                        title="聯邦銀行全月獻禮滿$52,000送$5,200"><img class="swiper-lazy"
+                                                                             data-src="bank-n-10.png" alt="">
+                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="promo__group promo__group--dynamic-slider m-bottom--sm promo__group--dynamic-slider slider__style3"
+             data-title="回饋12%">
+        <div class="promo__style3--bg">
+            <div class="layout--main">
+                <div class="promo__wrap">
+                    <div class="promo__slider swiper-container" id="sliderDynamic_3">
+                        <div class="swiper-wrapper"></div>
+                    </div>
+                    <div class="swiper-button-white swiper-button-prev" id="sliderDynamicPrev_3"></div>
+                    <div class="swiper-button-white swiper-button-next" id="sliderDynamicNext_3"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--include /event/2nd/e-main/components/event-w4m2/_event-w4m2-->
+</main>
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1114697/generateVersion20190619.js"></script>
+<script src="snowfall.jquery.js"></script>
+<script id="dataTab" src="data-tab-2nd.js"></script>
+<script src="data-dynamic-2nd.js"></script>
+<script id="dataDaily" src="data-daily-2nd.js"></script>
+<!--script#check(src="check.js")-->
+<!--script(src="data-promo.js")-->
+<script src="data-ticket.js"></script>
+<!--script#dataDynamicHalf(src="data-dynamic-half.js")-->
+<script type="text/javascript" src="vendor-bundle.js"></script>
+<script type="text/javascript" src="app-bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+.promo__group--bn-2
+  +pos-set(relative, zero)
+  .title__decoration
+    transform-origin: right
+    pointer-events: none
+  .promo__wrap
+    +pos-set(relative, zero)
+    padding: 25.5% 5% 6%
+    +bg-set(url("event/1st/e-main/components/bn-slider-2/bg-bn-slider-2.png"), 100%)
+    .promo__bn
+      margin-bottom: 3%
+    .swiper-slide
+      width: 33%
+      text-align: center
+      transition: all 0.5s
+      &:hover,
+      &:active
+        transform: scale(0.95)
+
+  +breakpoint-min($min-width-md)
+    .promo__wrap
+      padding-bottom: 9%
+
+  +breakpoint-min($min-width-xl)
+    .promo__wrap
+      padding: 255px 60px 70px
+
+
+
+

@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<head>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		* {
+ 		 box-sizing: border-box; }
+  		*:before, *:after {
+    		box-sizing: border-box; }
+	    a {
+	    	display: block;
+	    	text-decoration: none;
+	    }
+		ul {
+			list-style: none;
+		}
+		img {
+			border: 0;
+		}
+		main, header, footer, section {
+			display: block;
+		}
+		body {
+			margin: 0;
+  			padding: 0;
+  			width: 100%;
+  			min-width: 1260px;
+			background: center top url(background.png), center top url(background.jpg) no-repeat, #7200ff linear-gradient(#7200ff 20%, #1bc6ff 100%) no-repeat;
+			overflow-x: hidden;
+		}
+
+		body, td, th {
+			font-family: Arial, Helvetica, LiHei, "Microsoft JhengHei", PMingLiU, "微軟正黑體", "新細明體", sans-serif;
+
+		}
+
+		.clearfix:after {
+			content: '';
+			display: block;
+			clear: both;
+			*zoom: 1;
+		}
+
+		.sp--1260 {
+			position: relative;
+			max-width: 1260px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.sp__wrap section {
+			position: relative;
+			z-index: 0;
+		}
+/* ============= decoration ============= */
+		.decoration--background,
+		.decoration--foreground {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100vw;
+			height: 100vh;
+			pointer-events: none;
+		}
+
+		.decoration--background {
+			z-index: 5;
+		}
+
+		.decoration--foreground {
+			z-index: 10;
+		}
+
+		.background,
+		.foreground {
+			position: absolute;
+			z-index: 1;
+		}
+
+		.background {
+			width: 110vw;
+			margin-left: -5vw;
+			background-size: contain;
+		}
+
+		.background-1 {
+			margin-top: 50px;
+			height: 843px;
+			background: center url(background-decoration-1.png) no-repeat;
+		}
+
+		.background-2 {
+			margin-top: 250px;
+			height: 530px;
+			background: center url(background-decoration-2.png) no-repeat;
+		}
+
+		.background-3 {
+			height: 1174px;
+			background: center url(background-plane.png) no-repeat;
+		}
+
+		.foreground-1 {
+			top: 130px;
+			left: calc(50% - 750px);
+			width: 399px;
+			height: 345px;
+			background-image: url(foreground-man-1.png);
+			animation: 2s 3s elevator infinite;
+		}
+
+		.foreground-2 {
+			bottom: 0;
+			right: calc(50% - 1020px);
+			width: 346px;
+			height: 388px;
+			background-image: url(foreground-man-2.png);
+		}
+
+		@keyframes elevator {
+			from, 8%, 93%, 98%, to {
+				transform: translateY(0);
+			}
+			53%, 58% {
+				transform: translateY(6.2%);
+			}
+		}
+
+		@media screen and (max-width: 1366px) {
+			.foreground-1 {
+				top: 150px;
+				left: 0;
+			}
+			.foreground-2 {
+				display: none;
+			}
+		}
+/* ================= header ================= */
+		.sp-logo {
+			position: absolute;
+			z-index: 5;
+			top: 20px;
+			left: 0;
+			cursor: pointer;
+		}
+		.side-info {
+			position: absolute;
+			z-index: 5;
+			top: 185px;
+			left: 15px;
+			width: 167px;
+			transition: all 0.5s;
+		}
+
+		.side-info img {
+			width: 100%;
+		}
+		
+/* ================= main-visual ================= */
+		.sp-title {
+			z-index: 1;
+			padding-top: 20px;
+			height: 380px;
+		}
+
+		.main-title {
+			position: relative;
+			z-index: 2;
+			text-align: center;
+			-webkit-perspective: 600px;
+			-moz-perspective: 600px;
+			-ms-perspective: 600px;
+			perspective: 600px;
+			pointer-events: none;
+		}
+
+		.main-title img:first-child {
+			margin-left: -85px;
+			transform-origin: top center;
+			backface-visibility: visible;
+			opacity: 0;
+		}
+
+		.main-title .animation {
+			animation: 2s rotate-open forwards;
+		}
+
+		/* Animate.css */
+		@keyframes rotate-open {
+			from {
+			transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+			animation-timing-function: ease-in;
+			opacity: 0;
+			}
+
+			40% {
+			transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+			animation-timing-function: ease-in;
+			}
+
+			60% {
+			transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+			opacity: 1;
+			}
+
+			80% {
+			transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+			opacity: 1;
+			}
+
+			to {
+			transform: perspective(400px);
+			opacity: 1;
+			}
+		}
+
+		.subtitle__wrap {
+			position: absolute;
+			z-index: 1;
+			top: 265px;
+			width: 642px;
+			height: 77px;
+			left: calc(50% - 321px);
+			background: url(subtitle-background.png);
+			opacity: 0;
+		}
+
+		.subtitle__wrap.animation {
+			animation: 1.5s 2s slider-down both ease-in;
+		}
+
+		@keyframes slider-down {
+			from {
+				opacity: 0;
+				transform: translateY(-100%);
+			}
+			1%, to {
+				opacity: 1;
+			}
+		}
+
+		.subtitle__box {
+			position: relative;
+			z-index: 0;
+			margin: 0 auto;
+			width: 580px;
+			height: 100%;
+			overflow: hidden;
+		}
+		.subtitle__box a {
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			text-align: center;
+			animation: 16s slider infinite both ease-in-out;
+		}
+
+		.subtitle__box a:last-child {
+			animation-delay: 8s;
+		}
+
+		@keyframes slider {
+			from, 25% {
+				transform: translateX(-580px);
+			}
+			50%, 75% {
+				transform: translateX(0);
+			}
+			to {
+				transform: translateX(580px);
+			}
+		}
+
+		.subtitle__box img {
+			display: inline-block;
+			margin-top: 20px; 
+		}
+/* ================= product ================= */
+		.product__anchor,
+		.product__wrap {
+			position: absolute;
+			top: -160px;
+			right: calc(50% - 645px);
+			width: 258px;
+			height: 529px;		
+		}
+
+		.product__anchor {
+			z-index: 10;
+		}
+
+		.product__wrap {
+			z-index: 3;
+			background: url(product-background.png) no-repeat;
+			text-align: center;
+		}
+
+		.product__anchor:hover + .product__wrap {
+			animation: 1s bounce;
+		}
+
+		.product__wrap a {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+
+		.product__box img {
+			margin-top: 10px;
+			transition: transform 0.3s;
+		}
+
+		.product__foreground {
+			position: absolute;
+			z-index: 3;
+			top: 0;
+			left: 15px;
+			width: 219px;
+			height: 64px;
+			background: url(product-foreground.png) no-repeat;
+		}
+
+		/* Animate.css */
+		@keyframes bounce {
+		  from,
+		  20%,
+		  53%,
+		  80%,
+		  to {
+		    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+		    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+		    -webkit-transform: translate3d(0, 0, 0);
+		    transform: translate3d(0, 0, 0);
+		  }
+
+		  40%,
+		  43% {
+		    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+		    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+		    -webkit-transform: translate3d(0, -30px, 0);
+		    transform: translate3d(0, -30px, 0);
+		  }
+
+		  70% {
+		    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+		    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+		    -webkit-transform: translate3d(0, -15px, 0);
+		    transform: translate3d(0, -15px, 0);
+		  }
+
+		  90% {
+		    -webkit-transform: translate3d(0, -4px, 0);
+		    transform: translate3d(0, -4px, 0);
+		  }
+		}
+
+/* ================= main-content ================= */
+		.sp-content	{
+			margin-top: -20px;
+			height: 520px;
+		}
+
+		.main-info {
+			position: relative;
+			z-index: 4;
+		}
+
+		.main-intro {
+			position: relative;
+			z-index: 5;
+			margin-left: auto;
+			margin-right: auto;
+			padding-top: 30px;
+		}
+
+		.main--info-a {
+			position: relative;
+			z-index: 2;
+			float: left;
+			transition: all 0.2s ease-in-out;
+			overflow: hidden;
+		}
+
+		.main--info-a img {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.main--info-a img:first-child {
+			position: relative;
+			z-index: 1; 
+			transform-origin: left bottom;
+			transition: transform 0.3s;
+		}
+
+		.main--info-a img:last-child {
+			position: relative;
+			z-index: 0; 
+		}
+
+		.main--info-a:nth-child(1) {
+			margin-left: 200px;
+			padding-top: 5px;
+		}
+
+		.main--info-a:nth-child(1) img:first-child {
+			transform-origin: left bottom;
+		}
+
+		.main--info-a:nth-child(1) img:last-child {
+			margin-top: -28px; 
+		}
+
+		.main--info-a:nth-child(2) {
+			position: relative;
+			z-index: 3;
+			margin-top: -30px;
+			margin-left: -5px;
+			padding-top: 10px;
+		}
+
+		.main--info-a:nth-child(2) img:first-child {
+			transform-origin: center;
+		}
+
+		.main--info-a:nth-child(2) img:last-child {
+			margin-top: -80px;
+		}
+
+		.main--info-a:nth-child(3) {
+			margin-left: -5px;
+			padding-top: 10px;
+		}
+
+		.main--info-a:nth-child(3) img:last-child {
+			margin-top: -30px; 
+		}
+
+		.main__box {
+			animation: 7s elevator linear infinite;
+		}
+
+		.main--info-a:first-child .main__box {
+			animation-delay: 6s;
+		}
+
+		.main--info-a:nth-child(2) .main__box {
+			animation-delay: 3s;
+		}
+
+		.main--info-a:last-child .main__box {
+			animation-delay: 8s;
+		}
+
+		.main--info-a:hover .main__box {
+			animation-play-state: paused;
+		}
+
+		.main--info-a:hover .main__box img:first-child{
+			filter: drop-shadow(0 8px 10px rgba(0,0,0,0.1)) drop-shadow(0 3px 3px rgba(0,0,0,0.25));
+		}
+
+		.main--info-a:hover .main__box img:last-child{
+			filter: brightness(110%) contrast(110%);
+		}
+
+		.main--info-a:nth-child(1):hover img:first-child {
+			transform: rotate(-5deg);
+		}
+
+		.main--info-a:nth-child(2):hover img:first-child {
+			transform: rotateY(720deg);
+		}
+
+		.main--info-a:nth-child(3):hover img:first-child {
+			transform: scale(1.05);
+		}
+
+		.main--decoration {
+			position: absolute;
+			z-index: 5;
+			top: 205px;
+			left: -8px;
+			pointer-events: none;
+		}
+
+		.decoration__gift {
+			width: 1260px;
+			height: 176px;
+			background: center top url(main-decoration-gift.png) no-repeat;
+		}
+
+		.decoration__light {
+			position: absolute;
+			z-index: 6;
+			top: 15px;
+			left: 138px;
+			width: 1086px;
+			height: 212px;
+			background: center top url(main-decoration-light.png) no-repeat;
+			animation: 1.5s breath-light linear infinite alternate backwards;
+		}
+
+		@keyframes breath-light {
+			from {
+				filter: brightness(120%);
+			}
+			to {
+				opacity: 0;
+			}
+		}
+
+/* ================= table hover setting ================= */
+		td[width^="2"] {
+			transition: all 0.3s;
+		}
+
+		td[width^="2"] a {
+			transition: all 0.3s;
+		}
+
+		td[width^="2"] td {
+			transition: all 0.3s;
+		}
+
+		td[width^="2"]:hover {
+			transform: translateY(-6px);
+			box-shadow: 0 5px 10px rgba(0,0,0,0.2), 0 3px 3px rgba(0,0,0,0.35);
+		}
+		td[width^="2"]:hover a {
+			color: #3780ff !important;
+		}
+
+		td[width^="2"]:hover td {
+			color: #3780ff !important;
+		}
+
+		a ~ table {
+			animation: 1s slider-left-right;
+		}
+
+		@keyframes slider-left-right {
+			from {
+				transform: translateX(-5%);
+			}
+		}
+    </style>
+</head>
+<body>
+	<main id="spWrap" class="sp__wrap">
+		<div id="decrationBg" class="decoration--background">
+			<div class="background background-1" data-depth="0.05"></div>
+			<div class="background background-2" data-depth="-0.05"></div>
+			<div class="background background-3" data-depth="-0.05"></div>
+		</div>
+		<header>
+			<div class="sp--1260">
+				<div class="sp-logo">
+					<a href="http://www.u-mall.com.tw/" title="Umall森森購物網" target="_top">
+						<img src="logo.png" alt="Umall森森購物網">
+					</a>
+			  	</div>
+			</div>
+		</header>
+		<section class="sp-title">
+			<div class="sp--1260">
+				<h1 class="main-title">
+					<img id="openItem" src="title.png" alt="百萬週年慶">
+				</h1>
+				<h2 id="openItem2" class="subtitle__wrap">
+					<div class="subtitle__box">
+						<a href="https://www.etmall.com.tw/Activity/WebSP?SubPage=DMSetting/Final/201810/SP_1105791/w/index.html" target="_blank" title="指定銀行滿5000送500">
+							<img src="subtitle-1.png" alt="指定銀行滿5000送500">
+						</a>
+						<a href="https://www.etmall.com.tw/Activity/WebSP?SubPage=DMSetting/Final/201810/SP_1105791/w/index.html" target="_blank" title="銀行卡友消費最高20%回饋">
+							<img src="subtitle-2.png" alt="">
+						</a>						
+					</div>
+				</h2>
+			</div>
+		</section>
+		<section class="sp-content">
+			<div class="main-info">
+				<div class="sp--1260">
+					<a id="ASRC" class="product__anchor" href="" title="點我購買APP專屬優惠商品！"></a>
+					<div class="product__wrap">
+						<div class="product__box">
+							<div class="product__foreground"></div>
+							<img id="IMGSRC" src="product.png" alt="APP專屬優惠商品">
+						</div>
+					</div>
+					<div class="main-intro clearfix">
+						<a href="http://www.u-mall.com.tw/SimpleTemplate.aspx?SubPage=DMSetting/Final/201810/SP_1102691/index.html" class="main--info-a" title="銀行樂加碼">
+							<div class="main__box">
+								<img src="main-decortion-1.png" alt="">
+								<img src="main-1.png" alt="銀行樂加碼">
+							</div>							
+						</a>
+						<a href="#note" class="main--info-a" title="最高回饋1000">
+							<div class="main__box">
+								<img src="main-decortion-2.png" alt="">
+								<img src="main-2.png" alt="最高回饋1000">
+							</div>	
+						</a>
+						<a href="#login" class="main--info-a" title="館別加碼送">
+							<div class="main__box">
+								<img src="main-decortion-3.png" alt="">
+								<img src="main-3.png" alt="館別加碼送">
+							</div>	
+						</a>
+					</div>
+					<div class="main--decoration">
+						<div class="decoration__gift"></div>
+						<div class="decoration__light"></div>
+					</div>
+					<aside class="side-info">
+						<img src="line.png" alt="LINE's QR-code">
+					</aside>
+				</div>
+			</div>
+		</section>
+		<div class="decoration--foreground">
+			<div class="foreground foreground-1"></div>
+			<div class="foreground foreground-2"></div>
+		</div>
+	</main>
+<script id="loadJS" src="load-indicator.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script type="text/javascript" src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script type="text/javascript" src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1101787/generateVersion20180425.js" defer></script>
+<script>
+	function addWow() {
+		var tableEl = document.querySelectorAll('a ~ table');
+
+		for(var i = 0; i < tableEl.length; i++) {
+			tableEl[i].classList.add('wow');
+		}
+		new WOW().init();
+	}
+	document.addEventListener('DOMContentLoaded', addWow);
+	
+	function decoParallax() {
+		var bgDeco = document.getElementById('decrationBg');
+		var parallaxInstance = new Parallax(bgDeco);
+	}
+	requestAnimationFrame(decoParallax);
+</script>
+</body>

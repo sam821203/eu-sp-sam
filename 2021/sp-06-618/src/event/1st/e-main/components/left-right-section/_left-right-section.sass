@@ -1,0 +1,49 @@
+.promo__group--left-right
+  .promo__wrap
+    display: flex
+    justify-content: space-around
+    +pos-set(relative, zero)
+    padding: 15% 3.6% 8% 4.3%
+    &::before
+      content: ''
+      +pos-set(absolute, under, 0, 0)
+      width: 100%
+      height: 100%
+      +bg-set(url(event/1st/e-main/components/left-right-section/bg-left-right.png), 100%)
+      animation: bg-flash 1.5s infinite alternate
+
+    .block--left,
+    .block--right
+      width: 42%
+      border-radius: 5vw
+      overflow: hidden
+      img
+        margin-left: auto
+        margin-right: auto
+        filter: brightness(100%)
+        animation: none
+
+    +breakpoint-min($min-width-xl)
+      padding: 145px 33px 75px 42px
+      .block--left,
+      .block--right
+        border-radius: 48px
+
+  .item__box
+    text-align: center
+    &:hover,
+    &:active
+      > a
+        > img
+          filter: contrast(125%) brightness(105%)
+    // &.close
+    //   pointer-events: none
+
+@keyframes bg-flash
+  0%, 20%, 40%, 60%, 100%
+    filter: brightness(100%)
+  10%, 50%
+    filter: brightness(120%)
+
+
+

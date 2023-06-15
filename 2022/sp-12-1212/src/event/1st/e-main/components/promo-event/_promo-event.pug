@@ -1,0 +1,158 @@
+-
+  var promoItemData = [
+    {
+      link: "",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-item-1.png",
+      alt: "拼圖任務 抽1,212枚樂透金",
+    },
+    {
+      link: "",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-item-2.png",
+      alt: "人氣王票選抽111枚樂透金",
+    },
+    {
+      link: "",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-item-3.png",
+      alt: "25間銀行 最高回饋20%",
+    },
+  ]
+
+-
+  var promoEventData = [
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/19552/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-1.png",
+        alt: "新友領起來～首次註冊送500東森幣",
+      },
+    ],
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/19395/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-2.png",
+        alt: "全家取件送熱經典拿鐵(中杯)",
+      },
+    ],
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/19633/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-3.png",
+        alt: "MyMusic 送免費音樂暢聽",
+      },
+    ],
+  ]
+
+-
+  var promoEventData2 = [
+    [
+      {
+        link: "",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-7-1.png",
+        alt: "挑戰任務拿$999",
+      },
+      {
+        link: "",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-7-2.png",
+        alt: "全站消費滿額抽霹靂Q俠反向自動開收折傘",
+      },
+      {
+        link: "",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-7-3.png",
+        alt: "會員加碼限時免費抽全站折價券",
+      },
+      {
+        link: "",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-7-4.png",
+        alt: "全站消費滿額抽222枚東森幣",
+      },
+      {
+        link: "",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-7-5.png",
+        alt: "加入會員天天免費抽",
+      },
+    ],
+  ]
+
+-
+  var promoEventData3 = [
+    [
+      {
+        link: "https://www.etmall.com.tw/Activity/GroupSale",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-4.png",
+        alt: "集點加價購",
+      },
+    ],
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/18519/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-5.png",
+        alt: "滿1800折120指定商品100%東森幣回饋",
+      },
+    ],
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/18779/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-6.png",
+        alt: "離島配送滿額贈50枚樂透金",
+      },
+    ],
+  ]
+
+
+//- TODO: 如果promo不和hero綁一起時要有自己的section和layout--main
+section.promo__group.promo-event
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--title#promoEventTitle
+        img(src="event/1st/e-main/components/promo-event/decor-promo-title.png", alt="")
+      .decor__item.decor__item--left#promoEventLeft
+        img(src="event/1st/e-main/components/promo-event/decor-promo-left.png", alt="")
+      .decor__item.decor__item--right1#promoEventRight
+        img(src="event/1st/e-main/components/promo-event/decor-promo-right1.png", alt="")
+      .decor__item.decor__item--right2#promoEventRight2
+        img(src="event/1st/e-main/components/promo-event/decor-promo-right2.png", alt="")
+      .decor__item.decor__item--light
+        img(src="event/1st/e-main/components/promo-event/decor-promo-light.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          ul.item__box
+            each data, index in  promoItemData
+              li.promo__item
+                a(href=  data.link, title= data.alt)
+                  img(src=  data.imgSrc)
+          .promo__box--wrap
+            ul.promo__box
+              each data, index in promoEventData
+                li.event__item
+                  .swiper-container
+                    ul.swiper-wrapper
+                      each item, itemIndex in  data
+                        li.swiper-slide.promo__item.animate
+                          a(href=  item.link, title= item.alt)
+                            img(src=  item.imgSrc,  item.alt)
+
+            ul.promo__box
+              each data, index in promoEventData2
+                li.event__item(id="promoEventItem" + (index + 1))
+                  .swiper-container.container--promo-event
+                    ul.swiper-wrapper
+                      each item, itemIndex in data
+                        if itemIndex < 1
+                          li.swiper-slide.promo__item
+                            a(href=  item.link, title= item.alt, class="js-changeLink")
+                              img(src=  item.imgSrc)
+                        else
+                          li.swiper-slide.promo__item
+                            a(href=  item.link, title= item.alt)
+                              img(src=  item.imgSrc)
+
+            ul.promo__box
+              each data, index in promoEventData3
+                li.event__item
+                  .swiper-container
+                    ul.swiper-wrapper
+                      each item, itemIndex in  data
+                        li.swiper-slide.promo__item.animate
+                          a(href=  item.link, title= item.alt)
+                            img(src=  item.imgSrc,  item.alt)

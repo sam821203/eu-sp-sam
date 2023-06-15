@@ -1,0 +1,85 @@
+- 
+  var promoDataE = [
+    {
+      link: "#note",
+      imgSrc: "~event/1st/e-main/components/promo-event/items/promo-1.png",
+      imgSrc2: "~event/1st/e-main/components/promo-event/items/promo-1-pic.png",
+      alt: "限量商品開搶"
+    }, 
+    {
+      link: "#note",
+      imgSrc: "~event/1st/e-main/components/promo-event/items/promo-2.png",
+      alt: "搶限量折價券"
+    }, 
+    {
+      link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202005/SP_1115346/w/index.html", 
+      imgSrc: "~event/1st/e-main/components/promo-event/items/promo-3.png",
+      alt: "下單抽Dyson"
+    }, 
+    {
+      link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      imgSrc: "~event/1st/e-main/components/promo-event/items/promo-4.png",
+      alt: "首購送麥當勞即享券"
+    }, 
+    {
+      link: "#note",
+      imgSrc: "~event/1st/e-main/components/promo-event/items/promo-5.png",
+      alt: "最高送$600"
+    }, 
+    {
+      link: "https://www.etmall.com.tw/Activity/CollectPointExchange",
+      imgSrc: "~event/1st/e-main/components/promo-event/items/promo-6.png",
+      imgSrc2: "~event/1st/e-main/components/promo-event/items/promo-6-pic-1.png",
+      alt: "集點加價購"
+    },  
+  ]
+
+- 
+  var promoDataU = [
+    {
+      link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202005/SP_1106084/w/index.html", 
+      imgSrc: "~event/1st/u-main/components/promo-event/items/promo-1.png",
+      alt: "20間銀行最高回饋10%"
+    }, 
+    {
+      link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201407/SP_1019204/w/index.html", 
+      imgSrc: "~event/1st/u-main/components/promo-event/items/promo-2.png",
+      alt: "下單現折$100"
+    }, 
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale", 
+      imgSrc: "~event/1st/u-main/components/promo-event/items/promo-3.png",
+      alt: "整點最便宜"
+    }, 
+  ]
+ 
+- var promoData = isU ? promoDataU : promoDataE
+
+.promo__event(data-title="五告送")
+  ul.event__wrap
+    //- 固定位置模式
+    each data, index in promoData
+      - var anchorId = 'promoAnchor' + (index + 1)
+      - var imgId = 'promoImg' + (index + 1)
+
+      li
+        a(id= anchorId, href= data.link, title= data.alt)
+          img(id= imgId, src= data.imgSrc, alt= data.alt)
+          if data.imgSrc2
+            - var imgId2 = 'promoImgSpecial' + (index + 1)
+            img(id= imgId2, src= data.imgSrc2, alt= data.alt)
+
+    //- 位置不一模式
+    //- li
+    //-   a(href= promoData[0].link, title= promoData[0].alt)
+    //- li
+    //-   .link__box
+    //-     a(href= promoData[1].link, title= promoData[1].alt)
+    //-     a(href= promoData[2].link, title= promoData[2].alt)
+    //- li
+    //-   .link__box
+    //-     a(href= promoData[3].link, title= promoData[03].alt)
+    //-     a(href= promoData[4].link, title= promoData[4].alt)
+    //- li
+    //-   a(href= promoData[5].link, title= promoData[5].alt)
+    

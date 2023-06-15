@@ -1,0 +1,75 @@
+.promo__group--hot
+  .promo__zone
+    margin-top: 5%
+    +breakpoint-min($min-width-xl)
+      margin-top: 0
+    //
+    //overflow-x: hidden
+    //width: 100%
+    //max-width: 100%
+  .promo__wrap
+    padding-top: 66%
+    //transform: translateX(-10%)
+    +bg-set(url("~event/index-main-e-2/components/two-medium-slider/4-bg.png"), 150%, 60%, calc(100vw * 0.01), no-repeat, #fff)
+    .promo__slider
+      height: 100%
+    // +breakpoint-min($min-width-xl)
+      // height: 100%
+    .swiper-slide
+      width: 33%
+      a
+        transition: transform 0.6s
+        transform: translateY(-20%) scale(0.7)
+      img
+        transition: filter 0.6s
+        //filter: brightness(80%)
+
+    .swiper-slide-prev,
+    .swiper-slide-duplicate-prev
+      transform: translateY(-5%) translateX(30%) scale(0.85)
+    .swiper-slide-next,
+    .swiper-slide-duplicate-next
+      transform: translateY(-5%) translateX(-30%) scale(0.85)
+    .swiper-slide-active,
+    .swiper-slide-duplicate-active
+      a
+        transform: translateY(5%) scale(1)
+      img
+        filter: brightness(100%)
+
+    .swiper-pager-white
+      bottom: 3%
+    .swiper-button-white
+      top: 93.5%
+      transform: scale(0.6)
+    .swiper-button-prev
+      left: 8%
+    .swiper-button-next
+      right: 8%
+  +breakpoint-min($min-width-xl)
+    .layout--main
+      max-width: 1300px
+    .promo__wrap
+      padding-top: 48%
+      +bg-set(url("~event/index-main-e-2/components/two-medium-slider/4-bg.png"), 100%, center, 44px , no-repeat, transparent)
+      .promo__slider
+        padding-top: 4%
+      .swiper-slide
+        a
+          transform: translateY(-25%) scale(0.55)
+      .swiper-pager-white
+        bottom: 3px
+      .swiper-button-white
+        top: 96.5%
+      .swiper-slide-prev,
+      .swiper-slide-duplicate-prev
+        transform: translateY(-15%) translateX(53%) scale(0.85)
+      .swiper-slide-next,
+      .swiper-slide-duplicate-next
+        transform: translateY(-15%) translateX(-40%) scale(0.85)
+      .swiper-slide-active,
+      .swiper-slide-duplicate-active
+        a
+          transform: translateY(-19%) translateX(8%)  scale(0.75)
+        img
+          filter: brightness(100%)

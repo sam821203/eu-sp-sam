@@ -1,0 +1,62 @@
+// // ==========================================================================
+// // Plugins
+// // ==========================================================================
+// // @import "vendors/animate"
+@import "~vendors/style/swiper-slider-custom"
+
+// hero section
+// ===========================
+@import "~event/1st/e-main/components/hero-section/_hero-section"
+
+// // ==========================================================================
+// // components
+// // ==========================================================================
+@import "~event/1st/e-main/components/promo-event/_promo-event"
+@import "~event/1st/e-main/components/random-select/_random-select"
+@import "~event/1st/e-main/components/daily-change/_daily-change"
+@import "~event/1st/e-main/components/dynamic-slider-half/_dynamic-slider-half"
+@import "~event/1st/e-main/components/bn-special-half/_bn-special-half"
+@import "~event/1st/e-main/components/bn-event/_bn-event"
+@import "~event/1st/e-main/components/dynamic-slider/_dynamic-slider"
+@import "~event/1st/e-main/components/event-w4m4-no-item/_event-w4m4-no-item"
+// @import "~event/1st/e-main/components/dynamic-slider-2/_dynamic-slider-2" // 因版型和1一樣所以共用
+// @import "~event/1st/e-main/components/dynamic-slider-3/_dynamic-slider-3" // 因版型和1一樣所以共用
+
+
+// // ==========================================================================
+// // Page
+// // ==========================================================================
+body
+  +pos-set(relative, zero)
+  background: center 0 url("~event/1st/e-main/pages/index/bg.jpg") no-repeat, $main-e-background-color-1st center 88% url("~event/1st/e-main/pages/index/bg-fix.jpg") no-repeat fixed
+  background-size: 100%, cover
+
+  +breakpoint-min($min-width-xl)
+    background: center 0 url("~event/1st/e-main/pages/index/bg.jpg") no-repeat, center 0 url("~event/1st/e-main/pages/index/bg-web.jpg") no-repeat, center 0 url("~event/1st/e-main/pages/index/bg-fix.jpg") no-repeat fixed, $main-e-background-color-1st center 0 url("~event/1st/e-main/pages/index/bg-web-fix.jpg") no-repeat fixed
+    background-size: auto
+
+.sp__wrap
+  +pos-set(relative, zero)
+
+.sp__wrap a
+  display: block
+  .promo__title
+    text-align: center
+  // .decoration--background.decoration__wrap
+
+// parallax css
+// =================================
+// .decoration--background
+//   display: none
+
+//   +breakpoint-min($min-width-3xl)
+//     display: block
+//     // z-index: base(1)以上可蓋在主視覺上，zero(0)可在主視覺下，預設都在logo下(logo是500)
+//     +pos-set(absolute, under, 690px)
+//     width: 100%
+//     height: 100%
+//     pointer-events: none
+
+// .decoration__wrap
+//   +pos-set(sticky, zero, 0)
+

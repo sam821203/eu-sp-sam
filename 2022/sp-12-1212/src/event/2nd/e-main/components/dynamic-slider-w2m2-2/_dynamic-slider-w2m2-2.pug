@@ -1,0 +1,43 @@
+-
+  var promoBannerSlider = [
+    { // 1
+      link: "https://www.etmall.com.tw/bs/169002",
+      imgSrc: "event/2nd/e-main/components/dynamic-slider-w2m2-2/items/bn-w2m22-1.jpg",
+      alt: "盛香珍"
+    },
+    { // 2
+      link: "https://media.etmall.com.tw/sp/19145/m/index.html",
+      imgSrc: "event/2nd/e-main/components/dynamic-slider-w2m2-2/items/bn-w2m22-2.jpg",
+      alt: "澎湃禮盒送到心坎裡"
+    },
+    { // 3
+      link: "https://www.etmall.com.tw/p/199361",
+      imgSrc: "event/2nd/e-main/components/dynamic-slider-w2m2-2/items/bn-w2m22-3.jpg",
+      alt: "年終爽購殿堂"
+    },
+  ]
+  
+section.promo__group.dynamic-slider-w2m2-2.m-bottom--lg(data-title="年貨搶先購")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--title#decorDynamicW2M22Title
+        img(src="event/2nd/e-main/components/dynamic-slider-w2m2-2/title-dynamic-slider-w2m2-2.png", alt="年貨搶先購")
+      .decor__item.decor__item--left#decorDynamicW2M22Left
+        img(src="event/2nd/e-main/components/dynamic-slider-w2m2-2/decor-dynamic-slider-w2m2-2-left.png", alt="")
+      .decor__item.decor__item--right#decorDynamicW2M22Right
+        img(src="event/2nd/e-main/components/dynamic-slider-w2m2-2/decor-dynamic-slider-w2m2-2-right.png", alt="")
+      .decor__item.decor__item--light
+        img(src="event/2nd/e-main/components/dynamic-slider-w2m2-2/decor-dynamic-slider-w2m2-2-light.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          .banner__slider
+            .slider__wrap
+              .swiper-container#bannerSliderReady
+                ul.swiper-wrapper
+                  each data in promoBannerSlider
+                    li.swiper-slide
+                      a(href= data.link, title=data.alt)
+                        img(src= data.imgSrc, alt=data.alt)
+          .promo__slider.swiper-container#dynamicSliderW2M22Block
+            .swiper-wrapper

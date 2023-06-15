@@ -1,0 +1,73 @@
+-
+  var sliderW2M2Data = [
+    [  //1
+      {
+        link: "https://www.etmall.com.tw/i/3066461" ,
+        imgSrc: "event/1st/e-main/components/slider-w2m2/item/item-p-1.png",
+        alt: "【SingBee 欣美】coobee L型板成長機能桌+138單背椅(CB-502/兒童書桌椅組/實木兒童書桌/升降書桌椅)",
+      },
+      {
+        link: "https://www.etmall.com.tw/i/3292820" ,
+        imgSrc: "event/1st/e-main/components/slider-w2m2/item/item-p-2.png",
+        alt: "GOO.N大王紙尿布境內版敏感肌系列-黏貼型L(54片X4包)",
+      },
+    ],
+    [  //2
+      {
+        link: "https://www.etmall.com.tw/i/2664688" ,
+        imgSrc: "event/1st/e-main/components/slider-w2m2/item/item-p-3.png",
+        alt: "【超值雙鍋組】Tefal法國特福 全新鈦升級-爵士系列(28CM炒鍋+24CM平底鍋)",
+      },
+      {
+        link: "https://www.etmall.com.tw/i/3564474" ,
+        imgSrc: "event/1st/e-main/components/slider-w2m2/item/item-p-4.png",
+        alt: "現貨+預購【Häagen-Dazs 哈根達斯】月神祈願冰淇淋月餅禮盒提貨單-網",
+      },
+    ],
+    [  //3
+      {
+        link: "https://www.etmall.com.tw/i/1841180" ,
+        imgSrc: "event/1st/e-main/components/slider-w2m2/item/item-p-5.png",
+        alt: "【台酒生技】酒粕精粹逆齡活膚青春露5入組(120ml*5)",
+      },
+      {
+        link: "https://www.etmall.com.tw/i/3488320" ,
+        imgSrc: "event/1st/e-main/components/slider-w2m2/item/item-p-6.png",
+        alt: "安親 瞬吸乾爽復健褲 S-M號 成人紙尿褲(10片x6包/箱)",
+      },
+    ],
+    [  //4
+      {
+        link: "https://www.etmall.com.tw/i/3269043" ,
+        imgSrc: "event/1st/e-main/components/slider-w2m2/item/item-p-7.png",
+        alt: "HP Color LaserJet Pro M155nw 無線彩色雷射印表機",
+      },
+      {
+        link: "https://www.etmall.com.tw/i/3407738" ,
+        imgSrc: "event/1st/e-main/components/slider-w2m2/item/item-p-8.png",
+        alt: "Panasonic國際牌 3-4坪RX頂級旗艦系列變頻冷暖冷氣CS-RX28JA2/CU-RX28JHA2",
+      },
+    ],
+  ]
+
+
+section.promo__group.slider-w2m2.m-bottom--lg(data-title="大牌秒殺")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--left#decorSliderW2M2Left
+        img(src="event/1st/e-main/components/slider-w2m2/decor-slider-w2m2-left.png", alt="")
+      .decor__item.decor__item--right#decorSliderW2M2Right
+        img(src="event/1st/e-main/components/slider-w2m2/decor-slider-w2m2-right.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block.full-parent
+          .promo__slider.swiper-container#sliderW2M2Item
+            ul.swiper-wrapper
+              each data, index in sliderW2M2Data
+                li.swiper-slide
+                  each item, itemIndex in  data
+                    .swiper-box
+                      a(href= item.link, title=item.alt)
+                        img(src= item.imgSrc, alt=item.alt)
+
+

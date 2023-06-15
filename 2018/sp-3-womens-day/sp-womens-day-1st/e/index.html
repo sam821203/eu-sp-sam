@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<head>
+	<meta name="theme-color" content="#cc1e05">
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		* {
+ 		 box-sizing: border-box; }
+  		*:before, *:after {
+    		box-sizing: border-box; }
+	    a {
+	    	text-decoration: none;
+	    }
+		ul {
+			list-style: none;
+		}
+		img {
+			border: 0;
+		}
+		main, header, footer, section {
+			display: block;
+		}
+		body {
+			background-color: #ffaebf;
+		  	font-family: Arial, Helvetica, 'LiHei', "Microsoft JhengHei", "PMingLiU", "微軟正黑體", "新細明體", sans-serif;  
+			margin: 0;
+  			padding: 0;
+		}
+		.clearfix:after {
+			content: '';
+			display: block;
+			clear: both;
+			*zoom: 1;
+		}
+
+		.sp__wrap {
+			background: center top url(bg.jpg) no-repeat;
+		}
+
+		.sp--1260 {
+			position: relative;
+			width: 1260px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+/* ================= header ================= */
+		.sp-logo {
+			position: absolute;
+			z-index: 20;
+			top: 20px;
+			left: 0;
+			cursor: pointer;
+		}
+
+		.side-info {
+			position: absolute;
+			z-index: 30;
+			top: 512px;
+			right: 28px;
+			width: 186px;
+		}
+
+		.side-info img {
+			width: 100%;
+		}
+
+		.side-info a {
+			position: absolute;
+			z-index: 21;
+			left: 0;
+			width: 100%;
+		}
+
+		.side-info a:nth-child(2) {
+			top: 0;
+			height: 48%;
+		}
+
+		.side-info a:nth-child(3) {
+			bottom: 4px;
+			height: 48%;
+		}
+		
+/* ================= main-visual ================= */
+		.sp-title {
+			position: relative;
+			z-index: 10;
+			margin-left: 50px;
+			padding-top: 20px;
+		}
+
+		.main-title {
+			position: relative;
+			z-index: 0;
+			width: 880px;
+		}
+
+		.main-title > img {
+			position: absolute;
+			z-index: 1;
+			vertical-align: top;
+			opacity: 0;
+		}
+
+		.main-title > img:first-child {
+			top: 95px;
+			left: 45px;
+			animation: 1s 0.7s falling ease-out forwards, 2s 1.2s bounce;
+		}
+
+		.main-title > img:last-child {
+			top: 140px;
+			right: 0;
+			animation: 1s 1.8s falling ease-out forwards, 2s 2.3s bounce;
+		}
+		
+		.title-md {
+			position: relative;
+			z-index: 0;
+			top: 0;
+			left: 45px;
+			width: 78%;
+			margin-left: auto;
+			margin-right: auto;  
+		}
+
+		.title-md img:nth-child(1) {
+			position: relative;
+			z-index: 0;
+			top: 0;
+			opacity: 0;
+			animation: 1s 1s falling ease-out forwards;
+		}
+
+		.title-md img:nth-child(2) {
+			position: absolute;
+			z-index: 1;
+			top: 20px;
+			left: 150px;
+			opacity: 0;
+			animation: 1s 1.6s falling ease-out forwards;
+		}
+
+		.title-md img:nth-child(3) {
+			position: relative;
+			z-index: 0;
+			top: 0;
+			left: -45px;
+			opacity: 0;
+			animation: 1s 1.4s falling ease-out forwards;
+		}
+
+		@keyframes falling {
+			from {
+				top: -500px;
+				opacity: 0;
+			} 
+			to {
+				opacity: 1;
+			}
+		}
+		@keyframes bounce {
+		  from, 20%, 53%, 80%, to {
+		    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+		    transform: translate(0,0);
+		  }
+
+		  40%, 43% {
+		    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+		    transform: translate(0, -32px);
+		  }
+
+		  70% {
+		    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+		    transform: translate(0, -16px);
+		  }
+
+		  90% {
+		    transform: translate(0,-8px);
+		  }
+}
+/* ================= subtitle ================= */
+		.subtitle {
+			position: absolute;
+			top: 55px;
+			right: -45px;
+			width: 485px;
+			height: 469px;
+			background-image: url(bg-product.png); 
+		}
+
+		.subtitle a {
+			position: relative;
+			z-index: 35;
+		}
+
+		.subtitle img {
+			margin-top: 16px;
+			margin-left: 110px; 
+			transition: all 0.3s;
+		}
+
+		.subtitle img:hover {
+			filter: contrast(130%) brightness(105%);
+		}
+/* ================= main0 ================= */
+		.main0 {
+			position: relative;
+			z-index: 25;
+			top: -175px;
+			height: 366px;
+			background: center url(bg-main0.png) no-repeat;
+		}
+
+		.main0--info-a {
+			position: absolute;
+			z-index: 1;
+			top: -99px;
+			left: -55px;
+			width: 415px;
+			height: 464px;
+		}
+
+		.main0--info-a img {
+			position: absolute;
+			z-index: 0;
+			top: 0;
+			left: 0;
+			animation: 2s 3.8s flash infinite step-end;
+		}
+
+		.main0--info-a img:last-child {
+			opacity: 0;
+			animation: 2s 3.8s flash2 infinite step-end;
+		}
+
+		.main0--info-a:hover img {
+			animation-delay: 9999s;
+			opacity: 0;
+			filter: contrast(130%) brightness(110%);
+		}
+
+		.main0--info-a:hover img:last-child {
+			opacity: 1;
+		}
+
+		@keyframes flash {
+		  from, 50%, to {
+		    opacity: 1;
+		  }
+
+		  25%, 75% {
+		    opacity: 0;
+		  }
+		}
+
+		@keyframes flash2 {
+		  from, 50%, to {
+		    opacity: 0;
+		  }
+
+		  25%, 75% {
+		    opacity: 1;
+		  }
+		}
+
+/* ================= main-content ================= */
+		.sp-content	{
+			position: relative;
+			z-index: 20;
+			top: 0;
+			margin-top: -210px;
+
+		}
+
+		.main-info {
+			height: 419px;
+			padding: 20px 30px;
+			background: center top url(bg-main.jpg) no-repeat;
+		}
+
+		.main--info-a {
+			float: left;
+			padding: 30px 30px 0; 
+			transition: all 0.2s ease-in-out;
+		}
+
+		.main--info-a:nth-child(1) {
+			white-space: nowrap;
+		}
+
+		.main--info-a:nth-child(3) {
+			margin-left: -8px;
+		}
+
+		.main--info-a:nth-child(4) {
+			padding-top: 25px;
+		}
+
+		.main--info-a:hover {
+			transform: translateY(-10px);
+			filter: contrast(150%) drop-shadow(0 5px 10px rgba(0,0,0,0.2)) drop-shadow( 0 3px 3px rgba(0,0,0,0.35));
+		}
+
+/* ================= table hover setting ================= */
+		td[width^="2"] a img {
+			transition: all 0.3s;
+		}
+
+		td[width^="2"] a {
+			transition: all 0.3s;
+		}
+
+		td[width^="2"] td {
+			transition: all 0.3s;
+		}
+
+		td[width^="2"]:hover a img{
+			display: block;
+			margin-top: -5px;
+			margin-bottom: 5px;
+			transform: scale(1.05);
+			box-shadow: 0 5px 10px rgba(0,0,0,0.2), 0 3px 3px rgba(0,0,0,0.35);
+		}
+		td[width^="2"]:hover a {
+			color: #e33962 !important;
+		}
+
+		td[width^="2"]:hover td{
+			color: #e33962 !important;
+		}
+	</style>
+</head>
+<body>
+	<main class="sp__wrap">
+		<header>
+			<div class="sp--1260">
+				<div class="sp-logo">
+					<a href="https://www.etmall.com.tw/" title="東森嚴選 -- ETMall東森購物網" target="_top">
+						<img src="logo.png" alt="東森嚴選 -- ETMall東森購物網">
+					</a>
+			  	</div>
+				<aside class="side-info">
+					<img src="line.png" alt="LINE's & APP's QR-code">
+					<a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1103585/index.html" target="_blank"></a>
+					<a href="https://www.etmall.com.tw/Activity/WebSP?SubPage=DMSetting/Final/209912/SP_1103498/index.html" target="_blank"></a>
+				</aside>
+				<div class="sp-title" title="寵愛女人節 -- ETMall東森購物網">
+					<h1 class="main-title">
+						<img src="title-text1.png" alt="活動時間3/1~3/10">
+						<div class="title-md">
+							<img src="title-md1.png" alt="">
+							<img src="title-md2.png" alt="">
+							<img src="title-md3.png" alt="">
+						</div>
+						<img src="title-text2.png" alt="">
+					</h1>
+				</div>
+				<div class="subtitle">
+					<a href="#" title="點我購買APP專屬優惠商品！">
+						<img src="product.jpg" alt="APP專屬優惠商品">
+					</a>
+				</div>
+			</div>
+		</header>
+		<section class="main0">
+			<div class="sp--1260">
+				<a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201803/SP_1103669/index.html" class="main0--info-a" title="點我進入抽禮物活動頁面！">
+					<img src="main0-1.png" alt="">
+					<img src="main0-2.png" alt="">	
+				</a>
+			</div>
+		</section>
+		<section class="sp-content">
+			<div class="sp--1260">
+				<div class="main-info clearfix">
+					<a href="https://www.etmall.com.tw/Activity/WebSP?SubPage=DMSetting/Final/209912/SP_1103498/index.html" class="main--info-a" title="APP下載首次登入送折扣金">
+						<img src="main1.png" alt="APP下載首次登入送折扣金">
+					</a>
+					<a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201803/SP_1103668/index.html" class="main--info-a" title="會員專屬優惠"><img src="main2.png" alt="會員專屬優惠"></a>
+					<a href="https://www.etmall.com.tw/Activity/WebSP?SubPage=DMSetting/Final/201803/SP_1103667/index.html" class="main--info-a" title="銀行加碼送"><img src="main3.png" alt="銀行加碼送"></a>
+					<a href="https://www.etmall.com.tw/Activity/WebSP?SubPage=DMSetting/Final/201803/SP_1103666/index.html" class="main--info-a" title="單日累計送"><img src="main4.png" alt="單日累計送"></a>
+				</div>
+			</div>
+		</section>
+	</main>
+</body>
+</html>

@@ -1,0 +1,20 @@
+//- 打開u-mall選項會自動轉換成U的logo和連結(預設etmall)
+- var isU = true
+
+#parallaxBg.parallax__background
+
+main#spWrap.sp__wrap.sp__wrap--e
+  include /layout/header/_header
+
+  //- hero section
+  //- ===========================
+  include /event/1st/u-main/components/hero-section/_hero-section
+  include /event/1st/u-main/components/background-decoration/_background-decoration
+
+  //- other components
+  //- ===========================
+
+//- script區
+include /utils/pug/_total-script
+script#dataCountdown(src="data-countdown.js")
+

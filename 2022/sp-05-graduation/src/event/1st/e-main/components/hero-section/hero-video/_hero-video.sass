@@ -1,0 +1,19 @@
+.video__wrap
+  .hero__video--left
+    +pos-set(absolute, five)
+    bottom: -2%
+    left: 9%
+    +breakpoint-min($min-width-xl)
+      bottom: 0px
+      left: calc(50% - 360px)
+  .hero__video--right
+    +pos-set(absolute, five)
+    bottom: -3%
+    right: 6%
+    +breakpoint-min($min-width-xl)
+      bottom: -30px
+      right: calc(50% - 390px)
+  video
+    width: 50vw
+    +breakpoint-min($min-width-xl)
+      max-width: 440px

@@ -1,0 +1,41 @@
+// // ==========================================================================
+// // Plugins
+// // ==========================================================================
+// // @import "vendors/animate"
+// @import "~vendors/style/swiper-slider-custom"
+@import '~vendors/style/swiper-safari-polyfill'
+
+
+// // ==========================================================================
+// // 2nd screen need
+// // ==========================================================================
+// hero section
+// ===========================
+@import "~event/2nd/e-sp/components/hero-section/_hero-section"
+
+// // ==========================================================================
+// // components
+// // ==========================================================================
+
+// dynamic product 假宮格共用CSS
+// ===========================
+@import "~event/2nd/e-sp/components/promo-event/_promo-event"
+@import "~event/2nd/e-sp/components/hero-slider/_hero-slider"
+
+// // ==========================================================================
+// // Page
+// // ==========================================================================
+body
+  +pos-set(relative)
+  background: $sp-e-background-color-2nd center 0 url("~event/2nd/e-sp/pages/index/bg.jpg") no-repeat
+  background-size: 100% auto
+
+  +breakpoint-min($min-width-xl)
+    background: $sp-e-background-color-2nd center 0 url("~event/2nd/e-sp/pages/index/bg-web.jpg") no-repeat
+    background-size: auto
+
+.sp__wrap
+  +pos-set(relative)
+
+.sp__wrap a
+  display: block

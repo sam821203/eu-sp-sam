@@ -1,0 +1,95 @@
+.promo__group--time
+  +pos-set(relative, zero)
+  .promo__title
+    margin-left: auto
+    margin-right: auto
+    width: 50%
+    max-width: 288px
+    text-align: center
+    +breakpoint-min($min-width-lg)
+      width: 30%
+
+  .promo__body
+    padding: 5%
+    // +breakpoint-min($min-width-lg)
+      // margin-top: -8%
+
+  .time__block
+    padding: 4%
+    width: 100%
+    border-radius: 20px
+    &::before
+      top: 5%
+      height: 10%
+  .time__title
+    margin-top: 5%
+    padding: 0
+    width: 100%
+    color: $main-color-blue-2
+    background-color: $main-color-yellow-1
+    font-size: 20px
+    text-align: center
+  .time__box
+    display: flex
+    justify-content: center
+    align-items: center
+    padding-top: 1%
+    div
+      +pos-set(relative, zero)
+      padding: 1%
+      color: $gray-deep-light
+      font-size: 22px
+      font-weight: bold
+      span
+        +pos-set(relative, zero)
+        top: calc(50% - 14px)
+
+  .decoration__time
+    padding-top: 6%
+    padding-bottom: 6%
+    text-align: center
+    img
+      width: 6%
+
+  +breakpoint-min($min-width-lg)
+    .time__zone
+      display: flex
+      justify-content: space-between
+      .time__item
+        +pos-set(relative, zero)
+        width: 24%
+      .time__title
+        padding-right: 10px
+        font-size: 26px
+      .time__box
+        padding-top: 5%
+        // IE 11 flexbox中不支援min-height，只能用height
+        height: 68px
+        // min-height: 68px
+        div
+          font-size: 16px
+    .decoration__time
+      padding: 0
+      img
+        +pos-set(absolute, zero)
+        top: 21.3%
+        right: 8%
+        width: 20px
+        transform: rotate(270deg)
+
+  +breakpoint-min($min-width-xl)
+    .time__zone
+      .time__block
+        padding: 15px
+      .time__title
+        padding-right: 10px
+        font-size: 32px
+      .time__box
+        div
+          font-size: 20px
+    .decoration__time
+      img
+        +pos-set(absolute, zero)
+        top: 40px
+        right: 22px
+        width: 22px

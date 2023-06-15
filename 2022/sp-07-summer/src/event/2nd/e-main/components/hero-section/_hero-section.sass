@@ -1,0 +1,134 @@
+.hero
+  +pos-set(relative, zero)  
+  overflow: hidden
+  .hero__wrap 
+    .hero__zone
+      +aspect-ratio(960, 962)
+      +breakpoint-min($min-width-xl)
+        +aspect-ratio(960, 892)
+      .hero__title
+        &--decor
+          +pos-set(absolute, base, 10%, 72%)
+          height: auto
+          width: 29%
+          +breakpoint-min($min-width-xl)
+            top: 12%
+            left: calc(50% + 280px)
+            height: auto
+            transform: scale(1.15)
+          img
+            animation: hero-go-up-down .8s 2.8s infinite alternate, hero-shinning .8s 2.8s infinite alternate
+        &--main
+          +pos-set(absolute, second, 8%, 3%)
+          width: 96%
+          height: auto
+          img
+            animation: hero-jello 4s 3.2s infinite
+          +breakpoint-min($min-width-xl)
+            width: fit-content
+            left: calc(50% - 402px)
+            img
+              max-width: 840px
+              width: auto
+          +breakpoint-min($min-width-3xl)
+            left: calc(50% - 404px)
+        &--sun
+          +pos-set(absolute, under, 42%, 45%)
+          +size(8%, 1%)
+          border-radius: 50%
+          opacity: 0
+          background-color: #FF5D01
+          box-shadow: 0 0 80px 60px #FF5D01, 0 0 100px 80px #FF7E04, 0 0 120px 100px #FFB408, 0 0 140px 180px rgba(255, 215, 1, 0.2), 0 0 160px 200px rgba(255, 215, 1, 0.1), 0 0 200px 300px rgba(255, 215, 1, 0)
+          // animation-play-state: paused
+          +breakpoint-min($min-width-xl)
+            left: calc(50% + 8px)
+            +size(40px, 15px)
+            opacity: .5
+            // animation: sunAppear .8s 1, sunLight 6s 1.1s linear infinite both
+            // animation-play-state: running  
+        
+.js--loadHeroTitleAnime
+  animation: titleRotateIn .8s ease-in 1 forwards, hero-title 2.4s 1.2s linear infinite
+
+.js--loadFigureAnime
+  animation: slide-in-center 2s cubic-bezier(0.95, 0.05, 0.795, 0.035), banana-float 2.6s 2s 1
+
+@keyframes titleRotateIn
+  0%
+    opacity: 0
+    transform: scale(5) rotate(350deg)
+  100%
+    opacity: 1
+    transform: scale(1) rotate(0deg)
+
+@keyframes title-zoom-in
+  0% 
+    transform: scale(0)
+  100% 
+    transform: scale(1)
+
+@keyframes slide-in-center
+  0%
+    -webkit-transform: translateZ(-1400px)
+    transform: scale(0.005) translate3d(400px, -1400px, 1400px)
+    opacity: 0.5
+  50%
+    opacity: 1
+  100%
+    -webkit-transform: translateZ(0)
+    transform: scale(1) translate3d(0)
+    opacity: 1
+
+@keyframes hero-title
+  0%, 100%
+    transform: scale(1)
+  50%
+    transform: scale(1.05)
+
+// @keyframes sunAppear
+//   0%
+//     opacity: 0
+//   100%
+//     opacity: .5
+
+// @keyframes sunLight
+//   0%
+//     transform: scale(1.75)
+//   50%
+//     transform: scale(2.25)
+//   100%
+//     transform: scale(1.75)
+
+@keyframes banana-float
+  35%
+    transform: rotate(25deg) translateY(-25px)
+
+@keyframes hero-jello
+  0%, 3%, 27%, to
+    transform: translateZ(0)
+  6%
+    transform: skewX(-6.25deg) skewY(-6.25deg)
+  9%
+    transform: skewX(3.125deg) skewY(3.125deg)
+  12%
+    transform: skewX(-1.5625deg) skewY(-1.5625deg)
+  15%
+    transform: skewX(.78125deg) skewY(.78125deg)
+  18%
+    transform: skewX(-.390625deg) skewY(-.390625deg)
+  21%
+    transform: skewX(.1953125deg) skewY(.1953125deg)
+  24%
+    transform: skewX(-.09765625deg) skewY(-.09765625deg)
+
+@keyframes hero-go-up-down
+  0%
+    transform: translateY(0%) rotate(0deg)
+  100%
+    transform: translateY(-12%) rotate(4deg)
+
+@keyframes hero-shinning
+  0%
+    filter: brightness(100%) contrast(100%)
+  100%
+    filter: brightness(105%) contrast(110%)

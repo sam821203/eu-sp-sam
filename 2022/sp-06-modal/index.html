@@ -1,0 +1,785 @@
+<meta charset="UTF-8" />
+<meta
+  name="viewport"
+  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+/>
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<!-- 共用CSS -->
+<link
+  rel="stylesheet"
+  href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116205/animate.min.css"
+/>
+<link
+  rel="stylesheet"
+  href="https://media.etmall.com.tw/sp/12500/generate_v1.2.css"
+/>
+
+<!-- [電梯步驟1] 電梯CSS 不用就關掉 -->
+<!-- 商品左電梯CSS，要使用還要在步驟3開啟左電梯data資料 -->
+<!-- <link id="localElevatorLeft" rel="stylesheet" href="sp-elevator-left.css"> -->
+
+<!-- 商品右電梯CSS，步驟3有測試div可以測試 -->
+<link id="localElevatorRight" rel="stylesheet" href="sp-elevator-right.css" />
+<!-- [電梯步驟1] 電梯CSS END -->
+
+<style>
+  body {
+    /* 自行修正背景顏色 */
+    background-color: #27023d;
+  }
+
+  /* 調整logo位置大小 */
+  /* .logo {
+      top: 1%;
+      left: 1%;
+      width: 30%;
+      max-width: 220px;
+    } */
+
+  /* 連結測試 */
+  /* .sp__visual a{
+      filter: brightness(500%);
+    } */
+
+  /* 切片測試 */
+  /* .visual__fragment::before {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      border: 1px solid #00f;
+      pointer-events: none;
+    } */
+
+  /* 設定全畫面背景 */
+  /* .sp__main {
+      background: url(bg.jpg) center 0 no-repeat;
+    } */
+
+  /* 大網各區塊背景  */
+  @media screen and (min-width: 960px) {
+    .visual__block1 {
+      background: url(bg0616.jpg) center 0 no-repeat;
+    }
+
+    /*    .visual__block2 {
+      background: url(bg_02.jpg) center 0 no-repeat;
+    }
+
+    .visual__block3 {
+      background: url(bg_03.jpg) center 0 no-repeat;
+    }*/
+  }
+
+  /*-- 動畫小物件 --*/
+  .animate__wrap {
+    position: relative;
+    z-index: 1;
+  }
+
+  /*-- 手機版：
+            1. 設定物件距離左邊與上邊的位置，單位可以使用"%"或"vw"
+            2. width 建議電腦版可以使用auto，手機版則可使用%調整
+            --*/
+  .animate__wrap .animate__obj--01 {
+    position: absolute;
+    top: 27vw;
+    left: 70vw;
+    width: 17%;
+  }
+
+  /*-- 電腦版：
+            設定物件距離左邊與上邊的位置，單位可以使用"px"，左邊可以挑整clac()後面的px值
+            width 建議電腦版可以使用auto，手機版則可使用%調整
+            --*/
+  @media screen and (min-width: 960px) {
+    .animate__wrap .animate__obj--01 {
+      top: 250px;
+      left: calc(50% + 185px);
+      width: auto;
+    }
+  }
+
+  /* [區塊-背景固定] 只有大網有背景，需固定的背景圖可另行製作 */
+  @media screen and (min-width: 960px) {
+    .top__center {
+      left: 50%;
+      transform: translateX(-50%);
+      position: absolute;
+      background-size: 100% auto;
+      background: url(bg_01.jpg) center 0 no-repeat;
+      width: 2560px;
+      height: 828px;
+    }
+
+    .top--0 {
+      top: 0;
+    }
+  }
+
+  /*-- 手機版：
+            1. 設定物件距離左邊與上邊的位置，單位可以使用"%"或"vw"
+            2. width 建議電腦版可以使用auto，手機版則可使用%調整
+            --*/
+  .animate__wrap .animate__obj--02 {
+    position: absolute;
+    top: 33vw;
+    left: 75vw;
+    width: 12%;
+  }
+
+  /*-- 電腦版：
+            設定物件距離左邊與上邊的位置，單位可以使用"px"，左邊可以挑整clac()後面的px值
+            width 建議電腦版可以使用auto，手機版則可使用%調整
+            --*/
+  @media screen and (min-width: 960px) {
+    .animate__wrap .animate__obj--02 {
+      top: 312px;
+      left: calc(50% - -218px);
+      width: auto;
+    }
+  }
+
+  /* [區塊-背景固定] 只有大網有背景，需固定的背景圖可另行製作 */
+  @media screen and (min-width: 960px) {
+    .top__center {
+      left: 50%;
+      transform: translateX(-50%);
+      position: absolute;
+      background-size: 100% auto;
+      background: url(bg_01.jpg) center 0 no-repeat;
+      width: 2560px;
+      height: 828px;
+    }
+
+    .top--0 {
+      top: 0;
+    }
+  }
+
+  .body-color {
+    /* 外部背景底色 */
+    background-color: #27023d;
+  }
+
+  .sp--960 {
+    position: relative;
+    z-index: 0;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /*-- note start --*/
+  .note {
+    font-size: 15px;
+    word-break: break-all;
+    line-height: 150%;
+  }
+
+  .note article {
+    padding: 1.5%;
+    /* 內部背景底色 */
+    background-color: #ffffff;
+    border-radius: 5px;
+  }
+
+  .note article a {
+    display: inline;
+    color: #ce2212;
+    text-decoration: underline;
+    word-break: break-all;
+  }
+
+  .note article a:hover {
+    text-decoration: none;
+  }
+
+  .note li {
+    padding: 5px;
+  }
+
+  .note ol > li {
+    margin-left: 30px;
+  }
+
+  .act_name {
+    font-size: 24px;
+    color: #fff;
+    /* 主標底色 */
+    background-color: #15151d;
+    line-height: 32px;
+    /*text-align: center;*/
+    /*letter-spacing: 2px;*/
+    /*font-weight: bold;*/
+    padding: 15px;
+    border-radius: 5px;
+  }
+
+  .h2_style {
+    font-size: 24px;
+    /* 活動名稱顏色 */
+    color: #9b2121;
+    line-height: 30px;
+    margin-top: 15px;
+  }
+
+  @media (max-width: 700px) {
+    .act_name {
+      font-size: 24px;
+      line-height: 24px;
+    }
+
+    .h2_style {
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+
+  .p-notice {
+    font-size: 24px;
+    color: #555555;
+    line-height: 42px;
+    font-weight: bold;
+    margin-top: 15px;
+  }
+
+  @media (max-width: 700px) {
+    .p-notice {
+      font-size: 20px;
+    }
+  }
+
+  .p-notice-words {
+    color: #555555;
+  }
+
+  .note .decimal-type {
+    /* 阿拉伯數字 */
+    list-style-type: decimal;
+  }
+
+  .note .lower-alpha-type {
+    /* 小寫英文字母 */
+    list-style-type: lower-alpha;
+  }
+
+  .note .none-type {
+    /* 不顯示符號 */
+    list-style-type: none;
+  }
+
+  .note .disc-type {
+    /* 實心圓形 */
+    list-style-type: disc;
+  }
+
+  .btn_a1 {
+    /* 按鈕底色 */
+    background-color: #ce2212;
+    padding: 5px 30px;
+    border-radius: 5px;
+  }
+
+  .btn_p1 {
+    font-size: 24px;
+    line-height: 52px;
+    font-weight: bold;
+    margin: 0 0 5px 0px;
+  }
+
+  .note article .btn_p1 a {
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .note article .btn_p1 a:hover {
+    /* 滑鼠移過 按鈕底色 */
+    background-color: #ff5747;
+  }
+
+  /*-- rwd table --*/
+  .note table.rwd-table {
+    width: 100%;
+    border: none;
+    border-collapse: collapse;
+    background-color: #eeeeee;
+    overflow: hidden;
+    margin: 0 0 10px 0;
+  }
+
+  .note table.rwd-table th {
+    display: none;
+  }
+
+  .note table.rwd-table td {
+    display: block;
+    text-align: left;
+  }
+
+  .note table.rwd-table td:before {
+    content: attr(data-th) ': ';
+    display: inline-block;
+    margin: 5px 5px 5px 0;
+    color: #9b2121;
+    font-weight: bold;
+  }
+
+  .note table.rwd-table tr:nth-child(even) {
+    background-color: #dadada;
+  }
+
+  .note table.rwd-table th,
+  .rwd-table td {
+    margin: 0.5em 1em;
+  }
+
+  @media (min-width: 700px) {
+    .note table.rwd-table {
+      width: 95%;
+      border: 1px solid #15151d;
+      background-color: #fff;
+      margin: 0 auto 15px;
+    }
+
+    .note table.rwd-table tr:nth-child(even) {
+      background: transparent;
+    }
+
+    .note table.rwd-table th {
+      /* 表頭底色 */
+      background-color: #ffe39a;
+    }
+
+    .note table.rwd-table th,
+    .note table.rwd-table td {
+      border: 1px solid #15151d;
+    }
+
+    .note table.rwd-table td:nth-child(4) {
+      border: 1px solid #15151d;
+    }
+
+    .note table.rwd-table td:before {
+      display: none;
+    }
+
+    .note table.rwd-table th,
+    .note table.rwd-table td {
+      display: table-cell;
+      padding: 0.25em 0.5em;
+      text-align: center;
+    }
+
+    .note table.rwd-table th,
+    .note table.rwd-table td {
+      padding: 0.8em !important;
+    }
+  }
+
+  /* 插入圖片 */
+  .photo_style {
+    display: block;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 20px;
+  }
+
+  .sp--960 {
+    z-index: auto;
+  }
+  .modal--on {
+    overflow: hidden;
+  }
+  .modal__overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+  }
+  .modal__close {
+    display: none;
+    position: fixed;
+    z-index: 30;
+    top: 5%;
+    right: 5%;
+    cursor: pointer;
+  }
+  .modal__overlay.active,
+  .modal__close.active {
+    display: block;
+  }
+
+  .modal-top.active {
+    position: fixed;
+    z-index: 25;
+    top: 8%;
+    left: 8%;
+    padding: 1%;
+    width: 84%;
+    height: 84%;
+    border-radius: 5px;
+    background-color: #fff;
+    overflow-y: scroll;
+  }
+  @media screen and (min-width: 960px) {
+    .modal__close {
+      right: calc(50% - 480px - 20px);
+    }
+    .modal-top.active {
+      left: calc(50% - 480px);
+      width: 960px;
+    }
+  }
+</style>
+<div class="elevatorHome js--main--dialog" id="elevatorHome"></div>
+<div class="navRightBar" id="navRightBar"></div>
+<!-- 旅遊專用bar區域 start 不要就移除-->
+<!-- <div id="barHome"></div> -->
+<!-- 旅遊專用bar區域 end-->
+<div id="iconHome" class="layout--main home--icon"></div>
+
+<div id="spWrap" class="sp__wallper">
+  <!-- 動畫小物件 -->
+  <div class="animate__wrap">
+    <!-- 動畫 -->
+    <img
+      class="animate__obj--01 animate__animated animate__shakeX animate__delay-1s animate__slow animate__infinite"
+      src="ETcat.png"
+      alt=""
+    />
+
+    <!--<img class="animate__obj&#45;&#45;01" src="圖片檔名" alt="圖片提示文字">-->
+    <!--<img class="animate__obj&#45;&#45;02" src="圖片檔名" alt="圖片提示文字">-->
+    <!--<img class="animate__obj&#45;&#45;03" src="圖片檔名" alt="圖片提示文字">-->
+    <!-- 如果有多組物件，可以複製命名animate__obj--0{數字} css 也複製一份就可以一直往下生 -->
+    <!--<img class="animate__obj--04" src="" alt="">-->
+  </div>
+  <main class="sp__main">
+    <div class="layout--main home--logo">
+      <a href="https://www.etmall.com.tw"
+        ><img class="logo" src="ehs-logo.png" alt="東森購物"
+      /></a>
+    </div>
+    <section class="sp__visual visual__block1 sp--modal">
+      <div class="layout--main">
+        <ul class="visual--auto clearfix">
+          <li class="visual__fragment width--auto">
+            <img src="index0616_01.jpg" />
+          </li>
+          <li class="visual__fragment width--auto">
+            <a href="javascript:void(0)" class="btn--modal">
+              <img src="index0616_02.jpg" />
+            </a>
+          </li>
+          <li class="visual__fragment width--auto">
+            <a href="javascript:void(0)" class="btn--modal">
+              <img src="index0616_03.jpg" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="note body-color" name="note">
+      <div class="sp--960" style="padding: 1% 0 3% 0">
+        <article>
+          <div class="modal-top jsModalTop">
+            <a name="note01" id="note01"></a>
+            <p class="act_name">
+              範例1.
+              小明在618當天首次加入東森會員並使用東森購物APP成立訂單，購買家電商品，發票金額3,618元。（10次抽獎機會+享26%回饋）
+            </p>
+            <ol class="disc-type">
+              <li>最高抽東森幣1,050枚或樂透金25枚</li>
+              <li>抽小米手環7、iPhone 13 128g</li>
+              <li>
+                累積回饋26%：新會員東森幣500枚+挑戰任務東森幣68枚+樂透金181枚+銀行/支付回饋總值200回饋券
+              </li>
+              <li>參加戰隊最高瓜分70萬樂透金</li>
+            </ol>
+
+            <h2 class="h2_style">【詳情如下】</h2>
+            <ol class="decimal-type">
+              <li>
+                免費抽東森幣-最高可抽東森幣50枚（抽獎1次）<br />
+                <p class="btn_p1">
+                  <a
+                    class="btn_a1"
+                    href="https://www.etmall.com.tw/Activity/dl/LuckyDraw/300c48ac481b14978f83ee073b9c45f3"
+                    target="_blank"
+                    >點我進入</a
+                  >
+                </p>
+              </li>
+              <li>
+                限時扭一扭-單日最高可獲得東森幣1000或樂透金25枚（抽獎5次）<br />
+                <p class="btn_p1">
+                  <a
+                    class="btn_a1"
+                    href="https://www.etmall.com.tw/Activity/dl/LuckyDraw/40ec9bf85aa4c8dc186f3644ca0ea76c"
+                    target="_blank"
+                    >點我扭蛋</a
+                  >
+                </p>
+              </li>
+              <li>
+                618整點抽小米手環7（抽獎1次）<br />每一小時内成立任一訂單滿$618(含)以上，即可參加抽獎。<br />
+                <p class="btn_p1">
+                  <a
+                    class="btn_a1"
+                    href="https://www.etmall.com.tw/Activity/dl/HourlyGift618#"
+                    target="_blank"
+                    >點我進入</a
+                  >
+                </p>
+              </li>
+              <li>
+                大樂透摸彩（抽獎1次）<br />單筆訂單滿$3,000，可抽一次，最高可獲得樂透金80枚。<br />
+                <p class="btn_p1">
+                  <a
+                    class="btn_a1"
+                    href="https://m.etmall.com.tw/Activity/Lottery/9053a70965c4f6d88283143d98f4fd8a"
+                    target="_blank"
+                    >參與摸彩</a
+                  >
+                </p>
+              </li>
+              <li>
+                全站累積滿$1,618拚1元iPhone 13（限額6名）（抽獎2次）<br />
+                實付消費滿$1,618（含）以上，可累計，故消費$3,618即具有2次抽獎機會，抽「iPhone
+                13＿$25,899元電子折價券」。
+              </li>
+              <li>
+                新會員註冊立即送（東森幣500枚）<br />首次加入東森會員即可領取東森幣500枚<br />
+                <p class="btn_p1">
+                  <a
+                    class="btn_a1"
+                    href="https://m.etmall.com.tw/Activity/getehscoin/220500043-8e52fa6a08b29f2f85db9d0f221abd4b"
+                    target="_blank"
+                    >點我領取</a
+                  >
+                </p>
+              </li>
+              <li>
+                挑戰任務（東森幣68枚）<br />APP累積滿$3,618送68枚東森幣<br />
+                <p class="btn_p1">
+                  <a
+                    class="btn_a1"
+                    href="https://www.etmall.com.tw/member/taskActivity"
+                    target="_blank"
+                    >點我查看</a
+                  >
+                </p>
+              </li>
+              <li>
+                家電 5% 樂透金回饋無上限（樂透金181枚）<br />不限金額消費，登記即享5%回饋（$3618*5%=$181）<br />
+                <p class="btn_p1">
+                  <a class="btn_a1" href="#" target="_blank">點我登記</a>
+                </p>
+              </li>
+              <li>
+                銀行/支付 最高回饋200<br />使用悠遊付單筆滿$1,200元回饋100元悠遊付現金回饋券(限量2,000張)
+                ；《新戶加碼》悠遊付現金回饋券$100(限量500張)<br />
+                <p class="btn_p1">
+                  <a
+                    class="btn_a1"
+                    href="https://media.etmall.com.tw/sp/14386/m/index.html"
+                    target="_blank"
+                    >點我查看詳情</a
+                  >
+                </p>
+              </li>
+              <li>
+                618選隊戰 大獎爭霸賽<br />擇一隊伍加入，評比各戰隊累積發票總金額，做爭奪排名，第一名戰隊可瓜分70萬樂透金。<br />
+                <p class="btn_p1">
+                  <a
+                    class="btn_a1"
+                    href="https://www.etmall.com.tw/Activity/dl/Leaderboard618"
+                    target="_blank"
+                    >加入戰隊</a
+                  >
+                </p>
+              </li>
+            </ol>
+          </div>
+          <div class="modal-top jsModalTop">
+            <p class="act_name">
+              範例2.
+              小明在618當天使用東森購物APP成立訂單，購買家電商品，發票金額16,180元。（18次抽獎機會+享18%回饋）
+            </p>
+            <ol class="disc-type">
+              <li>最高抽東森幣1,050枚或樂透金105枚</li>
+              <li>抽小米手環7及iPhone 13 128g</li>
+              <li>
+                累積回饋18%：東森幣686枚+樂透金1,059枚+銀行/支付回饋1200刷卡金
+              </li>
+              <li>參加戰隊最高瓜分70萬樂透金</li>
+            </ol>
+            <a name="note02" id="note02"></a>
+            <h2 class="h2_style">【詳情如下】</h2>
+            <ol class="decimal-type">
+              <li>
+                免費抽東森幣-最高可抽東森幣50枚（抽獎1次）<br />
+                <p class="btn_p1">
+                  <a
+                    class="btn_a1"
+                    href="https://www.etmall.com.tw/Activity/dl/LuckyDraw/300c48ac481b14978f83ee073b9c45f3"
+                    target="_blank"
+                    >點我進入</a
+                  >
+                </p>
+              </li>
+              <li>
+                限時扭一扭-單日最高可獲得東森幣1000或樂透金25枚（抽獎5次）<br />
+                <p class="btn_p1">
+                  <a
+                    class="btn_a1"
+                    href="https://www.etmall.com.tw/Activity/dl/LuckyDraw/40ec9bf85aa4c8dc186f3644ca0ea76c"
+                    target="_blank"
+                    >點我扭蛋</a
+                  >
+                </p>
+              </li>
+              <li>
+                618整點抽小米手環7（抽獎1次）<br />每一小時内成立任一訂單滿$618(含)以上，即可參加抽獎。<br />
+                <p class="btn_p1">
+                  <a
+                    class="btn_a1"
+                    href="https://www.etmall.com.tw/Activity/dl/HourlyGift618#"
+                    target="_blank"
+                    >點我進入</a
+                  >
+                </p>
+              </li>
+              <li>
+                大樂透摸彩（抽獎1次）<br />單筆訂單滿$3,000，可抽一次，最高可獲得樂透金80枚。<br />
+                <p class="btn_p1">
+                  <a
+                    class="btn_a1"
+                    href="https://m.etmall.com.tw/Activity/Lottery/9053a70965c4f6d88283143d98f4fd8a"
+                    target="_blank"
+                    >參與摸彩</a
+                  >
+                </p>
+              </li>
+              <li>
+                全站累積滿$1,618拚1元iPhone 13（限額6名）（抽獎2次）<br />
+                實付消費滿$1,618（含）以上，可累計，故消費$3,618即具有2次抽獎機會，抽「iPhone
+                13＿$25,899元電子折價券」。
+              </li>
+              <li>
+                挑戰任務（東森幣686枚+樂透金250枚）<br />APP累積滿$3,618送68枚東森幣<br />全站累積滿$6,180送250枚樂透金<br />全站累積滿$16,180送618枚東森幣<br />
+                <p class="btn_p1">
+                  <a
+                    class="btn_a1"
+                    href="https://www.etmall.com.tw/member/taskActivity"
+                    target="_blank"
+                    >點我查看</a
+                  >
+                </p>
+              </li>
+              <li>
+                家電 5% 樂透金回饋無上限（樂透金809枚）<br />不限金額消費，登記即享5%回饋（$16,180*5%=809）<br />
+                <p class="btn_p1">
+                  <a class="btn_a1" href="#" target="_blank">點我登記</a>
+                </p>
+              </li>
+              <li>
+                銀行/支付 最高回饋1200<br />花旗銀行單件商品分期滿NT$15,000(含)以上，送NT$1,200刷卡金
+                (限前100名登錄)<br />
+                <p class="btn_p1">
+                  <a
+                    class="btn_a1"
+                    href="https://media.etmall.com.tw/sp/14386/m/index.html"
+                    target="_blank"
+                    >點我查看詳情</a
+                  >
+                </p>
+              </li>
+              <li>
+                618選隊戰 大獎爭霸賽<br />擇一隊伍加入，評比各戰隊累積發票總金額，做爭奪排名，第一名戰隊可瓜分70萬樂透金。<br />
+                <p class="btn_p1">
+                  <a
+                    class="btn_a1"
+                    href="https://www.etmall.com.tw/Activity/dl/Leaderboard618"
+                    target="_blank"
+                    >加入戰隊</a
+                  >
+                </p>
+              </li>
+            </ol>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+</div>
+<div id="modalOverlay" class="modal__overlay"></div>
+<div id="modalClose" class="modal__close">
+  <img src="modal-close.svg" alt="">
+</div>
+
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script
+  id="generateScript"
+  src="https://media.etmall.com.tw/sp/12500/generate_v1.2.js"
+></script>
+
+<!--[電梯步驟2] 電梯 JS -->
+<!-- 商品左電梯單機版資料，不用就關掉，要使用還要上方步驟1開啟商品左電梯CSS -->
+<!-- <script id="dataElevatorLeft" src="data-elevator.js"></script> -->
+
+<!-- 測試商品右電梯用，上線前必須關掉-->
+<!--   <div data-title="ccc"></div>
+  <div data-title="ccc"></div>
+  <div data-title="ccc"></div> -->
+<!-- 線上自動切換電梯，無論如何都要有 -->
+<script
+  id="checkElevator"
+  src="https://media.etmall.com.tw/sp/11911/check-elevator.js?cinderella"
+></script>
+<!-- [電梯步驟2] 電梯 JS END -->
+<script>
+  var btnArray = Array.apply(null, document.querySelectorAll('.btn--modal'));
+  var modalArray = Array.apply(null, document.querySelectorAll('.jsModalTop'));
+  var modalOverlay = document.getElementById('modalOverlay');
+  var modalClose = document.getElementById('modalClose');
+
+  btnArray.forEach(function(el, index){
+    el.addEventListener("click", function(){
+      document.body.classList.add('modal--on');
+      modalOverlay.classList.add('active');
+      modalClose.classList.add('active');
+
+      modalArray[index].classList.add('active');
+      modalArray[index].scrollTop = 0;
+    });
+  });
+
+  function removeModalActive(){
+    modalArray.forEach(function(modal){
+      modal.classList.remove('active');
+    });
+  }
+
+  function clickRemoveActive(el){
+    el.addEventListener("click", function(e){
+      e.stopPropagation();
+      removeModalActive();
+
+      document.body.classList.remove('modal--on');
+      modalOverlay.classList.remove('active');
+      modalClose.classList.remove('active');
+    });
+  }
+  clickRemoveActive(modalOverlay);
+  clickRemoveActive(modalClose);
+
+</script>

@@ -1,0 +1,16 @@
+.logo
+  // TODO: 切換logo size
+  width: 20% // normal logo size
+  // width: 10% // small logo size
+  position: absolute 
+  top: 3px
+  z-index: 10
+  left: 2%
+  &.logo--e
+    max-width: 134px
+  &.logo--u
+    max-width: 163px
+  +breakpoint-min($min-width-xl)
+    // width: 20%
+    margin-left: 35px
+    left: calc(50% - 480px)

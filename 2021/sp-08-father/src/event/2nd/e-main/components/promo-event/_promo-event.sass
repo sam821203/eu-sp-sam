@@ -1,0 +1,66 @@
+.promo__group--promo-event
+  +pos-set(relative, zero)
+  overflow: hidden
+
+  .promo__wrap
+    +aspect-ratio(960, 1192)
+  .promo__zone
+    +pos-set(relative, zero)
+    padding: 6% 6% 0
+    +bg-set(url(event/2nd/e-main/components/promo-event/bg-promo.png), 100%)
+    .event__wrap
+      padding: 1.5% 5% 0
+    .promo__block
+      > ul
+        display: flex
+        justify-content: space-between
+      li
+        text-align: center
+        &:active,
+        &:hover
+          a
+            transform: translateY(3%)
+            filter: hue-rotate(-15deg)
+      a
+        &.animation
+          animation: 0.5s shakeX
+        &.animation2
+          animation: 0.5s shakeY
+
+      &:first-child,
+      &:nth-child(2)
+        li
+          width: 48.5%
+      &:nth-child(3)
+        li
+          width: 32%
+
+    .promo__slider
+      +aspect-ratio(743, 173)
+    .swiper-container
+      padding: 0 5%
+      li
+        margin-bottom: 0
+        text-align: center
+
+    // +breakpoint-min($min-width-xl)
+    //   .event__wrap
+        // padding: 2.5% 52px 0
+      // .swiper-container
+      //   padding: 18px 60px 0 90px
+
+@keyframes shakeX
+  0%, 80%, to
+    transform: translateZ(0)
+  40%, 50%, 70%
+    transform: translate3d(-10%, 0, 0)
+  40%, 60%
+    transform: translate3d(10%, 0, 0)
+
+@keyframes shakeY
+  0%, 80%, to
+    transform: translateZ(0)
+  30%, 50%, 70%
+    transform: translate3d(0, -10%, 0)
+  40%, 60%
+    transform: translate3d(0, 10%, 0)

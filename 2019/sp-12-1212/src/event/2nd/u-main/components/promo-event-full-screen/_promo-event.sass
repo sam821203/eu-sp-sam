@@ -1,0 +1,33 @@
+.promo__event
+  .event__wrap
+    +display-flex
+    flex-wrap: wrap
+    justify-content: center
+    +pos-set(relative, second)
+    width: 100%
+    li
+      +flex(0, 0, 48%)
+      padding: 1%
+      transition: all 0.5s
+      &:hover,
+      &:active
+        filter: brightness(150%)
+        img
+          transition: all 0.5s
+          transform: rotateY(360deg)
+  .event__wrap_3
+    +display-flex
+    flex-wrap: wrap
+    justify-content: center
+    +pos-set(relative, second)
+    width: 100%
+    li
+      +flex(0, 0, 31%)
+      padding: 1%
+      transition: all 0.5s
+      &:hover,
+      &:active
+        filter: brightness(150%)
+        img
+          transition: all 0.5s
+          transform: rotateY(360deg)

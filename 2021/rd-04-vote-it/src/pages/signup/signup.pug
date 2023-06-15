@@ -1,0 +1,20 @@
+doctype html
+html(lang='zh-Hant-TW')
+  head
+    include /utils/pug/_total-head
+  body
+    main#spWrap.sp__wrap
+      //- - var firstItem = "我要報名"
+      include /layout/header/_header
+
+      //- hero section
+      //- ===========================
+      include /components/hero-section/_hero-section
+        .decoration__wrap
+          img(src="~pages/signup/decoration-signup.png", alt="")
+
+      //- //- other components
+      //- //- ===========================
+      include /components/form-section/_form-section
+      include /components/rule-section/_rule-section
+

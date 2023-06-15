@@ -1,0 +1,572 @@
+/* reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+*:before, *:after {
+    box-sizing: border-box;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    border: 0;
+    display: block;
+}
+
+article,
+main,
+nav,
+section {
+    display: block;
+}
+
+/* reset end */
+
+body {
+    margin: 0;
+    font-size: 14px;
+    font-family: PingFangTC-regular, Roboto, "LiHei Pro", "Source Han Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, "Microsoft JhengHei", sans-serif;
+}
+
+.logo a,
+.sp__visual a {
+    display: block;
+}
+
+.logo {
+    position: absolute;
+    z-index: 1;
+    /* 調整logo位置 */
+    top: 1%;
+    left: 1%;
+    width: 30%;
+    max-width: 220px;
+}
+
+/* 主視覺 */
+/* ======================================== */
+.sp--m {
+    position: relative;
+    z-index: 0;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    /* 改 .triangle */
+    background-color: #efefef;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    overflow-x: hidden;
+}
+
+/* 上方按鈕 */
+/* ======================================== */
+.btn__wrap {
+    padding-top: 1%;
+    padding-bottom: 3%;
+}
+
+.btn--left,
+.btn--right {
+    float: left;
+    width: 46%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+/* 分隔線 */
+/* ======================================== */
+.border__distinguish {
+    border-bottom: 1px dotted #f8417a;
+    position: relative;
+}
+
+.border__distinguish::before,
+.border__distinguish::after {
+    display: block;
+    content: '';
+    width: 0;
+    position: absolute;
+    top: -5px;
+    border-style: solid;
+}
+
+.border__distinguish::before {
+    border-width: 5px 5px 5px 10px;
+    border-color: transparent transparent transparent #f8417a;
+}
+
+.border__distinguish::after {
+    right: 0;
+    border-width: 5px 10px 5px 5px;
+    border-color: transparent #f8417a transparent transparent;
+}
+
+/* 折價券 */
+/* ======================================== */
+/* 共用 高度 */
+/* ========== */
+.incentive__wrap {
+    margin-top: 5%;
+    /*height: calc(100vh - 100vw * 0.5);*/
+    padding-bottom: 30px;
+}
+
+.incentive__s1,
+.incentive__s2,
+.coupon__wrap .coupon__content,
+.is__soldOut::before,
+.coupon__content__a,
+.clickBtn__a {
+    height: calc(100vw * 0.171);
+    max-height: 166px;
+}
+
+.incentive__s1,
+.incentive__s2 {
+    position: relative;
+    z-index: 1;
+    float: left;
+    width: 48%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position-x: center;
+    font-size: calc(100vw * 0.03);
+    margin-bottom: calc(100vw * 0.01);
+}
+
+.incentive__s1 a,
+.incentive__s2 a,
+.coupon__wrap {
+    color: #fcef96;
+}
+
+.incentive__s1 {
+    background-color: #FA6261;
+    /* 兩個誘因中間間距 */
+    margin-left: 1.3%;
+    margin-right: .7%;
+
+}
+
+/* 折價券 內容 */
+/* ========== */
+.coupon__wrap .coupon__title {
+    width: 20%;
+    text-align: center;
+    /* 誘因文字大小，左右間距 */
+    line-height: 125%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-left: calc(100vw * 0.01);
+    padding-right: calc(100vw * 0.01);
+}
+
+.coupon__wrap .coupon__content {
+    width: 80%;
+    margin-left: 20%;
+    position: absolute;
+    border-left: 1px dotted #fff;
+}
+
+.coupon__wrap .coupon__content .coupon__main {
+    width: 83%;
+    color: #fff;
+    padding-left: calc(100vw * 0.01);
+    padding-right: calc(100vw * 0.01);
+    padding-top: calc(100vw * 0.01);
+}
+
+.coupon__wrap .coupon__content .coupon__main .c__price {
+    font-size: calc(100vw * 0.065);
+    font-weight: 700;
+}
+
+.coupon__wrap .coupon__content .coupon__main .c__price .c__unit {
+    font-size: calc(100vw * 0.03);
+}
+
+.coupon__wrap .coupon__content .coupon__main .c__tips {
+    font-size: calc(100vw * 0.02);
+    line-height: 115%;
+}
+
+.coupon__wrap .coupon__content .coupon__main .c__desc {
+    font-size: calc(100vw * 0.01);
+    line-height: 125%;
+    padding-right: calc(100vw * 0.02);
+}
+
+.coupon__wrap .coupon__content .coupon__clickBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 17%;
+    margin-left: 83%;
+    text-align: center;
+    /* 誘因文字大小，左右間距 */
+    line-height: 125%;
+    padding-left: calc(100vw * 0.01);
+    padding-right: calc(100vw * 0.01);
+    border-left: 1px dotted #fff;
+}
+
+/*.coupon__wrap .coupon__content .coupon__clickBtn a {*/
+/*position: relative;*/
+/*}*/
+
+.incentive__s2 {
+    background-color: #FB64A0;
+    margin-left: .7%;
+    margin-right: 1.3%;
+}
+
+/* 折價券 箭頭 */
+/* ========== */
+.triangle, .triangle--down {
+    position: absolute;
+    width: 0;
+    left: calc(100vw * 0.093);
+    z-index: 3;
+    border-style: solid;
+}
+
+.triangle {
+    top: 0;
+    /*border-width: 7px 4px 4px 4px;*/
+    border-width: calc(100vw * 0.0083) calc(100vw * 0.0052) calc(100vw * 0.0052) calc(100vw * 0.0052);
+    border-color: #efefef transparent transparent transparent;
+}
+
+.triangle--down {
+    bottom: 0;
+    /*border-width: 4px 4px 7px 4px;*/
+    border-width: calc(100vw * 0.0052) calc(100vw * 0.0052) calc(100vw * 0.0083) calc(100vw * 0.0052);
+    border-color: transparent transparent #efefef transparent;
+}
+
+/* 折價券 領取完畢 */
+/* ========== */
+.is__soldOut::before {
+    position: absolute;
+    display: block;
+    content: '';
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.incentive__s1,
+.incentive__s2,
+.is__soldOut::before {
+    border-radius: 18px;
+}
+
+.is__soldOut::after {
+    position: absolute;
+    display: block;
+    content: '';
+    z-index: 5;
+    bottom: 0;
+    right: 0;
+    border-style: solid;
+    /*border-width: 30px 100px 30px 100px;*/
+    border-width: calc(100vw * 0.043) calc(100vw * 0.143);
+    border-bottom-right-radius: 18px;
+    border-color: transparent rgba(0, 0, 0, 0.7) rgba(0, 0, 0, 0.7) transparent;
+}
+
+.is__soldOut .is__soldOut__text {
+    position: absolute;
+    bottom: calc(100vw * 0.0143);
+    right: calc(100vw * 0.0072);
+    z-index: 6;
+    color: #fff;
+    transform: rotate(-18deg);
+}
+
+/* 折價券 title 品牌 */
+/* ========== */
+.is__titleImg .coupon__title {
+    background: #fff;
+    height: 98%;
+    border-radius: 8%;
+    border-top-left-radius: 18% 11%;
+    border-bottom-left-radius: 18% 11%;
+    margin-left: 1px;
+    width: 19.5%;
+    padding: 0;
+}
+
+.is__titleImg .coupon__title img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* 折價券 換底色 */
+/* ========== */
+.incentive:nth-child(4n+3) {
+    background-color: #FB64A0;
+}
+
+.incentive:nth-child(4n+4) {
+    background-color: #FA6261;
+}
+
+/* 浮動清除 */
+/* ======================================== */
+.sp--m:after,
+.btn__wrap:after,
+.coupon__wrap:after,
+.incentive__wrap:after,
+.coupon__content:after {
+    clear: both;
+    content: '';
+    display: block;
+}
+
+/* 折價券 連結 */
+/* ========== */
+.coupon__content__a {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100vw * 0.414);
+}
+
+.coupon__content__a.a__fillUp {
+    width: calc(100vw * 0.48);
+}
+
+.clickBtn__a {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 87%;
+    width: calc(100vw * 0.06);
+}
+
+@media screen and (max-width: 600px) {
+    /* 折價券 */
+    /* ======================================== */
+    /* 共用 高度 */
+    /* ========== */
+    .incentive__s1,
+    .incentive__s2,
+    .coupon__wrap .coupon__content,
+    .is__soldOut::before,
+    .coupon__content__a,
+    .clickBtn__a {
+        height: calc(100vw * 0.342);
+        max-height: 100%;
+    }
+
+    .incentive__s1,
+    .incentive__s2 {
+        width: 96%;
+        margin: 0 2% 1% 2%;
+        font-size: calc(100vw * 0.047);
+    }
+
+    /* 折價券 內容 */
+    /* ========== */
+    .coupon__wrap .coupon__title {
+        line-height: 135%;
+        padding-left: calc(100vw * 0.03);
+        padding-right: calc(100vw * 0.03);
+    }
+
+    .coupon__wrap .coupon__content .coupon__main {
+        padding-left: calc(100vw * 0.03);
+        padding-right: calc(100vw * 0.03);
+        padding-top: calc(100vw * 0.018);
+    }
+
+    .coupon__wrap .coupon__content .coupon__main .c__price {
+        font-size: calc(100vw * 0.12);
+    }
+
+    .coupon__wrap .coupon__content .coupon__main .c__price .c__unit {
+        font-size: calc(100vw * 0.07);
+    }
+
+    .coupon__wrap .coupon__content .coupon__main .c__tips {
+        font-size: calc(100vw * 0.04);
+    }
+
+    .coupon__wrap .coupon__content .coupon__main .c__desc {
+        font-size: calc(100vw * 0.02);
+    }
+
+    .coupon__wrap .coupon__content .coupon__clickBtn {
+        padding-left: calc(100vw * 0.02);
+        padding-right: calc(100vw * 0.02);
+    }
+
+    /* 折價券 title 品牌 */
+    /* ========== */
+    .is__titleImg .coupon__title {
+        height: 97%;
+        padding: 0;
+        margin-left: calc(100vw * 0.003);
+    }
+
+    /* 折價券 箭頭 */
+    /* ======================================== */
+    .triangle, .triangle--down {
+        left: calc(100vw * 0.187);
+    }
+
+    .triangle {
+        border-width: calc(100vw * 0.0142) calc(100vw * 0.0089) calc(100vw * 0.0089) calc(100vw * 0.0089);
+    }
+
+    .triangle--down {
+        border-width: calc(100vw * 0.0089) calc(100vw * 0.0089) calc(100vw * 0.0142) calc(100vw * 0.0089);
+    }
+
+    /* 領取完畢 */
+    /* ======================================== */
+    .incentive__s1,
+    .incentive__s2,
+    .is__soldOut::before {
+        border-radius: calc(100vw * 0.04);
+    }
+
+    .is__soldOut::after {
+        border-width: calc(100vw * 0.1) calc(100vw * 0.3);
+    }
+
+    .is__soldOut .is__soldOut__text {
+        bottom: calc(100vw * 0.035);
+        right: calc(100vw * 0.015);
+        transform: rotate(-20deg);
+    }
+
+    /* 換底色 */
+    /* ======================================== */
+    .incentive:nth-child(4n+3) {
+        background-color: #FA6261;
+    }
+
+    .incentive:nth-child(4n+4) {
+        background-color: #FB64A0;
+    }
+
+    /* 折價券 連結 */
+    /* ========== */
+    .coupon__content__a {
+        width: calc(100vw * 0.83);
+    }
+
+    .coupon__content__a.a__fillUp {
+        width: calc(100vw * 0.96);
+    }
+
+    .clickBtn__a {
+        width: calc(100vw * 0.125);
+    }
+}
+
+@media screen and (min-width: 961px) {
+    /* 折價券 */
+    /* ======================================== */
+    .incentive__s1,
+    .incentive__s2 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    /* 折價券 內容 */
+    /* ========== */
+    .coupon__wrap .coupon__title {
+        padding-left: 9.6px;
+        padding-right: 9.6px;
+    }
+
+    .coupon__wrap .coupon__content .coupon__main {
+        padding: 9.6px 12px;
+    }
+
+    .coupon__wrap .coupon__content .coupon__main .c__price {
+        font-size: 62.4px;
+    }
+
+    .coupon__wrap .coupon__content .coupon__main .c__price .c__unit {
+        font-size: 30px;
+    }
+
+    .coupon__wrap .coupon__content .coupon__main .c__tips {
+        font-size: 19.2px;
+    }
+
+    .coupon__wrap .coupon__content .coupon__main .c__desc {
+        font-size: 15px;
+        padding-right: 19.2px;
+    }
+
+    .coupon__wrap .coupon__content .coupon__clickBtn {
+        padding-left: 9.6px;
+        padding-right: 9.6px;
+    }
+
+    /* 折價券 箭頭 */
+    /* ========== */
+    .triangle, .triangle--down {
+        left: 89px;
+    }
+
+    .triangle {
+        border-width: 7px 4px 4px 4px;
+    }
+
+    .triangle--down {
+        border-width: 4px 4px 7px 4px;
+    }
+
+    /* 領取完畢 */
+    /* ========== */
+    .is__soldOut::after {
+        border-width: 45px 150px;
+    }
+
+    .is__soldOut .is__soldOut__text {
+        bottom: 15px;
+        right: 5px;
+    }
+
+    /* 折價券 title 品牌 */
+    /* ========== */
+    .is__titleImg .coupon__title {
+        padding: 0;
+    }
+
+    /* 折價券 連結 */
+    /* ========== */
+    .coupon__content__a {
+        width: 397px;
+    }
+
+    .coupon__content__a.a__fillUp {
+        width: 460px;
+    }
+
+    .clickBtn__a {
+        width: 58px;
+    }
+}

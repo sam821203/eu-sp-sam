@@ -1,0 +1,22 @@
+- var promoDataE = [{link: "notyet", imgSrc: "~components/promo-event/items/e/promo-1.png", alt: "滿額登記抽999"}, {link: "#note-20th", imgSrc: "~components/promo-event/items/e/promo-2.png", alt: "歡慶20週年把幸福抽回家"}, {link: "#note-1000ticket", imgSrc: "~components/promo-event/items/e/promo-3.png", alt: "登記抽千元無敵券"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201910/SP_1109124/w/index.html", imgSrc: "~components/promo-event/items/e/promo-4.png", alt: "萊爾富超取登記喝咖啡"}, ]
+
+- var promoDataU = [{link: "notyet", imgSrc: "~components/promo-event/items/u/promo-1.png", alt: ""}, {link: "notyet", imgSrc: "~components/promo-event/items/u/promo-2.png", alt: ""}, {link: "notyet", imgSrc: "~components/promo-event/items/u/promo-3.png", alt: ""}, {link: "notyet", imgSrc: "~components/promo-event/items/u/promo-4.png", alt: ""}, ]
+
+- var promoDataE_third = [{link: "#note", imgSrc: "~components/promo-event/items/e-3/promo-1.png", alt: "歡慶20週年把幸福抽回家GO"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201910/SP_1109125/w/index.html", imgSrc: "~components/promo-event/items/e-3/promo-2.png", alt: "全家超取送新貴派"}, {link: "#note", imgSrc: "~components/promo-event/items/e-3/promo-3.png", alt: "登記送千元無敵券"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html", imgSrc: "~components/promo-event/items/e-3/promo-4.png", alt: "新會員滿額"}, ]
+//- var promoData = isU? promoDataU : promoDataE
+if isU && !is_third
+  -var promoData = promoDataU
+else if isU && is_third
+  -var promoData = promoDataU_third
+else if !isU && !is_third
+  -var promoData = promoDataE
+else if !isU && is_third
+  -var promoData = promoDataE_third
+.promo__event
+  ul.event__wrap
+    each data, index in promoData
+      - var anchorId = 'promoAnchor' + (index + 1)
+      - var imgId = 'promoImg' + (index + 1)
+      li
+        a(id= anchorId, href= data.link, title= data.alt)
+          img(id= imgId, src= data.imgSrc, alt= data.alt)

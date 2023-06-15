@@ -1,0 +1,83 @@
+- 
+  var midBigDataE = [
+    {
+      link: "#",
+      imgSrc: "~event/1st/e-main/components/mid-big-slider/items/mid-item-1.png",
+      alt: "每日一物"
+    }, 
+    {
+      link: "#note",
+      imgSrc: "~event/1st/e-main/components/mid-big-slider/items/mid-item-2.png",
+      alt: "滿$3000送300"
+    }, 
+    {
+      link: "#note", 
+      imgSrc: "~event/1st/e-main/components/mid-big-slider/items/mid-item-3.png",
+      alt: "單筆消費$919抽919"
+    }, 
+    {
+      link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202008/SP_1116218/w/index.html",
+      imgSrc: "~event/1st/e-main/components/mid-big-slider/items/mid-item-4.png",
+      alt: "花月秋賞 月餅線上購"
+    }, 
+    {
+      link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      imgSrc: "~event/1st/e-main/components/mid-big-slider/items/mid-item-5.png",
+      alt: "首購登記送中冰美"
+    }, 
+    {
+      link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202007/SP_1116046/w/index.html",
+      imgSrc: "~event/1st/e-main/components/mid-big-slider/items/mid-item-6.png",
+      alt: "APP下單3次登記送霜淇淋"
+    },
+    {
+      link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202007/SP_1116046/w/index.html",
+      imgSrc: "~event/1st/e-main/components/mid-big-slider/items/mid-item-7.png",
+      alt: "APP下單3次登記送霜淇淋"
+    },
+    {
+      link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202008/SP_1116239/w/index.html",
+      imgSrc: "~event/1st/e-main/components/mid-big-slider/items/mid-item-8.png",
+      alt: "萊爾富超取請你喝中冰拿"
+    }, 
+
+  ]
+
+- 
+  var midBigDataU = [
+    {
+      link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202008/SP_1106087/w/index.html", 
+      imgSrc: "~event/1st/u-main/components/mid-big-slider/items/mid-item-1.png",
+      alt: "20間銀行最高回饋10%"
+    }, 
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale", 
+      imgSrc: "~event/1st/u-main/components/mid-big-slider/items/mid-item-2.png",
+      alt: "整點最便宜"
+    }, 
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale?Day=Up", 
+      imgSrc: "~event/1st/u-main/components/mid-big-slider/items/mid-item-3.png",
+      alt: "天天最激殺"
+    }, 
+  ]
+
+- var midBigData = isU ? midBigDataU : midBigDataE
+
+section.promo__group.promo__group--mid-big.m-bottom--sm(data-title="熱門活動")
+  .layout--main
+    //- .promo__title.block--center.text--center
+    //-   img(src="~event/1st/e-main/components/mid-big-slider/title-mid-big-slider.png", alt="")
+
+    .promo__wrap
+      #sliderMidBig.promo__slider.swiper-container
+        ul.swiper-wrapper
+          each data in midBigData
+            li.swiper-slide
+              a(href= data.link, title= data.alt)
+                img.swiper-lazy(data-src= data.imgSrc, alt= data.alt)
+                .swiper-lazy-preloader.swiper-lazy-preloader-white
+
+        #sliderMidBigPrev.swiper-button-white.swiper-button-prev.mid-big--prev
+        #sliderMidBigNext.swiper-button-white.swiper-button-next.mid-big--next
+      //- #sliderMidBigPager.mid-big__pager.swiper-pagination

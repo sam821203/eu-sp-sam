@@ -1,0 +1,18 @@
+.promo__group--player
+  +pos-set(relative, base)
+  .head__zone
+    padding-left: 5%
+    padding-right: 5%
+    .record__box
+      +pos-set(absolute, base)
+      top: 1.5%
+      right: 11%
+      width: 14%
+      a
+        display: block
+        padding-bottom: 55%
+        width: 100%
+      +breakpoint-min($min-width-xl)
+        top: 25px
+        right: calc(50% - 380px)
+        width: 140px

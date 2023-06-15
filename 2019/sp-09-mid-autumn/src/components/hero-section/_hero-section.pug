@@ -1,0 +1,31 @@
+- var heroBankData = {etmall: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201908/SP_1107836/w/index.html", umall: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201908/SP_1104315/w/index.html"}
+- var heroBankInfo = isU ? heroBankData.umall : heroBankData.etmall
+
+section.hero__wrap
+  .layout--main
+    .hero__zone
+      .header__decoration.header__decoration--right
+      .header__decoration.header__decoration--left
+      .hero__block
+        .hero__box
+          h1.hero__title.hero__title--main.block--center(title="秋禮鉅獻")
+            img(src="~components/hero-section/title.png", alt="秋禮鉅獻")
+
+          include /components/hero-small-slider/_hero-small-slider
+
+        include /components/goods-slider/_goods-slider
+
+        include /components/promo-event/_promo-event
+
+        include /components/goods-slider-flip/_goods-slider-flip
+
+      include /components/bn-special/_bn-special
+
+  .hero__decoration
+    .decoration__box
+    .decoration__box
+
+  include /layout/background-decoration/_background-decoration.pug
+
+
+  

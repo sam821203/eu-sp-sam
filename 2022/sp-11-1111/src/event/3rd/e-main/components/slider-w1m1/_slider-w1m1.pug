@@ -1,0 +1,51 @@
+-
+  var promoSliderItem = [
+    { // 1
+      link: "https://www.etmall.com.tw/gp/161812" ,
+      imgSrc: "event/3rd/e-main/components/slider-w1m1/item/p1.png",
+      alt: "BenQ職人季 職人季送好禮",
+    },
+    { // 2
+      link: "https://media.etmall.com.tw/sp/10591/m/index.html" ,
+      imgSrc: "event/3rd/e-main/components/slider-w1m1/item/p2.png",
+      alt: "LG LG滿額登記送好禮",
+    },
+    { // 3
+      link: "https://www.etmall.com.tw/p/186604" ,
+      imgSrc: "event/3rd/e-main/components/slider-w1m1/item/p3.png",
+      alt: "JORDON 雙11滿額雙重送",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/18846/m/index.html" ,
+      imgSrc: "event/3rd/e-main/components/slider-w1m1/item/p4.png",
+      alt: "CHANEL 雙11血拚攻略3折up",
+    },
+    { 
+      link: "https://www.etmall.com.tw/p/196357" ,
+      imgSrc: "event/3rd/e-main/components/slider-w1m1/item/p5.png",
+      alt: "理膚寶水 滿額1111加碼送",
+    },
+    { 
+      link: "https://www.etmall.com.tw/gp/195587" ,
+      imgSrc: "event/3rd/e-main/components/slider-w1m1/item/p6.png",
+      alt: "天使娜拉 東森幣加碼擴折15%",
+    },
+  ]
+
+section.promo__group.promo__group--slider-w1m1.m-bottom--lg(data-title="強檔推薦")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--left#decorW1m1Left
+        img(src="event/3rd/e-main/components/slider-w1m1/decor-slider-w1m1-left.png", alt="")
+      .decor__item.decor__item--right#decorW1m1Right
+        img(src="event/3rd/e-main/components/slider-w1m1/decor-slider-w1m1-right.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          .promo__slider.full-parent
+            .swiper-container#sliderW1m1Item
+              ul.swiper-wrapper
+                each data in promoSliderItem
+                  li.swiper-slide
+                    a(href= data.link, title=data.alt)
+                      img(src= data.imgSrc, alt=data.alt)

@@ -1,0 +1,106 @@
+.hero__decor--top
+  .decor--top
+    width: 100%
+    height: 50%
+    display: none
+    &:first-child
+      +bg-set(url(event/1st/e-main/components/hero-section/decor-item-1.png), auto)
+      .js-loading &
+        animation: bg-flash 2s ease-in-out infinite
+    &:last-child
+      +bg-set(url(event/1st/e-main/components/hero-section/decor-item-2.png), auto)
+      .js-loading &
+        animation: bg-flash 2s 1.2s ease-in-out infinite
+    +breakpoint-min($min-width-xl)
+      display: block
+.hero
+  +pos-set(relative, zero)  
+  overflow: hidden
+  .hero__wrap 
+    .hero__zone
+      +aspect-ratio(960, 560)
+      +breakpoint-min($min-width-xl)
+        +aspect-ratio(960, 500)
+      .hero__title
+        &--main
+          +pos-set(absolute, base, 12%, 10%)
+          width: 80%
+          animation: zoomIn .7s linear 1 forwards
+          +breakpoint-min($min-width-xl)
+            top: 8%
+            left: calc(50% - 373px)
+            width: auto
+      .decor__wrap
+        .decor__item
+          &--left
+            +pos-set(absolute, base, 12%, 7%)
+            width: 20%
+            .js-loading &
+              animation: move-circle-1 3s 1s linear infinite
+            +breakpoint-min($min-width-xl)
+              left: calc(50% - 360px)
+          &--right
+            +pos-set(absolute, zero, 12%)
+            right: 7%
+            width: 22%
+            opacity: 0
+            .js-loading &
+              animation: move-left-up 1s .7s linear 1 forwards, tada 2s 1.7s linear infinite
+            +breakpoint-min($min-width-xl)
+              top: 10%
+              right: calc(50% - 390px)
+              max-width: 180px
+          &--top
+            +pos-set(absolute, under, 0%, 0%)
+            .js-loading &
+              animation: bg-flash 2.5s ease-in-out infinite
+            +breakpoint-min($min-width-xl)
+              display: none
+          +breakpoint-min($min-width-xl)
+            width: auto
+
+@keyframes bg-flash
+  0%, 100%
+    filter: brightness(120%)
+  50%
+    filter: brightness(50%)
+
+@keyframes tada
+  0%
+    transform: scaleX(1)
+  5%, 10%
+    transform: scale3d(.9, .9, .9) rotate(-5deg)
+  15%, 25%
+    transform: scale3d(1.1, 1.1, 1.1) rotate(5deg)
+  20%, 30%
+    transform: scale3d(1.1, 1.1, 1.1) rotate(-5deg)
+  40%, 100%
+    transform: scaleX(1)
+
+@keyframes move-circle-1
+  0%, 100%
+    transform: translate(0%, 0%)
+  20%
+    transform: translate(0%, -10%)
+  40%
+    transform: translate(-30%, -5%)
+  60%
+    transform: translate(70%, -30%)
+  80%
+    transform: translate(20%, 15%)
+
+@keyframes move-left-up
+  0%
+    transform: translate( -30%, 100%) scale(.6)
+    opacity: 1
+  100%
+    transform: translate(0%, 0%) scale(1)
+    opacity: 1
+
+
+@keyframes zoomIn
+  0%
+    opacity: 0
+    transform: scale3d(.3, .3, .3)
+  50%
+    opacity: 1

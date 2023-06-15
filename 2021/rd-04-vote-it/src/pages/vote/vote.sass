@@ -1,0 +1,55 @@
+//- ==========================================================================
+//- Base
+//- ==========================================================================
+@import "~utils/sass/_common"
+
+//- =======================================================================
+//- layout
+//- =======================================================================
+@import "~layout/header/_header"
+@import "~layout/dynamic-product/_dynamic-product"
+@import "~layout/vote-tab/_vote-tab"
+
+// ========================================================================
+// components
+// ========================================================================
+@import "~components/hero-section/_hero-section"
+@import "~components/rank-section/_rank-section"
+@import "~components/player-section/_player-section"
+
+@import "~components/time-section/_time-section"
+@import "~components/info-section/_info-section"
+@import "~components/rule-section/_rule-section"
+
+@import "~components/modal/_modal"
+// ========================================================================
+// Page
+// ========================================================================
+body
+  background-color: $main-color-yellow-1
+  +breakpoint-min($min-width-xl)
+    background: $main-color-yellow-1 center 500px url(~pages/vote/bg-web.jpg) repeat-y
+    background-size: auto
+
+.hero__wrap
+  .hero__box
+    .cta__wrap
+      +pos-set(absolute, zero)
+      bottom: -14%
+      right: 1%
+      width: 33.5%
+
+.decoration__wrap--vote-info
+  margin-top: 10%
+  .layout--main
+    +pos-set(relative, zero)
+  img
+    +pos-set(absolute, zero)
+    top: 0
+    right: 0
+    width: 33.5%
+    max-width: 322px
+  +breakpoint-min($min-width-lg)
+    margin-top: 95px
+    img
+      transform: translateY(-30%)

@@ -1,0 +1,875 @@
+<meta name="viewport" content="width=device-width initial-scale=1">
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  *:before, *:after {
+    box-sizing: border-box; }
+  a {
+    display: block;
+    text-decoration: none;
+  }
+  ul {
+    list-style: none;
+  }
+  img {
+    width: 100%;
+    border: 0;
+  }
+  article,
+  main,
+  nav,
+  section {
+    display: block;
+  }
+  body {
+    margin:0;
+    background-color:#fff;
+    font-family: PingFangTC-regular, Roboto, "LiHei Pro", "Source Han Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, "Microsoft JhengHei", sans-serif;
+
+  }
+  .sp--1260 {
+    position: relative;
+    z-index: 0;
+    max-width: 1260px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* 主視覺 */
+  /* ======================================== */
+  .logo a,
+  .sp__visual a{
+    display: block;
+    /* 測試用 */
+	/*border: 1px solid #f00;*/
+  }
+  
+  .logo {
+    position: absolute;
+    z-index: 1;
+    /* 調整logo位置 */
+    top: 0.3%;
+    left: 0.3%;
+    width: 30%;
+    max-width: 220px;
+  }
+  /* 設定背景 */
+  .sp__main {
+    background: url(bg.jpg) center 0 no-repeat;
+  }
+  /* 設定前景 */
+  .sp__visual {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+  }
+  .decoration {
+    position: absolute;
+    z-index: 1;
+    padding-top: 4.125%;
+    width: 15.47%;
+    height: 0;
+    top: 9%;
+    left: 63%;
+    background-image: url(eyebrow.png);
+    background-size: 100%;
+    animation: 2.5s eyeblow infinite;
+  }
+  @keyframes eyeblow {
+    0%, 20%, 40%, 72%, 100% {
+      transform: translateY(0);
+    }
+    10%, 30% {
+      transform: translateY(-80%);
+    }
+  }
+  .visual__anchor,
+  .visual__main,
+  .visual__nav {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .visual__anchor {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }
+  .visual__main a,
+  .visual__nav a {
+    flex-grow: 1;
+  }
+  /* 設定高度，記得總和要100% */
+  /* 主視覺 */
+  .visual__main {
+    height: 75%;
+  }
+  /* 各nav */
+  .visual__nav.nav1 {
+    height: 25%;
+  }
+  /* 如果需要個別設定每塊寬度(可不設) */
+  /* 主視覺 */
+  /* 如果設100%後面的就會掉下去 */
+  .visual__main a:nth-child(1) {
+    flex-grow: 0;
+    width: 100%;
+  }
+  .visual__main a:nth-child(2) {
+    flex-grow: 0;
+    width: 70%;
+  }
+  /* 各視覺nav */
+  .visual__nav1.nav1 a:nth-child(1) {
+    flex-grow: 0;
+    width: 50%;
+  }
+
+  /* 自適應banner組 */
+  /* ======================================== */
+  .banner__title {
+    height: 65px;
+    background: center top no-repeat;
+  }
+  .nav--3c {
+    background-color:#e1edf3;
+  }
+  .banner__wrap {
+	
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .banner__item {
+    transition: all 0.3s;
+  }
+  .banner__item img {
+    width: 100%;
+  }
+  /* 設定一列4個 */
+  .bn-w4m2 .banner__item {
+    flex: 1 0 25%;
+  }
+  /* 設定點下去與hover動畫 */
+  .bn-w4m2 .banner__item:hover,
+  .bn-w4m2 .banner__item:active {
+    /* 變大(>1時變大) */
+    transform: scale(1.05);
+    /* 亮度調亮(>100%時變亮) */
+    filter: brightness(115%);
+  }
+  @media screen and (max-width: 767px) {
+    /* 設定手機時一列2個 */
+    .bn-w4m2 .banner__item {
+      flex: 1 0 50%;
+    }
+  }
+
+  /* note */
+  /* ======================================== */
+  .note {
+    font-size: 14px;
+    word-break: break-all;
+	  line-height:180%;
+  }
+  .note article {
+    padding: 1.5%;
+    background-color: #fff;
+    border: 5px solid #000;
+  }
+  .note article a {
+    display: inline;
+    color: #d6000f;
+    text-decoration: underline;
+    word-break: break-all;
+  }
+  .note article a:hover {
+    text-decoration: none;
+  }
+  .note h3 {
+    margin-left: 15px;
+  }
+  .note ol>li {
+    margin-left: 40px;
+  }
+  /* iframe 設定*/
+  .iframe__container {
+    position: relative;
+    z-index: 0;
+    padding-top: 300px;
+    overflow: hidden;
+  }
+  @media screen and (max-width: 600px) {
+    .iframe__container {
+      padding-top: 500px;
+    }
+  }
+  .iframe__container iframe {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  /* countdown */
+  /* ======================================== */
+  .countdown {
+    margin-top: 30px; 
+    height: 66px;
+    background: center top url(time_09.jpg);
+    overflow-x: hidden;
+  }
+  .timer {
+    margin-left: calc(50% - 10px);
+    padding-top: 1px;
+    padding-left: 17.5px;
+    width: 185px;
+    height: 65px;
+    line-height: 65px;
+    font-size: 34px;
+    font-weight: bold;
+  }
+  .timer span {
+    display: inline-block;
+    color: #fff;
+    vertical-align: middle;
+  }
+  .date--out-range {
+    position: relative;
+    z-index: 0;
+  }
+  .date--out-range:before {
+    content: '>';
+    position: absolute;
+    z-index: 1;
+    top: 8px;
+    left: -12px;
+    font-size: 24px;
+    font-weight: normal;
+  }
+  .timer span:nth-child(2),
+  .timer span:nth-child(4) {
+    padding-left: 2px;
+    padding-right: 2px; 
+    font-size: 28px;
+    font-weight: normal;
+  }
+  .product__wrap {
+    display: flex;
+    position: relative;
+    z-index: 0;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+  .product {
+    position: relative;
+    z-index: 0;
+    width: 25%;
+    background-image: linear-gradient(#fff 1%,#e1edf3 1%, #e1edf3);
+  }
+  .product:before {
+    content: '買吧買吧買吧買吧買吧買吧買吧買吧買吧買吧';
+    position: absolute;
+    z-index: 0;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    color: #e1edf3;
+    font-size: 30px;
+    letter-spacing: 0.04em;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .product:not(.product--just-standby) {
+    z-index: 1;
+    padding-top: 43.2%;
+    height: 0;
+    background: url(frame.png) no-repeat;
+    background-size: contain;
+    transition: transform 0.5s;
+  }
+
+  .product:not(.product--just-standby) a {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    padding: 4% 5.5% 35%;
+
+  }
+
+  .product:not(.product--just-standby):hover,
+  .product:not(.product--just-standby):active {
+    transform: rotate(1deg) scale(1.02);
+  }
+
+  .product:nth-child(1) {
+    order: 2;
+  }
+  .product:nth-child(2) {
+    order: 4;
+  }
+  .product:nth-child(3) {
+    order: 1;
+  }
+  .product:nth-child(4) {
+    order: 3;
+  }
+  .product__name {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow : ellipsis;
+    margin-bottom: 20px;
+    padding: 0.9% 5%;
+    height: calc(0.6% + 56px);
+    line-height: 130%;
+    color: #fff;
+    background-color: #000;
+    font-size: 22px;
+    overflow: hidden;
+  }
+  .product__price {
+    margin-left: 15px;
+  }
+  .product__price span {
+    color: #cc1e05;
+    font-size: 22px;
+  }
+  .product__price span:last-child {
+    font-size: 40px;
+  }
+  .product--just-standby a {
+    position: relative;
+    z-index: 0;
+    padding-bottom: 40%;
+    transform: scale(0.8);
+    pointer-events: none;
+  }
+  .product--just-standby .product__name {
+    background-color: #666;
+  }
+  .product--just-standby a:before,
+  .product--just-standby a:after {
+    position: absolute;
+    z-index: 1;
+  }
+  .product--just-standby a:before {
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+  }
+  .product--just-standby a:after {
+    content: '尚未開賣';
+    top: 40%;
+    left: 10%;
+    width: 80%;
+    height: 60px;
+    line-height: 60px;
+    color: #fff;
+    background-color: #000;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    transform: rotate(15deg);
+  }
+  @media screen and (max-width: 1000px) {
+    .countdown {
+      margin-top: 5%; 
+    }
+    .product__wrap {
+      margin-top: 1%;
+      margin-bottom: 1%;
+    }
+    .product {
+      margin-bottom: 30px;
+      width: 50%;
+    }
+    .product:before {
+      height: 28px;
+      line-height: 28px;
+      font-size: 18px;
+    }
+    .product:not(.product--just-standby) {
+      padding-top: 86.8%;
+    }
+    .product__name {
+      margin-bottom: 10px;
+      height: calc(0.6% + 40px);
+      font-size: 16px;
+    }
+    .product__price {
+      margin-left: 5%;
+    }
+    .product__price span {
+      font-size: 14px;
+    }
+    .product__price span:last-child {
+      font-size: 20px;
+    }
+    .product--just-standby a:after {
+      font-size: 20px;
+    }
+    @media screen and (min-width: 700px) and (max-width: 1000px) {
+      .product__name {
+        height: calc(0.6% + 56px);
+        font-size: 22px;
+      }
+      .product__price span {
+        font-size: 22px;
+      }
+      .product__price span:last-child {
+        font-size: 40px;
+      }
+    }
+  }
+  /* flip */
+  /* ======================================== */
+  .intro-promo {
+    position: relative;
+    z-index: 5;
+    height: 213px;
+    margin-bottom: 30px;
+    /*overflow: hidden;*/
+  }
+
+  .promo {
+    position: absolute;
+    z-index: 10;
+    top: 20px;
+    width: 285px;
+    height: 173px;
+  }
+
+  .promo a {
+    position: absolute;
+    z-index: 10;
+    height: 100%;
+  }
+
+  .promo1 {
+    left: 35px;
+  }
+
+  .promo2 {
+    left: 337px;
+  }
+
+  .promo3 {
+    left: 639px;
+  }
+
+  .promo4 {
+    left: 941px;
+  }
+
+  .flip-frame .flip{
+    position: relative;
+    height: 100%;
+    -webkit-perspective: 600px;
+    -moz-perspective: 600px;
+    -ms-perspective: 600px;
+    perspective: 600px;
+  }
+
+  .flip-frame .flip-slide {
+    -webkit-backface-visibility:hidden;
+    -moz-backface-visibility:hidden;
+    -ms-backface-visibility:hidden;
+    backface-visibility:hidden;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -webkit-transform: rotateX(-180deg);
+    -moz-transform: rotateX(-180deg);     
+    -ms-transform: rotateX(-180deg);      
+    transform: rotateX(-180deg);
+    transition: transform 1.2s ease-in-out;
+    overflow: hidden;
+  }
+
+  .flip-frame .flip-slide.front{
+    z-index: 2;
+    -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);     
+    -ms-transform: rotateX(0deg);      
+    transform: rotateX(0deg);
+  }
+
+  .flip-frame .flip-slide.back{
+    z-index: 1;
+  }
+
+  @media screen and (max-width: 1260px) {
+    .intro-promo {
+      margin-bottom: 5%;
+      padding: 0.5%;
+      height: auto;
+      overflow: hidden;
+    }
+    .intro-promo  .sp--1260 {
+      padding-top: 61.4%;
+    }
+    .promo {
+      top: 0;
+      left: 0.5%;
+      padding-top: 30.7%;
+      width: 49%;
+      height: 0;
+    }
+    .promo2 {
+      left: 50%;
+    }
+    .promo3 {
+      top: 50%;
+    }
+    .promo4 {
+      top: 50%;
+      left: 50%;
+    }
+    .flip-frame .flip {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+    .flip a {
+      width: 100%;
+    }
+  }
+  /* go top */
+  /* ======================================== */
+  .go-top {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    bottom: 5%;
+    right: 1%;
+    width: 100px;
+    height: 100px;
+    background-color: #000;
+    box-shadow: 0 0 1px #fff;
+    background-image: url(top.png);
+    border-radius: 50%;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  .go-top:hover,
+  .go-top:active {
+    transform: scale(0.95);
+    filter: brightness(120%) contrast(120%);
+  }
+  .go-top > div {
+    display: none;
+    margin-top: 35%;
+    margin-left: 30%;
+    width: 40%;
+    height: 40%;
+    border-top: 5px solid #fff;
+    border-left: 5px solid #fff;
+    transform: rotate(45deg);
+  }
+  @media screen and (max-width: 600px) {
+    .go-top {
+      right: 4%;
+      width: 50px;
+      height: 50px;
+      background-image: none;
+    }
+    .go-top > div {
+      display: block;
+    }
+    .go-top:hover,
+    .go-top:active {
+      transform: scale(1);
+    }
+  }
+</style>
+<div id="spWrap" class="sp__wallper">
+  <!-- 主視覺 -->
+  <main class="sp__main">
+    <div class="sp--1260">
+      <a href="https://www.etmall.com.tw" class="logo"><img src="ehs-logo.png" alt="東森購物"></a>
+      <div class="sp__visual">
+        <div class="decoration"></div>
+        <div class="visual__anchor">
+          <div class="visual__main">
+            <!-- <a href="https://1.com"></a> -->
+          </div>
+          <div class="visual__nav nav1">
+            <a href="https://1.com"></a>
+          </div>
+        </div>      	
+        <img src="index.jpg">
+      </div>
+    </div>
+  </main>
+  <!-- 自適應banner組 -->
+  <section class="bn-w4m2 nav--3c">
+    <!-- <div class="banner__title" style="background-image: url(bar1260x65.jpg);"></div> -->
+    <ul class="sp--1260 banner__wrap">
+      <li class="banner__item">
+        <a href="<!--[LINK1]-->">
+          <img src="menu_01.png" alt="banner">
+        </a>
+      </li>
+      <li class="banner__item">
+        <a href="<!--[LINK2]-->">
+          <img src="menu_02.png" alt="banner">
+        </a>
+      </li>
+      <li class="banner__item">
+        <a href="<!--[LINK3]-->">
+          <img src="menu_03.png" alt="banner">
+        </a>
+      </li>
+      <li class="banner__item">
+        <a href="<!--[LINK4]-->">
+          <img src="menu_04.png" alt="banner">
+        </a>
+      </li>
+    </ul>
+  </section>
+  <section class="countdown__wrap">
+    <div class="sp--1260">
+      <div class="countdown">
+        <div id="timer" class="timer"></div>
+      </div>
+      <div id="productWrap" class="product__wrap"></div>
+    </div>
+  </section>
+  <section class="intro-promo flip-frame">
+    <div class="sp--1260">
+      <div class="promo promo1">
+        <div class="flip">
+          <a href="" class="flip-slide" title="">
+            <img src="tab_1.png" alt="">
+          </a>
+          <a href="" class="flip-slide" title="">
+            <img src="tab_1-2.png" alt="">
+          </a>
+        </div>
+      </div>
+      <div class="promo promo2">
+        <div class="flip">
+          <a href="" class="flip-slide" title="">
+            <img src="tab_2.png" alt="">
+          </a>
+          <a href="" class="flip-slide" title="">
+            <img src="tab_2-2.png" alt="">
+          </a>                
+        </div>
+      </div>
+      <div class="promo promo3">
+        <div class="flip">
+          <a href="" class="flip-slide" title="">
+            <img src="tab_3.png" alt="">
+          </a>
+          <a href="" class="flip-slide" title="">
+            <img src="tab_3-2.png" alt="">
+          </a>
+        </div>
+      </div>
+      <div class="promo promo4">
+        <div class="flip">
+          <a href="" class="flip-slide" title="">
+            <img src="tab_4.png" alt="">
+          </a>
+          <a href="" class="flip-slide" title="">
+            <img src="tab_4-2.png" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="note" name="note">
+    <div class="sp--1260">
+      <article>
+        <h2 style="font-size:25px; padding:10px 0;font-weight:bolder;">【玉山銀行旅展專案 分期滿額送好禮】</h2>
+        <h3>活動期間：2018/9/3-2018/9/17</h3>
+        <h3>活動對象：玉山銀行信用卡持卡人</h3>
+        <h3>活動商品：限購買歡樂旅行社旅遊商品(商品規格裡有歡樂旅行社字號之商品)</h3>
+        <h3>分期滿額送贈：</h3>
+        <ol>
+          <li style="list-style:none;">單月累積分期滿3,000元送50元刷卡金</li>
+          <li style="list-style:none;">單月累積分期滿18,000元送500元刷卡金</li>
+          <li style="list-style:none;">(需登錄：<a href="https://card.esunbank.com.tw/EsunCreditweb/txnservice/Activity/RegisterEvent?EventId=18S9025#b">https://card.esunbank.com.tw/EsunCreditweb/txnservice/Activity/RegisterEvent?EventId=18S9025#b</a>，活動期間每月每歸戶回饋上限500元刷卡金)</li>
+        </ol>
+      </article>
+      <div class="iframe__container">
+        <iframe style="background: #000; overflow-x: hidden; vertical-align: bottom;" src="https://event.etmall.com/aform/?t=3" frameborder="0" scrolling="no"></iframe>
+      </div>
+    </div>
+  </section>
+  <div id="goTop" class="go-top"><div></div></div>
+</div>  
+<script id="data" src="data.js?20181101"></script>
+<script id="generateData" src="generateData.js"></script>
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script>$('a[href^="#"]').on('click',function(e){var target=$('a[name='+this.getAttribute('href').split('#')[1]+']')?$('a[name='+this.getAttribute('href').split('#')[1]+']'):$(this.getAttribute('href'));if(target.length){e.preventDefault();$('html,body').stop().animate({scrollTop:target.offset().top},500);}});</script>
+<script>
+  function goTop () {
+    var $goTop = $('#goTop');
+    $(window).on('scroll', function(){
+      var scrollHeight = $(this).scrollTop();
+      if(scrollHeight > 300) {
+        $goTop.fadeIn();
+      } else {
+        $goTop.fadeOut();
+      }
+    });
+    $(window).trigger('scroll');
+    $goTop.on('click', function(){
+      $('html,body').stop().animate({scrollTop:0},500);
+    });
+  }
+  goTop();
+
+  function AddFlipLink() {
+    var flipEl = document.getElementsByClassName('flip-slide');
+    var timeStamp = Math.floor(new Date() / 1000);
+    var isApp = initDetect();
+
+    if(isApp ==='Web Browser') {
+      for(var i = 0; i < flipEl.length; i++) {
+        flipEl[i].href = flipLink[i].link;
+        flipEl[i].title = flipLink[i].title;
+        flipEl[i].children[0].src += '?' + timeStamp;
+        flipEl[i].children[0].alt = flipLink[i].title;
+      }
+    } else if(isApp ==='Webview') {
+      for(var i = 0; i < flipEl.length; i++) {
+        flipEl[i].href = flipLink[i].appLink;
+        flipEl[i].title = flipLink[i].title;
+        flipEl[i].children[0].src += '?' + timeStamp;
+        flipEl[i].children[0].alt = flipLink[i].title;
+      }
+    }
+  }
+  AddFlipLink();
+
+  function FlipSlider(options) {
+    // Private Vars
+    var container = options.container,
+        startSlideIndex = options.startIndex || 0,
+        slider = container.querySelector(".flip"),
+        slides = slider.querySelectorAll(".flip-slide"),
+        timeout,
+        frontSlide,
+        backSlide;
+
+    // == public functions == //
+
+    //Next flip
+    this.nextFlip = function() {
+        doFlip(1);
+    };
+
+    // == private functions == //
+
+    // flip slides
+    function doFlip(dir) {
+        if (!container.querySelector(".animate")) {
+            slider.classList.add("animate");
+
+
+            frontSlide = slider.querySelector(".front");
+            backSlide = findBack(dir);
+
+            backSlide.classList.add("back");
+
+            timeout = setTimeout(function() {
+                resetSlides();
+                clearTimeout(timeout);
+            }, 0);
+        }
+    }
+
+    // reset slides on completion
+    function resetSlides() {
+        frontSlide = slider.querySelector(".front");
+        backSlide = slider.querySelector(".back");
+
+        backSlide.classList.add("front");
+        backSlide.classList.remove("back");
+        frontSlide.classList.remove("front");
+        slider.classList.remove("animate");
+    }
+
+    // find slide to set it back-flip
+    function findBack(dir) {
+        var frontIndex,
+            target,
+            slideCount;
+
+        slides = slider.querySelectorAll(".flip-slide");
+        slideCount = slides.length;
+
+        for (var i = 0; i < slideCount; i++) {
+            if (slides[i].classList.contains("front")) {
+                frontIndex = i;
+            }
+        }
+            target = (frontIndex + 1) < slideCount ? slides[frontIndex + 1] : slides[0];
+
+        return target;
+    }
+
+    // Init
+    (function (instance, sliderTime) {
+      var sliderTime = options.sliderTime || 3000;
+        // Setting First Slide
+        startSlideIndex = startSlideIndex >= slides.length ? 0 : startSlideIndex;
+        slides[startSlideIndex].classList.add("front");
+
+        // Event Bindings
+        function Timer(callback, delay) {
+        var timerId, start, remaining = delay;
+
+        this.pause = function() {
+            window.clearInterval(timerId);
+            // remaining -= new Date() - start;
+        };
+
+        this.resume = function() {
+            start = new Date();
+            window.clearInterval(timerId);
+            timerId = window.setInterval(callback, remaining);
+        };
+
+        this.resume();
+    }
+        var timer = new Timer(function(){
+          instance.nextFlip();
+        }, sliderTime);
+
+        slides.forEach(function(el){
+      el.addEventListener('mouseover', function(){
+            timer.pause();
+          }, true);
+
+          el.addEventListener('mouseleave', function(){
+            timer.resume();
+          }, true);
+        })
+    })(this);
+  }
+  // Creating Instance of the slider
+  var flip1 = new FlipSlider({container: document.querySelector(".promo1"), sliderTime: 5000});
+  var flip2 = new FlipSlider({container: document.querySelector(".promo2"), sliderTime: 5000});
+  var flip3 = new FlipSlider({container: document.querySelector(".promo3"), sliderTime: 5000});
+  var flip4 = new FlipSlider({container: document.querySelector(".promo4"), sliderTime: 5000});
+</script>
+<!-- 浮水印 -->
+<!--<script id="scriptIconFloat" src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106099/float-icon.js"></script>-->

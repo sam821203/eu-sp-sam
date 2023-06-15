@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="bundle.d3a5e6a4.css">
+
+    <!-- 宮格 css -->
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        *:before,
+        *:after {
+            box-sizing: border-box;
+        }
+
+        a {
+            display: block;
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            border: 0;
+        }
+
+        section {
+            display: block;
+        }
+
+        body {
+            font-size: 14px;
+            font-family: Helvetica, Arial, "LiHei Pro", "Microsoft JhengHei", "微軟正黑體", sans-serif;
+        }
+
+        .build--m-frame {
+            max-width: 960px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .margin-top-sm {
+            margin-top: 2%;
+        }
+
+        .margin-bottom-sm {
+            margin-bottom: 2%;
+        }
+
+        .margin-bottom-md {
+            margin-bottom: 4%;
+        }
+
+        .build__wrap {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        /* ===== animation setting start ===== */
+        .build__wrap.wow {
+            animation: .5s bounce-in-left both;
+        }
+
+        @keyframes bounce-in-left {
+            from {
+                transform: translateX(-30%);
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* ===== animation setting end ===== */
+        /* ===== card--ten-space setting start ===== */
+        .card--ten-space .build__item {
+            margin-bottom: 0.8%;
+            background-color: #fff;
+            border: 1px solid #EDEDED;
+            transition: transform 0.16s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        .card--ten-space .build__item:active,
+        .card--ten-space .build__item:hover {
+            transform: scale(1.05);
+        }
+
+        @media screen and (min-width: 768px) {
+            .card--ten-space .build__item {
+                margin-bottom: 0.35%;
+            }
+        }
+
+        /* ===== card--ten-space setting end ===== */
+        /* ===== card--ten-space item *6 setting start ===== */
+
+        .card--ten-space.item--10 .build__item {
+            width: 19%;
+            margin: .33%
+        }
+
+        .card--ten-space .build__item,
+        .card--ten-space .item__img {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .card--ten-space .item__info {
+            position: relative;
+        }
+
+        .card--ten-space .item__name {
+            height: 37px;
+            margin-top: 5px;
+        }
+
+        .card--ten-space .item__push span {
+            color: #fff;
+            font-weight: 400;
+        }
+
+        /* ===== card--ten-space item *6 setting end ===== */
+        /* ===== item-push background-color setting start ===== */
+        .card--ten-space .item__push.bg__blue {
+            background: #3000b1;
+            background: -webkit-linear-gradient(to right, #1a00ea, #3000b1, #1a00ea);
+            background: linear-gradient(to right, #1a00ea, #3000b1, #1a00ea);
+            border-radius: 20px;
+            color: #fff;
+            letter-spacing: 1.5px;
+        }
+
+        .card--ten-space .item__push.bg__green {
+            background: #3CA55C;
+            background: -webkitlinear-gradient(to right, #7fc313, #3CA55C, #7fc313);
+            background: linear-gradient(to right, #7fc313, #3CA55C, #7fc313);
+            border-radius: 20px;
+            color: #fff;
+            letter-spacing: 1.5px;
+        }
+
+        .card--ten-space .item__push.bg__red {
+            background: #f01400;
+            background: -webkit-linear-gradient(to right, #f07219, #f01400, #f07219);
+            background: linear-gradient(to right, #f07219, #f01400, #f07219);
+            border-radius: 20px;
+            color: #fff;
+            letter-spacing: 1.5px;
+        }
+
+        .card--ten-space .build__item.black__bg {
+            background-color: #362e2b;
+            border-radius: 10px;
+            padding: 5px;
+        }
+
+        .card--ten-space .build__item.black__bg a,
+        .card--ten-space .black__bg .item__push span {
+            color: #ddd;
+        }
+
+        .card--ten-space .build__item.black__bg .item__price span:last-child {
+            background-color: rgba(#EDEDED, .5);
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .card--ten-space .item__push--outerFrame {
+            width: 100%;
+            height: 28px;
+            text-align: center;
+        }
+
+        .card--ten-space .item__push {
+            position: relative;
+            z-index: 1;
+            line-height: 140%;
+            height: auto;
+        }
+
+        /* ===== item-push background-color setting end ===== */
+
+        @media screen and (max-width: 768px) {
+            .card--ten-space.item--10 .build__item {
+                width: 49%;
+                margin: .5% .25%;
+            }
+
+            .card--ten-space .build__item {
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.2);
+            }
+
+            .card--ten-space .item__push--outerFrame {
+                height: 21px;
+                font-size: 13px;
+            }
+
+            .card--ten-space .item__push span {
+                max-height: 21px;
+                line-height: 170%;
+                letter-spacing: 0;
+            }
+
+            .card--ten-space .item__name {
+                height: 32px;
+                font-size: 14px;
+            }
+        }
+
+        .build__item a {
+            color: #5d5d5d;
+        }
+
+        .item__pic {
+            position: relative;
+            z-index: 0;
+            padding-top: 100%;
+            overflow: hidden;
+        }
+
+        .item__img {
+            display: block;
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .item__info {
+            padding: 2%;
+        }
+
+        .item__push {
+            width: 100%;
+            height: 28px;
+            text-align: center;
+        }
+
+        .item__push span {
+            display: block;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            position: relative;
+            z-index: 0;
+            margin: 0 3%;
+            max-height: 28px;
+            line-height: 200%;
+            color: #cc1e05;
+            font-weight: bold;
+            overflow: hidden;
+        }
+
+        .item__name {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            text-overflow: ellipsis;
+            height: 36px;
+            line-height: 120%;
+            font-size: 15px;
+            overflow: hidden;
+        }
+
+        .item__price span:last-child {
+            color: #cc1e05;
+            font-size: 22px;
+        }
+    </style>
+
+    <!-- note css -->
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        *:before, *:after {
+            box-sizing: border-box;
+        }
+
+        a {
+            display: block;
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            width: 100%;
+            border: 0;
+        }
+
+        article,
+        main,
+        nav,
+        section {
+            display: block;
+        }
+
+        body {
+            margin: 0;
+            background-color: #26023c;
+        }
+
+        .sp--960 {
+            position: relative;
+            z-index: 0;
+            max-width: 960px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* note */
+        /* ======================================== */
+        .note {
+            word-break: break-all;
+        }
+
+        .note article {
+            background-color: #4b0561;
+            font: normal 1em/1.5 '微軟正黑體', Arial;
+            color: #eab3eb;
+            padding-bottom: 3%;
+        }
+
+        .note article a {
+            display: inline;
+        }
+
+        .note hr {
+            background-color: #ffc32e;
+            width: 100%;
+            margin: 15px 0;
+            height: 8px;
+            border: 0;
+        }
+
+        .note h2 {
+            color: #ffc32e;
+            font-size: 1.5em;
+            line-height: 2;
+            margin: 5px 0 5px 3%;
+        }
+
+        .note p {
+            line-height: 1.5;
+            padding: 0 5%;
+            margin: 0;
+        }
+
+        .note ol, .note ul {
+            padding: 0;
+            margin: auto;
+            margin: 0 5% 0 7%;
+            list-style: decimal;
+        }
+
+        .note ul {
+            list-style: disc;
+        }
+
+        .note .example {
+            color: #ffc32e;
+        }
+
+        .note table {
+            color: #5b5b5b;
+            border: 1px solid #c0c0c0;
+            border-right: 0;
+            border-bottom: 0;
+            width: 90%;
+            margin: 1% 0 2% 5.5%;
+            background-color: #FFFFFF;
+            font-size: 0.9em;
+        }
+
+        .note table td {
+            border-right: 1px solid #c0c0c0;
+            border-bottom: 1px solid #c0c0c0;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .note table tr:first-child td, .note ol table tr:first-child td {
+            text-align: center;
+            background-color: #949494;
+            color: #f9f9f9;
+        }
+
+        .note ol table {
+            margin: 0;
+            width: 100%;
+            margin: 2% 0;
+        }
+
+        .note ol table td {
+            text-align: left;
+        }
+
+        .note ol table tr:first-child td {
+            white-space: nowrap;
+        }
+
+        @media screen and (max-width: 1024px) {
+            .note ol, .note ul {
+                margin: 0 5% 0 10%;
+            }
+
+            .note table {
+                margin: 0 3%;
+                width: 94%;
+            }
+        }
+
+        /* 圖片 */
+        /* ======================================== */
+        .img--container {
+            display: inline-block;
+            width: 90%;
+            margin-left: 10%;
+            margin-right: 5%;
+            margin-bottom: 10px;
+        }
+
+        .img--container img:nth-child(1) {
+            width: calc(100% / 1.2 - 4px);
+            display: inline-block;
+        }
+
+        .flaot-left {
+            float: left;
+        }
+
+        .img--container img {
+            margin: 15px 0 5px 0;
+        }
+
+        @media screen and (max-width: 700px) {
+            .img--container {
+                margin-left: auto;
+                margin-right: auto;
+                width: 100%;
+            }
+
+            .img--container img:nth-child(1) {
+                width: 94%;
+                margin-left: 3%;
+                margin-right: 3%;
+            }
+        }
+
+        /* rwd table */
+        /* ======================================== */
+        .note table.rwd-table {
+            width: 94%;
+            /*color: #fff;*/
+            border: 1px solid #c0c0c0;
+            border-collapse: collapse;
+            background-color: #fff;
+            overflow: hidden;
+        }
+
+        .note table.rwd-table th {
+            display: none;
+        }
+
+        .note table.rwd-table td {
+            display: block;
+            border-right: 0;
+            text-align: left;
+        }
+
+        /* 注意此處的(4)要視一行有幾個td選項調整 */
+        .note table.rwd-table td:nth-child(4) {
+            border-bottom: 1px solid #c0c0c0;
+        }
+
+        .note table.rwd-table td:before {
+            content: attr(data-th) ": ";
+            display: inline-block;
+            width: 6em;
+            font-weight: bold;
+        }
+
+        .note table.rwd-table th, .rwd-table td {
+            text-align: left;
+        }
+
+        .note table.rwd-table tr {
+            border-color: #c0c0c0;
+        }
+
+        .note table.rwd-table tr:nth-child(even) {
+            background-color: #dadada;
+        }
+
+        .note table.rwd-table th, .rwd-table td {
+            margin: .5em 1em;
+        }
+
+        .note table.rwd-table th, .rwd-table td:before {
+            font-weight: bold;
+        }
+
+        @media (min-width: 700px) {
+            .note table.rwd-table {
+                width: 65%;
+            }
+
+            .note table.rwd-table tr:nth-child(even) {
+                background: transparent;
+            }
+
+            .note table.rwd-table th {
+                background-color: #ffc32e;
+                color: #21211d;
+            }
+
+            .note table.rwd-table th,
+            .note table.rwd-table td {
+                border-bottom: 1px solid #c0c0c0;
+                border-right: 1px solid #c0c0c0;
+            }
+
+            .note table.rwd-table td:before {
+                display: none;
+            }
+
+            .note table.rwd-table th, .note table.rwd-table td {
+                display: table-cell;
+                padding: .25em .5em;
+                text-align: center;
+            }
+
+            .note table.rwd-table th:first-child, .note table.rwd-table td:first-child {
+                padding-left: 0;
+            }
+
+            .note table.rwd-table th:last-child, .note table.rwd-table td:last-child {
+                padding-right: 0;
+            }
+
+            .note table.rwd-table th, .note table.rwd-table td {
+                padding: 0.8em !important;
+            }
+        }
+    </style>
+
+    <!--客製 css -->
+    <style>
+
+        @media screen and (max-width: 768px) {
+            .title__wrap--slide .title__box.tb--5 {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<main class="sp__wrap" id="spWrap">
+    <div class="sp--desktop--m">
+        <div id="iconHome"></div>
+        <div class="star__wrap"><img src="star-y.69603fd1.png"><img src="star.42db7c77.png"><img
+                src="star-y.69603fd1.png"><img src="star.42db7c77.png"><img src="star.42db7c77.png"><img
+                src="star.42db7c77.png"></div>
+        <header class="header__wrap--sp m-bottom--sm"><a class="logo" href="https://www.etmall.com.tw/"></a>
+            <div class="title__wrap--header"><h1 class="pic"><img src="title.4165db72.png" alt="浪我們相約買個夠"></h1></div>
+        </header>
+    </div>
+    <div class="landing__wrap">
+        <section class="slider__wrap">
+            <div class="gallery__sliders" id="gallerySliders">
+                <div class="slide__item">
+                    <div class="sp--desktop--m">
+                        <div class="title__wrap--slide m-bottom--sm">
+                            <div class="title__box">
+                                <div class="title__date m-right-px--sm" style="background-color:#ffe02e">
+                                    <div><span>8</span><span>/</span><span>12</span></div>
+                                </div>
+                                <div class="title__slogan">
+                                    <h2>
+                                        <div><span>TOSHIBA</span></div>
+                                        <div><span>讓你變身最強家政王</span></div>
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item__box--sp m-right--sm m-item__pic">
+                            <div class="item__image"><a href="#langBar" title="明星商品"><img
+                                    src="product_0812.eb2e262e.png" alt="明星商品"></a></div>
+                            <div class="item__video--mobile"><a href="https://youtu.be/Lj9Itnd5qRE"
+                                                                title="點我觀看" style="border:3px solid #ffe02e"><img
+                                    src="video_0812.3864b1f3.png" alt="超夯直播前導預告"></a></div>
+                        </div>
+                        <div class="thumb__box margin-thumb__box" id="thumbBox"><img class="card--current"
+                                                                                     src="card_0812.a60e81a3.png"
+                                                                                     alt="介紹卡片"></div>
+                    </div>
+                </div>
+                <div class="slide__item">
+                    <div class="sp--desktop--m">
+                        <div class="title__wrap--slide m-bottom--sm">
+                            <div class="title__box">
+                                <div class="title__date m-right-px--sm" style="background-color:#ffe02e">
+                                    <div><span>8</span><span>/</span><span>13</span></div>
+                                </div>
+                                <div class="title__slogan">
+                                    <h2>
+                                        <div><span>居家口袋名單</span></div>
+                                        <div><span>必吃，必玩，必買</span></div>
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item__box--sp m-right--sm m-item__pic">
+                            <div class="item__image"><a href="#langBar" title="明星商品"><img
+                                    src="product_0813.d356f9b4.png" alt="明星商品"></a></div>
+                            <div class="item__video--mobile"><a href="https://youtu.be/nzT-fbK4GWw"
+                                                                title="點我觀看" style="border:3px solid #ffe02e"><img
+                                    src="video_0813.bc40b71d.png" alt="超夯直播前導預告"></a></div>
+                        </div>
+                        <div class="thumb__box margin-thumb__box" id="thumbBox"><img class="card--current"
+                                                                                     src="card_0813.1ed49ac3.png"
+                                                                                     alt="介紹卡片"></div>
+                    </div>
+                </div>
+                <div class="slide__item">
+                    <div class="sp--desktop--m">
+                        <div class="title__wrap--slide m-bottom--sm">
+                            <div class="title__box">
+                                <div class="title__date m-right-px--sm" style="background-color:#ffe02e">
+                                    <div><span>8</span><span>/</span><span>14</span></div>
+                                </div>
+                                <div class="title__slogan">
+                                    <h2>
+                                        <div><span>SWITCH電力怪獸</span></div>
+                                        <div><span>超強續航任你遨遊</span></div>
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item__box--sp m-right--sm m-item__pic">
+                            <div class="item__image"><a href="#langBar" title="明星商品"><img
+                                    src="product_0814.3f94e77a.png" alt="明星商品"></a></div>
+                            <div class="item__video--mobile"><a href="https://youtu.be/oIfQqjdYmLQ"
+                                                                title="點我觀看" style="border:3px solid #ffe02e"><img
+                                    src="video_0814.13139400.png" alt="超夯直播前導預告"></a></div>
+                        </div>
+                        <div class="thumb__box margin-thumb__box" id="thumbBox"><img class="card--current"
+                                                                                     src="card_0814.e90acdfd.png"
+                                                                                     alt="介紹卡片"></div>
+                    </div>
+                </div>
+                <div class="slide__item">
+                    <div class="sp--desktop--m">
+                        <div class="title__wrap--slide m-bottom--sm">
+                            <div class="title__box">
+                                <div class="title__date m-right-px--sm" style="background-color:#ffe02e">
+                                    <div><span>8</span><span>/</span><span>15</span></div>
+                                </div>
+                                <div class="title__slogan">
+                                    <h2>
+                                        <div><span>品牌人氣表款</span></div>
+                                        <div><span>各種場合都有好錶現</span></div>
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item__box--sp m-right--sm m-item__pic">
+                            <div class="item__image"><a href="#langBar" title="明星商品"><img
+                                    src="product_0815.e8777eaf.png" alt="明星商品"></a></div>
+                            <div class="item__video--mobile"><a href="https://youtu.be/cT__eGS_7To"
+                                                                title="點我觀看" style="border:3px solid #ffe02e"><img
+                                    src="video_0815.5b2ad656.png" alt="超夯直播前導預告"></a></div>
+                        </div>
+                        <div class="thumb__box margin-thumb__box" id="thumbBox"><img class="card--current"
+                                                                                     src="card_0815.cafcbd06.png"
+                                                                                     alt="介紹卡片"></div>
+                    </div>
+                </div>
+                <div class="slide__item">
+                    <div class="sp--desktop--m">
+                        <div class="title__wrap--slide m-bottom--sm">
+                            <div class="title__box tb--5">
+                                <div class="title__date m-right-px--sm" style="background-color:#ffe02e">
+                                    <div><span>8</span><span>/</span><span>16</span></div>
+                                </div>
+                                <div class="title__slogan">
+                                    <h2>
+                                        <div><span>LG生活美學</span></div>
+                                        <div><span>絕美3C打造你的優雅品味</span></div>
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item__box--sp m-right--sm m-item__pic">
+                            <div class="item__image"><a href="#langBar" title="明星商品"><img
+                                    src="product_0816.2c777f7a.png" alt="明星商品"></a></div>
+                            <div class="item__video--mobile"><a href="https://youtu.be/88ClJ1bR150"
+                                                                title="點我觀看" style="border:3px solid #ffe02e"><img
+                                    src="video_0816.2c2e60b3.png" alt="超夯直播前導預告"></a></div>
+                        </div>
+                        <div class="thumb__box margin-thumb__box" id="thumbBox"><img class="card--current"
+                                                                                     src="card_0816.c6bcd0c2.png"
+                                                                                     alt="介紹卡片"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="sp--desktop--m">
+                <div class="slick-button-prev slick-button-custom" id="slickBtnPrev"></div>
+                <div class="slick-button-next slick-button-custom" id="slickBtnNext"></div>
+            </div>
+        </section>
+        <section class="item__video--desktop">
+            <div class="sp--desktop--m">
+                <div class="gallery__videos" id="galleryVideos">
+                    <div class="slide__item">
+                        <div class="video__box">
+                            <div class="background--decoration">
+                                <div class="circle circle--outer" style="background-color:#ffe02e"></div>
+                                <div class="circle circle--inner" style="background-color:#fea219"></div>
+                            </div>
+                            <div class="video__main">
+                                <iframe class="video--youtube" id="video1"
+                                        src="https://www.youtube.com/embed/Lj9Itnd5qRE?enablejsapi=1&amp;html5=1"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;"
+                                        allowfullscreen=""></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide__item">
+                        <div class="video__box">
+                            <div class="background--decoration">
+                                <div class="circle circle--outer" style="background-color:#ffe02e"></div>
+                                <div class="circle circle--inner" style="background-color:#fea219"></div>
+                            </div>
+                            <div class="video__main">
+                                <iframe class="video--youtube" id="video2"
+                                        src="https://www.youtube.com/embed/nzT-fbK4GWw?enablejsapi=1&amp;html5=1"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;"
+                                        allowfullscreen=""></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide__item">
+                        <div class="video__box">
+                            <div class="background--decoration">
+                                <div class="circle circle--outer" style="background-color:#ffe02e"></div>
+                                <div class="circle circle--inner" style="background-color:#fea219"></div>
+                            </div>
+                            <div class="video__main">
+                                <iframe class="video--youtube" id="video3"
+                                        src="https://www.youtube.com/embed/oIfQqjdYmLQ?enablejsapi=1&amp;html5=1"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;"
+                                        allowfullscreen=""></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide__item">
+                        <div class="video__box">
+                            <div class="background--decoration">
+                                <div class="circle circle--outer" style="background-color:#ffe02e"></div>
+                                <div class="circle circle--inner" style="background-color:#fea219"></div>
+                            </div>
+                            <div class="video__main">
+                                <iframe class="video--youtube" id="video4"
+                                        src="https://www.youtube.com/embed/cT__eGS_7To?enablejsapi=1&amp;html5=1"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;"
+                                        allowfullscreen=""></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide__item">
+                        <div class="video__box">
+                            <div class="background--decoration">
+                                <div class="circle circle--outer" style="background-color:#ffe02e"></div>
+                                <div class="circle circle--inner" style="background-color:#fea219"></div>
+                            </div>
+                            <div class="video__main">
+                                <iframe class="video--youtube" id="video5"
+                                        src="https://www.youtube.com/embed/88ClJ1bR150?enablejsapi=1&amp;html5=1"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;"
+                                        allowfullscreen=""></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <section class="bn-w4m2 sp--desktop--m">
+            <ul class="banner__wrap">
+                <li class="banner__item"><a href="https://www.etmall.com.tw/Activity/Reg/38" title="滿萬登記抽 千元無敵券"><img
+                        src="promo_3.11cc3b65.png" alt="滿萬登記抽 千元無敵券"></a></li>
+                <li class="banner__item"><a href="https://www.etmall.com.tw/Activity/Reg/38"
+                                            title="消費登記抽 tokuyo按摩椅"><img src="promo_2.ff09e6cb.png"
+                                                                         alt="消費登記抽 tokuyo按摩椅"></a></li>
+                <li class="banner__item"><a href="#serial_top" title="點我查主播序號"><img src="promo_1.a67d30b1.png"
+                                                                                    alt="點我查主播序號"></a></li>
+                <li class="banner__item"><a href="#airpods_top" title="參加活動抽AirPods 2019"><img
+                        src="promo_4.a136a752.png"
+                        alt="參加活動抽AirPods 2019"></a>
+                </li>
+            </ul>
+        </section>
+    </footer>
+    <section class="leader__board">
+        <div class="main__title"><img src="board.65c2be7c.png" alt="人氣銷售排行榜"></div>
+        <div class="ranking__wrap__all">
+            <div class="ranking__wrap">
+                <div class="ranking"><img src="no1.5359f725.png"></div>
+                <div class="contestant__wrap" style="background-image:url(board-1.8449973d.png)">
+                    <div class="contestant__name">茶米Debby</div>
+                    <div class="contestant__score">銷售亮度：<span>172474584</span></div>
+                </div>
+            </div>
+            <div class="ranking__wrap">
+                <div class="ranking"><img src="no2.6133a0b8.png"></div>
+                <div class="contestant__wrap" style="background-image:url(board-2.c233d8dc.png)">
+                    <div class="contestant__name">茶米Debby</div>
+                    <div class="contestant__score">銷售亮度：<span>9527000</span></div>
+                </div>
+            </div>
+            <div class="ranking__wrap">
+                <div class="ranking"><img src="no3.147bac60.png"></div>
+                <div class="contestant__wrap" style="background-image:url(board-3.0f347150.png)">
+                    <div class="contestant__name">茶米Debby</div>
+                    <div class="contestant__score">銷售亮度：<span>9527000</span></div>
+                </div>
+            </div>
+            <div class="ranking__wrap">
+                <div class="contestant__wrap" style="background-image:url(board-4.9c16b151.png)">
+                    <div class="contestant__name">茶米Debby</div>
+                    <div class="contestant__score">銷售亮度：<span>9527000</span></div>
+                </div>
+            </div>
+            <div class="ranking__wrap">
+                <div class="contestant__wrap" style="background-image:url(board-5.09084e78.png)">
+                    <div class="contestant__name">茶米Debby</div>
+                    <div class="contestant__score">銷售亮度：<span>9527000</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="title__wrap" id="langBar">
+        <div class="title__wrap__img"></div>
+    </section>
+</main>
+
+<!-- 宮格 內容 -->
+<section class="build__wrap build--m-frame card--ten-space item--10 wow">
+    <div class="build__item">
+        <a href="https://www.etmall.com.tw/Apple-MacBook-Air-13-3%E5%90%8B-%E7%AD%86%E8%A8%98%E5%9E%8B%E9%9B%BB%E8%85%A6-i5-8G-128G/i/2220751">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img" src="https://media.etmall.com.tw/NXimg/002220/2220751/2220751_XL.jpg" alt="">
+                </div>
+                <div class="item__info">
+                    <p class="item__name margin-bottom-md">Apple MacBook Air 13.3吋 筆記型電腦 i5/8G/128G</p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span>32,900</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="build__item">
+        <a href="https://www.etmall.com.tw/Apple-MacBook-Air-13-3%E5%90%8B-%E7%AD%86%E8%A8%98%E5%9E%8B%E9%9B%BB%E8%85%A6-i5-8G-128G/i/2220751">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img" src="https://media.etmall.com.tw/NXimg/002220/2220751/2220751_XL.jpg" alt="">
+                </div>
+                <div class="item__info">
+                    <p class="item__name margin-bottom-md">Apple MacBook Air 13.3吋 筆記型電腦 i5/8G/128G</p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span>32,900</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="build__item">
+        <a href="https://www.etmall.com.tw/Apple-MacBook-Air-13-3%E5%90%8B-%E7%AD%86%E8%A8%98%E5%9E%8B%E9%9B%BB%E8%85%A6-i5-8G-128G/i/2220751">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img" src="https://media.etmall.com.tw/NXimg/002220/2220751/2220751_XL.jpg" alt="">
+                </div>
+                <div class="item__info">
+                    <p class="item__name margin-bottom-md">Apple MacBook Air 13.3吋 筆記型電腦 i5/8G/128G</p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span>32,900</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="build__item">
+        <a href="https://www.etmall.com.tw/Apple-MacBook-Air-13-3%E5%90%8B-%E7%AD%86%E8%A8%98%E5%9E%8B%E9%9B%BB%E8%85%A6-i5-8G-128G/i/2220751">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img" src="https://media.etmall.com.tw/NXimg/002220/2220751/2220751_XL.jpg" alt="">
+                </div>
+                <div class="item__info">
+                    <p class="item__name margin-bottom-md">Apple MacBook Air 13.3吋 筆記型電腦 i5/8G/128G</p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span>32,900</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="build__item">
+        <a href="https://www.etmall.com.tw/Apple-MacBook-Air-13-3%E5%90%8B-%E7%AD%86%E8%A8%98%E5%9E%8B%E9%9B%BB%E8%85%A6-i5-8G-128G/i/2220751">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img" src="https://media.etmall.com.tw/NXimg/002220/2220751/2220751_XL.jpg" alt="">
+                </div>
+                <div class="item__info">
+                    <p class="item__name margin-bottom-md">Apple MacBook Air 13.3吋 筆記型電腦 i5/8G/128G</p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span>32,900</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="build__item">
+        <a href="https://www.etmall.com.tw/Apple-MacBook-Air-13-3%E5%90%8B-%E7%AD%86%E8%A8%98%E5%9E%8B%E9%9B%BB%E8%85%A6-i5-8G-128G/i/2220751">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img" src="https://media.etmall.com.tw/NXimg/002220/2220751/2220751_XL.jpg" alt="">
+                </div>
+                <div class="item__info">
+                    <p class="item__name margin-bottom-md">Apple MacBook Air 13.3吋 筆記型電腦 i5/8G/128G</p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span>32,900</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="build__item">
+        <a href="https://www.etmall.com.tw/Apple-MacBook-Air-13-3%E5%90%8B-%E7%AD%86%E8%A8%98%E5%9E%8B%E9%9B%BB%E8%85%A6-i5-8G-128G/i/2220751">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img" src="https://media.etmall.com.tw/NXimg/002220/2220751/2220751_XL.jpg" alt="">
+                </div>
+                <div class="item__info">
+                    <p class="item__name margin-bottom-md">Apple MacBook Air 13.3吋 筆記型電腦 i5/8G/128G</p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span>32,900</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="build__item">
+        <a href="https://www.etmall.com.tw/Apple-MacBook-Air-13-3%E5%90%8B-%E7%AD%86%E8%A8%98%E5%9E%8B%E9%9B%BB%E8%85%A6-i5-8G-128G/i/2220751">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img" src="https://media.etmall.com.tw/NXimg/002220/2220751/2220751_XL.jpg" alt="">
+                </div>
+                <div class="item__info">
+                    <p class="item__name margin-bottom-md">Apple MacBook Air 13.3吋 筆記型電腦 i5/8G/128G</p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span>32,900</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="build__item">
+        <a href="https://www.etmall.com.tw/Apple-MacBook-Air-13-3%E5%90%8B-%E7%AD%86%E8%A8%98%E5%9E%8B%E9%9B%BB%E8%85%A6-i5-8G-128G/i/2220751">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img" src="https://media.etmall.com.tw/NXimg/002220/2220751/2220751_XL.jpg" alt="">
+                </div>
+                <div class="item__info">
+                    <p class="item__name margin-bottom-md">Apple MacBook Air 13.3吋 筆記型電腦 i5/8G/128G</p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span>32,900</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="build__item">
+        <a href="https://www.etmall.com.tw/Apple-MacBook-Air-13-3%E5%90%8B-%E7%AD%86%E8%A8%98%E5%9E%8B%E9%9B%BB%E8%85%A6-i5-8G-128G/i/2220751">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img" src="https://media.etmall.com.tw/NXimg/002220/2220751/2220751_XL.jpg" alt="">
+                </div>
+                <div class="item__info">
+                    <p class="item__name margin-bottom-md">Apple MacBook Air 13.3吋 筆記型電腦 i5/8G/128G</p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span>32,900</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</section>
+
+<!-- note 內容 -->
+<section class="sp--960 note" name="note" id="note">
+    <article>
+        <hr>
+
+        <h2>【活動一、百萬之星爭霸戰_使用直播主專屬折價券結帳幫直播主爭取東森十月代言人】</h2>
+        <ol>
+            <li>活動時間：8/12 10:00-8/30 10:00</li>
+            <li>活動說明：活動期間於東森購物網路通路使用任一直播主專屬折價券消費任一商品，且無取消/退貨者，即可幫您喜愛的直播主衝銷售亮度；銷售亮度第一名之直播主，將可成為東森的十月代言人喔！</li>
+            <li>銷售亮度說明 :
+                活動期間內使用直播主專屬折價券消費完成，系統透過加權統計運算之後，即為銷售亮度(若有訂單取消/退貨者，銷售亮度將會扣除不予計算)，同時也會納入直播主於直播活動時的人氣值，後續將會再額外加權統計，實際銷售亮度值預計會在9/18進行結算，屆時直播主之排行順位將依其統計結果為主。※活動期間，銷售排行版每半小時更新一次。</br>
+                <span class="example">範例：小明於東森購物輸入折價券序號【EHS50JJ】兌換直播主專屬折價券並使用折價券結帳完成，且無取消/退貨，即可幫忙J寶衝人氣。</span></li>
+        </ol>
+
+        <a name="airpods_top" id="airpods_top"></a>
+        <h2>【活動二、百萬之星爭霸戰_使用直播主專屬折價券結帳抽AirPods 2019】</h2>
+        <ol>
+            <li>活動時間：8/12 10:00-8/30 10:00</li>
+            <li>活動說明：活動期間於東森購物網路通路使用任一直播主專屬折價券消費任一商品，且無取消/退貨者，即具抽獎資格，限量乙台。一張訂單乙次抽獎機會...依此類推。 消費越多~越有機會得到好禮!!!</li>
+            <li>中獎/兌獎注意事項 : 將於9/18(三)
+                17:00前抽出，兌獎流程將由專人主動與得獎人聯繫。依稅法規定，若得獎人於東森購物兌換贈（獎）品金額達新台幣（下同）1,001元以上未達20,010元，將於次年初開立免扣繳憑單予得獎人並向主管稽徵機關申報；如達20,010元以上者，得獎人應回填兌獎收據單，並由東森購物代為扣繳得獎人應繳納獎品價值10%(外國人20%)之機會中獎所得稅金額後，東森購物始交付獎品並將於次年開立扣繳憑單予得獎人。</br>
+                <span class="example">範例：小明於東森購物輸入折價券序號【EHS50JJ】兌換直播主專屬折價券並使用折價券結帳完成，且無取消/退貨，即可幫忙J寶衝人氣。</span></li>
+        </ol>
+        <a name="serial_top" id="serial_top"></a>
+        <h2>【活動三、百萬之星爭霸戰__使用直播主專屬折價券結帳抽直播主限量拍立得一張】</h2>
+        <ol>
+            <li>活動時間：8/12 10:00-8/30 10:00</li>
+            <li>活動說明：每位直播主有不同專屬的折價券兌換序號，活動期間於東森購物網路通路使用專屬折價券消費任一商品，有機會拿到喜愛直播主拍立得照片。每位直播主限量5張拍立得。</li>
+            <li>折價券說明：使用折價券兌換序號消費任一商品可享50元折扣(部份商品不適用)。無取消/退貨者，將在9/18抽出專屬兌換序號的直播主拍立得，9/19陸續寄出獎品，請耐心等待。</br><span
+                    class="example">範例：小明於東森購物輸入折價券序號【EHS50JJ】兌換直播主專屬折價券並使用折價券結帳完成，將有機會獲得J寶的拍立得一張喔~</span></li>
+        </ol>
+        <!-- rwd table -->
+        <table class="rwd-table">
+            <tr>
+                <th>直播主</th>
+                <th>折價券兌換序號</th>
+            </tr>
+            <tr>
+                <td data-th="直播主">J寶</td>
+                <td data-th="折價券兌換序號">EHS50JJ</td>
+            </tr>
+            <tr>
+                <td data-th="直播主">樂樂</td>
+                <td data-th="折價券兌換序號">EHS50KK</td>
+            </tr>
+            <tr>
+                <td data-th="直播主">愷弟</td>
+                <td data-th="折價券兌換序號">EHS50KID</td>
+            </tr>
+            <tr>
+                <td data-th="直播主">腹語小糖</td>
+                <td data-th="折價券兌換序號">EHS50KANDY</td>
+            </tr>
+            <tr>
+                <td data-th="直播主">欣蒂貝貝</td>
+                <td data-th="折價券兌換序號">EHS50ANGELA</td>
+            </tr>
+        </table>
+        <h2>直播主專屬折價券兌換方式如下:</h2>
+        <!-- 圖片 -->
+        <div class="img--container">
+            <div class="flaot-left"><img src="phone-1.png" alt="">
+                <p>1.點選東森購物APP的會員中心(右下角)<br/>2.點擊我的優惠</p></div>
+            <div class="flaot-left"><img src="phone-2.png" alt="">
+                <p>3.點選折價券</p></div>
+        </div>
+        <div class="img--container">
+            <div class="flaot-left"><img src="phone-3.png" alt="">
+                <p>4.輸入【直播主專屬折扣序號】<br/>5.確認送出</p></div>
+            <div class="flaot-left"><img src="phone-4.png" alt="">
+                <p>6.即可獲得直播主專屬折50折價券</p></div>
+        </div>
+        <h2>【活動四、消費1元，登記抽tokuyo按摩椅】</h2>
+        <ol>
+            <li>活動/登錄期間：8/2 AM 10:00-9/2 AM 10:00</li>
+            <li>活動說明：活動期間於東森/森森購物網全館消費不限金額，於登記頁面點選【我要登錄】且無取消/退貨者，即具tokuyo按摩椅TC-292 1名
+                (市價$34,900)之抽獎資格，限量乙台。一張訂單乙次抽獎機會...依此類推。 消費越多~越有機會得到好禮!!!每位會員消費完成需於活動頁登記才符合活動資格，未登記完成恕不符合活動資格。
+            </li>
+            <li>中獎/兌獎注意事項：將於9/20(五)
+                17:00前抽出，兌獎流程將由專人主動與得獎人聯繫。依稅法規定，若得獎人於東森/森森購物兌換贈（獎）品金額達新台幣（下同）1,001元以上未達20,010元，將於次年初開立免扣繳憑單予得獎人並向主管稽徵機關申報；如達20,010元以上者，得獎人應回填兌獎收據單，並由東森購物代為扣繳得獎人應繳納獎品價值10%(外國人20%)之機會中獎所得稅金額後，東森購物始交付獎品並將於次年開立扣繳憑單予得獎人。
+            </li>
+        </ol>
+        <h2>【活動五、消費滿$10,000登記抽 1,000元】</h2>
+        <ol>
+            <li>活動/登錄期間：8/2 AM 10:00-9/2 AM 10:00</li>
+            <li>
+                活動說明：活動期間消費累積訂單發票金額滿$10,000元(含)以上，並於登記頁面點選【我要登錄】且無取消/退貨者，即具抽獎資格，有機會獲得1張$300元、2張$200元、2張$100元及2張$50元東森/森森無敵折價券，東森與森森購物網合計限量300份。每個會員限得乙次，恕不累贈。消費完成需於活動效期內登記完成才符合活動資格，未登記完成恕不符合活動資格。
+            </li>
+            <li>不適用館別：iPhone、電子票券等專案商品。</li>
+            <li>
+                加給效期：無取消/退貨者將於9/23(一)17:00前抽出，9/24(二)17:00前匯入電子1張$300元、2張$200元、2張$100元及2張$50元東森/森森無敵折價券至會員帳戶內，效期至10/24(四)23:59，逾期失效。</br>
+                <span class="example">範例說明：小華在全館累積消費達$10,000元，並於表單登記，即獲抽獎資格，有機會可拿到1張$300元、2張$200元、2張$100元及2張$50元東森/森森無敵折價券。</span>
+            </li>
+            <li>無敵折價券使用說明：無敵折價券無門檻限制(iPhone、電子票券等專案商品除外)，消費即可於購物車使用，僅可使用一次。
+            </li>
+        </ol>
+    </article>
+</section>
+
+<!--[if IE 9]>
+<script src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106742/flexibility.js"></script>
+<script>flexibility(document.documentElement);</script>
+<![endif]-->
+
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<!--<script src="bundle.d3a5e6a4.js"></script>-->
+<script type="text/javascript" src="langIndex.js"></script>
+<script id="scriptIconFloat"
+        src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1108759/float-icon.js"></script>
+
+<!-- goTop -->
+<script id="generateScript"
+        src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106742/generate.js"></script>
+
+<!-- test -->
+<!--<script src="float-icon.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+</body>
+</html>

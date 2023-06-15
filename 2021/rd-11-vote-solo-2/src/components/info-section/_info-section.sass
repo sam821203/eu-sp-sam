@@ -1,0 +1,66 @@
+.promo__group--info
+  +pos-set(relative, zero)
+  .promo__title
+    margin-left: auto
+    margin-right: auto
+    width: 50%
+    max-width: 288px
+    text-align: center
+    +breakpoint-min($min-width-lg)
+      width: 30%
+
+  .promo__body
+    margin-top: -8%
+    font-size: 16px
+    +breakpoint-min($min-width-lg)
+      margin-top: -50px
+
+  .info__block
+    margin-left: auto
+    margin-right: auto
+    padding: 10% 5% 5%
+    width: 90%
+    background-color: $gray-deep-light
+    border-radius: 15px
+    +breakpoint-min($min-width-lg)
+      border-radius: 40px
+
+    +breakpoint-min($min-width-xl)
+      padding: 80px 40px 10px
+
+  .info__box
+    margin-bottom: 7%
+    +breakpoint-min($min-width-lg)
+      display: flex
+
+  .label__box
+    margin-bottom: 3%
+    +breakpoint-min($min-width-lg)
+      width: 200px
+      font-size: 32px
+
+  .info__label
+    padding-top: 6px
+    padding-bottom: 6px
+    +breakpoint-min($min-width-lg)
+      width: 96%
+
+  ol.info__list
+    margin-left: 3.5%
+    padding-left: 3.5%
+    color: $gray-deep-dark
+    list-style: decimal
+    a
+      display: inline
+      color: $main-color-blue-2
+      text-decoration: underline
+      &:hover,
+      &:active
+        text-decoration: none
+    +breakpoint-min($min-width-lg)
+      font-size: 24px
+
+  .info__text
+    +breakpoint-min($min-width-lg)
+      width: calc(100% - 144px)
+

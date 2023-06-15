@@ -1,0 +1,52 @@
+.sp__wrap:not(.sp__wrap--apple)
+  ~ .bn-slider
+    .bn-slider__wrap
+      padding: 6% 3% 2%
+      background: center 0 url("~components/bn-slider/img/bn-slider-bg.png") no-repeat
+      background-size: 100%
+      .bn-slider__title
+        display: none
+      .bn__slider--pager
+        width: 94%
+      .swiper-pagination-bullet
+        background-color: $gray-deep-light
+
+.sp__wrap--apple
+  ~ .bn-slider
+    .bn-slider__wrap
+      padding: 0% 1.5% 1.5%
+      background-color: $gray-dark
+      .bn__slider--pager
+        width: 97%
+      .swiper-pagination-bullet
+        background-color: $gray-deep-dark
+
+// core
+.bn-slider
+  padding-bottom: 24px
+.bn-slider__title
+  +font-size($fz-16)
+  color: $gray-deep-light
+  font-weight: bold
+  line-height: 180%
+  +breakpoint-min($min-width-lg)
+    +font-size($fz-32)
+    line-height: 200%
+
+.bn-slider__wrap
+  position: relative
+  z-index: map-get($zindex, zero)
+  li
+    width: 50%
+  .bn__slider--pager
+    top: 102%
+    text-align: center
+    .swiper-pagination-bullet
+      margin: 0 4px
+      width: 8px
+      height: 8px
+      outline: 0
+      +breakpoint-min($min-width-lg)
+        margin: 0 7px
+        width: 15px
+        height: 15px

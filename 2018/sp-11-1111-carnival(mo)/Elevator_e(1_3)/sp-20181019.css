@@ -1,0 +1,166 @@
+/* == initial style == */
+
+body {
+    font-family: Helvetica, Arial, 'LiHei', "Microsoft JhengHei", "PMingLiU", "微軟正黑體", "新細明體", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/*img {*/
+    /*display: block;*/
+    /*border: 0*/
+/*}*/
+
+.l--left {
+    float: left;
+}
+
+.l--right {
+    float: right;
+}
+
+.sp--1260 {
+    margin: 0px auto;
+    position: relative;
+    width: 1260px;
+}
+
+/*== nav style ==*/
+.sp-is--hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sp-fixed__nav * {
+    box-sizing: border-box;
+}
+
+/*側選單位置設定:right左右位置+寬度*/
+.sp-fixed__nav {
+    position: relative;
+    overflow-x: auto;
+    z-index: 600;
+    width: 120px;
+    top: 5%;
+    left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.sp-fixed__nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/*側選單子選項設定:文字大小*/
+.sp-fixed__nav li {
+    text-align: center;
+    font-size: 16px;
+}
+
+.sp-fixed__nav {
+    /* 寬度設死有問題 */
+    /*width: 1260px;*/
+    width: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+.sp-fixed__nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sp-fixed__nav ul:after {
+    content: '';
+    clear: both;
+    display: block;
+    zoom: 1;
+}
+
+/*側選單子選項設定:文字大小*/
+.sp-fixed__nav li {
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+    min-width: 80px;
+    max-height: 36px;
+}
+
+.sp-fixed__nav li:hover,
+.sp-fixed__nav li a:hover {
+    background-color: #222222;
+    transition: 2s;
+    color: #fdf450;
+}
+
+.sp-fixed__nav li.active,
+.sp-fixed__nav li.active a {
+    background-color: #222222;
+    transition: 2s;
+    color: #fdd23e;
+}
+
+/*側選單子選項設定:底圖+底色+上下距*/
+.sp-fixed__nav a {
+    display: inline-block;
+    height: 36px;
+    color: #fff;
+    position: static;
+    z-index: 1;
+    line-height: 36px;
+    padding: 1px 5px;
+    min-width: 80px;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+/*側選單表頭設定:底圖+高*/
+.sp-nav__home a {
+    background: url(main_battle.jpg) 0 0 no-repeat;
+    background-size: 80px, 36px;
+    width: 80px;
+    height: 36px;
+    color: #fff;
+    white-space: nowrap;
+    text-indent: 0;
+    overflow: hidden;
+    padding: 1px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.sp-nav__home a:hover:after {
+    background: none;
+}
+
+
+/*}*/
+/*== end of nav style == */
+.sp-nav_ul {
+    /*max-width: 1260px;*/
+    background-color: #494949;
+    color: #fff;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: initial;
+}
+
+
+/*!* 看bar height *!*/
+.pt--body {
+    margin-top: 39px;
+}
+
+/* fix umall "position:fixed" not working */
+.main,.side {
+    transform: none;
+}

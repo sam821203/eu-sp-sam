@@ -1,0 +1,295 @@
+//* 2018-12*/
+//* 立牌*/
+@keyframes lipai-scale
+  0%, 50%, 100%
+    transform: scaleX(1)
+
+  25%, 75%
+    transform: scaleX(-1)
+
+//* 誘因hover*/
+@keyframes incentive-scale
+  0%, 100%
+    transform: scaleX(1)
+
+  50%
+    transform: scaleX(-1)
+
+//* 誘因hover 彈跳*/
+@keyframes incentive-hover
+  0%, 100%
+    transform: scale(0.9) translate(-5%, 0)
+  45%, 55%
+    transform: scale(0.9) translate(-5%, -50px)
+
+//* 摩天輪*/
+@keyframes ferris-rotate
+  from
+    transform: rotate(0deg)
+  50%
+    transform: rotate(180deg)
+  to
+    transform: rotate(360deg)
+
+//* 棒棒糖 */
+@keyframes lollipop-rotate
+  0%
+    transform: rotate(0deg) scale(1)
+  50%
+    transform: rotate(180deg) scale(1.1)
+  100%
+    transform: rotate(360deg) scale(1)
+
+
+//* 盒子打開 */
+@keyframes box-open
+  0%
+    transform: rotateX(53deg)
+    transform-origin: bottom
+  20%,24%
+    transform: rotateX(43deg)
+    transform-origin: bottom
+  22%,26%
+    transform: rotateX(48deg)
+    transform-origin: bottom
+  100%
+    transform: rotateX(0)
+    transform-origin: bottom
+
+//* title 往上 */
+@keyframes title-up
+  0%
+    transform: translateY(calc(100vw * 0.15))
+  70%,80%
+    transform: translateY(0) scale(1.1)
+  75%,100%
+    transform: translateY(0) scale(1)
+
+@keyframes title-up-desktop
+  0%
+    transform: translateY(190px)
+  70%,80%
+    transform: translateY(0) scale(1.1)
+  75%,100%
+    transform: translateY(0) scale(1)
+
+
+@keyframes partial__sub--hover
+  0%
+    transform: translate(0,0) rotate(0)
+  50%
+    transform: translate(10px,10px) rotate(10deg)
+  100%
+    transform: translate(15px,15px) rotate(-10deg)
+
+
+@keyframes opacify-none
+  0%, 70%
+    opacity: 1
+  100%
+    opacity: 0
+
+//* process*/
+@keyframes lightSpot-move
+  0%
+    transform: translateX(-40px)
+    filter: brightness(500%)
+    opacity: .8
+
+  20%
+    transform: translateX(73px)
+    filter: brightness(500%)
+    opacity: .8
+
+  40%
+    transform: translateX(220px)
+    filter: brightness(500%)
+    opacity: .8
+
+  60%
+    transform: translateX(390px)
+    filter: brightness(500%)
+    opacity: .8
+
+  80%
+    transform: translateX(525px)
+    filter: brightness(500%)
+    opacity: .8
+
+  100%
+    transform: translateX(615px)
+    filter: brightness(100%)
+    opacity: .8
+
+@keyframes card-twinkling
+  0%
+    filter: brightness(500%)
+
+  25%
+    filter: brightness(100%)
+
+  50%
+    filter: brightness(100%)
+
+  75%
+    filter: brightness(100%)
+
+  100%
+    filter: brightness(100%)
+
+//* 閃爍*/
+@keyframes breathing-light
+  0%, 100%
+    filter: brightness(100%)
+
+  25%
+    filter: brightness(200%) blur(2px)
+
+  50%
+    filter: brightness(300%) blur(4px)
+
+  75%
+    filter: brightness(200%) blur(2px)
+
+@keyframes cycle-flash
+  0%
+    opacity: 1
+    filter: contrast(200%)
+
+  100%
+    opacity: .8
+    cursor: pointer
+
+//* 2019-01*/
+@keyframes self-rotate
+  10%, 30%, 70%, 90%
+    transform: rotate(15deg)
+
+  50%
+    transform: rotate(-15deg)
+
+  60%
+    transform: rotate(15deg)
+
+  0%, 20%, 40%, 80%, 100%
+    transform: rotate(-15deg)
+
+@keyframes left-move
+  0%, 100%
+    opacity: 1
+    transform: translateX(0)
+
+  25%
+    transform: translateX(50px)
+
+  75%
+    transform: translateX(100px)
+
+@keyframes lion-l-move
+  0%, 50%, 100%
+    transform: translateX(-150px)
+
+  60%, 70%
+    transform: translateX(0)
+
+  75%
+    transform: translateX(-30px)
+
+@keyframes lion-r-move
+  0%, 50%, 100%
+    transform: translateX(130px)
+    -webkit-transform: translateX(130px)
+
+  60%, 70%, 75%
+    transform: translateX(0)
+    -webkit-transform: translateX(0)
+
+@keyframes car-run
+  0%
+    left: 0
+  10%, 13%
+    left: 15%
+    opacity: 1
+  40%
+    left: 70%
+    opacity: 1
+  100%
+    left: 200%
+
+@keyframes candle-light
+  0%
+    transform: translate(-20px, 50px) scale(0)
+
+  3%
+    transform: translate(0, 0) scale(0.3)
+
+  8%, 100%
+    transform: translate(0, 0) scale(1)
+
+@keyframes flash-title
+  0%
+    background-position-y: 4870px
+
+  5%
+    background-position-y: 4870px
+
+  7%
+    background-position-y: 0
+
+  100%
+    background-position-y: 0
+
+@keyframes title-effect
+  0%
+    opacity: 1
+    transform: scale(3.5)
+
+  10%, 40%, 45%, 53%, 100%
+    opacity: 1
+    transform: scale(1)
+
+  43%, 50%
+    opacity: 1
+    transform: scale(1.2)
+
+@keyframes title-mask
+  0%, 100%
+    opacity: 1
+  20%
+    filter: brightness(300%)
+  25%, 50%
+    opacity: 0
+    filter: brightness(100%)
+
+@keyframes pig-move
+  20%
+    transform: rotate(0) translate(0, 15%)
+  40%
+    transform: rotate(-5deg) translate(0, 6%)
+  50%
+    transform: rotate(5deg) translate(0, 6%)
+  60%
+    transform: rotate(-5deg) translate(0, 6%)
+  0%, 100%
+    transform: rotate(0deg) translate(0, 0)
+
+@keyframes description-start
+  0%, 40%
+    opacity: 0
+    transform: translate(0)
+  50%, 60%, 70%, 80%, 90%
+    transform: translate(-10px, 0)
+  45%, 55%, 65%, 75%, 85%, 95%
+    transform: translate(10px, 0)
+  100%
+    transform: none
+    opacity: 1
+
+@keyframes description-shake
+  10%, 30%, 50%, 70%, 90%
+    transform: translate(-10px, 0)
+  20%, 40%, 60%, 80%
+    transform: translate(10px, 0)
+  0%, 100%
+    transform: none
+    opacity: 1

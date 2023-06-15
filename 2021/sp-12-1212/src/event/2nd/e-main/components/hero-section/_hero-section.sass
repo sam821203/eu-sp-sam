@@ -1,0 +1,240 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+#body
+  #WebGL-output
+    +pos-set(absolute, zero)
+    // +breakpoint-min($min-width-xl)
+      // +pos-set(fixed, zero)
+
+.decor--stage
+  +pos-set(absolute, under, 3.6%, 0%)
+.hero__wrap
+  +pos-set(relative, zero)
+  overflow: hidden
+  .hero__decoration
+    // display: none
+    +breakpoint-min($min-width-xxl)
+      display: block
+      +pos-set(absolute, zero)
+      
+    .decor--city
+      width: 100%
+      display: none
+      +breakpoint-min($min-width-xxl)
+        display: block
+        // +pos-set(absolute, zero)
+      img
+        &:first-child
+          +pos-set(absolute, under)
+          top: -3%
+          left: 0%
+          width: 37vw
+          animation: fadeInTopRight .5s .3s linear 1
+          +breakpoint-min($min-width-5xl)
+            width: 34vw
+        &:last-child
+          +pos-set(absolute, under)
+          top: -5%
+          right: 0%
+          width: 36vw
+          animation: fadeInTopLeft .5s .3s linear 1
+          +breakpoint-min($min-width-5xl)
+            width: 32vw
+    .decor--left
+      display: none
+      +pos-set(absolute, base, 40%, 0%)
+      // max-width: 400px
+      width: 25%
+      transform: rotate(30deg)
+      animation: fadeInTopRight-2 .5s .3s linear 1, up-and-down-dog 2s linear infinite
+      +breakpoint-min($min-width-xxl)
+        display: block
+        top: 45%
+        left: calc(50% - 670px)
+        width: 300px
+    .decor--ground
+      display: none
+      +pos-set(absolute, zero, 55%, 50%)
+      transform: translateX(-50%)
+      width: 90%
+      +breakpoint-min($min-width-xxl)
+        display: block
+        width: 70%
+      +breakpoint-min($min-width-5xl)
+        width: 50%
+
+    .decor--sky
+      +pos-set(absolute, zero)
+      margin: 0
+      // max-width: 1160px
+      animation: silde-down 1s 1s linear 1, light-up 3s linear infinite
+      +breakpoint-min($min-width-xl)
+        margin: 0 30%
+      img
+        &:first-child
+          display: none
+          +breakpoint-min($min-width-xl)
+            display: block
+        &:last-child
+          +breakpoint-min($min-width-xl)
+            display: none
+    .light__wrap
+      perspective: 250px
+      .decor--light //共用拉出來
+        +pos-set(absolute, zero, 0%, 0%)
+        transform-origin: 50% 15%
+        transform-style: preserve-3d
+        opacity: 0
+      .decor--light-front
+        animation: scale-large 2s ease-in-out 1 both
+      .decor--light-back
+        // animation: scale-large-2 3s 1.5s ease-in-out infinite both
+
+        
+
+  .hero__zone
+    +aspect-ratio(960, 1114)
+    margin-top: 16%
+    +breakpoint-min($min-width-xl)
+      margin-top: 13%
+    .hero__stage
+      +bg-set(url(event/2nd/e-main/components/hero-section/stage-hero-section.png), 100%)
+      animation: slide-in 1s .3s linear 1
+      +breakpoint-min($min-width-xl)
+        background-size: 90%
+    .hero__title
+      animation: fade-down-in 1s .3s linear 1, up-and-down-2 4s 2.3s linear infinite
+      pointer-events: none
+      .hero__title--main
+        +pos-set(absolute, zero, -14%, 50%)
+        width: 80%
+        transform: translateX(-50%)
+        +breakpoint-min($min-width-xl)
+          top: -12%
+          width: 70%
+      .hero__title--sub
+        +pos-set(absolute, zero, 20%, 50%)
+        transform: translateX(-50%)
+        width: 55%
+        height: 10%
+        +breakpoint-min($min-width-xl)
+          top: 17.5%
+          left: 51%
+          width: 51%
+
+
+
+
+
+    
+
+
+@import event/1st/e-main/components/hero-section/hero-event/_hero-event
+
+@keyframes up-and-down-2
+  0%
+    transform: translateY(0%)
+  50%
+    transform: translateY(2%)
+  to
+    transform: translateY(0%)
+
+@keyframes slide-in
+  0%
+    opacity: 0
+    transform: scale(.3) translateY(-10%)
+  100%
+    opacity: 1
+    transform: scale(1) translateY(0%)
+
+@keyframes fade-down-in
+  0%
+    transform: translateY(-50%)
+    opacity: 0
+  to
+    transform: translateY(0%)
+    opacity: 1
+
+
+@keyframes fadeInTopRight
+  0%
+    opacity: 0
+    transform: translate3d(50%, -30%, 0)
+  to
+    opacity: 1
+    transform: translateZ(0)
+
+@keyframes fadeInTopLeft
+  0%
+    opacity: 0
+    transform: translate3d(-50%, -30%, 0)
+  to
+    opacity: 1
+    transform: translateZ(0)
+
+
+@keyframes fadeInTopRight-2
+  0%
+    opacity: 0
+    transform: translate3d(30%, -30%, 0) scale(.3)
+  to
+    opacity: 1
+    transform: translateZ(0) scale(1)
+
+@keyframes fadeInTopLeft-2
+  0%
+    opacity: 0
+    transform: translate3d(-30%, -30%, 0) scale(.3)
+  to
+    opacity: 1
+    transform: translateZ(0) scale(1)
+
+@keyframes scale-large
+  0%
+    transform: scale(0)
+    opacity: 0
+  10% 
+    opacity: 1
+  90%
+    transform: scale(1.3) rotateX(5deg) 
+    opacity: 0
+  100%
+    // transform: scale(1.2)
+    opacity: 0
+
+
+@keyframes scale-large-2
+  0%
+    transform: scale(0)
+    opacity: 0
+  10% 
+    opacity: 1
+  90%
+    transform: scale(1.1)
+    opacity: 0
+  100%
+    // transform: scale(1.2)
+    opacity: 0
+
+@keyframes up-and-down-dog
+  0%
+    transform: translateY(3%)
+  50%
+    transform: translateY(-3%)
+  to
+    transform: translateY(3%)
+
+@keyframes silde-down
+  0%
+    transform: translateY(-100%)
+  100%
+    transform: translateY(-0%)
+
+@keyframes light-up
+  0%
+    filter: brightness(1)
+  50%
+    filter: brightness(1.3)
+  100%
+    filter: brightness(1)

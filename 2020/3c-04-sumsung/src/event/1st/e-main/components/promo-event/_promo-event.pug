@@ -1,0 +1,54 @@
+- 
+  var promoDataE = [
+    {
+      link: "#note-1", 
+      imgSrc: "~event/1st/e-main/components/promo-event/items/promo-1.jpg", 
+      alt: "3/20 00:00 - 4/30 23:59 登錄再送無限閃充行動電源"
+    }, 
+    {
+      link: "#note-2", 
+      imgSrc: "~event/1st/e-main/components/promo-event/items/promo-2.png", 
+      alt: "滿萬登記送5%東森幣"
+    }, 
+    {
+      link: "#note-3", 
+      imgSrc: "~event/1st/e-main/components/promo-event/items/promo-3.png", 
+      alt: "銀行回饋最高$3000"
+    },
+    {
+      link: "#note-4", 
+      imgSrc: "~event/1st/e-main/components/promo-event/items/promo-4.png", 
+      alt: "好禮多選一"
+    }, 
+  ]
+
+- 
+  var promoDataU = [
+    {
+      link: "#note", 
+      imgSrc: "~event/1st/u-main/components/promo-event/items/promo-1.jpg", 
+      alt: "3/20 00:00 - 4/30 23:59 登錄再送無限閃充行動電源"
+    }, 
+    {
+      link: "#note", 
+      imgSrc: "~event/1st/u-main/components/promo-event/items/promo-2.png", 
+      alt: "銀行回饋最高$3000"
+    },
+    {
+      link: "#note", 
+      imgSrc: "~event/1st/u-main/components/promo-event/items/promo-3.png", 
+      alt: "好禮多選一"
+    }, 
+  ]
+ 
+- var promoData = isU ? promoDataU : promoDataE
+
+.promo__event
+  ul.event__wrap
+    //- 固定位置模式
+    each data, index in promoData
+      li
+        a(id= anchorId, href= data.link, title= data.alt)
+          img(id= imgId, src= data.imgSrc, alt= data.alt)
+
+    

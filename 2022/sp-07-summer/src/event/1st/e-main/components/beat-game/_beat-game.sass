@@ -1,0 +1,83 @@
+.promo__group--beat
+  +pos-set(relative, zero)
+  .decor__wrap
+    .decor__item
+      &--click
+        +pos-set(absolute, base, 52%, 9.5%)
+        width: 21%
+        pointer-events: none
+        transform-origin: bottom
+        animation: click-wobble 3.5s infinite
+        +breakpoint-min($min-width-xl)
+          left: calc(50% - 386px)
+          width: auto
+  .promo__wrap
+    +aspect-ratio(960, 1207)
+    .promo__zone
+      padding: 30% 5% 0
+      +bg-set(url(event/1st/e-main/components/beat-game/bg-beat-game.png), 100% auto)
+      .promo__block
+        cursor: pointer
+        &.shakeX
+          animation: shakeX .1s linear 1
+        .snow-man
+          margin: -8% auto 0
+          width: 70%
+          &.hide
+            display: none
+          &.disabled
+            pointer-events: none
+      .popup__wrap
+        display: none
+        +pos-set(absolute, base, 0%, 0%)
+        height: 100%
+        // background-color: $gray-deep-dark-opacity
+        &.active
+          display: block
+          animation: showItem .4s linear both
+        .popup__block
+          margin: 24% auto
+          width: 82%
+
+@keyframes shakeX
+  0%
+    transform: translateX(2%)
+  50%
+    transform: translateX(-2%)
+  100%
+    transform: translateX(2%)
+
+@keyframes showItem
+  0%
+    transform: scale(.3)
+    opacity: 0
+  60%
+    opacity: 1
+    transform: scale(.8)
+    filter: brightness(2)
+  100%
+    transform: scale(1)
+    filter: brightness(1)
+
+@keyframes click-wobble
+  from
+    -webkit-transform: translate3d(0, 0, 0)
+    transform: translate3d(0, 0, 0)
+  2%
+    -webkit-transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg)
+    transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg)
+  4%
+    -webkit-transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 1deg)
+    transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 3deg)
+  8%
+    -webkit-transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, 1deg)
+    transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -3deg)
+  12%
+    -webkit-transform: translate3d(0%, 0, 0) rotate3d(0, 0, 1, 0deg)
+    transform: translate3d(0%, 0, 0) rotate3d(0, 0, 1, 0deg)
+  14%
+    -webkit-transform: translate3d(0, 0, 0)
+    transform: translate3d(0, 0, 0)
+  to
+    -webkit-transform: translate3d(0, 0, 0)
+    transform: translate3d(0, 0, 0)

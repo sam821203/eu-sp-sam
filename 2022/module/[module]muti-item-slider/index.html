@@ -1,0 +1,354 @@
+<meta charset="UTF-8">
+<meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!-- ============== 輪播 start ============== -->
+<link rel="stylesheet" href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116205/swiper.min.css">
+<!-- ============== 輪播 end ============== -->
+<!-- 共用CSS -->
+<link rel="stylesheet" href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116205/animate.min.css">
+<link rel="stylesheet" href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.css">
+<!-- [電梯步驟1] 電梯CSS，非線上版可以在裡面換顏色/圖片名稱 -->
+<link rel="stylesheet" href="sp-elevator.css">
+<!-- [電梯步驟1] 電梯CSS END -->
+<style>
+    body {
+        /* 自行修正背景顏色 */
+        background-color: #8b0101;
+    }
+
+    /* 調整logo位置大小 */
+    /* .logo {
+      top: 1%;
+      left: 1%;
+      width: 30%;
+      max-width: 220px;
+    } */
+
+    /* 連結測試 */
+    /* .sp__visual a{
+      filter: brightness(500%);
+    } */
+
+    /* 切片測試 */
+    /* .visual__fragment::before {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      border: 1px solid #00f;
+      pointer-events: none;
+    } */
+
+    /* 設定全畫面背景 */
+    /* .sp__main {
+      background: url(bg.jpg) center 0 no-repeat;
+    } */
+
+    /* 大網各區塊背景  */
+    @media screen and (min-width: 960px) {
+        .visual__block1 {
+            background: center 0 url("bg.jpg") no-repeat;
+        }
+    }
+
+    /*-- 動畫小物件 --*/
+    .animate__wrap {
+        position: relative;
+        z-index: 1;
+    }
+
+    /*-- 手機版：
+            1. 設定物件距離左邊與上邊的位置，單位可以使用"%"或"vw"
+            2. width 建議電腦版可以使用auto，手機版則可使用%調整
+     --*/
+    .animate__wrap .animate__obj--01 {
+        position: absolute;
+        top: 35vw;
+        left: 24vw;
+        width: 10%;
+    }
+
+    .animate__wrap .animate__obj--02 {
+        position: absolute;
+        top: 36vw;
+        left: 3vw;
+        width: 20%;
+    }
+
+    .animate__wrap .animate__obj--03 {
+        position: absolute;
+        top: 3vw;
+        left: 69vw;
+        width: 19%;
+    }
+
+    /*-- 電腦版：
+            設定物件距離左邊與上邊的位置，單位可以使用"px"，左邊可以挑整clac()後面的px值
+            width 建議電腦版可以使用auto，手機版則可使用%調整
+     --*/
+    @media screen and (min-width: 960px) {
+        .animate__wrap .animate__obj--01 {
+            top: 322px;
+            left: calc(50% - 236px);
+            width: auto;
+        }
+
+        .animate__wrap .animate__obj--02 {
+            top: 334px;
+            left: calc(50% - 471px);
+            width: auto;
+        }
+
+        .animate__wrap .animate__obj--03 {
+            top: 55px;
+            left: calc(50% - -193px);
+            width: auto;
+        }
+    }
+
+    /* 輪播CSS start */
+    .sp__main {
+        position: relative;
+        z-index: 0;
+    }
+    .promo__slider {
+        position: absolute;
+        z-index: 1;
+        top: 8.7%;
+        left: 0;
+        width: 100%;
+        max-width: 960px;
+        overflow: hidden;
+    }
+    .promo__slider .slide__block {
+        display: flex;
+    }
+    @media screen and (min-width: 960px) {
+        .promo__slider {
+            left: calc(50% - 480px);
+            overflow: visible;
+        }
+    }
+    /* 輪播CSS end */
+</style>
+<!-- [電梯步驟2] 電梯 html -->
+<div class="elevatorHome js--main--dialog" id="elevatorHome"></div>
+<div class="navRightBar" id="navRightBar" style="display: none;"></div>
+<!-- 右電梯關閉，需打開把display:none拿掉
+  測試右邊電梯是否正確方法：打開 <div data-title="a1"></div>，如果畫面出現a1代表正確，右電梯需要跳錨點連到宮格，請企劃自行在宮格的替代文字裡面填寫文字 -->
+<!-- [電梯步驟2] 電梯 html END -->
+<!-- 旅遊專用bar區域 start 不要就移除-->
+<div id="barHome"></div>
+<!-- 旅遊專用bar區域 end-->
+<div id="iconHome" class="layout--main home--icon"></div>
+<div id="spWrap" class="sp__wallper">
+    <!-- 動畫小物件 -->
+    <div class="animate__wrap">
+        <img class="animate__obj--01 animate__animated animate__fadeInDown" src="m-1.png" alt="leaf">
+        <a href="#"><img class="animate__obj--02 animate__animated animate__heartBeat animate__infinite animate__slow"
+                src="m-2.png" alt="集貨卷"></a>
+        <img class="animate__obj--03 animate__animated animate__flash animate__infinite animate__slow" src="m-3.png"
+            alt="new">
+        <!--<img class="animate__obj--01" src="圖片檔名" alt="圖片提示文字">-->
+        <!--<img class="animate__obj--02" src="圖片檔名" alt="圖片提示文字">-->
+        <!--<img class="animate__obj--03" src="圖片檔名" alt="圖片提示文字">-->
+        <!-- 如果有多組物件，可以複製命名animate__obj--0{數字} css 也複製一份就可以一直往下生 -->
+    </div>
+    <!-- 主視覺 -->
+    <main class="sp__main">
+        <div class="layout--main home--logo">
+            <a href="https://www.etmall.com.tw"><img class="logo" src="ehs-logo.png" alt="東森購物"></a>
+        </div>
+        <section class="sp__visual visual__block1">
+            <div class="layout--main">
+                <ul class="visual--auto clearfix">
+                    <li class="visual__fragment width--auto">
+                        <img src="index_01.gif" alt="H1">
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <img src="index_02.jpg">
+                    </li>
+                    <!-- 第一區 -->
+                    <li class="visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/gp/132667" title="華歌爾">
+                            <img src="index_03.jpg" alt="華歌爾">
+                        </a>
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/gp/105377" title="白牌內衣">
+                            <img src="index_04.jpg" alt="白牌內衣">
+                        </a>
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <a href="#" title="女裝">
+                            <img src="index_05.jpg" alt="女裝">
+                        </a>
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/gp/136418" title="機能">
+                            <img src="index_06.jpg" alt="機能">
+                        </a>
+                    </li>
+                    <!-- 第二區 -->
+                    <li class="visual__fragment width--auto">
+                        <img src="index_07.jpg" alt="H1">
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/gp/141020" title="男內">
+                            <img src="index_08.jpg" alt="男內">
+                        </a>
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/gp/113734" title="白內">
+                            <img src="index_09.jpg" alt="白內">
+                        </a>
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/gp/136240" title="專櫃">
+                            <img src="index_10.jpg" alt="專櫃">
+                        </a>
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/gp/141374" title="機能">
+                            <img src="index_11.jpg" alt="機能">
+                        </a>
+                    </li>
+                    <!-- 第三區 -->
+                    <li class="visual__fragment width--auto">
+                        <img src="index_12.jpg" alt="H1">
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/gp/111643" title="童裝">
+                            <img src="index_13.jpg" alt="童裝">
+                        </a>
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/gp/126307" title="襪">
+                            <img src="index_14.jpg" alt="襪">
+                        </a>
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/gp/129938" title="專櫃服飾">
+                            <img src="index_15.jpg" alt="專櫃服飾">
+                        </a>
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/gp/104158" title="男內">
+                            <img src="index_16.jpg" alt="男內">
+                        </a>
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/p/84821" title="睡衣">
+                            <img src="index_17.jpg" alt="睡衣">
+                        </a>
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/gp/141769" title="運動鞋">
+                            <img src="index_18.jpg" alt="運動鞋">
+                        </a>
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/c3/151534" title="泳衣">
+                            <img src="index_19.jpg" alt="泳衣">
+                        </a>
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <a href="#" title="女裝">
+                            <img src="index_20.jpg" alt="女裝">
+                        </a>
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/p/136675" title="男裝">
+                            <img src="index_21.jpg" alt="男裝">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- 自適應多品翻轉輪播 -->
+        <!-- 注意有使用 width--auto 自動計算寬度功能，因此若是每張切片大小不一樣只能限定自動寬度禮包 -->
+        <!-- 一般禮包多品的slide內每張切片大小必須相等 -->
+        <div class="promo__slider">
+            <div class="swiper-container" id="sliderMany">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                        <div class="slide__block">
+                            <div class="slide__box width--auto">
+                                <a href="https:www.etmall.com.tw">
+                                    <img src="slide-1-1.png" alt="">
+                                </a>
+                            </div>
+                            <div class="slide__box width--auto">
+                                <a href="https://www.google.com/">
+                                    <img src="slide-1-2.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="slide__block">
+                            <div class="slide__box">
+                                <a href="">
+                                    <img src="slide-2.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="slide__block">
+                            <div class="slide__box">
+                                <a href="">
+                                    <img src="slide-3.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+</div>
+<!--<script src="https://polyfill.io/v3/polyfill.min.js"></script>-->
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<!-- ============== 輪播 start ============== -->
+<script src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116205/swiper.min.js"></script>
+<!-- ============== 輪播 end ============== -->
+<!-- <script src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116205/lazyload.js"></script> -->
+<!-- 東森浮水印
+<script id="scriptIconFloat"
+        src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107916/float-icon.js"></script> -->
+<!-- 森森浮水印
+<script id="scriptIconFloat" src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1104381/float-icon.js"></script> -->
+<!-- 旅遊置頂bar
+<script id="scriptAddBn" src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106742/add-bn.js"></script> -->
+<!-- 共用JS -->
+<script id="generateScript"
+    src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.js"></script>
+<!--[電梯步驟3] 電梯 JS
+    data-elevator.js 是填寫下方欄位資料的js
+    sp-elevator.js   是共用的線上js
+-->
+<script src="data-elevator.js"></script>
+<script src="https://media.etmall.com.tw/sp/10382/sp-elevator.js"></script>
+<!-- [電梯步驟3] 電梯 JS END -->
+<!-- ============== 輪播 start ============== -->
+<script>
+    var sliderMany = new Swiper( "#sliderMany", {
+        // autoplay: {
+        //     delay: 2000,
+        //     disableOnInteraction: false,
+        // },
+        // 翻牌開始
+        effect: 'flip',
+            flipEffect: {
+            rotate: 30,
+            slideShadows: false,
+        },
+        grabCursor: true,
+        loop: true,
+        speed: 1000,
+    } );
+</script>
+<!-- ============== 輪播 end ============== -->

@@ -1,0 +1,62 @@
+.promo__group--bn-section
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__item
+    &--bg
+      +pos-set(absolute, zero, 6%, 2.5%)
+      width: 95%
+      +breakpoint-min($min-width-xl)
+        top: 50px
+        left: calc(50% - 470px)
+    &--title
+      +pos-set(absolute, base, 2%)
+      right: 14%
+      width: 55%
+      max-width: 538px
+      +breakpoint-min($min-width-xl)
+        top: 10px
+        left: calc(50% - 200px)
+    &--left
+      +pos-set(absolute, zero, 0%, 15%)
+      width: 22%
+      &.active
+        animation: shakeY 2s linear infinite
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 350px)
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .promo__wrap
+    +bg-set(url("~event/2nd/e-main/components/bn-section/bg-bn-section.png"), 100%)
+    margin-top: 17.5%
+    +breakpoint-min($min-width-xl)
+      margin-top: 160px
+    .promo__zone
+      +aspect-ratio(946, 519)
+      .promo__block
+        padding: 3% 5% 0
+        // +breakpoint-min($min-width-xl)
+        //   padding-right: 
+        //   padding-left: 
+        .promo__box
+          cursor: pointer
+          &:hover
+            transition: all 0.6s ease
+            transform: translateY(-1%)
+            filter: brightness(1.2)
+
+@keyframes rotateOut
+  0%
+    transform: scale(.3) rotate(0deg)
+    opacity: 1
+  100%
+    transform: scale(1) rotate(360deg)
+    opacity: 1
+
+@keyframes shakeY
+  0%, to
+    transform: translateZ(0)
+  10%, 30%, 50%, 70%, 90%
+    transform: translate3d(0, 0px, 0)
+  20%, 40%, 60%, 80%
+    transform: translate3d(0, 5px, 0)
+    filter: brightness(120%)

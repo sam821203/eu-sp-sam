@@ -1,0 +1,74 @@
+-
+  var promoSlider2Item = [
+    {
+      link: "https://www.etmall.com.tw/c3/45113" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-2/item/item-p-1.png",
+      alt: "安美諾美白霜75折up",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/162690" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-2/item/item-p-2.png",
+      alt: "船井女神購物節滿額送",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/162690" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-2/item/item-p-3.png",
+      alt: "護得住呵護妳買就送",
+    },
+    {
+      link: "https://www.etmall.com.tw/bs/162004" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-2/item/item-p-4.png",
+      alt: "美味好油滿額贈",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/10019/m/index.html" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-2/item/item-p-5.png",
+      alt: "傢俱寢飾下單抽好禮",
+    },
+    {
+      link: "" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-2/item/item-p-6.png",
+      alt: "CITIZEN 聯名限定錶款",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/13089/m/index.html" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-2/item/item-p-7.png",
+      alt: "你吃紅做頭家",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/162612" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-2/item/item-p-8.png",
+      alt: "流行女裝萬件出清",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/134605" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-2/item/item-p-9.png",
+      alt: "tokuyo全館88折起",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/162587" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-2/item/item-p-10.png",
+      alt: "chicco指定送好禮",
+    },
+    {
+      link: "https://www.etmall.com.tw/p/162241" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-2/item/item-p-11.png",
+      alt: "DV滿額送好禮",
+    },
+  ]
+
+
+section.promo__group.promo__group--promo-slider--sec(data-title="必buy推薦")
+  .layout--main
+    .promo__wrap
+      .decor__wrap.full-parent
+        .promo__decor#decorPromoSlider2
+          img(src="event/1st/e-main/components/promo-slider-2/decor-promo-slider-2.png", alt="")
+      .promo__zone
+        .promo__block.full-parent
+          .promo__slider.swiper-container#promoSlider2Item
+            ul.swiper-wrapper
+              each data in promoSlider2Item
+                li.swiper-slide
+                  a(href= data.link, title=data.alt)
+                    img(src= data.imgSrc, alt=data.alt)

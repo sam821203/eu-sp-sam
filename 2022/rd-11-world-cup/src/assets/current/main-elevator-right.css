@@ -1,0 +1,269 @@
+/* 校正iphone有瀏海的機型 */
+.safe-area-padding-bottom {
+    /* 在 iphone x + 中本句才會生效 */
+    padding-top: constant(safe-area-inset-top);
+    padding-top: env(safe-area-inset-top);
+    padding-right: constant(safe-area-inset-right);
+    padding-right: env(safe-area-inset-right);
+    padding-bottom: calc(constant(safe-area-inset-bottom));
+    padding-bottom: calc(env(safe-area-inset-bottom));
+    padding-left: constant(safe-area-inset-left);
+    padding-left: env(safe-area-inset-left);
+}
+/* == nav style ==*/
+
+.sp-is--hide {
+    opacity: 0;
+    pointer-events: none;
+}
+/* ==  !* 看bar height *!  == */
+
+/* ==
+ ** [右側電梯]單頁錨點 code
+  == */
+
+.sp-right__nav * {
+    box-sizing: border-box;
+}
+
+/* == 側選單位置設定:right左右位置+寬度 == */
+
+.sp-right__nav {
+    position: relative;
+    z-index: 600;
+    top: 0;
+    right: 0;
+    left: 0;
+    overflow-x: auto;
+    width: 100%;
+    margin: auto;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+.sp-right__nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sp-right__nav ul:after {
+    content: '';
+    clear: both;
+    display: block;
+    zoom: 1;
+}
+
+/* == end of nav style == */
+
+/* ==  mobile  == */
+
+@media screen and (max-width: 959px) {
+    /* ==
+     ** [右側電梯]單頁錨點 code
+      == */
+    .sp-nav-right_ul {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        overflow-x: auto;
+        width: 100%;
+        background: rgba(0, 0, 85, 0.72);
+        color: #fff;
+    }
+
+    /* == 側選單子選項設定:文字大小 == */
+    .sp-right__nav li {
+        display: inline-block;
+        text-align: center;
+        font-size: 16px;
+        /* min-width: 87px; */
+        max-height: 39px;
+        overflow-y: hidden;
+    }
+
+    /* == 側選單子選項設定:底圖+底色+上下距 == */
+    .sp-right__nav a {
+        display: inline-block;
+        position: static;
+        z-index: 1;
+        overflow: hidden;
+        min-width: 87px;
+        height: 39px;
+        line-height: 39px;
+        /* padding: 1px 5px; */
+        text-decoration: none;
+        /* ==  custom  == */
+        color: #fff;
+    }
+
+    /* ==  側選單表頭設定:底圖+高  == */
+    .sp-right__nav li.sp-bav_top_img {
+        min-width: 0;
+    }
+
+    .navRightBar {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        z-index: 102;
+    }
+
+    /* ==  修正滾軸 + 隱藏desktop按鈕  == */
+    .sp-nav-right_ul::-webkit-scrollbar, .sp-right__nav li.sp-nav-right__app, .sp-right__nav li.sp-nav-right__top, .sp-fixed__nav li.sp-nav__bottom {
+        display: none;
+    }
+
+    /* ==  app error  == */
+    .n-sp__box {
+        overflow: visible;
+    }
+
+
+    #spNavRightUl > li.sp-nav-right__record.jsRecordList{
+        display: none;
+
+    }
+
+    #spNavRightUl > li:nth-child(2) > a > img{
+        padding: 0 4px;
+        vertical-align: middle;
+    }
+
+    #spNavRightUl > li:nth-child(2) > a > span{
+        vertical-align: middle;
+    }
+}
+
+
+@media screen and (min-width: 960px) {
+    /* == 側選單位置設定:right左右位置+寬度 == */
+    .sp-right__nav {
+        position: fixed;
+        z-index: 600;
+        width: 136px;
+        right: 0;
+        margin-right: 0;
+        top: 5%;
+        box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.4);
+        border-radius: 20px 0px 0px 20px;
+    }
+    .sp-right__nav.fade {
+        transition: opacity 0.5s ease;
+        opacity: 0;
+    }
+    .sp-right__nav.left-in {
+        transform: translateX(112%);
+        transition: transform 0.5s ease;
+    }
+    .sp-right__nav.up-in {
+        transform: translateY(40px);
+        transition: all 0.5s ease;
+        opacity: 0;
+    }
+    .sp-right__nav.fade.active {
+        opacity: 1;
+    }
+    .sp-right__nav.left-in.active {
+        transform: translateX(0);
+    }
+    .sp-right__nav.up-in.active {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .sp-right__nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0 20px 20px 30px;
+        background: rgba(0, 0, 0, 0.7);
+
+    }
+
+    /* == 側選單子選項設定:文字大小 == */
+    .sp-right__nav li {
+        display: block;
+        text-align: center;
+        font-size: 16px;
+        position: relative;
+    }
+
+    .sp-right__nav li:not(:last-child):before {
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: 2;
+        bottom: 0;
+        left: 50%;
+        width: 90%;
+        height: 1px;
+        background-color: #fff;
+        transform: translateX(-50%);
+    }
+
+    .sp-right__nav li:first-child:before, .sp-right__nav li:nth-last-child(2):before, .sp-right__nav li:nth-last-child(3):before {
+        height: 0px;
+    }
+
+    /* == 側選單子選項設定:底圖+底色+上下距 == */
+    .sp-right__nav a {
+        display: block;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        position: relative;
+        z-index: 1;
+        text-decoration: none;
+        font-family: Microsoft JhengHei;
+        /* ==  custom  == */
+        color: #fff;
+    }
+
+    /* ==  hover or active : text-color  == */
+    .sp-right__nav li a.active, .sp-right__nav a:hover {
+        /* ==  custom  == */
+        color: #FFEAC1;
+    }
+
+    /* ==  側選單子選項設定:滑過去的底色  == */
+    .sp-right__nav li a.active:after, .sp-right__nav a:hover:after {
+        position: absolute;
+        z-index: -1;
+        content: "";
+        top: 0;
+        width: 10px;
+        height: 14px;
+        z-index: 2;
+        background: url(icon-nav.svg) 0 0 no-repeat;
+        /* ==  custom  == */
+        top: 11px;
+        left: -15px;
+    }
+
+    /* ==  側選單表頭設定:底圖+高  == */
+    .sp-bav_top_img {
+        height: 30px;
+    }
+
+    .sp-nav-right__top a:hover:after, .sp-nav-right__app a:hover:after {
+        background: none;
+        border: 0;
+    }
+
+    /* == 側選單表底設定:底圖+高 == */
+    .sp-nav-right__app a {
+        overflow: hidden;
+        white-space: nowrap;
+        text-indent: 1000%;
+        /* ==  custom  == */
+        height: 121px;
+    }
+
+    .sp-nav-right__top a {
+        overflow: hidden;
+        background: url(nav-gotop.svg) center 0 no-repeat;
+        white-space: nowrap;
+        text-indent: 1000%;
+        /* ==  custom  == */
+        height: 52px;
+    }
+}

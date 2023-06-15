@@ -1,0 +1,152 @@
+<meta name="viewport" content="width=device-width">
+<!-- ============== 輪播 start ============== -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+<!-- ============== 輪播 end ============== -->
+<!-- 共用CSS -->
+<link rel="stylesheet" href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.css">
+<style>
+    /* 調整logo位置大小 */
+    /* .logo {
+      top: 1%;
+      left: 1%;
+      width: 30%;
+      max-width: 220px;
+    } */
+
+    /* 連結測試 */
+    /* .sp__visual a{
+      filter: brightness(500%);
+    } */
+
+    /* 切片測試 */
+    /* .visual__fragment::before {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      border: 1px solid #00f;
+      pointer-events: none;
+    } */
+
+    /* 設定全畫面背景 */
+    body {
+        background-color: #fff;
+    }
+
+    .sp__main {
+        background: url(bg_01.jpg) center 0 no-repeat;
+    }
+
+    /*-- 動畫小物件 --*/
+    .animate__wrap {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        top: 0;
+    }
+
+    /*-- 手機版：
+            1. 設定物件距離左邊與上邊的位置，單位可以使用"%"或"vw"
+            2. width 建議電腦版可以使用auto，手機版則可使用%調整
+     --*/
+    .animate__wrap .animate__obj--01 {
+        position: -webkit-sticky;
+        position: sticky;
+        height: auto;
+        top: 0;
+        margin-left: 6vw;
+        width: 86vw;
+        margin-top: 96vw;
+    }
+
+    /*-- 電腦版：
+            設定物件距離左邊與上邊的位置，單位可以使用"px"，左邊可以挑整clac()後面的px值
+            width 建議電腦版可以使用auto，手機版則可使用%調整
+     --*/
+    @media screen and (min-width: 960px) {
+        .animate__wrap .animate__obj--01 {
+            margin-top: 922px;
+            margin-left: calc(50% - 430px);
+            width: auto;
+        }
+    }
+</style>
+<div id="iconHome"></div>
+<div id="spWrap" class="sp__wallper">
+    <!-- 主視覺 -->
+    <div id="animateWrapHt" class="animate__wrap">
+        <img class="animate__obj--01" src="button.png" alt="">
+    </div>
+    <main class="sp__main">
+        <div class="layout--main home--logo">
+            <a href="https://www.etmall.com.tw"><img class="logo" src="ehs-logo.png" alt="東森購物"></a>
+        </div>
+        <section class="sp__visual">
+            <div class="layout--main">
+                <ul class="visual--auto clearfix">
+                    <li class="visual__fragment width--auto">
+                        <img src="index_01.jpg">
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <img src="index_02.jpg">
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <img src="index_03.jpg">
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <img src="index_04.jpg">
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <img src="index_05.jpg">
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <img src="index_06.jpg">
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <img src="index_07.jpg">
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <img src="index_08.jpg">
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+</div>
+<script src="https://polyfill.io/v3/polyfill.min.js"></script>
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<!-- ============== 輪播 start ============== -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+<!-- ============== 輪播 end ============== -->
+<!--<script id="generateScript" src="generate.js"></script>-->
+<!-- <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js"></script> -->
+<!-- 東森浮水印 -->
+<script id="scriptIconFloat"
+        src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105264/float-icon.js"></script>
+<!-- 森森浮水印
+<script id="scriptIconFloat" src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1102419/float-icon.js"></script> -->
+<!-- 共用JS -->
+<script id="generateScript"
+        src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.js"></script>
+<script>
+    var footerSlider = new Swiper(".swiper-container", {
+        autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+        },
+        autoHeight: true,
+        grabCursor: true,
+        loop: true,
+        speed: 1000,
+    });
+
+
+    function stickyButton() {
+        var winHt = document.body.offsetHeight;
+        var navTop = document.getElementById('animateWrapHt');
+        navTop.style.height = winHt + 'px';
+    }
+    window.addEventListener('load', stickyButton);
+    window.addEventListener('resize', stickyButton);
+</script>

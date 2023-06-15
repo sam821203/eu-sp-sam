@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<head>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		* {
+ 		 box-sizing: border-box; }
+  		*:before, *:after {
+    		box-sizing: border-box; }
+	    a {
+	    	display: block;
+	    	text-decoration: none;
+	    }
+		header a, section a {
+			line-height: 0;
+		}
+	    h1 {
+	    	line-height: 0;
+	    }
+		ul {
+			list-style: none;
+		}
+		img {
+			border: 0;
+		}
+		main, header, footer, section {
+			display: block;
+		}
+		body {
+			margin: 0;
+  			padding: 0;
+  			width: 100%;
+  			min-width: 1260px;
+			background-color: #6c3a1e;
+			background-size: cover;
+			overflow-x: hidden;
+		}
+
+		body, td, th {
+		font-family: Arial, Helvetica, LiHei, "Microsoft JhengHei", PMingLiU, "微軟正黑體", "新細明體", sans-serif;
+		}
+
+		.clearfix:after {
+			content: '';
+			display: block;
+			clear: both;
+			*zoom: 1;
+		}
+
+		.sp__wrap {
+			position: relative;
+			background: center top url(background.jpg) no-repeat;
+			
+		}
+
+		.sp--1260 {
+			position: relative;
+			max-width: 1260px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+/* ============= decoration ============= */
+		.bg-decoration, .decoration__wrap, .decoration {
+			min-width: 1680px;
+			width: 100%;
+			height: 100%;
+			pointer-events: none;
+		}
+
+		.decoration__wrap {
+			position: absolute;
+			z-index: 10;			
+		}
+
+		.decoration {
+			background-size: 150%;
+		}
+
+		.decoration.play {
+			animation-play-state: running;
+		}
+
+		.decoration1 {
+			z-index: 3;
+			height: 70%;
+			background: center url(foreground-1.png) no-repeat;
+			animation: 1.5s opening paused;
+		}
+
+		.decoration2 {
+			z-index: 2;
+			height: 55%;
+			background: center url(foreground-2.png) no-repeat;
+			animation: 1.2s opening paused;
+		}
+
+		.decoration3 {
+			z-index: 1;
+			height: 35%;
+			background: center url(foreground-3.png) no-repeat;
+			animation: 1s opening paused;
+		}
+
+		@keyframes opening {
+			from {
+				transform: scale(5);
+			}
+			to {
+				transform: scale(1);
+			}
+		}
+
+		.coin__wrap {
+			position: absolute;
+			z-index: -1;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			opacity: 0;
+		}
+
+/* ================= header ================= */
+		.sp-logo {
+			position: absolute;
+			z-index: 5;
+			top: 20px;
+			left: 15px;
+			cursor: pointer;
+		}
+		.side-info {
+			position: absolute;
+			z-index: 5;
+			top: 665px;
+			right: 35px;
+			width: 280px;
+		}
+
+		.side-info img {
+			width: 100%;
+		}
+		
+/* ================= main-visual ================= */
+		.sp-title {
+			position: relative;
+			z-index: 0;
+			padding-top: 20px;
+			height: 640px;
+		}
+
+		.main-title {
+			position: relative;
+			margin-left: 50px;
+		}
+
+		.main-title:before {
+			content:'';
+			position: absolute;
+			z-index: 0;
+			top: 20px;
+			left: 415px;
+			width: 335px;
+			height: 335px;
+			background-image: url(decoration-light.png);
+			animation: 5s light-move infinite alternate ease-in-out;
+		}
+
+		@keyframes light-move {
+			to {
+				transform: translate(150px, 100px);
+			}
+		}
+
+		.title--animation {
+			position: absolute;
+			z-index: 2;
+			top: 375px;
+			left: 135px;
+			width: 563px;
+			height: 196px;
+			background-image: url(animation-title.png);
+			animation: 1.8s bg-animate steps(6) infinite;
+		}
+
+		.title--animation:before {
+			content:'';
+			position: absolute;
+			z-index: 0;
+			top: -95px;
+			left: -95px;
+			width: 335px;
+			height: 335px;
+			background-image: url(decoration-light.png);
+		}
+
+		@keyframes bg-animate {
+			to {
+				background-position-y: -1176px;
+			}
+		}
+
+/* ================= subtitle ================= */
+		.subtitle {
+			position: absolute;
+			z-index: 1;
+			top: 105px;
+			right: calc(50% - 605px);
+			width: 341px;
+			height: 509px;			
+		}
+
+		.subtitle a {
+			padding: 50px 30px 30px;
+			width: 100%;
+			height: 100%;
+			background: url(background-sub-title.png) no-repeat;
+			transform-origin: right bottom;
+			transition: all 0.2s;
+		}
+
+		.subtitle p {
+			color: #555;
+			font-size: 26px;
+			text-align: center;
+			margin-bottom: 17px;
+		}
+
+		.subtitle:hover a {
+			transform: rotate(3deg);
+		}
+
+/* ================= main0 ================= */
+		.main0 {
+			position: relative;
+			z-index: 1;
+			width: 100%;
+			height: 242px;
+		}
+
+		.main0-title {
+			position: relative;
+			z-index: 0;
+			margin-left: 36.8%;
+			padding-top: 25px;
+		}
+
+		.main0--info-a {
+			position: absolute;
+			z-index: 1;
+			top: -70px;
+		}
+
+		.main0--info-a img:nth-child(1) {
+			position: relative;
+			z-index: 1;
+			width: 270px;
+			transform-origin: left bottom;
+			transition: all 0.3s;
+		}
+
+		.main0--info-a img:nth-child(2) {
+			position: absolute;
+			z-index: 0;
+			top: 62px;
+			left: 200px;
+			width: 230px;
+		}
+
+		.main0--info-a img:nth-child(3) {
+			position: absolute;
+			z-index: 0;
+			top: 120px;
+			left: 245px;
+			width: 148px;
+			opacity: 0;
+		}
+
+		.main0:hover .main0--info-a img:nth-child(1) {
+			transform: rotate(-5deg);
+		}
+
+		.main0:hover .main0--info-a img:nth-child(3) {
+			opacity: 1;
+		}
+
+/* ================= main-content ================= */
+		.sp-content	{
+			position: relative;
+			z-index: 5;
+			margin-top: -40px;
+		}
+
+		.main-info {
+			height: 188px;
+			background: center top url(background-main.png) no-repeat;
+		}
+
+		.main--info-a {
+			position: relative;
+			z-index: 2;
+			float: left;
+			transition: all 0.2s ease-in-out;
+		}
+
+		.main--info-a:before {
+			content: '';
+			position: absolute;
+			z-index: 5;
+			top: 18px;
+			left: 35%;
+			width: 50px;
+			height: 50px;
+			background-image: url(coin-small.png);
+			background-size: 100%;
+			filter: drop-shadow(1px 1px #ebcf40);
+			opacity: 0;
+		}
+
+		.main--info-a:nth-child(1) {
+			margin-left: 35px;
+			padding: 22px 60px;
+		}
+
+		.main--info-a:nth-child(2) {
+			padding: 20px 43px;
+		}
+
+		.main--info-a:nth-child(3) {
+			padding: 20px 35px 0;
+		}
+
+		.main--info-a:nth-child(4){
+			margin-top: 50px;
+			padding: 55px 0 2px;
+		}
+
+		.main--info-a:hover {
+			transform: translateY(-5px);
+			filter: brightness(110%) contrast(110%) drop-shadow(0 8px 13px rgba(0,0,0,0.2)) drop-shadow(0 3px 3px rgba(0,0,0,0.35));
+		}
+
+		.main--info-a:hover:before {
+			animation: 1s get-coin infinite;
+		}
+
+		@keyframes get-coin {
+			0% {
+				transform: translateY(0) rotateY(-180deg);
+			}
+			5% {
+				opacity: 0;
+			}
+			45% {
+				opacity: 1;
+			}
+			50% {
+				transform: translateY(-150px) rotateY(0);
+				opacity: 1;
+			}
+			65% {
+				opacity: 1;
+			}
+			80% {
+				opacity: 0;
+			}
+			to {
+				transform: translateY(0) rotateY(-180deg);
+				opacity: 0;
+			}
+		}
+/* ================= table hover setting ================= */
+		td[width^="2"] {
+			transition: all 0.3s;
+		}
+
+		td[width^="2"] a {
+			transition: all 0.3s;
+		}
+
+		td[width^="2"] td {
+			transition: all 0.3s;
+		}
+
+		td[width^="2"]:hover {
+			transform: translateY(-6px);
+			box-shadow: 0 5px 10px rgba(0,0,0,0.2), 0 3px 3px rgba(0,0,0,0.35);
+		}
+		td[width^="2"]:hover a {
+			color: #df9a0b !important;
+		}
+
+		td[width^="2"]:hover td {
+			color: #df9a0b !important;
+		}
+
+		table:nth-child(even) td[width^="2"]:hover {
+			transform-origin: right bottom;
+			transform: rotate(2deg);
+			box-shadow: 0 5px 10px rgba(0,0,0,0.2), 0 3px 3px rgba(0,0,0,0.35);
+		}
+
+    </style>
+
+</head>
+<body>
+	<main id="spWrap" class="sp__wrap">
+		<div class="bg-decoration">
+			<div id="decorationWrap" class="decoration__wrap">
+				<div class="decoration decoration1" data-depth="-0.6"></div>
+				<div class="decoration decoration2" data-depth="0.3"></div>
+				<div class="decoration decoration3" data-depth="-0.1"></div>
+			</div>
+			<div id="coinWrap" class="coin__wrap">
+			</div>
+		</div>
+		<header>
+			<div class="sp--1260">
+				<div class="sp-logo">
+					<a href="https://www.etmall.com.tw/" title="東森嚴選 -- ETMall東森購物網" target="_top">
+						<img src="logo.png" alt="東森嚴選 -- ETMall東森購物網">
+					</a>
+			  	</div>
+				<aside class="side-info">
+					<a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201803/SP_1103897/index.html" target="_blank"><img src="line.png" alt="LINE's QR-code"></a>
+				</aside>
+				<div class="subtitle">
+					<a id="ASRC" href="" title="點我購買APP專屬優惠商品！">
+						<p>APP專屬優惠商品</p>
+						<div class="top-card">
+							<img id="IMGSRC" src="product.jpg" alt="APP專屬優惠商品">
+						</div>
+					</a>
+				</div>
+				<div class="sp-title">
+					<h1 class="main-title" title="8月全館回饋10%東森幣，08/01-08/31月送億元東森幣 -- ETMall東森購物網">
+						<img src="background-title.png" alt="8月全館回饋10%東森幣，08/01-08/31月送億元東森幣">
+					</h1>
+					<div class="title--animation"></div>
+				</div>
+			</div>
+		</header>
+		<section id="main0Bg" class="main0">
+			<div class="sp--1260">
+				<a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201808/SP_1105210/index.html" class="main0--info-a" title="點我進入遊戲活動頁面！" id="iconHome">
+					<img src="game-intro-1.png" alt="點我進入遊戲活動頁面">
+					<img src="game-intro-2.png" alt="點我進入遊戲活動頁面">
+					<img src="jackslot.gif" alt="點我進入遊戲活動頁面">
+				</a>
+				<img class="main0-title" src="promo-intro.png" alt="購物享折抵上限30%">
+			</div>
+		</section>
+		<section class="sp-content">
+			<div class="main-info clearfix">
+				<div class="sp--1260">
+					<a href="https://www.etmall.com.tw/Activity/WebSP?SubPage=DMSetting/Final/201808/SP_1105201/index.html" class="main--info-a" title="刷卡享好康">
+						<img id="changeImg" src="main-intro-1.png" alt="刷卡滿額就享超大好禮！">
+					</a>
+					<a href=" https://www.etmall.com.tw/XML/content/DMSetting/Final/201808/SP_1105206/index.html" class="main--info-a" title="現金回饋月">
+						<img src="main-intro-2.png" alt="消費滿8000天天抽現金">
+					</a>
+					<a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201812/SP_1104455/index.html" class="main--info-a" title="新北政府補助">
+						<img src="main-intro-3.png" alt="節能家電50%省很大GO">
+					</a>
+				</div>
+			</div>
+		</section>
+	</main>
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script id="loadJS" src="load-indicator.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+<script src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1104292/generateVersion20180425.js" defer></script>
+<script>
+	function productParallax() {
+		var bgDesc = document.getElementById('decorationWrap');
+		var parallaxInstance = new Parallax(bgDesc);
+	}
+	requestAnimationFrame(productParallax);
+
+	function spTimeLimit(srcDefault, srcChange1, srcChange2) {
+	  var promoMonth = 8;
+
+	  var dateNowMonth = new Date().getMonth();
+	  var dateNowDate = new Date().getDate();
+	  var changeImg = document.getElementById("changeImg");
+	  var srcDefault = srcDefault || 'main-intro-1.png';
+	  var srcChange1 = srcChange1 || 'main-intro-1-1.png';
+	  var srcChange2 = srcChange2 || 'main-intro-1-2.png';
+
+	  if(changeImg) {
+		  if(dateNowMonth === (promoMonth - 1)) {
+		    changeImg.style.opacity  = 0;
+
+		    switch (dateNowDate) {
+		      case 1: 
+		      case 2: 
+		      case 3: 
+		        changeImg.setAttribute('src',srcChange1);
+		        break;
+		      case 8:
+		        changeImg.setAttribute('src',srcChange2);
+		        break;
+		      default:
+		        changeImg.setAttribute('src',srcDefault);
+		    }
+		  }
+
+		  setTimeout(function(){
+		    changeImg.style.opacity = 1;
+		  }, 0); 
+	  }   
+	}   
+	spTimeLimit();
+
+	function coinRain(el) {
+	    var exists = document.getElementById('coinFall');
+	    if (exists) {
+	        exists.parentNode.removeChild(exists);
+	        return false;
+	    }
+
+	    var element = document.querySelector(el);
+	    var canvas = document.createElement('canvas'),
+	        ctx = canvas.getContext('2d'),
+	        focused = false;
+
+	    var body = document.body;
+    	var html = document.documentElement;
+		var height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+	    canvas.width = window.innerWidth;
+	    canvas.height = height;
+	    canvas.id = 'coinFall';
+
+	    var coin = new Image();
+	    coin.src = 'coin-xs.png'
+	    // 440 wide, 40 high, 10 states
+	    coin.onload = function () {
+	        element.appendChild(canvas)
+	        focused = true;
+	        drawloop();
+	    }
+	    var coins = []
+
+	    function drawloop() {
+	        if (focused) {
+	            requestAnimationFrame(drawloop);
+	        }
+	        
+	        ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+	        if (Math.random() < .3) {
+	            coins.push({
+	                x: Math.random() * canvas.width | 0,
+	                y: -50,
+	                dy: 3,
+	                s: 0.5 + Math.random(),
+	                state: Math.random() * 10 | 0
+	            })
+	        }
+	        var i = coins.length
+	        while (i--) {
+	            var x = coins[i].x
+	            var y = coins[i].y
+	            var s = coins[i].s
+	            var state = coins[i].state
+	            coins[i].state = (state > 9) ? 0 : state + 0.1
+	            coins[i].dy += 0.3
+	            coins[i].y += coins[i].dy
+
+	            ctx.drawImage(coin, 44 * Math.floor(state), 0, 44, 40, x, y, 44 * s, 40 * s)
+
+	            if (y > canvas.height) {
+	                coins.splice(i, 1);
+	            }
+	        }
+	    }
+	}
+	coinRain('#coinWrap');
+	window.addEventListener('scroll', function(){
+		var heightTop = document.documentElement.scrollTop || document.body.scrollTop;
+		var coinWrap = document.getElementById('coinWrap')
+		if (heightTop > 550) {		
+			coinWrap.style.opacity = 1;
+		} else {
+			coinWrap.style.opacity = 0;
+		}
+	});
+
+	var loadTimer = true;
+	function openingAnimation(el) {
+		var callBackElement = document.getElementsByClassName(el);
+
+  		if (loadTimer) {
+	 		loadTimer = false;
+			if (callBackElement) {
+				for (var i = 0; i < callBackElement.length; i++) {
+					callBackElement[i].classList.add('play');
+				}
+			}
+		}
+	}
+	window.addEventListener('load', openingAnimation('decoration'));
+	setTimeout(openingAnimation('decoration'), 2500);	
+</script>
+<script>
+			  var time = new Date();	  
+		  var days = time.getDate();
+		  var min = time.getMinutes();
+		  var n = time.getDate(); 
+          if(n>30)
+		  {	
+			document.getElementById("IMGSRC").src ="product.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href ="https://www.etmall.com.tw"
+		  }	 
+		  else if(n>6)
+		  {	
+			document.getElementById("IMGSRC").src ="product_3.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href ="https://www.etmall.com.tw/i/2046596"
+		  }
+		  else if(n>3)
+		  {
+			document.getElementById("IMGSRC").src ="product_2.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href ="https://www.etmall.com.tw/i/5674474"
+		  }
+		  else if(n>0)
+		  {
+			document.getElementById("IMGSRC").src ="product_1.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href ="https://www.etmall.com.tw/i/2076018"
+		  }
+</script>
+</body>
+</html>

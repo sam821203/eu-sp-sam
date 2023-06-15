@@ -1,0 +1,33 @@
+//- TODO: 打開雙月選項切換雙月(預設單月)
+- var isEven = true
+//- TODO: 打開2號電梯選項切換第二組電梯(預設第一組)
+- var isSecond = false
+//- TODO: 打開u-mall選項會自動轉換成U的logo和連結、電梯(預設etmall)
+//-- var isU = true
+
+
+main#spWrap.sp__wrap.sp__wrap--e
+  include /layout/header/_header
+  //- #parallaxBg.parallax__background
+  //- .parallax__background
+
+  //- hero section
+  //- ===========================
+  include /event/2nd/e-66/components/hero-section/_hero-section
+  //- include /event/2nd/e-66/components/background-decoration/_background-decoration
+
+  //- other components
+  //- ===========================
+  include /event/2nd/e-66/components/slider-section-1-collect/_slider-section-1-collect
+  include /event/2nd/e-66/components/tab-section/_tab-section
+  include /event/2nd/e-66/components/slider-section-2-20off/_slider-section-2-20off
+  include /event/2nd/e-66/components/bn-event-prevent/_bn-event-prevent
+  include /event/2nd/e-66/components/bn-event-hot/_bn-event-hot
+  include /event/2nd/e-66/components/event-w4m4/_event-w4m4
+  //- include /event/2nd/e-66/components/countdown-section/_countdown-section
+
+//- script區
+include /utils/pug/_total-script
+script(src="data-daily-66.js")
+script(src="data-promo-66.js")
+

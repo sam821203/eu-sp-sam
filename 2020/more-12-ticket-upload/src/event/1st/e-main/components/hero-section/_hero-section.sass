@@ -1,0 +1,32 @@
+// // // ==========================================================================
+// // // main
+// // // ==========================================================================
+.hero__box
+  +pos-set(relative, zero)
+  .hero__title--main
+    text-align: center
+  .decoration__title
+    +pos-set(absolute, zero)
+    pointer-events: none
+    bottom: -10%
+    right: 3%
+    width: 38%
+    // animation: bounce 2.4s infinite
+    +breakpoint-min($min-width-xl)
+      bottom: -55px
+
+@keyframes bounce
+  0%, 10%, 26%, 50%, to
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+    transform: translateZ(0)
+  20%, 21%
+    animation-timing-function: cubic-bezier(.755, .05, .855, .06)
+    transform: translate3d(0, -30%, 0)
+  35%
+    animation-timing-function: cubic-bezier(.755, .05, .855, .06)
+    transform: translate3d(0, -20%, 0)
+  40%
+    transition-timing-function: cubic-bezier(.215, .61, .355, 1)
+    transform: translateZ(0)
+  45%
+    transform: translate3d(0, -5%, 0)

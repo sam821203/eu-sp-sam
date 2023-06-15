@@ -1,0 +1,18 @@
+if is_third
+  section.promo__group.promo__group--video
+    .layout--main
+      .promo__zone
+        .promo__title.block--center.m-bottom--xs(data-title="a1")
+          img.lazyload(data-src="section-bn-video.png", src="~utils/img/1x1_low.png", alt="最強活動")
+        .promo__wrap
+          .video__wrap
+            <iframe src="https://www.youtube.com/embed/zZaa-0xKZOg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+else
+  //- ====== 第一檔 ======
+  section.promo__group.promo__group--video
+    .layout--main
+      .promo__zone
+        .promo__wrap
+          .video__wrap
+            <iframe src="https://www.youtube.com/embed/FCfsPPxhQy0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

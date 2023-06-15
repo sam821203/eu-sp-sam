@@ -1,0 +1,16 @@
+.canvas__wrap--color
+  +pos-set(absolute,zero)
+  top: 20%
+  left: 10%
+  width: 80%
+  height: 42%
+  border-radius: 5%
+  overflow: hidden
+  animation: bounceInUp 1s both
+  canvas
+    width: 100%
+    height: 100%
+
++breakpoint-min($min-width-xl)
+  .canvas__wrap--color
+    height: 430px

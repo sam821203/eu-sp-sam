@@ -1,0 +1,77 @@
+.promo__event
+  // margin-top: -5%
+  padding: 10% 2% 16%
+  +bg-set(url(~event/1st/u-main/components/promo-event/bg-promo.png), 100%)
+  .event__wrap
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    padding: 0 1%
+    li
+      flex: 0 0 49.5%
+      -ms-flex: auto
+      transition: all 0.5s
+      &:hover
+        transform: translateY(-3%)
+        filter: brightness(110%)
+
+    // li.promo__discount
+    //   +pos-set(relative, zero)
+    //   .promo__good
+    //     +pos-set(absolute, base)
+    //     top: 17%
+    //     right: 13%
+    //     width: 50%
+    //     animation: tada 3s infinite
+
+    &:first-child
+      li
+        &:nth-child(1)
+          padding: 4% 5% 5.5% 5%
+        &:nth-child(2)
+          padding: 4% 2% 8% 7%
+        &:nth-child(3)
+          padding: 7.5% 5% 7.5% 3%
+        &:nth-child(4)
+          padding:  7% 2% 3% 10%
+    &:last-child
+      li
+        &:nth-child(1)
+          padding: 3% 6.5%
+        &:nth-child(2)
+          padding: 5% 3% 1.5% 8%
+
+  +breakpoint-min($min-width-xl)
+    padding-bottom: 175px
+    .event__wrap
+      padding-bottom: 38px
+    //   li.promo__discount
+    //     .promo__good
+    //       top: 50px
+    //       right: 80px
+    //       width: auto
+
+// @keyframes tada
+//   from
+//     -webkit-transform: scale3d(1, 1, 1)
+//     transform: scale3d(1, 1, 1)
+//   5%,
+//   10%
+//     -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg)
+//     transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg)
+
+//   15%,
+//   25%,
+//   35%,
+//   45%
+//     -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)
+//     transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)
+
+//   20%,
+//   30%,
+//   40%
+//     -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)
+//     transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)
+//   50%, to
+//     -webkit-transform: scale3d(1, 1, 1)
+//     transform: scale3d(1, 1, 1)

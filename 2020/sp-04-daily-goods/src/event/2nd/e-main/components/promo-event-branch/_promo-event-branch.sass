@@ -1,0 +1,61 @@
+.promo__event-branch
+  // margin-top: -5%
+  padding: 6.8% 4% 13%
+  +bg-set(url(~event/2nd/e-main/components/promo-event-branch/bg-promo-branch.png), 96%)
+  .event__wrap
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    padding: 0
+    margin-top: 6%
+    li
+      display: flex
+      flex: 0 0 100%
+      -ms-flex: 0 0 99%
+      padding: 0 2%
+      margin: .8% 0
+      a
+        flex: 0 0 50%
+        transition: all 0.5s
+        transform-origin: bottom center
+        &:hover
+          transform: scale(1.05)
+    .branch__item--left
+      .branch__book
+        margin: -0.4vw auto auto 5vw
+        img
+          width: 100%
+      .branch__incentive
+        img
+          width: 79%
+          margin: 2.44vw 0 0 0.1vw
+    .branch__item--right
+      .branch__book
+        margin: -0.4vw auto auto -6vw
+        img
+          width: 100%
+      .branch__incentive
+        img
+          width: 79%
+          margin: 2vw 0 0 5vw
+  +breakpoint-min($min-width-xl)
+    padding: 78px 50px 110px
+    .event__wrap
+      margin-top: 47.5px
+      li
+        padding: 0 .5%
+        margin: 10.5px 0
+      .branch__item--left
+        .branch__book
+          margin: -16px auto auto 51px
+        .branch__incentive
+          img
+            width: 80%
+            margin: 8px 0 0 0
+      .branch__item--right
+        .branch__book
+          margin: -10px auto auto -61px
+        .branch__incentive
+          img
+            width: 79%
+            margin: 20.5px 0 0 51px

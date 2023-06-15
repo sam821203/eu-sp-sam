@@ -1,0 +1,13 @@
+//- 此為CSS使用背景圖的煙火，有兩種使用方式：一種是用雪碧圖做煙火動態，CSS animation做出位移
+//- 這邊使用的是單張煙火png，用雙層結構，一層同上做位移，一層用CSS animation做fade in
+//- TODO: 由於是純CSS，若有多個區塊要用到此煙火結構，需要複製出去以單獨的class name / 父層做出CSS scope
+.decor--top.firework__wrap.full-parent
+  .decor--top.decor--firework.decor--firework--1
+    .decor--top.firework
+      img(src="utils/bg-decoration-instance/css-firework-2/decor-firework-1.png", alt="")
+  .decor--top.decor--firework.decor--firework--2
+    .decor--top.firework
+      img(src="utils/bg-decoration-instance/css-firework-2/decor-firework-2.png", alt="")
+  .decor--top.decor--firework.decor--firework--3
+    .decor--top.firework
+      img(src="utils/bg-decoration-instance/css-firework-2/decor-firework-2.png", alt="")

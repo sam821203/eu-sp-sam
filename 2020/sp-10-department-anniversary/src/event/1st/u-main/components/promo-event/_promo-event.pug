@@ -1,0 +1,53 @@
+-
+  var promoDataE = [
+  {link: "#note",
+  imgSrc: "~event/1st/e-main/components/promo-event/items/everyday_pt1.png",
+  alt: "每日一物"},
+  {link: "#note",
+  imgSrc: "~event/1st/e-main/components/promo-event/items/promo1-1.png",
+  alt: "全館滿萬送千"},
+  {link: "#note",
+  imgSrc: "~event/1st/e-main/components/promo-event/items/promo1-2.png",
+  alt: "單筆$1,500送野餐維尼保溫袋"},
+  {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202009/SP_1116410/w/index.html",
+  imgSrc: "~event/1st/e-main/components/promo-event/items/promo1-3.png",
+  alt: "中秋夯肉趴"},
+  {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+  imgSrc: "~event/1st/e-main/components/promo-event/items/promo1-4.png",
+  alt: "首購登記送中冰美"},
+  {link: "#",
+  imgSrc: "~event/1st/e-main/components/promo-event/items/promo1-5.png",
+  alt: "萊爾富超取喝飲料"},
+  {link: "#",
+  imgSrc: "~event/1st/e-main/components/promo-event/items/promo1-6.png",
+  alt: "台中購物節logo下單抽聲寶空氣清淨機"},
+  {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202007/SP_1116046/w/index.html",
+  imgSrc: "~event/1st/e-main/components/promo-event/items/promo1-7.png",
+  alt: "APP獨享優惠"},
+  ]
+
+-
+  var promoDataU = [
+  {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202009/SP_1106088/w/index.html",
+  imgSrc: "~event/1st/u-main/components/promo-event/items/promo1.png",
+  alt: "22間銀行最高回饋10%"},
+  {link: "https://www.u-mall.com.tw/Activity/HourSale",
+  imgSrc: "~event/1st/u-main/components/promo-event/items/promo2.png",
+  alt: "整點最便宜"},
+  {link: "https://www.u-mall.com.tw/Activity/HourSale?Day=Up",
+  imgSrc: "~event/1st/u-main/components/promo-event/items/promo3.png",
+  alt: "天天最激殺"}, ]
+
+- var promoData = isU ? promoDataU : promoDataE
+
+.promo__event(data-title="")
+  ul.event__wrap
+    li
+      a(href= promoData[0].link, title= promoData[0].alt)
+        img(src= promoData[0].imgSrc, alt= promoData[0].alt)
+    li
+      a#anchorChangeLink(href= promoData[1].link, title= promoData[1].alt)
+        img(src= promoData[1].imgSrc, alt= promoData[1].alt)
+    li
+      a(href= promoData[2].link, title= promoData[2].alt)
+        img(src= promoData[2].imgSrc, alt= promoData[2].alt)

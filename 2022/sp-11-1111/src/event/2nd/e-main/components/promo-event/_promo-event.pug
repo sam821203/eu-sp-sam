@@ -1,0 +1,109 @@
+-
+  var promoItemData = [
+    {
+      link: "",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-item-1.png",
+      alt: "10/18-31 加入召集令 送樂透金 6%",
+    },
+    {
+      link: "",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-item-2.png",
+      alt: "1111召集令 $1,000換$1,288",
+    },
+    {
+      link: "",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-item-3.png",
+      alt: "召集令限定加碼抽 1111輪盤",
+    },
+  ]
+
+-
+  var promoEventData = [
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/19552/m/index.html",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-1.png",
+        alt: "領起來～首次註冊送500東森幣",
+      },
+    ],
+    [
+      {
+        link: "",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-2.png",
+        alt: "集點加價購",
+      },
+    ],
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/19056/m/index.html",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-3.png",
+        alt: "7-ELEVEN取件送御料小館鍋貼",
+      },
+    ],
+    [
+      {
+        link: "https://www.etmall.com.tw/Activity/GroupSale",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-4.png",
+        alt: "滿1800折120預購商品100%東森幣回饋",
+      },
+    ],
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/19450/m/index.html",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-5.png",
+        alt: "HOHO送服務折價券",
+      },
+    ],
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/18779/m/index.html",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-6-1.png",
+        alt: "離島配送滿額贈50枚樂透金",
+      },
+    ],
+    [
+      {
+        link: "",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-7-1.png",
+        alt: "全站折價券，限量開搶",
+      },
+      {
+        link: "",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-7-2.png",
+        alt: "消費滿$1,111天天抽指定商品1元起",
+      },
+      {
+        link: "https://www.etmall.com.tw/member/taskActivity",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-7-3.png",
+        alt: "挑戰任務滿額拿$888",
+      },
+    ],
+  ]
+
+//- TODO: 如果promo不和hero綁一起時要有自己的section和layout--main
+section.promo__group.promo-event
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--left#promoEventLeft
+        img(src="event/2nd/e-main/components/promo-event/decor-promo-left.png", alt="")
+      .decor__item.decor__item--right#promoEventRight
+        img(src="event/2nd/e-main/components/promo-event/decor-promo-right.png", alt="")
+      .decor__item.decor__item--light
+        img(src="event/2nd/e-main/components/promo-event/decor-promo-light.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          ul.item__box
+            each data, index in  promoItemData
+              li.promo__item
+                a(href=  data.link, title= data.alt)
+                  img(src=  data.imgSrc)
+          ul.promo__box
+            each data, index in promoEventData
+              li.event__item(id="promoEventItem" + (index + 1))
+                .swiper-container.container--promo-event
+                  ul.swiper-wrapper
+                    each item, itemIndex in  data
+                      li.swiper-slide.promo__item
+                        a(href=  item.link, title= item.alt)
+                          img(src=  item.imgSrc,  item.alt)

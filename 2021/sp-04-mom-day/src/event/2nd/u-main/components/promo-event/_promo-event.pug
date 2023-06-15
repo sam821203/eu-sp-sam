@@ -1,0 +1,53 @@
+-
+  var promoDataESlider = [
+  {link: "#note",
+  imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-1.png",
+  alt: "消費滿3,800送688"},
+  ]
+-
+  var promoDataE = [
+  {link: "https://media.etmall.com.tw/sp/7663/m/index.html",
+  imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-2.png",
+  alt: "累積消費最高回饋8,800"},
+  {link: "https://media.etmall.com.tw/sp/9010/m/index.html",
+  imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-3.png",
+  alt: "中租(logo)享分期回饋$1,200"},
+  {link: "https://media.etmall.com.tw/sp/9010/m/index.html",
+  imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-3-m.png",
+  alt: "中租(logo)享分期回饋$1,200"},
+  {link: "https://media.etmall.com.tw/sp/8896/m/index.html",
+  imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-4.png",
+  alt: "全家超取送$25購物金"},
+  {link: "https://media.etmall.com.tw/sp/7663/m/index.html",
+  imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-5.png",
+  alt: "APP消費滿$6,000送雙人牌餐具組"},
+  ]
+
+-
+  var promoDataU = [
+  {link: "https://media.u-mall.com.tw/sp/8872/m/index.html",
+  imgSrc: "~event/2nd/u-main/components/promo-event/items/promo-1.png",
+  alt: "與媽媽的美好食光"},
+  {link: "https://www.u-mall.com.tw/Activity/HourSale",
+  imgSrc: "~event/2nd/u-main/components/promo-event/items/promo-2.png",
+  alt: "限時瘋搶"},
+  ]
+
+- var promoData = isU ? promoDataU : promoDataE
+
+.promo__event(data-title="")
+  ul.event__wrap
+    //-li#dailyPromo
+    //-  span.js-month 10
+    //-  span.js-date 19
+    //-  a(href= promoData[0].link, title= promoData[0].alt)
+    //-    img(src= promoData[0].imgSrc, alt= promoData[0].alt)
+        //-img(class="promo__good" src="~event/2nd/u-main/components/promo-event/items/promo-1-good.png")
+        //-img(class="promo__go" src="~event/2nd/u-main/components/promo-event/items/promo-1-go.png")
+    li.first__layer
+      a(href= promoData[0].link, title= promoData[0].alt)
+        img(src= promoData[0].imgSrc, alt= promoData[0].alt)
+    li.first__layer
+      a(href= promoData[1].link, title= promoData[1].alt)
+        img(src= promoData[1].imgSrc, alt= promoData[1].alt)
+  include /event/2nd/u-main/components/bn-special/_bn-special

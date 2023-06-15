@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>love game</title>
+</head>
+<style>
+  body {
+    background: #f5dcea center 0 url("hero_blog.jpg");
+  }
+  img {
+    display: block;
+  }
+  .layout--main {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 960px;
+  }
+  .char__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 20%;
+  }
+  .char__pic {
+    position: relative;
+    width: 50%;
+    height: 50vh;
+  }
+  .char__pic img {
+    width: 100%;
+    filter: brightness(50%);
+  }
+  .char__pic img.now {
+    filter: contrast(100%);
+  }
+  .char__pic img.unknown {
+    filter: brightness(0);
+  }
+  .dialog__wrap {
+    position: relative;
+    padding: 2% 4%;
+    height: 15vh;
+    background-color: #f5dcea;
+    border: 1px solid #963470;
+    border-radius: 20px;
+  }
+  .char__name {
+    margin-bottom: 1.5%;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  .symbol--next {
+    position: absolute;
+    z-index: 1;
+    bottom: 0.5%;
+    right: 1.5%;
+    color: #963470;
+  }
+  .blink {
+    animation: blink 0.7s infinite;
+  }
+  .triangle {
+    border-top: 10px solid #963470;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 10px solid transparent;
+  }
+  @keyframes blink {
+    to {
+      opacity: 0;
+    }
+  }
+</style>
+<body>
+  <main id="spWrap" class="sp__wrap">
+    <div class="layout--main">
+      <section id="charWrap" class="char__wrap">
+        <div class="char__pic">
+          <img src="" alt="char">
+        </div>
+        <div class="char__pic">
+          <img src="" alt="char">
+        </div>
+      </section>
+      <section id="dialogWrap" class="dialog__wrap">
+        <div id="charName" class="char__name"></div>
+        <div id="charWord" class="char__word"></div>
+        <div id="symbolNext" class="symbol--next blink triangle"></div>
+      </section>
+    </div>
+  </main>
+  <script src="dialog.js"></script>
+  <script>
+    const charPic = Array.apply(null, document.querySelectorAll('#charWrap img'));
+    let charName = document.getElementById('charName');
+    let charWord = document.getElementById('charWord');
+    let dialogTurn = 0;
+
+    function freshDialog(dialogTurn){
+      charPic[0].src = dialogWord[dialogTurn].char1.char.pic;
+      charPic[1].src = dialogWord[dialogTurn].char2.char.pic;
+      
+      checkStatus(charPic[0], dialogWord[dialogTurn].char1.status);
+      checkStatus(charPic[1], dialogWord[dialogTurn].char2.status);
+
+      charName.textContent = dialogWord[dialogTurn].name;
+      charWord.textContent = dialogWord[dialogTurn].dialog;
+    }
+
+    function checkStatus(char, status) {
+      char.className = '';
+      char.style.opacity = 1;
+      switch (status) {
+        case 0:
+          char.style.opacity = 0;
+          break;
+        case 1:
+          char.classList.add('unknown')
+          break;
+        case 2:
+          break;
+        case 3:
+          char.classList.add('now');
+          break;
+      }
+
+    }
+
+    function checkDialogTurn(){
+      // dialogWord.length - 1為最後一個項目(base 0的關係)
+      if (dialogTurn <= (dialogWord.length - 1)) {
+        dialogTurn++;
+        freshDialog(dialogTurn);
+
+      }
+      if (dialogTurn === (dialogWord.length - 1)) {
+        const symbolNext = document.getElementById('symbolNext');
+        symbolNext.classList.remove('blink');
+        symbolNext.classList.remove('triangle');
+        symbolNext.textContent = 'FIN.';
+
+        document.removeEventListener('click', checkDialogTurn);
+        return false;
+      }
+    }
+
+    // 先自動跑第一輪(如果有標題蓋版，可以關掉這邊或是蓋板移除後再接這個function)
+    freshDialog(dialogTurn);
+    // 後續接著跑對話
+    document.addEventListener('click', checkDialogTurn);
+  </script>
+</body>
+</html>

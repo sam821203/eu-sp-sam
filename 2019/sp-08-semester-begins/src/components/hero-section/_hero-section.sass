@@ -1,0 +1,67 @@
+.hero__wrap
+  +pos-set(relative, null)
+  overflow: hidden
+  .hero__zone
+    +pos-set(relative, null)
+    +bg-set(url("~components/hero-section/960bg-01.jpg"), 100%)
+    padding-top: 8%
+  .header__decoration
+    +pos-set(absolute, zero, -2.4%, null, null, -26.5%)
+    +bg-set(url("~components/hero-section/hero-decoration.png"), contain)
+    padding: 11%
+    width: 50%
+    height: 0
+    animation: key-wind-rotate 12s infinite
+    transform-origin: right top
+  .hero__title
+    padding-top: 2%
+    &--main
+      img
+        margin-left: 25%
+        width: 55%
+    &--sub
+      +pos-set(relative, base)
+      img
+        margin-left: 25.5%
+        width: 48%
+      a
+        transition: all 0.5s
+        &:hover,
+        &:active
+          transform: translateY(-5px) scale(1.05)
+
+
+  +breakpoint-min($min-width-xl)
+    +bg-set(url("~components/hero-section/2560bg-01.jpg"))
+    .hero__zone
+      padding-top: 80px
+      .hero__title
+        padding-top: 15px
+
+  +breakpoint-min($min-width-xxl) 
+    .hero__decoration
+      +pos-set(absolute, base, null, calc(50% - 797px), 11%)
+      width: 320px
+      height: 420px
+      &:before,
+      &:after
+        +pos-set(absolute, zero)
+        content: ''
+      &:before
+        +bg-set(url("~components/hero-section/hero-decoration-web-2.png"))
+        left: 140px
+        bottom: 0
+        width: 188px
+        height: 98px
+      &:after
+        +bg-set(url("~components/hero-section/hero-decoration-web-1.png"))
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        transform-origin: 50% 80%
+        animation: key-wind-rotate2 12s infinite alternate
+
++key-wind-rotate(-3, 12)
++key-wind-rotate(2, -2, key-wind-rotate2)
++key-rotate-self(2)

@@ -1,0 +1,177 @@
+.anchor__title
+  text-align: center
+  position: relative
+  z-index: 1
+.anchor__wrap
+  +display-flex
+  li
+    +flex(0, 1, 33%)
+    padding: 4%
+    &:hover,
+    &:active
+      a
+        animation: tada 1s
+
+@keyframes tada
+  from
+    -webkit-transform: scale3d(1, 1, 1)
+    transform: scale3d(1, 1, 1)
+  10%,
+  20%
+    -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg)
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg)
+
+  30%,
+  50%,
+  70%,
+  90%
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)
+
+  40%,
+  60%,
+  80%
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)
+  to
+    -webkit-transform: scale3d(1, 1, 1)
+    transform: scale3d(1, 1, 1)
+
+
+.incentive_layer
+  position: relative
+  display: flex
+  justify-content: space-evenly
+  align-items: center
+  margin-top: 3%
+  .incentive-line, .incentive-dot
+    position: absolute
+    top: 24px
+    left: 0
+    //height: 10px
+  .incentive-line
+    width: 100%
+  .incentive-dot
+    width: 20px
+    background: #fff
+    opacity: .8
+    border-radius: 10px
+    animation: 7s 1.8s lightSpot-move infinite
+  .incentive-line__mo,.incentive-dot__mo
+    display: block
+    top: 3%
+  .incentive-line__web,.incentive-dot__web
+    display: none
+  .incentive__block
+    width: calc(100% / 3 - 8px)
+    img
+      width: 100%
+    .incentive__block-sub
+      text-align: center
+      position: relative
+      z-index: 30
+      margin: 0 auto
+      img
+        text-align: center
+        display: inline-block
+    .light-card
+      position: absolute
+      top: 0
+      z-index: 2
+    .incentive
+      position: relative
+      top: 2vw
+      height: 42vw
+      .incentive-main
+        z-index: 1
+        position: absolute
+        &:hover
+          transform-origin: center
+          animation: .5s .5s incentive-scale
+
+.incentive__block .img01,
+.incentive__block .lc-1
+  animation: 7s 3s card-twinkling infinite
+  z-index: 29
+
+
+.incentive__block .img02,
+.incentive__block .lc-2
+  animation: 7s 4.2s card-twinkling infinite
+  z-index: 29
+
+
+.incentive__block .img03,
+.incentive__block .lc-3
+  animation: 7s 5.9s card-twinkling infinite
+  z-index: 29
+
+.incentive__block .incentive__block-sub img
+  width: 40%
+  position: relative
+  z-index: 30
+  top: 10%
+
++breakpoint-min($min-width-xl)
+  .incentive_layer
+    .incentive-line, .incentive-dot
+      max-width: inherit
+      width: auto
+      top: 14px
+      left: calc(50% - 563px)
+    .incentive__block
+      .incentive
+        height: 403px
+  .incentive_layer .incentive-line__mo,
+  .incentive_layer .incentive-dot__mo
+    display: none
+
+  .incentive_layer .incentive-line__web,
+  .incentive_layer .incentive-dot__web
+    display: block
+
+  .incentive__block .img01,
+  .incentive__block .lc-1
+    animation: 7s 3s card-twinkling infinite
+    z-index: 29
+
+
+  .incentive__block .img02,
+  .incentive__block .lc-2
+    animation: 7s 4.2s card-twinkling infinite
+    z-index: 29
+
+
+  .incentive__block .img03,
+  .incentive__block .lc-3
+    animation: 7s 5.4s card-twinkling infinite
+    z-index: 29
+
+
+  //.incentive_layer .incentive-dot__mo
+  //  animation: 7s 4.8s lightSpot-move infinite
+  //  opacity: 0
+
+
+
+
+@keyframes card-twinkling
+  0%
+    /*opacity: 1;*/
+    filter: brightness(200%)
+
+  25%
+    /*opacity: .8;*/
+    filter: brightness(100%)
+
+  50%
+    /*opacity: .8;*/
+    filter: brightness(100%)
+
+  75%
+    /*opacity: .8;*/
+    filter: brightness(100%)
+
+  100%
+    /*opacity: .8;*/
+    filter: brightness(100%)

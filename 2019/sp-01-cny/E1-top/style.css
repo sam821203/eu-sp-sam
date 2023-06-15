@@ -1,0 +1,350 @@
+/* ============= reset ============= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*:before, *:after {
+    box-sizing: border-box;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+}
+
+h1 {
+    line-height: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    border: 0;
+}
+
+main, header, footer, section {
+    display: block;
+}
+
+/* ============= global ============= */
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+body, td, th {
+    font-family: Helvetica, Arial, LiHei, "Microsoft JhengHei", "微軟正黑體", sans-serif;
+}
+
+.clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+    *zoom: 1;
+}
+
+.opacity--0 {
+    opacity: 0;
+}
+
+/* ================= 輪播 ================= */
+.carousel_frame {
+    /*padding-top: 20px;*/
+    max-width: 1260px;
+    margin: 0 auto;
+    background-color: #c2833f;
+}
+.carousel_layer {
+    width: 100%;
+    background: url(carousel-box.png) no-repeat;
+    background-size: 100% 100%;
+    background-position: 50% 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel_layer,
+.carousel_layer .carousel__wrap {
+    height: 167px;
+}
+
+.carousel_layer .slick-list {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.carousel_layer .carousel__wrap {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel_layer img {
+    width: 95%;
+    margin-right: auto;
+    margin-left: auto;
+    /*transform: scale(1.25, 1.25);*/
+    transition: all 500ms ease-in-out;
+}
+
+.carousel_layer .slick-active img {
+    transform: scale(1, 1);
+}
+
+.carousel_layer .slick-next,
+.carousel_layer .slick-prev {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.carousel_layer .slick-next {
+    right: 35px;
+    opacity: 0;
+}
+
+.carousel_layer .slick-prev {
+    left: 35px;
+    opacity: 0;
+}
+
+.carousel_layer-m {
+    display: none;
+}
+
+.carousel_layer-d {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ================= mobile size ================= */
+
+@media screen and (max-width: 320px) {
+    /* ================= 輪播 ================= */
+    .carousel_layer,
+    .carousel_layer .carousel__wrap {
+        height: 102px;
+    }
+
+    .carousel_layer .slick-list {
+        width: 105%;
+        margin-left: -8px;
+    }
+
+    .carousel_layer-d {
+        display: none;
+    }
+
+    .carousel_layer-m {
+        display: block;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        /*margin-top: -15px;*/
+    }
+
+    .carousel_layer-m.carousel_layer {
+        background: url(carousel-box-m.png) no-repeat;
+        background-size: 100% 100%;
+        background-position: 50% 8%;
+    }
+
+    .carousel_layer .slick-next,
+    .carousel_layer .slick-prev {
+        width: 20px;
+        height: 40px;
+    }
+
+    .carousel_layer .slick-next {
+        right: 0px;
+        opacity: 0;
+    }
+
+    .carousel_layer .slick-prev {
+        left: 0px;
+        opacity: 0;
+    }
+
+}
+
+@media screen and (min-width: 321px) and (max-width: 375px) {
+    /* ================= 輪播 ================= */
+    .carousel_layer,
+    .carousel_layer .carousel__wrap {
+        height: 118px;
+    }
+
+    .carousel_layer .slick-list {
+        width: 87%;
+    }
+
+    .carousel_layer-d {
+        display: none;
+    }
+
+    .carousel_layer-m {
+        display: block;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        /*margin-top: -15px;*/
+    }
+
+    .carousel_layer-m.carousel_layer {
+        background: url(carousel-box-m.png) no-repeat;
+        background-size: 100% 100%;
+        background-position: 50% 8%;
+    }
+
+    .carousel_layer .slick-next,
+    .carousel_layer .slick-prev {
+        width: 20px;
+        height: 40px;
+    }
+
+    .carousel_layer .slick-next {
+        right: 0px;
+        opacity: 0;
+    }
+
+    .carousel_layer .slick-prev {
+        left: 0px;
+        opacity: 0;
+    }
+}
+
+@media screen and (min-width: 376px) and (max-width: 426px) {
+    /* ================= 輪播 ================= */
+    .carousel_layer,
+    .carousel_layer .carousel__wrap {
+        height: 132px;
+    }
+
+    .carousel_layer .slick-list {
+        width: 87%;
+    }
+
+    .carousel_layer-d {
+        display: none;
+    }
+
+    .carousel_layer-m {
+        display: block;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        /*margin-top: -15px;*/
+    }
+
+    .carousel_layer-m.carousel_layer {
+        background: url(carousel-box-m.png) no-repeat;
+        background-size: 100% 100%;
+        background-position: 50% 8%;
+    }
+
+    .carousel_layer .slick-next,
+    .carousel_layer .slick-prev {
+        width: 20px;
+        height: 40px;
+    }
+
+    .carousel_layer .slick-next {
+        right: 0px;
+        opacity: 0;
+    }
+
+    .carousel_layer .slick-prev {
+        left: 0px;
+        opacity: 0;
+    }
+}
+
+@media screen and (min-width: 427px) and (max-width: 768px) {
+    /* ================= 輪播 ================= */
+    .carousel_layer-m {
+        display: none;
+    }
+
+    .carousel_layer-d {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .carousel_layer,
+    .carousel_layer .carousel__wrap {
+        height: 165px;
+    }
+
+    .carousel_layer .slick-list {
+        width: 80%;
+    }
+}
+@media screen and (min-width: 1024px) {
+    /* ================= 輪播 ================= */
+    .carousel_frame {
+        background-color: transparent;
+    }
+    .carousel_layer,
+    .carousel_layer .carousel__wrap {
+        height: 187px;
+    }
+}
+@media screen and (min-width: 1260px) {
+    /* ================= 輪播 ================= */
+    .carousel_layer-m {
+        display: none;
+    }
+
+    .carousel_layer,
+    .carousel_layer .carousel__wrap {
+        height: 203px;
+    }
+
+    .carousel_layer {
+        width: 100%;
+        background: url(carousel-box.png) no-repeat;
+        background-size: 100% 100%;
+        background-position: 50% 8%;
+    }
+
+    .carousel_layer .slick-list {
+        width: 80%;
+    }
+
+    .carousel_layer img {
+        width: 90%;
+    }
+
+    .carousel_layer .slick-next,
+    .carousel_layer .slick-prev {
+        width: 65px;
+        height: 65px;
+        cursor: pointer;
+    }
+
+    .carousel_layer .slick-next {
+        right: 75px;
+        opacity: 0;
+    }
+
+    .carousel_layer .slick-prev {
+        left: 75px;
+        opacity: 0;
+    }
+
+    .carousel_layer-d {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

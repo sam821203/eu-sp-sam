@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-han-tw">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		ul, li {
+			list-style: none;
+		}
+		.tab__wrap {
+			padding: 30px;
+		}
+		.tab {
+			padding: 10px;
+			border: 1px solid #000;
+		}
+		.aaa {
+			display: none;
+		}
+		.aaa.active {
+			display: block;
+		}
+	</style>
+</head>
+<body>
+<div class="tab__wrap">
+	<a id="tabA" href="#" class="tab tab--a" data-tab="a">A</a>
+	<a id="tabB" href="#" class="tab tab--b" data-tab="b">B</a>
+</div>
+<div id="aa1" class="aaa active" data-color="a">AAA</div>
+<div id="aa2" class="aaa active" data-color="a">AAA</div>
+<div id="aa3" class="aaa" data-color="b">BBB</div>
+<div id="aa4" class="aaa" data-color="b">BBB</div>
+
+<a href="https://www.google.com.tw">google</a>
+</body>
+<script>
+	function initTab(){
+		var colorFromUrl = checkUrl();
+		showUrlColor(colorFromUrl, 'aaa');
+		tabBinding('tabA', 'aaa');
+		tabBinding('tabB', 'aaa');
+
+
+		function checkUrl() {
+			// var url = "https://www.etmall.com.tw/aaa.html?color=b"; //for test url
+			// var colorInUrl = url.split("?color=")[1]; //for test url
+			var colorInUrl = location.search.split("?color=")[1];
+
+			if(colorInUrl) return colorInUrl;
+			else console.log("No colorInUrl");
+		}
+
+		function modifyState(colorChoose) {
+			var currentState = history.state;
+			var hrefSearch = "?color=" + colorChoose;
+			var modifyUrl = location.href.split("?color=")[0] + hrefSearch;
+			history.replaceState(currentState, null, modifyUrl);
+		}
+
+		function changeActive(colorPassIn, targetClass){
+			var colorPassIn = colorPassIn;
+			var dataAttr = "[data-color=" + colorPassIn + "]";
+			var targetAll = Array.apply(null, document.getElementsByClassName(targetClass));
+			var targetEl = Array.apply(null, document.querySelectorAll(dataAttr));
+
+			targetAll.forEach(function (el) {
+				el.classList.remove('active');
+			});
+
+			targetEl.forEach(function (el) {
+				el.classList.add('active');
+			});
+			modifyState(colorPassIn);
+		}
+
+		function showUrlColor(colorInUrl, targetClass) {
+			if (colorInUrl) changeActive(colorFromUrl, targetClass);
+		}
+
+		function tabBinding(tabBtnId, targetClass) {
+			var tabBtn = document.getElementById(tabBtnId);
+
+			tabBtn.addEventListener('click', function(e){
+				e.preventDefault();
+
+				var tabColor = this.dataset.tab;
+
+				changeActive(tabColor, targetClass);
+			});
+		}
+
+
+	}
+	initTab();
+
+</script>
+</html>

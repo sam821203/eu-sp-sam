@@ -1,0 +1,219 @@
+// body property
+// ==========================================================================
+body
+  font-family: $font-family-base
+
+// cleafix
+// ==========================================================================
+.clearfix
+  +clearfix
+
+// Global a setting
+// ==========================================================================
+  section a
+    display: block
+
+// Global Img setting
+// ==========================================================================
+section img
+  align-self: flex-start // 處理iOS預設flex子項目align-self: auto其實是strech的bug
+  width: 100%
+  +breakpoint-min($min-width-xl)
+    width: auto
+
+// lists (note內的ul、ol不歸零)
+// ==========================================================================
+.note ol
+  list-style-type: decimal
+.note ul
+  list-style-type: disc
+
+.block--center
+  margin-left: auto
+  margin-right: auto
+
+.text--right
+  text-align: right
+
+.text--center
+  text-align: center
+
+.text--left
+  text-align: left
+
+// Global margin property
+// ==========================================================================
+//
+// Size abbreviation Introduction
+//
+// Extra extra small = xxs
+// Extra small = xs
+// small = sm
+// Medium = md
+// Large = lg
+// Extra large = xl
+// Extra extra large = xxl
+.m-bottom--xxs
+  margin-bottom: 4px
+  +breakpoint-min($min-width-lg)
+    margin-bottom: 12px
+
+.m-bottom--xs
+  margin-bottom: 8px
+  +breakpoint-min($min-width-lg)
+    margin-bottom: 16px
+
+.m-bottom--sm
+  margin-bottom: 16px
+  +breakpoint-min($min-width-lg)
+    margin-bottom: 32px
+
+.m-bottom--lg
+  margin-bottom: 24px
+  +breakpoint-min($min-width-lg)
+    margin-bottom: 48px
+
+.m-bottom--xl
+  margin-bottom: 24px
+  +breakpoint-min($min-width-xl)
+    margin-bottom: 64px
+
+.p-horizontal--xs
+  padding-left: 8px
+  padding-right: 8px
+  +breakpoint-min($min-width-lg)
+    padding-left: 32px
+    padding-right: 32px
+
+.p-horizontal--sm
+  padding-left: 8px
+  padding-right: 8px
+  +breakpoint-min($min-width-lg)
+    padding-left: 64px
+    padding-right: 64px
+
+.p-horizontal--lg
+  padding-left: 16px
+  padding-right: 16px
+  +breakpoint-min($min-width-lg)
+    padding-left: 32px
+    padding-right: 32px
+
+.p-horizontal--xl
+  padding-left: 16px
+  padding-right: 16px
+  +breakpoint-min($min-width-lg)
+    padding-left: 64px
+    padding-right: 64px
+
+.font--title-xxs
+  font-size: 14px
+  line-height: 150%
+  font-weight: bold
+  +breakpoint-min($min-width-lg)
+    font-size: 24px
+
+.font--title-xs
+  font-size: 16px
+  line-height: 150%
+  font-weight: bold
+  +breakpoint-min($min-width-lg)
+    font-size: 18px
+
+.font--title-sm
+  font-size: 20px
+  line-height: 150%
+  font-weight: bold
+  +breakpoint-min($min-width-lg)
+    font-size: 24px
+
+.font--title-lg
+  font-size: 16px
+  line-height: 150%
+  +breakpoint-min($min-width-lg)
+    font-size: 28px
+  +breakpoint-min($min-width-xl)
+    font-size: 36px
+
+.font--title-xl
+  font-size: 20px
+  line-height: 150%
+  font-weight: bold
+  +breakpoint-min($min-width-lg)
+    font-size: 32px
+
+
+.font--title-xxl
+  font-size: 20px
+  line-height: 150%
+  font-weight: bold
+  +breakpoint-min($min-width-lg)
+    font-size: 48px
+
+.font--article
+  font-size: 16px
+  line-height: 150%
+  +breakpoint-min($min-width-lg)
+    font-size: 18px
+
+.font--medium
+  font-size: 12px
+  line-height: 150%
+  +breakpoint-min($min-width-lg)
+    font-size: 32px
+
+.font--small
+  font-size: 12px
+  line-height: 150%
+  +breakpoint-min($min-width-lg)
+    font-size: 16px
+
+.default-border
+  border: 1px solid $gray-medium
+
+// Global width and height
+// ==========================================================================
+.layout--main
+  // position: relative
+  // z-index: map-get($zindex, zero)
+  +layout-center(null, $layout-switch-width-xl)
+
+.one-screen
+  width: 100%
+  height: 100vh
+
+.full-parent
+  width: 100%
+  height: 100%
+  // .swiper-container在他內建的css中權限比較高，因此專門寫來提高權限
+  &.swiper-container
+    height: 100%
+
+.block-center
+  +layout-center(null)
+
+// Global icon position
+// ==========================================================================
+.n-pic
+  position: relative
+
+.img-reverse-x
+  transform: scaleX(-1)
+
+// Icon Home Setting
+// ==========================================================================
+.icon__home
+  z-index: map-get($zindex, twenty)
+
+
+// 膠囊形狀
+// ==========================================================================
+.capsule
+  display: inline-block
+  padding: 2px 12px
+  border: 1px solid $gray-deep-light
+  border-radius: 1em
+  +breakpoint-min($min-width-lg)
+    border-width: 2px
+
+

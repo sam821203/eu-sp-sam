@@ -1,0 +1,25 @@
+.promo__group--dynamic-section-2
+  .promo__wrap
+    +aspect-ratio(960, 1230)
+    +bg-set(url(event/2nd/e-main/components/dynamic-section-2/bg-dynamic-section-2.png), 100%)
+  .promo__zone
+    +pos-set(relative, zero)
+    padding: 38% 7% 5%
+  .promo__title
+    a
+      margin-bottom: 8%
+      padding-top: 18%
+  .product__wrap
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    > div
+      width: 32.5%
+      margin-bottom: 1.5%
+
+  .product--dynamic
+    width: 100%
+    +aspect-ratio(266, 384, relative, zero, a)
+    +bg-set(url(layout/dynamic-product/bg-dynamic-item.png), 100%)
+  .product__block
+    padding: 1.5% 2%

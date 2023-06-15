@@ -1,0 +1,70 @@
+-
+  var dataPromoText = [
+    {
+      link: "https://www.etmall.com.tw/gp/168683" ,
+      text: "晶片讀卡機",
+      alt: "晶片讀卡機",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/169975" ,
+      text: "蘭陵熱銷新品",
+      alt: "蘭陵熱銷新品",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3396381" ,
+      text: "摩洛哥優油",
+      alt: "摩洛哥優油",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/10320/m/index.html" ,
+      text: "飛利浦限時送",
+      alt: "飛利浦限時送",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/10222/m/index.html" ,
+      text: "冰箱洗衣機",
+      alt: "冰箱洗衣機",
+    },
+    {
+      link: "https://www.etmall.com.tw/c3/44823" ,
+      text: "理膚寶水防曬",
+      alt: "理膚寶水防曬",
+    },
+  ]
+
+section.daily__group.promo__group--dynamic-slider.m-bottom--lg(data-title="第三塊")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--title#dynamic3Title
+        img(src="event/1st/e-main/components/dynamic-slider-3/title-dynamic-slider-3.png", alt="")
+      .decor__item.decor__item--left#decorDynamic3Left
+        img(src="event/1st/e-main/components/dynamic-slider/decor-dynamic-slider-left.png", alt="")
+      .decor__item.decor__item--right#decorDynamic3Right
+        img(src="event/1st/e-main/components/dynamic-slider/decor-dynamic-slider-right.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          .promo__slider.swiper-container#dynamicSlider3Block
+            .swiper-wrapper
+    .promo__box
+      ul.text__wrap
+        each data in dataPromoText
+          li.promo__text
+            a(href= data.link, title=data.alt)
+              span= data.text
+
+          //- include /utils/bg-deco dration-instance/threejs-gift/_threejs-gift
+
+//- 版型結構
+//- .dynamic__item
+//-   .product.product--dynamic
+//-     a(href="data.網址", title="data.商品名")
+//-       .product__block
+//-         .product__img
+//-           img.swiper-lazy(alt="", src="")
+//-        .product__text
+//-           .product__name
+//-             span data.商品名data.商品名data.商品名data.商品名data.商品名data.商品名data.商品名
+//-           .product__price
+//-             span $
+//-             span 888,888

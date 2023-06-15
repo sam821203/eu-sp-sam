@@ -1,0 +1,69 @@
+// ==========================================================================
+// Shape
+// ==========================================================================
+.shape--capsule
+  +capsule-set
+
+.shape--capsule-pad
+  +breakpoint-min($min-width-lg)
+    +capsule-set
+
+.shape--blur
+  +pos-set(relative, zero)
+  &::before
+    content: ''
+    +pos-set(absolute, base)
+    top: 8%
+    left: 50%
+    width: 70%
+    height: 15%
+    border-radius: 50%
+    background-color: $gray-light
+    transform: translateX(-50%)
+    opacity: 0.5
+    filter: blur(3px)
+
+.shape--radius
+  +radius-set
+
+// Shape style
+// ==========================================================================
+.shape--gray
+  background-color: $gray-dark
+
+.shape--gray-pad
+  +breakpoint-min($min-width-lg)
+    background-color: $gray-dark
+
+.shape--blue
+  background-color: $main-color-blue-1
+
+.shape--blue-pad
+  +breakpoint-min($min-width-lg)
+    background-color: $main-color-blue-1
+
+.shape--yellow
+  background-color: $main-color-yellow-1
+
+.shape--yellow-pad
+  +breakpoint-min($min-width-lg)
+    background-color: $main-color-yellow-2
+
+.shape--pink
+  background-color: $main-color-pink-1
+
+// Team shape and color style
+// ==========================================================================
+.player--dog
+  .team__label
+    +bg-set(url(~components/rank-section/label-dog.svg), contain)
+
+  .votes__value
+    color: $main-color-blue-2
+
+.player--cat
+  .team__label
+    +bg-set(url(~components/rank-section/label-cat.svg), contain)
+
+  .votes__value
+    color: $main-color-pink-5

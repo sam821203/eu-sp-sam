@@ -1,0 +1,334 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero
+  +pos-set(relative, zero)
+  // +bg-set(url(event/2nd/e-main/components/hero-section/bg-hero.png), 100%)
+  overflow: hidden
+  .layout--main
+    +pos-set(relative, zero)
+  .umbrella
+    +pos-set(absolute, zero, -20%)
+    display: none
+    +breakpoint-min($min-width-xl)
+      display: block
+    &--left-bottom
+      // top: -15px
+      left: calc(50% - 300px)
+      .js-loading &
+        animation: u-left-background 6s 2s infinite ease-out, u-rotate 5s infinite
+    &--right-bottom
+      right: 240px
+      .js-loading &
+        animation: u-right-background 6s 1.8s infinite ease-out, u-rotate2 5s infinite
+    &--umbrella--middle1
+      left: 620px
+      .js-loading &
+        animation: u-middle-background 8s 2.3s infinite ease-out, u-rotate 4s infinite
+    &--umbrella--middle2
+      right: 630px
+      .js-loading &
+        animation: u-middle2-background 7s 2.5s infinite ease-out, u-rotate2 5s infinite
+  .decor__spotlight
+    +pos-set(absolute, base, -15%)
+    width: 40%
+    opacity: 0.7
+    &--left
+      left: -20%
+      transform-origin: top left
+      .js-loading &
+        animation: spotlight-left 2s infinite both linear alternate
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 980px)
+    &--right
+      right: -20%
+      transform-origin: top right
+      .js-loading &
+        animation: spotlight-right 2s infinite both linear alternate
+      +breakpoint-min($min-width-xl)
+        right: calc(50% - 980px)
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .m-umbrella
+    +pos-set(absolute, zero, -10%)
+    &--left-m
+      left: 10%
+      width: 15%
+      max-width: 100px
+      // display: block
+      .js-loading &
+        animation: u-left-background-m 8s 2s infinite ease-out, u-rotate 5s infinite
+    &--right-m
+      right: 10%
+      width: 15%
+      max-width: 100px
+      // display: block
+      .js-loading &
+        animation: u-right-background-m 7s 1.3s infinite ease-out, u-rotate 5s infinite
+  .decor__wrap
+    pointer-events: none
+    .decor__item
+      &--left
+        +pos-set(absolute, zero, 18%, 3%)
+        width: 20%
+        transform-origin: 30% center
+        .js-loading &
+          animation: key-rotate-from-to 2.5s ease-in-out infinite both alternate
+        +breakpoint-min($min-width-xl)
+          top: 175px
+          left: calc(50% - 490px)
+      &--right
+        +pos-set(absolute, zero, 1%)
+        right: 3%
+        width: 15%
+        transform-origin: 40% center
+        .js-loading &
+          animation: key-rotate-from-to-2 1s .5s ease-in-out infinite both alternate
+        +breakpoint-min($min-width-xl)
+          right: calc(50% - 480px)
+      +breakpoint-min($min-width-xl)
+        width: auto
+      &--left-w
+        +pos-set(absolute, zero, 0%, calc(50% - 800px))
+        visibility: hidden
+        display: none
+        .js-loading &
+          animation: slideInLeft .7s 1.2s linear 1 forwards
+        .decor__box
+          +pos-set(absolute, zero, 150px, 10px)
+          animation: flash 1s 1s ease-in-out infinite
+        +breakpoint-min($min-width-xl)
+          display: block
+      &--right-w
+        +pos-set(absolute, zero, 0%)
+        right: calc(50% - 800px)
+        visibility: hidden
+        display: none
+        .js-loading &
+          animation: slideInRight .7s 1.2s linear 1 forwards
+        .decor__box
+          +pos-set(absolute, zero, 230px)
+          right: 10px
+          animation: flash 1s 1.5s ease-in-out infinite
+        +breakpoint-min($min-width-xl)
+          display: block
+  .hero__wrap
+    .hero__zone
+      +aspect-ratio(960, 1228)
+      // +breakpoint-min($min-width-xl)
+      //   +aspect-ratio(960, 892)
+      .hero__block
+        animation: moveY 1s 1s ease-in-out infinite alternate
+        z-index: 1
+      .hero__title
+        &--main
+          +pos-set(absolute, base, 1%, 11%)
+          width: 78%
+          animation: slideDown .7s 1s linear 1 forwards
+        &--item
+          +pos-set(absolute, zero, 0%, 10%)
+          width: 80%
+          opacity: 0
+          .js-loading &
+            animation: show-item .3s .7s linear 1 forwards, heartBeat 1s 1.7s ease-in infinite
+          +breakpoint-min($min-width-xl)
+            left: calc(50% - 380px)
+        &--bg
+          +pos-set(absolute, under, 0%, 10%)
+          width: 80%
+          +breakpoint-min($min-width-xl)
+            left: calc(50% - 380px)
+      .hero--btn
+        +pos-set(absolute, second)
+        right: 5%
+        bottom: 25%
+        width: 20%
+        animation: rotate-item 1s linear infinite alternate
+        &:hover
+          filter: brightness(120%)
+        +breakpoint-min($min-width-xl)
+          width: auto
+
+
+  // .hero__zone
+      // animation: zoomIn .3s ease-in 1, jackInTheBox 1s 1.2s ease-in 1
+
+@import event/2nd/e-main/components/hero-section/hero-video/_hero-video.sass
+
++key-rotate-from-to(-10, 30)
++key-rotate-from-to(-5, 5, key-rotate-from-to-2)
++key-rotate-from-to(-30, 0, spotlight-left)
++key-rotate-from-to(30, 0, spotlight-right)
+
+@keyframes slideInLeft
+  0%
+    transform: translate3d(-100%, 0, 0)
+    visibility: visible
+  to
+    transform: translateZ(0)
+    visibility: visible
+
+@keyframes slideInRight
+  0%
+    transform: translate3d(100%, 0, 0)
+    visibility: visible
+  to
+    transform: translateZ(0)
+    visibility: visible
+
+@keyframes heartBeat
+  0%, 100%
+    transform: scale(1)
+  5%
+    transform: scale(1.07)
+  10%
+    transform: scale(1)
+  15%
+    transform: scale(1.07)
+  35%
+    transform: scale(1)
+
+@keyframes rotate-item
+  0%, 100%
+    transform: rotate(-10deg)
+  50% 
+    transform: rotate(10deg) 
+    // filter: brightness(120%)
+
+@keyframes tada
+  0%
+    transform: scaleX(1)
+  10%, 20%
+    transform: scale3d(.9, .9, .9) rotate(-3deg)
+  30%, 50%, 70%, 90%
+    transform: scale3d(1.1, 1.1, 1.1) rotate(3deg)
+  40%, 60%, 80%
+    transform: scale3d(1.1, 1.1, 1.1) rotate(-3deg)
+  to
+    transform: scaleX(1)
+
+
+@keyframes show-item
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+@keyframes slideDown
+  0%
+    transform: translateY(-100%)
+  to
+    transform: translateY(0%)
+
+@keyframes moveY
+  0%
+    transform: translateY(0.3%)
+  100%
+    transform: translateY(-0.7%)
+
+@keyframes flash
+  0%, 10%, to
+    opacity: 1
+  5%, 15%
+    opacity: .2
+
+// umbrella
+@keyframes u-left-background
+  from
+    top: -20%
+    left: calc(50% - 900px)
+    filter: brightness(120%)
+  80%
+    opacity: 1
+  to
+    top: 600px
+    left: calc(50% - 850px)
+    transform: rotate(15deg) scale(0.8)
+    filter: brightness(60%)
+    opacity: 0
+
+@keyframes u-left-background-m
+  from
+    top: -20%
+    left: 10%
+    filter: brightness(120%)
+  65%
+    opacity: 1
+  70%
+    opacity: 0
+  to
+    top: 50%
+    left: 20%
+    transform: rotate(15deg) scale(0.8)
+    filter: brightness(60%)
+    opacity: 0
+
+@keyframes u-rotate
+  from
+    transform: rotate(-30deg) scale(0.8)
+  50%
+    transform: rotate(30deg) scale(0.8)
+  to
+    transform: rotate(-30deg) scale(0.8)
+
+@keyframes u-right-background
+  from
+    top: -10%
+    right: calc(50% - 900px)
+    filter: brightness(150%)
+  80%
+    opacity: 1
+  to
+    top: 600px
+    right: calc(50% - 800px)
+    filter: brightness(60%)
+    opacity: 0
+
+@keyframes u-right-background-m
+  from
+    top: -10%
+    right: 20%
+    filter: brightness(150%)
+  65%
+    opacity: 1
+  70%
+    opacity: 0
+  to
+    top: 50%
+    right: 25%
+    filter: brightness(60%)
+    opacity: 0
+
+@keyframes u-rotate2
+  from
+    transform: rotate(-15deg) scale(0.8)
+  50%
+    transform: rotate(15deg) scale(0.8)
+  to
+    transform: rotate(-15deg) scale(0.8)
+
+@keyframes u-middle-background
+  from
+    top: -20%
+    left: calc(50% - 920px)
+    filter: brightness(110%)
+  80%
+    opacity: 1
+  to
+    top: 600px
+    left: calc(50% - 850px)
+    filter: brightness(60%)
+    opacity: 0
+
+@keyframes u-middle2-background
+  from
+    top: -20%
+    right: calc(50% - 800px)
+    filter: brightness(150%)
+  80%
+    opacity: 1
+  to
+    top: 600px
+    right: calc(50% - 930px)
+    filter: brightness(70%)
+    opacity: 0

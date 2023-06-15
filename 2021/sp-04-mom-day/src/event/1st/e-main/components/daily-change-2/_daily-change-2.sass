@@ -1,0 +1,274 @@
+.sp__wrap
+  .promo__group.promo__group--everyDay
+    position: relative
+    z-index: 1
+    top: 0
+    right: 0
+    width: 100%
+    overflow: hidden
+    height: 89vw
+    margin-bottom: 3vw
+    +bg-set(url(~event/1st/e-main/components/daily-change-2/bg-everyday.png), 100% auto)
+    +breakpoint-min($min-width-xl)
+      background-size: 960px 843px
+      top: 0
+      right: 0
+      width: auto
+      height: 843px
+      margin-bottom: 30px
+
+    .promo__wrap
+      +pos-set(relative, zero)
+
+    .promo__wrap
+      padding-top: 0
+      text-align: center
+      &:hover,
+      &:active
+        a
+          filter: brightness(105%) contrast(120%)
+
+.today__day__wrap
+  ul
+    margin: 7vw auto auto auto
+    padding: 0 3%
+    .today__day__item
+      display: none
+      &.active
+        display: block
+        display: flex
+      li
+        width: 47%
+        margin-right: 2%
+        //filter: grayscale(1)
+        height: 45vw
+        //+bg-set(url(~event/1st/e-main/components/daily-change-2/bg_pp-style-1.png), 100% auto)
+        &:nth-child(1)
+          width: 50%
+          margin-top: 5vw
+          .product--dynamic
+            .product__text
+              margin-top: 7vw
+              .product__name
+                font-size: 13px
+              .product__price
+                span:first-child
+                  font-size: 6vw
+                span:last-child
+                  font-size: 10vw
+        &:last-child
+          margin-right: 0
+          .product--dynamic
+            .product__text
+              display: flex
+              flex-wrap: wrap
+              align-items: center
+              justify-content: flex-start
+              padding-left: 10px
+              padding-right: 10px
+              .product__name
+                width: 100%
+                height: 2.4em
+                -webkit-line-clamp: 2
+                padding: 0
+              .product__price
+                width: 100%
+                padding: 0
+                line-height: 1
+                span:last-child
+                  font-size: 6vw
+        &.now__time
+          filter: grayscale(.4)
+          pointer-events: auto
+        img
+          padding: 1% 8%
+
+      .product--dynamic
+        //border: 1px solid $gray-medium
+        border-radius: 1vw
+        overflow: hidden
+        .product__img
+        //img
+        //  transform: scale(0.9)
+        //  +breakpoint-min($min-width-xl)
+        //    transform: scale(1)
+        .product__name
+          display: -webkit-box
+          -webkit-line-clamp: 2
+          -webkit-box-orient: vertical
+          text-overflow: ellipsis
+          margin: 0
+          padding: 0 4%
+          color: $gray-deep-dark
+          line-height: 110%
+          height: 2.3em
+          font-size: 13px
+          overflow: hidden
+        .product__price
+          padding: 0 2%
+          color: $primary-medium
+          font-weight: 700
+          text-align: center
+          span
+            &:first-child
+              font-size: 2vw
+              vertical-align: baseline
+            &:last-child
+              font-size: 4vw
+
+        //+breakpoint-max($max-width-xxs)
+        //  .product__name
+        //    margin: 0
+
+        +breakpoint-min($min-width-lg)
+          .product__name
+            // margin: 5% 0
+            font-size: 3vw
+          .product__price
+            span
+              &:first-child
+                font-size: 2vw
+              &:last-child
+                font-size: 4vw
+
+        +breakpoint-min($min-width-xl)
+          border-radius: 12px
+          .product__name
+            margin: 20px 0 0 0
+            padding: 0 10px
+            font-size: 24px
+            height: 2.2em
+          .product__price
+            span
+              &:first-child
+                font-size: 29px
+              &:last-child
+                font-size: 46px
+
+  +breakpoint-min($min-width-xl)
+    ul
+      margin: 60px auto auto auto
+      padding: 0 4.5% 0 3.5%
+      .today__day__item
+        li
+          width: 47%
+          margin-right: 2%
+          height: 450px
+          &:nth-child(1)
+            width: 50%
+            margin-top: 80px
+            .product--dynamic
+              .product__text
+                margin-top: 50px
+                padding-left: 10px
+                padding-right: 10px
+                .product__name
+                  font-size: 36px
+                .product__price
+                  span:first-child
+                    font-size: 40px
+                  span:last-child
+                    font-size: 100px
+          &:last-child
+            margin-right: 0
+            .product--dynamic
+              margin-top: 20px
+              .product__text
+                margin-top: 10px
+                .product__name
+                  margin: 10px 0 0 0
+                  height: 2.2em
+                .product__price
+                  //width: 50%
+                  span:last-child
+                    font-size: 60px
+//- 日期標籤
+.everyDay__next__date__tag
+  display: flex
+  width: 50%
+  height: auto
+  position: absolute
+  top: 48.5vw
+  left: 50vw
+  li
+    position: relative
+    flex: 1 0 100%
+    color: #fff
+    font-weight: bold
+    text-align: center
+    cursor: default
+    height: 10vw
+    display: none
+    &.active--next__date
+      display: block
+    //filter: grayscale(1) brightness(2.5)
+    //+bg-set(url(~event/1st/e-main/components/daily-tab/bg-daily-tab-date.png), contain)
+
+    span
+      position: absolute
+      &:nth-child(1)
+        top: 0
+        left: 4vw
+        font-size: 4.5vw
+      &:nth-child(2)
+        top: 0
+        left: 10vw
+        font-size: 4.5vw
+      &:nth-child(2):before
+        display: block
+        position: absolute
+        top: .8vw
+        left: -2.5vw
+        content: '/'
+        clear: both
+        font-size: 3.5vw
+    &.active
+      color: #fff
+    //filter: grayscale(0)
+    &.active,
+    &:active,
+    &:hover
+      color: $gray-light
+  +breakpoint-min($min-width-xl)
+    height: auto
+    position: absolute
+    top: 465px
+    left: calc(50% - 5px)
+    li
+      height: 80px
+      span
+        &:nth-child(1)
+          top: 0
+          left: 40px
+          font-size: 45px
+        &:nth-child(2)
+          top: 0
+          left: 100px
+          font-size: 45px
+        &:nth-child(2):before
+          top: 8px
+          left: -25px
+          font-size: 35px
+
+.everyDay__next__day
+  position: absolute
+  width: 50%
+  top: 53vw
+  right: 1vw
+  padding: 2px
+  +breakpoint-min($min-width-xl)
+    top: 530px
+    right: calc(50% - 440px)
+    width: auto
+
+@keyframes tada
+  0%
+    transform: scaleX(1)
+  10%, 20%
+    transform: scale3d(.9, .9, .9) rotate(-3deg)
+  30%, 50%, 70%, 90%
+    transform: scale3d(1.05, 1.05, 1.05) rotate(3deg)
+  40%, 60%, 80%
+    transform: scale3d(1.05, 1.05, 1.05) rotate(-3deg)
+  to
+    transform: scaleX(1)

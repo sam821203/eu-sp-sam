@@ -1,0 +1,35 @@
+.promo__group--bn-3
+  +pos-set(relative, zero)
+  .promo__title
+    margin-left: auto
+    margin-right: auto
+    width: 55%
+    text-align: center
+  .promo__wrap
+    +aspect-ratio(824, 650)
+  .promo__zone
+    padding: 0 5%
+    .decoration--bn-3
+      z-index: map-get($zindex, second)
+      top: 0
+      left: 2%
+      width: 96%
+    .promo__slider
+      width: 100%
+      height: 100%
+    .swiper-slide
+      +aspect-ratio(824, 718, relative, zero, a)
+      width: 100%
+      height: 100%
+      text-align: center
+      transition: all 0.5s
+      &:hover,
+      &:active
+        transform: scale(0.95)
+
+  // +breakpoint-min($min-width-xl)
+  //   .promo__zone
+      // padding: 155px 65px 0 90px
+
+
+

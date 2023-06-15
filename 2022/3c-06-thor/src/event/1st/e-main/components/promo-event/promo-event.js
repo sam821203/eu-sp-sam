@@ -1,0 +1,53 @@
+import Swiper from 'swiper/swiper-bundle.min.js';
+import { detectApp } from 'utils/js/detect.js'
+import { siblingRandom } from 'utils/js/build-random.js'
+
+export var initPromo = [
+  setInterval( function () { chooseRandomPromoItem() }, 1500 ),
+  detectApp( window.addEventListener( 'load', promoEventReady ), promoEventReady ),
+  promoEventReady(),
+];
+
+function chooseRandomPromoItem() {
+  var promoItems = Array.apply( null, document.querySelectorAll( '.promo__block .promo__item' ) );
+  // console.log(promoItems);
+
+  var chooseItemIndex = siblingRandom( promoItems.length );
+  // console.log(chooseItemIndex);
+
+  promoItems.forEach( function (item) {
+    // arrayAnimationClass.forEach( function (className) {
+      item.classList.remove( "animate" );
+    // } );
+  });
+  promoItems[chooseItemIndex].classList.add("animate");
+
+}
+
+function promoEventReady () {
+  var promoSliders = Array.apply( null, document.querySelectorAll( '.container--promo-event' ) );
+  promoSliders.forEach( function ( el ) {
+    var thisSlideItemsLength = el.querySelectorAll( '.swiper-slide' ).length;
+    var sliderPromo = new Swiper(el, {
+      autoplay: {
+        delay: 1800 + Math.floor(Math.random() * 500),
+        disableOnInteraction: false,
+        // reverseDirection: true,
+      },
+      grabCursor: true,
+      init: thisSlideItemsLength > 1 ? true : false,
+      // initialSlide: Math.floor(Math.random() * document.querySelectorAll('#dailySliderBlock .swiper-slide').length),
+      // lazy: {
+      //   loadPrevNext: true,
+      // },
+      // loop: true,
+      slidesPerView: 1,
+      // slidesPerGroup: 3,
+      // slidesPerColumn : 2,
+      // slidesPerColumnFill : 'row',
+      speed: 500 + Math.floor(Math.random() * 200),
+    })
+    return sliderPromo;
+  });
+
+}

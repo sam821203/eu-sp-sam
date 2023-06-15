@@ -1,0 +1,22 @@
+//- 打開u-mall選項會自動轉換成U的logo和連結(預設etmall)
+//- - var isU = true
+
+
+main#spWrap.sp__wrap.sp__wrap--e
+  include /layout/header/_header
+  include /event/3rd/e-main/components/background-decoration/_background-decoration
+
+  //- hero section
+  //- ===========================
+  include /event/3rd/e-main/components/hero-section/_hero-section
+
+  //- other components
+  //- ===========================
+  include /event/3rd/e-main/components/connect-anchor/_connect-anchor
+  include /event/3rd/e-main/components/bn-special/_bn-special
+  include /event/3rd/e-main/components/countdown-section/_countdown-section
+
+//- script區
+//- script(src="auto-change.js")
+include /utils/pug/_total-script
+script#dataCountdown(src="data-countdown.js")

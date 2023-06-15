@@ -1,0 +1,57 @@
+//- TODO: 打開雙月選項切換雙月(預設單月：7658 / true = 雙月：7659)
+//- - var isEven = true
+//- TODO: 打開2號電梯選項切換第二組電梯(預設第一組，true = 第二組 單月：7660 / 雙月：7661)
+- var isSecond = true
+//- TODO: 打開u-mall選項會自動轉換成U的logo和連結、電梯(預設etmall)
+//- - var isU = true
+doctype html
+html(lang='zh-Hant-TW')
+  head
+    include /utils/pug/_total-head
+    //- link(rel="stylesheet", href="/layout/elevator/main-elevator-left.css")
+    //- link(rel="stylesheet", href="/layout/elevator/main-elevator-right.css")
+    //- link#localElevatorLeft(rel="stylesheet", href="/layout/elevator/sp-elevator-left.css")
+    //- link#localElevatorRight(rel="stylesheet", href="sp-elevator-right.css")
+
+  //- body有正常與背景fixed(.fixed)共兩種樣式，
+  //- 標題有正常與soft UI(.soft-title)共兩種樣式，
+  //- filter有正常與soft UI(.soft)共兩種樣式，
+  //- 內框有沒陰影、material design shadow(.shadow)與soft UI shadow(.soft.shadow)共三種樣式，
+  //- nav有大網高亮區塊與細線(.tiny)，小網決議都是高亮區塊，大小網nav都有有陰影沒陰影(.shadow)共三種樣式
+  //- aside可以有用CSS被景色或是1px背景圖(.aside-bg)共兩種樣式
+  //- footer可以有上方兩個圓角與否(.footer-radius)共兩種樣式
+  //- 共128種介面變化
+  //- e.g. body.fixed.shadow.tiny.soft.soft-title.aside-bg.footer-radius
+  body.fixed.shadow.tiny.aside-bg.footer-radius
+    //- header
+    //- ===========================
+    include /layout/header/_header
+
+    //- main block (hero + promo section)
+    //- ===========================
+    main#spWrap.sp__wrap
+      //- include /utils/bg-decoration-instance/parallax/_parallax
+      include /event/1st/e-main/components/hero-section/_hero-section
+
+    //- other components
+    //- ===========================
+    //- include /event/1st/e-main/components/event-w1m1/_event-w1m1
+    include /event/1st/e-main/components/nav/_nav
+    include /event/1st/e-main/components/filter-w2m1/_filter-w2m1
+    include /event/1st/e-main/components/week-show/_week-show
+    include /event/1st/e-main/components/event-w2m1/_event-w2m1
+    include /event/1st/e-main/components/table-1/_table-1
+    include /event/1st/e-main/components/table-2/_table-2
+    include /event/1st/e-main/components/middle-big/_middle-big
+
+    //- aside
+    //- ===========================
+    include /event/1st/e-main/components/aside-nav/_aside-nav
+
+    //- footer
+    //- ===========================
+    include /layout/footer/_footer
+
+    //- script區
+    include /utils/pug/_total-script
+

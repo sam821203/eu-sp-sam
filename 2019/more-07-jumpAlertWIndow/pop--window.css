@@ -1,0 +1,198 @@
+/* 點選圖片彈出視窗 */
+.open-bigPhoto,
+.overlay-mask {
+    cursor: pointer;
+}
+
+.overlay-mask {
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 99;
+}
+
+.big--photo {
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 80%;
+    margin: 3% auto;
+    overflow: auto;
+    z-index: 99;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+    .big--photo {
+        height: 100vh;
+    }
+}
+
+.big--photo img {
+    width: 100%;
+}
+
+.overlay-open {
+    display: block;
+    transition: 2.5s;
+}
+
+.overlay-animate {
+    transition: 2.5s;
+}
+
+.max-width-100 {
+    max-width: 100%;
+}
+
+.close-icon-btn {
+    position: relative;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.close-icon {
+    position: fixed;
+    top: 10px;
+    right: 5px;
+    z-index: 1;
+    color: #f3ffea;
+    background-color: #f3ffea;
+    width: 18px;
+    height: 1px;
+    border: 2px solid #f3ffea;
+    border-radius: 110px;
+}
+
+.close-icon-r {
+    transform: rotate(-45deg);
+}
+
+.close-icon-l {
+    transform: rotate(45deg);
+}
+
+/* dialog--content-sm 圖片太小 左右置中 */
+.big--photo.dialog--content-sm {
+    width: 80%;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.big--photo.dialog--content-sm img {
+    height: auto;
+}
+
+.big--photo.movie--iframes {
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.big--photo.movie--iframes iframe {
+    width: 100vw;
+    height: calc(100vw * 0.5625);
+}
+
+/* 草莓網 */
+.big--photo.dialog__wrap {
+    background: #f4f5f7;
+    width: 290px;
+    max-width: 780px;
+    color: #1e1e1e;
+    font-size: 16px;
+    text-align: center;
+    padding: 15px 20px 5px;
+}
+.big--photo.dialog__wrap .content {
+    background: #fff;
+    padding: 10px 20px;
+}
+.big--photo.dialog__wrap .content p {
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 1.2;
+}
+.big--photo.dialog__wrap .content .company__color {
+    color: #9b3c92;
+}
+.big--photo.dialog__wrap .content .company__font {
+    font-size: 1.5em;
+}
+.big--photo.dialog__wrap .immediately__go {
+    color: #fff;
+    background-color: #9b3c92;
+    width: 100%;
+    border-radius: 4px;
+    padding: 5px 10px;
+    margin-top: 10px;
+    border: 0;
+    font-size: 1em;
+    letter-spacing: 2;
+}
+.big--photo.dialog__wrap .timer__tips {
+    margin-top: 3px;
+    letter-spacing: 2;
+    color: #717171;
+    font-size: .8em;
+}
+/* /.END. 草莓網 */
+
+@media screen and (min-width: 769px) {
+    .big--photo {
+        width: auto;
+        margin: 1% auto;
+    }
+
+    .big--photo img {
+        width: auto;
+        height: 96vh;
+    }
+
+    .close-icon {
+        top: 10px;
+        right: 10px;
+        width: 18px;
+        border: 2px solid #f3ffea;
+    }
+
+    /* dialog--content-sm 圖片太小 左右置中 */
+    .big--photo.dialog--content-sm {
+        width: auto;
+    }
+
+    .big--photo.dialog--content-sm img {
+        height: auto;
+    }
+
+    .big--photo.movie--iframes iframe {
+        width: 80vw;
+        height: calc(80vw * 0.5625);
+    }
+
+    /* 草莓網 */
+    .big--photo.dialog__wrap {
+        width: 430px;
+        font-size: 22px;
+        padding: 20px 20px 10px;
+    }
+    .big--photo.dialog__wrap .immediately__go {
+        border-radius: 8px;
+        padding: 8px 10px;
+        margin-top: 15px;
+    }
+    .big--photo.dialog__wrap .timer__tips {
+        margin-top: 10px;
+    }
+    /* /.END. 草莓網 */
+
+}
+
+/* /.END 點選圖片彈出視窗 */

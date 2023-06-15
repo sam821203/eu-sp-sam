@@ -1,0 +1,33 @@
+.promo__event
+  //background-color: $gray-deep-light
+  margin-bottom: 2.25%
+  margin-top: 11%
+
+  // +bg-set(url(~event/3rd/u-main/components/promo-event/bg-promo.png), contain, 2vw)
+  .event__wrap
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    padding: 2.4% 5%
+    //background-color: $main-e-background-color-1st
+    // 固定位置模式
+    li
+      flex: 0 1 32%
+      width: 32%
+      padding: 0.2%
+      // transition: all 0.5s
+      text-align: center
+      &:hover,
+      &:active
+        filter: none
+        img
+          transform: scale(1.02)
+          filter: brightness(105%) contrast(110%)
+
+  // +breakpoint-min($min-width-xl)
+    // padding: 77px 65px 10px 68px
+    // .event__wrap
+      // li
+        // padding-left: 3px
+        // padding-right: 3px
+        // height: 220px

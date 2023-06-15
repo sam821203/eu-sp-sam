@@ -1,0 +1,59 @@
+.note__box
+  padding: 10px 20px
+  width: 100%
+  +bg-set(url(event/1st/e-main/pages/index/bg-section.png), 100%, null, null, repeat)
+  overflow: hidden
+
+  ol li
+    margin-left: 32px
+    list-style: decimal
+    > ol li, > ul li
+      margin-left: 8px
+      list-style: none
+
+  .table-section
+    margin-bottom: 16px
+
+  .table__box
+    overflow: auto
+  h5
+    font-size: 14px
+  table
+    margin-bottom: 4px
+    width: 100%
+    border-collapse: collapse
+    text-align: center
+    &.table--scroll
+      width: 550px
+      overflow-x: scroll
+      th:first-child
+        width: 20%
+      +breakpoint-min($min-width-lg)
+        width: 100%
+
+  table,
+  th,
+  tr,
+  td
+    border: 1px solid $gray-deep-dark
+
+  th,
+  td
+    font-size: 14px
+    vertical-align: middle
+    +breakpoint-min($min-width-lg)
+      font-size: 16px
+    +breakpoint-min($min-width-xl)
+      font-size: 18px
+
+.figure__box
+  figure
+    margin: 0 auto 8%
+    width: 80%
+    text-align: center
+  +breakpoint-min($min-width-lg)
+    display: flex
+    justify-content: space-between
+    figure
+      flex: 0 0 48%
+      margin-bottom: 0

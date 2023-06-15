@@ -1,0 +1,52 @@
+-
+  var w3m32Data = [
+    { // 1
+      link: "https://www.etmall.com.tw/gp/199611",
+      imgSrc: "event/2nd/e-main/components/event-w3m3-2/items/depart2-1.png",
+      alt: "亞培 原味安素(237mlx30入)"
+    },
+    { // 2
+      link: "https://www.etmall.com.tw/c3/74440",
+      imgSrc: "event/2nd/e-main/components/event-w3m3-2/items/depart2-2.png",
+      alt: "【買2送2】雅詩蘭黛 絕對慾望柔霧唇膏(#333)*2+贈絕對慾望奢華潤唇膏(#420)*2"
+    },
+    { // 3
+      link: "https://media.etmall.com.tw/sp/10641/m/index.html",
+      imgSrc: "event/2nd/e-main/components/event-w3m3-2/items/depart2-3.png",
+      alt: "變頻冷凍櫃，滿額送電鍋"
+    },
+    { // 4
+      link: "https://media.etmall.com.tw/sp/20496/m/index.html",
+      imgSrc: "event/2nd/e-main/components/event-w3m3-2/items/depart2-4.png",
+      alt: "Acer宏碁 Aspire3 大螢幕筆電 17吋 N5100/8G/1T+PCIe 256G SSD/Win11/A317-33-C6ZM 銀"
+    },
+    { // 5
+      link: "https://media.etmall.com.tw/sp/19342/m/index.html",
+      imgSrc: "event/2nd/e-main/components/event-w3m3-2/items/depart2-5.png",
+      alt: "【得意的一天】經典肉鬆禮盒(200gx2罐)-網"
+    },
+    { // 6
+      link: "https://media.etmall.com.tw/sp/10019/m/index.html",
+      imgSrc: "event/2nd/e-main/components/event-w3m3-2/items/depart2-6.png",
+      alt: "石墨烯獨立筒，加碼贈羊毛被"
+    },
+  ]
+
+section.promo__group.promo__group--w3m3-2(data-title="品牌大賞")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--left#decorEventW3m32Left
+        img(src="event/2nd/e-main/components/event-w3m3-2/decor-event-w3m3-2-left.png", alt="")
+      .decor__item.decor__item--right#decorEventW3m32Right
+        img(src="event/2nd/e-main/components/event-w3m3-2/decor-event-w3m3-2-right.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          #w3m32Wrap.event__wrap
+            ul.good__wrap
+              each data, index in w3m32Data
+                li
+                  a(href= data.link, title= data.alt)
+                    - var hasImg = data.imgSrc ? true : false
+                    if (hasImg)
+                      img(src= data.imgSrc, alt= data.alt)

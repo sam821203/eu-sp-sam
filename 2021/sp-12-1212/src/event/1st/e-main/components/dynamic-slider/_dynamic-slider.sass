@@ -1,0 +1,109 @@
+.promo__group--dynamic-slider
+  overflow: hidden
+  .promo__wrap
+    +aspect-ratio(960, 1015)
+  .promo__zone
+    +pos-set(relative, zero)
+    padding: 20% 5% 11%
+    +bg-set(url(event/1st/e-main/components/dynamic-slider/bg-dynamic-slider.png), 100%, center, 100%)
+    .promo__block
+      .promo__slider
+        height: 70vw
+        +breakpoint-min($min-width-xl)
+          height: 720px
+        .dynamic__item
+          &:first-child
+            +pos-set(absolute, zero, 0%, 0%)
+            width: 100%
+            +breakpoint-min($min-width-xl)
+              left: 3%
+              width: 90%
+            .product__img
+              +breakpoint-min($min-width-xl)
+                img
+                  width: 100%
+            .product__text
+              .product__name
+                padding: 21% 5% 0
+                font-size: 5vw
+                +breakpoint-min($min-width-xl)
+                  padding-top: 22%
+                  font-size: 28px
+            .product__price
+              span
+                font-size: 3vw
+                &:last-child
+                  font-size: 10vw
+                  +breakpoint-min($min-width-xl)
+                    font-size: 76px
+          &:nth-last-child(2)
+            +pos-set(absolute, zero)
+            bottom: 5%
+            left: 0%
+            width: 50%
+            +breakpoint-min($min-width-xl)
+              bottom: 130px
+              left: 2% 
+              width: 45%
+            .product__text
+              .product__name
+                padding: 11% 4% 0
+            .product__price
+              span
+                font-size: 5vw
+                +breakpoint-min($min-width-xl)
+                  font-size: 42px
+          &:last-child
+            +pos-set(absolute, zero)
+            right: 0%
+            bottom: 5%
+            width: 50%
+            +breakpoint-min($min-width-xl)
+              right: 6%
+              bottom: 130px
+              width: 45%
+            .product__text
+              .product__name
+                padding: 11% 4% 0
+            .product__price
+              span
+                font-size: 5vw
+                +breakpoint-min($min-width-xl)
+                  font-size: 42px
+    .decor__wrap
+      +pos-set(relative, base)
+      width: 30%
+      max-width: 277px
+            
+
+              
+
+
+  // TODO: 橫式
+  .product__block
+    display: flex
+    justify-content: space-around
+
+  // 共用類宮格樣式
+  .product--dynamic
+    .product__block
+      padding: 0% 2%
+      // +bg-set(url(event/2nd/e-main/components/daily-slider/bg-dynamic-item.png), contain)
+    .product__name
+      margin-bottom: 1%
+      height: 50%
+    .product__price
+      width: 100%
+      text-align: center
+      color: $main-e-background-color-1st-2
+
+
+    .product__img
+      width: 50%
+      border-radius: 15px 0 0 15px
+      // border-radius: 0
+    .product__text
+      width: 50%
+      border-radius: 0 15px 15px 0
+      background-color: #fff
+

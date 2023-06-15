@@ -1,0 +1,40 @@
+/* reset */
+/* ======================================== */
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, h5, h6, ol, ul, li {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	display: block;
+	text-decoration: none;
+}
+
+a:active, a:hover {
+	outline: 0;
+}
+
+ul, li {
+	list-style: none;
+}
+
+img, embed, object {
+  max-width: 100%;
+  height: auto;
+  border: 0;
+	vertical-align: middle;
+}
+
+article, main, nav, section, header {
+	display: block;
+}  
+/* clearfix */
+.clearfix::after {
+	content: '';
+	display: block;
+	clear: both;
+}

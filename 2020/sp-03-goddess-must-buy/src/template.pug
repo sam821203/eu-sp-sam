@@ -1,0 +1,32 @@
+//- TODO: 打開雙月選項切換雙月(預設單月)
+//- - var isEven = true
+
+doctype html
+html(lang='zh-Hant-TW')
+  head
+    include utils/pug/_total-head
+
+    //- TODO: 打開可測試是否會被app的太空垃圾影響，但是注意正式dist時要關閉
+    //- =======================================================================
+    //- link(rel="stylesheet3", type="text/css", href="~vendors/style/site.css")
+    //- =======================================================================
+
+  body
+    //- 每頁上方都要放動態產出置頂元件的定位tag(e.g. 電梯、浮水印)
+    include utils/pug/include/_top-home-section
+
+    //- main section 主視覺區
+    //- 第一波
+    //- include event/1st/e-main/pages/index/_index.pug
+    //- include event/1st/u-main/pages/index/_index.pug
+    //- include event/1st/e-sp/pages/index/_index.pug
+    //- 第二波
+    //- include event/2nd/e-main/pages/index/_index.pug
+    //- include event/2nd/e-sp/pages/index/_index.pug
+    //- include event/2nd/u-main/pages/index/_index.pug
+    //- include event/2nd/u-sp/pages/index/_index.pug
+    //- 第三波
+    //- include event/3rd/e-main/pages/index/_index.pug
+    //- include event/3rd/e-sp/pages/index/_index.pug
+    include event/3rd/u-main/pages/index/_index.pug
+    //- include event/3rd/u-sp/pages/index/_index.pug

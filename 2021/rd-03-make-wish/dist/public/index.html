@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="app-bundle.css" rel="stylesheet"></head>
+  <body>
+    <div class="elevatorHome js--main--dialog" id="elevatorHome"></div>
+    <div class="navRightBar" id="navRightBar"></div>
+    <div class="icon__home layout--main" id="iconHome"></div>
+    <main class="sp__wrap sp__wrap--e" id="spWrap">
+      <header class="header__zone">
+        <div class="layout--main"><a class="logo logo--e" href="https://www.etmall.com.tw/"><img src="logo.png" alt="東森購物"></a>
+        </div>
+      </header>
+      <section class="hero__wrap">
+        <div class="hero__zone">
+          <div class="layout--main">
+            <div class="hero__block">
+              <div class="hero__box">
+                <h1 class="hero__title hero__title--main wow" title="精品代購許願池"><img src="title.jpg" alt="精品代購許願池"></h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="promo__group promo__group--form m-bottom--md">
+        <div class="promo__body">
+          <form action="">
+            <div class="form__block">
+              <div class="block__wrap">
+                <ul class="form__list">
+                  <li class="form__box m-bottom--sm">
+                    <label for="brandName">品牌：</label>
+                    <select id="brandName" name="brandName">
+                      <option selected disabled hidden>請選擇品牌</option>
+                      <option name="LV" value="">LV</option>
+                      <option name="CHANEL" value="">CHANEL</option>
+                      <option name="HERMES" value="">HERMES</option>
+                      <option name="Christian Dior" value="">Christian Dior</option>
+                    </select>
+                  </li>
+                  <li class="form__box m-bottom--sm">
+                    <label for="officialLink">官網連結：</label>
+                    <input id="officialLink" name="officialLink">
+                  </li>
+                  <li class="form__box m-bottom--sm">
+                    <label for="itemName">品名：</label>
+                    <input id="itemName" name="itemName">
+                  </li>
+                  <li class="form__box m-bottom--sm">
+                    <label for="itemNumber">型號：</label>
+                    <input id="itemNumber" name="itemNumber">
+                  </li>
+                  <li class="form__box m-bottom--sm">
+                    <label for="itemSize">尺寸：</label>
+                    <input id="itemSize" name="itemSize">
+                  </li>
+                  <li class="form__box m-bottom--sm">
+                    <label for="itemColor">顏色：</label>
+                    <input id="itemColor" name="itemColor">
+                  </li>
+                  <li class="form__box m-bottom--sm">
+                    <label for="itemAmount">數量：</label>
+                    <input id="itemAmount" name="itemAmount" type="number" inputmode="numeric">
+                  </li>
+                  <li class="form__box m-bottom--sm">
+                    <label for="itemPrice">市價：</label>
+                    <input id="itemPrice" name="itemPrice" type="number" inputmode="numeric">
+                  </li>
+                </ul>
+              </div>
+              <div class="block__wrap">
+                <div class="block__title"><img src="decoration-title-1.png" alt="">
+                  <div class="title__box"><span>聯絡資訊</span></div>
+                </div>
+                <ul class="form__list">
+                  <li class="form__box m-bottom--sm">
+                    <label for="hopePriceLow">預期價格：</label>
+                    <input class="double__input" id="hopePriceLow" name="hopePriceLow" type="number" inputmode="numeric"><span>~</span>
+                    <input class="double__input" id="hopePriceHigh" name="hopePriceLow" type="number" inputmode="numeric">
+                  </li>
+                  <li class="form__box m-bottom--sm">
+                    <label for="userName">貴賓姓名：</label>
+                    <input id="userName" name="userName">
+                  </li>
+                  <li class="form__box m-bottom--sm">
+                    <label for="userTel">貴賓電話：</label>
+                    <input id="userTel" name="userTel" type="tel">
+                  </li>
+                  <li class="form__box m-bottom--sm">
+                    <label for="userMail">貴賓Mail：</label>
+                    <input id="userMail" name="userMail" type="email">
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="form__block">
+              <div class="block__wrap">
+                <div class="block__title m-bottom--md"><img src="decoration-title-2.png" alt="">
+                  <div class="title__box"><span>代購許願池交易規範</span></div>
+                </div>
+                <p class="m-bottom--sm">親愛的會員您好，如您於ET Mall東森購物網站上查詢不到想購買的精品，請於「精品代購許願池」中填入您想購買的許願表單，我們將為您尋找及代購。</p>
+                <p class="m-bottom--xs"><strong>交易規範須知：</strong></p>
+                <ol class="form__list">
+                  <li class="m-bottom--xs">精品價值需高於新臺幣15萬元(依市價認定)以上始得填寫代購許願表單。</li>
+                  <li class="m-bottom--xs">預計於14個工作天內，將以東森購物APP或E-mail通知您是否許願成功。</li>
+                  <li class="m-bottom--xs">許願成功者，請於72小時內點選東森購物APP通知或E-mail所提供之訂單連結以完成結帳，始完成許願代購程序。</li>
+                  <li class="m-bottom--xs">代購是依照消費者要求而提供協助購買商品之服務，係屬「客製化給付」，依通訊交易解除權合理例外情事適用準則規定並無消費者保護法第19條鑑賞期之適用。因此，若您收到精品後將無法主張退、換貨或解除契約。</li>
+                  <li class="m-bottom--xs">精品將由專人與您聯繫親送時間。經專人親自送達後，請逐一檢視所購買之精品，確認無誤後並請簽署"購買同意書"，以完成購買程序。</li>
+                  <li class="m-bottom--xs">東森購物僅會將精品親送予您本人，並請您本人確實簽收，故恕不提供指定第三人代收精品服務。若您欲將精品轉贈予第三人，請您務必先親自簽收後由您轉贈。</li>
+                  <li class="m-bottom--xs">倘若您已許願成功卻未於72小時內完成結帳，且超過2次者，為保障其他消費者權益恕東森購物不再提供代購許願服務。</li>
+                </ol>
+              </div>
+              <div class="block__hr"></div>
+            </div>
+            <div class="form__block">
+              <div class="form__check">
+                <input type="checkbox" name="" value="" id="ruleCheck">
+                <label for="ruleCheck">我已詳細閱讀並同意東森購物「<a href="https://www.etmall.com.tw/HelpCenter/PrivacyStatement" title="隱私權保護政策">隱私權保護政策</a></label>」。
+              </div>
+              <div class="form__submit">
+                <button type="submit">送出</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

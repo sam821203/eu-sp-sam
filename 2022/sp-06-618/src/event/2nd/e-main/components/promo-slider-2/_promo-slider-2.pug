@@ -1,0 +1,73 @@
+-
+  var promoSliderItem = [
+    {
+      link: "https://www.etmall.com.tw/i/3090052" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider-2/item/p-item-1.png",
+      alt: "安永鮮物鱸魚精-原味/0添加無薑無蔥x10盒(60ml*6包/盒，常溫)+贈安永滴雞精 60ml*2包",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3456124" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider-2/item/p-item-2.png",
+      alt: "DR.WU杏仁酸亮白煥膚精華15ML",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3108782" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider-2/item/p-item-3.png",
+      alt: "晶工牌43L雙溫控旋風電烤箱JK-7645",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3495356" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider-2/item/p-item-4.png",
+      alt: "SIROCA全自動研磨咖啡機SC-A1210CB金棕色",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3397902" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider-2/item/p-item-5.png",
+      alt: "ASUS華碩 Vivobook Pro 14 OLED 輕薄筆電 14吋 i5-11300H/16G/GTX1650-4G/K3400PH-0478B11300H",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3500603" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider-2/item/p-item-6.png",
+      alt: "618限定-PD QC五合一快充編織數據線(PD/QC/Lighting/TYPE-C/Micro USB)超值限量二入組送三合一編織快充線*1組合包",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3445036" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider-2/item/p-item-7.png",
+      alt: "媚格德莉MIGRATORY石墨烯控溫抗菌可水洗舒眠壓花四季被-雙人 贈寢具專用洗衣袋",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3289170" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider-2/item/p-item-8.png",
+      alt: "A&L老工匠】真皮名媛凱莉包手工牛皮頂級側背包28cm-甜米白",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3480647" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider-2/item/p-item-9.png",
+      alt: "Sodastream ART自動扣瓶氣泡水機白/黑",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2978171" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider-2/item/p-item-10.png",
+      alt: "Bio-essence碧歐斯 BIO膠原燕窩超澎精華霜50g",
+    },
+  ]
+
+
+section.promo__group.promo__group--promo-slider-2.m-bottom--lg(data-title="買一送一")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--bg
+        img(src="event/2nd/e-main/components/promo-slider-2/decor-promo-2-bg.png", alt="")
+      .decor__item.decor__item--title#titlePromoSlider2
+        img(src="event/2nd/e-main/components/promo-slider-2/title-promo-slider-2.png", alt="")
+      .decor__item.decor__item--item#decorPromoSlider
+        img(src="event/2nd/e-main/components/promo-slider-2/decor-promo-2-item.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          .promo__slider.swiper-container#promoSlider2Item
+            ul.swiper-wrapper
+              each data in promoSliderItem
+                li.swiper-slide
+                  a(href= data.link, title=data.alt)
+                    img(src= data.imgSrc, alt=data.alt)

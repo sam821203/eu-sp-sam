@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-Han-tw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+<!-- ============== 輪播 start ============== -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+<!--[if IE 9]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/2.7.6/idangerous.swiper.min.css">
+<![endif]-->
+<!-- ============== 輪播 end ============== -->
+<style>
+  ul, li{
+    list-style: none;
+  }
+  /* 自訂小點點未選取的顏色 不要就不用copy*/
+  .swiper-pagination-custom .swiper-pagination-bullet {
+    background-color: #606;
+  }
+  /* 自訂小點點active的顏色 不要就不用copy */
+  .swiper-pagination-custom .swiper-pagination-bullet-active {
+    background-color: #faa;
+  }
+
+  /* 自訂左箭頭顏色，不要就不用copy// fill%3D'%23色碼' => fill:'#色碼' */
+  .swiper-button-custom.swiper-button-prev {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23faa'%2F%3E%3C%2Fsvg%3E");
+                                                                                    /* ^^^此處填色碼 這個不用copy*/
+  }
+  /* 自訂左箭頭顏色，不要就不用copy// fill%3D'%23色碼' => fill:'#色碼' */
+  .swiper-button-custom.swiper-button-next {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23faa'%2F%3E%3C%2Fsvg%3E");
+                                                                                    /* ^^^此處填色碼 這個不用copy */
+  }
+</style>
+</head>
+<body>
+  <div class="promo__slider">
+    <div id="sliderModule" class="swiper-container">
+      <ul class="swiper-wrapper">
+        <li class="swiper-slide">
+          <a href="">
+            <img src="m-3-1.png" alt="">
+          </a>
+        </li>
+        <li class="swiper-slide">
+          <a href="">
+            <img src="m-3-2.png" alt="">
+          </a>
+        </li>
+        <li class="swiper-slide">
+          <a href="">
+            <img src="m-3-3.png" alt="">
+          </a>
+        </li>
+      </ul>
+      <!-- 如果需要小點點(預設class有白黑兩種(white、black)、或是自訂上色(custom)) -->
+      <!-- <div id="sliderModulePager" class="swiper-pagination-white swiper-pagination"></div> -->
+      <div id="sliderModulePager" class="swiper-pagination-black swiper-pagination"></div>
+      <!-- <div id="sliderModulePager" class="swiper-pagination-custom swiper-pagination"></div> -->
+
+      <!-- 如果需要左右按鈕(預設有白黑兩種(white、black)、或是自訂上色(custom)) -->
+      <!-- <div id="sliderModulePrev" class="swiper-button-white swiper-button-prev"></div> -->
+      <div id="sliderModulePrev" class="swiper-button-black swiper-button-prev"></div>
+      <div id="sliderModulePrev" class="swiper-button-black swiper-button-next"></div>
+      <!-- <div id="sliderModuleNext" class="swiper-button-custom swiper-button-next"></div> -->
+
+    </div>
+  </div>
+
+
+
+<!-- ============== 輪播 start ============== -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+<!--[if IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/2.7.6/idangerous.swiper.min.js"></script>
+<![endif]-->
+<script>
+  function isIE9() {
+    if (navigator.appName.indexOf("Internet Explorer") != -1) {
+      // not IE10, IE11
+      var badBrowser = navigator.appVersion.indexOf("MSIE 1") == -1;
+      if (badBrowser) return true;
+    }
+  }
+  var sliderModule = new Swiper('#sliderModule', {
+    autoplay: isIE9() ? 2000 : {
+      delay: 2000,
+      disableOnInteraction: false,
+    },
+    calculateHeight: true, // ie9 prevent float wrong height
+    centeredSlides: true,
+    grabCursor: true,
+    initialSlide: Math.floor(Math.random() * document.querySelectorAll('#sliderModule .swiper-slide').length),
+    loop: true,
+    // ========== 左右箭頭開始 不要就拿掉 ==========
+    navigation: {
+      nextEl: '#sliderModuleNext',
+      prevEl: '#sliderModulePrev',
+    },
+    // ========== 左右箭頭結束 不要就拿掉 ==========
+    // ========== 小點點開始 不要就拿掉 ==========
+    pagination: isIE9() ? '#sliderModulePager' : {
+      el: '#sliderModulePager',
+      type: 'bullets',
+      clickable: true,
+    },
+    paginationClickable: true, // ie9 only
+    // ========== 小點點結束 不要就拿掉 ==========
+    slidesPerView: 1,
+    speed: 600,
+  });
+</script>
+<!-- ============== 輪播 end ============== -->
+</body>
+</html>
+

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<head>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		* {
+ 		 box-sizing: border-box; }
+  		*:before, *:after {
+    		box-sizing: border-box; }
+	    a {
+	    	display: block;
+	    	text-decoration: none;
+	    }
+		header a, section a {
+			line-height: 0;
+		}
+	    h1 {
+	    	line-height: 0;
+	    }
+		ul {
+			list-style: none;
+		}
+		img {
+			border: 0;
+		}
+		main, header, footer, section {
+			display: block;
+		}
+		body {
+			margin: 0;
+  			padding: 0;
+  			width: 100%;
+  			min-width: 1260px;
+			background: #926c51 center top url(background.jpg) no-repeat fixed;
+			background-size: cover;
+		}
+
+		body, td, th {
+		font-family: Arial, Helvetica, LiHei, "Microsoft JhengHei", PMingLiU, "微軟正黑體", "新細明體", sans-serif;
+		}
+
+		.clearfix:after {
+			content: '';
+			display: block;
+			clear: both;
+			*zoom: 1;
+		}
+
+		.sp__wrap {
+			position: relative;
+			overflow: hidden;
+		}
+
+		.sp--1260 {
+			position: relative;
+			max-width: 1260px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+/* ============= decoration ============= */
+		.bg-decoration, .product__wrap, .decoration2 {
+			position: fixed;
+			z-index: -1;
+			min-width: 1920px;
+			width: 100%;
+			height: 100%;
+		}
+
+		.decoration__product {
+			z-index: 1;
+			background: center 15% url(foreground-1.png) no-repeat;
+			background-size: 100%;
+		}
+
+		.decoration__shadow {
+			background: center -5% url(foreground-2.png) no-repeat;
+			background-size: 100%;
+		}
+
+/* ================= header ================= */
+		.sp-logo {
+			position: absolute;
+			z-index: 20;
+			top: 20px;
+			left: 250px;
+			cursor: pointer;
+		}
+		.side-info {
+			position: absolute;
+			z-index: 30;
+			top: 585px;
+			right: 10px;
+			width: 186px;
+		}
+
+		.side-info img {
+			width: 100%;
+		}
+
+		.side-info a {
+			position: absolute;
+			z-index: 21;
+			left: 0;
+			width: 100%;
+		}
+
+		.side-info a:nth-child(2) {
+			top: 0;
+			height: 47.5%;
+		}
+
+		.side-info a:nth-child(3) {
+			bottom: 2.5%;
+			height: 47.5%;
+		}
+		
+/* ================= main-visual ================= */
+		.sp-title {
+			position: relative;
+			z-index: 0;
+			padding-top: 100px;
+			height: 540px;
+		}
+
+		.main-title {
+			position: relative;
+			margin-left: 150px;
+		}
+
+		.main-title:after {
+		    content: '';
+		    position: absolute;
+		    width: 100%;
+		    height: 100%;
+		    left: 0;
+		    top: 0;
+		    background-image: linear-gradient(to right, transparent, #fff, transparent);
+		    opacity: 0;
+ 			-webkit-mask: url(title.png) no-repeat;
+ 			mask: url(title.png) no-repeat;
+ 			animation: 10s 3s move infinite;
+	  	}
+
+		.title--animation {
+			position: absolute;
+			z-index: 2;
+			top: 255px;
+			left: 608px;
+			width: 123px;
+			height: 69px;
+			background-image: url(decoration-title.png);
+		}
+
+		@keyframes move {
+			50% {
+				opacity: 1;
+			}
+			to {
+				opacity: 0;
+				background-position-x: 1492px;
+			}
+		}
+
+/* ================= subtitle ================= */
+		.subtitle {
+			position: absolute;
+			z-index: 1;
+			top: 65px;
+			right: calc(50% - 610px);
+			width: 283px;
+			height: 403px;
+			padding: 18px 15px 15px;
+			background: url(background-sub-title.png) no-repeat;
+		}
+
+		.subtitle:before {
+			content: '';
+			position: absolute;
+			z-index: 2;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 40px;
+			background: center top url(background-sub-title-head.png) no-repeat;
+
+		}
+
+		.subtitle:after {
+			content: '';
+			position: absolute;
+			z-index: 2;
+			bottom: -100px;
+			right: -100px;
+			width: 240px;
+			height: 241px;
+			background: center top url(decoration-subtitle.png) no-repeat;
+			pointer-events: none;
+
+		}
+
+		.top-card {
+			margin-left: auto;
+			margin-right: auto;
+			width: 100%;
+			border-radius: 15px;
+			transition: all 0.2s;
+			overflow: hidden;
+		}
+
+		.top-card:hover {
+			transform: translateY(-3px) scale(1.01);
+			box-shadow: 0 8px 13px rgba(0,0,0,0.2), 0 3px 3px rgba(0,0,0,0.35);
+		}
+
+		.top-card img {
+			width: 100%;
+		}
+
+/* ================= main0 ================= */
+		.main0 {
+			position: relative;
+			z-index: 1;
+			width: 100%;
+			height: 236px;
+			background: center url(background-intro.png) no-repeat;
+		}
+
+		.main0-title {
+			position: relative;
+			z-index: 0;
+			margin-left: 51%;
+			padding-top: 55px;
+		}
+
+		.main0--info-a {
+			position: absolute;
+			z-index: 1;
+			top: -145px;
+			left: 80px;
+			width: 239px;
+		}
+
+		.main0--info-a img {
+			position: relative;
+			z-index: 1;
+		}
+
+		.main0--info-a:before {
+			content: '';
+			position: absolute;
+			z-index: 0;
+			top: 0;
+			left: 0;
+			width: 239px;
+			height: 388px;
+			background: url(game-intro-bg.png) no-repeat;
+		}
+
+/* ================= main-content ================= */
+		.sp-content	{
+			position: relative;
+			z-index: 20;
+			margin-top: 10px;
+			overflow: hidden;
+		}
+
+		.main-info {
+			padding: 30px 0; 
+			height: 494px;
+			background: center top url(background-main.png) no-repeat;
+		}
+
+		.main--info-a {
+			position: relative;
+			z-index: 2;
+			float: left;
+			transition: all 0.2s ease-in-out;
+		}
+
+		.main--info-a:nth-child(1) {
+			margin-left: 35px;
+			padding: 75px 30px 25px;
+		}
+
+		.main--info-a:nth-child(2) {
+			padding: 25px 65px 15px 35px;
+		}
+
+		.main--info-a:nth-child(3) {
+			margin-top: 50px;
+			margin-left: 35px;
+			padding: 60px 25px 32px;
+		}
+
+		.main--info-a:nth-child(4){
+			margin-top: 50px;
+			padding: 55px 0 2px;
+		}
+
+		.main--info-a:hover {
+			transform: translateY(-5px);
+			filter: brightness(110%) contrast(120%) drop-shadow(0 8px 13px rgba(0,0,0,0.2)) drop-shadow(0 3px 3px rgba(0,0,0,0.35));
+		}
+
+/* ================= ticket & sp-intro ================= */
+		.ticket {
+			
+			margin-top: 50px;
+			margin-left: 35px;
+			margin-bottom: 25px;
+		}
+
+		.ticket a {
+			position: relative;
+			transition: all 0.5s;
+		}
+
+		.ticket a:after {
+			content: '';
+			position: absolute;
+			z-index: 2;
+			top: 25%;
+			right: calc(50% - 620px);
+			width: 217px;
+			height: 223px;
+			background-image: url(decoration-discount.png);
+			pointer-events: none;
+			animation: 0.5s self-small steps(2) infinite alternate;
+		}
+
+		@keyframes self-small {
+			to {
+				transform: scale(0.9);
+			}
+		}
+
+		.ticket a:hover {
+			transform: translateY(-5px);
+			filter: brightness(110%);
+		}
+
+		.ticket a:hover:after {
+			animation: paused;
+		}
+
+		.sp-intro {
+			margin-top: 20px;
+		}
+/* ================= table hover setting ================= */
+		td[width^="2"] {
+			transition: all 0.3s;
+		}
+
+		td[width^="2"] a {
+			transition: all 0.3s;
+		}
+
+		td[width^="2"] td {
+			transition: all 0.3s;
+		}
+
+		td[width^="2"]:hover {
+			transform: translateY(-6px);
+			box-shadow: 0 5px 10px rgba(0,0,0,0.2), 0 3px 3px rgba(0,0,0,0.35);
+		}
+		td[width^="2"]:hover a {
+			color: #926c51 !important;
+		}
+
+		td[width^="2"]:hover td {
+			color: #926c51 !important;
+		}
+
+    </style>
+
+</head>
+<body>
+	<main id="spWrap" class="sp__wrap">
+		<div class="bg-decoration">
+			<div id="productWrap" class="product__wrap">
+				<div class="decoration2 decoration__product" data-depth="0.3"></div>
+				<div id="descShadow" class="decoration2 decoration__shadow" data-depth="0.15"></div>
+			</div>
+		</div>
+		<header>
+			<div class="sp--1260">
+				<div class="sp-logo">
+					<a href="https://www.etmall.com.tw/" title="東森嚴選 -- ETMall東森購物網" target="_top">
+						<img src="logo.png" alt="東森嚴選 -- ETMall東森購物網">
+					</a>
+			  	</div>
+				<aside class="side-info">
+					<img id="lineImg" src="line-and-app.png" alt="LINE's & APP's QR-code">
+					<a href="https://www.etmall.com.tw/Activity/WebSP?SubPage=DMSetting/Final/209912/SP_1103498/index.html" target="_blank"></a>
+					<a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201803/SP_1103897/index.html" target="_blank"></a>
+				</aside>
+				<div class="subtitle">
+					<a id="ASRC" href="" title="點我購買APP專屬優惠商品！">
+						<div class="top-card">
+							<img id="IMGSRC" src="product.jpg" alt="APP專屬優惠商品">
+						</div>
+					</a>
+				</div>
+				<div class="sp-title">
+					<h1 class="main-title" title="霸氣獻禮寵愛88，07/17-08/01下單抽海島奢華遊 -- ETMall東森購物網">
+						<img src="title.png" alt="霸氣獻禮寵愛88，07/17-08/01下單抽海島奢華遊">
+					</h1>
+					<div class="title--animation"><div class="title__light"></div></div>
+				</div>
+			</div>
+		</header>
+		<section id="main0Bg" class="main0">
+			<div class="sp--1260">
+				<a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201807/SP_1105064/index.html" class="main0--info-a" title="點我進入扭好禮活動頁面！">
+					<img id="main0Img" src="game-intro-1.png" alt="點我進入扭好禮活動頁面">
+				</a>
+				<img class="main0-title" src="promo-intro.png" alt="消費不限金額即享APP抽獎機會1次">
+			</div>
+		</section>
+		<section class="sp-content">
+			<div class="main-info clearfix">
+				<div class="sp--1260">
+					<a href="https://www.etmall.com.tw/Activity/WebSP?SubPage=DMSetting/Final/209912/SP_1103498/index.html" class="main--info-a" title="APP下載優惠">
+						<img src="main-intro-1.png" alt="首次登入送200折扣金，首購再送面膜與300折扣金">
+					</a>
+					<a href="https://www.etmall.com.tw/Activity/WebSP?SubPage=DMSetting/Final/201807/SP_1105063/index.html" class="main--info-a" title="滿額登錄抽">
+						<img src="main-intro-2.png" alt="滿三件且滿額登錄抽哈根達斯冰淇淋迷你杯">
+					</a>
+					<a href="https://www.etmall.com.tw/Activity/WebSP?SubPage=DMSetting/Final/201807/SP_1104701/index.html" class="main--info-a" title="刷卡享好康">
+						<img src="main-intro-3.png" alt="刷台新，滿額登錄送600刷卡金">
+					</a>
+					<a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201812/SP_1104455/index.html" class="main--info-a" title="新北政府補助">
+						<img src="main-intro-4.png" alt="節能家電50%省很大GO">
+					</a>
+				</div>
+			</div>
+		</section>
+		<section class="ticket">
+			<div class="sp--1260">
+				<a href="https://www.etmall.com.tw/member/ecoupon" title="點我領取折價券！">
+					<img src="discount-ticket.png" alt="滿1000折100折價券s/滿6000折700折價券">
+				</a>
+			</div>
+		</section>
+	</main>
+<script id="loadJS" src="load-indicator.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+<script>
+	function productParallax() {
+		var bgDesc = document.getElementById('productWrap');
+		var parallaxInstance = new Parallax(bgDesc);
+	}
+	requestAnimationFrame(productParallax);
+
+	function apngControl() {
+		var main0 = document.querySelector('#main0Bg');
+		var img = document.querySelector('#main0Img');
+		main0.addEventListener('mouseenter', function(){
+				hintBrowser(img);
+				img.src = 'game-intro-2.png';
+		});
+
+		main0.addEventListener('mouseleave', function(){
+				img.src = 'game-intro-1.png';
+		});
+
+		main0.addEventListener('animationEnd', removeHint);
+
+		function hintBrowser(el) {
+		  el.style.willChange = 'transform';
+		}
+
+		function removeHint() {
+		  this.style.willChange = 'auto';
+		}
+	}
+	apngControl();
+</script>
+</body>
+</html>

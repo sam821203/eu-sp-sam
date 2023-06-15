@@ -1,0 +1,63 @@
+.slider-w4m3
+  overflow: hidden
+  .decor__wrap
+    pointer-events: none
+    padding-bottom: 10%
+    +breakpoint-min($min-width-xl)
+      padding-bottom: 100px
+  .decor__item
+    &--left
+      +pos-set(absolute, zero, 0%, 7%)
+      width: 25%
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 370px)
+    &--right
+      +pos-set(absolute, zero, 5%)
+      right: 5%
+      width: 27%
+      +breakpoint-min($min-width-xl)
+        top: 75px
+        right: calc(50% - 420px)
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .promo__wrap
+    +bg-set(url("event/2nd/e-main/components/slider-w4m3/bg-slider-w4m3.png"), 100%)
+    // margin-top: 15%
+    +breakpoint-min($min-width-xl)
+      +bg-set(url("event/2nd/e-main/components/slider-w4m3/bg-web-slider-w4m3.png"), 100%)
+      // margin-top: 100px
+    .promo__zone
+      +aspect-ratio(960, 884)
+      +breakpoint-min($min-width-xl)
+        +aspect-ratio(960, 715)
+      .promo__block
+        padding: 18% 3% 0 7%
+        +breakpoint-min($min-width-xl)
+          padding-top: 160px
+
+    
+@keyframes shakeX
+  0%, 100%
+    transform: translateX(5%)
+  50%
+    transform: translateX(-5%)
+
+
+@keyframes flipInY
+  0%
+    transform: perspective(400px) scaleX(1) translateZ(0) rotateY(180deg)
+    animation-timing-function: ease-out
+  40%
+    transform: perspective(400px) scaleX(1) translateZ(50px) rotateY(-20deg)
+    filter: brightness(110%)
+    animation-timing-function: ease-out
+  50%
+    transform: perspective(400px) scaleX(1) translateZ(50px) rotateY(-10deg)
+    filter: brightness(110%)
+    animation-timing-function: ease-in
+  80%
+    transform: perspective(400px) scale3d(1, 1, 1) translateZ(0) rotateY(0deg)
+    animation-timing-function: linear
+  to
+    transform: perspective(400px) scaleX(1) translateZ(0) rotateY(0deg)
+    animation-timing-function: linear

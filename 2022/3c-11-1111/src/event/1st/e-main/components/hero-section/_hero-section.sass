@@ -1,0 +1,157 @@
+.hero
+  +pos-set(relative, zero)
+  overflow: hidden
+  .hero__zone
+    +aspect-ratio(960, 1374)
+    .hero__title
+      +pos-set(absolute, base, 0, 13%)
+      width: 72%
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 345px)
+        width: auto
+      img
+        transform-origin: center center
+        .js-loading &
+          animation: zoomIn-title 0.8s ease-in 1 forwards, seal-parent .4s 0.8s     
+
+    .hero__figure
+      +pos-set(absolute, base, 27%, 3.5%)
+      width: 89.5%
+      height: fit-content
+      overflow: hidden
+      img
+        transform: translate(10%, 100%)
+        .js-loading &
+          animation: move-up 1s ease-out 1 forwards
+      +breakpoint-min($min-width-xl)
+        top: 26.3%
+        left: calc(50% - 455px)
+        width: auto   
+
+    .hero__stage
+      +pos-set(absolute, base, 65%, 3.5%)
+      width: 89.5%
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 455px)
+        width: auto
+      .marquee
+        +pos-set(absolute, base, 2.3%, 11.2%)
+        height: 100px
+        width: 81.5%
+        overflow: hidden
+        +breakpoint-min($min-width-xl)
+          left: calc(50% - 330px)
+          width: 697px
+        .marquee__box
+          display: flex
+          align-items: center
+          justify-content: center
+          height: 9.5vw
+          font-size: 6.5vw
+          font-weight: bold
+          letter-spacing: 0.5px
+          line-height: 1
+          color: white
+          +breakpoint-min($min-width-xl)
+            height: 100px
+            font-size: 64px
+            letter-spacing: 1px
+          p
+            position: absolute
+            width: fit-content
+            margin: 0 auto
+            white-space: nowrap
+            overflow: hidden
+            span
+              display: inline-block
+              width: fit-content
+              padding-left: 164vw
+              +breakpoint-min($min-width-xl)
+                padding-left: calc(155vw + 24px)
+              +breakpoint-min($min-width-3xl)
+                padding-left: calc(115vw + 24px)
+          .message--1
+            span
+              .js-loading &
+                animation: marquee-text 10s linear infinite
+          .message--2
+            span
+              .js-loading &
+                animation: marquee-text 10s 4s linear infinite
+
+        &::before
+          +pos-set(absolute, base, 0, -1.8%)
+          content: ""
+          width: 2.2vw
+          height: 17vw
+          background-color: #2A2435
+          transform: rotate(11deg)
+          +breakpoint-min($min-width-xl)
+            width: 20px
+            height: 100px
+
+        &::after
+          +pos-set(absolute, base, 0)
+          right: -1.8%
+          content: ""
+          width: 2.6vw
+          height: 13vw
+          background-color: #2A2435
+          transform: rotate(-12deg)
+          +breakpoint-min($min-width-xl)
+            right: -1.5%
+            width: 20px
+            height: 100px
+
+// @import event/1st/e-main/components/hero-section/hero-video/_hero-video.sass
+
+// 印章的父層與、印章外層的外層都要有overflow hidden以免動畫期間造成橫向捲軸出現
+// 印章父層震動要delay到印章動畫秒數*0.8
+// TODO: 印章父層的後面那一層防safari破版需要加上transform: translateZ(-50px)
+@keyframes zoomIn-title
+  from
+    opacity: 0
+    transform: scale3d(0.2, 0.2, 0.2)
+  50%
+    opacity: 1
+
+// @keyframes zoomIn-twice
+//   from
+//     opacity: 1
+//     transform-origin: center center
+//     transform: scale3d(0.2, 0.2, 0.2)
+//   60%
+//     opacity: 0
+//     transform: scale3d(15, 15, 15)
+//   70%
+//     opacity: 0
+//     transform: scale3d(0.2, 0.2, 0.2)
+//   100%
+//     opacity: 1
+//     transform: scale3d(1, 1, 1)
+
+@keyframes move-up
+  0%
+    transform: translate(10%, 100%)
+  100%
+    transform: translate(0, 0%)
+
+@keyframes seal-parent
+  0%
+    transform: translateX(0) scale(1)
+  13%
+    transform: translateX(-3px) rotateY(-4deg) scale(.95)
+  37%
+    transform: translateX(2.5px) rotateY(3deg) scale(1.03)
+  63%
+    transform: translateX(-1.5px) rotateY(-2deg) scale(.97)
+  87%
+    transform: translateX(1px) rotateY(1deg) scale(1.01)
+  100%
+    transform: translateX(0) scale(1)
+
+@keyframes marquee-text
+  0%
+    transform: translate(0, 0)
+  100%
+    transform: translate(-100%, 0)

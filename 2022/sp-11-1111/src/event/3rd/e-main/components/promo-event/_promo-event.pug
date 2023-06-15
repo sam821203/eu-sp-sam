@@ -1,0 +1,104 @@
+-
+  var promoItemData = [
+    {
+      link: "https://media.etmall.com.tw/sp/19210/m/index.html",
+      imgSrc: "event/3rd/e-main/components/promo-event/items/promo-item-1.png",
+      alt: "25間銀行最高回饋25%",
+    },
+    {
+      link: "https://m.etmall.com.tw/Activity/Lottery/1497629114555cc1c157083b2da12110",
+      imgSrc: "event/3rd/e-main/components/promo-event/items/promo-item-2.png",
+      alt: "單筆訂單滿額抽222枚東森幣",
+    },
+    {
+      link: "https://www.etmall.com.tw/member/taskActivity",
+      imgSrc: "event/3rd/e-main/components/promo-event/items/promo-item-3.png",
+      alt: "挑戰任務滿額拿888枚東森幣",
+    },
+  ]
+
+-
+  var promoEventData = [
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/19552/m/index.html",
+        imgSrc: "event/3rd/e-main/components/promo-event/items/item-p-event-1.png",
+        alt: "領起來～首次註冊送500東森幣",
+      },
+    ],
+    [
+      {
+        link: "",
+        imgSrc: "event/3rd/e-main/components/promo-event/items/item-p-event-2.png",
+        alt: "集點加價購",
+      },
+    ],
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/19395/m/index.html",
+        imgSrc: "event/3rd/e-main/components/promo-event/items/item-p-event-3.png",
+        alt: "全家取件送熱拿鐵(中杯)",
+      },
+    ],
+    [
+      {
+        link: "https://www.etmall.com.tw/Activity/GroupSale",
+        imgSrc: "event/3rd/e-main/components/promo-event/items/item-p-event-4.png",
+        alt: "滿1800折120預購商品100%東森幣回饋",
+      },
+    ],
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/19450/m/index.html",
+        imgSrc: "event/3rd/e-main/components/promo-event/items/item-p-event-5.png",
+        alt: "HOHO送服務折價券",
+      },
+    ],
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/19677/m/index.html",
+        imgSrc: "event/3rd/e-main/components/promo-event/items/item-p-event-6-1.png",
+        alt: "離島配送滿額贈50枚樂透金",
+      },
+    ],
+    [
+      {
+        link: "https://www.etmall.com.tw/Activity/CouponReceiveAll",
+        imgSrc: "event/3rd/e-main/components/promo-event/items/item-p-event-7-1.png",
+        alt: "全站折價券，限量開搶",
+      },
+      {
+        link: "https://www.etmall.com.tw/Activity/dl/LuckyDraw/01c0ff5cbd33a4784f5a629260cd4d66",
+        imgSrc: "event/3rd/e-main/components/promo-event/items/item-p-event-7-4.png",
+        alt: "鬥陣蓋大樓 加入會員天天免費抽",
+      },
+    ],
+  ]
+
+//- TODO: 如果promo不和hero綁一起時要有自己的section和layout--main
+section.promo__group.promo-event
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--left#promoEventLeft
+        img(src="event/3rd/e-main/components/promo-event/decor-promo-left.png", alt="")
+      .decor__item.decor__item--right#promoEventRight
+        img(src="event/3rd/e-main/components/promo-event/decor-promo-right.png", alt="")
+      .decor__item.decor__item--light
+        img(src="event/3rd/e-main/components/promo-event/decor-promo-light.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          ul.item__box
+            each data, index in  promoItemData
+              li.promo__item
+                a(href=  data.link, title= data.alt)
+                  img(src=  data.imgSrc)
+          ul.promo__box
+            each data, index in promoEventData
+              li.event__item(id="promoEventItem" + (index + 1))
+                .swiper-container.container--promo-event
+                  ul.swiper-wrapper
+                    each item, itemIndex in  data
+                      li.swiper-slide.promo__item
+                        a(href=  item.link, title= item.alt)
+                          img(src=  item.imgSrc,  item.alt)

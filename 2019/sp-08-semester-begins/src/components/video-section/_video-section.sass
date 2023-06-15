@@ -1,0 +1,15 @@
+.promo__group--video
+  .promo__zone
+    +bg-set(null, 100%)
+  .promo__title
+    margin-top: -0.3%
+  .promo__wrap
+    +aspect-ratio(16, 9.9)
+    .video__wrap
+      padding-bottom: 9.1%
+      iframe
+        width: 100%
+        height: 100%
+
+  +breakpoint-min($min-width-xl)
+    +bg-set(url("~components/video-section/2560bg-03.jpg"))

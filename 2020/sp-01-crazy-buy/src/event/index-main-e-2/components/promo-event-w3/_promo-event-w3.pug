@@ -1,0 +1,15 @@
+- var promoDataE = [{link: "#買就送", imgSrc: "~event/index-main-e-2/components/promo-event-w3/items/e/promo-w3-1.png", alt: "買就送"}, {link: "#限時搶", imgSrc: "~event/index-main-e-2/components/promo-event-w3/items/e/promo-w3-2.png", alt: "限時搶"}, {link: "#優組合", imgSrc: "~event/index-main-e-2/components/promo-event-w3/items/e/promo-w3-3.png", alt: "優組合"}, ]
+
+
+- var promoData = isU? promoDataU : promoDataE
+.promo__event__bg-decoration
+  img(src="event/index-main-e-2/components/promo-event-w3/960__promo__bg.png")
+  img(src="event/index-main-e-2/components/promo-event-w3/2560__promo__bg.png")
+.promo__event-w3
+  ul.event__wrap
+    each data, index in promoData
+      - var anchorId = 'promoAnchorW3' + (index + 1)
+      - var imgId = 'promoImg' + (index + 1)
+      li
+        a(id= anchorId, href= data.link, title= data.alt)
+          img(id= imgId, src= data.imgSrc, alt= data.alt)

@@ -1,0 +1,752 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- ============== 輪播 start ============== -->
+    <link rel="stylesheet"
+          href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116205/swiper.min.css">
+    <!-- ============== 輪播 end ============== -->
+    <!-- 共用CSS -->
+    <link rel="stylesheet"
+          href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116205/animate.min.css">
+    <link rel="stylesheet"
+          href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.css">
+    <style>
+    body {
+        /* 自行修正背景顏色 */
+        background-color: #ffedb3;
+    }
+
+    /* 調整logo位置大小 */
+    /* .logo {
+      top: 1%;
+      left: 1%;
+      width: 30%;
+      max-width: 220px;
+      } */
+
+    /* 連結測試 */
+    /* .sp__visual a{
+      filter: brightness(500%);
+      } */
+
+    /* 切片測試 */
+    /* .visual__fragment::before {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      border: 1px solid #00f;
+      pointer-events: none;
+      } */
+
+    /* 設定全畫面背景 */
+    /* .sp__main {
+      background: url(bg.jpg) center 0 no-repeat;
+      } */
+    .bg__2-outer {
+        position: relative;
+        /*overflow-x: hidden;*/
+        /*width: 100%;*/
+    }
+    .bg__2 {
+        /*background: center 0 url("bg_02.jpg") no-repeat;*/
+        position: absolute;
+        background-image: url(bg_02-mobile.jpg);
+        background-repeat: no-repeat;
+        background-position: center 0;
+        width: 100%;
+        height: 221.15vw;
+        top: 80vw;
+        background-size: 100% auto;
+    }
+
+    @media screen and (min-width: 960px) {
+        .bg__2 {
+            background-image: url(bg_02.jpg);
+            background-size: 2560px 2123px;
+            top: 765px;
+            height: 2123px;
+        }
+    }
+    /* 大網各區塊背景  */
+    @media screen and (min-width: 960px) {
+        .visual__block1 {
+            /*            background: center 0 url("bg_01.jpg") no-repeat;*/
+            background: url(bg_01.jpg?20201109) center 0 no-repeat;
+
+        }
+
+        /*.visual__block2 {*/
+        /*!*            background: center 0 url("bg_02.jpg") no-repeat;*!*/
+        /*background: url(bg_02.jpg?20201109) center 0 no-repeat;*/
+        /*}*/
+    }
+
+    /*-- 動畫小物件 --*/
+    .animate__wrap {
+        position: relative;
+        z-index: 1;
+    }
+
+    /*-- 手機版：
+            1. 設定物件距離左邊與上邊的位置，單位可以使用"%"或"vw"
+            2. width 建議電腦版可以使用auto，手機版則可使用%調整
+            --*/
+    .animate__wrap .animate__obj--01 {
+        position: absolute;
+        top: 1vw;
+        left: 1vw;
+        width: auto;
+    }
+
+    /*-- 電腦版：
+            設定物件距離左邊與上邊的位置，單位可以使用"px"，左邊可以挑整clac()後面的px值
+            width 建議電腦版可以使用auto，手機版則可使用%調整
+            --*/
+    @media screen and (min-width: 960px) {
+        .animate__wrap .animate__obj--01 {
+            top: 0;
+            left: calc(50% - 480px);
+            width: auto;
+        }
+    }
+
+    /* [區塊-背景固定] 只有大網有背景，需固定的背景圖可另行製作 */
+    @media screen and (min-width: 960px) {
+        .top__center {
+            left: 50%;
+            transform: translateX(-50%);
+            position: absolute;
+            background-size: 100% auto;
+            background: url(bg_01.jpg) center 0 no-repeat;
+            width: 2560px;
+            height: 828px;
+        }
+
+        .top--0 {
+            top: 0;
+        }
+    }
+
+    /* ...............................................................大網2組，小網1組 */
+    /* 1組 */
+    /* 設定一列2個 */
+    .bn-w2m1 .banner__item {
+        float: left;
+        width: 50%;
+        flex: 1 1 50%;
+    }
+
+    .bn-w1m1 .banner__item {
+        float: left;
+        width: 100%;
+        flex: 1 1 100%;
+    }
+
+    /* 設定點下去與hover動畫 */
+    .bn-w2m1 .banner__item:hover,
+    .bn-w2m1 .banner__item:active {
+        /* 變大(>1時變大) */
+        /*transform: scale(1.05);*/
+        /* 亮度調亮(>100%時變亮) */
+        /*filter: brightness(115%);*/
+    }
+
+    @media screen and (max-width: 767px) {
+        /* 設定手機時一列1個 */
+        .bn-w2m1 .banner__item {
+            width: 100%;
+            flex: 1 1 100%;
+        }
+
+        .bn-w1m1 .banner__item {
+            width: 100%;
+            flex: 1 1 100%;
+        }
+    }
+
+    /* note字體 */
+    .ranking {
+        color: #ff738d;
+        font-weight: bold;
+        font-size: 20px
+    }
+
+    .visual__special-01, .visual__special-02, .visual__special-03 {
+        width: 96% !important;
+        max-width: 960px;
+        /* display: flex; */
+        /* justify-content: center; */
+        left: 50%;
+        transform: translateX(-50%);
+        background: #fff;
+        padding: 5% 7% 2%;
+        border-radius: 20px;
+        margin-bottom: 3%;
+    }
+
+    .visual__special-02 {
+        padding: 1%;
+        position: relative;
+    }
+
+    .visual__special-03 {
+        padding: 5% 3%;
+    }
+
+    .visual__special-02 .visual--auto {
+        justify-content: center;
+    }
+
+    .visual__special-02 .visual__special-padding {
+        position: relative;
+        width: 100% !important;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 4% 6%;
+    }
+
+    .bn-w1m1-padding {
+        padding: 2%;
+    }
+
+    .awards__title {
+        font-size: 5.2vw;
+        margin-bottom: 5px;
+    }
+    .awards__contnet {
+        font-size: 3.5vw;
+    }
+    .awards__contnet .ranking {
+        font-size: 4.5vw;
+    }
+    @media screen and (min-width: 960px) {
+        .awards__title {
+            font-size: 32px;
+        }
+        .awards__contnet {
+            font-size: 20px;
+        }
+        .awards__contnet .ranking {
+            font-size: 24px;
+        }
+        .visual__special-01, .visual__special-02, .visual__special-03 {
+            width: 100% !important;
+            max-width: 960px;
+            margin-bottom: 40px;
+        }
+
+        .visual__special-02 .visual__special-padding {
+            padding: 2% 5%;
+        }
+
+        .visual__special-02 {
+            padding: 20px;
+        }
+
+        .bn-w1m1-padding {
+            padding: 20px 10px 10px;
+        }
+
+        .visual__special-03 {
+            padding: 20px 30px;
+        }
+
+        .visual__special-03.logo__wrap {
+            padding: 20px 20px;
+        }
+
+        .visual__special-03 .visual__img-4 {
+            padding: 0 10px;
+            margin-bottom: 20px;
+        }
+    }
+
+    .padding-0 {
+        padding: 0;
+    }
+    </style>
+</head>
+<body>
+
+<!-- 旅遊專用bar區域 start 不要就移除-->
+<div id="barHome"></div>
+<!-- 旅遊專用bar區域 end-->
+<div id="iconHome" class="layout--main home--icon"></div>
+<div id="spWrap" class="sp__wallper">
+    <!-- 動畫小物件 -->
+    <!-- 主視覺 -->
+    <!-- [區塊-背景固定] 只有大網有背景 -->
+    <!--<div id="fixedBgHt" class="top__center"></div>-->
+
+    <main class="sp__main">
+        <div class="bg__2-outer">
+            <div class="bg__2"></div>
+        </div>
+        <div class="layout--main home--logo">
+            <a href="https://www.etmall.com.tw"><img class="logo" src="ehs-logo.png" alt="東森購物"></a>
+        </div>
+        <!-- 版頭 -->
+        <section class="sp__visual visual__block1">
+            <div class="layout--main">
+                <ul class="visual--auto clearfix">
+                    <li class="visual__fragment width--auto">
+                        <img src="top_01.jpg">
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <img src="top_02.jpg">
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <a href="#sponsor" title="">
+                            <img src="top_03.jpg" alt="">
+                        </a>
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <img src="top_04.jpg">
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- 投票獎-東森幣10枚 -->
+        <section class="sp__visual visual__block2">
+            <div class="layout--main">
+                <ul class="visual--auto clearfix">
+                    <li class="visual__fragment width--auto visual__special-01">
+                        <img src="1.png" alt="">
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 汪汪&喵喵獎項內容-格子w2m1 -->
+        <section class="visual__special-02">
+            <ul class="visual--auto clearfix">
+                <li class="visual__fragment width--auto visual__special-padding">
+                    <img src="2.png">
+                </li>
+                <li class="visual__fragment width--auto">
+                    <a href="#dog" title="">
+                        <img src="menu_01.png" alt="">
+                    </a>
+                </li>
+                <li class="visual__fragment width--auto">
+                    <a href="#cat" title="">
+                        <img src="menu_02.png" alt="">
+                    </a>
+                </li>
+                <li class="visual__fragment width--auto ">
+                    <a href="#gift" title="">
+                        <img src="menu_03.png" alt="">
+                    </a>
+                </li>
+            </ul>
+            <div id="dog" class="bn-w1m1 bn-w1m1-padding">
+                <div class="layout--main">
+                    <ul class="banner__wrap clearfix">
+                        <li class="banner__item">
+                            <img src="dog.png" alt="">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bn-w2m1">
+                <div class="layout--main">
+                    <ul class="banner__wrap clearfix">
+                        <li class="banner__item">
+                            <img src="dog_01.png" alt="">
+                        </li>
+                        <li class="banner__item">
+                            <img src="dog_02.png" alt="">
+                        </li>
+                        <li class="banner__item">
+                            <img src="dog_03.png" alt="">
+                        </li>
+                        <li class="banner__item">
+                            <img src="dog_04.png" alt="">
+                        </li>
+                        <li class="banner__item">
+                            <img src="dog_05.png" alt="">
+                        </li>
+                        <li class="banner__item">
+                            <img src="dog_06.png" alt="">
+                        </li>
+                        <li class="banner__item">
+                            <img src="dog_07.png" alt="">
+                        </li>
+                        <li class="banner__item">
+                            <img src="dog_08.png" alt="">
+                        </li>
+                        <li class="banner__item">
+                            <img src="dog_09.png" alt="">
+                        </li>
+                        <li class="banner__item">
+                            <img src="dog_10.png" alt="">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="cat" class="bn-w1m1 bn-w1m1-padding">
+                <div class="layout--main">
+                    <ul class="banner__wrap clearfix">
+                        <li class="banner__item">
+                            <img src="cat.png" alt="">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bn-w2m1">
+                <div class="layout--main">
+                    <ul class="banner__wrap clearfix">
+                        <li class="banner__item">
+                            <img src="cat_01.png" alt="">
+                        </li>
+                        <li class="banner__item">
+                            <img src="cat_02.png" alt="">
+                        </li>
+                        <li class="banner__item">
+                            <img src="cat_03.png" alt="">
+                        </li>
+                        <li class="banner__item">
+                            <img src="cat_04.png" alt="">
+                        </li>
+                        <li class="banner__item">
+                            <img src="cat_05.png" alt="">
+                        </li>
+                        <li class="banner__item">
+                            <img src="cat_06.png" alt="">
+                        </li>
+                        <li class="banner__item">
+                            <img src="cat_07.png" alt="">
+                        </li>
+                        <li class="banner__item">
+                            <img src="cat_08.png" alt="">
+                        </li>
+                        <li class="banner__item">
+                            <img src="cat_09.png" alt="">
+                        </li>
+                        <li class="banner__item">
+                            <img src="cat_10.png" alt="">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- 投票抽好禮 -->
+        <section class="sp__visual visual__special-03">
+            <div id="gift" class="layout--main">
+                <ul class="visual--auto clearfix">
+                    <li class="visual__fragment width--auto visual__special-03 padding-0">
+                        <img src="3.png">
+                    </li>
+                </ul>
+                <h2 class="awards__title">獎項內容</h2>
+                <ol class="awards__contnet">
+                    <li style="list-style:none;"><span class="ranking">抽10名</span>【SINGEN】開胃保健順暢整腸配方-貓咪專用5G*20包(盒)
+                        市價$499
+                    </li>
+                    <li style="list-style:none;"><span class="ranking">抽30名</span>【樂沛思】寵物洗毛精(款式隨機)500ml 市價$435</li>
+                    <li style="list-style:none;"><span class="ranking">抽20名</span>【SINGEN】開胃保健順暢整腸配方(款式隨機)5G*20包(盒) 市價$499</li>
+                    <li style="list-style:none;"><span class="ranking">抽10名</span>【希爾思】木架陶瓷寵物碗 市價$500</li>
+                    <li style="list-style:none;"><span class="ranking">抽5名</span>【喵仙兒】療癒系貓圓耳抓盤 L號 市價$570</li>
+                    <li style="list-style:none;"><span class="ranking">抽4名</span> 【QIDINA】韓版滑順質感寵物衣(款式隨機) 市價$599</li>
+                    <li style="list-style:none;"><span class="ranking">抽4名</span> 【QIDINA】寵物可愛刺繡圍兜兜(款式隨機) 市價$499</li>
+                    <li style="list-style:none;"><span class="ranking">抽4名</span> 【QIDINA】可愛壽司造型口水巾/領巾(款式隨機) 市價$399</li>
+                    <li style="list-style:none;"><span class="ranking">抽3名</span> 【烘焙客】成犬-草飼羊配方 5lb(小顆粒) 市價$1,050</li>
+                    <li style="list-style:none;"><span class="ranking">抽3名</span> 【SINGEN】保護關節改善關節靈活營養配方罐裝 市價$975</li>
+                    <li style="list-style:none;"><span class="ranking">抽3名</span> 【SINGEN】天然草本非藥性舒緩皮膚敏感外用噴霧-100mL 市價$908</li>
+                    <li style="list-style:none;"><span class="ranking">抽3名</span> 【SINGEN】天然低敏冷凍乾燥寵物零食包(口味隨機) 市價$585</li>
+                    <li style="list-style:none;"><span class="ranking">抽3名</span> 【SINGEN】去除異味毛孩溫和乾洗粉-花香 市價$399</li>
+                    <li style="list-style:none;"><span class="ranking">抽3名</span> 【汪事如意】原肉零食2包(口味隨機) 市價$326</li>
+                    <li style="list-style:none;"><span class="ranking">抽2名</span> 【沃貝】玉米砂(精典-多效凝結)14磅 市價$650</li>
+                    <li style="list-style:none;"><span class="ranking">抽2名</span> 【木酢達人】臭臭退散-寵物肌膚消臭木酢液500ml加贈一噴霧空瓶-150ml 市價$500</li>
+                    <li style="list-style:none;"><span class="ranking">抽1名</span> 【瑪恩吉】 倍愛滿滿 犬餐盒(羊) 100gX32罐 市價$1,500</li>
+                    <li style="list-style:none;"><span class="ranking">抽1名</span> 【法米納】挑嘴成犬天然無穀糧-野豬蘋果(小顆粒2.5kg) 市價$1,480</li>
+                    <li style="list-style:none;"><span class="ranking">抽1名</span> 【凡諦斯】烘培野宴狗飼料-鯡魚+鮭魚 5LB 市價$1,190</li>
+                    <li style="list-style:none;"><span class="ranking">抽1名</span> 【木入森】犬寶變不臭 狗狗益生菌 30包/盒 市價$1,100</li>
+                    <li style="list-style:none;"><span class="ranking">抽1名</span> 【PiPe煙斗牌】寵物電剪(ER168H) 市價$1,080</li>
+                    <li style="list-style:none;"><span class="ranking">抽1名</span> 【森鮮】天然無穀低敏-全犬魚肉配方4磅 市價$1,070</li>
+                    <li style="list-style:none;"><span class="ranking">抽1名</span> 【飛萊希】螢光系列伸縮牽繩M號 市價$880</li>
+                    <li style="list-style:none;"><span class="ranking">抽1名</span> 【毛孩時代】犬貓皮膚專科益生菌 (30包/盒) 市價$720</li>
+                    <li style="list-style:none;"><span class="ranking">抽1名</span> 【QIDINA】 寵物雙面四季睡墊 市價$699</li>
+                    <li style="list-style:none;"><span class="ranking">抽1名</span> 【木入森】貓咪活菌寶 益生菌 30包/盒 市價$550</li>
+                    <li style="list-style:none;"><span class="ranking">抽1名</span> 【OA本舖 x 酷酷貓Co.Co.Cat】台灣製紙箱貓抓板 市價$399</li>
+                </ol>
+            </div>
+        </section>
+        <!-- 贊助廠商 -->
+        <section class="sp__visual visual__special-03 logo__wrap">
+            <div id="sponsor" class="layout--main sponsor">
+                <ul class="visual--auto clearfix">
+                    <li class="visual__fragment width--auto visual__special-03 padding-0 visual__img-4">
+                        <img src="4.png">
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/c3/143992">
+                            <img src="logo-1.jpg" alt="沛德奧">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://media.etmall.com.tw/sp/9425/m/index.html">
+                            <img src="logo-2.jpg" alt="寵物王國">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/gp/133181">
+                            <img src="logo-3.jpg" alt="Pawbby">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://media.etmall.com.tw/sp/9387/m/index.html">
+                            <img src="logo-4.jpg" alt="希爾思">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/c3/143990">
+                            <img src="logo-5.jpg" alt="ibyaya">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://media.etmall.com.tw/sp/9395/m/index.html">
+                            <img src="logo-6.jpg" alt="法國皇家">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://media.etmall.com.tw/sp/8656/m/index.html">
+                            <img src="logo-7.jpg" alt="西莎">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/gp/133182">
+                            <img src="logo-8.jpg" alt="奇蒂可">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/c3/143986">
+                            <img src="logo-9.jpg" alt="木酢達人">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/Farmina-%E6%B3%95%E7%B1%B3%E7%B4%8D-%E8%B2%93%E9%A3%BC%E6%96%99%E5%93%81%E7%89%8C/c3/123326">
+                            <img src="logo-10.jpg" alt="法米納">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/c3/143984">
+                            <img src="logo-11.jpg" alt="OA酷酷貓">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/p/132549">
+                            <img src="logo-12.jpg" alt="信元">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/gp/123574">
+                            <img src="logo-13.jpg" alt="沒有臭">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/c3/143996">
+                            <img src="logo-14.jpg" alt="飛萊希">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/gp/133140">
+                            <img src="logo-15.jpg" alt="樂沛思">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/Search?keyword=%E6%AF%9B%E5%AD%A9%E6%99%82%E4%BB%A3">
+                            <img src="logo-16.jpg" alt="毛孩時代">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/c3/143972">
+                            <img src="logo-17.jpg" alt="藍鑽">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/Nutro-%E7%BE%8E%E5%A3%AB-%E8%B2%93%E9%A3%BC%E6%96%99%E5%93%81%E7%89%8C/c3/52515">
+                            <img src="logo-18.jpg" alt="美士">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/Oven-Baked-Tradition%E7%83%98%E7%84%99%E5%AE%A2-%E7%8B%97%E9%A3%BC%E6%96%99%E5%93%81%E7%89%8C/c3/73526">
+                            <img src="logo-19.jpg" alt="烘焙客">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/gp/133147">
+                            <img src="logo-20.jpg" alt="卡爾">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/gp/133146">
+                            <img src="logo-21.jpg" alt="柏萊富">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/c3/136249">
+                            <img src="logo-22.jpg" alt="LV藍帶">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/gp/133143">
+                            <img src="logo-23.jpg" alt="瑪恩吉">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/c3/149226">
+                            <img src="logo-24.jpg" alt="臭味滾">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/gp/133144">
+                            <img src="logo-25.jpg" alt="森鮮">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/gp/133148">
+                            <img src="logo-26.jpg" alt="凡諦斯">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/gp/133149">
+                            <img src="logo-27.jpg" alt="木入森">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/gp/133150">
+                            <img src="logo-28.jpg" alt="汪事如意">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/gp/133151">
+                            <img src="logo-29.jpg" alt="A Star">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/gp/132122">
+                            <img src="logo-30.jpg" alt="悠遊">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/HALO-%E5%98%BF%E5%9B%89-%E7%8B%97%E9%A3%BC%E6%96%99%E5%93%81%E7%89%8C/c3/131693">
+                            <img src="logo-31.jpg" alt="HALO">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/c3/146287">
+                            <img src="logo-32.jpg" alt="燒鳥一番">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/c3/143982">
+                            <img src="logo-33.jpg" alt="petwant">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/Search?keyword=%E9%BC%8E%E9%A3%9F">
+                            <img src="logo-34.jpg" alt="鼎食">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/gp/133154">
+                            <img src="logo-35.jpg" alt="普瑞納">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/gp/133184">
+                            <img src="logo-36.jpg" alt="艾可">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/gp/133146">
+                            <img src="logo-37.jpg" alt="棒吉">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://media.etmall.com.tw/sp/8656/m/index.html">
+                            <img src="logo-38.jpg" alt="喵愛餡">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/gp/133155">
+                            <img src="logo-39.jpg" alt="魏大夫">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/gp/133294">
+                            <img src="logo-40.jpg" alt="慧心">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/gp/133157">
+                            <img src="logo-41.jpg" alt="卡賀家">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/gp/133158">
+                            <img src="logo-42.jpg" alt="菲力貓">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/Search?keyword=%E5%90%89%E8%AB%A6%E5%A8%81">
+                            <img src="logo-43.jpg" alt="吉諦威">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/gp/132122">
+                            <img src="logo-44.jpg" alt="野宴">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://media.etmall.com.tw/sp/9239/m/index.html">
+                            <img src="logo-45.jpg" alt="丹">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://media.etmall.com.tw/sp/9239/m/index.html">
+                            <img src="logo-46.jpg" alt="博朗氏">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/gp/133152">
+                            <img src="logo-47.jpg" alt="PiPe煙斗牌">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/Search?keyword=%E5%A4%A7%E5%9C%B0%E6%81%A9%E5%85%B8">
+                            <img src="logo-48.jpg" alt="大地恩典">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://media.etmall.com.tw/sp/9239/m/index.html">
+                            <img src="logo-49.jpg" alt="多納">
+                        </a>
+                    </li>
+                    <li class="banner__item visual__fragment width--auto">
+                        <a href="https://media.etmall.com.tw/sp/9239/m/index.html">
+                            <img src="logo-50.jpg" alt="樂倍">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+</div>
+<!--<script src="https://polyfill.io/v3/polyfill.min.js"></script>-->
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<!-- 共用JS -->
+<script id="generateScript"
+        src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.js"></script>
+
+<!-- ============== 輪播 end ============== -->
+</body>
+</html>

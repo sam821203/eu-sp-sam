@@ -1,0 +1,47 @@
+.hero__zone
+  position: relative
+  z-index: map-get($zindex, zero)
+  padding: 16.71% 0
+  background: center 0 url("~utils/img/top-slider-bg.jpg") no-repeat
+  background-size: 100%
+
+.hero__slider
+  margin: 3.05% 8.33%
+
+.hero__zone
+  .hero__slider
+    &--prev,
+    &--next,
+      top: calc(50% + 10px)
+      width: 22px
+      height: 22px
+      background-color: $gray-deep-dark
+      background-size: 50%
+      +breakpoint-min($min-width-lg)
+        top: calc(50% + 5px)
+        width: 33px
+        height: 33px
+    &--prev
+      left: 1%
+    &--next
+      right: 1%
+    &--pager
+      top: 74.5%
+      bottom: auto
+      left: 50%
+      transform: translateX(-50%)
+      .swiper-pagination-bullet
+        margin: 0 5px
+        width: 10px
+        height: 10px
+        opacity: 0.5
+        outline: 0
+      .swiper-pagination-bullet-active
+        background-color: $gray-deep-light
+        opacity: 1
+      +breakpoint-min($min-width-lg)
+        top: 76%
+        .swiper-pagination-bullet
+          margin: 0 7px
+          width: 15px
+          height: 15px

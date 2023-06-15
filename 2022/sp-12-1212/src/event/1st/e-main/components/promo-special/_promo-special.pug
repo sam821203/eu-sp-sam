@@ -1,0 +1,85 @@
+-
+  var promoSpecialData = [
+    { // 1
+      link: "https://media.etmall.com.tw/sp/19581/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-special/items/item-p-special-1.png",
+      alt: "最高回饋11%"
+    },
+    { // 2
+      link: "https://media.etmall.com.tw/sp/19210/m/index.html#esun",
+      imgSrc: "event/1st/e-main/components/promo-special/items/item-p-special-2.png",
+      alt: "最高回饋10%"
+    },
+    { // 3
+      link: "https://media.etmall.com.tw/sp/19210/m/index.html#one",
+      imgSrc: "event/1st/e-main/components/promo-special/items/item-p-special-3.png",
+      alt: "最高回饋10%"
+    },
+    { // 4
+      link: "https://media.etmall.com.tw/sp/19210/m/index.html#citi",
+      imgSrc: "event/1st/e-main/components/promo-special/items/item-p-special-4.png",
+      alt: "單件商品分期滿$10,000送$800"
+    },
+  ]
+
+-
+  var promoSpecialSlider = [
+    { // 1
+      link: "https://media.etmall.com.tw/sp/19210/m/index.html#dbs",
+      imgSrc: "event/1st/e-main/components/promo-special/items/bn-p-special-1.png",
+      alt: "累積分期滿$38,000送$3,200"
+    },
+    { // 2
+      link: "https://media.etmall.com.tw/sp/18972/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-special/items/bn-p-special-2.png",
+      alt: "週四《玉山數位e卡 》最高享10%現金回饋"
+    },
+    { // 3
+      link: "https://media.etmall.com.tw/sp/19210/m/index.html#entie",
+      imgSrc: "event/1st/e-main/components/promo-special/items/bn-p-special-3.png",
+      alt: "累積分期滿$11,111送$1,111"
+    },
+    { // 4
+      link: "https://media.etmall.com.tw/sp/19210/m/index.html#shinkong",
+      imgSrc: "event/1st/e-main/components/promo-special/items/bn-p-special-4.png",
+      alt: "累積分期滿$12,000送$1,200"
+    },
+    { // 5
+      link: "https://media.etmall.com.tw/sp/19210/m/index.html#aftee",
+      imgSrc: "event/1st/e-main/components/promo-special/items/bn-p-special-5.png",
+      alt: "週二 舊客不限金額回饋10% AFTEE折價券"
+    },
+  ]
+
+section.promo__group.promo-special.m-bottom--lg(data-title="銀行/支付")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--title
+        img(src="event/1st/e-main/components/promo-special/decor-promo-sp-title.png", alt="")
+      .decor__item.decor__item--left
+        img(src="event/1st/e-main/components/promo-special/decor-promo-sp-left.png", alt="")
+      .decor__item.decor__item--right
+        img(src="event/1st/e-main/components/promo-special/decor-promo-sp-right.png", alt="")
+      .decor__item.decor__item--bottom
+        img(src="event/1st/e-main/components/promo-special/decor-promo-sp-bottom.png", alt="")
+      .decor__item.decor__item--gift1
+        img(src="event/1st/e-main/components/promo-special/decor-promo-sp-gift1.png", alt="")
+      .decor__item.decor__item--gift2
+        img(src="event/1st/e-main/components/promo-special/decor-promo-sp-gift2.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          ul.event__block
+            each data, index in promoSpecialData
+              li(id="promoSpecialItem" + (index + 1))
+                a(href= data.link, title=data.alt)
+                  img(src= data.imgSrc, alt=data.alt)
+          .promo__slider
+            .slider__wrap
+              .swiper-container#PromoSpReady
+                ul.swiper-wrapper
+                  each data in promoSpecialSlider
+                    li.swiper-slide
+                      a(href= data.link, title=data.alt)
+                        img(src= data.imgSrc, alt=data.alt)
+

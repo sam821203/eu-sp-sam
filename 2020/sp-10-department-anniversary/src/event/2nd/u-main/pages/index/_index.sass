@@ -1,0 +1,44 @@
+// // ==========================================================================
+// // Plugins
+// // ==========================================================================
+//@import "vendors/animate"
+@import "~vendors/style/swiper-slider-custom"
+@import "~swiper/swiper-bundle.css"
+
+// // ==========================================================================
+// // components
+// // ==========================================================================
+
+// hero section
+// ===========================
+@import "~event/2nd/u-main/components/hero-section/_hero-section"
+// @import "~event/2nd/u-main/components/background-decoration/_background-decoration"
+
+// other components
+// ===========================
+@import "~event/2nd/u-main/components/promo-event/_promo-event"
+//@import "~event/2nd/u-main/components/bn-special/_bn-special"
+// // ==========================================================================
+// // Page
+// // ==========================================================================
+body
+  +pos-set(relative, zero)
+  background-image: url("~event/2nd/e-main/pages/index/body-bg.jpg")
+  background-color: $main-e-background-color-2nd
+  +breakpoint-min($min-width-xl)
+    background-image: url("~event/2nd/e-main/pages/index/body-bg-web.jpg")
+    background-repeat: repeat-y
+    background-size: 2560px auto
+    background-position: top center
+
+.sp__wrap
+  +pos-set(relative, base)
+  +bg-set(url("~event/2nd/u-main/pages/index/bg.jpg"), 100%)
+  +breakpoint-min($min-width-xl)
+    background: center top url("~event/2nd/u-main/pages/index/bg-web.jpg") no-repeat
+    background-size: 2560px 885px
+    overflow-x: hidden
+    z-index: -1
+
+.sp__wrap a
+  display: block

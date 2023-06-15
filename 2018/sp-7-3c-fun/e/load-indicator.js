@@ -1,0 +1,166 @@
+// load indicator
+function loading() {
+	function preloading () {
+		var overlay = document.createElement('div');
+		var loadIndicator = document.createElement('div');
+		var logoImg = document.createElement('img');
+		var titleImg = document.createElement('img');
+
+		// basic attr in overlay
+		var overlayBasicAttr = {
+			'id': 'overlay',
+			'class': 'overlay'
+		};
+
+		// style attr in overlay
+		var overlayStyleAttr = {
+			// basic 
+			'position': 'fixed',
+			'z-index': 100,
+			'top': 0,
+			'left': 0,
+			'width': '100%',
+			'height': '100%',
+			// custom
+			'background-color': '#669aec',
+		}
+
+		// basic attr in logo img 
+		var logoImgBasicAttr = {
+			'class': 'logo-img',
+			'src': 'logo.png',
+			'alt': 'logo',
+		};
+
+		// style attr in logo img
+	  	var logoImgStyleAttr = {
+	  		// basic 
+	  		'position': 'absolute',
+	  		'z-index': 0,
+	  		//custom
+	  		'top': '2%',
+	  		'left': '15%',
+	  		'width': '220px',
+	  	}
+
+		// basic attr in title img 
+		var titleImgBasicAttr = {
+			// basic
+			'class': 'title-img',
+			'src': 'title.png',
+			'alt': '3C享fun價',
+		};
+
+		// style attr in title img
+	  	var titleImgStyleAttr = {
+	  		// basic 
+	  		'position': 'absolute',
+	  		'z-index': 0,
+	  		//custom
+	  		'top': '15%',
+	  		'left': 0,
+	  		'right': 0,
+	  		'bottom': 'auto',
+	  		'margin': 'auto',
+	  		'width': '631px',
+	  	}
+
+		// style attr in loading indicator
+	  	var loadIndicatorStyleAttr = {
+	  		// basic 
+	  		'position': 'absolute',
+	  		'z-index': 0,
+	  		//custom
+	  		'top': 'auto',
+	  		'left': 0,
+	  		'right': 0,
+	  		'bottom': '20%',
+	  		'margin': 'auto',
+	  		'width': '80px',
+	  		'height': '80px',
+	  		'border': '8px solid #eee',
+	  		'border-left-color': '#cc1e05',
+	  		'border-radius': '50%',
+	  		'animation': '0.5s self-rotate infinite linear',
+	  	}
+
+	  	// set id. classname
+		for (var attr in overlayBasicAttr) {
+			overlay.setAttribute(attr , overlayBasicAttr[attr]);
+		}
+
+		for (var attr in logoImgBasicAttr) {
+			logoImg.setAttribute(attr , logoImgBasicAttr[attr]);
+		}
+
+		for (var attr in titleImgBasicAttr) {
+			titleImg.setAttribute(attr , titleImgBasicAttr[attr]);
+		}
+
+		loadIndicator.setAttribute('class', 'loading');
+
+		// set style
+		var overlayStyleValue = '';
+		var logoImgStyleValue = '';
+		var titleImgStyleValue = '';
+		var loadIndicatorStyleValue = '';
+		
+
+		for (var attr in overlayStyleAttr) {
+			overlayStyleValue = overlayStyleValue + attr + ":" + overlayStyleAttr[attr] + ';';
+		}
+		overlay.setAttribute('style', overlayStyleValue);
+
+		for (var attr in logoImgStyleAttr) {
+			logoImgStyleValue = logoImgStyleValue + attr + ":" + logoImgStyleAttr[attr] + ';';
+		}
+		logoImg.setAttribute('style', logoImgStyleValue);
+
+		for (var attr in titleImgStyleAttr) {
+			titleImgStyleValue = titleImgStyleValue + attr + ":" + titleImgStyleAttr[attr] + ';';
+		}
+		titleImg.setAttribute('style', titleImgStyleValue);
+
+		for (var attr in loadIndicatorStyleAttr) {
+			loadIndicatorStyleValue = loadIndicatorStyleValue + attr + ":" + loadIndicatorStyleAttr[attr] + ';';
+		}
+		loadIndicator.setAttribute('style', loadIndicatorStyleValue);
+
+		// set animation in style
+		var animation = "@keyframes self-rotate {to {transform: rotate(360deg);}}";
+		var newStyleNode = document.createTextNode(animation);
+		var newStyle = document.createElement('style');
+		newStyle.appendChild(newStyleNode);
+		newStyle.setAttribute('id', 'overlayStyle');
+		document.head.appendChild(newStyle);
+
+		// set overlay. loading indicator in body
+	  	document.body.appendChild(overlay);
+	  	overlay.appendChild(logoImg);
+	  	overlay.appendChild(titleImg);
+	  	overlay.appendChild(loadIndicator);
+	  	document.head.appendChild(newStyle);
+	}
+	preloading();
+
+	// turn off the overlay when load
+	var timer = true;
+	var opening = function() {
+		var overlay = document.getElementById('overlay');
+		var overlayStyle = document.getElementById('overlayStyle');
+
+  		if (timer) {
+	 		timer = false;
+	  		overlay.style.display = 'none';
+	  		
+			// after load, remove all
+			var loadJS = document.getElementById('loadJS');
+	  		document.head.removeChild(overlayStyle);
+	  		document.body.removeChild(overlay);
+	  		document.body.removeChild(loadJS);
+  		}
+	};
+	window.addEventListener('load', opening);
+  	setTimeout(opening, 2000);
+}
+loading();

@@ -1,0 +1,50 @@
+-
+  var w4m4DataE = [
+  {link: "https://www.etmall.com.tw/np/104671",
+  imgSrc: "~event/2nd/e-main/components/event-w4m4/items/lovebrand-p1.png",
+  alt: "Georg Jensen"},
+  {link: "https://www.etmall.com.tw/c3/16094",
+  imgSrc: "~event/2nd/e-main/components/event-w4m4/items/lovebrand-p2.png",
+  alt: "蘭陵"},
+  {link: "https://www.etmall.com.tw/c3/131984",
+  imgSrc: "~event/2nd/e-main/components/event-w4m4/items/lovebrand-p3.png",
+  alt: "tokuyo"},
+  {link: "https://www.etmall.com.tw/gp/104539",
+  imgSrc: "~event/2nd/e-main/components/event-w4m4/items/lovebrand-p4.png",
+  alt: "台酒台鹽"},
+  {link: "https://www.etmall.com.tw/gp/128869",
+  imgSrc: "~event/2nd/e-main/components/event-w4m4/items/lovebrand-p5.png",
+  alt: "台塑生醫"},
+  {link: "https://www.etmall.com.tw/p/130413",
+  imgSrc: "~event/2nd/e-main/components/event-w4m4/items/lovebrand-p6.png",
+  alt: "華陀"},
+  {link: "https://www.etmall.com.tw/gp/125215",
+  imgSrc: "~event/2nd/e-main/components/event-w4m4/items/lovebrand-p7.png",
+  alt: "Dyson"},
+  {link: "https://media.etmall.com.tw/sp/4369/m/index.html",
+  imgSrc: "~event/2nd/e-main/components/event-w4m4/items/lovebrand-p8.png",
+  alt: "APPLE"},
+  ]
+
+-
+  var w4m4DataU = [
+  {link: "https://www.u-mall.com.tw/c1/45051", imgSrc: "~event/2nd/u-main/components/event-w4m4/items/event-w4m4-img-1.png", alt: "開架保養"},
+  {link: "https://www.u-mall.com.tw/np/73924", imgSrc: "~event/2nd/u-main/components/event-w4m4/items/event-w4m4-img-2.png", alt: "關鍵保健"},
+  {link: "notyet", imgSrc: "~event/2nd/u-main/components/event-w4m4/items/event-w4m4-img-3.png", alt: "notyet"},
+  {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202002/SP_1106075/w/index.html", imgSrc: "~event/2nd/u-main/components/event-w4m4/items/event-w4m4-img-4.png", alt: "豪禮狂送"},
+  {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202002/SP_1106076/w/index.html", imgSrc: "~event/2nd/u-main/components/event-w4m4/items/event-w4m4-img-5.png", alt: "女王家居"},
+  {link: "https://www.u-mall.com.tw/np/77121", imgSrc: "~event/2nd/u-main/components/event-w4m4/items/event-w4m4-img-6.png", alt: "流行精選"},
+  {link: "notyet", imgSrc: "~event/2nd/u-main/components/event-w4m4/items/event-w4m4-img-7.png", alt: "notyet"},
+  {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202002/SP_1106001/w/index.html", imgSrc: "~event/2nd/u-main/components/event-w4m4/items/event-w4m4-img-8.png", alt: "Fun心出遊"},
+  ]
+
+- var w4m4Data = isU? w4m4DataU : w4m4DataE
+
+
+section.promo__group.promo__group--w4m4(data-title="媽媽的愛牌")
+  .promo__wrap
+    ul.good__wrap
+      each data in w4m4Data
+        li
+          a(href= data.link, title= data.alt)
+            img(src= data.imgSrc, alt= data.alt)

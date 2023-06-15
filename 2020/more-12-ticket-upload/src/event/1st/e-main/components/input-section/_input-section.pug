@@ -1,0 +1,57 @@
+section.promo__group.promo__group--input.m-bottom--lg
+  .layout--main
+    .input__zone
+      .input__block.m-bottom--lg
+        .input__title
+          span 活動一：東森幣兌換
+        .input__box.input__box--promo1
+          form(action="")
+            input.input.input--coin-exchange(placeholder="輸入東森幣兌換序號")
+            button.btn.btn--submit 東森幣兌換
+
+      .input__block.m-bottom--lg
+        .input__title
+          span 活動二：發票登記抽
+        .input__box.input__box--promo2
+          form(action="")
+            ul
+              li
+                span 購買超商
+                select.input.input--cvs(name="")
+                  option(selected disabled hidden) 請選擇超商
+                  option(value="") 獅子超商
+                  option(value="") 你家超商
+                  option(value="") 高級生活超商
+                  option(value="") 好的超商
+              li
+                span 發票號碼
+                input.input.input--ticket.input--ticket-1st(placeholder="英文", maxlength="2", type="text")
+                input.input.input--ticket.input--ticket-2nd(placeholder="數字8碼", maxlength="8", type="tel", inputmode="numeric", pattern="[0-9]*")
+              li
+                .row.m-bottom--lg
+                  label.btn.btn--border.btn--upload
+                    input(type="file" hidden)
+                    span 上傳發票圖片
+                    img(src="~event/1st/e-main/components/input-section/decoration-ticket.png", alt="")
+                  button.btn.btn--submit 確認送出
+                .row
+                  a(href="javascript:void(0)") 查詢記錄
+                  span ｜
+                  a(href="#note") 上傳發票步驟教學
+
+    .pop__content
+      table
+        tbody
+          tr
+            th 登錄日期
+            th 發票號碼
+          tr
+            td
+              span 12/12 14:50
+            td
+              span FK49102584
+          tr
+            td
+              span 12/13 14:40
+            td
+              span SB14782144

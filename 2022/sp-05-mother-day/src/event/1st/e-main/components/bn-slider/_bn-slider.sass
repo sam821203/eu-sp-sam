@@ -1,0 +1,40 @@
+.promo__group--bn
+  +pos-set(relative, zero)
+  overflow: hidden
+
+  .decor-item
+    &:first-child
+      +pos-set(absolute, under, 0%, 4%)
+      width: 25%
+      &.active
+        animation: key-wind-rotate 8s linear infinite both
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 450px)
+        width: auto
+    &:last-child
+      +pos-set(absolute, under, 0%)
+      right: 5%
+      width: 23%
+      &.active
+        animation: key-wind-rotate 8s 2s linear infinite both
+      +breakpoint-min($min-width-xl)
+        right: calc(50% - 435px)
+        width: auto
+    // +breakpoint-min($min-width-xl)
+    //   width: auto
+  .promo__wrap
+    +aspect-ratio(960, 941)
+    margin-top: 7%
+      // animation: rotate-reverse 12s linear infinite
+    .promo__zone
+      // +pos-set(relative, zero)
+      +bg-set(url(event/1st/e-main/components/bn-slider/bg-bn-slider.png), 100%)
+      .promo__box
+        +pos-set(absolute, base, 20%, 4%)
+        width: 92%
+      .swiper-container
+        margin-top: 1.5%
+
+
+
++key-wind-rotate(-2, 2)

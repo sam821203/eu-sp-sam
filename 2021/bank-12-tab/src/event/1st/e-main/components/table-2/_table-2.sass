@@ -1,0 +1,40 @@
+// 共用table-1格式
+.promo__group--table-2
+  th,
+  td
+    padding: 1.2% 2% 1%
+    &:nth-child(1)
+      width: 14%
+    &:nth-child(2)
+      width: 16%
+    &:nth-child(3)
+      width: 18%
+    &:nth-child(4)
+      width: 20%
+    &:nth-child(5)
+      width: 30%
+  th
+    &:nth-child(3),
+    &:nth-child(4)
+      padding: 1.2% 4% 1%
+
+  +breakpoint-min($min-width-md)
+    th,
+    td
+      &:nth-child(1)
+        padding: 1.2% 3% 1%
+    th
+      &:nth-child(3),
+      &:nth-child(4)
+        padding: 1.2% 2% 1%
+
+  +breakpoint-min($min-width-lg)
+    th,
+    td
+      padding: 1.2% 2% 1%
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4),
+      &:nth-child(5)
+        width: 20%

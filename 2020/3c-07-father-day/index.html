@@ -1,0 +1,541 @@
+<meta name="viewport" content="width=device-width">
+<!-- ============== 輪播 start ============== -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+<!-- ============== 輪播 end ============== -->
+<!-- 共用CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.css">
+<style>
+    body {
+        /* 自行修正背景顏色 */
+        background-color: #020204;
+    }
+
+    /* 調整logo位置大小 */
+    /* .logo {
+      top: 1%;
+      left: 1%;
+      width: 30%;
+      max-width: 220px;
+    } */
+
+    /* 連結測試 */
+    /* .sp__visual a{
+      filter: brightness(500%);
+    } */
+
+    /* 切片測試 */
+    /* .visual__fragment::before {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      border: 1px solid #00f;
+      pointer-events: none;
+    } */
+
+    /* 設定全畫面背景 */
+    .sp__main {
+        background: url(bg.jpg) center 0 no-repeat;
+    }
+
+    /* 大網各區塊背景  */
+    /*@media screen and (min-width: 960px) {*/
+    /*.visual__block1 {*/
+    /*background: center 0 url("bg_01.jpg") no-repeat;*/
+    /*}*/
+
+    /*.visual__block2 {*/
+    /*background: center 0 url("bg_02.jpg") no-repeat;*/
+    /*}*/
+
+    /*.visual__block3 {*/
+    /*background: center 0 url("bg_03.jpg") no-repeat;*/
+    /*}*/
+    /*}*/
+
+    /*-- 動畫小物件 --*/
+    .animate__wrap {
+        position: relative;
+        z-index: 1;
+    }
+
+    /*-- 手機版：
+            1. 設定物件距離左邊與上邊的位置，單位可以使用"%"或"vw"
+            2. width 建議電腦版可以使用auto，手機版則可使用%調整
+     --*/
+    .animate__wrap .animate__obj--01 {
+        position: absolute;
+        top: 1vw;
+        left: 1vw;
+        width: auto;
+    }
+
+    /*-- 電腦版：
+            設定物件距離左邊與上邊的位置，單位可以使用"px"，左邊可以挑整clac()後面的px值
+            width 建議電腦版可以使用auto，手機版則可使用%調整
+     --*/
+    @media screen and (min-width: 960px) {
+        .animate__wrap .animate__obj--01 {
+            top: 0;
+            left: calc(50% - 480px);
+            width: auto;
+        }
+    }
+
+    /* tab CSS*/
+    .promo__group--tab .tab__wrap {
+        display: -ms-flexbox;
+        display: flex;
+        display: block;
+    }
+
+    .promo__group--tab .tab__wrap .tab__zone {
+        padding: 0;
+    }
+
+    .promo__group--tab .tab__wrap .tab__zone .tab__box {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -ms-flex-pack: center;
+        justify-content: center;
+        position: relative;
+        /*top: calc(100vw * 0.32);*/
+        /*left: calc(100vw * 0.045)*/
+    }
+
+    .promo__group--tab .tab__wrap .content__zone {
+        -ms-flex: 0 1 100%;
+        flex: 0 1 100%;
+    }
+
+    .promo__group--tab .tab__wrap .content__zone .content__block,
+    .promo__group--tab .tab__wrap .content__zone .content__box {
+        width: 100%;
+    }
+
+    .promo__group--tab .tab__item {
+        padding: 0;
+    }
+
+    .promo__group--tab .tab__item img {
+        display: block;
+        -webkit-filter: brightness(80%);
+        filter: brightness(80%);
+    }
+
+    .promo__group--tab .tab__item.active img {
+        -webkit-filter: brightness(150%);
+        filter: brightness(150%)
+    }
+
+    .promo__group--tab .tab__item:active,
+    .promo__group--tab .tab__item:hover {
+        -webkit-filter: brightness(120%);
+        filter: brightness(120%)
+    }
+
+    .promo__group--tab .tab__item.active:active,
+    .promo__group--tab .tab__item.active:hover {
+        -webkit-filter: brightness(100%);
+        filter: brightness(100%)
+    }
+
+    .promo__group--tab .content__box {
+        position: relative;
+        display: none;
+    }
+
+    .promo__group--tab .content__box.active {
+        display: block
+    }
+
+    .sub__title {
+        position: absolute;
+        top: 53vw;
+        left: 31vw;
+        width: 37vw;
+        height: 9vw;
+    }
+
+    .index__06__main, .index__06__sub01, .index__06__sub02,
+    .index__07__main, .index__07__sub01, .index__07__sub02,
+    .index__08__main, .index__08__sub01, .index__08__sub02 {
+        position: absolute;
+        /*background: rgba(233, 0, 233, .5);*/
+    }
+
+    .index__06__main {
+        width: 56vw;
+        height: 32vw;
+        top: 7vw;
+        right: 6vw;
+    }
+
+    .index__07__main {
+        width: 56vw;
+        height: 35vw;
+        top: 7vw;
+        left: 6vw;
+    }
+
+    .index__08__main {
+        width: 59vw;
+        height: 32vw;
+        top: 7vw;
+        right: 4vw;
+    }
+
+    .index__06__sub01 {
+        width: 24vw;
+        height: 39vw;
+        top: 41vw;
+        right: 35vw;
+    }
+
+    .index__07__sub01 {
+        width: 24vw;
+        height: 39vw;
+        top: 42vw;
+        left: 9vw;
+    }
+
+    .index__08__sub01 {
+        width: 24vw;
+        height: 39vw;
+        top: 40vw;
+        right: 31vw;
+    }
+
+    .index__06__sub02 {
+        width: 24vw;
+        height: 39vw;
+        top: 41vw;
+        right: 9vw;
+    }
+
+    .index__07__sub02 {
+        width: 24vw;
+        height: 39vw;
+        top: 42vw;
+        left: 33vw;
+    }
+
+    .index__08__sub02 {
+        width: 24vw;
+        height: 39vw;
+        top: 40vw;
+        right: 5vw;
+    }
+
+    .tab__06__bg {
+        background: url(index_06-bg.jpg);
+        background-size: 100% auto;
+    }
+    .tab__07__bg {
+        background: url(index_07-bg.jpg);
+        background-size: 100% auto;
+    }
+    .tab__08__bg {
+        background: url(index_08-bg.jpg);
+        background-size: 100% auto;
+    }
+    @media screen and (min-width: 960px) {
+        .promo__group--tab .tab__wrap {
+            display: block;
+        }
+
+        .promo__group--tab .tab__wrap .tab__zone {
+            width: 100%;
+        }
+
+        .promo__group--tab .tab__wrap .tab__zone .tab__box {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+
+        .promo__group--tab .tab__wrap .content__zone {
+            margin: auto;
+            width: 100%
+        }
+
+        .promo__group--tab .tab__item {
+            padding: 0;
+            cursor: pointer;
+            /*width: 33%*/
+        }
+
+        .promo__group--tab .tab__item img {
+            margin: 0 auto
+        }
+
+        .sub__title {
+            position: absolute;
+            top: 508px;
+            left: calc(50% - 184px);
+            width: 379px;
+            height: 96px;
+        }
+
+        .index__06__main {
+            width: 510px;
+            height: 300px;
+            top: 70px;
+            right: calc(50% - 410px);
+        }
+
+        .index__07__main {
+            width: 520px;
+            height: 330px;
+            top: 70px;
+            left: calc(50% - 410px);
+        }
+
+        .index__08__main {
+            width: 556px;
+            height: 295px;
+            top: 70px;
+            right: calc(50% - 430px);
+        }
+
+        .index__06__sub01 {
+            width: 240px;
+            height: 370px;
+            top: 385px;
+            right: calc(50% - 130px);
+        }
+
+        .index__07__sub01 {
+            width: 240px;
+            height: 332px;
+            top: 406px;
+            left: calc(50% - 405px);
+        }
+
+        .index__08__sub01 {
+            width: 240px;
+            height: 379px;
+            top: 370px;
+            right: calc(50% - 183px);
+        }
+
+        .index__06__sub02 {
+            width: 240px;
+            height: 370px;
+            top: 385px;
+            right: calc(50% - 385px);
+        }
+
+        .index__07__sub02 {
+            width: 240px;
+            height: 347px;
+            top: 406px;
+            left: calc(50% - 163px);
+        }
+
+        .index__08__sub02 {
+            width: 240px;
+            height: 379px;
+            top: 370px;
+            right: calc(50% - 428px);
+        }
+    }
+
+</style>
+<!-- 旅遊專用bar區域 start 不要就移除-->
+<div id="barHome"></div>
+<!-- 旅遊專用bar區域 end-->
+<div id="iconHome" class="layout--main home--icon"></div>
+<div id="spWrap" class="sp__wallper">
+    <!-- 動畫小物件 -->
+    <div class="animate__wrap">
+        <!--<img class="animate__obj&#45;&#45;01" src="圖片檔名" alt="圖片提示文字">-->
+        <!--<img class="animate__obj&#45;&#45;02" src="圖片檔名" alt="圖片提示文字">-->
+        <!--<img class="animate__obj&#45;&#45;03" src="圖片檔名" alt="圖片提示文字">-->
+        <!-- 如果有多組物件，可以複製命名animate__obj--0{數字} css 也複製一份就可以一直往下生 -->
+        <!--<img class="animate__obj--04" src="" alt="">-->
+    </div>
+    <!-- 主視覺 -->
+    <main class="sp__main">
+        <div class="layout--main home--logo">
+            <a href="https://www.etmall.com.tw"><img class="logo" src="ehs-logo.png" alt="東森購物"></a>
+        </div>
+        <section class="sp__visual visual__block1">
+            <div class="layout--main">
+                <ul class="visual--auto clearfix">
+                    <li class="visual__fragment width--auto">
+                        <img src="index_01.jpg">
+                        <a class="sub__title" href="#note"></a>
+                    </li>
+                    <!--<li class="visual__fragment width&#45;&#45;auto">-->
+                    <!--<a href="https://www.etmall.com.tw" title="優質商品">-->
+                    <!--<img src="index_03.jpg" alt="優質商品">-->
+                    <!--</a>-->
+                    <!--</li>-->
+                </ul>
+            </div>
+        </section>
+        <section class="sp__visual visual__block2">
+            <div class="layout--main">
+                <ul class="visual--auto clearfix">
+                    <li class="visual__fragment width--auto">
+                        <a href="#note" title="滿$12,888抽 萬寶龍原子筆">
+                            <img src="index_02.jpg" alt="滿$12,888抽 萬寶龍原子筆">
+                        </a>
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <a href="#note" title="滿$5,888抽 小米刮鬍刀">
+                            <img src="index_03.jpg" alt="滿$5,888抽 小米刮鬍刀">
+                        </a>
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <a href="#note" title="滿$3,000送$888">
+                            <img src="index_04.jpg" alt="滿$3,000送$888">
+                        </a>
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <a href="#note" title="銀行最高回饋$2,500">
+                            <img src="index_05.jpg" alt="銀行最高回饋$2,500">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- tab區 -->
+        <section class="promo__group promo__group--tab m-bottom--xs js-add__bg" data-title="">
+            <div class="layout--main">
+                <ul class="tab__wrap">
+                    <li class="tab__zone sp__visual visual__block2">
+                        <ul class="tab__box visual--auto clearfix" id="tabBox">
+                            <li class="tab__item visual__fragment width--auto active tab__06__bg" title="做工">
+                                <img src="index_06.png" alt="做工">
+                            </li>
+                            <li class="tab__item visual__fragment width--auto tab__07__bg" title="中產">
+                                <img class="" src="index_07.png" alt="中產">
+                            </li>
+                            <li class="tab__item visual__fragment width--auto tab__08__bg" title="富豪">
+                                <img class="" src="index_08.png" alt="富豪">
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="content__zone">
+                        <ul class="content__block" id="contentBlock">
+                            <li class="content__box clearfix active">
+                                <img src="index_06-content.jpg" alt="">
+                                <a class="index__06__main" href="https://www.etmall.com.tw/i/2687194" title="小米手環5"></a>
+                                <a class="index__06__sub01" href="https://www.etmall.com.tw/i/2634150"
+                                   title="UB平板電腦 (10.1吋大螢幕) "></a>
+                                <a class="index__06__sub02" href="https://www.etmall.com.tw/i/1927161"
+                                   title="播劇寶 (給爸爸的追劇神器)"></a>
+                            </li>
+
+                            <li class="content__box clearfix">
+                                <img src="index_07-content.jpg" alt="">
+                                <a class="index__07__main" href="https://www.etmall.com.tw/i/2658396"
+                                   title="iPhone SE 128G"></a>
+                                <a class="index__07__sub01" href="https://www.etmall.com.tw/i/2690486"
+                                   title="AirPods Pro "></a>
+                                <a class="index__07__sub02" href="https://www.etmall.com.tw/i/2690486"
+                                   title="Samsung Galaxy Tab A  (32G/LTE版)"></a>
+                            </li>
+                            <li class="content__box clearfix">
+                                <img src="index_08-content.jpg" alt="">
+                                <a class="index__08__main" href="https://www.etmall.com.tw/i/2644817"
+                                   title="MacBook Pro 13吋 "></a>
+                                <a class="index__08__sub01" href="https://www.etmall.com.tw/i/2658568"
+                                   title="SONY Xperia 1 II"></a>
+                                <a class="index__08__sub02" href="https://www.etmall.com.tw/i/2690486"
+                                   title="Garmin Fenix 6 Pro Solar運動GPS腕錶"></a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+</div>
+<script src="https://polyfill.io/v3/polyfill.min.js"></script>
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<!-- ============== 輪播 start ============== -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+<!-- ============== 輪播 end ============== -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js"></script> -->
+<!-- 東森浮水印 -->
+<script id="scriptIconFloat"
+        src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107916/float-icon.js"></script>
+<!-- 森森浮水印
+<script id="scriptIconFloat" src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1104381/float-icon.js"></script> -->
+<!-- 旅遊置頂bar
+<script id="scriptAddBn" src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106742/add-bn.js"></script> -->
+<!-- 共用JS -->
+<script id="generateScript"
+        src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.js"></script>
+<script>
+    var footerSlider = new Swiper(".swiper-container", {
+        autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+        },
+        autoHeight: true,
+        grabCursor: true,
+        loop: true,
+        speed: 1000,
+    });
+
+
+    //    export var initBuildTab = ;
+    buildTab();
+    function buildTab() {
+        var tabBox = document.getElementById('tabBox');
+        var tabItems = tabBox.querySelectorAll('.tab__item');
+        var contentBlock = document.getElementById('contentBlock');
+        var contentBox = contentBlock.querySelectorAll('.content__box');
+        var dateNow = dateCheck() - 1; // change date to zero start
+
+        if (tabItems.length !== contentBox.length) {
+            console.error('Tab Item數量與Content Box數量不符');
+            return false;
+        }
+
+        tabItems.forEach(function (el, index) {
+            if (index === dateNow) {
+                addActive(tabItems, dateNow);
+                addActive(contentBox, index);
+            }
+
+            function clickActive() {
+                addActive(tabItems, index);
+                addActive(contentBox, index);
+            }
+
+            if (el.addEventListener) {
+                el.addEventListener('click', clickActive, false);
+            }
+            else if (el.attachEvent) {
+                el.addEventListener('onclick', clickActive);
+
+            }
+        });
+
+    }
+
+    function addActive(arrayElementIn, elementIndex) {
+        arrayElementIn.forEach(function (el) {
+            el.classList.remove('active');
+        });
+        arrayElementIn[elementIndex].classList.add('active');
+    }
+
+    function dateCheck() {
+        var date = new Date().getDate();
+        return date;
+    }
+</script>
+<!-- ============== 輪播 end ============== -->

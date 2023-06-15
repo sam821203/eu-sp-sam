@@ -1,0 +1,82 @@
+-
+  var w3m3Data = [
+    { // 1
+      link: "https://media.etmall.com.tw/sp/10669/m/index.html",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-1.png",
+      alt: "滿額送萬元家電"
+    },
+    { // 2
+      link: "https://www.etmall.com.tw/c2/111150",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-2.png",
+      alt: "GARMIN10990起"
+    },
+    { // 3
+      link: "https://media.etmall.com.tw/sp/13859/m/index.html",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-3.png",
+      alt: "M33 開賣送好禮"
+    },
+    { // 4
+      link: "https://www.etmall.com.tw/p/167529",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-4.png",
+      alt: "母親節暖身滿額贈"
+    },
+    { // 5
+      link: "https://www.etmall.com.tw/gp/163595",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-5.png",
+      alt: "亞培滿額送好禮"
+    },
+    { // 6
+      link: "https://media.etmall.com.tw/sp/13989/m/index.html",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-6.png",
+      alt: "滿額抽五月花衛生紙"
+    },
+    { // 7
+      link: "https://www.etmall.com.tw/c3/162336",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-7.png",
+      alt: "下單指定品送好禮"
+    },
+    { // 8
+      link: "https://www.etmall.com.tw/gp/167385",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-8.png",
+      alt: "春意盎然55折起"
+    },
+    { // 9
+      link: "https://media.etmall.com.tw/sp/13777/m/index.html",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-9.png",
+      alt: "羅絲美旗艦店78折up"
+    },
+    { // 10
+      link: "https://www.etmall.com.tw/gp/163679",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-10.png",
+      alt: "愛媽咪全館86折"
+    },
+    { // 11
+      link: "https://www.etmall.com.tw/c3/165550",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-11.png",
+      alt: "木製玩具84折起"
+    },
+    { // 12
+      link: "https://www.etmall.com.tw/gp/144044",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-12.png",
+      alt: "全館85折起"
+    },
+  ]
+
+section.promo__group.promo__group--w3m3.m-bottom--lg(data-title="強檔狂折")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--left
+        img(src="event/1st/e-main/components/event-w3m3/decor-event-w3m3-left.png", alt="")
+      .decor__item.decor__item--right#decorEventW3M3
+        img(src="event/1st/e-main/components/event-w3m3/decor-event-w3m3-right.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          #w3m3Wrap.event__wrap
+            ul.good__wrap
+              each data, index in w3m3Data
+                li
+                  a(href= data.link, title= data.alt)
+                    - var hasImg = data.imgSrc ? true : false
+                    if (hasImg)
+                      img(src= data.imgSrc, alt= data.alt)

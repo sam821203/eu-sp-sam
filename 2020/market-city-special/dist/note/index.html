@@ -1,0 +1,524 @@
+<meta name="viewport" content="width=device-width">
+<meta charset="utf-8">
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    *:before,
+    *:after {
+        box-sizing: border-box;
+    }
+
+    a {
+        display: block;
+        text-decoration: none;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    img {
+        width: 100%;
+        border: 0;
+        vertical-align: bottom;
+    }
+
+    article,
+    main,
+    nav,
+    section {
+        display: block;
+    }
+
+    body {
+        margin: 0;
+        font-size: 14px;
+    }
+
+    .layout--main {
+        max-width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* note */
+    /* ======================================== */
+    .note {
+        word-break: break-all;
+    }
+
+    .note article {
+        background-color: #dd6362;
+        font: normal 1.15em/1.5 '微軟正黑體', Arial;
+        color: #FFFFFF;
+        padding-bottom: 3%;
+        padding-top: 0;
+        padding-right: 0;
+        margin-top: 2%;
+    }
+
+    .note article a {
+        display: inline;
+        color: #525252;
+    }
+
+    .note article a:visited {
+        color: #525252;
+    }
+
+    .note article a:hover {
+        color: #525252;
+        text-decoration: underline;
+    }
+
+    .note hr {
+        background-color: #ebc029;
+        width: 100%;
+        margin: 0;
+        margin-bottom: 15px;
+        height: 8px;
+        border: 0;
+    }
+
+    .note h2 {
+        font-size: 1.4em;
+        line-height: 1.5;
+        margin: 5px 3%;
+        font-weight: bold;
+    }
+
+    .note p {
+        line-height: 1.5;
+        padding: 0 5%;
+        margin: 0;
+    }
+
+    .note ol,
+    .note ul {
+        padding: 0;
+        margin: auto;
+        margin: 0 5% 0.25em 5%;
+        list-style: none;
+    }
+
+    .note li {
+        margin-bottom: 0.25em;
+        margin-left: 3%;
+        list-style: disc;
+    }
+
+    .note li:first-child ol {
+        margin-left: 5%;
+    }
+
+    .note li > ol, .note li > ul {
+        margin-left: 1.5em;
+    }
+
+    .note li > ol {
+        list-style: lower-alpha;
+    }
+
+    .note li li {
+        margin-left: 0;
+        list-style: circle;
+    }
+
+    .note ul {
+        list-style: disc;
+    }
+
+    .note ul.list--custsom, .note ol.list--custsom {
+        list-style: none;
+        margin-left: 0;
+    }
+    @media screen and (max-width: 769px) {
+        .note h2 {
+            font-size: 1rem;
+        }
+        .note ol,
+        .note ul {
+            margin: 0 3.5% 0 7%;
+        }
+    }
+    
+    /* table */
+    .note table {
+        color: #FFFFFF;
+        border: 1px solid #FFFFFF;
+        border-right: 0;
+        border-bottom: 0;
+        width: 90%;
+        margin: 1% 0 2% 5.5%;
+        background-color: #dd6362;
+        font-size: 1em;
+    }
+
+    .note table td {
+        border-right: 1px solid #FFFFFF;
+        border-bottom: 1px solid #FFFFFF;
+        padding: 5px;
+        text-align: center;
+    }
+
+   .note ol table {
+        margin: 0;
+        width: 100%;
+        margin: 2% 0;
+    }
+
+    @media screen and (max-width: 769px) {
+        .note h2 {
+            font-size: 1rem;
+        }
+        .note article a.but {
+            font-size: 1rem;
+        }
+        .note ol,
+        .note ul {
+            margin: 0 3.5% 0 7%;
+        }
+        .note table {
+            margin: 0 3%;
+            width: 100%;
+        }
+    }
+
+    /* 禮物盒giftbox圖 */
+    .bn-w3m1 .banner__wrap {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .bn-w3m1 .banner__item {
+        flex: 0 0 25%;
+        padding: 5px;
+        list-style: none;
+    }
+    @media screen and (max-width: 769px) {
+        ul.banner__wrap {
+            margin: 0;
+        }
+        .bn-w3m1 .banner__item {
+            flex: 1 0 50%;
+        }
+    }
+    /* button */
+    .note article a.but {
+        background-color: #ebc029;
+        border-radius: 99rem;
+        color: #a6130f;
+        font-size: .9em;
+        font-weight: bold;
+        display: inline-block;
+        text-align: center;
+        padding: 3px 20px;
+    }
+
+    .note article a.but:hover {
+        background-color: #a6130f;
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+    @media screen and (max-width: 769px) {        
+        .note article a.but {
+            display: block;
+            padding-top: 6px;
+            padding-bottom: 6px;
+            width: 95%;
+            font-size: 1.1rem;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+    }
+</style>
+<section class="layout--main note" name="note" id="note">
+    <article>
+        <hr>
+        <h2>【活動一、東森幣拼手氣-抽TOYOTA汽車】</h2>
+        <ol>
+            <li>活動時間：109/12/1-109/12/31</li>
+            <li>活動內容：活動期間內於全通路消費不限金額完成一筆有效訂單，並下注100枚東森幣，即可參加「東森幣X拼手氣」小額奪寶活動，就有機會獲得TOYOTA汽車。</li>
+            <li>活動獎項：TOYOTA COROLLA CROSS豪華款炫魅紅乙輛(市價$799,000)</li>
+            <li>抽獎日：109/1/6(三)東森購物47台20：00 LIVE節目抽獎</li>
+            <li>注意事項：
+                <ol>
+                    <li>可於東森購物APP【打卡/遊戲】內之<小額奪寶>進行投注，或進線透過專人進行投注，每注100枚東森幣。</li>
+                    <li>參加投注者12月需有1筆有效訂單 (不限通路消費且無取消/退貨)，此活動不限投注注數，若12月無成立有效訂單，即不符合活動資格，已投注之東森幣將不予返還。</li>
+                    <li>得獎者及開獎資訊將於東森購物APP【打卡/遊戲/小額奪寶】「中獎名單」頁面公告及電視跑馬公告。</li>
+                    <li>TOYOTA COROLLA CROSS豪華款汽車乙台中獎規範：
+                        <ol>
+                            <li>中獎者須依和泰汽車及遵守交通部公路總局相關交車取車辦法及費用，須自行負擔領牌費及強制險，實際費用依領牌時實際發生為主。</li>
+                            <li>本獎項不得更換其他車型、車色或折抵現金。</li>
+                            <li>車輛價值依和泰汽車當時所公佈建議訂價為參考價值，規格、配備以和泰汽車提供實車為準。</li>
+                            <li>圖片僅供參考，實際車款代後續交車時確認，車色為紅色。</li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+            <li>頒獎儀式：中獎者需至東森購物總公司(中和區景平路258號)參加贈獎儀式，並同意公開照片及影片至東森購物電視及粉絲專頁使用，若中獎者不克前往，將由東森購物工作人員代為領獎；贈獎儀式將視狀況擇日舉行，並另由專人通知。
+            </li>
+            <li>依稅法規定，若得獎人於東森購物兌換贈（獎）品金額達新台幣（下同）1,001元以上未達20,010元，將於次年初開立免扣繳憑單予得獎人並向主管稽徵機關申報。 </li>
+            <li>獎項均不得要求轉讓他人、折合現金及更換其他等值獎品；獎項說明未盡事宜，依中通知單說明為主。</li>
+            <li>東森購物保有活動變更、修改或終止本活動之權利。</li>
+        </ol>
+        <h2 id="note2">【活動二、東森購物21週年狂歡慶】</h2>
+        <ol>
+            <li>活動時間：2020/11/1~2021/1/31</li>
+            <li>活動內容：活動期間於全通路消費任一件商品，奢華國旅天天抽。
+                <ol>
+                    <li>第一重、天天抽五星級城堡 瑞穗天合國際觀光酒店住宿(1泊2食) 。</li>
+                    <li>第二重、每月加碼抽五星級觀光列車環島之星3天2日遊。</li>
+                </ol>
+            </li>
+            <li>活動獎項(皆1人中獎2人同行)：
+                <ol>
+                    <li>天天抽好禮
+                        <table cellpadding="0" cellspacing="0">
+                           <tr>
+                                <td>名稱</td>
+                                <td>市價</td>
+                                <td>數量</td>
+                           </tr>
+                           <tr>
+                                <td>瑞穗天合國際觀光酒店住宿</td>
+                                <td>10,000</td>
+                                <td>天天1名 / 共31名</td>
+                           </tr> 
+                        </table>
+                    </li>
+                    <li>月月抽豪禮
+                        <table cellpadding="0" cellspacing="0">
+                           <tr>
+                                <td>名稱</td>
+                                <td>市價</td>
+                                <td>數量</td>
+                           </tr>
+                           <tr>
+                                <td>環島之星觀光列車3天2日</td>
+                                <td>48,846</td>
+                                <td>5名</td>
+                           </tr> 
+                        </table>
+                    </li>
+                </ol>
+            </li>
+            <li>行程細項：
+                <ol>
+                    <li>瑞穗天合酒店住宿券効期為1年，效期為109/11/2-110/11/2
+                    <ol>
+                        <li>房型：城堡精緻客房(雙人房) 。</li>
+                        <li>使用說明：限定平日使用(定義為周一至周四，不含國定假期，假日使用需另加價，請依官網公告為主) 。
+                           本專案不接受加床。</li>
+                    </ol>
+                    </li>
+                    <li>環島之星3天2日，1人中獎2人同行，兌換日期為2021/3/1-2021/10/31
+                        <ol>
+                            <li>環島之星觀光列車+花蓮秧悅美地度假酒店+知本老爺酒店+精緻自選行程二泊六食兌換券。</li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+            <li>2020/12月消費抽獎公布日：2021/1/28；2021/1月消費抽獎公布日：2021/3/2。</li>
+            <li>注意事項：
+                <ol>
+                    <li>活動期間於全通路消費，無取消或辦理銷退者，即可參加把21週年狂歡慶活動。購買預付型商品(如旅遊、禮券、提貨券、超值券..等)不列入活動累計。</li>
+                    <li>東森購物將於隔月底開始由專人通知符合中獎資格會員，進行兌獎流程，資料繳回完成後30天內便會發送簡訊。</li>
+                    <li>依稅法規定，若得獎人於東森購物兌換贈（獎）品金額達新台幣（下同）1,001元以上未達20,010元，將於次年初開立免扣繳憑單予得獎人並向主管稽徵機關申報。 </li>
+                    <li>獎項均不得要求轉讓他人、折合現金及更換其他等值獎品；獎項說明未盡事宜，依中通知單說明為主。</li>
+                    <li>本活動獎品寄送範圍僅限中華民國台澎金馬地區。</li>
+                    <li>東森購物保有活動變更、修改或終止本活動之權利。</li>
+                </ol>
+            </li>
+        </ol>
+        <h2 id="note3">【活動三、下單登記抽好禮】<a href="https://www.etmall.com.tw/Activity/Reg/220" class="but">點我登記</a></h2>
+        <ol>
+            <li>活動時間：109/12/1 AM10:00-110/4/30 AM10:00</li>
+            <li>活動內容：活動期間於東森購物網購買含《優選》標籤之商品，單筆消費不限金額，無取消/退貨者，並於活動期間內至活動頁面點選【我要登記】，每月將抽出口袋保溫杯、DeMon面膜等好禮；活動結束後，即有機會再獲得Apple Airpods、國際牌吸塵器等多項大禮。每一會員限獲獎乙次。</li>
+            <li>活動獎項：
+                <table cellpadding="0" cellspacing="0">
+                   <tr>
+                        <td>抽獎</td>
+                        <td>項次</td>
+                        <td>獎項名稱</td>
+                        <td>市價</td>
+                        <td>數量</td>
+                   </tr>
+                   <tr>
+                        <td rowspan="2">月月抽</td>
+                        <td>1</td>
+                        <td>AWANA 304不鏽鋼炫彩迷你口袋保溫杯(150ml)</td>
+                        <td>$500</td>
+                        <td>10</td>
+                   </tr>
+                   <tr>                           
+                        <td>2</td>
+                        <td>DeMon_緊緻光耀黑面膜(3片/盒)</td>
+                        <td>$1,480</td>
+                        <td>10</td>
+                   </tr>
+                   <tr>
+                        <td rowspan="3">活動抽</td>
+                        <td>3</td>
+                        <td>Apple AirPods 藍牙耳機(搭配有線充電盒)</td>
+                        <td>$ 5,290</td>
+                        <td>1</td>
+                   </tr> 
+                   <tr>
+                        <td>4</td>
+                        <td>GoLiFE電子血壓計</td>
+                        <td>$3,990</td>
+                        <td>1</td>
+                   </tr> 
+                   <tr>
+                        <td>5</td>
+                        <td>國際牌直立式吸塵器MC-BU100JT-R</td>
+                        <td>$4,940</td>
+                        <td>1</td>
+                   </tr> 
+                </table>
+            </li>
+            <li style="margin-right: 0">中獎/兌獎注意事項：
+                <ol>
+                    <li>抽獎日期 :
+                        <table cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>抽獎別</td>
+                                <td>月份</td>
+                                <td>抽獎日</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="4">月月抽</td>
+                                <td>12</td>
+                                <td>110/1/25(一)18:00前</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>110/2/22(一)18:00前</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>110/3/22(一)18:00前</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>110/4/26(一)18:00前</td>
+                            </tr>
+                            <tr>
+                                <td>月月抽+活動抽</td>
+                                <td>4</td>
+                                <td>110/5/24(一)18:00前</td>
+                            </tr>
+                        </table>
+                    </li>
+                    <li>項次1統一於抽出得獎人七日內寄出，七天工作日寄出。以APP推播訊息通知。</li>
+                    <li>項次2、3、4兌獎流程將由專人主動與得獎人聯繫。依稅法規定，若得獎人於東森購物兌換贈（獎）品金額達新台幣（下同）1,001元以上未達20,010元，將於次年初開立免扣繳憑單予得獎人並向主管稽徵機關申報；如達20,010元以上者，得獎人應回填兌獎收據單，並由東森購物代為扣繳得獎人應繳納獎品價值10%(外國人20%)之機會中獎所得稅金額後，東森購物始交付獎品並將於次年開立扣繳憑單予得獎人。</li>
+                    <li>給獎名單不另行通知，給獎名單及獎項明細，將置入於【我的禮物盒】功能中即可查詢，給獎日以APP推播通知。</li>
+                    <li>【我的禮物盒】功能僅限行動裝置、APP支援，查詢步驟請見頁面下方。</li>
+                </ol>
+            </li>
+            <li>注意事項：
+                <ol>
+                    <li>限網路下單。</li>
+                    <li>網連通、購享賺會員恕無法參與活動。</li>
+                    <li>每會員於活動期間限贈送乙次。</li>
+                    <li>此活動限東森購物網路通路。</li>
+                    <li>未於活動期間內完成登記者，恕無法參與活動。</li>
+                    <li>東森購物網保有活動變更、修改或終止本活動之權力，如有異動，修改後之內容將公佈在東森購物網上。</li>
+                </ol>
+            </li>
+        </ol>
+        <h2 id="note4">【活動四、下單送東森幣100枚(每月限量100名)】<a href="https://www.etmall.com.tw/Activity/Reg/220" class="but">點我登記</a></h2>
+        <ol>
+            <li>活動時間：109/12/1 AM10:00-110/4/30 AM10:00</li>
+            <li>活動內容：活動期間於東森購物網購買含《優選》標籤之商品，單筆消費不限金額，無取消/退貨者，於每月最後一日AM10:00前至活動頁面點選【我要登記】，有機會獲得100枚東森幣，每月限量100名。每一會員每月限獲獎乙次。</li>
+            <li>活動獎項：
+                <table cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>抽獎別</td>
+                        <td>月份</td>
+                        <td>抽獎日</td>
+                        <td>東森幣使用期限</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="5">下單送東森幣100枚</td>
+                        <td>12</td>
+                        <td>110/1/25(一)18:00前</td>
+                        <td>110/2/24(三) 23:59</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>110/2/22(一)18:00前</td>
+                        <td>110/3/21(日) 23:59</td>
+                    </tr>
+                    <tr>                        
+                        <td>2</td>
+                        <td>110/3/22(一)18:00前</td>
+                        <td>110/4/21(三) 23:59</td>
+                    </tr>
+                    <tr>                        
+                        <td>3</td>
+                        <td>110/4/26(一)18:00前</td>
+                        <td>110/5/25(二) 23:59</td>
+                    </tr>
+                    <tr>                        
+                        <td>4</td>
+                        <td>110/5/24(一)18:00前</td>
+                        <td>110/6/23(三) 23:59</td>
+                    </tr>
+                </table>
+            </li>
+            <li>【我的禮物盒】說明
+                <ol>
+                    <li>給獎名單不另行通知，給獎名單及獎項明細，將置入於【我的禮物盒】功能中即可查詢，給獎日以APP推播通知。</li>
+            <li>【我的禮物盒】功能僅限行動裝置、APP支援。</li>
+            <li>【我的禮物盒】查詢方式：</li>
+            開啟東森購物行動裝置、APP→會員中心→點選【我的禮物盒】→選擇欲觀看獲獎明細→查詢獲獎活動資訊
+            <li>查詢途徑示意如下：
+                <section class="sp--1260 bn-w3m1 banner__item  ">
+                    <ul class="banner__wrap">
+                        <li class="banner__item">
+                            <img src="step1.jpg" alt="banner">
+                        </li>
+                        <li class="banner__item">
+                            <img src="step2.jpg" alt="banner">
+                        </li>
+                        <li class="banner__item">
+                            <img src="step3.jpg" alt="banner">
+                        </li>
+                        <li class="banner__item">
+                            <img src="step4.jpg" alt="banner">
+                        </li>
+                    </ul>
+                </section>
+            </li>
+            <li>查看APP推播通知步驟
+                <section class="sp--1260 bn-w3m1 banner__item  ">
+                    <ul class="banner__wrap">
+                        <li class="banner__item">
+                            <img src="app-1.jpg" alt="banner">
+                        </li>
+                        <li class="banner__item">
+                            <img src="app-2.jpg" alt="banner">
+                        </li>
+                    </ul>
+                </section>
+            </li>
+                </ol>
+            </li>
+            <li>注意事項：
+                <ol>
+                    <li>限網路下單。</li>
+                    <li>網連通、購享賺會員恕無法參與活動。</li>
+                    <li>每會員於活動期間限贈送乙次。</li>
+                    <li>此活動限東森購物網路通路。</li>
+                    <li>未於活動期間內完成登記者，恕無法參與活動。</li>
+                    <li>東森購物網保有活動變更、修改或終止本活動之權力，如有異動，修改後之內容將公佈在東森購物網上。</li>
+                </ol>
+            </li>
+        </ol>
+    </article>
+</section>

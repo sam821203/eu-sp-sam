@@ -1,0 +1,174 @@
+-
+  var promoData = [
+    //- 做上翻的輪播好ㄌ
+    {
+      link: "",
+      imgSrc: "event/1st/e-main/components/promo-event/items/box-1.png",
+      alt: ""
+    },
+    {
+      link: "",
+      imgSrc: "event/1st/e-main/components/promo-event/items/box-2.png",
+      alt: "",
+    },
+  ]
+-
+  var promoItemE = [
+    {
+      link: "https://www.etmall.com.tw/Activity/CouponReceiveAll",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-0-1.png",
+      alt: "領折價劵",
+    },
+    {
+      link: "https://www.etmall.com.tw/member/taskActivity",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-0-2.png",
+      alt: "挑戰任務",
+    },
+    //- slider start
+    {
+      link: "https://media.etmall.com.tw/sp/13858/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-1.png",
+      alt: "媽咪啾愛禮東森幣抽香奈兒鑽錶"
+    },
+    //- {
+    //-   link: "https://media.etmall.com.tw/sp/13474/m/index.html",
+    //-   imgSrc: "event/1st/e-main/components/promo-event/items/promo-1.png",
+    //-   alt: "寵愛新會員首購滿額抽SPA券"
+    //- },
+    //- slider end
+    {
+      link: "https://media.etmall.com.tw/sp/13910/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-2.png",
+      alt: "新會員註冊送500",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/13548/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-3.png",
+      alt: "22間銀行最高回饋15%",
+    },
+    //- slider start
+    {
+      link: "https://media.etmall.com.tw/sp/13751/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-4.png",
+      alt: "嘉義優鮮滿2500折200",
+    },
+    //- {
+    //-   link: "https://media.etmall.com.tw/sp/13263/m/index.html",
+    //-   imgSrc: "event/1st/e-main/components/promo-event/items/promo-4.png",
+    //-   alt: "嘉義優鮮消費不限金額抽哈密瓜",
+    //- },
+    //- slider end
+    {
+      link: "https://media.etmall.com.tw/sp/13938/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-5.png",
+      alt: "7-ELEVEN取件送中冰拿",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/13755/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-6.png",
+      alt: "彰化好物購週週送月月抽",
+    },
+    //- slider start
+    {
+      link: "https://media.etmall.com.tw/sp/13075/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-7-1.png",
+      alt: "行動支付回饋10%東森幣",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/13750/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-7-2.png",
+      alt: "Atome新戶最高現折40%",
+    },
+    //- slider end
+    //- slider start
+    //- {
+    //-   link: "https://www.etmall.com.tw/activity/dl/votepopularityranking/Localfruit",
+    //-   imgSrc: "event/1st/e-main/components/promo-event/items/promo-8-1.png",
+    //-   alt: "東森農場投票抽好禮",
+    //- },
+    //- {
+    //-   link: "",
+    //-   imgSrc: "event/1st/e-main/components/promo-event/items/promo-8-2.png",
+    //-   alt: "拼出萬元好禮",
+    //- },
+    //- {
+    //-   link: "",
+    //-   imgSrc: "event/1st/e-main/components/promo-event/items/promo-8-3.png",
+    //-   alt: "APP下單滿$1500登記抽氣炸鍋",
+    //- },
+    //- slider end
+  ]
+
+-
+  var promoItemU = [
+    {
+      link: "https://media.u-mall.com.tw/sp/9704/m/index.html",
+      //- imgSrc: "event/1st/u-main/components/promo-event/items/promo-1.png",
+      alt: "23家銀行 最高回饋15%"
+    },
+    {
+      link: "https://media.u-mall.com.tw/sp/9704/m/index.html",
+      //- imgSrc: "event/1st/u-main/components/promo-event/items/promo-2.png",
+      alt: "花旗滿$20,000送$2,000"
+    },
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale",
+      //- imgSrc: "event/1st/u-main/components/promo-event/items/promo-3.png",
+      alt: "限時瘋搶"
+    },
+  ]
+
+//- - var promoItem = isU ? promoItemE : promoItemU
+
+//- TODO: 如果promo不和hero綁一起時要有自己的section和layout--main
+section.promo__group.promo__group--promo-event.m-bottom--lg
+  .decor__block
+    //- .decor__item
+    //-   img(src="event/1st/e-main/components/promo-event/decor-promo-event-1.png", alt="")
+    //- .decor__item
+    //-   img(src="event/1st/e-main/components/promo-event/decor-promo-event-2.png", alt="")
+
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          ul.promo__box
+            each data, index in promoItemE
+              if index < 2
+                li.promo__item
+                  a(href= data.link, title= data.alt)
+                    img(src= data.imgSrc, alt= data.alt)
+          .event__wrap
+            ul.event__box
+              each data, index in promoItemE
+                if index >= 2 && index < 8 
+                  li.promo__item
+                    a(href= data.link, title= data.alt)
+                      img(src= data.imgSrc, alt= data.alt)
+          .slider__box#scrollBackGround
+            .swiper-container.container--promo-event
+              ul.swiper-wrapper
+                each data, index in promoItemE
+                  if index >= 8
+                    li.swiper-slide
+                      a(href= data.link, title=data.alt)
+                        img(src= data.imgSrc, data.alt)
+    //- .promo__wrap--special
+    //-   .promo__zone--special
+    //-     .promo__block
+    //-       ul.event__block
+    //-         each data, index in promoData
+    //-           if index == 0
+    //-             li.promo__item
+    //-               a(href= data.link, title= data.alt)
+    //-                 img(src= data.imgSrc, alt= data.alt)
+
+
+//- .promo__block
+//-   #promoSlider.swiper-container
+//-     ul.swiper-wrapper
+//-       each data, index in promoData
+//-         if index >= 6
+//-           li.swiper-slide
+//-             a(href= data.link, title=data.alt)
+//-               img(src= data.imgSrc, data.alt)

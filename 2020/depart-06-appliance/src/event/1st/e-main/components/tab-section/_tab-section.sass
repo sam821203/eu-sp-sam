@@ -1,0 +1,43 @@
+.promo__group--tab
+  .tab__wrap
+    padding: 3% 6.5%
+    +bg-set(url("~event/1st/e-main/components/tab-section/bg-tab.png"), 95%)
+
+    .tab__zone
+      .tab__box
+        display: flex
+        flex-wrap: wrap
+        li
+          width: 50%
+          cursor: pointer
+          img
+            &:last-child
+              display: none
+          &.active
+            img
+              &:first-child
+                display: none
+              &:last-child
+                display: block
+          &:hover
+            filter: brightness(120%)
+
+    .content__zone
+      padding: 1.8% 1% 2%
+      background-color: $main-e-background-color-1st-2
+      border-radius: 0 0 5vw 5vw
+      .content__box
+        display: none
+        &.active
+          display: flex
+      .content__item
+        padding: 1%
+        width: 33%
+        &:active,
+        &:hover
+          filter: contrast(150%)
+
+  +breakpoint-min($min-width-xl)
+    .tab__wrap
+      .content__zone
+        border-radius: 0 0 40px 40px

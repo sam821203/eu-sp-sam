@@ -1,0 +1,84 @@
+.promo__group--dynamic-slider-2
+  .promo__wrap
+    +aspect-ratio(960, 550)
+    +bg-set(url("~event/1st/e-main/components/dynamic-slider/bg-dynamic-slider.png"), 100%)
+    .promo__zone
+      // +pos-set(relative, base)
+      .decoration__box
+        +pos-set(absolute, second)
+        top: -20%
+        left: 17%
+        width: 65%
+        +breakpoint-min($min-width-xl)
+          left: 20%
+      .decoration__box--top
+        +pos-set(absolute, base)
+        top: -27%
+        left: 0%
+        width: 65%
+        width: 95%
+        +breakpoint-min($min-width-xl)
+          left: 2%
+    .promo__block
+      width: 70%
+      margin: 2% 14%
+      .promo__slider
+        margin: 5% 0% 0%
+        width: 100%
+        .product--dynamic
+          // border: 1px solid yellow
+          border-radius: 3px
+          .product__img
+            border-radius: 0
+          .product__name
+            background-color: #fff
+            margin-bottom: 0
+          .product__price
+            background-color: #fff
+            // border-radius: 0 0 3px 3px
+      // .swiper-button-prev
+      //   top: 20%
+      //   left: -14%
+      // .swiper-button-next
+      //   top: 20%
+      //   right: -14%
+
+
+
+  // .dynamic-slider-pager
+  //   bottom: 2%
+  //   +breakpoint-min($min-width-lg)
+  //     bottom: 15px
+  //   +breakpoint-min($min-width-xl)
+  //     bottom: 22px
+
+// .promo__group--dynamic-slider
+//   &.promo__group--dynamic-slider-2
+//     .promo__wrap
+//       +pos-set(relative, zero)
+//       padding: 13.5% 13% 11%
+
+//     .product--dynamic
+//       // +bg-set(url("~event/1st/e-main/components/dynamic-slider/item-dynamic-slider-2.png"), contain)
+//       .product__img
+//         margin-left: auto
+//         margin-right: auto
+//         width: 90%
+
+//     .dynamic__nav
+//       top: 52%
+//       outline: 0
+//       &--prev
+//         left: 6.5%
+//       &--next
+//         right: 6.5%
+//       +breakpoint-max($max-width-xxs)
+//         &--prev
+//           left: 6%
+//         &--next
+//           right: 6%
+//       +breakpoint-min($min-width-lg)
+//         &--prev
+//           left: 8%
+//         &--next
+//           right: 8%

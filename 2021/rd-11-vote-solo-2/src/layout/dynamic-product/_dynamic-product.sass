@@ -1,0 +1,90 @@
+.player__dynamic
+  // =======================
+  // layout
+  // =======================
+  background-color: $gray-deep-light
+  &--rank,
+  &--player
+    padding: 1.5%
+    border: 2px solid $main-color-yellow-3
+    border-radius: 10px
+
+  // =======================
+  // pic
+  // =======================
+  .player__pic
+    margin-bottom: 2%
+    +aspect-ratio(100, 100)
+    overflow: hidden
+    .pic__box
+      background-position: center
+      background-repeat: no-repeat
+      background-size: cover
+  &--rank,
+  &--player,
+    .player__pic
+      border-radius: 10px
+  &--intro
+    .player__pic
+      border-radius: 20px
+
+  // =======================
+  // name
+  // =======================
+  .player__name
+    display: -webkit-box
+    -webkit-box-orient: vertical
+    text-overflow: ellipsis
+    color: $gray-deep-dark
+    overflow: hidden
+  &--rank,
+  &--player
+    .player__name
+      -webkit-line-clamp: 1
+      height: 1.4em
+      font-size: 16px
+
+  // =======================
+  // number
+  // =======================
+  .player__number
+    color: $gray-dark
+  &--rank,
+  &--player
+    .player__number
+      font-size: 12px
+  &--intro
+    .player__number
+      font-size: 16px
+
+  // =======================
+  // teams label
+  // =======================
+
+  // =======================
+  // votes label
+  // =======================
+  .votes__label
+    font-size: 12px
+  // =======================
+  // votes value
+  // =======================
+  .votes__value
+    font-size: 16px
+    font-weight: bold
+    color: $main-color-blue-2
+
+  +breakpoint-min($min-width-lg)
+    &--rank,
+    &--player
+      border-radius: 20px
+      border: 4px solid $main-color-yellow-3
+      .player__pic
+        border-radius: 20px
+      .player__name
+        font-size: 28px
+      .player__number
+        font-size: 20px
+      .votes__value
+        font-size: 52px
+

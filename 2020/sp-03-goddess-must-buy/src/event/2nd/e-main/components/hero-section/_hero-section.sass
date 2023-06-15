@@ -1,0 +1,87 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero__wrap
+  +pos-set(relative, second)
+  overflow: hidden
+
+  .hero__zone
+    +pos-set(relative, zero)
+        
+  .hero__block
+    +bg-set(url("~event/2nd/e-main/components/hero-section/bg-hero.jpg"), cover)
+
+  .hero__box
+    +pos-set(relative, zero)                        
+
+  .hero__title
+    &--main
+      +pos-set(relative, zero)
+      padding-top: 2%
+      padding-bottom: 2.1%
+      margin-left: auto
+      margin-right: auto
+      // width: 90%
+      overflow: hidden
+      // &.animated
+        // animation: small-open 1s both ease-out
+
+  .title-decoration__wrap
+    +pos-set(absolute, zero, 0, 0)
+    width: 100%
+    height: 100%
+    pointer-events: none
+    .title__decoration
+      +pos-set(absolute, zero)
+      &--top
+        top: 7%
+        left: 0
+        width: 33%
+        &.animated
+          animation: 1s 1s title-down both ease-out
+        img
+          animation: 2s 2s key-rotate-stop both infinite ease-in-out
+        +breakpoint-min($min-width-xl)
+          top: 45px
+
+  .title__decoration--bottom
+    margin-top: -20%
+    img
+      margin-left: 21%
+      width: 78%
+      animation: up-down 1.5s infinite alternate
+
+  .promo__zone
+    background-color: $gray-deep-light
+    +breakpoint-min($min-width-xl)
+      background-color: transparent
+
+@keyframes title-down
+  0%
+    transform: translateY(calc(-100vw * .5))
+  70%, 80%
+    transform: translateY(0) scale(1.2)
+  75%, 100%
+    transform: translateY(0) scale(1)
+
+@keyframes key-rotate-stop
+  0%
+    transform: rotate(0)
+  5%
+    transform: rotate(-20deg)
+  10%
+    transform: rotate(0)
+  15%
+    transform: rotate(20deg)
+  20%
+    transform: rotate(0)
+  100%
+    transform: rotate(0)
+
+@keyframes up-down
+  0, 30%, 100%
+    transform: translateY(0)
+  20%, 40%, 60%
+    transform: translateY(-6%)
+  30%, 45%
+    transform: translateY(0)

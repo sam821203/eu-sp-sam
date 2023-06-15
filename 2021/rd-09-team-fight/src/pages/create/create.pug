@@ -1,0 +1,16 @@
+doctype html
+html(lang='zh-Hant-TW')
+  head
+    include /utils/pug/_total-head
+
+  body
+    main#spWrap.sp__wrap
+      include /layout/header/_header
+
+      //- hero section
+      //- ===========================
+      include /components/hero/_hero
+
+      //- other components
+      //- ===========================
+      include /components/create-team/_create-team

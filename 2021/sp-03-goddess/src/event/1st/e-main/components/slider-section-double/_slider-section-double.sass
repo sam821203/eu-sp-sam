@@ -1,0 +1,40 @@
+.promo__group--double-slider
+  position: relative
+  padding-left: 1.5%
+  padding-right: 2%
+  .double-slider__wrap
+    padding: 36.5% 3% 35%
+    +bg-set(url("~event/1st/e-main/components/slider-section-double/bg-tab-slider.png"), 100% auto)
+    +breakpoint-min($min-width-xl)
+      padding: 265px 150px 200px 130px
+      +bg-set(url("~event/1st/e-main/components/slider-section-double/bg-tab-slider-web.png"), 100% auto)
+    .double-slider__tab
+      margin-bottom: 21.5%
+      .swiper-slide
+        +pos-set(relative, zero)
+        width: 33%
+        transition: all 0.3s
+        img
+          &:last-child
+            +pos-set(absolute, base, 0, 0)
+            width: 100%
+            opacity: 0
+            transition: all 0.6s
+        &.active
+          img
+            &:last-child
+              opacity: 1
+
+    .double-slider__content
+      margin-left: auto
+      margin-right: auto
+      width: 90%
+      li
+        width: 33%
+        a
+          transition: all 0.3s
+        &:hover,
+        &:active,
+          a
+            filter: brightness(120%)
+

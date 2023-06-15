@@ -1,0 +1,15 @@
+- var promoDataE = [{link: "#note", imgSrc: "~event/2nd/e-sp/components/promo-event/items/promo-1-min.png", alt: "搶折價券1111"}, {link: "#note", imgSrc: "~event/2nd/e-sp/components/promo-event/items/promo-2-min.png", alt: "滿額抽1212"}, ]
+
+
+
+//- var promoData = isU? promoDataU : promoDataE
+- var promoData =  promoDataE
+
+.promo__event
+  ul.event__wrap
+    each data, index in promoData
+      - var anchorId = 'promoAnchor' + (index + 1)
+      - var imgId = 'promoImg' + (index + 1)
+      li
+        a(id= anchorId, href= data.link, title= data.alt)
+          img(id= imgId, src= data.imgSrc, alt= data.alt)

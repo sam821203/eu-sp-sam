@@ -1,0 +1,30 @@
+.promo__group--bn
+  +pos-set(relative, zero)
+  .title__decoration
+    +pos-set(absolute, zero, 0, 0)
+    width: 100%
+    text-align: center
+  .promo__wrap
+    +aspect-ratio(960, 880)
+  .promo__zone
+    +pos-set(relative, zero)
+    padding: 23% 5% 0
+    +bg-set(url(event/1st/e-main/components/bn-slider/bg-bn-slider.png), 100%)
+    text-align: center
+    .promo__bn
+      margin-bottom: 3.5%
+    .promo__slider
+      +aspect-ratio(960, 310)
+    .slide__group
+      display: flex
+      justify-content: space-between
+      height: 100%
+      a
+        width: 31.5%
+        text-align: center
+        transition: all 0.5s
+
+    a
+      &:hover,
+      &:active
+        filter: brightness(105%) contrast(105%)

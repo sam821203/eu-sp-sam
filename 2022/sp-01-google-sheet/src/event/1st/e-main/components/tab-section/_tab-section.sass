@@ -1,0 +1,51 @@
+.promo__group
+  margin-left: auto
+  margin-right: auto
+  max-width: 960px
+
+.content__box
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+  padding: 2%
+
+.content__item
+  margin-bottom: 2%
+  width: 32%
+  font-size: 12px
+  border: 1px solid $gray-deep-dark
+
+.good__title,
+.good__promo
+  overflow: hidden
+
+.good__title
+  padding: 0 6.5%
+  height: 1.8em
+  line-height: 1.8em
+  color: $gray-deep-light
+  background-color: $gray-deep-dark
+  font-weight: bold
+  text-align: center
+
+.good__promo
+  padding: 0 2.2%
+  height: 2em
+  line-height: 2em
+  color: $primary-medium
+  font-size: 1.2em
+  font-weight: bold
+  text-align: center
+
++breakpoint-min($min-width-lg)
+  .content__item
+    font-size: 2.13em
+  .good__title,
+  .good__promo
+    padding: 0 25px
++breakpoint-min($min-width-xl)
+  .content__item
+    font-size: 2.66em
+  .good__title,
+  .good__promo
+    padding: 0 30px

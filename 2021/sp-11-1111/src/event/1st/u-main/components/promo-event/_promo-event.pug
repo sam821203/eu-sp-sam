@@ -1,0 +1,155 @@
+-
+  var promoDataE = [
+    {
+      link: "#note",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-1.png",
+      alt: "滿額最高送1,999"
+    },
+    {
+      link: "",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-2.png",
+      alt: "7-ELEVEN取貨送中冰拿"
+    },
+    {
+      link: "",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-3.png",
+      alt: "新會員註冊送888東森"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/10563/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-4.png",
+      alt: "新會員首購送ASHIYA馬臍帶白皙精華"
+    },
+    //- slider end
+    {
+      link: "https://media.etmall.com.tw/sp/10563/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-5.png",
+      alt: "[APP限定] 滿額抽ASHIYA胎盤眼部安瓶"
+    },
+    //- slider start
+    {
+      link: "https://media.etmall.com.tw/sp/11165/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-6.png",
+      alt: "下單送肯德基&必勝客套餐優惠券"
+    },
+    {
+      link: "#promoW1m1",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-7.png",
+      alt: "9宮格抽最高999禮物卡"
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/144544",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-8.png",
+      alt: "BT21全館5折up"
+    },
+    //- slider start
+    {
+      link: "https://www.etmall.com.tw/gp/144544",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-bank-1.png",
+      alt: "BT21全館5折up"
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/144544",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-bank-2.png",
+      alt: "BT21全館5折up"
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/144544",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-bank-3.png",
+      alt: "BT21全館5折up"
+    },
+    //- slider end
+  ]
+
+-
+  var promoDataU = [
+    {
+      link: "https://media.u-mall.com.tw/sp/11082/m/index.html",
+      imgSrc: "event/1st/u-main/components/promo-event/items/promo-1.png",
+      alt: "22家銀行 最高回饋15%"
+    },
+    {
+      link: "https://media.u-mall.com.tw/sp/11082/m/index.html",
+      imgSrc: "event/1st/u-main/components/promo-event/items/promo-2.png",
+      alt: "國泰世華銀行_滿$4,500送$150"
+    },
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale",
+      imgSrc: "event/1st/u-main/components/promo-event/items/promo-3.png",
+      alt: "限時瘋搶"
+    },
+  ]
+  
+- var promoData = isU ? promoDataU : promoDataE
+
+//- TODO: 如果promo不和hero綁一起時要有自己的section和layout--main
+section.promo__group.promo__group--promo-event.m-bottom--sm.p-top--sm
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          each data, index in promoData
+            .promo__item
+              a(href= data.link) 
+                img(src= data.imgSrc, alt= data.alt)
+
+
+
+            //- /Users/etDesign007/Documents/eshn_project/eu-sp-event-site/2021/sp-10-lets-party/src/event/1st/e-main/components/promo-event/giftcard_btn.png
+          //-   .promo__slider
+          //-     .swiper-container.container--promo-event
+          //-       ul.swiper-wrapper
+          //-         each data, index in promoData
+          //-           if index < 2
+          //-             li.swiper-slide
+          //-               a(href= data.link, title=data.alt)
+          //-                 img(src= data.imgSrc, data.alt)
+          //-   .promo__slider
+          //-     .swiper-container.container--promo-event
+          //-       ul.swiper-wrapper
+          //-         each data, index in promoData
+          //-           if index >= 2 && index < 4
+          //-             li.swiper-slide
+          //-               a(href= data.link, title=data.alt)
+          //-                 img(src= data.imgSrc, data.alt)
+          //- .promo__block
+          //-   ul
+          //-     each data, index in promoData
+          //-       if index == 4
+          //-         li
+          //-           a(href= data.link, title= data.alt)
+          //-             img(src= data.imgSrc, alt= data.alt)
+          //- .promo__block
+          //-   .promo__slider
+          //-     .swiper-container.container--promo-event
+          //-       ul.swiper-wrapper
+          //-         each data, index in promoData
+          //-           if index >= 5 && index < 6
+          //-             li.swiper-slide
+          //-               a(href= data.link, title=data.alt)
+          //-                 img(src= data.imgSrc, data.alt)
+          //-   .promo__slider
+          //-     .swiper-container.container--promo-event
+          //-       ul.swiper-wrapper
+          //-         each data, index in promoData
+          //-           if index >= 6 && index < 7
+          //-             li.swiper-slide
+          //-               a(href= data.link, title=data.alt)
+          //-                 img(src= data.imgSrc, data.alt)
+          //- .promo__block
+          //-   ul
+          //-     each data, index in promoData
+          //-       if index >= 7 && index < 9
+          //-         li
+          //-           a(href= data.link, title= data.alt)
+          //-             img(src= data.imgSrc, alt= data.alt)
+          //- .promo__block
+          //-   .promo__slider
+          //-     .swiper-container.container--promo-event
+          //-       ul.swiper-wrapper
+          //-         each data, index in promoData
+          //-           if index >= 9
+          //-             li.swiper-slide
+          //-               a(href= data.link, title=data.alt)
+          //-                 img(src= data.imgSrc, data.alt)
+

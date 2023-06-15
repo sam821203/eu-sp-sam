@@ -1,0 +1,15 @@
+section.event__wrap--w2m1
+  .layout--main
+    #eventW2m1.event__zone(class= isSp ? isU ? "event__zone--sp event__zone--u" : "event__zone--sp event__zone--e" : isU ? "event__zone--u" : "event__zone--e")
+      if !isU
+        a(href="#", title="限時下殺").event__item.block--center
+          img(src="../components/event-w2m1/event-w2m1-item-e-1.png", alt="限時下殺")
+        a(href="#", title="買就送").event__item
+          img(src="../components/event-w2m1/event-w2m1-item-e-2.png", alt="買就送")
+      else if isU
+        a(href="#", title="限時下殺").event__item.block--center
+          img(src="../components/event-w2m1/event-w2m1-item-e-1.png", alt="限時下殺")
+        a(href="#", title="買就送").event__item
+          img(src="../components/event-w2m1/event-w2m1-item-e-2.png", alt="買就送")
+    #btnPrevEventW2m1.btn--prev-event-w2m1
+    #btnNextEventW2m1.btn--next-event-w2m1

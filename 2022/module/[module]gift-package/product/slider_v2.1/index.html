@@ -1,0 +1,456 @@
+<meta charset="UTF-8">
+<meta name="viewport"
+  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!-- ============== 輪播css ============== -->
+<link rel="stylesheet" href="https://media.etmall.com.tw/sp/12500/swiper.min.css">
+<!-- ============== 共用css ============== -->
+<link rel="stylesheet" href="https://media.etmall.com.tw/sp/12500/animate.min.css">
+<link rel="stylesheet" href="https://media.etmall.com.tw/sp/12500/generate_v1.4.1.css">
+
+<style>
+
+  /* == 單(雙)連結輪播 == */
+  .sp__main {
+    position: relative;
+    z-index: 0;
+  }
+
+  .promo__slider {
+    position: absolute;
+    z-index: 10;
+    top: 31.4%;
+    /* 小網左邊距離 */
+    left: 4%;
+    /* 小網圖片寬 */
+    width: 22%;
+    /* 圖片原始尺寸 */
+    max-width: 214px;
+    padding-bottom: 2%; /* 小網若翻轉時會裁到圖片，可以加這裡的數值 */ 
+    overflow: hidden;
+    transform: translateZ(0);
+  }
+
+  @media screen and (min-width: 960px) {
+      .promo__slider {
+          /* 大網左邊距離 */
+          left: calc(50% - 440px);
+          overflow: visible;
+      }
+  }
+
+  /* == 單(雙)連結輪播_第二組 == */
+  .promo__slider--2 {
+    position: absolute;
+    z-index: 1;
+    top: 31.4%;
+    /* 小網左邊距離 */
+    left: 74%;
+    /* 小網圖片寬 */
+    width: 22%;
+    /* 圖片原始尺寸 */
+    max-width: 214px;
+    overflow: hidden;
+    padding-bottom: 2%;
+  }
+
+  @media screen and (min-width: 960px) {
+    .promo__slider--2 {
+      /* 大網左邊距離 */
+      left: calc(50% - -230px);
+      overflow: visible;
+    }
+  }
+
+  /* --- 滑動Banner start --- */
+  .banner__slider {
+    /* 輪播的父層 */
+    position: relative;
+    z-index: 0
+  }
+
+  .banner__slider .swipersty__banner {
+    position: absolute;
+    z-index: 0;
+    top: 20.5%;
+    left: 8.8%;
+    width: 83.3%
+  }
+  /* --- 滑動Banner end --- */
+
+
+  /* --- 滑動Logo start --- */
+  .swipersty__logo {
+    position: relative;
+    z-index: 0;
+  }
+
+  .swipersty__logo__wrap {
+    position: absolute;
+    z-index: 1;
+    top: 34%;
+    left: 7.5%;
+    width: 85%
+  }
+
+  @media screen and (min-width: 960px) {
+    .swipersty__logo__wrap {
+      top: 50px;
+    }
+  }
+  /* --- 滑動Logo end --- */
+
+
+  /* --- 影片 start --- */
+  .video__wrap {
+    position: relative;
+    z-index: 0;
+  }
+
+    /*-- 手機版  --*/
+  .video__block{
+    position: absolute;
+    z-index: 1;
+    top: 21%;
+    left: 10%;
+    width: 80%;
+    height: 33vw;
+  }
+
+  .video__block iframe{
+    width: 100%;
+    height: 100%;
+  }
+
+    /*-- 電腦版 --*/
+  @media screen and (min-width: 960px) {
+    .video__block {
+      /* top: 1355px; */
+      left: calc(50% - 350px);
+      width: 700px;
+      height: 320px;
+    }
+  }
+  /* --- 影片 end --- */
+
+
+  /* --- 輪播W5M3 start --- */
+  .slider--w5m3 {
+    position: relative;
+    z-index: 0
+  }
+
+  .slider--w5m3 .banner__title {
+    /* 替換標題圖 */
+    background: url(bar.png) center 0 no-repeat;
+    background-size: auto
+  }
+
+  .slider--w5m3 .swipersty__banner {
+    position: absolute;
+    z-index: 0;
+    /* 調整離外框的高度 */
+    top: 70px;
+    left: 2.5%;
+    /* padding: 1%; */
+    width: 95%
+  }
+
+  @media screen and (min-width:960px) {
+    .slider--w5m3 .swipersty__banner {
+      top: 75px;
+      left: calc(50% - 480px);
+      width: 100%;
+      max-width: 960px
+    }
+  }
+  /* --- 輪播W5M3 end --- */
+
+
+
+</style>
+
+<!--<div id="barHome"></div>-->
+<div id="iconHome" class="layout--main home--icon"></div>
+<div id="spWrap" class="sp__wallper">
+  <!-- 主視覺 -->
+  <main class="sp__main">
+    <section class="sp__visual">
+      <div class="layout--main">
+        <ul class="visual--auto clearfix">
+          <li class="visual__fragment width--auto">
+            <a href="#" title="電視">
+              <img src="index_02.png" alt="電視">
+            </a>
+          </li>
+          <li class="visual__fragment width--auto">
+            <a href="https://www.etmall.com.tw" title="洗衣機">
+              <img src="index_03.png" alt="洗衣機">
+            </a>
+          </li>
+          <li class="visual__fragment width--auto">
+            <a href="https://www.etmall.com.tw" title="冰箱">
+              <img src="index_04.png" alt="冰箱">
+            </a>
+          </li>
+          <li class="visual__fragment width--auto">
+            <a href="https://www.etmall.com.tw" title="生活">
+              <img src="index_05.png" alt="生活">
+            </a>
+          </li>
+        </ul>
+        <!-- 單(雙)連結輪播 -->
+        <div class="promo__slider">
+          <div class="swiper-container" id="sliderMany">
+            <ul class="swiper-wrapper">
+              <li class="swiper-slide">
+                <div class="slide__block">
+                  <div class="slide__box">
+                    <a href="https://www.etmall.com.tw">
+                      <img src="1-1.png" alt="">
+                    </a>
+                  </div>
+                  <div class="slide__box">
+                    <a href="https://www.google.com/">
+                      <img src="1-2.png" alt="">
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li class="swiper-slide">
+                <div class="slide__block">
+                  <div class="slide__box">
+                    <a href="">
+                      <img src="2.png" alt="">
+                    </a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- 單(雙)連結輪播 END -->
+        <!-- 單(雙)連結輪播_第二組 -->
+        <div class="promo__slider--2">
+          <div class="swiper-container" id="sliderMany2">
+            <ul class="swiper-wrapper">
+              <li class="swiper-slide">
+                <div class="slide__block">
+                  <div class="slide__box">
+                    <a href="https://www.etmall.com.tw">
+                      <img src="1-1.png" alt="">
+                    </a>
+                  </div>
+                  <div class="slide__box">
+                    <a href="https://www.google.com/">
+                      <img src="1-2.png" alt="">
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li class="swiper-slide">
+                <div class="slide__block">
+                  <div class="slide__box">
+                    <a href="">
+                      <img src="2.png" alt="">
+                    </a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- 單(雙)連結輪播_第二組 END -->
+      </div>
+    </section>
+  </main>
+
+  <!-- ====== 滑動Banner start ====== -->
+  <section class="banner__slider">
+    <div class="layout--main">
+      <ul class="visual--auto clearfix">
+        <li class="visual__fragment width--auto"><img src="index_06.png" alt="底圖"></li>
+      </ul>
+      <div class="swipersty__banner">
+        <div class="swiper-container" id="swiperstyBanner">
+          <ul class="swiper-wrapper">
+            <li class="swiper-slide"><a href="#" title="第一個banner"><img src="750x328_1.jpg" alt="第一個banner"></a>
+            </li>
+            <li class="swiper-slide"><a href="#" title="第二個banner"><img src="750x328_2.jpg" alt="第二個banner"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ====== 滑動Banner end ====== -->
+
+
+  <!-- ====== 影片 start ====== -->
+  <section class="video__wrap">
+    <div class="layout--main">
+      <ul class="visual--auto clearfix">
+        <li class="visual__fragment width--auto"><img src="index_07.png" alt="底圖"></li>
+      </ul>
+      <div class="video__block">
+        <iframe src="https://www.youtube.com/embed/BeAjroWRvSc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+  <!-- ====== 影片 end ====== -->
+
+
+
+  <!-- ====== 滑動Logo start ====== -->
+  <section class="swipersty__logo">
+    <div class="layout--main">
+      <ul class="visual--auto clearfix">
+        <li class="visual__fragment width--auto"><img src="index_12.png" alt="底圖"></li>
+      </ul>
+      <div class="swipersty__logo__wrap swiper-container" id="sliderScrollX_1">
+        <ul class="swipersty__logo__zone swiper-wrapper">
+          <li class="swiper-slide"><a href="#" title="國際"><img src="swiper_logo-1.png" alt="國際"></a></li>
+          <li class="swiper-slide"><a href="#" title="日立"><img src="swiper_logo-2.png" alt="日立"></a></li>
+          <li class="swiper-slide"><a href="#" title="象印"><img src="swiper_logo-3.png" alt="象印"></a></li>
+          <li class="swiper-slide"><a href="#" title="LG"><img src="swiper_logo-4.png" alt="LG"></a></li>
+          <li class="swiper-slide"><a href="#" title="Dyson"><img src="swiper_logo-5.png" alt="Dyson"></a></li>
+          <li class="swiper-slide"><a href="#" title="鍋寶"><img src="swiper_logo-6.png" alt="鍋寶"></a></li>
+          <li class="swiper-slide"><a href="#" title="Sharp"><img src="swiper_logo-7.png" alt="Sharp"></a></li>
+          <li class="swiper-slide"><a href="#" title="禾聯"><img src="swiper_logo-8.png" alt="禾聯"></a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- ====== 滑動Logo end ====== -->
+
+
+  <!-- ====== 輪播W5M3 start ====== -->
+  <section class="slider--w5m3">
+    <div class="layout--main">
+      <div class="banner__title"></div>
+      <div class="swipersty__banner">
+        <div class="swiper-container" id="sliderW5M3">
+          <ul class="swiper-wrapper">
+            <li class="swiper-slide"><a href="#" title="第一個banner"><img src="slider-w5m3-1.png" alt="第一個banner"></a></li>
+            <li class="swiper-slide"><a href="#" title="第二個banner"><img src="slider-w5m3-2.png" alt="第二個banner"></a></li>
+            <li class="swiper-slide"><a href="#" title="第三個banner"><img src="slider-w5m3-3.png" alt="第三個banner"></a></li>
+            <li class="swiper-slide"><a href="#" title="第四個banner"><img src="slider-w5m3-2.png" alt="第四個banner"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ====== 輪播W5M3 end ====== -->
+
+</div>
+<script src="https://media.etmall.com.tw/sp/12500/jquery-3.6.0.min.js"></script>
+<!-- ============== 輪播 start ============== -->
+<script src="https://media.etmall.com.tw/sp/12500/swiper.min.js"></script>
+<!-- ============== 輪播 end ============== -->
+<!-- 共用JS -->
+<script id="generateScript" src="https://media.etmall.com.tw/sp/12500/generate_v1.4.1.js"></script>
+
+
+<!-- ============== 輪播 start ============== -->
+<script>
+  // 單(雙)連結輪播  
+  var sliderMany = new Swiper("#sliderMany", {
+    autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+    },
+    // 翻牌開始
+    effect: 'flip',
+    flipEffect: {
+      rotate: 30,
+      slideShadows: false,
+    },
+    // 翻牌結束   
+    grabCursor: true,
+    loop: true,
+    speed: 1000,
+  });
+  // 單(雙)連結輪播 end   
+
+
+  // 單(雙)連結輪播_第二組  
+  var sliderMany = new Swiper("#sliderMany2", {
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },  
+    grabCursor: true,
+    loop: true,
+    speed: 1000,
+  });
+  // 單(雙)連結輪播_第二組 end    
+  
+
+  // 滑動Banner
+  var swiperstyBanner = new Swiper("#swiperstyBanner", {
+    autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+    },
+    autoHeight: true,
+    grabCursor: true,
+    loop: true,
+    speed: 1000,
+  });
+  // 滑動Banner end
+
+
+  // logo輪播
+  var sliderScrollX_1 = new Swiper("#sliderScrollX_1", {
+    autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+    },
+    autoHeight: true,
+    grabCursor: true,
+    loop: true,
+    speed: 1000,
+    slidesPerView: 4,
+  });
+  // logo輪播 end
+
+
+  // 輪播W5M3 start
+  var promoSliderItem = new Swiper('#sliderW5M3', {
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false,
+    },
+    grabCursor: true,
+    lazy: {
+      loadPrevNext: true,
+    },
+    loop: true,
+    perspective: true,
+    effect: "coverflow",
+    coverflowEffect: {
+      rotate: 25,
+      stretch: 0,
+      depth: 25,
+      modifier: 1,
+      slideShadows: false,
+    },
+    breakpoints:{
+      960:{
+        slidesPerView: 5,
+      },
+    },
+    // pagination: {
+    //   el: ".swiper-pagination",
+    //   dynamicBullets: true,
+    // },
+    slidesPerView: 3,
+    // spaceBetween: '1%',
+    speed: 600,
+    watchSlidesProgress : true,
+    watchSlidesVisibility : true,
+  } )
+  // 輪播W5M3 end
+
+</script>
+<!-- ============== 輪播 end ============== -->

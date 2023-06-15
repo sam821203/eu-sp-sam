@@ -1,0 +1,57 @@
+.promo__group--mid-big
+  .promo__title
+    margin-left: 23%
+    width: 60%
+    max-width: 464px
+    +breakpoint-min($min-width-xl)
+      margin-left: 265px
+
+  .promo__wrap
+    margin-top: -15%
+    transition: all 0.6s ease
+    // padding-top: 70%
+    // +bg-set(url("~event/1st/e-main/components/mid-big-slider/bg-mid-big.png"), 100%)
+    .promo__slider
+      padding-top: 16.6%
+      padding-bottom: 5%
+    .swiper-slide
+      // background-color: #faf
+      text-align: center
+      // a
+      //   transition: transform 0.6s
+      //   transform: translateY(-27%) scale(0.6)
+    .swiper-slide,
+    .swiper-slide-duplicate
+      a,
+      img,
+        transition: all 0.6s
+      a
+          transform: translateY(25%) scale(0.7)
+      img
+        filter: grayscale(100%)
+    .swiper-slide-active,
+    .swiper-slide-duplicate-active
+      z-index: map-get($zindex, ten)
+      a
+        transform: translateY(-9%) scale(1.4)
+      img
+        filter: grayscale(0)
+
+  .mid-big__nav
+    top: 35%
+    outline: 0
+    &::after
+      font-size: 8vw
+      
+    &--prev
+      left: 4.5%
+    &--next
+      right: 4.5%
+    +breakpoint-min($min-width-lg)
+      &--prev
+        left: 6%
+      &--next
+        right: 6%
+    +breakpoint-min($min-width-xl)
+      &::after
+        font-size: 60px

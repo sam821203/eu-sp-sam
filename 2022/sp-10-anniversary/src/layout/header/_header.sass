@@ -1,0 +1,16 @@
+@import layout/logo/_logo.sass
+@import layout/share-tools/_share-tools
+
+.header__wrap
+  // display: none
+  +pos-set(absolute, logo, 0, 0)
+  width: 100%
+  pointer-events: none
+.header__zone
+  padding-top: 2%
+  a
+    display: block
+
+  +breakpoint-min($min-width-xl)
+    padding-top: 15px
+

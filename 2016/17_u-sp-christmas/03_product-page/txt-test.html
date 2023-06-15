@@ -1,0 +1,85 @@
+<style>
+	body {
+		font-family: Helvetica, Arial, '微軟正黑體', sans-serif;
+	}
+	img {
+		border: 0;
+	}
+	.sp__wallper {
+		background-color:#003181;
+ 	  	background-image:url(u-20161209-all-bg.jpg);
+		background-position:center 0;
+		background-repeat:no-repeat;
+		margin: 0px auto;
+		position: relative;
+	}
+	body{
+background:#134;
+margin:0 auto;
+box-shadow:none;
+}
+
+h2{
+color:black;
+font-size:24px;
+margin-top:720px;
+margin-left:20px;
+font-family:'Josefin Sans', sans-serif;  
+}
+
+h1{
+Margin-top:70px;;
+font-family:'Josefin Sans', sans-serif;    
+color:white;
+font-size:52px;
+letter-spacing:9px;
+}
+
+#wrapper{
+width:100%;
+Height:20px;
+}
+
+#snow{
+background:white;
+width:100%;
+min-height:450px;
+margin-top:450px;
+display:inline-block;
+}
+
+
+</style>
+<!-- <script type="text/javascript" src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201509/SP_1021444/js/sp-track.js"></script>
+
+<script type="text/javascript" src="js/generateVersion.js"></script> -->
+<script type="text/javascript" src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201504/SP_1019163/Includes/jquery-1.7.2.js"></script>
+<script type="text/javascript">
+;(function($){
+	function changeToClimax() {
+		//$.getJSON('text.txt', renderHtml);
+	
+		$.ajax({
+			url: 'text.txt',
+			dataType: 'text',
+			scriptCharset: 'UTF-8',
+			success: renderHtml
+		});
+
+		function renderHtml(data) {
+			var str = JSON.stringify( data );
+			console.log(  str,str[0] );
+		}
+		//console.log($.getJSON('text.txt', renderHtml))
+
+	}
+	changeToClimax();
+}(jQuery));
+</script>
+<div id="spWrap" class="sp__wallper">
+	<div class="sp--1260">
+	    
+	</div>
+</div>
+
+

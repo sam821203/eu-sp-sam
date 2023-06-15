@@ -1,0 +1,98 @@
+-
+  var promoSliderItem = [
+    {
+      link: "https://www.etmall.com.tw/gp/127897" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p1.png",
+      alt: "國際登錄送5000超商卡",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/9765/m/index.html" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p2.png",
+      alt: "滿額登記送樂透金",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/11387/m/index.html" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p3.png",
+      alt: "智能居家推薦",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/172154" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p4.png",
+      alt: "swift5 輕奢玩美",
+    },
+    {
+      link: "https://www.etmall.com.tw/p/171010" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p5.png",
+      alt: "Ella推薦植萃髮品",
+    },
+    {
+      link: "https://www.etmall.com.tw/p/171366" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p6.png",
+      alt: "滿額送好禮",
+    },
+    {
+      link: "https://www.etmall.com.tw/p/151714" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p7.png",
+      alt: "滿三件折$100",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/14257/m/index.html" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p8.png",
+      alt: "綿綿好禮三擇一",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/167812" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p9.png",
+      alt: "滿額登記抽樂透金",
+    },
+    {
+      link: "https://www.etmall.com.tw/bc3/166959" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p10.png",
+      alt: "旗艦店開幕慶2.5折",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/14597/m/index.html" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p11.png",
+      alt: "光輝感恩慶$699起",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/14126/m/index.html" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p12.png",
+      alt: "滿額好禮贈7-11咖啡提貨卡",
+    },
+    {
+      link: "https://www.etmall.com.tw/c3/51433" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p13.png",
+      alt: "指定品送雞精",
+    },
+    {
+      link: "https://www.etmall.com.tw/c3/102352" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p14.png",
+      alt: "出遊趣暑假不加價",
+    },
+    {
+      link: "https://www.etmall.com.tw/bs/167664" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p15.png",
+      alt: "讓地心引力幫你動",
+    },
+  ]
+
+
+section.promo__group.promo__group--promo-slider.m-bottom--lg(data-title="強檔推薦")
+  .layout--main
+    .promo__wrap
+      .decor__wrap.full-parent
+        .decor__item.decor__item--title#titlePromoSlider
+          img(src="event/1st/e-main/components/promo-slider/title-promo-slider.png", alt="")
+        .decor__item.decor__item--left#decorPromoSliderLeft
+          img(src="event/1st/e-main/components/promo-slider/decor-promo-slider-left.png", alt="")
+        .decor__item.decor__item--right#decorPromoSliderRight
+          img(src="event/1st/e-main/components/promo-slider/decor-promo-slider-right.png", alt="")
+      .promo__zone
+        .promo__block.full-parent
+          .promo__slider.swiper-container#promoSliderItem
+            ul.swiper-wrapper
+              each data in promoSliderItem
+                li.swiper-slide
+                  a(href= data.link, title=data.alt)
+                    img(src= data.imgSrc, alt=data.alt)

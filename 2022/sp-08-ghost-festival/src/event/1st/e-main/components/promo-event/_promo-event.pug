@@ -1,0 +1,73 @@
+-
+  var promoItemE = [
+    {
+      link: "https://media.etmall.com.tw/sp/15433/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-1.png",
+      alt: "滿888抽命運輪盤中獎率100%",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/12960/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-2.png",
+      alt: "東森小食堂 中元祭滿額抽烤箱",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/15511/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-3.png",
+      alt: "中元有BUY有保庇 品牌下殺好禮享不完"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/15343/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-4.png",
+      alt: "大魚大肉來拜Buy 週週限搶1元up",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/15893/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-5.png",
+      alt: "可口可樂品牌館滿$1000現折$100",
+    },
+    //- slider start
+    {
+      link: "https://media.etmall.com.tw/sp/16032/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-6-1.png",
+      alt: "珍有福氣buy中元",
+    },
+    //- {
+    //-   link: "https://media.etmall.com.tw/sp/16032/m/index.html",
+    //-   imgSrc: "event/1st/e-main/components/promo-event/items/promo-6-2.png",
+    //-   alt: "珍有福氣buy中元",
+    //- },
+    //- slider end
+  ]
+
+
+//- - var promoItem = isU ? promoItemE : promoItemU
+
+.section__decor--bottom
+  .decor--bottom#decorBottomLeft
+    img(src="event/1st/e-main/components/promo-event/decor-bottom-left.png", alt="")
+  .decor--bottom#decorBottomRight
+    img(src="event/1st/e-main/components/promo-event/decor-bottom-right.png", alt="")
+
+//- TODO: 如果promo不和hero綁一起時要有自己的section和layout--main
+section.promo__group.promo__group--promo-event.m-bottom--lg
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__block#decorPromoEvent
+        .decor__item
+          img(src="event/1st/e-main/components/promo-event/decor-promo-event.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          ul.promo__box
+            each data, index in promoItemE
+              if index <= 4
+                li.promo__item
+                  a(href= data.link, title=data.alt)
+                    img(src= data.imgSrc, alt=data.alt)
+            li.swiper-container.container--promo-event
+              ul.swiper-wrapper
+                each data, index in promoItemE
+                  if index > 4
+                    li.swiper-slide.promo__item
+                      a(href= data.link, title=data.alt)
+                        img(src= data.imgSrc, data.alt)

@@ -1,0 +1,95 @@
+
+@mixin center
+  margin: 0 auto
+  text-align: center
+
+@mixin position($static, $top, $direction, $lrValue, $zIndex)
+  position: #{$static}
+  //absolute
+  top: $top
+  //0
+  #{$direction}: $lrValue
+  //1%
+  z-index: $zIndex
+
+@mixin backgroundSet($image, $repeat:'no-repeat', $position:'top center', $size:'100% auto')
+  background-image: #{$image}
+  background-repeat: #{$repeat}
+  background-position: #{$position}
+  background-size: #{$size}
+
+$min-width-m: 640px
+@mixin breakpoint-min($point)
+  @media screen and (min-width: $point)
+    @content
+
+.leader__board
+  +backgroundSet('url(../img/ranking/down-bg--m.jpg)')
+  background-color: #25033d
+  margin-top: calc(-100vw * 0.003125)
+  padding-bottom: 15px
+  +breakpoint-min($min-width-m)
+    margin-top: -11px
+    padding-bottom: 25px
+    +backgroundSet('url(../img/ranking/down-bg.jpg)','no-repeat','top center','2560px 820px')
+
+  .main__title
+    padding-top: 4px
+    +center
+    img
+      width: 100%
+      max-width: 640px
+      +breakpoint-min($min-width-m)
+        width: auto
+  .ranking__wrap__all
+    +center
+    .ranking__wrap
+      position: relative
+      width: 100%
+      height: calc(100vw * 0.2)
+      margin: calc(100vw * 0.01) auto 0 auto
+      .ranking
+        +position('absolute', 0, 'left', 1%, 1)
+        width: 19%
+        img
+          width: 96%
+      +breakpoint-min($min-width-m)
+        max-width: 640px
+        height: 120px
+        margin: 10px auto 0 auto
+        .ranking
+          left: 10px
+          img
+            width: auto
+
+    .contestant__wrap
+      +position('absolute', 0, 'left', 21%, 1)
+      +backgroundSet('none','no-repeat','top center','100%')
+      width: 77%
+      height: calc(100vw * 0.2)
+      .contestant__name, .contestant__score
+        margin-left: calc(100vw * 0.3)
+        text-align: left
+        line-height: 1.4
+        margin-top: 1%
+      .contestant__name
+        font-size: calc(100vw * 0.069)
+        color: #fff
+      .contestant__score
+        font-size: calc(100vw * 0.047)
+        color: #ffff00
+      +breakpoint-min($min-width-m)
+        left: 145px
+        height: 117px
+        width: 468px
+        .contestant__name, .contestant__score
+          margin-left: 182px
+          line-height: 1.1
+          margin-top: 2.5%
+        .contestant__name
+          font-size: 44px
+        .contestant__score
+          font-size: 26px
+
+
+

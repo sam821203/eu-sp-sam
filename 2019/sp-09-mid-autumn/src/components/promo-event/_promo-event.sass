@@ -1,0 +1,20 @@
+.promo__event
+  +pos-set(relative, null)
+  padding: 0 5%
+  +breakpoint-min($min-width-xl)
+    padding: 150px 0 110px 15px
+  .event__wrap
+    +display-flex
+    flex-wrap: wrap
+    width: 100%
+    li
+      margin-right: 2%
+      padding: 0.5% 1%
+      width: 48%
+
+  .event__wrap
+    a
+      transition: all 0.5s
+      &:hover,
+      &:active
+        filter: brightness(120%)

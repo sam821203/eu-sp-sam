@@ -1,0 +1,101 @@
+// 需要複製請連著"{},"整個區塊複製
+var dataTaiwan = [
+  {
+    zoneName: '台北市',
+    itemImgName: 'item-taipei.png',
+    mapId: 'taipei',
+    productNumber: 2779833,
+  },
+  {
+    zoneName: '新北市',
+    itemImgName: 'item-new-taipei.png',
+    mapId: 'newTaipei',
+    productNumber: 2779833,
+  },
+  // {
+  //   zoneName: '基隆市',
+  //   itemImgName: 'item-keelung.png',
+  //   mapId: 'keelung',
+  //   webLink: '2779833a',
+  //   mobileLink: '2779833b',
+  //   appLink: '2779833',
+  // },
+  {
+    zoneName: '桃園縣',
+    itemImgName: 'item-taoyuan.png',
+    mapId: 'taoyuan',
+    productNumber: 2779833,
+  },
+  // {
+  //   zoneName: '新竹市',
+  //   itemImgName: 'item-hsinchu.png',
+  //   mapId: 'hsinchu',
+  //   productNumber: 2779833,
+  // },
+  {
+    zoneName: '苗栗縣',
+    itemImgName: 'item-miaoli.png',
+    mapId: 'miaoli',
+    productNumber: 2779833,
+  },
+  {
+    zoneName: '台中市',
+    itemImgName: 'item-taichung.png',
+    mapId: 'taichung',
+    productNumber: 2779833,
+  },
+  {
+    zoneName: '彰化縣',
+    itemImgName: 'item-changhua.png',
+    mapId: 'changhua',
+    productNumber: 2779833,
+  },
+  {
+    zoneName: '雲林縣',
+    itemImgName: 'item-yunlin.png',
+    mapId: 'yunlin',
+    productNumber: 2779833,
+  },
+  {
+    zoneName: '嘉義市',
+    itemImgName: 'item-chiayi.png',
+    mapId: 'chiayi',
+    productNumber: 2779833,
+  },
+  {
+    zoneName: '台南市',
+    itemImgName: 'item-tainan.png',
+    mapId: 'tainan',
+    productNumber: 2779833,
+  },
+  {
+    zoneName: '高雄市',
+    itemImgName: 'item-kaohsiung.png',
+    mapId: 'kaohsiung',
+    productNumber: 2779833,
+  },
+  {
+    zoneName: '屏東縣',
+    itemImgName: 'item-pingtung.png',
+    mapId: 'pingtung',
+    productNumber: 2779833,
+  },
+  // {
+  //   zoneName: '宜蘭縣',
+  //   itemImgName: 'item-yilan.png',
+  //   mapId: 'yilan',
+  //   productNumber: 2779833,
+  // },
+  {
+    zoneName: '花蓮縣',
+    itemImgName: 'item-hualien.png',
+    mapId: 'hualien',
+    productNumber: 2779833,
+  },
+  {
+    zoneName: '台東縣',
+    itemImgName: 'item-taitung.png',
+    mapId: 'taitung',
+    productNumber: 2779833,
+  },
+];

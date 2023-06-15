@@ -1,0 +1,55 @@
+.promo__group--card
+  .card__wrap
+    display: none
+    padding: 22% 6% 12%
+    +bg-set(url(event/1st/e-main/components/random-card/bg-random-card.png), 100%)
+    &.active
+      display: block
+      animation: random-bounceInDown 0.5s both
+  +breakpoint-min($min-width-xl)
+    margin-top: 0
+    .card__wrap
+      +padding-y(185px, 265px)
+
+  .card__box
+    display: flex
+    flex-wrap: wrap
+
+  .card__item
+    +pos-set(relative, zero)
+    a
+      text-align: center
+
+  .info__decor
+    +pos-set(absolute, base, -4%, 79%)
+    +size(22%, auto)
+    animation: random-hammerLightning ease-out 6s infinite
+@keyframes random-bounceInDown
+  from,
+  60%,
+  75%,
+  90%,
+  to
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+  0%
+    opacity: 0
+    transform: translate3d(0, -50px, 0)
+  60%
+    opacity: 1
+    transform: translate3d(0, 25px, 0)
+  75%
+    transform: translate3d(0, -10px, 0)
+  90%
+    transform: translate3d(0, 5px, 0)
+  to
+    transform: translate3d(0, 0, 0)
+
+@keyframes random-hammerLightning
+  0%, 42%, 44%, 60%
+    filter: brightness(1)
+  43%, 46%
+    filter: brightness(1.2)
+  62%
+    filter: brightness(1.3)
+  to
+    filter: brightness(1)

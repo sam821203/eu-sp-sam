@@ -1,0 +1,72 @@
+// ==========================================================================
+// Animations -- 較像程式碼所以用.scss保留{ }
+// ==========================================================================
+@mixin rotate-self($degree) {
+  @keyframes rotate-self {
+    to {
+      transform: rotate($degree + deg);
+    }
+  }
+}
+
+@mixin wind-rotate($rotare-degree, $skew-degree) {
+  @keyframes wind-rotate {
+    20% {
+      transform: rotate3d(0, 0, 1, $rotare-degree + deg) skew($skew-degree + deg);
+    }
+    40% {
+      transform: rotate3d(0, 0, 1, -($rotare-degree * 0.8) + deg) skew( -($skew-degree * 0.8) + deg);
+    }
+    60% {
+      transform: rotate3d(0, 0, 1, ($rotare-degree * 0.4) + deg) skew(($skew-degree * 0.4) + deg);
+    }
+    80% {
+      transform: rotate3d(0, 0, 1, -($rotare-degree * 0.2) + deg) skew(-($skew-degree * 0.2) + deg);
+    }
+    to {
+      transform: rotate3d(0, 0, 1, 0deg);
+    }
+  }
+}
+
+@keyframes fade-right {
+  from {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fade-top {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes marquee-y {
+  from {
+    transform: translateY(1.3em)
+  }
+  to {
+    transform: translateY(-100%)
+  }
+}
+
+@keyframes marquee-x{
+  from {
+    left: 100%;
+    transform: translateX(0);
+  }
+  to {
+    left: 0;
+    transform: translateX(-100%);
+  }
+}

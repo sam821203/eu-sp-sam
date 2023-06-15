@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="popWindow.css">
+  <link href="vendor-bundle.css" rel="stylesheet"><link href="app-bundle.css" rel="stylesheet"></head>
+  <body>
+    <div class="elevatorHome js--main--dialog" id="elevatorHome"></div>
+    <div class="navRightBar" id="navRightBar"></div>
+    <div class="icon__home layout--main" id="iconHome"></div>
+    <!--include /event/1st/e-main/components/bg-decoration/_bg-decoration-->
+    <main class="sp__wrap sp__wrap--e" id="spWrap">
+      <!--include /layout/header/_header-->
+      <section class="hero__wrap">
+        <div class="hero__zone">
+          <div class="hero__block">
+            <div class="hero__box">
+              <h1 class="hero__title hero__title--main block--center wow" title=""><img class="title__t1" src="top.jpg" alt="">
+                <div class="ehsn__coin__wrap"><span>1153</span><img class="coin__image" src="icon_E.png"></div>
+                <div class="open-bigPhoto css-content__detail" data-dialog="content__detail"></div>
+              </h1>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="promo__group promo__group--tab">
+        <div class="tab--bg">
+          <div class="layout--main">
+            <ul class="tab__wrap">
+              <li class="tab__zone">
+                <p class="pre__order__date">預購日期</p>
+                <ul class="tab__box" id="tabBox">
+                  <li class="tab__item active">
+                    <p>110年2月</p>
+                    <p>10<span>(三)</span></p>
+                  </li>
+                  <li class="tab__item">
+                    <p>110年2月</p>
+                    <p>11<span>(四)</span></p>
+                  </li>
+                  <li class="tab__item">
+                    <p>110年2月</p>
+                    <p>12<span>(五)</span></p>
+                  </li>
+                  <li class="tab__item">
+                    <p>110年2月</p>
+                    <p>13<span>(六)</span></p>
+                  </li>
+                  <li class="tab__item">
+                    <p>110年2月</p>
+                    <p>14<span>(日)</span></p>
+                  </li>
+                  <li class="tab__item">
+                    <p>110年2月</p>
+                    <p>15<span>(一)</span></p>
+                  </li>
+                  <li class="tab__item">
+                    <p>110年2月</p>
+                    <p>16<span>(二)</span></p>
+                  </li>
+                  <li class="tab__item">
+                    <p>110年2月</p>
+                    <p>17<span>(三)</span></p>
+                  </li>
+                  <li class="tab__item">
+                    <p>110年2月</p>
+                    <p>18<span>(四)</span></p>
+                  </li>
+                  <li class="tab__item">
+                    <p>110年2月</p>
+                    <p>19<span>(五)</span></p>
+                  </li>
+                  <li class="tab__item">
+                    <p>110年2月</p>
+                    <p>20<span>(六)</span></p>
+                  </li>
+                </ul>
+              </li>
+              <li class="content__zone">
+                <ul class="content__block" id="tabContentBlock">
+                  <li class="content__box active">
+                    <div class="tab__zone">
+                      <ul class="tab__box_sub">
+                        <li class="js--tab__item_sub tab__item_sub active">自選號碼</li>
+                        <li class="js--tab__item_sub tab__item_sub">系統號碼</li>
+                      </ul>
+                    </div>
+                    <div class="content__zone">
+                      <ul class="content__block">
+                        <li class="js--content__box_sub content__box_sub active">
+                          <div class="lotto__number__group"><span class="lotto__num active">1</span><span class="lotto__num">2</span><span class="lotto__num">3</span><span class="lotto__num">4</span><span class="lotto__num">5</span><span class="lotto__num">6</span><span class="lotto__num">7</span><span class="lotto__num">8</span><span class="lotto__num">9</span><span class="lotto__num">10</span><span class="lotto__num">11</span><span class="lotto__num">12</span><span class="lotto__num">13</span><span class="lotto__num">14</span><span class="lotto__num">15</span><span class="lotto__num">16</span><span class="lotto__num">17</span><span class="lotto__num">18</span><span class="lotto__num">19</span><span class="lotto__num">20</span><span class="lotto__num">21</span><span class="lotto__num">22</span><span class="lotto__num">23</span><span class="lotto__num">24</span><span class="lotto__num">25</span><span class="lotto__num">26</span><span class="lotto__num">27</span><span class="lotto__num">28</span><span class="lotto__num">29</span><span class="lotto__num">30</span><span class="lotto__num">31</span><span class="lotto__num">32</span><span class="lotto__num">33</span><span class="lotto__num">34</span><span class="lotto__num">35</span><span class="lotto__num">36</span><span class="lotto__num">37</span><span class="lotto__num">38</span><span class="lotto__num">39</span><span class="lotto__num">40</span><span class="lotto__num">41</span><span class="lotto__num">42</span><span class="lotto__num">43</span><span class="lotto__num">44</span><span class="lotto__num">45</span><span class="lotto__num">46</span><span class="lotto__num">47</span><span class="lotto__num">48</span><span class="lotto__num">49</span>
+                          </div><img class="but__50" src="but-50.png">
+                        </li>
+                        <li class="js--content__box_sub content__box_sub">
+                          <div class="lotto__system__num"><span>10</span></div><img class="but__50" src="but-50.png">
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="content__box">
+                    <div class="tab__zone">
+                      <ul class="tab__box_sub">
+                        <li class="js--tab__item_sub tab__item_sub active">自選號碼</li>
+                        <li class="js--tab__item_sub tab__item_sub">系統號碼</li>
+                      </ul>
+                    </div>
+                    <div class="content__zone">
+                      <ul class="content__block">
+                        <li class="js--content__box_sub content__box_sub active">
+                          <div class="lotto__number__group"><span class="lotto__num">1</span><span class="lotto__num">2</span><span class="lotto__num">3</span><span class="lotto__num">4</span><span class="lotto__num">5</span><span class="lotto__num">6</span><span class="lotto__num">7</span><span class="lotto__num">8</span><span class="lotto__num">9</span><span class="lotto__num">10</span><span class="lotto__num">11</span><span class="lotto__num">12</span><span class="lotto__num">13</span><span class="lotto__num">14</span><span class="lotto__num">15</span><span class="lotto__num">16</span><span class="lotto__num">17</span><span class="lotto__num">18</span><span class="lotto__num">19</span><span class="lotto__num">20</span><span class="lotto__num">21</span><span class="lotto__num">22</span><span class="lotto__num">23</span><span class="lotto__num">24</span><span class="lotto__num">25</span><span class="lotto__num">26</span><span class="lotto__num">27</span><span class="lotto__num">28</span><span class="lotto__num">29</span><span class="lotto__num">30</span><span class="lotto__num">31</span><span class="lotto__num">32</span><span class="lotto__num">33</span><span class="lotto__num">34</span><span class="lotto__num">35</span><span class="lotto__num">36</span><span class="lotto__num">37</span><span class="lotto__num">38</span><span class="lotto__num">39</span><span class="lotto__num">40</span><span class="lotto__num">41</span><span class="lotto__num">42</span><span class="lotto__num">43</span><span class="lotto__num">44</span><span class="lotto__num">45</span><span class="lotto__num">46</span><span class="lotto__num">47</span><span class="lotto__num">48</span><span class="lotto__num">49</span>
+                          </div><img class="but__50" src="but-50.png">
+                        </li>
+                        <li class="js--content__box_sub content__box_sub">
+                          <div class="lotto__system__num"><span>10</span></div><img class="but__50" src="but-50.png">
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="content__box">
+                    <div class="tab__zone">
+                      <ul class="tab__box_sub">
+                        <li class="js--tab__item_sub tab__item_sub active">自選號碼</li>
+                        <li class="js--tab__item_sub tab__item_sub">系統號碼</li>
+                      </ul>
+                    </div>
+                    <div class="content__zone">
+                      <ul class="content__block">
+                        <li class="js--content__box_sub content__box_sub active">
+                          <div class="lotto__number__group"><span class="lotto__num">1</span><span class="lotto__num">2</span><span class="lotto__num">3</span><span class="lotto__num">4</span><span class="lotto__num">5</span><span class="lotto__num">6</span><span class="lotto__num">7</span><span class="lotto__num">8</span><span class="lotto__num">9</span><span class="lotto__num">10</span><span class="lotto__num">11</span><span class="lotto__num">12</span><span class="lotto__num">13</span><span class="lotto__num">14</span><span class="lotto__num">15</span><span class="lotto__num">16</span><span class="lotto__num">17</span><span class="lotto__num">18</span><span class="lotto__num">19</span><span class="lotto__num">20</span><span class="lotto__num">21</span><span class="lotto__num">22</span><span class="lotto__num">23</span><span class="lotto__num">24</span><span class="lotto__num">25</span><span class="lotto__num">26</span><span class="lotto__num">27</span><span class="lotto__num">28</span><span class="lotto__num">29</span><span class="lotto__num">30</span><span class="lotto__num">31</span><span class="lotto__num">32</span><span class="lotto__num">33</span><span class="lotto__num">34</span><span class="lotto__num">35</span><span class="lotto__num">36</span><span class="lotto__num">37</span><span class="lotto__num">38</span><span class="lotto__num">39</span><span class="lotto__num">40</span><span class="lotto__num">41</span><span class="lotto__num">42</span><span class="lotto__num">43</span><span class="lotto__num">44</span><span class="lotto__num">45</span><span class="lotto__num">46</span><span class="lotto__num">47</span><span class="lotto__num">48</span><span class="lotto__num">49</span>
+                          </div><img class="but__50" src="but-50.png">
+                        </li>
+                        <li class="js--content__box_sub content__box_sub">
+                          <div class="lotto__system__num"><span>10</span></div><img class="but__50" src="but-50.png">
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="content__box">
+                    <div class="tab__zone">
+                      <ul class="tab__box_sub">
+                        <li class="js--tab__item_sub tab__item_sub active">自選號碼</li>
+                        <li class="js--tab__item_sub tab__item_sub">系統號碼</li>
+                      </ul>
+                    </div>
+                    <div class="content__zone">
+                      <ul class="content__block">
+                        <li class="js--content__box_sub content__box_sub active">
+                          <div class="lotto__number__group"><span class="lotto__num">1</span><span class="lotto__num">2</span><span class="lotto__num">3</span><span class="lotto__num">4</span><span class="lotto__num">5</span><span class="lotto__num">6</span><span class="lotto__num">7</span><span class="lotto__num">8</span><span class="lotto__num">9</span><span class="lotto__num">10</span><span class="lotto__num">11</span><span class="lotto__num">12</span><span class="lotto__num">13</span><span class="lotto__num">14</span><span class="lotto__num">15</span><span class="lotto__num">16</span><span class="lotto__num">17</span><span class="lotto__num">18</span><span class="lotto__num">19</span><span class="lotto__num">20</span><span class="lotto__num">21</span><span class="lotto__num">22</span><span class="lotto__num">23</span><span class="lotto__num">24</span><span class="lotto__num">25</span><span class="lotto__num">26</span><span class="lotto__num">27</span><span class="lotto__num">28</span><span class="lotto__num">29</span><span class="lotto__num">30</span><span class="lotto__num">31</span><span class="lotto__num">32</span><span class="lotto__num">33</span><span class="lotto__num">34</span><span class="lotto__num">35</span><span class="lotto__num">36</span><span class="lotto__num">37</span><span class="lotto__num">38</span><span class="lotto__num">39</span><span class="lotto__num">40</span><span class="lotto__num">41</span><span class="lotto__num">42</span><span class="lotto__num">43</span><span class="lotto__num">44</span><span class="lotto__num">45</span><span class="lotto__num">46</span><span class="lotto__num">47</span><span class="lotto__num">48</span><span class="lotto__num">49</span>
+                          </div><img class="but__50" src="but-50.png">
+                        </li>
+                        <li class="js--content__box_sub content__box_sub">
+                          <div class="lotto__system__num"><span>10</span></div><img class="but__50" src="but-50.png">
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="content__box">
+                    <div class="tab__zone">
+                      <ul class="tab__box_sub">
+                        <li class="js--tab__item_sub tab__item_sub active">自選號碼</li>
+                        <li class="js--tab__item_sub tab__item_sub">系統號碼</li>
+                      </ul>
+                    </div>
+                    <div class="content__zone">
+                      <ul class="content__block">
+                        <li class="js--content__box_sub content__box_sub active">
+                          <div class="lotto__number__group"><span class="lotto__num">1</span><span class="lotto__num">2</span><span class="lotto__num">3</span><span class="lotto__num">4</span><span class="lotto__num">5</span><span class="lotto__num">6</span><span class="lotto__num">7</span><span class="lotto__num">8</span><span class="lotto__num">9</span><span class="lotto__num">10</span><span class="lotto__num">11</span><span class="lotto__num">12</span><span class="lotto__num">13</span><span class="lotto__num">14</span><span class="lotto__num">15</span><span class="lotto__num">16</span><span class="lotto__num">17</span><span class="lotto__num">18</span><span class="lotto__num">19</span><span class="lotto__num">20</span><span class="lotto__num">21</span><span class="lotto__num">22</span><span class="lotto__num">23</span><span class="lotto__num">24</span><span class="lotto__num">25</span><span class="lotto__num">26</span><span class="lotto__num">27</span><span class="lotto__num">28</span><span class="lotto__num">29</span><span class="lotto__num">30</span><span class="lotto__num">31</span><span class="lotto__num">32</span><span class="lotto__num">33</span><span class="lotto__num">34</span><span class="lotto__num">35</span><span class="lotto__num">36</span><span class="lotto__num">37</span><span class="lotto__num">38</span><span class="lotto__num">39</span><span class="lotto__num">40</span><span class="lotto__num">41</span><span class="lotto__num">42</span><span class="lotto__num">43</span><span class="lotto__num">44</span><span class="lotto__num">45</span><span class="lotto__num">46</span><span class="lotto__num">47</span><span class="lotto__num">48</span><span class="lotto__num">49</span>
+                          </div><img class="but__50" src="but-50.png">
+                        </li>
+                        <li class="js--content__box_sub content__box_sub">
+                          <div class="lotto__system__num"><span>10</span></div><img class="but__50" src="but-50.png">
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="content__box">
+                    <div class="tab__zone">
+                      <ul class="tab__box_sub">
+                        <li class="js--tab__item_sub tab__item_sub active">自選號碼</li>
+                        <li class="js--tab__item_sub tab__item_sub">系統號碼</li>
+                      </ul>
+                    </div>
+                    <div class="content__zone">
+                      <ul class="content__block">
+                        <li class="js--content__box_sub content__box_sub active">
+                          <div class="lotto__number__group"><span class="lotto__num">1</span><span class="lotto__num">2</span><span class="lotto__num">3</span><span class="lotto__num">4</span><span class="lotto__num">5</span><span class="lotto__num">6</span><span class="lotto__num">7</span><span class="lotto__num">8</span><span class="lotto__num">9</span><span class="lotto__num">10</span><span class="lotto__num">11</span><span class="lotto__num">12</span><span class="lotto__num">13</span><span class="lotto__num">14</span><span class="lotto__num">15</span><span class="lotto__num">16</span><span class="lotto__num">17</span><span class="lotto__num">18</span><span class="lotto__num">19</span><span class="lotto__num">20</span><span class="lotto__num">21</span><span class="lotto__num">22</span><span class="lotto__num">23</span><span class="lotto__num">24</span><span class="lotto__num">25</span><span class="lotto__num">26</span><span class="lotto__num">27</span><span class="lotto__num">28</span><span class="lotto__num">29</span><span class="lotto__num">30</span><span class="lotto__num">31</span><span class="lotto__num">32</span><span class="lotto__num">33</span><span class="lotto__num">34</span><span class="lotto__num">35</span><span class="lotto__num">36</span><span class="lotto__num">37</span><span class="lotto__num">38</span><span class="lotto__num">39</span><span class="lotto__num">40</span><span class="lotto__num">41</span><span class="lotto__num">42</span><span class="lotto__num">43</span><span class="lotto__num">44</span><span class="lotto__num">45</span><span class="lotto__num">46</span><span class="lotto__num">47</span><span class="lotto__num">48</span><span class="lotto__num">49</span>
+                          </div><img class="but__50" src="but-50.png">
+                        </li>
+                        <li class="js--content__box_sub content__box_sub">
+                          <div class="lotto__system__num"><span>10</span></div><img class="but__50" src="but-50.png">
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="content__box">
+                    <div class="tab__zone">
+                      <ul class="tab__box_sub">
+                        <li class="js--tab__item_sub tab__item_sub active">自選號碼</li>
+                        <li class="js--tab__item_sub tab__item_sub">系統號碼</li>
+                      </ul>
+                    </div>
+                    <div class="content__zone">
+                      <ul class="content__block">
+                        <li class="js--content__box_sub content__box_sub active">
+                          <div class="lotto__number__group"><span class="lotto__num">1</span><span class="lotto__num">2</span><span class="lotto__num">3</span><span class="lotto__num">4</span><span class="lotto__num">5</span><span class="lotto__num">6</span><span class="lotto__num">7</span><span class="lotto__num">8</span><span class="lotto__num">9</span><span class="lotto__num">10</span><span class="lotto__num">11</span><span class="lotto__num">12</span><span class="lotto__num">13</span><span class="lotto__num">14</span><span class="lotto__num">15</span><span class="lotto__num">16</span><span class="lotto__num">17</span><span class="lotto__num">18</span><span class="lotto__num">19</span><span class="lotto__num">20</span><span class="lotto__num">21</span><span class="lotto__num">22</span><span class="lotto__num">23</span><span class="lotto__num">24</span><span class="lotto__num">25</span><span class="lotto__num">26</span><span class="lotto__num">27</span><span class="lotto__num">28</span><span class="lotto__num">29</span><span class="lotto__num">30</span><span class="lotto__num">31</span><span class="lotto__num">32</span><span class="lotto__num">33</span><span class="lotto__num">34</span><span class="lotto__num">35</span><span class="lotto__num">36</span><span class="lotto__num">37</span><span class="lotto__num">38</span><span class="lotto__num">39</span><span class="lotto__num">40</span><span class="lotto__num">41</span><span class="lotto__num">42</span><span class="lotto__num">43</span><span class="lotto__num">44</span><span class="lotto__num">45</span><span class="lotto__num">46</span><span class="lotto__num">47</span><span class="lotto__num">48</span><span class="lotto__num">49</span>
+                          </div><img class="but__50" src="but-50.png">
+                        </li>
+                        <li class="js--content__box_sub content__box_sub">
+                          <div class="lotto__system__num"><span>10</span></div><img class="but__50" src="but-50.png">
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="content__box">
+                    <div class="tab__zone">
+                      <ul class="tab__box_sub">
+                        <li class="js--tab__item_sub tab__item_sub active">自選號碼</li>
+                        <li class="js--tab__item_sub tab__item_sub">系統號碼</li>
+                      </ul>
+                    </div>
+                    <div class="content__zone">
+                      <ul class="content__block">
+                        <li class="js--content__box_sub content__box_sub active">
+                          <div class="lotto__number__group"><span class="lotto__num">1</span><span class="lotto__num">2</span><span class="lotto__num">3</span><span class="lotto__num">4</span><span class="lotto__num">5</span><span class="lotto__num">6</span><span class="lotto__num">7</span><span class="lotto__num">8</span><span class="lotto__num">9</span><span class="lotto__num">10</span><span class="lotto__num">11</span><span class="lotto__num">12</span><span class="lotto__num">13</span><span class="lotto__num">14</span><span class="lotto__num">15</span><span class="lotto__num">16</span><span class="lotto__num">17</span><span class="lotto__num">18</span><span class="lotto__num">19</span><span class="lotto__num">20</span><span class="lotto__num">21</span><span class="lotto__num">22</span><span class="lotto__num">23</span><span class="lotto__num">24</span><span class="lotto__num">25</span><span class="lotto__num">26</span><span class="lotto__num">27</span><span class="lotto__num">28</span><span class="lotto__num">29</span><span class="lotto__num">30</span><span class="lotto__num">31</span><span class="lotto__num">32</span><span class="lotto__num">33</span><span class="lotto__num">34</span><span class="lotto__num">35</span><span class="lotto__num">36</span><span class="lotto__num">37</span><span class="lotto__num">38</span><span class="lotto__num">39</span><span class="lotto__num">40</span><span class="lotto__num">41</span><span class="lotto__num">42</span><span class="lotto__num">43</span><span class="lotto__num">44</span><span class="lotto__num">45</span><span class="lotto__num">46</span><span class="lotto__num">47</span><span class="lotto__num">48</span><span class="lotto__num">49</span>
+                          </div><img class="but__50" src="but-50.png">
+                        </li>
+                        <li class="js--content__box_sub content__box_sub">
+                          <div class="lotto__system__num"><span>10</span></div><img class="but__50" src="but-50.png">
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="content__box">
+                    <div class="tab__zone">
+                      <ul class="tab__box_sub">
+                        <li class="js--tab__item_sub tab__item_sub active">自選號碼</li>
+                        <li class="js--tab__item_sub tab__item_sub">系統號碼</li>
+                      </ul>
+                    </div>
+                    <div class="content__zone">
+                      <ul class="content__block">
+                        <li class="js--content__box_sub content__box_sub active">
+                          <div class="lotto__number__group"><span class="lotto__num">1</span><span class="lotto__num">2</span><span class="lotto__num">3</span><span class="lotto__num">4</span><span class="lotto__num">5</span><span class="lotto__num">6</span><span class="lotto__num">7</span><span class="lotto__num">8</span><span class="lotto__num">9</span><span class="lotto__num">10</span><span class="lotto__num">11</span><span class="lotto__num">12</span><span class="lotto__num">13</span><span class="lotto__num">14</span><span class="lotto__num">15</span><span class="lotto__num">16</span><span class="lotto__num">17</span><span class="lotto__num">18</span><span class="lotto__num">19</span><span class="lotto__num">20</span><span class="lotto__num">21</span><span class="lotto__num">22</span><span class="lotto__num">23</span><span class="lotto__num">24</span><span class="lotto__num">25</span><span class="lotto__num">26</span><span class="lotto__num">27</span><span class="lotto__num">28</span><span class="lotto__num">29</span><span class="lotto__num">30</span><span class="lotto__num">31</span><span class="lotto__num">32</span><span class="lotto__num">33</span><span class="lotto__num">34</span><span class="lotto__num">35</span><span class="lotto__num">36</span><span class="lotto__num">37</span><span class="lotto__num">38</span><span class="lotto__num">39</span><span class="lotto__num">40</span><span class="lotto__num">41</span><span class="lotto__num">42</span><span class="lotto__num">43</span><span class="lotto__num">44</span><span class="lotto__num">45</span><span class="lotto__num">46</span><span class="lotto__num">47</span><span class="lotto__num">48</span><span class="lotto__num">49</span>
+                          </div><img class="but__50" src="but-50.png">
+                        </li>
+                        <li class="js--content__box_sub content__box_sub">
+                          <div class="lotto__system__num"><span>10</span></div><img class="but__50" src="but-50.png">
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="content__box">
+                    <div class="tab__zone">
+                      <ul class="tab__box_sub">
+                        <li class="js--tab__item_sub tab__item_sub active">自選號碼</li>
+                        <li class="js--tab__item_sub tab__item_sub">系統號碼</li>
+                      </ul>
+                    </div>
+                    <div class="content__zone">
+                      <ul class="content__block">
+                        <li class="js--content__box_sub content__box_sub active">
+                          <div class="lotto__number__group"><span class="lotto__num">1</span><span class="lotto__num">2</span><span class="lotto__num">3</span><span class="lotto__num">4</span><span class="lotto__num">5</span><span class="lotto__num">6</span><span class="lotto__num">7</span><span class="lotto__num">8</span><span class="lotto__num">9</span><span class="lotto__num">10</span><span class="lotto__num">11</span><span class="lotto__num">12</span><span class="lotto__num">13</span><span class="lotto__num">14</span><span class="lotto__num">15</span><span class="lotto__num">16</span><span class="lotto__num">17</span><span class="lotto__num">18</span><span class="lotto__num">19</span><span class="lotto__num">20</span><span class="lotto__num">21</span><span class="lotto__num">22</span><span class="lotto__num">23</span><span class="lotto__num">24</span><span class="lotto__num">25</span><span class="lotto__num">26</span><span class="lotto__num">27</span><span class="lotto__num">28</span><span class="lotto__num">29</span><span class="lotto__num">30</span><span class="lotto__num">31</span><span class="lotto__num">32</span><span class="lotto__num">33</span><span class="lotto__num">34</span><span class="lotto__num">35</span><span class="lotto__num">36</span><span class="lotto__num">37</span><span class="lotto__num">38</span><span class="lotto__num">39</span><span class="lotto__num">40</span><span class="lotto__num">41</span><span class="lotto__num">42</span><span class="lotto__num">43</span><span class="lotto__num">44</span><span class="lotto__num">45</span><span class="lotto__num">46</span><span class="lotto__num">47</span><span class="lotto__num">48</span><span class="lotto__num">49</span>
+                          </div><img class="but__50" src="but-50.png">
+                        </li>
+                        <li class="js--content__box_sub content__box_sub">
+                          <div class="lotto__system__num"><span>10</span></div><img class="but__50" src="but-50.png">
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="content__box">
+                    <div class="tab__zone">
+                      <ul class="tab__box_sub">
+                        <li class="js--tab__item_sub tab__item_sub active">自選號碼</li>
+                        <li class="js--tab__item_sub tab__item_sub">系統號碼</li>
+                      </ul>
+                    </div>
+                    <div class="content__zone">
+                      <ul class="content__block">
+                        <li class="js--content__box_sub content__box_sub active">
+                          <div class="lotto__number__group"><span class="lotto__num">1</span><span class="lotto__num">2</span><span class="lotto__num">3</span><span class="lotto__num">4</span><span class="lotto__num">5</span><span class="lotto__num">6</span><span class="lotto__num">7</span><span class="lotto__num">8</span><span class="lotto__num">9</span><span class="lotto__num">10</span><span class="lotto__num">11</span><span class="lotto__num">12</span><span class="lotto__num">13</span><span class="lotto__num">14</span><span class="lotto__num">15</span><span class="lotto__num">16</span><span class="lotto__num">17</span><span class="lotto__num">18</span><span class="lotto__num">19</span><span class="lotto__num">20</span><span class="lotto__num">21</span><span class="lotto__num">22</span><span class="lotto__num">23</span><span class="lotto__num">24</span><span class="lotto__num">25</span><span class="lotto__num">26</span><span class="lotto__num">27</span><span class="lotto__num">28</span><span class="lotto__num">29</span><span class="lotto__num">30</span><span class="lotto__num">31</span><span class="lotto__num">32</span><span class="lotto__num">33</span><span class="lotto__num">34</span><span class="lotto__num">35</span><span class="lotto__num">36</span><span class="lotto__num">37</span><span class="lotto__num">38</span><span class="lotto__num">39</span><span class="lotto__num">40</span><span class="lotto__num">41</span><span class="lotto__num">42</span><span class="lotto__num">43</span><span class="lotto__num">44</span><span class="lotto__num">45</span><span class="lotto__num">46</span><span class="lotto__num">47</span><span class="lotto__num">48</span><span class="lotto__num">49</span>
+                          </div><img class="but__50" src="but-50.png">
+                        </li>
+                        <li class="js--content__box_sub content__box_sub">
+                          <div class="lotto__system__num"><span>10</span></div><img class="but__50" src="but-50.png">
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <div class="records__wrap"><img src="2but-2.png">
+        <div class="open-bigPhoto css-award__number" data-dialog="award__number"></div>
+        <div class="open-bigPhoto css-record__pop" data-dialog="record__pop"></div>
+      </div>
+    </main>
+    <div class="open--window--wrap pop--images pop-content__detail" id="content__detail"><img class="title" src="w_note.png">
+      <hr class="line">
+      <div class="content">
+        <h3>活動時間</h3>
+        <p>2021農曆春節期間。2021/02/09(二) 20:00－2021/02/20(六)19:59</p>
+        <h3>開獎日期</h3>
+        <p style="color: red;">依照台灣彩券大樂透春節期間之開獎時間。</p>
+        <h3>遊戲說明</h3>
+        <ul class="list__style">
+          <li>可於東森購物App註冊/登入成為會員後，於［打卡/遊戲］使用東森幣進行百萬大樂透遊戲，或電話進線透過專人進行系統快速下注。</li>
+          <li>使用50枚東森幣即可下注「百萬大樂透」乙次。</li>
+          <li>App/網頁投注方式可自選號碼，或是系統選號：
+            <ul class="ul__dot">
+              <li>自行選號：在選號區中，自行從01~49的號碼中點選６個號碼進行投注。</li>
+              <li>系統選號：在選號區中，點選「系統選號」，系統將隨機產生一組６個號碼。</li>
+            </ul>
+          </li>
+          <li>電話專人投注方式：會員電話進線後由專人依系統選號方式下注，下注完後系統即會發送簡訊於會員，取得投注號碼。</li>
+          <li>開獎號碼依照台灣彩券大樂透春節期間每日開出之號碼。
+            <ul class="ul__dot">
+              <li>開獎單位將隨機開出六個號碼加一個特別號，這一組號碼就是該期大樂透的中獎號碼，也稱為「獎號」。您的六個選號中，如果有三個以上（含三個號碼）對中當期開出之六個號碼（特別號只適用於二獎、四獎、六獎和七獎），即為中獎，並可依規定兌領獎項。</li>
+              <li>東森「百萬大樂透」的獎號僅供會員兌獎參考用，若與台灣彩券大樂透的獎號有異時，以台灣彩券公布的大樂透獎號為主。</li>
+            </ul>
+          </li>
+          <li>您可以在［投注紀錄］查詢到您的歷史投注紀錄與開獎狀態。</li>
+          <li>本遊戲提供預購服務，您可點選欲預購的日期進行下注，預購後即扣款東森幣，並取得投注號碼，預購完成後無法取消與退回東森幣。</li>
+          <li>獎項分配方式：
+            <ul class="ul__dot">
+              <li>獎金依會員投注之東森幣為總獎金，五獎至普獎係採固定獎項方式分配，頭獎至四獎之實際中獎項額係由總獎項扣除五獎至普獎後之餘額，再依下列獎項分配比率及實際中獎注數分配之。</li>
+            </ul>
+            <table class="note__table">
+              <thead>
+                <tr>
+                  <th style="width: 10%">獎項</th>
+                  <th style="width: 55%">中獎方式</th>
+                  <th style="width: 35%" colspan="2">獎項</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>頭獎</td>
+                  <td>與當期六個號碼完全相同者</td>
+                  <td rowspan="4">提貨券</td>
+                  <td>82%分配 <br><span style="color: red;">保證一百萬</span></td>
+                </tr>
+                <tr>
+                  <td>二獎</td>
+                  <td>對中當期號碼之任五碼+特別號</td>
+                  <td>6.5%分配</td>
+                </tr>
+                <tr>
+                  <td>三獎</td>
+                  <td>對中當期號碼之任五碼</td>
+                  <td>7%分配</td>
+                </tr>
+                <tr>
+                  <td>四獎</td>
+                  <td>對中當期號碼之任四碼+特別號</td>
+                  <td>4.5%分配</td>
+                </tr>
+                <tr>
+                  <td>五獎</td>
+                  <td>對中當期號碼之任四碼</td>
+                  <td rowspan="4">東森幣</td>
+                  <td>2,000</td>
+                </tr>
+                <tr>
+                  <td>六獎</td>
+                  <td>對中當期號碼之任三碼+特別號</td>
+                  <td>1,000</td>
+                </tr>
+                <tr>
+                  <td>七獎</td>
+                  <td>對中當期號碼之任兩碼+特別號</td>
+                  <td>400</td>
+                </tr>
+                <tr>
+                  <td>普獎</td>
+                  <td>對中當期號碼之任三碼</td>
+                  <td>400</td>
+                </tr>
+              </tbody>
+            </table>
+            <ul class="ul__dot">
+              <li>如當期頭獎有人中獎，且當期頭獎分配加計上期頭獎累積獎項後，獎項仍未達價值一百萬元的東森提貨券時，當期頭獎獎項以一百萬元整的東森提貨券計算。</li>
+              <li>頭獎至四獎開獎後若無人獲得各該獎項，其獎項將累積納入次期各該獎項。</li>
+            </ul>
+          </li>
+          <li>依稅法規定，若得獎人於東森購物兌換贈(獎)品金額達新台幣(下同)1,001元以上未達20,010元，將於次年初開立免扣繳憑單予得獎人並向主管稽徵機關申報；如達20,010元以上者，將於得獎人扣繳獎品價值10%(外國人20%)之機會中獎所得稅後，且出具繳款收款集中獎通知函後，東森購物始交付獎品並將於次年開立扣繳憑單予得獎人。</li>
+          <li>各期獎項將於<span style="color:red">2021/02/22(一)</span><span>起統一派獎與兌獎。</span>
+            <ul class="ul__dot">
+              <li>六獎至普獎獲得的東森幣，於系統發送匯入會員帳戶後起算期效，最長期效150天，凡於有效期限內皆可於東森購物指定通路（不含森森購物網）消費時選擇使用，亦可進行遊戲；逾期，自動無效。</li>
+              <li>頭獎至四獎之得獎者，需進行兌獎流程，由專人與得獎者聯繫。</li>
+              <li>頭獎之得獎者需至東森購物總公司(中和區景平路258號)參加贈獎儀式，並同意公開照片及影片至東森購物電視及粉絲專頁使用，若得獎者不克前往，將由東森購物工作人員代為領獎；贈獎儀式將視狀況擇日舉行，並另由專人通知。</li>
+            </ul>
+          </li>
+          <li>兌獎資格或獎項均不得要求轉讓他人、折合現金。</li>
+          <li>獎項配送區域限臺灣本島地區（外、離島地區請利用臺灣親友地址作為收貨地址）。部分偏遠地區需加收額外運費（區域及實際運費由東森購物判定）。</li>
+          <li>東森購物保有活動解釋、變更、修改或終止本活動之權利。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="open--window--wrap pop--images pop-content__detail" id="award__number"><img class="title" src="w_prize.png">
+      <hr class="line">
+      <div class="content">
+        <p>東森「 百萬大樂透 」的獎項僅供會員兌獎參考用，若與台灣彩券大樂透號碼有異時，以台灣彩券公布的大樂透獎號為主</p>
+        <!--.table__wrap-->
+        <table class="lotto__ticket">
+          <thead>
+            <tr>
+              <th>東森大樂透旗別</th>
+              <th>開獎日</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>01</td>
+              <td>110/02/10</td>
+            </tr>
+          </tbody>
+          <thead>
+            <tr>
+              <th>獎項</th>
+              <th>特別號</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>01 02 03 04 05 06</td>
+              <td>08</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="lotto__ticket">
+          <thead>
+            <tr>
+              <th>東森大樂透旗別</th>
+              <th>開獎日</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>01</td>
+              <td>110/02/10</td>
+            </tr>
+          </tbody>
+          <thead>
+            <tr>
+              <th>獎項</th>
+              <th>特別號</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>01 02 03 04 05 06</td>
+              <td>08</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="open--window--wrap pop--images pop-content__detail" id="record__pop"><img class="title" src="w_list.png">
+      <hr class="line">
+      <div class="content">
+        <div class="table__record__wrap">
+          <table class="record__ticket">
+            <thead>
+              <tr>
+                <th>東森大樂透 第一期</th>
+                <th>開獎日期</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="lotto__num__style"><span>01</span><span>02</span><span>03</span><span>04</span><span>05</span><span>06</span></td>
+                <td class="award__date__end">110/02/10 <br> 恭喜中獎</td>
+              </tr>
+              <tr>
+                <td class="lotto__num__style"><span>01</span><span>02</span><span>03</span><span>04</span><span>05</span><span>49</span></td>
+                <td class="award__date__end">110/02/10 <br> 沒有中獎</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="table__record__wrap">
+          <table class="record__ticket">
+            <thead>
+              <tr>
+                <th>東森大樂透 第二期</th>
+                <th>開獎日期</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="lotto__num__style"><span>01</span><span>02</span><span>03</span><span>04</span><span>05</span><span>06</span></td>
+                <td class="award__date">110/02/11 <br> 尚未中獎</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="table__record__wrap">
+          <table class="record__ticket">
+            <thead>
+              <tr>
+                <th>東森大樂透 第一期</th>
+                <th>開獎日期</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="lotto__num__style"><span>01</span><span>02</span><span>03</span><span>04</span><span>05</span><span>06</span></td>
+                <td class="award__date__end">110/02/10 <br> 恭喜中獎</td>
+              </tr>
+              <tr>
+                <td class="lotto__num__style"><span>01</span><span>02</span><span>03</span><span>04</span><span>05</span><span>49</span></td>
+                <td class="award__date__end">110/02/10 <br> 沒有中獎</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+    <script src="popWindow.js"></script>
+  <script type="text/javascript" src="vendor-bundle.js"></script><script type="text/javascript" src="app-bundle.js"></script></body>
+</html>

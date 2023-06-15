@@ -1,0 +1,282 @@
+<meta name="viewport" content="width=device-width">
+<meta charset="utf-8">
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  *:before, *:after {
+    box-sizing: border-box; }
+  a {
+    display: block;
+    text-decoration: none;
+  }
+  ul {
+    list-style: none;
+  }
+  img {
+    width: 100%;
+    border: 0;
+    display: block;
+  }
+  article,
+  main,
+  nav,
+  section {
+    display: block;
+  }
+  body {
+    margin:0;
+    background-color:#cee61d;/*...................................背景色,1260把這行刪掉*/
+  }
+  .sp--1260 {
+    position: relative;
+    z-index: 0;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .sp--1260.icon_Home{
+    z-index: auto;
+  }
+  /* 主視覺 */
+  /* ======================================== */
+  .logo a,
+  .sp__visual a{
+    display: block;
+  }
+  .logo {
+    position: absolute;
+    z-index: 1;
+    /* 調整logo位置 */
+    top: 1%;
+    left: 1%;
+    width: 30%;
+    max-width: 220px;
+  }
+  /* 設定背景 */
+  .sp__main {
+    background: url(bg20200408.jpg) center 0 no-repeat;/*..............背景底圖,1260把這行刪掉*/
+  }
+  /* 設定前景 */
+  .sp__visual {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+  }
+  /*...........................................................示意線條拿掉start*/
+  /*.visual__main a{
+    border: 1px solid #f00;
+  }*/
+  /*...........................................................示意線條拿掉end*/
+  .visual__anchor,
+  .visual__main,
+  .visual__nav {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .visual__anchor {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }
+  .visual__main a,
+  .visual__nav a {
+    flex-grow: 1;
+  }
+  /* 主視覺 */
+  /*...........................................................紅框區高度*/
+  .visual__main {
+    height: 100%;
+  }
+  /*...........................................................紅框區寬度*/
+  .visual__main a:nth-child(1) {
+    flex-grow: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+
+  /* 自適應banner組 */
+  /* ======================================== */
+  .banner__title {
+    height: 65px;
+    background: center top no-repeat;
+  }
+  .banner__wrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .banner__item {
+    transition: all 0.3s;
+  }
+  .banner__item img {
+    width: 100%;
+  }
+  /* ...............................................................4變2 */
+  .bn-w4m2 .banner__item {
+    flex: 1 0 25%;
+  }
+  /* 設定點下去與hover動畫 */
+  .bn-w4m2 .banner__item:hover,
+  .bn-w4m2 .banner__item:active {
+    /* 變大(>1時變大) */
+    transform: scale(1.05);
+    /* 亮度調亮(>100%時變亮) */
+    filter: brightness(115%);
+  }
+  @media screen and (max-width: 1024px) {
+    /* 設定手機時一列2個 */
+    .bn-w4m2 .banner__item {
+      flex: 1 0 50%;
+    }
+  }
+</style>
+<!--[if IE 9]>
+<style>
+  .visual__anchor,
+  .visual__main,
+  .visual__nav {
+    -js-display: flex;
+  }
+  .visual__anchor {
+    position: absolute !important;
+    height: 114.28% \ ;
+  }
+  .visual__main a,
+  .visual__nav a {
+    background-color: rgba(0, 0, 0, .0);
+    /*height: 100% !important \ ;*/
+  }
+  .build__anchor {
+    -js-display: flex;
+  }
+  .build-nav__item {
+    width: 12.5% \ ;
+  }
+  .banner__wrap {
+    -js-display: flex;
+    width: 100% \ ;
+  }
+  .bn-w2m1 .banner__item {
+    width: 50% \ ;    
+  }
+  .bn-w4m2 .banner__item {
+    width: 25% \ ;
+  }
+  .bn-w2m1.item--3 li:last-child {
+    width: 100% \ ;
+  }
+  .bn-w3m1 .banner__item {
+    width: 33.33% \ ;    
+  }
+  @media screen and (max-width: 1024px) {
+    .bn-w2m1 .banner__item {
+      width: 100% \ ;
+    }
+    .bn-w4m2 .banner__item {
+      width: 50% \ ;
+    }
+    .bn-w3m1 .banner__item {
+      width: 100% \ ; 
+    }
+  }
+</style>
+<![endif]-->
+<div id="spWrap" class="sp__wallper">
+  <!-- 主視覺 -->
+  <div class="sp--1260 icon_Home"><!-- 浮水印start(勿刪)-->
+    <div id="iconHome"></div>
+  </div>                          <!-- 浮水印end(勿刪)-->
+  <main class="sp__main">
+    <div class="sp--1260">
+      <a href="https://www.etmall.com.tw" class="logo"><img src="ehs-logo.png" alt="東森購物"></a><!-- 1260把這行刪掉 -->
+      <div class="sp__visual">
+        <div class="visual__anchor"><!-- 紅框區 設定第一個a和第二個a的寬度會推擠後面a的寬度-->
+          <div class="visual__main">
+            <a></a>
+          </div>
+        </div>
+        <img src="index20200408.jpg">
+      </div>
+    </div>
+  </main>
+  <!-- 自適應banner組 --><!-- .................................................4變2 start -->
+  <section class="sp--1260 bn-w4m2">
+    <ul class="banner__wrap">
+      <li class="banner__item">
+        <a href="<!--[LINK1]-->">
+          <img src="menu_01.png" alt="banner">
+        </a>
+      </li>
+      <li class="banner__item">
+        <a href="<!--[LINK2]-->">
+          <img src="menu_02.png" alt="banner">
+        </a>
+      </li>
+      <li class="banner__item">
+        <a href="<!--[LINK3]-->">
+          <img src="menu_03.png" alt="banner">
+        </a>
+      </li>
+      <li class="banner__item">
+        <a href="<!--[LINK4]-->">
+          <img src="menu_04.png" alt="banner">
+        </a>
+      </li>
+       <li class="banner__item">
+        <a href="<!--[LINK1]-->">
+          <img src="menu_05.png" alt="banner">
+        </a>
+      </li>
+      <li class="banner__item">
+        <a href="<!--[LINK2]-->">
+          <img src="menu_06.png" alt="banner">
+        </a>
+      </li>
+      <li class="banner__item">
+        <a href="<!--[LINK3]-->">
+          <img src="menu_07.png" alt="banner">
+        </a>
+      </li>
+      <li class="banner__item">
+        <a href="<!--[LINK4]-->">
+          <img src="menu_08.png" alt="banner">
+        </a>
+      </li>
+       <li class="banner__item">
+        <a href="<!--[LINK1]-->">
+          <img src="menu_09.png" alt="banner">
+        </a>
+      </li>
+      <li class="banner__item">
+        <a href="<!--[LINK2]-->">
+          <img src="menu_10.png" alt="banner">
+        </a>
+      </li>
+      <li class="banner__item">
+        <a href="<!--[LINK3]-->">
+          <img src="menu_11.png" alt="banner">
+        </a>
+      </li>
+      <li class="banner__item">
+        <a href="<!--[LINK4]-->">
+          <img src="menu_12.png" alt="banner">
+        </a>
+      </li>
+    </ul>
+  </section>
+  <!-- ............................................................4變2 end -->
+  </div>
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script>$('a[href^="#"]').on('click',function(e){var target=$('a[name='+this.getAttribute('href').split('#')[1]+']');if(target.length){e.preventDefault();$('html,body').stop().animate({scrollTop:target.offset().top},500);}});</script>
+<!-- 浮水印 -->
+<script id="scriptIconFloat" src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105264/float-icon.js"></script>
+<!--[if IE 9]>
+  <script src="flexibility.js"></script>
+  <script>flexibility(document.documentElement);</script>
+<![endif]-->
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>

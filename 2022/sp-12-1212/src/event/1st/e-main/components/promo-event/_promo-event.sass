@@ -1,0 +1,125 @@
+.promo-event
+  margin-top: -11%
+  overflow: hidden
+  +breakpoint-min($min-width-xl)
+    margin-top: -100px
+
+  .decor__wrap
+    padding-bottom: 12%
+  .decor__item
+
+    &--title
+      +pos-set(absolute, zero, 2%, 20%)
+      width: 60%
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 315px)
+
+    &--left
+      +pos-set(absolute, zero, 0%, 17%)
+      width: 17%
+      +breakpoint-min($min-width-xl)
+        left: calc( 50% - 330px )
+
+    &--right1
+      +pos-set(absolute, base, 0%)
+      right: 25%
+      width: 11%
+      +breakpoint-min($min-width-xl)
+        right: calc(50% - 250px)
+      .js-loading &
+        animation: floating-down-up 3s ease-in-out infinite
+
+    &--right2
+      +pos-set(absolute, base, 3%)
+      right: 14%
+      width: 16%
+      +breakpoint-min($min-width-xl)
+        right: calc( 50% - 370px )
+      .js-loading &
+        animation: floating-down-up 3s .4s ease-in-out infinite
+
+    &--light
+      +pos-set(absolute, zero, 22.2%)
+      right: 3.2%
+      width: 92.5%
+      animation: light-flash 2.2s ease-out infinite
+      +breakpoint-min($min-width-xl)
+        right: calc( 50% - 446px )
+
+    +breakpoint-min($min-width-xl)
+      width: auto
+
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/promo-event/bg-promo-event.png), 99.1%)
+  .promo__zone
+    +aspect-ratio(952, 1201)
+  .promo__block
+    padding: 11% 9% 0
+    +breakpoint-min($min-width-xl)
+      padding-top: 130px
+  .item__box
+    display: flex
+    margin-bottom: 1%
+    li
+      +pos-set(relative, zero)
+  .promo__box--wrap
+    display: flex
+  .promo__box
+    width: 30%
+    .event__item
+      text-align: center
+      transition: all .5s
+    &:first-child
+      .event__item
+        transform: translateX(3%)
+        &:nth-child(2)
+          transform: translateX(-3%)
+    &:nth-child(2)
+      margin-top: 4%
+      width: 40%
+      transform: scale(1.05)
+    &:last-child
+      .event__item
+        transform: translateX(-3%)
+        &:nth-child(2)
+          transform: translateX(3%)
+          
+    .promo__item
+      transition: all 0.5s
+      &:hover,
+      &:active
+        transform: translateY(-2%)
+        filter: contrast(1.2)
+        
+.animation
+  animation: 0.4s promoShakeX
+.animation2
+  animation: 0.4s promoShakeY
+
+@keyframes light-flash
+  0%, 100%
+    filter: brightness(220%)
+  50%
+    filter: brightness(100%)
+
+@keyframes floating-down-up
+  0%, 100%
+    transform: translateY(0)
+  50% 
+    transform: translateY(28%)
+
+@keyframes promoShakeX
+  0%,80%, to
+    transform: translateZ(0)
+  30%, 50%, 70%
+    transform: translate3d(-4px, 0, 0)
+  40%, 60%
+    transform: translate3d(4px, 0, 0)
+
+@keyframes promoShakeY
+  0%,80%, to
+    transform: translateZ(0)
+  30%, 50%, 70%
+    transform: translate3d(0, -4px, 0)
+  40%, 60%
+    transform: translate3d(0, 4px, 0)

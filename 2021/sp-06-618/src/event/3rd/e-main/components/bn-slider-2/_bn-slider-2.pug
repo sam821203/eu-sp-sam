@@ -1,0 +1,77 @@
+-
+  var bnSliderItemData2 = [
+    {
+      link: "https://www.etmall.com.tw/gp/134803",
+      imgSrc: "event/3rd/e-main/components/bn-slider-2/items/brand-1.png",
+      alt: "統一"
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/136380",
+      imgSrc: "event/3rd/e-main/components/bn-slider-2/items/brand-2.png",
+      alt: "東妮寢飾"
+    },
+    //- {
+    //-   link: "https://media.etmall.com.tw/sp/9876/m/index.html",
+    //-   imgSrc: "event/3rd/e-main/components/bn-slider-2/items/brand-3.png",
+    //-   alt: "LV.CHANEL3折起 滿額再送"
+    //- },
+    {
+      link: "https://www.etmall.com.tw/p/135101",
+      imgSrc: "event/3rd/e-main/components/bn-slider-2/items/brand-4.png",
+      alt: "碧歐斯88折滿額送"
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/134737",
+      imgSrc: "event/3rd/e-main/components/bn-slider-2/items/brand-5.png",
+      alt: "船井購物節5折起"
+    },
+    {
+      link: "https://www.etmall.com.tw/p/135148",
+      imgSrc: "event/3rd/e-main/components/bn-slider-2/items/brand-6.png",
+      alt: "日本味王滿額贈"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/9624/m/index.html",
+      imgSrc: "event/3rd/e-main/components/bn-slider-2/items/brand-7.png",
+      alt: "LG"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/9857/m/index.html",
+      imgSrc: "event/3rd/e-main/components/bn-slider-2/items/brand-8.png",
+      alt: "Dyson"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/9581/m/index.html",
+      imgSrc: "event/3rd/e-main/components/bn-slider-2/items/brand-9.png",
+      alt: "日立"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/4369/m/index.html",
+      imgSrc: "event/3rd/e-main/components/bn-slider-2/items/brand-10.png",
+      alt: "APPLE"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/9913/m/index.html",
+      imgSrc: "event/3rd/e-main/components/bn-slider-2/items/brand-11.png",
+      alt: "OPPO"
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/134321",
+      imgSrc: "event/3rd/e-main/components/bn-slider-2/items/brand-12.png",
+      alt: "瘋搶Switch低至83折"
+    },
+  ]
+
+section.promo__group.promo__group--bn-2.m-bottom--lg(data-title="熱銷專區")
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        #sliderBn2.promo__slider.swiper-container
+          ul.swiper-wrapper
+            each data in bnSliderItemData2
+              li.swiper-slide
+                a(href= data.link, title= data.alt)
+                  img.swiper-lazy(data-src= data.imgSrc, alt="")
+                  .swiper-lazy-preloader.swiper-lazy-preloader-black
+
+      //- #sliderBnPager.bn__pager.swiper-pagination

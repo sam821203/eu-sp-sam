@@ -1,0 +1,41 @@
+.tab__zone
+  margin-left: auto
+  margin-right: auto
+  width: 90%
+
+.tab-list
+  display: flex
+  justify-content: right
+  margin-left: 20px
+  width: calc(100% - 14px)
+  li
+    width: 33%
+    &:last-child
+      box-shadow: 0px 5px 0px $main-color-pink-4
+  +breakpoint-min($min-width-lg)
+    margin-left: 33.3%
+    width: 68%
+  +breakpoint-min($min-width-xl)
+    margin-left: 287px
+
+.tab__content
+  +pos-set(relative, zero)
+  padding: 20px 15px 30px
+  background-color: $main-color-pink-3
+  border-radius: 20px
+  box-shadow: 3px 3px 0px $main-color-pink-4
+  +breakpoint-min($min-width-lg)
+    padding: 40px 20px 60px
+    box-shadow: 4px 4px 0px $main-color-pink-4
+  +breakpoint-min($min-width-xl)
+    box-shadow: 5px 5px 0px $main-color-pink-4
+
+.content__wrapper,
+.slider__wrapper
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+  li
+    +pos-set(relative, zero)
+    margin-bottom: 10px
+    width: calc(50% - 5px)

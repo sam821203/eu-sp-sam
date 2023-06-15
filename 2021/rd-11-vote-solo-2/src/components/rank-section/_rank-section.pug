@@ -1,0 +1,34 @@
+section.promo__group.promo__group--rank.m-bottom--md
+  .layout--main
+    .promo__head.m-bottom--sm
+      .promo__title
+        img(src="~components/rank-section/section-title-rank.png", alt="")
+    .promo__body
+      .tab__zone.tab__zone--rank
+        .tab__block.tab__block--rank
+          .tab__content
+            .content__box
+              .content__container
+                ul.content__wrapper
+                  - var n = 0
+                  while n < 2
+                    - var starClassName = 'rank__star--' + (n + 1)
+                    - var pet = (n==0) ? 'dog' : 'cat'
+                    li
+                      .rank__star(class= starClassName)
+                        span= (n + 1)
+                      .player__dynamic.player__dynamic--rank
+                        .player__pic
+                            .pic__box(style='background-image: url(../assets/fake-' + pet + '.jpg)')
+                        .player__name 報名名稱最多一排報名名稱最多一排報名名稱最多一排報名名稱最多一排報名名稱最多一排
+                        .player__number
+                          span 編號：
+                          span 5847852
+                        .player__info
+                          .info__team
+                            //- .team__label
+                          .info__votes
+                            .player__votes
+                              .votes__label.shape--gray 票數
+                              .votes__value 90,847
+                      - n++

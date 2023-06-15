@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- ============== 輪播 start ============== -->
+    <link rel="stylesheet"
+          href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116205/swiper.min.css">
+    <!-- ============== 輪播 end ============== -->
+    <!-- 共用CSS -->
+    <link rel="stylesheet"
+          href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116205/animate.min.css">
+    <link rel="stylesheet"
+          href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.css">
+    <link rel="stylesheet" href="sp-20190619.css">
+    <link rel="stylesheet"
+          href="random.css">
+    <style>
+        body {
+            /* 自行修正背景顏色 */
+            background: url(bg_01-m.jpg) no-repeat #040407 center 0;
+            background-size: 100% auto;
+            background-attachment: fixed;
+        }
+
+        @media screen and (min-width: 960px) {
+            body {
+                background: url(bg_01.jpg) no-repeat #040407 center 0;
+                background-color: #07208e;
+                background-size: 2560px auto;
+                background-attachment: fixed;
+            }
+        }
+
+        /* 調整logo位置大小 */
+        .logo {
+            top: 1%;
+            left: 1%;
+            width: 30%;
+            max-width: 200px;
+        }
+
+        /* 連結測試 */
+        /* .sp__visual a{
+          filter: brightness(500%);
+        } */
+
+        /* 切片測試 */
+        /* .visual__fragment::before {
+          content: '';
+          position: absolute;
+          z-index: 1;
+          width: 100%;
+          height: 100%;
+          border: 1px solid #00f;
+          pointer-events: none;
+        } */
+
+        /* 設定全畫面背景 */
+        /* .sp__main {
+          background: url(bg.jpg) center 0 no-repeat;
+        } */
+
+        /*-- 影片 --*/
+        /*-.video__wrap {
+           position: relative;
+           z-index: 1;
+       }
+       /*-- 手機版：
+               1. 設定物件距離左邊與上邊的位置，單位可以使用"%"或"vw"
+               2. width 建議電腦版可以使用auto，手機版則可使用%調整
+        --*/
+        /*- .video__wrap .video__obj--01{
+        position: absolute;
+        top: 356vw;
+        left: 47vw;
+        width: 45%;
+        height: 21vw;
+        }
+
+        /*-- 電腦版：
+                設定物件距離左邊與上邊的位置，單位可以使用"px"，左邊可以挑整clac()後面的px值
+                width 建議電腦版可以使用auto，手機版則可使用%調整
+         --*/
+        /*- @media screen and (min-width: 960px) {
+            .video__wrap .video__obj--01 {
+        top: 3416px;
+        left: 60%;
+        transform: translateX(-50%);
+        width: 422px;
+        height: 211px;
+        }
+
+        }
+
+        /* 大網各區塊背景  */
+        @media screen and (min-width: 960px) {
+            .visual__block1 {
+                /*background: center 0 url("bg_01.jpg") no-repeat;*/
+                /*background-attachment: fixed;*/
+            }
+
+            /* .visual__block2 {
+                 background: center 0 url("bg_02.jpg") no-repeat;
+             }
+
+             .visual__block3 {
+                 background: center 0 url("bg_03.jpg") no-repeat;
+             }*/
+        }
+
+        /*輪播 css */
+        .slider__tv {
+            position: relative;
+            padding: 0;
+        }
+
+        .slider__tv .swiper-container {
+            position: absolute;
+            right: 6%;
+            margin-left: 0;
+            margin-right: auto;
+            width: 30%;
+            /*height: 57vw; */
+            margin-top: 14.5%;
+        }
+
+        .slider__tv .swiper-container .swiper-slide {
+            -webkit-filter: contrast(100%);
+            filter: contrast(100%);
+            opacity: 1
+        }
+
+        .slider__tv .swiper-container .swiper-slide:hover,
+        .slider__tv .swiper-container .swiper-slide:active {
+            -webkit-filter: contrast(120%);
+            filter: contrast(120%)
+        }
+
+        .slider__tv .swiper-container .swiper-slide img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto
+        }
+
+        .slider__tv .swiper-container .swiper-pagination-custom {
+            bottom: 5px;
+        }
+
+        .slider__tv .swiper-container .swiper-pagination-custom .swiper-pagination-bullet {
+            width: 8px;
+            height: 8px;
+            margin: -1px 3px;
+            background-color: #24335e;
+        }
+
+        .slider__tv .swiper-container .swiper-pagination-custom .swiper-pagination-bullet-active {
+            opacity: 1
+        }
+
+        @media screen and (min-width: 960px) {
+            .slider__tv {
+                width: 100%;
+                max-width: 995px;
+            }
+
+            .slider__tv .swiper-container {
+                height: 587px;
+                top: -20px;
+            }
+
+            .slider__tv .swiper-container .swiper-pagination-custom {
+                bottom: 13px
+            }
+
+            .slider__tv .swiper-container .swiper-pagination-custom .swiper-pagination-bullet {
+                width: 12px;
+                height: 12px;
+                margin: -1px 6px;
+            }
+        }
+
+        @media screen and (max-width: 960px) {
+            .slider__tv .swiper-container {
+
+                right: 6%;
+                margin-top: 12.5%;
+            }
+
+            /*輪播 css-副標 */
+            /* 設定手機組版nav寬度(可不設) */
+            .build-nav__item {
+                flex: 1 0 25%;
+            }
+        }
+
+        .visual__navw.nav2 {
+            position: relative;
+            z-index: 0;
+            /* padding-top: 10%;*/
+            background-size: cover;
+            overflow: hidden;
+        }
+
+        .visual__nav.nav2 img {
+            padding-top: 1.5%;
+        }
+
+        .promo__slider {
+            position: absolute;
+            z-index: 1;
+            margin-top: 50.5%;
+            left: 5%;
+            width: 30%;
+            height: 70px !important;
+        }
+
+        @media screen and (max-width: 960px) {
+            .promo__slider {
+                margin-top: 50.2%;
+                height: 9vw !important;
+            }
+
+            /*-- 動畫小物件 --*/
+            .animate__wrap {
+                position: relative;
+                z-index: 1;
+            }
+
+            /*-- 手機版：
+                    1. 設定物件距離左邊與上邊的位置，單位可以使用"%"或"vw"
+                    2. width 建議電腦版可以使用auto，手機版則可使用%調整
+             --*/
+            .animate__wrap .animate__obj--01 {
+                position: absolute;
+                top: 2vw;
+                left: 1vw;
+                width: 55%;
+            }
+        }
+
+        /*-- 電腦版：
+                設定物件距離左邊與上邊的位置，單位可以使用"px"，左邊可以挑整clac()後面的px值
+                width 建議電腦版可以使用auto，手機版則可使用%調整
+         --*/
+        @media screen and (min-width: 960px) {
+            .animate__wrap .animate__obj--01 {
+                top: 18px;
+                left: calc(50% - 494px);
+                width: auto;
+            }
+        }
+
+        /* [區塊-背景固定] 只有大網有背景，需固定的背景圖可另行製作
+        @media screen and (min-width: 960px) {
+            .top__center {
+                left: 50%;
+                transform: translateX(-50%);
+                position: fixed;
+                background-size: 100% auto;
+                background: url(bg_02.jpg) center 0 no-repeat;
+                width: 2560px;
+                height: 828px;
+            }
+
+            .top--0 {
+                top: 0;
+            }
+        } */
+    </style>
+</head>
+<body>
+
+<!-- 旅遊專用bar區域 start 不要就移除-->
+<div id="barHome"></div>
+<!-- 旅遊專用bar區域 end-->
+<div id="iconHome" class="layout--main home--icon"></div>
+<div id="spWrap" class="sp__wallper">
+    <!-- 電梯 -->
+    <div class="elevatorHome" id="elevatorHome"></div>
+    <div class="navRightBar" id="navRightBar"></div>
+    <!-- 動畫小物件 -->
+    <!-- <div class="animate__wrap">
+        <img class="animate__obj--01 animate__animated animate__bounceInDown" src="01.png" alt="圖片提示文字"> -->
+</div>
+<!--<div class="video__wrap"><iframe class="video__obj--01" src="https://www.youtube.com/embed/8bBGP4Fb3sc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+</div>-->
+<!-- 主視覺  -->
+<!-- [區塊-背景固定] 只有大網有背景 -->
+<!--<div id="fixedBgHt" class="top__center"></div>-->
+<main class="sp__main">
+    <div class="layout--main home--logo">
+        <a href="https://www.etmall.com.tw"><img class="logo" src="ehs-logo-w.png" alt="東森購物"></a>
+    </div>
+    <section class="sp__visual visual__block1">
+        <div class="layout--main">
+            <!--輪播-副標-->
+            <div class="visual__nav nav2">
+                <div class="promo__slider">
+                    <div id="sliderSmall" class="swiper-container">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide"><a href=""><img src="title_01.png" alt=""></a></li>
+                            <li class="swiper-slide"><a href=""><img src="title_02.png" alt=""></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--輪播-->
+            <div class="slider__tv">
+                <div id="sliderCollectGoods" class="swiper-container">
+                    <ul class="swiper-wrapper collect__goods">
+                        <li class="swiper-slide collect__item">
+                            <a href="https://media.etmall.com.tw/sp/4369/index.html">
+                                <img src="p-1.png" alt="">
+                            </a>
+                        </li>
+
+                        <li class="swiper-slide collect__item">
+                            <a href="https://media.etmall.com.tw/sp/4369/index.html">
+                                <img src="p-2.png" alt="">
+                            </a>
+                        </li>
+                        <li class="swiper-slide collect__item">
+                            <a href="https://www.etmall.com.tw/i/2855715">
+                                <img src="p-3.png" alt="">
+                            </a>
+                        </li>
+                        <li class="swiper-slide collect__item">
+                            <a href="https://www.etmall.com.tw/c3/146714">
+                                <img src="p-4.png" alt="">
+                            </a>
+                        </li>
+                        <li class="swiper-slide collect__item">
+                            <a href="https://www.etmall.com.tw/c3/124394">
+                                <img src="p-5.png" alt="">
+                            </a>
+                        </li>
+                    </ul>
+                    <div id="sliderCollectGoodsPager" class="swiper-pagination-custom swiper-pagination"></div>
+                </div>
+            </div>
+            <ul class="visual--auto clearfix">
+                <li class="visual__fragment width--auto">
+                    <img style="margin-top:-5%; " src="index_01.gif">
+                </li>
+                <li class="visual__fragment width--auto">
+                    <a href="#note-4" title="">
+                        <img src="index_02.png" alt="">
+                    </a>
+                </li>
+                <li class="visual__fragment width--auto">
+                    <a href="#note-5" title="">
+                        <img src="index_03.png" alt="">
+                    </a>
+                </li>
+                <li class="">
+                    <section class="promo__group promo__group--random m-bottom--sm promo__group--card">
+                        <div class="layout--main">
+                            <div class="card__wrap promo__wrap active" id="cardWrap">
+                                <ul class="good__wrap" id="randomSelectWrap">
+                                    <li class="card__item">
+                                        <div class="card__front">
+                                            <a href="#note-1" title="抽toyata汽車">
+                                                <img src="card1.png" alt="抽toyata汽車">
+                                            </a>
+                                        </div>
+                                        <div class="card__back">
+                                            <img src="card1_b.png" alt="">
+                                        </div>
+                                    </li>
+                                    <li class="card__item">
+                                        <div class="card__front">
+                                            <a href="#note-2" title="提貨券X%無上限">
+                                                <img src="card2.png" alt="提貨券X%無上限">
+                                            </a>
+                                        </div>
+                                        <div class="card__back">
+                                            <img src="card2_b.png" alt="">
+                                        </div>
+                                    </li>
+                                    <li class="card__item">
+                                        <div class="card__front">
+                                            <a href="#note-3" title="LINE POINTS X%無上限">
+                                                <img src="card3.png" alt="LINE POINTS X%無上限">
+                                            </a>
+                                        </div>
+                                        <div class="card__back">
+                                            <img src="card3_b.png" alt="">
+                                        </div>
+                                    </li>
+                                    <li class="card__item">
+                                        <div class="card__front">
+                                            <a href="#note-5" title="XXX$1212、XXX$12121、XXX$121">
+                                                <img src="card4.png" alt="XXX$1212、XXX$12121、XXX$121">
+                                            </a>
+                                        </div>
+                                        <div class="card__back">
+                                            <img src="card4_b.png" alt="">
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </li>
+                <li class="visual__fragment width--auto">
+                    <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202005/SP_1115505/w/index.html"
+                       title="">
+                        <img src="index_05.png" alt="">
+                    </a>
+                </li>
+                <li class="visual__fragment width--auto">
+                    <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202005/SP_1115505/w/index.html"
+                       title="">
+                        <img src="index_06.png" alt="">
+                    </a>
+                </li>
+                <li class="visual__fragment width--auto">
+                    <a href="https://media.etmall.com.tw/sp/7185/m/index.html" title="">
+                        <img src="index_07.png" alt="">
+                    </a>
+                </li>
+                <li class="visual__fragment width--auto">
+                    <a href="https://media.etmall.com.tw/sp/7185/m/index.html" title="">
+                        <img src="index_08.png" alt="">
+                    </a>
+                </li>
+                <li class="visual__fragment width--auto">
+                    <a href="https://www.etmall.com.tw/c3/124394" title="">
+                        <img src="index_09.png" alt="">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+</main>
+</body>
+
+<!--<script src="https://polyfill.io/v3/polyfill.min.js"></script>-->
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<!-- ============== 輪播 start ============== -->
+<script src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116205/swiper.min.js"></script>
+<!-- ============== 輪播 end ============== -->
+<!-- <script src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116205/lazyload.js"></script> -->
+<!-- 共用JS -->
+<script id="generateScript"
+        src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.js"></script>
+<script>
+    var footerSlider = new Swiper(".swiper-container", {
+        autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+        },
+        autoHeight: true,
+        grabCursor: true,
+        loop: true,
+        speed: 1000,
+    });
+</script>
+<!-- ============== 輪播 end ============== -->
+<!-- 電梯 -->
+<!--<script src="https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1116819/w/generateVersion20190619.js"></script>-->
+<script type="text/javascript" src="sp-script20190619.js" defer></script>
+<script src="random-card.js"></script>
+</html>

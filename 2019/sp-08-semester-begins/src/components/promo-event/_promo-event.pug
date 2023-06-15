@@ -1,0 +1,21 @@
+- var promoData = {etmall: [{link: "https://www.etmall.com.tw/Activity/Reg/38", imgSrc: "~components/promo-event/promo-e-1.png", alt: "登記抽千元無敵券"},{link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201908/SP_1108618/w/index.html", imgSrc: "~components/promo-event/promo-e-2.png", alt: "百萬之星爭霸賽：抽air pods 2"},{link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201907/SP_1108482/w/index.html", imgSrc: "~components/promo-event/promo-e-3.png", alt: "萊爾富加價購"},{link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html", imgSrc: "~components/promo-event/promo-e-4.png", alt: "APP首購送200"}], umall: [{link: "https://www.u-mall.com.tw/Activity/Reg/11", imgSrc: "~components/promo-event/promo-u-1.png", alt: "登記抽千元無敵券"},{link: "", imgSrc: "~components/promo-event/promo-u-2.png", alt: "集點加價購"},{link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201907/SP_1104714/w/index.html", imgSrc: "~components/promo-event/promo-u-3.png", alt: "萊爾富加價購"},{link: "https://www.u-mall.com.tw/Activity/Reg/11", imgSrc: "~components/promo-event/promo-u-4.png", alt: "新會員首購送200折價券"}]}
+- var sitePromoData = isU ? promoData.umall : promoData.etmall
+
+- var bonusData = {etmall: "https://www.etmall.com.tw/Activity/Reg/38", umall: "https://www.u-mall.com.tw/Activity/Reg/11"}
+- var bonusInfo = isU ? bonusData.umall : bonusData.etmall
+
+.promo__event
+  ul.event__wrap
+    each data, index in sitePromoData
+      - var anchorId = 'promoAnchor' + (index + 1)
+      - var imgId = 'promoImg' + (index + 1)
+      li
+        a(id= anchorId, href= data.link, title= data.alt)
+          img(id= imgId, src= data.imgSrc, alt= data.alt)
+
+  .bonus__wrap
+    .bonus__item
+      img(src="~components/promo-event/bonus-item.png", alt="")
+    .bonus__anchor
+      a(href= bonusInfo, title="title")
+        img(src="~components/promo-event/bonus-btn.png", alt="")

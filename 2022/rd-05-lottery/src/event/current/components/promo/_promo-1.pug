@@ -1,0 +1,104 @@
+-
+  var promoItemData = [
+    {
+      imgSrc: "event/current/components/promo/promo-item-1-1.png",
+      alt: "1",
+      winner: "東森人",
+      count: "10000",
+    },
+    {
+      imgSrc: "event/current/components/promo/promo-item-1-2.png",
+      alt: "1",
+      winner: "我是東森人",
+      count: "4500",
+    },
+    {
+      imgSrc: "event/current/components/promo/promo-item-1-3.png",
+      alt: "1",
+      winner: "東森人",
+      count: "23400",
+    },
+  ]
+
+section.promo__group.promo__w3m3.m-bottom--xl
+  .layout--main
+    .promo__block 
+      .decor__top
+        img(src="event/current/components/promo/decor-promo-top-1.png" alt="")
+      .decor__bg
+        ul.promo__items
+          each data in promoItemData
+            li.promo__item
+              .time__wrap
+                .time__text
+                  .time__icon
+                    img(src="event/current/components/promo/icon-time.png")
+                  .time__block
+                    .time__box 
+                      span 0
+                    .time__box 
+                      span 8
+                  .time__colon :
+                  .time__block
+                    .time__box 
+                      span 3
+                    .time__box 
+                      span 5
+              .card__title
+                .card__overlay
+                  span 第
+                  span.card__num= data.alt
+                  span 場 
+              .card__wrap
+                .card__register
+                  img(src="event/current/components/promo/register-stamp.png" alt="")
+                .card__box
+                  img(src= data.imgSrc, alt= numTime)
+                .card__waiting
+                  div.time__label 得獎結果公佈
+                  div.time__text
+                    .time__block
+                      .time__box 
+                        span 0
+                      .time__box 
+                        span 0
+                    .time__colon :
+                    .time__block
+                      .time__box 
+                        span 0
+                      .time__box 
+                        span 0
+                .card__result 
+                  .winner__label 中獎者
+                  -var middleNum = Math.floor(data.winner.length / 2)
+                  .winner__name= '*' + data.winner[middleNum] + '*'
+                .people__count
+                  .card__people 參加人數
+                  .card__count= data.count + '人' 
+              .btn__wrap 
+                button.btn__title.full-parent 
+                  p.btn__title--1 尚未開始
+                  p.btn__title--2 提醒我
+                  p.btn__title--3 登記抽獎
+                  p.btn__title--4 完成登記
+
+                .btn__info
+                  .time__label
+                    p.time__label--1 登記開始
+                    p.time__label--2 登記截止
+                    p.time__label--3 結果公布
+                  .time__block
+                    .time__box
+                      span 0
+                    .time__box
+                      span 0
+                  .time__colon :
+                  .time__block
+                    .time__box
+                      span 0
+                    .time__box
+                      span 0
+
+      .decor__bottom
+        img(src="event/current/components/promo/decor-promo-bottom.png" alt="")
+

@@ -1,0 +1,78 @@
+.promo__group--daily
+  .promo__zone
+    +pos-set(relative, zero)
+    .title__text
+      +pos-set(absolute, base)
+    .daily__text
+      left: 19%
+      color: $gray-deep-light
+      font-size: 7vw
+      font-weight: bold
+      transform: translateY(13%)
+      span
+        &:nth-child(2)
+          font-size: 3vw
+    .decoration
+      &--daily-change
+        z-index: map-get($zindex, base)
+        top: 21.5%
+        left: 3.9%
+        width: 51.6%
+        animation: light-open 0.7s both
+      &--daily-change-2
+        z-index: map-get($zindex, second)
+        top: 0
+        left: 0
+        width: 23%
+    .daily__countdown
+      display: flex
+      justify-content: space-between
+      top: 49.5%
+      right: 16.25%
+      width: 25.7%
+      color: $gray-deep-light
+      font-size: 4vw
+      letter-spacing: 0.35em
+      pointer-events: none
+      // border: 1px solid #f00
+      .time__block
+        display: flex
+        justify-content: space-between
+        // margin-right: 0.5%
+        width: 25%
+        // border: 1px solid #fff
+
+        .time__box
+          width: 48%
+          text-align: right
+
+    +breakpoint-min($min-width-xl)
+      .decoration--daily-change
+        top: 145px
+        left: 48px
+      .daily__countdown
+        top: 305px
+        right: 173px
+        width: 233px
+        font-size: 40px
+
+  .promo__wrap--daily
+    +aspect-ratio(914, 563)
+  .promo__zone
+    padding: 13.5% 8% 4% 4%
+    +bg-set(url(event/2nd/e-main/components/daily-change/bg-daily.png), 100%, center, 100%)
+    text-align: center
+    &:hover,
+    &:active
+      a
+        filter: brightness(102%) contrast(105%)
+
+    +breakpoint-min($min-width-xl)
+      padding: 145px 80px 35px 40px
+      background-size: auto
+
+@keyframes light-open
+  0%, 28%, 80%
+    opacity: 0
+  14%, 40%, 100%
+    opacity: 1

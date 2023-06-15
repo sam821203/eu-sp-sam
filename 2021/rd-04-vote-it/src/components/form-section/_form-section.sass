@@ -1,0 +1,235 @@
+.promo__group--form
+  .promo__title
+    margin-left: auto
+    margin-right: auto
+    width: 50%
+    text-align: center
+  .promo__body
+    margin-top: -8%
+    font-size: 16px
+    // +breakpoint-max($max-width-xxs)
+    //   font-size: 12px
+    // +breakpoint-min($min-width-sm)
+    //   font-size: 18px
+    // +breakpoint-min($min-width-md)
+    //   font-size: 24px
+    +breakpoint-min($min-width-xl)
+      margin-top: -50px
+
+  .form__block
+    margin-left: auto
+    margin-right: auto
+    padding: 16% 5% 0.5%
+    width: 90%
+    background-color: $gray-deep-light
+    border-radius: 15px
+    +breakpoint-min($min-width-lg)
+      border-radius: 40px
+
+    +breakpoint-min($min-width-xl)
+      padding: 90px 40px 10px
+
+  .form__list
+    select,
+    input,
+    textarea,
+      -webkit-appearance: none
+      width: 100%
+      border: 2px solid $main-color-blue-2
+      border-radius: 4px
+      background-color: $gray-deep-light
+      outline: 0
+      &:focus
+        box-shadow: 0 0 12px $main-color-blue-1
+    input,
+    textarea,
+      padding: 3.8% 3%
+      &::placeholder
+        color: $gray-medium
+    select
+      +pos-set(relative, zero)
+      padding: 3.7% 15% 3.7% 3%
+      // IE 11清除select預設樣式
+      &::-ms-expand
+        display: none
+
+    .input__info
+      color: $gray-dark
+
+    +breakpoint-min($min-width-lg)
+      input,
+      textarea,
+        padding: 11px 10px
+
+    .input__box,
+    .address__box,
+      +pos-set(relative, zero)
+      select
+        + span
+          +pos-set(absolute, base)
+          top: calc(50%)
+          right: 3%
+          +arrow-down(6, 6, 8, $main-color-blue-2)
+          transform: translateY(-50%)
+          pointer-events: none
+
+    .form__box
+      +pos-set(relative, zero)
+      margin-bottom: 8%
+      .input__title
+        margin-bottom: 2.5%
+        color: $main-color-blue-2
+
+      +breakpoint-min($min-width-lg)
+        margin-bottom: 30px
+        .input__title,
+        .input__box,
+        .title--upload,
+        .label--file
+          display: inline-block
+          vertical-align: top
+
+        .input__info
+          display: inline-block
+          line-height: 48px
+        .input__title
+          &:not(.input__title--upload),
+          &.input__title--upload .title--upload
+            margin-right: 10px
+            color: $gray-deep-light
+          &.input__title--upload .title--upload
+            padding: 8px 0
+          &.input__title--upload
+            margin-bottom: 0
+
+        .input__box
+          &:not(.input__box--address)
+            width: 300px
+          &.input__box--long,
+          &.input__box--address
+            width: 81%
+        .input__title--upload
+          width: 284px
+
+    .decoration__upload
+      margin-bottom: 8%
+      height: 1px
+      background-color: $gray-medium
+      +breakpoint-min($min-width-lg)
+        display: none
+
+    textarea
+      resize: none
+
+    .label--file
+      +pos-set(relative, zero)
+      cursor: pointer
+      img
+        display: inline-block
+        margin-right: 3%
+        width: 25px
+        vertical-align: middle
+      span
+        color: $gray-deep-dark
+        vertical-align: middle
+      .input--file
+        +pos-set(absolute, zero, 0, 0)
+        width: 1px
+        height: 1px
+        opacity: 0
+
+    .input--checkbox
+      +pos-set(absolute, zero)
+      top: 0
+      right: 0
+      input,
+      label
+        width: auto
+        vertical-align: middle
+      +breakpoint-min($min-width-lg)
+        top: 10px
+        right: auto
+        left: 430px
+
+    .address__wrap
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+      .address__box
+        margin-bottom: 2%
+        select
+          padding: 7.5% 15% 7.5% 3%
+        &:nth-child(1),
+        &:nth-child(2),
+          width: 49%
+        &:nth-child(3),
+          width: 100%
+      +breakpoint-min($min-width-lg)
+        .address__box
+          select
+            padding: 11px 15% 11px 3%
+
+  .form__box,
+  .form__check,
+    +pos-set(relative, zero)
+    .decoration__checkbox
+      display: inline-block
+      +pos-set(relative, zero)
+      width: 20px
+      height: 20px
+      border: 1px solid $main-color-blue-2
+      border-radius: 50%
+      vertical-align: middle
+      &::before
+        content: ''
+        +pos-set(absolute, zero)
+        top: 4px
+        left: 2px
+        width: 14px
+        height: 8px
+        border-left: 3px solid $gray-deep-light
+        border-bottom: 3px solid $gray-deep-light
+        transform: rotate(-45deg)
+        opacity: 0
+
+    .input--hidden
+      +pos-set(absolute, base)
+      top: 3px
+      left: 0
+      width: 20px
+      height: 20px
+      opacity: 0
+      &:checked
+        + .decoration__checkbox
+          background-color: $main-color-pink-1
+          border: 1px solid $main-color-pink-1
+        + .decoration__checkbox::before
+          opacity: 1
+
+    .check__wrap
+      +breakpoint-min($min-width-lg)
+        margin-left: auto
+        margin-right: auto
+        width: 500px
+
+    .check__info
+      display: inline-block
+      width: calc(100% - 30px)
+      vertical-align: middle
+      a
+        display: inline
+        color: $main-color-blue-2
+        text-decoration: underline
+        &:hover,
+        &:active,
+          text-decoration: none
+
+  .form__check,
+  .form__submit
+    margin-bottom: 8%
+
+    +breakpoint-min($min-width-lg)
+      margin-left: auto
+      margin-right: auto
+      width: 240px
+      border-radius: 20px

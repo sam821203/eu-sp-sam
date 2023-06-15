@@ -1,0 +1,48 @@
+// ==========================================================================
+// Plugins
+// ==========================================================================
+// // @import vendors/animate
+// @import vendors/style/swiper-slider-custom
+@import vendors/style/swiper-safari-polyfill
+
+
+
+// ==========================================================================
+// components
+// ==========================================================================
+@import event/1st/e-main/components/nav/_nav
+@import event/1st/e-main/components/hero-section/_hero-section
+@import event/1st/e-main/components/map-taiwan/_map-taiwan
+@import event/1st/e-main/components/city-items/_city-items
+
+// ==========================================================================
+// Page
+// ==========================================================================
+body
+  +pos-set(relative)
+  height: 100vh
+  background: url(event/1st/e-main/pages/index/bg.jpg) $main-e-background-color-1st center 0 no-repeat
+  background-size: contain
+
+  +breakpoint-min($min-width-xl)
+    padding-top: 0
+    background: url(event/1st/e-main/pages/index/bg-web.jpg) $main-e-background-color-1st center 0 no-repeat
+
+.sp__wrap
+  +pos-set(relative)
+  height: calc(100% - 39px)
+  +breakpoint-min($min-width-xl)
+    height: 100%
+
+.sp__wrap a
+  display: block
+
+.decoration--top
+  +pos-set(absolute, zero)
+  pointer-events: none
+
+.layout--web
+  +breakpoint-min($min-width-xl)
+    display: flex
+    justify-content: center
+    padding-top: 253px

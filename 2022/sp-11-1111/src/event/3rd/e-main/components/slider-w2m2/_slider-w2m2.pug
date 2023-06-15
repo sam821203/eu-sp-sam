@@ -1,0 +1,61 @@
+-
+  var sliderW2M2Data = [
+    [  //1
+      {
+        link: "https://www.etmall.com.tw/c3/50432" ,
+        imgSrc: "event/3rd/e-main/components/slider-w2m2/item/item-p-1.png",
+        alt: "溫昇豪 指定品官網登錄送電視",
+      },
+      {
+        link: "https://www.etmall.com.tw/bs/86254" ,
+        imgSrc: "event/3rd/e-main/components/slider-w2m2/item/item-p-2.png",
+        alt: "Ella 獨家限定組合",
+      },
+    ],
+    [  //2
+      {
+        link: "https://www.etmall.com.tw/gp/116998" ,
+        imgSrc: "event/3rd/e-main/components/slider-w2m2/item/item-p-3.png",
+        alt: "林美秀 二代石墨烯塑崩未來褲2件組 好禮四重送",
+      },
+      {
+        link: "https://www.etmall.com.tw/i/3490955" ,
+        imgSrc: "event/3rd/e-main/components/slider-w2m2/item/item-p-4.png",
+        alt: "吳淡如 QIN指靜脈保險箱 藝人推薦東森獨家",
+      },
+    ],
+    [  //3
+      {
+        link: "https://www.etmall.com.tw/gp/193631" ,
+        imgSrc: "event/3rd/e-main/components/slider-w2m2/item/item-p-5.png",
+        alt: "郭書瑤 監製設計【OMIX】光感ANC主動降噪高清真無線藍牙耳機G-SE(郭書瑤藝人推薦/環境通透/IPX5)",
+      },
+      {
+        link: "https://www.etmall.com.tw/i/3574264" ,
+        imgSrc: "event/3rd/e-main/components/slider-w2m2/item/item-p-6.png",
+        alt: "賈靜雯 滿額送好禮 【DV 麗彤生醫】全新升級-醇耀妍 PLUS+ 濃萃飲",
+      },
+    ],
+  ]
+
+
+section.promo__group.slider-w2m2.m-bottom--lg(data-title="大牌秒殺")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--left#decorSliderW2M2Left
+        img(src="event/3rd/e-main/components/slider-w2m2/decor-slider-w2m2-left.png", alt="")
+      .decor__item.decor__item--right#decorSliderW2M2Right
+        img(src="event/3rd/e-main/components/slider-w2m2/decor-slider-w2m2-right.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block.full-parent
+          .promo__slider.swiper-container#sliderW2M2Item
+            ul.swiper-wrapper
+              each data, index in sliderW2M2Data
+                li.swiper-slide
+                  each item, itemIndex in  data
+                    .swiper-box
+                      a(href= item.link, title=item.alt)
+                        img(src= item.imgSrc, alt=item.alt)
+
+

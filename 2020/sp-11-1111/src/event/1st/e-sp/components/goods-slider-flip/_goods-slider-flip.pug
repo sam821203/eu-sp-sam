@@ -1,0 +1,26 @@
+-
+  var goodsFlipDataE = [
+  {link: "", imgSrc: "~event/1st/e-sp/components/goods-slider-flip/items/product-1.png", alt: ""},
+  {link: "", imgSrc: "~event/1st/e-sp/components/goods-slider-flip/items/product-2.png", alt: ""},
+  {link: "", imgSrc: "~event/1st/e-sp/components/goods-slider-flip/items/product-3.png", alt: ""},
+  ]
+//{link: "", imgSrc: "~event/1st/e-sp/components/goods-slider-flip/items/product-4.png", alt: ""}, {link: "", imgSrc: "~event/1st/e-sp/components/goods-slider-flip/items/product-5.png", alt: ""}, {link: "", imgSrc: "~event/1st/e-sp/components/goods-slider-flip/items/product-6.png", alt: ""}, {link: "", imgSrc: "~event/1st/e-sp/components/goods-slider-flip/items/product-7.png", alt: ""},
+
+
+- var goodsFlipDataU = [{link: "", imgSrc: "~event/1st/e-sp/components/goods-slider-flip/items/product-1.png", alt: ""}, {link: "", imgSrc: "~event/1st/e-sp/components/goods-slider-flip/items/product-2.png", alt: ""}, {link: "", imgSrc: "~event/1st/e-sp/components/goods-slider-flip/items/product-3.png", alt: ""}, {link: "", imgSrc: "~event/1st/e-sp/components/goods-slider-flip/items/product-4.png", alt: ""}, {link: "", imgSrc: "~event/1st/e-sp/components/goods-slider-flip/items/product-5.png", alt: ""}, {link: "", imgSrc: "~event/1st/e-sp/components/goods-slider-flip/items/product-6.png", alt: ""}, {link: "", imgSrc: "~event/1st/e-sp/components/goods-slider-flip/items/product-7.png", alt: ""}, {link: "", imgSrc: "~event/1st/e-sp/components/goods-slider-flip/items/product-8.png", alt: ""}, ]
+
+- var goodsFlipData = isU? goodsFlipDataU : goodsFlipDataE
+
+#goodsFlip.goods__wrap--flip
+  img.goods__showcase(src="~event/1st/e-sp/components/goods-slider-flip/goods-slider-flip-showcase.png")
+  .promo__slider
+    #sliderGoodsFlip.swiper-container
+      ul.swiper-wrapper
+        each data in goodsFlipData
+          li.swiper-slide
+            a(href= data.link, title= data.alt)
+              img(src= data.imgSrc, alt= data.alt)
+      //- #sliderGoodsFlipPager.swiper-pager-white.swiper-pagination
+    //- #sliderGoodsFlipPrev.swiper-button-white.swiper-button-prev
+    //- #sliderGoodsFlipNext.swiper-button-white.swiper-button-next
+

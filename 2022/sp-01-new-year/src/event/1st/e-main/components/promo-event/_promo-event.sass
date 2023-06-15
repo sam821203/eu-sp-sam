@@ -1,0 +1,78 @@
+.promo__group--promo-event
+  +pos-set(relative, zero)
+  overflow: hidden
+  margin-top: -48%
+  +breakpoint-min($min-width-xl)
+    margin-top: -540px
+  
+
+  .promo__wrap
+    +aspect-ratio(960, 873)
+  .promo__zone
+    +pos-set(relative, zero)
+    padding: 9% 8% 0
+    +bg-set(url(event/1st/e-main/components/promo-event/bg-promo-event.png), 100%)
+    .promo__block
+      .event__block
+        display: flex
+        justify-content: center
+        padding-bottom: 1%
+        .event__item
+          &:first-child
+            // padding-right: 6%
+      .event__wrap
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+        li
+          padding-left: 1%
+          padding-bottom: 3%
+          width: 49%
+      .event__slide
+        margin-top: 2%
+        margin-left: 26%
+        padding: 0 7%
+
+
+
+
+
+.animate
+  // transition: 2s
+  animation: heartBeat 1.5s 1s both 1 linear
+
+
+@keyframes heartBeat
+  0%
+    transform: scale(1)
+  14%
+    transform: scale(1.1)
+    filter: brightness(1.02)
+  28%
+    transform: scale(1)
+    filter: brightness(1.1)
+  42%
+    transform: scale(1.1)
+    filter: brightness(1.07)
+  64%
+    transform: scale(1)
+    filter: brightness(1.1)
+  70%
+    transform: scale(1)
+
+
+@keyframes headShake
+  0%
+    transform: translateX(0)
+  6.5%
+    transform: translateX(-6px) rotateY(-9deg)
+  18.5%
+    transform: translateX(5px) rotateY(7deg)
+  31.5%
+    transform: translateX(-3px) rotateY(-5deg)
+    filter: brightness(1.15)
+  43.5%
+    transform: translateX(2px) rotateY(3deg)
+    filter: brightness(1.2)
+  50%
+    transform: translateX(0)

@@ -1,0 +1,286 @@
+/* == initial style == */
+
+body {
+    font-family: PingFangTC-regular, "LiHei Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Source Han Sans TC", "Microsoft JhengHei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    margin: 0;
+    padding: 0;
+}
+
+.l--left {
+    float: left;
+}
+
+.l--right {
+    float: right;
+}
+
+.sp--frame {
+    margin: 0px auto;
+    position: relative;
+    max-width: 1260px;
+}
+
+/*== nav style ==*/
+
+.sp-is--hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sp-fixed__nav * {
+    box-sizing: border-box;
+}
+
+/*側選單位置設定:right左右位置+寬度*/
+
+.sp-fixed__nav {
+    position: relative;
+    overflow-x: auto;
+    z-index: 600;
+    /* 寬度設死有問題 */
+    /*width: 1260px;*/
+    width: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.sp-fixed__nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sp-fixed__nav ul:after {
+    content: '';
+    clear: both;
+    display: block;
+    zoom: 1;
+}
+
+/*== end of nav style == */
+
+/*!* 看bar height *!*/
+
+.pt--body {
+    margin-top: 39px;
+}
+
+/* fix u-mall "position:fixed" not working */
+
+.main, .side {
+    transform: none;
+}
+
+/* mobile */
+
+@media screen and (max-width: 1212px) {
+    .sp-nav_ul {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: initial;
+        /*max-width: 1260px;*/
+        /* custom */
+        background-color: #ffb64d;
+        color: #fff;
+    }
+    .sp-nav_ul::-webkit-scrollbar {
+        display: none;
+    }
+    /* fixed 加入大網 */
+    .sp-fixed__nav li.sp-nav__app, .sp-fixed__nav li.sp-nav__top {
+        display: none;
+    }
+    /*側選單子選項設定:文字大小*/
+    .sp-fixed__nav li {
+        display: inline-block;
+        text-align: center;
+        font-size: 14px;
+        min-width: 87px;
+        max-height: 39px;
+        overflow-y: hidden;
+    }
+    /* mobile active bg color */
+    .sp-fixed__nav li.active, .sp-fixed__nav li:hover {
+        background-color: #ffb64d;
+    }
+    /* mobile active text color */
+    .sp-fixed__nav li.active a, .sp-fixed__nav a:hover, .sp-nav__home a:hover {
+        transition: 1s;
+        background-color: #8c0000;
+        color: #fff;
+    }
+    .sp-fixed__nav li:hover {
+        transition: 1s;
+    }
+    /*側選單子選項設定:底圖+底色+上下距*/
+    .sp-fixed__nav a {
+        display: inline-block;
+        position: static;
+        z-index: 1;
+        overflow: hidden;
+        min-width: 87px;
+        height: 39px;
+        line-height: 39px;
+        padding: 1px 5px;
+        text-decoration: none;
+        /* custom */
+        color: #591301;
+    }
+    .sp-nav__home a:hover:after {
+        background: none;
+    }
+    /* 側選單表頭設定:底圖+高 */
+    .sp-nav__home a {
+        position: absolute;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+        width: 87px;
+        height: 39px;
+        white-space: nowrap;
+        text-indent: 0;
+        padding: 1px;
+        color: #fff;
+        background: url(main_battle.jpg) 0 0 no-repeat;
+        background-size: 87px, 39px;
+    }
+    /* id 寫法(之後拿掉) TODO */
+    .elevatorHome, #elevatorHome {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        z-index: 102;
+    }
+    /* app error */
+    .n-sp__box {
+        overflow: visible;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    /* mobile active bg color */
+    .sp-fixed__nav li:hover {
+        background-color: transparent;
+    }
+    /* mobile active text color */
+    .sp-fixed__nav a:hover, .sp-nav__home a:hover {
+        transition: 0;
+        color: #fff;
+    }
+}
+
+@media screen and (min-width: 1213px) {
+    .logo__sp {
+        background: url(u-logo.png) 0 0 no-repeat;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 500;
+        width: 150px;
+        height: 55px;
+    }
+    /*== initial style ==*/
+    /* */
+    .sp--frame .sp-fixed__nav2 {
+        display: none;
+    }
+    /*側選單位置設定:right左右位置+寬度*/
+    .sp-fixed__nav {
+        position: fixed;
+        z-index: 600;
+        width: 120px;
+        right: 50%;
+        margin-right: -604px;
+        top: 5%;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+    .sp-fixed__nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    /*側選單子選項設定:文字大小*/
+    .sp-fixed__nav li {
+        display: block;
+        text-align: center;
+        font-size: 16px;
+    }
+    /*側選單子選項設定:底圖+底色+上下距*/
+    .sp-fixed__nav a {
+        background: url(nav_bg.png) 0 0 repeat-y;
+        display: block;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        position: relative;
+        z-index: 1;
+        text-decoration: none;
+        font-family: "微軟正黑體";
+        /* custom */
+        color: #591301;
+    }
+    /* hover or active : text-color */
+    .sp-fixed__nav li.active a, .sp-fixed__nav a:hover {
+        /* custom */
+        color: #fff;
+    }
+    /* 側選單子選項設定:滑過去的底色 */
+    .sp-fixed__nav li.active a:after, .sp-fixed__nav a:hover:after {
+        position: absolute;
+        z-index: -1;
+        content: "";
+        top: 0;
+        /* right: 11px; */
+        /* width: 97px; */
+        height: 34px;
+        /* custom */
+        right: 3px;
+        width: 113px;
+        background-color: #dc5572;
+        color: #fff;
+    }
+    /* 側選單表頭設定:底圖+高 */
+    .sp-nav__home a {
+        overflow: hidden;
+        background: url(nav_home.png) 0 0 no-repeat;
+        height: 168px;
+        white-space: nowrap;
+        text-indent: 1000%;
+    }
+    .sp-nav__home a:hover:after, .sp-nav__top a:hover:after, .sp-nav__app a:hover:after {
+        background: none;
+    }
+    /*側選單表底設定:底圖+高*/
+    .sp-nav__app a {
+        overflow: hidden;
+        background: url(nav_app.png) 0 0 no-repeat;
+        white-space: nowrap;
+        text-indent: 1000%;
+        /* custom */
+        height: 121px;
+    }
+    .sp-nav__top a {
+        overflow: hidden;
+        background: url(nav_top.png) 0 0 no-repeat;
+        white-space: nowrap;
+        text-indent: 1000%;
+        /* custom */
+        height: 48px;
+    }
+}
+
+@media screen and (min-width: 1241px) and (max-width: 1366px) {
+    /* 浮水印擋到 */
+    .sp--iconHome {
+        top: 39px;
+    }
+}

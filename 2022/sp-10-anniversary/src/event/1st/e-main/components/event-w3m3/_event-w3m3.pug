@@ -1,0 +1,56 @@
+-
+  var w3m3Data = [
+    { // 1
+      link: "https://www.etmall.com.tw/Activity/CouponReceiveAll#%e7%be%8e%e9%a1%8f%e7%a5%9e%e5%88%b8",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-1.png",
+      alt: "美顏神券"
+    },
+    { // 2
+      link: "https://www.etmall.com.tw/Activity/CouponReceiveAll#%e4%bf%9d%e5%81%a5%e7%a5%9e%e5%88%b8",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-2.png",
+      alt: "保健神券"
+    },
+    { // 3
+      link: "https://www.etmall.com.tw/Activity/CouponReceiveAll#%e7%b2%be%e9%81%b8%e7%a5%9e%e5%88%b8",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-3.png",
+      alt: "精選神券"
+    },
+    { // 4
+      link: "https://www.etmall.com.tw/Activity/CouponReceiveAll#%e5%b1%85%e5%ae%b6%e7%94%9f%e6%b4%bb",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-4.png",
+      alt: "居家生活"
+    },
+    { // 5
+      link: "https://www.etmall.com.tw/Activity/CouponReceiveAll#%e7%94%9f%e6%b4%bb%e4%bc%91%e9%96%92",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-5.png",
+      alt: "生活休閒"
+    },
+    { // 6
+      link: "https://www.etmall.com.tw/Activity/CouponReceiveAll#%e6%97%97%e8%89%a6%e7%a5%9e%e5%88%b8",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-6.png",
+      alt: "旗艦神券"
+    },
+  ]
+
+section.promo__group.promo__group--w3m3(data-title="領券現折")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--title#decorEventW3M3Title
+        img(src="event/1st/e-main/components/event-w3m3/title-event-w3m3.png", alt="")
+      .decor__item.decor__item--center#decorEventW3M3Center
+        img(src="event/1st/e-main/components/event-w3m3/decor-event-w3m3-1.png", alt="")
+      .decor__item.decor__item--middle#decorEventW3M3Middle
+        img(src="event/1st/e-main/components/event-w3m3/decor-event-w3m3-2.png", alt="")
+      .decor__item.decor__item--outer#decorEventW3M3Outer
+        img(src="event/1st/e-main/components/event-w3m3/decor-event-w3m3-3.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          #w3m3Wrap.event__wrap
+            ul.good__wrap
+              each data, index in w3m3Data
+                li
+                  a(href= data.link, title= data.alt)
+                    - var hasImg = data.imgSrc ? true : false
+                    if (hasImg)
+                      img(src= data.imgSrc, alt= data.alt)

@@ -1,0 +1,110 @@
+/*== initial style ==*/
+
+body{
+  font-family: Arial, Helvetica, 'LiHei', "Microsoft JhengHei", "PMingLiU", "微軟正黑體", "新細明體", sans-serif;  
+  margin: 0;
+  padding: 0;
+}
+img {
+  display: block;
+  border: 0
+}
+
+
+
+.l--left{
+    float: left;
+}
+.l--right{
+    float: right;
+}
+
+.sp--1260 {
+    margin: 0px auto;
+    position: relative;
+    width: 1260px;
+}
+.logo__sp {
+    background: url(../u-logo.png) 0 0 no-repeat;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 500;
+    width: 150px;
+    height: 55px;
+}
+/*== initial style ==*/
+
+/*== nav style ==*/
+
+.sp-is--hide{opacity: 0;}
+
+.sp-fixed__nav{
+    position: fixed;
+    z-index: 600;
+    width: 120px;
+    right: 50%;
+    margin-right: -720px;
+    top: 5%;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.sp-fixed__nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.sp-fixed__nav li{
+    text-align: center;
+    font-size: 16px;
+}
+.sp-fixed__nav a{
+    background: url(../nav_bg.png) 0 0 repeat-y;
+    display: block;
+    color: #161412;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: relative;
+    z-index: 1;
+    text-decoration: none
+}
+.sp-fixed__nav a:hover{
+    color: #fff;
+}
+.sp-fixed__nav a:hover:after{
+    content: "";
+    background: rgba(245, 52, 32, 0.9);
+    position: absolute;
+    z-index: -1;
+    width: 93px;
+    height: 31px;
+    top: 0;
+    right: 10px;
+   
+}
+.sp-nav__home a{
+    background: url(../nav_home.png) 0 0 no-repeat;
+    height: 122px;
+    white-space: nowrap;
+    text-indent: 1000%;
+    overflow: hidden;
+    margin-bottom: -10px;
+}
+.sp-nav__home a:hover:after, .sp-nav__top a:hover:after{
+    background: none;
+}
+
+.sp-nav__top a{
+    background: url(../nav_top.png) 0 0 no-repeat;
+    height: 85px;
+    white-space: nowrap;
+    text-indent: 1000%;
+    overflow: hidden;
+}
+
+
+
+/*== nav style ==*/

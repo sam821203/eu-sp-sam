@@ -1,0 +1,59 @@
+.promo__group--dynamic-slider-half
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__wrap
+    +pos-set(absolute, zero, 0%, 0%)
+    +breakpoint-min($min-width-xl)
+      top: 2%
+      left: calc(50% - 390px)
+    // top: 0%
+    // left: 0%
+      // transform: translate(26%, -20%)
+  .promo__wrap
+    +aspect-ratio(960, 1003)
+  .promo__zone
+    +bg-set(url(event/1st/e-main/components/dynamic-slider-half/bg-dynamic-slider-half.png), 100%)
+    padding: 47% 4% 0
+    .promo__block
+      display: flex
+      justify-content: space-between
+      .promo__box
+        margin-top: 2%
+        margin-right: 1%
+        +breakpoint-min($min-width-xl)
+          margin-right: 0
+          a
+            width: 260px
+            img
+              width: 100%
+      .slider__box
+        width: 70%
+        margin-top: .6%
+        +breakpoint-min($min-width-xl)
+          width: 610px
+          margin-top: 2.4%
+        .promo__slider
+          // +pos-set(relative, zero)
+          // width: 100%
+          .swiper-slide
+            // width: 41%
+            .product--dynamic
+              width: 100%
+              .product__block
+                padding: 1.5% 2%
+                .product__img
+                  border-radius: 0
+                .product__text
+                  border-radius: 0
+                  .product__name
+                    padding-top: 4%
+                    height: 9.3vw
+                    font-size: 3.3vw
+                    +breakpoint-min($min-width-xl)
+                      padding-top: 2%
+                      height: 60px
+                      font-size: 22px
+                  .product__price
+                    padding: 3% 2%
+
+            // margin-bottom: 0

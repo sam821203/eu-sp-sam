@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+	<title>1111爽購節 -- 森森購物網U-mall</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="http://www.u-mall.com.tw/favicon.ico">
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		* {
+ 		 box-sizing: border-box; }
+  		*:before, *:after {
+    		box-sizing: border-box; }
+	    a {
+	    	text-decoration: none;
+	    }
+		ul {
+			list-style: none;
+		}
+		img {
+			border: 0;
+			display: block;
+		}
+		body {
+			background-color: #a4000d;
+		  	font-family: Arial, Helvetica, 'LiHei', "Microsoft JhengHei", "PMingLiU", "微軟正黑體", "新細明體", sans-serif;  
+			margin: 0;
+  			padding: 0;
+		}
+
+		.sp__wrap {
+			display: block;
+			background: center top url(img/bg.jpg) no-repeat;
+		}
+		
+		.sp--1260 {
+			position: relative;
+			width: 1260px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+/* ================= header ================= */
+		.sp-logo {
+			position: absolute;
+			z-index: 1;
+			top: 20px;
+			left: 0;
+		}
+
+		.side-info {
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			right: 0;
+		}
+
+		.side-info a {
+			position: absolute;
+			z-index: 100;
+			left: 0;
+			width: 95%;
+			height: 45%;
+		}
+
+		.side-info a:nth-child(2) {
+			top: 35px;
+		}
+
+		.side-info a:nth-child(3) {
+			bottom: 6px;
+		}
+
+/* ================= main-visual ================= */
+		.sp-title {
+			display: inline-block;
+			position: relative;
+			height: 638px;
+			margin-left: -125px;
+		}
+
+		.sp-title img {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		.sp-title img:first-child {	
+			z-index: 1;
+
+		}
+
+		.sp-title img:nth-child(2) {
+			width: 200px;
+			top: -30px;
+			left: 390px;
+			z-index: 2;
+			filter: brightness(130%) opacity(95%);
+			animation: breath-light 4s infinite;
+		}
+		@keyframes breath-light {
+			from {
+				transform: scale(1);
+				filter: brightness(130%) opacity(95%) blur(0);
+			}
+			50%{
+				transform: scale(1.2);
+				filter: brightness(130%) opacity(90%) blur(3px);
+			}
+			to {
+				transform: scale(1);
+				filter: brightness(130%) opacity(95%) blur(0);
+			}
+		}
+
+		.sp-title img:last-child {	
+			width: 590px;
+			top: 10px;
+			left: 210px;
+			z-index: 0;
+			animation: rotate-title 6s infinite linear;
+		}
+
+		@keyframes rotate-title {
+			from {
+				transform: rotate(0);
+				filter: brightness(100%);
+			}
+			50% {
+				filter: brightness(110%);
+			}
+			to {
+				transform: rotate(360deg);
+				filter: brightness(100%);
+			}
+		}
+		
+		.sp-slider {
+			float: right;
+			width: 369px;
+			height: 540px;
+			margin-top: 60px;
+			margin-right: 117px;
+			background: url(img/slider-bg.png) no-repeat;
+			overflow: hidden;
+		}
+
+/* ================= product_img-slider ================= */
+		.product-slider {
+			margin-top: 35px;
+			margin-left: 23px;
+			overflow: hidden;
+		}
+
+/* ================= logo-slider ================= */
+		.sp-content	{
+			width: 1260px;
+			height: 508px;
+			margin-top: -67px;
+			padding-top: 49px;
+			background: url(img/main-bg.png);
+		}
+
+		.sp-content > img:first-child {
+			width: 1208px;
+			height: 160px;
+			margin-left: 21px;
+			margin-bottom: 15px;
+		}
+
+		.logo-slider {
+			width: 100%;
+			height: 87px;
+			padding: 0 27px;
+		}
+
+		.logo-group {
+			float: left;
+		}
+
+		.logo-group img {
+			float: left;
+		}
+
+		.sp-content:after,
+		.logo-slider:after,
+		.logo-group:after {
+			content: '';
+			clear: both;
+			display: block;
+		}
+/* ================= main-content ================= */
+		.main-info {
+			width: 655px;
+			margin-top: 20px;
+			overflow: hidden;
+			float: left;
+		}
+		
+		.main-info:nth-child(3) {
+			margin-left: 25px
+		} 
+
+		.main-info:nth-child(4) {
+			width: 480px;
+			margin-left: 50px;
+		}
+
+/* ================= iframe ================= */
+	.product-iframe {
+		width: 100%;
+	}
+
+	.product-iframe:first-child {
+		margin-top: 30px;
+	}
+
+/* ================= nav ================= */
+
+/* ================= umbrella  ================= */	
+	.umbrella {
+		position: absolute;
+		top: -20%;
+	}
+
+	@media screen and (max-width: 1440px) {
+		.umbrella {
+			display: none;
+		}
+	}
+
+	.umbrella--left-top {
+		z-index: 10;
+		top: -15px;
+		left: -250px;
+		animation: u-left-down 2s ease-in-out, u-rotate-left-top 5s 2s infinite ease-in-out;
+
+	}
+
+	@keyframes u-left-down {
+		from {
+			top: -100px;
+			transform: rotate(45deg);
+		}
+		to {
+			top: -15px;
+			transform: rotate(0deg);
+		}
+	}
+	@keyframes u-rotate-left-top {
+		from{
+			transform: rotate(0deg);
+		}
+		50% {
+			transform: rotate(15deg);
+		}
+		to {
+			transform: rotate(0deg);
+		}
+	}
+
+	.umbrella--right-top {
+		z-index: 0;
+		top: 115px;
+		right: -210px;
+		animation: u-right-down 4s ease-in-out, u-rotate-right-top 6s 4s infinite linear;
+	}
+
+	@keyframes u-right-down {
+		from {
+			top: -100px;
+			transform: rotate(-60deg);
+		}
+		to {
+			top: 115px;
+			transform: rotate(0deg);
+		}
+	}
+
+	@keyframes u-rotate-right-top {
+		from{
+			transform: rotate(0deg);
+		}
+		25% {
+			transform: rotate(-10deg);
+		}
+		50% {
+			transform: rotate(0deg);
+		}
+		70% {
+			transform: rotate(10deg);
+		}
+		to {
+			transform: rotate(0deg);
+		}
+	}
+
+/* ================= umbrella background  ================= */
+	.umbrella--left-bottom {
+		z-index: 5;
+		animation: u-left-background 15s 10s infinite ease-out, u-rotate 10s infinite;
+	}
+
+	@keyframes u-left-background {
+		from{
+			top: -20%;
+			left: -400px;
+			filter: brightness(120%);
+		}
+		90% {
+			opacity: 1;
+		}
+		to {
+			top: 1440px;
+			left: -200px;
+			transform: rotate(15deg) scale(0.8);
+			filter: brightness(60%);
+			opacity: 0;
+		}
+	}
+	@keyframes u-rotate {
+		from{
+			transform: rotate(-30deg) scale(0.8);
+		}
+		50% {
+			transform: rotate(30deg) scale(0.8);
+		}
+		to {
+			transform: rotate(-30deg) scale(0.8);
+		}
+	}
+
+	.umbrella--right-bottom {
+		z-index: 0;
+		animation: u-right-background 15s 12s infinite ease-out, u-rotate2 8s infinite;
+	}
+
+	@keyframes u-right-background {
+		from {
+			top: -20%;
+			right: -350px;
+			filter: brightness(150%);
+		}
+		90% {
+			opacity: 1;
+		}
+		to {
+			top: 1500px;
+			right: -250px;
+			filter: brightness(60%);
+			opacity: 0;
+		}
+	}
+	@keyframes u-rotate2 {
+		from{
+			transform: rotate(-15deg) scale(0.8);
+		}
+		50% {
+			transform: rotate(15deg) scale(0.8);
+		}
+		to {
+			transform: rotate(-15deg) scale(0.8);
+		}
+	}
+
+	.umbrella--middle1 {
+		z-index: 0;
+		animation: u-middle-background 12s 3s infinite ease-out, u-rotate2 8s infinite;
+	}
+
+	@keyframes u-middle-background {
+		from {
+			top: -20%;
+			right: -120px;
+			filter: brightness(110%);
+		}
+		90% {
+			opacity: 1;
+		}
+		to {
+			top: 1350px;
+			right: -250px;
+			filter: brightness(60%);
+			opacity: 0;
+		}
+	}
+	@keyframes u-rotate2 {
+		from{
+			transform: rotate(-35deg) scale(0.8);
+		}
+		50% {
+			transform: rotate(15deg) scale(0.8);
+		}
+		to {
+			transform: rotate(-35deg) scale(0.8);
+		}
+	}
+	.umbrella--middle2 {
+		z-index: 4;
+		animation: u-middle2-background 10s 5s infinite ease-out, u-rotate2 15s infinite;
+	}
+
+	@keyframes u-middle2-background {
+		from {
+			top: -20%;
+			left: -80px;
+			filter: brightness(180%);
+		}
+		90% {
+			opacity: 1;
+		}
+		to {
+			top: 1600px;
+			left: -150px;
+			filter: brightness(70%);
+			opacity: 0;
+		}
+	}
+	@keyframes u-rotate2 {
+		from{
+			transform: rotate(-35deg) scale(0.8);
+		}
+		50% {
+			transform: rotate(15deg) scale(0.8);
+		}
+		to {
+			transform: rotate(-35deg) scale(0.8);
+		}
+	}
+
+	</style>
+</head>
+<body>
+	<main id="spWrap" class="sp__wrap">
+		<div class="sp--1260">
+			<header>
+				<div class="sp-logo">
+					<a href="http://www.u-mall.com.tw/" title="森森購物網U-mall">
+						<img src="img/logo.png" alt="森森購物網U-mall">
+					</a>
+			  </div>
+				<aside class="side-info">
+					<img src="img/line.png" alt="QR-code">
+				</aside>
+			</header>
+			<div class="sp-title">
+				<img src="img/title.png" alt="1111爽購節 -- 森森購物網U-mall">
+				<img src="img/pink_light.png" alt="">
+				<img src="img/circle.png" alt="">
+			</div>
+			<div class="sp-slider">
+	    		<div id="productSlider" class="cycle-slideshow product-slider"
+				data-cycle-fx="scrollHorz"
+				data-cycle-pause-on-hover="true"
+				data-cycle-speed="200"
+				data-cycle-slides="> a">
+
+	    		</div>				
+			</div>
+			<section class="sp-content">
+				<img src="img/88note.gif" alt="">
+				<div class="logo-slider">
+		    		<div id="logoContainer" class="cycle-slideshow"
+	    			data-cycle-fx="scrollHorz"
+	    			data-cycle-pause-on-hover="true"
+	    			data-cycle-speed="200"
+	    			data-cycle-slides="> a">
+
+	    			</div>
+				</div>
+				<div class="main-info"><a href="http://www.u-mall.com.tw/SimpleTemplate.aspx?SubPage=DMSetting/Final/201711/SP_1100728/index.html" title="" target="_blank"><img src="img/main1.png" alt=""></a></div>
+				<div class="main-info"><a href="http://www.u-mall.com.tw/SimpleTemplate.aspx?SubPage=DMSetting/Final/201711/SP_1100730/index.html" title="" target="_blank"><img src="img/main2.png" alt=""></a></div>
+			</section>
+			<section>
+				<iframe id="mainFrame" class="product-iframe" frameborder="0" scrolling="no" src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201711/SP_1100857/index.html" ></iframe>
+				<iframe id="mainFrame2" class="product-iframe" frameborder="0" scrolling="no" src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201711/SP_1100866/index.html" ></iframe>
+			</section>
+			<img class="umbrella umbrella--left-top" src="img/u_lt.png" alt="">
+			<img class="umbrella umbrella--right-top" src="img/u_rt.png" alt="">
+			<img class="umbrella umbrella--left-bottom" src="img/u_lt.png" alt="">
+			<img class="umbrella umbrella--right-bottom" src="img/u_rt.png" alt="">
+			<img class="umbrella umbrella--middle1" src="img/u_lt.png" alt="">
+			<img class="umbrella umbrella--middle2" src="img/u_rt.png" alt="">
+		</div>
+	</main>
+
+	<script src="http://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+	<script src="http://www.etmall.com.tw/Scripts/lib/jquery/jquery.cycle2.min.js"></script>
+	<script src="http://www.etmall.com.tw/Scripts/lib/jquery/jquery.cycle2.carousel.min.js"></script>
+	<script type="text/javascript" src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201509/SP_1021444/generateVersion20171103.js" defer></script>
+	<script src="sp-script20171108.js"></script>
+	<script>
+		$(function(){
+			setTimeout(function () {
+			      $(".product-iframe").on('load', function () {
+			        $(this).css({
+			          height: $(this).contents().height()
+			        });
+			      });
+			    }, 0);
+
+    	    var ifreamTop = $("#mainFrame").offset().top
+
+		    $('.logo-group').on('click', function(e) {
+		        e.preventDefault();
+		        let storeSelfHref = $(this).attr('href');
+
+		        $('html, body').animate({
+		            scrollTop: ifreamTop + $('#mainFrame').contents().find('a').filter("[name='" + storeSelfHref + "']").offset().top
+		        });
+		    });
+		});
+	</script>
+</body>
+</html>	

@@ -1,0 +1,33 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero__wrap
+  +pos-set(relative, zero)
+  // +bg-set(url("~event/2nd/e-sp/components/hero-section/bg-hero.jpg"), 100%)
+  // overflow: hidden
+  +breakpoint-min($min-width-xl)
+    background-size: auto
+
+  .hero__zone
+    overflow: hidden
+
+  .hero__block
+    display: flex
+    +pos-set(relative, zero)
+    padding: 6% 6% 2%
+
+  .hero__box
+    width: 50%
+
+  .hero__title
+    &--main
+      width: 100%
+      text-align: center
+      transform-origin: center top
+
+  // TODO: 如果hero和promo要共用主視覺時的共用區塊背景設定 
+  // .promo__zone
+    // margin-top: 8%
+    //background-color: $gray-deep-light
+    // +breakpoint-min($min-width-xl)
+      // background-color: transparent

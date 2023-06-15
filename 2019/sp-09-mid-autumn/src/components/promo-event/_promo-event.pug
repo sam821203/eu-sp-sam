@@ -1,0 +1,14 @@
+- var promoDataE = [{link: "notyet", imgSrc: "~components/promo-event/items/e/promo-1.png", alt: "滿額登記抽999"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html", imgSrc: "~components/promo-event/items/e/promo-2.png", alt: "APP獨家首購好禮"}, {link: "notyet", imgSrc: "~components/promo-event/items/e/promo-3.png", alt: "萊爾富取件抽SAMSUNG Galaxy S10"}, {link: "notyet", imgSrc: "~components/promo-event/items/e/promo-4.png", alt: "全家超取抽買萬名車"}, ]
+
+- var promoDataU = [{link: "notyet", imgSrc: "~components/promo-event/items/u/promo-1.png", alt: ""}, {link: "notyet", imgSrc: "~components/promo-event/items/u/promo-2.png", alt: ""}, {link: "notyet", imgSrc: "~components/promo-event/items/u/promo-3.png", alt: ""}, {link: "notyet", imgSrc: "~components/promo-event/items/u/promo-4.png", alt: ""}, ]
+
+- var promoData = isU? promoDataU : promoDataE
+
+.promo__event
+  ul.event__wrap
+    each data, index in promoData
+      - var anchorId = 'promoAnchor' + (index + 1)
+      - var imgId = 'promoImg' + (index + 1)
+      li
+        a(id= anchorId, href= data.link, title= data.alt)
+          img(id= imgId, src= data.imgSrc, alt= data.alt)

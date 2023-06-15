@@ -1,0 +1,116 @@
+// IE10 看不到此版位
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+  .promo__group.promo__group--countdown
+    display: none
+  
+.countdown__wrap
+  +pos-set(relative, zero)
+  +bg-set(url("~event/3rd/e-main/components/countdown-section/bg-countdown.png"), 100%)
+
+  .swiper-button
+    &-prev,
+    &-next
+      top: 60%
+      width: 4%
+      background-image: none
+      outline: 0
+      +breakpoint-min($min-width-lg)
+        top: 57%
+      +breakpoint-min($min-width-xl)
+        top: 335px
+    &-prev
+      left: 6.15%
+    &-next
+      right: 5.6%
+
+  .timer__wrap
+    padding-top: 2.73%
+    color: $gray-dark
+    // +font-size(14)
+    font-size: 3.7vw
+    text-align: right
+    > span
+      display: inline-block
+      text-align: left
+      &:first-child
+        // width: 2em
+      &:last-child
+        margin-right: 22.6%
+        // width: 4em
+
+  .product__wrap--countdown
+    margin-left: auto
+    margin-right: auto
+    padding: 9% 0 6% 0.6%
+    width: 80%
+    .swiper-wrapper
+    .swiper-slide
+      background-color: $gray-deep-light
+    .product--just-standby,
+    .product--now,
+    .product--over
+      // +flex(0, 1, 33.33%)
+      // padding: 1%
+      a
+        color: $gray-dark
+        font-size: calc(0.5vw + 0.5vh + 0.4vmin)
+        > div
+          margin-bottom: 2% 
+      img
+        width: 100%
+      .product__img
+        padding: 0 6%
+      .product__name
+        +font-size(13)
+        +text-fool(2.6em)
+        margin: 0 1.5% 1.5%
+      .product__price
+        margin: 0 1.5%
+        span
+          &:first-child
+            font-size: 12px 
+          &:last-child
+            +font-size(14)
+            color: $primary-medium
+            font-weight: bold
+
+  +breakpoint-max($max-width-xxs)
+    .product__wrap--countdown
+      .product--just-standby,
+      .product--now,
+      .product--over
+        .product__img
+          padding: 0 10%
+
+
+  +breakpoint-min($min-width-lg)
+    .product__wrap--countdown
+      padding: 78px 0 70px 0.6%
+      .product--just-standby,
+      .product--now,
+      .product--over
+        .product__img
+          padding: 0
+        a
+          font-size: 20px
+        .product__price
+          span
+            &:first-child
+              font-size: 14px 
+            &:last-child
+              color: $primary-medium
+              font-weight: bold
+              font-size: 24px
+        .product__name
+          +font-size(15)
+          +text-fool(3em)
+
+  +breakpoint-min($min-width-xl)
+    margin-left: auto
+    margin-right: auto
+    width: 95%
+    .product__wrap--countdown
+      padding: 95px 0 70px 0.6%
+    .timer__wrap
+      font-size: 34px
+

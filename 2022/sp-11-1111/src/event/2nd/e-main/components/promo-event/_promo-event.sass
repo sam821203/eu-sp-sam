@@ -1,0 +1,111 @@
+.promo-event
+  overflow: hidden
+  .decor__wrap
+    padding-bottom: 3%
+  .decor__item
+    &--left
+      +pos-set(absolute, zero, 2%, 13%)
+      width: 20%
+      &.active
+        animation: key-rotate-from-to .8s linear infinite alternate-reverse
+      +breakpoint-min($min-width-xl)
+        left: calc( 50% - 350px )
+    &--right
+      +pos-set(absolute, base, 0%)
+      right: 1%
+      width: 26%
+      &.active
+        animation: key-rotate-from-to .8s linear infinite alternate
+      +breakpoint-min($min-width-xl)
+        right: calc( 50% - 430px )
+    &--light
+      +pos-set(absolute, base, 38%)
+      right: 32%
+      width: 12%
+      animation: light-flash 2.6s ease-out infinite
+      +breakpoint-min($min-width-xl)
+        right: calc( 50% - 170px )
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .promo__wrap
+    +bg-set(url(event/2nd/e-main/components/promo-event/bg-promo-event.png), 96%)
+  .promo__zone
+    +aspect-ratio(912, 1363)
+  .promo__block
+    padding: 28% 0% 0
+    +breakpoint-min($min-width-xl)
+      padding-top: 260px
+  .item__box
+    display: flex
+    li
+      +pos-set(relative, zero)
+      &::before
+        content: ''
+        +pos-set(absolute, base, -20%)
+        right: -6%
+        +bg-set(url(event/2nd/e-main/components/promo-event/decor-promo-ring.png), 60%)
+        width: 50%
+        height: 50%
+  .promo__box
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    padding: 1% 3% 0%
+    +breakpoint-min($min-width-xl)
+      padding-top: 20px
+    li
+      width: 37%
+      .swiper-container
+        li
+          width: 100%
+          text-align: center
+
+    .event__item
+      transition: all .5s
+      &:nth-child(1)
+        padding: 1% 4% 0 2%
+        +breakpoint-min($min-width-xl)
+          padding-top: 15px
+      &:nth-child(2)
+        padding-left: 6%
+        padding-right: 2%
+        +breakpoint-min($min-width-xl)
+          padding-left: 30px
+      &:nth-child(3)
+        +breakpoint-min($min-width-xl)
+          margin-top: 20px
+      &:nth-child(4)
+        padding: 3% 4% 0
+        +breakpoint-min($min-width-xl)
+          padding-top: 40px
+      &:nth-child(5)
+        padding-right: 8%
+      &:nth-child(6)
+        margin-top: -2%
+        margin-right: 3%
+        +breakpoint-min($min-width-xl)
+          margin-top: -20px
+      &:nth-child(7)
+        margin: -75% auto 0
+        +breakpoint-min($min-width-xl)
+          margin-top: -680px
+        a
+          padding: 0% 10% 0 8%
+
+      &:hover,
+      &:active
+        transform: translateY(-2%)
+        filter: contrast(1.2)
+    .promo__item
+      transition: all 0.5s
+
+.animate
+  transition: all 0.5s
+  transform: translateY(-2%)
+  filter: contrast(1.2)
+
+@keyframes light-flash
+  0%, 100%
+    filter: brightness(120%)
+  50%
+    filter: brightness(80%)

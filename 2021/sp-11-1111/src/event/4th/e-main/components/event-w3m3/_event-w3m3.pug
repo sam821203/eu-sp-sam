@@ -1,0 +1,94 @@
+-
+  var w3m3Data = [
+    { // 1
+      link: "https://media.etmall.com.tw/sp/11937/m/index.html",
+      imgSrc: "event/4th/e-main/components/event-w3m3/items/depart-1.png",
+      alt: "美妝冬保養"
+    },
+    { // 2
+      link: "https://media.etmall.com.tw/sp/11940/m/index.html",
+      imgSrc: "event/4th/e-main/components/event-w3m3/items/depart-2.png",
+      alt: "保健熱銷品"
+    },
+    { // 3
+      link: "https://media.etmall.com.tw/sp/11919/m/index.html",
+      imgSrc: "event/4th/e-main/components/event-w3m3/items/depart-3.png",
+      alt: "3C超值敗"
+    },
+    { // 4
+      link: "https://media.etmall.com.tw/sp/12061/m/index.html",
+      imgSrc: "event/4th/e-main/components/event-w3m3/items/depart-4.png",
+      alt: "通訊返場再購"
+    },
+    { // 5
+      link: "https://media.etmall.com.tw/sp/9421/m/index.html",
+      imgSrc: "event/4th/e-main/components/event-w3m3/items/depart-5.png",
+      alt: "廚電超豪買"
+    },
+    { // 6
+      link: "https://media.etmall.com.tw/sp/11707/m/index.html",
+      imgSrc: "event/4th/e-main/components/event-w3m3/items/depart-6.png",
+      alt: "泰山購物節"
+    },
+    { // 7
+      link: "https://media.etmall.com.tw/sp/11819/m/index.html",
+      imgSrc: "event/4th/e-main/components/event-w3m3/items/depart-7.png",
+      alt: "日用SHOW好價"
+    },
+    { // 8
+      link: "https://www.etmall.com.tw/gp/152720",
+      imgSrc: "event/4th/e-main/components/event-w3m3/items/depart-8.png",
+      alt: "禦寒保暖"
+    },
+    { // 9
+      link: "https://media.etmall.com.tw/sp/11529/m/index.html",
+      imgSrc: "event/4th/e-main/components/event-w3m3/items/depart-9.png",
+      alt: "旅遊抽餐券"
+    },
+    { // 10
+      link: "https://media.etmall.com.tw/sp/10222/m/index.html",
+      imgSrc: "event/4th/e-main/components/event-w3m3/items/depart-10.png",
+      alt: "日立送6000"
+    },
+    { // 11
+      link: "https://www.etmall.com.tw/gp/152538",
+      imgSrc: "event/4th/e-main/components/event-w3m3/items/depart-11.png",
+      alt: "精品0利率"
+    },
+    { // 12
+      link: "https://media.etmall.com.tw/sp/11498/m/index.html",
+      imgSrc: "event/4th/e-main/components/event-w3m3/items/depart-12.png",
+      alt: "Switch OLED"
+    },
+    { // 13
+      link: "https://media.etmall.com.tw/sp/11746/m/index.html",
+      imgSrc: "event/4th/e-main/components/event-w3m3/items/depart-13.png",
+      alt: "傢寢延燒慶"
+    },
+    { // 14
+      link: "https://media.etmall.com.tw/sp/9400/m/index.html",
+      imgSrc: "event/4th/e-main/components/event-w3m3/items/depart-14.png",
+      alt: "返場接這購"
+    },
+    { // 15
+      link: "https://www.etmall.com.tw/gp/152951",
+      imgSrc: "event/4th/e-main/components/event-w3m3/items/depart-15.png",
+      alt: "海外優品免運"
+    },
+  ]
+
+section.promo__group.promo__group--w3m3.m-bottom--lg(data-title="熱門活動")
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        .decoration__box#decorEventW3M3
+          img(src="event/4th/e-main/components/event-w3m3/decor-event-w3m3.png", alt="")
+        #w3m3Wrap.event__wrap
+          .promo__block.m-bottom--xs
+            ul.good__wrap
+              each data, index in w3m3Data
+                li
+                  a(href= data.link, title= data.alt)
+                    - var hasImg = data.imgSrc ? true : false
+                    if (hasImg)
+                      img(src= data.imgSrc, alt= data.alt)

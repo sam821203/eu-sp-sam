@@ -1,0 +1,22 @@
+- var bankLink = {etmall: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201909/SP_1107837/w/index.html", umall: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201909/SP_1104316/w/index.html"}
+- var bankInfo = isU ? bankLink.umall : bankLink.etmall
+
+.promo__slider.hero__slider
+  #sliderSmall.swiper-container
+    ul.swiper-wrapper
+      li.swiper-slide
+        h2.hero__title.hero__title--sub.block--center
+          a(href= bankInfo, title="台新、花旗、聯邦最高回饋10%")
+            img(src="~components/hero-small-slider/items/sub-title-1.png", alt="台新、花旗、聯邦最高回饋10%")
+            //- img(src="~components/hero-small-slider/items/sub-title-web-1.png", alt="20間銀行最高回饋10%")
+      li.swiper-slide
+        h2.hero__title.hero__title--sub.block--center
+          a(href= "notyet", title="星展、凱基、土銀最高回饋10%")
+            img(src="~components/hero-small-slider/items/sub-title-2.png", alt="星展、凱基、土銀最高回饋10%")
+            //- img(src="~components/hero-small-slider/items/sub-title-web-2.png", alt="消費登記抽好禮")
+
+      li.swiper-slide
+        h2.hero__title.hero__title--sub.block--center
+          a(href= "notyet", title="搶券折999")
+            img(src="~components/hero-small-slider/items/sub-title-3.png", alt="搶券折999")
+            //- img(src="~components/hero-small-slider/items/sub-title-web-3.png", alt="消費登記抽好禮")

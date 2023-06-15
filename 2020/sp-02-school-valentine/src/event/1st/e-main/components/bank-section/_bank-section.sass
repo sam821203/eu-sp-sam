@@ -1,0 +1,68 @@
+.promo__group--bank
+  .promo__zone
+    // +bg-set(null, cover)
+  .promo__title
+    +bg-set(url("~components/bank-section/img/3rd/e/section-bn-04.png"))
+    margin-top: 2%
+
+  .promo__wrap
+    padding-top: 65%
+    .promo__slider
+      padding: 0 2%
+      width: 100%
+    .swiper-container
+      width: 100%
+      height: 100%
+    .swiper-slide
+      width: 33%
+      opacity: 0.95
+      filter: grayscale(100%)
+      a
+        transform: translateY(-2%) scale(0.9)
+    .swiper-slide-active,
+    .swiper-slide-duplicate-active
+      opacity: 1
+      filter: grayscale(0)
+    .swiper-slide-shadow
+      &-left,
+      &-right
+        transform: translateY(-4%) scale(0.8)
+
+    .swiper-slide-visible
+      a
+        // opacity: 1
+    .swiper-pager-white
+      bottom: 0.8%
+    .swiper-button-prev,
+    .swiper-button-next
+      display: none
+  +breakpoint-min($min-width-lg)
+    .promo__zone
+      background-size: auto
+    .promo__wrap
+      padding-top: 30%
+      .promo__slider
+        padding: 0 6%
+        .swiper-container
+          // height: 80%
+        .swiper-slide
+          width: 25%
+          opacity: 1
+          filter: grayscale(0)
+        // .swiper-slide-shadow
+        //   &-left,
+        //   &-right
+        //     transform: translateY(-5%) scale(0.8)
+        .swiper-pager-white
+          bottom: 10px
+        .swiper-button-prev,
+        .swiper-button-next
+        //   display: block
+        //   top: 50%
+        // .swiper-button-prev
+        //   left: 2.85%
+        // .swiper-button-next
+        //   right: 2.85%
+  +breakpoint-min($min-width-xl)
+    // +bg-set(url("~components/bank-section/2560bg-05.jpg"))
+

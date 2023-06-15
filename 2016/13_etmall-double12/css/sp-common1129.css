@@ -1,0 +1,159 @@
+/*== initial style ==*/
+
+body{
+  font-family: Arial, Helvetica, 'LiHei', "Microsoft JhengHei", "PMingLiU", "微軟正黑體", "新細明體", sans-serif;  
+  margin: 0;
+  padding: 0;
+}
+img {
+  display: block;
+  border: 0
+}
+
+
+
+.l--left{
+    float: left;
+}
+.l--right{
+    float: right;
+}
+
+.sp--1260 {
+    margin: 0px auto;
+    position: relative;
+    width: 1260px;
+}
+
+/*== initial style ==*/
+
+/*== nav style ==*/
+
+.sp-is--hide{opacity: 0;}
+
+.sp-fixed__nav{
+    position: fixed;
+    z-index: 617;
+    width: 143px;
+    /*right: 50%;
+    margin-right: -765px;*/
+    right: 10px;
+    top: 5%;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.sp-fixed__nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.sp-fixed__nav li{
+    text-align: center;
+    font-size: 16px;
+}
+.sp-fixed__nav a{
+    background: url(../images/nav_bg.png) 0 0 repeat-y;
+    display: block;
+    color: #bbbcf9;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: relative;
+    z-index: 1;
+    text-decoration: none
+}
+.sp-fixed__nav a:hover{
+    color: #ffe54e;
+}
+.sp-fixed__nav .sp-nav__home a:after{
+	background:none;}
+.sp-fixed__nav  .sp-nav__top a:after{
+	background:none;}
+.sp-fixed__nav a:after{
+    content: "";
+    background: #7301b4;
+    position: absolute;
+    z-index: -1;
+    width: 91px;
+    height: 29px;
+    top: 0;
+    right: 25px;}
+   
+.sp-fixed__nav a:hover:after{
+    content: "";
+    background: #b8087e;
+    position: absolute;
+    z-index: -1;
+    width: 93px;
+    height: 31px;
+    top: 0;
+    right: 25px;
+   
+}
+.sp-nav__home a{
+    background: url(../images/nav_home.png) 0 0 no-repeat;
+    height: 116px;
+    white-space: nowrap;
+    text-indent: 1000%;
+    overflow: hidden;
+    margin-bottom: -10px;
+}
+.sp-nav__home a:hover:after, .sp-nav__top a:hover:after{
+    background: none;
+}
+
+.sp-nav__top a{
+    background: url(../images/nav_top.png) 0 0 no-repeat;
+    height: 64px;
+    white-space: nowrap;
+    text-indent: 1000%;
+    overflow: hidden;
+}
+
+.sp-warpper{
+    background-position: center 65px !important;
+}
+
+.sp__countdown{
+    background: url(../images/e-clock1212.jpg) center 0 no-repeat;
+    height: 65px;
+}
+.sp__countdown2{
+    background: url(../images/e-clock2-02.jpg) center 0 no-repeat;
+    height: 65px;
+}
+.sp__countdown p, .sp__countdown2 p{
+    position: absolute;
+    z-index: 10;
+    top: 10px;
+    right: 50%;
+    font-size: 44px;
+    font-weight: bold;
+    color: #000;
+    margin: 0;
+    margin-right: -400px;
+    padding: 0;
+}
+.sp__countdown2 p{
+    font-size: 38px;
+    margin-right: -447px;
+}
+.sp__countdown span{
+    margin-right: 95px;
+}
+.sp__countdown2 span{
+    margin-right: 50px;
+}
+.sp__countdown span:nth-child(2){
+    margin-right: 80px;
+}
+
+.sp__countdown2 span{
+    margin-right: 65px;
+}
+
+
+
+/*== nav style ==*/

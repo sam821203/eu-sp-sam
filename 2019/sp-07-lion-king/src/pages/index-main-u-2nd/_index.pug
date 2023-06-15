@@ -1,0 +1,132 @@
+//- 打開u-mall選項會自動轉換成U的logo和連結(預設etmall)
+//- 打開sp選項以切換行銷主視覺或是商品SP頁(main/ sp、預設是main)
+- var isU = true
+//- - var isSp = true
+
+main#spWrap.sp__wrap
+  section.hero.header__wrap
+    .layout--main
+
+      include /layout/logo/_logo.pug
+
+      section.promo__event
+        .layout--main
+          ul.event__wrap
+            li
+              a(href="https://www.u-mall.com.tw/Activity/Reg/8", title="消費滿萬送千")
+                img(src="~pages/index-main-u-2nd/img/2-Button_03.png", alt="消費滿萬送千")
+            li
+              a(href="https://www.u-mall.com.tw/Activity/Reg/8", title="首購登記送$100")
+                img(src="~pages/index-main-u-2nd/img/2-Button_04.png", alt="首購登記送$100")
+            li
+              a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201907/SP_1104714/w/index.html", title="萊爾富取件加價購")
+                img(src="~pages/index-main-u-2nd/img/2-Button_05.png", alt="萊爾富取件加價購")
+  section.promo__group.promo__group-6
+      .layout--main
+        .promo__wrap
+          #sliderRank.promo__slider.swiper-container
+            ul.swiper-wrapper
+              li.swiper-slide
+                a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201906/SP_1104687/w/index.html", title="抽Acer翻轉筆電")
+                  img(src="~pages/index-main-u-2nd/img/6-pp_01.png", alt="抽Acer翻轉筆電")
+              li.swiper-slide
+                a(href="https://www.u-mall.com.tw/c3/133202", title="Apple新機駕到")
+                  img(src="~pages/index-main-u-2nd/img/6-pp_02.png", alt="Apple新機駕到")
+              li.swiper-slide
+                a(href="https://www.u-mall.com.tw/np/64924", title="契爾氏46折up")
+                  img(src="~pages/index-main-u-2nd/img/6-pp_03.png", alt="契爾氏46折up")
+              li.swiper-slide
+                a(href="https://www.u-mall.com.tw/np/65257", title="台塑生醫5折UP")
+                  img(src="~pages/index-main-u-2nd/img/6-pp_04.png", alt="台塑生醫5折UP")
+              li.swiper-slide
+                a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201906/SP_1104731/w/index.html", title="LG送西堤餐券2張")
+                  img(src="~pages/index-main-u-2nd/img/6-pp_05.png", alt="LG送西堤餐券2張")
+              li.swiper-slide
+                a(href="https://www.u-mall.com.tw/p/66202", title="A.S.O阿瘦皮鞋990up")
+                  img(src="~pages/index-main-u-2nd/img/6-pp_06.png", alt="A.S.O阿瘦皮鞋990up")
+              li.swiper-slide
+                a(href="https://www.u-mall.com.tw/np/56176", title="COACH 5折起")
+                  img(src="~pages/index-main-u-2nd/img/6-pp_07.png", alt="COACH 5折起")
+              li.swiper-slide
+                a(href="https://www.u-mall.com.tw/c3/133013", title="中興米開館$79up")
+                  img(src="~pages/index-main-u-2nd/img/6-pp_08.png", alt="中興米開館$79up")
+              li.swiper-slide
+                a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201907/SP_1104763/w/index.html", title="清潔大作戰!!8折up ")
+                  img(src="~pages/index-main-u-2nd/img/6-pp_09.png", alt="清潔大作戰!!8折up ")
+              li.swiper-slide
+                a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201906/SP_1104667/w/index.html", title="濟州島瘋狂下殺")
+                  img(src="~pages/index-main-u-2nd/img/6-pp_10.png", alt="濟州島瘋狂下殺")
+            #sliderRankPrev.swiper-button-white.swiper-button-prev
+            #sliderRankNext.swiper-button-white.swiper-button-next
+  // 超值爆推
+  section.promo__group.promo__group-8
+    .layout--main
+      .promo__wrap
+        #sliderPromo.promo__slider.swiper-container.p-bottom--sm
+          ul.swiper-wrapper
+            li.swiper-slide
+              a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201906/SP_1104687/w/index.html", title="資訊防衛隊")
+                img(src="~pages/index-main-u-2nd/img/8-pp_1.png", alt="資訊防衛隊")
+            li.swiper-slide
+              a(href="https://www.u-mall.com.tw/c2/59480", title="華為平板送好禮")
+                img(src="~pages/index-main-u-2nd/img/8-pp_2.png", alt="華為平板送好禮")
+            li.swiper-slide
+              a(href="https://www.u-mall.com.tw/np/59835", title="面膜大賞38折up")
+                img(src="~pages/index-main-u-2nd/img/8-pp_3.png", alt="面膜大賞38折up")
+            li.swiper-slide
+              a(href="https://www.u-mall.com.tw/np/65398", title="華陀全館8折up送雙重好禮")
+                img(src="~pages/index-main-u-2nd/img/8-pp_4.png", alt="華陀全館8折up送雙重好禮")
+            li.swiper-slide
+              a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201907/SP_1104741/w/index.html", title="dyson送王品餐券")
+                img(src="~pages/index-main-u-2nd/img/8-pp_5.png", alt="dyson送王品餐券")
+            li.swiper-slide
+              a(href="https://www.u-mall.com.tw/np/66033", title="顯瘦褲裝3.8折起")
+                img(src="~pages/index-main-u-2nd/img/8-pp_6.png", alt="顯瘦褲裝3.8折起")
+            li.swiper-slide
+              a(href="https://www.u-mall.com.tw/np/65447", title="給他/她新鮮感內衣")
+                img(src="~pages/index-main-u-2nd/img/8-pp_7.png", alt="給他/她新鮮感內衣")
+            li.swiper-slide
+              a(href="https://www.u-mall.com.tw/p/65928", title="優生、培寶奶瓶買一送一")
+                img(src="~pages/index-main-u-2nd/img/8-pp_8.png", alt="優生、培寶奶瓶買一送一")
+            li.swiper-slide
+              a(href="https://www.u-mall.com.tw/c3/124479", title="馬玉山養生79折up")
+                img(src="~pages/index-main-u-2nd/img/8-pp_9.png", alt="馬玉山養生79折up")
+            li.swiper-slide
+              a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201906/SP_1104667/w/index.html", title="旅遊年中慶")
+                img(src="~pages/index-main-u-2nd/img/8-pp_10.png", alt="旅遊年中慶")
+                //<div class="bn-slider__slider--pager swiper-pagination" id="bnSliderPager"></div>
+        #promoSliderPager.promo-pager.swiper-pagination
+        //#sliderPromoPrev.swiper-button-white.swiper-button-prev
+        //#sliderPromoNext.swiper-button-white.swiper-button-next
+  //section.promo__group.promo__group-7
+  //  .layout--main
+  //    .promo__wrap
+  //      #sliderEvent.promo__slider.swiper-container.p-bottom--sm
+  //        .swiper-wrapper
+  //          li.swiper-slide
+  //            a(href="https://www.u-mall.com.tw/c2/59548", title="精選推薦")
+  //              img(src="~pages/index-main-u-2nd/img/7-640x280-BN_01.jpg", alt="精選推薦")
+  //          li.swiper-slide
+  //            a(href="https://www.u-mall.com.tw/c3/122141", title="精選推薦")
+  //              img(src="~pages/index-main-u-2nd/img/7-640x280-BN_02.jpg", alt="精選推薦")
+  //          li.swiper-slide
+  //            a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201905/SP_1104485/w/index.html", title="精選推薦")
+  //              img(src="~pages/index-main-u-2nd/img/7-640x280-BN_03.jpg", alt="精選推薦")
+  //          li.swiper-slide
+  //            a(href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201906/SP_1108393/w/index.html", title="精選推薦")
+  //              img(src="~pages/index-main-u-2nd/img/7-640x280-BN_04.jpg", alt="精選推薦")
+  //      #sliderEventPrev.swiper-button-white.swiper-button-prev
+  //      #sliderEventNext.swiper-button-white.swiper-button-next
+  //footer
+
+//- script區
+//- polyfill 一般共用
+include /utils/pug/include/_polyfill-js.pug
+//- General 一般共用
+include /utils/pug/include/_general.pug
+//- 電梯
+include /utils/pug/include/_elevator-link.pug
+//- 浮水印
+include /utils/pug/include/_float-icon.pug
+//- 輪播cdn
+include /utils/pug/include/_slider-cdn-js.pug

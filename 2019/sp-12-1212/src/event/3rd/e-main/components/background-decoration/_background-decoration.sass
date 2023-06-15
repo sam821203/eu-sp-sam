@@ -1,0 +1,103 @@
+// parallax css
+// =================================
+.deoration--background
+  //display: none
+  // z-index: base(1)以上可蓋在主視覺上，zero(0)可在主視覺下，預設都在logo下(logo是500)
+  +pos-set(absolute !important, base, 0, 0)
+  overflow: hidden
+  pointer-events: none
+
+  +breakpoint-min($min-width-xl)
+    display: block
+
+.decoration__wrap
+  width: 100%
+  height: 100vh
+  +breakpoint-min($min-width-xl)
+    height: 100%
+.decoration__item
+  width: 100%
+  height: 100%
+  img
+    +pos-set(relative, zero, null, 50%)
+    transform: translateX(-50%)
+
+.decoration__left
+  +aspect-ratio(200, 300, absolute)
+  top: 15%
+  left: -25%
+  width: 30%
+  animation: left-move 20s infinite ease-in-out
+  .decoration__item
+    +bg-set(url(~event/3rd/e-main/components/background-decoration/bg-decoration-left.png), 400% 100%)
+    animation: item-sprite 0.5s steps(3) infinite
+
+  +breakpoint-min($min-width-lg)
+    top: 24%
+
+  +breakpoint-min($min-width-xl)
+    top: 400px
+    left: calc(50% - 780px)
+    width: 200px
+    animation: left-move-web 10s infinite
+
+.decoration__top
+  +aspect-ratio(359, 136, absolute)
+  top: 1%
+  right: 0
+  width: 50%
+  animation: top-move 10s infinite both linear
+
+  .decoration__item
+    +bg-set(url(~event/3rd/e-main/components/background-decoration/bg-decoration-top.png), 100%)
+
+  +breakpoint-min($min-width-xl)
+    top: 1%
+    right: 15%
+    width: 359px
+    transform-origin: left
+
+@keyframes left-move
+  from
+    transform: translateX(0) scaleX(1)
+  25%
+    transform: translateX(420%) scaleX(1)
+  49.9%
+    transform: translateX(420%) scaleX(1)
+  50%
+    transform: translateX(420%) scaleX(-1)
+  75%
+    transform: translateX(0) scaleX(-1)
+  75.1%
+    transform: translateX(0) scaleX(1)
+  100%
+    transform: translateX(0) scaleX(1)
+
+@keyframes left-move-web
+  from
+    transform: translateX(0) scaleX(1)
+  50%
+    transform: translateX(320%) scaleX(1)
+  50.1%
+    transform: translateX(320%) scaleX(-1)
+  99.9%
+    transform: translateX(0) scaleX(-1)
+  100%
+    transform: translateX(0) scaleX(1)
+
+@keyframes item-sprite
+  from
+    background-position-x: 0
+  50%
+    background-position-x: 100%
+  100%
+    background-position-x: 100%
+
+@keyframes top-move
+  from
+    transform: translate(200%, 100%) rotate(-20deg)
+  50%
+    transform: translate(-100%, -100%) rotate(0)
+  100%
+    transform: translate(-100%, -100%) rotate(0)
+

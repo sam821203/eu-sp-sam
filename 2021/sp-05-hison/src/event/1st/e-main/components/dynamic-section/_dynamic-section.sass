@@ -1,0 +1,54 @@
+
+// 兩區共用
+.promo__group--dynamic-section
+  +pos-set(relative, zero)
+  .promo__title
+    +pos-set(relative)
+    margin-bottom: -3.5%
+    .title__decoration
+      +pos-set(absolute, under)
+      width: 100%
+    .title__pic
+      +pos-set(relative, base)
+      margin-left: auto
+      margin-right: auto
+
+  .promo__wrap
+    +pos-set(relative, zero)
+  .product__wrap
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    > div
+      width: 32%
+      margin-bottom: 1.5%
+  .product__block
+    padding: 5% 6%
+  .product--dynamic
+    width: 100%
+    +bg-set(url("~event/1st/e-main/components/dynamic-section/item-dynamic-section.png"), 100%)
+  .product__price
+    span
+      &:last-child
+        font-size: 4vw
+  +breakpoint-max($max-width-xxs)
+    .product__name
+      margin: 0
+  +breakpoint-min($min-width-lg)
+    .product__price
+      span
+        &:last-child
+          font-size: 32px
+  +breakpoint-min($min-width-xl)
+    .product__name
+      margin: 24px 0
+
+.promo__group--dynamic-section-1
+  .title__decoration
+    top: 0
+    left: 0
+  .title__pic
+    width: 80%
+  .promo__wrap
+    padding: 13.5% 7% 5%
+    +bg-set(url("~event/1st/e-main/components/dynamic-section/bg-dynamic-section.png"), 100%)

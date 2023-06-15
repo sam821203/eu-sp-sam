@@ -1,0 +1,42 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.awards__w4m4
+  .event__zone
+    +bg-set(url(event/current/components/awards/awards-bg.png), 100%)
+    +aspect-ratio(960, 850)
+    .event__block
+      +pos-set(absolute, zero, 22.5%)
+      +flex-container
+      flex-wrap: wrap
+      align-content: center
+      +size(90%, 72%)
+      +layout-center
+      .event__item
+        +flex-container
+        +size(20%, auto)
+        margin: 4px
+        transition: transform .2s ease-in 
+        &:hover
+            transform: scale(1.04)
+        +breakpoint-min($min-width-md)
+          margin: 6px
+        +breakpoint-min($min-width-xl)
+          margin: 8px
+        a
+          +size(100%, 100%)
+          .item__title
+            +flex-container
+            height: 25%
+            +font-styling(4.5vw, 700)
+            line-height: 24px
+            color: $gray-deep-light
+            +breakpoint-min($min-width-xl)
+              font-size: 44px
+          .item__box
+            height: 75%
+            img
+              display: block
+              width: 100%
+        a:visited
+          color: $gray-deep-light

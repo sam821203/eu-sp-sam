@@ -1,0 +1,188 @@
+.promo__group--filter
+  +pos-set(relative, zero)
+  .filter__tab
+    +pos-set(sticky, nav)
+    top: 0
+    width: 100%
+    max-width: 960px
+  .tab__wrap
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    padding: 7px 0 0 7px
+    color: $gray-light
+    background-color: $gray-dark
+  .filter__item
+    flex: 1 1 30%
+    margin-right: 7px
+    margin-bottom: 7px
+    background-color: $gray-medium
+    font-size: 14px
+    text-align: center
+    cursor: pointer
+    .filter__box
+      padding: 7px 0
+    &.active
+      pointer-events: none
+      & .filter__box
+        background-color: $gray-deep-dark
+
+  .content__box
+    display: none
+    &.active
+      display: block
+
+  .special__promo
+    flex: 0 0 100%
+    p
+      padding: 1%
+      color: $gray-deep-light
+      font-size: 15px
+      font-weight: bold
+
+  .special__wrap
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+  .special__item
+    flex: 0 1 48.5%
+    margin-bottom: 3%
+    text-align: center
+    a
+      display: block
+
+  +breakpoint-min($min-width-lg)
+    .tab__wrap
+      flex-wrap: nowrap
+      padding: 10px 0 0 10px
+
+    .filter__item
+      margin-right: 10px
+      margin-bottom: 10px
+
+    .special__promo
+      p
+        padding: 0
+        font-size: 20px
+        text-align: center
+
+    .special__item
+      flex: 0 1 33.33%
+
+  +breakpoint-min($min-width-xl)
+    .filter__tab
+      top: 57px
+
+    .tab__wrap
+      position: static
+
+    .filter__item
+      font-size: 18px
+
+.promo__group--event
+  .content__zone
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+  .content__box
+    margin-bottom: 3%
+    width: 100%
+
+  .bank__wrap
+    padding-bottom: 17.5%
+
+  // 這色跟fixed的promo__title一樣色
+  .bank__logo
+    border-bottom: 1px solid $gray-dark
+
+  .bank__logo,
+  .bank__promo,
+  .promo__wrap li
+    margin-bottom: 2.5%
+
+  .promo__wrap
+    font-size: 14px
+
+    & li
+      display: none
+      &.active
+        display: block
+
+  .promo__date
+    display: inline-block
+    margin: 0 1%
+    padding: 0 1%
+    color: $gray-deep-light
+    background-color: $gray-dark
+    border-radius: 0.3em
+    text-align: center
+  .promo__rule
+    margin-right: 1%
+    color: $gray-dark
+    font-weight: bold
+  .promo__bonus
+    color: $gray-medium
+    font-weight: bold
+
+  .bank__cta
+    bottom: 1.2em
+
+  +breakpoint-min($min-width-lg)
+    .content__box
+      margin-bottom: 2%
+      width: 49%
+
+    .bank__wrap
+      padding-bottom: 21.5%
+
+    .promo__wrap
+      font-size: 18px
+
+    .bank__cta
+      bottom: 15px
+
+  +breakpoint-min($min-width-xl)
+    .content__box
+      &:hover .bank__wrap
+        transform: translatey(-2%)
+
+    .special__item
+      &:hover
+        transform: scale(1.05) translateZ(0)
+
+    .bank__wrap
+      padding-bottom: 75px
+
+.soft
+  .promo__group--filter
+    .tab__wrap
+      color: $gray-medium
+
+    .filter__item
+      background-color: $gray-dark
+      &.active
+        & .filter__box
+          color: $gray-deep-light
+          background: $gray-dark
+          border-radius: 8px
+          box-shadow: inset -6px 6px 12px $gray-deep-dark, inset 6px -6px 12px $gray-medium
+
+    .special__item
+      flex: 0 1 47%
+      margin-bottom: 5%
+    .special__promo
+      p
+        color: $gray-dark
+
+    +breakpoint-min($min-width-lg)
+      .special__item
+        flex: 0 1 30%
+
+  .promo__group--event
+    .content__box
+      margin-bottom: 5%
+
+    +breakpoint-min($min-width-lg)
+      .content__box
+        margin-bottom: 5%
+        width: 47%

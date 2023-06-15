@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../assets/css/pika.css">
+</head>
+<body>
+<!-- BEST VIEWED ON DESKTOP -->
+<!-- MERRY CHRISTMAS -->
+<!-- this hasn't been fully optimised for tablets & iPads -->
+<!-- couldn't use pokemon music for copyright reasons.. -->
+
+<div class="overlay"></div>
+<div class="wrapper"></div>
+<div class="battle">
+    <div class="square square01"></div>
+    <div class="square square02"></div>
+    <div class="square square03"></div>
+    <div class="square square04"></div>
+    <div class="square square05"></div>
+    <div class="square square06"></div>
+    <div class="square square07"></div>
+    <div class="square square08"></div>
+    <div class="square square09"></div>
+    <div class="square square10"></div>
+    <div class="square square11"></div>
+    <div class="square square12"></div>
+    <div class="square square13"></div>
+    <div class="square square14"></div>
+    <div class="square square15"></div>
+    <div class="square square16"></div>
+    <div class="square square17"></div>
+    <div class="square square18"></div>
+    <div class="square square19"></div>
+    <div class="square square20"></div>
+    <div class="square square21"></div>
+    <div class="square square22"></div>
+    <div class="square square23"></div>
+    <div class="square square24"></div>
+    <div class="square square25"></div>
+    <div class="square square26"></div>
+    <div class="square square27"></div>
+    <div class="square square28"></div>
+    <div class="square square29"></div>
+    <div class="square square30"></div>
+    <div class="square square31"></div>
+    <div class="square square32"></div>
+    <div class="square square33"></div>
+    <div class="square square34"></div>
+    <div class="square square35"></div>
+    <div class="square square36"></div>
+    <div class="square square37"></div>
+    <div class="square square38"></div>
+    <div class="square square39"></div>
+    <div class="square square40"></div>
+    <div class="square square41"></div>
+    <div class="square square42"></div>
+    <div class="square square43"></div>
+    <div class="square square44"></div>
+    <div class="square square45"></div>
+    <div class="square square46"></div>
+    <div class="square square47"></div>
+    <div class="square square48"></div>
+    <div class="square square49"></div>
+    <div class="square square50"></div>
+    <div class="square square51"></div>
+    <div class="square square52"></div>
+    <div class="square square53"></div>
+    <div class="square square54"></div>
+    <div class="square square55"></div>
+    <div class="square square56"></div>
+    <div class="square square57"></div>
+    <div class="square square58"></div>
+    <div class="square square59"></div>
+    <div class="square square60"></div>
+    <div class="square square61"></div>
+    <div class="square square62"></div>
+    <div class="square square63"></div>
+    <div class="square square64"></div>
+</div>
+
+
+</body>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+    //List of variables which always looks so ugly.. unlike Pikachu, he's cute
+    var $wrapper = $('.wrapper');
+    // 格子會不對
+    var $square = $('.square');
+    var $body = $('body');
+
+
+    var $windowHeight = window.innerHeight;
+    var $windowWidth = window.innerWidth;
+
+    document.ontouchmove = function(event) {
+        event.preventDefault();
+    }
+
+
+
+
+    /*
+     // CLICK METHODS
+     */
+    //Start the epicness of battling...... a present!
+    var battle = false;
+    var $overlay = $('.overlay');
+    var $pixel = $('.main-container .pixel');
+    var smallScreen = $windowWidth <= 768;
+    var medScreen = $windowWidth > 768 && $windowWidth <= 1024;
+    //For some reason body click wouldn't work on iPad so I had to make an overlay.. stupid freakin iPads
+    $overlay.on('click', function() {
+        if (battle === false) {
+            var battleTimeline = new TimelineMax({
+                delay: 1
+            });
+            battleTimeline
+                .set($overlay, {
+                    css: {
+                        display: 'none'
+                    }
+                })
+                .set($square, {
+                    css: {
+                        display: 'block'
+                    }
+                })
+                .set($wrapper, {
+                    css: {
+                        display: 'block'
+                    }
+                })
+                .to($wrapper, 0.2, {
+                    autoAlpha: 0.7
+                }, 0)
+                .to($wrapper, 0.2, {
+                    autoAlpha: 0.2
+                })
+                .to($wrapper, 0.2, {
+                    autoAlpha: 0.7
+                })
+                .to($wrapper, 0.2, {
+                    autoAlpha: 0.2,
+                    onComplete: battleBlackScreen
+                })
+                .to($wrapper, 1, {
+                    autoAlpha: 0
+                })
+                .set($wrapper, {
+                    autoAlpha: 0
+                }, '+=1')
+                .set($square, {
+                    css: {
+                        backgroundColor: 'white'
+                    }
+                })
+
+        } else if (battle === true && !$body.hasClass('is-animating')) {
+            var explodeTL = new TimelineMax();
+            explodeTL.set($body, {
+                className: '+=is-animating'
+            });
+            for (var i = 0; i < $pixel.length; i++) {
+                var randomNumberX = generateNum(1, 5);
+                var randomNumberY = generateNum(1, 8);
+                explodeTL.to($pixel[i], 3, {
+                    y: randomNumberY,
+                    x: randomNumberX,
+                    ease: Power2.easeOut
+                }, 0);
+            };
+            explodeTL
+                .to($pixel, 3, {
+                    y: 0,
+                    x: 0,
+                    ease: Power2.easeIn,
+                    onComplete: unPauseTimeline
+                })
+                .set($body, {
+                    className: '-=is-animating'
+                });
+        };
+    });
+
+    var $open = $('.attack.open');
+
+    $open.on('click', function() {
+        var openTL = new TimelineMax();
+
+        openTL
+            .set($square, {
+                css: {
+                    display: 'none'
+                }
+            })
+            .set($wrapper, {
+                autoAlpha: 1
+            })
+            .to($wrapper, 1, {
+                css: {
+                    backgroundColor: '#2B2E39'
+                }
+            })
+            .to($wrapper, 1, {
+                autoAlpha: 0
+            })
+            .set($wrapper, {
+                css: {
+                    display: 'block'
+                }
+            }, '-=1')
+            .fromTo($wrapper, 1, {
+                autoAlpha: 0
+            }, {
+                autoAlpha: 1
+            }, '-=1')
+            .set($overlay, {
+                css: {
+                    display: 'block'
+                }
+            });
+
+        setTimeout(function() {
+            battle = true;
+        }, 3000);
+
+    });
+
+
+    /*
+     // FUNCTIONS
+     */
+
+    //Making the sequence random also makes it easier.
+    function battleBlackScreen() {
+        var blackBattle = new TimelineMax();
+        var $shuffledArray = Shuffle($square);
+        for (var i = 0; i < $square.length; i++) {
+
+            blackBattle.to($shuffledArray[i], 0.03, {
+                autoAlpha: 1
+            });
+        };
+    };
+
+    //Shuffle array function/technique by Chris Coyier at: https://css-tricks.com/snippets/javascript/shuffle-array/
+
+    function Shuffle(o) {
+        for (var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+        return o;
+    };
+
+    function randomNumber(num1, num2) {
+        var time = Math.floor((Math.random() * num1) + num2);
+        return time;
+    };
+
+
+</script>
+</html>

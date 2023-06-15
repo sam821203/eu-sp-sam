@@ -1,0 +1,44 @@
+//- TODO: 打開雙月選項切換雙月(預設單月：4292 / true = 雙月：5567)
+- var isEven = true
+//- TODO: 打開2號電梯選項切換第二組電梯(預設第一組，true = 第二組 單月：4696 / 雙月：4697)
+- var isSecond = true
+//- TODO: 打開u-mall選項會自動轉換成U的logo和連結、電梯(預設etmall)
+//-- var isU = true
+
+main#spWrap.sp__wrap.sp__wrap--e
+  include /layout/header/_header
+
+  //- hero section
+  //- ===========================
+  include /event/2nd/e-main/components/hero-section/_hero-section
+
+  //- other components
+  //- ===========================
+  //- TODO: 如果promo不用和hero綁在一起時放這
+  //include /event/2nd/e-main/components/daily-change/_daily-change
+  include /event/2nd/e-main/components/promo-event/_promo-event
+  include /event/2nd/e-main/components/daily-tab/_daily-tab
+  //- include /event/2nd/e-main/components/daily-slider/_daily-slider
+  .bg__relative
+    #dateChangeBg.bg__wrap-2
+  include /event/2nd/e-main/components/daily-change-2/_daily-change-2
+  include /event/2nd/e-main/components/collect__point/_collect__point
+  include /event/2nd/e-main/components/left-right-section/_left-right-section
+  include /event/2nd/e-main/components/tab-section-1/_tab-section-1
+  include /event/2nd/e-main/components/tab-section-2/_tab-section-2
+  .bg__relative
+    .bg__wrap-3
+  include /event/2nd/e-main/components/dynamic-slider-half/_dynamic-slider-half
+  include /event/2nd/e-main/components/slider-section-double/_slider-section-double
+  include /event/2nd/e-main/components/bn-bank/_bn-bank
+
+//- script區
+include /utils/pug/_total-script
+script#dataDaily(src="data-daily-2nd.js")
+script#dataNewYearDaily(src="data-new-year-daily-2nd.js")
+// 天天開搶
+script#dataDailyTab(src="data-daily-tab-2nd.js")
+script#dataDynamicHalf(src="data-dynamic-half-2nd.js")
+script(src="data-left-right-2nd.js")
+script(src="data-tab-2nd.js")
+script(src="data-promo-2nd.js")

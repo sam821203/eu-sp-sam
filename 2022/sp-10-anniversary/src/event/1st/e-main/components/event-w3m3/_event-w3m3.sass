@@ -1,0 +1,57 @@
+.promo__group--w3m3
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__wrap
+    padding-bottom: 23%
+    .decor__item
+      &--title
+        +pos-set(absolute, under, 0%, 5%)
+        +breakpoint-min($min-width-xl)
+          left: calc( 50% - 480px )
+      &--center,
+      &--middle,
+      &--outer
+        +pos-set(absolute, zero, 10%, 7.5%)
+        width: 85%
+        transform-origin: bottom
+        +breakpoint-min($min-width-xl)
+          left: calc( 50% - 428px )
+      &--center
+        &.active
+          animation: scaleY .4s ease-in 1
+      &--middle
+        &.active
+          animation: scaleY 1s linear 1
+      &--outer
+        &.active
+          animation: scaleY .7s ease-out 1
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/event-w3m3/bg-event-w3m3.png), 100%)
+  .promo__zone
+    +aspect-ratio(960, 1186)
+  .promo__block
+    padding-top: 34%
+    .good__wrap
+      display: flex
+      flex-wrap: wrap
+      justify-content: center
+      li
+        width: 31%
+        &:nth-child(3n-1)
+          margin-top: 5%
+        a
+          transition: all 0.5s
+          &:hover
+            // transform: scale(1.05)
+            filter: brightness(120%)
+          &.active
+            transform: translateY(-2%)
+            filter: brightness(120%)
+
+@keyframes scaleY
+  0%
+    transform: scaleY(.3)
+  100%
+    transform: scaleY(1)

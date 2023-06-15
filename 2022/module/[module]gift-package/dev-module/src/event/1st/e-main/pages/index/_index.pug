@@ -1,0 +1,88 @@
+//- TODO: 打開u-mall選項會自動轉換成U的logo和連結、電梯(預設etmall)
+//- - var isU = true
+//- 1st: 非固定背景-算高度版
+//- 2nd: 非固定背景-自動切版(最常用)
+
+
+
+doctype html
+html(lang='zh-Hant-TW')
+  head
+    meta(name='viewport', content="width=device-width, initial-scale=1")
+
+    //- TODO: CSS檔案注意要放到assets內
+    //- nav CSS (main left & right、sp left & right)
+    //- ===========================
+    //- 行銷主視覺用電梯(main)
+    //- link(rel="stylesheet", href="main-elevator-left.css")
+    //- link(rel="stylesheet", href="main-elevator-right.css")
+    //- 商品館、禮包等需要被霸道電梯蓋過去的電梯(sp)
+    //- link#localElevatorLeft(rel="stylesheet", href="sp-elevator-left.css")
+    //- link#localElevatorRight(rel="stylesheet", href="sp-elevator-right.css")
+    link(rel="stylesheet", href="https://media.etmall.com.tw/sp/12500/animate.min.css")
+    link(rel="stylesheet" href="https://media.etmall.com.tw/sp/12500/generate_v1.3.1.css")
+
+  //- .bg-fixed 加上會固定背景
+  body.bg-fixed
+    //- header (logo + share tools)
+    //- ===========================
+    include /layout/header/_header
+    //- other components
+    //- ===========================
+    //- 右sticky電梯定位點，可置放在各處
+    #navRightBar.navRightBar
+
+    //- 左固定電梯定位點，也可移動，但在ajax要重繪的物件放底部可以讓上方load更快
+    #elevatorHome.elevatorHome.js--main--dialog
+
+
+    //- 旅遊bar
+    #barHome
+
+    #iconHome.home--icon.layout--main
+
+    //- 背景動畫
+    include /event/1st/e-main/components/bg-animate/_bg-animate
+
+
+    //- main block (hero + promo section)
+    //- ===========================
+    //- main#spWrap.sp__wrap(data-title="測試測試")
+    #spWrap.sp__wallper
+
+      include /event/1st/e-main/components/animate-wrap/_animate-wrap
+      main.sp__main(data-title="測試測試")
+        include /event/1st/e-main/components/sp-visual/_sp-visual
+        include /event/1st/e-main/components/bn-w4m2/_bn-w4m2
+        include /event/1st/e-main/components/bn-w2m1/_bn-w2m1
+        include /event/1st/e-main/components/bn-w2m1-2/_bn-w2m1-2
+        include /event/1st/e-main/components/bn-w1m1/_bn-w1m1
+        include /event/1st/e-main/components/bn-random/_bn-random
+        //- 品牌排排站系列
+        //- include /event/1st/e-main/components/special-w32m31/_special-w32m31
+        //- include /event/1st/e-main/components/special-w42m21/_special-w42m21
+        //- 輪播
+        //- include /event/1st/e-main/components/slider-w5m3/_slider-w5m3
+
+
+
+
+    //- footer
+    //- ===========================
+    //- include /layout/footer/_footer
+
+    //- script區
+    include /utils/pug/include/_general.pug
+
+    //- TODO: 以下資源注意要放到assets內
+    //- nav JS (main left & right、sp left & right)
+    //- ===========================
+    //- 行銷主視覺用電梯(main)
+    //- script(src="sp-elevator.js")
+    //- 商品館、禮包等需要被霸道電梯蓋過去的電梯(sp)
+    script#generateScript(src="https://media.etmall.com.tw/sp/12500/generate_v1.2.js")
+    //- script#checkElevator(src="https://media.etmall.com.tw/sp/11911/check-elevator.js?rapunzel")
+    //- script(src="https://media.etmall.com.tw/sp/11911/data-check-elevator.js")
+
+    //- data區
+    //- script#check(src="check.js")

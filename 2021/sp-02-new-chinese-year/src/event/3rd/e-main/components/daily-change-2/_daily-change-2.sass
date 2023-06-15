@@ -1,0 +1,62 @@
+.sp__wrap
+  .promo__group.promo__group--daily-2
+    position: relative
+    z-index: 1
+    top: 10vw
+    right: 0
+    width: 100%
+    overflow: hidden
+    height: 113.7vw
+    //+bg-set(url(~event/3rd/e-main/components/daily-change/daily-change-bg.png), 100% auto)
+    +breakpoint-min($min-width-xl)
+      top: 65px
+      right: 0
+      width: auto
+      height: 1071px
+
+    .promo__wrap
+      +pos-set(relative, zero)
+
+    .promo__wrap
+      padding-top: 0
+      text-align: center
+      &:hover,
+      &:active
+        a
+          filter: brightness(105%) contrast(120%)
+
+      .new__year__change
+        position: relative
+        .new__year__bg
+          position: relative
+          z-index: 1
+        .item__wrap
+          display: flex
+          a
+            position: absolute
+            top: 37vw
+            z-index: 2
+            width: 44.5vw
+            height: 71vw
+            &:nth-child(1)
+              left: 6vw
+            &:nth-child(2)
+              left: 50%
+      +breakpoint-min($min-width-xl)
+        background-size: auto
+        .new__year__change
+          width: auto
+          .item__wrap
+            a
+              top: 360px
+              width: 428px
+              height: 682px
+              &:nth-child(1)
+                left: calc(50% - 420px)
+              &:nth-child(2)
+                left: 50%
+
+.close__wrap
+  display: none
+.open__wrap
+  display: block

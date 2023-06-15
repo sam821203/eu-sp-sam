@@ -1,0 +1,55 @@
+.promo__group--random
+  +pos-set(relative, zero)
+  .promo__wrap
+    +aspect-ratio(960, 1097)
+    display: none
+    &.active
+      display: block
+  .promo__zone
+    +bg-set(url(event/1st/e-main/components/random-show/bg-random-show.png), 100% auto)
+  .promo__block
+    padding: 13% 8% 0
+    .promo__item
+      cursor: pointer
+      width: 100%
+      &:nth-child(2)
+        margin: 37% auto
+        width: 20%
+      &:last-child
+        +pos-set(relative, zero)
+        padding-bottom: 88.4%
+        img
+          +pos-set(absolute, zero, 0%, 0%)
+          width: 100%
+      &.hide
+        display: none
+      &.disabled
+        pointer-events: none
+  .popup__wrap
+    display: none
+    +pos-set(absolute, base, 12%, 8%)
+    width: 84%
+    height: 67%
+    background-color: $gray-deep-dark-opacity
+    transition: .5s all
+    &.active
+      display: block
+      animation: showItem .6s 1.5s ease-in both
+    .popup__block
+      margin: 2% auto 0
+      width: 60%
+  .promo__box
+    margin: 4% auto 0
+    width: 80%
+
+@keyframes showItem
+  0%
+    transform: scale(.3)
+    opacity: 0
+  60%
+    opacity: 1
+    transform: scale(.8)
+    filter: saturate(2)
+  100%
+    transform: scale(1)
+    filter: saturate(1)

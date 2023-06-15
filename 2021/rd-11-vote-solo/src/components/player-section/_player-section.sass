@@ -1,0 +1,50 @@
+@import "include/_player-title"
+
+.promo__group--player
+  // .promo__body
+  //   +breakpoint-min($min-width-lg)
+  //     margin-top: -8%
+
+  .content__wrapper
+    li
+      +breakpoint-min($min-width-lg)
+        width: calc(33% - 5px)
+
+  .dynamic__wrap
+    padding-top: 5%
+    .btn--dynamic
+      margin-left: auto
+      margin-right: auto
+
+.player__dynamic--player
+  .player__votes
+    display: flex
+    align-items: center
+  .votes__label
+    margin-right: 5px
+  .player__cta
+    padding: 5%
+    +breakpoint-max($max-width-xxs)
+      padding: 5% 0
+
+  +breakpoint-min($min-width-lg)
+    .votes__label
+      font-size: 20px
+
+    .votes__value
+      font-size: 36px
+
+// 預設顏色
+.player__dynamic--player
+  .votes__value
+    color: $main-color-1
+
+  .btn--vote,
+  .btn--cta
+    background-color: $main-btn-color-1
+    &:active,
+    &:hover
+      background-color: $main-btn-color-2
+  // .btn--cta
+  //   .team__icon
+  //     +bg-set(url(~components/player-section/icon-dog.svg), cover)

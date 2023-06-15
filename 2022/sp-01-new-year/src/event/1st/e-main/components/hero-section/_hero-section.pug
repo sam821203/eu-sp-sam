@@ -1,0 +1,97 @@
+-
+  var heroItemE = [
+    {
+      link: "",
+      imgSrc: "event/1st/e-main/components/hero-section/hero-item/hero-item-1.png",
+      alt: "精品鞋包2折起",
+    },
+    {
+      link: "",
+      imgSrc: "event/1st/e-main/components/hero-section/hero-item/hero-item-2.png",
+      alt: "年度熱銷",
+    },
+    {
+      link: "",
+      imgSrc: "event/1st/e-main/components/hero-section/hero-item/hero-item-3.png",
+      alt: "尾牙大獎選3C",
+    },
+    {
+      link: "",
+      imgSrc: "event/1st/e-main/components/hero-section/hero-item/hero-item-4.png",
+      alt: "年終換機搶便宜",
+    },
+    {
+      link: "",
+      imgSrc: "event/1st/e-main/components/hero-section/hero-item/hero-item-5.png",
+      alt: "美妝風雲2折起",
+    },
+    {
+      link: "",
+      imgSrc: "event/1st/e-main/components/hero-section/hero-item/hero-item-6.png",
+      alt: "饗食聚餐送咖啡",
+    },
+  ]
+
+
+-
+  var heroItemU = [
+    {
+      link: "#note",
+      imgSrc: "event/1st/e-main/components/hero-section/hero-item/hero-item-1.png",
+      alt: "享最高滿額回饋47%"
+    },
+  ]
+
+-var heroTitle = isU ? heroTitleU : heroTitleE
+
+-var heroItem = isU ? heroItemU : heroItemE
+
+
+section.hero__wrap
+  .hero__decoration
+    .background--hero.background--hero-1
+    .background--hero.background--hero-2
+        //- img(src="event/1st/e-main/components/hero-section/stage-hero-section.png", alt="")
+    .decor-screen
+      img(src="event/1st/e-main/components/hero-section/decor-screen-left.png", alt="")
+      img(src="event/1st/e-main/components/hero-section/decor-screen-right.png", alt="")
+    .decor-top-light
+      img(src="event/1st/e-main/components/hero-section/decor-top-light.png", alt="")
+    .decor-balloon
+      img(src="event/1st/e-main/components/hero-section/decor-balloon-left.png", alt="")
+      img(src="event/1st/e-main/components/hero-section/decor-balloon-right.png", alt="")
+    .decor-spotlight
+      img(src="event/1st/e-main/components/hero-section/decor-spotlight-left.png", alt="")
+      img(src="event/1st/e-main/components/hero-section/decor-spotlight-left.png", alt="")
+      img(src="event/1st/e-main/components/hero-section/decor-spotlight-right.png", alt="")
+      img(src="event/1st/e-main/components/hero-section/decor-spotlight-right.png", alt="")
+
+
+  .layout--main
+    .hero__zone
+      //- .hero__stage
+      .hero__title
+        .decor-crown
+          img(src="event/1st/e-main/components/hero-section/decor-crown.png", alt="")
+        .decor--ribbon
+          img(src="event/1st/e-main/components/hero-section/decor-ribbon-L.png", alt="")
+          img(src="event/1st/e-main/components/hero-section/decor-ribbon-R.png", alt="")
+        .hero__title--main
+          img(src="event/1st/e-main/components/hero-section/main-title-hero-section.png", alt="")
+      .hero__block
+        img(src="event/1st/e-main/components/hero-section/stage-min-hero-section.png", alt="")
+        .decor__wrap
+          .decor--ball
+            img(src="event/1st/e-main/components/hero-section/decor-ball.png", alt="")
+        .decor--ball2
+          img(src="event/1st/e-main/components/hero-section/decor-ball.png", alt="")
+        .hero__item.swiper-container#heroItem
+          ul.swiper-wrapper
+            each data, index in heroItem
+              li.swiper-slide
+                a(href= data.link, title=data.alt)
+                  img(src= data.imgSrc, data.alt)
+        .hero__zone--event
+          //- .hero__box--button
+              //- a(href="")
+          include /event/1st/e-main/components/hero-section/hero-event/_hero-event

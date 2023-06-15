@@ -1,0 +1,121 @@
+- 
+  var randomDataE = [
+    {
+      itemLink: "https://www.etmall.com.tw/activity/collectpointexchange/20201130",
+      imgSrc: "~event/3rd/e-main/components/random-select/items/1.png",
+      itemAlt: "100元全站折價券",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/activity/collectpointexchange/20201130",
+      imgSrc: "~event/3rd/e-main/components/random-select/items/2.png",
+      itemAlt: "漢克嚴選 和牛級嫩肩沙朗牛排8包",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/activity/collectpointexchange/20201130",
+      imgSrc: "~event/3rd/e-main/components/random-select/items/3.png",
+      itemAlt: "LINE POINTS 200點",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/activity/collectpointexchange/20201130",
+      imgSrc: "~event/3rd/e-main/components/random-select/items/4.png",
+      itemAlt: "歐舒丹 乳油木護足霜150ml",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/activity/collectpointexchange/20201130",
+      imgSrc: "~event/3rd/e-main/components/random-select/items/5.png",
+      itemAlt: "1212枚東森幣",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/activity/collectpointexchange/20201130",
+      imgSrc: "~event/3rd/e-main/components/random-select/items/6.png",
+      itemAlt: "鍋寶 雙層防燙快煮壺1.8L",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/activity/collectpointexchange/20201130",
+      imgSrc: "~event/3rd/e-main/components/random-select/items/7.png",
+      itemAlt: "LINE POINTS 150點",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/activity/collectpointexchange/20201130",
+      imgSrc: "~event/3rd/e-main/components/random-select/items/8.png",
+      itemAlt: "WMF 牛奶鍋14cm 1.7L",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/activity/collectpointexchange/20201130",
+      imgSrc: "~event/3rd/e-main/components/random-select/items/9.png",
+      itemAlt: "121枚東森幣",
+    }, 
+  ]
+
+- 
+  var randomDataU = [
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      imgSrc: "~event/3rd/e-main/components/random-select/items/1.png",
+      itemAlt: "滿額送$300",
+      departLink: "",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      imgSrc: "~event/3rd/e-main/components/random-select/items/2.png",
+      itemAlt: "滿額送$300",
+      departLink: "",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      imgSrc: "~event/3rd/e-main/components/random-select/items/3.png",
+      itemAlt: "滿額送$300",
+      departLink: "",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      imgSrc: "~event/3rd/e-main/components/random-select/items/4.png",
+      itemAlt: "滿額送$300",
+      departLink: "",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      imgSrc: "~event/3rd/e-main/components/random-select/items/5.png",
+      itemAlt: "滿額送$300",
+      departLink: "",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      imgSrc: "~event/3rd/e-main/components/random-select/items/6.png",
+      itemAlt: "滿額送$300",
+      departLink: "",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      imgSrc: "~event/3rd/e-main/components/random-select/items/7.png",
+      itemAlt: "滿額送$300",
+      departLink: "",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      imgSrc: "~event/3rd/e-main/components/random-select/items/8.png",
+      itemAlt: "滿額送$300",
+      departLink: "",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      imgSrc: "~event/3rd/e-main/components/random-select/items/`9.png",
+      itemAlt: "滿額送$300",
+      departLink: "",
+    }, 
+  ]
+
+- var randomData = isU? randomDataU : randomDataE
+
+section.promo__group.promo__group--random.m-bottom--sm.promo__group--card(data-title="玩購九格")
+  .layout--main
+    #cardWrap.card__wrap.promo__wrap.active
+      ul#randomSelectWrap.good__wrap
+        each data in randomData
+          li.card__item
+            .card__front
+              a(href= data.itemLink, title= data.itemAlt)
+                img(src= data.imgSrc, alt= data.itemAlt)
+            .card__back
+              img(src="~event/3rd/e-main/components/random-select/card-back.png", alt="")
+              //img(src="https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1116824/card-back.png", alt="")

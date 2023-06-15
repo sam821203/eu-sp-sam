@@ -1,0 +1,52 @@
+  /* reset */
+  /* ======================================== */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  body, h1, h2, h3, h4, h5, h6, ol, ul, li {
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+  }
+
+  a:active, a:hover {
+    outline: 0;
+  }
+
+  ul, li {
+    list-style: none;
+  }
+
+  img {
+    width: 100%;
+    border: 0;
+    vertical-align: middle;
+  }
+
+  article, main, nav, section, header {
+    display: block;
+  }
+
+  body {
+    font-family: PingFangTC-regular, Roboto, "LiHei Pro", "Source Han Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, "Microsoft JhengHei", sans-serif;
+  }
+
+  .layout--main {
+    position: relative;
+    z-index: 0;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* clearfix */
+  .clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+  }

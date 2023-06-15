@@ -1,0 +1,20 @@
+.hero__ferris
+  .ferris__wrap.m-bottom--lg
+    .ferris__zone
+      #ferrisDom.ferris__block(title="1111暖身慶｜嗨Fun夠好玩，滿額送1,111 + 1,111")
+        - var n = 0
+        while (n < 8)
+          - var item = (n % 4) +1
+          - var imgSrc = "event/1st/e-main/components/hero-section/ferris/ferris-item-" + item + ".png"
+          .ferris__box
+            .ferris__item
+              img(src= imgSrc, alt="")
+              //- a(href="")
+                img(src= imgSrc, alt="")
+          - n++
+      .decoration--top.decoration--ferris
+        img(src="event/1st/e-main/components/hero-section/ferris/decor-ferris-2.png", alt="")
+
+  //- .ferris__controller
+  //-   #scrollWrap.ferris__scroll
+  //-     #btnFerris.btn--ferris

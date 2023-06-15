@@ -1,0 +1,42 @@
+//- 當需要跨月時(前一個月)，填入的資料由這邊設定，將所有月份資料填上，
+//- 再由JS決定月份顯示哪些li
+- var bankLinkPrev = {etmall: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202007/SP_1114870/w/index.html", umall: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202007/SP_1106086/w/index.html"}
+
+- var bankLink = {etmall: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202008/SP_1114871/w/index.html", umall: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202008/SP_1106087/w/index.html"}
+
+//- 當需要跨月時(前一個月)
+- var bankInfoPrev = isU ? bankLinkPrev.umall : bankLinkPrev.etmall
+
+- var bankInfo = isU ? bankLink.umall : bankLink.etmall
+- var bankPageName = {"玉山": '#esun', "中信": "#ctbc", "國泰": "#cathay", "台新": "#Taishin", "花旗": "#citi", "富邦": "#taipeifubon", "永豐": "#sinopac", "聯邦": "#union", "一銀": "#one", "遠銀": "#fareasten", "滙豐": "#hsbc", "華南": "#huanan", "新光": "#shinkong", "星展": "#dbs", "合作金庫": "#tcb", "凱基": "#kgi", "上海銀行": "#shanghai", "土銀": "#landbank", "日盛": "#jihsun", "臺銀": "#bot", "陽信": "#sunnybank", "樂天": "#rakuten"}
+
+
+//- TODO: 給別的component引入時不需要前兩行要切換
+//- section.promo__group.promo__group--bn-special
+  //- .layout--main
+
+.promo__slider
+  #sliderSpecial.swiper-container
+    ul.swiper-wrapper
+      li.swiper-slide
+        a(href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202007/SP_1116046/w/index.html", title="APP獨享優惠")
+          img(src="~event/2nd/e-main/components/bn-special/items/bank-1.png", alt="APP獨享優惠")
+      li.swiper-slide.month--prev
+        a(href= bankInfoPrev + bankPageName["凱基"], title="凱基滿$18,000送$1,800")
+          img(src="~event/2nd/e-main/components/bn-special/items/bank-2.png", alt="凱基滿$18,000送$1,800")
+      li.swiper-slide.month--prev
+        a(href= bankInfoPrev + bankPageName["永豐"], title="永豐滿$25,000送$2,500")
+          img(src="~event/2nd/e-main/components/bn-special/items/bank-3.png", alt="永豐滿$25,000送$2,500")
+      li.swiper-slide.month--now
+        a(href= bankInfo + bankPageName["凱基"], title="凱基滿$8,800送$880")
+          img(src="~event/2nd/e-main/components/bn-special/items/bank-4.png", alt="凱基滿$18,000送$1,800")
+      li.swiper-slide.month--now
+        a(href= bankInfo + bankPageName["台新"], title="台新滿$10,000送$800")
+          img(src="~event/2nd/e-main/components/bn-special/items/bank-5.png", alt="台新滿$10,000送$800")
+      li.swiper-slide.month--now
+        a(href= bankInfo + bankPageName["星展"], title="星展滿$22,000送$2,200")
+          img(src="~event/2nd/e-main/components/bn-special/items/bank-6.png", alt="星展滿$22,000送$2,200")
+
+    //- #sliderSpecialPager.swiper-pagination-custom.swiper-pagination
+  #sliderSpecialPrev.swiper-button-custom.swiper-custom-prev
+  #sliderSpecialNext.swiper-button-custom.swiper-custom-next

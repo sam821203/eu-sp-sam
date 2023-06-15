@@ -1,0 +1,37 @@
+.promo__group--w3m3
+  +pos-set(relative, zero)
+  .promo__wrap
+    +aspect-ratio(947, 1541)
+  .promo__zone
+    +bg-set(url("event/4th/e-main/components/event-w3m3/bg-event-w3m3.png"), 100%)
+    .decoration__box
+      +pos-set(absolute, base)
+      top: -7%
+      left: 0%
+      +breakpoint-min($min-width-xl)
+        left: 4%
+    .event__wrap
+      padding: 16.2% 6.5% 0
+    .good__wrap
+      display: flex
+      flex-wrap: wrap
+      justify-content: center
+      li
+        margin: 3.5% 3% 2%
+        width: 25%
+        +breakpoint-min($min-width-xl)
+          margin: 4.7% -3.4% 2% 4%
+          width: 30%
+        a
+          transition: transform 0.5s
+          &:hover
+            transform: scale(1.05)
+            filter: brightness(120%)
+          &.active
+            animation: fade-up-3 1s
+    // .promo__block
+
+@keyframes fade-up-3
+  50%, 100%
+      transform: scale(1.05)
+      filter: brightness(120%)

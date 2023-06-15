@@ -1,0 +1,46 @@
+.promo__group--bn-section
+  +pos-set(relative, zero)
+  overflow: hidden
+  .promo__title--parent
+    max-width: 960px
+    +pos-set(relative, zero)
+    .promo__title
+      margin: 0 auto
+      width: 90%
+      +breakpoint-min($min-width-xl)
+        margin: 0 10%
+        width: 100%
+
+  .promo__wrap
+    +aspect-ratio(960, 433)
+    .promo__decor
+      +pos-set(absolute, second, -62%, 70%)
+      width: 35%
+      transform: rotate(15deg)
+      +breakpoint-min($min-width-xl)
+        top: -54%
+        width: 30%
+      &.active
+        animation: up-and-down 1s linear infinite
+    .promo__zone
+      margin-top: -7%
+      +bg-set(url("~event/2nd/e-main/components/bn-section/bg-bn-section.png"), 100%)
+      .promo__block
+        margin: 5.5% auto 0
+        width: 85%
+
+
+
+// @keyframes slideIn
+//   0%
+    
+//   100%
+    
+
+@keyframes up-and-down
+  0%
+    transform: translateY(3%)
+  50%
+    transform: translateY(-3%)
+  to
+    transform: translateY(3%)

@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<head>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		* {
+ 		 box-sizing: border-box; }
+  		*:before, *:after {
+    		box-sizing: border-box; }
+	    a {
+	    	display: block;
+	    	text-decoration: none;
+	    }
+		ul {
+			list-style: none;
+		}
+		img {
+			border: 0;
+		}
+		main, header, footer, section {
+			display: block;
+		}
+		body {
+			margin: 0;
+  			padding: 0;
+  			width: 100%;
+  			min-width: 1260px;
+			background: #f56c01 center top url(background.jpg) no-repeat fixed;
+			overflow-x: hidden;
+		}
+
+		body, td, th {
+			font-family: Arial, Helvetica, LiHei, "Microsoft JhengHei", PMingLiU, "微軟正黑體", "新細明體", sans-serif;
+
+		}
+
+		.clearfix:after {
+			content: '';
+			display: block;
+			clear: both;
+			*zoom: 1;
+		}
+
+		.sp__wrap {
+			position: relative;
+		}
+
+		.sp--1260 {
+			position: relative;
+			max-width: 1260px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+/* ============= decoration ============= */
+		.bg-decoration {
+			position: fixed;
+			z-index: -1;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			pointer-events: none;
+		}
+
+		.leaf-scene {
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			-webkit-transform-style: preserve-3d;
+			      transform-style: preserve-3d;
+		}
+
+		.leaf-scene div,
+		.leaf-scene p {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 20px;
+			height: 20px;
+			-webkit-transform-style: preserve-3d;
+			      transform-style: preserve-3d;
+			-webkit-backface-visibility: visible;
+			      backface-visibility: visible;
+		}
+
+		.leaf-scene div {
+			background: url(decoration-background-maple-1.png) no-repeat;
+			background-size: 100%;
+		}
+
+		.leaf-scene p {
+			background: url(decoration-background-maple-2.png) no-repeat;
+			background-size: 100%;
+		}
+
+		.decoration-plane {
+			position: fixed;
+			z-index: 0;
+			right: -416px;
+			width: 345px;
+			height: 55px;
+			background-image: url(decoration-background-plane.png);
+			animation: plane-move infinite linear; 
+		}
+
+		.plane1 {
+			top: 10px;
+			animation-duration: 35s;
+		}
+
+		.plane2 {
+			top: 90%;
+			animation-duration: 35s;
+			animation-delay: 22s; 
+		}
+
+		@keyframes plane-move {
+			to {
+				transform: translateX(calc(-120vw - 416px));
+			}
+		}
+
+		.decoration-rabbit {
+			position: fixed;
+			z-index: 0;
+			bottom: calc(50% - 460px);
+			left: calc(50% - 970px);
+			width: 265px;
+			height: 256px;
+			background-image: url(decoration-background-rabbit.png);
+			transform-origin: bottom;
+			animation: 1s rabbit2 infinite alternate ease-in-out;
+		}
+
+		@keyframes rabbit2 {
+			to {
+				transform: rotate(2deg);
+			}
+		}
+
+		.music {
+			position: absolute;
+			z-index: 0;
+			top: 5%;
+			right: 15%;
+			color: #fff;
+			font-size: 30px;
+		}
+
+		.music li {
+			position: absolute;
+			z-index: 0;
+			top: 0;
+			left: 0;
+			opacity: 0;
+			animation: 10s fade-rotate infinite ease-out;
+		}
+		.music li:nth-child(2) {
+			animation-delay: 1s;
+		}
+		.music li:nth-child(3) {
+			animation-delay: 2s;
+		}
+		.music li:nth-child(4) {
+			animation-delay: 4s;
+		}
+
+
+		@keyframes fade-rotate {
+			to {
+				transform: scale(2) rotate(720deg)  translate(100%, -100%);
+				opacity: 1;
+			}
+		}
+/* ================= header ================= */
+		.sp-logo {
+			position: absolute;
+			z-index: 5;
+			top: 20px;
+			left: 0;
+			cursor: pointer;
+		}
+		.side-info {
+			position: absolute;
+			z-index: 5;
+			top: 0;
+			right: 90px;
+			width: 212px;
+		}
+
+		.side-info img {
+			width: 100%;
+		}
+		
+/* ================= main-visual ================= */
+		.sp-title {
+			position: relative;
+			z-index: 1;
+			padding-top: 20px;
+			height: 740px;
+			background: center 130px url(background-title.png) no-repeat;
+		}
+
+		.main-title {
+			position: relative;
+			margin-top: 20px;
+			text-align: center;
+			-webkit-perspective: 600px;
+			-moz-perspective: 600px;
+			-ms-perspective: 600px;
+			perspective: 600px;
+		}
+
+		.main-title img:first-child {
+			margin-left: -75px;
+			transform-origin: top center;
+			backface-visibility: visible;
+			animation: 2s 2s rotateOpen forwards;
+			opacity: 0;
+		}
+
+		.main-title img:last-child {
+			margin-left: -25px;
+		}
+
+		/* Animate.css */
+		@keyframes rotateOpen {
+			from {
+			transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+			animation-timing-function: ease-in;
+			opacity: 0;
+			}
+
+			40% {
+			transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+			animation-timing-function: ease-in;
+			}
+
+			60% {
+			transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+			opacity: 1;
+			}
+
+			80% {
+			transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+			opacity: 1;
+			}
+
+			to {
+			transform: perspective(400px);
+			opacity: 1;
+			}
+		}
+
+/* ================= promo ================= */
+		.title-promo {
+			position: relative;
+			z-index: 2;
+			margin-top: -13px;
+			margin-left: auto;
+			margin-right: auto;
+			transform: translateX(-45px);
+			width: 641px;
+			height: 68px;
+			overflow: hidden;
+		}
+
+		.title-promo .slide {
+			position: absolute;
+			z-index: 1;
+			top: 100%;
+			animation: 0.6s 3s upup forwards; 
+		}
+
+		@keyframes upup {
+			to {
+				transform: translateY(-68px);
+			}
+		}
+/* ================= subtitle ================= */
+		.subtitle {
+			position: absolute;
+			z-index: 3;
+			top: 120px;
+			right: calc(50% - 605px);
+			padding: 10px 30px 13px 38px;
+			width: 340px;
+			height: 433px;
+			background: url(background-subtitle.png) no-repeat;
+			text-align: center;
+		}
+
+		.subtitle a {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+
+		.subtitle p {
+			margin-bottom: 5px;
+			color: #fff;
+			font-size: 28px;
+		}
+
+		.top-card img {
+			transition: transform 0.3s;
+		}
+
+		.subtitle:hover .top-card img {
+			transform: translateY(-3px) scale(1.01);
+			box-shadow: 0 8px 13px rgba(0,0,0,0.2), 0 3px 3px rgba(0,0,0,0.35);
+		}
+
+		.decoration-subtitle {
+			position: absolute;
+			z-index: 2;
+			right: 57px;
+			top: 335px;
+			width: 177px;
+			height: 215px;
+			background-image: url(decoration-subtitle.png);
+			transform-origin: bottom;
+			animation: 3s rabbit1 infinite alternate;
+		}
+
+		@keyframes rabbit1 {
+			20% {
+				transform: translateX(0) rotate(0deg);
+			}
+			50% {
+				 transform: translateX(127px) rotate(3.5deg);
+			}
+			to {
+				transform: translateX(124px) rotate(0deg);
+			}
+		}
+/* ================= main-content ================= */
+		.sp-content	{
+			margin-top: -134px;
+		}
+
+		.main-info {
+			position: relative;
+			z-index: 4;
+			height: 499px;
+			background: center top url(background-main.png) no-repeat;
+		}
+
+		.main-intro {
+			position: relative;
+			z-index: 5;
+			margin-left: auto;
+			margin-right: auto;
+			height: 224px;
+			background: center top url(background-intro.png) no-repeat;
+		}
+
+		.main--info-a {
+			position: relative;
+			z-index: 2;
+			float: left;
+			transition: all 0.2s ease-in-out;
+		}
+
+		.main--info-a:nth-child(1) {
+			margin-left: 35px;
+			padding: 3px 13px 13px;
+		}
+
+		.main--info-a:nth-child(2) {
+			padding: 3px 9px 3px;
+		}
+
+		.main--info-a:nth-child(3) {
+			padding: 3px 7px 11px;
+		}
+
+		.main--info-a:hover {
+			transform: translateY(-5px);
+			filter: brightness(120%) contrast(110%) drop-shadow(0 8px 10px rgba(0,0,0,0.1)) drop-shadow(0 3px 3px rgba(0,0,0,0.25));
+		}
+
+/* ================= intro-promo ================= */
+		.intro-promo {
+			position: relative;
+			z-index: 5;
+			height: 213px;
+		}
+
+		.promo {
+			position: absolute;
+			z-index: 10;
+			top: 20px;
+			width: 285px;
+			height: 173px;
+		}
+
+		.promo a {
+			position: absolute;
+			z-index: 10;
+			height: 100%;
+		}
+
+		.promo1 {
+			left: 35px;
+		}
+
+		.promo2 {
+			left: 337px;
+		}
+
+		.promo3 {
+			left: 639px;
+		}
+
+		.promo4 {
+			left: 941px;
+		}
+
+		.flip-frame .flip{
+			position: relative;
+			height: 100%;
+			-webkit-perspective: 600px;
+			-moz-perspective: 600px;
+			-ms-perspective: 600px;
+			perspective: 600px;
+		}
+
+		.flip-frame .slide {
+			-webkit-backface-visibility:hidden;
+			-moz-backface-visibility:hidden;
+			-ms-backface-visibility:hidden;
+			backface-visibility:hidden;
+			-webkit-transform-style: preserve-3d;
+			-moz-transform-style: preserve-3d;
+			-ms-transform-style: preserve-3d;
+			-webkit-transform: rotateX(-180deg);
+			-moz-transform: rotateX(-180deg);     
+			-ms-transform: rotateX(-180deg);      
+			transform: rotateX(-180deg);
+			transition: transform 1.2s ease-in-out;
+			overflow: hidden;
+		}
+
+		.flip-frame .slide.front{
+			z-index: 2;
+			-webkit-transform: rotateX(0deg);
+			-moz-transform: rotateX(0deg);     
+			-ms-transform: rotateX(0deg);      
+			transform: rotateX(0deg);
+		}
+
+		.flip-frame .slide.back{
+			z-index: 1;
+		}
+
+/* ================= table hover setting ================= */
+		td[width^="2"] {
+			transition: all 0.3s;
+		}
+
+		td[width^="2"] a {
+			transition: all 0.3s;
+		}
+
+		td[width^="2"] td {
+			transition: all 0.3s;
+		}
+
+		td[width^="2"]:hover {
+			transform: translateY(-6px);
+			box-shadow: 0 5px 10px rgba(0,0,0,0.2), 0 3px 3px rgba(0,0,0,0.35);
+		}
+		td[width^="2"]:hover a {
+			color: #f56c01 !important;
+		}
+
+		td[width^="2"]:hover td {
+			color: #f56c01 !important;
+		}
+
+    </style>
+</head>
+<body>
+	<main id="spWrap" class="sp__wrap">
+		<div class="bg-decoration">
+			<div class="decoration-plane plane1"></div>
+			<div class="decoration-plane plane2"></div>
+			<div class="decoration-rabbit">
+				<ul class="music">
+					<li>&#9833;</li>
+					<li>&#9834;</li>
+					<li>&#9835;</li>
+					<li>&#9836;</li>
+				</ul>
+			</div>
+
+		</div>
+		<header>
+			<div class="sp--1260">
+				<div class="sp-logo">
+					<a href="https://www.etmall.com.tw/" title="東森嚴選 -- ETMall東森購物網" target="_top">
+						<img src="logo.png" alt="東森嚴選 -- ETMall東森購物網">
+					</a>
+			  	</div>
+				<aside class="side-info">
+					<a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201803/SP_1103897/index.html" target="_blank"><img src="line.png" alt="LINE's QR-code"></a>
+				</aside>
+				<div class="subtitle">
+					<a id="ASRC" href="" title="點我購買APP專屬優惠商品！">
+						<p>APP專屬優惠商品</p>
+						<div class="top-card">
+							<img id="IMGSRC" src="product.jpg" alt="APP專屬優惠商品">
+						</div>
+					</a>
+				</div>
+				<div class="decoration-subtitle"></div>
+			</div>
+		</header>
+		<section class="sp-title">
+			<div class="sp--1260">
+				<h1 class="main-title" title="夏末出清5折狂歡，09/01-10/01封館出清 -- ETMall東森購物網">
+					<img src="title-1.png" alt="夏末出清5折狂歡">
+					<img src="title-2.png" alt="封館出清">
+				</h1>
+			</div>
+			<div class="title-promo">
+				<div class="flip">
+					<a href="https://www.etmall.com.tw/Activity/WebSP?SubPage=DMSetting/Final/201809/SP_1105577/index.html" title="夏末狂歡，夏殺5折up">
+						<img class="slide" src="promotion-bar-1.png" alt="夏末狂歡，夏殺5折up">
+					</a>
+				</div>
+			</div>
+		</section>
+		<section class="sp-content">
+			<div class="main-info clearfix">
+				<div class="sp--1260">
+					<div class="intro-promo flip-frame">
+						<div class="promo promo1">
+							<div class="flip">
+								<a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201808/SP_1105406/index.html" class="slide" title="品味中秋月餅禮盒預購中">
+									<img src="main-promo-1-1.png" alt="品味中秋月餅禮盒預購中">
+								</a>
+								<a href="https://www.etmall.com.tw/c3/120735" class="slide" title="西德有機9月滿額贈">
+									<img src="main-promo-2-1.png" alt="西德有機9月滿額贈">
+								</a>
+							</div>
+						</div>
+						<div class="promo promo2">
+							<div class="flip">
+								<a href="https://www.etmall.com.tw/p/60155" class="slide" title="指定烤肉組滿$899贈比臉大牛排">
+									<img src="main-promo-1-2.png" alt="指定烤肉組滿$899贈比臉大牛排">
+								</a>
+								<a href="https://www.etmall.com.tw/Activity/WebSP?SubPage=DMSetting/Final/201808/SP_1105449/index.html" class="slide" title="流行時尚夏日折學家5折起">
+									<img src="main-promo-2-2.png" alt="流行時尚夏日折學家5折起">
+								</a>								
+							</div>
+						</div>
+						<div class="promo promo3">
+							<div class="flip">
+								<a href="https://www.etmall.com.tw/c3/120887" class="slide" title="中秋燒烤限時特賣指定品下單再折$100">
+									<img src="main-promo-1-3.png" alt="中秋燒烤限時特賣指定品下單再折$100">
+								</a>
+								<a href="https://www.etmall.com.tw/Activity/WebSP?SubPage=DMSetting/Final/201808/SP_1105491/index.html" class="slide" title="今夏最強漫威嘉年華">
+									<img src="main-promo-2-3.png" alt="今夏最強漫威嘉年華">
+								</a>
+							</div>
+						</div>
+						<div class="promo promo4">
+							<div class="flip">
+								<a href="https://www.etmall.com.tw/p/60155" class="slide" title="滿額加價購自己烤肉自己組">
+									<img src="main-promo-1-4.png" alt="滿額加價購自己烤肉自己組">
+								</a>
+								<a href="https://www.etmall.com.tw/Activity/WebSP?SubPage=DMSetting/Final/201808/SP_1105375/index.html" class="slide" title="憲哥代言 X copper chef鍋具">
+									<img src="main-promo-2-4.png" alt="憲哥代言 X copper chef鍋具">
+								</a>
+							</div>
+						</div>						
+					</div>
+					<div class="main-intro">
+						<a href="https://www.etmall.com.tw/Activity/WebSP?SubPage=DMSetting/Final/201809/SP_1105513/w/index.html" class="main--info-a" title="東森嚴選">
+							<img src="main-intro-1.png" alt="東森嚴選">
+						</a>
+						<a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201809/SP_1105554/index.html" class="main--info-a" title="消費情報">
+							<img src="main-intro-2.png" alt="消費情報">
+						</a>
+						<a href="https://www.etmall.com.tw/Activity/WebSP?SubPage=DMSetting/Final/201809/SP_1105518/index.html" class="main--info-a" title="銀行樂加碼">
+							<img src="main-intro-3.png" alt="銀行樂加碼">
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+<script id="loadJS" src="load-indicator.js"></script>
+<script>
+	function spTimeLimit(srcDefault, srcChange1, srcChange2) {
+	  var promoMonth = 8;
+
+	  var dateNowMonth = new Date().getMonth();
+	  var dateNowDate = new Date().getDate();
+	  var changeImg = document.getElementById("changeImg");
+	  var srcDefault = srcDefault || 'main-intro-1.png';
+	  var srcChange1 = srcChange1 || 'main-intro-1-1.png';
+	  var srcChange2 = srcChange2 || 'main-intro-1-2.png';
+
+	  if(changeImg) {
+		  if(dateNowMonth === (promoMonth - 1)) {
+		    changeImg.style.opacity  = 0;
+
+		    switch (dateNowDate) {
+		      case 1: 
+		      case 2: 
+		      case 3: 
+		        changeImg.setAttribute('src',srcChange1);
+		        break;
+		      case 8:
+		        changeImg.setAttribute('src',srcChange2);
+		        break;
+		      default:
+		        changeImg.setAttribute('src',srcDefault);
+		    }
+		  }
+
+		  setTimeout(function(){
+		    changeImg.style.opacity = 1;
+		  }, 0); 
+	  }   
+	}   
+	spTimeLimit();
+
+	// Developer: Ashish Kumar
+	// Website: http://AshishKumar.asia
+	// Modify: JackDou
+	function FlipSlider(options) {
+	    // Private Vars
+	    var container = options.container,
+	        startSlideIndex = options.startIndex || 0,
+	        slider = container.querySelector(".flip"),
+	        slides = slider.querySelectorAll(".slide"),
+	        timeout,
+	        frontSlide,
+	        backSlide;
+
+	    // == public functions == //
+
+	    //Next flip
+	    this.nextFlip = function() {
+	        doFlip(1);
+	    };
+
+	    // == private functions == //
+
+	    // flip slides
+	    function doFlip(dir) {
+	        if (!container.querySelector(".animate")) {
+	            slider.classList.add("animate");
+
+
+	            frontSlide = slider.querySelector(".front");
+	            backSlide = findBack(dir);
+
+	            backSlide.classList.add("back");
+
+	            timeout = setTimeout(function() {
+	                resetSlides();
+	                clearTimeout(timeout);
+	            }, 0);
+	        }
+	    }
+
+	    // reset slides on completion
+	    function resetSlides() {
+	        frontSlide = slider.querySelector(".front");
+	        backSlide = slider.querySelector(".back");
+
+	        backSlide.classList.add("front");
+	        backSlide.classList.remove("back");
+	        frontSlide.classList.remove("front");
+	        slider.classList.remove("animate");
+	    }
+
+	    // find slide to set it back-flip
+	    function findBack(dir) {
+	        var frontIndex,
+	            target,
+	            slideCount;
+
+	        slides = slider.querySelectorAll(".slide");
+	        slideCount = slides.length;
+
+	        for (var i = 0; i < slideCount; i++) {
+	            if (slides[i].classList.contains("front")) {
+	                frontIndex = i;
+	            }
+	        }
+	            target = (frontIndex + 1) < slideCount ? slides[frontIndex + 1] : slides[0];
+
+	        return target;
+	    }
+
+	    // Init
+	    (function (instance, sliderTime) {
+	    	var sliderTime = options.sliderTime || 3000;
+	        // Setting First Slide
+	        startSlideIndex = startSlideIndex >= slides.length ? 0 : startSlideIndex;
+	        slides[startSlideIndex].classList.add("front");
+
+	        // Event Bindings
+	        function Timer(callback, delay) {
+			    var timerId, start, remaining = delay;
+
+			    this.pause = function() {
+			        window.clearInterval(timerId);
+			        // remaining -= new Date() - start;
+			    };
+
+			    this.resume = function() {
+			        start = new Date();
+			        window.clearInterval(timerId);
+			        timerId = window.setInterval(callback, remaining);
+			    };
+
+			    this.resume();
+			}
+	        var timer = new Timer(function(){
+	        	instance.nextFlip();
+	        }, sliderTime);
+
+	        slides.forEach(function(el){
+				el.addEventListener('mouseover', function(){
+	        		timer.pause();
+	        	}, true);
+
+	        	el.addEventListener('mouseleave', function(){
+	        		timer.resume();
+	        	}, true);
+	        })
+	    })(this);
+	}
+
+	// Creating Instance of the slider
+	var flip1 = new FlipSlider({container: document.querySelector(".promo1"), sliderTime: 5000});
+	var flip2 = new FlipSlider({container: document.querySelector(".promo2"), sliderTime: 5000});
+	var flip3 = new FlipSlider({container: document.querySelector(".promo3"), sliderTime: 5000});
+	var flip4 = new FlipSlider({container: document.querySelector(".promo4"), sliderTime: 5000});
+
+	function mapleFalling() {
+		var LeafScene = function(el) {
+		    this.viewport = el;
+		    this.world = document.createElement('div');
+		    this.leaves = [];
+
+		    this.options = {
+		      numLeaves: 20,
+		      wind: {
+		        magnitude: 0.98,
+		        maxSpeed: 8,
+		        duration: 1000,
+		        start: 0,
+		        speed: 0
+		      },
+		    };
+
+		    this.width = this.viewport.offsetWidth;
+		    this.height = this.viewport.offsetHeight;
+
+		    // animation helper
+		    this.timer = 0;
+
+		    this._resetLeaf = function(leaf) {
+
+		      // place leaf towards the top left
+		      leaf.x = this.width * 2 - Math.random()*this.width*1.75;
+		      leaf.y = -10;
+		      leaf.z = Math.random()*200;
+		      if (leaf.x > this.width) {
+		        leaf.x = this.width + 10;
+		        leaf.y = Math.random()*this.height/2;
+		      }
+		      // at the start, the leaf can be anywhere
+		      if (this.timer == 0) {
+		        leaf.y = Math.random()*this.height;
+		      }
+
+		      // Choose axis of rotation.
+		      // If axis is not X, chose a random static x-rotation for greater variability
+		      leaf.rotation.speed = Math.random()*10;
+		      var randomAxis = Math.random();
+		      if (randomAxis > 0.5) {
+		        leaf.rotation.axis = 'X';
+		      } else if (randomAxis > 0.25) {
+		        leaf.rotation.axis = 'Y';
+		        leaf.rotation.x = Math.random()*180 + 90;
+		      } else {
+		        leaf.rotation.axis = 'Z';
+		        leaf.rotation.x = Math.random()*360 - 180;
+		        // looks weird if the rotation is too fast around this axis
+		        leaf.rotation.speed = Math.random()*3;
+		      }
+
+		      // random speed
+		      leaf.xSpeedVariation = Math.random() * 0.8 - 0.4;
+		      leaf.ySpeed = Math.random() + 1.5;
+
+		      return leaf;
+		    }
+
+		    this._updateLeaf = function(leaf) {
+		      var leafWindSpeed = this.options.wind.speed(this.timer - this.options.wind.start, leaf.y);
+
+		      var xSpeed = leafWindSpeed + leaf.xSpeedVariation;
+		      leaf.x -= xSpeed;
+		      leaf.y += leaf.ySpeed;
+		      leaf.rotation.value += leaf.rotation.speed;
+
+		      var t = 'translateX( ' + leaf.x + 'px ) translateY( ' + leaf.y + 'px ) translateZ( ' + leaf.z + 'px )  rotate' + leaf.rotation.axis + '( ' + leaf.rotation.value + 'deg )';
+		      if (leaf.rotation.axis !== 'X') {
+		        t += ' rotateX(' + leaf.rotation.x + 'deg)';
+		      }
+		      leaf.el.style.webkitTransform = t;
+		      leaf.el.style.MozTransform = t;
+		      leaf.el.style.oTransform = t;
+		      leaf.el.style.transform = t;
+
+		      // reset if out of view
+		      if (leaf.x < -10 || leaf.y > this.height + 10) {
+		        this._resetLeaf(leaf);
+		      }
+		    }
+
+		    this._updateWind = function() {
+		      // wind follows a sine curve: asin(b*time + c) + a
+		      // where a = wind magnitude as a function of leaf position, b = wind.duration, c = offset
+		      // wind duration should be related to wind magnitude, e.g. higher windspeed means longer gust duration
+
+		      if (this.timer === 0 || this.timer > (this.options.wind.start + this.options.wind.duration)) {
+
+		        this.options.wind.magnitude = Math.random() * this.options.wind.maxSpeed;
+		        this.options.wind.duration = this.options.wind.magnitude * 50 + (Math.random() * 20 - 10);
+		        this.options.wind.start = this.timer;
+
+		        var screenHeight = this.height;
+
+		        this.options.wind.speed = function(t, y) {
+		          // should go from full wind speed at the top, to 1/2 speed at the bottom, using leaf Y
+		          var a = this.magnitude/2 * (screenHeight - 2*y/3)/screenHeight;
+		          return a * Math.sin(2*Math.PI/this.duration * t + (3 * Math.PI/2)) + a;
+		        }
+		      }
+		    }
+		  }
+
+		  LeafScene.prototype.init = function(mapleEl) {
+
+		    for (var i = 0; i < this.options.numLeaves; i++) {
+		      var leaf = {
+		        el: document.createElement(mapleEl),
+		        x: 0,
+		        y: 0,
+		        z: 0,
+		        rotation: {
+		          axis: 'X',
+		          value: 0,
+		          speed: 0,
+		          x: 0
+		        },
+		        xSpeedVariation: 0,
+		        ySpeed: 0,
+		        path: {
+		          type: 1,
+		          start: 0,
+
+		        },
+		        image: 1
+		      };
+		      this._resetLeaf(leaf);
+		      this.leaves.push(leaf);
+		      this.world.appendChild(leaf.el);
+		    }
+
+		    this.world.className = 'leaf-scene';
+		    this.viewport.appendChild(this.world);
+
+		    // set perspective
+		    this.world.style.webkitPerspective = "400px";
+		    this.world.style.MozPerspective = "400px";
+		    this.world.style.oPerspective = "400px";
+		    this.world.style.perspective = "400px";
+		    
+		    // reset window height/width on resize
+		    var self = this;
+		    window.onresize = function(event) {
+		      self.width = self.viewport.offsetWidth;
+		      self.height = self.viewport.offsetHeight;
+		    };
+		  }
+
+		  LeafScene.prototype.render = function() {
+		    this._updateWind();
+		    for (var i = 0; i < this.leaves.length; i++) {
+		      this._updateLeaf(this.leaves[i]);
+		    }
+
+		    this.timer++;
+
+		    requestAnimationFrame(this.render.bind(this));
+		  }
+
+		  // start up leaf scene
+		  var leafContainer = document.querySelector('.bg-decoration'),
+		      leaves = new LeafScene(leafContainer);
+
+		  leaves.init('div');
+		  leaves.init('p');
+		  leaves.render();
+	}
+	mapleFalling();
+	
+</script>
+<script type="text/javascript" src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script type="text/javascript" src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1104292/generateVersion20180425.js?56456131561" defer></script>
+</body>

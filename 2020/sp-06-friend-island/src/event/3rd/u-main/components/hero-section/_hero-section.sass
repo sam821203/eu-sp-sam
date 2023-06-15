@@ -1,0 +1,71 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero__wrap
+  +pos-set(relative, zero)
+  // +bg-set(url("~event/3rd/u-main/components/hero-section/bg-hero.jpg"), 100%)
+  // overflow: hidden
+  +breakpoint-min($min-width-xl)
+    background-size: auto
+
+  // .hero__zone
+
+  .hero__block
+    padding-top: 1%
+
+  .hero__box
+    margin-left: auto
+    margin-right: auto
+    width: 76%
+    // margin-left: -0.7%
+
+  .hero__title
+    &--main
+      width: 100%
+      text-align: center
+      transform-origin: center top
+      animation: swing 0.75s 0.75s both
+
+  .title-decoration__wrap
+    +pos-set(relative, zero)
+    width: 100%
+    height: 100%
+    pointer-events: none
+    .title__decoration
+
+      &--middle
+        display: flex
+        padding: 0 30%
+        width: 100%
+        pointer-events: none
+        // overflow: hidden
+        .decoration__pic
+          &:first-child
+            animation: shakeY 5s infinite
+          &:last-child
+            animation: shakeY 5s 2.5s infinite
+
+      &--bottom
+        +pos-set(absolute, base)
+        bottom: 15%
+        right: 2%
+        width: 26%
+        will-change: scroll
+        +breakpoint-min($min-width-xl)
+          bottom: 35px
+          right: calc(50% - 405px)
+          width: 180px
+
+  .promo__zone
+    // margin-top: 8%
+    //background-color: $gray-deep-light
+    +breakpoint-min($min-width-xl)
+      background-color: transparent
+
+@keyframes shakeY
+  0%, to
+    transform: translateZ(0)
+  5%, 15%, 25%, 35%, 45%
+    transform: translate3d(0, -10px, 0)
+  10%, 20%, 30%, 40%, 50%
+    transform: translate3d(0, 0, 0)

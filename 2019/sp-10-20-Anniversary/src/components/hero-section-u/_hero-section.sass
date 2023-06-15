@@ -1,0 +1,171 @@
+// // ==========================================================================
+// // 裝飾
+// // ==========================================================================
+@keyframes ball-jump-left
+  0%
+    top: -400px
+    transform: scale(0.4)
+    opacity: 0
+    left: calc(50% - 860px)
+  16%
+    transform: scale(0.4)
+  20%
+    top: 15%
+    opacity: 1
+    transform: scale(1.2)
+    //max-height: 150px
+    //background-size: 352px 150px
+  36%
+    transform: scale(1.2)
+  40%
+    top: 0
+    transform: scale(0.5)
+  50%
+    top: 4%
+    //max-height: 100px
+    //background-size: 352px 100px
+    transform: scale(1.1)
+    opacity: 1
+  70%, 100%
+    top: 2%
+    left: calc(50% - 860px)
+    opacity: 1
+    transform: scale(1)
+    //max-height: 378px
+    //background-size: 352px 378px
+
+
+@keyframes ball-jump-right
+  0%
+    top: -400px
+    transform: scale(0.4)
+    opacity: 0
+    right: calc(50% - 1030px)
+  16%
+    transform: scale(0.4)
+  20%
+    top: 30%
+    transform: scale(1)
+    //max-height: 50px
+    //background-size: 460px 50px
+  36%
+    transform: scale(1.2)
+  40%
+    top: 10%
+    transform: scale(0.5)
+  50%
+    top: 20%
+    transform: scale(1.1)
+    opacity: 1
+    //max-height: 200px
+    //background-size: 460px 200px
+  70%, 100%
+    top: 13%
+    right: calc(50% - 1030px)
+    opacity: 1
+    transform: scale(1)
+    //max-height: 430px
+    //background-size: 460px 430px
+
+@keyframes title-down
+  0%
+    opacity: 0
+    transform: translateY(calc(-100vw * .5))
+  70%, 80%
+    transform: translateY(0) scale(1.2)
+  75%, 100%
+    transform: translateY(0) scale(1)
+  100%
+    opacity: 1
+//+breakpoint-min($min-width-xl)
+.header__decoration
+  +pos-set(absolute, zero)
+  height: 0
+  &.header__decoration--left
+    +bg-set(url("~components/hero-section/hero-decoration-ball-left.png"), 352px 378px)
+    padding-top: 378px
+    width: 38%
+    max-width: 352px
+    max-height: 378px
+    animation: 3s 1s ball-jump-left 1 both, 12s 4s key-wind-rotate2 infinite
+    //transform-origin: left top
+  &.header__decoration--right
+    +bg-set(url("~components/hero-section/hero-decoration-ball-right.png"), 460px 430px)
+    padding-top: 430px
+    width: 48%
+    max-width: 460px
+    max-height: 430px
+    animation: 4s 2s ball-jump-right 1 both, 12s 4s key-wind-rotate infinite
+    //animation: key-wind-rotate 12s infinite
+    //transform-origin: right bottom
+  &.header__decoration--balls
+    +bg-set(url("~components/hero-section/hero-decoration-balls.png"), 2560px auto)
+    position: absolute
+    top: 0
+    left: 50%
+    transform: translateX(-50%)
+    width: 100%
+    height: 3031px
+// // ==========================================================================
+// // main
+// // ==========================================================================
+
+.hero__wrap
+  +pos-set(relative, null)
+  overflow: hidden
+  .hero__zone
+    +pos-set(relative, zero)
+    // +bg-set(url("~components/hero-section/960bg-01.jpg"), 100%)
+    padding-top: 5%
+
+  .hero__title
+    z-index: 2
+    position: relative
+    &--main
+      padding-top: 3.8%
+      img
+        animation: 1s 1s title-down both ease-out
+        margin-left: 10.5%
+        width: 80%
+
+  +breakpoint-min($min-width-xl)
+    // +bg-set(url("~components/hero-section/2560bg-01.jpg"))
+    .hero__zone
+      padding-top: 10px
+
+    .hero__title
+      padding-top: 110px
+      &--main
+        img
+          margin-left: 40px
+          width: auto
+          padding: 0
+    .hero__block
+      +display-flex(">div")
+      flex-wrap: wrap
+      +pos-set(relative, zero)
+    .hero__box
+      +flex(0, 0, 60%)
+    .goods__wrap
+      +flex(0, 1, 66%)
+      +pos-set(absolute, under, 15px, null, null, -140px)
+    .promo__event
+      +flex(0, 1, 100%)
+      +pos-set(relative, second)
+    .goods__wrap--flip
+      +flex(0, 1, 62%)
+      +pos-set(absolute, second, 50px, null, null, -135px)
+  //padding: 50px
+
+  // decoration
+  .hero__decoration
+    display: none
+    +breakpoint-min($min-width-xl)
+      display: block
+      +pos-set(absolute, base)
+      top: 450px
+      width: 100%
+      pointer-events: none
++key-wind-rotate(-4, 4)
++key-wind-rotate(5, -4, key-wind-rotate2)
++key-rotate-self(2)

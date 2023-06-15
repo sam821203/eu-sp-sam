@@ -1,0 +1,63 @@
+// // ==========================================================================
+// // Plugins
+// // ==========================================================================
+// // @import "vendors/animate"
+@import "~vendors/style/swiper-slider-custom"
+@import "~swiper/swiper-bundle.css"
+
+// // ==========================================================================
+// // components
+// // ==========================================================================
+
+// hero section
+// ===========================
+@import "~event/1st/e-main/components/hero-section/_hero-section"
+//@import "~event/1st/e-main/components/daily-slider/_daily-slider"
+@import "~event/1st/e-main/components/tab-section/_tab-section"
+@import "~event/1st/e-main/components/bg-decoration/_bg-decoration"
+
+// other components
+// ===========================
+//- @import "~event/1st/e-main/components/hero-small-slider/_hero-small-slider"
+//- @import "~event/1st/e-main/components/daily-goods/_daily-goods"
+@import "~event/1st/e-main/components/daily-change/_daily-change"
+@import "~event/1st/e-main/components/promo-event/_promo-event"
+@import "~event/1st/e-main/components/dynamic-slider/_dynamic-slider"
+@import "~event/1st/e-main/components/text-slider/_text-slider"
+@import "~event/1st/e-main/components/mid-big-slider/_mid-big-slider"
+@import "~event/1st/e-main/components/random-select/_random-select"
+@import "~event/1st/e-main/components/tab-slider-section/_tab-slider-section"
+//@import "~event/1st/e-main/components/dynamic-slider-2/_dynamic-slider-2"
+@import "~event/1st/e-main/components/bn-bank/_bn-bank"
+@import "~event/1st/e-main/components/dynamic-slider-3/_dynamic-slider-3"
+@import "~event/1st/e-main/components/bn-special/_bn-special"
+@import "~event/1st/e-main/components/promo-slider/_promo-slider"
+//@import "~event/1st/e-main/components/left-right-section/_left-right-section"
+// // ==========================================================================
+// // Page
+// // ==========================================================================
+body
+  +pos-set(relative, zero)
+  background-color: $main-e-background-color-1st
+  +breakpoint-min($min-width-xl)
+    //background-image: url("~event/1st/e-main/pages/index/bg-line.jpg")
+    background-repeat: repeat-y
+    background-size: 2560px auto
+    background-position: top center
+
+.sp__wrap
+  +pos-set(relative, base)
+  //+bg-set(url("~event/1st/e-main/pages/index/bg.jpg"), 100%)
+  +bg-set(url("https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1116800/bg.jpg"), 100%)
+  +breakpoint-min($min-width-xl)
+    //background: center top url("~event/1st/e-main/pages/index/bg-web.jpg") no-repeat
+    background: center top url("https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1116800/bg-web.jpg") no-repeat
+    background-size: 2560px 1200px
+    overflow-x: hidden
+    z-index: -1
+
+.sp__wrap a
+  display: block
+
+.max__width--100
+  max-width: 100%

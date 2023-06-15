@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<head>
+    <script>
+		function spTimeOut() {
+			var dateNow = Date.now();
+			var dateTimeOut = new Date(2018,5,6);
+			var dateTimeOut2 = new Date(2018,5,7);
+			var dateTimeOut3 = new Date(2018,5,15);
+			var dateTimeOut4 = new Date(2018,5,20);
+			var banner = document.querySelector("#banner");
+			var line = document.querySelector("#lineImg");
+
+			if( dateNow < dateTimeOut || dateNow > dateTimeOut4) {
+					line.style.opacity = 1;
+			} else if (dateNow > dateTimeOut2 ) {
+				if (dateNow < dateTimeOut3) {
+					line.style.opacity = 1;
+				} else {
+					banner.style.display = 'block';
+					line.setAttribute('src','line-and-app-2.png');
+					setTimeout(function(){
+						line.style.opacity = 1;
+					}, 0);
+					
+				}
+			} else {
+				banner.style.display = 'block';
+				line.setAttribute('src','line-and-app-2.png');
+				setTimeout(function(){
+					line.style.opacity = 1;
+				}, 0);
+			}
+		}		
+		document.addEventListener('DOMContentLoaded', spTimeOut);		
+    </script>	
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		* {
+ 		 box-sizing: border-box; }
+  		*:before, *:after {
+    		box-sizing: border-box; }
+	    a {
+	    	display: block;
+	    	text-decoration: none;
+	    }
+		header a, section a {	
+			line-height: 0;
+		}
+	    h1 {
+	    	line-height: 0;
+	    }
+		ul {
+			list-style: none;
+		}
+		img {
+			border: 0;
+		}
+		main, header, footer, section {
+			display: block;
+		}
+		body {
+			margin: 0;
+  			padding: 0;
+  			width: 100%;
+  			min-width: 1260px;
+  			background-color: #b82cc2;
+			background: center top url(bg.png) no-repeat, linear-gradient(#b82cc2, #1c0547, #b82cc2);
+		}
+
+		@media screen and (min-width: 1921px) {
+			body {
+				background-size: 100%;
+				background-position-y: -70px; 
+			}
+		}
+
+		body, td, th {
+		font-family: Arial, Helvetica, LiHei, "Microsoft JhengHei", PMingLiU, "微軟正黑體", "新細明體", sans-serif;
+		}
+		.clearfix:after {
+			content: '';
+			display: block;
+			clear: both;
+			*zoom: 1;
+		}
+
+		.sp__wrap {
+			position: relative;
+			background: center 100px url(foreground.png) no-repeat;
+			overflow: hidden;
+		}
+
+		.sp--1260 {
+			position: relative;
+			max-width: 1260px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+/* ================= bg-dec ================= */
+		.bg-dec {
+			position: absolute;
+			z-index: -2;
+			width: 100%;
+			height: 550px;
+			overflow: hidden;
+			perspective: 100px;
+		}
+
+		.bg-dec:before {
+			content: '';
+			position: absolute;
+			z-index: -2;
+			top: -15px;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: url(bg-spot.png) no-repeat;
+			background-size: cover;
+			animation: 5s burst-flash step-end infinite;			
+		}
+
+		@keyframes burst-flash {
+			2%, 6% ,22%, 26%, 42%, 46% {
+				filter: brightness(180%);
+			}
+			4%, 8%, 24%, 28%, 44%, 48% {
+				filter: brightness(150%) hue-rotate(-60deg);
+			}
+			10% {
+				filter: brightness(180%);
+			}
+			30% {
+				filter: brightness(150%) hue-rotate(-240deg);
+			}
+			50% {
+				filter: brightness(100%);
+			}
+		}
+
+		@media screen and (min-width: 1921px) {
+			.bg-dec {
+				height: 700px;
+			}
+		}
+
+		.spotlight {
+			position: absolute;
+			z-index: 0;
+			top: -100px;
+			width: 200px;
+			height: 150%;
+			background: linear-gradient(to right, transparent, #5a46c7, #7576dd, #f4f9f6,#7576dd, #5a46c7, transparent);
+			opacity: 0;
+			transform-style: preserve-3d;
+			transform-origin: top;
+		}
+
+		.spotlight1 {
+			left: 30%;
+			animation: 10s 0.4s self-rotate infinite linear;
+
+		}
+
+		.spotlight2 {
+			left: 60%;
+			animation: 10s 0.4s self-rotate infinite linear reverse;
+
+		}
+
+		@keyframes self-rotate {
+			from, to {
+				opacity: 0.5;
+				transform: rotate(0);
+			}
+			25% {
+				transform: rotate(20deg);
+			}
+			75% {
+				transform: rotate(-20deg);
+			}
+		}
+/* ================= header ================= */
+		.sp-logo {
+			position: absolute;
+			z-index: 20;
+			top: 20px;
+			left: 0;
+			cursor: pointer;
+		}
+		.side-info {
+			position: absolute;
+			z-index: 30;
+			top: 565px;
+			right: 5%;
+			width: 186px;
+			filter: drop-shadow(-5px -1px 4px rgba(0,0,0,.35));
+		}
+
+		.side-info img {
+			width: 100%;
+		}
+
+		.side-info a {
+			position: absolute;
+			z-index: 21;
+			left: 0;
+			width: 100%;
+		}
+
+		.side-info a:nth-child(2) {
+			top: 0;
+			height: 50%;
+		}
+
+		.side-info a:nth-child(3) {
+			bottom: 0;
+			height: 50%;
+		}
+		
+/* ================= main-visual ================= */
+
+		.sp-title {
+			position: relative;
+			z-index: 1;
+			padding-top: 60px;
+			height: 550px;
+		}
+
+		.main-title > img:first-child {
+			position: relative;
+			z-index: 0;
+			top: -20px;
+			left: 44.5%;
+			transform: translateX(-50%);
+		}
+
+		.main-title > img:nth-child(2) {
+			position: relative;
+			z-index: 2;
+			top: -352px;
+			left: 40%;
+		}
+
+		.main-title > img:last-child {
+			position: absolute;
+			z-index: 3;
+			top: 222px;
+			left: 36.5%;
+			opacity: 0;
+			animation: 2s 0.3s bounceInDown forwards ease-out, 5s 3s change-color infinite alternate;
+		}
+
+		/*!
+		 * animate.css -http://daneden.me/animate
+		 * Version - 3.6.0
+		 * Licensed under the MIT license - http://opensource.org/licenses/MIT
+		 *
+		 * Copyright (c) 2018 Daniel Eden
+		 */
+		@keyframes bounceInDown {
+		  from,
+		  60%,
+		  75%,
+		  90%,
+		  to {
+		    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+		    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+		  }
+
+		  0% {
+		    opacity: 1;
+		    -webkit-transform: translate3d(0, -1000px, 0);
+		    transform: translate3d(0, -1000px, 0);
+		  }
+
+		  60% {
+		    opacity: 1;
+		    -webkit-transform: translate3d(0, 25px, 0);
+		    transform: translate3d(0, 25px, 0);
+		  }
+
+		  75% {
+		  	opacity: 1;
+		    -webkit-transform: translate3d(0, -10px, 0);
+		    transform: translate3d(0, -10px, 0);
+		  }
+
+		  90% {
+		  	opacity: 1;
+		    -webkit-transform: translate3d(0, 5px, 0);
+		    transform: translate3d(0, 5px, 0);
+		  }
+
+		  to {
+		  	opacity: 1;
+		    -webkit-transform: translate3d(0, 0, 0);
+		    transform: translate3d(0, 0, 0);
+		  }
+		}
+
+		@keyframes change-color {
+			from {
+				filter: brightness(100%) hue-rotate(0deg);
+			}
+			25% {
+				filter: brightness(120%) hue-rotate(105deg);
+			}
+			50% {
+				filter: brightness(120%) hue-rotate(210deg);
+			}
+			75% {
+				filter: brightness(120%) hue-rotate(300deg);
+			}
+			to {
+				filter: brightness(120%) hue-rotate(360deg);
+			}
+		}
+
+		.light {
+			position: absolute;
+			z-index: 1;
+			top: 42px;
+			left: 23.7%;
+			width: 555px;
+			height: 156px;
+			border: 6px dotted #aaa;
+			border-radius: 20px;
+		}
+
+		.light:after {
+			content: '';
+			position: absolute;
+			z-index: 2;
+			top: -6px;
+			left: -6px;
+			width: 555px;
+			height: 156px;
+			border: 6px dotted transparent;
+			border-radius: 20px;
+			animation: 6s neon step-end infinite;
+		}
+
+		@keyframes neon {
+			10% {
+				border-top-color: #fffa90;
+			}
+			20% {
+				border-right-color: #fffa90;
+			}
+			30% {
+				border-bottom-color: #fffa90;
+			}
+			40% {
+				border-left-color: #fffa90;
+			}
+			50%, 60%, 70% {
+				border-color: transparent;
+			}
+			55%, 65%, 75%, 100% {
+				border-color: #fffa90;
+			}
+		}
+
+/* ================= subtitle ================= */
+		.subtitle {
+			position: absolute;
+			z-index: 5;
+			top: 100px;
+			right: 3%;
+		}
+
+		.top-card {
+			width: 271px;
+			padding: 10px;
+			background: linear-gradient(to top right, #0538a0, #2b60d1);
+			border-radius: 5px;
+			border: 3px solid #b1b5f4;
+			font-size: 15px;
+			text-align: center;
+		}
+
+		.subtitle a {
+			color: #b3d1ff;
+		}
+
+		.subtitle h2 {
+			font-weight: bold;
+			line-height: 120%;
+		}
+
+		.top-card {
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.top-card > img {
+			margin-top: 10px; 
+			transition: all 0.3s;
+		}
+
+		.subtitle:hover .top-card > img {
+			transform: translateY(-5px);
+			box-shadow: 0 8px 13px rgba(0,0,0,0.2), 0 3px 3px rgba(0,0,0,0.35);
+		}
+
+		.more-info {
+			margin-top: -20px;
+			margin-left: -38px;
+		}
+
+/* ================= main0 ================= */
+		.main0 {
+			position: relative;
+			z-index: 1;
+			width: 100%;
+			height: 200px;
+		}
+
+		.main0--info-a {
+			position: absolute;
+			z-index: 1;
+			top: -40px;
+			left: 65px;
+			width: 400px;
+			height: 250px;
+		}
+
+		.main0--info-a img {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 100%;
+		}
+
+		.main0--info-a:before {
+			content: '';
+			position: absolute;
+			z-index: 0;
+			bottom: -8px;
+			left: -25%;
+			width: 513px;
+			height: 222px;
+			background-image: url(game-intro-bg.png);
+		}
+
+		.main0-title {
+			position: relative;
+			top: 30px;
+			left: 55%;
+			transform: translateX(-50%);
+		}
+
+/* ================= main-content ================= */
+		.sp-content	{
+			position: relative;
+			z-index: 20;
+			/*height: 360px;*/
+			padding-bottom: 1%;
+			overflow: hidden;
+		}
+
+		.sp-content:hover .main--info-a	{
+			will-change: transform;
+		}
+
+		.main--info-a {
+			position: relative;
+			z-index: 2;
+			float: left;
+			width: 330px;
+			border-radius: 50%;
+			transform: scale(0.94); 
+			transition: all 0.2s ease-in-out;
+		}
+
+		.main--info-a + .main--info-a {
+			margin-left: -1.67%;
+		}
+
+		.main--info-a:hover {
+			z-index: 10;
+			transform: scale(1.03);
+			filter: brightness(110%) hue-rotate(5deg);
+			animation: 0.5s shuffle-left ease-in-out;
+		}
+
+		.main--info-a:nth-child(4):hover {
+			animation: 0.5s shuffle-right ease;
+		}
+
+		@keyframes shuffle-left {
+			50% {
+				transform: translateX(-10%);
+			}
+		}
+
+		@keyframes shuffle-right {
+			50% {
+				transform: translateX(10%);
+			}
+		}
+
+		.banner {
+			display: none;
+			position: relative;
+			z-index: 1;
+			margin-top: 30px; 
+			transition: transform 0.3s, filter 0.3s;
+		}
+		.banner:hover {
+			transform: scale(1.02);
+			transform-origin: center;
+			filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2)) drop-shadow( 0 3px 3px rgba(0,0,0,0.35));			
+		}
+
+/* ================= table hover setting ================= */
+		td[width^="2"] {
+			transition: all 0.3s;
+		}
+
+		td[width^="2"] a {
+			transition: all 0.3s;
+		}
+
+		td[width^="2"] td {
+			transition: all 0.3s;
+		}
+
+		td[width^="2"]:hover {
+			transform: translateY(-6px);
+			box-shadow: 0 5px 10px rgba(0,0,0,0.2), 0 3px 3px rgba(0,0,0,0.35);
+		}
+		td[width^="2"]:hover a {
+			color: #543ec3 !important;
+		}
+
+		td[width^="2"]:hover td {
+			color: #543ec3 !important;
+		}
+/* ================= brand ================= */
+		.sp__wrap .b1{
+			padding: 12px;
+		  background-color: #ea428d;
+		  vertical-align: top;
+		}
+		.sp__wrap .b1 img{
+		  width: 308px;
+		  padding: 10px;
+		}
+		.sp__wrap .b1 a{
+		  background-color: #FFFFFF;
+		  display: block;
+		  width: 308px;
+		  text-decoration: none;
+		}
+		.sp__wrap .b1 p,.sp__wrap .b1 h1{
+		  margin: 0;
+		}
+		.sp__wrap .b1 p{
+		  color: #434343;
+		  font:normal 20px/1.3 "微軟正黑體";
+		  width: 265px;
+		  height: 50px;
+		  overflow-y: hidden;
+		  margin: auto;
+		}
+		.sp__wrap .b1 h1{
+		  font:bold 42px/1.5 arial;
+		  color: #f44a72;
+		  text-align: center;
+		}
+		.sp__wrap .b1 h1::before{
+		  content: '$';
+		  font-size: 25px;
+		}
+		.sp__wrap .s4{
+		  background-color: #5938cb;
+		}
+		.sp__wrap .s4 a{
+		  background-color: #FFFFFF;
+		  width: 446px;
+		  display: block;
+		}
+		.sp__wrap .s4 img{
+		  width: 203px;
+		  height: 203px;
+		  padding-right: 22px;
+		  float: left;
+		}
+		.sp__wrap .s4 h3,.sp__wrap .s4 p,.sp__wrap .s4 h1{
+		  font:normal 16px/1.3 "微軟正黑體";
+		  color: #434343;
+		  float: left;
+		  width: 221px;
+		  margin: 0;
+		}
+		.sp__wrap .s4 h3{
+		  color: #f44a15;
+		  margin-top: 20px;
+		}
+		.sp__wrap .s4 p{
+		  font-size: 18px;
+		  margin-top: 5px;
+		}
+		.sp__wrap .s4 h1{
+		  font:bold 42px arial;
+		  color: #f44a72;
+		}
+		.sp__wrap .s4 h1::before{
+		  content: '$';
+		  font-size: 25px;
+		}
+		.sp__wrap .s4 a::after{
+		  clear: both;
+		  display: block;
+		  content: '';
+		}
+    </style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+	<div class="bg-dec">
+		<div class="spotlight spotlight1"></div>
+		<div class="spotlight spotlight2"></div>
+	</div>
+	<main id="spWrap" class="sp__wrap">
+		<header>
+			<div class="sp--1260">
+				<div class="sp-logo">
+					<a href="https://www.u-mall.com.tw/" title="Umall森森購物網" target="_top">
+						<img src="logo.png" alt="Umall森森購物網">
+					</a>
+			  	</div>
+				<aside class="side-info">
+					<img id="lineImg" src="line-and-app.png" alt="LINE's & APP's QR-code">
+				</aside>
+				<div class="subtitle">
+					<a id="ASRC" href="" title="點我購買APP專屬優惠商品！">
+						<div class="top-card">
+							<h2>森森強打推薦</h2>
+							<img id="IMGSRC" src="" alt="森森強打推薦">
+						</div>
+					</a>
+				</div>
+				<div class="sp-title">
+					<h1 class="main-title" title="618狂歡節 -- Umall森森購物網">
+						<img src="title.png" alt="618狂歡節年終慶送黃金">
+						<img src="title-time.png" alt="2018/6/1~2018/6/19">
+						<img src="5.png" alt="大牌狂降5折起">
+					</h1>
+					<div class="light"></div>
+				</div>
+			</div>
+		</header>
+		<section class="main0">
+			<div class="sp--1260">
+				<a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201806/SP_1101841/index.html" class="main0--info-a" title="點我進入抓抓樂活動頁面！">
+					<img id="main0Img" src="game-intro-1.png" alt="點我刮金塊">
+				</a>
+				<img class="main0-title" src="promo-intro.png" alt="消費不限金額即享APP刮刮樂抽獎機會1次">
+			</div>
+		</section>
+		<section class="sp-content">
+			<div class="sp--1260">
+				<div id="banner" class="banner"><a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201804/SP_1104083/index.html" target="_blank" title="LINE購物，全館最高5%回饋！"><img src="line-banner.png" alt="LINE購物，全館最高5%回饋！"></a></div>
+				<div class="main-info clearfix">
+					<a href="http://www.u-mall.com.tw/SimpleTemplate.aspx?SubPage=DMSetting/Final/201806/SP_1101837/index.html" class="main--info-a" title="單日累計送">
+						<img src="main-intro-1.png" alt="滿2000送600折扣金，滿7000送2550折扣金">
+					</a>
+					<a href="http://www.u-mall.com.tw/SimpleTemplate.aspx?SubPage=DMSetting/Final/201806/SP_1101840/index.html" class="main--info-a" title="登錄送好禮">
+						<img src="main-intro-2.png" alt="單日消費滿2件且達3000，全館隨你搬！">
+					</a>
+					<a href="http://www.u-mall.com.tw/SimpleTemplate.aspx?SubPage=DMSetting/Final/201806/SP_1101838/index.html" class="main--info-a" title="刷卡享好康">
+						<img src="main-intro-3.png" alt="刷台新，滿額登錄送550折扣金">
+					</a>
+					<a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201806/SP_1101839/index.html" class="main--info-a" title="會員專屬優惠">
+						<img src="main-intro-4.png" alt="登入免費送萬元折價券">
+					</a>
+				</div>
+			</div>
+		</section>
+		<div class="sp--1260">
+	<!--品牌區塊1 start(複製開始)-->
+	<!--bar-->
+		<table cellpadding="0" cellspacing="0" style="margin-top: 20px;">
+		  	<tr>
+		  		<td><a href="#" target="_blank"><img src="bar1.jpg"></a></td>
+		  	</tr>
+	  	</table>
+	<!--品牌商品1大4小-->
+		<table cellpadding="0" cellspacing="0" class="b1s4">
+			<tr>
+				<td class="b1">
+				  <a href="http://www.u-mall.com.tw/Prod?nm=&sc=02336964" target="_blank">
+				  <img src="http://media.u-mall.com.tw/NXimg/002027/2027736/2027736-1_XXL.jpg">
+				  <p>質感百搭<br>遮陽針織外套</p>
+				  <h1>499</h1>
+				  </a>
+		  		</td>
+				<td class="s4">
+					<table cellpadding="0" cellspacing="12">
+					<tr>
+					<td>
+			        <a href="http://www.u-mall.com.tw/Prod?nm=&sc=02344833" target="_blank">
+			        <img src="http://media.u-mall.com.tw/NXimg/002035/2035604/2035604-1_XXL.jpg">
+			        <h3>優雅修身版型　時尚經典</h3>
+			        <p>巴黎限定款<br>造型上衣</p>
+			        <h1>890</h1>
+			        </a>
+			        </td>
+			        <td>
+			        <a href="http://www.u-mall.com.tw/Prod?nm=&sc=02300944 " target="_blank">
+			        <img src="http://media.u-mall.com.tw/NXimg/002001/2001093/2001093-1_XXL.jpg">
+			        <h3>時尚簡約設計 亮麗時尚</h3>
+			        <p>都會名媛<br>專櫃質感上衣</p>
+			        <h1>740</h1>
+			        </a>
+			        </td>
+					</tr>
+					<tr>
+			        <td>
+			        <a href="http://www.u-mall.com.tw/Prod?nm=&sc=02347131" target="_blank">
+			        <img src="http://media.u-mall.com.tw/NXimg/002037/2037902/2037902-1_XXL.jpg">
+			        <h3>100%蠶絲 舒適透氣</h3>
+			        <p>時尚精品訂製款<br>100%蠶絲洋裝</p>
+			        <h1>1,599</h1>
+			        </a>
+			        </td>
+			        <td>
+			        <a href="http://www.u-mall.com.tw/Prod?nm=&sc=02277291" target="_blank">
+			        <img src="http://media.u-mall.com.tw/NXimg/001977/1977449/1977449-1_XXL.jpg">
+			        <h3>法式優雅造型蕾絲 絕美迷人</h3>
+			        <p>名媛女人<br>精品蕾絲上衣</p>
+			        <h1>880</h1>
+			        </a>
+			        </td>
+					</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<!--品牌區塊1 end(複製結束)-->
+		<!--品牌區塊2 start-->
+		<!--bar-->
+		<table cellpadding="0" cellspacing="0" style="margin-top: 20px;">
+		  	<tr>
+		  		<td><a href="#" target="_blank"><img src="bar2.jpg"></a></td>
+		  	</tr>
+	  	</table>
+	  	<!--品牌商品1大4小-->
+		<table cellpadding="0" cellspacing="0" class="b1s4">
+			<tr>
+				<td class="b1">
+				  <a href="http://www.u-mall.com.tw/Prod?nm=&sc=02339769" target="_blank">
+				  <img src="http://media.u-mall.com.tw/NXimg/002030/2030540/2030540-1_XXL.jpg">
+				  <p>蠶絲無鋼圈<br>蕾絲拉繩內衣 5件組</p>
+				  <h1>979</h1>
+				  </a>
+		  		</td>
+				<td class="s4">
+					<table cellpadding="0" cellspacing="12">
+					<tr>
+					<td>
+			        <a href="http://www.u-mall.com.tw/Prod?nm=&sc=02333695" target="_blank">
+			        <img src="http://media.u-mall.com.tw/NXimg/002024/2024467/2024467-1_XXL.jpg">
+			        <h3>天然棉健康素材</h3>
+			        <p>法式蕾絲<br>天然棉涼感美胸衣 3件組</p>
+			        <h1>865</h1>
+			        </a>
+			        </td>
+			        <td>
+			        <a href="http://www.u-mall.com.tw/Prod?nm=&sc=02342704 " target="_blank">
+			        <img src="http://media.u-mall.com.tw/NXimg/002033/2033475/2033475-1_XXL.jpg">
+			        <h3>Hi CooL排汗紗纖維</h3>
+			        <p>透氧輕呼吸<br>無痕無鋼圈胸罩 3件組</p>
+			        <h1>688</h1>
+			        </a>
+			        </td>
+					</tr>
+					<tr>
+			        <td>
+			        <a href="http://www.u-mall.com.tw/Prod?nm=&sc=02336873" target="_blank">
+			        <img src="http://media.u-mall.com.tw/NXimg/002027/2027645/2027645-1_XXL.jpg">
+			        <h3>前拉鍊方便穿脫</h3>
+			        <p>斜紋前拉鍊<br>運動內衣 (深灰)</p>
+			        <h1>220</h1>
+			        </a>
+			        </td>
+			        <td>
+			        <a href="http://www.u-mall.com.tw/Prod?nm=&sc=02175047 " target="_blank">
+			        <img src="http://media.u-mall.com.tw/NXimg/001898/1898091/1898091-1_XXL.jpg">
+			        <h3>3D立體輕巧模杯</h3>
+			        <p>挺Ｖ緹花蕾絲<br>無鋼圈內衣 3套組</p>
+			        <h1>985</h1>
+			        </a>
+			        </td>
+					</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<!--品牌區塊2 end-->
+  </div>
+	</main>
+<script src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201504/SP_1019163/Includes/jquery-1.7.2.js"></script>
+<script src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1101787/generateVersion20180425.js?165161656056" defer></script>
+<script>
+	function apngControl() {
+		var main0 = document.querySelector('.main0');
+		var img = document.querySelector('#main0Img');
+		main0.addEventListener('mouseenter', function(){
+				hintBrowser(img);
+				img.src = 'game-intro-2.png';
+		});
+
+		main0.addEventListener('mouseleave', function(){
+				img.src = 'game-intro-1.png';
+		});
+
+		main0.addEventListener('animationEnd', removeHint);
+
+		function hintBrowser(el) {
+		  el.style.willChange = 'transform';
+		}
+
+		function removeHint() {
+		  this.style.willChange = 'auto';
+		}
+	}
+	apngControl();
+</script>	
+<script>
+		  var time = new Date();	  
+		  var days = time.getDate();
+		  var min = time.getMinutes();
+		  var n = time.getDate(); 
+          if(n>15)
+		  {	 
+			document.getElementById("IMGSRC").src ="product_6.png"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href ="http://www.u-mall.com.tw/Prod?nm=&sc=02261333"
+		  
+		  }
+		  else if(n>12)
+		  {	 
+			document.getElementById("IMGSRC").src ="product_5.png"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href ="http://www.u-mall.com.tw/Prod?nm=&sc=02222095"
+		  }
+		  else if(n>9)
+		  {	
+			document.getElementById("IMGSRC").src ="product_4.png"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href ="http://www.u-mall.com.tw/Prod?nm=&sc=02293153"
+		  }
+		
+		  else if(n>6)
+		  {	
+			document.getElementById("IMGSRC").src ="product_3.png"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href ="http://www.u-mall.com.tw/Prod?nm=&sc=02349484"
+		  }
+		  
+		  else if(n>3)
+		  {	
+			document.getElementById("IMGSRC").src ="product_2.png"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href ="http://www.u-mall.com.tw/Prod?nm=&sc=02310726"
+		  }
+		 
+		  else if(n>0)
+		  {
+			document.getElementById("IMGSRC").src ="product_1.png"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href ="http://www.u-mall.com.tw/Prod?nm=&sc=02222403"
+		  }
+</script>	
+</body>
+</html>

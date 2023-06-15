@@ -1,0 +1,21 @@
+- var bankLink = {etmall: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202003/SP_1114865/w/index.html", umall: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202003/SP_1106082/w/index.html"}
+- var bankInfo = isU ? bankLink.umall : bankLink.etmall
+- var bankPageName = {"玉山": '#esun', "中信": "#ctbc", "國泰": "#cathay", "台新": "#Taishin", "花旗": "#citi", "富邦": "#taipeifubon", "永豐": "#sinopac", "聯邦": "#union", "一銀": "#one", "遠銀": "#fareasten", "滙豐": "#hsbc", "華南": "#huanan", "新光": "#shinkong", "星展": "#dbs", "合作金庫": "#tcb", "凱基": "#kgi", "上海銀行": "#shanghai", "土銀": "#landbank", "日盛": "#jihsun", "臺銀": "#bot", "陽信": "#sunnybank", "樂天": "#rakuten"}
+
+.promo__slider.hero__slider
+  #sliderSmall.swiper-container
+    ul.swiper-wrapper
+      li.swiper-slide
+        h2.hero__title.hero__title--sub.block--center
+          a(href= bankInfo + bankPageName["花旗"], title="花旗滿30000送3000刷卡金")
+            img(src="~event/3rd/e-main/components/hero-small-slider/items/sub-title-1.png", alt="花旗滿30000送3000刷卡金")
+      li.swiper-slide
+        h2.hero__title.hero__title--sub.block--center
+          a(href= bankInfo + bankPageName["星展"], title="星展滿16000送1600東森提貨券")
+            img(src="~event/3rd/e-main/components/hero-small-slider/items/sub-title-2.png", alt="星展滿16000送1600東森提貨券")
+      li.swiper-slide
+        h2.hero__title.hero__title--sub.block--center
+          a(href= bankInfo + bankPageName["凱基"], title="凱基滿3888送388刷卡金")
+            img(src="~event/3rd/e-main/components/hero-small-slider/items/sub-title-3.png", alt="凱基滿3888送388刷卡金")
+
+

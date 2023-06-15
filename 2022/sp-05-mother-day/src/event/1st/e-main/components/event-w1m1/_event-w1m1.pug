@@ -1,0 +1,54 @@
+-
+  var w1m1Data = [
+    { // 1
+      link: "https://www.etmall.com.tw/i/3411803",
+      imgSrc: "event/1st/e-main/components/event-w1m1/items/event-bn-1.png",
+      alt: "致青春---永遠的18歲"
+    },
+    { // 2
+      link: "https://www.etmall.com.tw/i/2463973",
+      imgSrc: "event/1st/e-main/components/event-w1m1/items/event-bn-2.png",
+      alt: "犀利人妻---凍齡馭膚術"
+    },
+    { // 3
+      link: "https://www.etmall.com.tw/i/2803232",
+      imgSrc: "event/1st/e-main/components/event-w1m1/items/event-bn-3.png",
+      alt: "不能說的秘密---身體年齡25歲"
+    },
+    { // 4
+      link: "https://www.etmall.com.tw/i/3338210",
+      imgSrc: "event/1st/e-main/components/event-w1m1/items/event-bn-4.png",
+      alt: "時代的革命---保持年輕的心情"
+    },
+    { // 5
+      link: "https://www.etmall.com.tw/i/2722851",
+      imgSrc: "event/1st/e-main/components/event-w1m1/items/event-bn-5.png",
+      alt: "魔女首部曲---美魔女的減齡穿搭 "
+    },
+    { // 6
+      link: "https://www.etmall.com.tw/i/3394946",
+      imgSrc: "event/1st/e-main/components/event-w1m1/items/event-bn-6.png",
+      alt: "小時代---浪漫時光機"
+    },
+  ]
+
+section.promo__group.promo__group--w1m1.m-bottom--lg(data-title="花樣年華")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--title#titleEventW1M1
+        img(src="event/1st/e-main/components/event-w1m1/title-event-w1m1.png", alt="")
+      .decor__item.decor__item--left#decorEventW1M1
+        img(src="event/1st/e-main/components/event-w1m1/decor-event-w1m1-left.png", alt="")
+      .decor__item.decor__item--right#decorEventW1M1Sec
+        img(src="event/1st/e-main/components/event-w1m1/decor-event-w1m1-right.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          #w1m1Wrap.event__wrap
+            ul.good__wrap
+              each data, index in w1m1Data
+                li.wow.slideDown
+                  a(href= data.link, title= data.alt)
+                    - var hasImg = data.imgSrc ? true : false
+                    if (hasImg)
+                      img(src= data.imgSrc, alt= data.alt)

@@ -1,0 +1,27 @@
+-
+  var navData = [
+    {
+      link: "/create/index.html",
+      imgSrc: "~components/nav/items/nav-1.png",
+      alt: "創建團隊"
+    },
+    {
+      link: "/add/index.html",
+      imgSrc: "~components/nav/items/nav-2.png",
+      alt: "加入團隊"
+    },
+    {
+      link: "/my/index.html",
+      imgSrc: "~components/nav/items/nav-3.png",
+      alt: "我的團隊"
+    },
+  ]
+
+nav.nav.m-bottom--fixed
+  .layout--main
+    .nav__wrap
+      ul
+        each data, index in navData
+          li
+            a(href= data.link, title= data.alt)
+              img(src= data.imgSrc, alt= data.alt)

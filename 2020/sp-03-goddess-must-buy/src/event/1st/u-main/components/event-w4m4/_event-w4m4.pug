@@ -1,0 +1,17 @@
+- var w4m2DataE = [{link: "https://www.etmall.com.tw/np/64075", imgSrc: "~event/1st/e-main/components/event-w4m4/items/special-1.png", alt: "話題美妝"}, {link: "https://www.etmall.com.tw/np/93807", imgSrc: "~event/1st/e-main/components/event-w4m4/items/special-2.png", alt: "健康法寶"}, {link: "https://www.etmall.com.tw/c2/107807", imgSrc: "~event/1st/e-main/components/event-w4m4/items/special-3.png", alt: "智能生活"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202002/SP_1114842/w/index.html", imgSrc: "~event/1st/e-main/components/event-w4m4/items/special-4.png", alt: "豪禮狂送"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202002/SP_1114800/w/index.html", imgSrc: "~event/1st/e-main/components/event-w4m4/items/special-5.png", alt: "春遊野餐"}, {link: "https://www.etmall.com.tw/np/93985", imgSrc: "~event/1st/e-main/components/event-w4m4/items/special-6.png", alt: "流行精選"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202001/SP_1114687/w/index.html", imgSrc: "~event/1st/e-main/components/event-w4m4/items/special-7.png", alt: "防疫清淨機"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202002/SP_1114707/w/index.html", imgSrc: "~event/1st/e-main/components/event-w4m4/items/special-8.png", alt: "Fun心出遊"}, ]
+
+- var w4m2DataU = [{link: "https://www.u-mall.com.tw/c1/45051", imgSrc: "~event/1st/u-main/components/event-w4m4/items/special-1.png", alt: "開架保養"}, {link: "https://www.u-mall.com.tw/np/73924", imgSrc: "~event/1st/u-main/components/event-w4m4/items/special-2.png", alt: "關鍵保健"}, {link: "https://www.u-mall.com.tw/c3/137833", imgSrc: "~event/1st/u-main/components/event-w4m4/items/special-3.png", alt: "購機贈禮"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202002/SP_1106075/w/index.html", imgSrc: "~event/1st/u-main/components/event-w4m4/items/special-4.png", alt: "豪禮狂送"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202002/SP_1106076/w/index.html", imgSrc: "~event/1st/u-main/components/event-w4m4/items/special-5.png", alt: "女王家居"}, {link: "https://www.u-mall.com.tw/np/77121", imgSrc: "~event/1st/u-main/components/event-w4m4/items/special-6.png", alt: "流行精選"}, {link: "https://www.u-mall.com.tw/c2/105020", imgSrc: "~event/1st/u-main/components/event-w4m4/items/special-7.png", alt: "防疫激推"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202002/SP_1106001/w/index.html", imgSrc: "~event/1st/u-main/components/event-w4m4/items/special-8.png", alt: "Fun心出遊"}, ]
+
+- var w4m2Data = isU? w4m2DataU : w4m2DataE
+
+
+section.promo__group.promo__group--w4m4.m-bottom--lg
+  .layout--main
+    //- .promo__title.block--center.m-bottom--xs(data-title="a4")
+    //-   img.lazyload(data-src="section-bn-05.png", src="~utils/img/1x1_low.png", alt="秋賞獻禮")
+    .promo__wrap
+      ul.good__wrap
+        each data in w4m2Data
+          li
+            a(href= data.link, title= data.alt)
+              img(src= data.imgSrc, alt= data.alt)

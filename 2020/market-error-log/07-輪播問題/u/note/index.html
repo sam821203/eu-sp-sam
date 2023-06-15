@@ -1,0 +1,247 @@
+<meta name="viewport" content="width=device-width">
+<meta charset="utf-8">
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  *:before, *:after {
+    box-sizing: border-box;
+  }
+  a {
+    display: block;
+    text-decoration: none;
+  }
+  ul {
+    list-style: none;
+  }
+  img {
+    width: 100%;
+    border: 0;
+  }
+  article,
+  main,
+  nav,
+  section {
+    display: block;
+  }
+  body {
+    margin:0;
+    background-color:#efcb9a;
+	font-family: PingFangTC-regular, Roboto, "LiHei Pro", "Source Han Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, "Microsoft JhengHei", sans-serif;
+  }
+  .sp--960 {
+    position: relative;
+    z-index: 0;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* note*/
+  .note {	  
+    font-size: 15px;
+    word-break: break-all;
+	line-height:150%;
+  }
+  .note article {
+    padding: 1.5%;
+    background-color: #ffffff;
+	border-radius: 5px;
+  }  
+  .note article a {	  
+	display:inline;
+    color: #ce2212;
+	text-decoration:underline;
+    word-break: break-all;
+  } 
+  .note article a:hover {
+	text-decoration:none;	
+  }       
+  .note li{
+    padding:5px;
+  }  
+  .note ol>li {
+    margin-left: 30px;
+  }   
+  .act_means {
+    font-size: 32px;	
+	color: #fff;
+    background-color: #413d3d;	
+	line-height: 30px;
+	text-align: center;
+    letter-spacing: 2px;	
+	font-weight: bold;
+	padding: 15px;
+	border-radius: 5px;
+  }
+  .h2_style {
+	font-size: 24px;
+	color: #9b2121;
+	line-height: 30px;
+	margin-top: 15px;
+  }
+  @media (max-width: 700px) {
+	.act_means {
+	  font-size: 20px;
+	  line-height: 24px;	
+	}	  
+	.h2_style {		
+	  font-size: 20px;
+	}	  
+  }  
+  .p-notice {	
+	font-size:24px;  
+  	color:#555555;	
+	line-height:42px;  
+	font-weight:bold;
+	margin-top:15px;
+  }  
+  @media (max-width: 700px) {
+	.p-notice {
+	  font-size: 20px;
+	}	  
+  }    
+  .p-notice-words{
+	color:#555555;
+  }
+  .p-notice-margin-top{
+	margin-top:10px;
+  }     
+  .decimal-type{
+	list-style-type: decimal;
+	  }
+  .lower-alpha-type{
+	list-style-type: lower-alpha;	  
+	  }
+  .none-type{
+	list-style-type: none;
+	  }
+  .btn_a1 {	  
+    background-color:#ce2212;
+    padding:5px 30px;  
+    border-radius:5px;  
+  }
+  .btn_p1 {
+    font-size: 24px;	  
+    line-height: 52px;
+    font-weight: bold;
+    margin:0 0 5px 35px;
+  }
+  .note article .btn_p1 a {
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s;		
+  }
+  .note article .btn_p1 a:hover {
+	background-color:#ff5747;
+  }   
+  .note table.rwd-table {
+    width: 100%;
+    border: none;	
+    border-collapse: collapse;
+    background-color: #eeeeee; 
+    overflow: hidden;
+  }
+  .note table.rwd-table th {
+    display: none;
+  }
+  .note table.rwd-table td {
+    display: block;
+    text-align: left;
+  }
+  /* 注意此處的(4)要視一行有幾個td選項調整 */
+  .note table.rwd-table td:before {
+    content: attr(data-th) ": ";
+    display: inline-block;
+	margin: 5px 5px 5px 0;
+    color: #9b2121;
+    font-weight: bold;
+  }
+  .note table.rwd-table tr:nth-child(even) {
+    background-color: #dadada;
+  }
+  .note table.rwd-table th, .rwd-table td {
+    margin: .5em 1em;
+  }
+  @media (min-width: 700px) {
+    .note table.rwd-table {
+      width: 95%;
+      border: 1px solid #15151d; 
+      background-color: #fff;
+	  margin: 0 auto;
+    }
+    .note table.rwd-table tr:nth-child(even){
+      background: transparent;
+    }
+    .note table.rwd-table th {
+      background-color: #f1b310; 
+    }
+    .note table.rwd-table th,
+    .note table.rwd-table td {
+      border: 1px solid #15151d;
+    }
+	.note table.rwd-table td:nth-child(4) {
+      border: 1px solid #15151d;
+	}	
+    .note table.rwd-table td:before {
+      display: none;
+    }
+    .note table.rwd-table th, .note table.rwd-table td {
+      display: table-cell;
+      padding: .25em .5em;
+      text-align: center;
+    }
+    .note table.rwd-table th, .note table.rwd-table td {
+      padding: 0.8em !important;
+    }
+  }  
+</style>
+<div id="spWrap" class="sp__wallper">
+  <section class="note" name="note">  
+    <div class="sp--960" style="padding:1% 0 3% 0;">
+      <article>
+		<a name="note-top" id="note-top"></a>
+        <p class="act_means">森森龍捲風</p>
+		<a name="note-1" id="note-1"></a>
+        <h2 class="h2_style">【活動一、華碩指定活動專區 登記送 威秀雙人電影票】</h2>        
+        <ol class="decimal-type">
+		  <li>活動期間：2020/08/01 10:00~2020/08/31 10:000</br>(訂單時間若不在此時段內，恕無法取得參加活動資格。請把握時間下單。訂單時間依系統紀錄為準。)</li>
+		  <li>登記期間：2020/08/01 10:00~2020/08/31 10:00</br>(如未在此活動區間內完成登記，視為放棄活動資格。登記時間依系統顯示為準，下單後請盡速完成登記。)</li>
+		  <li>活動辦法：活動期間，於森森購物網購買此<a href="https://www.u-mall.com.tw/c3/144228">活動專區</a>之指定S系列華碩筆電(不含改裝機)，且無取消/退貨，並於活動頁完成登記，就有機會獲得《威秀電影票兩張》（市值：660元）共限量30名。數量有限，送完為止，依登記順序為準。</li>
+        </ol>
+		<p class="btn_p1"><a class="btn_a1" href="https://www.u-mall.com.tw/Activity/Reg/96" target="_blank">點我登記</a></p>                
+        <p class="p-notice" style="padding-left: 10px;">注意事項</p>
+        <ol class="p-notice-words decimal-type">
+          <li><a href="https://www.u-mall.com.tw/c3/144228">點我進入活動專區</a></li>
+          <li>活動期間，每人限登記一次，即每人限得一次贈獎機會(依會員帳號判別)。</li>
+          <li>獎品寄送日期：2020/09/21後陸續寄出。</li>
+          <li>數量有限，送完為止，依登記順序為準。</li>
+          <li>此登記活動限訂購森森購物網(網聯通、購享賺、揪好團、電話下單、電視購物商品除外)使用網路頁面下單此活動頁商品即可參加。</li>
+          <li>如遇產品缺貨或不可抗力之事由導致獎品內容變更，森森購物有權變更獎品，改由等值商品取代之，得獎者不得要求折現或轉換其他商品。主辦與執行單位不負獎品之任何維護或保固責任。</li>
+          <li>獎品配送若因會員資料填寫不完整者，或活動後變更資料(如姓名、手機、地址等)，導致無法收到，恕不補發。</li>
+          <li>森森購物網保有活動變更、修改或終止本活動之權力，如有異動，修改後之內容將公佈在森森購物網上。</li>
+        </ol>
+		<a name="note-2" id="note-2"></a>
+        <h2 class="h2_style">【活動二、華碩指定活動專區 登記送 RGB散熱墊】</h2>
+        <ol class="decimal-type">
+		  <li>活動期間：2020/08/01 10:00~2020/08/31 10:00</br>(訂單時間若不在此時段內，恕無法取得參加活動資格。請把握時間下單。訂單時間依系統紀錄為準。)</li>
+          <li>登記期間：2020/08/01 10:00~2020/08/31 10:00</br>(如未在此活動區間內完成登記，視為放棄活動資格。登記時間依系統顯示為準，下單後請盡速完成登記。)</li>
+		  <li>活動辦法：活動期間，於森森購物網購買此<a href="https://www.u-mall.com.tw/c3/ 144230">活動專區</a>之指定電競系列華碩筆電(不含改裝機)，且無取消/退貨，並於活動頁完成登記，就有機會獲得《Esense G15 RGB 電競筆電散熱墊》（市值：1,590元）共限量30名。數量有限，送完為止，依登記順序為準。</li>
+        </ol>
+		<p class="btn_p1"><a class="btn_a1" href="https://www.u-mall.com.tw/Activity/Reg/96" target="_blank">點我登記</a></p>
+        <p class="p-notice" style="padding-left: 10px;">注意事項</p>
+        <ol class="p-notice-words decimal-type">
+          <li><a href=" https://www.u-mall.com.tw/c3/ 144230">點我進入活動專區</a></li>
+          <li>活動期間，每人限登記一次，即每人限得一次贈獎機會(依會員帳號判別)。</li>
+          <li>獎品寄送日期：2020/09/21後陸續寄出。</li>
+          <li>數量有限，送完為止，依登記順序為準。</li>
+          <li>此登記活動限訂購森森購物網(網聯通、購享賺、揪好團、電話下單、電視購物商品除外)使用網路頁面下單此活動頁商品即可參加。</li>
+          <li>如遇產品缺貨或不可抗力之事由導致獎品內容變更，森森購物有權變更獎品，改由等值商品取代之，得獎者不得要求折現或轉換其他商品。主辦與執行單位不負獎品之任何維護或保固責任。</li>
+          <li>獎品配送若因會員資料填寫不完整者，或活動後變更資料(如姓名、手機、地址等)，導致無法收到，恕不補發。</li>
+          <li>森森購物網保有活動變更、修改或終止本活動之權力，如有異動，修改後之內容將公佈在森森購物網上。</li>
+        </ol>
+      </article>
+    </div>
+  </section>
+</div>

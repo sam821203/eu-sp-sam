@@ -1,0 +1,23 @@
+.hero__zone
+  .hero__slider
+    width: 60%
+    left: 10%
+    margin-top: -6%
+    +aspect-ratio(479, 129)
+    +bg-set(url("~event/1st/e-main/components/hero-small-slider/bg-small-slider.png"), 90%)
+
+  .hero__title
+    &--sub
+      width: 90%
+      +pos-set(relative, third)
+
+  +breakpoint-min($min-width-xl)
+    .hero__slider
+      top: 5px
+      left: 125px
+      width: 500px
+    .hero__title
+      &--sub
+        width: 95%
+        left: -5px
+        top: -5px

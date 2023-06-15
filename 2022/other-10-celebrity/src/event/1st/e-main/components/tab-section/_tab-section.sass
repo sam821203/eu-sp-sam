@@ -1,0 +1,47 @@
+// tab layout
+.promo__group--tab-section
+  overflow: hidden
+  .promo__wrap
+    +aspect-ratio(960, 1068)      
+    +breakpoint-min($min-width-xl)
+      +aspect-ratio(960, 822)
+    .promo__zone
+      +bg-set(url("event/1st/e-main/components/tab-section/bg-tab.png"), 100%)
+      +breakpoint-min($min-width-xl)
+        +bg-set(url("event/1st/e-main/components/tab-section/web-bg-tab.png"), auto)
+    .tab__wrap
+      padding: 23% 2% 0
+      +breakpoint-min($min-width-xl)
+        padding-top: 25.2%
+      .tab__box
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+        +breakpoint-min($min-width-xl)
+          flex-wrap: nowrap
+      .tab__item
+        width: 32%
+        margin-bottom: 1%
+        cursor: pointer
+        transition: all .2s
+        +breakpoint-min($min-width-xl)
+          width: 16%
+          margin-bottom: 0
+        .active
+          opacity: 1
+        &:hover, &.active
+          filter: brightness(1.2)
+          
+    .content__zone
+      .content__box
+        margin-top: 5.5%
+        +breakpoint-min($min-width-xl)
+          margin-top: 30px
+      .tab__slider
+        display: flex
+        align-items: center
+        .content__item
+          width: 27%
+          margin-right: 1%
+          &:first-child
+            width: 45%

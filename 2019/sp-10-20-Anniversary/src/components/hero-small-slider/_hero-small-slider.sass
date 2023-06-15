@@ -1,0 +1,63 @@
+.hero__zone
+  .hero__slider.slider__1st
+    width: 130% !important
+    left: -16%
+    margin-top: -14%
+    // height: 500px
+    +aspect-ratio(455, 180)
+    +bg-set(url("components/hero-small-slider/bg-small-slider.png"), 100%)
+
+    .hero__title
+      &--sub
+        padding-top: calc(100vw * 0.125)
+        width: 70%
+        +pos-set(relative, third)
+
+    +breakpoint-min($min-width-xl)
+        margin-top: 0
+        width: 843px !important
+        top: -85px
+        left: -108px
+        height: auto
+        .hero__title
+          &--sub
+            padding-top: 41px
+            width: auto
+            left: 174px
+            top: 46px
+
+.hero__zone
+  .hero__slider.slider__3rd
+    left: 0%
+    margin-top: -18%
+    animation: 1s 2s openSmallSlider both
+    // height: 500px
+    +aspect-ratio(1800, 180)
+    //width: 100%
+    z-index: 2
+
+    .hero__title
+      &--sub
+        padding-top: 0
+        width: 70%
+        +pos-set(relative, third)
+
+    +breakpoint-min($min-width-xl)
+      margin-top: -20%
+      top: -85px
+      left: -108px
+      height: auto
+      +aspect-ratio(400, 180)
+      z-index: 2
+      .hero__title
+        &--sub
+          padding-top: 41px
+          width: auto
+          left: 174px
+          top: 46px
+
+@keyframes openSmallSlider
+  from
+    opacity: 0
+  to
+    opacity: 1

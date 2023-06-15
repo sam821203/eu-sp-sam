@@ -1,0 +1,56 @@
+// // ==========================================================================
+// // Plugins
+// // ==========================================================================
+// // @import "vendors/animate"
+
+// hero section
+// ===========================
+@import "~event/1st/u-main/components/hero-section/_hero-section"
+
+// // ==========================================================================
+// // components
+// // ==========================================================================
+@import "~event/1st/u-main/components/promo-event/_promo-event"
+
+// // ==========================================================================
+// // Page
+// // ==========================================================================
+body
+  +pos-set(relative, zero)
+  background: center 0 url("~event/1st/u-main/pages/index/bg.jpg") no-repeat, $main-e-background-color-1st center 88% url("~event/1st/u-main/pages/index/bg-fix.jpg") no-repeat fixed
+  background-size: 100%, cover
+
+  +breakpoint-min($min-width-xl)
+    background: center 0 url("~event/1st/u-main/pages/index/bg.jpg") no-repeat, center 0 url("~event/1st/u-main/pages/index/bg-web.jpg") no-repeat, center 0 url("~event/1st/u-main/pages/index/bg-fix.jpg") no-repeat fixed, $main-e-background-color-1st center 0 url("~event/1st/u-main/pages/index/bg-web-fix.jpg") no-repeat fixed
+    background-size: auto
+
+.sp__wrap
+  +pos-set(relative, zero)
+
+  +breakpoint-min($min-width-xxl)
+    background-position-y: 0, 0
+    background-size: auto, auto
+
+
+.sp__wrap
+  a
+    display: block
+
+  // .decoration--background.decoration__wrap
+
+// parallax css
+// =================================
+// .decoration--background
+//   display: none
+
+//   +breakpoint-min($min-width-3xl)
+//     display: block
+//     // z-index: base(1)以上可蓋在主視覺上，zero(0)可在主視覺下，預設都在logo下(logo是500)
+//     +pos-set(absolute, under, 690px)
+//     width: 100%
+//     height: 100%
+//     pointer-events: none
+
+// .decoration__wrap
+//   +pos-set(sticky, zero, 0)
+

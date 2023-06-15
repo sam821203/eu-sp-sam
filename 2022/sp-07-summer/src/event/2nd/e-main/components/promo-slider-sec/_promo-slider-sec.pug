@@ -1,0 +1,68 @@
+-
+  var promoSliderItem = [
+    {
+      link: "https://www.etmall.com.tw/i/2940027" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider-sec/item/p-sec-item-1.png",
+      alt: "雅漾 全效極護亮顏防曬液SPF50+30ml",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2458896" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider-sec/item/p-sec-item-2.png",
+      alt: "買一送一【風獅爺】金門一條根精油貼布(涼感/熱感)-6包(共12包)",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3539771" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider-sec/item/p-sec-item-3.png",
+      alt: "MAXIA LBT-200 LED智慧燈",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2942570" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider-sec/item/p-sec-item-4.png",
+      alt: "象印6人份鐵器塗層白金厚釜壓力IH電子鍋NW-JBF10",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3498787" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider-sec/item/p-sec-item-5.png",
+      alt: "P.F. CANDLE CO. 美國香氛潔手沐浴露 8oz 日暮系列 中午時分 - 官方旗艦店",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3113891" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider-sec/item/p-sec-item-6.png",
+      alt: "獨家價【CROSS】限量1折 頂級小牛皮鱷魚紋手拿肩背/側背包",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3471437" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider-sec/item/p-sec-item-6.png",
+      alt: "【益菌革命】TRIPLE PROBIO寵物專用益生菌口腔抗菌慕斯/犬用130ml",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2736784" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider-sec/item/p-sec-item-6.png",
+      alt: "【OMORY】買一送一 六合一餐具吸管組_兩色任選-網",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3526709" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider-sec/item/p-sec-item-6.png",
+      alt: "瓦崎燒烤火鍋(西門店)燒肉無限x寧記火鍋單人週一至週五689吃到飽",
+    },
+  ]
+
+
+section.promo__group.promo__group--promo-slider-sec.m-bottom--lg(data-title="買一送一")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--title
+        img(src="event/2nd/e-main/components/promo-slider-sec/title-promo-slider-sec.png", alt="")
+      .decor__item.decor__item--left#promoSliderSecLeft
+        img(src="event/2nd/e-main/components/promo-slider-sec/decor-promo-sec-left.png", alt="")
+      .decor__item.decor__item--right#promoSliderSecRight
+        img(src="event/2nd/e-main/components/promo-slider-sec/decor-promo-sec-right.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          .promo__slider.swiper-container#promoSliderSecItem
+            ul.swiper-wrapper
+              each data in promoSliderItem
+                li.swiper-slide
+                  a(href= data.link, title=data.alt)
+                    img(src= data.imgSrc, alt=data.alt)

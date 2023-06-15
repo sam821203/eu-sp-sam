@@ -1,0 +1,43 @@
+.promo__group--bn-section-2
+  +pos-set(relative, zero)
+  overflow: hidden
+  // height: 500px
+  .decor__item
+    &--title
+      +pos-set(absolute, base, 1%, 29%)
+      width: 55%
+      +breakpoint-min($min-width-xl)
+        top: 10px
+        left: calc(50% - 200px)
+    &--wing
+      +pos-set(absolute, zero, 7%, 2.5%)
+      width: 95%
+      +breakpoint-min($min-width-xl) 
+        top: 50px
+        left: calc(50% - 470px)
+    &--left
+      +pos-set(absolute,zero, 0%, 15%)
+      width: 22%
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 350px)
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .promo__wrap
+    +bg-set(url("~event/1st/e-main/components/bn-section-2/bg-bn-section-2.png"), 100%)
+    margin-top: 16%
+    +breakpoint-min($min-width-xl)
+      margin-top: 160px
+    .promo__zone
+      +aspect-ratio(946, 519)
+      // .promo__decor
+      .promo__block
+        padding: 3.5% 5.5% 0
+        .promo__box
+          cursor: pointer
+          &:hover
+            transition: all 0.6s ease
+            transform: translateY(-.5%)
+            filter: brightness(1.1)
+          +breakpoint-min($min-width-xl)
+            img
+              width: 100%

@@ -1,0 +1,25 @@
+.promo__group--w4m4
+  +pos-set(relative, zero)
+  .promo__wrap
+    // +aspect-ratio(960, 238)
+  .promo__title
+    margin-bottom: 2%
+    width: 76.04%
+    text-align: center
+  .good__wrap
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    padding: 0 0.5%
+    li
+      margin-bottom: 0.5%
+      width: 24.5%
+      text-align: center
+      a
+        &:hover
+          transform: translateY(-2%)
+    +breakpoint-min($min-width-xl)
+      padding: 0 12px
+      li
+        margin-bottom: 8px
+

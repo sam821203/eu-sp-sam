@@ -1,0 +1,81 @@
+-
+  var bnSliderItemData2 = [
+    {
+      link: "https://www.etmall.com.tw/p/135011",
+      imgSrc: "event/1st/e-main/components/bn-slider-2/items/brand-1.png",
+      alt: "舒潔"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/9175/m/index.html",
+      imgSrc: "event/1st/e-main/components/bn-slider-2/items/brand-2.png",
+      alt: "可口可樂"
+    },
+    {
+      link: "https://www.etmall.com.tw/bs/53385",
+      imgSrc: "event/1st/e-main/components/bn-slider-2/items/brand-3.png",
+      alt: "曼黛瑪璉"
+    },
+    {
+      link: "https://www.etmall.com.tw/p/135104",
+      imgSrc: "event/1st/e-main/components/bn-slider-2/items/brand-4.png",
+      alt: "我的心機滿$799贈極酵冷敷水凍膜"
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/135130",
+      imgSrc: "event/1st/e-main/components/bn-slider-2/items/brand-5.png",
+      alt: "亞培6月指定買三送六"
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/118822",
+      imgSrc: "event/1st/e-main/components/bn-slider-2/items/brand-6.png",
+      alt: "享食尚滴雞精"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/9456/m/index.html",
+      imgSrc: "event/1st/e-main/components/bn-slider-2/items/brand-7.png",
+      alt: "禾聯"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/9581/m/index.html",
+      imgSrc: "event/1st/e-main/components/bn-slider-2/items/brand-8.png",
+      alt: "日立"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/9624/m/index.html",
+      imgSrc: "event/1st/e-main/components/bn-slider-2/items/brand-9.png",
+      alt: "LG"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/9540/m/index.html",
+      imgSrc: "event/1st/e-main/components/bn-slider-2/items/brand-10.png",
+      alt: "ASUS"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/4369/m/index.html",
+      imgSrc: "event/1st/e-main/components/bn-slider-2/items/brand-11.png",
+      alt: "APPLE"
+    },
+    {
+      link: "https://www.etmall.com.tw/c2/107794",
+      imgSrc: "event/1st/e-main/components/bn-slider-2/items/brand-12.png",
+      alt: "Samsung"
+    },
+    {
+      link: "https://www.etmall.com.tw/c2/107796",
+      imgSrc: "event/1st/e-main/components/bn-slider-2/items/brand-13.png",
+      alt: "OPPO"
+    },
+  ]
+
+section.promo__group.promo__group--bn-2.m-bottom--lg(data-title="熱銷專區")
+  .layout--main
+    .promo__wrap
+      #sliderBn2.promo__slider.swiper-container
+        ul.swiper-wrapper
+          each data in bnSliderItemData2
+            li.swiper-slide
+              a(href= data.link, title= data.alt)
+                img.swiper-lazy(data-src= data.imgSrc, alt="")
+                .swiper-lazy-preloader.swiper-lazy-preloader-black
+
+      //- #sliderBnPager.bn__pager.swiper-pagination

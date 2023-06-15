@@ -1,0 +1,178 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero__wrap
+  +pos-set(relative, base)
+  overflow: hidden
+
+  // .hero__zone
+
+  .hero__block
+    // +pos-set(relative)
+    +aspect-ratio(100, 100)
+
+  .hero__box
+    +pos-set(relative)
+    width: 100%
+
+  .hero__title
+    &--main
+      // +pos-set(relative, zero)
+      +aspect-ratio(780, 460, relative, zero, h1)
+      top: 4%
+      width: 82%
+      opacity: 0
+      .js-loading &
+        opacity: 1
+        animation: zoom-in 0.5s ease-in both
+
+      .decoration--title
+        width: 50%
+        opacity: 0
+        .js-loading &
+          opacity: 1
+          animation: bounceInUp 1s 0.55s both,
+          img
+            // animation: go-up-down 5s 2.5s infinite linear
+      .title__box
+        +pos-set(relative, base)
+        margin-top: -12%
+
+    &--sub
+      padding-top: 0.8%
+      width: 60%
+      text-align: center
+
+  .hero__item
+    +aspect-ratio(960, 330)
+    top: 1%
+    .item--gift
+      width: 82%
+    .item--main
+      +pos-set(absolute, base)
+      top: -25%
+      right: 3.5%
+      width: 35%
+      opacity:0
+      .js-loading &
+        opacity: 1
+        animation: go-left-down 1s 0.9s both
+
+  .decoration__box
+    &:first-child
+      +pos-set(relative, zero)
+      top: -4%
+      .decoration--hero
+        top: 0
+        width: 42%
+        opacity: 0
+        &:first-child
+          left: -12%
+          .js-loading &
+            opacity: 1
+            animation: fade-left-up 1s 0.75s both
+        &:last-child
+          right: -12%
+          .js-loading &
+            opacity: 1
+            animation: fade-right-up 1s 0.85s both
+    &:nth-last-child(2)
+      z-index: map-get($zindex, base)
+      bottom: 29.5%
+      left: 4.1%
+      width: 88%
+      +breakpoint-min($min-width-xl)
+        bottom: 285px
+        left: 41px
+        width: 845px
+      .decoration--top
+        top: 0
+        left: 0
+      .decoration--hero
+        width: 100%
+        opacity: 0
+        &:first-child
+          .js-loading &
+            animation: fade-in 1.2s 1.8s infinite linear alternate
+        &:last-child
+          .js-loading &
+            animation: fade-in 1.2s 3s infinite linear alternate
+    &:last-child
+      z-index: map-get($zindex, base)
+      top: 50%
+      left: 0
+      width: 100%
+      .decoration--hero
+        &:first-child
+          margin-left: 8.5%
+          width: 16%
+          .js-loading &
+            animation: go-up-down 2s 1.8s both infinite linear reverse
+        &:last-child
+          top: 113%
+          right: 1%
+          width: 16%
+          .js-loading &
+            animation: go-up-down 2s 1.8s both infinite linear
+
+@keyframes bounceInUp
+  0%, 60%, 75%, 90%, to
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+  0%
+    opacity: 0
+    transform: translate3d(0, 200%, 0) scaleY(2)
+  60%
+    opacity: 1
+    transform: translate3d(0, -10%, 0) scaleY(.9)
+  75%
+    transform: translate3d(0, 5%, 0) scaleY(.95)
+  90%
+    transform: translate3d(0, -1%, 0) scaleY(.985)
+  to
+    transform: translateZ(0)
+
+@keyframes zoom-in
+  0%
+    transform: scale(0)
+    opacity: 0
+  100%
+    transform: scale(1)
+    opacity: 1
+
+@keyframes go-left-down
+  0%
+    transform: translate(200%, -30%) scale(0.3)
+  100%
+    transform: translate(0) scale(1)
+
+@keyframes fade-left-up
+  0%
+    transform: translate(70%, 80%) scale(0.8)
+    opacity: 0
+  5%
+    opacity: 1
+  100%
+    transform: translate(0, 0) scale(1)
+
+@keyframes fade-right-up
+  0%
+    transform: translate(-80%, 80%) scale(0.8)
+    opacity: 0
+  5%
+    opacity: 1
+  100%
+    transform: translate(0, 0) scale(1)
+
+@keyframes fade-in
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+@keyframes go-up-down
+  0%, 100%
+    transform: translateY(0)
+  25%
+    transform: translateY(5%)
+  75%
+    transform: translateY(-5%)

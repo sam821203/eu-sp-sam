@@ -1,0 +1,249 @@
+.hero
+  +pos-set(relative, zero)
+  overflow: hidden
+  .hero__decor
+    width: 100%
+    +breakpoint-min($min-width-xl)
+      width: auto
+    &--left
+      +pos-set(absolute, zero, 9%, 12%)
+      display: none
+      opacity: 0
+      animation: lightSpeedInLeft .5s 1.2s linear 1 forwards, hero-up-down 4s 2s ease-in-out infinite
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 860px)
+        display: block
+
+    &--right
+      +pos-set(absolute, zero, 11%)
+      right: 8%
+      display: none
+      opacity: 0
+      animation: lightSpeedInRight .5s 1.2s linear 1 forwards, hero-up-down 4s 3s ease-in-out infinite
+      +breakpoint-min($min-width-xl)
+        right: calc(50% - 800px)
+        display: block
+
+    &--light
+      +pos-set(absolute, zero, 24%, -20%)
+      width: 140%
+      opacity: 0 
+      filter: grayscale(0.8) brightness(1.3)
+      transform: rotate(45deg) scale(0)
+      +breakpoint-min($min-width-xl)
+        top: 2%
+        left: 0
+        width: auto
+      .js-loading &
+        animation: light-scale-large 5s 1s ease-out infinite both
+  .hero__zone
+    +aspect-ratio(960, 1200)
+    .hero__block
+      transform: translateY(-101%)
+      .js-loading &
+        animation: slideDown 1s cubic-bezier(.12,.46,.75,.93) 1 forwards
+    .hero__title
+      &--main
+        +size(100%, 40%)
+        .js-loading &
+          transform: translateY(4%)
+          // animation: moveY 1.8s 1.4s ease-in-out infinite alternate
+        .title
+          +pos-set(absolute, base, 1%, 3.3%)
+          width: 94%
+          +breakpoint-min($min-width-xl)
+            left: calc(50% - 430px)
+            width: auto
+        .light 
+          +pos-set(absolute, base, 1%, 3.3%)
+          width: 94%
+          transform: scale(0.99)
+          +breakpoint-min($min-width-xl)
+            left: calc(50% - 430px)
+            width: autos
+          .js-loading &
+            animation: light-flash 2.2s ease-out infinite
+          
+    .decor__title
+      z-index: 2
+      &--2
+        z-index: map-get($zindex, zero)
+        top: 8%
+        left: 24%
+        width: 10%
+        opacity: 0
+        +breakpoint-min($min-width-xl)
+          left: calc(50% - 240px)
+          width: auto
+        .js-loading &
+          animation: sub-stamp .4s 1.2s cubic-bezier(.07,.47,.37,.96) forwards, bounce 2.4s 1.9s infinite
+      &--22
+        z-index: map-get($zindex, zero)
+        top: 9%
+        left: 35%
+        width: 15%     
+        opacity: 0
+        +breakpoint-min($min-width-xl)
+          left: calc(50% - 130px)
+          width: auto
+        .js-loading &
+          animation: sub-stamp .4s 1.4s cubic-bezier(.07,.47,.37,.96) forwards, bounce 2.4s 2.3s infinite
+      &--222
+        z-index: map-get($zindex, zero)
+        top: 8%
+        left: 50.5%
+        width: 10%
+        opacity: 0
+        +breakpoint-min($min-width-xl)
+          left: calc(50% + 12px)
+          width: auto
+        .js-loading &
+          animation: sub-stamp .4s 1.6s cubic-bezier(.07,.47,.37,.96) forwards, bounce 2.4s 2.5s infinite
+      &--2222
+        z-index: map-get($zindex, zero)
+        top: 9%
+        left: 61.5%
+        width: 15%  
+        opacity: 0
+        +breakpoint-min($min-width-xl)
+          left: calc(50% + 120px)
+          width: auto
+        .js-loading &
+          animation: sub-stamp .4s 1.8s cubic-bezier(.07,.47,.37,.96) forwards, bounce 2.4s 2.7s infinite
+
+    .decor__item
+      &--left
+        z-index: map-get($zindex, zero)
+        top: 27%
+        left: 2%
+        width: 22%
+        +breakpoint-min($min-width-xl)
+          top: 310px
+      &--right
+        z-index: map-get($zindex, zero)
+        top: 20%
+        right: -4%
+        width: 26%
+        +breakpoint-min($min-width-xl)
+          top: 255px
+
+@import event/1st/e-main/components/hero-section/hero-video/_hero-video.sass
+
+@keyframes bounce
+  0%, 2%, 5.3%, to
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+    transform: translateZ(0)
+  4%, 4.3%
+    animation-timing-function: cubic-bezier(.755, .05, .855, .06)
+    transform: translate3d(0, -30px, 0) scaleY(1.1)
+  7%
+    animation-timing-function: cubic-bezier(.755, .05, .855, .06)
+    transform: translate3d(0, -15px, 0) scaleY(1.05)
+  8%
+    transition-timing-function: cubic-bezier(.215, .61, .355, 1)
+    transform: translateZ(0) scaleY(.95)
+  9%
+    transform: translate3d(0, -4px, 0) scaleY(1.02)
+  10%
+    transform: translate3d(0, 0px, 0) scaleY(1)
+
+@keyframes sub-stamp
+  0%
+    opacity: 0
+    transform: scale(10)
+  1%
+    opacity: 1
+  80%
+    opacity: 1
+    transform: scale(.8)
+  100%
+    opacity: 1
+    transform: scale(1)
+
+@keyframes light-scale-large
+  0%
+    transform: scale(0)
+    opacity: 0 
+  10% 
+    opacity: 1
+  30%
+    transform: scale(1.5)
+    opacity: 0
+  40% 
+    transform: scale(0)
+    opacity: 0
+  50%
+    opacity: 1
+  70%
+    transform: scale(1.5)
+    opacity: 0
+  100%
+    opacity: 0
+
+@keyframes moveY
+  0%
+    transform: translateY(10%)
+  100%
+    transform: translateY(4%)
+
+@keyframes slideDown
+  0%
+    transform: translateY(-101%)
+  100%
+    transform: translateY(10%)
+
+@keyframes lightSpeedInRight
+  0%
+    transform: translate3d(100%, 0, 0) skewX(-30deg)
+    opacity: 0
+  60%
+    transform: skewX(20deg)
+    opacity: 1
+  80%
+    transform: skewX(-5deg)
+    opacity: 1
+  to
+    transform: translateZ(0)
+    opacity: 1
+
+@keyframes lightSpeedInLeft
+  0%
+    transform: translate3d(-100%, 0, 0) skewX(30deg)
+    opacity: 0
+  60%
+    transform: skewX(-20deg)
+    opacity: 1
+  80%
+    transform: skewX(5deg)
+    opacity: 1
+  to
+    transform: translateZ(0)
+    opacity: 1
+
+@keyframes hero-up-down
+  0%
+    transform: translateY(0%) rotate(0)
+  25%
+    transform: translateY(8%) rotate(3deg)
+  50%
+    transform: translateY(0%) rotate(0)
+  75%
+    transform: translateY(8%) rotate(-5deg)
+  100%
+    transform: translateY(0%)
+  0%
+    transform: translateY(0%) rotate(0)
+  25%
+    transform: translateY(8%) rotate(3deg)
+  50%
+    transform: translateY(0%) rotate(0)
+  75%
+    transform: translateY(8%) rotate(-5deg)
+  100%
+    transform: translateY(0%)
+
+@keyframes light-flash
+  0%, 100%
+    filter: brightness(220%)
+  50%
+    filter: brightness(100%)

@@ -1,0 +1,132 @@
+// tab layout
+.promo__group--tab-section
+  overflow: hidden
+  .decor__wrap
+    position: relative
+    padding-top: 4%
+    .decor__item
+      width: auto
+      &--title
+        +pos-set(absolute, under, 4vw, 21%)
+        width: 70%
+        +breakpoint-min($min-width-xl)
+          top: 30px
+          left: calc(50% - 280px)
+        &.active
+          z-index: map-get($zindex, base)
+          animation: jump-out-bounce 1s both
+      &--left
+        +pos-set(absolute, under, 4vw, 6%)
+        width: 20%
+        +breakpoint-min($min-width-xl)
+          top: 30px
+          left: calc(50% - 400px)
+        &.active
+          z-index: map-get($zindex, base)
+          animation: jump-out-bounce 1s both, swing 3s 1s linear infinite
+  .promo__wrap
+    +bg-set(url("event/1st/e-main/components/tab-section/bg-tab.png"), 100%)
+    +breakpoint-min($min-width-xl)
+      +bg-set(url("event/1st/e-main/components/tab-section/web-bg-tab.png"), auto)
+    .promo__zone
+      +aspect-ratio(950, 1081)
+    .tab__wrap
+      padding: 21.3% 3% 0%
+      +breakpoint-min($min-width-xl)
+        padding: 23.2% 3.5% 0%
+      .tab__box
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+      .tab__item
+        position: relative
+        width: 33%
+        margin-bottom: 0
+        transform-origin: left bottom
+        cursor: pointer
+        .active
+          opacity: 1
+        &:hover, &.active
+          transform: rotate(-3deg)
+    .content__zone
+      .content__block
+        margin-top: 2%
+      .content__box
+        display: none
+        padding: 0 1%
+        &.active
+          display: flex
+          align-items: center
+
+        .promo__item
+          width: 40%
+          .promo__box
+            padding: 3% 23% 18% 5%
+            +breakpoint-min($min-width-xl)
+              padding: 0% 23% 18% 5%
+        .tab__slider
+          display: flex
+          flex-wrap: nowrap
+          width: 67%
+          padding: 0.5% 0% 0 1.5%
+          +breakpoint-min($min-width-xl)
+            padding-top: 2.5%
+          &.swiper-container
+            margin-right: 0
+          .item__wrap
+            display: flex
+            flex-wrap: nowrap
+          .swiper-slide
+            width: 44%
+            transform: translateY(0%)
+            +breakpoint-min($min-width-xl)
+              width: 48%
+              transform: translateY(-6%)
+            .product.product--dynamic
+              border-radius: 2vw
+              background-color: $gray-deep-light
+              +breakpoint-min($min-width-xl)
+                border-radius: 10px
+              .product__img
+                border-radius: 2vw 2vw 0 0
+                +breakpoint-min($min-width-xl)
+                  border-radius: 10px 10px 0 0
+              .product__text
+                border-radius: 0 0 2vw 2vw
+                +breakpoint-min($min-width-xl)
+                  border-radius: 0 0 10px 10px
+              .product__name
+                height: 2.52em
+                padding: 2% 5%
+              .product__price
+                padding: 0 2% 4% 2%
+
+@keyframes jump-out-bounce
+  0%, 20%, 53%, to
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+    transform: translateZ(0)
+  40%, 43%
+    animation-timing-function: cubic-bezier(.755, .05, .855, .06)
+    transform: translate3d(0, -16%, 0) scaleY(1.05)
+  70%
+    animation-timing-function: cubic-bezier(.755, .05, .855, .06)
+    transform: translate3d(0, -10%, 0) scaleY(1.025)
+  80%
+    transition-timing-function: cubic-bezier(.215, .61, .355, 1)
+    transform: translateZ(0) scaleY(.95)
+  90%
+    transform: translate3d(0, -5%, 0) scaleY(1.01)
+
+@keyframes swing
+  10%
+    transform-origin: right bottom
+    transform: rotate(4deg)
+  20%
+    transform: rotate(-12deg)
+  30%
+    transform: rotate(2deg)
+  40%
+    transform: rotate(-10deg)
+  50%
+    transform-origin: right bottom
+    transform: rotate(0deg)

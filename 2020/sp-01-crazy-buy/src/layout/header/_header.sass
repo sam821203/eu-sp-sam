@@ -1,0 +1,38 @@
+@import "~layout/logo/_logo.sass"
+@import "~layout/share-tools/_share-tools"
+
+.header__zone
+  // display: none
+  +pos-set(absolute, bnElems)
+  top: 2px
+  left: 0
+  width: 100%
+  .layout--main
+    +display-flex(">div")
+    align-items: center
+
+  +breakpoint-min($min-width-xl)
+    // display: block
+    top: 15px
+
+
+
+//.share-block
+//  width: 105px
+//  .community__ico li
+//    display: inline-block
+//    cursor: pointer
+//    line-height: 40px
+//    margin-right: 5px
+//  .bg-line a
+//    width: 45px
+//    height: 45px
+//    background: url('~layout/header/line.png') no-repeat
+//    background-size: 45px, 45px
+//    border-radius: 5px
+//  .bg-facebook a
+//    width: 46px
+//    height: 46px
+//    background: url('~layout/header/facebook.png') no-repeat
+//    background-size: 46px, 46px
+

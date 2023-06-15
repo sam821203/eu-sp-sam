@@ -1,0 +1,156 @@
+.buy__wrap
+  margin-left: 16px
+  margin-right: 16px
+
+.buy__box
+  padding: 10px 20px
+  +bg-set(url(event/1st/e-main/components/collect-buy/bg-buy.png), 100%, null, null,repeat)
+
+  .item__wrap
+    margin-bottom: 15px
+    padding: 15px
+    background-color: $gray-deep-light
+    border: 2px solid $main-color-5
+    box-shadow: 4px 4px 0px $main-color-5
+    border-radius: 20px
+    font-size: 18px
+    line-height: 27px
+    text-align: center
+
+  .item__box
+    display: flex
+    margin-bottom: 10px
+
+  .item__pic
+    flex: 0 0 38%
+    margin-right: 15px
+
+  .item__intro
+    flex: 1
+
+  .item__point
+    color: $main-color-2
+    font-weight: bold
+
+  .item__name
+    +pos-set(relative, zero)
+    width: 100%
+    height: calc( 100% - 2.5em )
+
+  .name__box
+    +pos-set(absolute, zero, 50%, 0)
+    width: 100%
+    max-height: calc( 100% - 0.75em )
+    color: $gray-dark
+    line-height: 130%
+    font-size: 16px
+    font-weight: bold
+    word-break: break-all
+    transform: translateY(-50%)
+    overflow: hidden
+
+  .item__quantity
+    color: $main-color-2
+    font-size: 12px
+    line-height: 150%
+
+  .cta__box
+    display: flex
+    justify-content: center
+
+  .item__info
+    flex: 0 0 40%
+    margin-right: 10px
+
+  .item__cta
+    flex: 1
+
+  a, .cta--closed div
+    padding: 5px 20px
+    border-radius: 50px
+    transition: all 0.3s
+
+  .cta--closed div
+    color: $gray-deep-light
+
+  a
+    display: inline-block
+    color: $gray-dark
+    &:hover,
+    &:active
+      transform: scale(1.1)
+
+  .item__info a
+    background-color: $main-color-3
+    span
+      vertical-align: middle
+    img
+      margin-left: 0.2em
+      width: 18px
+
+  .cta--closed div
+    background-color: $gray-medium
+
+  .cta a
+    width: 100%
+    color: $gray-deep-light
+    background-color: $main-color-2
+
+  .cta--active span:first-child
+    margin-right: 0.25em
+
+  .rule__box
+    font-size: 12px
+    color: $gray-deep-light
+
+  .item__cta
+    .cta--active
+      display: none
+  .item__cta
+    .cta--active
+      display: none
+  .item__cta.active,
+  .active .item__cta
+    .cta--active
+      display: block
+    .cta--closed
+      display: none
+
+  +breakpoint-min($min-width-lg)
+    padding: 10px 30px
+    ul
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+      margin-right: 1%
+      li
+        margin-bottom: 0.5%
+        width: 48.75%
+
+    .item__wrap
+      width: 100%
+      font-size: 24px
+      line-height: 36px
+
+    .item__quantity
+      font-size: 16px
+
+    .item__info a
+      img
+        width: 24px
+
+    .rule__box
+      font-size: 20px
+
+  +breakpoint-min($min-width-xl)
+    padding: 10px 55px
+    ul
+      li
+        margin-bottom: 12px
+        width: 48.5%
+
+      .name__box
+        font-size: 18px
+
+    .rule__box
+      font-size: 24px

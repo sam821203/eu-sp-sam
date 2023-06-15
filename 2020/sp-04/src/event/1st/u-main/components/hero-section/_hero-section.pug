@@ -1,0 +1,34 @@
+section.hero__wrap
+  .hero__zone
+    .layout--main
+      #heroBlock.hero__block
+        .hero__box
+          //- 標題
+          h1.hero__title.hero__title--main.block--center.wow(title="好嗨森")
+            img(src="~event/1st/u-main/components/hero-section/title.png", alt="好嗨森")
+          .title-decoration__wrap
+            .title__decoration.title__decoration--top.wow
+              img(src="~event/1st/u-main/components/hero-section/decoration-title.png", alt="44激搶")
+          .title__decoration.title__decoration--bottom
+            .decoration--gift(title="凱基滿$4000送$400刷卡金")
+              img(class="gift--1" src="~event/1st/u-main/components/hero-section/decoration-give--1.png", alt="")
+              img(class="gift--2" src="~event/1st/u-main/components/hero-section/decoration-give--2.png", alt="")
+              img(class="gift--finger" src="~event/1st/u-main/components/hero-section/decoration-finger.png", alt="")
+
+            a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/202004/SP_1106083/w/index.html" class="sub__title")
+  .promo__zone
+    .layout--main
+      .promo__block
+        //- 行銷誘因
+        include /event/1st/u-main/components/promo-event/_promo-event
+
+        //- 商品輪播
+          //- 副標
+        .hero__small__zone
+          include /event/1st/u-main/components/hero-small-slider/_hero-small-slider
+        //- include /event/1st/u-main/components/goods-slider-flip/_goods-slider-flip
+        //include /event/1st/u-main/components/goods-slider/_goods-slider
+
+  //- include /event/1st/u-main/components/background-decoration/_background-decoration.pug
+
+

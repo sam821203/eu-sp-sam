@@ -1,0 +1,188 @@
+// tab layout
+.promo__group--dynamic-section-1
+  .promo__wrap
+    +aspect-ratio(960, 1500)
+    +breakpoint-min($min-width-xl)
+      +aspect-ratio(960, 1146)
+    .decoration__title
+      +pos-set(absolute, under)
+      top: -9%
+      left: 20%
+      width: 70%
+      +breakpoint-min($min-width-xl)
+        top: -14%
+    .promo__zone
+      +bg-set(url("event/2nd/e-main/components/dynamic-section/bg-tab.png"), 100%)
+      +breakpoint-min($min-width-xl)
+        +bg-set(url("event/2nd/e-main/components/dynamic-section/bg-tab-web.png"), 100%)
+
+      .tab__wrap
+        .tab__box
+          display: flex
+          justify-content: flex-end
+          margin-top: 14%
+          margin-right: 7%
+          +breakpoint-min($min-width-xl)
+            margin-top: 10%
+          .tab__item
+            position: relative
+            width: 20%
+            margin-left: 6%
+            &--top
+              position: absolute
+              top: 0%
+              left: 0%
+              opacity: 0
+              cursor: pointer
+            .active
+              opacity: 1
+        .content__zone
+          .content__box
+            display: none
+            &.active
+              display: block
+            .tab__slider
+              width: 75%
+              .swiper-wrapper
+                flex-wrap: wrap
+                margin: 10% auto
+
+                // width: 90%
+                +breakpoint-min($min-width-xl)
+                  margin: 9% auto
+                  // width: 80%
+                .swiper-slide
+                  // width: 25%
+                  margin-bottom: 2%
+                  +breakpoint-min($min-width-xl)
+                    // margin-left: auto
+                    margin-right: 2%
+                    width: 23%
+                  .product.product--dynamic
+                    margin-right: auto
+                    margin-left: auto
+                    width: 95%
+                    +breakpoint-min($min-width-xl)
+                      width: 100%
+                    .product__name
+                      margin-bottom: 0px
+                      background-color: #fff
+                    .product__price
+                      background-color: #fff
+                      padding-bottom: 5%
+                      border-radius: 0 0 2vw 2vw
+                      +breakpoint-min($min-width-xl)
+                        border-radius: 0 0 20px 20px
+
+//     .content__block
+//       padding: 12.5% 10% 16% 8%
+//     .content__box
+//       .item__wrap
+//         display: flex
+//         flex-wrap: wrap
+
+//   .tab__item
+//     filter: brightness(80%)
+//     cursor: pointer
+
+//     &:active,
+//     &:hover
+//       filter: brightness(100%)
+//     &.active
+//       filter: contrast(120%) brightness(100%)
+//       cursor: default
+
+//   .content__box
+//     display: none
+//     &.active
+//       display: block
+//     .swiper-slide
+//       width: 48%
+//       // +bg-set(url("~event/2nd/e-main/components/tab-section/bg-tab-item.png"), contain)
+//       a
+//         display: block
+//         width: 100%
+//         &:active,
+//         &:hover
+//           filter: contrast(120%)
+
+//   +breakpoint-min($min-width-lg)
+//     .tab__wrap
+//       .content__block
+//         padding-bottom: 15%
+//   +breakpoint-min($min-width-xl)
+//     .tab__wrap
+//       // +bg-set(url("~event/2nd/e-main/components/tab-section/bg-tab-web.png"), auto , center, 100px)
+//       .content__block
+//         padding: 85px 90px 110px 85px
+//       .content__box
+//         .item__wrap
+//           .swiper-slide
+//             width: 25%
+
+
+// // 動態item內容
+// .promo__group--tab
+//   .swiper-slide
+//     +pos-set(relative, zero)
+//     padding: 1.5% 3.5%
+
+//     +breakpoint-min($min-width-xl)
+//       padding: 12px 16px
+
+//   .product--dynamic
+//     //border: 1px solid $gray-medium
+//     border-radius: 1vw
+//     overflow: hidden
+//     .product__name
+//       display: -webkit-box
+//       -webkit-line-clamp: 2
+//       -webkit-box-orient: vertical
+//       text-overflow: ellipsis
+//       margin: 7% 0
+//       padding: 0
+//       color: $gray-deep-dark
+//       line-height: 110%
+//       height: 2.3em
+//       font-size: 11px
+//       overflow: hidden
+//     .product__price
+//       padding: 0 2%
+//       color: $primary-medium
+//       font-weight: 700
+//       text-align: center
+//       span
+//         &:first-child
+//           font-size: 2vw
+//         &:last-child
+//           font-size: 4vw
+
+//     //+breakpoint-max($max-width-xxs)
+//     //  .product__name
+//     //    margin: 0
+
+//     +breakpoint-min($min-width-lg)
+//       .product__name
+//         // margin: 5% 0
+//         font-size: 3vw
+//       .product__price
+//         span
+//           &:first-child
+//             font-size: 2vw
+//           &:last-child
+//             font-size: 4vw
+
+//     +breakpoint-min($min-width-xl)
+//       border-radius: 12px
+//       .product__name
+//         margin: 10px 0
+//         font-size: 16px
+//         height: 2.25em
+//       .product__price
+//         span
+//           &:first-child
+//             font-size: 16px
+//           &:last-child
+//             font-size: 24px
+
+

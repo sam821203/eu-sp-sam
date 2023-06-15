@@ -1,0 +1,370 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero__wrap
+  +pos-set(relative, second)
+  overflow: hidden
+
+  .hero__zone
+    +pos-set(relative, zero)
+
+  .hero__box
+    +pos-set(relative, ten)
+
+  .hero__title
+    &--main
+      +pos-set(relative, ten)
+      //background-image: url("~event/2nd/e-main-618/components/hero-section/title-bg.png")
+      background-size: 67% auto
+      background-repeat: no-repeat
+      background-position: top center
+      padding-top: 0
+      padding-bottom: 13%
+      padding-left: 0
+      text-align: center
+      margin-left: auto
+      margin-right: auto
+      width: 100%
+      overflow: hidden
+      .title__txt
+        position: relative
+        top: 4vw
+        animation: bounceInRight 1s .5s linear both
+        width: 80%
+        //opacity: .1
+        //animation: big-title 1s linear both
+        &.title__t2
+          width: 100%
+          animation: bounceInLeft 1s .5s linear both
+        &.title__t3
+          width: 59%
+          //padding-bottom: 1%
+          animation: title-down .8s 1.5s linear both, tada1 8s 3s infinite
+
+      .title__circle
+        -ms-transform: translateX(-50%)
+        -ms-animation: none
+        position: absolute
+        top: 0
+        left: 50%
+        transform-origin: center
+        transform: translateX(-50%)
+        width: 64vw
+        height: 64vw
+        animation: behind-appear 1s 1s both linear, rotate-title 6s infinite linear
+        &.title__circle-2
+          left: 0
+          animation: bounceInUpToCenter 1s linear both
+          width: 100vw
+          height: 74vw
+
+      +breakpoint-min($min-width-xl)
+        width: auto
+        padding-top: 2%
+        padding-bottom: 98px
+        padding-left: 0
+        padding-right: 0
+        .title__txt
+          top: 38px
+        .title__circle
+          transform: translateX(-52%)
+          width: 616px
+          height: 619px
+          &.title__circle-2
+            width: 960px
+            height: 712px
+  //top: -12px
+
+  // &.animated
+    // animation: small-open 1s both ease-out
+
+  //.title-decoration__wrap
+  //  +pos-set(relative, zero, -8vw, 2%)
+  .title__decoration
+    img
+      display: none
+    +breakpoint-min($min-width-xl)
+      width: 96%
+      height: 100%
+      pointer-events: none
+      +pos-set(fixed, under)
+      top: 0
+      img
+        position: absolute
+        display: block
+        z-index: -1
+      .left-1
+        width: 290px
+        height: 414px
+        left: calc(50% - 1230px)
+        top: 0px
+        animation: up-appear 0.5s linear both
+      .left-2
+        width: 487px
+        height: 667px
+        top: 0
+        left: calc(50% - 956px)
+        animation: up-appear-skew .5s 0.3s linear both
+      .left-3
+        width: 189px
+        height: 340px
+        top: 473px
+        left: calc(50% - 1230px)
+        animation: up-appear-skew .8s 1.6s linear both
+      .left-4
+        width: 237px
+        height: 227px
+        top: 435px
+        left: calc(50% - 975px)
+        animation: up-appear-skew 1s 1.6s linear both
+      .right-1
+        width: 215px
+        height: 206px
+        right: calc(50% - 846px)
+        top: 34px
+        animation: up-appear-skew .5s 0.8s linear both
+      .right-2
+        width: 401px
+        height: 217px
+        top: 0
+        right: calc(50% - 1330px)
+        animation: up-appear-skew .5s 1.2s linear both
+      .right-3
+        width: 462px
+        height: 455px
+        top: 265px
+        right: calc(50% - 1088px)
+        animation: up-appear-skew .7s 1.8s linear both
+      .right-4
+        width: 443px
+        height: 323px
+        top: 105px
+        right: calc(50% - 1333px)
+        animation: up-appear-skew .7s 1.5s linear both
+
+  //+breakpoint-min($min-width-xl)
+  //  +pos-set(relative, zero, -82px, 2%)
+
+  .promo__zone
+    margin-top: 12%
+    position: relative
+    //background-color: $gray-deep-light
+    +breakpoint-min($min-width-xl)
+      margin-top: 117px
+      background-color: transparent
+
+.parallax__background
+  +breakpoint-min($min-width-xl)
+    +pos-set(absolute, under)
+    //+bg-set(url("~event/2nd/e-main-618/components/hero-section/decoration-goods.png"), 100% auto)
+    width: 2227px
+    height: 868px
+    // transform: translateY(-10%)
+    animation: 1s 2s behind-appear both
+    pointer-events: none
+    will-change: scroll-position
+    top: 81px
+    left: 50%
+    transform: translateX(-50%)
+    background-position: center
+    transform-origin: center center
+
+@keyframes title-down
+  0%
+    transform: translateY(calc(-100vw * 1))
+  70%, 80%
+    transform: translateY(0) scale(1.2)
+  75%, 100%
+    transform: translateY(0) scale(1)
+
+@keyframes key-rotate-stop
+  0%
+    transform: rotate(0)
+  1%
+    transform: scale(1.1) rotate(-20deg)
+    filter: brightness(3)
+  2%
+    transform: scale(1) rotate(0)
+    filter: brightness(1)
+  3%
+    transform: scale(1.1) rotate(20deg)
+    filter: brightness(3)
+  4%
+    transform: scale(1) rotate(0)
+    filter: brightness(1)
+  10%
+    transform: rotate(0)
+
+@keyframes up-down
+  0%, 30%, 100%
+    transform: translateY(0)
+  20%, 40%, 60%
+    transform: translateY(-6%)
+  30%, 45%
+    transform: translateY(0)
+
+@keyframes up-down
+  0%, 8%, 12%, 16%, 74%, 78%, 82%, 100%
+    transform: scale(1) translateY(0)
+  10%, 14%, 76%, 80%
+    transform: scale(1.1) translateY(-6%)
+
+@keyframes up-appear
+  0%
+    transform: translateX(-20vw) translateY(-40vw)
+    opacity: 0
+  1%
+    transform: translateX(-20vw) translateY(-40vw)
+    opacity: 1
+  80%, 90%
+    transform: translateX(0) translateY(0)
+    opacity: 1
+  85%, 95%
+    transform: translateX(0) translateY(0)
+    opacity: 1
+  75%, 82.5%, 92.5%, 87.5%, 97.5%, 100%
+    transform: translateX(0) translateY(0)
+    opacity: 1
+
+@keyframes up-appear-skew
+  0%
+    transform: translateX(-20vw) translateY(-40vw)
+    opacity: 0
+  1%
+    opacity: 1
+  80%, 90%
+    transform: translateX(0) translateY(0) skew(-5deg, -5deg)
+    opacity: 1
+  85%, 95%
+    transform: translateX(0) translateY(0) skew(5deg, 5deg)
+    opacity: 1
+  75%, 82.5%, 92.5%, 87.5%, 97.5%, 100%
+    transform: translateX(0) translateY(0) skew(0)
+    opacity: 1
+
+@keyframes behind-appear
+  0%
+    opacity: 0
+    left: 50%
+    transform: translateX(-50%) scale(0)
+  99%
+    opacity: 0
+  100%
+    opacity: 1
+    //transform-origin: center center
+    left: 50%
+    transform: translateX(-50%) scale(1)
+
+@keyframes big-title
+  0%
+    opacity: 0
+    transform: scale(0)
+  50%, 60%, 70%, 100%
+    opacity: 1
+    transform: scale(1)
+  55%, 65%
+    transform: scale(1.1) rotate(10deg)
+
+@keyframes rotate-title
+  from
+    transform: translateX(-52%) rotate(0)
+    filter: brightness(100%)
+  50%
+    filter: brightness(150%)
+  to
+    transform: translateX(-52%) rotate(360deg)
+    filter: brightness(100%)
+
+@keyframes bounceInLeft
+  from, 60%, 75%, 90%, to
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+  0%
+    opacity: 0
+    -webkit-transform: translate3d(- 3000px, 0, 0) scaleX(3)
+    transform: translate3d(- 3000px, 0, 0) scaleX(3)
+  60%
+    opacity: 1
+    -webkit-transform: translate3d(25px, 0, 0) scaleX(1)
+    transform: translate3d(25px, 0, 0) scaleX(1)
+  75%
+    -webkit-transform: translate3d(-10px, 0, 0) scaleX(0.98)
+    transform: translate3d(-10px, 0, 0) scaleX(0.98)
+  90%
+    -webkit-transform: translate3d(5px, 0, 0) scaleX(0.995)
+    transform: translate3d(5px, 0, 0) scaleX(0.995)
+  to
+    -webkit-transform: translate3d(0, 0, 0)
+    transform: translate3d(0, 0, 0)
+
+@keyframes bounceInRight
+  from, 60%, 75%, 90%, to
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+  from
+    opacity: 0
+    -webkit-transform: translate3d(3000px, 0, 0) scaleX(3)
+    transform: translate3d(3000px, 0, 0) scaleX(3)
+  60%
+    opacity: 1
+    -webkit-transform: translate3d(-25px, 0, 0) scaleX(1)
+    transform: translate3d(-25px, 0, 0) scaleX(1)
+  75%
+    -webkit-transform: translate3d(10px, 0, 0) scaleX(0.98)
+    transform: translate3d(10px, 0, 0) scaleX(0.98)
+  90%
+    -webkit-transform: translate3d(-5px, 0, 0) scaleX(0.995)
+    transform: translate3d(-5px, 0, 0) scaleX(0.995)
+  to
+    -webkit-transform: translate3d(0, 0, 0)
+    transform: translate3d(0, 0, 0)
+
+@keyframes bounceInUpToCenter
+  from, 60%, 75%, 90%, to
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+  from
+    opacity: 0
+    -webkit-transform: translate3d(3000px, 3000px, 0) scaleX(3)
+    transform: translate3d(3000px, 3000px, 0) scaleX(3)
+  to
+    opacity: 1
+    -webkit-transform: translate3d(0, 0, 0) scaleX(1)
+    transform: translate3d(0, 0, 0) scaleX(1)
+
+@keyframes swing
+  0%, 88%
+    -webkit-transform: rotate3d(0, 0, 0, 0deg)
+    transform: rotate3d(0, 0, 0, 0deg)
+  92%
+    -webkit-transform: rotate3d(0, 0, 1, 15deg)
+    transform: rotate3d(0, 0, 1, 15deg)
+  94%
+    -webkit-transform: rotate3d(0, 0, 1, -10deg)
+    transform: rotate3d(0, 0, 1, -10deg)
+  96%
+    -webkit-transform: rotate3d(0, 0, 1, 5deg)
+    transform: rotate3d(0, 0, 1, 5deg)
+  98%
+    -webkit-transform: rotate3d(0, 0, 1, -5deg)
+    transform: rotate3d(0, 0, 1, -5deg)
+  to
+    -webkit-transform: rotate3d(0, 0, 1, 0deg)
+    transform: rotate3d(0, 0, 1, 0deg)
+
+@keyframes tada1
+  from
+    -webkit-transform: scale3d(1, 1, 1)
+    transform: scale3d(1, 1, 1)
+  //11%, 12%
+  //  -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg)
+  //  transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg)
+  13%, 15%, 17%, 19%
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)
+  14%, 16%, 18%
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)
+  20%, 100%
+    -webkit-transform: scale3d(1, 1, 1)
+    transform: scale3d(1, 1, 1)

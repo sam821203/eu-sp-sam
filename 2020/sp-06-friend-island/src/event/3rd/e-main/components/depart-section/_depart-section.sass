@@ -1,0 +1,163 @@
+.promo__group--depart
+  margin-top: -2.96%
+  overflow: hidden
+  +breakpoint-min($min-width-xl)
+    margin-top: 0
+
+
+
+.depart__wrap
+  +pos-set(relative, zero)
+  padding: 3% 0 13.6%
+  +bg-set(url("~event/3rd/e-main/components/depart-section/bg-depart.jpg"), 100%, center, 2px, no-repeat, $main-e-background-color-3rd)
+  .decoration--tunnel
+    +pos-set(absolute, base, 2px, 0)
+    width: 100%
+    height: 100%
+    +bg-set(url("~event/3rd/e-main/components/depart-section/decoration-tunnel.png"), 100%)
+    pointer-events: none
+  
+.depart__block
+  display: flex
+  +pos-set(relative, zero)
+  padding: 1% 8% 7%
+  li
+    width: 50%
+  .depart__link
+    a
+      padding-bottom: 66%
+      width: 73%
+      // background-color: #f00
+      opacity: 0.3
+  // .depart__item
+  //   a
+  //     border: 1px solid #00f
+
+
+  // 車車設定
+  .decoration__wrap
+    +pos-set(absolute, zero)
+    padding-bottom: 23.5%
+    width: 14%
+    // transition: transform 0.3s
+    // transform: scale(0)
+    opacity: 0
+    pointer-events: none
+    &.active
+      // transform: scale(1)
+      opacity: 1
+
+
+    .decoration__car
+      +pos-set(absolute, zero, 0, 0)
+      width: 100%
+      height: 100%
+      +bg-set(url(~event/3rd/e-main/components/depart-section/decoration-car.png), 100%)
+      animation: car-shaking 0.2s infinite
+
+  &:nth-child(1)
+    .depart__item
+      transform: translate(23%, -3.5%)
+      order: -1
+    .depart__link
+      a
+        transform: translate(23%, 50%)
+    .decoration__car
+      background-image: none
+
+  &:nth-child(2)
+    .depart__item
+      transform: translateX(8%)
+    .depart__link
+      a
+        transform: translate(58%, 63%)
+    .decoration__wrap
+      top: -20%
+      left: 25%
+
+  &:nth-child(3)
+    .depart__item
+      transform: translateX(-48%)
+    .depart__link
+      a
+        transform: translate(-30%, 45%)
+    .decoration__wrap
+      top: -17%
+      right: 0%
+
+  &:nth-child(4)
+    padding-bottom: 2.5%
+    .depart__item
+      transform: translateX(-48%)
+    .depart__link
+      a
+        transform: translate(-20%, 60%)
+    .decoration__wrap
+      top: -23%
+      right: 22%
+      .decoration__car
+        animation: car-shaking-reverse 0.2s infinite
+
+  &:nth-child(5)
+    padding-bottom: 6.5%
+    .depart__item
+      transform: translateX(9%)
+    .depart__link
+      a
+        transform: translate(55%, 65%)
+    .decoration__wrap
+      top: -14.5%
+      left: 26%
+
+  &:nth-child(6)
+    padding-bottom: 6%
+    .depart__item
+      transform: translateX(9%)
+    .depart__link
+      a
+        transform: translate(55%, 50%)
+    .decoration__wrap
+      top: -27%
+      left: 31%
+
+  &:nth-child(7)
+    padding-bottom: 4%
+    .depart__item
+      transform: translateX(-5%)
+      order: -1
+    .depart__link
+      a
+        transform: translate(-20%, 50%)
+    .decoration__wrap
+      top: -10.5%
+      right: 1%
+
+  &:nth-child(8)
+    .depart__item
+      transform: translateX(5%)
+    .depart__link
+      a
+        transform: translate(40%, 48%)
+    .decoration__wrap
+      top: 1%
+      left: -1%
+      .decoration__car
+        animation: car-shaking-reverse 0.2s infinite
+
+@keyframes car-shaking
+  from
+    transform: translateY(0)
+  50%
+    transform: translateY(0.5%)
+  to
+    transform: translateY(-0.5%)
+
+@keyframes car-shaking-reverse
+  from
+    transform: translateY(0) scaleX(-1)
+  50%
+    transform: translateY(0.5%) scaleX(-1)
+  to
+    transform: translateY(-0.5%) scaleX(-1)
+
+

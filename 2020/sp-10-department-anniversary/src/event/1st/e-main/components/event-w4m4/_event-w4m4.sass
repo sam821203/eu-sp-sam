@@ -1,0 +1,26 @@
+.promo__group--w4m4
+  position: relative
+  z-index: 2
+  .promo__wrap
+    +bg-set(url("~event/1st/e-main/components/event-w4m4/bg-event-w4m4.jpg"), 100% auto)
+    height: 74vw
+    .good__wrap
+      display: flex
+      flex-wrap: wrap
+      justify-content: center
+      padding: 15% 2% 2% 2%
+      li
+        flex: 0 0 24%
+        padding: 1% .5%
+        a
+          transition: transform 0.5s
+        &:hover
+          a
+            transform: scale(1.1)
+            filter: brightness(120%)
+
+    +breakpoint-min($min-width-xl)
+      width: 100%
+      max-width: 960px
+      margin: 0 auto
+      height: 710px

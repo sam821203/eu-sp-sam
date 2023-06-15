@@ -1,0 +1,100 @@
+- 
+  var dailySliderNow = [
+    {
+      link: "#",
+      nowImgSrc: "~event/1st/e-main/components/daily-slider/items/now-daily-item-1.png",
+      alt: "每日一物"
+    }, 
+    {
+      link: "#note",
+      nowImgSrc: "~event/1st/e-main/components/daily-slider/items/now-daily-item-2.png",
+      alt: "滿$3000送300"
+    }, 
+    {
+      link: "#note", 
+      nowImgSrc: "~event/1st/e-main/components/daily-slider/items/now-daily-item-3.png",
+      alt: "單筆消費$919抽919"
+    }, 
+    {
+      link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202008/SP_1116218/w/index.html",
+      nowImgSrc: "~event/1st/e-main/components/daily-slider/items/now-daily-item-4.png",
+      alt: "花月秋賞 月餅線上購"
+    }, 
+    {
+      link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202008/SP_1116218/w/index.html",
+      nowImgSrc: "~event/1st/e-main/components/daily-slider/items/now-daily-item-5.png",
+      alt: "首購登記送中冰美"
+    }, 
+    {
+      link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202007/SP_1116046/w/index.html",
+      nowImgSrc: "~event/1st/e-main/components/daily-slider/items/now-daily-item-6.png",
+      alt: "APP下單3次登記送霜淇淋"
+    },
+    {
+      link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202007/SP_1116046/w/index.html",
+      nowImgSrc: "~event/1st/e-main/components/daily-slider/items/now-daily-item-7.png",
+      alt: "APP下單3次登記送霜淇淋"
+    },
+    {
+      link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202008/SP_1116239/w/index.html",
+      nowImgSrc: "~event/1st/e-main/components/daily-slider/items/now-daily-item-8.png",
+      alt: "萊爾富超取請你喝中冰拿"
+    },
+  ]
+
+- 
+  var dailySliderNext = [
+    {
+      nextImgSrc: "~event/1st/e-main/components/daily-slider/items/daily-item-2.png",
+      alt: dailySliderNow[1].alt,
+    }, 
+    {
+      nextImgSrc: "~event/1st/e-main/components/daily-slider/items/daily-item-3.png",
+      alt: dailySliderNow[2].alt,
+    }, 
+    {
+      nextImgSrc: "~event/1st/e-main/components/daily-slider/items/daily-item-4.png",
+      alt: dailySliderNow[3].alt,
+    }, 
+    {
+      nextImgSrc: "~event/1st/e-main/components/daily-slider/items/daily-item-5.png",
+      alt: dailySliderNow[4].alt,
+    }, 
+    {
+      nextImgSrc: "~event/1st/e-main/components/daily-slider/items/daily-item-6.png",
+      alt: dailySliderNow[5].alt,
+    },
+    {
+      nextImgSrc: "~event/1st/e-main/components/daily-slider/items/daily-item-7.png",
+      alt: dailySliderNow[6].alt,
+    },
+    {
+      nextImgSrc: "~event/1st/e-main/components/daily-slider/items/daily-item-8.png",
+      alt: dailySliderNow[7].alt,
+    },
+    {
+      nextImgSrc: "~event/1st/e-main/components/daily-slider/items/daily-item-9.png",
+      alt: "活動已結束",
+    }, 
+  ]
+
+
+
+section.promo__group.promo__group--daily-slider.m-bottom--sm(data-title="天天開搶")
+  .layout--main
+    .promo__wrap
+      #dailyItem.daily__item
+        each dataNow, index in dailySliderNow
+          .item__box(class= (index== 0) ? "active": "")
+            a(href= dataNow.link, title= dataNow.alt)
+            img(src= dataNow.nowImgSrc, alt= dataNow.alt)
+      .slider__wrap
+        #dailySlider.promo__slider.swiper-container
+          ul.swiper-wrapper
+            each dataNext, index in dailySliderNext
+              li.swiper-slide(class= (index== dailySliderNext.length - 1) ? "" : "active")
+                img.swiper-lazy(data-src= dataNext.nextImgSrc, alt= dataNext.alt)
+                .swiper-lazy-preloader.swiper-lazy-preloader-white
+          #dailySliderPrev.swiper-button-white.swiper-button-prev.daily__nav--prev
+          #dailySliderNext.swiper-button-white.swiper-button-next.daily__nav--next
+      

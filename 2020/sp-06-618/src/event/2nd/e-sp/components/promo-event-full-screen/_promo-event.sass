@@ -1,0 +1,43 @@
+.promo__event
+  .event__wrap
+    +display-flex
+    flex-wrap: wrap
+    justify-content: center
+    +pos-set(relative, second)
+    width: 100%
+    li
+      +flex(0, 0, 47%)
+      padding: 1%
+      transition: all 0.5s
+      &:hover,
+      &:active
+        //filter: brightness(150%)
+        //filter: drop-shadow(0 0.5em 0 $gray-deep-dark)
+        img
+          transition: all 0.5s
+          //transform: rotateY(360deg)
+          transform: translateY(-3%)
+          filter: brightness(110%) contrast(110%)
+    +breakpoint-min($min-width-xl)
+      top: 10px
+      li
+        display: flex
+        justify-content: center
+        +flex(0, 0, 49%)
+        padding: 0
+  .event__wrap_3
+    +display-flex
+    flex-wrap: wrap
+    justify-content: center
+    +pos-set(relative, second)
+    width: 100%
+    li
+      +flex(0, 0, 31%)
+      padding: 2% 1% 0 1%
+      transition: all 0.5s
+      &:hover,
+      &:active
+        filter: brightness(150%)
+        img
+          transition: all 0.5s
+          transform: rotateY(360deg)

@@ -1,0 +1,84 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero__wrap
+  +pos-set(relative, zero)
+  // +bg-set(url("~event/2nd/u-main/components/hero-section/bg-hero.jpg"), 100%)
+  // overflow: hidden
+  +breakpoint-min($min-width-xl)
+    background-size: auto
+
+  .hero__zone
+    overflow: hidden
+
+  .hero__block
+    +pos-set(relative, zero)
+    padding-top: 0.5%
+
+  .hero__box
+    margin-left: 21%
+    width: 55%
+
+  .hero__title
+    &--main
+      width: 100%
+      text-align: center
+      transform-origin: center top
+      animation: flash-speed 6s infinite
+      // 因為要隨日期換圖，由js控制opacity
+      img
+        opacity: 0
+
+  .title__decoration--top
+    +pos-set(absolute, under, 0, 0)
+    width: 100%
+    height: 100%
+    pointer-events: none
+    .decoration__pic
+      +pos-set(absolute, zero, -23%)
+      +bg-set(url(~event/2nd/u-main/components/hero-section/decoration-light.png), cover)
+      width: 20%
+      height: 112%
+      transform-origin: top
+      &:first-child
+        left: 0
+        animation: key-rotate-from-to 5s infinite alternate linear
+        img
+          transform: scale(-1)
+      &:last-child
+        right: 0
+        animation: key-rotate-from-to 5s infinite alternate-reverse linear
+
+
+  .title-decoration__wrap
+    +pos-set(relative, zero)
+    width: 100%
+    height: 100%
+    pointer-events: none
+    .title__decoration
+
+      &--middle
+        .decoration__pic
+          margin-top: -19.9%
+          margin-left: 12%
+          width: 88%
+
+      &--bottom
+        +pos-set(absolute, base)
+        bottom: 0.5%
+        left: 3.5%
+        width: 58%
+
+  // TODO: 如果hero和promo要共用主視覺時的共用區塊背景設定 
+  // .promo__zone
+    // margin-top: 8%
+    //background-color: $gray-deep-light
+    // +breakpoint-min($min-width-xl)
+      // background-color: transparent
+
++key-rotate-from-to(-20, 20)
+@keyframes flash-speed
+  from, 19%, 21%, 22%, 24%, 39%, 41%, 44%, to
+    filter: brightness(100%)
+  20%, 23%, 40%, 43%,
+    filter: brightness(200%)

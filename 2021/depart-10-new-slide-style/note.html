@@ -1,0 +1,290 @@
+<meta name="viewport" content="width=device-width">
+<meta charset="utf-8">
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+*:before, *:after {
+  box-sizing: border-box;
+}
+a {
+  display: block;
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+img {
+  width: 100%;
+  border: 0;
+}
+article,
+main,
+nav,
+section {
+  display: block;
+}
+body {
+  margin:0;
+  font-family: PingFangTC-regular, "LiHei Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Source Han Sans TC", "Microsoft JhengHei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" ;
+}
+.body-color{
+  /* 外部背景底色 */	  
+  background-color: #150000;
+}
+.sp--960 {
+  position: relative;
+  z-index: 0;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/*-- note start --*/
+.note {	  
+  font-size: 15px;
+  word-break: break-all;
+  line-height: 150%;
+}
+.note article {
+  padding: 1.5%;
+  /* 內部背景底色 */
+  background-color: #ffffff;
+  border-radius: 5px;
+}  
+.note article a {	  
+ display: inline;
+ color: #ce2212;
+ text-decoration: underline;
+ word-break: break-all;
+} 
+.note article a:hover {
+ text-decoration: none;	
+}       
+.note li{
+  padding: 5px;
+}  
+.note ol>li {
+  margin-left: 30px;
+}   
+.act_name {
+  font-size: 32px;	
+  color: #fff;
+  /* 主標底色 */	  
+  background-color: #15151d;	
+  line-height: 32px;
+  text-align: center;
+  letter-spacing: 2px;	
+  font-weight: bold;
+  padding: 15px;
+  border-radius: 5px;
+}
+.h2_style {
+ font-size: 24px;
+ /* 活動名稱顏色 */	  
+ color: #9b2121;
+ line-height: 30px;
+ margin-top: 15px;
+}
+@media (max-width: 700px) {
+	.act_name {
+   font-size: 24px;
+   line-height: 24px;	
+ }	  
+ .h2_style {		
+   font-size: 20px;
+   line-height: 24px;      
+ }	  
+}  
+.p-notice {	
+ font-size: 24px;  
+ color: #555555;	
+ line-height: 42px;  
+ font-weight: bold;
+ margin-top: 15px;
+}  
+@media (max-width: 700px) {
+	.p-notice {
+   font-size: 20px;
+ }	  
+}    
+.p-notice-words{
+ color: #555555;
+}          
+.note .decimal-type{
+  /* 阿拉伯數字 */
+  list-style-type: decimal;
+}
+.note .lower-alpha-type{
+  /* 小寫英文字母 */
+  list-style-type: lower-alpha;   
+}
+.note .none-type{
+  /* 不顯示符號 */   
+  list-style-type: none;
+}
+.note .disc-type{
+  /* 實心圓形 */    
+  list-style-type: disc;
+} 
+.btn_a1 {	  
+  /* 按鈕底色 */
+  background-color: #ce2212;
+  padding: 5px 30px;  
+  border-radius: 5px;  
+}
+.btn_p1 {
+  font-size: 24px;	  
+  line-height: 52px;
+  font-weight: bold;
+  margin: 0 0 5px 35px;
+}
+.note article .btn_p1 a {
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s;		
+}
+.note article .btn_p1 a:hover {
+  /* 滑鼠移過 按鈕底色 */	  
+  background-color: #ff5747;
+}   
+/*-- rwd table --*/  
+.note table.rwd-table {
+  width: 100%;
+  border: none;	
+  border-collapse: collapse;
+  background-color: #eeeeee; 
+  overflow: hidden;
+  margin: 0 0 10px 0;
+}
+.note table.rwd-table th {
+  display: none;
+}
+.note table.rwd-table td {
+  display: block;
+  text-align: left;
+}
+.note table.rwd-table td:before {
+  content: attr(data-th) ": ";
+  display: inline-block;
+  margin: 5px 5px 5px 0;
+  color: #9b2121;
+  font-weight: bold;
+}
+.note table.rwd-table tr:nth-child(even) {
+  background-color: #dadada;
+}
+.note table.rwd-table th, .rwd-table td {
+  margin: .5em 1em;
+}
+@media (min-width: 700px) {
+  .note table.rwd-table {
+    width: 95%;
+    border: 1px solid #15151d; 
+    background-color: #fff;
+    margin: 0 auto 15px;
+  }
+  .note table.rwd-table tr:nth-child(even){
+    background: transparent;
+  }
+  .note table.rwd-table th {
+    /* 表頭底色 */		
+    background-color: #ffe39a; 
+  }
+  .note table.rwd-table th,
+  .note table.rwd-table td {
+    border: 1px solid #15151d;
+  }
+  .note table.rwd-table td:nth-child(4) {
+    border: 1px solid #15151d;
+  }	
+  .note table.rwd-table td:before {
+    display: none;
+  }
+  .note table.rwd-table th, .note table.rwd-table td {
+    display: table-cell;
+    padding: .25em .5em;
+    text-align: center;
+  }
+  .note table.rwd-table th, .note table.rwd-table td {
+    padding: 0.8em !important;
+  }
+} 
+/* 插入圖片 */		  
+.photo_style {
+ display: block;
+ margin: 0 auto;
+ max-width: 800px;
+ padding: 20px;
+}	
+/*-- note end --*/
+</style>
+<div id="spWrap" class="sp__wallper">
+  <section class="note body-color" name="note">  
+    <div class="sp--960" style="padding:1% 0 3% 0;">
+      <article>
+        <a name="note-top" id="note-top"></a>
+        <p class="act_name">家電風雲榜活動辦法</p>
+        <h2 class="h2_style">指定LG(洗衣機/冰箱/電視)，指定惠而浦(洗衣機/冰箱)，指定BOSCH(洗衣機/冰箱/洗碗機)商品</h2> 
+        <h2 class="h2_style">【單筆滿$15,888登記送14吋360度循環風扇】</h2> 
+        <h2 class="h2_style">【單筆滿$35,888登記送溫控火烤兩用輕食鍋】</h2> 
+        <h2 class="h2_style">【單筆滿$55,888登記送安晴4L觸控氣炸鍋】</h2>        
+        <ol class="decimal-type">
+          <li>活動期間：2021/8/3 AM 00:00 – 2021/8/31 PM 23:59</li>
+          <li>登記時間：2021/8/3 AM 00:00 – 2021/8/31 PM 23:59</li>
+          <li>活動說明：
+            <ol class="disc-type">
+              <li>活動期間凡購買活動參與品號內之指定商品(電話下單、電視購物商品除外;註:電視購物商品係指商品網頁有標記TV標籤之商品)，符合資格且於2021/9/30安裝完成過鑑賞期未退貨者，若贈品尚未贈送完畢，單筆滿額並於活動期間內至登記頁登記即可獲得，例；單筆滿$15,888登記即獲得14吋360度循環風扇一台，單筆滿$ 35,888即獲得溫控火烤兩用輕食鍋一台，單筆滿$ 55,888即獲得安晴4L觸控氣炸鍋一台，贈品發送順序以下訂單時間為準，每筆訂單限得一份贈品，門檻擇一登記，贈品不累贈，贈品不可挑色隨機出貨，數量有限，送完為止。</li>
+            </ol>			  
+          </li>
+          <!-- rwd table -->
+          <table class="rwd-table">
+            <tr>
+              <th>獎項</th>
+              <th>單筆訂單門檻</th>
+              <th>贈品寄送及發放時間</th>
+              <th>贈品數量</th>
+            </tr>
+            <tr>
+              <td data-th="獎項">14吋循環風扇(顏色隨機)</td>
+              <td data-th="單筆訂單門檻">買家電館活動參與品號內之指定商品(電話下單、電視購物商品除外；註:電視購物商品係指商品網頁有標記TV 標籤之商品)。</td>
+              <td data-th="贈品寄送及發放時間">統一於10/25前陸續寄出</td>
+              <td data-th="贈品數量">50份</td>
+            </tr>
+            <tr>
+              <td data-th="獎項">兩用輕食鍋(顏色隨機)</td>
+              <td data-th="單筆訂單門檻">買家電館活動參與品號內之指定商品(電話下單、電視購物商品除外；註:電視購物商品係指商品網頁有標記TV 標籤之商品)。</td>
+              <td data-th="贈品寄送及發放時間">統一於10/25前陸續寄出</td>
+              <td data-th="贈品數量">35份</td>
+            </tr>		
+            <tr>
+              <td data-th="獎項">安晴觸控氣炸鍋(顏色隨機)</td>
+              <td data-th="單筆訂單門檻">買家電館活動參與品號內之指定商品(電話下單、電視購物商品除外；註:電視購物商品係指商品網頁有標記TV 標籤之商品)。</td>
+              <td data-th="贈品寄送及發放時間">統一於10/25前陸續寄出</td>
+              <td data-th="贈品數量">15份</td>
+            </tr>					
+          </table>  
+          <p class="btn_p1"><a class="btn_a1" href="https://www.etmall.com.tw/Activity/Reg/210" target="_blank">點我登記</a></p><!-- 最多8字，超過會破版 -->
+          <li>活動參與品號：
+            <ol class="disc-type">
+              <li>3108878、3108062、3106288、3106199、3098457、3098427、3098360、3094176、3094175、3094174、3094173、3094171、3094170、3094169、3094168、3094167、3094166、3094165、3093996、3093995、3093994、3093993、3093992、3093991、3093990、3093989、3093988、3093987、3093916、3093910、3093909、3093248、3093028、3084565、3082409、3082408、3049606、3011629、3010477、3010435、3010432、3010427、3010426、2978869、2978868、2978867、2960885、2960884、2960883、2960849、2954158、2954140、2954139、2954138、2954137、2954136、2954135、2954134、2954133、2954132、2954131、2954130、2954129、2954128、2954127、2954126、2954125、2954124、2954123、2954122、2954121、2954120、2950982、2950981、2950980、2950979、2950978、2950977、2950976、2950975、2950974、2950973、2950972、2950971、2950970、2950969、2950968、2950967、2950966、2950965、2950964、2944346、2934983、2934926、2934925、2920753、2920238、2920237、2920235、2920234、2920222、2920214、2920208、2920205、2920204、2919351、2912507、2912505、2912496、2912461、2907768、2901797、2901796、2901795、2901794、2901793、2901792、2901791、2901790、2901789、2901788、2901787、2901786、2901785、2901784、2901783、2901782、2901781、2901780、2901746、2901745、2901744、2901743、2901742、2901741、2899155、2899154、2899153、2899152、2899150、2899149、2899148、2899147、2899146、2899145、2899144、2899143、2899142、2899141、2899140、2899139、2899138、2899137、2897760、2897759、2897752、2897751、2897750、2897749、2897745、2897740、2897738、2897737、2897736、2897735、2897734、2897732、2897731、2897730、2897729、2897728、2897727、2897725、2897723、2897721、2897720、2897719、2897718、2897701、2897700、2897674、2897633、2897579、2897568、2897565、2897563、2897558、2897557、2897544、2897519、2897516、2897514、2897495、2897485、2897477、2896416、2896415、2896414、2789456、2789352、2781381、2763538、2711187、2702858、2702820、2702774、2702773、2670514、2660398、2660397、2639954、2639953、2580379、2436119、2436112。
+                2625929、2629005、2629008、2707463、2764130、2943934、3090202、3090204、3090205、3090206、3090207、3090208、3090209、3090210、3091297。
+                2471219、2471220、2471221、2471222、2471224、2471225、2482256、2649707、2649709、3016055、3016056、3016057、3016058、3016059、3035673、3035675、3035682、3035683、3035684、3035685、3035687、3035688、3035689、3035690、3035691、3035692、3035693、3035694、3035695、3035696、3035697、3035698、3035699、3035700、3035701、3035702、3070353、3105043。
+              </li>
+            </ol>      
+          </ol>
+          <p class="p-notice">贈獎注意事項</p>
+          <ol class="p-notice-words decimal-type">
+            <li>獎項詳細內容與規格以實物為準，獎項均不得轉換、轉讓或折換現金，中獎資格不可轉讓予第三人。領獎後獎品之使用與維護，東森購物概不負責，若因不可抗力因素造成贈品無法交件，東森購物可將贈品內容更換成等值商品做為替換。</li>
+            <li>主辦單位有權檢視本活動參加者之參加行為及中獎情形是否涉嫌不法或有違常理之異常狀況，包括但不限於下列情況：人為操作蓄意偽造、短時間異常多筆參與行為、透過任何電腦程式參與活動、詐欺或以任何其他不正當的方式意圖以進行不實或虛偽活動參與行為、或登錄資料不實或不正確或盜用任何第三人之資料，或有違反活動規範之行為。活動參加者因上述情形所獲得之活動資格及獎品，主辦方及活動小組保有變更、終止其參加活動資格、取消中獎資格或暫停活動的權利，並對於任何破壞本活動之行為保留法律追訴權，並就因此產生之損害，得向參加者請求賠償。</li>
+            <li>兌獎流程將由專人主動與得獎人聯繫。依稅法規定，若得獎人於東森購物兌換贈（獎）品金額達新台幣（下同）1,001元以上未達20,010元，將於次年初開立免扣繳憑單予得獎人並向主管稽徵機關申報。</li>
+            <li>活動限在台灣地區（包含金門、馬祖、澎湖）設有住居所之本國人參加。本獎品配送區域限臺灣本島地區(外、離島地區請利用臺灣親友地址作為收貨地址)，部分偏遠地區需加收額外運費(區域及實際運費由物流判定)。若因會員資料填寫不完整者，或活動後變更資料(如姓名、手機、地址等)，導致無法收到，恕不補發。</li>
+            <li>此登記活動限訂購東森購物網(直銷電商、購享賺、揪好團、電話下單、電視購物商品除外)，使用網路頁面下單或東森購物APP下單此活動頁商品即可參加。活動贈獎資格及優惠價格以有效訂單為準。若遇主商品訂單取消、銷退時，亦需將贈品一併退回，如贈品有缺損，需賠償贈品市價。上述所有活動如遇不可抗拒之狀況產生，東森購物網保留更換、修改或停止活動之權利，相關異動將於東森購物網公告，不另行個別通知。</li>
+            <li>此活動非買就送，贈品數量皆有限量，贈品發送已訂單順序為主，贈完皆不再補。</li>
+            <li>本活動贈品以東森會員註冊之地址為寄送地址(非寄送到訂單配送地址)，下單時請留意以免贈品無法收到，恕不補發。</li>
+          </ol>
+        </article>
+      </div>
+    </section>
+  </div>

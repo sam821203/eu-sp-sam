@@ -1,0 +1,61 @@
+@import "layout/logo/_logo.sass"
+
+// default layout style
+.sp__header
+  position: sticky
+  z-index: map-get($zindex, fifteen)
+  top: 0
+  color: $gray-deep-light
+  background-color: $gray-deep-dark
+  .layout--main
+    position: relative
+    z-index: map-get($zindex, zero)
+
+  .header__zone
+    padding: 1.5% 2.5%
+  .header__info
+    +font-size($fz-18)
+    display: inline-block
+    vertical-align: middle
+  .info--sign
+    margin-left: 0.4rem
+    margin-right: 0.6rem
+  .info--common
+    display: none
+  .share__wrap
+    padding-top: 5px
+    float: right
+  .share__icon
+    display: inline-block
+    margin-left: 10px
+    width: 8vw
+
+  +breakpoint-min($min-width-lg)
+    .header__zone
+      padding: 10px 25px
+    .header__info
+      +font-size($fz-28)
+    .info--sign
+      margin-left: 1rem
+      margin-right: 1.2rem
+    .share__wrap
+      padding-top: 6px
+    .share__icon
+      width: 53px
+
+  +breakpoint-min($min-width-xl)
+    .header__zone
+      padding: 14px 0 15px 25px
+
+// TODO: 各家廠商的設定
+.sp__wrap
+  // apple style
+  &--apple
+    .sp__header
+      color: $gray-deep-light
+      background-color: $apple-deep-dark
+  // mi style
+  &--mi
+    .sp__header
+      color: $gray-deep-dark
+      background-color: $gray-deep-light

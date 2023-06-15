@@ -1,0 +1,77 @@
+.promo__group--mid-big
+  +pos-set(relative, zero)
+  .promo__title
+    display: flex
+    text-align: center
+
+    .title__box
+      width: 56%
+  .decoration--mid-big
+    width: 22%
+    padding-top: 4%
+    &:last-child
+      transform: rotateY(180deg)
+  .promo__wrap
+    +pos-set(relative, zero)
+    // +bg-set(url(event/1st/e-main/components/mid-big-slider/bg-mid-big.png), 100%)
+    .promo__slider
+      padding-top: 9.5%
+      padding-bottom: 9.5%
+    .swiper-slide
+      width: 33%
+      text-align: center
+    .swiper-slide,
+    .swiper-slide-duplicate
+      a,
+      img
+        transition: all 0.6s
+      a
+        transform: translateY(8%) scale(0.5)
+      // img
+      //   filter: grayscale(100%)
+    .swiper-slide-active,
+    // FIXME: IE會錯將最後一品dup掛active class造成最後一品一直放大，解法2種，1. 拿掉dup active class但dup輪到正式會少transition、2. JS中IE不loop，這邊走2.
+    .swiper-slide-duplicate-active
+      z-index: map-get($zindex, ten)
+      a
+        transform: translateY(-9%) scale(1.4)
+      // img
+      //   filter: grayscale(0)
+
+  +breakpoint-min($min-width-xl)
+    .promo__title
+      padding: 0 70px
+    // .promo__wrap
+    //   .promo__slider
+    //     padding-top: 170px
+
+  // .mid-big__pager
+  //   bottom: 0
+  //   left: 0
+  //   width: 100%
+  //   .swiper-pagination-bullet
+  //     margin: 0 4px
+  //     width: 12px
+  //     height: 12px
+  //     transition: all 0.3s
+  //     outline: 0
+  //     &.swiper-pagination-bullet-active
+  //       width: 24px
+  //       border-radius: 12px
+  //       background-color: $gray-deep-dark
+
+  // +breakpoint-min($min-width-md)
+  //   .mid-big__pager
+  //     .swiper-pagination-bullet
+  //       margin: 0 6px
+  //       width: 18px
+  //       height: 18px
+  //       &.swiper-pagination-bullet-active
+  //         width: 36px
+  //         border-radius: 18px
+  // +breakpoint-min($min-width-xl)
+  //   .promo__wrap
+  //     .promo__slider
+  //       padding-bottom: 65px
+  //   .mid-big__pager
+  //     bottom: 25px

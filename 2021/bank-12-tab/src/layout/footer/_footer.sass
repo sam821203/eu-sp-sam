@@ -1,0 +1,23 @@
+.footer__zone
+  // padding-bottom是為了避開aside-nav按鈕
+  padding: 2% 0 51px
+  background-color: $gray-dark
+  h2,
+  p
+    color: $gray-deep-light
+    text-align: center
+
+  h2
+    margin-bottom: 1%
+    font-size: 32px
+    font-weight: bold
+  p
+    font-size: 20px
+
+  +breakpoint-min($min-width-lg)
+    padding-bottom: 2%
+
+.footer-radius .footer__zone
+  border-radius: 18px 18px 0 0
+  +breakpoint-min($min-width-xxl)
+    border-radius: 18px

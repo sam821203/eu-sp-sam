@@ -1,0 +1,99 @@
+.promo__group--daily-time
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__item
+    &:first-child
+      +pos-set(absolute, base, 0%, 0%)
+      width: 16%
+      +breakpoint-min($min-width-xl)
+        top: -2%
+        left: calc(50% - 500px)
+        width: auto
+    &:last-child
+      +pos-set(absolute, under, 0%, 23%)
+      width: 55%
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 310px)
+        width: auto
+      
+  .promo__wrap
+    +aspect-ratio(960, 908)
+  .promo__zone
+    +pos-set(relative, zero)
+    padding: 32% 5% 0
+    +bg-set(url(event/1st/e-main/components/daily-time/bg-daily-time.png), 100%)
+    +breakpoint-min($min-width-xl)
+      padding-top: 34%
+  .product__wrap
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    > div
+      width: 32%
+      margin-bottom: 1.5%
+      &:nth-child(1)
+        .product__time
+          +bg-set(url(event/1st/e-main/components/daily-time/daily-time-hour-1.png), 100%)
+      &:nth-child(2)
+        .product__time
+          +bg-set(url(event/1st/e-main/components/daily-time/daily-time-hour-2.png), 100%)
+      &:nth-child(3)
+        .product__time
+          +bg-set(url(event/1st/e-main/components/daily-time/daily-time-hour-3.png), 100%)
+  .product__block
+    padding: 3% 2.5%
+  .product--dynamic
+    width: 100%
+    // +bg-set(url(layout/dynamic-product/bg-dynamic-item.png), 100%)
+  .product__time
+    margin-left: auto
+    margin-right: auto
+    // margin-bottom: 6%
+    padding-bottom: 40%
+    width: 95%
+    filter: brightness(50%)
+    + .product
+      filter: brightness(50%)
+    &.active
+      filter: grayscale(0)
+      + .product
+        filter: grayscale(0)
+
+  .product--dynamic
+    +breakpoint-min($min-width-xl)
+      margin-top: 15px
+    .product__name
+      +pos-set(relative, zero)
+      font-size: 3.3vw
+      padding-top: 12%
+      height: 3.43em
+      background-color: $main-e-background-color-1st-3
+      +breakpoint-min($min-width-xl)
+        margin-bottom: 0
+        padding-top: 10%
+        font-size: 22px
+      &:after
+        content: ''
+        +pos-set(absolute, base, -12%, -8%)
+        +bg-set(url(event/1st/e-main/components/daily-time/decor-product-img.png), 100%)
+        width: 120%
+        height: 20px
+        +breakpoint-min($min-width-xl)
+          top: -21%
+          height: 40px
+
+  .product__price
+    background-color: $main-e-background-color-1st-3
+    span
+      &:last-child
+        font-size: 3.6vw
+        +breakpoint-min($min-width-xl)
+          font-size: 28px
+
+@keyframes shakeX2
+  0%, 50%, to
+    transform: translateZ(0)
+  5%, 15%, 25%, 35%, 45%
+    transform: translate3d(-10px, 0, 0)
+  10%, 20%, 30%, 40%
+    transform: translate3d(10px, 0, 0)

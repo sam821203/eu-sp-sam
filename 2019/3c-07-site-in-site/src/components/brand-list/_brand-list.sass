@@ -1,0 +1,49 @@
+.brand-list
+  background-color: $gray-deep-light
+  border-bottom-width: 1px
+  border-bottom-style: solid
+  border-bottom-color: $primary-medium
+  overflow: hidden
+  +breakpoint-min($min-width-lg)
+    border-bottom-width: 2px
+.brand__wrap
+  +display-flex
+  flex-wrap: wrap
+  padding: 0 5%
+  animation: 1s fade-top both
+  .brand__item
+    +flex(0, 0, 25%)
+    padding: 0 5px
+    a
+      display: block
+      width: 100%
+      height: 100%
+    +breakpoint-min($min-width-lg)
+      +flex(1, 0, 10.5%)
+      width: 12.5%
+  +breakpoint-min($min-width-xl)
+    padding: 0
+  .brand__item--others
+    a
+      padding-top: 9.5%
+    .others__item
+      padding: 6% 0 6% 4.4%
+      color: $gray-deep-light
+      background-color: $gray-deep-dark
+      text-align: center
+      span
+        vertical-align: middle
+        &:first-child
+          +font-size($fz-13)
+        &:last-child
+          +font-size($fz-12)
+          margin-left: 0.4rem
+
+      +breakpoint-min($min-width-xl)
+        span
+          &:first-child
+            +font-size($fz-20)
+          &:last-child
+            +font-size($fz-13)
+    +breakpoint-max($max-width-xxs)
+      padding: 0

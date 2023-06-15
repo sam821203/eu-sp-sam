@@ -1,0 +1,24 @@
+.promo-special
+  margin-top: -16%
+  overflow: hidden
+  +breakpoint-min($min-width-xl)
+    margin-top: -220px
+
+  .promo__wrap
+    .promo__zone
+      +aspect-ratio(360, 152)
+      .promo__block
+        padding-right: 1%
+        +breakpoint-min($min-width-xl)
+          padding: 25px 10px 0 20px
+        .event__block
+          display: flex
+          justify-content: space-between
+          flex-wrap: wrap
+          li
+            width: 33%
+            transition: .2s
+            &:hover
+              transform: translateY(-2%)
+              filter: brightness(1.25)
+

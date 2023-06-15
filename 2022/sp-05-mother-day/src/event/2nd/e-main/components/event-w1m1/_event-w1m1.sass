@@ -1,0 +1,62 @@
+.promo__group--w1m1
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__wrap
+    pointer-events: none
+    .decor__item
+      &--left
+        +pos-set(absolute, under, 0%, 2%)
+        width: 25%
+        +breakpoint-min($min-width-xl)
+          max-width: 236px
+          left: calc(50% - 500px)
+      &--right
+        +pos-set(absolute, under, 0%)
+        right: 2%
+        width: 34%
+        +breakpoint-min($min-width-xl)
+          width: auto
+          right: calc(50% - 470px)
+      &--title
+        // +pos-set(absolute, )
+        margin: 7% auto 0
+        width: 75%
+  .promo__wrap
+    // +bg-set(url("event/2nd/e-main/components/event-w3m3/bg-event-w3m3.png"), 100%)
+    // margin-top: 4%
+    +breakpoint-min($min-width-xl)
+      // +bg-set(url("event/2nd/e-main/components/event-w3m3/bg-web-event-w3m3.png"), 100%)
+      // margin-top: 5%
+    .promo__zone
+      +aspect-ratio(960, 2100)
+      .good__wrap
+        li
+          &.slideDown
+            animation: slideInDown .5s linear 1
+
+    
+@keyframes slideInDown
+  0%
+    transform: translate3d(0, -100%, 0)
+    visibility: visible
+  to
+    transform: translateZ(0)
+
+@keyframes flipInY
+  0%
+    transform: perspective(400px) scaleX(1) translateZ(0) rotateY(180deg)
+    animation-timing-function: ease-out
+  40%
+    transform: perspective(400px) scaleX(1) translateZ(50px) rotateY(-20deg)
+    filter: brightness(110%)
+    animation-timing-function: ease-out
+  50%
+    transform: perspective(400px) scaleX(1) translateZ(50px) rotateY(-10deg)
+    filter: brightness(110%)
+    animation-timing-function: ease-in
+  80%
+    transform: perspective(400px) scale3d(1, 1, 1) translateZ(0) rotateY(0deg)
+    animation-timing-function: linear
+  to
+    transform: perspective(400px) scaleX(1) translateZ(0) rotateY(0deg)
+    animation-timing-function: linear

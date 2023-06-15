@@ -1,0 +1,112 @@
+// tab layout
+.promo__group--tab-section2
+  overflow: hidden
+  .decor__wrap
+    padding-bottom: 3%
+    +breakpoint-min($min-width-xl)
+      padding-bottom: 0%
+  .decor__item
+    &--title
+      +pos-set(absolute, zero, 2.5%, 12.5%)
+      width: 75%
+      +breakpoint-min($min-width-xl)
+        left: calc( 50% - 324px )
+    &--left
+      +pos-set(absolute, zero, 1%, 4%)
+      width: 18%
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 390px)
+    &--right1
+      +pos-set(absolute, under, 1%)
+      right: 4%
+      width: 25%
+      animation: tada 2s linear infinite
+      +breakpoint-min($min-width-xl)
+        right: calc(50% - 390px)
+    &--right2
+      +pos-set(absolute, zero, 5.5%)
+      right: 4%
+      width: 11%
+      +breakpoint-min($min-width-xl)
+        top: 80px
+        right: calc(50% - 390px)
+    &--bottom
+      +pos-set(absolute, base)
+      bottom: 10.5%
+      left: 45%
+      width: 10%
+      animation: heartBeat 1.5s ease-in infinite
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 40px)
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .promo__wrap
+    +aspect-ratio(924, 1674)
+    +breakpoint-min($min-width-xl)
+      +aspect-ratio(924, 1624)
+  .promo__zone
+    +bg-set(url("event/1st/e-main/components/tab-section-2/bg-tab-2.png"), 100%)
+    background-position: bottom
+    // margin-top: 28%
+  .tab__wrap
+    padding-top: 22%
+  .tab__box
+    display: flex
+    justify-content: space-around
+    flex-wrap: wrap
+    margin: 0 auto
+    width: 95%
+    .tab__item
+      width: 33%
+      transition: all .5s
+      cursor: pointer
+      &:hover,
+      &.active
+        transform: scale(0.9)
+        filter: contrast(1.2)
+  .content__block
+    padding: 2% 0% 0
+  .content__box
+    display: none
+    &.active
+      display: block
+  .swiper-slide
+    &:first-child
+      .product.product--dynamic
+        margin-left: 6%
+    &:nth-child(2)
+      .product.product--dynamic
+        margin-top: 11%
+        width: 100% 
+        +breakpoint-min($min-width-xl)
+          margin-top: 10px
+        .product__img
+          overflow: visible
+        .product__name,
+        .product__price
+          display: none
+    &:last-child
+      .product.product--dynamic
+        margin-left: 14%
+  // 共用
+  .product.product--dynamic
+    margin-top: 11%
+    width: 76%
+    +breakpoint-min($min-width-xl)
+      margin-top: 0
+    .product__name
+      margin-bottom: 0px
+      background-color: $gray-light
+      +breakpoint-min($min-width-xl)
+        font-size: 26px
+        height: 2.43em
+    .product__price
+      background-color: $gray-light
+      border-radius: 0 0 2vw 2vw
+      +breakpoint-min($min-width-xl)
+        border-radius: 0 0 20px 20px
+      span
+        &:last-child
+          +breakpoint-min($min-width-xl)
+            font-size: 36px
+

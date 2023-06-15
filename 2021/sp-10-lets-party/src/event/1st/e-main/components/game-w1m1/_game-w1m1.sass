@@ -1,0 +1,97 @@
+.promo__group--game-w1m1
+  +pos-set(relative, zero)
+  .promo__wrap
+    +aspect-ratio(921, 960)
+  .promo__zone
+    .event__wrap
+      +pos-set(relative, zero)
+      padding: 0 5%
+    .game__wrap--w1m1
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+      +pos-set(relative)
+      transition: all 0.3s
+      &:hover,
+      &.active
+        filter: brightness(110%)
+      .wait__wrap
+        cursor: pointer
+        &.active
+          opacity: 0
+          // animation: bright-out 2s
+      .win__wrap,
+      .lose__wrap
+        display: none
+        +pos-set(absolute, base, 0, 0)
+        &.active
+          display: block
+      .lose__wrap
+        cursor: pointer
+
+    .count__wrap
+      +pos-set(relative, zero)
+      margin-top: 10px
+      padding: 0.3% 0
+      width: 100%
+      background-color: $gray-deep-light
+    .count__box
+      width: 0
+      padding-bottom: 5%
+      background: linear-gradient(to right, $main-e-game-color-1st-1, $main-e-game-color-1st-2)
+      +breakpoint-min($min-width-xl)
+        padding-bottom: 24px
+    .check__box
+      +pos-set(absolute, under, 0, 0)
+      height: 100%
+      background-color: $main-e-game-color-1st-3
+      &::before,
+      &::after
+        content: ''
+        +pos-set(absolute, zero)
+        top: -20px
+        padding-top: 20px
+        width: 20px
+        +bg-set(url(event/1st/e-main/components/game-w1m1/arrow.gif), 100%)
+        opacity: 0
+      &::before
+        left: -10px
+      &::after
+        right: -10px
+      &.active
+        &::before,
+        &::after
+          opacity: 1
+
+    .popup__wrap
+      display: none
+      +pos-set(absolute, base)
+      top: 0
+      left: 0
+      width: 100%
+      &.active
+        display: block
+        .popup__overlay
+          animation: zoom-in2 0.6s 0.3s both linear
+        img
+          animation: zoom-in 1s 0.5s both
+
+    .popup__overlay
+      background-color: $gray-deep-dark
+      opacity: 0.8
+      transition: opacity 1s 0.3s
+    .popup__block
+      +pos-set(absolute, base)
+      top: 0
+      a
+        display: none
+
+@keyframes zoom-in2
+  0%
+    border-radius: 50%
+    transform: scale(0)
+  30%
+    border-radius: 50%
+  100%
+    border-radius: 0
+    transform: scale(1)

@@ -1,0 +1,89 @@
+.dynamic-slider
+  // +pos-set(relative, zero)
+  overflow: hidden
+  .decor__wrap
+    padding-bottom: 18%
+  .decor__item
+    &--title
+      +pos-set(absolute, under, 0%, 2.5%)
+      width: 95%
+      &.active
+        animation: swing 2s linear 3
+        transform-origin: bottom center
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 480px)
+    &--left
+      +pos-set(absolute, zero, 13%, 21%)
+      width: 43%
+      &.active
+        animation: bounceIn 1.5s linear infinite alternate
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 290px)
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .promo__wrap
+    +bg-set(url(event/2nd/e-main/components/dynamic-slider/bg-dynamic-slider.png), 100%)
+    margin-top: 2%
+    .promo__zone
+      +aspect-ratio(960, 809)
+      .promo__block
+        padding: 32% 3% 0
+      .promo__slider
+        overflow: hidden
+        .swiper-slide
+          display: flex
+          justify-content: space-around
+          flex-wrap: wrap
+        .dynamic__item
+          width: 29%
+          margin-bottom: 2%
+          &:nth-child(2)
+            margin-top: -15%
+            background-color: transparent
+            width: 42%
+            .product--dynamic
+              padding-bottom: 0%
+            .product__img
+              border: none
+              padding-bottom: 50%
+            .product__text
+              display: none
+          .product__img
+            border: 1px solid $main-e-background-color-2nd-3
+            border-bottom: none
+          .product__text
+            border: 1px solid $main-e-background-color-2nd-3
+            border-top: none
+            padding: 1.5%
+          +breakpoint-min($min-width-xl)
+            .product__img,
+            .product__text
+              border-width: 2px
+
+@keyframes bounceIn
+  0%, 20%, 40%, 60%, 80%, to
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+  0%
+    transform: scale3d(.7, .7, .7)
+  20%
+    transform: scale3d(1, 1, 1)
+  40%
+    transform: scale3d(.9, .9, .9)
+  60%
+    transform: scale3d(1.02, 1.02, 1.02)
+  80%
+    transform: scale3d(.97, .97, .97)
+  to
+    transform: scaleX(1)
+
+@keyframes swing
+  20%
+    transform: rotate(5deg)
+  40%
+    transform: rotate(-5deg)
+  60%
+    transform: rotate(5deg)
+  80%
+    transform: rotate(-5deg)
+  to
+    transform: rotate(0deg)

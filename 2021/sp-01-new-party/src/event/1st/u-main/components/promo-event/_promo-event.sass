@@ -1,0 +1,51 @@
+.promo__group--promo-event
+  // margin-top: -18%
+  // overflow: hidden
+  // +breakpoint-min($min-width-xl)
+  //   margin-top: -150px
+  .promo__body
+    +bg-set(url("~event/1st/e-main/components/promo-event/bg-promo.png"), 100%)
+    .event__wrap
+      display: flex
+      flex-wrap: wrap
+      padding: 5% 10% 8%
+    li
+      padding: 0.5%
+      width: 49%
+      &:active,
+      &:hover
+        filter: hue-rotate(-15deg)
+    .promo__slider
+      +pos-set(relative, zero)
+      padding: 7% 8.5% 2.5% 7%
+      .swiper-button-white
+        &::after
+          font-size: 20px
+      .swiper-button-white
+        top: 52%
+      .swiper-button
+        &-prev
+          left: 6%
+        &-next
+          right: 8%
+      +breakpoint-min($min-width-lg)
+        .swiper-button-white
+          &::after
+            font-size: 40px
+        .swiper-button
+          &-prev
+            left: 9%
+          &-next
+            right: 10%
+
+@keyframes item-jump
+  40%, 42%
+    transform: translateY(-15%) scale(1)
+    filter: brightness(150%)
+  0%, 39%, 41%, 43%, 76%, 78%, 80%
+    transform: translateY(0) scale(1)
+  77%
+    transform: translateX(-5%)
+  79%
+    transform: translateX(5%)
+

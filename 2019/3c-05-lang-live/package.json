@@ -1,0 +1,30 @@
+{
+  "name": "3c-lang-live",
+  "version": "1.0.0",
+  "description": "3c浪live輪播影片頁",
+  "main": "src/pug/index.pug",
+  "scripts": {
+    "prestart": "rm -rf ./dist/develop/*.*",
+    "start": "parcel src/pug/index.pug --open -d ./dist/develop/",
+    "prebuild": "rm -rf ./dist/release/*.*",
+    "build": "parcel build src/pug/index.pug --no-source-maps --no-content-hash -d dist/release/ --public-url ./"
+  },
+  "keywords": [
+    "3c",
+    "浪live",
+    "etmall",
+    "東森購物"
+  ],
+  "author": "JackDou",
+  "license": "ISC",
+  "devDependencies": {
+    "jquery": "^3.4.1",
+    "parcel-bundler": "^1.12.2",
+    "pug": "^2.0.3",
+    "sass": "^1.17.3"
+  },
+  "dependencies": {
+    "slick-carousel": "^1.8.1",
+    "swiper": "^4.5.0"
+  }
+}

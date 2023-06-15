@@ -1,0 +1,108 @@
+.promo__group--game-w3m3
+  +pos-set(relative, zero)
+  .promo__wrap
+    +aspect-ratio(960, 1400)
+  .promo__zone
+    +bg-set(url("event/2nd/e-main/components/game-w3m3/bg-game-w3m3.png"), 100%)
+    .event__wrap
+      +pos-set(relative, zero)
+      padding: 53% 5% 0
+    .game__wrap--w3m3
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+      li
+        +pos-set(relative)
+        width: 33%
+        cursor: pointer
+        transition: all 0.3s
+        &:hover,
+        &.active
+          filter: brightness(120%)
+        .bottom__wrap
+          padding: 4%
+          &.active
+            animation: flash2 3s linear, bounce 0.5s
+        .top__wrap
+          display: none
+          +pos-set(absolute, base, 0, 0)
+          img
+            transform-origin: 40% 10%
+            transform: scale(1.15)
+          &.active
+            display: block
+
+    .popup__wrap
+      display: none
+      +pos-set(absolute, base)
+      top: 2.5%
+      left: 0
+      width: 100%
+      &.active
+        display: block
+        .popup__overlay
+          animation: zoom-in2 0.6s 0.3s both linear
+        img
+          animation: zoom-in 1s 0.5s both
+
+    .popup__overlay
+      background-color: $gray-deep-dark
+      opacity: 0.8
+      transition: opacity 1s 0.3s
+    .popup__block
+      +pos-set(absolute, base)
+      top: 20%
+
+      .popup__alert
+        +pos-set(absolute, zero, 50%, 50%)
+        padding: 2%
+        width: 40%
+        color: $gray-deep-light
+        background-color: $gray-medium
+        border: 1px solid $gray-deep-light
+        border-radius: 100px
+        font-size: 5vw
+        text-align: center
+        transition: opacity 0.3s ease-out
+        transform: translate(-50%, -50%)
+        pointer-events: none
+        opacity: 0
+        &.active
+          opacity: 1
+        +breakpoint-min($min-width-xl)
+          font-size: 28px
+
+@keyframes zoom-in2
+  0%
+    border-radius: 50%
+    transform: scale(0)
+  30%
+    border-radius: 50%
+  100%
+    border-radius: 0
+    transform: scale(1)
+
+
+@keyframes flash2
+  0%, 20%, 40%, 50%, 60%, 64%, 68%,72%, 76%, 80%, 82%, 84%, 86%, 88%, 90%, 92%, 94%, 96%, 98%, 100%
+    filter: brightness(90%)
+    opacity: 0.9
+  10%, 30%, 45%, 55%, 62%, 66%, 70%, 74%, 78%, 81%, 83%, 85%, 87%, 89%, 91%, 93%, 95%, 97%, 99%
+      filter: brightness(120%)
+      opacity: 1
+
+@keyframes bounce
+  0%, 20%, 53%, to
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+    transform: translateZ(0)
+  40%, 43%
+    animation-timing-function: cubic-bezier(.755, .05, .855, .06)
+    transform: translate3d(0, -30px, 0) scaleY(1.1)
+  70%
+    animation-timing-function: cubic-bezier(.755, .05, .855, .06)
+    transform: translate3d(0, -15px, 0) scaleY(1.05)
+  80%
+    transition-timing-function: cubic-bezier(.215, .61, .355, 1)
+    transform: translateZ(0) scaleY(.95)
+  90%
+    transform: translate3d(0, -4px, 0) scaleY(1.02)

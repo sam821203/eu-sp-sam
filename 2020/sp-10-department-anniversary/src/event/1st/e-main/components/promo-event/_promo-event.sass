@@ -1,0 +1,149 @@
+.promo__event
+  padding: 0 1.5% 0
+  height: 147vw
+  margin-top: 6%
+  +bg-set(url(~event/1st/e-main/components/promo-event/bg-promo-m.png), 100%)
+  .event__wrap
+    //display: flex
+    //flex-wrap: wrap
+    //justify-content: space-between
+    padding: 0
+    li#dailyPromo
+      font-size: 9px
+    li
+      display: flex
+      justify-content: center
+      flex: 0 0 100%
+      -ms-flex: 0 0 49%
+      transition: all 0.5s
+      padding: .5%
+      position: relative
+      &:nth-child(1)
+        img
+          position: absolute
+          top: 28vw
+          left: 7vw
+          width: 42%
+        span
+          position: absolute
+          color: #fff
+          font-size: 2em
+          font-weight: 700
+          top: 17.5vw
+          &:nth-of-type(1)
+            left: 13.5vw
+          &:nth-of-type(2)
+            left: 21.5vw
+      &:nth-child(2)
+        img
+          position: absolute
+          top: 14vw
+          right: 0vw
+          width: 47%
+      &:nth-child(3)
+        //justify-content: flex-end
+        img
+          position: absolute
+          top: 52.5vw
+          right: 0
+          width: 44%
+      &:nth-child(4)
+        img
+          position: absolute
+          top: 89vw
+          left: 0.5vw
+          width: 29%
+      &:nth-child(5)
+        img
+          position: absolute
+          top: 84.5vw
+          left: 32vw
+          width: 36%
+      &:nth-child(6)
+        img
+          position: absolute
+          top: 85vw
+          right: 0
+          width: 32%
+      &:hover
+        transform: translateY(-3%)
+        filter: brightness(130%)
+    &.second__wrap
+      li
+        &:nth-child(1)
+          img
+            position: absolute
+            top: 106.5vw
+            left: 3vw
+            width: 40%
+        &:nth-child(2)
+          img
+            position: absolute
+            top: 106vw
+            right: 3vw
+            width: 40%
+
+  +breakpoint-min($min-width-xl)
+    +bg-set(url(~event/1st/e-main/components/promo-event/bg-promo.png), 100%)
+    padding: 0
+    height: 975px
+    margin-top: 5%
+    .event__wrap
+      li
+        &:nth-child(1)
+          img
+            top: 215px
+            left: calc(50% - 132px)
+            width: auto
+          span
+            font-size: 42px
+            font-weight: 700
+            top: 129px
+            &:nth-of-type(1)
+              left: calc(50% - 88px)
+            &:nth-of-type(2)
+              left: calc(50% - 28px)
+        &:nth-child(2)
+          img
+            top: 24px
+            left: calc(50% - 498px)
+            right: 0
+            width: 32%
+        &:nth-child(3)
+          img
+            top: 375px
+            left: calc(50% - 498px)
+            right: 0
+            width: 34%
+        &:nth-child(4)
+          img
+            top: 68px
+            left: calc(50% + 200px)
+            width: 27%
+        &:nth-child(5)
+          img
+            top: 220px
+            left: calc(50% + 210px)
+            width: 26%
+        &:nth-child(6)
+          img
+            top: 405px
+            left: calc(50% + 218px)
+            right: 0
+            width: 26%
+        &:hover
+          transform: translateY(-3%)
+          filter: brightness(130%)
+      &.second__wrap
+        li
+          &:nth-child(1)
+            img
+              top: 590px
+              left: calc(50% - 435px)
+              width: auto
+          &:nth-child(2)
+            img
+              top: 580px
+              left: calc(50% + 70px)
+              right: 0
+              width: auto

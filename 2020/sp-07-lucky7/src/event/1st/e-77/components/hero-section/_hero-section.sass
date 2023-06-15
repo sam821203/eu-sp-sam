@@ -1,0 +1,288 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero__wrap
+  +pos-set(relative, second)
+  overflow: hidden
+
+  .hero__zone
+    +pos-set(relative, zero)
+
+  .hero__box
+    +pos-set(relative, ten)
+
+  .hero__title
+    &--main
+      +pos-set(relative, ten)
+      //background-image: url("~event/1st/e-77/components/hero-section/title-bg.png")
+      background-size: 67% auto
+      background-repeat: no-repeat
+      background-position: top center
+      padding-top: 0
+      padding-bottom: 2.1%
+      padding-left: 0
+      text-align: center
+      margin-left: auto
+      margin-right: auto
+      width: 92%
+      overflow: hidden
+      .title__txt
+        position: relative
+        animation: big-title 1s linear both
+        top: 3vw
+        width: 75%
+        &.title__t2
+          position: absolute
+          animation: title-down 1s linear both, key-rotate-stop 4s 2s infinite ease-in-out
+          width:  17%
+          top: 7vw
+          left: 36vw
+
+      .title__coupon
+        position: absolute
+        width: 23%
+        top: 17vw
+        right: 11vw
+        transform-origin: left bottom
+        animation: title-down 1.5s linear both, jello 2s 2s infinite
+      +breakpoint-min($min-width-xl)
+        width: auto
+        padding-top: 2%
+        padding-bottom: 0
+        padding-left: 0
+        padding-right: 0
+        .title__txt
+          top: 18px
+          width: auto
+          &.title__t2
+            width: auto
+            top: 65px
+            left: calc(50% - 87px)
+        .title__coupon
+          width: auto
+          top: 172px
+          right: calc(50% - 312px)
+  // &.animated
+    // animation: small-open 1s both ease-out
+
+  //.title-decoration__wrap
+  //  +pos-set(relative, zero, -8vw, 2%)
+  .title__decoration
+    width: 100%
+    height: 100%
+    overflow-y: hidden
+    pointer-events: none
+    +pos-set(absolute, under)
+    top: 0
+    img
+      position: absolute
+      display: block
+      z-index: -1
+    .left-1
+      width: 50%
+      left: 0
+      top: 4vw
+      //left: calc(50% - 1216px)
+      //top: 145px
+      animation: up-appear-skew .7s .7s linear both
+    .right-1
+      width: 50%
+      right: -6vw
+      top: 6vw
+      //left: calc(50% - 1216px)
+      //top: 145px
+      animation: up-appear-skew-right .4s .9s linear both
+    +breakpoint-min($min-width-xl)
+      .left-1
+        width: auto
+        left: calc(50% - 450px)
+        top: 40px
+      .right-1
+        width: auto
+        right: calc(50% - 556px)
+        top: 40px
+
+  //+breakpoint-min($min-width-xl)
+  //  +pos-set(relative, zero, -82px, 2%)
+
+  .promo__zone
+    margin-top: -5%
+    position: relative
+    //background-color: $gray-deep-light
+    +breakpoint-min($min-width-xl)
+      margin-top: -32px
+      background-color: transparent
+
+.parallax__background
+  +breakpoint-min($min-width-xl)
+    +pos-set(absolute, under)
+    +bg-set(url("~event/1st/e-77/components/hero-section/bg-fixed.jpg"), 100% auto)
+    width: 2560px
+    height: 2253px
+    // transform: translateY(-10%)
+    //animation: 1s 2s behind-appear both
+    pointer-events: none
+    will-change: scroll-position
+    top: 828px
+    left: 50%
+    transform: translateX(-50%)
+    background-position: center
+    transform-origin: center center
+
+.top--0
+  top: 0
+
+@keyframes title-down
+  0%
+    transform: translateY(calc(-100vw * .5))
+  70%, 80%
+    transform: translateY(0) scale(1.2)
+  75%, 100%
+    transform: translateY(0) scale(1)
+
+@keyframes key-rotate-stop
+  0%
+    transform: rotate(0)
+  1.5%
+    transform: rotate(-20deg)
+  3%
+    transform: rotate(0)
+  4.5%
+    transform: rotate(20deg)
+  6%
+    transform: rotate(0)
+  100%
+    transform: rotate(0)
+
+@keyframes up-down
+  0%, 30%, 100%
+    transform: translateY(0)
+  20%, 40%, 60%
+    transform: translateY(-6%)
+  30%, 45%
+    transform: translateY(0)
+
+@keyframes up-down
+  0%, 8%, 12%, 16%, 74%, 78%, 82%, 100%
+    transform: scale(1) translateY(0)
+  10%, 14%, 76%, 80%
+    transform: scale(1.1) translateY(-6%)
+
+@keyframes up-appear
+  0%
+    transform: translateX(-20vw) translateY(-40vw)
+    opacity: 0
+  1%
+    transform: translateX(-20vw) translateY(-40vw)
+    opacity: 1
+  80%, 90%
+    transform: translateX(0) translateY(0)
+    opacity: 1
+  85%, 95%
+    transform: translateX(0) translateY(0)
+    opacity: 1
+  75%, 82.5%, 92.5%, 87.5%, 97.5%, 100%
+    transform: translateX(0) translateY(0)
+    opacity: 1
+
+@keyframes up-appear-skew
+  0%
+    transform: translateX(-20vw) translateY(-40vw)
+    opacity: 0
+  1%
+    opacity: 1
+  80%, 90%
+    transform: translateX(0) translateY(0) skew(-5deg, -5deg)
+    opacity: 1
+  85%, 95%
+    transform: translateX(0) translateY(0) skew(5deg, 5deg)
+    opacity: 1
+  75%, 82.5%, 92.5%, 87.5%, 97.5%, 100%
+    transform: translateX(0) translateY(0) skew(0)
+    opacity: 1
+
+@keyframes up-appear-skew-right
+  0%
+    transform: translateX(20vw) translateY(-40vw)
+    opacity: 0
+  1%
+    opacity: 1
+  80%, 90%
+    transform: translateX(0) translateY(0) skew(-5deg, -5deg)
+    opacity: 1
+  85%, 95%
+    transform: translateX(0) translateY(0) skew(5deg, 5deg)
+    opacity: 1
+  75%, 82.5%, 92.5%, 87.5%, 97.5%, 100%
+    transform: translateX(0) translateY(0) skew(0)
+    opacity: 1
+
+@keyframes behind-appear
+  0%
+    opacity: 1
+    left: 50%
+    transform: translateX(-50%) scale(0)
+  100%
+    opacity: 1
+    //transform-origin: center center
+    left: 50%
+    transform: translateX(-50%) scale(1)
+
+@keyframes big-title
+  0%
+    opacity: 0
+    transform: scale(0)
+  50%, 60%, 70%, 100%
+    opacity: 1
+    transform: scale(1)
+  55%, 65%
+    transform: scale(1.1) rotate(10deg)
+
+@keyframes rotate-title
+  from
+    transform: translateX(-50%) rotate(0)
+    filter: brightness(100%)
+  50%
+    filter: brightness(150%)
+  to
+    transform: translateX(-50%) rotate(360deg)
+    filter: brightness(100%)
+
+@keyframes jello
+  from, 11.1%, to
+    -webkit-transform: translate3d(0, 0, 0)
+    transform: translate3d(0, 0, 0)
+
+  22.2%
+    -webkit-transform: skewX(-8.5deg) skewY(-8.5deg)
+    transform: skewX(-8.5deg) skewY(-8.5deg)
+
+  33.3%
+    -webkit-transform: skewX(6.25deg) skewY(6.25deg)
+    transform: skewX(6.25deg) skewY(6.25deg)
+
+  44.4%
+    -webkit-transform: skewX(-3.125deg) skewY(-3.125deg)
+    transform: skewX(-3.125deg) skewY(-3.125deg)
+
+  55.5%
+    -webkit-transform: skewX(1.5625deg) skewY(1.5625deg)
+    transform: skewX(1.5625deg) skewY(1.5625deg)
+
+  66.6%
+    -webkit-transform: skewX(-0.78125deg) skewY(-0.78125deg)
+    transform: skewX(-0.78125deg) skewY(-0.78125deg)
+
+  77.7%
+    -webkit-transform: skewX(0.390625deg) skewY(0.390625deg)
+    transform: skewX(0.390625deg) skewY(0.390625deg)
+
+  88.8%
+    -webkit-transform: skewX(-0.1953125deg) skewY(-0.1953125deg)
+    transform: skewX(-0.1953125deg) skewY(-0.1953125deg)
+
+.jello
+  -webkit-animation-name: jello
+  animation-name: jello
+  -webkit-transform-origin: center
+  transform-origin: center

@@ -1,0 +1,26 @@
+doctype html
+html(lang='zh-Hant-TW')
+  head
+    include /utils/pug/_total-head
+  body
+    main#spWrap.sp__wrap
+      - var firstItem = "我要投票"
+      include /layout/header/_header
+
+      //- hero section
+      //- ===========================
+      include /components/hero-section/_hero-section
+
+      //- //- other components
+      //- //- ===========================
+      //- include /components/rank-section/_rank-section
+      include /components/player-section/_player-section
+
+      //- .decoration__wrap--vote-info
+      //-   .layout--main
+      //-     img(src="~pages/info/decoration-vote.png", alt="")
+      //- include /components/time-section/_time-section
+      include /components/info-section/_info-section
+      include /components/rule-section/_rule-section
+
+      include /components/modal/_modal

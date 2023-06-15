@@ -1,0 +1,195 @@
+-
+  var promoData = [
+    //- 做上翻的輪播好ㄌ
+    {
+      link: "",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/box-1.png",
+      alt: ""
+    },
+    {
+      link: "",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/box-2.png",
+      alt: "",
+    },
+  ]
+-
+  var promoItemE = [
+    //- {
+    //-   link: "https://www.etmall.com.tw/Activity/CouponReceiveAll",
+    //-   imgSrc: "event/2nd/e-main/components/promo-event/items/promo-0-1.png",
+    //-   alt: "領折價劵",
+    //- },
+    //- {
+    //-   link: "https://www.etmall.com.tw/member/taskActivity",
+    //-   imgSrc: "event/2nd/e-main/components/promo-event/items/promo-0-2.png",
+    //-   alt: "挑戰任務",
+    //- },
+    {
+      link: "https://media.etmall.com.tw/sp/14944/m/index.html",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-2.png",
+      alt: "寵愛新會員首購好禮獨享贈"
+    },
+    //- slider start
+    {
+      link: "",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-1-0.png",
+      alt: "APP滿額贈樂透金",
+    },
+    {
+      link: "",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-1-1.png",
+      alt: "APP滿額贈樂透金",
+    },
+        {
+      link: "",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-1-2.png",
+      alt: "APP滿額贈樂透金",
+    },
+    //- slider end
+    {
+      link: "https://media.etmall.com.tw/sp/14911/m/index.html",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-3.png",
+      alt: "全家取件送光泉無加糖鮮豆漿",
+    },
+    //- slider start
+    {
+      link: "https://www.etmall.com.tw/Activity/CollectPointExchangeActivity/202205549adb93",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-4.png",
+      alt: "集點換好禮",
+    },
+    //- {
+    //-   link: "https://media.etmall.com.tw/sp/13263/m/index.html",
+    //-   imgSrc: "event/2nd/e-main/components/promo-event/items/promo-4.png",
+    //-   alt: "嘉義優鮮消費不限金額抽哈密瓜",
+    //- },
+    //- slider end
+    {
+      link: "https://media.etmall.com.tw/sp/14530/m/index.html",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-5.png",
+      alt: "嘉義優鮮滿$1,500折$100再抽好禮",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/14386/m/index.html",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-6.png",
+      alt: "24間銀行最高回饋11%",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/14386/m/index.html",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-7.png",
+      alt: "使用銀角零卡滿萬再抽萬",
+    },
+    //- slider start
+    //- {
+    //-   link: "https://media.etmall.com.tw/sp/14030/m/index.html",
+    //-   imgSrc: "event/2nd/e-main/components/promo-event/items/promo-7-2.png",
+    //-   alt: "23間銀行最高回饋12%%",
+    //- },
+    //- slider end
+    //- slider start
+    //- {
+    //-   link: "https://www.etmall.com.tw/activity/dl/votepopularityranking/Localfruit",
+    //-   imgSrc: "event/2nd/e-main/components/promo-event/items/promo-8-1.png",
+    //-   alt: "東森農場投票抽好禮",
+    //- },
+    //- {
+    //-   link: "",
+    //-   imgSrc: "event/2nd/e-main/components/promo-event/items/promo-8-2.png",
+    //-   alt: "拼出萬元好禮",
+    //- },
+    //- {
+    //-   link: "",
+    //-   imgSrc: "event/2nd/e-main/components/promo-event/items/promo-8-3.png",
+    //-   alt: "APP下單滿$1500登記抽氣炸鍋",
+    //- },
+    //- slider end
+  ]
+
+-
+  var promoItemU = [
+    {
+      link: "https://media.u-mall.com.tw/sp/9704/m/index.html",
+      //- imgSrc: "event/2nd/u-main/components/promo-event/items/promo-1.png",
+      alt: "23家銀行 最高回饋15%"
+    },
+    {
+      link: "https://media.u-mall.com.tw/sp/9704/m/index.html",
+      //- imgSrc: "event/2nd/u-main/components/promo-event/items/promo-2.png",
+      alt: "花旗滿$20,000送$2,000"
+    },
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale",
+      //- imgSrc: "event/2nd/u-main/components/promo-event/items/promo-3.png",
+      alt: "限時瘋搶"
+    },
+  ]
+
+//- - var promoItem = isU ? promoItemE : promoItemU
+
+//- TODO: 如果promo不和hero綁一起時要有自己的section和layout--main
+section.promo__group.promo__group--promo-event.m-bottom--lg
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--bg
+        img(src="event/2nd/e-main/components/promo-event/decor-promo-bg.png", alt="")
+      .decor__item.decor__item--title#titlePromoEvent
+        img(src="event/2nd/e-main/components/promo-event/title-promo-event.png", alt="")
+      .decor__item.decor__item--left#decorPromoEventLeft
+        img(src="event/2nd/e-main/components/promo-event/decor-promo-left.png", alt="")
+      .decor__item.decor__item--star-2#decorPromoEventStar2
+        img(src="event/2nd/e-main/components/promo-event/decor-promo-star-2.png", alt="")
+      .decor__item.decor__item--right#decorPromoEventRight
+        img(src="event/2nd/e-main/components/promo-event/decor-promo-right.png", alt="")
+      .decor__item.decor__item--star-1#decorPromoEventStar1
+        img(src="event/2nd/e-main/components/promo-event/decor-promo-star-1.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          ul.event__wrap
+            each data, index in promoItemE
+              if index == 0
+                li.promo__item
+                  a(href= data.link, title= data.alt)
+                    img(src= data.imgSrc, alt= data.alt)
+            .swiper-container.container--promo-event
+                ul.swiper-wrapper
+                  each data, index in promoItemE
+                    if index >= 1 && index < 4
+                      li.swiper-slide
+                        a(href= data.link, title=data.alt)
+                          img(src= data.imgSrc, data.alt)
+            each data, index in promoItemE
+              if index == 4
+                li.promo__item
+                  a(href= data.link, title= data.alt)
+                    img(src= data.imgSrc, alt= data.alt)
+          ul.event__box
+            each data, index in promoItemE
+              if index >= 5 && index < 7 
+                li.promo__item
+                  a(href= data.link, title= data.alt)
+                    img(src= data.imgSrc, alt= data.alt)
+          ul.event__block
+            each data, index in promoItemE
+              if index >= 7
+                li.promo__item
+                  a(href= data.link, title=data.alt)
+                    img(src= data.imgSrc, data.alt)
+    //- .promo__wrap--special
+    //-   .promo__zone--special
+    //-     .promo__block
+    //-       ul.event__block
+    //-         each data, index in promoData
+    //-           if index == 0
+    //-             li.promo__item
+    //-               a(href= data.link, title= data.alt)
+    //-                 img(src= data.imgSrc, alt= data.alt)
+
+
+//- .promo__block
+//-   #promoSlider.swiper-container
+//-     ul.swiper-wrapper
+//-       each data, index in promoData
+//-         if index >= 6
+//-           li.swiper-slide
+//-             a(href= data.link, title=data.alt)
+//-               img(src= data.imgSrc, data.alt)

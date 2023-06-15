@@ -1,0 +1,73 @@
+-
+  var promoData = [
+    {
+      link: "",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-1.png",
+      imgSrc2: "event/1st/e-main/components/promo-event/items/collect-1.png",
+      alt: "",
+    },
+    {
+      link: "",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-2.png",
+      imgSrc2: "event/1st/e-main/components/promo-event/items/collect-2.png",
+      alt: "",
+    },
+    {
+      link: "",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-3.png",
+      imgSrc2: "event/1st/e-main/components/promo-event/items/collect-3.png",
+      alt: "",
+    },
+    {
+      link: "",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-4.png",
+      imgSrc2: "event/1st/e-main/components/promo-event/items/collect-4.png",
+      alt: "",
+    },
+    {
+      link: "",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-5.png",
+      imgSrc2: "event/1st/e-main/components/promo-event/items/collect-5.png",
+      alt: "",
+    },
+    {
+      link: "",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-6.png",
+      imgSrc2: "event/1st/e-main/components/promo-event/items/collect-6.png",
+      alt: "",
+    },
+    {
+      link: "",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-7.png",
+      imgSrc2: "event/1st/e-main/components/promo-event/items/collect-7.png",
+      alt: "",
+    },
+    {
+      link: "",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-8.png",
+      imgSrc2: "event/1st/e-main/components/promo-event/items/collect-8.png",
+      alt: "",
+    },
+  ]
+
+//- - var promoData = isU ? promoDataU : promoDataE
+
+//- TODO: 如果promo不和hero綁一起時要有自己的section和layout--main
+section.promo__group.promo__group--promo-event.m-bottom--lg
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          .event__wrap.active
+            img(src="event/1st/e-main/components/promo-event/finish.png", alt="")
+          ul.event__block
+            each data, index in promoData
+              li.promo__item
+                a(href= data.link)
+                  img(src= data.imgSrc) 
+                .event__item
+                  a(href= data.link)
+                    img(src= data.imgSrc2) 
+          .promo__box
+            a(href="")
+              img(src="event/1st/e-main/components/promo-event/button.png", alt="")

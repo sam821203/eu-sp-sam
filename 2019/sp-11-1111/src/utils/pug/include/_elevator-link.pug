@@ -1,0 +1,12 @@
+//- 電梯menu切換eu的script，如有更換請在下方更新
+//- 打開u-mall選項與單雙月選項會自動轉換script src
+if !isEven
+  if !isU
+    script(src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1104292/generateVersion20190619.js")
+  else if isU
+    script(src="https://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1101787/generateVersion20190619.js")
+else if isEven
+  if !isU
+    script(src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105567/generateVersion20190619.js")
+  else if isU
+    script(src="https://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1102593/generateVersion20190619.js")

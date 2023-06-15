@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>running-man game</title>
+</head>
+<body>
+  <canvas id="canvas" width="960" height="400"></canvas>
+  <script src="./createjs.min.js"></script>
+  <script>
+    window.onload = () => {
+      let stage, stageWidth, stageHeight, loader, sky, man, ground, hill, hill2;
+
+      function init(){
+        // 要使用webGL用stageGL
+        stage = new createjs.StageGL("canvas");
+        stageWidth = stage.canvas.width; // 960
+        stageHeight = stage.canvas.height; // 400
+
+        // 設定靜態資源
+        let manifest = [
+          // 雪碧、人
+          {
+            src: "sprite-man.png",
+            id: "man"
+          },
+          // 天空
+          {
+            src: "sky.png",
+            id: "sky"
+          }, 
+          // 地面
+          {
+            src: "ground.png",
+            id: "ground"
+          },
+          // 一號山
+          {
+            src: "hill1.png",
+            id: "hill"
+          },
+          // 二號山
+          {
+            src: "hill2.png",
+            id: "hill2"
+          },
+        ];
+
+        // 建立資源load隊列
+        // 如果是false的时候，就用html tag載入，如果不能用的话，就用XHR来載入。預設是true，直接用XHR。
+        loader = new createjs.LoadQueue(false);
+        // 添加"load完成"事件
+        loader.addEventListener("complete", handleComplete);
+        // 加载资源
+        loader.loadManifest(manifest, true, "./");  // (manifest, loadNow, basePath)
+      }
+
+      // 當圖都load完成
+      function handleComplete(){
+        // render場景
+        // 天空：只有5px寬要重複鋪滿的背景
+        // loader使用getResult(id)函數取得靜態圖
+        sky = new createjs.Shape();
+        sky.graphics.beginBitmapFill(loader.getResult("sky")).drawRect(0, 0, stageWidth, stageHeight);
+        sky.cache(0, 0, stageWidth, stageHeight); // 從stage過渡到stageGL時不能畫圖，除非被cache
+
+        // render地面
+        const groundImg = loader.getResult("ground");
+        ground = new createjs.Shape();
+        // 寬度要在畫面外多準備一塊地板
+        ground.graphics.beginBitmapFill(groundImg).drawRect(0, 0, (stageWidth + groundImg.width), groundImg.height);
+        ground.y = stageHeight - groundImg.height;
+        ground.cache(0, 0, (stageWidth + groundImg.width), groundImg.height);
+
+        // random render 遠山(放大4倍、x為隨機、y為整個舞台高度減掉4倍山高減掉地磚高度)
+        hill = new createjs.Bitmap(loader.getResult("hill"));
+        // setTransform([x=0], [y=0], [scaleX=1], [scaleY=1], [rotation=0], [skewX=0], [skewY=0], [regX=0], [regY=0])
+        hill.setTransform(Math.random() * stageWidth, stageHeight - hill.image.height * 4 - groundImg.height, 4, 4);
+        hill.alpha = 0.5;     // 透明度
+        // random render 近山(放大三倍)
+        hill2 = new createjs.Bitmap(loader.getResult("hill2"));
+        hill2.setTransform(Math.random() * stageWidth, stageHeight - hill2.image.height * 3 - groundImg.height, 3, 3);
+
+        // 建立sprite
+        let spriteSheet = new createjs.SpriteSheet({
+          framerate: 30,      // 帧率 FPS
+          "images": [loader.getResult("man")],
+          "frames": { "width": 165, "height": 292, "count": 64, "regX": 82, "regY": 0 }, // 初始化init
+          // 定義動畫
+          "animations": {
+          "run": [0, 25, "run"],     // name: [開始幀, 结束幀, '下一個動畫']
+          "jump": [26, 63, "run"]
+          }
+        });
+
+        // render sprite
+        man = new createjs.Sprite(spriteSheet, "run");
+        // 對準人物y軸
+        man.y = 35;
+        // 將所有內容rendar到stage
+        stage.addChild(sky, ground, hill, hill2, man);
+        // 監聽滑鼠點擊
+        stage.addEventListener("stagemousedown", () => {
+          // 跳轉播放別的動畫
+          man.gotoAndPlay("jump");
+        });
+        createjs.Ticker.framerate = 60;
+        createjs.Ticker.timingMode = createjs.Ticker.RAF_SYNCHED;     // RAF / RAF_SYNCHED / TIMEOUT
+        createjs.Ticker.addEventListener("tick", tick);
+
+        function tick(event) {
+          // event.delta -- 上一次tick到現在tick的ms
+          let deltaS = event.delta / 1000;
+          
+          // 人物移動距離
+          let position = man.x + 150 * deltaS;
+          
+          // getBounds() -- 返回當前這幀相對sprite原點的邊界
+          // 如果人物位置大於場景寬度+人物寬度，則位置等於-人物寬度
+          let manW = man.getBounds().width * man.scaleX;
+          man.x = (position >= stageWidth + manW) ? -manW : position;
+          ground.x = (ground.x - deltaS * 150) % groundImg.width;
+
+          // 從右至左移動遠山
+          hill.x = (hill.x - deltaS * 30);
+          // 如果山從左邊出螢幕
+          if (hill.x + hill.image.width * hill.scaleX <= 0) {
+            hill.x = stageWidth;     // 重置回螢幕最右邊
+          }
+          // 近山比照處理
+          hill2.x = (hill2.x - deltaS * 45);
+          if (hill2.x + hill2.image.width * hill2.scaleX <= 0) {
+            hill2.x = stageWidth;
+          }
+          stage.update();
+        }
+      }
+
+      // 主function入口-初始化
+      init();
+    }
+
+  </script>
+</body>
+</html>

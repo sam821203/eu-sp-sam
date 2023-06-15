@@ -1,0 +1,57 @@
+-
+  var sliderW4M3Data = [
+    { // 1
+      link: "https://www.etmall.com.tw/Activity/CouponReceiveAll#%e7%94%9f%e6%b4%bb",
+      imgSrc: "event/1st/e-main/components/slider-w4m3/items/slider-1.png",
+      alt: "irocks電腦椅88折"
+    },
+    { // 2
+      link: "https://www.etmall.com.tw/Activity/CouponReceiveAll#%e7%94%9f%e6%b4%bb",
+      imgSrc: "event/1st/e-main/components/slider-w4m3/items/slider-2.png",
+      alt: "倍潔雅衛生紙95折"
+    },
+    { // 3
+      link: "https://www.etmall.com.tw/Activity/CouponReceiveAll#%e7%94%9f%e6%b4%bb",
+      imgSrc: "event/1st/e-main/components/slider-w4m3/items/slider-3.png",
+      alt: "瑞康屋指定鍋具9折"
+    },
+    { // 4
+      link: "https://www.etmall.com.tw/Activity/CouponReceiveAll#%e7%be%8e%e5%a6%9d",
+      imgSrc: "event/1st/e-main/components/slider-w4m3/items/slider-4.png",
+      alt: "NOW娜奧精油．指定品現折$100"
+    },
+    { // 5
+      link: "https://www.etmall.com.tw/Activity/CouponReceiveAll#%e4%bf%9d%e5%81%a5",
+      imgSrc: "event/1st/e-main/components/slider-w4m3/items/slider-5.png",
+      alt: "船井生醫指定商品現折100"
+    },
+    { // 6
+      link: "https://www.etmall.com.tw/Activity/CouponReceiveAll#%e5%ae%b6%e9%9b%bb",
+      imgSrc: "event/1st/e-main/components/slider-w4m3/items/slider-6.png",
+      alt: "Dyson領券最高折2000"
+    },
+  ]
+
+section.promo__group.slider-w4m3.m-bottom--lg.m-top--sm(data-title="品牌神券")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--left#decorSliderW4M3Left
+        img(src="event/1st/e-main/components/slider-w4m3/decor-slider-w4m3-left.png", alt="")
+      .decor__item.decor__item--right#decorSliderW4M3Right
+        img(src="event/1st/e-main/components/slider-w4m3/decor-slider-w4m3-right.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          .event__wrap.swiper-container#sliderW4M3
+            ul.event__item.swiper-wrapper
+              each data in sliderW4M3Data
+                li.swiper-slide
+                  a(href= data.link, title=data.alt)
+                    img(src= data.imgSrc, alt=data.alt)
+            .swiper-pagination
+
+
+              //- each data, index in w1m1Data
+              //-   li
+              //-     a(href= data.link, title= data.alt)
+              //-       img(src= data.imgSrc, alt= data.alt)

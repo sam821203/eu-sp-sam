@@ -1,0 +1,71 @@
+//- 當需要跨月時(前一個月)，填入的資料由這邊設定，將所有月份資料填上，
+//- 再由JS決定月份顯示哪些li(li.swiper-slide.month--prev、li.swiper-slide.month--now)
+- var bankLinkPrev = {etmall: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202010/SP_1114873/w/index.html", umall: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202010/SP_1106089/w/index.html"}
+
+- var bankLinkNext = {etmall: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202010/SP_1114873/w/index.html", umall: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202010/SP_1106089/w/index.html"}
+
+- var bankInfoPrev = isU ? bankLinkPrev.umall : bankLinkPrev.etmall
+- var bankInfoNext = isU ? bankLinkNext.umall : bankLinkNext.etmall
+
+- var bankPageName = {"玉山": '#esun', "中信": "#ctbc", "國泰": "#cathay", "台新": "#Taishin", "花旗": "#citi", "富邦": "#taipeifubon", "永豐": "#sinopac", "聯邦": "#union", "一銀": "#one", "遠東": "#fareasten", "滙豐": "#hsbc", "華南": "#huanan", "新光": "#shinkong", "星展": "#dbs", "合作金庫": "#tcb", "凱基": "#kgi", "上海": "#shanghai", "土銀": "#landbank", "日盛": "#jihsun", "臺灣企銀": "#tbb", "臺銀": "#bot", "陽信": "#sunnybank", "樂天": "#rakuten"}
+
+
+//- TODO: 給別的component引入時不需要前兩行要切換
+section#specialHalf.promo__group.promo__group--bn-special-half.m-bottom--sm(data-title="銀行活動")
+  .layout--main
+    //.promo__title.block--center.text--center
+    //  img(src="~event/2nd/e-main/components/bn-special-half/title-special-half.png", alt="銀行活動")
+
+    .promo__wrap
+      .pic__box
+        a.month--prev(href="", title="")
+          img(src="~event/2nd/e-main/components/bn-special-half/item-special-half-p-0.png" alt="22間銀行最高回饋$3500")
+      .slider__box
+        .promo__slider
+          #sliderSpecialHalf.swiper-container
+            ul.swiper-wrapper
+              //- prev
+              li.swiper-slide.month--prev
+                a(href= bankInfoPrev + bankPageName["凱基"], title="凱基滿$3,000送$300")
+                  img.swiper-lazy(data-src="~event/2nd/e-main/components/bn-special-half/items/bank-p-1.png", alt="")
+                  .swiper-lazy-preloader.swiper-lazy-preloader-white
+              li.swiper-slide.month--prev
+                a(href= bankInfoPrev + bankPageName["一銀"], title="一銀滿$1,500送$100")
+                  img.swiper-lazy(data-src="~event/2nd/e-main/components/bn-special-half/items/bank-p-2.png", alt="")
+                  .swiper-lazy-preloader.swiper-lazy-preloader-white
+              li.swiper-slide.month--prev
+                a(href= bankInfoPrev + bankPageName["富邦"], title="富邦滿$3,000送$100")
+                  img.swiper-lazy(data-src="~event/2nd/e-main/components/bn-special-half/items/bank-p-3.png", alt="")
+                  .swiper-lazy-preloader.swiper-lazy-preloader-white
+              li.swiper-slide.month--prev
+                a(href= bankInfoPrev + bankPageName["花旗"], title="花旗滿$3,000送$120")
+                  img.swiper-lazy(data-src="~event/2nd/e-main/components/bn-special-half/items/bank-p-4.png", alt="")
+                  .swiper-lazy-preloader.swiper-lazy-preloader-white
+              li.swiper-slide.month--prev
+                a(href= bankInfoPrev + bankPageName["臺灣企銀"], title="臺灣企銀滿$3,000送$150")
+                  img.swiper-lazy(data-src="~event/2nd/e-main/components/bn-special-half/items/bank-p-5.png", alt="")
+                  .swiper-lazy-preloader.swiper-lazy-preloader-white
+              li.swiper-slide.month--prev
+                a(href= bankInfoPrev + bankPageName["臺銀"], title="臺銀滿$3,000送$150")
+                  img.swiper-lazy(data-src="~event/2nd/e-main/components/bn-special-half/items/bank-p-6.png", alt="")
+                  .swiper-lazy-preloader.swiper-lazy-preloader-white
+              li.swiper-slide.month--prev
+                a(href= bankInfoPrev + bankPageName["日盛"], title="日盛滿$3,000送$150")
+                  img.swiper-lazy(data-src="~event/2nd/e-main/components/bn-special-half/items/bank-p-7.png", alt="")
+                  .swiper-lazy-preloader.swiper-lazy-preloader-white
+              li.swiper-slide.month--prev
+                a(href= bankInfoPrev + bankPageName["陽信"], title="陽信滿$3,000送$150")
+                  img.swiper-lazy(data-src="~event/2nd/e-main/components/bn-special-half/items/bank-p-8.png", alt="")
+                  .swiper-lazy-preloader.swiper-lazy-preloader-white
+              li.swiper-slide.month--prev
+                a(href= bankInfoPrev + bankPageName["上海"], title="上海滿$3,000送$200")
+                  img.swiper-lazy(data-src="~event/2nd/e-main/components/bn-special-half/items/bank-p-9.png", alt="")
+                  .swiper-lazy-preloader.swiper-lazy-preloader-white
+              li.swiper-slide.month--prev
+                a(href= bankInfoPrev + bankPageName["合作金庫"], title="合作金庫滿$3,500送$200")
+                  img.swiper-lazy(data-src="~event/2nd/e-main/components/bn-special-half/items/bank-p-10.png", alt="")
+                  .swiper-lazy-preloader.swiper-lazy-preloader-white
+
+          //#sliderSpecialHalfPager.swiper-pagination-custom.swiper-pagination
+          #sliderSpecialHalfPrev.swiper-button-white.swiper-button-prev
+          #sliderSpecialHalfNext.swiper-button-white.swiper-button-next

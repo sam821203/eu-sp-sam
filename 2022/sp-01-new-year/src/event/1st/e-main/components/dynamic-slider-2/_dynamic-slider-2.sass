@@ -1,0 +1,16 @@
+.promo__group--dynamic-slider-2
+  overflow: hidden
+  .promo__wrap
+    +aspect-ratio(935, 648)
+  .promo__zone
+    +bg-set(url("event/1st/e-main/components/dynamic-slider-2/bg-dynamic-slider-2.png"), 100%)
+    .promo__block
+      margin: 22.5% 5% 0
+      +breakpoint-min($min-width-xl)
+        margin-top: 25%
+  .decor__wrap
+    +pos-set(relative, zero)
+    pointer-events: none
+    .promo__decor
+      +pos-set(absolute, under, -1.7%)
+      right: 0%

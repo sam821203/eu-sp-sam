@@ -1,0 +1,32 @@
+
+section.hero__wrap(data-title="搶攻百貨")
+  .hero__zone
+    .layout--main
+      #heroBlock.hero__block
+        .hero__box
+          //- 標題
+          h1.hero__title.hero__title--main.block--center.wow(title="搶攻百貨週年慶")
+            img(class="title__t1" src="~event/1st/e-main/components/hero-section/title-t1.png", alt="搶攻百貨週年慶")
+            img(class="title__t2" src="~event/1st/e-main/components/hero-section/title-t2.png", alt="搶攻百貨週年慶")
+          .title__sub.wow
+            a(href="https://www.etmall.com.tw/p/109711")
+              img.title__people(class="" src="~event/1st/e-main/components/hero-section/title-people.png", alt="")
+  //-.title-decoration__wrap
+  .title__decoration.wow
+    img.title__shiny(src="~event/1st/e-main/components/hero-section/title__shiny.png")
+    //-img.title__shiny-2(src="~event/1st/e-main/components/hero-section/title__shiny-2.png")
+    img.title__shiny-3(src="~event/1st/e-main/components/hero-section/title__shiny-3.png")
+
+
+
+
+  .promo__zone
+    .layout--main
+      .promo__block
+        //- 插入daily goods
+        //include /event/1st/e-main/components/daily-goods/_daily-goods-bottom
+        //- 行銷誘因
+        include /event/1st/e-main/components/promo-event/_promo-event
+
+
+

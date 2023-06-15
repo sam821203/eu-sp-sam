@@ -1,0 +1,83 @@
+-
+  var promoSliderItem = [
+    {
+      link: "https://www.etmall.com.tw/i/23442074" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-2/item/p-item-1.png",
+      alt: "買大送小laura mercier蘿拉蜜思 煥顏透明蜜粉(29g)#透明色 加贈Anna sui許願精靈淡香水(5ml)",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3363974" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-2/item/p-item-2.png",
+      alt: "一家人益生菌S強酵升級版100包",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3481149" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-2/item/p-item-3.png",
+      alt: "2入防油皮革長地墊",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2427974" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-2/item/p-item-4.png",
+      alt: "奧莉薇閣26吋行李箱",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3430120" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-2/item/p-item-5.png",
+      alt: "SAMSUNG Galaxy M33 5G (6G/128G)",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3246708" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-2/item/p-item-6.png",
+      alt: "Microsoft微軟 設計師精簡鍵盤",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3011484" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-2/item/p-item-7.png",
+      alt: "東元吸入式捕蚊燈",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3441304" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-2/item/p-item-8.png",
+      alt: "伊萊克斯29坪PureA9.2抗菌空氣清淨機",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2981413" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-2/item/p-item-9.png",
+      alt: "DV麗彤生醫醇耀妍NMN超能飲x9盒",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3455211" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-2/item/p-item-10.png",
+      alt: "Miro Piazza時尚藝術太陽眼鏡-自我系列",
+    },
+    //- {
+    //-   link: "https://www.etmall.com.tw/i/3273645" ,
+    //-   imgSrc: "event/1st/e-main/components/promo-slider-2/item/p-item-11.png",
+    //-   alt: "任天堂 Switch 寶可夢 晶燦鑽石／明亮珍珠-雙包裝(中文版)",
+    //- },
+    //- {
+    //-   link: "https://www.etmall.com.tw/i/3397876" ,
+    //-   imgSrc: "event/1st/e-main/components/promo-slider-2/item/p-item-12.png",
+    //-   alt: "Apple音樂狂想組",
+    //- },
+  ]
+
+
+section.promo__group.promo__group--promo-slider-2.m-bottom--lg(data-title="買一送一")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--bg
+        img(src="event/1st/e-main/components/promo-slider-2/decor-promo-2-bg.png", alt="")
+      .decor__item.decor__item--title#titlePromoSlider2
+        img(src="event/1st/e-main/components/promo-slider-2/title-promo-slider-2.png", alt="")
+      .decor__item.decor__item--item#decorPromoSlider
+        img(src="event/1st/e-main/components/promo-slider-2/decor-promo-2-item.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          .promo__slider.swiper-container#promoSlider2Item
+            ul.swiper-wrapper
+              each data in promoSliderItem
+                li.swiper-slide
+                  a(href= data.link, title=data.alt)
+                    img(src= data.imgSrc, alt=data.alt)

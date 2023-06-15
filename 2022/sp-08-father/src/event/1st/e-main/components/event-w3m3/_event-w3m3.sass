@@ -1,0 +1,135 @@
+.promo__group--w3m3
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__wrap
+    padding-top: 2%
+    pointer-events: none
+    .decor__item
+      &--bg
+        +pos-set(absolute, under, 6%, 2.5%)
+        width: 95%
+        +breakpoint-min($min-width-xl)
+          left: calc(50% - 458px)
+      &--left
+        +pos-set(absolute, zero, 1%, 4%)
+        width: 25%
+        transform: translateY(60%)
+        &.active
+          animation: up-and-down 8s infinite ease-in-out both
+        +breakpoint-min($min-width-xl)
+          top: 0%
+          left: calc(50% - 436px)
+      &--right
+        +pos-set(absolute, base, 0)
+        right: 3%
+        width: 24%
+        +breakpoint-min($min-width-xl)
+          top: 1%
+          right: calc(50% - 475px)
+        &.active 
+          animation: dog-bounce 1.2s .2s 1
+      +breakpoint-min($min-width-xl)
+        width: auto
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/event-w3m3/bg-event-w3m3.png), 100%)
+    .promo__zone
+      +aspect-ratio(952, 1247)
+      .promo__block
+        +pos-set(absolute, base, 0%, 0%)
+        .event__wrap
+          padding: 29.5% 1% 0
+          +breakpoint-min($min-width-xl)
+            padding: 29% 0% 5% 0.5%
+          .good__wrap
+            display: flex
+            flex-wrap: wrap
+            justify-content: space-around
+            li
+              position: relative
+              width: 32%
+              margin-bottom: 1.5%
+              +breakpoint-min($min-width-xl)
+                margin-bottom: 2%
+              a
+                overflow: hidden
+                transition: transform 0.4s
+                &:hover
+                  transform: translateY(-12px)
+                img
+                  filter: brightness(95%)
+                &.active
+                  transition: transform .4s
+                  transform: translateY(-6px)
+                  +breakpoint-min($min-width-xl)
+                    transform: translateY(-12px)
+                  .ice-shine
+                    position: absolute
+                    width: 100%
+                    height: 100%
+                    &::after
+                      content: ""
+                      position: absolute
+                      top: 0
+                      left: -25px
+                      z-index: 8
+                      +size(30%, 100%)
+                      background-color: rgba(255, 255, 255, 0.65)
+                      transform: skewX(-15deg)
+                      -webkit-filter: blur(16px)
+                      animation: ice-shine 4s -1s linear infinite
+                  img
+                    filter: brightness(105%)
+
+@keyframes ice-shine
+  0%, 65%
+    opacity: 0
+    left: -50%
+  75%
+    opacity: 1
+    left: 75%
+  76%
+    opacity: 0
+    left: 75%
+  90%
+    opacity: 0
+    left: -50%
+  100%
+    opacity: 1
+    left: 75%
+    
+@keyframes up-and-down
+    0%
+      transform: translateX(-3px) translateY(60%)
+    6.5%
+      transform-origin: top center
+      transform: translateX(-3px) translateY(0%) scale(1.05) rotate(13deg)
+    20%
+      transform: rotate(-5deg) translateY(15%)
+    40% 
+      transform: rotate(10deg) translateY(30%)
+    60%
+      transform: rotate(-5deg) translateY(42%)
+    80%
+      transform: rotate(10deg) translateY(56%)
+    100%
+      transform: translateY(60%) rotate(0deg) scale(.95)
+
+@keyframes dog-bounce
+  from,
+  20%,
+  53%,
+  to
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+    transform: translate3d(0, 0, 0)
+  40%,
+  43%
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06)
+    transform: translate3d(0, -15px, 0)
+  70%
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06)
+    transform: translate3d(0, -8px, 0)
+  80%
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+    transform: translate3d(0, 0, 0)
+  90%
+    transform: translate3d(0, -3px, 0)

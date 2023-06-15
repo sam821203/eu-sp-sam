@@ -1,0 +1,44 @@
+// // ==========================================================================
+// // login page
+// // ==========================================================================
+body.default__reset
+  .pop__window__outline
+    display: flex
+    width: 100vw
+    height: 100vh
+    justify-content: center
+    align-items: center
+  .pop__window__wrap
+    width: 296px
+    //margin: 24px 8px 100px
+    //padding: 108px 0 0
+    padding: 16px
+    margin: 0
+    border-radius: 6px
+    box-shadow: $model-shadow
+    background: #fff
+    text-align: center
+    .pop__window__title
+      font-size: 16px
+      font-weight: bold
+      font-stretch: normal
+      font-style: normal
+      line-height: normal
+      letter-spacing: normal
+      color: $eckare-primary-text
+      &:after
+        display: block
+        content: ''
+        clear: both
+        height: 1px
+        width: 100%
+        margin: 15px 0 0 0
+        background-color: $eckare-background
+    .pop__window__text
+      font-size: 14px
+      height: 20px
+      color: $eckare-primary-text
+      margin: 16px 0
+  .pop__window__button__group
+    +styled__button--01
+    padding-top: 16px

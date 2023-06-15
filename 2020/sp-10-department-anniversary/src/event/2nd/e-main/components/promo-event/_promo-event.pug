@@ -1,0 +1,68 @@
+-
+  var promoDataE = [
+  {link: "#note",
+  imgSrc: "~event/2nd/e-main/components/promo-event/items/everyday_2nd_pt1.png",
+  alt: "每日一物"},
+  {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+  imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-1.png",
+  alt: "首購登記送中冰美"},
+  {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202009/SP_1116455/w/index.html",
+  imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-2.png",
+  alt: "萊爾富超取喝飲料"},
+  {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202009/SP_1116422/w/index.html",
+  imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-3.png",
+  alt: "單筆$3,000送德國雙人牌三件組 下單送<天姬物語>限量虛寶"},
+  {link: "#note",
+  imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-4.png",
+  imgWebSrc: "~event/2nd/e-main/components/promo-event/items/promo-4-web.png",
+  alt: "全館滿$8,000送800"},
+  {link: "#note",
+  imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-5.png",
+  imgWebSrc: "~event/2nd/e-main/components/promo-event/items/promo-5-web.png",
+  alt: "單筆$3,000送德國雙人牌三件組"},
+  {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202009/SP_1116518/w/index.html",
+  imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-6.png",
+  alt: "台中購物節logo下單抽聲寶空氣清淨機"},
+  {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202007/SP_1115861/w/index.html",
+  imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-7.png",
+  alt: "APP獨享優惠"},
+  ]
+
+- var promoDataU = [{link: "https://www.u-mall.com.tw/Activity/HourSale", imgSrc: "~event/2nd/u-main/components/promo-event/items/promo-1.png", alt: "整點最便宜"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1103367/w/index.html", imgSrc: "~event/2nd/u-main/components/promo-event/items/promo-2.png", alt: "20間銀行最高回饋10%"}, {link: "https://www.u-mall.com.tw/Activity/HourSale?Day=Up", imgSrc: "~event/2nd/u-main/components/promo-event/items/promo-3.png", alt: "天天最激殺"}, ]
+
+- var promoData = isU ? promoDataU : promoDataE
+
+.promo__event(data-title="每日激搶")
+  ul.event__wrap
+    li#dailyPromo
+      a(href= promoData[0].link, title= promoData[0].alt)
+        img(src= promoData[0].imgSrc, alt= promoData[0].alt)
+        //img(class="promo__good" src="~event/2nd/e-main/components/promo-event/items/promo-1-good.png")
+        //img(class="promo__go" src="~event/2nd/e-main/components/promo-event/items/promo-1-go.png")
+    li
+      //a#anchorChangeLink(href= promoData[1].link, title= promoData[1].alt)
+      a(href= promoData[1].link, title= promoData[1].alt)
+        img(src= promoData[1].imgSrc, alt= promoData[1].alt)
+    li
+      a(href= promoData[2].link, title= promoData[2].alt)
+        img(src= promoData[2].imgSrc, alt= promoData[2].alt)
+    li
+      a(href= promoData[3].link, title= promoData[3].alt)
+        img(src= promoData[3].imgSrc, alt= promoData[3].alt)
+    li
+      a(href= promoData[4].link, title= promoData[4].alt)
+        img.m__promo(src= promoData[4].imgSrc, alt= promoData[4].alt)
+        img.web__promo(src= promoData[4].imgWebSrc, alt= promoData[4].alt)
+    li
+      a(href= promoData[5].link, title= promoData[5].alt)
+        img.m__promo(src= promoData[5].imgSrc, alt= promoData[5].alt)
+        img.web__promo(src= promoData[5].imgWebSrc, alt= promoData[5].alt)
+
+  include /event/2nd/e-main/components/bn-special/_bn-special
+  ul.event__wrap.second__wrap
+    li
+      a(href= promoData[6].link, title= promoData[6].alt)
+        img(src= promoData[6].imgSrc, alt= promoData[6].alt)
+    li
+      a(href= promoData[7].link, title= promoData[7].alt)
+        img(src= promoData[7].imgSrc, alt= promoData[7].alt)

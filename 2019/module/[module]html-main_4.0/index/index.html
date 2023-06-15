@@ -1,0 +1,287 @@
+<meta name="viewport" content="width=device-width">
+<!-- ============== 輪播 start ============== -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+<!--[if IE 9]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/2.7.6/idangerous.swiper.min.css">
+<![endif]-->
+<!-- ============== 輪播 end ============== -->
+<link rel="stylesheet" href="generate.css">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* 調整logo位置大小 */
+  /* .logo {
+    top: 1%; 
+    left: 1%;
+    width: 30%;
+    max-width: 220px;
+  } */
+
+  /* 連結測試 */
+  /* .sp__visual a{
+    filter: brightness(500%);
+  } */
+
+  /* 切片測試 */
+  /* .visual__fragment::before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #00f;
+    pointer-events: none;
+  } */
+
+  /* 設定全畫面背景 */
+  /* .sp__main {
+    background: url(bg.jpg) center 0 no-repeat;
+  } */
+
+  /* 大網各區塊背景  */
+  @media screen and (min-width: 960px) {
+    .visual__block1 {
+      background: center 0 url("bg_01.jpg") no-repeat;
+    }
+    .visual__block2 {
+      background: center 0 url("bg_02.jpg") no-repeat;
+    }
+    .visual__block3 {
+      background: center 0 url("bg_03.jpg") no-repeat;
+    }
+  }
+</style>
+<!-- 旅遊專用bar區域 start 不要就移除-->
+<div id="barHome"></div>
+<!-- 旅遊專用bar區域 end-->
+<div id="iconHome"></div>
+<div id="spWrap" class="sp__wallper">
+  <!-- 主視覺 -->
+  <main class="sp__main">
+    <div class="layout--main home--logo">
+        <a href="https://www.etmall.com.tw"><img class="logo" src="ehs-logo.png" alt="東森購物"></a>
+    </div>
+    <section class="sp__visual visual__block1">
+      <div class="layout--main">
+        <ul class="visual--auto clearfix">
+          <li class="visual__fragment width--auto">
+            <img src="index_01.jpg">
+          </li>
+          <li class="visual__fragment width--auto">
+            <img src="index_02.jpg">
+          </li>
+          <li class="visual__fragment width--auto">
+            <a href="https://www.etmall.com.tw" title="優質商品">
+              <img src="index_03.jpg" alt="優質商品">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="sp__visual visual__block2">
+      <div class="layout--main">
+        <ul class="visual--auto clearfix">
+          <li class="visual__fragment width--auto">
+            <a href="https://www.etmall.com.tw" title="優質商品">
+              <img src="index_04.jpg" alt="優質商品">
+            </a>
+          </li>
+          <li class="visual__fragment width--auto">
+            <img src="index_05.jpg">
+          </li>
+          <li class="visual__fragment width--auto">
+            <img src="index_06.jpg">
+          </li>
+          <li class="visual__fragment width--auto">
+            <img src="index_07.jpg">
+          </li>
+          <li class="visual__fragment width--auto">
+            <a href="https://www.etmall.com.tw" title="優質商品">
+              <img src="index_08.jpg" alt="優質商品">
+            </a>
+          </li>
+          <li class="visual__fragment width--auto">
+            <img src="index_09.jpg">
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="sp__visual visual__block3">
+      <div class="layout--main">
+        <ul class="visual--auto clearfix">
+          <li class="visual__fragment width--auto">
+            <img class="lazyload" data-src="index_10.jpg">
+          </li>
+          <li class="visual__fragment width--auto">
+            <a href="https://www.etmall.com.tw" title="優質商品">
+              <img class="lazyload" data-src="index_11.jpg" alt="優質商品">
+            </a>
+          </li>
+          <li class="visual__fragment width--auto">
+            <img class="lazyload" data-src="index_12.jpg">
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 組版用nav -->
+    <nav class="build__nav">
+      <div class="layout--main">
+        <ul class="build__anchor clearfix">
+          <li class="build-nav__item"><a href="#a1"><span>王朝</span></a></li>
+          <li class="build-nav__item"><a href="#a2"><span>馬漢</span></a></li>
+          <li class="build-nav__item"><a href="#a3"><span>張龍</span></a></li>
+          <li class="build-nav__item"><a href="#a4"><span>趙虎</span></a></li>
+          <li class="build-nav__item"><a href="#a5"><span>翻天鼠</span></a></li>
+          <li class="build-nav__item"><a href="#a6"><span>徹地鼠</span></a></li>
+          <li class="build-nav__item"><a href="#a7"><span>鑽山鼠</span></a></li>
+          <li class="build-nav__item"><a href="#a8"><span>錦毛鼠</span></a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- 自適應banner組 -->
+    <section class="bn-w4m2">
+      <div class="layout--main">
+        <!-- <div class="banner__title" style="background-image: url(bar1260x65.jpg);"></div> -->
+        <ul class="banner__wrap clearfix">
+          <li class="banner__item">
+            <a href="<!--[LINK1]-->">
+              <img src="menu_01.png" alt="banner">
+            </a>
+          </li>
+          <li class="banner__item">
+            <a href="<!--[LINK2]-->">
+              <img src="menu_02.png" alt="banner">
+            </a>
+          </li>
+          <li class="banner__item">
+            <a href="<!--[LINK3]-->">
+              <img src="menu_03.png" alt="banner">
+            </a>
+          </li>
+          <li class="banner__item">
+            <a href="<!--[LINK4]-->">
+              <img src="menu_04.png" alt="banner">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- 自適應banner組 -->
+    <section class="bn-w2m1">
+      <div class="layout--main">
+        <div class="banner__title" style="background-image: url(bar1260x65.jpg);"></div>
+        <ul class="banner__wrap clearfix">
+          <li class="banner__item">
+            <a href="<!--[LINK1]-->">
+              <img src="800x300_1.jpg" alt="banner">
+            </a>
+          </li>
+          <li class="banner__item">
+            <a href="<!--[LINK2]-->">
+              <img src="800x300_2.jpg" alt="banner">
+            </a>
+          </li>
+          <li class="banner__item">
+            <a href="<!--[LINK3]-->">
+              <img src="800x300_3.jpg" alt="banner">
+            </a>
+          </li>
+          <li class="banner__item">
+            <a href="<!--[LINK4]-->">
+              <img src="800x300_4.jpg" alt="banner">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- 自適應banner組 -->
+    <section class="bn-w2m1">
+      <div class="layout--main">
+        <!-- <div class="banner__title" style="background-image: url(bar1260x65.jpg);"></div> -->
+        <ul class="banner__wrap clearfix">
+          <li class="banner__item">
+            <a href="<!--[LINK1]-->">
+              <img src="rwd-nav_1.jpg" alt="banner">
+            </a>
+          </li>
+          <li class="banner__item">
+            <a href="<!--[LINK2]-->">
+              <img src="rwd-nav_2.jpg" alt="banner">
+            </a>
+          </li>
+          <li class="banner__item">
+            <a href="<!--[LINK3]-->">
+              <img src="rwd-nav_3.jpg" alt="banner">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- 自適應banner組 -->
+    <section class="bn-w3m1">
+      <div class="layout--main">
+        <!-- <div class="banner__title" style="background-image: url(bar1260x65.jpg);"></div> -->
+        <ul class="banner__wrap clearfix">
+          <li class="banner__item">
+            <a href="<!--[LINK1]-->">
+              <img src="menu_01.png" alt="banner">
+            </a>
+          </li>
+          <li class="banner__item">
+            <a href="<!--[LINK2]-->">
+              <img src="menu_02.png" alt="banner">
+            </a>
+          </li>
+          <li class="banner__item">
+            <a href="<!--[LINK3]-->">
+              <img src="menu_03.png" alt="banner">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</div>
+<script src="https://polyfill.io/v3/polyfill.min.js"></script>
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<!-- ============== 輪播 start ============== -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+<!--[if IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/2.7.6/idangerous.swiper.min.js"></script>
+<![endif]-->
+<!-- ============== 輪播 end ============== -->
+<script id="generateScript" src="generate.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js"></script> -->
+<!-- 東森浮水印 -->
+<script id="scriptIconFloat" src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105264/float-icon.js"></script>
+<!-- 森森浮水印
+<script id="scriptIconFloat" src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1102419/float-icon.js"></script> -->
+<script src="index.js"></script>
+
+<!-- 旅遊專用bar區域 start 不要就移除-->
+<!-- <script id="scriptAddBn" src="add-bn/add-bn.js"></script> -->
+<!-- 旅遊專用bar區域 end-->
+
+<script>
+  var footerSlider = new Swiper(".swiper-container", {
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false,
+    },
+    autoHeight: true,
+    grabCursor: true,
+    loop: true,
+    speed: 1000,
+  });
+</script>
+<!--[if IE 9]>
+  <script>
+    var footerSlider = new Swiper(".swiper-container", {
+      autoplay: 2000,
+      autoplayDisableOnInteraction: false,
+      calculateHeight: true,
+      loop: true,
+    });
+  </script>
+<![endif]-->
+<!-- ============== 輪播 end ============== -->

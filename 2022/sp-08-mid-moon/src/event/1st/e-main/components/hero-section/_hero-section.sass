@@ -1,0 +1,102 @@
+.hero
+  +pos-set(relative, zero)
+  overflow: hidden
+  .hero__wrap
+    +aspect-ratio(760, 854)
+    .video__wrap
+      +aspect-ratio(760, 854)
+      // seal parent防safari破版
+      transform: translateZ(-50px)
+    .hero__title
+      +pos-set(absolute, base, 4%, 4%)
+      width: 92%
+      .js-loading &
+        animation: zoomInDown 2s forwards, seal-parent 0.3s 2.4s
+      .title__sub
+        +pos-set(absolute, base)
+        bottom: 11%
+        // 調整副標對齊用left即可(字長就靠左一點)
+        left: 6.5%
+        width: 80%
+        &:hover,
+        &:active
+          filter: brightness(110%) contrast(150%)
+
+      .title__cta
+        +pos-set(absolute, second)
+        right: 13.5%
+        bottom: 4.5%
+        width: 15.5%
+        &:hover,
+        &:active
+          filter: brightness(110%) contrast(150%)
+        .js-loading &
+          animation: seal 0.5s 2s both, pulse 0.75s 3.75s infinite
+
+      +breakpoint-min($min-width-xl)
+        top: 50px
+        left: calc(50% - 420px)
+        width: 850px
+        .title__sub
+          bottom: 70px
+          // 調整副標對齊用left即可(字長就靠左一點)
+          left: calc(50% - 340px)
+
+    .decor__title
+      z-index: -1
+      width: 95%
+      left: 5%
+      bottom: 8%
+      +breakpoint-min($min-width-xl)
+        bottom: 120px
+        left: calc(50% - 360px)
+
+@import event/1st/e-main/components/hero-section/hero-video/_hero-video.sass
+
+@keyframes seal
+  0%
+    opacity: 0
+    transform: scale(10)
+  1%
+    opacity: 1
+  80%
+    opacity: 1
+    transform: scale(0.8)
+  100%
+    opacity: 1
+    transform: scale(1)
+
+// 印章的父層與、印章外層的外層都要有overflow hidden以免動畫期間造成橫向捲軸出現
+// 印章父層震動要delay到印章動畫秒數*0.8
+// TODO: 印章父層的後面那一層防safari破版需要加上transform: translateZ(-50px)
+@keyframes seal-parent
+  0%
+    transform: translateX(0) scale(1)
+  13%
+    transform: translateX(-6px) rotateY(-9deg) scale(0.92)
+  37%
+    transform: translateX(5px) rotateY(7deg) scale(1.05)
+  63%
+    transform: translateX(-3px) rotateY(-5deg) scale(0.95)
+  87%
+    transform: translateX(2px) rotateY(3deg) scale(1.02)
+  100%
+    transform: translateX(0) scale(1)
+
+@keyframes zoomInDown
+  0%
+    opacity: 0
+    transform: scale3d(.1, .1, .1) translate3d(0, -3000px, 0)
+    animation-timing-function: cubic-bezier(.55, .055, .675, .19)
+  60%
+    opacity: 1
+    transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0)
+    animation-timing-function: cubic-bezier(.175, .885, .32, 1)
+
+@keyframes pulse
+  0%
+    transform: scaleX(1)
+  50%
+    transform: scale3d(0.95, 0.95, 0.95)
+  to
+    transform: scaleX(1)

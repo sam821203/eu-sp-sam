@@ -1,0 +1,34 @@
+// // ==========================================================================
+// // Plugins
+// // ==========================================================================
+// // @import "vendors/animate"
+@import "~vendors/style/swiper-slider-custom"
+
+// hero section
+// ===========================
+@import "~event/1st/e-main/components/hero-section/_hero-section"
+@import "~event/1st/e-main/components/promo-event/_promo-event"
+
+// // ==========================================================================
+// // components
+// // ==========================================================================
+@import "~event/1st/e-main/components/event-w3m2/_event-w3m2"
+
+// // ==========================================================================
+// // Page
+// // ==========================================================================
+body
+  +pos-set(relative, zero)
+  background-color: $main-e-background-color-1st
+
+.sp__wrap
+  +pos-set(relative, base)
+  +bg-set(url("~event/1st/e-main/pages/index/bg.jpg"), 100%)
+
+  +breakpoint-min($min-width-xl)
+    +bg-set(url("~event/1st/e-main/pages/index/bg-web.jpg"), 100%)
+    // background: center 0 url("~event/1st/e-main/pages/index/bg.jpg") no-repeat, center 0 url("~event/1st/e-main/pages/index/bg-web.jpg") no-repeat
+    // background-size: auto
+
+.sp__wrap a
+  display: block

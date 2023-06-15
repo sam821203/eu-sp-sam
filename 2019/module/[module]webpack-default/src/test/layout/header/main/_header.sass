@@ -1,0 +1,82 @@
+.header__zone
+  position: relative
+  .logo
+    position: absolute
+    z-index: map-get($zindex, base)
+    top: 5%
+    left: 13.5%
+    width: 12.5%
+
+  .header__title--main
+    position: relative
+    padding-bottom: 11%
+    overflow: hidden
+    .pic > img
+      transform: translate(0, 12.6%) scale(1.25)
+    +breakpoint-min($min-width-xl)
+      overflow: unset
+      .pic > img
+        transform: translate(0.77%, 12.6%) scale(1.25)
+    .title__decoration
+      position: absolute
+      z-index: map-get($zindex, zero)
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      [class^="decoration"]
+          position: absolute
+          z-index: map-get($zindex, base)
+      .decoration
+        &--left
+          top: 13%
+          left: -5%
+          width: 15%
+          img
+            &:first-child
+              transform-origin: right bottom
+              animation: wind-rotate 5s infinite ease-in
+            &:last-child
+              margin-top: -53%
+              margin-left: 25%
+              width: 150%
+              transform-origin: right bottom
+              animation: wind-rotate 5s 0.3s infinite ease-out
+        &--right
+          top: 2%
+          right: -7%
+          width: 25%
+          img
+            &:first-child
+              transform-origin: left bottom
+              animation: wind-rotate 5s 0.2s infinite ease-out
+            &:last-child
+              margin-top: -55%
+              margin-left: -8%
+              transform-origin: left bottom
+              animation: wind-rotate 5s 0.1s infinite ease-in
+        &--middle
+          z-index: map-get($zindex, second)
+          top: 60%
+          left: 9.5%
+          width: 73%
+          a
+            transition: all 0.5s
+            &:hover
+              transform: translateY(-5%)
+              filter: brightness(110%)
+        &--dog
+          top: -53%
+          right: -18.3%
+          width: 36%
+          img
+            &:last-child
+              margin-top: -125%
+              margin-left: 0%
+              transform-origin: 25% 88%
+              animation: rotate-self 0.8s alternate infinite ease-in-out
+              +breakpoint-min($min-width-lg)
+                margin-top: -115%
+
++wind-rotate(-2, 4)
++rotate-self(-15)

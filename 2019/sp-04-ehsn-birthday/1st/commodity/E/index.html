@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" rel="stylesheet">
+
+    <!----- 測試電梯 ----->
+    <!--<link rel="stylesheet" href="../../Elevator_e/sp-20181019.css">-->
+    <!--<script type="text/javascript" src="../../Elevator_e/sp-script20181019.js" defer></script>-->
+
+    <link href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201903/SP_1107602/w/style.css" rel="stylesheet">
+    <style type="text/css">
+        .main_group {
+            background-image: url('upper_bg-sm.jpg');
+        }
+
+        .carousel_layer {
+            background-image: url('BN-carousel-m.png');
+        }
+
+        @media screen and (min-width: 768px) {
+            .main_group {
+                background-image: url('upper_bg-m.jpg');
+            }
+
+            .carousel_layer {
+                background-image: url('BN-carousel.png');
+            }
+        }
+
+        /* 背景 */
+        .sp__page {
+            background-color: #f7d1ff;
+        }
+
+        @media screen and (min-width: 1280px) {
+            .sp__page {
+                background-image: url('upper_bg_bottom.jpg');
+            }
+        }
+
+        @media screen and (min-width: 641px) {
+            .n-sp__box .sp__wrap img,
+            .upper_layer img {
+                width: auto;
+            }
+        }
+
+        @media screen and (max-width: 1260px) {
+            .upper_layer {
+                background-image: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="sp__page">
+<div id="iconHome" class="sp--1260 home__wrap"></div>
+<div id="elevatorHome" class="elevatorHome"></div>
+
+<div class="balloon-decoration">
+    <ul id="decorationWrap" class="decoration__wrap">
+        <li class="decoration decoration1" data-depth="-0.6">
+            <img src="desc__balloon-1.png">
+        </li>
+        <li class="decoration decoration2" data-depth="0.3">
+            <img src="desc__balloon-2.png">
+        </li>
+        <li class="decoration decoration3" data-depth="0.3">
+            <img src="desc__balloon-m.png">
+        </li>
+    </ul>
+</div>
+
+
+<main id="spWrap" class="sp__wrap" style="background-color: transparent;">
+
+    <section class="upper_layer" style="background-image: url(upper_bg.jpg);">
+        <div id="openItem" class="logo">
+            <a href="https://www.etmall.com.tw/">
+                <img src="logo.png" alt="東森購物"/>
+            </a>
+        </div>
+
+        <div class="main_group" style=""></div>
+
+    </section>
+
+    <section class="sp-content wow bounceInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+        <aside class="incentive_layer">
+            <div class="incentive__block">
+                <div class="incentive">
+                    <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201903/SP_1107233/w/index.html"
+                       data-regist="">
+                        <img class="incentive-main size--d ib--1"
+                             src="https://www.etmall.com.tw/XML/content/DMSetting/Final/201903/SP_1107602/w/E-01.png"
+                             alt="滿2500送100無敵券">
+                        <img class="incentive-main size--m"
+                             src="https://www.etmall.com.tw/XML/content/DMSetting/Final/201903/SP_1107602/w/E-01--m.png"
+                             alt="滿2500送100無敵券">
+                    </a>
+                </div>
+            </div>
+            <div class="incentive__block">
+                <div class="incentive">
+                    <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201903/SP_1107233/w/index.html"
+                       data-regist="">
+                        <img class="incentive-main size--d ib--2"
+                             src="https://www.etmall.com.tw/XML/content/DMSetting/Final/201903/SP_1107602/w/E-02.png"
+                             alt="3c家電滿萬送200東森幣">
+                        <img class="incentive-main size--m"
+                             src="https://www.etmall.com.tw/XML/content/DMSetting/Final/201903/SP_1107602/w/E-02--m.png"
+                             alt="3c家電滿萬送200東森幣">
+                    </a>
+                </div>
+            </div>
+            <div class="incentive__block">
+                <div class="incentive">
+                    <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201903/SP_1107233/w/index.html"
+                       data-regist="">
+                        <img class="incentive-main size--d ib--3"
+                             src="https://www.etmall.com.tw/XML/content/DMSetting/Final/201903/SP_1107602/w/E-03.png"
+                             alt="旅遊館滿一萬六送600東森幣">
+                        <img class="incentive-main size--m"
+                             src="https://www.etmall.com.tw/XML/content/DMSetting/Final/201903/SP_1107602/w/E-03--m.png"
+                             alt="旅遊館滿一萬六送600東森幣">
+                    </a>
+                </div>
+            </div>
+            <div class="incentive__block">
+                <div class="incentive">
+                    <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201904/SP_1107540/w/index.html"
+                       data-regist="">
+                        <img class="incentive-main size--d ib--4"
+                             src="https://www.etmall.com.tw/XML/content/DMSetting/Final/201903/SP_1107602/w/E-04.png"
+                             alt="APP首購登記送100">
+                        <img class="incentive-main size--m"
+                             src="https://www.etmall.com.tw/XML/content/DMSetting/Final/201903/SP_1107602/w/E-04--m.png"
+                             alt="APP首購登記送100">
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <aside class="carousel_layer">
+            <div class="carousel__wrap">
+                <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201904/SP_1107524/w/index.html">
+                    <img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/201903/SP_1107602/w/BN-1.png"
+                         alt="DeMon Q彈飲36盒送金元寶"/>
+                </a>
+            </div>
+            <div class="carousel__wrap">
+                <a href=" https://www.etmall.com.tw/p/71244">
+                    <img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/201903/SP_1107602/w/BN-2.png"
+                         alt="華陀扶元堂 六味龜鹿膠原錠"/>
+                </a>
+            </div>
+            <div class="carousel__wrap">
+                <a href="https://www.etmall.com.tw/c3/117942">
+                    <img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/201903/SP_1107602/w/BN-3.png"
+                         alt="陳芳語 HUAWEI nova 4e"/>
+                </a>
+            </div>
+            <div class="carousel__wrap">
+                <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201904/SP_1107522/w/index.html">
+                    <img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/201903/SP_1107602/w/BN-4.png"
+                         alt="五月天 HITACHI日立 527公升日本原裝六門變頻冰箱 RHW530JJ/R-HW530JJ"/>
+                </a>
+            </div>
+            <div class="carousel__wrap">
+                <a href="https://www.etmall.com.tw/c3/126151">
+                    <img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/201903/SP_1107602/w/BN-5.png"
+                         alt="林心如【FUJITSU富士通】3-5坪優級L系列變頻冷專分離式冷氣ASCG028JLTB/AOCG028JLTB(送基本安裝)"/>
+                </a>
+            </div>
+            <div class="carousel__wrap">
+                <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201903/SP_1107301/w/index.html">
+                    <img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/201903/SP_1107602/w/BN-6.png"
+                         alt="Timberland女款淡米色Slip-On便鞋"/>
+                </a>
+            </div>
+            <div class="carousel__wrap">
+                <a href="https://www.etmall.com.tw/c3/102488">
+                    <img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/201903/SP_1107602/w/BN-7.png"
+                         alt="曾國城 過海製麵所 香蔥椒麻曾拌麵4包 x4袋"/>
+                </a>
+            </div>
+            <div class="carousel__wrap">
+                <a href="https://www.etmall.com.tw/c3/102487">
+                    <img src="https://www.etmall.com.tw/XML/content/DMSetting/Final/201903/SP_1107602/w/BN-8.png"
+                         alt="ALin 老媽拌麵3袋組送小辣醬-酸辣/老成都擔擔/蔥油開洋 (4包/袋)"/>
+                </a>
+            </div>
+        </aside>
+    </section>
+
+</main>
+
+<div id="goTopWrap"></div>
+
+<!--[if IE 9]>
+<script src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106742/flexibility.js"></script>
+<script>flexibility(document.documentElement);</script>
+<![endif]-->
+
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+<script id="loadJS" src="load-indicator.js"></script>
+<!----- 輪播 ----->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+
+<!-- 登錄表單掛鉤 -->
+<script src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107360/getAnchor-script.js"></script>
+
+<!----- 浮水印 ----->
+<script id="scriptIconFloat"
+        src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105264/float-icon.js"></script>
+
+<!----- 電梯 ----->
+<script type="text/javascript"
+        src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105567/generateVersion20181019.js"></script>
+
+<!-- goTop -->
+<script id="generateScript"
+        src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106742/generate.js"></script>
+
+<!--<script type="text/javascript"-->
+<!--src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106349/generateVersion20181019.js"></script>-->
+
+<script type="text/javascript">
+
+    // 輪 error tips: not to use (document ready jquery)
+    $('.carousel_layer').slick({
+        dots: true,
+        autoplay: true,
+        infinite: true,
+        autoplaySpeed: 3000,
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    fade: true,
+                    cssEase: 'linear'
+                }
+            }
+        ]
+    });
+
+    // 裝飾
+    function productParallax() {
+        var bgDesc = document.getElementById('decorationWrap');
+        var parallaxInstance = new Parallax(bgDesc);
+    }
+
+    requestAnimationFrame(productParallax);
+</script>
+
+</body>
+</html>

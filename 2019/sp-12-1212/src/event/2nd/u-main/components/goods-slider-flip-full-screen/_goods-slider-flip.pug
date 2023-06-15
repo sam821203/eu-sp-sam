@@ -1,0 +1,21 @@
+- var goodsFlipDataE = [{link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201912/SP_1105723/w/index.html", imgSrc: "~event/2nd/u-main/components/goods-slider-flip-full-screen/items/pic-1-min.png", alt: "頑美購物全面1.2折up"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201912/SP_1105703/w/index.html", imgSrc: "~event/2nd/u-main/components/goods-slider-flip-full-screen/items/pic-2-min.png", alt: "保健年終盛典5折UP"}, {link: "https://www.u-mall.com.tw/c3/111115", imgSrc: "~event/2nd/u-main/components/goods-slider-flip-full-screen/items/pic-3-min.png", alt: "SAMSUNG旗艦機"},  {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201912/SP_1105728/w/index.html", imgSrc: "~event/2nd/u-main/components/goods-slider-flip-full-screen/items/pic-4-min.png", alt: "華碩筆電無痛升級!?"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201912/SP_1105705/w/index.html", imgSrc: "~event/2nd/u-main/components/goods-slider-flip-full-screen/items/pic-5-min.png", alt: "服飾精品年終狂歡2折起"}, {link: "https://www.u-mall.com.tw/c2/50702", imgSrc: "~event/2nd/u-main/components/goods-slider-flip-full-screen/items/pic-6-min.png", alt: "衛生紙$699破盤搶購"}, {link: "notYet", imgSrc: "~event/2nd/u-main/components/goods-slider-flip-full-screen/items/pic-7-min.png", alt: "大同40吋電視 $5990"},{link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201912/SP_1105704/w/index.html", imgSrc: "~event/2nd/u-main/components/goods-slider-flip-full-screen/items/pic-8-min.png", alt: "寒假出遊現折5千"}, ]
+
+
+
+//- var goodsFlipData = isU? goodsFlipDataU : goodsFlipDataE
+- var goodsFlipData = goodsFlipDataE
+
+.goods__wrap--flip.js-add__bg
+  //- .goods__decoration.goods__decoration--right
+  //- .goods__decoration.goods__decoration--left
+  .promo__slider
+    #sliderGoodsFlip.swiper-container
+      ul.swiper-wrapper
+        each data in goodsFlipData
+          li.swiper-slide
+            a(href= data.link, title= data.alt)
+              img(src= data.imgSrc, alt= data.alt)
+      //- #sliderGoodsFlipPager.swiper-pager-white.swiper-pagination
+    //- #sliderGoodsFlipPrev.swiper-button-white.swiper-button-prev
+    //- #sliderGoodsFlipNext.swiper-button-white.swiper-button-next
+

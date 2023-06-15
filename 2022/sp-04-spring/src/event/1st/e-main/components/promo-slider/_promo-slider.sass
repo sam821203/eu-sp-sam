@@ -1,0 +1,65 @@
+.promo__group--promo-slider
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__item
+    &:first-child
+      +pos-set(absolute, under, 0%, 23%)
+      width: 53%
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 240px)
+        width: auto
+    &:nth-child(2)
+      +pos-set(absolute, base, 0%)
+      right: 7%
+      width: 17%
+      +breakpoint-min($min-width-xl)
+        right: calc(50% - 410px)
+        width: auto
+      &.active
+        animation: rotate-reverse 3s linear infinite
+    &:last-child
+      +pos-set(absolute, base, 3%, 0%)
+      width: 24%
+      +breakpoint-min($min-width-xl)
+        top: 2%
+        left: calc(50% - 480px)
+        width: auto
+      &.active
+        animation: bounce-up 2s linear infinite
+
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/promo-slider/bg-promo-slider.png), 100%)
+    // margin-top: 23%
+    .promo__zone
+      +aspect-ratio(960, 921)
+      // margin-top: -15%
+      // padding-top: 20%
+      .promo__slider
+        margin: 37% 3% 0
+        // +pos-set(relative, zero)
+        // height: 100%
+      // .swiper-container
+      //   display: flex
+
+@keyframes rotate-reverse
+  0%
+    transform: rotate(0)
+  to
+    transform: rotate(-360deg)
+
+
+@keyframes bounce-up
+  0%   
+    transform: scale(1,1) translateY(0)
+  10%
+    transform: scale(1.1,.9) translateY(0)
+  30%
+    transform: scale(.9,1.1) translateY(-10px)
+  50%
+    transform: scale(1,1) translateY(0)
+  57%
+    transform: scale(1,1) translateY(-7px)
+  64%
+    transform: scale(1,1) translateY(0)
+  100%
+    transform: scale(1,1) translateY(0)

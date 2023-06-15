@@ -1,0 +1,101 @@
+.promo__group--choose
+  overflow: hidden
+  .promo__wrap
+    +aspect-ratio(891, 891)
+  .promo__zone
+    +pos-set(relative, zero)
+    padding: 13.5% 6% 8.5%
+    +bg-set(url(event/2nd/e-main/components/random-choose/bg-random-choose.png), 100%)
+    text-align: center
+
+  .btn__wrap
+    +pos-set(relative, base)
+
+  .btn__box
+    display: flex
+    justify-content: space-between
+    +pos-set(absolute, second, 0)
+    left: 7%
+    width: 86%
+    a
+      padding-top: 17%
+      width: 20%
+
+  .line__wrap
+    +pos-set(relative, zero)
+    padding: 0 6%
+  .line__box,
+  .line__btn
+    +pos-set(absolute, zero, 0, 6%)
+    width: 88%
+    &--a
+      +bg-set(url(event/2nd/e-main/components/random-choose/choose-a.png), 100%)
+    &--b
+      +bg-set(url(event/2nd/e-main/components/random-choose/choose-b.png), 100%)
+    &--c
+      +bg-set(url(event/2nd/e-main/components/random-choose/choose-c.png), 100%)
+
+    &.active
+      animation: grow-line 2s both, flash-out 0.7s 0.3s
+
+  .card__wrap
+    +pos-set(relative, seco)
+    margin-top: -5%
+    padding-left: 0.5%
+  .card__box
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    width: 100%
+    li
+      display: none
+      flex: 0 0 31%
+      &.active
+        display: block
+
+  .card__item
+    +pos-set(relative, zero)
+    perspective: 600px
+
+  .card__front,
+  .card__back
+    backface-visibility: hidden
+    transition: all 0.5s
+
+  .card__front
+    +pos-set(absolute, under, 0, 0)
+    width: 100%
+    height: 100%
+    transform-style: preserve-3d
+    transform: rotateY(180deg)
+
+  .card__item.active .card__back
+    transform: rotateY(-180deg)
+
+  .card__item.active .card__front
+    transform: rotateY(0)
+
+  .decoration--gift
+    &-left
+      top: 30%
+      left: -15%
+      width: 30%
+
+  +breakpoint-min($min-width-xl)
+    .promo__zone
+      padding: 12.5% 82px 7.5%
+      background-size: auto
+    .decoration--gift
+      &-left
+        left: -100px
+
+@keyframes flash-out
+  0%, 100%
+    filter: brightness(100%) contrast(100%)
+  50%, 80%
+    filter: brightness(200%) contrast(200%)
+@keyframes grow-line
+  0%
+    height: 0
+  100%
+    height: 100%

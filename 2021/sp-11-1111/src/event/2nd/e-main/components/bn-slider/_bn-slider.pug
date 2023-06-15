@@ -1,0 +1,84 @@
+-
+  var bnSliderItemData = [
+    {
+      link: "https://www.etmall.com.tw/Activity/CollectPointExchangeActivity/20210894cdc93e",
+      imgSrc: "event/2nd/e-main/components/bn-slider/items/collect-1.png",
+      alt: "集點加價購"
+    },
+    {
+      link: "https://www.etmall.com.tw/Activity/CollectPointExchangeActivity/20210894cdc93e",
+      imgSrc: "event/2nd/e-main/components/bn-slider/items/collect-1.png",
+      alt: "集點加價購"
+    },
+    {
+      link: "https://www.etmall.com.tw/Activity/CollectPointExchangeActivity/20210894cdc93e",
+      imgSrc: "event/2nd/e-main/components/bn-slider/items/collect-1.png",
+      alt: "集點加價購"
+    },
+    {
+      link: "https://www.etmall.com.tw/Activity/CollectPointExchangeActivity/20210894cdc93e",
+      imgSrc: "event/2nd/e-main/components/bn-slider/items/collect-1.png",
+      alt: "集點加價購"
+    },
+    {
+      link: "https://www.etmall.com.tw/Activity/CollectPointExchangeActivity/20210894cdc93e",
+      imgSrc: "event/2nd/e-main/components/bn-slider/items/collect-1.png",
+      alt: "集點加價購"
+    },
+    {
+      link: "https://www.etmall.com.tw/Activity/CollectPointExchangeActivity/20210894cdc93e",
+      imgSrc: "event/2nd/e-main/components/bn-slider/items/collect-1.png",
+      alt: "集點加價購"
+    },
+    {
+      link: "https://www.etmall.com.tw/Activity/CollectPointExchangeActivity/20210894cdc93e",
+      imgSrc: "event/2nd/e-main/components/bn-slider/items/collect-1.png",
+      alt: "集點加價購"
+    },
+    {
+      link: "https://www.etmall.com.tw/Activity/CollectPointExchangeActivity/20210894cdc93e",
+      imgSrc: "event/2nd/e-main/components/bn-slider/items/collect-1.png",
+      alt: "集點加價購"
+    },
+    {
+      link: "https://www.etmall.com.tw/Activity/CollectPointExchangeActivity/20210894cdc93e",
+      imgSrc: "event/2nd/e-main/components/bn-slider/items/collect-1.png",
+      alt: "集點加價購"
+    },
+      {
+      link: "https://www.etmall.com.tw/Activity/CollectPointExchangeActivity/20210894cdc93e",
+      imgSrc: "event/2nd/e-main/components/bn-slider/items/collect-1.png",
+      alt: "集點加價購"
+    },
+    {
+      link: "https://www.etmall.com.tw/Activity/CollectPointExchangeActivity/20210894cdc93e",
+      imgSrc: "event/2nd/e-main/components/bn-slider/items/collect-1.png",
+      alt: "集點加價購"
+    },
+    {
+      link: "https://www.etmall.com.tw/Activity/CollectPointExchangeActivity/20210894cdc93e",
+      imgSrc: "event/2nd/e-main/components/bn-slider/items/collect-1.png",
+      alt: "集點加價購"
+    },
+  ]
+section#bnSlider.promo__group.promo__group--bn.m-bottom--xs(data-title="集點專區")
+  .layout--main
+    //- .promo__title
+    //-   #decoBnSlider.title__decoration
+    //-     img(src="event/2nd/e-main/components/bn-slider/decoration-bn-slider.png", alt="")
+    .promo__wrap(title="集點加價購")
+      .promo__zone
+        .promo__bn
+          a(href="集井", title="集點加價購")
+            img(src="event/2nd/e-main/components/bn-slider/title-bn-slider.png", alt="集點加價購")
+        .decoration__box#decorBnSlider
+          img(src="event/2nd/e-main/components/bn-slider/decor-bn-slider.png")
+        .promo__slider
+          #sliderBn.swiper-container
+            ul.swiper-wrapper
+              each data, index in bnSliderItemData
+                li.swiper-slide
+                  a(href= data.link, title= data.alt)
+                    img.swiper-lazy(data-src= data.imgSrc, alt="")
+                    .swiper-lazy-preloader.swiper-lazy-preloader-black
+      //- #sliderBnPager.bn__pager.swiper-pagination

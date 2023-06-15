@@ -1,0 +1,125 @@
+-
+  var promoEventData = [
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/18570/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-1.png",
+        alt: "7-ELEVEN取件送冰濃萃拿鐵+東森幣60枚",
+      },
+    ],
+    [
+      {
+        link: "https://www.etmall.com.tw/Activity/GroupSale",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-2.png",
+        alt: "幸福集氣購",
+      },
+    ],
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/17016/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-3.png",
+        alt: "不限金額消費送漢堡王優惠券",
+      },
+    ],
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/16741/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-4.png",
+        alt: "全站消費不限金額抽商品1折券",
+      },
+    ],
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/16741/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-5.png",
+        alt: "集點換豪禮",
+      },
+    ],
+    [
+      {
+        link: "",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-6-1.png",
+        alt: "離島配送滿$2,000贈99枚樂透金",
+      },
+      {
+        link: "",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-6-2.png",
+        alt: "離島配送滿$1,010贈50枚樂透金",
+      },
+    ],
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/16741/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-7-1.png",
+        alt: "全站消費滿額抽安晴氣炸鍋",
+      },
+      {
+        link: "https://media.etmall.com.tw/sp/18639/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-7-2.png",
+        alt: "消費滿額抽Uber Eats 新用戶優惠5折",
+      },
+      {
+        link: "https://media.etmall.com.tw/sp/16741/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-7-3.png",
+        alt: "挑戰任務拿$820",
+      },
+      {
+        link: "https://www.etmall.com.tw/Activity/dl/VoteActivityMethod/40",
+        imgSrc: "event/1st/e-main/components/promo-event/items/item-p-event-7-4.png",
+        alt: "2022金萌獎火熱報名中",
+      },
+    ],
+    [
+      {
+        link: "https://www.etmall.com.tw/gp/168840",
+        imgSrc: "event/1st/e-main/components/promo-event/items/bn-p-event-1.png",
+        alt: "為健康打底 箱購滴雞精65折up",
+      },
+      {
+        link: "https://www.etmall.com.tw/gp/121618",
+        imgSrc: "event/1st/e-main/components/promo-event/items/bn-p-event-2.jpg",
+        alt: "開學季特價$6138起",
+      },
+      {
+        link: "https://www.etmall.com.tw/gp/124090",
+        imgSrc: "event/1st/e-main/components/promo-event/items/bn-p-event-3.png",
+        alt: "醫美聯慶狂降",
+      },
+      {
+        link: "https://media.etmall.com.tw/sp/18527/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-event/items/bn-p-event-4.jpg",
+        alt: "KKlifex紅龍 露天廚房",
+      },
+      {
+        link: "https://media.etmall.com.tw/sp/9765/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-event/items/bn-p-event-5.jpg",
+        alt: "料理家電99購物節",
+      },
+      {
+        link: "https://media.etmall.com.tw/sp/17446/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-event/items/bn-p-event-6.jpg",
+        alt: "安卓旗艦",
+      },
+      {
+        link: "https://media.etmall.com.tw/sp/17056/m/index.html",
+        imgSrc: "event/1st/e-main/components/promo-event/items/bn-p-event-7.jpg",
+        alt: "歡慶雙十FUN大價",
+      },
+    ],
+  ]
+
+//- TODO: 如果promo不和hero綁一起時要有自己的section和layout--main
+section.promo__group.promo-event.m-bottom--lg
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          ul.promo__box
+            each data, index in promoEventData
+              li.event__item(id="promoEventItem" + (index + 1))
+                .swiper-container.container--promo-event
+                  ul.swiper-wrapper
+                    each item, itemIndex in  data
+                      li.swiper-slide.promo__item
+                        a(href=  item.link, title= item.alt)
+                          img(src=  item.imgSrc,  item.alt)

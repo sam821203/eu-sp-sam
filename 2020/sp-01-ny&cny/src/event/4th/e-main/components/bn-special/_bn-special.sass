@@ -1,0 +1,33 @@
+.promo__group--bn-special
+  margin-left: auto
+  margin-right: auto
+  padding: 2% 0
+  .promo__slider
+    margin-left: auto
+    margin-right: auto
+    width: 95%
+    // height: 100%
+    .swiper-container
+      // height: 100%
+      .swiper-slide
+      //   transition: transform 0.5s
+      //   transform: translateY(-100%)
+      // .swiper-slide-active,
+      // .swiper-slide-duplicate-active,
+      //   transform: translateY(0)
+
+      .swiper-slide
+        &:hover,
+        &:active
+          filter: contrast(120%)
+        img
+          &:last-child
+            display: none
+          +breakpoint-min($min-width-xl)
+            &:first-child
+              display: none
+            &:last-child
+              display: block
+              margin-left: auto
+              margin-right: auto
+

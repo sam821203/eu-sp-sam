@@ -1,0 +1,22 @@
+- var goodsFlipDataU = [{link: "https://www.u-mall.com.tw/p/75223", imgSrc: "~event/1st/u-main/components/goods-slider-flip-full-screen/items/pic-1.png", alt: "牛爾熱銷2件45折"}, {link: "https://www.u-mall.com.tw/np/75322", imgSrc: "~event/1st/u-main/components/goods-slider-flip-full-screen/items/pic-2.png", alt: "年後搶孅贏人氣必買"}, {link: "https://www.u-mall.com.tw/c3/138126", imgSrc: "~event/1st/u-main/components/goods-slider-flip-full-screen/items/pic-3.png", alt: "開學夢幻逸品98折up"},  {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202002/SP_1105964/w/index.html", imgSrc: "~event/1st/u-main/components/goods-slider-flip-full-screen/items/pic-4.png", alt: "3C帶你今晚GO嗨"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202002/SP_1105882/w/index.html", imgSrc: "~event/1st/u-main/components/goods-slider-flip-full-screen/items/pic-5.png", alt: "精品愛錶現2折up"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202002/SP_1105969/w/index.html", imgSrc: "~event/1st/u-main/components/goods-slider-flip-full-screen/items/pic-6.png", alt: "動吃動年後不卡卡"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202002/SP_1105969/w/index.html", imgSrc: "~event/1st/u-main/components/goods-slider-flip-full-screen/items/pic-7.png", alt: "大同10人份電鍋"},{link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202001/SP_1105879/w/index.html", imgSrc: "~event/1st/u-main/components/goods-slider-flip-full-screen/items/pic-8.png", alt: "旅遊開春下殺"}, ]
+
+
+
+//- var goodsFlipData = isU? goodsFlipDataU : goodsFlipDataE
+- var goodsFlipData = goodsFlipDataU
+
+.goods__wrap--flip(data-title="愛之品")
+  //- .goods__decoration.goods__decoration--right
+  //- .goods__decoration.goods__decoration--left
+  .promo__slider
+    #sliderGoodsFlip.swiper-container
+      ul.swiper-wrapper
+        each data in goodsFlipData
+          li.swiper-slide
+            a(href= data.link, title= data.alt)
+              img(data-src= data.imgSrc, alt= data.alt, class="swiper-lazy")
+              .swiper-lazy-paloader
+      //- #sliderGoodsFlipPager.swiper-pager-white.swiper-pagination
+    //- #sliderGoodsFlipPrev.swiper-button-white.swiper-button-prev
+    //- #sliderGoodsFlipNext.swiper-button-white.swiper-button-next
+

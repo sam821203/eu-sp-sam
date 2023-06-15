@@ -1,0 +1,15 @@
+//- TODO: 設定跑馬燈方向，--top / --bottom / --left / --right
+- var marqueePartnerClassName = "marquee--" + partner
+section#marquee.marquee.marquee--bottom.active(class= marqueePartnerClassName)
+  .layout--main
+    .marquee__wrap
+      #marqueeBox.marquee__box
+        .marquee__item.marquee__item--active
+          a(href="https://www.etmall.com.tw/", title="活動熱門消息專區")
+            span 活動熱門消息專區
+        .marquee__item
+          a(href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202005/SP_1114867/w/index.html", title="銀行消息專區")
+            span 銀行消息專區
+        .marquee__item
+          a(href="https://www.etmall.com.tw/", title="最新熱門消息專區")
+            span 最新熱門消息專區

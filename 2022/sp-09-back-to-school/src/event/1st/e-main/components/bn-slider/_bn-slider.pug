@@ -1,0 +1,45 @@
+-
+  var bnSliderItemData = [
+    {
+      link: "",
+      imgSrc: "event/1st/e-main/components/bn-slider/items/collect-1.png",
+      alt: "集點加價購"
+    },
+    {
+      link: "",
+      imgSrc: "event/1st/e-main/components/bn-slider/items/collect-2.png",
+      alt: "集點加價購"
+    },
+    {
+      link: "",
+      imgSrc: "event/1st/e-main/components/bn-slider/items/collect-3.png",
+      alt: "集點加價購"
+    },
+    {
+      link: "",
+      imgSrc: "event/1st/e-main/components/bn-slider/items/collect-4.png",
+      alt: "集點加價購"
+    },
+    {
+      link: "https://www.etmall.com.tw/Activity/CollectPointExchangeActivity/20211266405d72",
+      imgSrc: "event/1st/e-main/components/bn-slider/items/collect-5.png",
+      alt: "集點加價購"
+    },
+  ]
+section#bnSlider.promo__group.bn-slider.m-bottom--lg(data-title="集點加價購")
+  .layout--main 
+    .decor__wrap.full-parent
+      .decor__item.decor__item--left#decorBnSliderLeft
+        img(src="event/1st/e-main/components/bn-slider/decor-bn-slider-left.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          .promo__box
+            a(href="") 
+              img(src="event/1st/e-main/components/bn-slider/bn-bn-slider.png", alt="")
+            .swiper-container#sliderBn
+              ul.swiper-wrapper
+                each data in bnSliderItemData
+                  li.swiper-slide
+                    a(href= data.link, title= data.alt)
+                      img.swiper-lazy(data-src= data.imgSrc, alt="")

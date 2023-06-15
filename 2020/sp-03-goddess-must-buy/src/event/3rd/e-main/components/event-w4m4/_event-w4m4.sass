@@ -1,0 +1,42 @@
+.promo__group--w4m4
+  // .promo__title
+  //   +bg-set(url("~~event/3rd/e-main/components/event-w4m4/section-bn-05.png"))
+  //   margin-top: 1%
+  //   margin-bottom: 1%
+  //   height: 103px
+  //   margin-top: -0.5%
+  .promo__wrap
+    // margin-bottom: 6% // 主視覺結尾添加的，若在中間可刪
+    +bg-set(url("~~event/3rd/e-main/components/event-w4m4/bg-event-w4m4.png"), 98%)
+    .good__wrap
+      display: flex
+      flex-wrap: wrap
+      // justify-content: space-between
+      padding: 11% 1% 7% 2%
+      li
+        flex: 0 0 25%
+        padding: 1% 1%
+        a
+          transition: transform 0.5s
+        &:hover
+          a
+            transform: scale(1.1)
+            filter: brightness(120%)
+    +breakpoint-min($min-width-xl)
+      background-size: auto
+      .good__wrap
+        padding: 11% 1% 7% 1%
+        li
+          padding: 1% 0
+.decoration__boy__layout
+  position: relative
+  .decoration__boy
+    position: absolute
+    top: -20vw
+    right: 2.5vw
+    width: 24vw
+    +breakpoint-min($min-width-xl)
+      top: -177px
+      right: calc(50% - 452px)
+      pointer-events: none
+      width: auto

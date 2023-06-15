@@ -1,0 +1,85 @@
+//- 品牌專區
+-
+  var w4m4noItemDataE = [
+    {
+      itemLink: "https://www.etmall.com.tw/c3/137524",
+      itemAlt: "高島",
+    },
+    {
+      itemLink: "https://www.etmall.com.tw/p/108088",
+      itemAlt: "盛香珍",
+    },
+    {
+      itemLink: "https://www.etmall.com.tw/c2/99198",
+      itemAlt: "COACH",
+    },
+    {
+      itemLink: "https://www.etmall.com.tw/c3/145060",
+      itemAlt: "HADA Nature肌純",
+    },
+    {
+      itemLink: "https://www.etmall.com.tw/gp/110076",
+      itemAlt: "白蘭氏",
+    },
+    {
+      itemLink: "https://www.etmall.com.tw/c2/125337",
+      itemAlt: "dyson",
+    },
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202005/SP_1115505/w/index.html",
+      itemAlt: "Apple",
+    },
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202008/SP_1116179/w/index.html",
+      itemAlt: "Acer",
+    },
+  ]
+
+- 
+  var w4m4noItemDataU = [
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      itemAlt: "滿額送$300",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      itemAlt: "滿額送$300",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      itemAlt: "滿額送$300",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      itemAlt: "滿額送$300",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      itemAlt: "滿額送$300",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      itemAlt: "滿額送$300",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      itemAlt: "滿額送$300",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      itemAlt: "滿額送$300",
+    }, 
+  ]
+
+- var w4m4noItemData = isU? w4m4noItemDataU : w4m4noItemDataE
+
+section.promo__group.promo__group--w4m4-no-item.m-bottom--sm(data-title="品牌專區")
+  .layout--main
+    //- .promo__title.block--center.text--center
+    //-   img(src="~event/2nd/e-main/components/event-w4m4-no-item/title-event-w4m4-no-item.png", alt="")
+    .promo__wrap
+      ul.good__wrap
+        each data in w4m4noItemData
+          li
+            a(href= data.itemLink, title= data.itemAlt)
+

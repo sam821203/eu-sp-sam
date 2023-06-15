@@ -1,0 +1,23 @@
+.promo__event
+  .event__wrap
+    +display-flex
+    flex-wrap: wrap
+    justify-content: center
+    +pos-set(relative, second)
+    width: 100%
+    li
+      +flex(1, 0, 33%)
+      transition: all 0.5s
+      &:hover,
+      &:active
+        // filter: brightness(150%)
+        img
+          opacity: 0
+          // transition: all 0.5s
+          // transform: rotateY(360deg)
+      
+      @for $i from 1 through 6
+        &:nth-child(#{$i})
+          &:hover,
+          &:active
+            +bg-set(url(~event/3rd/e-main/components/promo-event/items/promo-open-#{$i}.png), contain)

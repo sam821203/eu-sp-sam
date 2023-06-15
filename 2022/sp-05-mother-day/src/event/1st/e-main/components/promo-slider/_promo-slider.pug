@@ -1,0 +1,98 @@
+-
+  var promoSliderItem = [
+    {
+      link: "https://www.etmall.com.tw/gp/127897" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p1.jpg",
+      alt: "最高折抵東森幣70%",
+    },
+    {
+      link: "https://www.etmall.com.tw/p/167245" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p2.jpg",
+      alt: "滿額送暖心好禮",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/13985/m/index.html" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p3.jpg",
+      alt: "春日好食節3折up",
+    },
+    {
+      link: "https://www.etmall.com.tw/bs/83605" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p4.jpg",
+      alt: "亞尼克10件76折",
+    },
+    {
+      link: "https://www.etmall.com.tw/bs/141472" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p5.jpg",
+      alt: "東森幣最高折抵10%",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/10765/m/index.html" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p6.jpg",
+      alt: "最高送10%樂透金",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/11387/m/index.html" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p7.jpg",
+      alt: "小米全面8折起",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/13555/m/index.html" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p8.jpg",
+      alt: "路由器選購指南",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/13715/m/index.html" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p9.jpg",
+      alt: "寵愛有禮56折up",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/156557" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p10.jpg",
+      alt: "歐系精品經典包款5折起",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/13624/m/index.html" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p11.jpg",
+      alt: "婦幼滿額抽樂透金",
+    },
+    {
+      link: "https://www.etmall.com.tw/p/162241" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p12.jpg",
+      alt: "tokuyo送5%東森幣",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/13917/m/index.html" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p13.jpg",
+      alt: "毛毛商城滿額贈",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/13594/m/index.html" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p14.jpg",
+      alt: "澎湖花火節20th",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/13735/m/index.html" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p15.jpg",
+      alt: "天堂2M限時送虛寶",
+    },
+  ]
+
+
+section.promo__group.promo__group--promo-slider(data-title="強檔推薦")
+  .layout--main
+    .promo__wrap
+      .decor__wrap.full-parent
+        .decor__item.decor__item--title#titlePromoSlider
+          img(src="event/1st/e-main/components/promo-slider/title-promo-slider.png", alt="")
+        .decor__item.decor__item--left#decorPromoSliderLeft
+          img(src="event/1st/e-main/components/promo-slider/decor-promo-slider-left.png", alt="")
+        .decor__item.decor__item--right#decorPromoSliderRight
+          img(src="event/1st/e-main/components/promo-slider/decor-promo-slider-right.png", alt="")
+      .promo__zone
+        .promo__block.full-parent
+          .promo__slider.swiper-container#promoSliderItem
+            ul.swiper-wrapper
+              each data in promoSliderItem
+                li.swiper-slide
+                  a(href= data.link, title=data.alt)
+                    img(src= data.imgSrc, alt=data.alt)

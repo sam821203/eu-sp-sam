@@ -1,0 +1,146 @@
+-
+  var promoDataE = [
+    {
+      link: "https://www.etmall.com.tw/Activity/dl/VotePopularityRanking/CarriagePhoto",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-1.png",
+      alt: "東森與你同載捷運車廂 人氣票選"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/10563/m/index.html",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-2.png",
+      alt: "新會員首購送好禮2088"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/11933/m/index.html",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-3.png?332",
+      alt: "【指定銀行最高享】25%刷卡金"
+    },
+    {
+      link: "http://bit.ly/2Lbl1bd",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-4.png?234",
+      alt: "東森幣抽晶華酒店"
+    },
+    {
+      link: "https://m.etmall.com.tw/Activity/Lottery/202112_be63d74405caeae167d3d75b7efba78e",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-5.png",
+      alt: "集字抽Dyson 中獎率100%"
+    },
+    {
+      link: "https://m.etmall.com.tw/Activity/Lottery/202112_be63d74405caeae167d3d75b7efba78e",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-6.png",
+      alt: "集字抽Dyson 中獎率100%"
+    },
+    //- slider start
+      {
+      link: "https://media.etmall.com.tw/sp/11411/m/index.html",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-7-1.png",
+      alt: "全民拚經濟"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/10713/m/index.html",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-7-2.png",
+      alt: "彰化好物購"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/11528/m/index.html",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-7-3.png",
+      alt: "臺中購物節"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/10141/m/index.html",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-7-4.png",
+      alt: "桃園樂購節"
+    },
+    {
+      link: "https://www.etmall.com.tw/bs/154029",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-7-5.png",
+      alt: "嘉義優鮮"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/11906/m/index.html",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-7-6.png",
+      alt: "指定銀行24、30期 0利率"
+    },
+    //- slider end
+    {
+      link: "https://media.etmall.com.tw/sp/12133/m/index.html",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-8.png",
+      alt: "零卡分期無負擔 最高享8%"
+    },
+  ]
+
+-
+  var promoDataU = [
+    {
+      link: "https://media.u-mall.com.tw/sp/9704/m/index.html",
+      imgSrc: "event/2nd/u-main/components/promo-event/items/promo-1.png",
+      alt: "23家銀行 最高回饋15%"
+    },
+    {
+      link: "https://media.u-mall.com.tw/sp/9704/m/index.html",
+      imgSrc: "event/2nd/u-main/components/promo-event/items/promo-2.png",
+      alt: "花旗滿$20,000送$2,000"
+    },
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale",
+      //- imgSrc: "event/2nd/u-main/components/promo-event/items/promo-3.png",
+      alt: "限時瘋搶"
+    },
+  ]
+
+- var promoData = isU ? promoDataU : promoDataE
+
+//- TODO: 如果promo不和hero綁一起時要有自己的section和layout--main
+section.promo__group.promo__group--promo-event.m-bottom--lg
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          ul.event__block
+            each data, index in promoData
+              if index == 0 
+                li.promo__item
+                  a(href= data.link, title= data.alt)
+                    img(src= data.imgSrc, alt= data.alt)
+          ul.event__wrap
+            .event__item
+              each data, index in promoData
+                if index > 0 && index <= 2
+                  li.promo__item
+                    a(href= data.link, title= data.alt)
+                      img(src= data.imgSrc, alt= data.alt)
+            .event__item 
+              each data, index in promoData
+                if index == 3
+                  li.promo__item
+                    a(href= data.link, title= data.alt)
+                      img(src= data.imgSrc, alt= data.alt)
+          ul.event__box
+            each data, index in promoData
+              if index > 3 && index <= 5
+                li.promo__item
+                  a(href= data.link, title= data.alt)
+                    img(src= data.imgSrc, alt= data.alt)
+          ul.event__slide
+            .slide__item.swiper-container#promoEvent
+              ul.swiper-wrapper
+                each data, index in promoData
+                  if index > 5 && index <= 11
+                    li.swiper-slide
+                      a(href= data.link, title=data.alt)
+                        img(src= data.imgSrc, data.alt)
+            .slide__item
+              each data, index in promoData
+                if index == 12
+                  li.promo__item
+                    a(href= data.link, title= data.alt)
+                      img(src= data.imgSrc, alt= data.alt)
+
+//- .promo__block
+//-   #promoSlider.swiper-container
+//-     ul.swiper-wrapper
+//-       each data, index in promoData
+//-         if index >= 6
+//-           li.swiper-slide
+//-             a(href= data.link, title=data.alt)
+//-               img(src= data.imgSrc, data.alt)

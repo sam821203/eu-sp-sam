@@ -1,0 +1,67 @@
+<!--TODO 如果要多新增一區href跟id要改名字 -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116385/style.css">
+    <style>
+        /* tab下方文字背景顏色 & 文字顏色 */
+        .blog__item__theme-tabImage {
+            background-color: #fbc842;
+            color: #333;
+        }
+        /* tab的『預設』顏色 */
+        .blog__item__theme-tabImage .tab-group .tab {
+            background-color: #fff;
+        }
+        .blog__item__theme-tabImage .tab-group li a {
+            color: #a0b3b0;
+        }
+        /* tab的『點擊』顏色 */
+        .blog__item__theme-tabImage .tab-group .tab.active,
+        .blog__item__theme-tabImage .tab-group li a:hover {
+            background-color: #818181;
+        }
+        .blog__item__theme-tabImage .tab-group .tab.active a,
+        .blog__item__theme-tabImage .tab-group li a:hover  {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<!--兩圖切換-->
+<div class="blog__item__theme-tabImage js-blogWrap">
+    <div class="wrap__width--max">
+        <!--切換圖片-->
+        <div class="js-tab-content tab-content">
+            <div id="tabImage1" class="tab__image">
+                <img src="theme-imageRight-goods.jpg" alt="">
+            </div>
+            <div id="tabImage2" class="tab__image">
+                <img src="theme-imageLeft-goods.jpg" alt="">
+            </div>
+        </div>
+        <!--切換文字-->
+        <ul class="tab-group">
+            <li class="js-tab tab active">
+                <a href="#tabImage1">GT 2e穿搭</a>
+            </li>
+            <li class="js-tab tab">
+                <a href="#tabImage2">Band 4 Pro 穿搭</a>
+            </li>
+        </ul>
+        <!--下面的固定文字-->
+        <div class="article">
+            <p class="content">GT2e與Band 4 Pro兩款皆支援GPS及5ATM防水防塵(在水下50米內具有防水能力)，Band 4
+                Pro採用0.95吋AMOLED彩色螢幕，視覺上色彩清晰飽和;GT2e為1.39吋AMOLED大錶面同時搭配不鏽鋼錶身。</p>
+        </div>
+    </div>
+</div>
+</body>
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116205/swiper.min.js"></script>
+<script src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116385/index.js"></script>
+</html>

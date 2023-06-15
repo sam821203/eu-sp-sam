@@ -1,0 +1,131 @@
+.buy__wrap
+  .buy__box
+    padding-left: 8%
+    padding-right: 8%
+    font-size: 12px 
+    +bg-set(url(~event/1st/e-main/components/collect-buy/bg-buy.png), 100%, null, null,repeat)
+    > ul
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+      width: 100%
+      li
+        flex: 0 0 100%
+        margin-bottom: 4%
+        overflow: hidden
+        a
+          transition: all 0.3s
+          &:hover,
+          &:active
+            transform: scale(1.1)
+
+    .item__cta
+      .cta--active
+        display: none
+    .item__cta.active,
+    .active .item__cta
+      .cta--active
+        display: block
+      .cta--closed
+        display: none
+
+  .item__wrap
+    display: flex
+    flex-wrap: wrap
+    padding: 4.2% 8% 1%
+    +bg-set(url(~event/1st/e-main/components/collect-buy/bg-buy-item.png), contain)
+
+  .info__box
+    flex: 0 0 46%
+  .cta__box
+    flex: 0 0 54%
+  .rule__box
+    flex: 0 0 100%
+
+  .item__name
+    padding-left: 6%
+    .name__promo
+      color: $main-e-background-color-1st-4
+      font-weight: bold
+
+    .name__box
+      height: 7.5vw
+      line-height: 125%
+      color: $gray-deep-light
+      font-weight: bold
+      word-break: break-all
+      overflow: hidden
+
+  .item__value
+    margin-top: 4%
+    padding: 0 4%
+    line-height: 100%
+    text-align: center
+
+  .item__cta
+    padding: 0 10%
+
+  .rule__box
+    padding-top: 1.5%
+    height: 7.5vw
+    line-height: 109%
+    color: $main-e-background-color-1st-5
+    font-weight: bold
+    overflow: hidden
+
+  +breakpoint-max($max-width-xxs)
+    .item__wrap
+      padding: 1% 3%
+    .item__name
+      .name__box
+        line-height: 100%
+    .rule__box
+      padding-top: 0
+      height: 7.5vw
+
+  +breakpoint-min($min-width-lg)
+    .buy__box
+      > ul li
+        margin-bottom: 2%
+    .item__name
+      .name__promo
+        font-size: 3.2vw
+      .name__box
+        font-size: 3vw
+    .item__wrap
+      padding-bottom: 3%
+    .item__value
+      margin: 7% 0 4%
+      font-size: 2.2vw
+    .rule__box
+      padding-top: 7%
+      line-height: 120%
+      height: 8.5vw
+      font-size: 2.5vw
+
+  +breakpoint-min($min-width-xl)
+    .item__name
+      .name__promo
+        font-size: 32px
+
+      .name__box
+        height: 76px
+        line-height: 130%
+        font-size: 28px
+
+    .item__value
+      margin-top: 4%
+      padding: 0 4%
+      line-height: 100%
+      font-size: 18px
+
+    .rule__box
+      padding-top: 22px
+      height: 80px
+      line-height: 140%
+      font-size: 20px
+      span
+        display: block
+        margin-left: auto
+        margin-right: auto
+        width: 62%

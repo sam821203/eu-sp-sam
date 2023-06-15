@@ -1,0 +1,22 @@
+- var purchaseLink = {etmall: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201910/SP_1107838/w/index.html", umall: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201910/SP_1104317/w/index.html"}
+- var purchaseInfo = isU ? purchaseLink.umall : purchaseLink.etmall
+
+- var purchaseDataE = [{link: bankInfo, imgSrc: "~event/1st/e-sp/components/purchase-section/img/purchase-1.png", alt: "點我看銀行回饋"}, {link: bankInfo, imgSrc: "~event/1st/e-sp/components/purchase-section/img/purchase-2.png", alt: "點我看銀行回饋"}, {link: bankInfo, imgSrc: "~event/1st/e-sp/components/purchase-section/img/purchase-3.png", alt: "點我看銀行回饋"}, ]
+
+- var purchaseDataU = [{link: bankInfo, imgSrc: "~event/1st/e-sp/components/purchase-section/img/3rd/u/bank-01.png", alt: "點我看銀行回饋"}, {link: bankInfo, imgSrc: "~event/1st/e-sp/components/purchase-section/img/3rd/u/bank-02.png", alt: "點我看銀行回饋"}, {link: bankInfo, imgSrc: "~event/1st/e-sp/components/purchase-section/img/3rd/u/bank-03.png", alt: "點我看銀行回饋"}, {link: bankInfo, imgSrc: "~event/1st/e-sp/components/purchase-section/img/3rd/u/bank-04.png", alt: "點我看銀行回饋"} ]
+
+- var purchaseData = isU? purchaseDataU : purchaseDataE
+
+
+section.purchase__group.m-bottom--xs
+  .layout--main
+    //- .purchase__zone.lazyload(data-src="960bg-05.jpg")
+    .purchase__zone
+      .purchase__title.block--center(data-title="a1")
+        //- img.lazyload(data-src="section-bn-04.png", src="~utils/img/1x1_low.png", alt="銀行回饋")
+      .purchase__wrap
+        ul
+          each data in purchaseData
+            li.purchase__li
+              a(href= data.link, title= data.alt)
+                img(src= data.imgSrc, alt= data.alt)

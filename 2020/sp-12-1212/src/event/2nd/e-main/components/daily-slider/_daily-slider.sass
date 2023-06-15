@@ -1,0 +1,71 @@
+.promo__group--daily-slider
+  .promo__wrap
+    padding-left: 0
+    padding-bottom: 5.5%
+    .promo__zone
+      display: flex
+    //+bg-set(url(~event/2nd/e-main/components/daily-slider/bg-daily-slider.png), 100%)
+    +bg-set(url(https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1116824/bg-daily-slider.png), 100%)
+  .daily__item
+    padding: 16% 5% 1% 11.5%
+    width: 48%
+    .item__box
+      display: none
+      &.active
+        display: block
+  .slider__wrap
+    +pos-set(relative, zero)
+    padding: 14% 11% 0 2%
+    width: 52%
+    .swiper-slide
+      // margin-top: 73%
+      // transform: translateY(-50%)
+      span
+        color: #fff
+      &:last-child
+        display: none
+
+    .daily__nav
+      &--slider
+        &::after
+          color: $main-custom-slider-nav-color
+
+    .daily__nav
+      &--slider
+        top: 59%
+        outline: 0
+        &::after
+          font-size: 5vw
+        +breakpoint-min($min-width-xl)
+          &::after
+            font-size: 35px
+          
+      &--prev
+        left: -4%
+      &--next
+        right: 12%
+      //+breakpoint-min($min-width-lg)
+      //  &--prev
+      //    left: 2%
+      //  &--next
+      //    right: 10%
+      +breakpoint-min($min-width-xl)
+        &--prev
+          left: -4px
+        &--next
+          right: 99px
+
+  +breakpoint-min($min-width-xl)
+    .daily__item
+      width: 46%
+      padding: 15% 4% 1% 9%
+    .slider__wrap
+      padding: 14% 12% 0 1.5%
+      width: 54%
+.daily-slider--bg
+  +breakpoint-min($min-width-xl)
+    //+bg-set(url(~event/2nd/e-main/components/daily-slider/bg-daily-slider-web.png), 1350px 636px)
+    +bg-set(url(https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1116824/bg-daily-slider-web.png), 1350px 636px)
+    height: 636px
+    .promo__wrap
+      background-image: none

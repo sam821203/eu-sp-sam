@@ -1,0 +1,48 @@
+section.js--tab.promo__group--week
+  .layout--main
+    .section__title
+      .title__box 卡友日
+    #weekContent.week__content.content__wrap
+      ul.content__zone
+        li.content__box(data-week="0 1 2")
+          .week__box
+            .week__icon 週日
+            .week__icon 週一
+            .week__icon 週二
+          .bank__wrap(data-bank="one")
+            .bank__logo
+              img(src="https://media.etmall.com.tw/sp/7695/m/one.png", alt="第一銀行")
+            .bank__promo
+              ul.promo__wrap
+                li
+                  .promo__rule 累積分期
+                  .promo__rule 滿$10,000送
+                li
+                  .promo__bonus $1,500
+                  .promo__unit 刷卡金
+            .bank__cta
+              a.btn--cta(href="", target="_blank", style="display: none") 登錄
+              .btn--pop.js--pop 詳情
+
+        - var index = 0
+        - var weekLanguage = ['週日', '週一', '週二', '週三', '週四', '週五', '週六'];
+        while (index < 7)
+          li.content__box(data-week= index)
+            .week__box
+              .week__icon= weekLanguage[index]
+            .bank__wrap(data-bank="rakuten")
+              .bank__logo
+                img(src="https://media.etmall.com.tw/sp/7695/m/rakuten.png", alt="樂天銀行")
+              .bank__promo
+                ul.promo__wrap
+                  li
+                    .promo__rule 累積分期
+                    .promo__rule 滿$888,888送
+                  li
+                    .promo__bonus $88,888
+                    .promo__unit 刷卡金
+              .bank__cta
+                a.btn--cta(href="", target="_blank", style="display: none") 登錄
+                .btn--pop.js--pop 詳情
+          - index++
+

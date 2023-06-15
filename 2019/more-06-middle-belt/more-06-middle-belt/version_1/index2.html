@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>中腰帶展示</title>
+    <link rel="stylesheet" href="reset.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" rel="stylesheet">
+    <style>
+        .mid__belt {
+            /*width: 90%;*/
+            /*margin: 0 auto;*/
+            /*display: flex;*/
+            /*justify-content: center;*/
+            /*flex-wrap: wrap;*/
+            /*margin: 0 auto;*/
+            /*text-align: center;*/
+        }
+
+        .mid__belt img {
+            width: 100%;
+            margin: 0 auto;
+            /*text-align: center;*/
+        }
+
+        .box__shadow img {
+            /*box-shadow: 5px 5px 5px 0px rgba(166, 166, 166, 1);*/
+        }
+
+        @keyframes flipInX {
+            0% {
+                -webkit-transform: perspective(400px) rotateX(90deg);
+                transform: perspective(400px) rotateX(90deg);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+                opacity: 0
+            }
+            40% {
+                -webkit-transform: perspective(400px) rotateX(-20deg);
+                transform: perspective(400px) rotateX(-20deg);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in
+            }
+            60% {
+                -webkit-transform: perspective(400px) rotateX(10deg);
+                transform: perspective(400px) rotateX(10deg);
+                opacity: 1
+            }
+            80% {
+                -webkit-transform: perspective(400px) rotateX(-5deg);
+                transform: perspective(400px) rotateX(-5deg)
+            }
+            to {
+                -webkit-transform: perspective(400px);
+                transform: perspective(400px)
+            }
+        }
+
+        .flipInX {
+            -webkit-backface-visibility: visible !important;
+            backface-visibility: visible !important;
+            -webkit-animation-name: flipInX;
+            animation-name: flipInX
+        }
+
+        @keyframes flipInX_2 {
+            0% {
+                -webkit-transform: perspective(400px) rotateX(-90deg);
+                transform: perspective(400px) rotateX(-90deg);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+                opacity: 0
+            }
+            40% {
+                -webkit-transform: perspective(400px) rotateX(20deg);
+                transform: perspective(400px) rotateX(20deg);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in
+            }
+            60% {
+                -webkit-transform: perspective(400px) rotateX(-10deg);
+                transform: perspective(400px) rotateX(-10deg);
+                opacity: 1
+            }
+            80% {
+                -webkit-transform: perspective(400px) rotateX(5deg);
+                transform: perspective(400px) rotateX(5deg)
+            }
+            to {
+                -webkit-transform: perspective(400px);
+                transform: perspective(400px)
+            }
+        }
+
+        .flipInX_2 {
+            -webkit-backface-visibility: visible !important;
+            backface-visibility: visible !important;
+            -webkit-animation-name: flipInX_2;
+            animation-name: flipInX_2
+        }
+    </style>
+</head>
+<body>
+<div class="mid__belt">
+    <div class="box__shadow wow flipInX" data-wow-duration="1s" data-wow-delay=".5s">
+        <img src="01.png" alt="">
+    </div>
+    <div class="box__shadow wow flipInX_2" data-wow-duration="1s" data-wow-delay=".5s">
+        <img src="02.png" alt="">
+    </div>
+    <div class="box__shadow wow flipInX" data-wow-duration="1s" data-wow-delay=".5s">
+        <img src="03.png" alt="">
+    </div>
+    <div class="box__shadow wow flipInX_2" data-wow-duration="1s" data-wow-delay=".5s">
+        <img src="04.png" alt="">
+    </div>
+    <div class="box__shadow wow flipInX" data-wow-duration="1s" data-wow-delay=".5s">
+        <img src="05.png" alt="">
+    </div>
+    <div class="box__shadow wow flipInX_2" data-wow-duration="1s" data-wow-delay=".5s">
+        <img src="06.png" alt="">
+    </div>
+    <div class="box__shadow wow flipInX" data-wow-duration="1s" data-wow-delay=".5s">
+        <img src="07.png" alt="">
+    </div>
+    <div class="box__shadow wow flipInX_2" data-wow-duration="1s" data-wow-delay=".5s">
+        <img src="08.png" alt="">
+    </div>
+</div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+<script>
+    new WOW().init();
+</script>
+</html>

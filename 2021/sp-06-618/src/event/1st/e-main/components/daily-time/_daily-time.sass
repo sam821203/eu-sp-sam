@@ -1,0 +1,105 @@
+.promo__group--daily-time
+  +pos-set(relative, zero)
+  width: 100%
+  .promo__title
+    +pos-set(relative)
+    padding-bottom: 12.7%
+    overflow-y: visible
+    +breakpoint-min($min-width-xl)
+      padding-bottom: 110px
+  .title__pic
+    +pos-set(absolute, zero, 0)
+    left: 25%
+    width: 50%
+    text-align: center
+  .decoration__box
+    +pos-set(absolute, base, -70%, 0)
+    padding-top: 5%
+    padding-bottom: 5%
+    width: 100%
+    overflow-x: hidden
+    pointer-events: none
+    +breakpoint-min($min-width-lg)
+      top: -140%
+      padding-top: 120px
+    +breakpoint-min($min-width-xxl)
+      overflow: visible
+  .title__decoration
+    margin-left: 10%
+    width: 84%
+    text-align: center
+    pointer-events: none
+    perspective: 600px
+    animation: zoom-in 7s infinite alternate
+    img
+      transform-style: preserve-3d
+      animation: rotate-y 12s infinite alternate
+
+  .promo__wrap
+    +pos-set(relative, zero)
+    padding: 10% 7% 9%
+    +bg-set(url(event/1st/e-main/components/daily-time/bg-daily-time.png), 100%)
+  .product__wrap
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    > div
+      width: 32%
+      margin-bottom: 1.5%
+      &:nth-child(1)
+        .product__time
+          +bg-set(url(event/1st/e-main/components/daily-time/daily-time-hour-1.png), 100%)
+      &:nth-child(2)
+        .product__time
+          +bg-set(url(event/1st/e-main/components/daily-time/daily-time-hour-2.png), 100%)
+      &:nth-child(3)
+        .product__time
+          +bg-set(url(event/1st/e-main/components/daily-time/daily-time-hour-3.png), 100%)
+
+  .product__block
+    padding: 5% 6%
+  .product--dynamic
+    width: 100%
+  .product__time
+    margin-left: auto
+    margin-right: auto
+    padding-bottom: 30%
+    width: 90%
+    filter: brightness(50%)
+    + .product
+      filter: brightness(50%)
+    &.active
+      filter: grayscale(0)
+      + .product
+        filter: grayscale(0)
+  .product__price
+    span
+      &:last-child
+        font-size: 4vw
+  +breakpoint-max($max-width-xxs)
+    .product__name
+      margin: 0
+  +breakpoint-min($min-width-lg)
+    .product__price
+      span
+        &:last-child
+          font-size: 32px
+  +breakpoint-min($min-width-xl)
+    .product__name
+      margin: 24px 0
+
+@keyframes zoom-in
+  0%
+    transform: scale(1.19)
+  100%
+    opacity: 1
+    transform: scale(1)
+
+@keyframes rotate-y
+  0%, 33%
+    transform: rotateY(0)
+  66%
+    transform: rotateY(-30deg)
+  100%
+    transform: rotateY(40deg)
+

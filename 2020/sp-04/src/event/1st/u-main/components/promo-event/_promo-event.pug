@@ -1,0 +1,79 @@
+- 
+  var promoDataE = [
+    {
+      link: "https://www.etmall.com.tw/i/2485653", 
+      imgSrc: "~event/1st/e-main/components/promo-event/items/promo-1.png",
+      alt: "現折$100"
+    }, 
+    {
+      link: "#note",
+      imgSrc: "~event/1st/e-main/components/promo-event/items/promo-2.png",
+      alt: "整點搶限量券"
+    }, 
+    {
+      link: "#note", 
+      imgSrc: "~event/1st/e-main/components/promo-event/items/promo-3.png",
+      alt: "滿額送$388"
+    }, 
+    {
+      link: "https://www.etmall.com.tw/Activity/GroupSale", 
+      imgSrc: "~event/1st/e-main/components/promo-event/items/promo-4.png",
+      alt: "集氣搶3元品"
+    }, 
+    {
+      link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html", 
+      imgSrc: "~event/1st/e-main/components/promo-event/items/promo-5.png",
+      alt: "首購登記抽日本獅王洗衣精"
+    }, 
+    {
+      link: "https://www.etmall.com.tw/Activity/HourSale", 
+      imgSrc: "~event/1st/e-main/components/promo-event/items/promo-6.png",
+      alt: "整點最便宜"
+    },  
+  ]
+
+- 
+  var promoDataU = [
+    {
+      link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202003/SP_1106082/w/index.html", 
+      imgSrc: "~event/1st/u-main/components/promo-event/items/promo-1.png",
+      alt: "20間銀行最高回饋10%"
+    }, 
+    {
+      link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1103167/w/index.html", 
+      imgSrc: "~event/1st/u-main/components/promo-event/items/promo-2.png",
+      alt: "瘋搶撇步"
+    }, 
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale?Day=Up", 
+      imgSrc: "~event/1st/u-main/components/promo-event/items/promo-3.png",
+      alt: "天天最激殺"
+    }, 
+  ]
+ 
+- var promoData = isU ? promoDataU : promoDataE
+
+.promo__event(data-title="撒券94爽")
+  ul.event__wrap
+    //- 固定位置模式
+    each data, index in promoData
+      - var anchorId = 'promoAnchor' + (index + 1)
+      - var imgId = 'promoImg' + (index + 1)
+      li
+        a(id= anchorId, href= data.link, title= data.alt)
+          img(id= imgId, src= data.imgSrc, alt= data.alt)
+
+    //- 位置不一模式
+    //- li
+    //-   a(href= promoData[0].link, title= promoData[0].alt)
+    //- li
+    //-   .link__box
+    //-     a(href= promoData[1].link, title= promoData[1].alt)
+    //-     a(href= promoData[2].link, title= promoData[2].alt)
+    //- li
+    //-   .link__box
+    //-     a(href= promoData[3].link, title= promoData[03].alt)
+    //-     a(href= promoData[4].link, title= promoData[4].alt)
+    //- li
+    //-   a(href= promoData[5].link, title= promoData[5].alt)
+    

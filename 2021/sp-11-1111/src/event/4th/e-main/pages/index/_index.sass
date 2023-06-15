@@ -1,0 +1,69 @@
+// ==========================================================================
+// Plugins
+// ==========================================================================
+// // @import vendors/animate
+// @import vendors/style/swiper-slider-custom
+@import vendors/style/swiper-safari-polyfill
+
+
+// ==========================================================================
+// first screen need
+// ==========================================================================
+// hero section
+@import event/4th/e-main/components/hero-section/_hero-section
+@import utils/bg-decoration-instance/parallax/_parallax
+
+
+// ==========================================================================
+// components
+// ==========================================================================
+// dynamic product 假宮格共用CSS
+@import layout/dynamic-product/_dynamic-product.sass
+
+// 一般components
+@import event/4th/e-main/components/promo-event/_promo-event
+@import event/4th/e-main/components/dynamic-slider/_dynamic-slider
+@import event/4th/e-main/components/event-w1m1/_event-w1m1
+@import event/4th/e-main/components/dynamic-section/_dynamic-section
+@import event/4th/e-main/components/cash-back-slider/_cash-back-slider
+@import event/4th/e-main/components/mid-more-slider/_mid-more-slider
+@import event/4th/e-main/components/event-w3m3/_event-w3m3
+@import event/4th/e-main/components/bn-special/_bn-special
+
+// ==========================================================================
+// Page
+// ==========================================================================
+body
+  +pos-set(relative)
+  background-color: $main-e-background-color-4th
+
+// TODO: 修改EU nav佔位高度(影響logo距離上方高度，U每次要改)
+.navRightBar
+  // E
+  height: 39px
+  // U
+  // height: 15px
+  +breakpoint-min($min-width-xl)
+    height: auto
+
+.sp__wrap
+  +pos-set(relative)
+  // height: 1000vw
+  &::before
+    content: ''
+    +pos-set(fixed, under, 39px, 0)
+    width: 100%
+    height: 100vh
+    background: center 0 url(event/4th/e-main/pages/index/bg.jpg) no-repeat
+    background-size: 100%
+    transition: all 0.5s
+
+    +breakpoint-min($min-width-xl)
+      top: 0
+      background: center 0 url(event/4th/e-main/pages/index/bg-web.jpg) no-repeat
+      background-size: auto
+
+section
+  // 有parallax scroll時圖層有relative就有預設z-index可能會遮到宮格，因此使用這個讓宮格也能有預設z-index
+  +pos-set(relative)
+

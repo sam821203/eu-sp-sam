@@ -1,0 +1,326 @@
+== initial style ==*/
+
+body{
+  font-family: Arial, Helvetica, 'LiHei', "Microsoft JhengHei", "PMingLiU", "微軟正黑體", "新細明體", sans-serif;  
+  margin: 0;
+  padding: 0;
+}
+img {
+  display: block;
+  border: 0
+}
+
+.l--left{
+    float: left;
+}
+.l--right{
+    float: right;
+}
+
+.sp--1260 {
+    margin: 0px auto;
+    position: relative;
+    width: 1260px;
+}
+.logo__sp {
+    background: url(u-logo.png) 0 0 no-repeat;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 500;
+    width: 150px;
+    height: 55px;
+}
+
+/* 螢幕小於寬1440px時電梯靠右貼齊*/
+@media screen and (max-width: 1440px) {
+    .sp__wrap .sp-fixed__nav {
+        top: -30px;
+        right: 0;
+        margin-right: 0; 
+    }
+}
+/*== initial style ==*/
+/* */
+.sp--1260 .sp-fixed__nav2 {
+    display: none;
+}
+
+/*== nav style ==*/
+
+.sp-is--hide{opacity: 0;}
+
+.sp-fixed__nav * {
+         box-sizing: border-box;
+    }
+
+/*側選單位置設定:right左右位置+寬度*/
+.sp-fixed__nav{
+    position: fixed;
+    z-index: 600;
+    width: 120px;
+    right: 50%;
+    margin-right: -720px;
+    top: 5%;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.sp-fixed__nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/*側選單子選項設定:文字大小*/
+.sp-fixed__nav li{
+    text-align: center;
+    font-size: 16px;
+}
+
+/*側選單子選項設定:底圖+底色+上下距*/
+.sp-fixed__nav a{
+    background: url(nav_bg.png) 0 0 repeat-y;
+    display: block;
+    color: #FFFFFF;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: relative;
+    z-index: 1;
+    text-decoration: none
+}
+.sp-fixed__nav a:hover{
+    color: #fff;
+}
+
+/*側選單子選項設定:滑過去的底色*/
+.sp-fixed__nav a:hover:after{
+    content: "";
+    background-color: #820000;
+    position: absolute;
+    z-index: -1;
+    width: 101px;
+    height: 31px;
+    top: 0;
+    right: 9px;
+   
+}
+
+/*側選單活動1設定*/
+.sp-fixed__nav li.sp-nav__1 a{
+    background: url(nav_bgbk.png) 0 0 repeat-y;
+    color: #ff8f2b;
+}
+
+/*側選單活動2設定*/
+.sp-fixed__nav li.sp-nav__2 a{
+    background: url(nav_bgbk.png) 0 0 repeat-y;
+    color: #ff8f2b;
+}
+
+/*側選單活動3設定*/
+.sp-fixed__nav li.sp-nav__3 a{
+    background: url(nav_bgbk.png) 0 0 repeat-y;
+    color: #ff8f2b;
+}
+.sp-fixed__nav li.sp-nav__2 a:hover:after{
+ 
+    height: 50px;
+}
+
+/*側選單表頭設定:底圖+高*/
+.sp-nav__home a{
+    background: url(nav_home.png) 0 0 no-repeat;
+    height: 176px;
+    white-space: nowrap;
+    text-indent: 1000%;
+    overflow: hidden;
+    /*margin-bottom: -10px;*/
+}
+.sp-nav__home a:hover:after, .sp-nav__top a:hover:after{
+    background: none;
+}
+
+/*側選單表底設定:底圖+高*/
+.sp-nav__top a{
+    background: url(nav_top.png) 0 0 no-repeat;
+    height: 78px;
+    white-space: nowrap;
+    text-indent: 1000%;
+    overflow: hidden;
+}
+.sp-fixed__nav li.sp-nav__15 a{
+    background: url(nav_app.png) 0 0 no-repeat;
+    height: 58px;
+}
+.sp-fixed__nav li.sp-nav__16 a{
+    background: url(nav_line.png) 0 0 no-repeat;
+    height: 58px;
+}
+.sp-fixed__nav li.sp-nav__15 a:hover:after,.sp-fixed__nav li.sp-nav__16 a:hover:after{
+    height: 0px;
+}
+
+
+/* =============  螢幕小於1366時的橫向選單 ================*/
+/*側選單位置設定:top左右位置+寬度*/
+@media screen and (max-width: 1366px) {
+    .sp__wrap .sp-fixed__nav{
+        width: 1260px;
+        top: 0;
+        right: 0;
+        left: 0;
+        margin: auto; 
+    }
+
+    .sp-fixed__nav ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .sp-fixed__nav ul:after{
+        content: '';
+        clear: both;
+        display: block;
+        zoom: 1;
+    }
+    /*側選單子選項設定:文字大小*/
+    .sp-fixed__nav li{
+        float: left;
+        text-align: center;
+        font-size: 14px;
+    }
+    /*側選單子選項設定:底圖+底色+上下距*/
+    .sp-fixed__nav a{
+        background: url(nav_bg2.png) 0 0 repeat-x;
+        display: block;
+        height: 60px;
+        color: #FFFFFF;
+        position: relative;
+        z-index: 1;
+        text-decoration: none;
+        line-height: 35px;
+        padding: 5px 3px;
+    }
+    .sp-fixed__nav a:hover{
+        color: #fff;
+    }
+    /*側選單子選項設定:滑過去的底色*/
+    .sp-fixed__nav a:hover:after{
+        content: "";
+        background-color: #820000;
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 80px;
+        top: -50px;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto; 
+       
+    }
+    /*側選單活動1設定*/
+    .sp-fixed__nav li.sp-nav__1 {
+        position: relative;
+        background: url(nav_bgbk2.png) 0 0 repeat-x;
+        width: 106px;
+        height: 60px;
+        color: #ff8f2b;
+    }
+    .sp-fixed__nav li.sp-nav__1 a{
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        top: 5px;
+        left: 26px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        line-height: 20px;
+        background: none;
+    }
+    .sp-fixed__nav li.sp-nav__1 a:hover:after{
+        height: 80px;
+    }
+    /*側選單活動2設定*/
+    .sp-fixed__nav li.sp-nav__2 {
+        position: relative;
+        background: url(nav_bgbk2.png) 0 0 repeat-x;
+        width: 106px;
+        height: 60px;
+        color: #ff8f2b;
+    }
+    .sp-fixed__nav li.sp-nav__2 a{
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        top: 15px;
+        left: 26px;
+        padding-top: 5px;
+        padding-bottom: 5px; 
+        line-height: 20px;
+        background: none;    
+    }
+    .sp-fixed__nav li.sp-nav__2 a:hover:after{
+        height: 100px;
+    }
+    /*側選單活動3設定*/
+    .sp-fixed__nav li.sp-nav__3 {
+        position: relative;
+        background: url(nav_bgbk2-3.png) 0 0 repeat-x;
+        width: 126px;
+        height: 60px;
+        color: #ff8f2b;
+    }
+    .sp-fixed__nav li.sp-nav__3 a{
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        top: 15px;
+        left: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;  
+        line-height: 20px;
+        background: none;    
+    }
+    .sp-fixed__nav li.sp-nav__3 a:hover:after{
+        width: 90px;
+        height: 80px;
+    }
+    /*側選單表頭設定:底圖+高*/
+    .sp-nav__home a{
+        background: url(nav_home2.png) 0 0 no-repeat;
+        width: 248px;
+        height: 60px;
+        white-space: nowrap;
+        text-indent: 1000%;
+        overflow: hidden;
+        /*margin-bottom: -10px;*/
+    }
+    .sp-nav__home a:hover:after, .sp-nav__top a:hover:after{
+        background: none;
+    }
+    /*側選單表底設定:底圖+高*/
+    .sp-nav__top a{
+        background: none;
+        height: 78px;
+        white-space: nowrap;
+        text-indent: 1000%;
+        overflow: hidden;
+    }
+    .sp-fixed__nav li.sp-nav__15 a{
+        background: none;
+        height: 58px;
+    }
+    .sp-fixed__nav li.sp-nav__16 a{
+        background: none;
+        height: 58px;
+    }
+    .sp-fixed__nav li.sp-nav__15 a:hover:after,.sp-fixed__nav li.sp-nav__16 a:hover:after{
+        height: 0px;
+    }
+}
+/*== nav style ==

@@ -1,0 +1,122 @@
+- 
+  var departDataE = [
+    {
+      itemLink: "https://www.etmall.com.tw/np/102759",
+      imgSrc: "~event/3rd/e-main/components/depart-section/items/depart-1.png",
+      itemAlt: "涼夏上衣$199up",
+      departLink: "https://www.etmall.com.tw/np/100194",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202006/SP_1115710/w/index.html",
+      imgSrc: "~event/3rd/e-main/components/depart-section/items/depart-2.png",
+      itemAlt: "夏美妝人氣3折起",
+      departLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202006/SP_1115710/w/index.html",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/c3/139813",
+      imgSrc: "~event/3rd/e-main/components/depart-section/items/depart-3.png",
+      itemAlt: "小資美食 FUN肆一下",
+      departLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202006/SP_1115747/w/index.html",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/i/2042225",
+      imgSrc: "~event/3rd/e-main/components/depart-section/items/depart-4.png",
+      itemAlt: "迎夏孅準備66折起",
+      departLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202006/SP_1115749/w/index.html",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202006/SP_1115657/w/index.html",
+      imgSrc: "~event/3rd/e-main/components/depart-section/items/depart-5.png",
+      itemAlt: "安晴氣炸鍋$2XXX",
+      departLink: "https://www.etmall.com.tw/c3/139709",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/c3/131107",
+      imgSrc: "~event/3rd/e-main/components/depart-section/items/depart-6.png",
+      itemAlt: "SONY Xperia 1 II",
+      departLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202006/SP_1115685/w/index.html",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/c3/109076",
+      imgSrc: "~event/3rd/e-main/components/depart-section/items/depart-7.png",
+      itemAlt: "Acer筆電抽PS4",
+      departLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202005/SP_1115451/w/index.html",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/i/2648797",
+      imgSrc: "~event/3rd/e-main/components/depart-section/items/depart-8.png",
+      itemAlt: "遠雄悅來 小孩免費",
+      departLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202006/SP_1115707/w/index.html",
+    }, 
+  ]
+
+- 
+  var departDataU = [
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      imgSrc: "~event/3rd/u-main/components/depart-section/items/depart-1.png",
+      itemAlt: "滿額送$300",
+      departLink: "",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      imgSrc: "~event/3rd/u-main/components/depart-section/items/depart-2.png",
+      itemAlt: "滿額送$300",
+      departLink: "",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      imgSrc: "~event/3rd/u-main/components/depart-section/items/depart-3.png",
+      itemAlt: "滿額送$300",
+      departLink: "",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      imgSrc: "~event/3rd/u-main/components/depart-section/items/depart-4.png",
+      itemAlt: "滿額送$300",
+      departLink: "",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      imgSrc: "~event/3rd/u-main/components/depart-section/items/depart-5.png",
+      itemAlt: "滿額送$300",
+      departLink: "",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      imgSrc: "~event/3rd/u-main/components/depart-section/items/depart-6.png",
+      itemAlt: "滿額送$300",
+      departLink: "",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      imgSrc: "~event/3rd/u-main/components/depart-section/items/depart-7.png",
+      itemAlt: "滿額送$300",
+      departLink: "",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      imgSrc: "~event/3rd/u-main/components/depart-section/items/depart-8.png",
+      itemAlt: "滿額送$300",
+      departLink: "",
+    }, 
+  ]
+ 
+- var departData = isU ? departDataU : departDataE
+
+section.promo__group.promo__group--depart
+  .layout--main
+    .depart__wrap
+      each data in departData
+        ul.depart__block
+          li.depart__link
+            a(href= data.departLink, title="我想出島玩")
+          li.depart__item
+            a(href= data.itemLink, title= data.itemAlt)
+              img(src= data.imgSrc, alt= data.itemAlt)
+          .decoration__wrap.decoration--depart
+            .decoration__car
+      .decoration--tunnel
+
+
+

@@ -1,0 +1,44 @@
+.promo__group--dynamic-slider-3
+  overflow: hidden
+  +pos-set(relative, zero)
+  .decor__wrap
+    pointer-events: none
+    .promo__decor
+      width: 23%
+      +breakpoint-min($min-width-xl)
+        width: auto
+      &:first-child
+        +pos-set(absolute, base, 4%, 0%)
+        +breakpoint-min($min-width-xl)
+          top: 5%
+          left: calc( 50% - 460px)
+      &:last-child
+        +pos-set(absolute, base, 8%)
+        right: 0%
+        +breakpoint-min($min-width-xl)
+          top: 4%
+          right: calc( 50% - 530px)
+        // left: calc(50% - 397px)
+  .promo__wrap
+    +aspect-ratio(946, 1307)
+    // margin-top: 23%
+    .promo__zone
+      +bg-set(url("event/1st/e-main/components/dynamic-slider-3/bg-dynamic-slider-3.png"), 100%)
+      .promo__block
+        margin: 31% 3% 0
+        +breakpoint-min($min-width-xl)
+          margin-top: 30%
+        .swiper-container
+          .swiper-wrapper
+            .swiper-slide
+              padding: .5%
+              +breakpoint-min($min-width-xl)
+                .product__name
+                  padding: 4% 3% 0%
+                  height: 70px
+                .product__price
+                  padding: 0 1% 3%
+                  span
+                    &:last-child
+                      font-size: 32px
+

@@ -1,0 +1,14 @@
+- var promoDataE = [{link: "#note", imgSrc: "~event/2nd/e-sp/components/promo-event/items/promo-1.png", alt: "搶折價券1111"}, {link: "#note", imgSrc: "~event/2nd/e-sp/components/promo-event/items/promo-2.png", alt: "滿額抽1212"}, {link: "#note", imgSrc: "~event/2nd/e-sp/components/promo-event/items/promo-3.png", alt: "天天抽漢來海港雙人券"}, {link: "#note", imgSrc: "~event/2nd/e-sp/components/promo-event/items/promo-4.png", alt: "天天搶1折商品"}, ]
+
+- var promoDataU = [{link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201911/SP_1104318/w/index.html", imgSrc: "~event/2nd/u-main/components/promo-event/items/promo-1.png", alt: "20間銀行最高10%回饋"}, {link: "#note", imgSrc: "~event/2nd/u-main/components/promo-event/items/promo-2.png", alt: "天天搶111元折價券"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201911/SP_1104318/w/index.html", imgSrc: "~event/2nd/u-main/components/promo-event/items/promo-3.png", alt: "瘋搶撇步"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201407/SP_1019204/w/index.html", imgSrc: "~event/2nd/u-main/components/promo-event/items/promo-4.png", alt: ""}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201906/SP_1104582/w/index.html", imgSrc: "~event/2nd/u-main/components/promo-event/items/promo-5.png", alt: "優惠聯盟給你好康"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201910/SP_1105578/w/index.html", imgSrc: "~event/2nd/u-main/components/promo-event/items/promo-6.png", alt: "全家取件 抽賓士"},]
+
+- var promoData = isU? promoDataU : promoDataE
+
+.promo__event
+  ul.event__wrap
+    each data, index in promoData
+      - var anchorId = 'promoAnchor' + (index + 1)
+      - var imgId = 'promoImg' + (index + 1)
+      li
+        a(id= anchorId, href= data.link, title= data.alt)
+          img(id= imgId, src= data.imgSrc, alt= data.alt)

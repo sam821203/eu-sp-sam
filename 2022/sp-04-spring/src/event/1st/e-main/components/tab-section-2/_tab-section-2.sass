@@ -1,0 +1,80 @@
+// tab layout
+.promo__group--tab-section-2
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__item
+    &:first-child
+      +pos-set(absolute, under, 2%, 0%)
+      width: 30%
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 480px)
+        width: auto
+    &:last-child
+      +pos-set(absolute, under, 1%)
+      right: 0%
+      width: 30%
+      +breakpoint-min($min-width-xl)
+        right: calc(50% - 480px)
+        width: auto
+  .promo__wrap
+    +aspect-ratio(960, 1391)
+    .promo__zone
+      +bg-set(url("event/1st/e-main/components/tab-section-2/bg-tab-section-2.png"), 100%)
+
+      .tab__wrap
+        .tab__box
+          display: flex
+          justify-content: space-between
+          margin: 33.4% 7% 0
+          .tab__item
+            position: relative
+            width: 29%
+            // margin-left: 6%
+            &--top
+              +pos-set(absolute, 0%, 0%)
+              // position: absolute
+              // top: 0%
+              // left: 0%
+              opacity: 0
+              cursor: pointer
+            .active
+              opacity: 1
+        .content__zone
+          // margin-top: 5%
+          +breakpoint-min($min-width-xl)
+            // margin-top: 6%
+          .content__box
+            display: none
+            &.active
+              display: block
+            .tab__slider--sec
+              width: 90%
+              .swiper-wrapper
+                flex-wrap: wrap
+                margin: 2% auto
+                .swiper-slide
+                  margin-bottom: 1.2%
+                  +breakpoint-min($min-width-xl)
+                    margin-bottom: 2%
+                  .product.product--dynamic
+                    margin-right: auto
+                    margin-left: auto
+                    width: 95%
+                    +breakpoint-min($min-width-xl)
+                      width: 95%
+                    .product__name
+                      margin-bottom: 0px
+                      background-color: #fff
+                      +breakpoint-min($min-width-xl)
+                        font-size: 26px
+                        height: 2.43em
+                    .product__price
+                      background-color: #fff
+                      border-radius: 0 0 2vw 2vw
+                      +breakpoint-min($min-width-xl)
+                        border-radius: 0 0 20px 20px
+                      span
+                        &:last-child
+                          +breakpoint-min($min-width-xl)
+                            font-size: 36px
+

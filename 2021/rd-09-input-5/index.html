@@ -1,0 +1,415 @@
+<meta name="viewport" content="width=device-width">
+<meta charset="utf-8">
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  img {
+    width: 100%;
+    border: 0;
+    display: block;
+  }
+
+  article,
+  main,
+  nav,
+  section {
+    display: block;
+  }
+
+  body {
+    margin: 0;
+    background-color: #900002;
+  }
+  @media screen and (min-width: 960px) {
+    body {
+      background: url(bg-web.jpg) #900002 center 0 no-repeat;
+    }
+  }
+  .layout--main {
+    position: relative;
+    z-index: 0;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .layout--main.icon_Home {
+    z-index: auto;
+  }
+
+  /* 主視覺 */
+  /* ======================================== */
+  .logo a,
+  .sp__visual a {
+    display: block;
+  }
+
+  .logo {
+    position: absolute;
+    z-index: 1;
+    /* 調整logo位置 */
+    top: 1%;
+    left: 1%;
+    width: 30%;
+    max-width: 220px;
+  }
+
+  /* 設定前景 */
+  .sp__visual {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+  }
+
+  .tip {
+    background-color: #040a13;
+  }
+
+  .tip ul {
+    padding: 1%;
+    width: 70%;
+    margin: auto;
+    display: flex;
+  }
+
+  .tip li {
+    color: #a3a8b1;
+    font: bold 1.2em "微軟正黑體";
+  }
+
+  .tip li:first-child {
+    background-color: #a3a8b1;
+    border-radius: 5px;
+    color: #0a1b36;
+    margin-right: 15px;
+    width: 7em;
+    text-align: center;
+    padding: 3px 5px;
+    align-self: center;
+  }
+
+  .end {
+    background-color: #0a1b36;
+    color: #ffffff;
+    padding: 0.8%;
+    font: 500 2em "微軟正黑體";
+    text-align: center;
+  }
+
+  /* 自適應banner組 */
+  /* ======================================== */
+  .banner__title {
+    height: 65px;
+    background: center top no-repeat;
+  }
+
+  .banner__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #660109;
+    padding: 2%;
+  }
+
+  .banner__item {
+    transition: all 0.3s;
+  }
+
+  .banner__item img {
+    width: auto;
+    display: block;
+    margin: auto;
+  }
+
+  /* ...............................................................4變2 */
+  .bn-w4m2 .banner__item {
+    flex: 1 0 100%;
+  }
+
+  /* 設定點下去與hover動畫 */
+  .bn-w4m2 .banner__item:hover,
+  .bn-w4m2 .banner__item:active {
+    /* 變大(>1時變大) */
+    transform: scale(1.05);
+    /* 亮度調亮(>100%時變亮) */
+    filter: brightness(115%);
+  }
+
+  @media screen and (max-width: 720px) {
+
+    /* 設定手機時一列2個 */
+    .bn-w4m2 .banner__wrap {
+      padding: 3%;
+    }
+
+    .bn-w4m2 .banner__item {
+      flex: 1 0 100%;
+    }
+
+    .banner__item img {
+      width: 60%;
+    }
+
+    .tip ul {
+      width: 100%;
+      padding: 3%;
+      flex-wrap: wrap;
+    }
+
+    .tip li:first-child {
+      width: auto;
+      margin-bottom: 5px;
+      margin-right: 0;
+    }
+
+    .end {
+      font-size: 1.5em;
+    }
+  }
+
+  .note {
+    word-break: break-all;
+  }
+
+  .note article {
+    background-color: #e8e1db;
+    font: normal 1.07em/1.5 '微軟正黑體', Arial;
+    color: #3e3e3e;
+    padding: 2% 0;
+  }
+
+  .note hr {
+    background-color: #3c3c3c;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 15px;
+    height: 8px;
+    border: 0;
+  }
+
+  .note h2 {
+    font-size: 1em;
+    line-height: 2;
+    margin: 5px 0 5px 3%;
+  }
+
+  .note p {
+    line-height: 1.5;
+    padding: 0 5%;
+    margin: 0;
+  }
+
+  .note ol,
+  .note ul {
+    padding: 0;
+    margin: auto;
+    margin: 0 5% 0 7%;
+    list-style: decimal;
+  }
+
+  .note ul {
+    list-style: disc;
+  }
+
+  .note table {
+    color: #5b5b5b;
+    border: 1px solid #c0c0c0;
+    border-right: 0;
+    border-bottom: 0;
+    width: 90%;
+    margin: 1% 0 2% 5.5%;
+    background-color: #FFFFFF;
+    font-size: 0.9em;
+  }
+
+  .note table td {
+    border-right: 1px solid #c0c0c0;
+    border-bottom: 1px solid #c0c0c0;
+    padding: 5px;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .note ol,
+    .note ul {
+      margin: 0 5% 0 10%;
+    }
+
+    .note table {
+      margin: 0 3%;
+      width: 94%;
+    }
+  }
+
+  .form__container {
+    padding: 5%;
+    width: 100%;
+    background: #0a1b36;
+    text-align: center;
+  }
+
+	.leftbox li{
+		color: rgba(255,255,255,0.3);
+		margin-bottom: 10px;
+    font-size: 16px;
+	}
+	label{
+		color: #FFFFFF;
+		font-size: 1.2em;
+    font-weight: bold;
+		width: 4em;
+		display: inline-block;
+    vertical-align: middle;
+	}
+	input{
+		color: #333333;
+		font-size: 1.4em;
+    font-weight: bold;
+		border: 0;
+		width: calc(100% - 4em);
+    vertical-align: middle;
+	}
+	input.sellnum{
+		color: #333333;
+	}
+  .allbox {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-around;
+      padding-bottom: 20px;
+  }
+	.leftbox{
+		margin-top: 30px;
+    width: 70%;
+	}
+	.rightbox{
+		margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+    max-width: 185px;
+	}
+	.note{
+		font:bold 15px '微軟正黑體';
+	}
+	.ex{
+		list-style: none;
+		font:bold 13px '微軟正黑體';
+		color: rgba(255,255,255,0.7);;
+		margin: 0;
+		text-align: right;
+	}
+  @media screen and (min-width: 540px) {
+    .leftbox li {
+      font-size: 24px;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .leftbox{
+      margin-top: 60px;
+    }
+    .leftbox li {
+      font-size: 28px;
+    }
+  }
+</style>
+<div id="spWrap" class="sp__wallper">
+  <!-- 主視覺 -->
+  <div class="layout--main icon_Home">
+    <!-- 浮水印start(勿刪)-->
+    <div id="iconHome"></div>
+  </div> <!-- 浮水印end(勿刪)-->
+  <main class="sp__main">
+    <div class="layout--main">
+      <div class="sp__visual">
+        <img src="top181224_01.jpg">
+        <img src="top181224_02.jpg">
+      </div>
+      <div class="form__container">
+        <form method="post" id="fileinfo" name="fileinfo" enctype="multipart/form-data" onsubmit="return false;">
+          <div class="allbox">
+            <div class="leftbox">
+              <ul>
+                <li>
+                  <label for="sellnum">驗證碼</label><input name="sellnum" type="text" class="sellnum" id="sellnum"
+                    size="15" maxlength="9"></li>
+                  <input type="hidden" name="type" id="type" value="1"><input type="hidden" name="web"
+                    id="web" value="etmall"><input type="hidden" name="bank" id="bank" value="dbs"></li>
+                <li class="note">必填欄位</li>
+              </ul>
+            </div>
+            <div class="rightbox"><a href="javascript:submitForm()"><img src="form170921_but.png"></a></div>
+
+
+
+          </div>
+        </form>
+      </div>
+      <div class="tip">
+        <ul>
+          <li>登錄說明</li>
+          <li>1月活動需2019/1/21上午11點後~2019/1/31至東森購物網站登錄，需填寫完整會員及消費資料，每一持卡人／會員上述所有門檻限擇優回饋乙次，恕不重複。</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+  <section class="layout--main bn-w4m2">
+  </section>
+  <section name="note" id="note">
+    <div class="layout--main note">
+      <article>
+        <!-- <hr> -->
+        <a id="coin" name="coin"></a>
+        <h2>注意事項</h2>
+        <ol>
+          <li>
+            本活動限於東森購物全通路（旅遊商品除外）【含電視、型錄、網路（含東森及森森購物網）、手機購物及MOD】刷星展信用卡單筆分期消費達指定門檻即可享東森提貨券回饋。本活動須以東森購物會員身份登錄，每一星展信用卡持卡人／會員上述門檻限擇優回饋乙次，恕不重複回饋。
+          <li>
+            請於活動指定期間至東森購物網活動網頁進行登錄，完成登錄後即享有參加本活動之資格，未於指定期間內完成登錄者，視同放棄參加資格。登錄額滿活動即提前終止並公告於登錄網頁。東森購物，1月份活動將於2019/03/31前將東森提貨券回饋至東森購物會員帳戶。回饋之東森提貨券僅限抵扣信用卡一般消費帳款，恕不得要求折現或轉讓予他人。
+          </li>
+          <li>請注意特約商店有權決定適用本活動之商品及其得分期之期數與門檻，持卡人登錄或購物前請先確認該商品是否適用本活動。</li>
+          <li><a name="a01" id="a01"></a>東森購物提貨券說明：<br>
+            （1）提貨券視同現金，可合併商品券、折扣金及促銷活動使用，憑提貨券帳戶金額可向東森購物兌換等值商品，提貨券帳戶金額無使用期限，可分次使用，但不得要求兌換現金或找零及抵扣代收公費、稅捐等業務服務費用，亦不適用於專案商品（如：旅遊、汽機車…等）。<br>
+            （2）以提貨券帳戶進行消費，如有退貨，退貨款項將會再加回到商品購買人之提貨券帳戶內。<br>
+            （3）使用提貨券兌換商品時，東森購物不再開立統一發票。<br>
+            （4）當提貨券帳戶金額不足兌換商品時，持卡人得使用現金或信用卡支付差額。<br>
+            （5）持卡人得至東森網站或向東森購物客服中心查詢提貨券使用情形及餘額，使用提貨券如有任何疑問，請洽東森購物客服中心服務專線：0800-666-608。
+          </li>
+          <li>
+            上述活動消費金額以刷卡交易日為準，且廠商請款入帳日須於活動結束後10天完成，若有付款失敗、訂單取消、分期取消、退貨或授權未完成之情事，該筆交易不得參加本活動。分期付款消費係以該筆交易之總金額歸入交易當月計算。回饋時如遇持卡人有延滯繳款、停卡或其它違反本行信用卡約定條款之情事，本行得取消其回饋資格。
+          </li>
+          <li>紅利折抵交易與分期交易不得同時併用。</li>
+          <li>如有任何因電腦、網路、電話、技術或不可歸責於本行與特約商店之事由，而使參加本活動卡友登錄之資料有錯誤、無法辨識，本行與特約商店不負任何法律責任，持卡人亦不得因此異議。</li>
+          <li>
+            參加分期付款專案時，將由本行就持卡人所購買的商品／服務之全部價款一次墊付予該特約商店，並由持卡人就分期付款本金以每一月為一期，分期償還每月應攤還金額予本行。本行非商品進口人、出售人或經銷人，與特約商店／商品出賣人間亦無代理、合夥關係、本行未就商品提供任何保證，亦未介入商品之交付或商品之瑕疵等買賣之實體交易關係。相關出退貨或服務取消之退款事宜、持卡人應逕洽商品出賣人。若持卡人與特約商店就所購買之商品／服務之品質、數量、金額有所爭議時，應向特約商店尋求解決，如無法解決，得要求本行就該筆交易以「帳款疑義之處理程序」辦理，不得因此拒付信用卡款項。持卡人進行郵購買賣或訪問買賣交易，可依消費者保護法第19條規定向特約商店解除買賣契約。
+          </li>
+          <li>相關活動辦法、未盡事宜或變更，依本行網站或特約商店公告為準。持卡人於參加本活動之同時，即同意接受本活動注意事項之規範，如有違反本活動注意事項之行為，本行得取消其參加資格，並對於任何破壞本活動之行為保留相關權利。
+          </li>
+          <li>星展銀行（台灣）與特約商店保留隨時修改、變更或終止本活動內容之權利。</li>
+        </ol>
+      </article>
+    </div>
+  </section>
+
+</div>
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script>$( 'a[href^="#"]' ).on( 'click', function ( e ) { var target = $( 'a[name=' + this.getAttribute( 'href' ).split( '#' )[1] + ']' ); if ( target.length ) { e.preventDefault(); $( 'html,body' ).stop().animate( { scrollTop: target.offset().top }, 500 ); } } );</script>
+<!-- 浮水印 -->
+<!-- <script id="scriptIconFloat" src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105264/float-icon.js"></script> -->

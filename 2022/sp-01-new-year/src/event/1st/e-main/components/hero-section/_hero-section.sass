@@ -1,0 +1,375 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.decor--stage
+  +pos-set(absolute, zero, 0%, 0%)
+  width: 100%
+.hero__wrap
+  +pos-set(relative, zero)
+  overflow: hidden
+  .hero__decoration
+    .background--hero
+      width: 100%
+      height: 100%
+      background: center 0 no-repeat
+      background-size: 100%
+      &-1
+        +pos-set(absolute, under, 0%, 0%)
+        background-image: url(event/1st/e-main/components/hero-section/bg-web-hero-section.jpg)
+        background-size: 100%
+        animation: light-up-bg 5s cubic-bezier(.49,1.04,.21,-0.12) infinite
+        +breakpoint-min($min-width-xl)
+          background-size: auto
+      &-2
+        +pos-set(absolute, zero, 0%, 0%)
+        background-image: url(event/1st/e-main/components/hero-section/stage-hero-section.png)
+        +breakpoint-min($min-width-xl)
+          background-size: auto
+    .decor-screen
+      display: none
+      +breakpoint-min($min-width-xxl)
+        display: block
+      img
+        width: 60%
+        +breakpoint-min($min-width-4xl)
+          width: 40%
+        &:first-child
+          +pos-set(absolute, zero, 0%, -30%)
+          animation: move-screen-left 1s linear 1
+          +breakpoint-min($min-width-4xl)
+            left: -15%
+        &:last-child
+          +pos-set(absolute, zero, 0%)
+          right: -30%
+          animation: move-screen-right 1s linear 1
+          +breakpoint-min($min-width-4xl)
+            right: -15%
+    .decor-top-light
+      +pos-set(absolute, zero, 0%, 0%)
+      z-index: 1
+    .decor-balloon
+      img
+        max-width: 384px
+        &:first-child
+          +pos-set(absolute, under, 17%, calc(50% - 690px))
+          // left: 20%
+          transform-origin: bottom right
+          animation: scale-large 1s linear 1, key-wind-rotate 5s 1.5s infinite ease-in-out
+        &:last-child
+          +pos-set(absolute, under, 17%)
+          right: calc(50% - 690px)
+          transform-origin: bottom left
+          animation: scale-large 1s linear 1, key-wind-rotate-reverse 5s 1.5s infinite ease-in-out
+    .decor-spotlight
+      display: none
+      +breakpoint-min($min-width-xxl)
+        display: block
+      img
+        &:first-child
+          +pos-set(absolute, base, -1%, 12%)
+          transform-origin: top left
+          animation: key-rotate-from-to 2s infinite both linear alternate, light-up 2s infinite linear
+          +breakpoint-min($min-width-4xl)
+            top: 0%
+            left: 13%
+          +breakpoint-min($min-width-5xl)
+            left: 13.4%
+        &:nth-child(2)
+          +pos-set(absolute, base, 1%, 21%)
+          transform-origin: top left
+          animation: key-rotate-from-to 3s infinite both linear alternate, light-up 3s infinite linear
+          +breakpoint-min($min-width-4xl)
+            top: 0.2%
+            left: 20.5%
+          +breakpoint-min($min-width-5xl)
+            top: .8%
+            left: 21.2%
+        &:nth-child(3)
+          +pos-set(absolute, base, 0%)
+          right: 17%
+          // transform: scaleX(-1)
+          transform-origin: top right
+          animation: key-rotate-from-to 2s infinite both linear alternate-reverse, light-up 2s infinite linear
+          +breakpoint-min($min-width-5xl)
+            right: 18%
+        &:last-child
+          +pos-set(absolute, base, 0%)
+          right: 23.8%
+          // transform: scaleX(-1)
+          transform-origin: top right
+          animation: key-rotate-from-to 3s infinite both linear alternate-reverse, light-up 3s infinite linear
+          +breakpoint-min($min-width-4xl)
+            right: 24.4%
+          +breakpoint-min($min-width-5xl)
+            top: 1.2%
+            right: 26.1%
+
+
+  .hero__zone
+    +aspect-ratio(960, 1929)
+    z-index: 1
+    // margin-top: 16%
+    +bg-set(url(event/1st/e-main/components/hero-section/bg-hero-section.png), 100%)
+    +breakpoint-min($min-width-xl)
+      // +aspect-ratio(960, 1884)
+      background: none
+      // +aspect-ratio(2560, 1139)
+      // +bg-set(url(event/1st/e-main/components/hero-section/bg-web-hero-section.jpg), 100%)
+    .hero__title
+      z-index: 0
+      .decor-crown
+        +pos-set(absolute, zero,6%)
+        right: 0%
+        width: 15%
+        animation: silde-down 1s ease-in 1, zoom-in-light 3s 1s linear infinite
+        +breakpoint-min($min-width-xl)
+          right:8%
+          width: 12%
+      .decor--ribbon
+        animation: show-up 1s linear 1
+        img
+          width: 10%
+          +breakpoint-min($min-width-xl)
+            width: 9%
+          &:first-child
+            +pos-set(absolute, zero, 10%, 8%)
+            animation: up-down-light 2s 1s linear infinite
+            +breakpoint-min($min-width-xl)
+              top: 8%
+              left: 16%
+          &:last-child
+            +pos-set(absolute, zero, 15%)
+            right: 0%
+            animation: up-down-light-reverse 2s 1s linear infinite
+            +breakpoint-min($min-width-xl)
+              top: 13%
+              right: 8%
+      .hero__title--main
+        // +pos-set(absolute, zero, 0%, 0%)
+        margin: 0 auto
+        width: 90%
+        transform: translateX(0%)
+        animation: zoomInDown 1s ease-in 1, zoom-in 3s 1s linear infinite
+        +breakpoint-min($min-width-xl)
+          top: -12%
+          padding: 0 5%
+          animation: zoomInDown 1s ease-in 1
+          // max-width: 400px
+          // width: 55%
+      .hero__title--sub
+        +pos-set(absolute, zero, 20%, 50%)
+        // background: 
+        transform: translateX(-50%)
+        width: 55%
+        height: 10%
+        +breakpoint-min($min-width-xl)
+          top: 6%
+          left: 51%
+          width: 51%
+    .hero__block
+      +pos-set(absolute, zero, 46.7%, 50%)
+      padding: 0 1%
+      transform: translateX(-50%)
+      // width: 80%
+      +breakpoint-min($min-width-xl)
+        top: 43%
+        padding: 0 2%
+        // width: 80%
+      .decor__wrap
+        +pos-set(absolute, zero, 11%)
+        right: 8%
+        width: 10%
+        +bg-set(url(event/1st/e-main/components/hero-section/decor-ball-dark.png), 80%)
+        background-position: bottom 0 right 8px
+        animation: moveX 4s linear infinite
+        +breakpoint-min($min-width-xl)
+          // top: 8%
+          background-position: bottom 0 right 20px
+        .decor--ball
+          animation: rotate 4s linear infinite
+      .decor--ball2
+        +pos-set(absolute, zero, 13%, 8%)
+        // right: 8%
+        width: 8%
+        animation: light-up 3s linear infinite
+        +breakpoint-min($min-width-xl)
+          // top: 11%
+          // left: 14%
+          width: 6%
+      .hero__item
+        +pos-set(absolute, zero, -21%, 0%)
+        width: 100%
+        height: 50%
+        +breakpoint-min($min-width-xl)
+          top: -19%
+          left: 7.5%
+          width: 90%
+          max-height: 600px
+        ul
+          width: 75%
+          .swiper-slide-prev
+            transform: translate(100%, 0%) scale(0.6)
+            opacity: 0
+            transition: all 0.5s
+          .swiper-slide-active
+            transform: translate(17%, 16%) scale(1)
+            transition: all 0.5s
+            z-index: 2
+            +breakpoint-min($min-width-xl)
+              transform: translate(13%, 26%) scale(1.1)
+          .swiper-slide-next
+            transform: translate(-16%, -1%) scale(.9)
+            transition: all 0.5s
+            +breakpoint-min($min-width-xl)
+              transform: translate(-18%, 0%) scale(1)
+          li
+            width: 50%
+
+
+@import event/1st/e-main/components/hero-section/hero-event/_hero-event
+
+
+
+@keyframes rotate
+  0%
+    transform: rotate(0deg)
+  25%
+    transform: rotate(-360deg)
+  50%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(0deg)
+
+@keyframes moveX
+  0%
+    transform: translateX(0%)
+  25%
+    transform: translateX(-150%)
+  50%
+    transform: translateX(0%)
+  100%
+    transform: translateX(0%)
+
+@keyframes move-screen-left
+  0%
+    left: -3%
+    transform: scale(1.1)
+    transform-origin: top left
+  100%
+    left: -15%
+    // transform: translateX(0%)
+
+@keyframes move-screen-right
+  0%
+    right: -3%
+    transform: scale(1.1)
+    transform-origin: top right
+  100%
+    right: -15%
+    // transform: translateX(0%)
+
+
+@keyframes light-up
+  0%
+    filter: brightness(1)
+  50%
+    filter: brightness(1.3)
+  100%
+    filter: brightness(1)
+
+@keyframes light-up-bg
+  0%
+    filter: brightness(1)
+  50%
+    filter: brightness(2)
+  100%
+    filter: brightness(1)
+
+@keyframes up-down-light
+  0%
+    transform: translateY(10%)
+    filter: brightness(1)
+  50%
+    transform: translateY(-10%)
+    filter: brightness(1.5)
+  to
+    transform: translateY(10%)
+    filter: brightness(1)
+
+@keyframes up-down-light-reverse
+  0%
+    transform: translateY(-10%)
+    filter: brightness(1)
+  50%
+    transform: translateY(10%)
+    filter: brightness(1.5)
+  to
+    transform: translateY(-10%)
+    filter: brightness(1)
+
+@keyframes zoom-in-light
+  0%
+    transform: scale(1)
+    filter: brightness(1)
+  50%
+    transform: scale(1.1)
+    filter: brightness(1.5)
+  to
+    transform: scale(1)
+    filter: brightness(1)
+
+@keyframes zoom-in
+  0%
+    transform: scale(1)
+  50%
+    transform: scale(1.05)
+  to
+    transform: scale(1)
+
+@keyframes zoomInDown
+  0%
+    opacity: 0
+    transform: scale3d(.1, .1, .1) translate3d(0, -1000px, 0)
+    animation-timing-function: cubic-bezier(.55, .055, .675, .19)
+  60%
+    opacity: 1
+    transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0)
+    animation-timing-function: cubic-bezier(.175, .885, .32, 1)
+
+@keyframes silde-down
+  0%
+    transform: translateY(-150%)
+  100%
+    transform: translateY(-0%)
+
+@keyframes show-up
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+@keyframes scale-large
+  0%
+    opacity: 0
+    transform: scale(.1)
+  100%
+    opacity: 1
+    transform: scale(1)
+
+@keyframes key-wind-rotate
+  0%
+    transform: rotate3d(0, 0, 1, 0deg) skew(0deg)
+  50%
+    transform: rotate3d(0, 0, 1, -4deg) skew(4deg)
+  100%
+    transform: rotate3d(0, 0, 1, 0deg) skew(0deg)
+
+@keyframes key-wind-rotate-reverse
+  0%
+    transform: rotate3d(0, 0, 1, 0deg) skew(0deg)
+  50%
+    transform: rotate3d(0, 0, 1, 4deg) skew(-4deg)
+  100%
+    transform: rotate3d(0, 0, 1, 0deg) skew(0deg)
+
++key-rotate-from-to(-5, 5)

@@ -1,0 +1,158 @@
+.promo__group--left-right
+  position: relative
+  overflow: hidden
+  height: 63vw
+  margin-top: 0
+  //+bg-set(url("~event/3rd/e-main/components/left-right-section/game-bg.png"), 100%)
+  +bg-set(url("https://media.etmall.com.tw/sp/8249/game-bg.png"), 100%)
+  +breakpoint-min($min-width-xl)
+    overflow: visible
+    background: none
+    margin-top: 0
+    height: 620px
+  .left-right__wrap
+    display: flex
+    .block--left,
+    .block--right
+      width: 50%
+      a
+        text-align: center
+        height: 32vw
+        margin-top: 11vw
+        +breakpoint-min($min-width-xl)
+          height: auto
+          margin-top: 116px
+    .block--left
+      position: relative
+      img
+        position: absolute
+        width: auto
+        &.turntable__bg
+          top: 2vw
+          left: 11vw
+          width: 37vw
+          height: 44vw
+        &.turntable__circle
+          top: 18.5vw
+          left: 17.5vw
+          width: 25vw
+          height: 25vw
+          transform-origin: center
+          animation: key-rotate-stop 8s 1.7s linear both infinite
+        &.turntable__point
+          top: 17vw
+          left: 15.5vw
+          width: 29vw
+          height: 28vw
+          animation: iocn-light 8s 1.7s linear both infinite
+        +breakpoint-min($min-width-xl)
+          &.turntable__bg
+            top: 0
+            left: calc(50% - 160px)
+            width: 365px
+            height: 431px
+          &.turntable__circle
+            top: 167px
+            left: calc(50% - 94px)
+            width: 241px
+            height: 241px
+          &.turntable__point
+            top: 157px
+            left: calc(50% - 111px)
+            width: 280px
+            height: 267px
+  .item__box
+    +pos-set(relative, zero)
+    &:hover,
+    &:active
+      > a
+        > img
+          filter: contrast(105%) brightness(105%)
+    .img--notyet,.not-yet__wrap,.red__envelope__wrap
+      display: none
+    .decoration--slot
+      +pos-set(absolute,base)
+      top: 42%
+      left: 18%
+      width: 62%
+    .decoration__box
+      +pos-set(absolute, second, 0, 0)
+      width: 100%
+      height: 100%
+      pointer-events: none
+
+    &.not-yet
+      img
+        display: none
+      .img--notyet
+        display: block
+        position: absolute
+        top: 2vw
+        left: 1vw
+        width: 37vw
+        +breakpoint-min($min-width-xl)
+          top: 0
+          left: calc(50% - 250px)
+          width: auto
+
+    .img_open
+      position: absolute
+      top: 2vw
+      left: 1vw
+      width: 37vw
+      +breakpoint-min($min-width-xl)
+        top: 0
+        left: calc(50% - 250px)
+        width: auto
+
+.left-right__web--bg
+  +breakpoint-min($min-width-xl)
+    position: absolute
+    //+bg-set(url("~event/3rd/e-main/components/left-right-section/game-web-bg.png"))
+    +bg-set(url("https://media.etmall.com.tw/sp/8249/game-web-bg.png"))
+    background-size: 1000px 617px
+    left: 50%
+    transform: translateX(-50%)
+    width: 100%
+    height: 620px
+@keyframes blow-up-down
+  0%
+    opacity: 0
+    transform: scale(0)
+  1%
+    opacity: 1
+  15%
+    transform: scale(1) translateY(0)
+  20%
+    opacity: 1
+  50%, 100%
+    opacity: 0
+    transform: scale(2) translateY(60%)
+
+@keyframes blowup
+  0%, 50%
+    opacity: 0
+    transform: scale(0) rotate(0)
+  51%
+    opacity: 1
+  90%
+    opacity: 1
+  100%
+    opacity: 0
+    transform: scale(1.5) rotateZ(360deg)
+
+@keyframes key-rotate-stop
+  0%, 41%, 59%, 91%
+    transform: rotate(0)
+  40%,40.9%
+    transform: rotate(1080deg)
+  90%,90.9%
+    transform: rotate(-1080deg)
+
+
+@keyframes iocn-light
+  0%, 41%, 45%, 49%, 91%, 95%, 99%
+    transform: scale(1)
+  43%, 47%, 93%, 97%
+    transform: scale(0.9)
+    filter: brightness(130%)

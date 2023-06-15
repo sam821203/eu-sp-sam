@@ -1,0 +1,67 @@
+.promo__group--left-right
+  .promo__target
+    +pos-set(relative)
+    padding-top: 5%
+    //z-index: 1
+    pointer-events: none
+    // margin-bottom: -3.5%
+    .title__decoration
+      +pos-set(absolute, base)
+      top: -3vw
+      right: 1%
+      width: 20%
+      img
+        animation: heartBeat 2s infinite
+        transform-origin: bottom right
+  .promo__wrap
+    display: flex
+    justify-content: center
+    +pos-set(relative, zero)
+    padding: 17% 3.6% 0 4.3%
+    height: 93vw
+    &::before
+      content: ''
+      +pos-set(absolute, under, 0, 0)
+      width: 100%
+      height: 100%
+      +bg-set(url(event/1st/e-main/components/left-right-section/bg-left-right.png), 100%)
+      animation: bg-flash 1.5s infinite alternate
+
+    .block--left,
+    .block--right
+      width: 43%
+      padding: 2%
+      overflow: hidden
+      img
+        margin-left: auto
+        margin-right: auto
+        filter: brightness(100%)
+        animation: none
+        border-radius: 5vw
+
+    +breakpoint-min($min-width-xl)
+      padding: 168px 33px 75px 42px
+      height: 900px
+      .block--left,
+      .block--right
+        img
+          border-radius: 48px
+
+  .item__box
+    text-align: center
+    &:hover,
+    &:active
+      > a
+        > img
+          filter: contrast(125%) brightness(105%)
+  // &.close
+  //   pointer-events: none
+
+@keyframes bg-flash
+  0%, 20%, 40%, 60%, 100%
+    filter: brightness(100%)
+  10%, 50%
+    filter: brightness(120%)
+
+
+

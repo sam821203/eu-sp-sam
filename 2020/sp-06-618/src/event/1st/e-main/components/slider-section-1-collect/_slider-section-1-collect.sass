@@ -1,0 +1,93 @@
+
+.slider__collect
+  position: relative
+  padding: 0
+  margin-top: -5%
+  +bg-set(url("~event/1st/e-main/components/slider-section-1-collect/bg__slider__collect.png"), 100% auto)
+  background-size: 100% auto
+  height: 79vw
+  .swiper-container
+    margin-left: auto
+    margin-right: auto
+    width: 85%
+    .collect__banner
+      margin-top: 17vw
+      margin-bottom: 1vw
+    .swiper-slide
+      filter: contrast(100%)
+      opacity: 1
+      &:hover,
+      &:active
+        filter: contrast(120%)
+      img
+        display: block
+        margin-left: auto
+        margin-right: auto
+    .swiper-pagination-custom
+      margin-top: 1%
+      .swiper-pagination-bullet
+        width: 6px
+        height: 6px
+        margin: -1px 2px
+        background-color: #ffffff
+      .swiper-pagination-bullet-active
+        opacity: 1
+  +breakpoint-min($min-width-xl)
+    width: 100%
+    max-width: 995px
+    margin: -40px auto 0 auto
+    height: 759px
+    .swiper-container
+      .collect__banner
+        margin-top: 173px
+      .swiper-pagination-custom
+        bottom: 13px
+        .swiper-pagination-bullet
+          width: 8px
+          height: 8px
+          margin: -1px 4px
+.collect__goods
+  .collect__item
+    +bg-set(url("~event/1st/e-main/components/slider-section-1-collect/bg__slider__good.png"), 100%)
+    height: 40vw
+    img
+      width: 92%
+      margin-top: 8%
+    .collect__good__title
+      font-size: 2.6vw
+      line-height: 3.8vw
+      height: 7.6vw
+      overflow: hidden
+      color: #5d5d5d
+      padding: 0 4%
+    .collect__good__price
+      display: flex
+      justify-content: flex-end
+      margin: 1% 7% auto auto
+      color: #cc1e05
+      font-size: 4.5vw
+      font-weight: 700
+      align-items: baseline
+      .price__init
+        font-size: 11px
+        font-weight: 500
+        padding-right: 1%
+        vertical-align: baseline
+
+  +breakpoint-min($min-width-xl)
+    .collect__item
+      height: 409px
+      .collect__good__title
+        font-size: 15px
+        line-height: 20px
+        height: 60px
+        margin-top: 5px
+      .collect__good__price
+        margin: 12% 5% auto auto
+        font-size: 24px
+        .price__init
+          font-size: 13px
+          padding-right: 0.5%
+
+
+

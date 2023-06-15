@@ -1,0 +1,22 @@
+- var goodsFlipDataE = [{link: "https://www.etmall.com.tw/p/91367", imgSrc: "~event/1st/e-main/components/goods-slider-flip-full-screen/items/pic-1.png", alt: "牛爾熱銷2件45折"}, {link: "https://www.etmall.com.tw/np/91497", imgSrc: "~event/1st/e-main/components/goods-slider-flip-full-screen/items/pic-2.png", alt: "年後搶孅贏人氣必買"}, {link: "https://www.etmall.com.tw/c3/138366", imgSrc: "~event/1st/e-main/components/goods-slider-flip-full-screen/items/pic-3.png", alt: "realme開學換隻新旗艦"},  {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202002/SP_1114639/w/index.html", imgSrc: "~event/1st/e-main/components/goods-slider-flip-full-screen/items/pic-4.png", alt: "3C帶你今晚GO嗨"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1120013/w/index.html", imgSrc: "~event/1st/e-main/components/goods-slider-flip-full-screen/items/pic-5.png", alt: "內著愛一世 約惠2折起"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202002/SP_1114663/w/index.html", imgSrc: "~event/1st/e-main/components/goods-slider-flip-full-screen/items/pic-6.png", alt: "開春甜蜜蜜"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114468/w/index.html", imgSrc: "~event/1st/e-main/components/goods-slider-flip-full-screen/items/pic-7.png", alt: "大同10人份電鍋"},  {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202001/SP_1114487/w/index.html", imgSrc: "~event/1st/e-main/components/goods-slider-flip-full-screen/items/pic-8.png", alt: "買旅遊送雙人看電影"}, ]
+
+
+
+//- var goodsFlipData = isU? goodsFlipDataU : goodsFlipDataE
+- var goodsFlipData = goodsFlipDataE
+
+.goods__wrap--flip(data-title="愛之品")
+  //- .goods__decoration.goods__decoration--right
+  //- .goods__decoration.goods__decoration--left
+  .promo__slider
+    #sliderGoodsFlip.swiper-container
+      ul.swiper-wrapper
+        each data in goodsFlipData
+          li.swiper-slide
+            a(href= data.link, title= data.alt)
+              img(data-src= data.imgSrc, alt= data.alt, class="swiper-lazy")
+              .swiper-lazy-paloader
+      //- #sliderGoodsFlipPager.swiper-pager-white.swiper-pagination
+    //- #sliderGoodsFlipPrev.swiper-button-white.swiper-button-prev
+    //- #sliderGoodsFlipNext.swiper-button-white.swiper-button-next
+

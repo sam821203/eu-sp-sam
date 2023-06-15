@@ -1,0 +1,18 @@
+.step__block
+  .step__box
+    +bg-set(url(event/1st/e-main/pages/index/bg-section.png), 100%, null, null, repeat)
+
+  .step__figure
+    img:last-child
+      display: none
+    +breakpoint-min($min-width-lg)
+      img
+        &:first-child
+          display: none
+        &:last-child
+          display: block
+
+
+
+
+

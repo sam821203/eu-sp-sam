@@ -1,0 +1,73 @@
+.promo__group--dynamic-slider-half
+  overflow: hidden
+  .promo__wrap
+    +aspect-ratio(960, 642)
+  .promo__zone
+    display: flex
+    justify-content: space-between
+    +pos-set(relative, zero)
+    padding: 17% 4% 0
+    +bg-set(url(event/1st/e-main/components/dynamic-slider-half/bg-dynamic-slider-half.png), 100%)
+
+    .pic__box
+      padding-top: 0.3%
+      flex: 0 0 31.8%
+    .slider__box
+      width: 66%
+      .promo__slider
+        +pos-set(relative, zero)
+        width: 100%
+      .product--dynamic
+        width: 100%
+        +aspect-ratio(266, 384, relative, zero, a)
+        +bg-set(url(layout/dynamic-product/bg-dynamic-item.png), 100%)
+      .product__img
+        border-radius: 2.5vw 2.5vw 0 0
+      .product__text
+        border-radius: 0 0 2.5vw 2.5vw
+      +breakpoint-min($min-width-xl)
+        .product__img
+          border-radius: 16px 16px 0 0
+        .product__text
+          border-radius: 0 0 16px 16px
+
+      .product__block
+        padding: 1.5% 2%
+      .product__name
+        margin-bottom: 0
+
+      +breakpoint-min($min-width-md)
+        .product__name
+          font-size: 3.2vw
+        .product__price
+          span
+            &:last-child
+              font-size: 4vw
+      +breakpoint-min($min-width-lg)
+        .product__block
+          padding: 2.1% 2%
+        .product__name
+          font-size: 22px
+        .product__price
+          span
+            &:last-child
+              font-size: 32px
+      +breakpoint-min($min-width-xl)
+        .product__block
+          padding: 4px 5px
+
+    .swiper-slide
+      width: 50%
+
+    +breakpoint-min($min-width-xl)
+      padding: 230px 30px 0
+      .pic__box
+        padding-top: 2px
+        flex: 0 0 24%
+
+      .slider__box
+        width: 74.6%
+        .promo__slider
+          .swiper-wrapper
+            display: flex
+            justify-content: space-between

@@ -1,0 +1,124 @@
+section.promo__group.promo__group--rank.m-bottom--md
+  .layout--main
+    .promo__head.m-bottom--sm
+      .promo__title
+        img(src="~components/rank-section/section-title-rank.png", alt="")
+    .promo__body
+      .tab__zone.tab__zone--rank
+        .tab__block.tab__block--rank
+          .tab__box
+            ul.tab-list
+              - var tabItems = ['人氣TOP 1', '汪組TOP 10', '喵組TOP 10']
+              each item, index in tabItems
+                  li
+                    if index == 0
+                      .btn--tab.action
+                        div
+                          span= item
+                    else
+                      .btn--tab
+                        div
+                          span= item
+
+          .tab__content
+            .content__box.active
+              .content__container
+                ul.content__wrapper
+                  - var n = 0
+                  while n < 2
+                    - var pet = (n==0) ? 'dog' : 'cat'
+                    li
+                      .rank__star.rank__star--1
+                        span 1
+                      .player__dynamic.player__dynamic--rank(class= 'player--' + pet)
+                        .player__pic
+                            .pic__box(style='background-image: url(../assets/fake-' + pet + '.jpg)')
+                        .player__name 報名名稱最多一排報名名稱最多一排報名名稱最多一排報名名稱最多一排報名名稱最多一排
+                        .player__number
+                          span 編號：
+                          span 5847852
+                        .player__info
+                          .info__team
+                            .team__label
+                          .info__votes
+                            .player__votes
+                              .votes__label.shape--gray 票數
+                              .votes__value 90,847
+                      - n++
+
+            .content__box
+              .slider__container
+                ul.slider__wrapper
+                  - var n = 0
+                  while n < 10
+                    li.slider__item
+                      if n < 3
+                        .rank__star(class="rank__star--" + (n+1))
+                          span= n+1
+                      else
+                        .rank__star(class="rank__star--n")
+                          span= n+1
+                      .player__dynamic.player__dynamic--rank.player--dog
+                        .player__pic
+                          .pic__box(style="background-image: url(../asset/fake-dog.jpg)")
+                        .player__name 報名名稱最多一排報名名稱最多一排報名名稱最多一排報名名稱最多一排報名名稱最多一排
+                        .player__number
+                          span 編號：
+                          span 5847852
+                        .player__info
+                          .info__team
+                            .team__label
+                          .info__votes
+                            .player__votes
+                              .votes__label.shape--gray 票數
+                              .votes__value 90,847
+                      - n++
+              .slider__ui
+                .slider__prev
+                .slider__pager-wrap
+                  .slider__pager.active
+                  .slider__pager
+                  .slider__pager
+                  .slider__pager
+                  .slider__pager
+                .slider__next
+
+            .content__box
+              .slider__container
+                ul.slider__wrapper
+                  - var n = 0
+                  while n < 10
+                    li.slider__item
+                      if n < 3
+                        .rank__star(class="rank__star--" + (n+1))
+                          span= n+1
+                      else
+                        .rank__star(class="rank__star--n")
+                          span= n+1
+                      .player__dynamic.player__dynamic--rank.player--cat
+                        .player__pic
+                          .pic__box(style="background-image: url(../asset/fake-cat.jpg)")
+                        .player__name 報名名稱最多一排報名名稱最多一排報名名稱最多一排報名名稱最多一排報名名稱最多一排
+                        .player__number
+                          span 編號：
+                          span 5847852
+                        .player__info
+                          .info__team
+                            .team__label
+                          .info__votes
+                            .player__votes
+                              .votes__label.shape--gray 票數
+                              .votes__value 90,847
+                      - n++
+              .slider__ui
+                .slider__prev
+                .slider__pager-wrap
+                  .slider__pager.active
+                  .slider__pager
+                  .slider__pager
+                  .slider__pager
+                  .slider__pager
+                .slider__next
+
+
+

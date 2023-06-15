@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<title>森森購物網</title>
+<link rel="shortcut icon" href="http://www.u-mall.com.tw/Images/favicon.ico">
+<link rel="apple-touch-icon" href="http://www.u-mall.com.tw/Images/mobile/images/touch-icon-iphone.png">
+<link rel="apple-touch-icon" sizes="72x72" href="http://www.u-mall.com.tw/Images/mobile/images/touch-icon-ipad.png">
+<link rel="apple-touch-icon" sizes="114x114" href="http://www.u-mall.com.tw/Images/mobile/images/touch-icon-iphone4.png">
+<link rel="apple-touch-icon-precomposed" href="http://www.u-mall.com.tw/Images/mobile/images/touch-icon-iphone.png">
+<link rel="stylesheet" type="text/css" href="http://www.u-mall.com.tw/CSS/mobile/common.css">
+<script type="text/javascript" src="http://www.u-mall.com.tw/Includes/mobile/New/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://www.u-mall.com.tw/Includes/mobile/New/jquery-migrate-1.2.1.min.js"></script>
+<script>
+$(function(){
+	$(".headerZone").load("http://www.u-mall.com.tw/XML/Content/DMSetting/Final/201407/SP_1019383/mo_sp_header.html");
+	$(".copyright").load("http://www.u-mall.com.tw/XML/Content/DMSetting/Final/201407/SP_1019383/mo_sp_footer.html");
+});
+var t1	= new Date(),
+	t2	= t1.getHours()*3600 + t1.getMinutes()*60 + t1.getSeconds(),
+	t3	= 86400 - t2;
+function clock() {
+	t3--;
+	var h = Math.floor(t3 % (24*3600)/3600),
+		m = Math.floor(t3 % 3600/60),
+		s = Math.floor(t3 % 60);
+	if ( h < 10 ) {
+		h = '0' + h;
+	};
+	if ( m < 10 ) {
+		m = '0' + m;
+	};
+	if ( s < 10 ) {
+		s = '0' + s;
+	};
+	$(".time span").text( h + ':' + m + ':' + s );
+	setTimeout("clock()",1000);
+}
+$(window).resize(function(){
+	$('.time').css({
+		'height': $('.mainWrap_b').width()*125/800
+	});
+	$('.time span').css({
+		'top': $('.mainWrap_b').width()*60/800,
+		'line-height': $('.mainWrap_b').width()*55/800 + 'px',
+		'font-size': $('.mainWrap_b').width()*40/800,
+		'letter-spacing': $('.mainWrap_b').width()*10/800
+	});
+});
+$(function(){
+	$(".headerZone").load("http://www.u-mall.com.tw/XML/Content/DMSetting/Final/201407/SP_1019383/mo_sp_header.html");
+	$(".copyright").load("http://www.u-mall.com.tw/XML/Content/DMSetting/Final/201407/SP_1019383/mo_sp_footer.html");
+	$('.time').css({
+		'height': $('.mainWrap_b').width()*125/800
+	});
+	$('.time span').css({
+		'top': $('.mainWrap_b').width()*60/800,
+		'line-height': $('.mainWrap_b').width()*55/800 + 'px',
+		'font-size': $('.mainWrap_b').width()*40/800,
+		'letter-spacing': $('.mainWrap_b').width()*10/800
+	});
+	clock();
+
+	function displayBn() {
+		var $spPromoBn = $('#spPromoBn');
+		var min =  t1.getMinutes();
+		var days = t1.getDate();
+
+			console.log(days);
+            if ( days == 13 ) {
+                $spPromoBn.show();
+            }
+		
+		
+	}
+	var startClock = setInterval( displayBn, 1000 ); 
+});
+</script>
+<style type="text/css">
+.header_btn_right1 {
+	position: absolute;
+	top: 0;
+	right: 1px;
+	width: auto;
+	height: 38px;
+	padding: 0 5px;
+	border-left: 1px solid #f6786c;
+	cursor: pointer;
+}
+img {
+	width: 100%;
+}
+.time {
+	position: relative;
+	width: 100%;
+	height: 125px;
+	overflow: hidden;
+}
+.time img {
+	position: absolute;
+}
+.time span {
+	position: absolute;
+	top: 60px;
+	width: 100%;
+	line-height: 55px;
+	text-align: center;
+	color: #a2a2a2;
+	font-size: 40px;
+	font-family: arial;
+	font-weight: bold;
+	letter-spacing: 10px;
+}
+.promo_bn{
+	display: none;
+}
+</style>
+</head>
+<body>
+<div class="main">
+	<div class="headerZone"></div>
+<div id="wrapper">
+		<div class="mainWrap">
+			<div class="mainWrap_b">
+﻿<!DOCTYPE html>
+<html>
+<head>
+<link href="layout.css" rel="stylesheet" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<style type="text/css">
+body {
+          width: 100%;
+          height: auto;
+          overflow-x: hidden;
+        }
+</style>
+</head>
+<body>
+<div>
+<div class="time"><img src="u-cell.jpg"><span>00:00:00</span></div>
+<div id="spPromoBn" class="promo_bn"><img src="1213bar-mobile.jpg"></div>
+</div>
+<div><img src="top1212-mobil_01.jpg" alt="" width="100%" border="0"></div>
+<div><img src="top1212-mobil_02-1.jpg" alt="" width="640" border="0"></div>
+<div><a href="http://www.u-mall.com.tw/SimpleTemplate.aspx?SubPage=DMSetting/Final/201612/SP_1025495/index.html" target="_blank"><img src="top1212-mobil_03-1.jpg" alt="" width="640" border="0"></a></div>
+<div><a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201612/SP_1025513/m.html?PHRef=A00_12_1025477" target="_blank"><img src="top1212-mobil_04.jpg" alt="" width="100%" border="0"></a></div>
+<div><a href="http://www.u-mall.com.tw/Pages/Mobile_Cate.aspx?cid=94730" target="_blank"><img src="top1212-mobil_05.jpg" alt="" style=" width:100%;" border="0"></a></div>
+<div><a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201612/SP_1025581/m.html" target="_blank"><img src="top1212-mobil_06.jpg" alt="" style="width:35%;" border="0"></a><a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201611/SP_1025537/m.html" target="_blank"><img src="top1212-mobil_07.jpg" alt="" style="width:30%;" border="0"></a><a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201612/SP_1024473/m.html" target="_blank"><img src="top1212-mobil_08.jpg" alt="" style="width:35%;" border="0"></a></div>
+<div><a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201612/SP_1025562/m.html" target="_blank"><img src="top1212-mobil_09.jpg" alt="" style="width:35%;" border="0"></a><a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201612/SP_1025558/m.html" target="_blank"><img src="top1212-mobil_10.jpg" alt="" style="width:30%;" border="0"></a><a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201611/SP_1025593/m.html" target="_blank"><img src="top1212-mobil_11.jpg" alt="" style="width:35%;" border="0"></a></div>
+<div><a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201612/SP_1025704/m.html?PHRef=A00_12_1025478" target="_blank"><img src="top1212-mobil_12.jpg" alt="" style="width:35%;" border="0"></a><a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201612/SP_1025568/m.html" target="_blank"><img src="top1212-mobil_13.jpg" alt="" style="width:30%;" border="0"></a><a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201612/SP_1025585/m.html" target="_blank"><img src="top1212-mobil_14-1.jpg" alt="" style="width:35%;" border="0"></a></div>
+<div><a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201612/SP_1025587/m.html" target="_blank"><img src="top1212-mobil_15-1.jpg" alt="" style="width:35%;" border="0"></a><a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201612/SP_1025551/m.html" target="_blank"><img src="top1212-mobil_16.jpg" alt="" style="width:30%;" border="0"></a><a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201612/SP_1025448/m.html" target="_blank"><img src="top1212-mobil_17.jpg" alt="" style="width:35%;" border="0"></a></div>
+<div><a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201612/SP_1025560/m.html" target="_blank"><img src="top1212-mobil_18.jpg" alt="" style="width:35%;" border="0"></a><a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201612/SP_1025549/m.html" target="_blank"><img src="top1212-mobil_19-1.jpg" alt="" style="width:30%;" border="0"></a><a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201612/SP_1025597/m.html" target="_blank"><img src="top1212-mobil_20-1.jpg" alt="" style="width:35%;" border="0"></a></div>
+</body>
+</html>
+
+﻿<!doctype html>
+<html>
+<head>
+<link href="layout.css" rel="stylesheet" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<style type="text/css">
+body {
+          width: 100%;
+          height: auto;
+          overflow-x: hidden;
+        }
+</style>
+</head>
+<body>
+<div id="TOP">
+<h2>▌<strong>好評安口場 登入現賺500回饋金</strong></h2>
+<p>1.活動期間: 105年12月13日 00:00起至105年12月13日23:59止。<br>
+2.優惠價格以購物車結帳金額為準，若未顯示優惠價，即表示該商品並未參加本活動。<br>
+3.加價購、服務性票券、驚爆商品、機車、旅遊、保險、電視頻道商品、禮券等專案商品，恕不參加折扣優惠活動。優惠活動不得合併使用(如: 折價券或其他折價活動等)。<br>
+4.活動期間登入森森購物網，每會員(帳號)可領取森森購物網500元回饋金，活動活動期間所發送之回饋金使用效期統一至105/12/13 23:59 到期，逾期未使用完回饋金自動歸0。<br>
+5.更多關於回饋金使用說明及規範請至森森購物網關於回饋金。<br>
+6.如遇不可抗拒之狀況產生，森森購物保留更換、更改或是停止活動之權利金。
+</p>
+</div>
+</body>
+</html>
+			</div>
+			<div class="copyright"></div>
+		</div>
+	</div><!--wrapper-->
+</div>
+</body>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-15606512-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<script type="text/javascript">
+var _mvq = window._mvq || [];window._mvq = _mvq;
+_mvq.push(['$setAccount', 'm-86870-0']);
+_mvq.push(['$setGeneral', '', '', '']);
+_mvq.push(['$logConversion']);
+(function() {
+var mvl = document.createElement('script');
+mvl.type = 'text/javascript'; mvl.async = true;
+mvl.src = ('https:' == document.location.protocol ? 'https://static-ssl.mediav.com/mvl.js' : 'http://static.mediav.comm/mvl.js');
+var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(mvl, s);
+})();
+</script>
+</html>

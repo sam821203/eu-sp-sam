@@ -1,0 +1,10 @@
+section#loyaltyCard.loyalty__wrap
+  .layout--main
+    .loyalty__block
+      .card__wrap
+        img(src="~event/1st/e-main/components/loyalty-card/loyalty-card.jpg", alt="我的集點卡")
+      .point__wrap
+        span(data-src="CustPoint")= isFake ? 9999 : 0
+      .login__error.login_text.jsLoginText
+        span 請登入會員
+

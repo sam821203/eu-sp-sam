@@ -1,0 +1,275 @@
+// ==========================================================================
+// mixins -- 較像程式碼所以用.scss保留{ }
+// ==========================================================================
+// 除法現在不能用直接用a/b，要在最上面宣告@use "sass:math"; 後用math.div(a,b)
+@use "sass:math";
+// ==========================================================================
+// Mixins for Layout
+// ==========================================================================
+// Clear Float
+// ==========================================================================
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+// base layout align center
+// ==========================================================================
+@mixin layout-center($width) {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: $width;
+}
+
+// horizontal vertical center
+// ==========================================================================
+@mixin hor-ver-center($width) {
+  width: $width + px;
+  position: absolute;
+  z-index: map-get($zindex, base);
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+// background set (for background size)
+// ==========================================================================
+@mixin bg-set($image, $size: auto, $pos-x: center, $pos-y: 0, $repeat: no-repeat, $color: null) {
+  // 分開寫是為了ie9不支援漸層時可以吃到上面的bg-color
+  background-color: $color;
+  background: $color $pos-x $pos-y $image $repeat;
+  background-size: $size;
+}
+
+// position set
+// ==========================================================================
+@mixin pos-set($pos: relative, $znumber: 0, $top: null, $left: null, $bottom: null, $right: null) {
+  position: $pos;
+  z-index: map-get($zindex, $znumber);
+  top: $top;
+  left: $left;
+  bottom: $bottom;
+  right: $right;
+}
+
+// ==========================================================================
+// Mixins for btn color setting
+// ==========================================================================
+@mixin btn-border($color) {
+  line-height: 140%; // for android
+  color: $color;
+  border-color: $color;
+  font-weight: bold;
+  &:hover, &:focus {
+    color: lighten($color, 10%);
+    border-color: lighten($color, 10%);
+  }
+}
+
+@mixin btn-fill($color, $bgColor) {
+  padding: 0.8% 5%;
+  line-height: 140%; // for android
+  color: $color;
+  background-color: $bgColor;
+  font-weight: bold;
+  &:hover, &:focus {
+    background-color: lighten($bgColor, 10%);
+  }
+}
+
+// breakpoint
+// ==========================================================================
+@mixin breakpoint-min($point) {
+  @media screen and (min-width: $point) {
+    @content;
+  }
+}
+
+@mixin breakpoint-max($point) {
+  @media screen and (max-width: $point) {
+    @content;
+  }
+}
+
+// ==========================================================================
+// Mixins for Text layout
+// ==========================================================================
+// hide text
+// ==========================================================================
+@mixin text-hide {
+  white-space: nowrap;
+  text-indent: 1000%;
+  overflow: hidden;
+}
+
+@mixin text-fool($num) {
+  height: $num;
+  overflow: hidden;
+}
+
+// setting img width height
+// ==========================================================================
+@mixin width-height($value) {
+  width: $value + px;
+  height: $value + px;
+  overflow: hidden;
+}
+
+// img loading
+// ==========================================================================
+@mixin img-loading {
+  background: url('../../Resource/img201703/1x1.png') no-repeat center center;
+  background-size: cover;
+}
+
+// ellipsis text
+// ==========================================================================
+@mixin txt-ellipsis($maxWidth) {
+  max-width: $maxWidth + px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// font size
+// ==========================================================================
+@mixin font-size($value) {
+  font-size: $value + px;
+  font-size: ($value / 10) + rem;
+}
+
+// ==========================================================================
+// Css triangle
+// ==========================================================================
+%arrow-common {
+  width: 0;
+  height: 0;
+}
+
+@mixin arrow-top($left, $right, $bottom, $color) {
+  @extend %arrow-common;
+  border-left: $left + px solid transparent;
+  border-right: $right + px solid transparent;
+  border-bottom: $bottom + px solid $color;
+}
+
+@mixin arrow-down($left, $right, $top, $color) {
+  @extend %arrow-common;
+  border-left: $left + px solid transparent;
+  border-right: $right + px solid transparent;
+  border-top: $top + px solid $color;
+}
+
+@mixin arrow-right($top, $bottom, $left, $color) {
+  @extend %arrow-common;
+  border-top: $top + px solid transparent;
+  border-bottom: $bottom + px solid transparent;
+  border-left: $left + px solid $color;
+}
+
+@mixin arrow-left($top, $bottom, $right, $color) {
+  @extend %arrow-common;
+  border-top: $top + px solid transparent;
+  border-bottom: $bottom + px solid transparent;
+  border-right: $right + px solid $color;
+}
+
+// ==========================================================================
+// Mixins for flex support to ie
+// ==========================================================================
+// for flex container
+@mixin display-flex($child: 'li') {
+  display: flex;
+
+  // for IE9
+  // @include clearfix;
+  // #{$child} {
+  //   float: left;
+  // }
+}
+
+// for flex item
+@mixin flex($grow: 0, $shrink: 1, $basic: auto) {
+  flex: $grow $shrink $basic;
+}
+// for flex item + IE9
+// @mixin flex($grow: 0, $shrink: 1, $basic: auto, $width: $basic) {
+//   width: $width;
+//   flex: $grow $shrink $basic;
+// }
+
+@mixin nav-overflow-x() {
+  overflow-x: scroll;
+  /* for IE, firefox cacel scrollbar */
+  -ms-overflow-x: auto;
+  scrollbar-width: none;
+  /* for chrome, safari cacel scrollbar */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+// ==========================================================================
+// Aspect ratio Mixin
+// ==========================================================================
+@mixin aspect-ratio($width, $height, $pos: relative, $z: zero, $tag: div) {
+  position: $pos;
+  z-index: map-get($zindex, $z);
+  &:before {
+    content: "";
+    display: block;
+    padding-bottom: math.div($height, $width) * 100%;
+    width: 100%;
+  }
+  > #{$tag} {
+    position: absolute;
+    z-index: map-get($zindex, base);
+    top: 0;
+    left: 0;
+    width: 100%;
+    @if $tag != 'img' {
+      height: 100%;
+    }
+  }
+}
+
+// ==========================================================================
+// Swiper slider custom nav arrow Mixin
+// ==========================================================================
+// .swiper-butto-custom 指定色arrow樣式($color為不帶#的Hex六碼色碼)
+// 在.swiper-button-custom底下用
+@mixin swiper-button-custom($color) {
+  &.swiper-button-prev {
+    left: 0;
+    // fill%3D'%23色碼' => fill:'#色碼'
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23#{$color}'%2F%3E%3C%2Fsvg%3E");
+  }
+  &.swiper-button-next {
+    right: 0;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23#{$color}'%2F%3E%3C%2Fsvg%3E");
+  }
+}
+
+@mixin capsule-set($text-color: $gray-deep-light, $width: 100px, $padding-up-bottom: 8px, $radius: math.div($width, 2)) {
+  padding-top: $padding-up-bottom;
+  padding-bottom: $padding-up-bottom;
+  width: $width;
+  color: $text-color;
+  border-radius: $radius;
+  text-align: center;
+}
+
+@mixin radius-set($text-color: $gray-deep-dark, $width: 160px, $padding-up-bottom: 12px, $radius: 4px, ) {
+  padding-top: $padding-up-bottom;
+  padding-bottom: $padding-up-bottom;
+  width: $width;
+  color: $text-color;
+  border-radius: $radius;
+  text-align: center;
+}

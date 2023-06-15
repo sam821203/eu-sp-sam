@@ -1,0 +1,36 @@
+section.hero__wrap
+  .hero__zone
+    .layout--main
+      #heroBlock.hero__block
+        .hero__box.wow
+          //- 標題
+          h1.hero__title.hero__title--main.block--center.wow(title="日常好物集")
+            img(src="~event/1st/e-main/components/hero-section/title.png", alt="日常好物集")
+          .title-decoration__wrap
+            img.opacity-change(src="~event/1st/e-main/components/hero-section/bg-hero-day.jpg", alt="")
+            .title__decoration.title__decoration--bg-day.opacity-change--reverse
+            .title__decoration.title__decoration--left
+              .decoration--leaf.opacity-change
+              .decoration--leaf.decoration--night.opacity-change--reverse
+              .decoration--girl.opacity-change
+              .decoration--girl.decoration--night.opacity-change--reverse
+            .title__decoration.title__decoration--right
+              .decoration--leaf.opacity-change
+              .decoration--leaf.decoration--night.opacity-change--reverse
+              .decoration--dog.opacity-change
+              .decoration--dog.decoration--night.opacity-change--reverse
+    .title-decoration__wrap.title-decoration__wrap--web
+      .title__decoration.title__decoration--bg-day.opacity-change
+      .title__decoration.title__decoration--bg-night.opacity-change--reverse
+
+  .promo__zone
+    .layout--main
+      .promo__block
+        //- 行銷誘因
+        include /event/1st/e-main/components/promo-event/_promo-event
+
+        //- 商品輪播
+        //- include /event/1st/e-main/components/goods-slider-flip/_goods-slider-flip
+        //- include /event/1st/e-main/components/goods-slider/_goods-slider
+
+  //- include /event/1st/e-main/components/background-decoration/_background-decoration

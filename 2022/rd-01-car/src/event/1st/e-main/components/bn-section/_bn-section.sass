@@ -1,0 +1,75 @@
+.promo__group--bn-section
+  +pos-set(relative, zero)
+  overflow: hidden
+
+  .promo__wrap
+    // +aspect-ratio(794, 443)
+    .promo__zone
+      .promo__block
+        +pos-set(relative, zero)
+        .promo__input
+          +pos-set(absolute, base)
+          left: 15%
+          bottom: 27%
+          width: 100%
+          +breakpoint-min($min-width-xl)
+            left: 12%
+            bottom: 26%
+          input
+            width: 50%
+            height: 13vw
+            border: none
+            font-size: 5vw
+            text-align: center
+            +breakpoint-min($min-width-xl)
+              width: 400px
+              height: 115px
+              border-radius: 30px
+              font-size: 40px
+            &:focus
+              outline: none
+        .promo__box
+          +pos-set(absolute, base)
+          right: 9%
+          bottom: 23%
+          width: 20%
+          height: 34%
+          +breakpoint-min($min-width-xl)
+            right: 25.3%
+            width: 16%
+          a
+            width: 100%
+            height: 100%
+          &--close
+            +pos-set(absolute, base, 0%)
+            right: 2%
+            +breakpoint-min($min-width-xl)
+              top: 1%
+              right: 19%
+
+
+        .promo__text
+          +pos-set(absolute, base)
+          left: 28%
+          bottom: 13%
+          color: $main-e-background-color-1st-2
+          font-size: 4vw
+          +breakpoint-min($min-width-xl)
+            left: 25%
+            font-size: 28px
+
+
+
+// @keyframes slideIn
+//   0%
+    
+//   100%
+    
+
+@keyframes up-and-down
+  0%
+    transform: translateY(3%)
+  50%
+    transform: translateY(-3%)
+  to
+    transform: translateY(3%)

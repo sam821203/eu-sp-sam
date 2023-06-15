@@ -1,0 +1,18 @@
+- var rankData = [{link:  {etmall: "https://www.etmall.com.tw/np/64075", umall: "https://www.u-mall.com.tw/np/55127"}, imgSrc: "~components/main-big-slider/items/2-1.png", alt: "國際專櫃大牌"},{link:  {etmall: "https://www.etmall.com.tw/np/77970", umall: "https://www.u-mall.com.tw/np/66095"}, imgSrc: "~components/main-big-slider/items/2-2.png", alt: "台塑生醫"},{link:  {etmall: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201908/SP_1108726/w/index.html", umall: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201908/SP_1104891/w/index.html "}, imgSrc: "~components/main-big-slider/items/2-3.png", alt: "買筆電送遊戲"},{link:  {etmall: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201907/SP_1108628/w/index.html", umall: ""}, imgSrc: "~components/main-big-slider/items/2-4.png", alt: "三星手機新機"},{link:  {etmall: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201908/SP_1108730/w/index.html", umall: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201908/SP_1104897/w/index.html"}, imgSrc: "~components/main-big-slider/items/2-5.png", alt: "飛利浦品牌月"},{link:  {etmall: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201908/SP_1110100/w/index.html", umall: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201908/SP_1109998/w/index.html"}, imgSrc: "~components/main-big-slider/items/2-6.png", alt: "夏出清特賣會"},{link:  {etmall: "https://www.etmall.com.tw/c3/125991", umall: "https://www.u-mall.com.tw//c3/124474"}, imgSrc: "~components/main-big-slider/items/2-7.png", alt: "開學趣6折up"},{link:  {etmall: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201907/SP_1108729/w/index.html", umall: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201907/SP_1104896/w/index.html"}, imgSrc: "~components/main-big-slider/items/2-8.png", alt: "秋季旅展"},]
+
+section.promo__group.promo__group--rank
+  .layout--main
+    .promo__zone
+      .promo__title.block--center.m-bottom--xs
+        img(src="~components/main-big-slider/section-bn-02.png", alt="爆品特集")
+      .promo__wrap
+        #sliderRank.promo__slider.swiper-container
+          ul.swiper-wrapper
+            each data in rankData
+              - var link = isU ? data.link.umall : data.link.etmall
+              li.swiper-slide
+                a(href= link, title= data.alt)
+                  img(src= data.imgSrc, alt= data.alt)
+
+          #sliderRankPrev.swiper-button-white.swiper-button-prev
+          #sliderRankNext.swiper-button-white.swiper-button-next

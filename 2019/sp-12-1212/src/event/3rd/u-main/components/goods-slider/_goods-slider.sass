@@ -1,0 +1,14 @@
+.goods__wrap
+  +bg-set(url("~event/3rd/u-main/components/goods-slider/bg-goods-slider.png"), contain)
+  .promo__slider
+    // padding: 6%
+    width: 100%
+    .swiper-container
+      width: 100%
+      height: 100%
+    .swiper-slide
+      width: 100%
+  +breakpoint-min($min-width-xl)
+    margin-top: 0
+    img
+      max-width: 530px

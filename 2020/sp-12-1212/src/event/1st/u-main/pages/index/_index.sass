@@ -1,0 +1,44 @@
+// // ==========================================================================
+// // Plugins
+// // ==========================================================================
+// // @import "vendors/animate"
+@import "~vendors/style/swiper-slider-custom"
+@import "~swiper/swiper-bundle.css"
+
+// // ==========================================================================
+// // components
+// // ==========================================================================
+
+// hero section
+// ===========================
+@import "~event/1st/u-main/components/hero-section/_hero-section"
+@import "~event/1st/e-main/components/promo-slider/_promo-slider"
+//@import "~event/1st/u-main/components/left-right-section/_left-right-section"
+// // ==========================================================================
+// // Page
+// // ==========================================================================
+body
+  +pos-set(relative, zero)
+  background-color: $main-e-background-color-1st
+  +breakpoint-min($min-width-xl)
+    //background-image: url("~event/1st/u-main/pages/index/bg-line.jpg")
+    background-repeat: repeat-y
+    background-size: 2560px auto
+    background-position: top center
+
+.sp__wrap
+  +pos-set(relative, base)
+  //+bg-set(url("~event/1st/u-main/pages/index/bg.jpg"), 100%)
+  +bg-set(url("https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1116800/bg.jpg"), 100%)
+  +breakpoint-min($min-width-xl)
+    //background: center top url("~event/1st/u-main/pages/index/bg-web.jpg") no-repeat
+    background: center top url("https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1116800/bg-web.jpg") no-repeat
+    background-size: 2560px 1200px
+    overflow-x: hidden
+    z-index: -1
+
+.sp__wrap a
+  display: block
+
+.max__width--100
+  max-width: 100%

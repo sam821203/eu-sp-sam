@@ -1,0 +1,50 @@
+//- TODO: 打開u-mall選項會自動轉換成U的logo和連結(預設etmall)
+//- - var isU = true
+doctype html
+html(lang='zh-Hant-TW')
+  head
+    meta(name='viewport' content="width=device-width, initial-scale=1")
+
+    //- TODO: CSS檔案注意要放到assets內
+    //- nav CSS (main left & right、sp left & right)
+    //- ===========================
+    //- 行銷主視覺用電梯(main)
+    //- link(rel="stylesheet" href="main-elevator-left.css")
+    //- link(rel="stylesheet" href="main-elevator-right.css")
+
+    //- 商品館、禮包等需要被霸道電梯蓋過去的電梯(sp)
+    //- link#localElevatorLeft(rel="stylesheet" href="sp-elevator-left.css")
+    link#localElevatorRight(rel="stylesheet" href="sp-elevator-right.css")
+
+  body
+    //- header (logo + share tools)
+    //- ===========================
+    include /layout/header/_header
+
+    main#spWrap.sp__wrap
+      include /layout/header/_header
+
+      .bg-web.full-parent
+      .bg__item--1
+        img(src="event/1st/e-main/components/hero/decor.png" alt="")
+      .bg__item--2
+        img(src="event/1st/e-main/components/hero/decor.png" alt="")
+      //- hero section
+      //- ===========================
+      include /event/1st/e-main/components/hero/_hero
+
+      //- other components
+      //- ===========================
+      include /event/1st/e-main/components/promo-event/_promo-event
+    include /event/1st/e-main/components/daily-tab/_daily-tab
+    #navRightBar.navRightBar
+    include /event/1st/e-main/components/info-cover/_info-cover
+    include /event/1st/e-main/components/puzzle/_puzzle
+    include /event/1st/e-main/components/random-card/_random-card
+    include /event/1st/e-main/components/bn-section/_bn-section
+
+//- script區
+include /utils/pug/_total-script
+script#check(src="check.js")
+script#checkElevator(src="https://media.etmall.com.tw/sp/11911/check-elevator.js")
+

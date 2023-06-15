@@ -1,0 +1,29 @@
+.promo__group--promo-event
+  +pos-set(relative, zero)
+  overflow: hidden
+
+  .promo__wrap
+    +aspect-ratio(960, 900)
+  .promo__zone
+    +pos-set(relative, zero)
+    padding: 0 2%
+    // +bg-set(url(event/1st/u-main/components/promo-event/bg-promo.png), 100%)
+    .promo__block
+      > ul
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+      li
+        margin-bottom: 3%
+        text-align: center
+        &:active,
+        &:hover
+          a
+            transform: translateY(3%)
+            filter: hue-rotate(-15deg)
+
+        &:first-child,
+        &:nth-child(2)
+          width: 48.5%
+        &:last-child
+          width: 100%

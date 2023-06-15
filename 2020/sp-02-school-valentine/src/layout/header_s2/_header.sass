@@ -1,0 +1,22 @@
+@import "~layout/header_s2/logo_s2/_logo.sass"
+@import "~layout/header_s2/share-tools/_share-tools"
+
+.header__zone
+  display: none
+  +pos-set(absolute, bnElems)
+  top: 2px
+  left: 0
+  width: 100%
+  .layout--main
+    +display-flex(">div")
+    align-items: center
+    max-width: 1280px
+
+  +breakpoint-min($min-width-xl)
+    // display: block
+    top: 0
+    background-color: #cc1e05
+    display: block
+    height: 60px
+
+

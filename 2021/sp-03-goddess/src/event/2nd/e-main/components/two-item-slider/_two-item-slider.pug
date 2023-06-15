@@ -1,0 +1,80 @@
+-
+  var twoItemDataE = [
+    {
+      link: "https://www.etmall.com.tw/i/2048101",
+      imgSrc: "~event/2nd/e-main/components/two-item-slider/items/collect-1.png",
+      alt: "12點 600枚東森幣"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2801946",
+      imgSrc: "~event/2nd/e-main/components/two-item-slider/items/collect-2.png",
+      alt: "1點+$150 過海製麵所 曾拌麵-胡蔴醬香"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2803209",
+      imgSrc: "~event/2nd/e-main/components/two-item-slider/items/collect-3.png",
+      alt: "1點+$800 契爾氏 冰河醣蛋白保濕霜"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2801216",
+      imgSrc: "~event/2nd/e-main/components/two-item-slider/items/collect-4.png",
+      alt: "10點 LINE POINTS 300點"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2048101",
+      imgSrc: "~event/2nd/e-main/components/two-item-slider/items/collect-5.png",
+      alt: "5點 100元全站折價券"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2801946",
+      imgSrc: "~event/2nd/e-main/components/two-item-slider/items/collect-6.png",
+      alt: "1點+$299 德國 好立善 基礎保養系列發泡錠"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2803209",
+      imgSrc: "~event/2nd/e-main/components/two-item-slider/items/collect-7.png",
+      alt: "2點 肯德基蛋撻"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2801216",
+      imgSrc: "~event/2nd/e-main/components/two-item-slider/items/collect-8.png",
+      alt: "1點+$699 SONGEN松井 まつい萬用烹煮巧食樂饗鍋"
+    },
+  ]
+
+-
+  var twoItemDataU = [
+    {
+      link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202008/SP_1106087/w/index.html",
+      imgSrc: "~event/2nd/u-main/components/two-item-slider/items/collect-1.png",
+      alt: "20間銀行最高回饋10%"
+    },
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale",
+      imgSrc: "~event/2nd/u-main/components/two-item-slider/items/collect-2.png",
+      alt: "整點最便宜"
+    },
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale?Day=Up",
+      imgSrc: "~event/2nd/u-main/components/two-item-slider/items/collect-3.png",
+      alt: "天天最激殺"
+    },
+  ]
+
+- var twoItemData = isU ? twoItemDataU : twoItemDataE
+
+section.promo__group.promo__group--two-item.m-bottom--md(data-title="集點專區")
+  .decoration--flower
+    img#scrollTwoItem(src="~event/2nd/e-main/components/two-item-slider/decoration-flower-two.png", alt="")
+  .layout--main
+    .promo__wrap
+      .promo__block
+        #sliderTwoItem.promo__slider.swiper-container
+          ul.swiper-wrapper
+            each data in twoItemData
+              li.swiper-slide
+                a(href= data.link, title= data.alt)
+                  img.swiper-lazy(data-src= data.imgSrc, alt="")
+                  .swiper-lazy-preloader.swiper-lazy-preloader-black
+
+        #sliderTwoItemPager.two-item__pager.swiper-pagination

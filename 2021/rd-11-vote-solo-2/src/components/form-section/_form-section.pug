@@ -1,0 +1,160 @@
+-
+  var inputInfo = [
+    {
+      label: '姓名',
+      id: 'userName',
+    },
+    {
+      label: 'Email',
+      id: 'userMail',
+      type: 'email',
+    },
+    {
+      label: '電話',
+      id: 'userTel',
+      type: 'tel',
+    },
+    //- {
+    //-   label: '報名組別',
+    //-   id: 'petTeam',
+    //-   style: 'input--select',
+    //- },
+    {
+      label: '報名名稱',
+      id: 'petName',
+      placeholder: '中英文字20字內，不可輸入符號',
+      maxlength: 20,
+      style: 'input__box--long',
+    },
+    {
+      label: '介紹說明',
+      id: 'petInfo',
+      type: 'textarea',
+      placeholder: '請介紹你家的汪汪或喵喵，中英文字120字內',
+      style: 'input--textarea',
+    },
+    {
+      label: '上傳照片',
+      id: 'upLoadImg',
+      type: 'file',
+      placeholder: '檔案大小不得超過5MB，建議尺寸為正方形(最少1張、最多3張)',
+      style: 'input--upload',
+    },
+    {
+      label: '收件人姓名',
+      label2: '同會員',
+      id: 'receiveName',
+      id2: 'memberCheck',
+      type2: 'checkbox',
+      style: 'input--member',
+    },
+    {
+      label: '收件人地址',
+      id: 'addressCity',
+      id2: 'addressDist',
+      id3: 'addressRoad',
+      placeholder: '請填寫詳細地址',
+      style: 'input--address',
+    },
+  ]
+
+section.promo__group.promo__group--form.m-bottom--md
+  .layout--main
+    .promo__head
+      .promo__title
+        img(src="~components/form-section/section-title-form.png", alt="")
+    .promo__body
+      form(action="")
+        .form__block
+          ul.form__list
+            each data, index in inputInfo
+              if data.style === "input--upload"
+                - var n = 0
+                while n < 3
+                  if(n == 0)
+                    .decoration__upload
+                  li.form__box
+                    .input__title.input__title--upload
+                      label(for= data.id + (n+1), title="選擇檔案")
+                        .title--upload.shape--capsule-pad.shape--blue-pad= data.label + (n+1)
+                        .label--file.btn--radius.btn--yellow-1
+                          img(src="~components/form-section/icon-upload.svg", alt="選擇檔案")
+                          span 選擇檔案
+                          input.input--file(id= data.id + (n+1), name= data.id + (n+1), type= data.type, accept="image/gif, image/jpeg, image/png", class= [data.style, data.style + '-' + (n+1)])
+                    .input__info
+                      span= data.placeholder
+                  if(n == 2)
+                    .decoration__upload
+                  - n++
+
+              else if data.style === "input--select"
+                li.form__box
+                  .input__title.shape--capsule-pad.shape--gray-pad
+                    label(for= data.id)= data.label
+                  .input__box
+                    select(id= data.id, name= data.id, )
+                      option(selected disabled hidden) 請選擇
+                      option(value="dog") 汪汪組
+                      option(value="cat") 喵喵組
+                    span
+
+
+              else if data.style === "input--member"
+                li.form__box
+                  .input__title.shape--capsule-pad.shape--gray-pad
+                    label(for= data.id)= data.label
+                  .input__box
+                    input(id= data.id, name= data.id, type= data.type, inputmode= data.inputmode, placeholder= data.placeholder)
+                  //- .input--checkbox
+                  //-   input.input--hidden(id= data.id2, name= data.id, type= data.type2)
+                  //-   .decoration__checkbox
+                  //-   label(for= data.id2)= data.label2
+
+              else if data.style === "input--address"
+                li.form__box
+                  .input__title.shape--capsule-pad.shape--gray-pad
+                    label(for= data.id)= data.label
+                  .input__box.input__box--address
+                    .address__wrap
+                      .address__box
+                        select(id= data.id, name= data.id, )
+                          option(selected disabled hidden) 縣市
+                          option(value="") 天龍國
+                          option(value="") 南部
+                        span
+                      .address__box
+                        select(id= data.id2, name= data.id2, )
+                          option(selected disabled hidden) 鄉鎮市區
+                          option(value="") 蛋黃區
+                          option(value="") 蛋白區
+                          option(value="") 蛋殼區
+                        span
+                      .address__box
+                        input(id= data.id3, name= data.id3, type= data.type, inputmode= data.inputmode, class= data.style, placeholder= data.placeholder)
+
+              else if data.style === "input--textarea"
+                li.form__box
+                  .input__title.shape--capsule-pad.shape--gray-pad
+                    label(for= data.id)= data.label
+                  .input__box.input__box--long
+                    textarea(id= data.id, name= data.id, type= data.type, inputmode= data.inputmode, class= data.style, placeholder= data.placeholder, maxlength= data.maxlength, wrap="physical")
+
+              else
+                li.form__box
+                  .input__title.shape--capsule-pad.shape--gray-pad
+                    label(for= data.id)= data.label
+                  .input__box(class= (data.style === "input__box--long") ? "input__box--long" : "")
+                    input(id= data.id, name= data.id, type= data.type, inputmode= data.inputmode, class= data.style, placeholder= data.placeholder, maxlength= data.maxlength)
+
+          .form__check
+            .check__wrap
+              input.input--hidden(type="checkbox", name="", value="" id="ruleCheck")
+              .decoration__checkbox
+              .check__info
+                label(for="ruleCheck") 我已詳細閱讀並同意東森購物「
+                  a(href="https://m.etmall.com.tw/HelpCenter/PrivacyStatement", title="隱私權保護政策") 隱私權保護政策
+                |」。
+          .form__submit
+            button.btn--submit.btn--capsule.btn--blur.btn--pink(type="submit") 送出
+
+

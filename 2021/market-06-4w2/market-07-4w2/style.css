@@ -1,0 +1,486 @@
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  *:before, *:after {
+    box-sizing: border-box; }
+  a {
+    display: block;
+    text-decoration: none;
+  }
+  ul {
+    list-style: none;
+  }
+  img {
+    width: 100%;
+    border: 0;
+    display: block;
+  }
+  article,
+  main,
+  nav,
+  section {
+    display: block;
+  }
+  body {
+    margin:0;
+    background-color:#6c2201;
+    font-size: 14px;
+  }
+  .sp--1260 {
+    position: relative;
+    z-index: 0;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .sp--1260.icon_Home{
+    z-index: auto;
+  }
+  /* 主視覺 */
+  /* ======================================== */
+  .logo a,
+  .sp__visual a{
+    display: block;
+  }
+  .logo {
+    position: absolute;
+    z-index: 2;
+    /* 調整logo位置 */
+    top: 0;
+    left: 0;
+    width: 27%;
+    max-width: 220px;
+  }
+  /* 設定背景 */
+  .sp__main {
+    background: url(bg.jpg) center 0 no-repeat;
+  }
+  /* 設定前景 */
+  .sp__visual {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+  }
+  /*...........................................................示意線條拿掉start*/
+  /*.visual__main a{
+    border: 1px solid #f00;
+  }*/
+  /*...........................................................示意線條拿掉end*/
+  .visual__anchor,
+  .visual__main,
+  .visual__nav {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .visual__anchor {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }
+  .visual__main a,
+  .visual__nav a {
+    flex-grow: 1;
+  }
+  /* 主視覺 */
+  /*...........................................................紅框區高度*/
+  .visual__main {
+    height: 100%;
+  }
+  /*...........................................................紅框區設定寬度高度*/
+  .visual__main a:nth-child(1) {
+    flex-grow: 0;
+    width: 100%;
+    height: 16%
+  }
+  .visual__main a:nth-child(2) {
+    flex-grow: 0;
+    width: 50%;
+    height: 4%;
+
+  }
+    .visual__main a:nth-child(3) {
+    flex-grow: 0;
+    width: 50%;
+    height: 4%;
+
+  }
+    .visual__main a:nth-child(4) {
+    flex-grow: 0;
+    width: 100%;
+    height: 80%
+  }
+  /* 自適應banner組 */
+  /* ======================================== */
+  .banner__title {
+    height: 65px;
+    background: center top no-repeat;
+  }
+  .banner__wrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .banner__item {
+    transition: all 0.3s;
+  }
+  .banner__item img {
+    width: 100%;
+  }
+  /* ...............................................................2變2 */
+  .bn-w2m2 .banner__item {
+    flex: 1 0 40%;
+    margin: 5% 1% 3%;    
+  }
+  .bn-w2m2 .banner__item:first-child{
+    filter: drop-shadow(6px 6px #1166e6);
+  }
+  .bn-w2m2 .banner__item:last-child{
+    filter: drop-shadow(6px 6px #1e7f3e);
+  }
+  /* 設定點下去與hover動畫 */
+  .bn-w2m2 .banner__item:hover,
+  .bn-w2m2 .banner__item:active {
+    transform: translate(6px,6px);
+    filter: drop-shadow(0px 0px #1e7f3e);
+  }
+  @media screen and (max-width: 1024px) {
+    .bn-w2m2 .banner__item:first-child {
+      filter: drop-shadow(3px 3px #1166e6);
+    }
+    .bn-w2m2 .banner__item:last-child{
+    filter: drop-shadow(3px 3px #1e7f3e);
+    }
+  }
+  /* 動畫小物件 */
+  /* ======================================== */
+    .animate__wrap {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        top: 0;
+    }
+    .animate__wrap .animate__obj--01 {
+        position: -webkit-sticky;
+        position: sticky;
+        height: auto;
+        bottom: 0;
+        /*margin-left: 6vw;*/
+        /*width: 86vw;*/
+        margin-top:66vw;
+    }
+    .animate__wrap .animate__obj--02 {
+        position: absolute;
+        top: 40vw;
+        left: 33vw;
+        width: 35%;
+    }
+    @media screen and (min-width: 960px) {
+        .logo{
+          left: calc(50% - 480px);
+        }
+        .animate__wrap .animate__obj--01 {
+            margin-top: 650px;
+            margin-left: calc(50% - 480px);
+            width: auto;
+        }
+        .animate__wrap .animate__obj--02 {
+            top: 360px;
+            left: calc(50% - 186px);
+            width: auto;
+        }
+    }
+  /* go top */
+  /* ======================================== */
+        .go-top {
+            position: fixed;
+            z-index: 999;
+            right: 10px;
+            bottom: 90px;
+            transform: translateY(-50%);
+            padding: 10px 12px;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            opacity: 0;
+            transition: opacity 0.4s linear;
+            border-radius: 100px;
+            cursor: pointer;
+            display: none;
+        }
+
+        .go-top.is-visible {
+            display: block;
+            opacity: 1;
+        }
+
+        .go-top:focus,
+        .go-top i:focus {
+            outline: 0;
+        }
+
+  /* zone */
+  /* ======================================== */
+      .zone{
+        width: 90%;
+        background-color: #FFF;
+        border-radius: 20px;
+        filter: drop-shadow(7px 7px #d1c05f);
+        font: bold 1.1rem/1.5 '微軟正黑體', Arial;
+        padding-bottom: 1%;
+        margin-bottom: 2%;
+    }
+    .zone1{
+      color: #0a4678;
+    }
+    .title {
+        padding: 1.5%;
+        border-bottom: 2px solid #1166e6;
+        text-align: center;
+    }
+    .zone3{
+      background-color: #98480c;
+    }
+    .zone2 .title{
+      border-color: #3dbd67;
+    }
+    .zone3 .title{
+      color: #FFFFFF;
+      font-weight: bold;
+      border-color: #FFFFFF;
+      font-size: 2.5rem;
+      padding: 1%;
+    }
+    .zone img{
+      width: auto;
+      display: inline-block;
+    }
+    .zonew{
+      margin: 2% 5%;
+    }
+    .zone h3{
+      background-color: #2684cf;
+      padding: 5px 10px;
+      border-radius: 10px;
+      color: #FFF;
+      display: inline-block;
+      margin: 0 1% 1% 0;
+    }
+    .zone2 h3 {
+      background-color: #0b9639;
+    }
+    .zone1wt1,.zone1wt2,.zone2wt1,.zone2wt2{
+      display: inline-block;
+      background: url(zone1w2.png) 50%;
+      width: 97%;
+      height: 24px;
+    }
+    .zone1wt1{
+      background: url(zone1w1.png) 50%;
+      width: 85%;
+    }
+    .zone2wt1{
+      background: url(zone2w1.png) 50%;
+      margin-bottom: 10%;
+    }
+    .zone2wt2{
+      background: url(zone2w2.png) 50%;
+    }
+    .wtnote {
+        text-align: center;
+        margin-bottom: 2%;
+        font-size: 1.2rem;
+    }
+    .step .banner__item {
+        flex: 1 0 40%;
+        margin: 0 5px 2% 0px;    
+    }
+    .buts{
+      margin-bottom: 2%;
+    }
+    .zone ol{
+      width: 95%;
+      margin-left: 4%;
+      padding-bottom: 2%;
+    }
+    .zone table {
+      border-right: 1px solid #76a7cf;
+      border-bottom: 1px solid #76a7cf;
+      width: 100%;
+      margin: 5px 0;
+    }
+    .zone table td,.zone table th {
+      border-left: 1px solid #76a7cf;
+      border-top: 1px solid #76a7cf;
+      padding: 5px;
+      text-align: center;
+      color: #0a4678;
+    }
+    .zone table,.zone table td,.zone table th{
+      border-color: #98bda6;
+    }
+    .zone2,.zone2 table td,.zone2 table th{
+      color: #196633;
+    }
+    .zone3 img {
+      display: block;
+      margin: 2% auto;
+    }
+    .zone3 .web{
+      display: block;
+    }
+    .zone3 .mobile{
+      display: none;
+    }
+    @media screen and (max-width: 1024px) {
+        .zone{
+          width: 95%;
+          font-size: 0.9rem;
+        }
+        .zone img{
+          width: 100%;
+        }
+        .zone h3 {
+            padding: 1% 3%;
+            margin-right: 2%;
+        }
+        .title{
+          padding: 3%;
+        }
+        .title img{
+          width: 50%;
+        }
+        .step .banner__item{
+          flex-basis: 100%;
+        }
+        .step .banner__item:first-child{
+          border-bottom: 1px dashed #1494fc;
+          padding-bottom: 3%;
+        }
+        .zone2 .step .banner__item:first-child{
+          border:0;
+        }
+        .zone1wt1,.zone1wt2,.zone2wt1,.zone2wt2{
+          background-position: 35%;
+          width: 100%;
+          background-size: 190%;
+          height: 4.7vw;
+          margin-bottom: 2%;
+        }
+        .zone1wt1{
+          background-size: 180%;
+        }
+        .zone1wt2,.zone2wt1,.zone2wt2{
+          background-position: 50%;
+        }
+        .zone2wt1,.zone2wt2{
+          background-size: 100%;
+        }
+        .wtnote{
+          font-size: 0.9rem;
+        }
+        .zone ol{
+          width: 90%;
+          margin-left: 8%;
+        }
+        .zone2wt1{
+          margin-bottom: 1%;
+        }
+        .buts{
+          margin-top: 2%;
+          margin-bottom: 4%;
+        }
+        .zone3 .title{
+          font-size: 1.5rem;
+        }
+        .zone3 .web{
+          display: none;
+        }
+        .zone3 .mobile{
+          display: block;
+          padding: 5%;
+        }
+      }
+      /* note*/
+  /* ======================================== */
+  .note {
+  /*font-size: 18px;*/
+    word-break: break-all;
+}
+  article.note {
+    /*background-color: #f6e0a9;*/
+    font:normal 1.2em/1.5 '微軟正黑體', Arial;
+    color:#fdfdfd;
+    padding-bottom: 1%;
+    padding-top: 1%;
+  }
+  .note hr{
+    background-color: #e2cbac;
+    border-width: 0;
+    height: 4px;
+    width: 100%;
+    margin: 0 auto 10px auto;
+  }
+  .note h2 {
+    font-size: 1.5em;
+    line-height: 1.5;
+    margin: 5px 0 5px 3%;
+    display: inline-block;
+    padding: 0 1%;
+  }
+  .note p {
+    line-height:1.5;
+    padding: 0 4%;
+  }
+  .note ol, .note ul {
+    padding: 0;
+    margin: auto;
+    margin: 0 6% 1%;
+    list-style: decimal;
+  }
+  .note ul {
+    list-style: disc;
+  }
+  .note table {
+    border: 1px solid #fdfdfd;
+    border-right: 0;
+    border-bottom: 0;
+    width: 70%;
+    margin: 1% 0;
+  }
+  .note table td {
+    border-right: 1px solid #fdfdfd;
+    border-bottom: 1px solid #fdfdfd;
+    padding: 5px;
+    text-align: center;
+    color:#fdfdfd;
+  }
+  .note table tr:first-child td, .note ol table tr:first-child td {
+    text-align: center;
+    color:#fdfdfd;
+    white-space: nowrap;
+  }
+  .note img {
+      width: 80%;
+      margin: 10px 0;
+  }
+
+    @media screen and (max-width: 1024px) {
+        article.note {
+      margin-top: 1%;
+      font-size: 1rem;
+    }
+    .note h2{
+      margin-bottom: 2%;
+      font-size: 1.2rem;
+    }
+    .note ol{
+      margin-left: 9%;
+      margin-bottom: 3%;
+    }
+    .note table{
+      width: 100%;
+    }
+    }

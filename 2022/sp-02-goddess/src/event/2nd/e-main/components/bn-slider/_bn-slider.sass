@@ -1,0 +1,31 @@
+.promo__group--bn
+  +pos-set(relative, zero)
+  overflow: hidden
+
+  .promo__wrap
+    +aspect-ratio(949, 1013)
+    margin-top: 2%
+    .decor-ball
+      +pos-set(absolute, under, -1%)
+      right: 21%
+      width: 23%
+      animation: rotate-reverse 12s linear infinite
+      +breakpoint-min($min-width-xl)
+        // top: 1%
+        right: calc( 50% - 260px )
+        width: 185px
+  .promo__zone
+    +pos-set(relative, zero)
+    +bg-set(url(event/2nd/e-main/components/bn-slider/bg-bn-slider.png), 100%)
+    .promo__slide
+      margin-top: 34%
+      padding: 0% 3%
+      .swiper-container
+        margin-top: 2%
+
+
+@keyframes rotate-reverse
+  0%
+    transform: rotate(0)
+  to
+    transform: rotate(-360deg)

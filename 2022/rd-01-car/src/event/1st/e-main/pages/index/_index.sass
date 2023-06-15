@@ -1,0 +1,58 @@
+// ==========================================================================
+// Plugins
+// ==========================================================================
+// // @import vendors/animate
+// @import vendors/style/swiper-slider-custom
+@import vendors/style/swiper-safari-polyfill
+
+
+// ==========================================================================
+// first screen need
+// ==========================================================================
+// hero section
+@import event/1st/e-main/components/hero-section/_hero-section
+@import utils/bg-decoration-instance/threejs-gift/_threejs-gift
+@import utils/bg-decoration-instance/parallax/_parallax
+
+// ==========================================================================
+// components
+// ==========================================================================
+// dynamic product 假宮格共用CSS
+@import layout/dynamic-product/_dynamic-product.sass
+
+// 一般components
+@import event/1st/e-main/components/promo-event/_promo-event
+// @import event/1st/e-main/components/daily-slider/_daily-slider
+@import event/1st/e-main/components/bn-section/_bn-section
+// @import event/1st/e-main/components/dynamic-slider/_dynamic-slider
+// @import event/1st/e-main/components/bn-slider/_bn-slider
+// @import event/1st/e-main/components/promo-slider/_promo-slider
+// @import event/1st/e-main/components/bn-section-2/_bn-section-2
+// @import event/1st/e-main/components/dynamic-slider-2/_dynamic-slider-2
+// @import event/1st/e-main/components/promo-slider-2/_promo-slider-2
+// @import event/1st/e-main/components/bn-special/_bn-special
+// @import event/1st/e-main/components/tab-section/_tab-section
+// @import event/1st/e-main/components/match-game/_match-game
+// @import event/1st/e-main/components/event-w3m3/_event-w3m3
+
+// ==========================================================================
+// Page
+// ==========================================================================
+body
+  +pos-set(relative, zero)
+  background-color: $main-e-background-color-1st
+
+.sp__wrap
+  +pos-set(relative, base)
+  +bg-set(url("event/1st/e-main/pages/index/bg.jpg"), 100%)
+
+  +breakpoint-min($min-width-xl)
+    background: center 0 url("event/1st/e-main/pages/index/bg.jpg") no-repeat, center 0 url("event/1st/e-main/pages/index/bg-web.jpg") no-repeat
+    background-size: auto
+
+.sp__wrap a
+  display: block
+
+section
+  // 有parallax scroll時圖層有relative就有預設z-index可能會遮到宮格，因此使用這個讓宮格也能有預設z-index
+  +pos-set(relative)

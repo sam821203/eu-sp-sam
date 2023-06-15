@@ -1,0 +1,50 @@
+-
+  var gameW3m3Data = [
+    {
+      imgSrc: "event/2nd/e-main/components/game-w3m3/items/game-item-1.png",
+    },
+    {
+      imgSrc: "event/2nd/e-main/components/game-w3m3/items/game-item-2.png",
+    },
+    {
+      imgSrc: "event/2nd/e-main/components/game-w3m3/items/game-item-3.png",
+    },
+    {
+      imgSrc: "event/2nd/e-main/components/game-w3m3/items/game-item-4.png",
+    },
+    {
+      imgSrc: "event/2nd/e-main/components/game-w3m3/items/game-item-5.png",
+    },
+    {
+      imgSrc: "event/2nd/e-main/components/game-w3m3/items/game-item-6.png",
+    },
+    {
+      imgSrc: "event/2nd/e-main/components/game-w3m3/items/game-item-7.png",
+    },
+    {
+      imgSrc: "event/2nd/e-main/components/game-w3m3/items/game-item-8.png",
+    },
+    {
+      imgSrc: "event/2nd/e-main/components/game-w3m3/items/game-item-9.png",
+    },
+  ]
+
+section.promo__group.promo__group--game-w3m3.m-bottom--sm(data-title="戳戳樂")
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        #gameW3m3Wrap.event__wrap
+          .promo__block.m-bottom--xs
+            ul.game__wrap--w3m3
+              each data in gameW3m3Data
+                li(title= "戳我戳我")
+                  .bottom__wrap
+                    img(src= data.imgSrc, alt= alt)
+                  .top__wrap.full-parent
+                    img(src="event/2nd/e-main/components/game-w3m3/game-item-0.png", alt="")
+          #gamePopupWrap.popup__wrap.full-parent
+            .popup__overlay.full-parent
+            .popup__block
+              a(href="")
+                img(src="", alt="")
+                .popup__alert 複製完成！

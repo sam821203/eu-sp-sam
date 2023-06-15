@@ -1,0 +1,19 @@
+- var w4m2DataE = [{link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201909/SP_1108943/w/index.html", imgSrc: "~components/event-w4m2/items/e/super-1.png", alt: "微星品牌週"}, {link: "https://www.etmall.com.tw/c3/132041", imgSrc: "~components/event-w4m2/items/e/super-4.png", alt: "ASUS新機"}, {link: "https://www.etmall.com.tw/bs/86254", imgSrc: "~components/event-w4m2/items/e/super-6.png", alt: "Elastine全館滿額送"}, {link: "https://www.etmall.com.tw/np/80091", imgSrc: "~components/event-w4m2/items/e/super-8.png", alt: "正官庄"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201909/SP_1108958/w/index.html", imgSrc: "~components/event-w4m2/items/e/super-9.png", alt: "日立三菱冰洗"}, {link: "https://www.etmall.com.tw/np/80524", imgSrc: "~components/event-w4m2/items/e/super-12.png", alt: "阿瘦全館84折"}, {link: "https://www.etmall.com.tw/c3/27275", imgSrc: "~components/event-w4m2/items/e/super-13.png", alt: "鶴岡X麻豆 文旦"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201908/SP_1108869/w/index.html", imgSrc: "~components/event-w4m2/items/e/super-15.png", alt: "秋季旅展"}, ]
+
+- var w4m2DataU = [{link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201909/SP_1105062/w/index.html", imgSrc: "~components/event-w4m2/items/u/super-1.png", alt: "微星品牌週"}, {link: "https://www.u-mall.com.tw/c3/132042", imgSrc: "~components/event-w4m2/items/u/super-4.png", alt: "ASUS新機"}, {link: "https://www.u-mall.com.tw/np/68051", imgSrc: "~components/event-w4m2/items/u/super-6.png", alt: "FORTE 39折起"}, {link: " https://www.u-mall.com.tw/p/67970", imgSrc: "~components/event-w4m2/items/u/super-8.png", alt: "天使娜拉"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201909/SP_1105070/w/index.html", imgSrc: "~components/event-w4m2/items/u/super-9.png", alt: "日立三菱冰洗"}, {link: "https://www.u-mall.com.tw/p/57752", imgSrc: "~components/event-w4m2/items/u/super-12.png", alt: "EASY SHOP"}, {link: "https://www.u-mall.com.tw/c3/91054", imgSrc: "~components/event-w4m2/items/u/super-13.png", alt: "JHT美體季"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201908/SP_1104993/w/index.html", imgSrc: "~components/event-w4m2/items/u/super-15.png", alt: "秋季旅展"}, ]
+
+- var w4m2Data = isU? w4m2DataU : w4m2DataE
+
+
+section.promo__group.promo__group--w4m2
+  .layout--main
+    //- .promo__zone.lazyload(data-src="960bg-04.jpg")
+    .promo__zone
+      .promo__title.block--center.m-bottom--xs(data-title="a4")
+        //- img.lazyload(data-src="section-bn-05.png", src="~utils/img/1x1_low.png", alt="秋賞獻禮")
+    .promo__wrap
+      ul.good__wrap
+        each data in w4m2Data
+          li
+            a(href= data.link, title= data.alt)
+              img(src= data.imgSrc, alt= data.alt)

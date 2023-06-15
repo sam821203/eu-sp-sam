@@ -1,0 +1,84 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero
+  +pos-set(relative, zero)
+  +bg-set(url(event/2nd/e-main/components/hero-section/bg-hero.png), 100%)
+  overflow: hidden
+
+  +breakpoint-min($min-width-xl)
+    +bg-set(url(event/2nd/e-main/components/hero-section/bg-hero-web.png), auto)
+
+  .hero__wrap
+    +aspect-ratio(960, 900)
+
+  // .hero__zone
+
+  .hero__title
+    z-index: map-get($zindex, second)
+    text-align: center
+    &--main
+      +pos-set(relative)
+      margin-left: 17.5%
+      width: 64%
+      transform-origin: top
+      opacity: 0
+      .js-loading &
+        animation: bounceInDown 1.2s both ease-in-out
+      h1
+        +pos-set(relative, base)
+
+  .decor
+    &--heart
+      top: 30%
+      right: 0%
+      width: 22%
+      .js-loading &
+        animation: heartBeat2 1.2s 1.2s infinite both
+
+.decor--blink
+  z-index: map-get($zindex, third)
+  top: 15%
+  left: 0
+  width: 100%
+  .js-loading &
+    animation:  flash 3s 1.2s infinite
+  &:last-child
+    animation-delay: 1.5s
+
+@keyframes flash
+  0%, 50%, to
+    opacity: 1
+  25%, 75%
+    opacity: 0
+@keyframes heartBeat2
+  0%
+    transform: scale(1)
+  14%
+    transform: scale(1.1)
+  28%
+    transform: scale(1)
+  42%
+    transform: scale(1.1)
+  70%
+    transform: scale(1)
+@keyframes bounceInDown
+  0%, 60%, 75%, 90%, to
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+  0%
+    opacity: 0
+    transform: translate3d(0, -3000px, 0) scaleY(3)
+  60%
+    opacity: 1
+    transform: translate3d(0, -10%, 0) scaleY(1) skewY(-10deg)
+  75%
+    opacity: 1
+    transform: translate3d(0, -8%, 0) scaleY(1) skewY(8deg)
+  98%
+    opacity: 1
+    transform: translate3d(0, 0, 0) scaleY(1) skewY(0deg)
+  to
+    opacity: 1
+    transform: translate3d(0, 0, 0) scaleY(1) skewY(0deg)
+
+

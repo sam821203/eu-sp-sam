@@ -1,0 +1,405 @@
+// 範例彈窗
+.modal-on
+  overflow: hidden
+
+.modal
+  display: none
+  +pos-set(fixed, overlay, 0, 0, 0, 0)
+  width: 100%
+  height: 100vh
+  &.active
+    display: block
+
+  .modal__overlay
+    +pos-set(absolute, zero, 0, 0)
+    border: none
+    -webkit-backdrop-filter: blur(4px)
+    backdrop-filter: blur(4px)
+    .overlay__block
+      background-color: rgba($gray-deep-dark, 0.5)
+
+  .dialog__block
+    +pos-set(relative, second)
+    top: 50%
+    margin: 0 auto
+    width: 330px
+    color: $gray-deep-dark
+    background-color: $gray-deep-light
+    border-radius: 6px
+    box-shadow: 0px 24px 38px rgba($gray-deep-dark, 0.14), 0px 9px 46px rgba($gray-deep-dark, 0.12), 0px 11px 15px rgba($gray-deep-dark, 0.2)
+    text-align: left
+    transform: translateY(-50%)
+    overflow: hidden
+    .scroll-section
+      padding: 0 16px
+      max-height: calc(70vh - 140px)
+      overflow-y: auto
+      min-height: 60px
+
+  .area-title
+    padding: 16px
+    font-size: 18px
+    font-weight: bold
+    text-align: center
+
+  .area-subtitle
+    margin-bottom: 8px
+    padding: 8px 4px
+    background: $gray-light
+    border-radius: 8px
+    font-size: 16px
+    font-weight: bold
+    text-align: center
+
+  .area-content
+    padding-bottom: 24px
+    font-size: 16px
+    line-height: 150%
+
+  .area-content hr
+    display: none
+    // width: 100%
+    // height: 2px
+    // border: 0
+    // background-color: $gray-medium
+  
+  .area-detail
+    margin-bottom: 12px
+    line-height: 24px
+    font-weight: 400
+    font-size: 16px
+
+  .area-number
+    display: flex
+    justify-content: center
+    align-items: center
+    margin: 0 auto
+    width: 152px
+    background: $gray-light
+    border: 2px solid $gray-light
+    border-radius: 99px
+  .number-text
+    margin-left: 6px
+    margin-right: 8px
+  .number-btn
+    display: flex
+    span
+      width: 30px
+      height: 36px
+      line-height: 36px
+      text-align: center
+      background-color: $gray-deep-light
+
+
+  .area-clickBtn
+    display: flex
+    border-top: 1px solid #e1e1e1
+    text-align: center
+    .cta__box
+      flex: 0 0 100%
+    .n-btn
+      padding: 12px 0
+      width: 100%
+      color: $primary-medium
+      background-color: $gray-deep-light
+      border: 1px solid transparent
+      font-size: 18px
+      &:focus
+        outline: 0
+      &:hover
+        color: $main-color-2
+      &.n-btn--cancel
+        color: $gray-medium
+        border-left: 1px solid #E1E1E1
+        &:hover
+          color: $gray-dark
+        +breakpoint-min($min-width-xxl)
+          order: 1
+
+// 兌換紀錄彈窗
+.record-list
+  // display: none
+  .record-list__modal
+    margin-left: 15px
+    margin-right: 15px
+    width: 330px
+    background-color: transparent
+    box-shadow: none
+    +breakpoint-min($min-width-xl)
+      width: 500px
+
+
+    .list__head
+      +pos-set(relative, zero)
+
+    .btn--modal
+      +pos-set(absolute, zero)
+      top: 15px
+      width: 24px
+      &.modal__back
+        left: 5%
+      &.modal__close        
+        right: 5%
+
+    .list-title
+      padding-top: 15px
+      padding-bottom: 15px
+      color: $gray-dark
+      background-color: $main-color-6
+      font-size: 16px
+      font-weight: bold
+      text-align: center
+
+    .list__body
+      padding: 15px
+      background-color: #F7F7F7
+
+    .list-content
+      +pos-set(relative, zero)
+      min-height: 100px
+      max-height: 60vh
+      overflow-y: auto
+      
+
+    .record-list-table
+      +pos-set(relative, base)
+      width: 100%
+      font-size: 14px
+      margin-bottom: 16px
+      padding: 4px
+      border-radius: 4px
+      box-shadow: 0px 0.25px 1px rgba(0, 0, 0, 0.039), 0px 0.85px 3px rgba(0, 0, 0, 0.19)
+      background-color: $gray-deep-light
+      .card__head
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 4px 8px
+        border-bottom: 1px solid #E1E1E1
+        // background-color: $gray-deep-light
+        color: $gray-dark
+        font-weight: 500
+        font-size: 16px
+        vertical-align: middle
+      .card__box
+        display: flex
+        justify-content: space-between
+        align-items: center
+        width: 100%
+        // background-color: $gray-deep-light
+        vertical-align: middle
+      .card__item
+        &:first-child
+          flex-wrap: wrap
+        &:last-child
+          text-align: center
+          padding: 4px
+          width: 100px
+          box-shadow: -1px 0px 6px rgba(0, 0, 0, 0.12)
+          .card__text
+            font-size: 16px
+            color: $gray-dark
+      .card__text
+        padding: 4px
+        span
+          padding-right: 4px
+          vertical-align: middle
+        img
+          padding-right: .5em
+        span.light-gray
+          color: $gray-medium
+          vertical-align: middle
+          
+      
+      .card__footer
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 8px
+        // background-color: $gray-deep-light
+        border-top: 1px solid #E1E1E1
+        .footer--item
+          font-size: 16px
+          span
+            padding-right: 4px
+            &:first-child
+              font-size: 14px
+              color: #5D5D5D
+            &:nth-child(2)
+              color: #5D5D5D
+          &:first-child
+            flex: 1
+          &.footer--result
+            flex: 0 0 4.5em
+            text-align: right
+            img
+              display: none
+              vertical-align: middle
+              padding-right: .5em
+            span
+              color: $main-color-5
+              vertical-align: middle
+          &.footer__btn
+            display: none
+            flex: 0 0 58px
+            width: 58px
+            .btn__info
+              padding: 0 0 3px 8px
+              border: 1px solid #e1e1e1
+              border-radius: 24px
+              font-size: 14px
+              line-height: 150%
+              background-color: $gray-deep-light
+              span,
+              img
+                padding-right: 0
+                vertical-align: middle
+
+      &.lose
+        background-color: $gray-light
+        .card__footer
+          .footer--item
+            &.footer--result
+              span
+                color: $gray-medium
+            &.footer__btn
+              display: block
+      &.win
+        background-color: #FFFDE8
+        .card__footer
+          .footer--item
+            &:first-child
+              flex: 0 0 4em
+            &.footer--result
+              flex: 1
+              text-align: left
+              img
+                display: inline-block
+              span
+                color: $gray-dark
+            &.footer__btn
+              display: block
+
+      &.record-list-table--info
+        padding: 0
+        box-shadow: 0px 0.5px 1.75px rgba(0, 0, 0, 0.039), 0px 1.85px 6.25px rgba(0, 0, 0, 0.19)
+        border-radius: 6px
+        .card__box
+          display: block
+        .card__item
+          width: 100%
+          text-align: left
+          .card__text
+            display: flex
+            padding: 12px 8px
+            &:last-child
+              background: #FFFDE8
+            .text__title
+              flex: 0 0 7em
+              padding-top: 0.3em
+              font-size: 16px
+            .text__result
+              flex: 1
+              font-size: 20px
+              text-align: right
+
+
+    .list-alert
+      +pos-set(absolute, zero)
+      top: 40px
+      left: 0
+      width: 100%
+      height: 60px
+      line-height: 60px
+      color: $gray-deep-dark
+      background-color: $gray-light
+      font-size: 14px
+      text-align: center
+
+    .list-note
+      padding-top: 15px
+      color: $gray-deep-dark
+      font-size: 14px
+
+    .modal__close,
+    .n-btn
+      cursor: pointer
+
+    +breakpoint-min($min-width-lg)
+      margin-left: auto
+      margin-right: auto
+      max-width: 500px
+      .list-title
+        padding-top: 10px
+        padding-bottom: 10px
+        font-size: 16px
+
+      .list__body
+        padding: 30px
+
+      .record-list-table
+        font-size: 16px
+        th,
+        td
+          padding: 12px
+        th
+          font-size: 20px
+
+      .list-note
+        padding-top: 20px
+        font-size: 16px
+        text-align: center
+
+      .list-alert
+        top: 52px
+        height: 42px
+        line-height: 42px
+        font-size: 16px
+
+    .record-detail
+      margin-bottom: 16px
+      font-size: 16px
+      .team__title
+        margin-bottom: 8px
+      .team__head,
+      .team__group,
+      .team__footer
+        display: flex
+      .team__head,
+      .team__footer
+        background-color: #E1E1E1
+      .team__body
+        background-color: $gray-deep-light
+      .team__item
+        padding: 6px
+        border-bottom: 1px solid #E1E1E1
+        &:not(:last-child)
+          border-right: 1px solid #E1E1E1
+        &:first-child
+          width: 36.5%
+        &:nth-child(2)
+          width: 27%
+          text-align: center
+        &:last-child
+          width: 36.5%
+          text-align: right
+      .team__footer
+        .team__item
+          &:first-child
+            padding-top: 0.5em
+          &:last-child
+            width: 63.5%
+            span,
+            img
+              vertical-align: middle
+
+    .record-detail__note
+      h2, 
+      p
+        font-size: 16px
+      h2
+        color: $gray-dark
+        font-weight: bold
+      p
+        color: #5d5d5d
+        

@@ -1,0 +1,153 @@
+.sp__wrap:not(.sp__wrap--apple)
+  .hero__zone
+    padding: 16.71% 0
+    background: center 0 url("~utils/img/top-slider-bg.jpg") no-repeat
+    background-size: 100%
+
+.sp__wrap--apple
+  .hero__zone
+    padding: 6% 0 4%
+    +breakpoint-min($min-width-lg)
+      padding: 30px 0 20px
+  .slide-item__wrap
+    background-color: $gray-deep-light
+
+// core
+.hero__zone
+  position: relative
+  z-index: map-get($zindex, zero)
+.hero__slider
+  margin: 3.05% 8.33%
+.hero__zone
+  .hero__slider
+    &--prev,
+    &--next,
+      top: calc(50% + 10px)
+      width: 22px
+      height: 22px
+      background-color: $gray-deep-dark
+      background-size: 50%
+      +breakpoint-min($min-width-lg)
+        top: calc(50% + 5px)
+        width: 33px
+        height: 33px
+    &--prev
+      left: 1%
+    &--next
+      right: 1%
+    &--pager
+      top: 74.5%
+      bottom: auto
+      left: 50%
+      transform: translateX(-50%)
+      .swiper-pagination-bullet
+        margin: 0 4px
+        width: 8px
+        height: 8px
+        outline: 0
+      +breakpoint-min($min-width-lg)
+        top: 76%
+        .swiper-pagination-bullet
+          margin: 0 7px
+          width: 15px
+          height: 15px
+
+    // main start
+    &--main
+      .slide-item__wrap
+        +display-flex("> div")
+        padding: 1.5% 4% 0 10%
+        .slide-item__box
+          width: 42%
+        .slide-item__info
+          width: 54%
+        .info__title
+          font-size: 4.57vw
+          +text-fool(11.7vw)
+          padding-top: 1.5%
+          line-height: 120%
+          font-weight: bold
+        .info__sub-title
+          font-size: 3vw
+          +text-fool(4.8vw)
+        .info__price
+          padding-top: 1.8%
+          span
+            vertical-align: baseline
+            &:first-child
+              +font-size($fz-12)
+            &:last-child
+              font-size: 4.2vw
+              font-weight: bold
+        .btn--info
+          +font-size($fz-12)
+          border-radius: 50px 50px 50px 50px
+          +breakpoint-min($min-width-lg)
+            +font-size($fz-20)
+
+        +breakpoint-min($min-width-xl)
+          .info__title
+            +font-size($fz-48)
+            +text-fool(130px)
+            padding-top: 15px
+          .info__sub-title
+            +font-size($fz-20)
+            +text-fool(32px)
+          .info__price
+            padding-top: 15px
+            span
+              &:first-child
+                +font-size($fz-12)
+              &:last-child
+                +font-size($fz-36)
+
+.sp__wrap--apple
+  .hero__slider--pager
+    top: 93%
+    +breakpoint-max($max-width-xs)
+      top: 91.5%
+
+// theme
+.sp__wrap:not(.sp__wrap--apple)
+  .swiper-pagination-bullet
+    opacity: 0.5
+  .swiper-pagination-bullet-active
+    background-color: $gray-deep-light
+    opacity: 1
+  .info__title
+    color: $gray-deep-light
+  .info__sub-title
+    color: $primary-dark
+  .info__price
+    color: $primary-notice
+  .btn--info
+    +btn-fill($gray-deep-dark, $primary-dark)
+  .hero__slider--main
+    a:hover,
+    a:active
+      .btn--info
+        background-color: lighten($primary-dark, 10%)
+
+.sp__wrap--apple
+  .swiper-pagination-bullet-active
+    background-color: $gray-deep-dark
+  .info__title
+    color: $gray-deep-dark
+  .info__sub-title
+    color: $gray-deep-dark
+  .info__price
+    color: $primary-alert
+  .btn--info
+    +btn-fill($gray-deep-light, $gray-deep-dark)
+  .hero__slider--main
+    a:hover,
+    a:active
+      .btn--info
+        color: darken($gray-deep-light, 100%)
+        background-color: lighten($gray-deep-dark, 100%)
+        border: 1px solid $gray-deep-dark
+
+
+
+
+

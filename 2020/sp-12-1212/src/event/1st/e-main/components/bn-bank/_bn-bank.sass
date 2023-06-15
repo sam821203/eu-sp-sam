@@ -1,0 +1,105 @@
+// 依附在別的section時
+.promo__group--bn-bank
+  .promo__wrap
+    +pos-set(relative, zero)
+    padding: 20% 11% 20% 12%
+    // +bg-set(url("~event/1st/e-main/components/bn-special/bg-special-p.png"), 100%)
+    +bg-set(null, 100%)  // 用JS判斷哪個月用哪個背景，要放在assets裡
+    .promo__slider
+      +pos-set(relative, zero)
+      width: 100%
+
+      .swiper-container
+        display: flex
+        width: 100%
+        height: 100%
+        padding: 2% 0
+        .swiper-slide
+          // background-color: #faf
+          text-align: center
+          padding: 0 2%
+        // a
+        //   transition: transform 0.6s
+        //   transform: translateY(-27%) scale(0.6)
+        .swiper-slide,
+        .swiper-slide-duplicate
+          a,
+          img
+            transition: all 0.6s
+          a
+            transform: scale(1.1)
+          img
+            filter: grayscale(100%)
+        .swiper-slide-active,
+        .swiper-slide-duplicate-active
+          z-index: map-get($zindex, ten)
+          a
+            transform: scale(1.1)
+          img
+            filter: grayscale(0)
+          // lazyLoad CSS end
+
+            display: block
+            margin-left: auto
+            margin-right: auto
+
+    // +breakpoint-min($min-width-xl)
+    //   display: flex
+    //   padding: 60px 60px 70px 40px
+    //   // +bg-set(url("~event/1st/e-main/components/bn-special/bg-special-web.png"), auto)
+    //   .slider__box
+        // width: 70%
+  
+    // .swiper-pagination-custom
+    //   bottom: -11%
+    //   left: 50%
+    //   transform: translateX(-50%)
+    //   .swiper-pagination-bullet
+    //     margin: 0 2px
+    //     width: 6px
+    //     height: 6px
+    //     background-color: $gray-medium
+    //     opacity: .8
+    //     outline: 0
+    //   .swiper-pagination-bullet-active
+    //     background-color: $main-e-background-color-1st-2
+    //     opacity: 1
+
+  .special__nav
+    top: 60%
+    outline: 0
+    &::after
+      font-size: 5vw
+      
+    &--prev
+      left: 5.5%
+    &--next
+      right: 5.5%
+    // +breakpoint-max($max-width-xxs)
+      // &--prev
+      //   left: 6%
+      // &--next
+      //   right: 6%
+    +breakpoint-min($min-width-lg)
+      &--prev
+        left: 7.5%
+      &--next
+        right: 7.5%
+    +breakpoint-min($min-width-xl)
+      &::after
+        font-size: 40px
+  
+    +breakpoint-min($min-width-lg)
+      // .swiper-pagination-custom
+      //   .swiper-pagination-bullet
+      //     margin: 0 6px
+      //     width: 14px
+      //     height: 14px
+
+    // +breakpoint-min($min-width-xl)
+      // .swiper-pagination-custom
+      //   bottom: -30px
+      //   .swiper-pagination-bullet 
+      //     margin: 0 8px
+      //     width: 16px
+      //     height: 16px

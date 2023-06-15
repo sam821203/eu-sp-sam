@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>version_2</title>
+    <link rel="stylesheet" href="reset.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #666;
+        }
+
+        .mid__belt {
+            -webkit-perspective: 800px;
+            perspective: 800px;
+            max-width: 960px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .mid__belt .mid__belt-style {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+        }
+
+        .mid__belt img {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .flop__effect:nth-of-type(2n+1) {
+            -webkit-backface-visibility: visible;
+            backface-visibility: visible;
+            animation: flop__outside 2s both;
+        }
+
+        .flop__effect:nth-of-type(2n+2) {
+            -webkit-backface-visibility: visible;
+            backface-visibility: visible;
+            animation: flop__inside 2s both;
+        }
+
+        @keyframes flop__inside {
+            0% {
+                -webkit-transform: translate3d(0, -140px, 0px) rotate3d(1, 0, 0, 90deg);
+                transform: translate3d(0, -140px, 0px) rotate3d(1, 0, 0, 90deg);
+                -webkit-transform-origin: bottom;
+                transform-origin: bottom;
+                opacity: 0;
+            }
+
+            100% {
+                -webkit-transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0deg);
+                transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0deg);
+                opacity: 1;
+            }
+        }
+
+        @keyframes flop__outside {
+            0% {
+                -webkit-transform: rotate3d(1, 0, 0, -90deg);
+                transform: rotate3d(1, 0, 0, -90deg);
+                -webkit-transform-origin: top;
+                transform-origin: top;
+                opacity: 0;
+            }
+
+            100% {
+                -webkit-transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0deg);
+                transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0deg);
+                opacity: 1;
+            }
+        }
+
+        .start__wrap {
+            position: relative;
+            z-index: 2;
+        }
+
+    </style>
+</head>
+<body>
+<div class="mid__belt">
+    <div class="mid__belt-style">
+        <div class="start__wrap">
+            <img src="01.png" alt="">
+        </div>
+        <div class="start__wrap">
+            <img src="02.png" alt="">
+        </div>
+        <div class="start__wrap">
+            <img src="03.png" alt="">
+        </div>
+        <div class=" wow bounceInDown" data-wow-duration="1s" data-wow-delay=".2s">
+            <img src="04.png" alt="">
+        </div>
+        <div class=" wow bounceInDown" data-wow-duration="1s" data-wow-delay=".2s">
+            <img src="05.png" alt="">
+        </div>
+        <div class=" wow flop__effect" data-wow-duration=".5s" data-wow-delay=".7s">
+            <img src="06.png" alt="">
+        </div>
+        <div class=" wow flop__effect" data-wow-duration=".5s" data-wow-delay=".7s">
+            <img src="07.png" alt="">
+        </div>
+        <div class=" wow flop__effect" data-wow-duration=".5s" data-wow-delay=".7s">
+            <img src="01.png" alt="">
+        </div>
+        <div class=" wow flop__effect" data-wow-duration=".5s" data-wow-delay=".7s">
+            <img src="02.png" alt="">
+        </div>
+        <div class=" wow flop__effect" data-wow-duration=".5s" data-wow-delay=".7s">
+            <img src="06.png" alt="">
+        </div>
+        <div class=" wow flop__effect" data-wow-duration=".5s" data-wow-delay=".7s">
+            <img src="07.png" alt="">
+        </div>
+        <div class=" wow flop__effect" data-wow-duration=".5s" data-wow-delay=".7s">
+            <img src="09.png" alt="">
+        </div>
+        <div class=" wow flop__effect" data-wow-duration=".5s" data-wow-delay=".7s">
+            <img src="10.png" alt="">
+        </div>
+        <div class=" wow flop__effect" data-wow-duration=".5s" data-wow-delay=".7s">
+            <img src="06.png" alt="">
+        </div>
+        <div class=" wow flop__effect" data-wow-duration=".5s" data-wow-delay=".7s">
+            <img src="07.png" alt="">
+        </div>
+        <div class=" wow flop__effect" data-wow-duration=".5s" data-wow-delay=".7s">
+            <img src="02.png" alt="">
+        </div>
+        <div class=" wow flop__effect" data-wow-duration=".5s" data-wow-delay=".7s">
+            <img src="06.png" alt="">
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+<script>
+    new WOW().init();
+</script>
+</html>

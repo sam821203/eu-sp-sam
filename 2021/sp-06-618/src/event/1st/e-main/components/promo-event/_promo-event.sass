@@ -1,0 +1,86 @@
+.promo__group--promo-event
+  +pos-set(relative, zero)
+  margin-top: -15%
+  overflow: hidden
+
+  .promo__title
+    +pos-set(relative, zero)
+    padding-bottom: 12.5%
+  .decoration--top
+    top: 12%
+    &-left
+      left: -12.5%
+      width: 25%
+      animation: key-rotate-self 15s infinite linear
+    &-right
+      right: -10%
+      width: 25%
+      // animation: key-rotate-self-2 20s infinite linear
+  +breakpoint-min($min-width-xl)
+    margin-top: -70px
+    overflow: visible
+    .decoration--top
+      &-left
+        left: -100px
+      &-right
+        top: 20px
+        right: -90px
+
+  .promo__wrap
+    +pos-set(relative, zero)
+    padding: 11% 6% 1%
+    +bg-set(url(event/1st/e-main/components/promo-event/bg-promo.png), 100%)
+    .event__wrap
+      padding: 4% 3% 12%
+
+    .promo__block
+      > ul
+        display: flex
+        justify-content: space-between
+      a
+        text-align: center
+        &:active,
+        &:hover
+          transform: translateY(3%)
+          filter: hue-rotate(-15deg)
+        &.animation
+          animation: 0.5s shakeX
+        &.animation2
+          animation: 0.5s shakeY
+
+      &:first-child,
+      &:nth-child(4)
+        li
+          width: 49%
+      &:nth-child(3)
+        li
+          width: 32%
+
+    .promo__slider
+      +pos-set(relative, zero)
+      padding: 2.5% 8.8%
+      li
+        margin-bottom: 0
+
+    +breakpoint-min($min-width-xl)
+      .event__wrap
+        padding: 50px 50px 130px
+
++key-rotate-self(360)
+// +key-rotate-self(-360, key-rotate-self-2)
+
+@keyframes shakeX
+  0%,80%, to
+    transform: translateZ(0)
+  30%, 50%, 70%
+    transform: translate3d(-10px, 0, 0)
+  40%, 60%
+    transform: translate3d(10px, 0, 0)
+
+@keyframes shakeY
+  0%,80%, to
+    transform: translateZ(0)
+  30%, 50%, 70%
+    transform: translate3d(0, -10px, 0)
+  40%, 60%
+    transform: translate3d(0, 10px, 0)

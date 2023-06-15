@@ -1,0 +1,52 @@
+-
+  var awardsItemData = [
+    {
+      link: "",
+      imgSrc: "event/current/components/awards/event-item-1.png",
+      alt: "午夜場",
+    },
+    {
+      link: "",
+      imgSrc: "event/current/components/awards/event-item-2.png",
+      alt: "夜貓場",
+    },
+    {
+      link: "",
+      imgSrc: "event/current/components/awards/event-item-3.png",
+      alt: "早鳥場",
+    },
+    {
+      link: "",
+      imgSrc: "event/current/components/awards/event-item-4.png",
+      alt: "上班場",
+    },
+    {
+      link: "",
+      imgSrc: "event/current/components/awards/event-item-5.png",
+      alt: "午休場",
+    },
+    {
+      link: "",
+      imgSrc: "event/current/components/awards/event-item-6.png",
+      alt: "午茶場",
+    },
+    {
+      link: "",
+      imgSrc: "event/current/components/awards/event-item-7.png",
+      alt: "下班場",
+    },
+    {
+      link: "",
+      imgSrc: "event/current/components/awards/event-item-8.png",
+      alt: "宵夜場",
+    },
+  ]
+
+section.awards__group.awards__w4m4.m-bottom--xl
+  .layout--main
+    .event__zone
+      ul.event__block
+        each data in awardsItemData
+          li.event__item
+            a(href= data.link, title= data.alt)
+              img(src= data.imgSrc, alt= data.alt)

@@ -1,0 +1,77 @@
+.bet__block
+  padding: 16px 16px 30px
+  +breakpoint-min($min-width-xl)
+    padding-bottom: 58px
+
+  .decor__top
+    margin: 0 auto 20px
+    +breakpoint-min($min-width-xl)
+      margin-bottom: 16px
+      max-width: 500px
+
+  .decor__text--wrap
+    +pos-set(absolute, zero, 0%, calc(50% - 55px))
+    width: 110px
+    .decor__text
+      display: flex
+      justify-content: space-around
+      span
+        font-size: 24px
+        color: $gray-deep-light
+  .decor__countdown
+    display: flex
+    justify-content: space-around
+    margin: 16px auto 18px
+    padding: 4px 16px
+    width: 287px
+    height: 32px
+    background: linear-gradient(180deg, #319A5B 0%, #113955 85.58%)
+    border-radius: 4px
+    text-align: center
+    span
+      font-size: 16px
+      color: $gray-deep-light
+      &.countdown-time
+        color: $main-color-4
+
+.bet__box
+
+  .bet__item
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin: 0 auto 20px
+    padding: 4px 16px
+    width: 106px
+    height: 38px
+    background: linear-gradient(135deg, #FFAC3D 0%, #FFD100 100%)
+    border-radius: 38px
+    span
+      display: block
+      line-height: 30px
+      font-size: 20px
+      font-weight: 500
+      color: $main-color-3
+      &:first-child
+        margin-right: 2%
+  .bet__text
+    color: $gray-deep-light
+    line-height: 24px
+    font-size: 16px
+    font-weight: 400
+    +breakpoint-min($min-width-xl)
+      text-align: center
+    p
+      &:first-child
+        margin-bottom: 20px
+
+
+  +breakpoint-min($min-width-xl)
+    padding: 0 50px
+    .point__wrap
+      margin-right: 30px
+    .point__head
+      margin-bottom: 50px
+
+    .rule__wrap
+      width: calc(100% - 250px - 30px)

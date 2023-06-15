@@ -1,0 +1,139 @@
+.daily__goods
+  word-break: break-all
+  .goods--hero
+    +pos-set(absolute, zero)
+    top: 7%
+    left: 58.53%
+    width: 41%
+    a
+      animation: scale 0.7s infinite ease-in-out alternate
+    &::before
+      content: ''
+      +pos-set(absolute, zero)
+      top: -8%
+      left: 5%
+      padding-bottom: 18%
+      width: 18%
+      +bg-set(url(~event/2nd/e-main/components/daily-goods/decoration-bubble.png), contain)
+      //animation: up-down 0.5s infinite ease-in-out
+
+    &:hover,
+    &:active
+      a
+        filter: contrast(110%)
+
+    +breakpoint-min($min-width-xl)
+      left: calc(50% + 80px)
+      width: 390px
+
+  .goods--promo
+    display: flex
+    padding-top: 0.5%
+    .goods__item
+      width: 50%
+    .info__wrap
+      display: flex
+      padding: 5% 2%
+
+    .item__info
+      width: 83%
+      padding: 3% 8% 0
+
+    .item__name
+      padding-top: 5%
+    .item__price
+      margin-bottom: 12%
+    .item__pic
+      width: 75%
+      padding-top: 0
+      img
+        transform: scale(1.2) translate(-15%, 10%)
+    .item__date
+      color: $gray-deep-light
+      span:first-child
+        font-size: 4vw
+        font-weight: bold
+        vertical-align: top
+
+    +breakpoint-max($min-width-xs)
+      .item__name
+        line-height: 1
+    +breakpoint-min($min-width-xl)
+      padding-top: 20px
+      .item__price
+        margin-bottom: 12%
+  .goods__item
+    &:nth-child(even)
+      .item__info
+        padding: 3% 4% 0 12%
+      .item__date
+        margin-left: 10%
+      .item__pic
+        order: -1
+        img
+          transform: scale(1.2) translate(15%, 10%)
+    a
+      line-height: 120%
+      font-size: 3.1vw
+      &:hover,
+      &:active
+        filter: brightness(110%)
+
+    .item__name
+      width: 6.2em
+      height: 2.6em
+      color: $gray-deep-dark
+      font-weight: bold
+      overflow: hidden
+      font-size: inherit
+    .item__price
+      color: $primary-medium
+      span
+        &:first-child
+          font-size: 2vw
+        &:last-child
+          font-size: 4vw
+          font-weight: bold
+    .item__date
+      color: $gray-deep-light
+      span:first-child
+        font-size: 4vw
+        font-weight: bold
+        vertical-align: top
+
+    +breakpoint-min($min-width-xl)
+      a
+        font-size: 28px
+      .item__info
+        padding: 1% 8% 0
+      .item__price
+        margin-bottom: 20px
+        span
+          &:first-child
+            font-size: 16px
+          &:last-child
+            font-size: 32px
+      .item__date
+        span:first-child
+          font-size: 36px
+      .item__pic
+        img
+          transform: scale(1.18) translate(-15%, 1px)
+      &:nth-child(even)
+        .item__info
+          padding: 2% 4% 0 12%
+        .item__pic
+          img
+            transform: scale(1.18) translate(15%, 1px)
+
+@keyframes up-down
+  0%, 100%
+    transform: translate(0)
+  50%
+    transform: translate(-10%, -10%)
+
+@keyframes scale
+  0%, 100%
+    transform: scale(1)
+  50%
+    transform: scale(1.1)

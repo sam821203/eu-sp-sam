@@ -1,0 +1,81 @@
+.promo__group--promo-section
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__wrap
+    pointer-events: none
+    .decor__item
+      &--title
+        +pos-set(absolute, zero, 4%, 23%)
+        width: 55%
+        +breakpoint-min($min-width-xl)
+          left: calc(50% - 222px)
+      &--left
+        +pos-set(absolute, under, 0%, 9%)
+        width: 18%
+        +breakpoint-min($min-width-xl)
+          left: calc(50% - 320px)
+      &--right
+        +pos-set(absolute, under, 2%)
+        right: 11%
+        width: 18%
+        +breakpoint-min($min-width-xl)
+          top: 5px
+          right: calc(50% - 320px)
+      +breakpoint-min($min-width-xl)
+        width: auto
+  .promo__wrap
+    +bg-set(url("event/1st/e-main/components/promo-section/bg-promo-section.png"), 100%)
+    margin-top: 15%
+    +breakpoint-min($min-width-xl)
+      +bg-set(url("event/1st/e-main/components/promo-section/bg-web-promo-section.png"), 100%)
+      margin-top: 100px
+    .promo__zone
+      +aspect-ratio(949, 1114)
+      +breakpoint-min($min-width-xl)
+        +aspect-ratio(949, 762)
+      .promo__block
+        padding: 9% 3% 0
+        +breakpoint-min($min-width-xl)
+          padding-top: 90px
+        .swiper-container
+          .swiper-slide
+            padding: .6% .8%
+            &:hover
+              transition: .3s
+              transform: translateY(-2%)
+              filter: brightness(110%)
+          .swiper-pagination
+            position: static
+          .swiper-pagination.swiper-pagination-bullets
+            .swiper-pagination-bullet
+              background: $gray-deep-light
+            .swiper-pagination-bullet-active
+              background: $gray-deep-light
+
+
+    
+@keyframes slideInDown
+  0%
+    transform: translate3d(0, -100%, 0)
+    visibility: visible
+  to
+    transform: translateZ(0)
+
+@keyframes flipInY
+  0%
+    transform: perspective(400px) scaleX(1) translateZ(0) rotateY(180deg)
+    animation-timing-function: ease-out
+  40%
+    transform: perspective(400px) scaleX(1) translateZ(50px) rotateY(-20deg)
+    filter: brightness(110%)
+    animation-timing-function: ease-out
+  50%
+    transform: perspective(400px) scaleX(1) translateZ(50px) rotateY(-10deg)
+    filter: brightness(110%)
+    animation-timing-function: ease-in
+  80%
+    transform: perspective(400px) scale3d(1, 1, 1) translateZ(0) rotateY(0deg)
+    animation-timing-function: linear
+  to
+    transform: perspective(400px) scaleX(1) translateZ(0) rotateY(0deg)
+    animation-timing-function: linear

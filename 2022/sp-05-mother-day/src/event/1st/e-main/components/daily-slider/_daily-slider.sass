@@ -1,0 +1,172 @@
+.promo__group--daily-slider
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__item
+    &--title
+      +pos-set(absolute, base, 2%, 13%)
+      width: 70%
+      +breakpoint-min($min-width-xl)
+        top: 40px
+        left: calc(50% - 340px)
+    &--left
+      +pos-set(absolute, zero, 4%, 0%)
+      width: 25%
+      +breakpoint-min($min-width-xl)
+        top: 60px
+        left: calc(50% - 480px)
+    &--right
+      +pos-set(absolute, second, 0%)
+      right: 1%
+      width: 24%
+      +breakpoint-min($min-width-xl)
+        right: calc(50% - 460px)
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .title__text
+    +pos-set(absolute, third, 4.7%)
+    right: 26.3%
+    +breakpoint-min($min-width-xl)
+      top: 85px
+      right: calc(50% - 218px)
+  .daily__countdown
+    display: flex
+    justify-content: space-around
+    width: 29%
+    +breakpoint-min($min-width-xl)
+      width: 270px
+    .time__block
+      display: flex
+      justify-content: space-around
+      align-items: center
+      width: 15%
+      font-size: 5vw
+      font-weight: 500
+      .time__box
+        width: 5%
+      +breakpoint-min($min-width-xl)
+        font-size: 42px
+      &:first-child
+        .time__box
+          &:first-child
+            margin-left: 8%
+            margin-right: 65%
+          &:last-child
+            margin-left: 0%
+      &:nth-child(2)
+        .time__box
+          &:first-child
+            margin-left: -13%
+          &:last-child
+            margin-left: 39%
+      &:last-child
+        .time__box
+          &:first-child
+            margin-left: -20%
+          &:last-child
+            margin-left: 28%
+      .time__box
+        color: $gray-deep-light
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/daily-slider/bg-daily-slider.png), 100%, center, center)
+    margin-top: 21%
+    +breakpoint-min($min-width-xl)
+      +bg-set(url(event/1st/e-main/components/daily-slider/bg-web-daily-slider.png), 100%, center, center)
+      margin-top: 220px
+    .promo__zone
+      +aspect-ratio(950, 1430)
+      +breakpoint-min($min-width-xl)
+        +aspect-ratio(950, 446)
+      // +pos-set(relative, base)
+      .promo__block
+        padding: 7% 2% 5%
+        +breakpoint-min($min-width-xl)
+            padding-top: 5.8%
+        .swiper-slide
+          display: flex
+          justify-content: space-around
+          flex-wrap: wrap
+          height: calc((100% - 10px) / 2)
+        .dynamic__item
+          width: 48%
+          margin-bottom: 2%
+          background-color: $gray-deep-light
+          border-radius: 3vw
+          +breakpoint-min($min-width-xl)
+            width: 24%
+            border-radius: 20px
+          .product--dynamic
+            +pos-set(relative, zero)
+            padding-bottom: 4%
+            +breakpoint-min($min-width-xl)
+              padding-bottom: 0%
+            .product__block
+              border-radius: 3vw
+              margin: 0 auto
+              // width: 90%
+          .product__img
+            margin: 0 auto
+            width: 100%
+            // border-radius: 0px
+            +breakpoint-min($min-width-xl)
+              // width: 90%
+            img
+              +breakpoint-min($min-width-xl)
+                width: 100%
+          .product__text
+            margin: 0 auto
+            // width: 80%
+            border-radius: 0px
+            background-color: transparent
+            .product__name
+              margin: 4% 1%
+              height: 10vw
+              font-size: 4.2vw
+              +breakpoint-min($min-width-xl)
+                margin: 1%
+                font-size: 24px
+                height: 60px
+          .product__price
+            margin: 2% auto
+            width: 90%
+            height: 5vw
+            line-height: 5vw
+            // border-radius: 4vw
+            color: $main-e-background-color-1st-2
+            +breakpoint-min($min-width-xl)
+              height: 40px
+              line-height: 40px
+
+            span
+              &:last-child
+                font-size: 6vw
+                +breakpoint-min($min-width-xl)
+                  font-size: 36px
+
+
+@keyframes flash
+  0%, 50%, to
+    opacity: 1
+  25%, 75%
+    opacity: 0
+
+@keyframes shake-daily-slider
+  0%
+    transform: translateX(3%)
+  10%
+    transform: translateX(-3%)
+  20%
+    transform: translateX(3%)
+  30%
+    transform: translateX(-3%)
+  35%
+    transform: translateX(3%)
+  100%
+    transform: translateX(3%)
+
+@keyframes flower
+  0%
+    transform: rotate3d(0, 0, 1, 0deg) scale(.8)
+  50%
+    transform: rotate3d(0, 0, 1, 1.5*360deg) scale(1)
+  100%
+    transform: rotate3d(0, 0, 1, 0deg) scale(.8)

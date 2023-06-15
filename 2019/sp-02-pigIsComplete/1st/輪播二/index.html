@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" rel="stylesheet">
+
+    <link href="style.css" rel="stylesheet">
+    <style type="text/css">
+        @media screen and (min-width: 641px) {
+            .n-sp__box .sp__wrap img,
+            .upper_layer img {
+                width: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<section class="carousel_frame">
+    <!-- desktop -->
+    <aside class="carousel_layer carousel_layer-d">
+        <div class="carousel__wrap">
+            <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201811/SP_1106186/w/index.html">
+                <img src="BN-1.jpg" alt="全民大換鍋"/>
+            </a>
+        </div>
+        <div class="carousel__wrap">
+            <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106343/w/index.html">
+                <img src="BN-2.jpg" alt="瘋搶撇步"/>
+            </a>
+        </div>
+        <div class="carousel__wrap">
+            <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201901/SP_1106752/w/index.html">
+                <img src="BN-3.jpg" alt="app新朋友拿500東森幣"/>
+            </a>
+        </div>
+    </aside>
+
+    <!-- mobile -->
+    <aside class="carousel_layer carousel_layer-m">
+        <div class="carousel__wrap">
+            <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201811/SP_1106186/w/index.html">
+                <img src="BN-m-1.jpg" alt="全民大換鍋"/>
+            </a>
+        </div>
+        <div class="carousel__wrap">
+            <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106343/w/index.html">
+                <img src="BN-m-2.jpg" alt="瘋搶撇步"/>
+            </a>
+        </div>
+        <div class="carousel__wrap">
+            <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201901/SP_1106752/w/index.html">
+                <img src="BN-m-3.jpg" alt="app新朋友拿500東森幣"/>
+            </a>
+        </div>
+    </aside>
+</section>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+<!----- 輪播 ----->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+
+
+<script type="text/javascript">
+    // 輪
+    $('.carousel_layer').slick({
+        autoplay: true,
+        autoplaySpeed: 3000,
+    });
+</script>
+</body>
+</html>

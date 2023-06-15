@@ -1,0 +1,58 @@
+// .promo__group--bn-special
+//   margin-left: auto
+//   margin-right: auto
+.promo__slider
+  position: relative
+  padding-top: 2%
+  .swiper-container
+    margin-left: auto
+    margin-right: auto
+    width: 85%
+    // height: 100%
+    // .swiper-slide
+      // transition: transform 0.5s
+      // transform: translateY(-100%)
+    // .swiper-slide-active,
+    // .swiper-slide-duplicate-active,
+      // transform: translateY(0)
+
+    .swiper-slide
+      &:hover,
+      &:active
+        filter: contrast(120%)
+      img
+        display: block
+        margin-left: auto
+        margin-right: auto
+  #sliderSpecialPrev, #sliderSpecialNext
+    opacity: 0
+    width: 6vw
+    height: 7vw
+    margin-top: -2vw
+    background-size: 6vw 7vw
+  #sliderSpecialNext
+    right: 0
+  #sliderSpecialPrev
+    left: 0
+  +breakpoint-min($min-width-xl)
+    #sliderSpecialNext, #sliderSpecialPrev
+      width: 27px
+      height: 44px
+      margin-top: -22px
+      background-size: 27px 44px
+    #sliderSpecialNext
+      right: 37px
+    #sliderSpecialPrev
+      left: 37px
+// 當大小網不一樣時
+// img
+//   &:last-child
+//     display: none
+//   +breakpoint-min($min-width-xl)
+//     &:first-child
+//       display: none
+//     &:last-child
+//       display: block
+//       margin-left: auto
+//       margin-right: auto
+

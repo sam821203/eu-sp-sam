@@ -1,0 +1,80 @@
+// SVG linear 煙火結構 css
+// =================================
+.deoration--background
+  display: none
+  +pos-set(absolute !important, under, 0, 0)
+  width: 100%
+  overflow: hidden
+  pointer-events: none
+
+.decoration__item
+  position: absolute
+  top: 0
+  left: 0
+  // width: 100%
+  // height: 100%
+  max-width: 1000px
+
+.firework--1
+  position: absolute
+  left: calc(100% - 220px)
+  stroke-dasharray: 163
+  stroke-dashoffset: 163
+
+  animation: fw02-boom 4s cubic-bezier(0,1.1,.71,.99) infinite
+
+.firework--2
+  position: absolute
+  left: calc(100% - 140px)
+  top: 84px
+  stroke-dasharray: 94
+  stroke-dashoffset: 94
+  animation: fw03-boom 3.5s cubic-bezier(0,1.1,.71,.99) infinite
+
+.firework--3
+  position: absolute
+  top: 10%
+  left: -30%
+  stroke-dasharray: 163
+  stroke-dashoffset: 163
+  transform: scale(0.8)
+  animation: fw02-boom 4s 2s cubic-bezier(0,1.1,.71,.99) infinite
+
+.firework--4
+  position: absolute
+  top: calc(10% + 84px)
+  left: calc(-30% + 80px)
+  stroke-dasharray: 94
+  stroke-dashoffset: 94
+  transform: scale(0.8)
+  animation: fw03-boom 3.5s 2s cubic-bezier(0,1.1,.71,.99) infinite
+
++breakpoint-min($min-width-xl)
+  .deoration--background
+    display: block
+  .decoration__item
+    position: absolute
+    top: 0
+    left: calc(50% - 500px)
+  .firework
+    &--1
+      left: calc(100% - 500px)
+    &--2
+      left: calc(100% - 420px)
+    &--3
+      left: -200px
+    &--4
+      left: -120px
+
+@keyframes fw02-boom
+  from
+    stroke-dashoffset: 163
+  to
+    stroke-dashoffset: -163
+
+@keyframes fw03-boom
+  from
+    stroke-dashoffset: 94
+  to
+    stroke-dashoffset: -94
+

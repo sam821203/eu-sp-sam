@@ -1,0 +1,14 @@
+- var promoDataE = [{link: "#note", imgSrc: "~event/3rd/u-main/components/promo-event/items/promo-1.png", alt: "搶折價券1111"}, {link: "#note", imgSrc: "~event/3rd/u-main/components/promo-event/items/promo-2.png", alt: "滿額抽1212"}, {link: "#note", imgSrc: "~event/3rd/u-main/components/promo-event/items/promo-3.png", alt: "天天抽漢來海港雙人券"}, {link: "#note", imgSrc: "~event/3rd/u-main/components/promo-event/items/promo-4.png", alt: "天天搶1折商品"},]
+
+- var promoDataU = [{link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201911/SP_1105668/w/index.html", imgSrc: "~event/3rd/u-main/components/promo-event/items/promo-1.png", alt: "萊爾富超取送"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201911/SP_1105663/w/index.html", imgSrc: "~event/3rd/u-main/components/promo-event/items/promo-2.png", alt: "全家取件抽"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201911/SP_1104318/w/index.html", imgSrc: "~event/3rd/u-main/components/promo-event/items/promo-3.png", alt: "銀行最高回饋10%"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1103167/w/index.html", imgSrc: "~event/3rd/u-main/components/promo-event/items/promo-4.png", alt: "瘋搶撇步"},]
+
+- var promoData = isU? promoDataU : promoDataE
+
+.promo__event
+  ul.event__wrap
+    each data, index in promoData
+      - var anchorId = 'promoAnchor' + (index + 1)
+      - var imgId = 'promoImg' + (index + 1)
+      li
+        a(id= anchorId, href= data.link, title= data.alt)
+          img(id= imgId, src= data.imgSrc, alt= data.alt)

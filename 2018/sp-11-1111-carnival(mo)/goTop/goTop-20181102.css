@@ -1,0 +1,41 @@
+
+.pageYOffset {
+    position: fixed;
+    right: 0;
+    padding: 10px;
+    color: #fff;
+    background: rgba(00, 00, 00, 0.3);
+    opacity: 0;
+}
+
+.goTop {
+    position: fixed;
+    z-index: 999;
+    right: 10px;
+    bottom: 10px;
+    transform: translateY(-50%);
+    padding: 10px 12px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    opacity: 0;
+    transition: opacity 0.4s linear;
+    border-radius: 100px;
+    cursor: pointer;
+    display: none;
+}
+
+.goTop.is-visible {
+    display: block;
+    opacity: 1;
+}
+
+.goTop:focus,
+.goTop i:focus {
+    outline: 0;
+}
+
+/* fix umall "position:fixed" not working */
+.main,.side {
+    transform: none;
+}

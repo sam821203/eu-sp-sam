@@ -1,0 +1,66 @@
+.promo__group--daily
+  margin-top: -19%
+  // overflow: hidden
+  +breakpoint-min($min-width-xl)
+    margin-top: -190px
+
+  .promo__wrap
+    +pos-set(relative, zero)
+    .title__text
+      +pos-set(absolute, base)
+
+
+    // .daily__text
+    //   left: 19%
+    //   color: $gray-deep-light
+    //   font-size: 7vw
+    //   font-weight: bold
+    //   transform: translateY(13%)
+    //   span
+    //     &:nth-child(2)
+    //       font-size: 3vw
+    .daily__countdown
+      display: flex
+      justify-content: space-between
+      top: 44.5%
+      right: 14.85%
+      padding-top: 0.15em
+      width: 32.1%
+      color: $gray-deep-light
+      font-size: 5vw
+      font-weight: bold
+      letter-spacing: 0.35em
+      pointer-events: none
+      // border: 1px solid #f00
+      .time__block
+        display: flex
+        justify-content: space-between
+        width: 24%
+        // border: 1px solid #fff
+
+        .time__box
+          width: 48%
+          text-align: right
+
+    +breakpoint-min($min-width-xl)
+      .daily__countdown
+        top: 245px
+        right: 142px
+        padding-top: 4px
+        width: 308px
+        font-size: 48px
+
+  .promo__wrap
+    padding-top: 15%
+    padding-bottom: 5.5%
+    +bg-set(url(~event/2nd/e-main/components/daily-change/bg-daily.png), 100%)
+    text-align: center
+    a
+      padding: 0 5.5%
+    &:hover,
+    &:active
+      a
+        filter: brightness(102%) contrast(105%)
+
+    +breakpoint-min($min-width-xl)
+      background-size: auto

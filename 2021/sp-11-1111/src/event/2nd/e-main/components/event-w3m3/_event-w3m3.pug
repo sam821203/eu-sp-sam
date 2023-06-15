@@ -1,0 +1,94 @@
+-
+  var w3m3Data = [
+    { // 1
+      link: "https://www.etmall.com.tw/gp/104343",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-1.png",
+      alt: "專櫃狂歡購"
+    },
+    { // 2
+      link: "https://www.etmall.com.tw/gp/104783",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-2.png",
+      alt: "保健熱銷榜"
+    },
+    { // 3
+      link: "https://media.etmall.com.tw/sp/11699/m/index.html",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-3.png",
+      alt: "3C爭霸戰"
+    },
+    { // 4
+      link: "https://media.etmall.com.tw/sp/11760/m/index.html",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-4.png",
+      alt: "通訊激購殺"
+    },
+    { // 5
+      link: "https://media.etmall.com.tw/sp/10249/m/index.html",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-5.png",
+      alt: "冰洗狂歡購"
+    },
+    { // 6
+      link: "https://media.etmall.com.tw/sp/11830/m/index.html",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-6.png",
+      alt: "雙11聯合慶"
+    },
+    { // 7
+      link: "https://media.etmall.com.tw/sp/11633/m/index.html",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-7.png",
+      alt: "日用慶雙11"
+    },
+    { // 8
+      link: "https://www.etmall.com.tw/gp/150103",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-8.png",
+      alt: "流行嗨購雙11"
+    },
+    { // 9
+      link: "https://media.etmall.com.tw/sp/11529/m/index.html",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-9.png",
+      alt: "國旅券折1千"
+    },
+    { // 10
+      link: "https://media.etmall.com.tw/sp/10765/m/index.html",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-10.png",
+      alt: "滿件現折送豪禮"
+    },
+    { // 11
+      link: "https://www.etmall.com.tw/gp/150317",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-11.png",
+      alt: "登記抽鑽石項鍊"
+    },
+    { // 12
+      link: "https://media.etmall.com.tw/sp/11498/m/index.html",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-12.png",
+      alt: "新Switch激搶"
+    },
+    { // 13
+      link: "https://media.etmall.com.tw/sp/11626/m/index.html",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-13.png",
+      alt: "家寢狂歡購"
+    },
+    { // 14
+      link: "https://media.etmall.com.tw/sp/11788/m/index.html",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-14.png",
+      alt: "滿額抽按摩枕"
+    },
+    { // 15
+      link: "https://media.etmall.com.tw/sp/11875/m/index.html",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-15.png",
+      alt: "最高現折1111"
+    },
+  ]
+
+section.promo__group.promo__group--w3m3.m-bottom--lg(data-title="熱門活動")
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        .decoration__box#decorEventW3M3
+          img(src="event/2nd/e-main/components/event-w3m3/decor-event-w3m3.png", alt="")
+        #w3m3Wrap.event__wrap
+          .promo__block.m-bottom--xs
+            ul.good__wrap
+              each data, index in w3m3Data
+                li
+                  a(href= data.link, title= data.alt)
+                    - var hasImg = data.imgSrc ? true : false
+                    if (hasImg)
+                      img(src= data.imgSrc, alt= data.alt)

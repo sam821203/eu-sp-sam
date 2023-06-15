@@ -1,0 +1,14 @@
+- var promoDataE = [{link: "https://www.etmall.com.tw/Activity/CouponPage/50", imgSrc: "~event/1st/e-sp/components/promo-event-full-screen/items/promo-1.png", alt: "整點搶券1212"}, {link: "#note", imgSrc: "~event/1st/e-sp/components/promo-event-full-screen/items/promo-2.png", alt: "抽東京來回機票"},]
+
+
+//- var promoData = isU? promoDataU : promoDataE
+
+.promo__event
+  ul.event__wrap
+    each data, index in promoDataE
+      - var anchorId = 'promoAnchor' + (index + 1)
+      - var imgId = 'promoImg' + (index + 1)
+      li
+        a(id= anchorId, href= data.link, title= data.alt)
+          img(id= imgId, src= data.imgSrc, alt= data.alt)
+

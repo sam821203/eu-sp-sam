@@ -1,0 +1,58 @@
+-
+  var promoSliderItem = [
+    {
+      link: "https://www.etmall.com.tw/i/2006797" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-w3/item/p-w3-item-1.png",
+      alt: "SanDisk 64G USB3.1 隨身碟",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3682467" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-w3/item/p-w3-item-2.png",
+      alt: "HP LaserJet Pro M404n 黑白雷射印表機",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2391663" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-w3/item/p-w3-item-3.png",
+      alt: "【BESTA】無敵 電腦辭典/翻譯機 CD952",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3419925" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-w3/item/p-w3-item-4.png",
+      alt: "LG 34吋 21:9 多工智慧窄邊框螢幕",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3445257" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-w3/item/p-w3-item-5.png",
+      alt: "小米50W雙模行動電源1A1C",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3659749" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-w3/item/p-w3-item-6.png",
+      alt: "Insta360 X3 全景隨身相機",
+    },
+  ]
+
+section.promo__group.promo__group--promo-slider-w3.m-bottom--lg
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--left#promoSliderW3Left
+        img(src="event/1st/e-main/components/promo-slider-w3/promo-slider-w3-left.png", alt="")
+      .decor__item.decor__item--right#promoSliderW3Right
+        img(src="event/1st/e-main/components/promo-slider-w3/promo-slider-w3-right.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          .promo__slider.swiper-container#promoSliderW3Item
+            ul.swiper-wrapper.container--promo-slider-w3
+              each data, index in promoSliderItem
+                if index <= 2
+                  li.swiper-slide
+                    a(href= data.link, title=data.alt)
+                      img(src= data.imgSrc, alt=data.alt)
+
+            ul.swiper-wrapper.container--promo-slider-w3
+              each data, index in promoSliderItem
+                if index > 2 && index < 6
+                  li.swiper-slide
+                    a(href= data.link, title=data.alt)
+                      img(src= data.imgSrc, alt=data.alt)

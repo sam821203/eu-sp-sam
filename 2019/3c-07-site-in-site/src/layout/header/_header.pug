@@ -1,0 +1,16 @@
+.header__zone
+  include /layout/logo/_logo.pug
+  .header__info.header__info--common
+    span.info--sign |
+    span.info--common.info--index 通訊
+    span.info--common.info--apple APPLE
+    span.info--common.info--phone 手機
+    span.info--common.info--pad 平板
+    span.info--common.info--wear 智慧穿戴
+    span.info--common.info--accessories 配件
+    span 熱銷推薦
+  .share__wrap
+    a(href!="javascript: void(window.open(&apos;https://lineit.line.me/share/ui?url=&apos;.concat(encodeURIComponent(location.href))));", title="分享到LINE").share__icon.share__icon--line
+      img(src="~layout/header/line-icon.png", alt="分享到LINE")
+    a(href="javascript:void(0);", title="分享到facebook", onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+fbhtml_url); return false;").share__icon.share__icon--fb
+      img(src="~layout/header/facebook-icon.png", alt="分享到facebook")

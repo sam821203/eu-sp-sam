@@ -1,0 +1,104 @@
+.modal__wrap
+  max-width: 500px
+  border-radius: 20px
+  // border: 1px solid #000
+  // margin: 0 auto
+  // transform: translateY(-50%)
+  .modal__head
+    padding-top: 40px
+    padding-bottom: 20px
+    background-color: $gray-deep-light
+    font-size: 30px
+    text-align: center
+    border-radius: 20px 20px 0 0
+    overflow: hidden
+    img
+      // outlidvvvne: 1px solid red
+      padding: 1% 8% 0% 
+      +breakpoint-min($min-width-xl)
+        padding: 1% 12% 0%
+      // width: 80%
+
+  .modal__body
+    +pos-set(relative, zero)
+    padding-bottom: 40px
+    color: $gray-dark
+    background-color: $gray-deep-light
+    border-radius: 0 0 20px 20px
+    font-size: 16px
+    .data__wrap
+      padding: 0 20px
+      height: 396px
+      font-size: 16px
+      overflow: auto
+      +breakpoint-min($min-width-xl)
+        padding: 0 20px
+    .data--none
+      display: none
+      +pos-set(absolute, zero)
+      top: 50%
+      left: 50%
+      width: 100%
+      text-align: center
+      transform: translate(-50%, -50%)
+    &.none
+      .data--none
+        display: block
+    .modal__info
+      // outline: 1px solid red
+      margin: 20px auto 0
+      padding: 10px 15px
+      width: 303px
+      height: 48px
+      border: 1px solid $main-color-4
+      border-radius: 100px
+      text-align: center
+      +breakpoint-min($min-width-lg)
+        width: 200px
+      span
+        color: $main-color-4
+        font-size: 20px
+
+.data__wrap
+  table
+    // border: 1px solid #d5d5d5
+    width: 100%
+    font-size: 16px
+    tr
+      height: 30px
+      color: $gray-deep-dark
+      // border: 1px solid #d5d5d5
+      &:nth-child(4n),
+      &:nth-child(4n-1)
+        background-color: $main-color-5
+        
+      &:nth-child(2n-1)
+        td:first-child //時間
+          display: block
+          padding-left: 10px
+          padding-top: 10px
+          color: $gray-medium-dark
+          vertical-align: middle
+        td:last-child //東森幣10沒
+          padding-right: 10px
+          text-align: right
+          vertical-align: middle
+          // line-height: 4
+        // border: 1px solid #d5d5d5
+      &:nth-child(2n) //序號
+        display: block
+        padding-bottom: 11px
+        padding-left: 10px
+        td
+          &:last-child
+            padding-left: 10px
+            vertical-align: middle 
+        // line-height: 1.8
+
+
+
+
+  // table
+    // > tr
+      // &:nth-child(2n)
+        // background-color: $main-color-5

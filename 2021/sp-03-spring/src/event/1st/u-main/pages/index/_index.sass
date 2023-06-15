@@ -1,0 +1,138 @@
+// // ==========================================================================
+// // Plugins
+// // ==========================================================================
+// // @import "vendors/animate"
+// @import "~vendors/style/swiper-slider-custom"
+@import '~vendors/style/swiper-safari-polyfill'
+
+// // ==========================================================================
+// // 1st screen need
+// // ==========================================================================
+//@import "utils/bg-decoration-instance/css-firework/_css-firework"
+// hero section
+// ===========================
+@import "~event/1st/u-main/components/hero-section/_hero-section"
+
+// // ==========================================================================
+// // components
+// // ==========================================================================
+@import "~event/1st/u-main/components/promo-event/_promo-event"
+@import "~event/1st/u-main/components/bn-special/_bn-special"
+
+// // ==========================================================================
+// // Page
+// // ==========================================================================
+body
+  +pos-set(relative)
+  background-color: $main-u-background-color-1st
+
+  +breakpoint-min($min-width-xl)
+    background: $main-u-background-color-1st center 0 url("~event/1st/u-main/pages/index/bg-web.jpg") no-repeat
+    background-size: 2560px 1418px
+    height: 1418px
+
+.sp__wrap
+  +pos-set(relative)
+  background: $main-u-background-color-1st center 0 url("~event/1st/u-main/pages/index/bg.jpg") no-repeat
+  background-size: 100% auto
+  +breakpoint-min($min-width-xl)
+    background: none
+    //.decoration--foreground
+    //  +pos-set(absolute, zero)
+    //  top: 6.9%
+    //  left: 0
+    //  width: 100%
+    //  height: 100%
+    //  background: center 0 url("~event/1st/u-main/pages/index/bg-decoration-web.png") no-repeat,
+    //.promo__group
+    //  +pos-set(relative, base)
+
+.sp__wrap a
+  display: block
+  .promo__title
+    text-align: center
+
+a.logo
+  width: 12%
+  top: 0
+  left: 1%
+  +breakpoint-min($min-width-xl)
+    left: calc(50% - 550px)
+    top: -10px
+    display: block
+.bg__relative
+  position: relative
+// parallax css
+// =================================
+// .decoration--background
+//   display: none
+
+//   +breakpoint-min($min-width-3xl)
+//     display: block
+//     // z-index: base(1)以上可蓋在主視覺上，zero(0)可在主視覺下，預設都在logo下(logo是500)
+//     +pos-set(absolute, under, 690px)
+//     width: 100%
+//     height: 100%
+//     pointer-events: none
+
+// .decoration__wrap
+//   +pos-set(sticky, zero, 0)
+
+// 背景花
+.decoration--flower
+  display: none
+  +breakpoint-min($min-width-xxl)
+    display: block
+    +pos-set(absolute, zero)
+    top: 13%
+    left: 50%
+    transform: translateX(-50%)
+    min-width: 1245px
+    img
+      margin-left: 0
+      margin-right: 0
+      will-change: scroll-position
+    &.move__2
+      top: 25%
+    &.move__3
+      top: 0
+
+.parallax__background
+  display: none
+  &.active
+    display: block
+.scroll--flower
+  display: none
+  +breakpoint-min($min-width-xl)
+    display: block
+    pointer-events: none
+    will-change: scroll-position
+    +pos-set(fixed, zero)
+    img
+      margin-left: 0
+      margin-right: 0
+      will-change: scroll-position
+    &.flower__left
+      top: 10%
+      left: -40px
+      transform-origin: top left
+      animation: key-wind-rotate-3 15s 5s infinite ease-in-out
+      img
+        transform: scale(0.55)
+        transform-origin: top left
+    &.flower__right
+      top: 20%
+      right: -40px
+      transform-origin: top right
+      animation: key-wind-rotate-3 15s 5s infinite ease-in-out
+      img
+        transform: scale(0.55)
+        transform-origin: top right
+
+  +breakpoint-min($min-width-4xl)
+    &.flower__left
+      img
+        transform: scale(0.7)
+    &.flower__right
+      img
+        transform: scale(0.7)

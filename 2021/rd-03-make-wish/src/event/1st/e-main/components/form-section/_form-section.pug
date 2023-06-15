@@ -1,0 +1,138 @@
+-
+  var inputInfo = [
+    {
+      id: 'officialLink',
+      label: '官網連結',
+      placeholder: '',
+    },
+    {
+      id: 'itemName',
+      label: '品名',
+      placeholder: '',
+    },
+    {
+      id: 'itemNumber',
+      label: '型號',
+      placeholder: '',
+    },
+    {
+      id: 'itemSize',
+      label: '尺寸',
+      placeholder: '',
+    },
+    {
+      id: 'itemColor',
+      label: '顏色',
+      placeholder: '',
+    },
+    {
+      id: 'itemAmount',
+      label: '數量',
+      placeholder: '',
+      type: 'number',
+      inputmode: "numeric",
+    },
+    {
+      id: 'itemPrice',
+      label: '市價',
+      placeholder: '',
+      type: 'number',
+      inputmode: "numeric",
+    },
+    {
+      id: 'hopePriceLow',
+      label: '預期價格',
+      placeholder: '',
+      type: 'number',
+      inputmode: "numeric",
+      twice: true,
+      id2:'hopePriceHigh',
+    },
+    {
+      id: 'userName',
+      label: '貴賓姓名',
+      placeholder: '',
+    },
+    {
+      id: 'userTel',
+      label: '貴賓電話',
+      placeholder: '',
+      type: 'tel',
+    },
+    {
+      id: 'userMail',
+      label: '貴賓Mail',
+      placeholder: '',
+      type: 'email',
+    },
+  ]
+
+section.promo__group.promo__group--form.m-bottom--md
+  .promo__body
+    form(action="")
+      .form__block
+        .block__wrap
+          ul.form__list
+            li.form__box.m-bottom--sm
+              label(for="brandName") 品牌：
+              select#brandName(name="brandName")
+                option(selected disabled hidden) 請選擇品牌
+                option(name="LV", value="") LV
+                option(name="CHANEL", value="") CHANEL
+                option(name="HERMES", value="") HERMES
+                option(name="Christian Dior", value="") Christian Dior
+            each data, index in inputInfo
+              if index <= 6
+                li.form__box.m-bottom--sm
+                  label(for= data.id)= data.label + "："
+                  input(id= data.id, name= data.id, type= data.type ? data.type : null, inputmode= data.inputmode ? data.inputmode : null, class= data.twice ? "double__input" : null)
+                  if data.twice
+                    span ~
+                    input(id= data.id2, name= data.id, type= data.type ? data.type : null, inputmode= data.inputmode ? data.inputmode : null, class= data.twice ? "double__input" : null)
+
+        .block__wrap
+          .block__title
+            img(src="~event/1st/e-main/components/form-section/decoration-title-1.png", alt="")
+            .title__box
+              span 聯絡資訊
+
+          ul.form__list
+            each data, index in inputInfo
+              if index > 6
+                li.form__box.m-bottom--sm
+                  label(for= data.id)= data.label + "："
+                  input(id= data.id, name= data.id, type= data.type ? data.type : null, inputmode= data.inputmode ? data.inputmode : null, class= data.twice ? "double__input" : null)
+                  if data.twice
+                    span ~
+                    input(id= data.id2, name= data.id, type= data.type ? data.type : null, inputmode= data.inputmode ? data.inputmode : null, class= data.twice ? "double__input" : null)
+
+      .form__block
+        .block__wrap
+          .block__title.m-bottom--md
+            img(src="~event/1st/e-main/components/form-section/decoration-title-2.png", alt="")
+            .title__box
+              span 代購許願池交易規範
+          p.m-bottom--sm 親愛的會員您好，如您於ET Mall東森購物網站上查詢不到想購買的精品，請於「精品代購許願池」中填入您想購買的許願表單，我們將為您尋找及代購。
+          p.m-bottom--xs
+            strong 交易規範須知：
+          ol.form__list
+            li.m-bottom--xs 精品價值需高於新臺幣15萬元(依市價認定)以上始得填寫代購許願表單。
+            li.m-bottom--xs 預計於14個工作天內，將以東森購物APP或E-mail通知您是否許願成功。
+            li.m-bottom--xs 許願成功者，請於72小時內點選東森購物APP通知或E-mail所提供之訂單連結以完成結帳，始完成許願代購程序。
+            li.m-bottom--xs 代購是依照消費者要求而提供協助購買商品之服務，係屬「客製化給付」，依通訊交易解除權合理例外情事適用準則規定並無消費者保護法第19條鑑賞期之適用。因此，若您收到精品後將無法主張退、換貨或解除契約。
+            li.m-bottom--xs 精品將由專人與您聯繫親送時間。經專人親自送達後，請逐一檢視所購買之精品，確認無誤後並請簽署"購買同意書"，以完成購買程序。
+            li.m-bottom--xs 東森購物僅會將精品親送予您本人，並請您本人確實簽收，故恕不提供指定第三人代收精品服務。若您欲將精品轉贈予第三人，請您務必先親自簽收後由您轉贈。
+            li.m-bottom--xs 倘若您已許願成功卻未於72小時內完成結帳，且超過2次者，為保障其他消費者權益恕東森購物不再提供代購許願服務。
+
+        .block__hr
+
+      .form__block
+        .form__check
+          input(type="checkbox", name="", value="" id="ruleCheck")
+          label(for="ruleCheck") 我已詳細閱讀並同意東森購物「
+            a(href="https://m.etmall.com.tw/HelpCenter/PrivacyStatement", title="隱私權保護政策") 隱私權保護政策
+          |」。
+        .form__submit
+          button(type="submit") 送出
+
+

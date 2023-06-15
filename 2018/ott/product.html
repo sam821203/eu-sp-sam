@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  <meta charset="UTF-8">
+  <title>嚴選商品 - 東森購物</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="theme-color" content="#cc1e05">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" size="16x16" href="image/favicon.ico">
+  <link rel="icon" sizes="192x192" href="image/android-icon-192x192.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="/image/apple-touch-icon-180x180.png">
+  <meta name="description" content="東森購物的嚴選商品！">
+  <meta name="keywords" content="ETMALL,東森購物,嚴選商品">
+  <meta itemprop="name" content="嚴選商品 - 東森購物"> 
+  <meta itemprop="description" content="東森購物的嚴選商品！"> 
+  <meta property="og:title" content="嚴選商品 - 東森購物">
+  <meta property="og:description" content="東森購物的嚴選商品！">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="Product Card">
+  <meta name="twitter:site" content="ETmall">
+  <meta name="twitter:title" content="嚴選商品 - 東森購物">
+  <meta name="twitter:description" content="東森購物的嚴選商品！">
+  <link rel="stylesheet" href="css/ott-product.css">
+</head>
+<body>
+  <main id="wrap" class="wrap">
+    <section id="product" class="product">
+      <div id="productVideo" class="product__video">
+        <div id="videoWrap" class="video__wrap shadow">
+          <div id="videoFrame"></div>
+        </div>        
+      </div>
+      <article class="product__intro">
+        <p id="productPromo" class="product__promo"></p>
+        <p id="productName" class="product__name">
+        <div id="productSpec" class="product__spec">
+          <p></p>
+        </div>
+      </article>
+      <div class="product__info">
+        <div class="info__price">
+          <p>商品價格</p>
+          <div class="product__price">
+            <span>$</span>
+            <span id="productPrice"></span>
+          </div>            
+        </div>
+        <div class="info__id">
+          <p>訂購編號</p>
+          <p id="productId" class="product__id"></p>
+        </div>
+      </div>
+      <aside class="mobile-cta">
+        <a href="http://www.etmall.com.tw" id="btnBuy" class="btn btn--buy grid-small grid-medium" target="_blank"><span>立即購買</span></a>
+        <a href="tel:0800552299" class="btn btn--call grid-small" target="_blank"><img src="image/icon-call.png" alt="訂購專線"><span>訂購專線</span><span>0800-55-22-99</span></a>
+      </aside>
+      <aside class="pad-cta grid-medium grid-large">
+        <div class="qrcode__img">
+          <img src="image/etmall0800.png" alt="tel:0800552299">
+        </div>
+        <p>掃描立即撥打電話</p>
+        <p>0800-55-22-99</p>
+        <div class="tv-cta grid-large">
+          <div class="btn__wrap">
+            <a href="" id="btnPlay" class="btn btn--play"><i></i><span>播放影片</span></a>
+          </div>
+          <div class="btn__wrap">
+            <a href="" id="btnBack" class="btn btn--back"><i></i><span>返回上一頁</span></a>
+          </div>  
+        </div>
+      </aside>
+    </section>
+  </main>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/generateData-rank.js"></script>
+  <script src="js/generateData-sale.js"></script>
+  <script src="js/generateData-today.js"></script>
+  <script src="js/ott-product.js"></script>
+</body>
+</html>

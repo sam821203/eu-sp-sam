@@ -1,0 +1,119 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero__zone
+  +pos-set(relative, base)
+  margin: 0 auto
+  width: 90%
+  .hero__block
+    // outline: 1px solid red
+    +aspect-ratio(960, 650)
+    .hero__box
+      // +pos-set(relative)
+      width: 100%
+      padding: 0 auto
+      text-align: center
+      .decoration__box
+        +pos-set(absolute, 0, 0)
+
+        width: 100%
+        .decoration--top
+          width: 25%
+          &:first-child
+            margin-top: 2%
+            animation: go-up-down 2s 1.8s both infinite linear
+          &:last-child
+            right: 0
+            margin-top: -3%
+            width: 30%
+            z-index: -1
+            animation: bounceInUp 2s .5s 
+
+
+      .decoration__box--ball
+        +pos-set(absolute, 0, 0, 0)
+        width: 100%
+        .decoration--top
+          width: 30%
+          z-index: -1
+          &:first-child
+            margin-top: -15%
+            margin-left: 13%
+            animation: bounceInUp 3s .5s 
+          &:last-child
+            margin-top: 24%
+            margin-left: -5%
+            width: 16%
+            animation: key-wind-rotate 5s 1s infinite ease-in-out
+            +breakpoint-min($min-width-md)
+              margin-left: -2%
+      .hero__item
+        display: flex
+        +pos-set(absolute)
+        top: 45%
+        left: 0
+        z-index: 1
+        .item--box
+          width: 65%
+          &:first-child
+            margin-left: 6%
+          &:last-child
+            margin-top: 5%
+            margin-left: -12%
+            width: 35%
+            animation: bounceInUp2 5s 1s both infinite linear
+
+  .title__sub
+    position: absolute
+    top: 54%
+    left: calc(50% - 150px)
+    // width: 95%
+    +breakpoint-min($min-width-md)
+      top: 49%
+      left: 8%
+
+
+
+
+@keyframes key-wind-rotate
+  0%
+    transform: rotate3d(0, 0, 1, -4deg) skew(4deg)
+  50%
+    transform: rotate3d(0, 0, 1, 4deg) skew(-4deg)
+  100%
+    transform: rotate3d(0, 0, 1, -4deg) skew(4deg)
+    
+
+@keyframes bounceInUp
+  0%, 60%, 75%, 90%, to
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+  0%
+    opacity: 0
+    transform: translate3d(0, 200%, 0) scaleY(2)
+  60%
+    opacity: 1
+    transform: translate3d(0, -10%, 0) scaleY(.9)
+  75%
+    transform: translate3d(0, 5%, 0) scaleY(.95)
+  90%
+    transform: translate3d(0, -1%, 0) scaleY(.985)
+  to
+    transform: translateZ(0)
+
+@keyframes bounceInUp2
+  0%, 100%
+    transform: translateY(0)
+  10%
+    transform: translateY(-8%)
+  20%
+    transform: translateY(0%)
+
+
+@keyframes go-up-down
+  0%, 100%
+    transform: translateY(0)
+  25%
+    transform: translateY(5%)
+  75%
+    transform: translateY(-5%)
+

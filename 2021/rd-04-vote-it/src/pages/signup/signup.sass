@@ -1,0 +1,32 @@
+//- ==========================================================================
+//- Base
+//- ==========================================================================
+@import "~utils/sass/_common"
+
+//- =======================================================================
+//- layout
+//- =======================================================================
+@import "~layout/header/_header"
+
+// ========================================================================
+// components
+// ========================================================================
+@import "~components/hero-section/_hero-section"
+@import "~components/form-section/_form-section"
+@import "~components/rule-section/_rule-section"
+// ========================================================================
+// Page
+// ========================================================================
+body
+  background-color: $main-color-yellow-1
+  +breakpoint-min($min-width-xl)
+    background: $main-color-yellow-1 center 500px url(~pages/signup/bg-web.jpg) repeat-y
+    background-size: auto
+
+.hero__wrap
+  .hero__box
+    .cta__wrap
+      +pos-set(absolute, ten)
+      bottom: -5%
+      right: 0
+      width: 33.5%

@@ -1,0 +1,110 @@
+- 
+  var w4m4DataE = [
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202007/SP_1115985/w/index.html",
+      imgSrc: "~event/1st/e-main/components/event-w4m4/items/depart-1.png",
+      itemAlt: "型男老爸",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202007/SP_1115979/w/index.html",
+      imgSrc: "~event/1st/e-main/components/event-w4m4/items/depart-2.png",
+      itemAlt: "愛爸健康",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202007/SP_1115983/w/index.html",
+      imgSrc: "~event/1st/e-main/components/event-w4m4/items/depart-3.png",
+      itemAlt: "電鬍刀↘",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/c2/138366",
+      imgSrc: "~event/1st/e-main/components/event-w4m4/items/depart-4.png",
+      itemAlt: "realme來了",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202006/SP_1115740/w/index.html",
+      imgSrc: "~event/1st/e-main/components/event-w4m4/items/depart-5.png",
+      itemAlt: "抽Switch",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202004/SP_1115247/w/index.html",
+      imgSrc: "~event/1st/e-main/components/event-w4m4/items/depart-6.png",
+      itemAlt: "日用+美食",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202007/SP_1116012/w/index.html",
+      imgSrc: "~event/1st/e-main/components/event-w4m4/items/depart-7.png",
+      itemAlt: "流行時尚",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202007/SP_1115807/w/index.html",
+      imgSrc: "~event/1st/e-main/components/event-w4m4/items/depart-8.png",
+      itemAlt: "振興旅遊",
+    }, 
+  ]
+
+- 
+  var w4m4DataU = [
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      imgSrc: "~event/1st/e-main/components/event-w4m4/items/depart-1.png",
+      itemAlt: "滿額送$300",
+      departLink: "",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      imgSrc: "~event/1st/e-main/components/event-w4m4/items/depart-2.png",
+      itemAlt: "滿額送$300",
+      departLink: "",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      imgSrc: "~event/1st/e-main/components/event-w4m4/items/depart-3.png",
+      itemAlt: "滿額送$300",
+      departLink: "",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      imgSrc: "~event/1st/e-main/components/event-w4m4/items/depart-4.png",
+      itemAlt: "滿額送$300",
+      departLink: "",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      imgSrc: "~event/1st/e-main/components/event-w4m4/items/depart-5.png",
+      itemAlt: "滿額送$300",
+      departLink: "",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      imgSrc: "~event/1st/e-main/components/event-w4m4/items/depart-6.png",
+      itemAlt: "滿額送$300",
+      departLink: "",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      imgSrc: "~event/1st/e-main/components/event-w4m4/items/depart-7.png",
+      itemAlt: "滿額送$300",
+      departLink: "",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      imgSrc: "~event/1st/e-main/components/event-w4m4/items/depart-8.png",
+      itemAlt: "滿額送$300",
+      departLink: "",
+    }, 
+  ]
+
+- var w4m4Data = isU? w4m4DataU : w4m4DataE
+
+section.promo__group.promo__group--w4m4.m-bottom--sm(data-title="八館活動")
+  .layout--main
+    .promo__title.block--center
+      img(src="~event/1st/e-main/components/event-w4m4/title-event-w4m4.png", alt="")
+    .promo__wrap
+      ul.good__wrap
+        each data in w4m4Data
+          li
+            a(href= data.itemLink, title= data.itemAlt)
+              img(src= data.imgSrc, alt= data.itemAlt)
+
+

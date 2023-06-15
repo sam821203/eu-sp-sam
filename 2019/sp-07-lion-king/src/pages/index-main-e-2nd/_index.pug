@@ -1,0 +1,129 @@
+//- 打開u-mall選項會自動轉換成U的logo和連結(預設etmall)
+//- 打開sp選項以切換行銷主視覺或是商品SP頁(main/ sp、預設是main)
+//- - var isU = true
+//- - var isSp = true
+
+main#spWrap.sp__wrap
+  section.hero.header__wrap
+    .layout--main
+      .logo-e-2nd
+        include /layout/logo/_logo.pug
+
+      //h1.title__wrap--main.block--center(title="東森購物ｘ獅子王購物慶典")
+      //  img(src="~pages/index-main-e-2nd/img/1-title.png", alt="東森購物ｘ獅子王購物慶典")
+      .hero__pic.block--center
+        img(src="~pages/index-main-e-2nd/img/1-poster.jpg", alt= "東森購物")
+        a.bankPoint(href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201907/SP_1107834/w/index.html")
+      div.promo__event
+        .layout--main
+          ul.event__wrap
+            li
+              a(href="https://www.etmall.com.tw", title="消費滿萬送千")
+                img(src="~pages/index-main-e-2nd/img/2-Button_03.png", alt="消費滿萬送千")
+            li
+              a(href="https://www.etmall.com.tw", title="滿額加價購")
+                img(src="~pages/index-main-e-2nd/img/2-Button_04.png", alt="滿額加價購")
+            li
+              a(href="https://www.etmall.com.tw", title="登記抽好物")
+                img(src="~pages/index-main-e-2nd/img/2-Button_05.png", alt="登記抽好物")
+
+  // 品牌夯推薦
+  section.promo__group.promo__group-3
+    .layout--main
+      .promo__wrap
+        #sliderRank.promo__slider.swiper-container
+          ul.swiper-wrapper
+            li.swiper-slide
+              a(href="https://www.etmall.com.tw/i/2326942", title="SK-II 青春露330ml")
+                img(src="~pages/index-main-e-2nd/img/3-pp_01.png", alt="SK-II 青春露330ml")
+            li.swiper-slide
+              a(href="https://www.etmall.com.tw/i/2304731", title="iVENOR 「林采緹推薦 夜塑崩夜間瘦身術3盒組( 60粒/盒)")
+                img(src="~pages/index-main-e-2nd/img/3-pp_02.png", alt="iVENOR 「林采緹推薦 夜塑崩夜間瘦身術3盒組( 60粒/盒)")
+            li.swiper-slide
+              a(href="https://www.etmall.com.tw/p/77613", title="LG喜馬拉雅粉晶鹽牙膏285g/瓶+100g/條+牙刷x3支+漱口水320ml/瓶")
+                img(src="~pages/index-main-e-2nd/img/3-pp_03.png", alt="LG喜馬拉雅粉晶鹽牙膏285g/瓶+100g/條+牙刷x3支+漱口水320ml/瓶")
+            li.swiper-slide
+              a(href="https://www.etmall.com.tw/c3/131797", title="UCC經典風味濾掛式咖啡 8gx12入")
+                img(src="~pages/index-main-e-2nd/img/3-pp_04.png", alt="UCC經典風味濾掛式咖啡 8gx12入")
+            li.swiper-slide
+              a(href="https://www.etmall.com.tw/i/2205383", title="長灘島海陸精彩夜店瘋狂夜悠閒4+1日(兩人成行)旅遊")
+                img(src="~pages/index-main-e-2nd/img/3-pp_05.png", alt="長灘島海陸精彩夜店瘋狂夜悠閒4+1日(兩人成行)旅遊")
+            li.swiper-slide
+              a(href="https://www.etmall.com.tw/c2/107807", title="HUAWEI 華為 Watch GT 智慧運動手錶-活力款")
+                img(src="~pages/index-main-e-2nd/img/3-pp_06.png", alt="HUAWEI 華為 Watch GT 智慧運動手錶-活力款")
+            li.swiper-slide
+              a(href="https://www.etmall.com.tw/i/2274071", title="SONY PS4 Pro主機CUH-7218系列 2TB-極致黑+第二支手把")
+                img(src="~pages/index-main-e-2nd/img/3-pp_07.png", alt="SONY PS4 Pro主機CUH-7218系列 2TB-極致黑+第二支手把")
+            li.swiper-slide
+              a(href="https://www.etmall.com.tw/i/2225852", title="BRAUN德國百靈 新升級三鋒系列電鬍刀3090cc(自動清洗座)")
+                img(src="~pages/index-main-e-2nd/img/3-pp_08.png", alt="BRAUN德國百靈 新升級三鋒系列電鬍刀3090cc(自動清洗座)")
+            li.swiper-slide
+              a(href="https://www.etmall.com.tw/np/78250", title="MONTBLANC 萬寶龍牛皮長/短夾")
+                img(src="~pages/index-main-e-2nd/img/3-pp_09.png", alt="MONTBLANC 萬寶龍牛皮長/短夾")
+            li.swiper-slide
+              a(href="https://www.etmall.com.tw/c3/96623", title="亞帝芬奇 GIA 50分 FSI1 鑽石 項鍊 真愛 14K金台+14K金鍊")
+                img(src="~pages/index-main-e-2nd/img/3-pp_10.png", alt="亞帝芬奇 GIA 50分 FSI1 鑽石 項鍊 真愛 14K金台+14K金鍊")
+          #sliderRankPrev.swiper-button-white.swiper-button-prev
+          #sliderRankNext.swiper-button-white.swiper-button-next
+  section.promo__group.promo__group-6
+    .layout--main
+      .promo__wrap
+        #sliderPromo.promo__slider.swiper-container.p-bottom--sm
+          ul.swiper-wrapper
+            li.swiper-slide
+              a(href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201907/SP_1108574/w/index.html", title="ACER滿額送耳機")
+                img(src="~pages/index-main-e-2nd/img/6-pp_01.png", alt="ACER滿額送耳機")
+            li.swiper-slide
+              a(href="https://www.etmall.com.tw/c2/107789", title="MacBook")
+                img(src="~pages/index-main-e-2nd/img/6-pp_02.png", alt="MacBook")
+            li.swiper-slide
+              a(href="https://www.etmall.com.tw/c3/132826", title="三星新機A80")
+                img(src="~pages/index-main-e-2nd/img/6-pp_03.png", alt="三星新機A80")
+            li.swiper-slide
+              a(href="https://www.etmall.com.tw/c2/121379", title="夏日防曬美妝")
+                img(src="~pages/index-main-e-2nd/img/6-pp_04.png", alt="夏日防曬美妝")
+            li.swiper-slide
+              a(href="https://www.etmall.com.tw/p/77965", title="華陀龜鹿專家")
+                img(src="~pages/index-main-e-2nd/img/6-pp_05.png", alt="華陀龜鹿專家")
+            li.swiper-slide
+              a(href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201907/SP_1108611/w/index.html", title="德國百靈")
+                img(src="~pages/index-main-e-2nd/img/6-pp_06.png", alt="德國百靈")
+            li.swiper-slide
+              a(href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201907/SP_1108652/w/index.html", title="精品服飾送禮")
+                img(src="~pages/index-main-e-2nd/img/6-pp_07.png", alt="精品服飾送禮")
+            li.swiper-slide
+              a(href="https://www.etmall.com.tw/c3/133023", title="台灣茶人69折")
+                img(src="~pages/index-main-e-2nd/img/6-pp_08.png", alt="台灣茶人69折")
+            li.swiper-slide
+              a(href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201906/SP_1108403/w/index.html", title="旅遊年中慶")
+                img(src="~pages/index-main-e-2nd/img/6-pp_09.png", alt="旅遊年中慶")
+        #sliderPromoPrev.swiper-button-white.swiper-button-prev
+        #sliderPromoNext.swiper-button-white.swiper-button-next
+
+
+
+  section.promo__group.promo__group-9.promo__bngroup
+    .layout--main
+      .promo__wrap
+        #sliderBn.promo__slider.swiper-container
+          .swiper-wrapper
+            li.swiper-slide
+              a(href="https://www.etmall.com.tw", title="好康推薦")
+                img(src="~pages/index-main-e-2nd/img/9-640x280-BN_01.jpg", alt="好康推薦")
+            li.swiper-slide
+              a(href="https://www.etmall.com.tw", title="好康推薦")
+                img(src="~pages/index-main-e-2nd/img/9-640x280-BN_02.jpg", alt="好康推薦")
+        //#sliderBnPrev.swiper-button-white.swiper-button-prev
+        //#sliderBnNext.swiper-button-white.swiper-button-next
+
+//- script區
+//- polyfill 一般共用
+include /utils/pug/include/_polyfill-js.pug
+//- General 一般共用
+include /utils/pug/include/_general.pug
+//- 電梯
+include /utils/pug/include/_elevator-link.pug
+//- 浮水印
+//- include /utils/pug/include/_float-icon.pug
+//- 輪播cdn
+include /utils/pug/include/_slider-cdn-js.pug

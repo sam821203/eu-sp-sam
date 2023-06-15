@@ -1,0 +1,52 @@
+.promo__group--group-item
+  .promo__wrap
+    +pos-set(relative, zero)
+    padding: 22% 5% 8%
+    +bg-set(url("~event/1st/e-main/components/group-slider/bg-group-slider.png"), 100%)
+    .swiper-wrapper
+      // FIXME: IE中swiper在slidesPerColumn有設定下不會自己補上flex-wrap: wrap，但現代瀏覽器手動在CSS補上會造成一開始較大的板塊飄移，所以用CSS前綴只幫IE手動補上，現代瀏覽器交給swiper自己補上
+      -ms-flex-wrap: wrap
+      li
+        width: 50%
+    +breakpoint-min($min-width-lg)
+      +bg-set(url("~event/1st/e-main/components/group-slider/bg-group-slider-web.png"), 100%)
+      .swiper-wrapper
+        li
+          width: 25%
+    +breakpoint-min($min-width-xl)
+      padding: 215px 50px 70px
+
+  .group__pager
+    bottom: 2.2%
+    left: 0
+    width: 100%
+    .swiper-pagination-bullet
+      margin: 0 4px
+      width: 12px
+      height: 12px
+      transition: all 0.3s
+      outline: 0
+      &.swiper-pagination-bullet-active
+        width: 24px
+        border-radius: 12px
+        background-color: $gray-deep-dark
+
+  +breakpoint-min($min-width-md)
+    .group__pager
+      bottom: 2.5%
+      .swiper-pagination-bullet
+        margin: 0 6px
+        width: 18px
+        height: 18px
+        &.swiper-pagination-bullet-active
+          width: 36px
+          border-radius: 18px
+
+  +breakpoint-min($min-width-lg)
+    .group__pager
+      bottom: 4.5%
+  +breakpoint-min($min-width-xl)
+    .group__pager
+      bottom: 35px
+
+

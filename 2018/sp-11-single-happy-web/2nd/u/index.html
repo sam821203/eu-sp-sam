@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		* {
+ 		 box-sizing: border-box; }
+  		*:before, *:after {
+    		box-sizing: border-box; }
+	    a {
+	    	display: block;
+	    	text-decoration: none;
+	    }
+		ul {
+			list-style: none;
+		}
+		img {
+			border: 0;
+		}
+		main,article, aside, details, figcaption, figure, 
+		footer, header, hgroup, menu, nav, section {
+			display: block;
+		}
+		html, body{
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+  			width: 100%;
+  			min-width: 1260px;
+			background: center top url(background-2.jpg) no-repeat, center 50% url(background-pattern.png), #e6104e linear-gradient(#e6104e 40%, #fc0b1e 100%);
+		}
+
+		body, td, th {
+    		font-family: PingFangTC-regular, Roboto, "LiHei Pro", "Source Han Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, "Microsoft JhengHei", sans-serif;
+		}
+
+		.sp--1260 {
+			position: relative;
+			max-width: 1260px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.sp__wrap,
+		.sp__wrap section {
+			position: relative;
+			overflow: hidden;
+		}
+/* ============= decoration ============= */
+		.decoration--background,
+		.decoration--foreground {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100vh;
+			pointer-events: none;
+		}
+
+		.decoration--foreground {
+			z-index: 10;
+		}
+
+		.background,
+		.background--middle, 
+		.foreground {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+
+		.background--middle {
+			z-index: -1;
+		}
+
+		.foreground {
+			position: absolute;
+		}
+
+		.background--middle img {
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			left: 0;
+		}
+		.background--middle img:nth-child(1) {
+			margin-left: calc(50% - 425px);
+		}
+		.background--middle img:nth-child(2) {
+			top: 317px;
+			margin-left: calc(50% + 397px);
+			transform: translate(-60px, 0px) scale(0.7);
+		}
+		.background--middle img:nth-child(3) {
+			margin-left: calc(50% - 800px);
+			transform: translate(-7px, -4px) scale(0.825) rotate(10deg);
+		}
+		.background--middle img:nth-child(4) {
+			margin-left: calc(50% - 900px);
+			transform-origin: top right;
+			transform: translate(0, -100px) scale(0.76);
+		}
+		.background--middle img:nth-child(5) {
+			margin-left: calc(50% - 165px);
+			transform-origin: top left;
+			transform: translate(0, -100px) scale(0.76);
+		}
+		.background--middle img:nth-child(6) {
+			margin-left: calc(50% - 1152px);
+			transform: translate(-40px, -8px) scale(0.71) rotate(-15deg);
+		}
+		.background--middle img:nth-child(7) {
+			top: 550px;
+			margin-left: calc(50% - 933px);
+			transform: translate(0px, -150px) scale(0.4);
+		}
+		.background--middle img:nth-child(8) {
+			top: 87px;
+			margin-left: calc(50% - 1273px);
+		}
+		.decoration-light {
+			position: absolute;
+			z-index: 1;
+			width: 100%;
+			height: 120vh;
+		}
+
+		.overlay--off .background--middle img:nth-child(8) {
+			animation: 1s 2s super-flash both;
+		}
+		.overlay--off .decoration-light {
+			animation: 1s 1s super-flash2 both;
+		}
+
+		.overlay--off .background--middle img:not(:nth-child(8)) {
+			animation: 2s back-to-zero both ease-in-out;
+		}
+
+
+		@keyframes back-to-zero {
+			to {
+				transform: translate(0, 0) scale(1) rotate(0);
+			}
+		}
+		@keyframes super-flash {
+			from, 10%, 20%{
+				opacity: 0;
+			}
+			5%, 15% {
+				opacity: 1;
+				filter: brightness(100%);
+			}
+			40% {
+				opacity: 1;
+				filter: brightness(500%) filter: drop-shadow(0 0 20px #fff);	
+			}
+			to {
+				filter: brightness(100%);
+			}
+		}
+		@keyframes super-flash2 {
+			from, 10%, 20%{
+				opacity: 0;
+			}
+			5%, 15% {
+				opacity: 0.1;
+				background-color: #fff;			
+			}
+			40% {
+				opacity: 0.3;
+				background-color: #fff;
+			}
+			to {
+				opacity: 0;
+			}
+		}
+
+		.foreground--star,
+		.foreground--light,
+		.product__wrap {
+			position: absolute;
+			z-index: 5;
+		}
+
+		.light-1 {
+			top: 10px;
+			left: calc(50% - 540px);
+			transform-origin: right bottom;
+		}
+
+		.light-2 {
+			top: 0;
+			right: calc(50% - 540px);
+			transform-origin: left bottom;
+		}
+
+		.overlay--off .light-1 {
+			animation: 1s 1.5s super-flash3 backwards, 7s 1s rotate-self infinite alternate ease-out;
+		}
+
+		.overlay--off .light-2 {
+			animation: 1s 1.5s super-flash3 backwards, 8s 1s rotate-self backwards infinite alternate ease-in;
+		}
+
+		.light-1 div,
+		.light-2 div {
+			width: 495px;
+			height: 457px;
+			background-image: url(foreground-light.png);
+		}
+
+		.light-1 div {
+			transform: scale(-1, 1);
+		}
+		@keyframes super-flash3 {
+			from, 10%, 20%{
+				opacity: 0;
+			}
+			5%, 15% {
+				opacity: 0.1;
+				
+			}
+			40% {
+				opacity: 0.3;
+			}
+			to {
+				opacity: 1;
+			}
+		}
+		@keyframes rotate-self {
+			from {
+				transform: rotate(-40deg);
+			}
+			to {
+				transform: rotate(30deg);
+			}
+		}
+
+		.foreground--star {
+			left: calc(50% - 1200px);
+			width: 1369px;
+			height: 1065px;
+			background-image: url(foreground-star-2.png);
+		}
+
+		.overlay--off .foreground--star {
+			animation: 0.5s 2s fall-left backwards;
+		}
+
+		@keyframes fall-left {
+			from {
+				transform: translate(100%, -100%);
+			}
+		}
+
+		.product__wrap {
+			top: 100px;
+			left: calc(50% - 874px);
+		}
+
+		.overlay--off .product__wrap {
+			animation: 1s 2s spread-out backwards;
+		}
+
+		.foreground--product {
+			width: 1920px;
+			height: 1010px;
+			background-image: url(foreground-product-2.png);
+		}
+		@keyframes spread-out {
+			from {
+				transform: scale(0);
+			}
+		}		
+/* ================= header ================= */
+		.sp-logo {
+			position: absolute;
+			z-index: 5;
+			top: 20px;
+			left: 0;
+			cursor: pointer;
+		}
+		
+/* ================= main-visual ================= */
+		.main-title {
+			position: relative;
+			z-index: 2;
+			padding-top: 110px;
+		}
+		.main-title img {
+			margin-left: calc(50% - 352px);
+			transform: translate(0, 0) scale(1.4);
+		}
+
+		.overlay--off .main-title img {
+			animation: 2s back-to-zero both ease-in-out;
+		}
+/* ================= main-content ================= */
+		.main-info {
+			position: relative;
+			z-index: 4;
+			padding-left: 50px;
+			padding-right: 50px;
+		}
+
+		.main-info:after {
+			content: '';
+			position: absolute;
+			z-index: -1;
+			top: 20%;
+			left: 0;
+			width: 100%;
+			height: 65%;
+			background-color: rgba(0, 0, 0, .5);
+			border: 2px solid #e10082;
+			border-radius: 135px / 81px;
+			/*animation: 1s 3.5s slide-down backwards;*/
+		}
+
+		.main-intro {
+			display: flex;
+			justify-content: space-around;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.main__title img {
+			position: relative;
+			z-index: 0;
+			top: calc(50% - 105px);
+		}
+
+		.main__box {
+			transition: all 0.3s;
+		}
+
+		.overlay--off .main__box {
+			animation: 1s stop-flip ease-in;
+		}
+
+		.overlay--off .main__box.animation {
+			animation: 0.3s flipX infinite linear;
+		}
+
+		.main--info-a:hover .main__box,
+		.main--info-a:active .main__box {
+			filter: brightness(109%) contrast(118%);
+			animation: 0.3s flipX2;
+		}
+
+		@keyframes slide-down {
+			from {
+				transform: translateY(-20%);
+				opacity: 0;
+			}
+		}
+		/* Animate.css*/
+		@keyframes flipX {
+		  from {
+		    transform: perspective(400px) rotate3d(1, 0, 0, 0deg);
+		  }
+		  10% {
+		    transform: perspective(400px) rotate3d(1, 0, 0, 180deg);
+		  }
+
+		  100% {
+		    transform: perspective(400px) rotate3d(1, 0, 0, 720deg);
+		  }
+		}
+
+		@keyframes stop-flip {
+		  from {
+		    transform: perspective(400px) rotate3d(1, 0, 0, 360deg);
+		  }
+		  20% {
+		    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+		  }
+
+		  40% {
+		    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+		  }
+
+		  60% {
+		    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+		  }
+
+		  80% {
+		    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+		  }
+
+		  to {
+		    -webkit-transform: perspective(400px);
+		    transform: perspective(400px);
+		  }
+		}
+
+		@keyframes flipX2 {
+		  from {
+		    transform: perspective(400px) rotate3d(1, 0, 0, 0deg);
+		  }
+		  100% {
+		    transform: perspective(400px) rotate3d(1, 0, 0, 360deg);
+		  }
+		}
+/* ================= table hover setting ================= */
+		td[width^="2"] {
+			transition: all 0.3s;
+		}
+
+		td[width^="2"] a {
+			transition: all 0.3s;
+		}
+
+		td[width^="2"] td {
+			transition: all 0.3s;
+		}
+
+		td[width^="2"]:hover {
+			transform-origin: right bottom;
+			transform: rotate(1deg);
+			box-shadow: 0 5px 10px rgba(0,0,0,0.2), 0 3px 3px rgba(0,0,0,0.35);
+		}
+		td[width^="2"]:hover a {
+			color: #e6104e !important;
+		}
+
+		td[width^="2"]:hover td {
+			color: #e6104e !important;
+		}
+
+		a ~ table {
+			animation: 1s slider-left-right;
+		}
+
+		@keyframes slider-left-right {
+			from {
+				transform: translateX(-5%);
+			}
+		}
+    </style>
+	<main id="spWrap" class="sp__wrap">
+		<div class="decoration--background">
+			<div class="background--middle">
+				<img src="decoration-background-0.png" alt="">
+				<img src="decoration-background-1.png" alt="">
+				<img src="decoration-background-2.png" alt="">
+				<img src="decoration-background-3.png" alt="">
+				<img src="decoration-background-4.png" alt="">
+				<img src="decoration-background-5.png" alt="">
+				<img src="decoration-background-6.png" alt="">
+				<img src="decoration-background-light.png" alt="">
+				<div class="decoration-light"></div>
+			</div>
+		</div>
+		<header>
+			<div class="sp--1260">
+				<div class="sp-logo">
+					<a href="http://www.u-mall.com.tw/" title="Umall森森購物網" target="_top">
+						<img src="logo.png" alt="Umall森森購物網">
+					</a>
+			  	</div>
+			</div>
+		</header>
+		<section class="sp-title">
+			<div class="sp--1260">
+				<div id="iconHome" class="icon-home"></div>
+			</div>
+			<h1 class="main-title">
+				<img src="title.png" alt="1111狂歡慶">
+			</h1>
+		</section>
+		<section class="sp-content">		
+			<div class="sp--1260">
+				<div class="main-info">
+					<div class="main-intro">
+						<div class="main__title">
+							<img src="main-info-1-2.png" alt="快速累點">
+						</div>
+						<a href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201811/SP_1102839/w/index.html" class="main--info-a" title="百萬大禮包登記送">
+							<div class="main__box animation">
+								<img class="main-target" src="main-1-1.png" alt="百萬大禮包登記送">
+							</div>	
+						</a>
+						<a href="#note" class="main--info-a" title="登入天天領">
+							<div class="main__box animation">
+								<img class="main-target" src="main-1-2.png" alt="登入天天領">
+							</div>	
+						</a>
+						<a href="https://www.u-mall.com.tw/Activity/WebSP?SubPage=DMSetting/Final/201811/SP_1102836/w/index.html" class="main--info-a" title="消費加碼$1,212登記GO">
+							<div class="main__box animation">
+								<img src="main-1-3.png" alt="消費加碼$1,212登記GO">
+							</div>	
+						</a>
+						<a href="https://www.u-mall.com.tw/Activity/WebSP?SubPage=DMSetting/Final/201811/SP_1102825/w/index.html" class="main--info-a" title="銀行卡友回饋">
+							<div class="main__box animation">
+								<img src="main-1-4.png" alt="銀行卡友回饋">
+							</div>	
+						</a>
+					</div>
+					<div class="main-intro">
+						<div class="main__title">
+							<img src="main-info-2-2.png" alt="抽獎好康">
+						</div>
+						<a href="https://www.u-mall.com.tw/Activity/WebSP?SubPage=DMSetting/Final/201811/SP_1102836/w/index.html" class="main--info-a" title="泡湯券滿額抽">
+							<div class="main__box animation">
+								<img src="main-2-1.png" alt="泡湯券滿額抽">
+							</div>	
+						</a>
+						<a href="https://www.u-mall.com.tw/Activity/WebSP?SubPage=DMSetting/Final/201811/SP_1102939/w/index.html" class="main--info-a" title="流行紡品滿999現折111">
+							<div class="main__box animation">
+								<img src="main-2-2.png" alt="流行紡品滿999現折111">
+							</div>	
+						</a>
+						<a href="#a99" class="main--info-a" title="買一送一專區">
+							<div class="main__box animation">
+								<img src="main-2-3.png" alt="買一送一專區">
+							</div>	
+						</a>
+						<a href="#a99" class="main--info-a" title="爆殺好物5折！">
+							<div class="main__box animation">
+								<img src="main-2-4.png" alt="爆殺好物5折！">
+							</div>	
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<div class="decoration--foreground">
+			<div class="foreground--star"></div>
+			<div class="foreground">
+				<div class="foreground--light light-1">
+					<div></div>
+				</div>
+				<div class="foreground--light light-2">
+					<div></div>
+				</div>
+			</div>
+			<div id="decrationFg" class="product__wrap">
+				<div class="foreground--product" data-depth="0.15"></div>
+			</div>
+		</div>
+	</main>
+<script id="loadJS" src="load-indicator.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script type="text/javascript" src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script type="text/javascript" src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1101787/generateVersion20180425.js" defer></script>
+<script id="scriptIconFloat" src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1103045/float-icon.js"></script>
+<script>
+	function addWow() {
+		var tableEl = document.querySelectorAll('a ~ table');
+
+		for(var i = 0; i < tableEl.length; i++) {
+			tableEl[i].classList.add('wow');
+		}
+		new WOW().init();
+	}
+	document.addEventListener('DOMContentLoaded', addWow);
+
+	function decoParallax() {
+		var fgDeco = document.getElementById('decrationFg');
+		var parallaxInstance = new Parallax(fgDeco);
+	}
+	setTimeout(function(){
+		requestAnimationFrame(decoParallax);
+	}, 4000);
+
+	function randomAnimate(elClass, time, newClass) {
+		var newClass = newClass || "animation";
+		var time = time || 160;
+
+		function getRandom(length) {
+			return Math.floor(Math.random() * length);
+		}
+
+		// make node index
+		var targetNode = document.getElementsByClassName(elClass);
+		var originArray = [];
+
+		for(var i = 0; i < targetNode.length; i++) {
+			originArray.push(i);
+		}
+
+		// make a new random array
+		var randomArray = [];
+		// make a steady length
+		var randomLength = originArray.length
+
+		for(var j = 0; j < randomLength; j++) {
+
+			// make a random index by the dynamic length
+			var randomIndex = getRandom(originArray.length)
+
+			randomArray.push(
+				originArray.splice(randomIndex, 1)[0]
+			);
+		}
+
+		for(var k = 0; k < randomLength; k++) {
+
+			(function(){
+				var m = k;
+				setTimeout(function(){
+					targetNode[randomArray[m]].classList.remove(newClass);
+				}, m * time)
+			})();
+		}
+	}
+</script>
+<script>$('a[href^="#"]').on('click',function(e){var target=$('a[name='+this.getAttribute('href').split('#')[1]+']')?$('a[name='+this.getAttribute('href').split('#')[1]+']'):$(this.getAttribute('href'));if(target.length){e.preventDefault();$('html,body').stop().animate({scrollTop:target.offset().top},500);}});</script>

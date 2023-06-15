@@ -1,0 +1,285 @@
+<meta charset="UTF-8">
+<meta name="viewport"
+  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!-- ============== 輪播 start ============== -->
+<link rel="stylesheet" href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116205/swiper.min.css">
+<!-- ============== 輪播 end ============== -->
+<!-- 共用CSS -->
+<link rel="stylesheet" href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116205/animate.min.css">
+<link rel="stylesheet" href="https://media.etmall.com.tw/sp/12500/generate_v1.1.css">
+
+<!-- [電梯步驟1] 電梯CSS 不用就關掉 -->
+<!-- 商品左電梯CSS，要使用還要在步驟3開啟左電梯data資料 -->
+<!-- <link id="localElevatorLeft" rel="stylesheet" href="sp-elevator-left.css"> -->
+
+<!-- 商品右電梯CSS，步驟3有測試div可以測試 -->
+<link id="localElevatorRight" rel="stylesheet" href="sp-elevator-right.css">
+<!-- [電梯步驟1] 電梯CSS END -->
+
+<style>
+  body {
+    /* 自行修正背景顏色 */
+    background-color: #c9bcb6;
+  }
+
+  .decor__bg {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: url(bg-m.jpg) center 0 no-repeat;
+    background-size: 100%;
+  }
+
+  @media screen and (min-width: 960px) {
+    .decor__bg {
+      background: url(bg.jpg) center 0 no-repeat;
+      background-size: auto;
+    }
+  }
+
+  /* == 單(雙)連結輪播 == */
+  .sp__main {
+    position: relative;
+    z-index: 0;
+  }
+
+  .promo__slider {
+    position: absolute;
+    z-index: 1;
+    top: 11.5%;
+    /* 小網左邊距離 */
+    left: 0%;
+    /* 小網圖片寬 */
+    width: 100%;
+    /* 圖片原始尺寸 */
+    max-width: 960px;
+    overflow: hidden;
+    /* 小網若翻轉時會裁到圖片，可以加這裡的數值 */
+    padding-bottom: 12%;
+  }
+
+  .swiper-container {
+    padding-top: 18%;
+  }
+    .swiper-slide,
+    .swiper-slide-duplicate {
+      width: 30%;
+    }
+    .swiper-slide a,
+    .swiper-slide-duplicate a{
+      position: relative;
+      z-index: 0;
+      filter: brightness(50%);
+      transform: translate(0, 0) scale(0);
+      transition: all 0.6s;
+      opacity: 0;
+    }
+    .swiper-slide-next a,
+    .swiper-slide-duplicate-next a {
+      transform: translate(-23%, -15%) scale(0.8);
+      opacity: 0.5;
+    }
+    .swiper-slide-prev a,
+    .swiper-slide-duplicate-prev a{
+      transform: translate(23%, -15%) scale(0.8);
+      opacity: 0.5;
+    }
+
+    .swiper-slide-active,
+    .swiper-slide-duplicate-active {
+      z-index: 1;
+    }
+    .swiper-slide-active a,
+    .swiper-slide-duplicate-active a{
+      transition: all 0.6s;
+      transform: translate(0%, 0%) scale(1.6);
+      filter: brightness(105%);
+      opacity: 1;
+    }
+
+  @media screen and (min-width: 960px) {
+    .promo__slider {
+      /* 大網左邊距離 */
+      left: calc(50% - 440px);
+      /* overflow: visible; */
+    }
+  }
+
+  /* 調整logo位置大小 */
+  .logo {
+    top: 14px;
+    left: 1%;
+    width: 20%;
+    max-width: 220px;
+  }
+
+  /* 連結測試 */
+  /* .sp__visual a{
+    filter: brightness(500%);
+  } */
+
+  /* 切片測試 */
+  /* .visual__fragment::before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #00f;
+    pointer-events: none;
+  } */
+
+  /*-- 動畫小物件 --*/
+  /* ======================================== */
+  .animate__wrap {
+    position: relative;
+    z-index: 1;
+  }
+
+  /*-- 手機版：設定物件距離左邊與上邊的位置，單位可以使用"%"或"vw";width:建議電腦版可以使用auto，手機版則可使用%調整 --*/
+  .animate__wrap .animate__obj--01 {
+    position: absolute;
+    top: 5vw;
+    left: 3vw;
+    width: 95%;
+  }
+
+  /*-- 電腦版：設定物件距離左邊與上邊的位置，單位可以使用"px"，左邊可以挑整clac()後面的px值;width:建議電腦版可以使用auto，手機版則可使用%調整 --*/
+  @media screen and (min-width: 960px) {
+    .animate__wrap .animate__obj--01 {
+      top: 12px;
+      left: calc(50% - 445px);
+      width: auto;
+    }
+  }
+</style>
+<div class="elevatorHome js--main--dialog" id="elevatorHome"></div>
+<div class="navRightBar" id="navRightBar"></div>
+
+<!--<div id="barHome"></div>-->
+<div id="iconHome" class="layout--main home--icon"></div>
+<div class="decor__bg"></div>
+<div id="spWrap" class="sp__wallper">
+  <!-- 動畫小物件 -->
+  <div class="animate__wrap">
+    <!-- 如果有多組物件，可以複製命名animate__obj--0{數字} css 也複製一份就可以一直往下生 -->
+    <img class="animate__obj--01 animate__animated animate__backInDown" src="001.png" alt="" title="">
+  </div>
+  <!-- 主視覺 -->
+  <main class="sp__main">
+    <div class="layout--main home--logo">
+      <a href="https://www.etmall.com.tw"><img class="logo" src="ehs-logo.png" alt="東森購物"></a>
+    </div>
+    <section class="sp__visual">
+      <div class="layout--main">
+        <div class="promo__slider swiper-container" id="promoSlider">
+          <ul class="swiper-wrapper">
+            <li class="swiper-slide">
+              <a href="https://www.etmall.com.tw/gp/157147" title="零食伴手禮7折up">
+                <img src="pr-1.png" alt="零食伴手禮7折up">
+              </a>
+            </li>
+            <li class="swiper-slide">
+              <a href="https://www.etmall.com.tw/gp/157147" title="零食伴手禮7折up">
+                <img src="pr-2.png" alt="零食伴手禮7折up">
+              </a>
+            </li>
+            <li class="swiper-slide">
+              <a href="https://www.etmall.com.tw/gp/157147" title="零食伴手禮7折up">
+                <img src="pr-3.png" alt="零食伴手禮7折up">
+              </a>
+            </li>
+            <li class="swiper-slide">
+              <a href="https://www.etmall.com.tw/gp/157147" title="零食伴手禮7折up">
+                <img src="pr-4.png" alt="零食伴手禮7折up">
+              </a>
+            </li>
+          </ul>
+        </div>
+        <ul class="visual--auto clearfix">
+          <li class="visual__fragment width--auto">
+            <img src="index_01.png">
+          </li>
+          <li class="visual__fragment width--auto">
+            <a href="https://www.etmall.com.tw/i/2784015" title="">
+              <img src="index_02.png" alt="">
+            </a>
+          </li>
+          <li class="visual__fragment width--auto">
+            <a href="https://www.etmall.com.tw/i/2183204" title="">
+              <img src="index_03.png" alt="">
+            </a>
+          </li>
+          <li class="visual__fragment width--auto">
+            <a href="https://www.etmall.com.tw/i/3367569" title="">
+              <img src="index_04.png" alt="">
+            </a>
+          </li>
+          <li class="visual__fragment width--auto">
+            <a href="https://media.etmall.com.tw/sp/11482/m/index.html" title="">
+              <img src="index_05.png" alt="">
+            </a>
+          </li>
+          <li class="visual__fragment width--auto">
+            <a href="https://media.etmall.com.tw/sp/13103/m/index.html" title="">
+              <img src="index_06.png" alt="">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+</div>
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<!-- ============== 輪播 start ============== -->
+<script src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116205/swiper.min.js"></script>
+
+<!-- ============== 輪播 end ============== -->
+<!-- 東森浮水印
+<script id="scriptIconFloat"
+        src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107916/float-icon.js"></script> -->
+<!-- 森森浮水印
+<script id="scriptIconFloat" src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1104381/float-icon.js"></script> -->
+<!-- 旅遊置頂bar
+<script id="scriptAddBn" src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106742/add-bn.js"></script> -->
+<!-- 共用JS -->
+<script id="generateScript" src="https://media.etmall.com.tw/sp/12500/generate_v1.1.js"></script>
+
+<!--[電梯步驟2] 電梯 JS -->
+<!-- 商品左電梯單機版資料，不用就關掉，要使用還要上方步驟1開啟商品左電梯CSS -->
+<!-- <script id="dataElevatorLeft" src="data-elevator.js"></script> -->
+
+<!-- 測試商品右電梯用，上線前必須關掉-->
+<!-- <div data-title="ccc"></div> -->
+
+<!-- 線上自動切換電梯，無論如何都要有 -->
+<script id="checkElevator" src="https://media.etmall.com.tw/sp/11911/check-elevator.js"></script>
+<!-- [電梯步驟2] 電梯 JS END -->
+<script>
+  // 單(雙)連結輪播
+  var promoSlider = new Swiper( "#promoSlider", {
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false,
+    },
+    centeredSlides: true,
+    loop: true,
+		slidesPerView: 3,
+    speed: 600,
+    watchSlidesProgress : true,
+    watchSlidesVisibility : true,
+  } );
+  // 單(雙)連結輪播 end
+  //- 如果在sp-elevator.css裡面把下方欄位(.footer__box)改成display:none的話，把預留出來的空間刪掉
+  $( function () {
+    var display = $( "#footerBox" ).css( "display" );
+    if ( display === "none" ) {
+      $( "body" ).removeClass( "safe-area-padding-bottom" );
+    }
+  } );
+</script>

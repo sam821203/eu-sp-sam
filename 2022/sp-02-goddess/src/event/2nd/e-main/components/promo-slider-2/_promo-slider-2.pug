@@ -1,0 +1,94 @@
+-
+  var promoSlider2Item = [
+    {
+      link: "https://www.etmall.com.tw/p/163478" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider-2/item/item-p-1.png",
+      alt: "安美諾美白霜75折up",
+    },
+    {
+      link: "https://www.etmall.com.tw/p/164465" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider-2/item/item-p-2.png",
+      alt: "DV笛絲薇夢滿額送好禮",
+    },
+    {
+      link: "https://www.etmall.com.tw/p/163632" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider-2/item/item-p-3.png",
+      alt: "AGE20s女神光買就送",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/104673" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider-2/item/item-p-4.png",
+      alt: "HOII后益越曬越美麗1280元起",
+    },
+    {
+      link: "https://www.etmall.com.tw/p/163881" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider-2/item/item-p-5.png",
+      alt: "葡萄王女神節好禮三重送",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/144348" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider-2/item/item-p-6.png",
+      alt: "tokuyo送3%東森幣",
+    },
+    {
+      link: "https://www.etmall.com.tw/c3/26231" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider-2/item/item-p-7.png",
+      alt: "輝葉小智跑步機",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/138422" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider-2/item/item-p-8.png",
+      alt: "高島指定品贈好禮",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/13534/m/index.html" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider-2/item/item-p-9.png",
+      alt: "永夜星神",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/135458" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider-2/item/item-p-10.png",
+      alt: "bgreen指定品送禮券",
+    },
+    {
+      link: "https://www.etmall.com.tw/p/163871" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider-2/item/item-p-11.png",
+      alt: "日本味王滿額送刀具六件套組",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/110652" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider-2/item/item-p-12.png",
+      alt: "石墨烯塑衣褲 38折up",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/164743" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider-2/item/item-p-13.png",
+      alt: "DR.WU 超逆齡 加1元多1件",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/109554" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider-2/item/item-p-14.png",
+      alt: "Footer除臭襪超品週 滿1138折138",
+    },
+    {
+      link: "https://www.etmall.com.tw/c3/165253" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider-2/item/item-p-15.png",
+      alt: "OPPO新機推薦",
+    },
+  ]
+
+
+section.promo__group.promo__group--promo-slider--sec(data-title="必buy推薦")
+  .layout--main
+    .promo__wrap
+      .decor__wrap.full-parent
+        .promo__decor#decorPromoSlider2
+          img(src="event/2nd/e-main/components/promo-slider-2/decor-promo-slider-2.png", alt="")
+      .promo__zone
+        .promo__block.full-parent
+          .promo__slider.swiper-container#promoSlider2Item
+            ul.swiper-wrapper
+              each data in promoSlider2Item
+                li.swiper-slide
+                  a(href= data.link, title=data.alt)
+                    img(src= data.imgSrc, alt=data.alt)

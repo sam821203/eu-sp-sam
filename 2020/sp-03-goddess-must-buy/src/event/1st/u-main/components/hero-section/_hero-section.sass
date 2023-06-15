@@ -1,0 +1,107 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero__wrap
+  +pos-set(relative, second)
+  overflow: hidden
+
+  // .hero__zone
+  //   +pos-set(relative, zero)
+        
+  .hero__block
+     +pos-set(relative, zero)
+
+  .hero__box
+    +pos-set(relative, zero)                        
+
+  .hero__title
+    &--main
+      +pos-set(absolute, second, 2%, 22%)
+      width: 64%
+      &.animated
+        animation: small-open 1s both ease-out
+      
+      +breakpoint-min($min-width-xl)
+        width: 66%
+        top: 10px
+
+  .title-decoration__wrap
+    padding-top: 1%
+    pointer-events: none
+    // overflow: hidden
+    &--web
+      display: none
+    .title__decoration
+      +pos-set(absolute)
+      &--top
+        top: 0
+        width: 100%
+        height: 50%
+        .decoration--gift
+          +pos-set(absolute, under)
+          top: 62%
+          left: 0%
+          padding-bottom: 42.67%
+          width: 98%
+          +bg-set(url(~event/1st/u-main/components/hero-section/decoration-gift.png), contain)
+          &.animated
+            animation: small-open 1s 1s both ease-out
+
+        .decoration--light
+          +pos-set(absolute, base)
+          top: 52%
+          left: 34%
+          padding-bottom: 50.02%
+          width: 70%
+          +bg-set(url(~event/1st/u-main/components/hero-section/decoration-light.png), contain)
+          &.animated
+            animation: opacity-change 3s 2s both linear infinite
+
+    +breakpoint-min($min-width-xl)
+      padding-top: 20px
+      > img
+        display: none
+      .decoration--gift
+        display: none
+      .title__decoration--top
+        .decoration--light
+          top: 220px
+          left: calc(50% - 140px)
+      &--web
+        display: block
+        > img
+          margin-left: auto
+          margin-right: auto
+          display: block
+        .title__decoration--top
+          .decoration--gift
+            display: block
+            top: 260px
+            left: calc(50% - 1072px)
+            padding-bottom: 683px
+            width: 1800px
+            +bg-set(url(~event/1st/u-main/components/hero-section/decoration-gift-web.png), 100%)
+            transform-origin: 60% 30%
+
+  .promo__zone
+    +pos-set(relative, base)
+    margin-top: -5.5%
+
+    +breakpoint-min($min-width-xl)
+      margin-top: -51px
+
+@keyframes small-open
+  from
+    transform: scale(0)
+    opacity: 0
+  to
+    transform: scale(1)
+    opacity: 1
+
+@keyframes opacity-change
+  from, to
+    opacity: 0.2
+  40%, 60% 
+    opacity: 0.85
+
+

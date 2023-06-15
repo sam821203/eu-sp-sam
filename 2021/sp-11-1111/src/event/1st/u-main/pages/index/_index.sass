@@ -1,0 +1,71 @@
+// ==========================================================================
+// Plugins
+// ==========================================================================
+// // @import vendors/animate
+// @import vendors/style/swiper-slider-custom
+@import vendors/style/swiper-safari-polyfill
+
+
+// ==========================================================================
+// first screen need
+// ==========================================================================
+// hero section
+@import event/1st/u-main/components/hero-section/_hero-section
+// @import utils/bg-decoration-instance/parallax/_parallax
+
+// ==========================================================================
+// components
+// ==========================================================================
+// dynamic product 假宮格共用CSS
+@import layout/dynamic-product/_dynamic-product.sass
+
+// 一般components
+@import event/1st/u-main/components/promo-event/_promo-event
+
+// ==========================================================================
+// Page
+// ==========================================================================
+body
+  +pos-set(relative)
+  background: $main-e-background-color-1st center 0 url(event/1st/u-main/pages/index/bg-m.jpg) no-repeat
+  background-size: 100%
+  +breakpoint-min($min-width-xl)
+    background: $main-e-background-color-1st center 0 url(event/1st/u-main/pages/index/bg.jpg) no-repeat
+    background-size: auto
+
+// TODO: 修改EU nav佔位高度(影響logo距離上方高度，U每次要改)
+.navRightBar
+  // E
+  // height: 39px
+  // U
+  height: 15px
+  +breakpoint-min($min-width-xl)
+    height: auto
+
+.sp__wrap
+  +pos-set(relative)
+
+.sp__wrap a
+  display: block
+
+.swiper-button--custom
+  top: 55%
+  margin-top: 0
+  width: 3.5%
+  transform: translateY(-50%)
+  &:after
+    content: ''
+  &:active,
+  &:hover
+    filter: brightness(120%)
+  // &.swiper-button-prev
+  //   left: 9.3%
+  //   +bg-set(url(event/1st/u-main/pages/index/btn-slider-prev.png), contain, center, center)
+  // &.swiper-button-next
+  //   right: 9.3%
+  //   +bg-set(url(event/1st/u-main/pages/index/btn-slider-next.png), contain, center, center)
+
+.decoration--top
+  +pos-set(absolute, zero)
+  pointer-events: none
+

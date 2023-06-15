@@ -1,0 +1,34 @@
+.bn-group__wrap--w2m1-2
+  .layout--main
+    position: relative
+    .tilte__zone--bn-group
+      padding: 2% 18% 3%
+    .btn--prev-bn-group-w2m1,
+    .btn--next-bn-group-w2m1
+      position: absolute
+      z-index: map-get($zindex, base)
+      top: 52%
+      width: 8%
+      height: 15%
+      +breakpoint-min($min-width-lg)
+        width: 6%
+        top: 59%
+    .btn--prev-bn-group-w2m1
+      left: 0
+    .btn--next-bn-group-w2m1
+      right: 0
+  .bn-group__zone
+    padding: 6.5% 8% 5.5%
+    background: url("../components/bn-group-w2m1-2/bn-group-w2m1-2-background-mobile.png") no-repeat
+    background-size: 100%
+    +breakpoint-min($min-width-lg)
+      padding: 5.3% 5% 3.3%
+      background: url("../components/bn-group-w2m1-2/bn-group-w2m1-2-background-web.png") no-repeat
+      background-size: 100%
+      a
+        transition: all 0.5s
+        &:hover
+          transform: scale(1.05)
+          filter: contrast(120%)
+      .slick-slide
+        padding: 0 10px

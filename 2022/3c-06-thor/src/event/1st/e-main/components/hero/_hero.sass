@@ -1,0 +1,60 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero__wrap
+  .hero__zone
+    +pos-set(relative, 0, 0)
+    .hero__block
+      +pos-set(relative, 0, 0)
+      +aspect-ratio(920, 689)
+      width: 100%
+      padding-top: 1.5%
+      .hero__title
+        +pos-set(absolute)
+        overflow: hidden
+        img
+          width: 100%
+          +breakpoint-min($min-width-xl)
+            width: auto
+        &--main
+          +flex-container(center, flex-start)
+          top: 48%
+          z-index: 2
+          animation: hero-zoomIn .4s ease-in 1 backwards, hero-shakeX 3s 1.6s ease-in-out infinite
+        &--figure
+          left: 0
+          z-index: 1
+          animation: hero-zoomInDown .8s .4s ease-in 1 backwards
+          +breakpoint-min($min-width-xl)
+            left: 4%
+          img
+            transform: translateX(20px)
+            +breakpoint-min($min-width-xl)
+              transform: translateX(0px)
+@keyframes hero-zoomIn  
+  0%
+    opacity: 0
+    transform: scale3d(.3,.3,.3)
+  50%
+    opacity: 1
+
+@keyframes hero-shakeX
+  0%, to
+    transform: translateZ(0)
+  10%, 14%, 30%, 34%
+    transform: translate3d(-1.5px, 0, 0)
+  12%, 16%, 32%, 36%
+    transform: translate3d(1.5px, 0, 0)
+  38%
+    transform: translateZ(0)
+
+@keyframes hero-zoomInDown
+  0%
+    opacity: 0
+    transform: scale3d(.1, .1, .1) translate3d(0, -1000px, 0)
+    animation-timing-function: cubic-bezier(.55, .055, .675, .19)
+  60%
+    opacity: 1
+    transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0)
+    animation-timing-function: cubic-bezier(.175, .885, .32, 1)
+

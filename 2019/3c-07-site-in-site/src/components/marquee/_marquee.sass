@@ -1,0 +1,65 @@
+// core structure
+.marquee__wrap
+  position: relative
+  overflow: hidden
+  .marquee__info
+    position: absolute
+    z-index: map-get($zindex, base)
+    top: 0
+    left: 0
+    height: 100%
+    text-align: center
+  .marquee__box
+    display: inline-block
+    position: relative
+    z-index: map-get($zindex, zero)
+    width: 100%
+    height: 100%
+    white-space: nowrap
+    will-change: auto
+    .marquee__item
+      position: absolute
+      z-index: map-get($zindex, zero)
+      top: 0
+      opacity: 0
+
+.marquee--right
+    .marquee__item.marquee__item--active
+      opacity: 1
+      animation: marquee-x linear both
+.marquee--bottom
+    .marquee__item.marquee__item--active
+      opacity: 1
+      animation: marquee-y linear both
+.marquee--left
+    .marquee__item.marquee__item--active
+      opacity: 1
+      animation: marquee-x linear both reverse
+.marquee--top
+    .marquee__item.marquee__item--active
+      opacity: 1
+      animation: marquee-y linear both reverse
+
+// custom style
+.marquee__wrap
+  +font-size($fz-16)
+  height: 2em
+  line-height: 2em
+  color: $primary-notice
+  background-color: $primary-deep-dark
+  a
+    color: $primary-notice
+  .marquee__info
+    width: 3.5em
+    color: $primary-light
+    background-color: $primary-deep-dark
+  .marquee__box
+    .marquee__item
+      margin-left: 3.5em
+      // TODO: 設定間隔時間，設定完要去JS設定
+      // animation-duration: 3.5s // suggest bottom value
+      animation-duration: 9s // suggest left value
+  +breakpoint-min($min-width-lg)
+    +font-size($fz-24)
+    height: 50px
+    line-height: 50px

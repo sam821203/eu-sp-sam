@@ -1,0 +1,29 @@
+doctype html
+html(lang='zh-Hant-TW')
+  head
+    include /utils/pug/_total-head
+
+    //- TODO: 打開可測試是否會被app的太空垃圾影響，但是注意正式dist時要關閉
+    //- =======================================================================
+    //- link(rel="stylesheet3", type="text/css", href="~vendors/style/site.css")
+    //- =======================================================================
+
+  body.default__reset.bg-gray
+    //- main section 主視覺區
+    //- 第一波
+    main.sp__wrap.sp__wrap--eckare
+      //include /layout/header/_header
+
+      //- hero section
+      //- ===========================
+      include /event/eckare/components/login-section/_login-section
+
+      //- other components
+      //- ===========================
+    //- script區
+    include  /utils/pug/_total-script
+
+//- webpack 教學
+//- https://iter01.com/115559.html
+//- https://medium.com/coding-hot-pot/%E5%9C%A8vue-cli-%E8%A3%A1%E4%BD%BF%E7%94%A8-css-sprite-%E9%9B%AA%E7%A2%A7%E5%9C%96-617ea0e9c0f6
+//- https://juejin.cn/post/6844903602528452615

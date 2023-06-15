@@ -1,0 +1,52 @@
+// 因版型和1一樣所以共用
+.promo__group--dynamic-slider
+  &.slider__style3
+    height: 58vw
+    +breakpoint-min($min-width-xl)
+      height: auto
+    .promo__wrap
+      //+bg-set(url("~event/3rd/e-main/components/dynamic-slider-3/bg-dynamic-slider-3.png"), 100%)
+      +bg-set(url("https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1116824/bg-dynamic-slider-3.png"), 100%)
+      padding: 14% 16% 3%
+    li
+      //+bg-set(url("~event/3rd/e-main/components/dynamic-slider-3/bg-slider_3_pt.png"), 100%)
+      +bg-set(url("https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1116824/bg-slider_3_pt.png"), 100%)
+    .promo__style3--bg
+      +breakpoint-min($min-width-xl)
+        +bg-set(url("~event/3rd/e-main/components/dynamic-slider-3/bg-dynamic-slider-3-web.png"))
+        //+bg-set(url("https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1116824/bg-dynamic-slider-3-web.png"))
+        background-size: 1350px 580px
+        height: 580px
+        .promo__wrap
+          background-image: none
+
+.dynamic-slider-pager
+  &.pager__style3
+    .swiper-pagination-bullet-active
+      background-color: #fda53b
+      opacity: 1
+
+#sliderDynamicPrev_3.swiper-button-prev,
+#sliderDynamicNext_3.swiper-button-next
+  width: 5vw
+  height: 6vw
+  margin-top: -5.6vw
+  opacity: 0
+  &::after
+    font-size: 5vw
+  +breakpoint-min($min-width-xl)
+    width: 48px
+    height: 58px
+    margin-top: 15px
+    &::after
+      font-size: 29px
+
+#sliderDynamicPrev_3.swiper-button-prev
+  left: 7vw
+  +breakpoint-min($min-width-xl)
+    left: 9px
+#sliderDynamicNext_3.swiper-button-next
+  right: 7vw
+  +breakpoint-min($min-width-xl)
+    right: 9px
+

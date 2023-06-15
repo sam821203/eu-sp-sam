@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- ============== 輪播css ============== -->
+    <link rel="stylesheet" href="https://media.etmall.com.tw/sp/12500/swiper.min.css">
+    <!-- ============== 共用css ============== -->
+    <link rel="stylesheet" href="https://media.etmall.com.tw/sp/12500/generate_v1.3.css">
+  
+    <!-- [電梯步驟1] 電梯CSS 不用就關掉 -->
+    <!-- 商品左電梯CSS，要使用還要在步驟2開啟左電梯data資料 -->
+    <!-- <link id="localElevatorLeft" rel="stylesheet" href="sp-elevator-left.css"> -->
+  
+    <!-- 商品右電梯CSS，步驟2有測試div可以測試 -->
+    <!-- <link id="localElevatorRight" rel="stylesheet" href="sp-elevator-right.css"> -->
+    <!-- [電梯步驟1] 電梯CSS END -->
+  
+    <!-- 背景特效區塊的css -->
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    
+    <style>
+        /* ========== 共用 css Start========== */
+        html {
+          font-size: 62.5%;
+          -ms-text-size-adjust: 100%;
+          -webkit-text-size-adjust: 100%;
+        }
+        body {
+          line-height: 1.4;
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          font-weight: 400;
+          font-size: unset;
+        }
+        img {
+          max-width: 100%;
+          height: auto;
+          border: 0;
+          vertical-align: middle;
+        }
+        svg:not(:root) {
+          overflow: hidden;
+        }
+        a {
+          text-decoration: none;
+          background-color: transparent;
+        }
+        a:active,
+        a:hover {
+          outline: 0;
+        }
+        ol,
+        ul {
+          list-style: none;
+        }
+        *,
+        :after,
+        :before {
+          box-sizing: border-box;
+        }
+        .clearfix:after {
+          content: "";
+          display: block;
+          clear: both;
+        }
+        .sp__wrap img {
+          -ms-flex-item-align: start;
+          align-self: flex-start;
+          width: 100%;
+        }
+        @media screen and (min-width: 960px) {
+          .sp__wrap img {
+            width: auto;
+          }
+        }
+        .text--right {
+          text-align: right;
+        }
+        .text--center {
+          text-align: center;
+        }
+        .text--left {
+          text-align: left;
+        }
+        .m-top--xs {
+          margin-top: 1%;
+        }
+        .m-top--sm {
+          margin-top: 2%;
+        }
+        .m-top--md {
+          margin-top: 3%;
+        }
+        .m-top--lg {
+          margin-top: 4%;
+        }
+        .m-bottom--xs {
+          margin-bottom: 1%;
+        }
+        @media screen and (min-width: 960px) {
+          .m-bottom--xs {
+            margin-bottom: 10px;
+          }
+        }
+        .m-bottom--sm {
+          margin-bottom: 2%;
+        }
+        @media screen and (min-width: 960px) {
+          .m-bottom--sm {
+            margin-bottom: 20px;
+          }
+        }
+        .m-bottom--md {
+          margin-bottom: 3%;
+        }
+        @media screen and (min-width: 960px) {
+          .m-bottom--md {
+            margin-bottom: 30px;
+          }
+        }
+        .m-bottom--lg {
+          margin-bottom: 4%;
+        }
+        @media screen and (min-width: 960px) {
+          .m-bottom--lg {
+            margin-bottom: 40px;
+          }
+        }
+        .m-bottom--xl {
+          margin-bottom: 5%;
+        }
+        @media screen and (min-width: 960px) {
+          .m-bottom--xl {
+            margin-bottom: 50px;
+          }
+        }
+        .m-bottom--xxl {
+          margin-bottom: 8%;
+        }
+        @media screen and (min-width: 1260px) {
+          .m-bottom--xxl {
+            margin-bottom: 80px;
+          }
+        }
+        .m-left--minus {
+          margin-left: -10%;
+        }
+        .m-right--xs {
+          margin-right: 1%;
+        }
+        .m-right--sm {
+          margin-right: 2%;
+        }
+        .m-right--md {
+          margin-right: 3%;
+        }
+        .m-right-px--xs {
+          margin-right: 5px;
+        }
+        .m-right-px--sm {
+          margin-right: 10px;
+        }
+        .m-right-px--md {
+          margin-right: 15px;
+        }
+        .m-right--em {
+          margin-right: 0.5em;
+        }
+        .m-top--custom {
+          margin-top: 18%;
+        }
+        @media screen and (min-width: 960px) {
+          .m-top--custom {
+            margin-top: 9%;
+          }
+        }
+        .m-bottom-custom {
+          margin-bottom: 18%;
+        }
+        @media screen and (min-width: 960px) {
+          .m-bottom-custom {
+            margin-bottom: 13%;
+          }
+        }
+        .padding-xs {
+          padding: 1%;
+        }
+        .padding-sm {
+          padding: 2%;
+        }
+        .padding-md {
+          padding: 3%;
+        }
+        .padding-lg {
+          padding: 4%;
+        }
+        .p-bottom--xs {
+          padding-bottom: 1%;
+        }
+        .p-bottom--sm {
+          padding-bottom: 2%;
+        }
+        .p-bottom--md {
+          padding-bottom: 3%;
+        }
+        .p-bottom--lg {
+          padding-bottom: 4%;
+        }
+        .p-bottom--xl {
+          padding-bottom: 5%;
+        }
+        .default-border {
+          border: 1px solid #999;
+        }
+        .layout--main {
+          margin-left: auto;
+          margin-right: auto;
+          max-width: 960px;
+        }
+        .one-screen {
+          width: 100%;
+          height: 100vh;
+        }
+        .full-parent {
+          width: 100%;
+          height: 100%;
+        }
+        .full-parent.swiper-container {
+          height: 100%;
+        }
+        .block-center {
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .n-pic {
+          position: relative;
+        }
+        .img-reverse-x {
+          transform: scaleX(-1);
+        }
+        .icon__home {
+          z-index: 20;
+        }
+        .btn {
+          display: inline-block;
+          zoom: 1;
+          line-height: normal;
+          white-space: nowrap;
+          vertical-align: middle;
+          cursor: pointer;
+          -webkit-user-drag: none;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+        }
+        .btn::-moz-focus-inner {
+          padding: 0;
+          border: 0;
+        }
+        .btn {
+          border: 1px solid transparent;
+          padding: 0 0.4rem;
+          text-align: center;
+          font-size: 16px;
+          font-size: 1.6rem;
+        }
+        .btn:focus {
+          outline: 0;
+        }
+        .btn-hidden {
+          display: none;
+        }
+        .btn--primary {
+          color: #b50005;
+          border-color: #b50005;
+          font-weight: 700;
+        }
+        .btn--primary:focus,
+        .btn--primary:hover {
+          color: #e80006;
+          border-color: #e80006;
+        }
+        .go-top {
+          display: none;
+          position: fixed;
+          z-index: 18;
+          bottom: 90px;
+          right: 10px;
+          padding: 0;
+          width: 48px;
+          height: 48px;
+          background: rgba(0, 0, 0, 0.7);
+          border: 0;
+          border-radius: 50%;
+          transition: all 0.4s linear;
+          opacity: 0;
+          cursor: pointer;
+          pointer-events: none;
+        }
+        .go-top svg {
+          stroke-dasharray: 151;
+        }
+        .go-top svg stop {
+          transition: all 0.4s linear;
+        }
+        @media screen and (min-width: 960px) {
+          .go-top:hover {
+            background: #000;
+          }
+          .go-top:hover svg {
+            -webkit-animation: svg-stroke 0.4s linear both;
+            animation: svg-stroke 0.4s linear both;
+          }
+          .go-top:hover svg stop {
+            stop-opacity: 0.7;
+          }
+        }
+        .go-top.is-visible {
+          display: block;
+          opacity: 1;
+          pointer-events: auto;
+        }
+        .go-top:focus {
+          outline: 0;
+        }
+        .main,
+        .side {
+          transform: none;
+        }
+        @keyframes svg-stroke {
+          0% {
+            stroke-dashoffset: 60;
+          }
+          to {
+            stroke-dashoffset: 0;
+          }
+        }
+        /* ========== 共用 css End========== */
+
+        /* ========== Header區塊 css Start========== */
+        .logo {
+          position: relative;
+          z-index: 0;
+          margin-left: 1%;
+          width: 30%;
+          pointer-events: auto;
+        }
+        .logo.logo--e,
+        .logo.logo--u {
+          max-width: 220px;
+        }
+        @media screen and (min-width: 960px) {
+          .logo {
+            left: calc(50% - 480px);
+          }
+        }
+        .share__wrap {
+          display: -ms-flexbox;
+          display: flex;
+          margin: 0 0.5%;
+          position: absolute;
+          top: 2.5vw;
+          right: 3.75vw;
+        }
+        @media screen and (min-width: 960px) {
+          .share__wrap {
+            margin: 0 2%;
+            top: -10px;
+            right: calc(50% - 350px);
+          }
+        }
+        .share__btn img {
+          width: 20px;
+        }
+        @media screen and (min-width: 768px) {
+          .share__btn img {
+            width: 55px;
+          }
+        }
+        .header__wrap {
+          position: absolute;
+          z-index: 17;
+          top: 0;
+          left: 0;
+          width: 100%;
+          pointer-events: none;
+        }
+        .header__zone {
+          padding-top: 2%;
+        }
+        .header__zone a {
+          display: block;
+        }
+        @media screen and (min-width: 960px) {
+          .header__zone {
+            padding-top: 15px;
+          }
+        }
+        /* ========== Header區塊 css End========== */
+
+        /* ========== Hero區塊 css Start========== */
+        .swiper-container {
+          height: -webkit-fit-content;
+          height: -moz-fit-content;
+          height: fit-content;
+        }
+        .hero {
+          z-index: 0;
+          overflow: hidden;
+        }
+        .hero,
+        .hero .hero__wrap .hero__zone {
+          position: relative;
+        }
+        .hero .hero__wrap .hero__zone:before {
+          content: "";
+          display: block;
+          padding-bottom: 73.125%;
+          width: 100%;
+        }
+        .hero .hero__wrap .hero__zone > div {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+        .hero .hero__wrap .hero__title {
+          position: absolute;
+          z-index: 1;
+          top: 4%;
+          left: 0;
+          width: 100%;
+        }
+        .hero .hero__wrap .hero__title .title__sub {
+          position: absolute;
+          z-index: 1;
+          top: 3%;
+          right: -1%;
+          width: 70%;
+          transform: scale(1);
+          animation: sub-stamp 0.5s 1s both, sub-thump-up 2.2s ease-in-out 1.8s 1;
+        }
+        @media screen and (min-width: 960px) {
+          .hero .hero__wrap .hero__title .title__sub {
+            top: 6%;
+            right: 0;
+            width: auto;
+          }
+        }
+        @keyframes sub-stamp {
+          0% {
+            opacity: 0;
+            transform: scale(10);
+          }
+          1% {
+            opacity: 1;
+          }
+          80% {
+            opacity: 1;
+            transform: scale(0.8);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+        @keyframes sub-thump-up {
+          0%,
+          15.5%,
+          30%,
+          to {
+            transform-origin: 90% 0;
+            transform: rotate(0);
+          }
+          9%,
+          21.5% {
+            transform: rotate(4deg);
+          }
+        }
+        /* ========== Hero區塊 css End========== */
+
+        /* ========== product--dynamic Start========== */
+        .product--dynamic {
+          width: 100%;
+        }
+        .product--dynamic .product__img {
+          border-radius: 2vw 2vw 0 0;
+          overflow: hidden;
+          position: relative;
+          z-index: 0;
+        }
+        .product--dynamic .product__img:before {
+          content: "";
+          display: block;
+          padding-bottom: 100%;
+          width: 100%;
+        }
+        .product--dynamic .product__img > span {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+        .product--dynamic .product__img img {
+          position: absolute;
+          z-index: 1;
+          top: 0;
+          left: 0;
+        }
+        .product--dynamic .product__text {
+          background-color: #fff;
+          border-radius: 0 0 2vw 2vw;
+          overflow: hidden;
+        }
+        .product--dynamic .product__name {
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          text-overflow: ellipsis;
+          padding: 0 1%;
+          color: #000;
+          line-height: 120%;
+          height: 2.33em;
+          font-size: 12px;
+          overflow: hidden;
+        }
+        .product--dynamic .product__price {
+          padding: 0 2%;
+          color: #f6403a;
+          font-weight: 700;
+          text-align: center;
+        }
+        .product--dynamic .product__price span:first-child {
+          font-size: 2vw;
+        }
+        .product--dynamic .product__price span:last-child {
+          font-size: 4vw;
+        }
+        @media screen and (min-width: 480px) {
+          .product--dynamic .product__name {
+            margin-bottom: 0.5%;
+            font-size: 2.5vw;
+          }
+          .product--dynamic .product__price span:first-child {
+            font-size: 2vw;
+          }
+          .product--dynamic .product__price span:last-child {
+            font-size: 3.5vw;
+          }
+        }
+        @media screen and (min-width: 960px) {
+          .product--dynamic .product__img {
+            border-radius: 22px 22px 0 0;
+          }
+          .product--dynamic .product__text {
+            border-radius: 0 0 22px 22px;
+          }
+          .product--dynamic .product__name {
+            margin-bottom: 10px;
+            font-size: 20px;
+          }
+          .product--dynamic .product__price span:first-child,
+          .product--dynamic .product__price span:last-child {
+            font-size: 24px;
+          }
+        }
+        /* ========== product--dynamic End========== */
+
+        /* ========== 翻轉兩品輪播區塊 css Start========== */
+        .slider-w2m2 {
+          position: relative;
+          z-index: 0;
+          overflow: hidden;
+        }
+        .slider-w2m2 .promo__wrap {
+          padding-top: 3%;
+          padding-bottom: 4%;
+        }
+        @media screen and (min-width: 768px) {
+          .slider-w2m2 .promo__wrap {
+            padding-top: 9%;
+            padding-bottom: 8%;
+          }
+        }
+        @media screen and (min-width: 960px) {
+          .slider-w2m2 .promo__wrap {
+            padding-top: 126px;
+            padding-bottom: 110px;
+          }
+        }
+        .slider-w2m2 .promo__zone {
+          position: relative;
+        }
+        .slider-w2m2 .promo__zone:before {
+          content: "";
+          display: block;
+          padding-bottom: 72.0833333333%;
+          width: 100%;
+        }
+        .slider-w2m2 .promo__zone > div {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+        .slider-w2m2 .promo__zone .swiper-slide {
+          display: -ms-flexbox;
+          display: flex;
+        }
+        /* ========== 翻轉兩品輪播區塊 css End========== */
+
+        /* ========== 頁籤區塊 css Start========== */
+        .promo__group--tab-section {
+          overflow: hidden;
+        }
+        .promo__group--tab-section .promo__wrap .promo__zone {
+          position: relative;
+          background: url(bg-tab.png) center 0 no-repeat;
+          background-size: 100%;
+        }
+        .promo__group--tab-section .promo__wrap .promo__zone:before {
+          content: "";
+          display: block;
+          padding-bottom: 111.25%;
+          width: 100%;
+        }
+        .promo__group--tab-section .promo__wrap .promo__zone > div {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+        @media screen and (min-width: 960px) {
+          .promo__group--tab-section .promo__wrap .promo__zone {
+            position: relative;
+            background: url(web-bg-tab.png) center 0 no-repeat;
+            background-size: auto;
+          }
+          .promo__group--tab-section .promo__wrap .promo__zone:before {
+            content: "";
+            display: block;
+            padding-bottom: 85.625%;
+            width: 100%;
+          }
+          .promo__group--tab-section .promo__wrap .promo__zone > div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .promo__group--tab-section .promo__wrap .tab__wrap {
+          padding: 23.3% 1.5% 0;
+        }
+        @media screen and (min-width: 960px) {
+          .promo__group--tab-section .promo__wrap .tab__wrap {
+            padding-top: 25.2%;
+          }
+        }
+        .promo__group--tab-section .promo__wrap .tab__wrap .tab__box {
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-pack: justify;
+          justify-content: space-between;
+          -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+        }
+        @media screen and (min-width: 960px) {
+          .promo__group--tab-section .promo__wrap .tab__wrap .tab__box {
+            -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+          }
+        }
+        .promo__group--tab-section .promo__wrap .tab__wrap .tab__item {
+          position: relative;
+          width: 32%;
+          margin-bottom: 1%;
+          cursor: pointer;
+          transition: all 0.2s;
+        }
+        @media screen and (min-width: 960px) {
+          .promo__group--tab-section .promo__wrap .tab__wrap .tab__item {
+            width: 16%;
+            margin-bottom: 0;
+          }
+        }
+        .promo__group--tab-section .promo__wrap .tab__wrap .tab__item .active {
+          opacity: 1;
+        }
+        .promo__group--tab-section .promo__wrap .tab__wrap .tab__item.active,
+        .promo__group--tab-section .promo__wrap .tab__wrap .tab__item:hover {
+          filter: brightness(1.2);
+        }
+        .promo__group--tab-section .promo__wrap .content__zone .content__block {
+          margin-top: 6.6%;
+        }
+        @media screen and (min-width: 960px) {
+          .promo__group--tab-section .promo__wrap .content__zone .content__block {
+            margin-top: 4%;
+          }
+        }
+        .promo__group--tab-section .promo__wrap .content__zone .content__box {
+          display: none;
+        }
+        .promo__group--tab-section .promo__wrap .content__zone .content__box.active {
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-align: center;
+          align-items: center;
+        }
+        .promo__group--tab-section
+          .promo__wrap
+          .content__zone
+          .content__box
+          .promo__item {
+          width: 40%;
+        }
+        .promo__group--tab-section
+          .promo__wrap
+          .content__zone
+          .content__box
+          .tab__slider {
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-pack: center;
+          justify-content: center;
+          -ms-flex-align: center;
+          align-items: center;
+          -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+          width: 60%;
+          padding: 0.5% 1.5% 0;
+        }
+        @media screen and (min-width: 960px) {
+          .promo__group--tab-section
+            .promo__wrap
+            .content__zone
+            .content__box
+            .tab__slider {
+            padding-top: 4.5%;
+          }
+        }
+        .promo__group--tab-section
+          .promo__wrap
+          .content__zone
+          .content__box
+          .tab__slider
+          .swiper-slide {
+          width: 44%;
+          transform: translateY(0);
+        }
+        @media screen and (min-width: 960px) {
+          .promo__group--tab-section
+            .promo__wrap
+            .content__zone
+            .content__box
+            .tab__slider
+            .swiper-slide {
+            width: 48%;
+            transform: translateY(-6%);
+          }
+        }
+        .promo__group--tab-section
+          .promo__wrap
+          .content__zone
+          .content__box
+          .tab__slider
+          .swiper-slide
+          .product.product--dynamic {
+          border-radius: 2vw;
+          background-color: #fff;
+        }
+        @media screen and (min-width: 960px) {
+          .promo__group--tab-section
+            .promo__wrap
+            .content__zone
+            .content__box
+            .tab__slider
+            .swiper-slide
+            .product.product--dynamic {
+            border-radius: 16px;
+          }
+        }
+        .promo__group--tab-section
+          .promo__wrap
+          .content__zone
+          .content__box
+          .tab__slider
+          .swiper-slide
+          .product.product--dynamic
+          .product__img {
+          border: 1px solid #0ff;
+          border-bottom: none;
+          border-radius: 2vw 2vw 0 0;
+        }
+        @media screen and (min-width: 960px) {
+          .promo__group--tab-section
+            .promo__wrap
+            .content__zone
+            .content__box
+            .tab__slider
+            .swiper-slide
+            .product.product--dynamic
+            .product__img {
+            border-radius: 16px 16px 0 0;
+          }
+        }
+        .promo__group--tab-section
+          .promo__wrap
+          .content__zone
+          .content__box
+          .tab__slider
+          .swiper-slide
+          .product.product--dynamic
+          .product__text {
+          border: 1px solid #0ff;
+          border-top: none;
+          border-radius: 0 0 2vw 2vw;
+        }
+        @media screen and (min-width: 960px) {
+          .promo__group--tab-section
+            .promo__wrap
+            .content__zone
+            .content__box
+            .tab__slider
+            .swiper-slide
+            .product.product--dynamic
+            .product__text {
+            border-radius: 0 0 16px 16px;
+          }
+        }
+        .promo__group--tab-section
+          .promo__wrap
+          .content__zone
+          .content__box
+          .tab__slider
+          .swiper-slide
+          .product.product--dynamic
+          .product__name {
+          height: 2.52em;
+          padding: 2% 5%;
+        }
+        .promo__group--tab-section
+          .promo__wrap
+          .content__zone
+          .content__box
+          .tab__slider
+          .swiper-slide
+          .product.product--dynamic
+          .product__price {
+          padding: 0 2% 4%;
+        }
+        /* ========== 頁籤區塊 css End========== */
+
+        /* ========== 固定背景 css Start========== */
+        body {
+          position: relative;
+          background-color: #fff;
+          overflow-x: hidden;
+        }
+        body .decor__bg {
+          position: fixed;
+          z-index: -1;
+          top: 0;
+          left: 0;
+          background: url(bg.jpg) center 0 no-repeat;
+          background-size: 100%;
+        }
+        @media screen and (min-width: 960px) {
+          body .decor__bg {
+            position: fixed;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            background: url(bg-web.jpg) center 0 no-repeat;
+            background-size: auto;
+          }
+        }
+        /* ========== 固定背景 css End========== */
+    </style>
+  <body>
+    <header class="header__wrap">
+      <div class="layout--main">
+        <div class="header__zone"><a class="logo logo--e" href="https://www.etmall.com.tw/"><img src="logo-new.svg" alt="東森購物"></a>
+        </div>
+      </div>
+    </header>
+    <div class="decor__bg full-parent"></div>
+    <main class="sp__wrap" id="spWrap">
+
+      <!-- ============== hero 區塊 ============== -->
+      <section class="hero">
+        <div class="layout--main">
+          <div class="hero__wrap">
+            <div class="hero__zone">
+              <div class="hero__title">
+                <div class="title--main"><a href="https://media.etmall.com.tw/sp/15748/m/index.html" title="名人推薦"> <img src="title.png" alt="名人推薦"></a></div>
+                <div class="title__sub"><img src="title-sub.png" alt="名人推薦"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== 翻轉兩品輪播區塊 ============== -->
+      <section class="promo__group slider-w2m2" data-title="大牌秒殺">
+        <div class="layout--main">
+          <div class="promo__wrap">
+            <div class="promo__zone">
+              <div class="promo__block full-parent">
+                <div class="promo__slider swiper-container" id="sliderW2M2Item">
+                  <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                      <div class="swiper-box"><a href="https://www.etmall.com.tw/i/3066461" title="【SingBee 欣美】coobee L型板成長機能桌+138單背椅(CB-502/兒童書桌椅組/實木兒童書桌/升降書桌椅)"><img src="item-p-1.png" alt="【SingBee 欣美】coobee L型板成長機能桌+138單背椅(CB-502/兒童書桌椅組/實木兒童書桌/升降書桌椅)"></a></div>
+                      <div class="swiper-box"><a href="https://www.etmall.com.tw/i/3292820" title="GOO.N大王紙尿布境內版敏感肌系列-黏貼型L(54片X4包)"><img src="item-p-2.png" alt="GOO.N大王紙尿布境內版敏感肌系列-黏貼型L(54片X4包)"></a></div>
+                    </li>
+                    <li class="swiper-slide">
+                      <div class="swiper-box"><a href="https://www.etmall.com.tw/i/2664688" title="【超值雙鍋組】Tefal法國特福 全新鈦升級-爵士系列(28CM炒鍋+24CM平底鍋)"><img src="item-p-3.png" alt="【超值雙鍋組】Tefal法國特福 全新鈦升級-爵士系列(28CM炒鍋+24CM平底鍋)"></a></div>
+                      <div class="swiper-box"><a href="https://www.etmall.com.tw/i/3564474" title="現貨+預購【Häagen-Dazs 哈根達斯】月神祈願冰淇淋月餅禮盒提貨單-網"><img src="item-p-4.png" alt="現貨+預購【Häagen-Dazs 哈根達斯】月神祈願冰淇淋月餅禮盒提貨單-網"></a></div>
+                    </li>
+                    <li class="swiper-slide">
+                      <div class="swiper-box"><a href="https://www.etmall.com.tw/i/1841180" title="【台酒生技】酒粕精粹逆齡活膚青春露5入組(120ml*5)"><img src="item-p-5.png" alt="【台酒生技】酒粕精粹逆齡活膚青春露5入組(120ml*5)"></a></div>
+                      <div class="swiper-box"><a href="https://www.etmall.com.tw/i/3488320" title="安親 瞬吸乾爽復健褲 S-M號 成人紙尿褲(10片x6包/箱)"><img src="item-p-6.png" alt="安親 瞬吸乾爽復健褲 S-M號 成人紙尿褲(10片x6包/箱)"></a></div>
+                    </li>
+                    <li class="swiper-slide">
+                      <div class="swiper-box"><a href="https://www.etmall.com.tw/i/3269043" title="HP Color LaserJet Pro M155nw 無線彩色雷射印表機"><img src="item-p-7.png" alt="HP Color LaserJet Pro M155nw 無線彩色雷射印表機"></a></div>
+                      <div class="swiper-box"><a href="https://www.etmall.com.tw/i/3407738" title="Panasonic國際牌 3-4坪RX頂級旗艦系列變頻冷暖冷氣CS-RX28JA2/CU-RX28JHA2"><img src="item-p-8.png" alt="Panasonic國際牌 3-4坪RX頂級旗艦系列變頻冷暖冷氣CS-RX28JA2/CU-RX28JHA2"></a></div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== 頁籤區塊 ============== -->
+      <section class="promo__group promo__group--tab-section m-bottom--lg" data-title="大牌鉅獻">
+        <div class="layout--main">
+          <div class="promo__wrap">
+            <div class="promo__zone"> 
+              <div class="tab__wrap">
+                <div class="tab__zone">
+                  <ul class="tab__box" id="tabBoxSecond">
+                    <li class="tab__item active" title="聯華食品"><img src="tab-1.png" alt="聯華食品"></li>
+                    <li class="tab__item" title="聯華食品"><img src="tab-2.png" alt="聯華食品"></li>
+                    <li class="tab__item" title="聯華食品"><img src="tab-3.png" alt="聯華食品"></li>
+                    <li class="tab__item" title="聯華食品"><img src="tab-4.png" alt="聯華食品"></li>
+                    <li class="tab__item" title="聯華食品"><img src="tab-5.png" alt="聯華食品"></li>
+                    <li class="tab__item" title="聯華食品"><img src="tab-6.png" alt="聯華食品"></li>
+                  </ul>
+                </div>
+                <div class="content__zone">
+                  <ul class="content__block" id="tabContentBlockSecond">
+                    <li class="content__box active">
+                      <div class="promo__item">
+                        <div class="promo__box"><a href="https://www.etmall.com.tw/c3/46340"> <img src="tab-item-1-1.png" alt="名人推薦"></a></div>
+                      </div>
+                      <div class="tab__slider swiper-container">
+                        <ul class="item__wrap swiper-wrapper"></ul>
+                      </div>
+                    </li>
+                    <li class="content__box">
+                      <div class="promo__item">
+                        <div class="promo__box"><a href="https://www.etmall.com.tw/c3/46340"> <img src="tab-item-2-1.png" alt="名人推薦"></a></div>
+                      </div>
+                      <div class="tab__slider swiper-container">
+                        <ul class="item__wrap swiper-wrapper"></ul>
+                      </div>
+                    </li>
+                    <li class="content__box">
+                      <div class="promo__item">
+                        <div class="promo__box"><a href="https://www.etmall.com.tw/c3/46340"> <img src="tab-item-3-1.png" alt="名人推薦"></a></div>
+                      </div>
+                      <div class="tab__slider swiper-container">
+                        <ul class="item__wrap swiper-wrapper"></ul>
+                      </div>
+                    </li>
+                    <li class="content__box">
+                      <div class="promo__item">
+                        <div class="promo__box"><a href="https://www.etmall.com.tw/c3/46340"> <img src="tab-item-4-1.png" alt="名人推薦"></a></div>
+                      </div>
+                      <div class="tab__slider swiper-container">
+                        <ul class="item__wrap swiper-wrapper"></ul>
+                      </div>
+                    </li>
+                    <li class="content__box">
+                      <div class="promo__item">
+                        <div class="promo__box"><a href="https://www.etmall.com.tw/c3/46340"> <img src="tab-item-5-1.png" alt="名人推薦"></a></div>
+                      </div>
+                      <div class="tab__slider swiper-container">
+                        <ul class="item__wrap swiper-wrapper"></ul>
+                      </div>
+                    </li>
+                    <li class="content__box">
+                      <div class="promo__item">
+                        <div class="promo__box"><a href="https://www.etmall.com.tw/c3/46340"> <img src="tab-item-6-1.png" alt="名人推薦"></a></div>
+                      </div>
+                      <div class="tab__slider swiper-container">
+                        <ul class="item__wrap swiper-wrapper"></ul>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============== 共用JS ============== -->
+    <script src="https://media.etmall.com.tw/sp/12500/jquery-3.6.0.min.js"></script>
+    <script id="generateScript" src="https://media.etmall.com.tw/sp/12500/generate_v1.2.js"></script>
+
+    <!--[電梯步驟2] 電梯 JS -->
+  <!-- 商品左電梯單機版資料，不用就關掉，要使用還要上方步驟1開啟商品左電梯CSS -->
+  <!-- <script id="dataElevatorLeft" src="data-elevator.js"></script> -->
+
+  <!-- 線上自動切換電梯，無論如何都要有 -->
+  <!-- <script id="checkElevator" src="https://media.etmall.com.tw/sp/11911/check-elevator.js"></script> -->
+  <!-- [電梯步驟2] 電梯 JS END -->
+
+  <!-- data 檔 -->
+  <script id="dataTab" src="data-tab.js"></script>
+  <script type="text/javascript" src="vendor-bundle.js"></script>
+  <script type="text/javascript" src="app-bundle.js"></script>
+</body>
+</html>

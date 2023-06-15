@@ -1,0 +1,166 @@
+.promo__group--tab
+  .tab__wrap
+    +display-flex
+    //+bg-set(url("~event/2nd/e-main/components/tab-section/bg-tab-m.png"), 99%)
+    display: block
+    height: 109vw
+    +bg-set(url("~event/2nd/e-main/components/tab-section/bg-tab.png"), 95%)
+    .tab__zone
+      padding: 0
+      width: 90%
+      margin: 0 auto
+      .tab__box
+        +display-flex
+        flex-wrap: wrap
+        justify-content: center
+        position: relative
+        top: 11vw
+        //text-align: center
+        left: 0
+        color: #00013a
+        font-weight: 700
+        font-size: 3.8vw
+        font-style: italic
+        font-family: Arial
+        .tab-01, .tab-02, .tab-03
+          position: absolute
+        .tab-01
+          left: 7vw
+        .tab-02
+          left: 30vw
+        .tab-03
+          left: 59vw
+        .tab__item__price__init
+          font-size: 2.3vw
+          padding-left: 1%
+          vertical-align: baseline
+    .content__zone
+      +flex(0, 1, 100%)
+      padding: 17.5% 3% 2% 6%
+      .content__block,
+      .content__box
+        width: 100%
+        height: 100%
+        &.tabs__goods
+          width: 90%
+          margin: 0 auto
+
+  .tab__item
+    // +flex(0, 0, 25%)
+    padding: 0 2%
+    width: 31%
+    //img
+    //  &:first-child
+    //    display: block
+    //  &:last-child
+    //    display: none
+    &.active
+      color: #ef4a4a
+      //img
+      //  &:first-child
+      //    display: none
+      //  &:last-child
+      //    display: block
+    &:active,
+    &:hover
+      filter: brightness(110%)
+    &.active
+      &:active,
+      &:hover
+        filter: brightness(100%)
+
+  .content__box
+    display: none
+    &.active
+      display: block
+    .content__item
+      float: left
+      padding: 0
+      width: 31%
+      margin: 1%
+      &:active,
+      &:hover
+        filter: contrast(150%)
+
+  +breakpoint-min($min-width-xl)
+    margin-top: 15px
+    .tab__wrap
+      display: block
+      height: 1120px
+      +bg-set(url("~event/2nd/e-main/components/tab-section/bg-tab.png"), 100% auto)
+
+      .tab__zone
+        .tab__box
+          top: 108px
+          font-size: 40px
+          .tab-01
+            left: 96px
+            cursor: pointer
+          .tab-02
+            left: 305px
+            cursor: pointer
+          .tab-03
+            left: 600px
+            cursor: pointer
+          .tab__item__price__init
+            font-size: 22px
+      .content__zone
+        padding: 20.5% 3% 2% 6%
+        .content__block,
+        .content__box
+          &.tabs__goods
+            width: 96%
+    .tab__item
+      // +flex(0, 0, 25%)
+      padding: 0
+      width: 25%
+      height: 65px
+      img
+        margin: 0 auto
+    .content__box
+      padding: 5px 20px 15px
+      .content__item
+        width: 31.3%
+
+.tabs__goods
+  .content__item
+    +bg-set(url("~event/2nd/e-main/components/slider-section-1-collect/bg__slider__good.png"), 100%)
+    height: 40vw
+    img
+      width: 92%
+      margin: 5% 4% 2% 4%
+    .tab__good__title
+      font-size: 2.6vw
+      line-height: 3.8vw
+      height: 7.5vw
+      padding: 0 4%
+      overflow: hidden
+      color: #5d5d5d
+    .tab__good__price
+      display: flex
+      justify-content: flex-end
+      margin: 1% 7% auto auto
+      color: #cc1e05
+      font-size: 4.5vw
+      font-weight: 700
+      align-items: baseline
+      .price__init
+        font-size: 11px
+        font-weight: 500
+        padding-right: 1%
+        vertical-align: baseline
+  +breakpoint-min($min-width-xl)
+    .content__item
+      height: 384px
+      .tab__good__title
+        font-size: 15px
+        line-height: 20px
+        height: 60px
+        margin-top: 5px
+      .tab__good__price
+        margin: 12% 5% auto auto
+        font-size: 24px
+        //margin: 1% 7% auto auto
+        .price__init
+          font-size: 13px
+          padding-right: 0.5%

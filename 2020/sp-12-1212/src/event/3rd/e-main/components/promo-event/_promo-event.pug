@@ -1,0 +1,69 @@
+-
+  var promoDataE = [
+  {link: "#note",
+  imgSrc: "~event/3rd/e-main/components/promo-event/items/promo-1.png",
+  alt: "消費滿額最高送3,200"},
+  {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202011/SP_1116795/w/index.html",
+  imgSrc: "~event/3rd/e-main/components/promo-event/items/promo-2.png",
+  alt: "滿額送BT21心型手拿鏡"},
+  {link: "#note",
+  imgSrc: "~event/3rd/e-main/components/promo-event/items/promo-3.png",
+  alt: "APP單筆滿額送(foodpanda)九折折扣碼"},
+  {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202011/SP_1116709/w/index.html",
+  imgSrc: "~event/3rd/e-main/components/promo-event/items/promo-4.png",
+  alt: "首購登記送象印保溫瓶"},
+  {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202011/SP_1116792/w/index.html",
+  imgSrc: "~event/3rd/e-main/components/promo-event/items/promo-5.png",
+  alt: "滿$1,212看Catchplay"},
+  {link: "#note",
+  imgSrc: "~event/3rd/e-main/components/promo-event/items/promo-6.png",
+  alt: "天天抽 瑞穗天合國際觀光酒店"},
+  {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202011/SP_1116768/w/index.html",
+  imgSrc: "~event/3rd/e-main/components/promo-event/items/promo-7.png",
+  alt: "消費BT21商品滿$899送BT21獨家刺繡貼貼樂"},
+  {link: "#note",
+  imgSrc: "~event/3rd/e-main/components/promo-event/items/promo-8.png",
+  alt: "下單贈(生活大管家)折扣碼"},
+  ]
+
+- var promoDataU = [{link: "https://www.u-mall.com.tw/Activity/HourSale", imgSrc: "~event/3rd/u-main/components/promo-event/items/promo-1.png", alt: "整點最便宜"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1103367/w/index.html", imgSrc: "~event/3rd/u-main/components/promo-event/items/promo-2.png", alt: "20間銀行最高回饋10%"}, {link: "https://www.u-mall.com.tw/Activity/HourSale?Day=Up", imgSrc: "~event/3rd/u-main/components/promo-event/items/promo-3.png", alt: "天天最激殺"}, ]
+
+- var promoData = isU ? promoDataU : promoDataE
+.promo__event(data-title="")
+  include /event/3rd/e-main/components/daily-change/_daily-change.pug
+  ul.event__wrap
+    //li#dailyPromo
+    //  span.js-month 10
+    //  span.js-date 19
+    //  a(href= promoData[0].link, title= promoData[0].alt)
+    //    img(src= promoData[0].imgSrc, alt= promoData[0].alt)
+        //img(class="promo__good" src="~event/3rd/e-main/components/promo-event/items/promo-1-good.png")
+        //img(class="promo__go" src="~event/3rd/e-main/components/promo-event/items/promo-1-go.png")
+    li
+      a(href= promoData[0].link, title= promoData[0].alt)
+        img(src= promoData[0].imgSrc, alt= promoData[0].alt)
+    li
+      a(href= promoData[1].link, title= promoData[1].alt)
+        img(src= promoData[1].imgSrc, alt= promoData[1].alt)
+    li
+      a(href= promoData[2].link, title= promoData[2].alt)
+        img(src= promoData[2].imgSrc, alt= promoData[2].alt)
+    li
+      a(href= promoData[3].link, title= promoData[3].alt)
+        img(src= promoData[3].imgSrc, alt= promoData[3].alt)
+    li
+      a(href= promoData[4].link, title= promoData[4].alt)
+        img(src= promoData[4].imgSrc, alt= promoData[4].alt)
+    li
+      a(href= promoData[5].link, title= promoData[5].alt)
+        img(src= promoData[5].imgSrc, alt= promoData[5].alt)
+    li
+      a(href= promoData[6].link, title= promoData[6].alt)
+        img(src= promoData[6].imgSrc, alt= promoData[6].alt)
+    li
+      a(href= promoData[7].link, title= promoData[7].alt)
+        img(src= promoData[7].imgSrc, alt= promoData[7].alt)
+
+  include /event/3rd/e-main/components/bn-special/_bn-special
+
+  include /event/3rd/e-main/components/text-slider/_text-slider

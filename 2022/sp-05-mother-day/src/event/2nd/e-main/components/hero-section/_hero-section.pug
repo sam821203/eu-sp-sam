@@ -1,0 +1,44 @@
+-
+  var heroTitleE = [
+    {
+      link: "#note",
+      imgSrc: "event/2nd/e-main/components/hero-section/sub-title-1.png",
+      alt: "全站滿額回饋5%樂透金",
+    },
+    {
+      link: "",
+      imgSrc: "event/2nd/e-main/components/hero-section/sub-title-2.png",
+      alt: "APP下單滿額送$100樂透金",
+    },
+  ]
+section.hero
+
+  //- .decor--top.decor--hero
+  .layout--main
+    .hero__wrap
+      .hero__zone
+        .hero__title.hero__title--bg
+          img(src="event/2nd/e-main/components/hero-section/title-bg-hero-section.png", alt="花樣年華")
+        .hero__title.hero__title--main
+            img(src="event/2nd/e-main/components/hero-section/title-main.png", alt="")
+        .hero__title--item
+          img(src="event/2nd/e-main/components/hero-section/title-item.gif", alt="最高送2000")
+        .hero__title.hero__title--sub
+          a(href="")
+            img(src="event/2nd/e-main/components/hero-section/title-sub.png", alt="")
+        .hero__title.hero__title--slide
+          .swiper-container#heroTitle
+            ul.swiper-wrapper
+              each data in heroTitleE
+                li.swiper-slide
+                  a(href= data.link, title=data.alt)
+                    img(src= data.imgSrc, data.alt)
+        .hero__title--decor
+          .decor__item
+            img(src="event/2nd/e-main/components/hero-section/decor-item-1.png", alt="")
+          .decor__item
+            img(src="event/2nd/e-main/components/hero-section/decor-item-2.png", alt="")
+          .decor__item
+            img(src="event/2nd/e-main/components/hero-section/decor-item-3.png", alt="")
+          .decor__item
+            img(src="event/2nd/e-main/components/hero-section/decor-item-4.png", alt="")

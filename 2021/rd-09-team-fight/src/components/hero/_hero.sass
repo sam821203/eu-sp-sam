@@ -1,0 +1,16 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero
+  +pos-set(relative, base)
+  overflow: hidden
+  +breakpoint-min($min-width-xl)
+    background: center 0 url(~components/hero/bg-hero-web.jpg) no-repeat
+    background-size: auto
+
+  // .hero__wrap
+  //   +aspect-ratio(960, 400)
+
+  // .hero__box
+  //   +pos-set(relative)
+  //   width: 100%

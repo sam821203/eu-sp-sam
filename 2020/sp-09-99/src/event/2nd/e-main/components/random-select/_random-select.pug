@@ -1,0 +1,121 @@
+- 
+  var randomDataE = [
+    {
+      itemLink: "https://www.etmall.com.tw/p/103005",
+      imgSrc: "~event/2nd/e-main/components/random-select/items/depart-1.jpg",
+      itemAlt: "旺旺滿額贈",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202009/SP_1116298/w/index.html",
+      imgSrc: "~event/2nd/e-main/components/random-select/items/depart-2.jpg",
+      itemAlt: "美妝5折起",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/bs/145323",
+      imgSrc: "~event/2nd/e-main/components/random-select/items/depart-3.jpg",
+      itemAlt: "wmf買一送一399起",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/c3/145300",
+      imgSrc: "~event/2nd/e-main/components/random-select/items/depart-4.jpg",
+      itemAlt: "ZenFone 7 Pro買就送",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202008/SP_1116233/w/index.html",
+      imgSrc: "~event/2nd/e-main/components/random-select/items/depart-5.jpg",
+      itemAlt: "上班族保健對策$425up",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/c3/139709",
+      imgSrc: "~event/2nd/e-main/components/random-select/items/depart-6.jpg",
+      itemAlt: "最高送20%",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/gp/110473",
+      imgSrc: "~event/2nd/e-main/components/random-select/items/depart-7.jpg",
+      itemAlt: "IG女神桌椅",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202009/SP_1116319/w/index.html",
+      imgSrc: "~event/2nd/e-main/components/random-select/items/depart-8.jpg",
+      itemAlt: "Notebook通通折5%",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/gp/110389",
+      imgSrc: "~event/2nd/e-main/components/random-select/items/depart-9.jpg",
+      itemAlt: "機能服$99up",
+    }, 
+  ]
+
+- 
+  var randomDataU = [
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      imgSrc: "~event/2nd/e-main/components/random-select/items/depart-1.jpg",
+      itemAlt: "滿額送$300",
+      departLink: "",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      imgSrc: "~event/2nd/e-main/components/random-select/items/depart-2.jpg",
+      itemAlt: "滿額送$300",
+      departLink: "",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      imgSrc: "~event/2nd/e-main/components/random-select/items/depart-3.jpg",
+      itemAlt: "滿額送$300",
+      departLink: "",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      imgSrc: "~event/2nd/e-main/components/random-select/items/depart-4.jpg",
+      itemAlt: "滿額送$300",
+      departLink: "",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      imgSrc: "~event/2nd/e-main/components/random-select/items/depart-5.jpg",
+      itemAlt: "滿額送$300",
+      departLink: "",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      imgSrc: "~event/2nd/e-main/components/random-select/items/depart-6.jpg",
+      itemAlt: "滿額送$300",
+      departLink: "",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      imgSrc: "~event/2nd/e-main/components/random-select/items/depart-7.jpg",
+      itemAlt: "滿額送$300",
+      departLink: "",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      imgSrc: "~event/2nd/e-main/components/random-select/items/depart-8.jpg",
+      itemAlt: "滿額送$300",
+      departLink: "",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      imgSrc: "~event/2nd/e-main/components/random-select/items/depart-9.jpg",
+      itemAlt: "滿額送$300",
+      departLink: "",
+    }, 
+  ]
+
+- var randomData = isU? randomDataU : randomDataE
+
+section.promo__group.promo__group--random.m-bottom--sm(data-title="玩敗九格")
+  .layout--main
+    //- .promo__title.block--center.text--center
+    //-   img(src="~event/2nd/e-main/components/random-select/title-random-select.png", alt="")
+    .promo__wrap
+      ul#randomSelectWrap.good__wrap
+        each data in randomData
+          li
+            a(href= data.itemLink, title= data.itemAlt)
+              img(src= data.imgSrc, alt= data.itemAlt)
+
+

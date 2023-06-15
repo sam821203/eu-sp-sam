@@ -1,0 +1,32 @@
+.bn-slider
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__wrap
+    padding-bottom: 5%
+    +breakpoint-min($min-width-xl)
+      padding-bottom: 40px
+  .decor__item
+    &--left
+      +pos-set(absolute, base, 0%, 6%)
+      width: 22%
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 415px)
+    &--right
+      +pos-set(absolute, base, -2%)
+      right: 5.3%
+      width: 23%
+      +breakpoint-min($min-width-xl)
+        right: calc(50% - 415px)
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .promo__wrap
+    +aspect-ratio(960, 973)
+  .promo__zone
+    +bg-set(url(event/1st/e-main/components/bn-slider/bg-bn-slider.png), 100%)
+  .promo__block
+    padding: 23% 5% 0% 7%
+    .promo__box
+      .swiper-container
+        margin-top: 1%
+        +breakpoint-min($min-width-xl)
+            margin-top: 10px

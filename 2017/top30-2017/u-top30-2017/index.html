@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+	<title>熱銷瘋省榜 -- 森森購物網U-mall</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="http://www.u-mall.com.tw/favicon.ico">
+	<link rel="stylesheet" href="starry-sky.css">
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		* {
+ 		 box-sizing: border-box; }
+  		*:before, *:after {
+    		box-sizing: border-box; }
+	    a {
+	    	text-decoration: none;
+	    }
+		ul {
+			list-style: none;
+		}
+		img {
+			border: 0;
+			display: block;
+		}
+		body {
+			background-color: #000;
+		  	font-family: Arial, Helvetica, 'LiHei', "Microsoft JhengHei", "PMingLiU", "微軟正黑體", "新細明體", sans-serif;  
+			margin: 0;
+  			padding: 0;
+		}
+
+		.sp__wrap {
+			width: 100%;
+			background: center top url(bg.jpg) no-repeat;
+			background-size: 100%;
+
+		}
+
+		.speical {
+			width: 100%;
+			position: relative;
+		}
+
+		.canvas {
+			position: absolute;
+			z-index: -1;
+		}
+
+		.front-bg {
+			background: center top url(triangle.png) repeat-y;
+			background-size: 100%;
+		}
+
+		.sp--1260 {
+			position: relative;
+			width: 1260px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+/* ================= header ================= */
+		.sp-logo {
+			position: absolute;
+			z-index: 15;
+			top: 20px;
+			left: 0;
+			cursor: pointer;
+		}
+
+		.side-info {
+			position: absolute;
+			z-index: 15;
+			top: 39px;
+			right: -51px;
+			width: 202px;
+		}
+
+		.side-info a {
+			display: block;
+			width: 100%;
+			height: 96px;	
+		}
+
+		
+/* ================= main-visual ================= */
+		.sp-title {
+			position: relative;
+		}
+
+		.sp-title > img:first-child {
+			height: 700px;
+			margin-left: -207px;
+		}
+
+		.sp-title > img:nth-child(2) {
+			position: absolute;
+			z-index: 1;
+			top: 57px;
+			width: 700px;
+			opacity: 0;
+			animation: shine 20s 2s ease-in-out infinite;
+		}
+
+		@keyframes shine {
+			from {
+				opacity: 0;
+			}
+			5% {
+				opacity: 1;
+				filter: brightness(150%);
+			}
+			10% {
+				opacity: 0
+				filter: brightness(0%);
+			}
+		}
+
+		.sp-title > img:nth-child(3) {
+			position: absolute;
+			z-index: 0;
+			bottom: -88px;
+			left: 117px;
+			width: 760px;
+		}
+
+		.sp-title > a {
+			display: block;
+			position: absolute;
+			z-index: 15;
+			bottom: 137px;
+			right: 87px;
+			width: 320px;
+			height: 213px;
+			transform: rotate(-13deg);
+			transition: all 0.5s;
+		}
+
+		.sp-title > a:hover {
+			border: 6px solid rgba(235,208,195,.5);
+		}
+
+/* ================= main-content ================= */
+		.sp-content	{
+			position: relative;
+			width: 100%;
+			height: 500px;
+			margin-top: -44px;
+			margin-bottom: 50px;
+			background: center top url(main-bg.jpg) no-repeat;
+		}
+
+		.sp-content > img {
+			position: absolute;
+			z-index: 1;
+			top: -146px;
+			left: -143px;
+			width: 384px;
+		}
+
+		.main-group	{
+			position: absolute;
+			z-index: 2;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin: auto;
+		}
+
+		.main-info {
+			float: left;
+			margin-left: 25px;
+			padding-top: 10px;
+			text-align: center;
+			overflow: hidden;
+		}
+
+		.main-info:nth-child(1) {
+			padding-top: 18px;
+		}
+
+		.main-info:nth-child(2) {
+			padding-top: 44px;
+		}
+
+		.main-info img {
+			width: 90%;
+			margin-left: auto;
+			margin-right: auto; 
+			transition: all 0.5s;
+		}
+
+		.main-info img:hover {
+			filter: brightness(115%);
+		}
+
+		.main-info:last-child img:hover {
+			filter: brightness(105%);
+		}
+/* ================= iframe ================= */
+	.top30 {
+		width: 116%;
+		margin-left: -8%;
+		margin-bottom: -38px;
+	}
+
+	</style>
+</head>
+<body>
+	<div class="sp__wrap">
+		<div class="special">			
+			<div class="front-bg">
+				<div class="sp--1260">
+					<header>
+						<div class="sp-logo">
+							<a href="https://www.u-mall.com.tw/" title="森森購物網U-mall" target="_top">
+								<img src="logo.png" alt="森森購物網U-mall">
+							</a>
+					  </div>
+					</header>
+						<div class="sp-title">
+							<img src="title.png" alt="熱銷瘋省榜 -- 森森購物網U-mall">
+							<img src="light.png" alt="">
+							<img src="product.png" alt="">
+							<a href="#mainFrame"></a>
+						</div>
+					<section class="sp-content">
+						<img src="bat.png" alt="">
+						<div class="main-group">
+							<div class="main-info"><a href="http://www.u-mall.com.tw/SimpleTemplate.aspx?SubPage=DMSetting/Final/201711/SP_1100933/index.html" title="" target="_blank"><img src="main1.png" alt=""></a></div>
+							<div class="main-info"><a href="http://www.u-mall.com.tw/SimpleTemplate.aspx?SubPage=DMSetting/Final/201711/SP_1100934/index.html" title="" target="_blank"><img src="main2.png" alt=""></a></div>
+							<div class="main-info"><a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201711/SP_1100939/index.html" title="" target="_blank"><img src="main4.png" alt=""></a></div>
+						</div>
+					</section>
+					<section>
+						<img class="top30" src="top30.png" alt="">
+						<div id="mainFrame"></div>
+					</section>
+				</div>			
+			</div>
+		</div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+				<div class="p"></div>
+	</div>
+	<script src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201504/SP_1019163/Includes/jquery-1.7.2.js"></script>
+	<script>
+		$(function(){
+			setTimeout(function () {
+			      $(".product-iframe").on('load', function () {
+			        $(this).css({
+			          height: $(this).contents().height()
+			        });
+			      });
+			    }, 0);
+
+    	    var ifreamTop = $("#mainFrame").offset().top
+
+		    $('.sp-title > a').on('click', function(e) {
+		        e.preventDefault();
+		        let storeSelfHref = $(this).attr('href');
+
+		        $('html, body').animate({
+		            scrollTop: ifreamTop
+		        });
+		    });
+
+		});
+	</script>
+</body>
+</html>	

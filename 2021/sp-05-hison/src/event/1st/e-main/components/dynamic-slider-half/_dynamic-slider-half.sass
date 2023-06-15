@@ -1,0 +1,80 @@
+.promo__group--dynamic-slider-half
+  .promo__wrap
+    display: flex
+    +pos-set(relative, zero)
+    padding: 14.5% 4% 4%
+    +bg-set(url("~event/1st/e-main/components/dynamic-slider-half/bg-dynamic-slider-half.png"), 100%)
+    overflow: hidden
+    .pic__box
+      flex: 0 1 33.33%
+    .slider__box
+      padding-left: 2%
+      width: 66.66%
+      .promo__slider
+        +pos-set(relative, zero)
+        width: 100%
+        height: 100%
+
+    .pic__box,
+    .swiper-slide
+      // +bg-set(url("~event/1st/e-main/components/dynamic-slider-half/bg-dynamic-slider-half-item.png"), 100%)
+
+    .swiper-slide
+      width: 50%
+      background-color: $gray-deep-light
+
+
+    +breakpoint-min($min-width-xl)
+      padding: 160px 3% 50px
+      +bg-set(url("~event/1st/e-main/components/dynamic-slider-half/bg-dynamic-slider-half-web.png"), auto)
+      .pic__box
+        flex: 0 1 24.2%
+
+      .slider__box
+        padding-left: 10px
+        width: 75.8%
+        .promo__slider
+          .swiper-wrapper
+            display: flex
+            justify-content: space-between
+            .swiper-slide
+              // flex: 0 1 24.6%
+              // padding: 7px 8px
+
+  .dynamic-slider-pager
+    bottom: 3.5%
+    left: 18%
+    width: 100%
+    .swiper-pagination-bullet
+      margin: 0 4px
+      width: 12px
+      height: 12px
+      transition: all 0.3s
+      outline: 0
+      &.swiper-pagination-bullet-active
+        width: 24px
+        border-radius: 12px
+        background-color: $gray-deep-dark
+
+  +breakpoint-max($max-width-xxs)
+    .dynamic-slider-pager
+      bottom: 2.5%
+  +breakpoint-min($min-width-md)
+    .dynamic-slider-pager
+      .swiper-pagination-bullet
+        margin: 0 6px
+        width: 18px
+        height: 18px
+        &.swiper-pagination-bullet-active
+          width: 36px
+          border-radius: 18px
+
+  +breakpoint-min($min-width-lg)
+    .dynamic-slider-pager
+      bottom: 5.5%
+  +breakpoint-min($min-width-xl)
+    .dynamic-slider-pager
+      bottom: 18px
+      left: 0
+      span
+        transform: translateX(110px)

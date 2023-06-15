@@ -1,0 +1,117 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero__wrap
+  +pos-set(relative, zero)
+  // +bg-set(url("~event/2nd/e-main/components/hero-section/bg-hero.jpg"), 100%)
+  overflow: hidden
+  +breakpoint-min($min-width-xl)
+    background-size: auto
+
+  // .hero__zone
+
+  .hero__block
+    padding-top: 9.8%
+
+  .hero__box
+    width: 66.5%
+    margin-left: -0.7%
+
+  .hero__title
+    &--main
+      +pos-set(relative, base)
+      width: 100%
+      transform-origin: center top
+      animation: swing 0.75s 0.75s both
+
+  .title-decoration__wrap
+    +pos-set(absolute, null, 0, 0)
+    width: 100%
+    height: 100%
+    pointer-events: none
+    .title__decoration
+      +pos-set(absolute, zero)
+
+      &--middle
+        z-index: map-get($zindex, base)
+        top: 0
+        padding-top: 39%
+        width: 100%
+        pointer-events: none
+        overflow: hidden
+        .decoration__pic
+          &:first-child
+            margin-left: 31.5%
+            width: 45%
+            animation: up-to-down 0.5s 0.5s both, shake 1s 1.5s infinite
+          &:last-child
+            +pos-set(absolute, zero)
+            top: 35%
+            left: 0
+            transform-origin: top
+            animation: burst-paper 1s 0.5s both ease
+        +breakpoint-min($min-width-xl)
+          padding-top: 375px
+          .decoration__pic
+            &:first-child
+              width: auto
+              margin-left: calc(50% - 175px)
+            &:last-child
+              top: 310px
+              left: calc(50% - 480px)
+
+  .promo__zone
+    // margin-top: 8%
+    //background-color: $gray-deep-light
+    +breakpoint-min($min-width-xl)
+      background-color: transparent
+
+@keyframes burst-paper
+  0%
+    transform: scale(0)
+    opacity: 0
+  1%
+    opacity: 1
+  100%
+    transform: scale(1)
+
+
+@keyframes swing
+  20%
+    transform: rotate3d(0, 0, 1, -15deg)
+  40%
+    transform: rotate3d(0, 0, 1, 10deg)
+  60%
+    transform: rotate3d(0, 0, 1, -5deg)
+  80%
+    transform: rotate3d(0, 0, 1, 5deg)
+  to
+    transform: rotate3d(0, 0, 1, 0deg)
+
+@keyframes up-to-down
+  0%
+    transform: translateY(100%)
+    opacity: 0
+  1%
+    opacity: 1
+  70%
+    transform: translateY(-15%)
+  100%
+    transform: translateY(0)
+
+@keyframes shake
+  from,
+  50%,
+  to
+    transform: translate3d(0, 0, 0)
+  5%,
+  15%,
+  25%,
+  35%,
+  45%
+    transform: translate3d(-2px, 2px, 0)
+  10%,
+  20%,
+  30%,
+  40%
+    transform: translate3d(2px, -2px, 0)

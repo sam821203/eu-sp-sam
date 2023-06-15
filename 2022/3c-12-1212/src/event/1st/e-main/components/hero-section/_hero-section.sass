@@ -1,0 +1,194 @@
+.hero
+  +pos-set(relative, zero)
+  overflow: hidden
+  .hero__zone
+    +aspect-ratio(960, 888)
+    .hero__title
+      +pos-set(absolute, base, 3%, 5%)
+      width: 90%
+      .js-loading &
+        animation: backInDown 0.5s ease-out 1 forwards, up-down 2s .5s linear infinite forwards
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 432px)
+        width: auto
+
+  .decor__item
+    &--left1
+      z-index: map-get($zindex, zero)
+      top: 58%
+      left: 2%
+      width: 44%
+      .js-loading &
+        animation: bounceInLeft 1s linear forwards
+      +breakpoint-min($min-width-xl)
+        top: 520px
+        left: calc( 50% - 450px )
+    &--left2
+      z-index: map-get($zindex, zero)
+      top: 79%
+      left: 37%
+      width: 32%
+      opacity: 0
+      .js-loading &
+        animation: zoomIn-title .5s .7s linear forwards
+      +breakpoint-min($min-width-xl)
+        top: 690px
+        left: calc( 50% - 140px )
+    &--right1
+      z-index: map-get($zindex, zero)
+      top: 52%
+      right: 3%
+      width: 30%
+      .js-loading &
+        animation: bounceInRight 1s linear forwards
+      +breakpoint-min($min-width-xl)
+        top: 440px
+        right: calc( 50% - 440px )
+    &--right2
+      z-index: map-get($zindex, zero)
+      top: 58%
+      right: 30%
+      width: 32%
+      opacity: 0
+      .js-loading &
+        animation: zoomIn-title .5s .5s linear forwards
+      +breakpoint-min($min-width-xl)
+        top: 500px
+        right: calc( 50% - 200px )
+    &--ball
+      z-index: map-get($zindex, base)
+      top: 66%
+      left: -6%
+      width: 52%
+      opacity: 0
+      transform: skewX(0deg) scaleY(1)
+      .js-loading &
+        animation: zoomIn-title .5s .5s ease-in forwards, tr-bag 4s 1s linear infinite
+      +breakpoint-min($min-width-xl)
+        top: 610px
+        left: calc( 50% - 520px )
+        max-width: 438px
+    +breakpoint-min($min-width-xl)
+      width: auto
+
+@keyframes backInDown
+  0%
+    transform: translateY(-1200px) scale(.7)
+    opacity: .7
+  80%
+    transform: translateY(0) scale(.7)
+    opacity: .7
+  to
+    transform: scale(1)
+    opacity: 1
+
+@keyframes move-up
+  0%
+    transform: translate(10%, 100%)
+  100%
+    transform: translate(0, 0%)
+
+@keyframes up-down
+  0%, 100%
+    transform: translateY(0%)
+  50%
+    transform: translateY(-2%)
+
+@keyframes tr-bag 
+  0%, 80%, 84%, 98% 
+    transform: translate(2px, 5px)
+  2%, 40%, 42%, 62% 
+    transform: translate(2px, 3px)
+  4%, 12% 
+    transform: translate(3px, 5px)
+  6%, 94% 
+    transform: translate(3px, 2px)
+  8% 
+    transform: translate(1px, 1px)
+  10%, 92%, 100% 
+    transform: translate(5px, 5px)
+  14.000000000000002%, 52% 
+    transform: translate(1px, 5px)
+  16% 
+    transform: translate(4px, 3px)
+  18%, 86% 
+    transform: translate(4px, 5px)
+  20%, 24%, 56% 
+    transform: translate(2px, 1px)
+  22%, 58% 
+    transform: translate(5px, 3px)
+  26%, 74% 
+    transform: translate(4px, 1px)
+  28.000000000000004%, 54% 
+    transform: translate(3px, 3px)
+  30% 
+    transform: translate(1px, 3px)
+  32% 
+    transform: translate(4px, 4px)
+  34% 
+    transform: translate(5px, 2px)
+  36%, 46%, 64% 
+    transform: translate(5px, 4px)
+  38%, 50%, 60%, 72% 
+    transform: translate(3px, 1px)
+  44%, 90% 
+    transform: translate(1px, 4px)
+  48%, 68%, 70%, 88% 
+    transform: translate(3px, 4px)
+  66%, 78% 
+    transform: translate(2px, 2px)
+  76%, 82% 
+    transform: translate(2px, 4px)
+  96% 
+    transform: translate(5px, 1px)
+
+  1% 
+    transform: scaleY(1) skewX(0deg)
+  1.5% 
+    transform: scaleY(3) skewX(-60deg)
+  2% 
+    transform: scaleY(1) skewX(0deg)
+  51% 
+    transform: scaleX(1) scaleY(1) skewX(0deg)
+  53% 
+    transform: scaleX(1) scaleY(1) skewX(0deg)
+
+@keyframes bounceInLeft
+  0%, 60%, 75%, 90%, to
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+  0%
+    opacity: 0
+    transform: translate3d(-3000px, 0, 0) scaleX(3)
+  60%
+    opacity: 1
+    transform: translate3d(25px, 0, 0) scaleX(1)
+  75%
+    transform: translate3d(-10px, 0, 0) scaleX(.98)
+  90%
+    transform: translate3d(5px, 0, 0) scaleX(.995)
+  to
+    transform: translateZ(0)
+
+@keyframes bounceInRight
+  0%, 60%, 75%, 90%, to
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+  0%
+    opacity: 0
+    transform: translate3d(3000px, 0, 0) scaleX(3)
+  60%
+    opacity: 1
+    transform: translate3d(-25px, 0, 0) scaleX(1)
+  75%
+    transform: translate3d(10px, 0, 0) scaleX(.98)
+  90%
+    transform: translate3d(-5px, 0, 0) scaleX(.995)
+  to
+    transform: translateZ(0)
+
+@keyframes zoomIn-title
+  0%
+    opacity: 0
+    transform: scale3d(.3, .3, .3)
+  50%, 100%
+    transform: scale3d(1, 1, 1)
+    opacity: 1

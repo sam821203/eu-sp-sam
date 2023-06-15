@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>集點加價購</title>
+    <!-- reset 可以刪掉加入自己的 -->
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+    <link rel="stylesheet" href="popWindow.css">
+    <style>
+        .go-top {
+            position: fixed;
+            z-index: 999;
+            right: 10px;
+            bottom: 90px;
+            transform: translateY(-50%);
+            padding: 10px 12px;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            opacity: 0;
+            transition: opacity 0.4s linear;
+            border-radius: 100px;
+            cursor: pointer;
+            display: none;
+        }
+
+        .go-top.is-visible {
+            display: block;
+            opacity: 1;
+        }
+
+        .go-top:focus,
+        .go-top i:focus {
+            outline: 0;
+        }
+
+        /* fix umall "position:fixed" not working */
+        .main,.side {
+            transform: none;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <script src="popWindow.js"></script>
+</head>
+<body>
+<main class="sp__wrap">
+    <div class="layout--main">
+        <header class="m-bottom--sm">
+            <div class="logo__wrap">
+                <a href="https://www.etmall.com.tw" title="東森購物">
+                    <img src="logo.png" alt="東森購物">
+                </a>
+            </div>
+            <h1 class="title__wrap">
+                <img class="title__main" src="title.png" alt="東森購物集點加價購，消費滿$618元1點、滿$2000可獲2點、集2點加價購1款">
+                <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202009/SP_1116232/w/index.html">
+                    <img class="event__detail" src="but_note.png" alt="活動詳情">
+                </a>
+            </h1>
+
+            <div class="title__incentive__wrap">
+                <a href="#pointWrap">
+                    <img src="incentive--01.png" alt="">
+                </a>
+                <a href="#wrap01">
+                    <img src="incentive--02.png" alt="">
+                </a>
+                <a href="#wrap02">
+                    <img src="incentive--03.png" alt="">
+                </a>
+            </div>
+        </header>
+        <section id="pointWrap" class="point__wrap clearfix m-bottom--sm">
+            <img src="point__card.png" alt="">
+        </section>
+
+        <section id="wrap01" class="wrap__01 clearfix m-bottom--sm">
+            <div class="wrap__01__items">
+                <div class="wrap__01__card no__item">
+                    <div class="pop__detail open-bigPhoto" data-dialog="movie--desctription"
+                         title="詳情  pop window">
+                        <img class="btn__more" src="gift-button-more.png" alt="">
+                    </div>
+                    <img class="front__image__gift" src="gift-pic-1.png" alt="">
+                    <img src="gift-1-888.png" alt="">
+                    <a href class="btn-registration__change"></a>
+                    <img class="gift__redeemed" src="gift-button-redeemed.png" alt="">
+                </div>
+                <div class="wrap__01__card">
+                    <div class="pop__detail open-bigPhoto" data-dialog="movie--desctription"
+                         title="詳情  pop window">
+                        <img class="btn__more" src="gift-button-more.png" alt="">
+                    </div>
+                    <img class="front__image__gift left-0" src="gift-pic-2.png" alt="">
+                    <img src="gift-2-618.png" alt="">
+                    <a href class="btn-registration__change"></a>
+                    <img class="gift__redeemed" src="gift-button-redeemed.png" alt="">
+                </div>
+                <div class="wrap__01__card">
+                    <div class="pop__detail open-bigPhoto" data-dialog="movie--desctription"
+                         title="詳情  pop window">
+                        <img class="btn__more" src="gift-button-more.png" alt="">
+                    </div>
+                    <img class="front__image__gift left-0" src="gift-pic-3.png" alt="">
+                    <img src="gift-3-168.png" alt="">
+                    <a href class="btn-registration__change"></a>
+                    <img class="gift__redeemed" src="gift-button-redeemed.png" alt="">
+                </div>
+                <div class="wrap__01__card">
+                    <div class="pop__detail open-bigPhoto" data-dialog="movie--desctription"
+                         title="詳情  pop window">
+                        <img class="btn__more" src="gift-button-more.png" alt="">
+                    </div>
+                    <img class="front__image__gift left-0" src="gift-pic-4.png" alt="">
+                    <img src="gift-4-88.png" alt="">
+                    <a href class="btn-registration__change"></a>
+                    <img class="gift__redeemed" src="gift-button-redeemed.png" alt="">
+                </div>
+                <div class="wrap__01__card">
+                    <div class="pop__detail open-bigPhoto" data-dialog="movie--desctription"
+                         title="詳情  pop window">
+                        <img class="btn__more" src="gift-button-more.png" alt="">
+                    </div>
+                    <img class="front__image__gift left-0" src="gift-pic-5.png" alt="">
+                    <img src="gift-5-$100.png" alt="">
+                    <a href class="btn-registration__change"></a>
+                    <img class="gift__redeemed" src="gift-button-redeemed.png" alt="">
+                </div>
+                <div class="wrap__01__card">
+                    <div class="pop__detail open-bigPhoto" data-dialog="movie--desctription"
+                         title="詳情  pop window">
+                        <img class="btn__more" src="gift-button-more.png" alt="">
+                    </div>
+                    <img class="front__image__gift left-0" src="gift-pic-6.png" alt="">
+                    <img src="gift-6-$50.png" alt="">
+                    <a href class="btn-registration__change"></a>
+                    <img class="gift__redeemed" src="gift-button-redeemed.png" alt="">
+                </div>
+                <div class="wrap__01__card">
+                    <div class="pop__detail open-bigPhoto" data-dialog="movie--desctription"
+                         title="詳情  pop window">
+                        <img class="btn__more" src="gift-button-more.png" alt="">
+                    </div>
+                    <img class="front__image__gift left-0" src="gift-pic-7.png" alt="">
+                    <img src="gift-7-line.png" alt="">
+                    <a href class="btn-registration__change"></a>
+                    <img class="gift__redeemed" src="gift-button-redeemed.png" alt="">
+                </div>
+                <div class="wrap__01__card">
+                    <div class="pop__detail open-bigPhoto" data-dialog="movie--desctription"
+                         title="詳情  pop window">
+                        <img class="btn__more" src="gift-button-more.png" alt="">
+                    </div>
+                    <img class="front__image__gift left-0" src="gift-pic-8.png" alt="">
+                    <img src="gift-8-m.png" alt="">
+                    <a href class="btn-registration__change"></a>
+                    <img class="gift__redeemed" src="gift-button-redeemed.png" alt="">
+                </div>
+                <div class="wrap__01__card no__item">
+                    <div class="pop__detail open-bigPhoto" data-dialog="movie--desctription"
+                         title="詳情  pop window">
+                        <img class="btn__more" src="gift-button-more.png" alt="">
+                    </div>
+                    <img class="front__image__gift left-0" src="gift-pic-9.png" alt="">
+                    <img src="gift-9-family.png" alt="">
+                    <!-- <p class="goods__name">TATUNG大同3人份超美型小電鍋</p> -->
+                    <!-- <span class="goods__inventory">尚餘123組</span> -->
+                    <a href class="btn-registration__change"></a>
+                    <img class="gift__redeemed" src="gift-button-redeemed.png" alt="">
+                </div>
+                <div class="wrap__01__card">
+                    <div class="pop__detail open-bigPhoto" data-dialog="movie--desctription"
+                         title="詳情  pop window">
+                        <img class="btn__more" src="gift-button-more.png" alt="">
+                    </div>
+                    <img class="front__image__gift left-0" src="gift-pic-10.png" alt="">
+                    <img src="gift-10-85.png" alt="">
+                    <!-- <p class="goods__name">TATUNG大同3人份超美型小電鍋</p> -->
+                    <!-- <span class="goods__inventory">尚餘123組</span> -->
+                    <a href class="btn-registration__change"></a>
+                    <img class="gift__redeemed" src="gift-button-redeemed.png" alt="">
+                </div>
+                <p class="wrap__01__remark">*完成登記之贈品將於6/29(一)18:00前以簡訊通知</p>
+            </div>
+
+        </section>
+
+        <section id="wrap02" class="wrap__02 clearfix m-bottom--sm">
+            <div class="wrap__02__title">
+                <!-- <img src="wrap__02__title.png" alt=""> --></div>
+            <div class="wrap__02__items">
+                <div class="wrap__02__good" href="">
+                    <a class="good__link" href=""></a>
+                    <img src="https://media.etmall.com.tw/NXimg/002345/2345310/2345310_ML.jpg?t=17781115770" alt="">
+                    <span class="good__count">2</span>
+                    <span class="good__price">2000</span>
+                    <span class="good__txt">樂芙 廚房紙巾60抽6捲8袋</span>
+                    <span class="good__remain">尚餘123組</span>
+                    <!-- <span class="good__tips">折價券將於6/29(一)18:00前以簡訊通知</span> -->
+                    <a href="" class="btn-registration__buy"><img src="buy-button-y.png" alt=""></a>
+                </div>
+                <div class="wrap__02__good" href="">
+                    <a class="good__link" href=""></a>
+                    <img src="https://media.etmall.com.tw/NXimg/002345/2345310/2345310_ML.jpg?t=17781115770" alt="">
+                    <span class="good__count">2</span>
+                    <span class="good__price">2000</span>
+                    <span class="good__txt">樂芙 廚房紙巾60抽6捲8袋</span>
+                    <span class="good__remain">尚餘123組</span>
+                    <!-- <span class="good__tips">折價券將於6/29(一)18:00前以簡訊通知</span> -->
+                    <a href="" class="btn-registration__buy"><img src="buy-button-y.png" alt=""></a>
+                </div>
+                <div class="wrap__02__good" href="">
+                    <a class="good__link" href=""></a>
+                    <img src="https://media.etmall.com.tw/NXimg/002345/2345310/2345310_ML.jpg?t=17781115770" alt="">
+                    <span class="good__count">2</span>
+                    <span class="good__price">2000</span>
+                    <span class="good__txt">樂芙 廚房紙巾60抽6捲8袋</span>
+                    <span class="good__remain">尚餘123組</span>
+                    <!-- <span class="good__tips">折價券將於6/29(一)18:00前以簡訊通知</span> -->
+                    <a href="" class="btn-registration__buy"><img src="buy-button-y.png" alt=""></a>
+                </div>
+                <div class="wrap__02__good">
+                    <a class="good__link" href=""></a>
+                    <img src="https://media.etmall.com.tw/NXimg/002345/2345310/2345310_ML.jpg?t=17781115770" alt="">
+                    <span class="good__count">2</span>
+                    <span class="good__price">2000</span>
+                    <span class="good__txt">樂芙 廚房紙巾60抽6捲8袋</span>
+                    <span class="good__remain">尚餘123組</span>
+                    <!-- <span class="good__tips">折價券將於6/29(一)18:00前以簡訊通知</span> -->
+                    <a href="" class="btn-registration__buy"><img src="buy-button-y.png" alt=""></a>
+                </div>
+                <div class="wrap__02__good">
+                    <a class="good__link" href=""></a>
+                    <img src="https://media.etmall.com.tw/NXimg/002345/2345310/2345310_ML.jpg?t=17781115770" alt="">
+                    <span class="good__count">2</span>
+                    <span class="good__price">2000</span>
+                    <span class="good__txt">樂芙 廚房紙巾60抽6捲8袋</span>
+                    <span class="good__remain">尚餘123組</span>
+                    <!-- <span class="good__tips">折價券將於6/29(一)18:00前以簡訊通知</span> -->
+                    <a href="" class="btn-registration__buy"><img src="buy-button-y.png" alt=""></a>
+                </div>
+                <div class="wrap__02__good">
+                    <a class="good__link" href=""></a>
+                    <img src="https://media.etmall.com.tw/NXimg/002345/2345310/2345310_ML.jpg?t=17781115770" alt="">
+                    <span class="good__count">2</span>
+                    <span class="good__price">2000</span>
+                    <span class="good__txt">樂芙 廚房紙巾60抽6捲8袋</span>
+                    <span class="good__remain">尚餘123組</span>
+                    <!-- <span class="good__tips">折價券將於6/29(一)18:00前以簡訊通知</span> -->
+                    <a href="" class="btn-registration__buy"><img src="buy-button-y.png" alt=""></a>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<!-- 彈出照片(小張) -->
+<div class="open--window--wrap pop--images pop__detail__wrap" id="movie--desctription">
+    <p class="detail__title">888枚東森幣</p>
+    <p class="detail__txt">完成【登記換】者，將於6/29 18:00前匯入帳戶並以簡訊通知。<br>東森幣效期：9/29 23:59。<br>使用東森幣注意事項請見：會員＞幫助中心＞常見問題＞東森幣說明
+    </p>
+    <!--<img src="popup-bg.png" alt="banner">-->
+    <div class="close-icon-btn btn-bottom"></div>
+</div>
+</body>
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script>
+    // go top
+    // ================================
+    // function
+    var basicScrollTop = function () {
+        // The button
+        var btnTop = document.getElementById('goTop');
+        // Reveal the button
+        var btnReveal = function () {
+            if (window.scrollY >= 300) {
+                btnTop.classList.add('is-visible');
+            } else {
+                btnTop.classList.remove('is-visible');
+            }
+        }
+        // Smooth scroll top
+        var TopscrollTo = function () {
+            if (window.scrollY != 0) {
+                if (window.jQuery) {
+                    $('html,body').stop().animate({scrollTop: 0}, 500);
+                } else {
+                    setTimeout(function () {
+                        window.scrollTo(0, window.scrollY - 100);
+                        TopscrollTo();
+                    }, 0);
+                }
+            }
+        }
+        // Listeners
+        window.addEventListener('scroll', btnReveal);
+        btnTop.addEventListener('click', TopscrollTo);
+    };
+    var goTopHtml = '';
+    var goTopNode = document.createElement('button');
+    goTopHtml = '<i class="fas fa-arrow-up" style="font-size: 20px;"></i>';
+    goTopNode.id = 'goTop';
+    goTopNode.classList.add('go-top');
+    goTopNode.innerHTML = goTopHtml;
+
+    //    document.head.appendChild(fontAwesomeLink);
+    //    document.head.appendChild(goTopLink);
+    document.body.appendChild(goTopNode);
+    basicScrollTop();
+</script>
+<script src="popWindow.js" defer></script>
+</html>

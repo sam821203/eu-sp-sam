@@ -1,0 +1,118 @@
+.daily__goods
+  word-break: break-all
+  font-family: Arial
+  .daily__cover
+    img, span
+      position: absolute
+    img
+      top: 12vw
+      left: 50%
+      transform: translateX(-50%)
+      width: 96%
+      z-index: 3
+    span
+      top: 13vw
+      color: #f9f0a3
+      font-size: 4.7vw
+      z-index: 3
+    span:nth-of-type(1)
+      left: 4vw
+    span:nth-of-type(2)
+      right: 4vw
+    &::before
+      position: absolute
+      background-color: rgba(0,0,0,0.6)
+      display: block
+      content: ''
+      width: 43.5vw
+      height: 30vw
+      right: 6.5vw
+      top: 13.5vw
+      pointer-events: none
+      z-index: 2
+
+  .goods--promo
+    display: flex
+    flex-wrap: wrap
+    padding: 21% 7% 4%
+    +bg-set(url(~event/1st/e-main/components/daily-goods/daily-goods-bg.png), 96% auto)
+    .goods__item
+      width: 50%
+      &:nth-of-type(1)
+        position: relative
+        z-index: 4
+    .info__wrap
+      display: flex
+      padding: 0 2% 0 4%
+      width: 100%
+      align-items: flex-end
+    .item__pic
+      width: 100%
+      padding: 0 0 0 2%
+    .item__date
+      color: #6a1125
+      span:first-child
+        font-size: 4vw
+        vertical-align: top
+  .goods__item
+    a
+      line-height: 120%
+      &:hover,
+      &:active
+        filter: brightness(110%)
+    &:nth-of-type(2)
+      a
+        pointer-events: none
+  .date__wrap
+    width: 100%
+    display: flex
+    margin: 9.3% 5% 0
+    text-align: center
+    pointer-events: none
+    li
+      width: 25%
+      margin: 0 4%
+      line-height: 5vw
+      height: 5vw
+  .date__active
+    background: #f8efa2
+    border-radius: 100rem
+  +breakpoint-min($min-width-xl)
+    .goods--promo
+      padding: 200px 7% 4%
+      .item__date
+        span:first-child
+          font-size: 38px
+    .daily__cover
+      img
+        top: 115px
+        width: auto
+      span
+        top: 120px
+        font-size: 49px
+      span:nth-of-type(1)
+        left: calc(50% - 440px)
+      span:nth-of-type(2)
+        right: calc(50% - 440px)
+      &::before
+        width: 418px
+        height: 291px
+        right: calc(50% - 417px)
+        top: 127px
+    .date__wrap
+      margin: 83px 5% 0
+      li
+        line-height: 50px
+        height: 50px
+
+@keyframes up-down
+  0%, 100%
+    transform: translate(0)
+  50%
+    transform: translate(-10%, -10%)
+
+@keyframes scale
+  0%, 100%
+    transform: scale(1)
+  50%
+    transform: scale(1.1)

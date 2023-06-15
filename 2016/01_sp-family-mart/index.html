@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>在全家遇見最美的妳</title>
+<link href="http://www.etmall.com.tw/E68CSS/E68Basic.css?version=20160825154755" rel="stylesheet" />
+<style type="text/css">
+.l-wrapper{
+	background-color: #00a040;
+}
+.l-content{
+	width: 940px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.map__title, .map__table, .map__box{
+	margin-bottom: 20px;
+}
+.map__table {
+	background-color: transparent;
+	empty-cells: show;
+	width: 100%;
+	max-width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.map__table > thead > tr > th,
+.map__table > tbody > tr > th,
+.map__table > tfoot > tr > th,
+.map__table > thead > tr > td,
+.map__table > tbody > tr > td,
+.map__table > tfoot > tr > td {
+	padding: 15px 10px; 
+	vertical-align: top;
+	border: 1px solid #fff; 
+	color: #fff;
+	font-size: 13px;
+	text-align: center;
+}
+.map__table > thead > tr > th {
+	vertical-align: bottom;
+	border-bottom: 2px solid #fff; 
+}
+.map__table > caption + thead > tr:first-child > th,
+.map__table > colgroup + thead > tr:first-child > th,
+.map__table > thead:first-child > tr:first-child > th,
+.map__table > caption + thead > tr:first-child > td,
+.map__table > colgroup + thead > tr:first-child > td,
+.map__table > thead:first-child > tr:first-child > td {
+	border-top: 0;
+}
+.map__table > tbody + tbody {
+	border-top: 2px solid #fff; 
+}
+.map__table a{
+	color: #0065bf;
+}
+.c--yellow{
+	color: #fcff1f;
+}
+.map__box{
+	width: 100%;
+	height: 450px;
+}
+</style>
+</head>
+<body>
+<div class="l-wrapper">
+	<div class="l-content">
+		<div class="map__wrap">
+			<div class="map__title"></div>
+			<table id="mapAddress" class="map__table">
+				<thead>
+					<tr>
+						<th>地區</th>
+						<th>店名</th>
+						<th>地址</th>
+						<th>&#9733; 寶可夢灑花補給站店家</th>
+					</tr>
+				</thead>
+				<tr>
+					<td>新北</td>
+					<td>汐止宏國店</td>
+					<td>新北市汐止區大同路2段283號【<a href="" title="點我查google地圖">點我查google地圖</a>】</td>
+					<td><span class="c--yellow">&#9733;</span></td>
+				</tr>
+				<tr>
+					<td>新北</td>
+					<td>板橋新雅店</td>
+					<td>新北市板橋區南雅東路8號（代表號）１樓【<a href="" title="點我查google地圖">點我查google地圖</a>】</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>新北</td>
+					<td>板橋中勝店</td>
+					<td>北市板橋區林園街2號【<a href="" title="點我查google地圖">點我查google地圖</a>】</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>新北</td>
+					<td>中和新興店</td>
+					<td>新北市中和區興南路二段36號 【<a href="" title="點我查google地圖">點我查google地圖</a>】</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>新北</td>
+					<td>中和佳和店</td>
+					<td>新北市中和區佳和里中山路二段132號、134號1樓 【<a href="" title="點我查google地圖">點我查google地圖</a>】</td>
+					<td><span class="c--yellow">&#9733;</span></td>
+				</tr>
+				<tr>
+					<td>台北</td>
+					<td>新信德店</td>
+					<td>台北市信義區松德路283號 【<a href="" title="點我查google地圖">點我查google地圖</a>】</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>台北</td>
+					<td>萬中店</td>
+					<td>台北市萬華區漢口街2段22號 【<a href="" title="點我查google地圖">點我查google地圖</a>】</td>
+					<td></td>
+				</tr>
+			</table>
+			<div id="martMapBox" class="map__box">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14456.206927312202!2d121.6536934!3d25.0662357!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf0234ced8a965916!2z5YWo5a625L6_5Yip5ZWG5bqXLeaxkOatouWuj-Wci-W6lw!5e0!3m2!1szh-TW!2stw!4v1472117517774" style="width: 100%; border:0" height="450" frameborder="0" allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="js/jquery-1.4.4.js"></script>	
+<script type="text/javascript">
+$(function(){
+
+	var martMap = function(){
+
+		var martMap = [
+						'<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14456.206927312202!2d121.6536934!3d25.0662357!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf0234ced8a965916!2z5YWo5a625L6_5Yip5ZWG5bqXLeaxkOatouWuj-Wci-W6lw!5e0!3m2!1szh-TW!2stw!4v1472117517774" style="width: 100%; border:0" height="450" frameborder="0" allowfullscreen></iframe>',
+						'<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.82608496489!2d121.45296145097518!3d25.00602488390683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346802a8eeeb724d%3A0xa4e3ea5eac2ab50f!2zMjIw5paw5YyX5biC5p2_5qmL5Y2A5Y2X6ZuF5p2x6LevOOiZnw!5e0!3m2!1szh-TW!2stw!4v1472117907871" style="width: 100%; border:0" height="450" frameborder="0" allowfullscreen></iframe>',
+						'<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14462.927312711854!2d121.4542812!3d25.0092268!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xafba8094716e0bd9!2z5YWo5a625L6_5Yip5ZWG5bqX!5e0!3m2!1szh-TW!2stw!4v1472117984347" style="width: 100%; border:0" height="450" frameborder="0" allowfullscreen>',
+						'<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.4313768949232!2d121.50460131500522!3d24.985453883995053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3468026e40924ba1%3A0x217f09c490fe8d63!2zMjM15paw5YyX5biC5Lit5ZKM5Y2A6IiI5Y2X6Lev5LqM5q61MzbomZ8!5e0!3m2!1szh-TW!2stw!4v1472118056451" style="width: 100%; border:0" height="450" frameborder="0" allowfullscreen></iframe>',
+
+						'<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.9085157578465!2d121.49998391500559!3d25.003224383986677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a9d74465053f%3A0x26711857f62df154!2zMjM15paw5YyX5biC5Lit5ZKM5Y2A5Lit5bGx6Lev5LqM5q61MTM06Jmf!5e0!3m2!1szh-TW!2stw!4v1472120108457" style="width: 100%; border:0" height="450" frameborder="0" allowfullscreen></iframe>',
+						'<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14460.194010996851!2d121.5746406!3d25.032428!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8bbac1f59925b6ca!2z5YWo5a625L6_5Yip5ZWG5bqX!5e0!3m2!1szh-TW!2stw!4v1472118212898" style="width: 100%; border:0" height="450" frameborder="0" allowfullscreen></iframe>',
+						'<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14458.676449430663!2d121.507968!3d25.0453009!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xfa912009fb8be4df!2z5YWo5a625L6_5Yip5ZWG5bqXLea8ouWPo-W6lw!5e0!3m2!1szh-TW!2stw!4v1472118267524" style="width: 100%; border:0" height="450" frameborder="0"  allowfullscreen></iframe>'
+						]
+
+		var mapAddress = document.getElementById('mapAddress');
+		var addressBtn = mapAddress.getElementsByTagName('a');
+		var martMapBox = document.getElementById('martMapBox');
+
+
+		var changeMap = function(btnArray, mapArray){
+
+            addressBtn[btnArray].onclick = function(e) {
+                e.preventDefault();
+
+                martMapBox.innerHTML = ' ';
+                martMapBox.innerHTML = martMap[mapArray];
+
+            }
+
+		}
+		changeMap(0,0);
+		changeMap(1,1);
+		changeMap(2,2);
+		changeMap(3,3);
+		changeMap(4,4);
+		changeMap(5,5);
+		changeMap(6,6);
+
+
+	}
+
+	martMap();
+
+});
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+-
+  var heroTitleE = [
+    {
+      link: "#note",
+      imgSrc: "event/1st/e-main/components/hero-section/sub-title-hero-section-1.png",
+      alt: "享最高滿額回饋47%"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/8130/m/index.html",
+      imgSrc: "event/1st/e-main/components/hero-section/sub-title-hero-section-2.png",
+      alt: "集點換iPhone"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/11933/m/index.html",
+      imgSrc: "event/1st/e-main/components/hero-section/sub-title-hero-section-3.png",
+      alt: "銀行最高回饋25%"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/12160/m/index.html",
+      imgSrc: "event/1st/e-main/components/hero-section/sub-title-hero-section-4.png",
+      alt: "送KFC優惠券"
+    },
+  ]
+
+-
+  var heroTitleU = [
+    {
+      link: "https://media.u-mall.com.tw/sp/9704/m/index.html",
+      imgSrc: "event/1st/u-main/components/promo-event/items/promo-1.png",
+      alt: "23家銀行 最高回饋15%"
+    },
+    {
+      link: "https://media.u-mall.com.tw/sp/9704/m/index.html",
+      imgSrc: "event/1st/u-main/components/promo-event/items/promo-2.png",
+      alt: "花旗滿$20,000送$2,000"
+    },
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale",
+      //- imgSrc: "event/1st/u-main/components/promo-event/items/promo-3.png",
+      alt: "限時瘋搶"
+    },
+  ]
+
+-var heroTitle = isU ? heroTitleU : heroTitleE
+.decor--stage
+  img(src="event/1st/e-main/components/hero-section/decor-bridge.png", alt="")
+
+section.hero__wrap
+  .hero__decoration.full-parent
+    .decor--city
+      img(src="event/1st/e-main/components/hero-section/decor-city-left.png", alt="")
+      img(src="event/1st/e-main/components/hero-section/decor-city-right.png", alt="")
+    .decor--left
+      img(src="event/1st/e-main/components/hero-section/decor-plane-left.png", alt="")
+    .decor--right
+      img(src="event/1st/e-main/components/hero-section/decor-gift-right.png", alt="")
+    .light__wrap
+      .decor--light.decor--light-front
+        img(src="event/1st/e-main/components/hero-section/decor-light.png", alt="")
+      .decor--light.decor--light-back
+        img(src="event/1st/e-main/components/hero-section/decor-light.png", alt="")
+
+
+  .layout--main
+    .hero__zone
+      .hero__stage
+      .hero__title
+        .hero__title--main
+          img(src="event/1st/e-main/components/hero-section/main-title-hero-section.png", alt="")
+        .hero__title--sub.swiper-container#heroTitle(dir="rtl")
+          ul.swiper-wrapper
+            each data, index in heroTitle
+              li.swiper-slide
+                a(href= data.link, title=data.alt)
+                  img(src= data.imgSrc, data.alt)
+
+
+    .hero__zone--event
+      .hero__box--button
+          a(href="")
+      include /event/1st/e-main/components/hero-section/hero-event/_hero-event
+      //- #heroBlock.hero__block
+
+      //-   .hero__box
+
+      //-     //- 摩天輪相關
+      //-     include /event/1st/e-main/components/hero-section/ferris/_ferris
+
+      //-     .decoration__box
+      //-       //- .decoration--top.decoration--hero
+      //-       //-   img(src="event/1st/e-main/components/hero-section/decor-hero-1.png", alt="")
+      //-       //- .decoration--top.decoration--hero
+      //-       //-   img.img-reverse-x(src="event/1st/e-main/components/hero-section/decor-hero-1.png", alt="")
+      //-     .hero__title.hero__title--main.block-center
+      //-       //- 標題
+      //-       .decoration--top.title__icon
+      //-         img(src="event/1st/e-main/components/hero-section/title-icon.png", alt="暖身慶")
+      //-       h1
+      //-         .title__box.title--decor
+      //-           .decoration--title
+      //-             .decor__box
+      //-               img(src="event/1st/e-main/components/hero-section/title-1.png", alt="1")
+      //-           .decoration--title
+      //-             .decor__box
+      //-               img(src="event/1st/e-main/components/hero-section/title-1.png", alt="1")
+      //-           .decoration--title
+      //-             .decor__box
+      //-               img(src="event/1st/e-main/components/hero-section/title-1.png", alt="1")
+      //-           .decoration--title
+      //-             .decor__box
+      //-               img(src="event/1st/e-main/components/hero-section/title-1.png", alt="1")
+      //-         .title__box.title--main
+      //-           img(src="event/1st/e-main/components/hero-section/title.png", alt="嗨Fun購好玩")
+      //-         .title__box.title--sub
+      //-           img(src="event/1st/e-main/components/hero-section/title-sub.png", alt="百萬東森幣，最高折抵80%")
+
+    //- 禮物檯相關
+    //- include /event/1st/e-main/components/hero-section/hero-items/_hero-items
+
+  //- .decoration--top.decoration__foreground
+
+//- 前景滑鼠parallax相關
+//- include /utils/bg-decoration-instance/parallax/_parallax

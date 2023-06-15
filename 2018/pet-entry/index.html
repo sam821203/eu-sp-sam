@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  <meta charset="UTF-8">
+  <title>發票登錄頁</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta property="al:ios:url" content="etmall://open?pgid=2">
+  <meta property="al:ios:app_store_id" content="974433138">
+  <meta property="al:ios:app_name" content="EHS東森購物">
+  <meta property="al:web:should_fallback" content="false">
+  <meta property="al:android:url" content="etmall://open?pgid=2">
+  <meta property="al:android:package" content="com.hyxen.app.etmall">
+  <meta property="al:android:app_name" content="EHS東森購物">
+  <meta name="theme-color" content="#cc1e05">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="alternate" href="etmall://open?pgid=2" media="handheld">
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://rec.scupio.com">
+  <link rel="dns-prefetch" href="https://www.facebook.com">
+  <link rel="dns-prefetch" href="https://connect.facebook.net">
+  <link rel="dns-prefetch" href="https://dcs.eimi.com.tw">
+  <link rel="dns-prefetch" href="//media.etmall.com.tw">
+  <link rel="search" type="application/opensearchdescription+xml" title="東森購物" href="/opensearch_etmall.xml">
+  <link rel="icon" href="https://www.etmall.com.tw/favicon.ico">
+  <meta name="description" content="ETtoday東森寵物雲的發票登錄頁">
+  <meta name="keywords" content="ETMALL,ETtoday,東森寵物雲,發票登錄">
+  <meta itemprop="name" content="發票登錄頁"> 
+  <meta itemprop="description" content="ETtoday東森寵物雲的發票登錄頁"> 
+  <meta itemprop="image" content="">
+  <meta property="og:title" content="發票登錄頁">
+  <meta property="og:description" content="ETtoday東森寵物雲的發票登錄頁">
+  <meta property="og:image" content="banner.jpg">
+  <meta property="og:type" content="website">
+  <meta property ="og:site_name" content="ETmall">
+  <meta property="og:locale" content="zh_TW">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+    {
+     "@context": "http://schema.org",
+     "@type": "Action",   
+     "audience" : "ETtoday&東森寵物雲",
+     "description": "ETtoday東森寵物雲的發票登錄頁",
+     "image": "",   
+     "name" : "發票登錄頁",      
+     "url": "" 
+    }
+  </script>
+  <style>
+
+  </style>
+</head>
+<body>
+  <main class="sp__wrap">
+    <div class="sp--1260">
+      <header>
+        <div class="header__info">
+          <div class="logo__wrap">
+            <img src="logo_petshop.png" alt="logo">
+          </div>
+          <div class="info__wrap">
+            <ul>
+              <li><i class="icon--pet"></i><span>寵物與水族</span></li>
+              <li><i class="icon--pet"></i><span>寵物用品超市</span></li>
+              <li><i class="icon--pet"></i><span>犬貓美容SPA</span></li>
+              <li><i class="icon--pet"></i><span>狗狗包月接送</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="header__banner"><img src="banner.jpg" alt="header banner"></div>
+      </header>
+      <section class="action__wrap">
+        <div class="input__wrap">
+          <label>
+            <span>會員姓名：</span>
+            <input type="text" id="userName">
+            <div id="errorName" class="error-msg">
+              <span>請輸入姓名</span>
+            </div>
+          </label>
+          <label>
+            <span>發票號碼：</span>
+            <input type="text" id="ticketNumber" placeholder="請輸入發票號碼10碼" size="10">
+            <div id="errorNumber" class="error-msg">
+              <span>請輸入發票號碼</span>
+            </div>
+          </label>
+          <label>
+            <span>發票金額：</span>
+            <input type="text" id="userPrice" placeholder="請輸入發票金額">
+            <div id="errorPrice" class="error-msg">
+              <span>請輸入金額</span>
+            </div>
+          </label>
+          <div class="vc__wrap">
+            <label><span>驗證碼：</span>
+            <input type="text" id="vcCode"></label>
+            <div class="vc__pic">
+              <img src="VCode.jpg" alt="vc code">
+            </div>
+            <button id="btnReload" class="vc--reload" title="重新整理">
+              <svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12.011 20c0-0.002 0-0.003 0-0.005 0-4.421 3.578-8.005 7.991-8.005 2.683 0 5.051 1.329 6.5 3.361l1.26-1.644c-1.834-2.254-4.627-3.696-7.76-3.696 -5.519 0-9.994 4.471-10.001 9.989H8.013l3.018 4.013L13.987 20H12.011zM32 20l-2.969-3.985L26 20h1.992c-0.003 4.419-3.579 8.001-7.99 8.001 -2.716 0-5.111-1.36-6.555-3.435l-1.284 1.644c1.832 2.314 4.66 3.803 7.84 3.803 5.524 0 10.001-4.478 10.001-10.001 0-0.004-0.001-0.008-0.001-0.012H32z"/>
+              </svg>
+            </button>
+            <div id="errorVc" class="error-msg">
+              <span>請輸入驗證碼</span>
+            </div>
+          </div>
+          <div class="cta__wrap">
+            <button id="btnCta" class="btn__cta">
+              <span>登記領幣</span>
+            </button>
+          </div>
+        </div>
+      </section>
+      <footer class="note">
+        <div class="note__wrap">
+          <h3>【東森幣優惠活動方法】</h2>
+          <ol>
+            <li><span>2018/11/1-11/30活動期間，凡至ETtoday東森寵物雲實體店鋪加入會員、憑不限金額消費發票，並於2018/12/10前於東森購物(ETMall)官網完成註冊及登記，即送1000元東森幣。本活動期間每人限領一次，領取方式依店舖及ETtoday官網公告為準。</span></li>
+            <li><span>登記完成後，經所有資料比對正確將於2個工作日內發送東森幣，東森幣使用效期至2019/2/28，相關使用說明及規則請洽ETMall。「<a href="https://www.etmall.com.tw/HelpCenter/EHSCoinQuestion" title="東森幣使用說明">東森幣使用說明</a>」。</span></li>
+            <li><span>東森幣限量1,000名額，ETtoday及ETMall保有調整活動內容之權利，詳情請洽ETtoday官網及ETMall相關公告及說明，若有相關問題，請「<a href="https://www.etmall.com.tw/helpcenter/contact" title="聯絡客服">聯絡客服</a>」。</span></li>
+          </ol>
+        </div>
+      </footer>
+    </div>
+    <div id="overlay" class="overlay">
+      <div class="overlay__wrap">
+        <div id="infoSuccess" class="overlay__info info--success">
+          <span>登記領幣成功，東森購物將核對您的資料，於兩個工作天內入帳東森幣。</span>
+           <button id="btnClose" class="btn--close">X</button>
+        </div>
+        <div id="infoFailure" class="overlay__info info--failure">
+          <span>您已重複登記！</span>
+          <button id="btnClose" class="btn--close">X</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="global.js"></script>
+</body>
+</html>
+    

@@ -1,0 +1,123 @@
+-
+  var promoDataE = [
+    {
+      link: "#note",
+      imgSrc: "~event/1st/e-main/components/promo-event/items/promo-1.png",
+      alt: "APP首購送uber券"
+    },
+    {
+      link: "#note",
+      imgSrc: "~event/1st/e-main/components/promo-event/items/promo-2.png",
+      alt: "消費滿額最高送1,200"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/9435/m/index.html",
+      imgSrc: "~event/1st/e-main/components/promo-event/items/promo-3.png",
+      alt: "粽情一夏 香飄萬粽"
+    },
+    {
+      link: "#note",
+      imgSrc: "~event/1st/e-main/components/promo-event/items/promo-4.png",
+      alt: "消費滿額抽豪禮"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/9327/m/index.html",
+      imgSrc: "~event/1st/e-main/components/promo-event/items/promo-5.png",
+      alt: "萊爾富超取喝港式奶茶"
+    },
+    {
+      link: "#note",
+      imgSrc: "~event/1st/e-main/components/promo-event/items/promo-6.png",
+      alt: "滿3件登記購 衛生紙$299/箱"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/9519/m/index.html",
+      imgSrc: "~event/1st/e-main/components/promo-event/items/promo-7.png",
+      alt: "紅+綠回饋20%東森幣"
+    },
+    //- slider start
+    {
+      link: "https://media.etmall.com.tw/sp/9221/m/index.html",
+      imgSrc: "~event/1st/e-main/components/promo-event/items/promo-8.png",
+      alt: "東森X宮廷計單抽獨家時裝"
+    },
+    {
+      link: "#note",
+      imgSrc: "~event/1st/e-main/components/promo-event/items/promo-9.png",
+      alt: "買ASHIYA商品送賦活白皙精華"
+    },
+    {
+      link: "#note",
+      imgSrc: "~event/1st/e-main/components/promo-event/items/promo-10.png",
+      alt: "消費DeMon商品滿額送冷萃面膜"
+    },
+    {
+      link: "井",
+      imgSrc: "~event/1st/e-main/components/promo-event/items/promo-11.png",
+      alt: "消費滿5件登記購 $999美型微波爐"
+    },
+    //- slider end
+  ]
+
+-
+  var promoDataU = [
+    {
+      link: "https://media.u-mall.com.tw/sp/9002/m/index.html",
+      imgSrc: "~event/1st/u-main/components/promo-event/items/promo-1.png",
+      alt: "星展最高回饋$2,800東森提貨券"
+    },
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale",
+      imgSrc: "~event/1st/u-main/components/promo-event/items/promo-2.png",
+      alt: "限時瘋搶"
+    },
+    {
+      link: "https://media.u-mall.com.tw/sp/9002/m/index.html",
+      imgSrc: "~event/1st/u-main/components/promo-event/items/promo-3.png",
+      alt: "22間銀行 最高回饋15%"
+    },
+  ]
+
+- var promoData = isU ? promoDataU : promoDataE
+
+//- TODO: 如果promo不和hero綁一起時要有自己的section和layout--main
+section.promo__group.promo__group--promo-event.m-bottom--md(data-title="嗨搶攻略")
+
+  .decoration--promo-bg.wow
+    img(src="~event/1st/e-main/components/promo-event/decoration-promo-bg.png", alt="")
+
+  .layout--main
+    //- .promo__head.promo__title
+    //-   img(src="", alt="")
+
+    .promo__body
+      .decoration--top.decoration--sub
+        img(src="~event/1st/e-main/components/promo-event/decoration-sub.png", alt="")
+      #promoEvent.event__wrap
+        .promo__block
+          ul
+            each data, index in promoData
+              if index <= 2
+                li
+                  a(href= data.link, title= data.alt, id= ('promoAnchor' + (index + 1)))
+                    img(src= data.imgSrc, alt= data.alt)
+        .promo__block
+          ul
+            each data, index in promoData
+              if index > 2 && index <= 6
+                li
+                  a(href= data.link, title= data.alt)
+                    img(src= data.imgSrc, alt= data.alt)
+      .promo__slider
+        #sliderPromo.swiper-container
+          ul.swiper-wrapper
+            each data, index in promoData
+              if index > 6
+                li.swiper-slide
+                  a(href= data.link, title=data.alt)
+                    img(src= data.imgSrc, data.alt)
+        #sliderPromoPrev.swiper-button--custom.swiper-button-prev
+        #sliderPromoNext.swiper-button--custom.swiper-button-next
+      .decoration--promo-fg
+        img(src="~event/1st/e-main/components/promo-event/decoration-promo-fg.png", alt="")
+

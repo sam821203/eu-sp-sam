@@ -1,0 +1,51 @@
+-
+  var sliderSection = [
+    {
+      link: "#" ,
+      imgSrc: "event/1st/e-main/components/slider-w5m3/item/slider-1.png",
+      alt: "第一個banner",    
+    },
+    {
+      link: "#" ,
+      imgSrc: "event/1st/e-main/components/slider-w5m3/item/slider-2.png",
+      alt: "第二個banner",    
+    },
+    {
+      link: "#" ,
+      imgSrc: "event/1st/e-main/components/slider-w5m3/item/slider-3.png",
+      alt: "第三個banner",    
+    },
+    {
+      link: "#" ,
+      imgSrc: "event/1st/e-main/components/slider-w5m3/item/slider-2.png",
+      alt: "第四個banner",    
+    },
+    //- {
+    //-   link: "#" ,
+    //-   imgSrc: "event/1st/e-main/components/slider-w5m3/item/slider-5.jpg",
+    //-   alt: "第五個banner",    
+    //- },
+    //- {
+    //-   link: "#" ,
+    //-   imgSrc: "event/1st/e-main/components/slider-w5m3/item/slider-6.jpg",
+    //-   alt: "第六個banner",    
+    //- },
+  ]
+
+section.slider--w5m3
+  .layout--main
+    .banner__title
+    //- ul.visual--auto.clearfix
+      //- li.visual__fragment.width--auto
+      //-   img(src="event/1st/e-main/components/slider-w5m3/index_10.jpg", alt="底圖")
+
+    .swipersty__banner
+      .swiper-container#swiperstyBanner
+        ul.swiper-wrapper
+          each data in sliderSection
+            li.swiper-slide
+              a(href= data.link, title=data.alt)
+                img(src=data.imgSrc, alt=data.alt)
+        //- .swiper-button-next.slider__button
+        //- .swiper-button-prev.slider__button
+        //- .swiper-pagination

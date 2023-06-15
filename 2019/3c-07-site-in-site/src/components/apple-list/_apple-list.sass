@@ -1,0 +1,65 @@
+.apple-list
+  position: sticky
+  z-index: map-get($zindex, bnElems)
+  top: -0.8%
+  width: 100%
+  background-color: $gray-medium
+  border-bottom-width: 1px
+  border-bottom-style: solid
+  border-bottom-color: $gray-deep-light
+  transition: top 0.3s
+  overflow: hidden
+  &.sticky
+    position: sticky
+    top: 74px
+  +breakpoint-min($min-width-lg)
+    top: 0.5%
+    border-bottom-width: 2px
+    &.fixed
+      top: 127px
+  +breakpoint-min($min-width-xl)
+    top: -50px
+    &.fixed
+      top: 75px
+.sub-list__wrap--apple
+  +nav-overflow-x
+  +display-flex
+  padding: 0
+  white-space: nowrap
+  animation: 1s fade-right both
+  .sub-list__item
+    +flex(0, 0, 22%)
+    padding: 1% 0
+    min-width: 80px
+    overflow: hidden
+    a
+      +font-size($fz-12)
+      display: block
+      width: 100%
+      height: 100%
+      color: $gray-deep-light
+      text-align: center
+    img
+      max-width: 55px
+    .item__notice
+      height: 16px
+      color: $primary-notice
+      font-weight: normal
+      
+  +breakpoint-min($min-width-lg)
+    justify-content: center
+    padding: 0 100px
+    .sub-list__item
+      +flex(0, 0, 16.5%)
+      min-width: 108px
+      a
+        +font-size($fz-16)
+      img
+        max-width: 85px
+      .item__notice
+        height: 22px
+
+.apple-list__item
+  display: none
+.apple-list__item.active
+  display: block

@@ -1,0 +1,636 @@
+/* ============= reset =============*/
+$font-def: Helvetica, Arial, LiHei, "Microsoft JhengHei", "微軟正黑體", sans-serif
+
+$main-color: #005337
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  &:before, &:after
+    box-sizing: border-box
+
+a
+  display: block
+  text-decoration: none
+
+h1
+  line-height: 0
+
+ul
+  list-style: none
+
+img
+  border: 0
+
+main, header, footer, section
+  display: block
+
+/* ============= global =============*/
+body
+  margin: 0
+  padding: 0
+  width: 100%
+  //background-color: $main-color
+  background-size: 100% 100%
+  /*background-image: linear-gradient(to bottom right, #04017F,#04017F 20%, #8028bd);
+  /*background-position: 0 200px;
+  font-family: $font-def
+
+td, th
+  font-family: $font-def
+
+.clearfix:after
+  content: ''
+  display: block
+  clear: both
+  *zoom: 1
+
+.opacity--0
+  opacity: 0
+
+/* ================= var =================*/
+//$carousel-ht: 161px
+/* ================= 主視覺 =================*/
+.upper_layer
+  position: relative
+  background-image: none
+  min-height: auto
+  margin-right: auto
+  margin-left: auto
+
+.main_group
+  overflow: hidden
+  background-image: url('upper_bg__mobile.jpg')
+  background-size: 100% auto
+  background-repeat: no-repeat
+  background-position: center top
+  height: auto
+  margin-left: auto
+  margin-right: auto
+  transform-origin: left
+  min-height: 382px
+
+.main_title
+  position: relative
+  z-index: 10
+  display: flex
+  align-items: flex-start
+  height: 100%
+  img
+    position: absolute
+    height: auto
+    display: block
+    z-index: 12
+  .partial__title
+    z-index: 15
+    top: calc(100vw * .02)
+    left: calc(100vw * .22)
+    width: calc(100vw * .5)
+    animation: 1s 1.2s title-up both ease-out
+  .partial__desc
+    z-index: 14
+    top: calc(100vw * .17)
+    left: calc(100vw * .17)
+    width: calc(100vw * .77)
+  .partial__sub
+    z-index: 12
+    top: calc(100vw * .14)
+    right: calc(-100vw * .03)
+    width: calc(100vw * .46)
+    // U diff
+  .partial__cover
+    top: calc( 100vw * 0.035)
+    left: calc( 100vw * 0.15)
+    width: calc( 100vw * 0.625)
+    animation: 3s .2s box-open both
+  .partial__box
+    top: calc( 100vw * 0.189)
+    transform: translateX(-50%)
+    left: calc( 100vw * 0.38)
+    width: calc( 100vw * 0.79)
+  .partial__box--back
+    top: calc(100vw * 0.35)
+    transform: translateX(-50%)
+    left: calc(100vw * 0.46)
+    width: calc(100vw * 0.61)
+    z-index: 17
+    //animation: 10s 1s opacify-none
+  .sub__title__href
+    z-index: 17
+    position: absolute
+    width: calc(100vw * .52)
+    height: calc(100vw * .1)
+    top: calc(100vw * 0.35)
+    left: calc(100vw * .2)
+
+/* ================= 裝飾 =================*/
+.upper_layer .description
+  //position: relative
+  img
+    position: absolute
+    z-index: 1
+    &:hover
+      animation: 2s description-shake
+  .lollipop--left, .lollipop--right
+    position: relative
+    img
+      width: 28%
+  .lollipop--left
+    top: 8vw
+    left: -17vw
+    img
+      left: 0
+      &:nth-child(1)
+        animation: 10s lollipop-rotate both linear infinite
+      &:nth-child(2)
+        z-index: 9
+        top: 300px
+        left: 176px
+        transform: rotateZ(300deg)
+        display: none
+  .lollipop--right
+    display: none
+    img
+      &:nth-child(1)
+        animation: 15s lollipop-rotate both linear infinite reverse
+      &:nth-child(2)
+        z-index: 9
+        top: 315px
+        width: 167px
+        height: 100px
+        right: calc(50% - 146px)
+        transform: rotateZ(-26deg)
+
+
+//氣球
+.balloon-decoration,
+.decoration__wrap,
+.decoration
+  width: 100%
+  height: 100%
+  pointer-events: none
+.balloon-decoration
+  .decoration__wrap
+    position: absolute
+    z-index: 12
+    overflow-x: hidden
+    .decoration img
+      width: 100%
+      position: relative
+      left: 50%
+      transform: translateX(-50%)
+    .decoration1, .decoration2
+      display: none !important
+    .decoration3
+      display: block !important
+      img
+        top: calc(-100vw * .03)
+        left: 47%
+/* ================= 誘因 =================*/
+.sp-content
+  position: relative
+  z-index: 20
+  //overflow-x: hidden
+  width: 100%
+  height: auto
+  top: 0
+
+.incentive_layer
+  display: flex
+  z-index: 2
+  flex-wrap: wrap
+  align-items: center
+  justify-content: center
+  height: auto
+  margin-bottom: 0
+  &:before, &:after
+    content: ''
+    clear: both
+    display: block
+  .incentive__block
+    width: calc(100% / 2 - 11vw)
+    margin: -2px 10px
+    &:hover .incentive-main
+      transform-origin: center
+      animation: .3s .3s incentive-hover
+    .incentive
+      position: relative
+      .incentive-main
+        margin: 0 5%
+        transform: scale(1) translate(-5%, 0)
+        &.size--d
+          display: none
+    img
+      width: 100%
+
+.super__product
+  display: block
+  position: relative
+  img
+    width: 100%
+  .super__watch__more
+    position: absolute
+    top: calc(100vw * .086)
+    right: .5%
+    width: 10%
+
+/* ================= 輪播 =================*/
+.carousel_layer
+  display: flex
+  align-items: center
+  justify-content: flex-start
+  height: calc(100vw / 2.13)
+  max-height: 301px
+  width: 100%
+  margin-left: auto
+  margin-right: auto
+  margin-top: 0
+  background-image: url('BN-carousel-m.png')
+  background-repeat: no-repeat
+  background-size: 100% 100%
+  background-position: 50% 8%
+  margin-top: calc(100vw *0.1)
+  .carousel__wrap
+    display: flex !important
+    align-items: center
+    justify-content: center
+  .slick-list
+    width: 83%
+    margin: 0 auto
+    text-align: center
+  .slick-next, .slick-prev
+    width: 20px
+    height: 40px
+    cursor: pointer
+    opacity: 0
+  .slick-next
+    right: 5px
+  .slick-prev
+    left: 5px
+  img
+    width: 100%
+    margin-top: 0
+    margin-right: auto
+    margin-left: auto
+    padding-left: 2px
+    transition: all 500ms ease-in-out
+    border-radius: 5px
+  //TODO 第一張會跑掉
+  //.slick-slide img
+  //  transform: scale(.9)
+  //  transform-origin: center
+  //.slick-active img
+  //  transform: scale(1)
+  //  transform-origin: center
+/* ================= 總體 =================*/
+
+.sp__page
+  background-image: none
+  background-color: #ffd6e0
+  background-position: center top
+
+.sp__wrap
+  position: relative
+  display: block
+  overflow: hidden
+  width: 100%
+  //max-width: 640px
+  margin-left: auto
+  margin-right: auto
+  //background-image: url('upper_bg.jpg')
+  background-position: center top
+  background-repeat: no-repeat
+
+.logo
+  position: absolute
+  top: 20px
+  left: calc(50% - 614px)
+  z-index: 101
+  img
+    width: 70%
+    height: auto
+
+.upper_layer img, .incentive_layer
+  width: auto
+
+
+/* ================= 動畫 =================*/
+@import modules/_keyframe.sass
+
+/* ================= mobile size =================*/
+
+
+@media screen and (max-width: 800px)
+  body
+    background-size: auto
+  .logo
+    display: none
+  /* ================= 主視覺 =================*/
+  .main_group
+    min-height: calc(100vw * 1.16)
+
+  /* ================= 誘因 =================*/
+  .sp-content
+    margin: calc(-100vw * 0.65) auto 0 auto
+
+
+@media screen and (max-width: 320px)
+  /* ================= 輪播 =================*/
+  .carousel_layer
+    .slick-next, .slick-prev
+      width: 20px
+      height: 40px
+    .slick-next
+      right: 10px
+    .slick-prev
+      left: 10px
+
+@media screen and (min-width: 321px) and (max-width: 375px)
+  /* ================= var =================*/
+  //$carousel-ht: 60px
+  /* ================= 輪播 =================*/
+  .carousel_layer
+    .slick-next, .slick-prev
+      width: 20px
+      height: 50px
+    .slick-next
+      right: 4%
+    .slick-prev
+      left: 4%
+
+@media screen and (min-width: 376px) and (max-width: 426px)
+  /* ================= var =================
+  /* ================= 輪播 =================
+  .carousel_layer
+    .slick-next, .slick-prev
+      width: 20px
+      height: 50px
+    .slick-next
+      right: 4.5%
+    .slick-prev
+      left: 4.5%
+
+@media screen and (min-width: 427px) and (max-width: 800px)
+  /* ================= var =================
+  //$carousel-ht: 120px
+  /* ================= 輪播 =================
+  .carousel_layer
+    .slick-next, .slick-prev
+      width: 30px
+      height: 50px
+    .slick-next
+      right: 4%
+    .slick-prev
+      left: 4%
+
+
+@media screen and (min-width: 801px) and (max-width: 1024px)
+  /* ================= var =================*/
+  /* ================= 主視覺 =================*/
+  .logo
+    left: 1%
+    top: 10px
+  /* ================= 裝飾 =================*/
+  .upper_layer .description
+    img
+      &:nth-child(1)
+        top: 57%
+      &:nth-child(2)
+        top: 59%
+      &:nth-child(3)
+        top: 49%
+  /* ================= 誘因 =================*/
+  .sp-content
+    width: 100%
+    margin: -4.5% auto 0 auto
+  .incentive_layer
+    justify-content: space-around
+    .incentive__block
+      width: calc(100% / 4 - 2%)
+      min-height: 170px
+  /* ================= 輪播 =================
+  .carousel_layer
+    .slick-next, .slick-prev
+      top: 55%
+      width: 35px
+      height: 80px
+    .slick-next
+      right: 4%
+    .slick-prev
+      left: 4%
+
+@media screen and (min-width: 768px)
+  .main_group
+    overflow: hidden
+    background-image: url('upper_bg__desktop.jpg')
+    min-height: calc(100vw * 1.16)
+
+  /* ================= 誘因 =================*/
+  .sp-content
+    margin: calc(-100vw * 0.65) auto 0 auto
+
+  .incentive_layer
+    .incentive__block
+      min-height: calc(100vw / 4.13)
+      width: calc(100% / 4)
+      margin: 0
+      .incentive
+        .incentive-main
+          &.size--d
+            display: block
+          &.size--m
+            display: none
+        .ib--1, .ib--2, .ib--3, .ib--4
+          position: absolute
+        .ib--1, .ib--4
+          top: 2px
+        .ib--2, .ib--3
+          top: 22px
+        .ib--2
+          left: -16px
+        .ib--3
+          left: 16px
+
+  /* ================= 輪播 =================
+  .carousel_layer
+    background-image: url('BN-carousel.png')
+    height: calc(100vw / 3.33)
+    max-width: 1260px
+    max-height: 379px
+    margin-top: calc(100vw *0.25)
+    margin-top: 0
+    background-size: 100%
+    background-position: center
+    .slick-list
+      margin: 30px auto 0 auto
+
+
+@media screen and (min-width: 1025px) and (max-width: 1280px)
+  /* ================= var =================*/
+  //$carousel-ht: 190px
+  /* ================= 主視覺 =================*/
+  /* ================= 誘因 =================*/
+
+  /* ================= 輪播 =================
+  .carousel_layer
+    .slick-next, .slick-prev
+      width: 30px
+      height: 65px
+    .slick-next
+      right: 3%
+    .slick-prev
+      left: 3%
+
+@media screen and (min-width: 1280px)
+  /* ================= var =================*/
+  $upper__ht: 975px
+  /* ================= 主視覺 =================*/
+  .sp__page
+    background-position: center $upper__ht - 3px
+    background-image: url('upper_bg_bottom.jpg')
+    background-repeat: no-repeat
+    background-size: 2560px auto
+  .upper_layer
+    position: relative
+    max-width: 2560px
+    max-height: $upper__ht
+    background-size: 2560px $upper__ht
+    background-position: center top
+    background-repeat: no-repeat
+
+  .main_group
+    height: $upper__ht
+    background-size: auto auto
+    .main_title
+      img
+        &.main_title_1
+          width: auto
+      .partial__title
+        top: 50px
+        left: calc(50% - 332px)
+        animation: 1s 1.2s title-up-desktop both ease-out
+      .partial__desc
+        z-index: 14
+        top: 235px
+        left: calc(50% - 393px)
+      //u diff
+      .partial__sub
+        top: 228px
+        right: calc(50% - 680px)
+      .partial__cover
+        top: 71px
+        left: calc( 50% - 406px)
+      .partial__box
+        top: 266px
+        transform: translateX(-50%)
+        left: calc(50% - 115px)
+      .partial__box--back
+        width: 767px
+        top: 471px
+        left: calc(50% - 10px)
+      .sub__title__href
+        position: absolute
+        width: 658px
+        height: 120px
+        top: 470px
+        left: calc(50% - 340px)
+  /* ================= 裝飾 =================*/
+  .upper_layer .description
+    //position: relative
+    img
+      position: absolute
+      z-index: 10
+      &:hover
+        animation: 2s description-shake
+    .lollipop--left, .lollipop--right
+      position: absolute
+      img
+        width: auto
+    .lollipop--left
+      top: 100px
+      left: calc(50% - 783px)
+      img
+        left: 0
+        &:nth-child(2)
+          width: 167px
+          height: 200px
+          display: block
+    .lollipop--right
+      display: block
+      top: 133px
+      right: calc(50% - 632px)
+  // 氣球
+  .balloon-decoration,
+  .decoration__wrap,
+  .decoration
+    width: 100%
+    height: 100%
+    pointer-events: none
+  .balloon-decoration
+    .decoration__wrap
+      position: absolute
+      z-index: 12
+      overflow: hidden
+      .decoration img
+        position: relative
+        left: 50%
+        transform: translateX(-50%)
+        width: auto
+      .decoration1,.decoration2
+        display: block !important
+      .decoration1
+        z-index: 3
+      .decoration2
+        z-index: 2
+        img
+          top: -3%
+      .decoration3
+        display: none !important
+
+
+  /* ================= 誘因 =================*/
+  .sp-content
+    margin: -300px auto 0 auto
+
+  .incentive_layer
+    width: 1260px
+    margin-left: calc(50% - 685px)
+    justify-content: space-between
+    position: relative
+    z-index: 22
+    top: -30px
+    .incentive__block
+      width: calc(1260px / 4 - 15px)
+      min-height: 296px
+      .incentive
+        .ib--1, .ib--4
+          top: -11px
+        .ib--2
+          left: -5px
+        .ib--3
+          left: 65px
+        .ib--4
+          left: 60px
+      img
+        width: auto
+  /* ================= 輪播 =================*/
+  .carousel_layer
+    .slick-next, .slick-prev
+      width: 50px
+      height: 80px
+      top: 210px
+    .slick-prev
+      left: calc(50% - 575px)
+    .slick-next
+      right: calc(50% - 575px)
+
+  .super__product
+    display: flex
+    justify-content: center
+    padding-bottom: 20px
+    img
+      width: auto
+    .super__watch__more
+      top: 108px
+      right: calc(50% - 577px)
+      width: auto

@@ -1,0 +1,113 @@
+-
+  var promoDataE = [
+    //- slider start
+    {
+      link: "#note",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-1-1.png",
+      alt: "滿額最高送1,999"
+    },
+    {
+      link: "井",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-1-2.png",
+      alt: "再送BT21擴香石/水晶球"
+    },
+    //- slider end
+    //- slider start
+    {
+      link: "https://media.etmall.com.tw/sp/10563/m/index.html",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-2-1.png",
+      alt: "新會員註冊送888東森"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/10563/m/index.html",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-2-2.png",
+      alt: "新會員首購送ASHIYA馬臍帶白皙精華"
+    },
+    //- slider end
+    {
+      link: "https://media.etmall.com.tw/sp/10563/m/index.html",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-3.png",
+      alt: "[APP限定] 滿額抽ASHIYA胎盤眼部安瓶"
+    },
+    //- slider start
+    {
+      link: "井",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-4-1.png",
+      alt: "全家超取抽好禮"
+    },
+    //- {
+    //-   link: "https://media.etmall.com.tw/sp/10670/m/index.html",
+    //-   imgSrc: "event/2nd/e-main/components/promo-event/items/promo-4-2.png",
+    //-   alt: "紅標+綠標 買就回饋20% "
+    //- },
+    //- slider end
+    //- slider start
+    {
+      link: "#promoW1m1",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-5-1.png",
+      alt: "9宮格抽最高999禮物卡"
+    },
+    //- {
+    //-   link: "https://media.etmall.com.tw/sp/10527/m/index.html",
+    //-   imgSrc: "event/2nd/e-main/components/promo-event/items/promo-5-2.png",
+    //-   alt: "下單送必勝客套餐優惠券"
+    //- },
+    //- slider end
+    {
+      link: "https://media.etmall.com.tw/sp/10924/m/index.html",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-6.png",
+      alt: "滿額送烘焙體驗課"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/8130/m/index.html",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-7.png",
+      alt: "最高回饋20%東森幣"
+    },
+    //- slider start
+    {
+      link: "https://www.etmall.com.tw/bs/154029",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-8-1.png",
+      alt: "嘉義優鮮"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/10713/m/index.html",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-8-2.png",
+      alt: "彰化好物購"
+    },
+    //- slider end
+  ]
+
+-
+  var promoDataU = [
+    {
+      link: "https://media.u-mall.com.tw/sp/9704/m/index.html",
+      imgSrc: "event/2nd/u-main/components/promo-event/items/promo-1.png",
+      alt: "23家銀行 最高回饋15%"
+    },
+    {
+      link: "https://media.u-mall.com.tw/sp/9704/m/index.html",
+      imgSrc: "event/2nd/u-main/components/promo-event/items/promo-2.png",
+      alt: "永豐滿$25,000送$1,500"
+    },
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale",
+      imgSrc: "event/2nd/u-main/components/promo-event/items/promo-3.png",
+      alt: "限時瘋搶"
+    },
+  ]
+
+- var promoData = isU ? promoDataU : promoDataE
+
+//- TODO: 如果promo不和hero綁一起時要有自己的section和layout--main
+section.promo__group.promo__group--promo-event.m-bottom--sm
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        #promoEvent.event__wrap
+          .promo__block
+            ul
+              each data, index in promoData
+                li
+                  a(href= data.link, title= data.alt)
+                    img(src= data.imgSrc, alt= data.alt)
+

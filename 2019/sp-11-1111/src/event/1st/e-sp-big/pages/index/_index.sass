@@ -1,0 +1,34 @@
+// // ==========================================================================
+// // Plugins
+// // ==========================================================================
+// // @import "vendors/animate"
+
+// // ==========================================================================
+// // components
+// // ==========================================================================
+
+// hero section
+// ===========================
+@import "~event/1st/e-sp-big/components/hero-section/_hero-section"
+@import "~event/1st/e-sp-big/components/background-decoration/_background-decoration"
+
+// other components
+// ===========================
+@import "~event/1st/e-sp-big/components/goods-slider-flip/_goods-slider-flip"
+@import "~event/1st/e-sp-big/components/promo-event/_promo-event"
+@import "~event/1st/e-sp-big/components/scroll-x-section/_scroll-x-section"
+@import "~event/1st/e-sp-big/components/tab-section/_tab-section"
+// // ==========================================================================
+// // Page
+// // ==========================================================================
+body
+  background-color: $main-e-background-color
+  +breakpoint-min($min-width-xl)
+    +bg-set(url("~event/1st/e-sp-big/pages/index/bg-down.jpg"), 100%, center, 116px, repeat-y, $main-e-background-color)
+.sp__wrap
+  +pos-set(relative, zero)
+  +bg-set(url("~event/1st/e-sp-big/pages/index/bg-960.jpg"), 100%)
+  +breakpoint-min($min-width-xl)
+    +bg-set(url("~event/1st/e-sp-big/pages/index/bg.jpg"), null, 55%)
+.sp__wrap a
+  display: block

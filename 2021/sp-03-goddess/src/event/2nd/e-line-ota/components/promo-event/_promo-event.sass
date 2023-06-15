@@ -1,0 +1,64 @@
+.promo__group--promo-event
+  +pos-set(relative, zero)
+  padding: 10% 2% 0
+  overflow: hidden
+  // +breakpoint-min($min-width-xl)
+  //   margin-top: -150px
+
+  .decoration--promo
+    +pos-set(absolute, under)
+    top: 5%
+    left: 0
+    width: 100%
+    transition: all 0.3s
+    img
+      will-change: scroll-position
+    +breakpoint-min($min-width-xl)
+      left: calc(50% - 690px)
+
+  .promo__body
+    +pos-set(relative, zero)
+    +bg-set(url("~event/2nd/e-main/components/promo-event/bg-promo.png"), 100%)
+    .event__wrap
+      display: flex
+      flex-wrap: wrap
+      padding: 20% 4%
+      justify-content: space-between
+      +breakpoint-min($min-width-xl)
+        padding-bottom: 215px
+      > li
+        margin-bottom: 2.5%
+        a
+          text-align: center
+        &.animation
+          animation: shakeY 0.6s
+        &:active,
+        &:hover
+          filter: hue-rotate(-15deg)
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3),
+          width: 32%
+          &.animation
+            animation: item-rotate-Y 0.6s
+        &:nth-child(4),
+          width: 53.4%
+        &:nth-child(5),
+          width: 42.8%
+        &:nth-child(6),
+          width: 100%
+        &:nth-child(7),
+        &:nth-child(8),
+          width: 48%
+
+@keyframes item-rotate-Y
+  100%
+    transform: rotateY(360deg)
+
+@keyframes shakeY
+  0%,80%, to
+    transform: translateZ(0)
+  30%, 50%, 70%
+    transform: translate3d(0, -10px, 0)
+  40%, 60%
+    transform: translate3d(0, 10px, 0)

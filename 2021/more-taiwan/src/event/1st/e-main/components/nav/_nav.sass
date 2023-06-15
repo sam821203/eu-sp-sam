@@ -1,0 +1,32 @@
+.nav
+  height: 39px
+  background-color: $gray-deep-dark
+  +breakpoint-min($min-width-xl)
+    display: none
+
+.nav__wrap
+  display: flex
+  flex-wrap: nowrap
+  overflow-x: auto
+  justify-content: initial
+
+  // smooth 只chrome和firefox，safari要用js+polyfill
+  scroll-behavior: smooth
+  &::-webkit-scrollbar
+    display: none
+
+.nav__item
+  display: inline-block
+  padding: 1px 5px
+  min-width: 80px
+  max-height: 39px
+  line-height: 39px
+  color: $gray-deep-light
+  font-size: 16px
+  text-align: center
+  white-space: nowrap
+  overflow: hidden
+  &.active
+    color: $main-e-nav-color-1st
+  +breakpoint-min($min-width-lg)
+    font-size: 20px

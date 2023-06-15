@@ -1,0 +1,31 @@
+//- ==========================================================================
+//- Base
+//- ==========================================================================
+@import "~utils/sass/_common"
+
+//- =======================================================================
+//- layout
+//- =======================================================================
+@import "~layout/header/_header"
+@import "~layout/dynamic-product/_dynamic-product"
+@import "~layout/vote-tab/_vote-tab"
+
+// ========================================================================
+// components
+// ========================================================================
+@import "~components/hero-section/_hero-section"
+@import "~components/player-section/_player-section"
+
+@import "~components/info-section/_info-section"
+@import "~components/rule-section/_rule-section"
+
+@import "~components/modal/_modal"
+// ========================================================================
+// Page
+// ========================================================================
+body
+  background-color: $main-color-6
+  +breakpoint-min($min-width-xl)
+    background: $main-color-6 center 500px url(~pages/bg-web.jpg) repeat-y
+    background-size: auto
+

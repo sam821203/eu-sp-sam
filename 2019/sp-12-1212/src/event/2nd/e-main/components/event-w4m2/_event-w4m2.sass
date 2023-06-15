@@ -1,0 +1,25 @@
+.promo__group--w4m2
+  .promo__zone
+    // +bg-set(null, 100%)
+  .promo__title
+    +bg-set(url("~components/event-w4m2/section-bn-05.png"))
+    margin-top: 1%
+    margin-bottom: 1%
+    height: 103px
+    // margin-top: -0.5%
+  .promo__wrap
+    margin-bottom: 6% // 主視覺結尾添加的，若在中間可刪
+    .good__wrap
+      +display-flex
+      flex-wrap: wrap
+      justify-content: center
+      li
+        +flex(0, 0, 50%)
+        padding: 5px 0
+        transition: transform 0.5s
+        &:hover
+          transform: translateY(-3%)
+    +breakpoint-min($min-width-lg)
+      .good__wrap
+        li
+          +flex(0, 0, 23.9%)

@@ -1,0 +1,82 @@
+-
+  var w3m3Data = [
+    { // 1
+      link: "https://media.etmall.com.tw/sp/10669/m/index.html",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-1.png",
+      alt: "59折up滿額送家電"
+    },
+    { // 2
+      link: "https://media.etmall.com.tw/sp/14144/m/index.html",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-2.png",
+      alt: "秘境傳說：神木遺跡"
+    },
+    { // 3
+      link: "https://media.etmall.com.tw/sp/4369/m/index.html",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-3.png",
+      alt: "給媽媽最好的"
+    },
+    { // 4
+      link: "",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-4.png",
+      alt: "LG洗沐滿額雙送"
+    },
+    { // 5
+      link: "https://www.etmall.com.tw/p/170060",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-5.png",
+      alt: "台塑生醫滿額送好禮"
+    },
+    { // 6
+      link: "https://www.etmall.com.tw/p/131365",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-6.png",
+      alt: "妙管家2件享9折"
+    },
+    { // 7
+      link: "https://www.etmall.com.tw/gp/134455",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-7.png",
+      alt: "全館88折起"
+    },
+    { // 8
+      link: "https://www.etmall.com.tw/c3/144963",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-8.png",
+      alt: "舒適電腦椅9折up"
+    },
+    { // 9
+      link: "https://www.etmall.com.tw/gp/141074",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-9.png",
+      alt: "NIKE精選鞋款6折up"
+    },
+    { // 10
+      link: "https://www.etmall.com.tw/gp/109515",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-10.png",
+      alt: "童樂繪金飾全館79折起"
+    },
+    { // 11
+      link: "https://www.etmall.com.tw/c3/165550",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-11.png",
+      alt: "木製玩具全館85折"
+    },
+    { // 12
+      link: "https://www.etmall.com.tw/gp/134418",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-12.png",
+      alt: "指定品送東幣5%"
+    },
+  ]
+
+section.promo__group.promo__group--w3m3.m-bottom--lg(data-title="強檔狂折")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--left
+        img(src="event/2nd/e-main/components/event-w3m3/decor-event-w3m3-left.png", alt="")
+      .decor__item.decor__item--right#decorEventW3M3
+        img(src="event/2nd/e-main/components/event-w3m3/decor-event-w3m3-right.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          #w3m3Wrap.event__wrap
+            ul.good__wrap
+              each data, index in w3m3Data
+                li
+                  a(href= data.link, title= data.alt)
+                    - var hasImg = data.imgSrc ? true : false
+                    if (hasImg)
+                      img(src= data.imgSrc, alt= data.alt)

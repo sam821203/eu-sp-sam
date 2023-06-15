@@ -1,0 +1,60 @@
+// tab layout
+.promo__group--tab-section
+  +bg-set(url(event/1st/e-main/components/tab-section/bg-tab.png), 100%, center, 20%)
+  +breakpoint-min($min-width-xl)
+    +bg-set(url(event/1st/e-main/components/tab-section/bg-tab-web.png), auto, center, -15px)
+
+  .promo__wrap
+    +aspect-ratio(375, 320)
+
+  .promo__title
+    margin-bottom: 1%
+    width: 76.04%
+    text-align: center
+
+  .tab__zone
+    +aspect-ratio(960, 100, ul)
+
+  .tab__box
+    display: flex
+    justify-content: center
+    padding: 0 2.0825%
+  .tab__item
+    +pos-set(relative, zero)
+    width: 25%
+    cursor: pointer
+    img
+      &:nth-child(2),
+      &:nth-child(3)
+        +pos-set(absolute, base, 0, 0)
+        opacity: 0
+    &.active
+      pointer-events: none
+      img
+        &:nth-child(2)
+          opacity: 1
+  +breakpoint-min($min-width-xl)
+    .tab__box
+      padding: 0 30px
+    .tab__item
+      &:hover,
+      &:active
+        img
+          &:nth-child(3)
+            opacity: 1
+
+  .content__zone
+    +aspect-ratio(936, 465, ul)
+    margin-top: -2.25%
+    +breakpoint-min($min-width-xl)
+      margin-top: -23px
+  .content__box
+    display: none
+    text-align: center
+    &.active
+      display: block
+    a
+      // transition: all 0.5s
+      &:hover,
+      &:active
+        filter: contrast(150%)

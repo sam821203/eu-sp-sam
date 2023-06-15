@@ -1,0 +1,26 @@
+-
+  var heroTitleE = [
+    {
+      link: "#note",
+      imgSrc: "event/1st/e-main/components/hero-section/sub-title-1.png",
+      alt: "全站滿額贈禮物卡",
+    },
+    {
+      link: "",
+      imgSrc: "event/1st/e-main/components/hero-section/sub-title-2.png",
+      alt: "挑戰任務領東森幣",
+    },
+  ]
+section.hero
+  .layout--main
+    .hero__wrap
+      .hero__zone
+        .hero__title.hero__title--main
+          a(href="https://www.etmall.com.tw/member/taskActivity" class="js--changeLink") 
+            img(src="event/1st/e-main/components/hero-section/title-main.png" alt="母親節")
+        .hero__title--decor
+          .decor__item
+            img(src="event/1st/e-main/components/hero-section/hero-item.png" alt="")
+        .video__wrap
+          .video__block
+            include /event/1st/e-main/components/hero-section/hero-video/_hero-video.pug

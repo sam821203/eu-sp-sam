@@ -1,0 +1,97 @@
+
+.promo__group.promo__group-hot
+  .promo__zone
+    overflow: hidden
+  .promo__wrap
+    +pos-set(relative, zero)
+    .promo__slider
+      +pos-set(absolute, base, 0, 0)
+      width: 100%
+      //height: 100%
+  +breakpoint-min($min-width-xl)
+    background-size: auto
+
+.promo__group.promo__group-hot
+  a
+    display: block
+  .promo__wrap
+    +bg-set(url("~event/2nd/e-main/components/bn-event-hot/bg-bn-hot.png"), 100% auto)
+    height: 54vw
+    .promo__slider
+      top: 30%
+      width: 90%
+      margin: 0 auto
+      text-align: center
+      //padding: 0 10%
+      //height: 50%
+      left: 50%
+      transform: translateX(-50%)
+      .swiper-slide
+        padding: 0 0 3% 0
+        //&:nth-of-type(2n)
+        //  +bg-set(url("~event/2nd/e-main/components/bn-event-hot/hot-event_bn-bg.png"), 100% auto)
+        //&:nth-of-type(2n+1)
+        //  +bg-set(url("~event/2nd/e-main/components/bn-event-hot/hot-event_bn-bg-2.png"), 100% auto)
+        a
+          //transform: scale(0.85)
+          transform: translateY(5%) scale(0.95)
+        +breakpoint-min($min-width-xl)
+          width: 50%
+          a
+            padding: 3%
+            transform: scale(1) translateY(0)
+    .promo-pager
+      bottom: 7.5vw
+      left: 50%
+      transform: translateX(-50%)
+      .swiper-pagination-bullet
+        margin: 0 2px
+        width: 6px
+        height: 6px
+        opacity: .8
+        background-color: #b5a6cd
+      .swiper-pagination-bullet-active
+        opacity: 1
+        background-color: #9280bb
+
+  +breakpoint-min($min-width-xl)
+    width: 100%
+    max-width: 960px
+    margin: 0 auto
+    .promo__wrap
+      height: 512px
+      .promo__slider
+        top: 32%
+        img
+          width: 100%
+      .promo-pager
+        bottom: 73px
+        .swiper-pagination-bullet
+          margin: 0 8px
+          width: 16px
+          height: 16px
+
+#sliderBnEventHotPrev.swiper-button-prev,
+#sliderBnEventHotNext.swiper-button-next
+  width: 5vw
+  height: 6vw
+  margin-top: 1.4vw
+  opacity: 0
+  &::after
+    font-size: 3vw
+  +breakpoint-min($min-width-xl)
+    width: 48px
+    height: 58px
+    margin-top: 15px
+    &::after
+      font-size: 29px
+
+#sliderBnEventHotPrev.swiper-button-prev
+  left: 1vw
+  +breakpoint-min($min-width-xl)
+    left: 10px
+
+#sliderBnEventHotNext.swiper-button-next
+  right: 1vw
+  +breakpoint-min($min-width-xl)
+    right: 10px

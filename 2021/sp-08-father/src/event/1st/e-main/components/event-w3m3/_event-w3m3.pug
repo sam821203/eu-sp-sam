@@ -1,0 +1,84 @@
+- var link = "https://media.etmall.com.tw/sp/9862/m/index.html"
+- var preImgSrc = "event/1st/e-main/components/event-w3m3/items/depart-"
+- var alt = "Bingo配對購"
+-
+  var w3m3Data = [
+    {
+      link: "https://media.etmall.com.tw/sp/10318/m/index.html",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-1.png",
+      alt: "酷夏FUN價日用豪購季"
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/139649",
+      //- imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-2.png",
+      alt: "買給你！時尚好爸5折起"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/10444/m/index.html",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-3.png",
+      alt: "深夜美食 型男主廚88折"
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/139023",
+      //- imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-4.png",
+      alt: "空拍機代你出門逛大街"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/10318/m/index.html",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-5.png",
+      alt: "就愛付清節！爸氣88折"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/10207/m/index.html",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-6.png",
+      alt: "Zenfone 8領券折$1500"
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/139765",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-7.png",
+      alt: "MAN POWER幸福持久戰73折UP"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/10315/m/index.html",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-8.png",
+      alt: "電鬍刀加碼送8%東森幣"
+    },
+    //- {
+    //-   link: "https://media.etmall.com.tw/sp/9429/m/index.html",
+    //-   imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-9.png",
+    //-   alt: "涼夏傢寢早享受35折up"
+    //- },
+  ]
+
+section.promo__group.promo__group--w3m3.m-bottom--lg(data-title="老爸必備")
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        #w3m3Wrap.event__wrap
+          .promo__block.m-bottom--xs
+            ul.good__wrap
+              each data, index in w3m3Data
+                if index < 3
+                  li
+                    a(href= data.link, title= data.alt)
+                      - var hasImg = data.imgSrc ? true : false
+                      if (hasImg)
+                        img(src= data.imgSrc, alt= data.alt)
+          .promo__block.m-bottom--xs
+            ul.good__wrap
+              each data, index in w3m3Data
+                if index >= 3 && index < 5
+                  li
+                    a(href= data.link, title= data.alt)
+                      - var hasImg = data.imgSrc ? true : false
+                      if (hasImg)
+                        img(src= data.imgSrc, alt= data.alt)
+          .promo__block.m-bottom--xs
+            ul.good__wrap
+              each data, index in w3m3Data
+                if index >= 5 && index < 8
+                  li
+                    a(href= data.link, title= data.alt)
+                      - var hasImg = data.imgSrc ? true : false
+                      if (hasImg)
+                        img(src= data.imgSrc, alt= data.alt)

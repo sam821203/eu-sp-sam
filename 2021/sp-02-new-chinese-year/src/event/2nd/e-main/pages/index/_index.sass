@@ -1,0 +1,138 @@
+// // ==========================================================================
+// // Plugins
+// // ==========================================================================
+// // @import "vendors/animate"
+// @import "~vendors/style/swiper-slider-custom"
+@import '~vendors/style/swiper-safari-polyfill'
+
+// // ==========================================================================
+// // 2nd screen need
+// // ==========================================================================
+@import "utils/bg-decoration-instance/css-firework/_css-firework"
+// hero section
+// ===========================
+@import "~event/2nd/e-main/components/hero-section/_hero-section"
+
+// // ==========================================================================
+// // components
+// // ==========================================================================
+@import "~event/2nd/e-main/components/daily-change/_daily-change"
+@import "~event/2nd/e-main/components/promo-event/_promo-event"
+@import "~event/2nd/e-main/components/daily-tab/_daily-tab"
+// @import "~event/2nd/e-main/components/daily-slider/_daily-slider"
+//@import "~event/2nd/e-main/components/tab-slider-section/_tab-slider-section"
+@import "~event/2nd/e-main/components/bn-special/_bn-special"
+@import "~event/2nd/e-main/components/daily-change-2/_daily-change-2"
+@import "~event/2nd/e-main/components/collect__point/_collect__point"
+@import "~event/2nd/e-main/components/left-right-section/_left-right-section"
+@import "~event/2nd/e-main/components/tab-section-1/_tab-section-1"
+@import "~event/2nd/e-main/components/tab-section-2/_tab-section-2"
+@import "~event/2nd/e-main/components/dynamic-slider-half/_dynamic-slider-half"
+@import "~event/2nd/e-main/components/slider-section-double/_slider-section-double"
+@import "~event/2nd/e-main/components/bn-bank/_bn-bank"
+
+// // ==========================================================================
+// // Page
+// // ==========================================================================
+body
+  +pos-set(relative)
+  background-color: $main-e-background-color-2nd
+
+  +breakpoint-min($min-width-xl)
+    //background: $main-e-background-color-2nd center 0 url("~event/2nd/e-main/pages/index/bg-web.jpg") no-repeat
+    background: $main-e-background-color-2nd center 0 url("https://media.etmall.com.tw/sp/8249/bg-web.jpg") no-repeat
+    background-size: 2560px 2690px
+    height: 2690px
+
+.sp__wrap
+  +pos-set(relative)
+  //background: $main-e-background-color-2nd center 0 url("~event/2nd/e-main/pages/index/bg.jpg") no-repeat
+  background: $main-e-background-color-2nd center 0 url("https://media.etmall.com.tw/sp/8249/bg.jpg") no-repeat
+  background-size: 100% auto
+  +breakpoint-min($min-width-xl)
+    background: none
+    //.decoration--foreground
+    //  +pos-set(absolute, zero)
+    //  top: 6.9%
+    //  left: 0
+    //  width: 100%
+    //  height: 100%
+    //  background: center 0 url("~event/2nd/e-main/pages/index/bg-decoration-web.png") no-repeat,
+    .promo__group
+      +pos-set(relative, base)
+
+.sp__wrap a
+  display: block
+  .promo__title
+    text-align: center
+
+.bg__wrap-2
+  position: absolute
+  z-index: 0
+  //background: center 0 url(~event/2nd/e-main/pages/index/bg-960-2.jpg) no-repeat
+  background: center 0 url(https://media.etmall.com.tw/sp/8249/bg-960-2.jpg) no-repeat
+  background-size: 100% auto
+  width: 100%
+  height: 517vw
+  &.date__change
+    //background: center 0 url(~event/2nd/e-main/pages/index/bg-960-2-date-210.jpg) no-repeat
+    background: center 0 url(https://media.etmall.com.tw/sp/8249/bg-960-2-date-210.jpg) no-repeat
+    background-size: 100% auto
+    height: 709vw
+
+.bg__wrap-3
+  position: absolute
+  z-index: 0
+  //background: center 0 url(~event/2nd/e-main/pages/index/bg-960-3.jpg) no-repeat
+  background: center 0 url(https://media.etmall.com.tw/sp/8249/bg-960-3.jpg) no-repeat
+  background-size: 100% auto
+  width: 100%
+  height: 230vw
+
++breakpoint-min($min-width-xl)
+  .bg__wrap-2
+    //background: center 0 url(~event/2nd/e-main/pages/index/bg-2560-2.jpg) no-repeat
+    background: center 0 url(https://media.etmall.com.tw/sp/8249/bg-2560-2.jpg) no-repeat
+    background-size: 2560px 4185px
+    height: 4185px
+    top: 0
+    &.date__change
+      //background: center 0 url(~event/2nd/e-main/pages/index/bg-2560-2-date-210.jpg) no-repeat
+      background: center 0 url(https://media.etmall.com.tw/sp/8249/bg-2560-2-date-210.jpg) no-repeat
+      background-size: 2560px 5256px
+      height: 5256px
+  .bg__wrap-3
+    //background: center 0 url(~event/2nd/e-main/pages/index/bg-2560-3.jpg) no-repeat
+    background: center 0 url(https://media.etmall.com.tw/sp/8249/bg-2560-3.jpg) no-repeat
+    background-size: 2560px 2221px
+    height: 2221px
+    top: 0
+
+a.logo
+  width: 12%
+  top: 0
+  left: 1%
+  display: none
+  +breakpoint-min($min-width-xl)
+    left: calc(50% - 550px)
+    top: -10px
+    display: block
+
+.bg__relative
+  position: relative
+// parallax css
+// =================================
+// .decoration--background
+//   display: none
+
+//   +breakpoint-min($min-width-3xl)
+//     display: block
+//     // z-index: base(1)以上可蓋在主視覺上，zero(0)可在主視覺下，預設都在logo下(logo是500)
+//     +pos-set(absolute, under, 690px)
+//     width: 100%
+//     height: 100%
+//     pointer-events: none
+
+// .decoration__wrap
+//   +pos-set(sticky, zero, 0)
+

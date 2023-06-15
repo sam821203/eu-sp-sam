@@ -1,0 +1,52 @@
+-
+  var w3m3Data = [
+    { // 1
+      link: "https://www.etmall.com.tw/i/3620273",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-1.png",
+      alt: "東森獨家超值組-DANBY丹比雙溫控火烤兩用輕食鍋電烤盤/電火鍋/料理鍋+西班牙sOlac 3L瞬熱式開飲機 飲水機DB-1BHP/SMA-T20S"
+    },
+    { // 2
+      link: "https://www.etmall.com.tw/i/3506165",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-2.png",
+      alt: "Apple iPad mini 64G 8.3吋 WiFi+磁吸智能保護殼組"
+    },
+    { // 3
+      link: "",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-3.png",
+      alt: "【CookPower 鍋寶】茗茶保溫瓶+不鏽鋼便當盒"
+    },
+    { // 4
+      link: "https://www.etmall.com.tw/i/2976929",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-4.png",
+      alt: "FJ 高清遠端觀看寵物自動餵食器PW3(連接WIFI可觀看)"
+    },
+    { // 5
+      link: "https://www.etmall.com.tw/i/3397165",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-5.png",
+      alt: "沈文程有感代言  都會新貴嚴選 鱘熹王 專利K2鱘龍複方膠囊 (60/顆x12盒;共720顆)"
+    },
+    { // 6
+      link: "https://www.etmall.com.tw/i/3648411",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-6.png",
+      alt: "LANCOME蘭蔻 超未來肌因賦活露100ml 小黑瓶*2入"
+    },
+  ]
+
+section.promo__group.promo__group--w3m3(data-title="限時開團")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--left#decorEventW3m3Left
+        img(src="event/1st/e-main/components/event-w3m3/decor-event-w3m3-left.png", alt="")
+      .decor__item.decor__item--right#decorEventW3m3Right
+        img(src="event/1st/e-main/components/event-w3m3/decor-event-w3m3-right.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          #w3m3Wrap.event__wrap
+            ul.good__wrap
+              each data, index in w3m3Data
+                li
+                  a(href= data.link, title= data.alt)
+                    - var hasImg = data.imgSrc ? true : false
+                    if (hasImg)
+                      img(src= data.imgSrc, alt= data.alt)

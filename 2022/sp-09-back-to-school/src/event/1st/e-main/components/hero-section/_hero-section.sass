@@ -1,0 +1,258 @@
+.hero
+  +pos-set(relative, zero)
+  overflow: hidden
+  .hero__zone
+    +aspect-ratio(960, 610)
+
+    .hero__title
+      +pos-set(absolute, base, 12%, 2.5%)
+      width: 94%
+      text-align: center
+      opacity: 0
+      .js-loading &
+        animation: runIn 1.2s 1.4s ease-out forwards
+        +breakpoint-min($min-width-xl)
+          animation: runIn-web 1.2s 1.4s ease-out forwards
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 440px)
+        width: auto
+      .title--sub
+        +pos-set(absolute, second, 0, 0)
+        width: 100%
+        .js-loading &
+            animation: sub-tada 3.4s 2.8s ease-in-out infinite
+
+    .decor__title
+      top: 0
+      z-index: -1
+      width: 100%
+      +breakpoint-min($min-width-xl)
+        width: auto
+        height: auto
+      &--light
+        top: -20%
+        opacity: 0
+        img
+          transform: scale(1.45)
+        .js-loading &
+          animation: shine-zoomIn .7s 1.2s ease-in 1 forwards, shine-scale 2.5s 2s linear infinite alternate
+          +breakpoint-min($min-width-xl)
+            animation: shine-zoomIn-web .8s 1.2s ease-in 1 forwards, shine-scale 3.5s 2s linear infinite alternate
+      &--dog
+        top: 14%
+        left: 1%
+        width: 28%
+        height: fit-content
+        opacity: 0
+        transform: translateX(16%)
+        .js-loading &
+          animation: move-fade-in .4s 2.2s ease-out 1 forwards, jump 1.2s 2.6s ease-out 1 forwards, dog-rambling 3.6s 3.8s ease-in-out forwards infinite alternate
+          +breakpoint-min($min-width-xl)
+            animation: move-fade-in .4s 2.2s ease-out 1 forwards, jump-web 1.2s 2.6s ease-out 1 forwards, dog-rambling 3.6s 3.8s ease-in-out forwards infinite alternate
+
+        +breakpoint-min($min-width-xl)
+          top: 10%
+          width: auto
+
+// @import event/1st/e-main/components/hero-section/hero-video/_hero-video.sass
+
+// 印章的父層與、印章外層的外層都要有overflow hidden以免動畫期間造成橫向捲軸出現
+// 印章父層震動要delay到印章動畫秒數*0.8
+// TODO: 印章父層的後面那一層防safari破版需要加上transform: translateZ(-50px)
+@keyframes runIn-web
+  0%
+    opacity: 0
+    transform: translateY(200px) scale3d(0.3, 0.3, 0.3)
+  60%, 100%
+    opacity: 1
+    transform: translateY(4%) scale3d(1, 1, 1)
+  70%, 90%
+    transform: translateY(-3%)
+  80%
+    transform: translateY(3%)
+  100%
+    transform: translateY(0%)
+
+@keyframes runIn
+  0%
+    opacity: 0
+    transform: translateY(0%) scale3d(0.3, 0.3, 0.3)
+  60%, 100%
+    opacity: 1
+    transform: translateY(4%) scale3d(1, 1, 1)
+  70%, 90%
+    transform: translateY(-3%)
+  80%
+    transform: translateY(3%)
+  100%
+    transform: translateY(0%)
+
+@keyframes up-and-down-2
+  0%, 100%
+    transform: translateY(0)
+  50%
+    transform: translateY(4%)
+
+@keyframes shine-zoomIn-web
+  0%
+    opacity: 0
+    transform: translateY(200px) scale(0)
+  100%
+    opacity: 1
+    transform: translateY(0) scale(1)
+
+@keyframes shine-zoomIn
+  0%
+    opacity: 0
+    transform: scale(0)
+  100%
+    opacity: 1
+    transform: scale(1)
+
+@keyframes move-fade-in
+  0%
+    transform: translateX(16%) scale(0.7)
+    opacity: 0
+  100%
+    transform: translateX(-4%) scale(1)
+    opacity: 1
+
+@keyframes jump
+  0%
+    transform: rotate(0deg) translate(0px, -10px)
+  4%
+    transform: rotate(0deg) translate(2.5px, -10px)
+  8%
+    transform: rotate(0deg) translate(5px, -7.5px)
+  12%
+    transform: rotate(0deg) translate(7.5px, -5px)
+  16%
+    transform: rotate(0deg) translate(10px, -2.5px)
+  20%
+    transform: rotate(-0.5deg) translate(10px, 0px)
+  25%
+    transform: rotate(-1deg) translate(10px, -5px)
+  30%
+    transform: rotate(-2deg) translate(7.5px, -10px)
+  35%
+    transform: rotate(-3deg) translate(5px, -15px)
+  40%
+    transform: rotate(-2deg) translate(2.5px, -20px)
+  45%
+    transform: rotate(-1deg) translate(1px, -22.5px)
+  50%
+    transform: rotate(0deg) translate(-1px, -22.5px)
+  55%
+    transform: rotate(1deg) translate(-2.5px, -20px)
+  58%
+    transform: rotate(2deg) translate(-5px, -15px)
+  62%
+    transform: rotate(3deg) translate(-7.5px, -10px)
+  66%
+    transform: rotate(2deg) translate(-10px, -5px)
+  70%
+    transform: rotate(1deg) translate(-10px, 0px)
+  76%
+    transform: rotate(0.5deg) translate(-10px, -2.5px)
+  82%
+    transform: rotate(0deg) translate(-7.5px, -5px)
+  88%
+    transform: rotate(0deg) translate(-5px, -7.5px)
+  94%
+    transform: rotate(0deg) translate(-2.5px, -2%)
+  100%
+    transform: rotate(0deg) translate(0px, -2%)
+
+@keyframes jump-web
+  0%
+    transform: rotate(0deg) translate(0px, -20px)
+  4%
+    transform: rotate(0deg) translate(5px, -20px)
+  8%
+    transform: rotate(0deg) translate(10px, -15px)
+  12%
+    transform: rotate(0deg) translate(15px, -10px)
+  16%
+    transform: rotate(0deg) translate(20px, -5px)
+  20%
+    transform: rotate(-0.5deg) translate(20px, 0px)
+  25%
+    transform: rotate(-1deg) translate(20px, -10px)
+  30%
+    transform: rotate(-2deg) translate(15px, -20px)
+  35%
+    transform: rotate(-3deg) translate(10px, -30px)
+  40%
+    transform: rotate(-2deg) translate(5px, -40px)
+  45%
+    transform: rotate(-1deg) translate(2px, -45px)
+  50%
+    transform: rotate(0deg) translate(-2px, -45px)
+  55%
+    transform: rotate(1deg) translate(-5px, -40px)
+  58%
+    transform: rotate(2deg) translate(-10px, -30px)
+  62%
+    transform: rotate(3deg) translate(-15px, -20px)
+  66%
+    transform: rotate(2deg) translate(-20px, -10px)
+  70%
+    transform: rotate(1deg) translate(-20px, 0px)
+  76%
+    transform: rotate(0.5deg) translate(-20px, -5px)
+  82%
+    transform: rotate(0deg) translate(-15px, -10px)
+  88%
+    transform: rotate(0deg) translate(-10px, -15px)
+  94%
+    transform: rotate(0deg) translate(-5px, -4%)
+  100%
+    transform: rotate(0deg) translate(0px, -4%)
+
+@keyframes zoom-in-out
+  0%
+    transform: scale(1)
+  100%
+    transform: scale(.95)
+
+@keyframes shine-scale
+  0%
+    transform-origin: bottom center
+    transform: scale(1)
+  100%
+    transform: scale(1.35)
+
+@keyframes dog-rambling
+  0%
+    opacity: 1
+    transform: translate(0, -4%)
+  10%
+    transform: translate(-12%, -4%)
+  15%
+    transform: translate(-12%, -9%)
+  20%
+    transform: translate(-12%, -5%)
+  25%
+    transform: translate(-12%, -8%)
+  30%
+    opacity: 1
+    transform: translate(-12%, -4%)
+  45%
+    opacity: 0
+    transform: translate(100%, -4%)
+  47%
+    opacity: 0
+    transform: scaleX(-1) translate(-100%, -4%)
+  78%, 100%
+    opacity: 1
+    transform: scaleX(-1) translate(-250%, -4%)
+
+@keyframes sub-tada
+  0%, 30%, 100%
+    transform: scaleX(1)
+  7%, 10%
+    transform: scale3d(.95,.95,.95) rotate(-2deg)
+  13%, 19%, 25%
+    transform: scale3d(1.025,1.025,1.025) rotate(2deg)
+  16%, 22%
+    transform: scale3d(1.025,1.025,1.025) rotate(-2deg)

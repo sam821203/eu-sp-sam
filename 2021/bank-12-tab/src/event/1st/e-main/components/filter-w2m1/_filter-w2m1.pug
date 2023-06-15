@@ -1,0 +1,121 @@
+-
+  var filterData = [
+    {
+      text: "全部門檻",
+      filter: "all",
+    },
+    {
+      text: "$4,999以下",
+      filter: "a",
+    },
+    {
+      text: "$5,000~$9,999",
+      filter: "b",
+    },
+    {
+      text: "$10,000~$19,999",
+      filter: "c",
+    },
+    {
+      text: "$20,000以上",
+      filter: "d",
+    },
+  ]
+
+section.js--tab.promo__group--event.promo__group--filter.active
+  .layout--main
+    .section__title
+      .title__box 銀行總覽
+
+    .filter__wrap
+      .filter__tab
+        ul#filterTabWrap.tab__wrap
+          each data, index in filterData
+            - var activeClass = (index == 0 ? 'active' : '')
+            li.filter__item(class= activeClass, data-filter= data.filter)
+              .filter__box
+                span= data.text
+
+      #filterContent.filter__content.content__wrap
+        ul.content__zone
+          li#specialPromo.special__promo.content__box.active
+            ul.special__wrap
+              li.special__item(data-bank="rakuten")
+                a(href="", target="_blank")
+                  img(src="event/1st/e-main/components/filter-w2m1/special-1.png", alt="東森購物網超強銀行回饋")
+              - var specialIndex = 0
+              while (specialIndex < 5)
+                li.special__item(data-bank="one")
+                  .js--pop
+                    img(src="event/1st/e-main/components/filter-w2m1/special-2.png", alt="東森購物網超強銀行回饋")
+                - specialIndex++
+            p 刷卡活動LINE Pay、Apple Pay等行動支付結帳恕不適用 (部分指定銀行除外)
+
+          li.content__box.active
+            .bank__wrap(data-bank="one")
+              .bank__logo
+                img(src="https://media.etmall.com.tw/sp/7695/m/one.png", alt="第一銀行")
+              .bank__promo
+                ul.promo__wrap
+                  li.active(data-filter="a")
+                    span.promo__date 週六~週日
+                    span.promo__rule 累積分期滿$1,000
+                    span.promo__bonus 送$150
+                  li.active(data-filter="c")
+                    span.promo__date 12/28~12/28
+                    span.promo__rule 累積分期滿$10,500
+                    span.promo__bonus 送$150
+                  li.active(data-filter="d")
+                    span.promo__date 1/1~1/1
+                    span.promo__rule 累積分期滿$50,500
+                    span.promo__bonus 送$150
+                  li.active(data-filter="")
+                    span.promo__date 週六~週日
+                    span.promo__rule 有刷就送
+                    span.promo__bonus 送$150
+                  li.active(data-filter="c d")
+                    span.promo__date 週六~週日
+                    span.promo__rule 累積分期滿$10,500 ~ $25,000
+                    span.promo__bonus 送$150
+              .bank__cta
+                a.btn--cta(href="", target="_blank", style="display: none") 登錄
+                .btn--pop.js--pop 詳情
+
+          - var index = 0
+          while (index < 13)
+            li.content__box.active
+              .bank__wrap(data-bank="rakuten")
+                .bank__logo
+                  img(src="https://media.etmall.com.tw/sp/7695/m/rakuten.png", alt="樂天銀行")
+                .bank__promo
+                  ul.promo__wrap
+                    li.active(data-filter="a")
+                      span.promo__date 週六~週日
+                      span.promo__rule 累積分期滿$1,000
+                      span.promo__bonus 送$150
+                    li.active(data-filter="b")
+                      span.promo__date 週六
+                      span.promo__rule 累積分期滿$5,500
+                      span.promo__bonus 送$150
+                    li.active(data-filter="c")
+                      span.promo__date 12/28~12/28
+                      span.promo__rule 累積分期滿$10,500
+                      span.promo__bonus 送$150
+                    li.active(data-filter="d")
+                      span.promo__date 1/1~1/1
+                      span.promo__rule 累積分期滿$50,500
+                      span.promo__bonus 送$150
+                    li.active(data-filter="")
+                      span.promo__date 週六~週日
+                      span.promo__rule 有刷就送
+                      span.promo__bonus 送$150
+                    li.active(data-filter="c d")
+                      span.promo__date 週六~週日
+                      span.promo__rule 累積分期滿$10,500 ~ $25,000
+                      span.promo__bonus 送$150
+                .bank__cta
+                  a.btn--cta(href="", target="_blank", style="display: none") 登錄
+                  .btn--pop.js--pop 詳情
+            - index++
+
+      include /event/1st/e-main/components/note/_note

@@ -1,0 +1,124 @@
+.promo__group--daily-time
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__item
+    &:first-child
+      +pos-set(absolute, zero, 0%, 0%)
+      width: 33%
+      -webkit-animation: key-wind-rotate 8s linear 2s infinite both  
+      animation: key-wind-rotate 8s linear 2s infinite both
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 500px)
+        width: auto
+    &:nth-child(2)
+      +pos-set(absolute, zero, 40%, 50%)
+      width: 75%
+      transform: translate(-50%, -50%)
+      +breakpoint-min($min-width-xl)
+        width: fit-content
+    &:last-child
+      +pos-set(absolute, under, 0%)
+      right: 0%
+      width: 24%
+      animation: daily-time-jello 1s ease-out .9s infinite both
+      +breakpoint-min($min-width-xl)
+        right: calc(50% - 480px)
+        width: fit-content
+        transform: scale(1.2)
+  .promo__wrap
+    +aspect-ratio(960, 1020)
+  .promo__zone
+    +pos-set(relative, zero)
+    margin-top: 42%
+    +bg-set(url(event/1st/e-main/components/daily-time/bg-daily-time.png), 100%)
+  .product__wrap
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    padding: 0 4% 4%
+    transform: translateY(-5%)
+    > div
+      width: 32%
+      margin-bottom: 1.5%
+      &:nth-child(1)
+        .product__time
+          +bg-set(url(event/1st/e-main/components/daily-time/daily-time-hour-1.png), 100%)
+      &:nth-child(2)
+        .product__time
+          +bg-set(url(event/1st/e-main/components/daily-time/daily-time-hour-2.png), 100%)
+      &:nth-child(3)
+        .product__time
+          +bg-set(url(event/1st/e-main/components/daily-time/daily-time-hour-3.png), 100%)
+  .product__block
+    padding: 0 6% 6%
+  .product--dynamic
+    width: 100%
+  .product__time
+    margin-left: auto
+    margin-right: auto
+    padding-bottom: 40%
+    width: 95%
+    filter: brightness(50%)
+    + .product
+      filter: brightness(50%)
+    &.active
+      filter: grayscale(0)
+      + .product
+        filter: grayscale(0)
+
+  .product--dynamic
+    +breakpoint-min($min-width-xl)
+      margin-top: 15px
+    .product__name
+      +pos-set(relative, zero)
+      height: 3.2em
+      padding-top: 12%
+      font-size: 3.3vw
+      background-color: $gray-deep-light
+      +breakpoint-min($min-width-xl)
+        height: 3.42em
+        margin-bottom: 0
+        padding-top: 10%
+        font-size: 22px
+  .product__price
+    background-color: $gray-deep-light
+    color: $main-e-font-color-1st
+    span
+      &:last-child
+        font-size: 3.6vw
+        +breakpoint-min($min-width-xl)
+          font-size: 28px
+  .product__text
+    transform: translateY(-0.5px)
+
+@keyframes key-wind-rotate
+  20%
+    transform: rotate(-2.8deg) skew(2.8deg)
+  40%
+    transform: rotate(2.2deg) skew(-2.2deg)
+  60%
+    transform: rotate(-0.8deg) skew(0.8deg)
+  80%
+    transform: rotate(0.4deg) skew(-0.4deg)
+  100%
+    transform: rotate(0deg)
+
+@keyframes daily-time-jello
+  0%, 11.1% 
+      transform: translateZ(0)
+  22.2%
+      transform: skewX(-12.5deg) skewY(-12.5deg)
+  33.3%
+      transform: skewX(6.25deg) skewY(6.25deg)
+  44.4%
+      transform: skewX(-3.125deg) skewY(-3.125deg)
+  55.5%
+      transform: skewX(1.5625deg) skewY(1.5625deg)
+  66.6%
+      transform: skewX(-.78125deg) skewY(-.78125deg)
+  77.7%
+      transform: skewX(.390625deg) skewY(.390625deg)
+  88.8%
+      transform: skewX(-.1953125deg) skewY(-.1953125deg)
+  100%
+      transform: translateZ(0)

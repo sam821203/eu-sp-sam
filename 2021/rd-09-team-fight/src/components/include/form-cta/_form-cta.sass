@@ -1,0 +1,21 @@
+.form__submit
+  +breakpoint-min($min-width-xl)
+    display: flex
+    justify-content: space-around
+    padding-left: 50px
+    padding-right: 50px
+    .btn__box
+      width: 200px
+
+.btn--submit,
+.btn--cancel
+  padding-top: 15px
+  padding-bottom: 15px
+  width: 100%
+  font-size: 24px
+.btn--submit
+  border: 0
+  &.disabled
+    background-color: $gray-medium
+.btn--cancel
+  cursor: pointer

@@ -1,0 +1,89 @@
+-
+  var bnSliderItemData2 = [
+  {
+  link: "https://www.etmall.com.tw/gp/111582",
+  imgSrc: "event/1st/e-main/components/bn-slider-2/items/brand-1.png",
+  alt: "京美",
+  content: "銀纖維護膝/護腰/內衣褲"
+  },
+  {
+  link: "https://www.etmall.com.tw/bc3/148453",
+  imgSrc: "event/1st/e-main/components/bn-slider-2/items/brand-2.png",
+  alt: "傢寢-佾",
+  content: "東妮涼寢3折up"
+  },
+  {
+  link: "https://media.etmall.com.tw/sp/10095/m/index.html",
+  imgSrc: "event/1st/e-main/components/bn-slider-2/items/brand-3.png",
+  alt: "鍋寶",
+  content: "安心自煮 滿額贈保溫杯"
+  },
+  {
+  link: "https://media.etmall.com.tw/sp/9807/m/index.html",
+  imgSrc: "event/1st/e-main/components/bn-slider-2/items/brand-4.png",
+  alt: "美食-桂格",
+  content: "滿額送禮 給你好穀力"
+  },
+  {
+  link: "https://www.etmall.com.tw/gp/121009",
+  imgSrc: "event/1st/e-main/components/bn-slider-2/items/brand-5.png",
+  alt: "DeMon",
+  content: "最高80%折抵 再回饋"
+  },
+  {
+  link: "https://www.etmall.com.tw/gp/131073",
+  imgSrc: "event/1st/e-main/components/bn-slider-2/items/brand-6.png",
+  alt: "ReFa",
+  content: "享受極致美顏6折起"
+  },
+  {
+  link: "https://www.etmall.com.tw/p/137870",
+  imgSrc: "event/1st/e-main/components/bn-slider-2/items/brand-7.png",
+  alt: "ivenor",
+  content: "防溢79折起"
+  },
+  {
+  link: "https://www.etmall.com.tw/gp/125823",
+  imgSrc: "event/1st/e-main/components/bn-slider-2/items/brand-8.png",
+  alt: "IRIS",
+  content: "日本賣到缺貨除螨機"
+  },
+  {
+  link: "https://www.etmall.com.tw/gp/131631",
+  imgSrc: "event/1st/e-main/components/bn-slider-2/items/brand-9.png",
+  alt: "Vitamix",
+  content: "官網登錄抽10萬購物金"
+  },
+  {
+  link: "https://www.etmall.com.tw/gp/118386",
+  imgSrc: "event/1st/e-main/components/bn-slider-2/items/brand-10.png",
+  alt: "九陽",
+  content: "指定買就送多重禮"
+  },
+  {
+  link: "https://www.etmall.com.tw/gp/137512",
+  imgSrc: "event/1st/e-main/components/bn-slider-2/items/brand-11.png",
+  alt: "GARMIN",
+  content: "新錶上市時尚由你決定"
+  },
+  {
+  link: "https://www.etmall.com.tw/c2/134738",
+  imgSrc: "event/1st/e-main/components/bn-slider-2/items/brand-12.png",
+  alt: "MOSHI",
+  content: "經典美學融入科技生活"
+  },
+  ]
+//- 品牌回饋7%東森幣
+section.promo__group.promo__group--bn-2(data-title="")
+  .layout--main
+    .promo__wrap
+      a.detail__btn(href="#note5")
+      #sliderBn2.promo__slider.swiper-container
+        ul.swiper-wrapper
+          each data in bnSliderItemData2
+            li.swiper-slide
+              a(href= data.link, title= data.alt)
+                img(src= data.imgSrc, alt="")
+                p.content= data.content
+
+      //- #sliderBnPager.bn__pager.swiper-pagination

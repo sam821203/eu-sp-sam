@@ -1,0 +1,244 @@
+//.promo__two-daily--bg
+//  +breakpoint-min($min-width-xl)
+//    position: absolute
+//    //+bg-set(url("~event/2nd/e-main/components/two-daily-change/bg-two-daily-change-web.png"))
+//    background-size: 960px 562px
+//    width: 100%
+//    height: 562px
+//    top: 0
+//    left: 50%
+//    transform: translateX(-50%)
+.promo__group--two-daily-change
+  height: 61vw
+  margin-top: 30px
+  .two-daily-tab__wrap
+    position: relative
+    padding: 12% 5% 5% 34%
+    +bg-set(url(~event/2nd/e-main/components/two-daily-change/bg-two-daily-change.png), 100%)
+    .tab__zone
+      position: absolute
+      height: 6vw
+      width: 28vw
+      top: -2vw
+      left: 55vw
+      z-index: 2
+
+  .tab__head--daily-2
+    display: flex
+    width: 100%
+    li
+      position: relative
+      flex: 1 0 100%
+      color: #fff
+      font-weight: bold
+      text-align: center
+      cursor: default
+      height: 21vw
+      display: none
+      &.active--two__daily
+        display: block
+      //filter: grayscale(1) brightness(2.5)
+      //+bg-set(url(~event/2nd/e-main/components/daily-tab/bg-daily-tab-date.png), contain)
+
+      span
+        position: absolute
+        &:nth-child(1)
+          top: 7vw
+          left: 4vw
+          font-size: 4.5vw
+        &:nth-child(2)
+          top: 7vw
+          left: 10vw
+          font-size: 4.5vw
+        &:nth-child(2):before
+          display: block
+          position: absolute
+          top: 1vw
+          left: -2.5vw
+          content: '/'
+          clear: both
+          font-size: 3.5vw
+      &.active
+        color: #fff
+        //filter: grayscale(0)
+      &.active,
+      &:active,
+      &:hover
+        color: $gray-light
+
+      &.daily-active
+        color: #fff
+        display: block
+        //filter: grayscale(0)
+
+
+  .two-daily-content__box
+    display: none
+    &.active
+      display: block
+
+  .two-daily-content__box
+    li
+      +pos-set(relative, zero)
+      padding: 2% 3% 3%
+      height: 41vw
+      border-radius: 10px
+      overflow: hidden
+      +bg-set(url(~event/2nd/e-main/components/two-daily-change/bg_pp_two-daily.png), 100% auto)
+      .banner__wrap
+        +pos-set(absolute, base)
+        bottom: 0
+        right: 10%
+        width: 35%
+        .promo__banner
+          padding: 5% 10%
+          color: $gray-deep-light
+          border-radius: 100px
+          font-size: 4vw
+          text-align: center
+          overflow: hidden
+          &--now
+            display: none
+            background-color: #cd1953
+          &--wait
+            background-color: #f2a100
+        &.active
+          .promo__banner
+            &--now
+              display: block
+            &--wait
+              display: none
+
+      .product--dynamic
+        .product__block
+          border-radius: 1vw
+          overflow: hidden
+          .product__img
+            margin-bottom: -1vw
+            img
+              transform: scale(0.9)
+            +breakpoint-min($min-width-xl)
+              margin-bottom: 20px
+          .product__name
+            display: -webkit-box
+            -webkit-line-clamp: 2
+            -webkit-box-orient: vertical
+            text-overflow: ellipsis
+            margin: 4% 0 0 0
+            padding: 0 4%
+            color: $gray-deep-dark
+            line-height: 110%
+            height: 2.25em
+            font-size: 11px
+            overflow: hidden
+          .product__price
+            padding: 0 2%
+            color: $primary-medium
+            font-weight: 700
+            text-align: center
+            span
+              &:first-child
+                font-size: 2vw
+              &:last-child
+                font-size: 4vw
+
+
+  +breakpoint-min($min-width-xl)
+    position: relative
+    height: 562px
+    margin: 150px auto 30px
+    .two-daily-tab__wrap
+      //background: none
+      padding: 12.5% 6% 5% 34%
+      .tab__zone
+        height: auto
+        width: 223px
+        top: 44px
+        left: calc(50% + 21px)
+    .tab__head--daily
+      li
+        height: 202px
+        span
+          &:nth-child(1)
+            top: 67px
+            left: 38px
+            font-size: 53px
+          &:nth-child(2)
+            top: 120px
+            left: 77px
+            font-size: 48px
+
+    .two-daily-content__box
+      li
+        //padding: 6% 1% 0
+        height: 400px
+        .banner__wrap
+          .promo__banner
+            font-size: 26px
+        .product--dynamic
+          .product__block
+            border-radius: 6px
+            .product__name
+              font-size: 24px
+            .product__price
+              span
+                line-height: 1.2
+                &:first-child
+                  font-size: 29px
+                &:last-child
+                  font-size: 46px
+    .tab__head--daily-2
+      li
+        height: 60px
+        span
+          &:nth-child(1)
+            top: 4px
+            left: 40px
+            font-size: 40px
+          &:nth-child(2)
+            top: 4px
+            left: 100px
+            font-size: 40px
+          &:nth-child(2):before
+            top: 4px
+            left: -25px
+            font-size: 35px
+
+
+.tab__content--two-daily-change
+  padding: 0 2%
+
+.two-daily-change-pager
+  bottom: 1.6vw
+  left: 66%
+  transform: translateX(-50%)
+  .swiper-pagination-bullet
+    margin: 0 4px
+  .swiper-pagination-bullet-active
+    width: 20px
+    height: 7px
+    vertical-align: middle
+    background-color: #3d161b
+    border: 0px
+    border-radius: 6px
+    margin-top: -1px
+
+  +breakpoint-min($min-width-xl)
+    bottom: 37px
+    left: 64%
+
+//.activity__time__out
+//  .product--dynamic
+//    filter: grayscale(100%) !important
+//    pointer-events: none !important
+//  .banner__wrap
+//    display: none
+
+//- 圖片日期標
+//@for $i from 1 through 15
+//  .promo__group--two-daily-change
+//    .two-daily-content__box
+//      &:nth-child(#{$i})
+//        li .product--dynamic .product__block .product__img
+//          &:after
+//            +bg-set(url(~event/2nd/e-main/components/daily-tab/date/daily-tab-item-date-#{$i}.png), 100% auto)

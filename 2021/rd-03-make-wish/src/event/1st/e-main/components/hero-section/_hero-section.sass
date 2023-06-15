@@ -1,0 +1,13 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero__wrap
+  +breakpoint-min($min-width-xl)
+    +bg-set(url(~event/1st/e-main/components/hero-section/bg-hero-web.jpg), auto)
+
+  .hero__box
+    +pos-set(relative)
+
+  .hero__title
+    &--main
+      +pos-set(relative, zero)

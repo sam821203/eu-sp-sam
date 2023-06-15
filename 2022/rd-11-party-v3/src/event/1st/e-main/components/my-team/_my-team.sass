@@ -1,0 +1,58 @@
+
+.my__block
+  .my__box
+    +bg-set(url(event/1st/e-main/components/my-team/bg-my.png), 100%, null, null, repeat)
+
+  .my__group
+    display: flex
+    padding-top: 16px
+
+  .my__pic
+    flex: 0 0 36%
+    margin-right: 16px
+    +breakpoint-min($min-width-lg)
+      margin-right: 48px
+
+  .my__intro
+    flex: 1
+
+  .intro__box
+    display: flex
+    flex-wrap: wrap
+    align-content: center
+    height: 100%
+
+  .intro__head,
+  .intro__body,
+  .btn__my
+    width: 100%
+    text-align: center
+
+  .intro__head
+    margin-bottom: 4px
+    color: $gray-deep-light
+
+  .intro__body
+    margin-bottom: 8px
+    padding: 8px 0
+    background-color: $main-color-5
+    border: 1px solid $gray-deep-light
+    box-shadow: inset 2px 2px 0px rgba($main-color-5, 0.35)
+    border-radius: 6px
+    +breakpoint-min($min-width-lg)
+      padding: 16px 0
+      border: 3px solid $gray-deep-light
+      box-shadow: inset 5px 5px 0px rgba($main-color-5, 0.35)
+      border-radius: 16px
+    +breakpoint-min($min-width-xl)
+      margin-bottom: 24px
+
+  .btn__my
+    display: block
+    margin-left: auto
+    margin-right: auto
+    max-width: 355px
+    transition: all 0.6s
+    &:hover
+      transform: scale(1.05)
+

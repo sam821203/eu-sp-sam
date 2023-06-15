@@ -1,0 +1,37 @@
+/* 阿寧嘗試新增banner */
+.bn-w5m2 .banner__wrap{
+  /* margin-bottom: 200px; */
+  /* outline: 1px solid red; */
+  display: flex;
+  /* flex-wrap: nowrap; */
+  justify-content: center;
+}
+
+.bn-w5m2 .banner__wrap{
+  flex-wrap: wrap;
+}
+.bn-w5m2 .banner__item{
+  /* flex: 1 1 50%; */
+  width: 50%;
+}
+
+.bn-w5m2 .banner__item:hover{
+  filter: saturate(1.5);
+  transform: scale(1.1);
+}
+
+
+.bn-w5m2 .banner__item:nth-child(5n+1){
+  width: 100%;
+  /* background-color: maroon; */
+  /* width: 98%; */
+}
+
+@media (min-width: 769px) {
+  .bn-w5m2 .banner__item:nth-child(5n+1), .bn-w5m2 .banner__item{
+    width: 20%;
+  }
+
+}
+
+

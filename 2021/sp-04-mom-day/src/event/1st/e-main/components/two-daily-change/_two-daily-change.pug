@@ -1,0 +1,49 @@
+.decoration--top--outer.top-2
+  img#twoDailyChange_scroll(src="~event/1st/e-main/components/two-daily-change/gathering_scroll__flower.png", alt="")
+section.promo__group.promo__group--two-daily-change(data-title="集氣")
+  //.decoration--flower.move__3
+  //  img#scrollDoubleSlider_3(src="~assets/img/scroll__tree.png", alt="")
+  //.promo__solid-color--bg
+  //.promo__two-daily--bg
+  .layout--main
+    ul.two-daily-tab__wrap
+      li.tab__zone
+        #sliderTwoDailyChangeTabHead.tab__head--daily-2.promo__slider.swiper-container.swiper-no-swiping
+          ul.swiper-wrapper
+            // date 起始日期
+            li.tabs-slide.active--two__daily
+              span 4
+              span 07-08
+            li.tabs-slide
+              span 4
+              span 09-10
+            li.tabs-slide
+              span 4
+              span 11-12
+            li.tabs-slide
+              span 4
+              span 13-14
+            li.tabs-slide
+              span 4
+              span 15-16
+            li.tabs-slide
+              span 4
+              span 17-18
+            li.tabs-slide
+              span 4
+              span 19-20
+            li.tabs-slide
+              span 4
+              span 21-22
+      li.content__zone
+        ul#sliderTwoDailyChangeContent.tab__content--two-daily-change
+          //- 共七個
+          - var date = 2
+          while date <= 9
+            - var activeContentClass = 'active'
+            - if (date != 2) activeContentClass = ''
+            li.two-daily-content__box(class= activeContentClass)
+              .tab__slider--two-daily-change.swiper-container
+                ul.item__group__wrap.swiper-wrapper
+            - date++
+        .js__twoDailyChange__pager.two-daily-change-pager.swiper-pagination

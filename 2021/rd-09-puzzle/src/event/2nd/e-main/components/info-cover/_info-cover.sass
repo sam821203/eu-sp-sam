@@ -1,0 +1,54 @@
+//   margin-left: auto
+//   margin-right: auto
+//   max-width: 960px
+
+// img
+//   display: block
+//   margin: 0 auto
+
+  
+.promo__wrap
+  .promo__zone
+    +aspect-ratio(960, 1200)
+    // background-color: $main-e-background-color-2nd
+    .layout--main
+      // outline: 1px solid red
+      .promo__box--parent
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-around
+        .promo__box
+          width: 75%
+          margin-bottom: 2%
+          +breakpoint-min($min-width-xl)
+            width: 60%
+          &:first-child
+            display: none
+            +breakpoint-min($min-width-xl)
+              display: block
+              margin-bottom: 5%
+              width: 100%
+              img
+                display: block
+                margin: 0 auto
+          &:last-child
+            display: block
+            +breakpoint-min($min-width-xl)
+              display: none
+            // width: 98%
+  // +breakpoint-min($max-width-xl)
+//     // &::before
+//     //   padding-bottom: 69%
+//   .hero__zone
+//     // +pos-set(relative, zero)
+//     .hero__block
+//       .hero__title
+//         // +pos-set(absolute, 0, 62%, 18%)
+//         margin: 45% auto 0
+//         width: 65%
+//         a
+//           // outline: 1px solid blue
+//           .title__box
+//             margin: 0 auto 1%
+
+

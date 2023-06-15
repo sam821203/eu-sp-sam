@@ -1,0 +1,34 @@
+// // ==========================================================================
+// // Plugins
+// // ==========================================================================
+// // @import "vendors/animate"
+// @import "~vendors/style/swiper-slider-custom"
+
+// // ==========================================================================
+// // components
+// // ==========================================================================
+
+// hero section
+// ===========================
+@import "~event/1st/e-main/components/hero-section/_hero-section"
+
+// other components
+// ===========================
+@import "~event/1st/e-main/components/promo-calendar/_promo-calendar"
+@import "~event/1st/e-main/components/daily-promo/_daily-promo"
+@import "~event/1st/e-main/components/table-section/_table-section"
+
+// // ==========================================================================
+// // Page
+// // ==========================================================================
+body
+  background-color: $main-e-background-color
+
+.sp__wrap
+  +pos-set(relative, zero)
+
+  +breakpoint-min($min-width-xl)
+    +bg-set(url("~event/1st/e-main/pages/index/bg-web.jpg"))
+
+.sp__wrap a
+  display: block

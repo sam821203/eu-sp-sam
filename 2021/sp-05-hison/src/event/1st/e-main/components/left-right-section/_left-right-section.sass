@@ -1,0 +1,63 @@
+.promo__group--left-right
+  +pos-set(relative, zero)
+  // padding-top: 10%
+  overflow: hidden
+
+  .promo__title
+    +pos-set(relative)
+    margin-bottom: -6%
+    .title__decoration
+      +pos-set(absolute, base)
+      top: 0
+      left: 12%
+      width: 20%
+      img
+        animation: rotate-self-2 15s infinite alternate
+    .title__pic
+      +pos-set(relative, zero)
+      margin-left: auto
+      margin-right: auto
+      padding-top: 2%
+      text-align: center
+
+    +breakpoint-min($min-width-xl)
+      margin-bottom: -50px
+      .title__decoration
+        left: 175px
+
+  .promo__wrap
+    display: flex
+    justify-content: space-around
+    +pos-set(relative, second)
+    padding: 2.5% 13.5%
+    +bg-set(url(~event/1st/e-main/components/left-right-section/bg-left-right.png), 100%)
+    +breakpoint-min($min-width-xl)
+      padding: 55px 130px 45px
+    .block--left,
+    .block--right
+      width: 48%
+      img
+        margin-left: auto
+        margin-right: auto
+  .item__box
+    text-align: center
+    &:hover,
+    &:active
+      > a
+        > img
+          filter: contrast(105%) brightness(105%)
+    // &.close
+    //   pointer-events: none
+
+@keyframes rotate-self-2
+  0%, 20%
+    transform: rotate(0)
+  40%, 50%
+    transform: rotate(360deg)
+  65%, 75%
+    transform: rotate(-360deg)
+  90%, 100%
+    transform: rotate(720deg)
+
+
+

@@ -1,0 +1,114 @@
+// // ==========================================================================
+// // Plugins
+// // ==========================================================================
+// @import "vendors/animate"
+
+// // ==========================================================================
+// // components
+// // ==========================================================================
+
+// hero section
+// ===========================
+@import "event/1st/e-main/components/hero/_hero"
+// @import "event/1st/e-main/components/test/_hero"
+
+// other components
+// ===========================
+@import "event/1st/e-main/components/promo-event/_promo-event"
+@import "event/1st/e-main/components/daily-tab/_daily-tab"
+@import "event/1st/e-main/components/info-cover/_info-cover"
+@import "event/1st/e-main/components/puzzle/_puzzle"
+@import "event/1st/e-main/components/random-card/_random-card"
+@import "event/1st/e-main/components/bn-section/_bn-section"
+
+
+// @import "event/1st/e-main/components/scroll-intro/_scroll-intro"
+// @import "event/1st/e-main/components/info-cover/_info-cover"
+
+// // ==========================================================================
+// // Page
+// // ==========================================================================
+body
+  +size(100%)
+  background-color: $main-e-background-color-1st
+  
+// TODO: 修改EU nav佔位高度(影響logo距離上方高度，U每次要改)
+.navRightBar
+  // E
+  height: 39px
+  // U
+  // height: 15px
+  +breakpoint-min($min-width-xl)
+    height: auto
+
+.sp__wrap
+  overflow: hidden
+.bg-web
+  +pos-set(fixed, under)
+  +bg-set(url("event/1st/e-main/pages/index/bg-app.jpg"), 100%)
+  opacity: 0.8
+  overflow: hidden
+  -webkit-animation: bg-flash ease-out 6s infinite
+  -moz-animation: bg-flash ease-out 6s infinite
+  animation: bg-flash ease-out 6s infinite
+  animation-delay: 1s
+  +breakpoint-min($min-width-xl)
+    background: center 0 url("event/1st/e-main/pages/index/bg-web.jpg") no-repeat
+    background-size: auto
+
+[class^="bg__item"]
+  +pos-set(fixed, under)
+  +size(auto)
+  opacity: 0.7
+  animation: bg-flashLightning ease-out 6s infinite
+  animation-delay: .9s
+
+.bg__item--1
+  left: calc(50% - 750px)
+.bg__item--2
+  right: calc(50% - 845px)
+
+.sp__wrap a
+  display: block
+
+@keyframes bg-flash
+  from
+    opacity: 0.8
+  42%
+    opacity: 0.7
+  43%
+    opacity: 1
+    filter: brightness(1.3)
+  44%
+    opacity: 0.7
+  46%
+    opacity: 1
+  60%
+    opacity: 0.7
+  62%
+    opacity: 1
+    filter: brightness(1.35)
+  to
+    opacity: 0.8
+    filter: brightness(1)
+
+@keyframes bg-flashLightning
+  from
+    opacity: 0.7
+  42%
+    transform: scale(1)
+  43%
+    transform: scale(1.5)
+  44%
+    transform: scale(1)
+  46%
+    opacity: 0.9
+    transform: scale(1.5)
+  60%
+    opacity: 0.6
+  62%
+    opacity: 1
+    transform: scale(1.5)
+  to
+    opacity: 0.7
+    transform: scale(1)

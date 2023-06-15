@@ -1,0 +1,124 @@
+.bn-slider
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__wrap
+    padding-bottom: 18.4%
+    +breakpoint-min($min-width-xl)
+      padding-bottom: 16.5%
+  .decor__item
+    &--title
+      +pos-set(absolute, under, 3%, 12.8%)
+      width: 74%
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 325px)
+      &.active
+        animation: key-rotate-from-to 1s linear infinite alternate-reverse
+    &--left
+      +pos-set(absolute, under, 0%, 12%)
+      width: 18%
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 335px)
+      &.active
+        animation: key-rotate-from-to 1s linear infinite alternate-reverse
+    &--right
+      +pos-set(absolute, under, 0%)
+      right: 24%
+      width: 10%
+      +breakpoint-min($min-width-xl)
+        right: calc(50% - 225px)
+      &.active
+        animation: rotate-reverse 2s linear infinite
+    &--right-2
+      +pos-set(absolute, under, 6%)
+      right: 16%
+      width: 16%
+      +breakpoint-min($min-width-xl)
+        top: 5%
+        right: calc(50% - 290px)
+      &.active
+        animation: rotate-reverse 14s .6s linear infinite
+    &--light
+      +pos-set(absolute, zero)
+      bottom: 7%
+      right: 0%
+      width: 100%
+      animation: light-flash 2.2s ease-out infinite
+      +breakpoint-min($min-width-xl)
+        right: calc(50% - 478px)
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/bn-slider/bg-bn-slider.png), 100%)
+  .promo__zone
+    +aspect-ratio(960, 780)
+  .promo__block
+    padding: 0 6%
+    .promo__box
+      +pos-set(absolute, zero, 0.8%, 7.8%)
+      width: 84.2%
+      +breakpoint-min($min-width-xl)
+        top: 7px
+        left: calc(50% - 401px)
+        width: auto
+        transform: scale(1.01)
+      img
+        border-radius: 6px !important
+        +breakpoint-min($min-width-xl)
+          border-radius: 18px !important
+    .promo__slider
+      +pos-set(absolute, zero, 42%)
+      left: 7.5%
+      width: 85%
+      +breakpoint-min($min-width-xl)
+        left: 7%
+        width: 87%
+
+      .swiper-slide
+        padding: .2%
+      .swiper-slide-visible
+        a
+          transition: all 0.6s
+      .swiper-slide-visible.swiper-slide-next
+        a
+          transition: all 0.6s
+          filter: brightness(105%)
+
+@keyframes stamp-pulse
+  0%
+    opacity: 0
+  10%
+    opacity: .50
+    transform-origin: 50% 50%
+    transform: scale(5)
+    transition: all .3s cubic-bezier(0.6, 0.04, 0.98, 0.335)
+  100%
+    opacity: 1
+    transform: scale(1)
+
+@keyframes stamp-swing
+  20%
+    transform: rotate(15deg)
+  40%
+    transform: rotate(-10deg)
+  60%
+    transform: rotate(5deg)
+  80%
+    transform: rotate(-5deg)
+  to
+    transform: rotate(0deg)
+
+@keyframes rotate-reverse
+  0%
+    filter: brightness(100%)
+    transform: rotate(0)
+  50%
+    filter: brightness(140%)
+  100%
+    filter: brightness(100%)
+    transform: rotate(-1turn)
+
+@keyframes light-flash
+  0%, 100%
+    filter: brightness(220%)
+  50%
+    filter: brightness(100%)

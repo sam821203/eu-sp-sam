@@ -1,0 +1,176 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero__wrap
+  +pos-set(relative, second)
+  +bg-set(url("~event/1st/u-main/components/hero-section/bg-hero.jpg"), 100%)
+  overflow: hidden
+  +breakpoint-min($min-width-xl)
+    background-size: auto
+
+  .hero__zone
+    +pos-set(relative, zero)
+    padding-bottom: 3.6%
+    +breakpoint-min($min-width-xl)
+      padding-bottom: 36px
+
+  // .hero__block
+
+
+  .hero__box
+    +pos-set(relative, zero)
+
+  .hero__title
+    &--main
+      +pos-set(relative, base)
+      padding-top: 4%
+      // padding-bottom: 2.1%
+      padding-left: 14%
+      margin-left: auto
+      margin-right: auto
+      width: 93%
+      // overflow: hidden
+      // +breakpoint-min($min-width-xl)
+        // width: auto
+        // padding-top: 10.2%
+        // padding-bottom: 2.1%
+        // padding-left: 15.5%
+        // padding-right: 0
+  // &.animated
+    // animation: small-open 1s both ease-out
+
+  .title-decoration__wrap
+    +pos-set(absolute, null, 0, 0)
+    width: 100%
+    height: 100%
+    pointer-events: none
+    .title__decoration
+      +pos-set(absolute, zero)
+      &--top
+        top: 19%
+        left: 2%
+        width: 20%
+        &.animated
+          animation: 1s 1s title-down both ease-out
+        img
+          animation: 2s 2s key-rotate-stop both infinite ease-in-out
+        // +breakpoint-min($min-width-xl)
+          // top: 75px
+          // left: calc(50% - 380px)
+          // width: 33%
+
+      &--middle
+        z-index: map-get($zindex, under)
+        bottom: 0
+        padding-bottom: 21.29%
+        width: 100%
+        overflow: hidden
+        img
+          +pos-set(absolute, zero, 0, 0)
+          width: 20%
+          animation: move-left-right 8s infinite
+        +breakpoint-min($min-width-xl)
+          padding-bottom: 231px
+          img
+            width: 217px
+
+      &--bottom
+        bottom: 0
+        padding-bottom: 18%
+        width: 100%
+        max-width: 960px
+        &::before,
+        &::after
+          content: ''
+          +pos-set(absolute, base)
+        &::before
+          top: 5%
+          left: -1.7%
+          padding-bottom: 18%
+          width: 21%
+          +bg-set(url(~event/1st/u-main/components/hero-section/decoration-heart-1.png), contain)
+          animation: heartbeat 4s infinite
+        &::after
+          top: -16%
+          right: -2%
+          padding-bottom: 30%
+          width: 26%
+          +bg-set(url(~event/1st/u-main/components/hero-section/decoration-heart-2.png), contain)
+          animation: heartbeat 4s 1s infinite both
+        img
+          +pos-set(absolute, zero)
+          &:first-child
+            top: 2%
+            left: -3.8%
+            width: 20.5%
+
+          &:last-child
+            top: -4%
+            right: -3%
+            width: 25.5%
+        +breakpoint-min($min-width-xl)
+          padding-bottom: 170px
+          // img
+          //   width: 217px
+
+  .promo__zone
+    // margin-top: 8%
+    //background-color: $gray-deep-light
+    +breakpoint-min($min-width-xl)
+      background-color: transparent
+
+@keyframes move-left-right
+  0%
+    left: -20%
+  100%
+    left: 100%
+
+@keyframes heartbeat
+  0%
+    transform: scale(1) rotate(5deg)
+    opacity: 0
+  20%
+    transform: scale(1.5) rotate(0)
+  40%
+    transform: scale(1) rotate(-5deg)
+    opacity: 1
+  60%
+    transform: scale(1.5) rotate(5deg)
+    opacity: 1
+  80%,
+  100%
+    transform: scale(1) rotate(0)
+    opacity: 0
+
+
+
+// @keyframes title-down
+//   0%
+//     transform: translateY(calc(-100vw * .5))
+//   70%, 80%
+//     transform: translateY(0) scale(1.2)
+//   75%, 100%
+//     transform: translateY(0) scale(1)
+
+@keyframes key-rotate-stop
+  0%
+    transform: rotate(0)
+  5%
+    transform: rotate(-20deg)
+  10%
+    transform: rotate(0)
+  15%
+    transform: rotate(20deg)
+  20%
+    transform: rotate(0)
+  100%
+    transform: rotate(0)
+
+@keyframes up-down
+  0%, 30%, 100%
+    transform: translateY(0)
+  20%, 40%, 60%
+    transform: translateY(-6%)
+  30%, 45%
+    transform: translateY(0)
+

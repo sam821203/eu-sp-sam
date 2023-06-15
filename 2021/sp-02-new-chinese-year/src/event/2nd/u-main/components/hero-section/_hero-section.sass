@@ -1,0 +1,263 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero__wrap
+  +pos-set(relative, zero)
+  width: 100%
+  overflow: hidden
+  // +bg-set(url("~event/2nd/u-main/components/hero-section/bg-hero-web.jpg"), 100%)
+  // overflow: hidden
+  // +breakpoint-min($min-width-xl)
+  //   background-size: auto
+
+  .hero__block
+    +pos-set(relative, zero)
+    padding-top: 0
+
+  .hero__box
+    +pos-set(relative, zero)
+    .hero__title--main
+      margin-left: 0
+      z-index: 10
+      height: 60vw
+      img
+        position: absolute
+        &:nth-child(1)
+          width: 78vw
+          top: 2vw
+          left: 11vw
+          animation: bounceInDown 1s 1s both
+        &:nth-child(2)
+          width: 60vw
+          left: 20vw
+          top: 20vw
+          animation: bounceInDown .5s 1.5s both, heartBeat 1s 2s both linear
+      +breakpoint-min($min-width-xl)
+        height: 600px
+        img
+          &:nth-child(1)
+            width: auto
+            top: 7px
+            left: calc(50% - 284px)
+          &:nth-child(2)
+            width: auto
+            top: 173px
+            left: calc(50% - 212px)
+
+  .decoration__title
+    +pos-set(absolute, base)
+    width: 100%
+    pointer-events: none
+    top: 0
+    left: 0
+    .decoration--wrap
+      img
+        position: relative
+        z-index: 2
+        animation: bounceInUp .5s .5s both
+      .left
+        transform: rotateY(180deg) rotateZ(-5deg)
+        position: absolute
+        width: 37vw
+        top: -2vw
+        left: 52vw
+        z-index: 1
+        img
+          transform-origin: bottom right
+          animation: fadeInDown 1.5s 1.5s both, cowReachOut 5s 3s both infinite linear
+      .right
+        transform: rotateY(0) rotateZ(-5deg)
+        position: absolute
+        width: 37vw
+        top: -2vw
+        right: 52vw
+        z-index: 1
+        img
+          transform-origin: bottom right
+          animation: fadeInDown 1.5s 1.5s both, cowReachOut 5s 3s both infinite linear
+    +breakpoint-min($min-width-xl)
+      .decoration--wrap
+        .left
+          top: -10px
+          left: calc(50% + 40px)
+          width: auto
+        .right
+          top: -10px
+          right: calc(50% + 30px)
+          width: auto
+        img
+          width: auto
+          left: 14px
+
+  .hero__title
+    &--main
+      +pos-set(relative, zero)
+      margin-left: 7%
+      width: 86%
+      // text-align: center
+      transform-origin: center
+
+// .decoration__title
+//   +pos-set(absolute, zero)
+//   bottom: 17%
+//   left: 0
+//   width: 100%
+//   img:last-child
+//     +pos-set(absolute, base)
+//     top: 20%
+//     left: 24%
+//     width: 53%
+
+//   +breakpoint-min($min-width-xl)
+//     bottom: 74px
+
+//@keyframes bounceInUp
+//  0%, 60%, 75%, 90%, to
+//    animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+//  0%
+//    opacity: 0
+//    transform: translate3d(0, 50px, 0) scale(0)
+//  60%
+//    opacity: 1
+//    transform: translate3d(0, -10px, 0) scale(1.1)
+//  75%
+//    opacity: 1
+//    transform: translate3d(0, 5px, 0) scale(.985)
+//  90%
+//    opacity: 1
+//    transform: translate3d(0, -2px, 0) scale(1.05)
+//  to
+//    opacity: 1
+//    transform: translateZ(0)
+@keyframes bounceInUp
+  from, 60%, 75%, 90%, to
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+  from
+    opacity: 0
+    -webkit-transform: translate3d(0, 3000px, 0)
+    transform: translate3d(0, 3000px, 0)
+  60%
+    opacity: 1
+    -webkit-transform: translate3d(0, -20px, 0)
+    transform: translate3d(0, -20px, 0)
+  75%
+    -webkit-transform: translate3d(0, 10px, 0)
+    transform: translate3d(0, 10px, 0)
+  90%
+    -webkit-transform: translate3d(0, -5px, 0)
+    transform: translate3d(0, -5px, 0)
+  to
+    -webkit-transform: translate3d(0, 0, 0)
+    transform: translate3d(0, 0, 0)
+
+@keyframes bounceInDown
+  0%, 60%, 75%, 90%, to
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+  0%
+    opacity: 0
+    transform: translate3d(0, -3000px, 0) scaleY(3)
+  60%
+    opacity: 1
+    transform: translate3d(0, 25px, 0) scaleY(.9)
+  75%
+    transform: translate3d(0, -10px, 0) scaleY(.95)
+  90%
+    transform: translate3d(0, 5px, 0) scaleY(.985)
+  to
+    opacity: 1
+    transform: translateZ(0)
+
+@keyframes bounceInRight
+  0%, 60%, 75%, 90%, to
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+  0%
+    opacity: 0
+    transform: translate3d(3000px, 0, 0) scaleX(3)
+  60%
+    opacity: 1
+    transform: translate3d(-25px, 0, 0) scaleX(1)
+  75%
+    transform: translate3d(10px, 0, 0) scaleX(.98)
+  90%
+    transform: translate3d(-5px, 0, 0) scaleX(.995)
+  to
+    opacity: 1
+    transform: translateZ(0)
+
+@keyframes bounceInLeft
+  0%, 60%, 75%, 90%, to
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+  0%
+    opacity: 0
+    transform: translate3d(-3000px, 0, 0) scaleX(3)
+  60%
+    opacity: 1
+    transform: translate3d(25px, 0, 0) scaleX(1)
+  75%
+    transform: translate3d(-10px, 0, 0) scaleX(.98)
+  90%
+    transform: translate3d(5px, 0, 0) scaleX(.995)
+  to
+    opacity: 1
+    transform: translateZ(0)
+
+@keyframes heartBeat
+  0%
+    transform: scale(1)
+
+  14%
+    transform: scale(1.3)
+
+  28%
+    transform: scale(1)
+
+  42%
+    transform: scale(1.3)
+
+  70%
+    transform: scale(1)
+
+@keyframes fadeInDown
+  0%
+    opacity: 0
+    transform: translate3d(0, -100%, 0) translate(130px, 190px,0)
+
+  to
+    opacity: 1
+    transform: translate(0,0,0)
+
+@keyframes rotateXY
+  10%, 20%, 30%, 40%, 50%
+    transform: rotate(0)
+  15%, 35%
+    transform: rotate(10deg)
+  25%, 45%
+    transform: rotate(-10deg)
+
+@keyframes cowReachOut
+  0%, 10%
+    //opacity: 0
+    transform: translate(0, 0)
+  15%, 25%, 35%, 45%
+    //transform: rotate(10deg) translateX(0)
+    transform: translate(0, 0)
+    opacity: 1
+  20%, 40%
+    //transform: rotate(10deg) translateX(0)
+    transform: translate(30px, 90px)
+    opacity: 1
+  30%, 50%
+    //transform: rotate(10deg) translateX(0)
+    transform: translate(15px, 45px)
+    opacity: 1
+  51%, 100%
+    transform: translate(0, 0)
+    opacity: 1
+
+// TODO: 如果hero和promo要共用主視覺時的共用區塊背景設定 
+  // .promo__zone
+    // margin-top: 8%
+    //background-color: $gray-deep-light
+    // +breakpoint-min($min-width-xl)
+      // background-color: transparent

@@ -1,0 +1,172 @@
+//- TODO: API:
+//- data-src="Jajago_Content"，最外層區塊，登記換內容會吐在這個裡面
+//- id="Jajago_Template"，區塊模版外框，『必須display: none』，每個子項目會拿這個裡面內容再append到ul的li內
+//- data-src="Image"，圖片，限用<img>
+//- data-src="Name"，名稱
+//- data-src="UsePoint"，花費點數
+//- class="jsGoodsInventory"，「尚餘組數」外框，限用<div>
+//- data-src="Amount"，「尚餘組數」數量
+//- data-src="Link"，商品連結
+//- class="cta--active"，登記按鈕
+//- data-src="NotificationTime"，推播時間
+
+section#collectBuy.buy__wrap.m-bottom--collect(data-title="集點購好物")
+  .layout--main
+    .buy__block
+      .decor__top
+        img(src="event/1st/e-main/components/collect-buy/decor-buy-top.png", alt="")
+
+      .buy__box(data-src="Jajago_Content")
+        //- TODO: 整個#Jajago_Template內部由item__wrap開始會吐在由RD創立的ul > li內，有幾個吐幾個，因此測試結構上線前要關閉，正式結構寫在最下面
+        //- ===================== 上線要註解掉 start ===================
+        //- ul
+        //-   li
+        //-     #Jajago_Template
+        //-       .item__wrap
+        //-         .item__box
+        //-           .item__pic
+        //-             img(src="https://media.etmall.com.tw/nximg/003290/3290027/3290027-1_xxl.jpg?t=18226513797", alt="")
+        //-           .item__intro
+        //-             .item__point
+        //-               span(data-src="UsePoint") 8888點+199元
+        //-             .item__name
+        //-               .name__box
+        //-                 span(data-src="Name") 呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵
+        //-             .item__quantity.jsGoodsInventory
+        //-               span 尚餘
+        //-               span(data-src="Amount") 0
+        //-               span 組
+        //-         .cta__box
+        //-           .item__info.jsItemInfo
+        //-             a(data-src="Link" href="", title="詳情")
+        //-               span 詳情
+        //-               img(src="event/1st/e-main/components/collect-buy/icon-buy.svg", alt="")
+        //-           .item__cta
+        //-             .cta.cta--active
+        //-               a(href="", title="登記購")
+        //-                 span 登記購
+
+        //-             .cta.cta--closed(title="登記完畢")
+        //-               div 登記完畢
+        //-   li
+        //-     #Jajago_Template
+        //-       .item__wrap
+        //-         .item__box
+        //-           .item__pic
+        //-             img(src="https://media.etmall.com.tw/nximg/003290/3290027/3290027-1_xxl.jpg?t=18226513797", alt="")
+        //-           .item__intro
+        //-             .item__point
+        //-               span(data-src="UsePoint") 100點+9989元
+        //-             .item__name
+        //-               .name__box
+        //-                 span(data-src="Name") 哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+        //-             .item__quantity.jsGoodsInventory
+        //-               span 尚餘
+        //-               span(data-src="Amount") 999
+        //-               span 組
+        //-         .cta__box
+        //-           .item__info.jsItemInfo
+        //-             a(data-src="Link" href="", title="詳情")
+        //-               span 詳情
+        //-               img(src="event/1st/e-main/components/collect-buy/icon-buy.svg", alt="")
+        //-           .item__cta
+        //-             .cta.cta--active
+        //-               a(href="", title="登記購")
+        //-                 span 登記購
+
+        //-             .cta.cta--closed(title="登記完畢")
+        //-               div 登記完畢
+        //-   li
+        //-     #Jajago_Template
+        //-       .item__wrap
+        //-         .item__box
+        //-           .item__pic
+        //-             img(src="https://media.etmall.com.tw/nximg/003290/3290027/3290027-1_xxl.jpg?t=18226513797", alt="")
+        //-           .item__intro
+        //-             .item__point
+        //-               span(data-src="UsePoint") 8888點+199元
+        //-             .item__name
+        //-               .name__box
+        //-                 span(data-src="Name") 呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵
+        //-             .item__quantity.jsGoodsInventory
+        //-               span 尚餘
+        //-               span(data-src="Amount") 0
+        //-               span 組
+        //-         .cta__box
+        //-           .item__info.jsItemInfo
+        //-             a(data-src="Link" href="", title="詳情")
+        //-               span 詳情
+        //-               img(src="event/1st/e-main/components/collect-buy/icon-buy.svg", alt="")
+        //-           .item__cta
+        //-             .cta.cta--active
+        //-               a(href="", title="登記購")
+        //-                 span 登記購
+
+        //-             .cta.cta--closed(title="登記完畢")
+        //-               div 登記完畢
+        //-   li
+        //-     #Jajago_Template
+        //-       .item__wrap
+        //-         .item__box
+        //-           .item__pic
+        //-             img(src="https://media.etmall.com.tw/nximg/003290/3290027/3290027-1_xxl.jpg?t=18226513797", alt="")
+        //-           .item__intro
+        //-             .item__point
+        //-               span(data-src="UsePoint") 100點+9989元
+        //-             .item__name
+        //-               .name__box
+        //-                 span(data-src="Name") 哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+        //-             .item__quantity.jsGoodsInventory
+        //-               span 尚餘
+        //-               span(data-src="Amount") 999
+        //-               span 組
+        //-         .cta__box
+        //-           .item__info.jsItemInfo
+        //-             a(data-src="Link" href="", title="詳情")
+        //-               span 詳情
+        //-               img(src="event/1st/e-main/components/collect-buy/icon-buy.svg", alt="")
+        //-           .item__cta
+        //-             .cta.cta--active
+        //-               a(href="", title="登記購")
+        //-                 span 登記購
+
+        //-             .cta.cta--closed(title="登記完畢")
+        //-               div 登記完畢
+        //- ===================== 上線要註解掉 End =====================
+
+        .rule__box
+          span 完成登記之贈品將於
+          span(data-src="NotificationTime")
+          span 前以我的禮物盒推播通知
+
+      .decor__bottom
+        img(src="event/1st/e-main/components/collect-buy/decor-buy-bottom.png", alt="")
+
+#Jajago_Template(style="display: none")
+  .item__wrap
+    .item__box
+      .item__pic
+        //- FIXME: pug 不能直接填data-src，會報錯，得產出後手改
+        img(data-src="/Image", alt="")
+      .item__intro
+        .item__point
+          span(data-src="UsePoint") 0
+        .item__name
+          .name__box
+            span(data-src="Name")
+        .item__quantity.jsGoodsInventory
+          span 尚餘
+          span(data-src="Amount") 0
+          span 組
+    .cta__box
+      .item__info.jsItemInfo
+        a(data-src="Link" href="", title="詳情")
+          span 詳情
+          img(src="event/1st/e-main/components/collect-buy/icon-buy.svg", alt="")
+      .item__cta
+        .cta.cta--active
+          a(href="", title="登記購")
+            span 登記購
+
+        .cta.cta--closed(title="登記完畢")
+          div 登記完畢

@@ -1,0 +1,143 @@
+-
+  var promoData = [
+    //- 做上翻的輪播好ㄌ
+    {
+      link: "",
+      imgSrc: "event/3rd/e-main/components/promo-event/items/box-1.png",
+      alt: ""
+    },
+    {
+      link: "",
+      imgSrc: "event/3rd/e-main/components/promo-event/items/box-2.png",
+      alt: "",
+    },
+  ]
+-
+  var promoItemE = [
+    {
+      link: "https://media.etmall.com.tw/sp/14944/m/index.html",
+      imgSrc: "event/3rd/e-main/components/promo-event/items/promo-2.png",
+      alt: "寵愛新會員首購好禮獨享贈"
+    },
+    {
+      link: "",
+      imgSrc: "event/3rd/e-main/components/promo-event/items/promo-1.png",
+      alt: "挑戰任務拿$200樂透金",
+    },
+    {
+      link: "https://www.etmall.com.tw/product/greenpointsp",
+      imgSrc: "event/3rd/e-main/components/promo-event/items/promo-3.png",
+      alt: "環保綠點回饋10倍送",
+    },
+    {
+      link: "https://www.etmall.com.tw/Activity/GroupSale?linkNameEv4linkName?linkNameEv3linkName",
+      imgSrc: "event/3rd/e-main/components/promo-event/items/promo-4.png",
+      alt: "幸福集氣購",
+    },
+    //- {
+    //-   link: "https://media.etmall.com.tw/sp/13263/m/index.html",
+    //-   imgSrc: "event/3rd/e-main/components/promo-event/items/promo-4.png",
+    //-   alt: "嘉義優鮮消費不限金額抽哈密瓜",
+    //- },
+    //- slider end
+    {
+      link: "https://www.etmall.com.tw/Activity/CollectPointExchangeActivity/202205549adb93",
+      imgSrc: "event/3rd/e-main/components/promo-event/items/promo-5.png",
+      alt: "集點換好禮",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/14386/m/index.html",
+      imgSrc: "event/3rd/e-main/components/promo-event/items/promo-6.png",
+      alt: "24間銀行最高回饋11%",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/14386/m/index.html",
+      imgSrc: "event/3rd/e-main/components/promo-event/items/promo-7.png",
+      alt: "使用銀角零卡滿萬再抽萬",
+    },
+    //- slider start
+    //- {
+    //-   link: "https://media.etmall.com.tw/sp/14030/m/index.html",
+    //-   imgSrc: "event/3rd/e-main/components/promo-event/items/promo-7-2.png",
+    //-   alt: "23間銀行最高回饋12%%",
+    //- },
+    //- slider end
+  ]
+
+-
+  var promoItemU = [
+    {
+      link: "https://media.u-mall.com.tw/sp/9704/m/index.html",
+      //- imgSrc: "event/3rd/u-main/components/promo-event/items/promo-1.png",
+      alt: "23家銀行 最高回饋15%"
+    },
+    {
+      link: "https://media.u-mall.com.tw/sp/9704/m/index.html",
+      //- imgSrc: "event/3rd/u-main/components/promo-event/items/promo-2.png",
+      alt: "花旗滿$20,000送$2,000"
+    },
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale",
+      //- imgSrc: "event/3rd/u-main/components/promo-event/items/promo-3.png",
+      alt: "限時瘋搶"
+    },
+  ]
+
+//- - var promoItem = isU ? promoItemE : promoItemU
+
+//- TODO: 如果promo不和hero綁一起時要有自己的section和layout--main
+section.promo__group.promo__group--promo-event.m-bottom--lg
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--bg
+        img(src="event/3rd/e-main/components/promo-event/decor-promo-bg.png", alt="")
+      .decor__item.decor__item--title#titlePromoEvent
+        img(src="event/3rd/e-main/components/promo-event/title-promo-event.png", alt="")
+      .decor__item.decor__item--left#decorPromoEventLeft
+        img(src="event/3rd/e-main/components/promo-event/decor-promo-left.png", alt="")
+      .decor__item.decor__item--star-2#decorPromoEventStar2
+        img(src="event/3rd/e-main/components/promo-event/decor-promo-star-2.png", alt="")
+      .decor__item.decor__item--right#decorPromoEventRight
+        img(src="event/3rd/e-main/components/promo-event/decor-promo-right.png", alt="")
+      .decor__item.decor__item--star-1#decorPromoEventStar1
+        img(src="event/3rd/e-main/components/promo-event/decor-promo-star-1.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          ul.promo__box
+            each data, index in promoItemE
+              if index < 3
+                li.promo__item
+                  a(href= data.link, title= data.alt)
+                    img(src= data.imgSrc, alt= data.alt)
+          ul.event__box
+            each data, index in promoItemE
+              if index >= 3 && index < 5 
+                li.promo__item
+                  a(href= data.link, title= data.alt)
+                    img(src= data.imgSrc, alt= data.alt)
+          ul.event__block
+            each data, index in promoItemE
+              if index >= 5
+                li.promo__item
+                  a(href= data.link, title=data.alt)
+                    img(src= data.imgSrc, data.alt)
+    //- .promo__wrap--special
+    //-   .promo__zone--special
+    //-     .promo__block
+    //-       ul.event__block
+    //-         each data, index in promoData
+    //-           if index == 0
+    //-             li.promo__item
+    //-               a(href= data.link, title= data.alt)
+    //-                 img(src= data.imgSrc, alt= data.alt)
+
+
+//- .promo__block
+//-   #promoSlider.swiper-container
+//-     ul.swiper-wrapper
+//-       each data, index in promoData
+//-         if index >= 6
+//-           li.swiper-slide
+//-             a(href= data.link, title=data.alt)
+//-               img(src= data.imgSrc, data.alt)

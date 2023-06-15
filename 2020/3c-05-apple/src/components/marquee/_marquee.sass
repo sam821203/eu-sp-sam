@@ -1,0 +1,76 @@
+.marquee
+  +nav-overflow-x
+  position: fixed
+  z-index: map-get($zindex, fifteen)
+  bottom: 0
+  padding-bottom: constant(safe-area-inset-bottom)
+  padding-bottom: env(safe-area-inset-bottom)
+  width: 100%
+  background-color: $gray-medium
+  transform: translateY(100%)
+  transition: transform 0.5s
+  &.active
+    transform: translateY(0)
+
+// core structure
+.marquee__wrap
+  position: relative
+  overflow: hidden
+  .marquee__info
+    position: absolute
+    z-index: map-get($zindex, base)
+    top: 0
+    left: 0
+    height: 100%
+    text-align: center
+  .marquee__box
+    display: inline-block
+    position: relative
+    z-index: map-get($zindex, zero)
+    width: 100%
+    height: 100%
+    white-space: nowrap
+    will-change: auto
+    .marquee__item
+      position: absolute
+      z-index: map-get($zindex, zero)
+      top: 0
+      width: 100%
+      text-align: center
+      opacity: 0
+      &--active
+        z-index: map-get($zindex, base)
+        opacity: 1
+
+.marquee--right
+    .marquee__item.marquee__item--active
+      animation: marquee-x linear both
+.marquee--bottom
+    .marquee__item.marquee__item--active
+      animation: marquee-y linear both
+.marquee--left
+    .marquee__item.marquee__item--active
+      animation: marquee-x linear both reverse
+.marquee--top
+    .marquee__item.marquee__item--active
+      animation: marquee-y linear both reverse
+
+// custom style
+.marquee__wrap
+  +font-size($fz-18)
+  height: 2.2em
+  line-height: 2.2em
+  background-color: $gray-medium
+  a
+    color: $primary-deep-dark
+  .marquee__box
+    .marquee__item
+      // margin-left: 3.5em
+      // TODO: 設定間隔時間，設定完要去JS設定
+      animation-duration: 3.5s // suggest bottom value
+      // animation-duration: 9s // suggest left value
+
+  +breakpoint-min($min-width-lg)
+    +font-size($fz-28)
+    height: 50px
+    line-height: 50px

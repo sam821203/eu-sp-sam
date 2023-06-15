@@ -1,0 +1,81 @@
+//- ==========================================================================
+//- Base
+//- ==========================================================================
+@import "~utils/sass/_common"
+
+//- =======================================================================
+//- layout
+//- =======================================================================
+@import "~layout/header/_header"
+
+// ========================================================================
+// components
+// ========================================================================
+@import "~components/hero-section/_hero-section"
+@import "~components/time-section/_time-section"
+@import "~components/info-section/_info-section"
+@import "~components/rule-section/_rule-section"
+// ========================================================================
+// Page
+// ========================================================================
+body
+  background-color: $main-color-yellow-1
+  +breakpoint-min($min-width-xl)
+    background: $main-color-yellow-1 center 500px url(~pages/signup/bg-web.jpg) repeat-y
+    background-size: auto
+
+.hero__wrap
+  .hero__box
+    .cta__wrap
+      +pos-set(absolute)
+      bottom: -14%
+      right: 1%
+      width: 33.5%
+    .cta__box
+      +pos-set(fixed, twenty)
+      bottom: 5%
+      right: 3%
+      width: 30%
+      max-width: 200px
+      transition: transform 0.5s
+      img
+        transform-origin: 50% 70%
+        animation: bounce 2s infinite
+      &:active,
+      &:hover
+        transform: rotate(15deg)
+        img
+          animation-play-state: paused
+
+    +breakpoint-min($min-width-lg)
+      .cta__wrap
+        bottom: -34%
+        right: 1%
+        width: 33.5%
+
+      .cta__box
+        +pos-set(absolute, twenty)
+        bottom: 88%
+        width: 200px
+
+    +breakpoint-min($min-width-xl)
+      .cta__box
+        bottom: 330px
+        right: 60px
+
+@keyframes bounce
+  0%, 20%, 53%, to
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+    transform: translateZ(0)
+  40%, 43%
+    animation-timing-function: cubic-bezier(.755, .05, .855, .06)
+    transform: translate3d(0, -15px, 0) scaleY(1.05)
+  70%
+    animation-timing-function: cubic-bezier(.755, .05, .855, .06)
+    transform: translate3d(0, -10px, 0) scaleY(1.025)
+  80%
+    transition-timing-function: cubic-bezier(.215, .61, .355, 1)
+    transform: translateZ(0) scaleY(.95)
+  90%
+    transform: translate3d(0, -2px, 0) scaleY(1.01)
+

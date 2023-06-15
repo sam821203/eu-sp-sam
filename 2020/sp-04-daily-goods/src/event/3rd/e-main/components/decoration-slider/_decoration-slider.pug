@@ -1,0 +1,24 @@
+-
+  var goodsFlipDataE = [
+  {imgSrc: "~event/3rd/e-main/components/hero-section/decoration-mom_1.png", alt: ""},
+  {imgSrc: "~event/3rd/e-main/components/hero-section/decoration-mom_2.png", alt: ""},
+  {imgSrc: "~event/3rd/e-main/components/hero-section/decoration-mom_3.png", alt: ""},
+  ]
+//{link: "", imgSrc: "~event/3rd/e-sp/components/goods-slider-flip/items/product-4.png", alt: ""}, {link: "", imgSrc: "~event/3rd/e-sp/components/goods-slider-flip/items/product-5.png", alt: ""}, {link: "", imgSrc: "~event/3rd/e-sp/components/goods-slider-flip/items/product-6.png", alt: ""}, {link: "", imgSrc: "~event/3rd/e-sp/components/goods-slider-flip/items/product-7.png", alt: ""},
+
+
+- var goodsFlipDataU = [{link: "", imgSrc: "~event/3rd/e-sp/components/goods-slider-flip/items/product-1.png", alt: ""}, {link: "", imgSrc: "~event/3rd/e-sp/components/goods-slider-flip/items/product-2.png", alt: ""}, {link: "", imgSrc: "~event/3rd/e-sp/components/goods-slider-flip/items/product-3.png", alt: ""}, {link: "", imgSrc: "~event/3rd/e-sp/components/goods-slider-flip/items/product-4.png", alt: ""}, {link: "", imgSrc: "~event/3rd/e-sp/components/goods-slider-flip/items/product-5.png", alt: ""}, {link: "", imgSrc: "~event/3rd/e-sp/components/goods-slider-flip/items/product-6.png", alt: ""}, {link: "", imgSrc: "~event/3rd/e-sp/components/goods-slider-flip/items/product-7.png", alt: ""}, {link: "", imgSrc: "~event/3rd/e-sp/components/goods-slider-flip/items/product-8.png", alt: ""}, ]
+
+- var goodsFlipData = isU? goodsFlipDataU : goodsFlipDataE
+
+.decoration-slider
+  .promo__slider
+    #sliderDecoration.swiper-container
+      ul.swiper-wrapper
+        each data in goodsFlipData
+          li.swiper-slide
+            img(src= data.imgSrc, alt= data.alt)
+      //- #sliderGoodsFlipPager.swiper-pager-white.swiper-pagination
+    //- #sliderGoodsFlipPrev.swiper-button-white.swiper-button-prev
+    //- #sliderGoodsFlipNext.swiper-button-white.swiper-button-next
+

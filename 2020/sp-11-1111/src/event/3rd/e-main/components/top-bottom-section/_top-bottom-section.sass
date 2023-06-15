@@ -1,0 +1,69 @@
+.promo__group.promo__group--top-bottom
+  +pos-set(relative, zero) // 防止前一section動畫遮蔽
+  .top-bottom__wrap
+    padding: 1% 0
+    text-align: center
+    .up__wrap
+      +pos-set(relative, base)
+      margin-bottom: 3%
+    .title__wrap,
+      +pos-set(absolute, base)
+      top: 6%
+      left: 33.8%
+      width: 36%
+      // border: 1px solid #fff
+
+    .decoration--up
+      +pos-set(absolute, base)
+      &.decoration--right
+        top: 50%
+        right: 14%
+        width: 30%
+        animation: go-in-out 1s infinite alternate
+      &.decoration--bottom
+        top: 93%
+        left: 3.9%
+        width: 8%
+        animation: go-left 5s infinite alternate
+        pointer-events: none
+        img
+          transform-origin: center top
+          animation: key-rotate-from-to 0.9s infinite alternate ease-in-out
+
+    .item__wrap
+      display: flex
+      justify-content: center
+      +pos-set(relative, zero)
+      padding: 2%
+      .swiper-slide
+        width: 33%
+
+    +breakpoint-min($min-width-xl)
+      .decoration--up
+        &.decoration--right
+          right: 160px
+        &.decoration--bottom
+          animation: go-left-web 5s infinite alternate
+
+
+
+@keyframes go-in-out
+  0%
+    transform: scale(0.8) skew(0)
+  100%
+    transform: scale(1) skew(-5deg, -5deg) translateY(20%)
+
+@keyframes go-left
+  0%
+    transform: translateX(0)
+  100%
+    transform: translateX(1064%)
+
+@keyframes go-left-web
+  0%
+    transform: translateX(35px)
+  100%
+    transform: translateX(777px)
+
+
++key-rotate-from-to(-10, 10)

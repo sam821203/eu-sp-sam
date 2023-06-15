@@ -1,0 +1,21 @@
+/*==================================================*\
+        SCSS Keyframes
+\*==================================================*/
+
+/*==================== Fonts ====================*/
+@keyframes shake{
+	0%{
+		transform: translateY(-5px);
+	}
+	100%{
+		transform: translateY(5px);
+	}
+}
+@keyframes shining{
+	0%{
+		opacity: 0.65;
+	}
+	100%{
+		opacity: 1;
+	}
+}

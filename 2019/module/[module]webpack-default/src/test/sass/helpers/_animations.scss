@@ -1,0 +1,50 @@
+// ==========================================================================
+// Animations -- 較像程式碼所以用.scss保留{ }
+// ==========================================================================
+@mixin rotate-self($degree) {
+  @keyframes rotate-self {
+    to {
+      transform: rotate($degree + deg);
+    }
+  }
+}
+
+@keyframes rotate-self2 {
+  0% {
+    transform: rotate(30deg)
+  }
+  100% {
+    transform: rotate(0deg)
+  }
+}
+
+@mixin wind-rotate($rotare-degree, $skew-degree) {
+  @keyframes wind-rotate {
+    20% {
+      transform: rotate3d(0, 0, 1, $rotare-degree + deg) skew($skew-degree + deg);
+    }
+    40% {
+      transform: rotate3d(0, 0, 1, -($rotare-degree * 0.8) + deg) skew( -($skew-degree * 0.8) + deg);
+    }
+    60% {
+      transform: rotate3d(0, 0, 1, ($rotare-degree * 0.4) + deg) skew(($skew-degree * 0.4) + deg);
+    }
+    80% {
+      transform: rotate3d(0, 0, 1, -($rotare-degree * 0.2) + deg) skew(-($skew-degree * 0.2) + deg);
+    }
+    to {
+      transform: rotate3d(0, 0, 1, 0deg);
+    }
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}

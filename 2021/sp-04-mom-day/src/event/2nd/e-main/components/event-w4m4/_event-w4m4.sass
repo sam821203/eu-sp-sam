@@ -1,0 +1,33 @@
+.promo__group--w4m4
+  margin: 2vw auto 6vw
+  .promo__wrap
+    +bg-set(url("~event/2nd/e-main/components/event-w4m4/bg-event-w4m4.png"), 100% auto)
+    height: 49vw
+    .good__wrap
+      display: flex
+      flex-wrap: wrap
+      justify-content: center
+      padding: 13.7% 5% 5% 5%
+      li
+        flex: 0 0 24%
+        padding: 1%
+        text-align: center
+        a
+          transition: transform 0.5s
+        &:hover
+          a
+            transform: scale(1.1)
+            filter: brightness(120%)
+
+  +breakpoint-min($min-width-xl)
+    margin: 20px auto 40px
+    .promo__wrap
+      width: 100%
+      max-width: 960px
+      margin: 0 auto
+      height: 460px
+      .good__wrap
+        padding: 15.7% 5% 5% 5%
+        li
+          flex: 0 0 25%
+          padding: 1% 0

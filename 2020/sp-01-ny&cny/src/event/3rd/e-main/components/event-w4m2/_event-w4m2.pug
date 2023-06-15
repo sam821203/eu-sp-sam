@@ -1,0 +1,21 @@
+- var w4m2DataE = [{link: "https://www.etmall.com.tw/c3/125140", imgSrc: "~event/3rd/e-main/components/event-w4m2/items/event-1.png", alt: "專櫃爆品崩殺 21天霜直降$599"}, {link: "https://www.etmall.com.tw/np/90015", imgSrc: "~event/3rd/e-main/components/event-w4m2/items/event-2.png", alt: "正官庄75折起	敏鎬愛你最蔘"}, {link: "https://www.etmall.com.tw/c3/124846", imgSrc: "~event/3rd/e-main/components/event-w4m2/items/event-3.png", alt: "Apple迎新	24H快速到貨"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202001/SP_1114434/w/index.html", imgSrc: "~event/3rd/e-main/components/event-w4m2/items/event-4.png", alt: "過年不打烊	3C讓你抽"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202001/SP_1114410/w/index.html", imgSrc: "~event/3rd/e-main/components/event-w4m2/items/event-5.png", alt: "鼠年報喜 衣│鞋│包2折up"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202001/SP_1114509/w/index.html", imgSrc: "~event/3rd/e-main/components/event-w4m2/items/event-6.png", alt: "新春不打烊 安心吃喝過好年"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114468/w/index.html", imgSrc: "~event/3rd/e-main/components/event-w4m2/items/event-7.png", alt: "24H火速出貨 下單就抽小紫除蟎機"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202001/SP_1114397/w/index.html", imgSrc: "~event/3rd/e-main/components/event-w4m2/items/event-8.png", alt: "立山雪壁	早鳥下殺"}, ]
+
+- var w4m2DataU = [{link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201909/SP_1105062/w/index.html", imgSrc: "~event/3rd/u-main/components/event-w4m2/items/event-1.png", alt: "微星品牌週"}, {link: "https://www.u-mall.com.tw/c3/132042", imgSrc: "~event/3rd/u-main/components/event-w4m2/items/event-2.png", alt: "ASUS新機"}, {link: "https://www.u-mall.com.tw/np/68051", imgSrc: "~event/3rd/u-main/components/event-w4m2/items/event-3.png", alt: "FORTE 39折起"}, {link: " https://www.u-mall.com.tw/p/67970", imgSrc: "~event/3rd/u-main/components/event-w4m2/items/event-4.png", alt: "天使娜拉"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201909/SP_1105070/w/index.html", imgSrc: "~event/3rd/u-main/components/event-w4m2/items/event-5.png", alt: "日立三菱冰洗"}, {link: "https://www.u-mall.com.tw/p/57752", imgSrc: "~event/3rd/u-main/components/event-w4m2/items/event-6.png", alt: "EASY SHOP"}, {link: "https://www.u-mall.com.tw/c3/91054", imgSrc: "~event/3rd/u-main/components/event-w4m2/items/event-7.png", alt: "JHT美體季"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201908/SP_1104993/w/index.html", imgSrc: "~event/3rd/u-main/components/event-w4m2/items/event-8.png", alt: "秋季旅展"}, ]
+
+- var w4m2Data = isU? w4m2DataU : w4m2DataE
+
+
+section.promo__group.promo__group--w4m2.m-bottom--md
+  .layout--main
+    .event__zone
+      .event__decoration--top(data-title="滿滿好康", title="滿滿好康這裡挑")
+        //- img.lazyload(data-src="section-bn-05.png", src="~utils/img/1x1_low.png", alt="秋賞獻禮")
+        img(src="~event/3rd/e-main/components/event-w4m2/bg-event-top.png", alt="")
+      .event__wrap
+        ul.event__box
+          each data in w4m2Data
+            li
+              a(href= data.link, title= data.alt)
+                img(src= data.imgSrc, alt= data.alt)
+      .event__decoration--bottom
+        img(src="~event/3rd/e-main/components/event-w4m2/bg-event-bottom.png", alt="")

@@ -1,0 +1,71 @@
+// tab layout
+.promo__group--tab-section
+  +pos-set(relative, zero)
+  overflow: hidden
+  .promo__wrap
+    +aspect-ratio(960, 1500)
+    .decoration__title
+      +pos-set(absolute, under)
+      top: 0%
+      left: 0%
+      pointer-events: none
+    .promo__zone
+      +bg-set(url("event/2nd/e-main/components/tab-section/bg-tab.png"), 100%)
+
+      .tab__wrap
+        .tab__box
+          display: flex
+          justify-content: center
+          margin-top: 44%
+          .tab__item
+            position: relative
+            width: 31%
+            // margin-left: 6%
+            &--top
+              position: absolute
+              top: 0%
+              left: 0%
+              opacity: 0
+              cursor: pointer
+            .active
+              opacity: 1
+        .content__zone
+          margin-top: 6%
+          .content__box
+            display: none
+            &.active
+              display: block
+            .tab__slider
+              width: 90%
+              .swiper-wrapper
+                flex-wrap: wrap
+                margin: 2% auto
+                .swiper-slide
+                  margin-bottom: 4.5%
+                  +breakpoint-min($min-width-xl)
+                    margin-bottom: 5%
+                  .product.product--dynamic
+                    margin-right: auto
+                    margin-left: auto
+                    width: 90%
+                    +breakpoint-min($min-width-xl)
+                      width: 95%
+                    .product__name
+                      margin-bottom: 0px
+                      // height: 4.4vw
+                      // padding-top: 5%
+                      padding-bottom: 5%
+                      background-color: #fff
+                      +breakpoint-min($min-width-xl)
+                        font-size: 26px
+                    .product__price
+                      background-color: #fff
+                      padding-bottom: 5%
+                      border-radius: 0 0 2vw 2vw
+                      +breakpoint-min($min-width-xl)
+                        border-radius: 0 0 20px 20px
+                      span
+                        &:last-child
+                          +breakpoint-min($min-width-xl)
+                            font-size: 36px
+

@@ -1,0 +1,42 @@
+.promo__group--bn
+  +pos-set(relative, zero)
+  overflow: hidden
+  .promo__decor
+    +pos-set(relative, zero)
+    max-width: 960px
+    .decor-ball
+      +pos-set(absolute, base, 0%, 9%)
+      width: 80%
+      +breakpoint-min($min-width-xl)
+        left: 10%
+        margin-top: 3%
+
+  .promo__wrap
+    +aspect-ratio(960, 1003)
+  .promo__zone
+    +pos-set(relative, zero)
+    +bg-set(url(event/1st/e-main/components/bn-slider/bg-bn-slider.png), 100%)
+    .promo__zone--decor
+      width: 12%
+    .promo__slide
+      padding: 0% 6%
+      margin-top: 28%
+      .swiper-container
+        margin-top: 3%
+
+
+@keyframes enlarge
+  0%
+    transform: scale(1)
+  50%
+    transform: scale(1.1)
+  100%
+    transform: scale(1)
+
+@keyframes enlarge-rotate
+  0%
+    transform: scale(1)
+  50%
+    transform: scale(1.2)
+  100%
+    transform: scale(1)

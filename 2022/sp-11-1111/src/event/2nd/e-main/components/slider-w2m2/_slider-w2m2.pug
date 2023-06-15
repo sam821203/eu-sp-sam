@@ -1,0 +1,61 @@
+-
+  var sliderW2M2Data = [
+    [  //1
+      {
+        link: "" ,
+        imgSrc: "event/2nd/e-main/components/slider-w2m2/item/item-p-1.png",
+        alt: "劉品言推薦新6色 好禮四重送",
+      },
+      {
+        link: "https://www.etmall.com.tw/i/3490955" ,
+        imgSrc: "event/2nd/e-main/components/slider-w2m2/item/item-p-2.png",
+        alt: "藝人推薦 東森獨家",
+      },
+    ],
+    [  //2
+      {
+        link: "https://www.etmall.com.tw/c3/50432" ,
+        imgSrc: "event/2nd/e-main/components/slider-w2m2/item/item-p-3.png",
+        alt: "溫昇豪 指定品官網登錄送電視",
+      },
+      {
+        link: "https://www.etmall.com.tw/gp/193631" ,
+        imgSrc: "event/2nd/e-main/components/slider-w2m2/item/item-p-4.png",
+        alt: "郭書瑤 監製設計",
+      },
+    ],
+    [  //3
+      {
+        link: "https://www.etmall.com.tw/bs/86254" ,
+        imgSrc: "event/2nd/e-main/components/slider-w2m2/item/item-p-5.png",
+        alt: "ELLA 獨家限定組合",
+      },
+      {
+        link: "https://www.etmall.com.tw/p/183377" ,
+        imgSrc: "event/2nd/e-main/components/slider-w2m2/item/item-p-6.png",
+        alt: "賈靜雯 滿額送好禮",
+      },
+    ],
+  ]
+
+
+section.promo__group.slider-w2m2.m-bottom--lg(data-title="大牌秒殺")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--left#decorSliderW2M2Left
+        img(src="event/2nd/e-main/components/slider-w2m2/decor-slider-w2m2-left.png", alt="")
+      .decor__item.decor__item--right#decorSliderW2M2Right
+        img(src="event/2nd/e-main/components/slider-w2m2/decor-slider-w2m2-right.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block.full-parent
+          .promo__slider.swiper-container#sliderW2M2Item
+            ul.swiper-wrapper
+              each data, index in sliderW2M2Data
+                li.swiper-slide
+                  each item, itemIndex in  data
+                    .swiper-box
+                      a(href= item.link, title=item.alt)
+                        img(src= item.imgSrc, alt=item.alt)
+
+

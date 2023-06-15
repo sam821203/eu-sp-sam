@@ -1,0 +1,69 @@
+.container
+  .loading-init
+    .loading-init__header Loading
+    .loading-init__status Assembling Shells
+  .stage-container.remove
+    .canvas-container
+      canvas#trails-canvas
+      canvas#main-canvas
+    .controls
+      .btn.pause-btn
+        svg(fill='white' width='24' height='24')
+          use(href='#icon-pause' xlink:href='#icon-pause')
+      .btn.sound-btn
+        svg(fill='white' width='24' height='24')
+          use(href='#icon-sound-off' xlink:href='#icon-sound-off')
+      .btn.settings-btn
+        svg(fill='white' width='24' height='24')
+          use(href='#icon-settings' xlink:href='#icon-settings')
+    .menu.hide
+      .menu__inner-wrap
+        .btn.btn--bright.close-menu-btn
+          svg(fill='white' width='24' height='24')
+            use(href='#icon-close' xlink:href='#icon-close')
+        .menu__header Settings
+        .menu__subheader For more info, click any label.
+        form
+          .form-option.form-option--select
+            label.shell-type-label Shell Type
+            select.shell-type
+          .form-option.form-option--select
+            label.shell-size-label Shell Size
+            select.shell-size
+          .form-option.form-option--select
+            label.quality-ui-label Quality
+            select.quality-ui
+          .form-option.form-option--select
+            label.sky-lighting-label Sky Lighting
+            select.sky-lighting
+          .form-option.form-option--select
+            label.scaleFactor-label Scale
+            select.scaleFactor
+          .form-option.form-option--checkbox
+            label.auto-launch-label Auto Fire
+            input.auto-launch(type='checkbox')
+          .form-option.form-option--checkbox.form-option--finale-mode
+            label.finale-mode-label Finale Mode
+            input.finale-mode(type='checkbox')
+          .form-option.form-option--checkbox
+            label.hide-controls-label Hide Controls
+            input.hide-controls(type='checkbox')
+          .form-option.form-option--checkbox.form-option--fullscreen
+            label.fullscreen-label Fullscreen
+            input.fullscreen(type='checkbox')
+          .form-option.form-option--checkbox
+            label.long-exposure-label Open Shutter
+            input.long-exposure(type='checkbox')
+        .credits
+          | Passionately built Sayn Achhava.
+  .help-modal
+    .help-modal__overlay
+    .help-modal__dialog
+      .help-modal__header
+      .help-modal__body
+      button.help-modal__close-btn(type='button') Close
+
+script(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/329180/fscreen%401.0.1.js')
+script(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/329180/Stage%400.1.4.js')
+script(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/329180/MyMath.js')
+//- script(src='./script.js')

@@ -1,0 +1,69 @@
+-
+  var promoSectionData = [
+    { // 1
+      link: "https://www.etmall.com.tw/Activity/CouponPage/346",
+      imgSrc: "event/1st/e-main/components/promo-section/items/item-p-1.png",
+      alt: "3M寢具83折"
+    },
+    { // 2
+      link: "https://www.etmall.com.tw/Activity/CouponPage/356",
+      imgSrc: "event/1st/e-main/components/promo-section/items/item-p-2.png",
+      alt: "百貨品牌鍋具9折"
+    },
+    { // 3
+      link: "https://www.etmall.com.tw/Activity/CouponPage/357",
+      imgSrc: "event/1st/e-main/components/promo-section/items/item-p-3.png",
+      alt: "提升保護力現折200元"
+    },
+    { // 4
+      link: "https://www.etmall.com.tw/Activity/CouponPage/315",
+      imgSrc: "event/1st/e-main/components/promo-section/items/item-p-4.png",
+      alt: "家電激省現折$2222"
+    },
+    { // 5
+      link: "https://www.etmall.com.tw/Activity/CouponPage/350",
+      imgSrc: "event/1st/e-main/components/promo-section/items/item-p-5.png",
+      alt: "加碼防疫居家3600大禮包"
+    },
+    { // 6
+      link: "https://www.etmall.com.tw/Activity/CouponPage/354",
+      imgSrc: "event/1st/e-main/components/promo-section/items/item-p-6.png",
+      alt: "泰山食品83折"
+    },
+        { // 5
+      link: "https://www.etmall.com.tw/Activity/CouponPage/353",
+      imgSrc: "event/1st/e-main/components/promo-section/items/item-p-7.png",
+      alt: "法式女內衣褲9折"
+    },
+    { // 6
+      link: "https://www.etmall.com.tw/Activity/CouponReceiveAll",
+      imgSrc: "event/1st/e-main/components/promo-section/items/item-p-8.png",
+      alt: "畢業狂歡神券$350元"
+    },
+  ]
+
+section.promo__group.promo__group--promo-section.m-bottom--lg.m-top--lg(data-title="品牌神券")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--title#titlePromoSection
+        img(src="event/1st/e-main/components/promo-section/title-promo-section.png", alt="")
+      .decor__item.decor__item--left#decorPromoSection
+        img(src="event/1st/e-main/components/promo-section/decor-promo-section-left.png", alt="")
+      .decor__item.decor__item--right#decorPromoSectionSec
+        img(src="event/1st/e-main/components/promo-section/decor-promo-section-right.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          .event__wrap.swiper-container#promoSection
+            ul.event__item.swiper-wrapper
+              each data in promoSectionData
+                li.swiper-slide
+                  a(href= data.link, title=data.alt)
+                    img(src= data.imgSrc, alt=data.alt)
+            .swiper-pagination
+
+
+              //- each data, index in w1m1Data
+              //-   li
+              //-     a(href= data.link, title= data.alt)
+              //-       img(src= data.imgSrc, alt= data.alt)

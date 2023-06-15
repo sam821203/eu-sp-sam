@@ -1,0 +1,81 @@
+// .promo__group--bn-special
+//   margin-left: auto
+//   margin-right: auto
+
+.one__buy__one-web--bg
+  +breakpoint-min($min-width-xl)
+    position: absolute
+    +bg-set(url("~event/1st/e-main/components/one-buy-one-slider/one__buy__one-bg-web.png"))
+    background-size: 1168px 777px
+    left: 50%
+    transform: translateX(-50%)
+    width: 100%
+    height: 777px
+.promo__slider.one__buy__one
+  top: 0
+  position: relative
+  padding-top: 0
+  padding-bottom: 0
+  background: center 0 url("~event/1st/e-main/components/one-buy-one-slider/one__buy__one-bg.png") no-repeat
+  background-size: 100% auto
+  height: 108vw
+  .one__buy__one__wrap-1
+    position: relative
+    padding-top: 20vw
+  .swiper-container
+    margin-left: auto
+    margin-right: auto
+    width: 90%
+    // height: 100%
+    // .swiper-slide
+      // transition: transform 0.5s
+      // transform: translateY(-100%)
+    // .swiper-slide-active,
+    // .swiper-slide-duplicate-active,
+      // transform: translateY(0)
+
+    .swiper-slide
+      &:hover,
+      &:active
+        filter: contrast(120%)
+      img
+        display: block
+        margin-left: auto
+        margin-right: auto
+
+  .one__buy__one-pager
+    left: 50%
+    transform: translateX(-50%)
+    .swiper-pagination-bullet
+      margin: 0 4px
+    .swiper-pagination-bullet-active
+      width: 20px
+      height: 7px
+      vertical-align: middle
+      background-color: #3d161b
+      border: 0px
+      border-radius: 6px
+  .one__buy__one-pager
+    bottom: -5%
+  +breakpoint-min($min-width-xl)
+    top: 20px
+    background: none
+    height: 785px
+    .one__buy__one__wrap-1
+      padding-top: 187px
+      margin: 0 auto
+      max-width: 960px
+    .one__buy__one-pager
+      bottom: -3%
+// 當大小網不一樣時
+// img
+//   &:last-child
+//     display: none
+//   +breakpoint-min($min-width-xl)
+//     &:first-child
+//       display: none
+//     &:last-child
+//       display: block
+//       margin-left: auto
+//       margin-right: auto
+

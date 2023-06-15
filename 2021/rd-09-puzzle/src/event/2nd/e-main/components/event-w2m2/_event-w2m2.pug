@@ -1,0 +1,38 @@
+-
+  var promoItem = [
+    {
+      alt: "熱門活動",
+      imgSrc: "event/2nd/e-main/components/event-w2m2/items/promo-item-1.png",
+    },
+    {
+      alt: "熱門活動",
+      imgSrc: "event/2nd/e-main/components/event-w2m2/items/promo-item-2.png",
+    },
+    {
+      alt: "熱門活動",
+      imgSrc: "event/2nd/e-main/components/event-w2m2/items/promo-item-3.png",
+    },
+    {
+      alt: "熱門活動",
+      imgSrc: "event/2nd/e-main/components/event-w2m2/items/promo-item-4.png",
+    },
+  ]
+
+- var promoItem = promoItem
+
+section.promo__group.promo__group--w3m3(data-title="熱門活動")
+  .layout--main
+    .promo__wrap
+      .promo__zone
+          .promo__block
+            each data, index in promoItem
+              .promo__box
+                a(href="") 
+                  img(src= data.imgSrc, alt= data.alt)
+
+              //- each data, index in w3m3Data
+              //-   li
+              //-     a(href= data.link, title= data.alt)
+              //-       - var hasImg = data.imgSrc ? true : false
+              //-       if (hasImg)
+              //-         img(src= data.imgSrc, alt= data.alt)

@@ -1,0 +1,31 @@
+.promo__group--daily
+  .promo__title
+    +pos-set(relative, zero)
+    .daily__text
+      +pos-set(absolute, base)
+      left: 20%
+      bottom: 5%
+      color: $gray-deep-light
+      font-size: 8vw
+      span
+        vertical-align: middle
+        &:nth-child(2)
+          margin: 0 1vw
+          font-size: 5vw
+          font-weight: bold
+
+      +breakpoint-min($min-width-xl)
+        bottom: 12px
+        font-size: 72px
+        span
+          vertical-align: middle
+          &:nth-child(2)
+            margin: 0 10px
+            font-size: 48px          
+  .promo__wrap
+    padding-bottom: 1.5%
+    +bg-set(url(~event/1st/e-main/components/daily-change/bg-daily.png), 100%)
+    &:hover,
+    &:active
+      a
+        transform: translateY(5%) scale(0.95)

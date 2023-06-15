@@ -1,0 +1,33 @@
+doctype html
+html(lang='zh-Hant-TW')
+  head
+    meta(name='viewport' content="width=device-width, initial-scale=1")
+
+  body
+
+    include /layout/header/_header
+
+    //- main block (hero + promo section)
+    //- ===========================
+    include /event/current/components/hero/_hero
+    include /event/current/components/awards/_awards
+    include /event/current/components/promo/_promo-1
+    include /event/current/components/promo/_promo-2
+    include /event/current/components/promo/_promo-3
+    include /event/current/components/promo/_promo-4
+    include /event/current/components/promo/_promo-5
+    include /event/current/components/promo/_promo-6
+    include /event/current/components/promo/_promo-7
+    include /event/current/components/promo/_promo-8
+    include /event/current/components/note/_note
+
+    //- btn-draw 
+    //- ===========================
+    button.btn-draw
+      img(src="event/current/pages/index/btn-draw.png")
+
+    //- go-top 
+    //- ===========================
+    button.go-top.is-visible
+      svg(width='16' height='16' viewbox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg')
+        path(fill-rule='evenodd' clip-rule='evenodd' d='M8.00223 3.22752e-06C8.31712 0.000466342 8.63189 0.0992726 8.89318 0.296425L9.01004 0.394649L15.762 6.70193C16.0647 6.98469 16.0808 7.45929 15.7981 7.76198C15.541 8.03715 15.1254 8.07552 14.8246 7.86778L14.738 7.79807L8.75 2.2037V15.25C8.75 15.6642 8.41422 16 8 16C7.62031 16 7.30651 15.7178 7.25685 15.3518L7.25 15.25V2.2037L1.26198 7.79807C0.986806 8.05512 0.56956 8.06513 0.283532 7.83741L0.201933 7.76198C-0.0551185 7.4868 -0.0651317 7.06956 0.162588 6.78353L0.238027 6.70193L6.98996 0.394649C7.27161 0.13155 7.63581 3.20526e-07 8 0' fill='white')

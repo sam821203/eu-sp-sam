@@ -1,0 +1,45 @@
+- var heroBankData = {etmall: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201908/SP_1107836/w/index.html", umall: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201908/SP_1104315/w/index.html"}
+- var heroBankInfo = isU ? heroBankData.umall : heroBankData.etmall
+
+// ========== Title Image ==========
+- var titleImageE = {src:"~event/index-main-u-2/components/hero-section/title.png", alt:"激戰72小時"}
+- var titleImage = titleImageE
+
+
+//- ========== Code Start ==========
+//- ========== 第一檔裝飾 ==========
+.parallax__background
+//- include /event/index-main-u-2/components/canva-effect/_canva-effect.pug
+section.hero__wrap
+  .bg--light
+  .layout--main
+    .hero__zone
+      .hero__block
+        //-.header__decoration.header__decoration--right
+        //-.header__decoration.header__decoration--left
+        //-.header__decoration.header__decoration--left-2
+        //-.header__decoration.header__decoration--star
+        //img.header__decoration.header__decoration--one-dollar(src="~event/index-main-u-2/components/hero-section/oneDollar.png")
+        canvas.canvas-firework
+        .hero__box
+          h1.hero__title.hero__title--main.block--center(title="激戰72小時")
+            img(src= "~event/index-main-u-2/components/hero-section/title.png", alt= "激戰72小時")
+
+          include /event/index-main-u-2/components/hero-small-slider/_hero-small-slider.pug
+
+        include /event/index-main-u-2/components/promo-event/_promo-event.pug
+
+        //-include /event/index-main-u-2/components/goods-slider/_goods-slider.pug
+
+        //-include /event/index-main-u-2/components/goods-slider-flip/_goods-slider-flip
+
+      //-include /event/index-main-u-2/components/bn-special/_bn-special
+
+  //-.hero__decoration
+  //-  .decoration__box
+  //-  .decoration__box
+
+  //-include /layout/background-decoration/_background-decoration.pug
+
+
+  

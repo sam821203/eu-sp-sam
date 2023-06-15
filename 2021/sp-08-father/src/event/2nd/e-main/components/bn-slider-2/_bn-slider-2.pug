@@ -1,0 +1,79 @@
+-
+  var bnSliderItemData2 = [
+    {
+      link: "https://www.etmall.com.tw/p/138248",
+      imgSrc: "event/2nd/e-main/components/bn-slider-2/items/brand-1.png",
+      alt: "娘家"
+    },
+    {
+      link: "https://www.etmall.com.tw/c3/93723",
+      imgSrc: "event/2nd/e-main/components/bn-slider-2/items/brand-2.png",
+      alt: "Alpecin"
+    },
+    {
+      link: "https://www.etmall.com.tw/p/139769",
+      imgSrc: "event/2nd/e-main/components/bn-slider-2/items/brand-3.png",
+      alt: "華陀"
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/136418",
+      imgSrc: "event/2nd/e-main/components/bn-slider-2/items/brand-4.png",
+      alt: "Columbia"
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/104717",
+      imgSrc: "event/2nd/e-main/components/bn-slider-2/items/brand-5.png",
+      alt: "Crocodile"
+    },
+    {
+      link: "https://www.etmall.com.tw/np/139736",
+      imgSrc: "event/2nd/e-main/components/bn-slider-2/items/brand-6.png",
+      alt: "多款輪胎品牌"
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/138947",
+      imgSrc: "event/2nd/e-main/components/bn-slider-2/items/brand-7.png",
+      alt: "德國百靈刮鬍刀"
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/129125",
+      imgSrc: "event/2nd/e-main/components/bn-slider-2/items/brand-8.png",
+      alt: "NESPRESSO"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/10212/m/index.html",
+      imgSrc: "event/2nd/e-main/components/bn-slider-2/items/brand-9.png",
+      alt: "LG"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/4369/m/index.html",
+      imgSrc: "event/2nd/e-main/components/bn-slider-2/items/brand-10.png",
+      alt: "APPLE"
+    },
+    {
+      link: "https://www.etmall.com.tw/c1/150243",
+      imgSrc: "event/2nd/e-main/components/bn-slider-2/items/brand-11.png",
+      alt: "ACER"
+    },
+    {
+      link: "https://www.etmall.com.tw/c3/131745",
+      imgSrc: "event/2nd/e-main/components/bn-slider-2/items/brand-12.png",
+      alt: "Amazfit華米"
+    },
+  ]
+
+section.promo__group.promo__group--bn-2.m-bottom--lg(data-title="88愛牌")
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        .decoration--top.decoration--bn-2
+          img(src="event/2nd/e-main/components/bn-slider-2/decoration-bn-2.png", alt="")
+        #sliderBn2.promo__slider.swiper-container
+          ul.swiper-wrapper
+            each data in bnSliderItemData2
+              li.swiper-slide
+                a(href= data.link, title= data.alt)
+                  img.swiper-lazy(data-src= data.imgSrc, alt="")
+                  .swiper-lazy-preloader.swiper-lazy-preloader-black
+
+      //- #sliderBnPager.bn__pager.swiper-pagination

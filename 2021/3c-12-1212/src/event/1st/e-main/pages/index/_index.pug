@@ -1,0 +1,39 @@
+//- TODO: 打開雙月選項切換雙月(預設單月：7658 / true = 雙月：7659)
+//- - var isEven = true
+//- TODO: 打開2號電梯選項切換第二組電梯(預設第一組，true = 第二組 單月：7660 / 雙月：7661)
+- var isSecond = true
+//- TODO: 打開u-mall選項會自動轉換成U的logo和連結、電梯(預設etmall)
+//- - var isU = true
+doctype html
+html(lang='zh-Hant-TW')
+  head
+    include /utils/pug/_total-head
+    //- link(rel="stylesheet", href="/layout/elevator/main-elevator-left.css")
+    //- link(rel="stylesheet", href="/layout/elevator/main-elevator-right.css")
+    //- link#localElevatorLeft(rel="stylesheet", href="/layout/elevator/sp-elevator-left.css")
+    link#localElevatorRight(rel="stylesheet", href="sp-elevator-right.css")
+
+  body
+    main#spWrap.sp__wrap
+      include /layout/header/_header
+
+      //- hero section
+      //- ===========================
+      //- include /utils/bg-decoration-instance/parallax/_parallax
+      include /event/1st/e-main/components/hero-section/_hero-section
+
+      //- other components
+      //- ===========================
+      include /event/1st/e-main/components/event-w1m1/_event-w1m1
+      include /event/1st/e-main/components/promo-event/_promo-event
+      include /event/1st/e-main/components/daily-change/_daily-change
+      #navRightBar.navRightBar
+      include /event/1st/e-main/components/nav-depart/_nav-depart
+      include /event/1st/e-main/components/tab-section/_tab-section
+      include /event/1st/e-main/components/daily-tab/_daily-tab
+      include /event/1st/e-main/components/event-w4m4/_event-w4m4
+
+    //- script區
+    include /utils/pug/_total-script
+    script#checkElevator(src="https://media.etmall.com.tw/sp/11911/check-elevator.js")
+

@@ -1,0 +1,284 @@
+// ==========================================================================
+// Collection Helpers 
+// ==========================================================================
+@import "_helpers/_collection"
+
+// ==========================================================================
+// Plugins
+// ==========================================================================
+@import "_libs/_slick"
+// @import "_libs/_swiper"
+
+// ==========================================================================
+// Page
+// ==========================================================================
+body
+  background-color: $gray-light
+.sp__wrap
+  +font-size($fz-18)
+  background-color: $gray-deep-light
+
+.header__wrap--sp
+  position: relative
+  padding: 3% 4% 0
+
+.logo
+  position: absolute
+  z-index: map-get($zindex, fifth)
+  top: 6.5%
+  left: 31%
+  width: 64%
+  padding-top: 13%
+
+.slider__wrap
+  .sp--1260
+    position: relative
+    z-index: map-get($zindex, fifth)
+  
+.gallery__sliders
+  z-index: map-get($zindex, second)
+  .slide__item
+    width: 100%
+    a
+      display: block
+      outline: 0
+
+.title__wrap--slide
+  color: $gray-dark
+  .title__box
+    display: flex
+    justify-content: center
+
+.title__date
+  +font-size($fz-28)
+  position: relative
+  width: 1.8em
+  height: 1.8em
+  border-radius: 50%
+  div
+    position: absolute
+    z-index: map-get($zindex, zero)
+    top: 0.2em
+    left: 50%
+    transform: translateX(-50%)
+  // .background--decoration,
+  // .foreground--decoration
+  //   top: 0
+  //   z-index: map-get($zindex, zero)
+  //   width: 100%
+  //   height: 100%
+  //   border-radius: 50%
+  //   transform: translateX(-50%)
+  //   animation: morph 60s linear infinite
+  // .background--decoration
+  //   transform: translateX(-50%) scale(1.3)
+  //   animation: morph 30s linear infinite
+  span
+    font-weight: bold
+    &:nth-child(2)
+      +font-size($fz-16)
+      font-weight: normal
+
+.title__slogan
+  h2
+    +font-size($fz-20)
+    max-height: 3em
+    vertical-align: bottom
+    overflow: hidden
+    div:last-child
+      margin-top: -0.3em
+    span
+      padding-left: 0.3em
+      padding-right: 0.3em
+      line-height: 150%
+
+.item__box--sp
+  display: flex
+  .item__image
+    width: 70%
+  .item__video--mobile
+    width: 30%
+    a
+      width: 75%
+      border-radius: 6px
+      img
+        border-radius: 3px
+
+.item__video--desktop
+  display: none
+
+.video__box
+  position: relative
+  z-index: map-get($zindex, zero)
+  width: 100%
+  height: 920px
+  .background--decoration
+    position: absolute
+    z-index: map-get($zindex, zero)
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    .circle
+      position: absolute
+      z-index: map-get($zindex, base)
+      transform-style: preserve-3d
+      outline: 1px solid transparent
+      will-change: border-radius, transform, opacity
+    .circle--outer
+      top: 14%
+      left: 6%
+      width: 86%
+      height: 72%
+      border-radius: 42% 58% 60% 40% / 45% 45% 55% 55%
+      animation: morph 60s linear infinite
+    .circle.circle--inner
+      top: 20%
+      left: 14%
+      width: 71%
+      height: 61%
+      border-radius: 42% 58% 60% 40% / 45% 45% 55% 55%
+      animation: morph 30s ease-in infinite
+
+@keyframes morph
+  0%,100%
+    border-radius: 42% 58% 60% 40% / 45% 45% 55% 55%
+    transform: translate3d(0,0,0) rotate(0)
+  34%
+    border-radius: 60% 40% 46% 54% / 30% 29% 61% 60%
+    transform:  translate3d(0,5px,0) rotate(135deg)
+  50%
+    opacity: .89
+    transform: translate3d(0,0,0) rotate(270deg)
+  67%
+    border-radius: 100% 60% 60% 100% / 100% 100% 60% 60% 
+    transform: translate3d(0,-3px,0) rotate(360deg)
+
+.video__main
+  position: relative
+  z-index: map-get($zindex, third)
+  top: 31px
+  margin-left: auto
+  margin-right: auto
+  padding: 30px 57px 80px 22px
+  width: 437px
+  height: 899px
+  background-image: url(../img/decoration_phone.png)
+  iframe
+    width: 100%
+    height: 100%
+.thumb__box
+  // 啟動輪播後img會換成block屬性因此兩種置中都加
+  text-align: center
+  img
+    margin-left: auto
+    margin-right: auto
+    width: 80%
+  .card--others
+    display: none
+    filter: grayscale(100%)
+
+.marquee__wrap
+  height: 2em
+  color: $gray-deep-light
+  background-color: rgba($gray-dark, .7)
+  overflow: hidden
+  .sp--1260
+    position: relative
+  .marquee__info
+    position: absolute
+    z-index: map-get($zindex, base)
+    top: 0.33em
+    left: 0.15em
+    width: 3em
+    height: 1.4em
+    text-align: center
+    color: $gray-medium
+    background-color: $gray-deep-light
+    border-radius: 20%/50%
+  .marquee__box
+    display: inline-block
+    position: relative
+    line-height: 2em
+    white-space: nowrap
+    will-change: auto
+    animation: 9s marquee infinite linear
+    div
+      +font-size($fz-15)
+      margin-left: 4.1em
+  +breakpointMaxWidth($small-mobile)
+    .marquee__info
+      +font-size($fz-15)
+      top: 0.48em
+    .marquee__box div
+      +font-size($fz-13)  
+
+@keyframes marquee
+  from
+    transform: translateY(1.3em)
+  to
+    transform: translateY(-100%)
+
+.slick-button-custom
+  position: absolute
+  z-index: map-get($zindex, twenty)
+  top: calc(-3em - 24.5vw)
+  padding-top: 13%
+  width: 8.5%
+  height: 0
+  outline: 0
+  cursor: pointer
+  &:before,
+  &:after
+    content: ''
+    position: absolute
+    z-index: 1
+    left: 30%
+    width: 40%
+    height: 50%
+    background-color: $gray-deep-dark
+  &:before
+    top: 0.1%
+  &:after
+    bottom: 0.1%
+.slick-button-prev
+  left: 0.7%
+  &:before
+    transform: skew(-30deg)
+  &:after
+    transform: skew(30deg)
+.slick-button-next
+  right: 0.7%
+  &:before
+    transform: skew(30deg)
+  &:after
+    transform: skew(-30deg)
+
+footer
+    background-color: $gray-dark
+  
+.bn-w4m2
+  // 填補slick display block造成的空白
+  margin-top: -6px
+  margin-bottom: 0.75%
+  .banner__wrap
+    display: flex
+    flex-wrap: wrap
+    padding: 1%
+    .banner__item
+      margin: 1% 1%
+      width: 48%
+      transition: all 0.3s
+      &:hover,
+      &:active
+        transform: scale(1.05)
+        filter: brightness(115%)
+      & a
+        display: block
+      & img
+        width: 100%
+      +breakpoint($max-pad)
+        width: 23%
+
+@import './_include/_pad'
+@import './_include/_desktop'

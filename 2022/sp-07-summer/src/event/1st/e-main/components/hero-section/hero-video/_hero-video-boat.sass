@@ -1,0 +1,13 @@
+.video__wrap
+  .hero__video--boat
+    +pos-set(absolute, zero)
+    bottom: 50%
+    right: 2%
+    +breakpoint-min($min-width-xl)
+      bottom: 22%
+      left: calc(50% - 900px)
+    video
+      width: 29vw
+      +breakpoint-min($min-width-xl)
+        width: auto
+        max-width: 700px

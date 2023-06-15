@@ -1,0 +1,228 @@
+// ==========================================================================
+// Plugins
+// ==========================================================================
+// // @import vendors/animate
+// @import vendors/style/swiper-slider-custom
+@import vendors/style/swiper-safari-polyfill
+
+// ==========================================================================
+// first screen need
+// ==========================================================================
+// hero section
+@import utils/bg-decoration-instance/parallax/_parallax
+.bg-decoration-wrap
+  position: absolute
+  top: 0
+  left: 0
+  z-index: 0
+  width: 100%
+  opacity: 0
+  .js-loading &
+    animation: balloon-zoomIn .8s 1.4s ease-out 1 forwards
+@import event/1st/e-main/components/hero-section/_hero-section
+  
+// @import utils/bg-decoration-instance/css-firework-2/_css-firework-2
+
+// ==========================================================================
+// components
+// ==========================================================================
+// dynamic product 假宮格共用CSS
+@import layout/dynamic-product/_dynamic-product.sass
+
+// 一般components
+@import event/1st/e-main/components/promo-slider-2/_promo-slider-2
+@import event/1st/e-main/components/promo-event/_promo-event
+@import event/1st/e-main/components/tab-section/_tab-section
+@import event/1st/e-main/components/tab-section-2/_tab-section-2
+@import event/1st/e-main/components/match-game/_match-game
+@import event/1st/e-main/components/event-w3m3/_event-w3m3
+@import event/1st/e-main/components/bn-section/_bn-section
+@import event/1st/e-main/components/daily-time/_daily-time
+@import event/1st/e-main/components/bn-slider/_bn-slider
+
+// ==========================================================================
+// Page
+// ==========================================================================
+body
+  +pos-set(relative)
+  background-color: $main-e-background-color-1st
+  overflow-x: hidden
+  // height: 1000vh
+
+  .decor__bg
+    +pos-set(fixed, under, 0%, 0%)
+    +bg-set(url(event/1st/e-main/pages/index/bg.jpg), 100%)
+    +breakpoint-min($min-width-xl)
+      +pos-set(fixed, under, 0%, 0%)
+      +bg-set(url(event/1st/e-main/pages/index/bg-web.jpg), auto)
+
+  .decor__fg
+    +pos-set(absolute, under, 0%, 0%)
+    +bg-set(url(event/1st/e-main/pages/index/bg-top.jpg), 100%)
+    +breakpoint-min($min-width-xl)
+      +pos-set(absolute, under, 0%, 0%)
+      +bg-set(url(event/1st/e-main/pages/index/bg-top-web.jpg), auto)
+
+.decor__doors
+  position: relative
+  &.door-shaking-animate
+    animation: doorShaking .02s .4s ease-in-out infinite alternate
+  .doors__wrap
+    position: absolute
+    width: 100%
+    height: 82vw
+    overflow: hidden
+.decor__left
+  +aspect-ratio(1235, 424)
+  +pos-set(absolute, zero, 40vw, -70%)
+  width: 120%
+  +bg-set(url(event/1st/e-main/pages/index/bg-left-door.png), 100%)
+  +breakpoint-min($min-width-xl)
+    top: 362px
+    left: calc(50% - 1233px)
+    width: 1235px
+  .js-loading &
+    animation: doorMoveLeft 1s .4s ease-out 1 forwards
+    +breakpoint-min($min-width-xl)
+      animation: doorMoveLeft-web 1s .4s ease-out 1 forwards
+
+.decor__right
+  +aspect-ratio(1235, 424)
+  +pos-set(absolute, zero, 40vw, 50%)
+  width: 120%
+  +bg-set(url(event/1st/e-main/pages/index/bg-right-door.png), 100%)
+  +breakpoint-min($min-width-xl)
+    top: 362px
+    left: calc(50% + 0px)
+    width: 1235px
+  .js-loading &
+    animation: doorMoveRight 1s .4s ease-out 1 forwards
+    +breakpoint-min($min-width-xl)
+      animation: doorMoveRight-web 1s .4s ease-out 1 forwards
+
+.decor__etman
+  +pos-set(absolute, second, 4.1%, 16%)
+  display: none
+  opacity: 0
+  +breakpoint-min($min-width-xl)
+    top: 468px
+    left: calc(50% - 790px)
+    display: block
+  .js-loading &
+    animation: float-down 2s 1.6s ease-out 1 forwards, floating-jump 2s 2.8s cubic-bezier(0.280, 0.840, 0.420, 1) infinite
+
+.decor__cat
+  +pos-set(absolute, second, 14%)
+  right: 16%
+  display: none
+  opacity: 0
+  +breakpoint-min($min-width-xl)
+    top: 540px
+    right: calc(50% - 761px)
+    display: block
+  .js-loading &
+    animation: float-down2 1s 1.6s ease-out 1 forwards, float-down-rotate 4.2s 2.6s ease-in-out 1 forwards, normal-jump 1.8s 7.2s infinite forwards
+// TODO: 修改EU nav佔位高度(影響logo距離上方高度，U每次要改)
+.navRightBar
+  height: 39px
+  +breakpoint-min($min-width-xl)
+    height: auto
+
+.decoration--top,
+.decor--top
+  +pos-set(absolute)
+  pointer-events: none
+
+section:not(.note)
+  // 有parallax scroll時圖層有relative就有預設z-index可能會遮到宮格，因此使用這個讓宮格也能有預設z-index
+  +pos-set(relative)
+  a
+    display: block
+
+@keyframes doorMoveLeft-web
+  0%
+    left: calc(50% - 1233px)
+  100%
+    left: calc(50% - 1604px)
+
+@keyframes doorMoveLeft
+  0%
+    left: -70%
+  100%
+    left: -108%
+
+@keyframes doorMoveRight-web
+  0%
+    left: calc(50% + 0px)
+  100%
+    left: calc(50% + 365px)
+
+@keyframes doorMoveRight
+  0%
+    left: 50%
+  100%
+    left: 88%
+
+@keyframes doorShaking
+  0%
+    transform: translateY(-0.6px)
+  100%
+    transform: translateY(0.6px)
+
+@keyframes balloon-zoomIn
+  0%
+    opacity: 0
+    transform: translateY(200px) scale(0)
+  100%
+    opacity: 1
+    transform: translateY(0px) scale(1)
+
+@keyframes floating-jump
+  0%, 64%, 100%
+    transform: scale(1, 1) translateY(0)
+  10%
+    transform: scale(1.05, .95) translateY(0)
+  30%
+    transform: scale(.95, 1.05) translateY(-100px)
+  50%
+    transform: scale(1.025, .975) translateY(0)
+  57%
+    transform: scale(1, 1) translateY(-3px)
+
+@keyframes normal-jump
+  0%, 20%, 40%, 100%
+    transform: scale(1) translateY(0)
+  10%
+    transform: scale(1.025) translateY(-7%)
+  30%
+    transform: scale(1.01) translateY(-3.5%)
+
+@keyframes float-down
+  0%
+    transform: translateY(-160px)
+    opacity: 0
+  100%
+    transform: translateY(0)
+    opacity: 1
+
+@keyframes float-down2
+  0%
+    transform: translateY(-60%)
+    opacity: 0
+  100%
+    transform: translateY(-50%)
+    opacity: 1
+
+@keyframes float-down-rotate
+  0%
+    transform-origin: top center
+    transform: translateY(-50%)
+  25%
+    transform: rotate(-8deg) translateY(-37%)
+  50%
+    transform: rotate(10deg) translateY(-25%)
+  75%
+    transform: rotate(-8deg) translateY(-10%)
+  100%
+    transform: rotate(0deg) translateY(0%)
+

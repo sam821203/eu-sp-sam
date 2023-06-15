@@ -1,0 +1,49 @@
+//- RD的詳情Modal的結構，需留在底部並display: none
+.modal
+  .modal__overlay.full-parent
+    .overlay__block.full-parent
+
+  //- TODO: 商品詳情假內文
+  //- form.dialog__block
+  //-   .area-title
+  //-     p 商品詳情
+  //-   .scroll-section
+  //-     .area-content
+  //-       .area-subtitle 9999 枚東森幣
+  //-       .area-detail
+  //-         hr
+  //-         | 完成『登記換』者，將於2020/10/30 18:00前以我的禮物盒推播通知。
+  //-         br
+  //-         | 東森幣效期：2021/1/30 23:59。
+  //-         br
+  //-         | 使用東森幣注意事項請見：會員＞幫助中心＞常見問題＞東森幣說明
+
+  //-   .area-clickBtn.normal
+  //-     button.n-btn.n-btn--cancel(type="button", style="display: none") 取消
+  //-     button.n-btn(type="button") 確定
+
+  //- TODO: 登記換假內文
+  //- form.dialog__block
+    //- .area-title
+    //-   p 請確認是否使用52點登記購「9999 枚東森幣」，一經確認後，立即扣除，無法取消返還
+    //- .scroll-section(style="display: none")
+    //-   .area-content
+    //-     .area-subtitle
+    //-     .area-detail
+
+    //- .area-clickBtn.normal
+    //-   button.n-btn.n-btn--cancel(type="button") 取消
+    //-   button.n-btn(type="button") 確定
+
+  //- TODO: 正式清空欄位
+  form.dialog__block
+    .area-title
+      p
+    .scroll-section
+      .area-content
+        .area-subtitle
+        .area-detail
+
+    .area-clickBtn.normal
+      button.n-btn.n-btn--cancel(type="button") 取消
+      button.n-btn(type="button") 確定

@@ -1,0 +1,117 @@
+-
+  var promoEventData = [
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/17015/m/index.html",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-1.png",
+        alt: "全家取件送霜淇淋",
+      },
+    ],
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/15925/m/index.html",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-2-1.png",
+        alt: "台灣Pay 最高回饋10%",
+      },
+      {
+        link: "https://media.etmall.com.tw/sp/15748/m/index.html#zingala",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-2-2.png",
+        alt: "銀角零卡 最高回饋8%"
+      },
+      {
+        link: "https://media.etmall.com.tw/sp/17300/m/index.html",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-2-3.png",
+        alt: "Pi 拍錢包 最高回饋22%",
+      },
+      {
+        link: "https://media.etmall.com.tw/sp/17456/m/index.html",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-2-4.png",
+        alt: "Atome 最高回饋40%",
+      },
+      {
+        link: "https://media.etmall.com.tw/sp/16698/m/index.html#esun",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-2-5.png",
+        alt: "玉山銀行 最高回饋10%",
+      },
+      {
+        link: "https://media.etmall.com.tw/sp/16698/m/index.html#sinopac",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-2-6.png",
+        alt: "永豐銀行 最高回饋12%",
+      },
+    ],
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/16116/m/index.html",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-3-1.png",
+        alt: "新會員註冊 送$500",
+      },
+      {
+        link: "https://www.etmall.com.tw/Activity/GroupSale",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-3-2.png",
+        alt: "專屬集氣價 最高享 折60%up "
+      },
+      {
+        link: "https://www.etmall.com.tw/Activity/CollectPointExchangeActivity/202208c68e60de",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-3-3.png",
+        alt: "集點加價購 等你換 樂透金100枚",
+      },
+      {
+        link: "https://media.etmall.com.tw/sp/16746/m/index.html",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-3-4.png",
+        alt: "全站滿額抽 Uber乘車優惠$100",
+      },
+      {
+        link: "https://media.etmall.com.tw/sp/17472/m/index.html",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-3-5.png",
+        alt: "離島免運 滿額送 樂透金99枚",
+      },
+    ],
+    [
+      {
+        link: "https://media.etmall.com.tw/sp/17018/m/index.html",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-4-1.jpg",
+        alt: "中秋燒烤派對 5折up",
+      },
+      {
+        link: "https://media.etmall.com.tw/sp/17144/m/index.html",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-4-2.jpg",
+        alt: "流行服飾$99up 下單登記抽壓力鍋"
+      },
+      {
+        link: "https://media.etmall.com.tw/sp/16651/m/index.html",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-4-3.jpg",
+        alt: "百貨專櫃週年慶 最高現省$5,000",
+      },
+      {
+        link: "https://www.etmall.com.tw/gp/186073",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-4-4.jpg",
+        alt: "中秋樂烤淨纖密技 代謝好幫手3折up",
+      },
+      {
+        link: "https://media.etmall.com.tw/sp/17081/m/index.html",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-4-5.jpg",
+        alt: "買了就歐趴 每日登入抽歐趴折價券",
+      },
+      {
+        link: "https://media.etmall.com.tw/sp/10669/m/index.html",
+        imgSrc: "event/2nd/e-main/components/promo-event/items/item-p-event-4-6.jpg",
+        alt: "Dyson居家新美學 滿額登記送Dyson美髮造型器",
+      },
+    ],
+  ]
+
+//- TODO: 如果promo不和hero綁一起時要有自己的section和layout--main
+section.promo__group.promo-event.m-bottom--lg
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          ul.promo__box
+            each data, index in promoEventData
+              li.event__item(id="promoEventItem" + (index + 1))
+                .swiper-container.container--promo-event
+                  ul.swiper-wrapper
+                    each item, itemIndex in  data
+                      li.swiper-slide.promo__item
+                        a(href=  item.link, title= item.alt)
+                          img(src=  item.imgSrc,  alt= item.alt)

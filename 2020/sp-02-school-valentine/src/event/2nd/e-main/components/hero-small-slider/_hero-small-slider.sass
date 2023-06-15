@@ -1,0 +1,30 @@
+.hero__zone
+  .hero__slider
+    +pos-set(relative, base,)
+    margin: -8.5% auto 0
+    padding: 2% 3% 4%
+    width: 75%
+    +bg-set(url(~event/2nd/e-main/components/hero-small-slider/bg-hero-small.png), 100%)
+
+    .swiper-slide
+      transition: transform 0.5s
+      transform: translateY(200%) scale(0)
+    .swiper-slide-active,
+    .swiper-slide-duplicate-active,
+      transform: translateY(0) scale(1)
+
+
+  .hero__title
+    &--sub
+      +pos-set(relative, third, 0, 0)
+      width: 75%
+
+  // +breakpoint-min($min-width-xl)
+    // .hero__slider
+    //   top: 465px
+    //   left: calc(50% - 200px)
+    //   margin-top: 0
+    //   //width: 100%
+    // .hero__title
+    //   &--sub
+    //     width: 95%

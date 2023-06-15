@@ -1,0 +1,153 @@
+// ==========================================================================
+// Plugins
+// ==========================================================================
+// // @import vendors/animate
+// @import vendors/style/swiper-slider-custom
+@import vendors/style/swiper-safari-polyfill
+
+// ==========================================================================
+// first screen need
+// ==========================================================================
+// hero section
+@import event/2nd/e-main/components/hero-section/_hero-section
+// @import utils/bg-decoration-instance/parallax/_parallax
+// @import utils/bg-decoration-instance/css-firework-2/_css-firework-2
+
+// ==========================================================================
+// components
+// ==========================================================================
+// dynamic product 假宮格共用CSS
+@import layout/dynamic-product/_dynamic-product.sass
+
+// 一般components
+@import event/2nd/e-main/components/promo-section/_promo-section
+@import event/2nd/e-main/components/promo-event/_promo-event
+@import event/2nd/e-main/components/daily-slider/_daily-slider
+// @import event/2nd/e-main/components/dynamic-slider/_dynamic-slider
+@import event/2nd/e-main/components/event-w3m3/_event-w3m3
+@import event/2nd/e-main/components/promo-slider/_promo-slider
+@import event/2nd/e-main/components/bn-section/_bn-section
+@import event/2nd/e-main/components/tab-section/_tab-section
+@import event/2nd/e-main/components/bn-slider/_bn-slider
+@import event/2nd/e-main/components/bn-section-2/_bn-section-2
+@import event/2nd/e-main/components/promo-slider-2/_promo-slider-2
+@import event/2nd/e-main/components/daily-time/_daily-time
+// ==========================================================================
+// Page
+// ==========================================================================
+body
+  +pos-set(relative)
+  background-color: $main-e-background-color-2nd
+  // height: 10000px
+  // background-color: $main-e-background-color-1st
+  // background-attachment: auto
+  .bg-web
+    &--top
+      +pos-set(absolute, zero, 0%, 0%)
+      +bg-set(url(event/2nd/e-main/pages/index/bg-m.jpg), 100%)
+      +breakpoint-min($min-width-xl)
+        +bg-set(url(event/2nd/e-main/pages/index/bg.png), auto)
+    &--bottom
+      +pos-set(fixed, under, 0%, 0%)
+      +bg-set(url(event/2nd/e-main/pages/index/bg-m-bottom.jpg), 100%)
+      +breakpoint-min($min-width-xl)
+        +bg-set(url(event/2nd/e-main/pages/index/bg-bottom.jpg), auto)
+        background-position-y: 100%
+      +breakpoint-min($min-width-3xl)
+        background-size: 110%
+    &--spotlight
+      +pos-set(absolute, second, 0%, 0%)
+      width: 100%
+      height: 100vh
+      pointer-events: none
+      overflow: hidden
+      .inner-light
+        +pos-set(absolute, second, 0%, 0%)
+        width: 200%
+        height: 200%
+        +radial-gradient(circle, center, center, transparent, 5%, rgba(0, 0, 0, 0.9), 5%)
+        transform: translate(0%, -50%)
+
+.js-loading .inner-light
+  animation: bg-spotlight 2s ease-in-out 1 forwards
+  +breakpoint-min($min-width-xl)
+    // animation: bg-spotlight-web 2s ease-in-out 1 forwards
+  // background: white
+  // &.bg-fixed
+  //   background-position-y: 55%
+  //   background-attachment: fixed
+  //   +breakpoint-min($min-width-4xl)
+  //     background-position-y: 65%
+  //   +breakpoint-min($min-width-5xl)
+  //     background-position-y: 60%
+
+
+// TODO: 修改EU nav佔位高度(影響logo距離上方高度，U每次要改)
+.navRightBar
+  // +pos-set(relative,zero)
+  // E
+  height: 39px
+  // U
+  // height: 15px
+  +breakpoint-min($min-width-xl)
+    height: auto
+
+.nav__top--btn
+  position: absolute
+  z-index: 601
+  top: 0
+  left: 0
+  padding: 1px 5px
+  // width: 25%
+  min-width: 87px
+  height: 39px
+  line-height: 39px
+  font-size: 15px
+  background-color: #ffe361
+  color: rgb(0, 5, 25)
+  text-align: center
+  // max-height: 39px
+  overflow-y: hidden
+  +breakpoint-min($min-width-xl)
+    display: none
+
+.decoration--top,
+.decor--top
+  +pos-set(absolute)
+  pointer-events: none
+
+section:not(.note)
+  // 有parallax scroll時圖層有relative就有預設z-index可能會遮到宮格，因此使用這個讓宮格也能有預設z-index
+  +pos-set(relative)
+  a
+    display: block
+
+@keyframes bg-spotlight
+  0%
+    transform: translate(0%, -50%) scale(1)
+  35%
+    transform: translate(-40%, -35%) scale(1.5)
+  55%
+    transform: translate(-12%, -15%) scale(2)
+  80%
+    transform: translate(-25%, -35%) scale(3)
+  99%
+    transform: translate(-25%, -35%) scale(10)
+    opacity: 1
+  to
+    opacity: 0
+
+@keyframes bg-spotlight-web
+  0%
+    transform: translate(0%, -50%) scale(1)
+  35%
+    transform: translate(-40%, -35%) scale(1.5)
+  55%
+    transform: translate(-12%, -15%) scale(2)
+  80%
+    transform: translate(-25%, -25%) scale(3)
+  99%
+    transform: translate(-25%, -25%) scale(10)
+    opacity: 1
+  to
+    opacity: 0

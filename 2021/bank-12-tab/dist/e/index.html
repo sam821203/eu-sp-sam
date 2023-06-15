@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="app-bundle.css" rel="stylesheet">
+</head>
+
+<body class="fixed shadow tiny aside-bg footer-radius">
+  <header class="header__wrap">
+    <div class="layout--main">
+      <div class="header__zone"><a class="logo logo--e" href="https://www.etmall.com.tw/"><img src="logo-stroke.svg"
+            alt="東森購物"></a>
+      </div>
+    </div>
+  </header>
+  <main class="sp__wrap" id="spWrap">
+    <section class="hero__wrap">
+      <div class="layout--main">
+        <div class="hero__zone">
+          <div class="hero__box">
+            <div class="hero__title hero__title--main block-center">
+              <h1>
+                <div class="title__box" title="本月銀行優惠"><img src="title.jpg" alt="本月銀行優惠"></div>
+              </h1>
+            </div>
+          </div>
+        </div>
+        <div class="promo__box"><a href="" title="超殺優惠在此！"><img src="hero-promo.jpg" alt="超殺優惠在此！"></a></div>
+        <!-- <div class="promo__box"><img src="hero-promo.jpg" alt="超殺優惠在此！"></div> -->
+      </div>
+    </section>
+  </main>
+  <nav class="nav">
+    <div class="layout--main">
+      <div class="nav__wrap" id="navWrap">
+        <div class="decor__nav" id="decorNav"></div>
+        <ul>
+          <li class="nav__item active"><span>銀行總覽</span></li>
+          <li class="nav__item"><span>卡友日</span></li>
+          <li class="nav__item"><span>行動支付</span></li>
+          <li class="nav__item"><span>輕鬆分期</span></li>
+          <li class="nav__item"><span>紅利折抵</span></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <section class="js--tab promo__group--event promo__group--filter active">
+    <div class="layout--main">
+      <div class="section__title">
+        <div class="title__box">銀行總覽</div>
+      </div>
+      <div class="filter__wrap">
+        <div class="filter__tab">
+          <ul class="tab__wrap" id="filterTabWrap">
+            <li class="filter__item active" data-filter="all">
+              <div class="filter__box"><span>全部門檻</span></div>
+            </li>
+            <li class="filter__item" data-filter="a">
+              <div class="filter__box"><span>$4,999以下</span></div>
+            </li>
+            <li class="filter__item" data-filter="b">
+              <div class="filter__box"><span>$5,000~$9,999</span></div>
+            </li>
+            <li class="filter__item" data-filter="c">
+              <div class="filter__box"><span>$10,000~$19,999</span></div>
+            </li>
+            <li class="filter__item" data-filter="d">
+              <div class="filter__box"><span>$20,000以上</span></div>
+            </li>
+          </ul>
+        </div>
+        <div class="filter__content content__wrap" id="filterContent">
+          <ul class="content__zone">
+            <li class="special__promo content__box active" id="specialPromo">
+              <ul class="special__wrap">
+                <li class="special__item" data-bank="rakuten"><a href=""><img src="special-1.png" alt="東森購物網超強銀行回饋"></a>
+                </li>
+                <li class="special__item" data-bank="one">
+                  <div class="js--pop"><img src="special-2.png" alt="東森購物網超強銀行回饋"></div>
+                </li>
+                <li class="special__item" data-bank="one">
+                  <div class="js--pop"><img src="special-2.png" alt="東森購物網超強銀行回饋"></div>
+                </li>
+                <li class="special__item" data-bank="one">
+                  <a href=""><img src="special-2.png" alt="東森購物網超強銀行回饋"></a>
+                </li>
+                <li class="special__item" data-bank="one">
+                  <div class="js--pop"><img src="special-2.png" alt="東森購物網超強銀行回饋"></div>
+                </li>
+                <li class="special__item" data-bank="one">
+                  <div class="js--pop"><img src="special-2.png" alt="東森購物網超強銀行回饋"></div>
+                </li>
+              </ul>
+              <p>刷卡活動LINE Pay、Apple Pay等行動支付結帳恕不適用 (部分指定銀行除外)</p>
+            </li>
+            <li class="content__box active">
+              <div class="bank__wrap" data-bank="one">
+                <div class="bank__logo"><img src="https://media.etmall.com.tw/sp/7695/m/one.png" alt="第一銀行"></div>
+                <div class="bank__promo">
+                  <ul class="promo__wrap">
+                    <li class="active" data-filter="a">
+                      <span class="promo__date">週六~週日</span>
+                      <span class="promo__rule">累積分期滿$1,000</span>
+                      <span class="promo__bonus">送$150</span>
+                    </li>
+                    <li class="active" data-filter="c">
+                      <span class="promo__date">12/28~12/28</span>
+                      <span class="promo__rule">累積分期滿$10,500</span>
+                      <span class="promo__bonus">送$150</span>
+                    </li>
+                    <li class="active" data-filter="d">
+                      <span class="promo__date">1/1~1/1</span>
+                      <span class="promo__rule">累積分期滿$50,500</span>
+                      <span class="promo__bonus">送$150</span>
+                    </li>
+                    <li class="active" data-filter="">
+                      <span class="promo__date">週六~週日</span>
+                      <span class="promo__rule">有刷就送</span>
+                      <span class="promo__bonus">送$150</span>
+                    </li>
+                    <li class="active" data-filter="c d">
+                      <span class="promo__date">週六~週日</span>
+                      <span class="promo__rule">累積分期滿$10,500 ~ $25,000</span>
+                      <span class="promo__bonus">送$150</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="bank__cta">
+                  <!-- <a class="btn--cta" href="">登錄</a> -->
+                  <div class="btn--pop js--pop">詳情</div>
+                </div>
+              </div>
+            </li>
+            <li class="content__box active">
+              <div class="bank__wrap" data-bank="rakuten">
+                <div class="bank__logo"><img src="https://media.etmall.com.tw/sp/7695/m/rakuten.png" alt="樂天銀行"></div>
+                <div class="bank__promo">
+                  <ul class="promo__wrap">
+                    <li class="active" data-filter="a"><span class="promo__date">週六~週日</span><span
+                        class="promo__rule">累積分期滿$1,000</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="b"><span class="promo__date">週六</span><span
+                        class="promo__rule">累積分期滿$5,500</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="c"><span class="promo__date">12/28~12/28</span><span
+                        class="promo__rule">累積分期滿$10,500</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="d"><span class="promo__date">1/1~1/1</span><span
+                        class="promo__rule">累積分期滿$50,500</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter=""><span class="promo__date">週六~週日</span><span
+                        class="promo__rule">有刷就送</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="c d"><span class="promo__date">週六~週日</span><span
+                        class="promo__rule">累積分期滿$10,500 ~ $25,000</span><span class="promo__bonus">送$150</span></li>
+                  </ul>
+                </div>
+                <div class="bank__cta">
+                  <!-- <a class="btn--cta" href="">登錄</a> -->
+                  <div class="btn--pop js--pop">詳情</div>
+                </div>
+              </div>
+            </li>
+            <li class="content__box active">
+              <div class="bank__wrap" data-bank="rakuten">
+                <div class="bank__logo"><img src="https://media.etmall.com.tw/sp/7695/m/rakuten.png" alt="樂天銀行"></div>
+                <div class="bank__promo">
+                  <ul class="promo__wrap">
+                    <li class="active" data-filter="a"><span class="promo__date">週六~週日</span><span
+                        class="promo__rule">累積分期滿$1,000</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="b"><span class="promo__date">週六</span><span
+                        class="promo__rule">累積分期滿$5,500</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="c"><span class="promo__date">12/28~12/28</span><span
+                        class="promo__rule">累積分期滿$10,500</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="d"><span class="promo__date">1/1~1/1</span><span
+                        class="promo__rule">累積分期滿$50,500</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter=""><span class="promo__date">週六~週日</span><span
+                        class="promo__rule">有刷就送</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="c d"><span class="promo__date">週六~週日</span><span
+                        class="promo__rule">累積分期滿$10,500 ~ $25,000</span><span class="promo__bonus">送$150</span></li>
+                  </ul>
+                </div>
+                <div class="bank__cta">
+                  <!-- <a class="btn--cta" href="">登錄</a> -->
+                  <div class="btn--pop js--pop">詳情</div>
+                </div>
+              </div>
+            </li>
+            <li class="content__box active">
+              <div class="bank__wrap" data-bank="rakuten">
+                <div class="bank__logo"><img src="https://media.etmall.com.tw/sp/7695/m/rakuten.png" alt="樂天銀行"></div>
+                <div class="bank__promo">
+                  <ul class="promo__wrap">
+                    <li class="active" data-filter="a"><span class="promo__date">週六~週日</span><span
+                        class="promo__rule">累積分期滿$1,000</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="b"><span class="promo__date">週六</span><span
+                        class="promo__rule">累積分期滿$5,500</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="c"><span class="promo__date">12/28~12/28</span><span
+                        class="promo__rule">累積分期滿$10,500</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="d"><span class="promo__date">1/1~1/1</span><span
+                        class="promo__rule">累積分期滿$50,500</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter=""><span class="promo__date">週六~週日</span><span
+                        class="promo__rule">有刷就送</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="c d"><span class="promo__date">週六~週日</span><span
+                        class="promo__rule">累積分期滿$10,500 ~ $25,000</span><span class="promo__bonus">送$150</span></li>
+                  </ul>
+                </div>
+                <div class="bank__cta">
+                  <a class="btn--cta" href="">登錄</a>
+                  <!-- <div class="btn--pop js--pop">詳情</div> -->
+                </div>
+              </div>
+            </li>
+            <li class="content__box active">
+              <div class="bank__wrap" data-bank="rakuten">
+                <div class="bank__logo"><img src="https://media.etmall.com.tw/sp/7695/m/rakuten.png" alt="樂天銀行"></div>
+                <div class="bank__promo">
+                  <ul class="promo__wrap">
+                    <li class="active" data-filter="a"><span class="promo__date">週六~週日</span><span
+                        class="promo__rule">累積分期滿$1,000</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="b"><span class="promo__date">週六</span><span
+                        class="promo__rule">累積分期滿$5,500</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="c"><span class="promo__date">12/28~12/28</span><span
+                        class="promo__rule">累積分期滿$10,500</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="d"><span class="promo__date">1/1~1/1</span><span
+                        class="promo__rule">累積分期滿$50,500</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter=""><span class="promo__date">週六~週日</span><span
+                        class="promo__rule">有刷就送</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="c d"><span class="promo__date">週六~週日</span><span
+                        class="promo__rule">累積分期滿$10,500 ~ $25,000</span><span class="promo__bonus">送$150</span></li>
+                  </ul>
+                </div>
+                <div class="bank__cta">
+                  <!-- <a class="btn--cta" href="">登錄</a> -->
+                  <div class="btn--pop js--pop">詳情</div>
+                </div>
+              </div>
+            </li>
+            <li class="content__box active">
+              <div class="bank__wrap" data-bank="rakuten">
+                <div class="bank__logo"><img src="https://media.etmall.com.tw/sp/7695/m/rakuten.png" alt="樂天銀行"></div>
+                <div class="bank__promo">
+                  <ul class="promo__wrap">
+                    <li class="active" data-filter="a"><span class="promo__date">週六~週日</span><span
+                        class="promo__rule">累積分期滿$1,000</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="b"><span class="promo__date">週六</span><span
+                        class="promo__rule">累積分期滿$5,500</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="c"><span class="promo__date">12/28~12/28</span><span
+                        class="promo__rule">累積分期滿$10,500</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="d"><span class="promo__date">1/1~1/1</span><span
+                        class="promo__rule">累積分期滿$50,500</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter=""><span class="promo__date">週六~週日</span><span
+                        class="promo__rule">有刷就送</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="c d"><span class="promo__date">週六~週日</span><span
+                        class="promo__rule">累積分期滿$10,500 ~ $25,000</span><span class="promo__bonus">送$150</span></li>
+                  </ul>
+                </div>
+                <div class="bank__cta">
+                  <!-- <a class="btn--cta" href="">登錄</a> -->
+                  <div class="btn--pop js--pop">詳情</div>
+                </div>
+              </div>
+            </li>
+            <li class="content__box active">
+              <div class="bank__wrap" data-bank="rakuten">
+                <div class="bank__logo"><img src="https://media.etmall.com.tw/sp/7695/m/rakuten.png" alt="樂天銀行"></div>
+                <div class="bank__promo">
+                  <ul class="promo__wrap">
+                    <li class="active" data-filter="a"><span class="promo__date">週六~週日</span><span
+                        class="promo__rule">累積分期滿$1,000</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="b"><span class="promo__date">週六</span><span
+                        class="promo__rule">累積分期滿$5,500</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="c"><span class="promo__date">12/28~12/28</span><span
+                        class="promo__rule">累積分期滿$10,500</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="d"><span class="promo__date">1/1~1/1</span><span
+                        class="promo__rule">累積分期滿$50,500</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter=""><span class="promo__date">週六~週日</span><span
+                        class="promo__rule">有刷就送</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="c d"><span class="promo__date">週六~週日</span><span
+                        class="promo__rule">累積分期滿$10,500 ~ $25,000</span><span class="promo__bonus">送$150</span></li>
+                  </ul>
+                </div>
+                <div class="bank__cta">
+                  <!-- <a class="btn--cta" href="">登錄</a> -->
+                  <div class="btn--pop js--pop">詳情</div>
+                </div>
+              </div>
+            </li>
+            <li class="content__box active">
+              <div class="bank__wrap" data-bank="rakuten">
+                <div class="bank__logo"><img src="https://media.etmall.com.tw/sp/7695/m/rakuten.png" alt="樂天銀行"></div>
+                <div class="bank__promo">
+                  <ul class="promo__wrap">
+                    <li class="active" data-filter="a"><span class="promo__date">週六~週日</span><span
+                        class="promo__rule">累積分期滿$1,000</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="b"><span class="promo__date">週六</span><span
+                        class="promo__rule">累積分期滿$5,500</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="c"><span class="promo__date">12/28~12/28</span><span
+                        class="promo__rule">累積分期滿$10,500</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="d"><span class="promo__date">1/1~1/1</span><span
+                        class="promo__rule">累積分期滿$50,500</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter=""><span class="promo__date">週六~週日</span><span
+                        class="promo__rule">有刷就送</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="c d"><span class="promo__date">週六~週日</span><span
+                        class="promo__rule">累積分期滿$10,500 ~ $25,000</span><span class="promo__bonus">送$150</span></li>
+                  </ul>
+                </div>
+                <div class="bank__cta">
+                  <!-- <a class="btn--cta" href="">登錄</a> -->
+                  <div class="btn--pop js--pop">詳情</div>
+                </div>
+              </div>
+            </li>
+            <li class="content__box active">
+              <div class="bank__wrap" data-bank="rakuten">
+                <div class="bank__logo"><img src="https://media.etmall.com.tw/sp/7695/m/rakuten.png" alt="樂天銀行"></div>
+                <div class="bank__promo">
+                  <ul class="promo__wrap">
+                    <li class="active" data-filter="a"><span class="promo__date">週六~週日</span><span
+                        class="promo__rule">累積分期滿$1,000</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="b"><span class="promo__date">週六</span><span
+                        class="promo__rule">累積分期滿$5,500</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="c"><span class="promo__date">12/28~12/28</span><span
+                        class="promo__rule">累積分期滿$10,500</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="d"><span class="promo__date">1/1~1/1</span><span
+                        class="promo__rule">累積分期滿$50,500</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter=""><span class="promo__date">週六~週日</span><span
+                        class="promo__rule">有刷就送</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="c d"><span class="promo__date">週六~週日</span><span
+                        class="promo__rule">累積分期滿$10,500 ~ $25,000</span><span class="promo__bonus">送$150</span></li>
+                  </ul>
+                </div>
+                <div class="bank__cta">
+                  <!-- <a class="btn--cta" href="">登錄</a> -->
+                  <div class="btn--pop js--pop">詳情</div>
+                </div>
+              </div>
+            </li>
+            <li class="content__box active">
+              <div class="bank__wrap" data-bank="rakuten">
+                <div class="bank__logo"><img src="https://media.etmall.com.tw/sp/7695/m/rakuten.png" alt="樂天銀行"></div>
+                <div class="bank__promo">
+                  <ul class="promo__wrap">
+                    <li class="active" data-filter="a"><span class="promo__date">週六~週日</span><span
+                        class="promo__rule">累積分期滿$1,000</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="b"><span class="promo__date">週六</span><span
+                        class="promo__rule">累積分期滿$5,500</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="c"><span class="promo__date">12/28~12/28</span><span
+                        class="promo__rule">累積分期滿$10,500</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="d"><span class="promo__date">1/1~1/1</span><span
+                        class="promo__rule">累積分期滿$50,500</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter=""><span class="promo__date">週六~週日</span><span
+                        class="promo__rule">有刷就送</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="c d"><span class="promo__date">週六~週日</span><span
+                        class="promo__rule">累積分期滿$10,500 ~ $25,000</span><span class="promo__bonus">送$150</span></li>
+                  </ul>
+                </div>
+                <div class="bank__cta">
+                  <!-- <a class="btn--cta" href="">登錄</a> -->
+                  <div class="btn--pop js--pop">詳情</div>
+                </div>
+              </div>
+            </li>
+            <li class="content__box active">
+              <div class="bank__wrap" data-bank="rakuten">
+                <div class="bank__logo"><img src="https://media.etmall.com.tw/sp/7695/m/rakuten.png" alt="樂天銀行"></div>
+                <div class="bank__promo">
+                  <ul class="promo__wrap">
+                    <li class="active" data-filter="a"><span class="promo__date">週六~週日</span><span
+                        class="promo__rule">累積分期滿$1,000</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="b"><span class="promo__date">週六</span><span
+                        class="promo__rule">累積分期滿$5,500</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="c"><span class="promo__date">12/28~12/28</span><span
+                        class="promo__rule">累積分期滿$10,500</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="d"><span class="promo__date">1/1~1/1</span><span
+                        class="promo__rule">累積分期滿$50,500</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter=""><span class="promo__date">週六~週日</span><span
+                        class="promo__rule">有刷就送</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="c d"><span class="promo__date">週六~週日</span><span
+                        class="promo__rule">累積分期滿$10,500 ~ $25,000</span><span class="promo__bonus">送$150</span></li>
+                  </ul>
+                </div>
+                <div class="bank__cta">
+                  <!-- <a class="btn--cta" href="">登錄</a> -->
+                  <div class="btn--pop js--pop">詳情</div>
+                </div>
+              </div>
+            </li>
+            <li class="content__box active">
+              <div class="bank__wrap" data-bank="rakuten">
+                <div class="bank__logo"><img src="https://media.etmall.com.tw/sp/7695/m/rakuten.png" alt="樂天銀行"></div>
+                <div class="bank__promo">
+                  <ul class="promo__wrap">
+                    <li class="active" data-filter="a"><span class="promo__date">週六~週日</span><span
+                        class="promo__rule">累積分期滿$1,000</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="b"><span class="promo__date">週六</span><span
+                        class="promo__rule">累積分期滿$5,500</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="c"><span class="promo__date">12/28~12/28</span><span
+                        class="promo__rule">累積分期滿$10,500</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="d"><span class="promo__date">1/1~1/1</span><span
+                        class="promo__rule">累積分期滿$50,500</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter=""><span class="promo__date">週六~週日</span><span
+                        class="promo__rule">有刷就送</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="c d"><span class="promo__date">週六~週日</span><span
+                        class="promo__rule">累積分期滿$10,500 ~ $25,000</span><span class="promo__bonus">送$150</span></li>
+                  </ul>
+                </div>
+                <div class="bank__cta">
+                  <!-- <a class="btn--cta" href="">登錄</a> -->
+                  <div class="btn--pop js--pop">詳情</div>
+                </div>
+              </div>
+            </li>
+            <li class="content__box active">
+              <div class="bank__wrap" data-bank="rakuten">
+                <div class="bank__logo">
+                  <img src="https://media.etmall.com.tw/sp/7695/m/rakuten.png" alt="樂天銀行">
+                </div>
+                <div class="bank__promo">
+                  <ul class="promo__wrap">
+                    <li class="active" data-filter="a"><span class="promo__date">週六~週日</span><span
+                        class="promo__rule">累積分期滿$1,000</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="b"><span class="promo__date">週六</span><span
+                        class="promo__rule">累積分期滿$5,500</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="c"><span class="promo__date">12/28~12/28</span><span
+                        class="promo__rule">累積分期滿$10,500</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="d"><span class="promo__date">1/1~1/1</span><span
+                        class="promo__rule">累積分期滿$50,500</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter=""><span class="promo__date">週六~週日</span><span
+                        class="promo__rule">有刷就送</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="c d"><span class="promo__date">週六~週日</span><span
+                        class="promo__rule">累積分期滿$10,500 ~ $25,000</span><span class="promo__bonus">送$150</span></li>
+                  </ul>
+                </div>
+                <div class="bank__cta">
+                  <!-- <a class="btn--cta" href="">登錄</a> -->
+                  <div class="btn--pop js--pop">詳情</div>
+                </div>
+              </div>
+            </li>
+            <li class="content__box active">
+              <div class="bank__wrap" data-bank="rakuten">
+                <div class="bank__logo"><img src="https://media.etmall.com.tw/sp/7695/m/rakuten.png" alt="樂天銀行"></div>
+                <div class="bank__promo">
+                  <ul class="promo__wrap">
+                    <li class="active" data-filter="a"><span class="promo__date">週六~週日</span><span
+                        class="promo__rule">累積分期滿$1,000</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="b"><span class="promo__date">週六</span><span
+                        class="promo__rule">累積分期滿$5,500</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="c"><span class="promo__date">12/28~12/28</span><span
+                        class="promo__rule">累積分期滿$10,500</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="d"><span class="promo__date">1/1~1/1</span><span
+                        class="promo__rule">累積分期滿$50,500</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter=""><span class="promo__date">週六~週日</span><span
+                        class="promo__rule">有刷就送</span><span class="promo__bonus">送$150</span></li>
+                    <li class="active" data-filter="c d"><span class="promo__date">週六~週日</span><span
+                        class="promo__rule">累積分期滿$10,500 ~ $25,000</span><span class="promo__bonus">送$150</span></li>
+                  </ul>
+                </div>
+                <div class="bank__cta">
+                  <!-- <a class="btn--cta" href="">登錄</a> -->
+                  <div class="btn--pop js--pop">詳情</div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="filter__note">
+          <ol>
+            <li>消費計算以活動期間內「訂單成立日」為準，並限活動期間完成信用卡授權者為限。</li>
+            <li>符合資格之訂單認列標準為：需於「活動期間內成立訂單」且「活動期間內授權成功」為準。</li>
+            <li>
+              <ol>
+                <li>
+                  <p>一般授權方式：成功訂單金額以「實際授權金額」為準，每筆訂單滿額係指單項(單一件)商品滿額，若持卡人使用「購物車」同時購買多樣商品，則需其中單一件商品達滿額標準，始符合回饋資格。</p>
+                  <p>(範例 1：一台購物車，內含5項商品，每一項商品皆買1個，即有5 個授權碼；需其中有1個授權金額符合活動門檻，始符合回饋資格。)</p>
+                  <p>(範例 2：一台購物車，內含5項商品，其中一項商品買3個，即有7 個授權碼；需其中有1個授權金額符合活動門檻，始符合回饋資格。)</p>
+                </li>
+                <li>
+                  <p>3D驗證授權方式：成功訂單金額以「實際授權金額」為準，一台「購物車」無論訂購幾項商品，僅有1個授權碼，限使用信用卡一次付清，且授權金額達滿額標準，始符合回饋資格。</p>
+                </li>
+              </ol>
+            </li>
+            <li>活動期間於東森購物、Her森森購物網消費合併計算，且各家銀行活動均為正、附卡合併計算，每月每戶限回饋一次，詳細活動辦法依各配合發卡機構網站公告為準。</li>
+            <li>若同時遇各銀行其他紅利點數(加倍)優惠活動，則各銀行將"擇優"(不重複)計算回饋點數。</li>
+            <li>
+              活動認定資格以實際成交訂單計算（排除購買旅遊、保險、生前契約、禮券、贈品、公關、簽證、兵險、機場稅、燃油附加費等之適用），若持卡人如有付款失敗、授權未完成、取消訂單、銷貨退回或回饋當時信用卡發生停卡、延滯繳款或其他違反信用卡契約之情事者，將喪失得獎及領獎資格。
+            </li>
+            <li>以上活動，消費金額以該筆實際支付金額計算(使用紅利點數、折價券、折扣金、東森幣、提貨券、禮物卡等折抵之消費，以折抵後之消費金額為計算基準)。</li>
+            <li>以上活動，歡樂旅行社商品、草莓網商品不適用。</li>
+            <li>登錄說明：需於「指定期間內完成登錄」且「限於活動名額內」且「無取消訂單或退貨」始符合活動資格；未於指定期間內完成登錄者或資料輸入錯誤者，視同放棄參加資格，登錄額滿時活動即提前終止。</li>
+            <li>
+              詳細活動辦法依各配合發卡機構網站公告為準，請參閱東森購物網（http://www.etmall.com.tw/）與Her森森購物網（http://www.u-mall.com.tw/），各配合發卡機構及東森購物(包含Her森森購物網)保留隨時修改、變更、取消本活動之權利，亦有權對本活動之所有事宜作出解釋或決定，恕不另行通知，並於公告後實施。
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="js--tab promo__group--week">
+    <div class="layout--main">
+      <div class="section__title">
+        <div class="title__box">卡友日</div>
+      </div>
+      <div class="week__content content__wrap" id="weekContent">
+        <ul class="content__zone">
+          <li class="content__box" data-week="0 1 2">
+            <div class="week__box">
+              <div class="week__icon">週日</div>
+              <div class="week__icon">週一</div>
+              <div class="week__icon">週二</div>
+            </div>
+            <div class="bank__wrap" data-bank="one">
+              <div class="bank__logo"><img src="https://media.etmall.com.tw/sp/7695/m/one.png" alt="第一銀行"></div>
+              <div class="bank__promo">
+                <ul class="promo__wrap">
+                  <li>
+                    <div class="promo__rule">累積分期</div>
+                    <div class="promo__rule">滿$10,000送</div>
+                  </li>
+                  <li>
+                    <div class="promo__bonus">$1,500</div>
+                    <div class="promo__unit">刷卡金</div>
+                  </li>
+                </ul>
+              </div>
+              <div class="bank__cta">
+                <!-- <a class="btn--cta" href="">登錄</a> -->
+                <div class="btn--pop js--pop">詳情</div>
+              </div>
+            </div>
+          </li>
+          <li class="content__box" data-week="0">
+            <div class="week__box">
+              <div class="week__icon">週日</div>
+            </div>
+            <div class="bank__wrap" data-bank="rakuten">
+              <div class="bank__logo"><img src="https://media.etmall.com.tw/sp/7695/m/rakuten.png" alt="樂天銀行"></div>
+              <div class="bank__promo">
+                <ul class="promo__wrap">
+                  <li>
+                    <div class="promo__rule">累積分期</div>
+                    <div class="promo__rule">滿$888,888送</div>
+                  </li>
+                  <li>
+                    <div class="promo__bonus">$88,888</div>
+                    <div class="promo__unit">刷卡金</div>
+                  </li>
+                </ul>
+              </div>
+              <div class="bank__cta">
+                <!-- <a class="btn--cta" href="">登錄</a> -->
+                <div class="btn--pop js--pop">詳情</div>
+              </div>
+            </div>
+          </li>
+          <li class="content__box" data-week="1">
+            <div class="week__box">
+              <div class="week__icon">週一</div>
+            </div>
+            <div class="bank__wrap" data-bank="rakuten">
+              <div class="bank__logo"><img src="https://media.etmall.com.tw/sp/7695/m/rakuten.png" alt="樂天銀行"></div>
+              <div class="bank__promo">
+                <ul class="promo__wrap">
+                  <li>
+                    <div class="promo__rule">累積分期</div>
+                    <div class="promo__rule">滿$888,888送</div>
+                  </li>
+                  <li>
+                    <div class="promo__bonus">$88,888</div>
+                    <div class="promo__unit">刷卡金</div>
+                  </li>
+                </ul>
+              </div>
+              <div class="bank__cta">
+                <a class="btn--cta" href="">登錄</a>
+                <!-- <div class="btn--pop js--pop">詳情</div> -->
+              </div>
+            </div>
+          </li>
+          <li class="content__box" data-week="2">
+            <div class="week__box">
+              <div class="week__icon">週二</div>
+            </div>
+            <div class="bank__wrap" data-bank="rakuten">
+              <div class="bank__logo"><img src="https://media.etmall.com.tw/sp/7695/m/rakuten.png" alt="樂天銀行"></div>
+              <div class="bank__promo">
+                <ul class="promo__wrap">
+                  <li>
+                    <div class="promo__rule">累積分期</div>
+                    <div class="promo__rule">滿$888,888送</div>
+                  </li>
+                  <li>
+                    <div class="promo__bonus">$88,888</div>
+                    <div class="promo__unit">刷卡金</div>
+                  </li>
+                </ul>
+              </div>
+              <div class="bank__cta">
+                <!-- <a class="btn--cta" href="">登錄</a> -->
+                <div class="btn--pop js--pop">詳情</div>
+              </div>
+            </div>
+          </li>
+          <li class="content__box" data-week="3">
+            <div class="week__box">
+              <div class="week__icon">週三</div>
+            </div>
+            <div class="bank__wrap" data-bank="rakuten">
+              <div class="bank__logo"><img src="https://media.etmall.com.tw/sp/7695/m/rakuten.png" alt="樂天銀行"></div>
+              <div class="bank__promo">
+                <ul class="promo__wrap">
+                  <li>
+                    <div class="promo__rule">累積分期</div>
+                    <div class="promo__rule">滿$888,888送</div>
+                  </li>
+                  <li>
+                    <div class="promo__bonus">$88,888</div>
+                    <div class="promo__unit">刷卡金</div>
+                  </li>
+                </ul>
+              </div>
+              <div class="bank__cta">
+                <!-- <a class="btn--cta" href="">登錄</a> -->
+                <div class="btn--pop js--pop">詳情</div>
+              </div>
+            </div>
+          </li>
+          <li class="content__box" data-week="4">
+            <div class="week__box">
+              <div class="week__icon">週四</div>
+            </div>
+            <div class="bank__wrap" data-bank="rakuten">
+              <div class="bank__logo"><img src="https://media.etmall.com.tw/sp/7695/m/rakuten.png" alt="樂天銀行"></div>
+              <div class="bank__promo">
+                <ul class="promo__wrap">
+                  <li>
+                    <div class="promo__rule">累積分期</div>
+                    <div class="promo__rule">滿$888,888送</div>
+                  </li>
+                  <li>
+                    <div class="promo__bonus">$88,888</div>
+                    <div class="promo__unit">刷卡金</div>
+                  </li>
+                </ul>
+              </div>
+              <div class="bank__cta">
+                <!-- <a class="btn--cta" href="">登錄</a> -->
+                <div class="btn--pop js--pop">詳情</div>
+              </div>
+            </div>
+          </li>
+          <li class="content__box" data-week="5">
+            <div class="week__box">
+              <div class="week__icon">週五</div>
+            </div>
+            <div class="bank__wrap" data-bank="rakuten">
+              <div class="bank__logo"><img src="https://media.etmall.com.tw/sp/7695/m/rakuten.png" alt="樂天銀行"></div>
+              <div class="bank__promo">
+                <ul class="promo__wrap">
+                  <li>
+                    <div class="promo__rule">累積分期</div>
+                    <div class="promo__rule">滿$888,888送</div>
+                  </li>
+                  <li>
+                    <div class="promo__bonus">$88,888</div>
+                    <div class="promo__unit">刷卡金</div>
+                  </li>
+                </ul>
+              </div>
+              <div class="bank__cta">
+                <!-- <a class="btn--cta" href="">登錄</a> -->
+                <div class="btn--pop js--pop">詳情</div>
+              </div>
+            </div>
+          </li>
+          <li class="content__box" data-week="6">
+            <div class="week__box">
+              <div class="week__icon">週六</div>
+            </div>
+            <div class="bank__wrap" data-bank="rakuten">
+              <div class="bank__logo"><img src="https://media.etmall.com.tw/sp/7695/m/rakuten.png" alt="樂天銀行"></div>
+              <div class="bank__promo">
+                <ul class="promo__wrap">
+                  <li>
+                    <div class="promo__rule">累積分期</div>
+                    <div class="promo__rule">滿$888,888送</div>
+                  </li>
+                  <li>
+                    <div class="promo__bonus">$88,888</div>
+                    <div class="promo__unit">刷卡金</div>
+                  </li>
+                </ul>
+              </div>
+              <div class="bank__cta">
+                <!-- <a class="btn--cta" href="">登錄</a> -->
+                <div class="btn--pop js--pop">詳情</div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="js--tab promo__group--event">
+    <div class="layout--main">
+      <div class="section__title">
+        <div class="title__box">行動支付</div>
+      </div>
+      <div class="event__content content__wrap">
+        <ul class="content__zone">
+          <li class="content__box active">
+            <div class="bank__wrap" data-bank="one">
+              <div class="bank__logo"><img src="https://media.etmall.com.tw/sp/7695/m/one.png" alt="第一銀行"></div>
+              <div class="bank__promo">
+                <ul class="promo__wrap">
+                  <li class="active" data-filter="a"><span class="promo__date">週六~週日</span><span
+                      class="promo__rule">累積分期滿$1,000</span><span class="promo__bonus">送$150</span></li>
+                  <li class="active" data-filter="c"><span class="promo__date">12/28~12/28</span><span
+                      class="promo__rule">累積分期滿$10,500</span><span class="promo__bonus">送$150</span></li>
+                  <li class="active" data-filter="d"><span class="promo__date">1/1~1/1</span><span
+                      class="promo__rule">累積分期滿$50,500</span><span class="promo__bonus">送$150</span></li>
+                  <li class="active" data-filter=""><span class="promo__date">週六~週日</span><span
+                      class="promo__rule">有刷就送</span><span class="promo__bonus">送$150</span></li>
+                  <li class="active" data-filter="c d"><span class="promo__date">週六~週日</span><span
+                      class="promo__rule">累積分期滿$10,500 ~ $25,000</span><span class="promo__bonus">送$150</span></li>
+                </ul>
+              </div>
+              <div class="bank__cta">
+                <!-- <a class="btn--cta" href="">登錄</a> -->
+                <div class="btn--pop js--pop">詳情</div>
+              </div>
+            </div>
+          </li>
+          <li class="content__box active">
+            <div class="bank__wrap" data-bank="rakuten">
+              <div class="bank__logo"><img src="https://media.etmall.com.tw/sp/7695/m/rakuten.png" alt="樂天銀行"></div>
+              <div class="bank__promo">
+                <ul class="promo__wrap">
+                  <li class="active" data-filter="a"><span class="promo__date">週六~週日</span><span
+                      class="promo__rule">累積分期滿$1,000</span><span class="promo__bonus">送$150</span></li>
+                  <li class="active" data-filter="b"><span class="promo__date">週六</span><span
+                      class="promo__rule">累積分期滿$5,500</span><span class="promo__bonus">送$150</span></li>
+                  <li class="active" data-filter="c"><span class="promo__date">12/28~12/28</span><span
+                      class="promo__rule">累積分期滿$10,500</span><span class="promo__bonus">送$150</span></li>
+                  <li class="active" data-filter="d"><span class="promo__date">1/1~1/1</span><span
+                      class="promo__rule">累積分期滿$50,500</span><span class="promo__bonus">送$150</span></li>
+                  <li class="active" data-filter=""><span class="promo__date">週六~週日</span><span
+                      class="promo__rule">有刷就送</span><span class="promo__bonus">送$150</span></li>
+                  <li class="active" data-filter="c d"><span class="promo__date">週六~週日</span><span
+                      class="promo__rule">累積分期滿$10,500 ~ $25,000</span><span class="promo__bonus">送$150</span></li>
+                </ul>
+              </div>
+              <div class="bank__cta">
+                <!-- <a class="btn--cta" href="">登錄</a> -->
+                <div class="btn--pop js--pop">詳情</div>
+              </div>
+            </div>
+          </li>
+          <li class="content__box active">
+            <div class="bank__wrap" data-bank="rakuten">
+              <div class="bank__logo"><img src="https://media.etmall.com.tw/sp/7695/m/rakuten.png" alt="樂天銀行"></div>
+              <div class="bank__promo">
+                <ul class="promo__wrap">
+                  <li class="active" data-filter="a"><span class="promo__date">週六~週日</span><span
+                      class="promo__rule">累積分期滿$1,000</span><span class="promo__bonus">送$150</span></li>
+                  <li class="active" data-filter="b"><span class="promo__date">週六</span><span
+                      class="promo__rule">累積分期滿$5,500</span><span class="promo__bonus">送$150</span></li>
+                  <li class="active" data-filter="c"><span class="promo__date">12/28~12/28</span><span
+                      class="promo__rule">累積分期滿$10,500</span><span class="promo__bonus">送$150</span></li>
+                  <li class="active" data-filter="d"><span class="promo__date">1/1~1/1</span><span
+                      class="promo__rule">累積分期滿$50,500</span><span class="promo__bonus">送$150</span></li>
+                  <li class="active" data-filter=""><span class="promo__date">週六~週日</span><span
+                      class="promo__rule">有刷就送</span><span class="promo__bonus">送$150</span></li>
+                  <li class="active" data-filter="c d"><span class="promo__date">週六~週日</span><span
+                      class="promo__rule">累積分期滿$10,500 ~ $25,000</span><span class="promo__bonus">送$150</span></li>
+                </ul>
+              </div>
+              <div class="bank__cta">
+                <!-- <a class="btn--cta" href="">登錄</a> -->
+                <div class="btn--pop js--pop">詳情</div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="js--tab promo__group--table promo__group--table-1">
+    <div class="layout--main">
+      <div class="section__title">
+        <div class="title__box">輕鬆分期</div>
+      </div>
+      <div class="table__wrap content__wrap">
+        <div class="table__box">
+          <table>
+            <tr>
+              <th>銀行名稱</th>
+              <th>一次付清</th>
+              <th>3期</th>
+              <th>6期</th>
+              <th>12期</th>
+              <th>24期</th>
+              <th>30期</th>
+            </tr>
+            <tr>
+              <td>台灣樂天</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>╳</td>
+              <td>╳</td>
+            </tr>
+            <tr>
+              <td>台灣樂天</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>╳</td>
+              <td>╳</td>
+            </tr>
+            <tr>
+              <td>台灣樂天</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>╳</td>
+              <td>╳</td>
+            </tr>
+            <tr>
+              <td>台灣樂天</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>╳</td>
+              <td>╳</td>
+            </tr>
+            <tr>
+              <td>台灣樂天</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>╳</td>
+              <td>╳</td>
+            </tr>
+            <tr>
+              <td>台灣樂天</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>╳</td>
+              <td>╳</td>
+            </tr>
+            <tr>
+              <td>台灣樂天</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>╳</td>
+              <td>╳</td>
+            </tr>
+            <tr>
+              <td>台灣樂天</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>╳</td>
+              <td>╳</td>
+            </tr>
+            <tr>
+              <td>台灣樂天</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>╳</td>
+              <td>╳</td>
+            </tr>
+            <tr>
+              <td>台灣樂天</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>╳</td>
+              <td>╳</td>
+            </tr>
+            <tr>
+              <td>台灣樂天</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>╳</td>
+              <td>╳</td>
+            </tr>
+            <tr>
+              <td>台灣樂天</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>╳</td>
+              <td>╳</td>
+            </tr>
+            <tr>
+              <td>台灣樂天</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>╳</td>
+              <td>╳</td>
+            </tr>
+            <tr>
+              <td>台灣樂天</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>╳</td>
+              <td>╳</td>
+            </tr>
+            <tr>
+              <td>台灣樂天</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>╳</td>
+              <td>╳</td>
+            </tr>
+            <tr>
+              <td>台灣樂天</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>╳</td>
+              <td>╳</td>
+            </tr>
+            <tr>
+              <td>台灣樂天</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>╳</td>
+              <td>╳</td>
+            </tr>
+            <tr>
+              <td>台灣樂天</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>◯</td>
+              <td>╳</td>
+              <td>╳</td>
+            </tr>
+          </table>
+        </div>
+        <p>實際可分期期數依結帳頁面顯示為準</p>
+      </div>
+    </div>
+  </section>
+  <section class="js--tab promo__group--table promo__group--table-2">
+    <div class="layout--main">
+      <div class="section__title">
+        <div class="title__box">紅利折抵</div>
+      </div>
+      <div class="table__wrap content__wrap">
+        <div class="table__box">
+          <table>
+            <tr>
+              <th>銀行名稱</th>
+              <th>最高折抵上限</th>
+              <th>刷卡門檻</th>
+              <th>點數限制</th>
+              <th>折抵比例</th>
+            </tr>
+            <tr>
+              <td>台灣樂天</td>
+              <td>100%</td>
+              <td>888元</td>
+              <td>8888點</td>
+              <td>888點：88元</td>
+            </tr>
+            <tr>
+              <td>台灣樂天</td>
+              <td>100%</td>
+              <td>888元</td>
+              <td>8888點</td>
+              <td>888點：88元</td>
+            </tr>
+            <tr>
+              <td>台灣樂天</td>
+              <td>100%</td>
+              <td>888元</td>
+              <td>8888點</td>
+              <td>888點：88元</td>
+            </tr>
+            <tr>
+              <td>台灣樂天</td>
+              <td>100%</td>
+              <td>888元</td>
+              <td>8888點</td>
+              <td>888點：88元</td>
+            </tr>
+            <tr>
+              <td>台灣樂天</td>
+              <td>100%</td>
+              <td>888元</td>
+              <td>8888點</td>
+              <td>888點：88元</td>
+            </tr>
+            <tr>
+              <td>台灣樂天</td>
+              <td>100%</td>
+              <td>888元</td>
+              <td>8888點</td>
+              <td>888點：88元</td>
+            </tr>
+            <tr>
+              <td>台灣樂天</td>
+              <td>100%</td>
+              <td>888元</td>
+              <td>8888點</td>
+              <td>888點：88元</td>
+            </tr>
+            <tr>
+              <td>台灣樂天</td>
+              <td>100%</td>
+              <td>888元</td>
+              <td>8888點</td>
+              <td>888點：88元</td>
+            </tr>
+            <tr>
+              <td>台灣樂天</td>
+              <td>100%</td>
+              <td>888元</td>
+              <td>8888點</td>
+              <td>888點：88元</td>
+            </tr>
+            <tr>
+              <td>台灣樂天</td>
+              <td>100%</td>
+              <td>888元</td>
+              <td>8888點</td>
+              <td>888點：88元</td>
+            </tr>
+            <tr>
+              <td>台灣樂天</td>
+              <td>100%</td>
+              <td>888元</td>
+              <td>8888點</td>
+              <td>888點：88元</td>
+            </tr>
+            <tr>
+              <td>台灣樂天</td>
+              <td>100%</td>
+              <td>888元</td>
+              <td>8888點</td>
+              <td>888點：88元</td>
+            </tr>
+            <tr>
+              <td>台灣樂天</td>
+              <td>100%</td>
+              <td>888元</td>
+              <td>8888點</td>
+              <td>888點：88元</td>
+            </tr>
+            <tr>
+              <td>台灣樂天</td>
+              <td>100%</td>
+              <td>888元</td>
+              <td>8888點</td>
+              <td>888點：88元</td>
+            </tr>
+            <tr>
+              <td>台灣樂天</td>
+              <td>100%</td>
+              <td>888元</td>
+              <td>8888點</td>
+              <td>888點：88元</td>
+            </tr>
+            <tr>
+              <td>台灣樂天</td>
+              <td>100%</td>
+              <td>888元</td>
+              <td>8888點</td>
+              <td>888點：88元</td>
+            </tr>
+            <tr>
+              <td>台灣樂天</td>
+              <td>100%</td>
+              <td>888元</td>
+              <td>8888點</td>
+              <td>888點：88元</td>
+            </tr>
+            <tr>
+              <td>台灣樂天</td>
+              <td>100%</td>
+              <td>888元</td>
+              <td>8888點</td>
+              <td>888點：88元</td>
+            </tr>
+          </table>
+        </div>
+        <p>詳細折抵辦法依各配合銀行網站公告為準</p>
+      </div>
+    </div>
+  </section>
+  <section class="promo__group--big">
+    <div class="layout--main">
+      <div class="big__content content__wrap" id="bigContent">
+        <ul class="content__zone">
+          <li class="content__box">
+            <div class="bank__wrap" id="one">
+              <div class="bank__logo">
+                <div class="btn--back"><img src="go-back.svg" alt="go back"><span class="text--web">返回列表</span></div>
+                <div class="logo__box"><img src="https://media.etmall.com.tw/sp/7695/m/one.png" alt="第一銀行"></div>
+              </div>
+              <div class="bank__promo">
+                <ul class="promo__wrap">
+                  <li class="promo__box">
+                    <h3 class="promo__title">【活動一】週三臺銀日</h3>
+                    <ul class="promo__info">
+                      <li class="info__box">
+                        <div class="info__head">活動期間</div>
+                        <div class="info__body">
+                          <p>2021/12/1-2021/12/31，每週三</p>
+                        </div>
+                      </li>
+                      <li class="info__box">
+                        <div class="info__head">活動內容</div>
+                        <div class="info__body">
+                          <p>2021/12/1-2021/12/31，每週三</p>
+                          <ul>
+                            <li>上述優惠正附卡消費、回饋歸戶合併計算，每戶每週限回饋乙次，每月限回饋二次，當月所有活動每戶限「擇優」回饋乙次。</li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="info__box">
+                        <div class="info__head">登錄辦法</div>
+                        <div class="info__body">
+                          <ul>
+                            <li>登錄日期：2021/12/17 18:00起至 2021/12/31 23:59，若登錄名額額滿，將提前關閉。</li>
+                          </ul>
+                        </div><a class="btn--cta" herf="" title="登錄網址">登錄網址</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="promo__box">
+                    <h3 class="promo__title">【活動二】全月活動</h3>
+                    <ul class="promo__info">
+                      <li class="info__box">
+                        <div class="info__head">活動期間</div>
+                        <div class="info__body">
+                          <p>2021/12/1-2021/12/31</p>
+                        </div>
+                      </li>
+                      <li class="info__box">
+                        <div class="info__head">活動內容</div>
+                        <div class="info__body">
+                          <ol>
+                            <li>累積分期滿NT$6,000送NT$200刷卡金 (限量50名)</li>
+                            <li>累積分期滿NT$20,000送NT$800刷卡金 (限量20名)</li>
+                          </ol>
+                          <ul>
+                            <li>上述優惠正附卡消費、回饋歸戶合併計算，每戶每週限回饋乙次，每月限回饋二次，當月所有活動每戶限「擇優」回饋乙次。</li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="info__box">
+                        <div class="info__head">登錄辦法</div>
+                        <div class="info__body">
+                          <ul>
+                            <li>登錄日期：2021/12/1 00:00起至2021/12/31 23:59止於「安泰銀行活動登錄網頁」完成【東森購物12月優惠】活動登錄，登錄名額額滿為止。</li>
+                          </ul>
+                        </div><a class="btn--cta" herf="" title="登錄網址">登錄網址</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="promo__box">
+                    <div class="promo__title">注意事項</div>
+                    <ul class="promo__info">
+                      <li class="info__box">
+                        <div class="info__body">
+                          <ol>
+                            <li class="bottom-dash">
+                              參加本活動須由正卡持卡人於開放登錄期間透過「活動登錄網頁」完成登錄並於活動期間內，持安泰銀行信用卡正、附卡消費達活動門檻始符合回饋資格，如僅完成登錄或僅達消費門檻均不符合回饋資格。
+                            </li>
+                            <li class="bottom-dash">
+                              【東森購物12月優惠】當月所有活動/門檻僅供正卡持卡人擇一登錄，登錄完成後無法取消，每歸戶限回饋乙次，正、附卡合併計算，恕不重複回饋。登錄名額額滿為止，不另公告，額滿恕無法補登及享有回饋資格。
+                            </li>
+                            <li class="bottom-dash">
+                              參加本活動須由正卡持卡人於開放登錄期間透過「活動登錄網頁」完成登錄並於活動期間內，持安泰銀行信用卡正、附卡消費達活動門檻始符合回饋資格，如僅完成登錄或僅達消費門檻均不符合回饋資格。
+                            </li>
+                            <li class="bottom-dash">
+                              【東森購物12月優惠】當月所有活動/門檻僅供正卡持卡人擇一登錄，登錄完成後無法取消，每歸戶限回饋乙次，正、附卡合併計算，恕不重複回饋。登錄名額額滿為止，不另公告，額滿恕無法補登及享有回饋資格。
+                            </li>
+                          </ol>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="content__box">
+            <div class="bank__wrap" id="rakuten">
+              <div class="bank__logo">
+                <div class="btn--back"><img src="go-back.svg" alt="go back">
+                  <span class="text--web">返回列表</span>
+                </div>
+                <div class="logo__box">
+                  <img src="https://media.etmall.com.tw/sp/7695/m/rakuten.png" alt="樂天銀行">
+                </div>
+              </div>
+              <div class="bank__promo">
+                <ul class="promo__wrap">
+                  <li class="promo__box">
+                    <h3 class="promo__title">【活動一】週三臺銀日</h3>
+                    <ul class="promo__info">
+                      <li class="info__box">
+                        <div class="info__head">活動期間</div>
+                        <div class="info__body">
+                          <p>2021/12/1-2021/12/31，每週三</p>
+                        </div>
+                      </li>
+                      <li class="info__box">
+                        <div class="info__head">活動內容</div>
+                        <div class="info__body">
+                          <p>2021/12/1-2021/12/31，每週三</p>
+                          <ul>
+                            <li>上述優惠正附卡消費、回饋歸戶合併計算，每戶每週限回饋乙次，每月限回饋二次，當月所有活動每戶限「擇優」回饋乙次。</li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="info__box">
+                        <div class="info__head">登錄辦法</div>
+                        <div class="info__body">
+                          <ul>
+                            <li>登錄日期：2021/12/17 18:00起至 2021/12/31 23:59，若登錄名額額滿，將提前關閉。</li>
+                          </ul>
+                        </div><a class="btn--cta" herf="" title="登錄網址">登錄網址</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="promo__box">
+                    <h3 class="promo__title">【活動二】全月活動</h3>
+                    <ul class="promo__info">
+                      <li class="info__box">
+                        <div class="info__head">活動期間</div>
+                        <div class="info__body">
+                          <p>2021/12/1-2021/12/31</p>
+                        </div>
+                      </li>
+                      <li class="info__box">
+                        <div class="info__head">活動內容</div>
+                        <div class="info__body">
+                          <ol>
+                            <li>累積分期滿NT$6,000送NT$200刷卡金 (限量50名)</li>
+                            <li>累積分期滿NT$20,000送NT$800刷卡金 (限量20名)</li>
+                          </ol>
+                          <ul>
+                            <li>上述優惠正附卡消費、回饋歸戶合併計算，每戶每週限回饋乙次，每月限回饋二次，當月所有活動每戶限「擇優」回饋乙次。</li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="info__box">
+                        <div class="info__head">登錄辦法</div>
+                        <div class="info__body">
+                          <ul>
+                            <li>登錄日期：2021/12/1 00:00起至2021/12/31 23:59止於「安泰銀行活動登錄網頁」完成【東森購物12月優惠】活動登錄，登錄名額額滿為止。</li>
+                          </ul>
+                        </div><a class="btn--cta" herf="" title="登錄網址">登錄網址</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="promo__box">
+                    <div class="promo__title">注意事項</div>
+                    <ul class="promo__info">
+                      <li class="info__box">
+                        <div class="info__body">
+                          <ol>
+                            <li class="bottom-dash">
+                              參加本活動須由正卡持卡人於開放登錄期間透過「活動登錄網頁」完成登錄並於活動期間內，持安泰銀行信用卡正、附卡消費達活動門檻始符合回饋資格，如僅完成登錄或僅達消費門檻均不符合回饋資格。
+                            </li>
+                            <li class="bottom-dash">
+                              【東森購物12月優惠】當月所有活動/門檻僅供正卡持卡人擇一登錄，登錄完成後無法取消，每歸戶限回饋乙次，正、附卡合併計算，恕不重複回饋。登錄名額額滿為止，不另公告，額滿恕無法補登及享有回饋資格。
+                            </li>
+                            <li class="bottom-dash">
+                              參加本活動須由正卡持卡人於開放登錄期間透過「活動登錄網頁」完成登錄並於活動期間內，持安泰銀行信用卡正、附卡消費達活動門檻始符合回饋資格，如僅完成登錄或僅達消費門檻均不符合回饋資格。
+                            </li>
+                            <li class="bottom-dash">
+                              【東森購物12月優惠】當月所有活動/門檻僅供正卡持卡人擇一登錄，登錄完成後無法取消，每歸戶限回饋乙次，正、附卡合併計算，恕不重複回饋。登錄名額額滿為止，不另公告，額滿恕無法補登及享有回饋資格。
+                            </li>
+                          </ol>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <aside class="aside-nav bg" id="asideNav">
+    <button class="btn--fixed" id="btnFixed"><span>各大銀行</span><span>關閉</span></button>
+    <div class="overlay" id="overlay"></div>
+    <div class="aside__wrap" id="asideWrap">
+      <div class="aside__header"><img src="aside-header-web.png" alt="銀行總覽"></div>
+      <ul class="aside__block">
+        <li>
+          <div class="aside__box" data-bank="one">
+            <a class="btn--cta" href="">一銀</a>
+          </div>
+        </li>
+        <li>
+          <div class="aside__box" data-bank="one">
+            <div class="btn--pop js--pop">一銀</div>
+          </div>
+        </li>
+        <li>
+          <div class="aside__box" data-bank="rakuten">
+            <div class="btn--pop js--pop">樂天</div>
+          </div>
+        </li>
+        <li>
+          <div class="aside__box" data-bank="rakuten">
+            <div class="btn--pop js--pop">樂天</div>
+          </div>
+        </li>
+        <li>
+          <div class="aside__box" data-bank="rakuten">
+            <div class="btn--pop js--pop">樂天</div>
+          </div>
+        </li>
+        <li>
+          <div class="aside__box" data-bank="rakuten">
+            <div class="btn--pop js--pop">樂天</div>
+          </div>
+        </li>
+        <li>
+          <div class="aside__box" data-bank="rakuten">
+            <div class="btn--pop js--pop">樂天</div>
+          </div>
+        </li>
+        <li>
+          <div class="aside__box" data-bank="rakuten">
+            <div class="btn--pop js--pop">樂天</div>
+          </div>
+        </li>
+        <li>
+          <div class="aside__box" data-bank="rakuten">
+            <div class="btn--pop js--pop">樂天</div>
+          </div>
+        </li>
+        <li>
+          <div class="aside__box" data-bank="rakuten">
+            <div class="btn--pop js--pop">樂天</div>
+          </div>
+        </li>
+        <li>
+          <div class="aside__box" data-bank="rakuten">
+            <div class="btn--pop js--pop">樂天</div>
+          </div>
+        </li>
+        <li>
+          <div class="aside__box" data-bank="rakuten">
+            <div class="btn--pop js--pop">樂天</div>
+          </div>
+        </li>
+        <li>
+          <div class="aside__box" data-bank="rakuten">
+            <div class="btn--pop js--pop">樂天</div>
+          </div>
+        </li>
+        <li>
+          <div class="aside__box" data-bank="rakuten">
+            <div class="btn--pop js--pop">樂天</div>
+          </div>
+        </li>
+      </ul>
+      <div class="aside__footer js--go-top" id="elevatorGoTop"><img src="aside-footer-web.png" alt="回到頂端"></div>
+    </div>
+  </aside>
+  <footer class="footer__wrap" id="footer">
+    <div class="layout--main">
+      <div class="footer__zone">
+        <h2>謹慎理財 信用至上</h2>
+        <p>詳細活動辦法</p>
+        <p>依各配合發卡機構網站公告為準</p>
+      </div>
+    </div>
+  </footer>
+  <script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+  <script type="text/javascript" src="app-bundle.js"></script>
+</body>
+
+</html>

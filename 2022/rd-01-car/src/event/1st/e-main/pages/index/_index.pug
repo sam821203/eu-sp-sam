@@ -1,0 +1,44 @@
+//- TODO: 打開雙月選項切換雙月(預設單月：7658 / true = 雙月：7659)
+//- - var isEven = true
+//- TODO: 打開2號電梯選項切換第二組電梯(預設第一組，true = 第二組 單月：7660 / 雙月：7661)
+//- - var isSecond = true
+//- TODO: 打開u-mall選項會自動轉換成U的logo和連結、電梯(預設etmall)
+//- - var isU = true
+main#spWrap.sp__wrap
+  include /layout/header/_header
+
+  //- hero section
+  //- ===========================
+  //- include /utils/bg-decoration-instance/parallax/_parallax
+  include /event/1st/e-main/components/hero-section/_hero-section
+
+  //- other components
+  //- ===========================
+  //- TODO: 如果promo不用和hero綁在一起時放這
+  include /event/1st/e-main/components/promo-event/_promo-event
+  include /event/1st/e-main/components/bn-section/_bn-section
+  //- include /event/1st/e-main/components/daily-slider/_daily-slider
+  //- include /event/1st/e-main/components/dynamic-slider/_dynamic-slider
+  //- include /event/1st/e-main/components/bn-slider/_bn-slider
+  //- include /event/1st/e-main/components/promo-slider/_promo-slider
+  //- include /event/1st/e-main/components/bn-section-2/_bn-section-2
+  //- include /event/1st/e-main/components/dynamic-slider-2/_dynamic-slider-2
+  //- include /event/1st/e-main/components/promo-slider-2/_promo-slider-2
+  //- include /event/1st/e-main/components/bn-special/_bn-special
+  //- include /event/1st/e-main/components/tab-section/_tab-section
+  //- include /event/1st/e-main/components/match-game/_match-game
+  //- include /event/1st/e-main/components/event-w3m3/_event-w3m3
+
+//- script區
+include /utils/pug/_total-script
+//- script#dataMatchGame(src='data-match-game.js')
+//- script#dataDailySlider(src='data-daily-slider.js')
+//- script#dataTab(src='data-tab.js')
+//- script#dataDynamicSlider(src='data-dynamic-slider.js')
+//- script#dataDynamicSliderSecond(src='data-dynamic-slider-2.js')
+
+//- script
+  //- include /utils/bg-decoration-instance/threejs-gift/three.min.js
+  //- include /utils/bg-decoration-instance/threejs-gift/three.module.js
+  //- include /utils/bg-decoration-instance/threejs-gift/GLTFLoader.js
+  //- include /utils/bg-decoration-instance/threejs-gift/OrbitControls.js

@@ -1,0 +1,102 @@
+- 
+  var midMoreDataE = [
+    {
+      link: "https://www.etmall.com.tw/gp/110069",
+      imgSrc: "~event/1st/e-main/components/mid-more-slider/items/mid-more-1.png",
+      alt: "PLAYBOY",
+      text: "均一價$1500",
+    }, 
+    {
+      link: "https://www.etmall.com.tw/i/2539272",
+      imgSrc: "~event/1st/e-main/components/mid-more-slider/items/mid-more-2.png",
+      alt: "BOSCH",
+      text: "車用清淨機",
+    }, 
+    {
+      link: "https://www.etmall.com.tw/gp/105031", 
+      imgSrc: "~event/1st/e-main/components/mid-more-slider/items/mid-more-3.png",
+      alt: "好神拖",
+      text: "潔好緣贈菜瓜布x5",
+    }, 
+    {
+      link: "https://www.etmall.com.tw/bc3/148576",
+      imgSrc: "~event/1st/e-main/components/mid-more-slider/items/mid-more-4.png",
+      alt: "ASHIYA",
+      text: "日本熱銷組滿額贈",
+    }, 
+    {
+      link: "https://www.etmall.com.tw/p/120029",
+      imgSrc: "~event/1st/e-main/components/mid-more-slider/items/mid-more-5.png",
+      alt: "華陀",
+      text: "華陀均一價$1180",
+    }, 
+    {
+      link: "https://www.etmall.com.tw/p/118494",
+      imgSrc: "~event/1st/e-main/components/mid-more-slider/items/mid-more-6.png",
+      alt: "日本味王",
+      text: "日本味王滿額送禮",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/6923/m/index.html",
+      imgSrc: "~event/1st/e-main/components/mid-more-slider/items/mid-more-7.png",
+      alt: "MyCard",
+      text: "狂撒百萬抽Switch",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/7261/index.html",
+      imgSrc: "~event/1st/e-main/components/mid-more-slider/items/mid-more-8.png",
+      alt: "象印",
+      text: "象印送清淨機",
+    }, 
+    {
+      link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202005/SP_1115505/w/index.html",
+      imgSrc: "~event/1st/e-main/components/mid-more-slider/items/mid-more-9.png",
+      alt: "Apple",
+      text: "iPhone12:26288起",
+    }, 
+  ]
+
+- 
+  var midMoreDataU = [
+    {
+      link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202008/SP_1106087/w/index.html", 
+      imgSrc: "~event/1st/u-main/components/mid-more-slider/items/mid-more-1.png",
+      alt: "滿$3000送300",
+      text: "我愛東森東森愛我",
+    }, 
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale", 
+      imgSrc: "~event/1st/u-main/components/mid-more-slider/items/mid-more-2.png",
+      alt: "滿$3000送300",
+      text: "我愛東森東森愛我",
+    }, 
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale?Day=Up", 
+      imgSrc: "~event/1st/u-main/components/mid-more-slider/items/mid-more-3.png",
+      alt: "滿$3000送300",
+      text: "我愛東森東森愛我",
+    }, 
+  ]
+
+- var midMoreData = isU ? midMoreDataU : midMoreDataE
+
+section.promo__group.promo__group--mid-more.m-bottom--md(data-title="品牌大賞")
+  .layout--main
+    //- .promo__title.block--center.text--center
+    //-   img(src="~event/1st/e-main/components/mid-more-slider/title-mid-more.png", alt="")
+
+    .promo__wrap
+      .promo__slider
+        #sliderMidMore.swiper-container
+          ul.swiper-wrapper
+            each data in midMoreData
+              li.swiper-slide
+                a(href= data.link, title= data.alt)
+                  img.swiper-lazy(data-src= data.imgSrc, alt= data.alt)
+                  .swiper-lazy-preloader.swiper-lazy-preloader-white
+                  .text__box
+                    span= data.text
+
+        //- #sliderMidMorePrev.swiper-button-white.swiper-button-prev.mid-more__nav.mid-more__nav--prev
+        //- #sliderMidMoreNext.swiper-button-white.swiper-button-next.mid-more__nav.mid-more__nav--next
+      //- #sliderMidMorePager.mid-more__pager.swiper-pagination

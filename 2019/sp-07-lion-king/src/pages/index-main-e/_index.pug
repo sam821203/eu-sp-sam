@@ -1,0 +1,166 @@
+//- 打開u-mall選項會自動轉換成U的logo和連結(預設etmall)
+//- 打開sp選項以切換行銷主視覺或是商品SP頁(main/ sp、預設是main)
+//- - var isU = true
+//- - var isSp = true
+
+main#spWrap.sp__wrap
+  section.hero.header__wrap
+    .layout--main
+
+      include /layout/logo/_logo.pug
+
+      .header__decoration
+      h1.title__wrap--main.block--center(title="東森購物ｘ獅子王購物慶典")
+        img(src="~pages/index-main-e/img/1-title.png", alt="東森購物ｘ獅子王購物慶典")
+      .hero__pic.block--center
+        img(src="~pages/index-main-e/img/1-poster.jpg", alt= "東森購物")
+  section.promo__event
+    .layout--main
+      ul.event__wrap
+        li
+          a#changeAnchor(href="https://www.etmall.com.tw", title="登記抽1元電影票")
+            img#changeImg(src="~pages/index-main-e/img/2-Button_01.png", alt="登記抽1元電影票")
+        li
+          a(href="https://www.etmall.com.tw", title="登記抽電影周邊商品")
+            img(src="~pages/index-main-e/img/2-Button_02.png", alt="登記抽電影周邊商品")
+        li
+          a(href="https://www.etmall.com.tw", title="消費滿萬送千")
+            img(src="~pages/index-main-e/img/2-Button_03.png", alt="消費滿萬送千")
+        li
+          a(href="https://www.etmall.com.tw", title="滿額加價購")
+            img(src="~pages/index-main-e/img/2-Button_04.png", alt="滿額加價購")
+        li
+          a(href="https://www.etmall.com.tw", title="登記抽好物")
+            img(src="~pages/index-main-e/img/2-Button_05.png", alt="登記抽好物")
+  section.promo__group.promo__group-3
+    .layout--main
+      .promo__wrap
+        #sliderRank.promo__slider.swiper-container
+          ul.swiper-wrapper
+            li.swiper-slide
+              a(href="https://www.etmall.com.tw", title="人氣話題商品")
+                img(src="~pages/index-main-e/img/3-pp_01.png", alt="人氣話題商品")
+            li.swiper-slide
+              a(href="https://www.etmall.com.tw", title="人氣話題商品")
+                img(src="~pages/index-main-e/img/3-pp_02.png", alt="人氣話題商品")
+            li.swiper-slide
+              a(href="https://www.etmall.com.tw", title="人氣話題商品")
+                img(src="~pages/index-main-e/img/3-pp_03.png", alt="人氣話題商品")
+          #sliderRankPrev.swiper-button-white.swiper-button-prev
+          #sliderRankNext.swiper-button-white.swiper-button-next
+  section.promo__group.promo__group-4.video
+    .layout--main
+      .promo__wrap
+        .video__wrap
+          <iframe src="https://www.youtube.com/embed/-GgBWl9NWUY?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  section.promo__group.promo__group-5
+    .layout--main
+      .limit__wrap
+        .limit__slider
+          #sliderLimit.promo__slider.swiper-container
+            ul.swiper-wrapper
+              li.swiper-slide
+                a(href="https://www.etmall.com.tw", title="限量商品登記抽")
+                  img(src="~pages/index-main-e/img/5-pp_01.png", alt="限量商品登記抽")
+              li.swiper-slide
+                a(href="https://www.etmall.com.tw", title="限量商品登記抽")
+                  img(src="~pages/index-main-e/img/5-pp_02.png", alt="限量商品登記抽")
+              li.swiper-slide
+                a(href="https://www.etmall.com.tw", title="限量商品登記抽")
+                  img(src="~pages/index-main-e/img/5-pp_03.png", alt="限量商品登記抽")
+            #sliderLimitPrev.swiper-button-white.swiper-button-prev
+            #sliderLimitNext.swiper-button-white.swiper-button-next
+        .limit__info
+          .info__wrap
+            img(src="~pages/index-main-e/img/5-content.png", alt="限量商品登記抽")
+          .button__wrap
+            a(href="https://www.etmall.com.tw", title="點我登記").btn--promo.btn--limit-info 
+              img(src="~pages/index-main-e/img/5-Button.png", alt="點我登記")
+  section.promo__group.promo__group-6
+    .layout--main
+      .promo__wrap
+        #sliderPromo.promo__slider.swiper-container.p-bottom--sm
+          ul.swiper-wrapper
+            li.swiper-slide
+              a(href="https://www.etmall.com.tw", title="超夯商品推薦")
+                img(src="~pages/index-main-e/img/6-pp_01.png", alt="超夯商品推薦")
+            li.swiper-slide
+              a(href="https://www.etmall.com.tw", title="超夯商品推薦")
+                img(src="~pages/index-main-e/img/6-pp_01.png", alt="超夯商品推薦")
+            li.swiper-slide
+              a(href="https://www.etmall.com.tw", title="超夯商品推薦")
+                img(src="~pages/index-main-e/img/6-pp_01.png", alt="超夯商品推薦")
+            li.swiper-slide
+              a(href="https://www.etmall.com.tw", title="超夯商品推薦")
+                img(src="~pages/index-main-e/img/6-pp_01.png", alt="超夯商品推薦")
+        #sliderPromoPrev.swiper-button-white.swiper-button-prev
+        #sliderPromoNext.swiper-button-white.swiper-button-next
+        .button__wrap
+          a(href="https://www.etmall.com.tw", title="點我登記").btn--promo.btn--see-more
+            img(src="~pages/index-main-e/img/6-Button.png", alt="點我登記")
+  section.promo__group.promo__group-7
+    .layout--main
+      .promo__wrap
+        #sliderEvent.promo__slider.swiper-container.p-bottom--sm
+          .swiper-wrapper
+            li.swiper-slide
+              a(href="https://www.etmall.com.tw", title="超值活動")
+                img(src="~pages/index-main-e/img/7-640x280-BN_01.jpg", alt="超值活動")
+            li.swiper-slide
+              a(href="https://www.etmall.com.tw", title="超值活動")
+                img(src="~pages/index-main-e/img/7-640x280-BN_02.jpg", alt="超值活動")
+        #sliderEventPrev.swiper-button-white.swiper-button-prev
+        #sliderEventNext.swiper-button-white.swiper-button-next
+  section.promo__group.promo__group-8
+    .layout--main
+      .promo__wrap.p-bottom--sm
+        ul.good__wrap
+          li
+            a(href="https://www.etmall.com.tw", title="人氣強檔")
+              img(src="~pages/index-main-e/img/8-pp_01.png", alt="人氣強檔")
+          li
+            a(href="https://www.etmall.com.tw", title="人氣強檔")
+              img(src="~pages/index-main-e/img/8-pp_02.png", alt="人氣強檔")
+          li
+            a(href="https://www.etmall.com.tw", title="人氣強檔")
+              img(src="~pages/index-main-e/img/8-pp_03.png", alt="人氣強檔")
+          li
+            a(href="https://www.etmall.com.tw", title="人氣強檔")
+              img(src="~pages/index-main-e/img/8-pp_04.png", alt="人氣強檔")
+          li
+            a(href="https://www.etmall.com.tw", title="人氣強檔")
+              img(src="~pages/index-main-e/img/8-pp_05.png", alt="人氣強檔")
+          li
+            a(href="https://www.etmall.com.tw", title="人氣強檔")
+              img(src="~pages/index-main-e/img/8-pp_06.png", alt="人氣強檔")
+          li
+            a(href="https://www.etmall.com.tw", title="人氣強檔")
+              img(src="~pages/index-main-e/img/8-pp_07.png", alt="人氣強檔")
+          li
+            a(href="https://www.etmall.com.tw", title="人氣強檔")
+              img(src="~pages/index-main-e/img/8-pp_08.png", alt="人氣強檔")
+  section.promo__group.promo__group-9.promo__bngroup
+    .layout--main
+      .promo__wrap
+        #sliderBn.promo__slider.swiper-container
+          .swiper-wrapper
+            li.swiper-slide
+              a(href="https://www.etmall.com.tw", title="好康推薦")
+                img(src="~pages/index-main-e/img/9-640x280-BN_01.jpg", alt="好康推薦")
+            li.swiper-slide
+              a(href="https://www.etmall.com.tw", title="好康推薦")
+                img(src="~pages/index-main-e/img/9-640x280-BN_02.jpg", alt="好康推薦")
+        #sliderBnPrev.swiper-button-white.swiper-button-prev
+        #sliderBnNext.swiper-button-white.swiper-button-next
+
+//- script區
+//- polyfill 一般共用
+include /utils/pug/include/_polyfill-js.pug
+//- General 一般共用
+include /utils/pug/include/_general.pug
+//- 電梯
+include /utils/pug/include/_elevator-link.pug
+//- 浮水印
+//- include /utils/pug/include/_float-icon.pug
+//- 輪播cdn
+include /utils/pug/include/_slider-cdn-js.pug

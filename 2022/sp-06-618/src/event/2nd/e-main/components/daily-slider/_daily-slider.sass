@@ -1,0 +1,175 @@
+.promo__group--daily-slider
+  overflow: hidden
+  +pos-set(relative, zero)
+  // +breakpoint-min($min-width-xl)
+  //   overflow: visible
+  .decor__item
+    &--title
+      +pos-set(absolute, zero, 0%, 30%)
+      width: 40%
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 192px)
+    &--left
+      +pos-set(absolute, zero, 2%, 18%)
+      width: 5%
+      img
+        &:first-child
+          animation: blink-show 2s linear infinite
+        &:last-child
+          animation: blink-show 2s 1s linear infinite
+      +breakpoint-min($min-width-xl)
+        top: 10px
+        left: calc(50% - 325px)
+    &--right
+      +pos-set(absolute, zero, 2%)
+      right: 23%
+      width: 5%
+      img
+        &:first-child
+          animation: blink-show 2s 1s linear infinite
+        &:last-child
+          animation: blink-show 2s linear infinite
+      +breakpoint-min($min-width-xl)
+        top: 10px
+        right: calc(50% - 320px)
+    +breakpoint-min($min-width-xl)
+      width: auto
+    .decor__box
+      display: flex
+  .promo__wrap
+    +bg-set(url(event/2nd/e-main/components/daily-slider/bg-daily-slider.png), 100%, center, 100%)
+    margin-top: -3%
+    +breakpoint-min($min-width-xl)
+      margin-top: -30px
+    .promo__zone
+      +aspect-ratio(960, 1020)
+      // padding: 7% 10% 11%
+      .promo__block
+        padding: 15% 7.5% 0
+        .item__title
+          +pos-set(absolute, zero, 15.5%, 22%)
+          width: 57%
+
+  // TODO: 橫式
+  .product__block
+    display: flex
+    justify-content: space-around
+
+  .daily__slider
+    +pos-set(relative, zero)
+
+  // 共用類宮格樣式
+  .product--dynamic
+    margin-top: 17.4%
+    .product__block
+      padding: 0%
+      // +bg-set(url(event/2nd/e-main/components/daily-slider/bg-dynamic-item.png), contain)
+    .product__name
+      margin-top: 22%
+      margin-bottom: 2%
+      font-size: 4vw
+      +breakpoint-min($min-width-xl)
+        font-size: 28px
+    .product__intro
+      +pos-set(absolute, zero ,0%, 14%)
+      padding-left: 9%
+      +bg-set(url(event/2nd/e-main/components/daily-slider/title-daily-slider-sub.png), 100%)
+      width: 70%
+      color: $main-e-background-color-2nd-2
+      font-size: 7vw
+      line-height: 14vw
+      +breakpoint-min($min-width-xl)
+        top: 5px
+        padding-left: 90px
+        font-size: 60px
+        line-height: 130px
+      span:last-child
+        padding-left: 4%
+    .product__price
+      color: $main-e-background-color-1st-4
+      text-align: left
+      span
+        &:last-child
+          font-size: 7.2vw
+          +breakpoint-min($min-width-xl)
+            font-size: 60px
+
+    .product__img
+      width: 45%
+      // border-radius: 3vw 0 0 3vw
+      border-radius: 0
+      img
+        width: 100%
+    .product__text
+      width: 50%
+      border-radius: 0
+      background-color: transparent
+      +breakpoint-min($min-width-xl)
+        font-size: 20px
+
+  .daily__block // 下面區塊
+    display: flex
+    justify-content: space-between
+    margin-top: 6%
+    .daily__box
+      width: 45%
+
+
+  .daily__block
+    .product--dynamic
+      +pos-set(relative, zero)
+      padding: .2% 0% 1% 5%
+    .product__block
+      padding-top: 3%
+      padding-left: 2%
+      .product__img
+        width: 50%
+      .product__text
+        display: flex
+        flex-wrap: wrap
+        padding-left: 2%
+        // font-size: 3vw
+        .product__name
+          margin-top: 12%
+          font-size: 3.2vw
+          +breakpoint-min($min-width-xl)
+            font-size: 22px
+        .product__price
+          span
+            &:last-child
+              font-size: 4.3vw
+              +breakpoint-min($min-width-xl)
+                font-size: 42px
+        .product__intro
+          +pos-set(absolute, zero ,-43%, 24%)
+          +bg-set(url(event/2nd/e-main/components/daily-slider/title-daily-slider-3.png), 100%)
+          width: 60%
+          color: $main-e-background-color-2nd-3
+          text-align: right
+          font-size: 5vw
+          line-height: 7vw
+          +breakpoint-min($min-width-xl)
+            font-size: 40px
+            line-height: 60px
+
+
+  // 最後一天處理
+  .daily--next
+    &.active
+      .product--dynamic
+        filter: none
+      .product__name
+        -webkit-line-clamp: 1
+        margin-top: 0
+        height: 1.2em
+      .product__price
+        display: block
+      .product__intro
+        // +bg-set(url(event/2nd/e-main/components/daily-slider/intro-item.png), 100%, center, 28%)
+
+@keyframes blink-show
+  0%, 100%
+    opacity: .2
+  50%
+    opacity: 1
+    filter: brightness(120%)

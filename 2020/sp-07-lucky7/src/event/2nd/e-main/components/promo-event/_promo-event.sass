@@ -1,0 +1,93 @@
+.promo__event
+  // margin-top: -5%
+  padding: 14% 4% 8.2%
+  +bg-set(url(~event/2nd/e-main/components/promo-event/bg-promo.png), 100%)
+  .event__wrap
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    padding: 0
+    li
+      display: flex
+      justify-content: center
+      flex: 0 0 50%
+      -ms-flex: 0 0 45%
+      transition: all 0.5s
+      padding: 2%
+      &:hover
+        transform: translateY(-3%)
+        filter: brightness(130%)
+
+  +breakpoint-min($min-width-xl)
+    padding: 140px 19px 100px
+    .event__wrap
+      li.promo__discount
+        position: relative
+        .promo__go, .promo__good
+          position: absolute
+          z-index: 11
+        .promo__go
+          right: 45px
+          top: 175px
+        .promo__good
+          right: 70px
+          top: 23px
+        &:hover
+          filter: none
+          transform: translateY(0)
+          .promo__go, .promo__good
+            animation: tada 1s
+
+.promo__main
+  position: absolute
+  width: 35%
+  top: -5vw
+  left: 6vw
+  z-index: 2
+  transition: all 0.5s
+  transform-origin: bottom center
+  animation: car-move 1.5s .5s both ease-in-out, car-shaking 0.2s 1.5s infinite
+  &:hover
+    transform: scale(1.05)
+    filter: brightness(110%)
+  +breakpoint-min($min-width-xl)
+    top: -58px
+    left: calc(50% - 380px)
+    width: auto
+    transform: translateX(0)
+
+.promo__decoration
+  position: absolute
+  width: 45%
+  top: 2vw
+  right: 13%
+  +breakpoint-min($min-width-xl)
+    width: auto
+    top: 26px
+    right: calc(50% - 380px)
+    transform: translateX(0)
+
+@keyframes tada
+  from
+    -webkit-transform: scale3d(1, 1, 1)
+    transform: scale3d(1, 1, 1)
+  10%,
+  20%
+    -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg)
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg)
+
+  30%,
+  50%,
+  70%,
+  90%
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)
+
+  40%,
+  60%,
+  80%
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)
+  to
+    -webkit-transform: scale3d(1, 1, 1)
+    transform: scale3d(1, 1, 1)

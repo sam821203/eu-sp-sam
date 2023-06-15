@@ -1,0 +1,450 @@
+<meta name="viewport" content="width=device-width">
+<meta charset="utf-8">
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  *:before, *:after {
+    box-sizing: border-box; }
+  a {
+    display: block;
+    text-decoration: none;
+  }
+  ul {
+    list-style: none;
+  }
+  img {
+    width: 100%;
+    border: 0;
+  }
+  article,
+  main,
+  nav,
+  section {
+    display: block;
+  }
+  body {
+    margin:0;
+    background-color:#ba1c4a;/*...................................背景色,1260把這行刪掉*/
+  }
+  .sp--1260 {
+    position: relative;
+    z-index: 0;
+    max-width: 1260px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .sp--1260.icon_Home{
+    z-index: auto;
+  }
+  /* 主視覺 */
+  /* ======================================== */
+  .logo a,
+  .sp__visual a{
+    display: block;
+    /* 測試用 */
+    /*border: 1px solid #f00;*/
+  }
+  .logo {
+    position: absolute;
+    z-index: 1;
+    /* 調整logo位置 */
+    top: 1%;
+    left: 1%;
+    width: 30%;
+    max-width: 220px;
+  }
+  /* 設定背景 */
+  .sp__main {
+    background: url(bg.jpg) center 0 no-repeat;/*..............背景底圖,1260把這行刪掉*/
+  }
+  /* 設定前景 */
+  .sp__visual {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+  }
+  .visual__anchor,
+  .visual__main,
+  .visual__nav {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .visual__anchor {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }
+  .visual__main a,
+  .visual__nav a {
+    flex-grow: 1;
+  }
+  /* 主視覺 */
+  .visual__main {
+    height: 70%;
+  }
+  .visual__main a:nth-child(1) {
+    flex-grow: 0;
+    width: 100%;
+  }
+
+  /* 自適應banner組 */
+  /* ======================================== */
+  .banner__title {
+    height: 65px;
+    background: center top no-repeat;
+  }
+  .banner__wrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .banner__item {
+    transition: all 0.3s;
+  }
+  .banner__item img {
+    width: 100%;
+  }
+
+  /* ...............................................................table */
+   .sp--1260 .bn-w1m1,.sp--1260 .topbox{
+    width: 85%;
+  }
+  .bn-w1m1 .bank__wrap,.topbox .bank__wrap,.bn-w1m1 .bank__no{
+    width: 98%;
+    display: block;
+    margin: auto;
+    background-color: #fff;
+    padding: 2%;
+    border-radius: 10px;
+    margin-bottom: 8px;
+  }
+  .topbox .bank__wrap{
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.2);
+    margin-top: 2%;
+  }
+  .topbox p{
+    color: #ba1c4a;
+    font: bold 2em "微軟正黑體";
+    text-align: center;
+  }
+  .bn-w1m1 .bank__wrap li,.topbox .bank__wrap li{
+    font: 500 1.2em/1.2 "微軟正黑體";
+    text-align: center;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #919191;
+    color: #333333;
+    border-top: 0;
+    border-right: 0;
+  }
+  .topbox .bank__wrap li {
+    border-color: #ba1c4a;
+  }
+  .topbox .bank__wrap li:first-child div{
+    background-color: #ba1c4a;
+    color: #FFFFFF;
+    font:600 1.5em/1.2 "微軟正黑體";
+    text-align: center;
+  }
+  .bn-w1m1 li:first-child div:nth-child(3), .bn-w1m1 li:first-child div:nth-child(4){
+    color: #FFFFFF;
+  }
+  .bn-w1m1 li div:nth-child(3), .bn-w1m1 li div:nth-child(4) {
+    color: #cb0000;
+  }
+  .topbox li div{
+    flex:0 1 50%;
+    padding: 0.5%;
+    border-right: 1px solid #ba1c4a;
+    font: 600 1.3em "微軟正黑體";
+    word-break: break-all;
+  }
+  .topbox li div span{
+    color: #ba1c4a;
+  }
+  .topbox .bank__wrap li:first-child div:first-child{
+    border-right: 1px solid #e19db1;
+  }
+  .topbox li div:first-child{
+    font-size: 1.8em;
+    border-top: 1px solid #ba1c4a;
+  }
+  .form {
+    width: 95%;
+    margin: 10px auto;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .form select {
+    font: 600 1.2em/1.5 "微軟正黑體";
+    color: #ba1c4a;
+    border: 0;
+    border-radius: 5px;
+    flex:0 1 31.33%;
+    margin: 3px 1%;
+    padding: 8px;
+  }
+  .bn-w1m1 .bank__wrap li:first-child {
+    background-color: #5c5c5c;
+    color: #FFFFFF;
+  }
+  .bn-w1m1 .bank__wrap li:first-child div:last-child{
+    text-align: center;
+  }
+  .bn-w1m1 .bank__wrap li:last-child{
+    border-bottom: 1px solid #919191;
+  }
+  .bn-w1m1 li div {
+    display: flex;
+    flex: 1 0 20%;
+    padding: 0.5%;
+    border-right: 1px solid #919191;
+    min-width: 50px;
+    word-break: break-all;
+    align-items: center;
+    justify-content: center;
+  }
+  .bn-w1m1 li div a {
+    display: inline-block;
+    background-color: #ba1c4a;
+    color: #FFFFFF;
+    padding: 3px 5%;
+    border-radius: 50px;
+    margin-left: 5px;
+    font-weight: 600;
+  }
+  .bn-w1m1 li div:last-child {
+    position: relative;
+    flex-wrap: wrap;
+  }
+  .bn-w1m1 li div:last-child a{
+    position: relative;
+    right: 0;
+    bottom: 0;
+  }
+  .tip,.tips{
+    color: #fff002;
+    font: normal 1.5em/1.5 "微軟正黑體";
+    text-align: center;
+    margin: 10px auto;
+    width: 90%;
+  }
+  .tip a {
+    color: #fff002;
+    margin-right: 5px;
+    text-decoration: underline;
+    font-size: 2em;
+  }
+  .tips{
+    color: #FFFFFF;
+  }
+  .path img {
+    width: auto;
+    margin: auto;
+    display: block;
+  }
+  .gotop{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
+  .result div {
+    background-color: #76122f;
+    width: 98%;
+    border-radius: 10px;
+    margin: 0 auto 8px;
+    padding: 0.5% 1%;
+  }
+  .result p,.result ul li{
+    font: bold 22px/1.8 "微軟正黑體";
+    color: #FFFFFF;
+    text-align: center;
+  }
+  .result hr{
+    border: 0;
+    border-bottom: 1px dashed #f6769e;
+    width: 97%;
+    margin: auto;
+  }
+  .result ul{
+    text-align: center;
+  }
+  .result ul li{
+    display: inline-block;
+    margin: 0 10px;
+  }
+  .result span {
+    color: #f2d934;
+  }
+  .result a {
+    width: 16%;
+    padding: 5px;
+    border-radius: 999em;
+    text-align: center;
+    margin: 10px auto;
+    background: linear-gradient(to bottom,#FFFFFF 10%,#ffd29c 100%);
+    border: 1px solid #ffa6b6;
+    font: bold 26px "微軟正黑體";
+    color: #ba1c4a;
+    box-shadow: 5px 4px 3px #630f27;
+  }
+  .result a:active,.result a:hover{
+    filter: brightness(1.05);
+  }
+  .bn-w1m1 .bank__no {
+    width: 100%;
+    background-color: #f2d0db;
+    padding: 5%;
+    text-align: center;
+    color: #ba1c4a;
+    font: bold 26px "微軟正黑體";
+    border-radius: 10px;
+    margin: 0;
+  }
+  .btn--clean {
+    cursor: pointer;
+  }
+  @media screen and (max-width: 1024px) {
+    .bn-w1m1 .bank__wrap,.topbox .bank__wrap,.result div{
+      width: 95%;
+    }
+    .bn-w1m1 .bank__wrap li{
+      font-size: 1em;
+    }
+    .login a{
+      position: unset;
+    }
+    .topbox p,.result p{
+      font: bold 1.3em/2 "微軟正黑體";
+    }
+    .topbox li div{
+      font-size: 1em;
+      padding: 1.5%;
+      line-height: 1.2;
+    }
+    .topbox .bank__wrap li:first-child div{
+      font-size: 1em;
+    }
+    .topbox li div:first-child{
+      font-size: 1.3em;
+    }
+    .topbox li div:nth-child(2){
+      text-align: left;
+    }
+    .result ul{
+      width: 100%;
+      margin: 2% auto;
+    }
+    .result ul li{
+      display: block;
+      font: bold 1.4em/1.5 "微軟正黑體";
+      text-align: left;
+    }
+    .result a{
+      width: 50%;
+      font-size: 1.4em;
+    }
+    .bn-w1m1 .bank__no{
+      font: bold 1.4em/1.2 "微軟正黑體";
+      text-align: center;
+    }
+    .bn-w1m1 li div a{
+      padding: 3px;
+      margin: 0;
+      display: block;
+      width: 65%;
+      margin: auto;
+    }
+    .tip,.tips{
+      font-size: 0.95em;
+    }
+    .path img{
+      width: 100%;
+    }
+  }
+  @media screen and (max-width: 420px){
+    .form select {
+      flex:0 1 100%;
+      margin: 3px 1%;
+      padding: 5px;
+    }
+    .bn-w1m1 li div a{
+      padding: 3px;
+      width: 90%;
+    }
+  }
+  .result {
+    display: none;
+  }
+  .hide-show {
+    animation: 0.3s hide-show both;
+  }
+  @keyframes hide-show {
+    from {
+      background: rgba(100, 100, 100, .5);
+      filter: contrast(50%);
+      opacity: 0;
+    }
+    to {
+      filter: contrast(100%);
+      opacity: 1;      
+    }
+  }
+</style>
+<div id="spWrap" class="sp__wallper">
+  <!-- 主視覺 -->
+  <div class="sp--1260 icon_Home"><!-- 浮水印start(勿刪)-->
+    <div id="iconHome"></div>
+  </div>                          <!-- 浮水印end(勿刪)-->
+  <main class="sp__main">
+    <div class="sp--1260">
+      <a href="https://www.etmall.com.tw" class="logo"><img src="ehs-logo.png" alt="東森購物"></a>
+      <div class="sp__visual">
+        <div class="visual__anchor"><!-- 紅框區 設定第一個a和第二個a的寬度會推擠後面a的寬度-->
+          <div class="visual__main">
+            <a href="https://1.com"></a>
+          </div>
+        </div>
+        <img src="index.jpg">
+      </div>
+    </div>
+  </main>
+  <section class="sp--1260 topbox">
+    <div id="sp1stTableWrap" class="bank__wrap"></div>
+  </section>
+  <p class="sp--1260 tip"><a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201812/SP_1106497/w/index.html">活動頁請點我</a>刷哪張卡最優惠？輸入條件就可以找到最適合你的刷卡優惠摟!!</p>
+  <p class="sp--1260 path"><img src="p.jpg"></p>
+  <section class="sp--1260 form">
+    <select id="dateSelect" name="dataDate"></select>
+    <select id="costSelect" name="dataCost"></select>
+    <select id="bankSelect" name="bank"></select>
+  </section>
+  <section id="resultZone" class="sp--1260 result"><!-- 新增-篩選結果 start-->
+    <div>
+      <p>您篩選的條件是</p>
+      <hr>
+      <ul id="statusZone"></ul>
+      <a id="btnClean" class="btn--clean">清空篩選</a>
+    </div>
+  </section><!-- 新增-篩選結果 end-->
+  <section class="sp--1260 bn-w1m1">
+  <div id="bankDataWrap" class="bank__wrap"></div>
+  <div id="notMatchBox" class="bank__wrap hide-show"><!-- 新增-沒有篩選 start-->
+    <div class="bank__no">哦哦！沒有符合您篩選條件的結果，請重新篩選。</div>
+  </div><!-- 新增-沒有篩選 end-->
+  </section>
+<div id="goTopWrap"></div>
+</div>
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script>$('a[href^="#"]').on('click',function(e){var target=$('a[name='+this.getAttribute('href').split('#')[1]+']');if(target.length){e.preventDefault();$('html,body').stop().animate({scrollTop:target.offset().top},500);}});</script>
+<!-- 浮水印 -->
+<script id="scriptIconFloat" src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105264/float-icon.js"></script>
+<script type="text/javascript" src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106349/generateVersion20181019.js"></script>
+<script src="dataBank.js"></script>
+<script src="generateBankData.js"></script>

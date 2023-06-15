@@ -1,0 +1,29 @@
+//- TODO: 打開雙月選項切換雙月(預設單月)
+//- - var isEven = true
+
+//- TODO: 打開u-mall選項會自動轉換成U的logo和連結(預設etmall)
+- var isU = true
+
+//- TODO: 打開第二組電梯選項(預設用第一組)
+//- e: 單月-4292，雙月-5567 / e2: 單月-4696，雙月-4697 / u:單月-4292，雙月-5567 / u2: 目前4697一個
+//- - var isSecond = true
+
+//- TODO: 打開會切換SP連結(要去utils/pug/include/_elevator-link中設定sp連結)
+//- var isSp = true
+
+
+main#spWrap.sp__wrap.sp__wrap--e
+  include /layout/header/_header
+  //- #parallaxBg.parallax__background
+  //- .parallax__background
+
+  //- hero section
+  //- ===========================
+  include /event/1st/u-main/components/hero-section/_hero-section
+
+  //- other components
+  //- ===========================
+  include /event/1st/u-main/components/bn-special/_bn-special
+
+//- script區
+include /utils/pug/_total-script

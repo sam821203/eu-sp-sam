@@ -1,0 +1,83 @@
+// ==========================================================================
+// Base
+// ==========================================================================
+@import "~utils/sass/_common"
+
+// // ==========================================================================
+// // Plugins
+// // ==========================================================================
+// // @import "vendors/animate"
+@import "vendors/style/swiper-slider-custom.sass"
+
+// // ==========================================================================
+// // layout
+// // ==========================================================================
+@import "~layout/header/_header"
+@import "~layout/background-decoration/_background-decoration"
+
+// // ==========================================================================
+// // components
+// // ==========================================================================
+@import "~event/index-main-e-2/components/hero-section/_hero-section"
+@import "~event/index-main-e-2/components/hero-small-slider/_hero-small-slider"
+//- @import "~event/index-main-e-2/components/goods-slider/_goods-slider"
+//-@import "~event/index-main-e-2/components/video-section/_video-section.sass"
+//-@import "~event/index-main-e-2/components/canva-effect/_canva-effect"
+@import "~event/index-main-e-2/components/promo-event/_promo-event"
+@import "~event/index-main-e-2/components/promo-event-w3/_promo-event-w3"
+//-@import "~event/index-main-e-2/components/goods-slider-flip/_goods-slider-flip"
+@import "~event/index-main-e-2/components/bn-special/_bn-special"
+@import "~event/index-main-e-2/components/two-medium-slider/_two-medium-slider"
+//-@import "~event/index-main-e-2/components/bank-section/_bank-section"
+//-@import "~event/index-main-e-2/components/event-w4m2/_event-w4m2"
+@import "~event/index-main-e-2/components/countdown-section/_countdown-section"
+// @import "~event/index-main-e-2/components/bn-event/_bn-event"
+// // ==========================================================================
+// // Page
+// // ==========================================================================
+body
+  background-color: $main-e-background-color
+  width: 100%
+  height: 100%
+
+.sp__wrap
+  +pos-set(relative, zero)
+  // +bg-set(url("~utils/img/960bg.jpg"), 100%)
+  +breakpoint-min($min-width-xl)
+.sp__wrap a
+  display: block
+
+.promo__group
+  .promo__zone
+    overflow: hidden
+  .promo__title
+    margin-top: 6%
+    margin-bottom: 2%
+    height: 72px
+  .promo__wrap
+    +pos-set(relative, zero)
+    .promo__slider,
+    .video__wrap
+      +pos-set(absolute, base, 0, 0)
+      width: 100%
+      height: 100%
+  +breakpoint-min($min-width-xl)
+    background-size: auto
+.bg-wrap-2
+  background-color: $gray-light
+
+//- 煙火全部都出現
+canvas
+  /* The page shows scrollbars if this is removed, I wonder why. CSS black magic! */
+  display: block
+  position: absolute
+  top: 0
+  left: 50%
+  transform: translateX(-50%)
+  z-index: 0
+.noselect
+  -webkit-touch-callout: none /* iOS Safari */
+  -webkit-user-select: none /* Chrome/Safari/Opera */
+  -khtml-user-select: none /* Konqueror */
+  -moz-user-select: none /* Firefox */
+  -ms-user-select: none /* Internet Explorer/Edge */

@@ -1,0 +1,102 @@
+.promo__group--w3m3
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__wrap
+    .decor__item
+      text-align: center
+  .promo__wrap
+    margin-top: -3.2%
+    .promo__zone
+      +aspect-ratio(960, 850)
+      +breakpoint-min($min-width-xl)
+        +aspect-ratio(960, 800)
+    .promo__block
+      +pos-set(absolute, base, 0%, 0%)
+    .good__wrap
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-around
+      li
+        position: relative
+        width: 32%
+        margin-bottom: 1.5%
+        text-align: center
+        +breakpoint-min($min-width-xl)
+          margin-bottom: 2%
+        a
+          overflow: hidden
+          transition: transform 0.16s
+          &:hover
+            transform: translateY(-12px)
+          img
+            filter: brightness(95%)
+          &.active
+            transition: transform .4s
+            transform: translateY(-6px)
+            +breakpoint-min($min-width-xl)
+              transform: translateY(-12px)
+            .ice-shine
+              position: absolute
+              width: 100%
+              height: 100%
+              &::after
+                content: ""
+                position: absolute
+                top: 0
+                left: -25px
+                z-index: 8
+                +size(30%, 100%)
+                background-color: rgba(255, 255, 255, 0.65)
+                transform: skewX(-15deg)
+                -webkit-filter: blur(16px)
+                animation: ice-shine 4s -1s linear infinite
+            img
+              filter: brightness(105%)
+
+@keyframes ice-shine
+  0%, 65%, 90%
+    opacity: 0
+    left: -50%
+  75%, 100%
+    opacity: 1
+    left: 75%
+  76%
+    opacity: 0
+    left: 75%
+    
+@keyframes up-and-down
+    0%
+      transform: translateX(-3px) translateY(60%)
+    6.5%
+      transform-origin: top center
+      transform: translateX(-3px) translateY(0) scale(1.05) rotate(13deg)
+    20%
+      transform: rotate(-5deg) translateY(15%)
+    40% 
+      transform: rotate(10deg) translateY(30%)
+    60%
+      transform: rotate(-5deg) translateY(42%)
+    80%
+      transform: rotate(10deg) translateY(56%)
+    100%
+      transform: translateY(60%) rotate(0) scale(.95)
+
+@keyframes dog-bounce
+  from,
+  20%,
+  53%,
+  to
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+    transform: translate3d(0, 0, 0)
+  40%,
+  43%
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06)
+    transform: translate3d(0, -15px, 0)
+  70%
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06)
+    transform: translate3d(0, -8px, 0)
+  80%
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+    transform: translate3d(0, 0, 0)
+  90%
+    transform: translate3d(0, -3px, 0)

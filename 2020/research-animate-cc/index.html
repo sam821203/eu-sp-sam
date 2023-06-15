@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <canvas id="game" width="1000" height="700" style="background-color: #333"></canvas>
+  <script src="createjs.min.js"></script>
+  <!-- <script src="EaselJS-1.0.0/lib/easeljs.min.js"></script> -->
+  <script>
+    // =====================================================================================
+    // EaselJS - 主要套件，包含輸入、互動、事件處理
+    // =====================================================================================
+    // 1. window load完後呼叫(有的教學寫body.onload會失敗)
+    window.onload = init;
+
+    function init() {
+      // 2. canvas容器，裡面可直接接ID或是接getElId("id")或是qSlector("#id")都可以
+      var stage = new createjs.Stage("game");
+      // 2-1. 接受touch設備
+      createjs.Touch.enable(stage);
+      // 2-2. stage開放滑鼠移入事件
+      stage.enableMouseOver();
+    
+      // createjs提供6種類型可以設定：文字檔Text、向量圖Shape(及其下.Graphics)、靜態圖Bitmap、Container、雪碧圖Sprite和SpriteSheet、控制DOM元素，依序如下：
+
+      // 3. 新增文字範例
+      var txt = new createjs.Text("HELLO", "40px PingFang", "#fff");
+      // 文字可修改位置、內容
+      txt.x = 100;
+      txt.y = 100;
+      txt.regX = -50; // 偏移量 
+      txt.rotation = 45;
+      txt.skewX = 40;
+      txt.text = "hello, world!";
+      txt.shadow = new createjs.Shadow("#eee", 5, 5, 8); 
+      // 最後要將新增好的物件丟入canvas容器
+      stage.addChild(txt);
+      // 要update容器才會顯示在畫面上
+      stage.update();
+
+      // 4. 新增繪製圖形範例，圖型的內容放在Shape.graphics內
+      // 4-1. Shape類的x和y是根據父元素(畫布或container位置決定)，可以提供shape.graphics內填色的原點，稱作「註冊點」
+      var rs = new createjs.Shape();
+      // stroke經測試會佔容器內一半與容器外一半(因此setStroke 10的話 座標至少要5,5才會展露全部寬度)
+      rs.graphics.beginFill("green").setStrokeStyle(2).beginStroke("#faf").drawRect(10, 10, 30, 30);
+      stage.addChild(rs);
+      stage.update();
+
+      // 4-2. 圖型可分開不同shape也可同shape內一直用「draw形狀」新增不同圖形，但是前面寫的beginStroke等會套用到後寫的圖案(即使後面沒寫)
+      var cs = new createjs.Shape();
+      cs.graphics.beginFill("red").drawCircle(300, 300, 30);
+      cs.shadow = new createjs.Shadow("#eee", 5, 5, 8); // 陰影要設定顏色、偏移x、偏移y、模糊程度
+      stage.addChild(cs);
+      stage.update();
+
+      // 4-3. 可以使用transform中的平移和旋轉、縮放與傾斜，x和y就是平移，regX、regY和rotation是旋轉，scale、scaleX、scaleY是縮放，skew、skewX、skewY是傾斜
+      // 4-3-1. 旋轉和縮放是以註冊點為基準。
+      // 4-3-2. 註冊點更改只能使用x.y，但這樣圖形的位置就跑掉了，所以有regX、regY，就是偏移(CSS中的translateX與Y)，設置註冊點後用此兩個移動圖片回到原本位置。
+      // 4-3-3. 所以旋轉和縮放等有3步，a. 設置註冊點(旋轉中心)、b. 使用偏移讓圖形回到原位、c. 進行transform
+      var rs = new createjs.Shape(); 
+      rs.graphics.beginFill("cyan").drawRect(135, 135, 30, 30);
+      rs.x = 150; // (135 + (30/2)) 旋轉中心在矩形中心
+      rs.y = 150;
+      rs.regX = 150;
+      rs.regY = 150;
+      rs.rotation = 30;
+      stage.addChild(rs);
+      stage.update();
+
+      var ss = new createjs.Shape();
+      ss.graphics.beginFill("pink").drawRect(200, 200, 30, 30);
+      ss.x = 215; // (200 + (30/2)) 縮放中心在矩形中心
+      ss.y = 215;
+      ss.regX = 215;
+      ss.regY = 215;
+      ss.scaleX = 2;
+      ss.scaleY = 2;
+      // ss.scale = 2; // 等同上面兩行
+      stage.addChild(ss);
+      stage.update();
+
+      // 5. 可load圖片進來
+      // 5-1. 有做preload處理的話可以直接使用
+      var bg = new createjs.Bitmap("./pikachu.png");
+      bg.x = 10;
+      bg.y = 10;
+      stage.addChild(bg);
+      stage.update();
+      // 5-2. 沒做preload的話要新增img tag，等src載入完成才可以引進canvas
+      var img = new Image();
+      img.src = './pikachu.png';
+      img.onload = function () {
+        var bg2 = new createjs.Bitmap("./pikachu.png");
+        bg2.x = 500;
+        bg2.y = 10;
+        bg2.scale = 1.5;
+        bg2.alpha = 0.6; // 透明度
+        bg2.cursor = 'help';
+
+        // 5-3. 可以使用mask讓shape和bitmap產生遮罩
+        var ms = new createjs.Shape();
+        ms.graphics.beginFill("#eee").drawCircle(0, 0, 100);
+        ms.x = 620;
+        ms.y = 120;
+        bg2.mask = ms; // 給bg2加遮罩
+
+        // 5-4. 可以增加濾鏡效果
+        var blur = new createjs.BlurFilter(5, 5, 100); // 設定模糊效果
+        bg2.filters = [blur]; // 把模糊套在bg2上
+
+        // 5-4-1. 上濾鏡效果只會持續一幀，要持續有效必須將bg2 cache起來。cache詳第12段說明
+        bg2.cache(0, 0, bg2.image.width, bg2.image.height);
+
+        stage.addChild(ms);
+        stage.addChild(bg2);
+        stage.update();
+      }
+
+      // 6. Stage、Container有個Children属性代表子元素，是Array，裡面同z-index從0開始，後addChild就會蓋在上面。
+      // 可動態改變Childen
+      stage.setChildIndex(bg, 0);
+      stage.update();
+
+      // 7. 可新增容器Container，有點像一個div包起來或是拉成群組的概念，可使容器內的物件一起移動
+      var button = new createjs.Container();
+      var label = new createjs.Text("按我聽歌", "20px Times", "#fff");
+      label.textAlign = 'center';
+      label.textBaseline = 'middle';
+      label.y = button.y / 2 + 5;
+
+      var bs = new createjs.Shape();
+      bs.graphics.beginFill("#ff0000").drawCircle(0, 0, 50);
+      bs.shadow = new createjs.Shadow("#eee", 5, 5, 8);
+
+      // 現在控制button的xy時label和bs都會一起移動
+      button.addChild(bs, label);
+      button.x = 250;
+      button.y = 400;
+      // 8. 移到btn上時顯示手指(要有設定2-2的stage開放滑鼠移入事件才有用)
+      button.cursor = "pointer";
+      // 不顯示
+      label.visible = false;
+
+      // 9. 可設置name屬性像是className一樣，頻繁操作時用parent.getChildByName取得該元素
+      label.name = 'quick'; // 設置name值
+      quick = button.getChildByName('quick');  // 使用name取到該元素
+      // 顯示，把這行註解可以看到文字消失代表有正確取得元素
+      // quick.visible = true;
+
+      // 10. 加上事件監聽
+      // container或shape或text或bitmap都可上監聽，下面button改成bs或label也行，但字就只有字的長寬
+      var clicked = false;
+      button.addEventListener("click", function(e){
+        // alert("OK");
+        if(!clicked) {
+          createjs.Sound.play("sound"); // 因為chrome不能直接播放，改成按按鈕播放
+          clicked = true;
+          label.text = "已播放";
+        }
+      });
+      // 10-1. addEventListener可簡寫成on
+      button.on("mouseover", function (e) {
+        bs.scaleX = 1.2;
+        bs.scaleY = 1.2;
+        bs.alpha = 0.8;
+      });
+      button.on("mouseout", function (e) {
+        bs.scaleX = 1;
+        bs.scaleY = 1;
+        bs.alpha = 1;
+      });
+      stage.addChild(button);
+      stage.update();
+
+      // 11. 控制雪碧圖
+      // 11-1. 分成兩個步驟：基本設定(SpriteSheet)與動畫設定(Sprite)
+      // 11-2. 一定要用tick才會持續動(createjs.Ticker.addEventListener('tick', update))
+      // 11-3. 基本設定 new createjs.SpriteSheet(設定圖片來源、雪碧圖外框大小位置幀數、動畫定義)
+      // 11-3-1. frames：可以設定x(x軸), y(y軸), width, height, regX, regY, spacing(間距), margin(邊距), count(動畫格數；預設從左到右，從上到下) e.g. frames: { width: 64, height: 64, count: 20, regX: 32, regY: 64, spacing: 0, margin: 0 }
+      // 11-4. 動畫設定 new createjs.Sprite(基本設定, 動畫名稱)
+      var spriteData = {
+        images: ["./manwalk.png"], // 圖片路徑
+        frames: {
+          height: 256,
+          width: 128,
+          regX: 50,
+          regY: 0,
+          count: 26
+        },
+        animations: {
+          walk: [0, 25],
+          stand: [1],
+          walkAndStop: [0, 1, "stand"], //  name: [開始幀, 结束幀, '下一個動畫']
+        },
+      };
+      var spriteSheet = new createjs.SpriteSheet(spriteData);
+      var spriteObj = new createjs.Sprite(spriteSheet, "walk"); // 後面接起始動畫，如果沒填不會動要等GoAndPlay指令
+      spriteObj.y = 300;
+      spriteObj.addEventListener("tick", spriteTickEvent);
+
+      // setTimeout(function(){
+      //   spriteObj.gotoAndPlay("walkAndStop"); // 可以直接控制接到哪個動畫
+      //   spriteObj.removeEventListener("tick", spriteTickEvent);
+      // }, Math.random() * 7000);
+
+
+      // 11-5. 移動條件範例(直接將事件接在sprite本體上)
+      function spriteTickEvent(event) { 
+        if (spriteObj.x > stage.canvas.width) {
+          spriteObj.x = 0;
+        }
+        spriteObj.x += 5;
+      }
+
+      stage.addChild(spriteObj);
+      // stage.update(); // 動畫無法直接update會只有一幀，要用tick持續處理
+
+      // 12. cache
+      // 12-1. 在DisplayObject中有一個cache方法，是把顯示對像畫到一個新的canvas中。這樣一些不經常變化的複雜的顯示對象性能上會優化好多（比如說有許多子對象的容器或者復雜的Shape）。在cache了以後，就不用在每一次stage.update()重繪的時候重新渲染了，所以可以大大提高效率。被緩存的顯示對象可以移動、旋轉、改變透明度。
+
+      // 12-2. 如果被緩存的顯示對象的內容變化的話，就要重新調用cache()或者updateCahce()方法。
+      // 在官網的這個例子裡面，可以明顯的看出來緩存的效果。
+      // https://createjs.com/demos/easeljs/cache
+
+      // 12-3. 程式碼
+      // cache(x y width height[scale = 1])
+      // 這個方法有五個參數，最後一個scale是可選的，預設為1.
+      // 前四個參數指定了顯示對像要緩存的區域，注意的事x和y的坐標都是根據當前這個顯示對象本身的坐標係來計算。
+      // 最後一個參數scale表示在緩存時縮放的比例，比如myShape.cache(0, 0, 100, 100, 2)，緩存大小是200 * 200。
+
+      // cache一個圓型的Shape(另一個範例5-4-1)
+      // var shape = new createjs.Shape();
+      // shape.graphics.beginFill("#ff0000").drawCircle(0, 0, 25);
+      // shape.cache(-25, -25, 50, 50);
+      // 注意：如果要在displayObject上使用filter的話，要在調用cache方法之前使用filter。(5-4-1範例有)
+
+      // 12-4. 各種元素的調用cache
+      // 12-4-1. Bitmap的cache：正常bitmap一定不要調用cache方法；如果要使用濾鏡filter的話，一定要調用cache。
+      // 12-4-2. DOMElement的cache：不適用
+      // 12-4-3. Sprite的cache：因為Sprite已經是光柵格式，對於Sprite實例來說cache沒有必要。不要為提高性能來調用Sprite的cache。
+
+
+    // =====================================================================================
+    // TweenJS - 附加套件，掌管動畫設定、動畫接續與動畫事件偵聽
+    // =====================================================================================
+      // 13. TweenJS用javascript控制new createjs出的物件(Bitmap、shape、Sprite等)，用鏈式的方式接上key frame
+      // 同樣的，動畫得用tick處理，不能用stage.update(只會有一幀)
+      createjs.Tween.get(bg, { loop: true })
+        .wait(1500)
+        .to({ x: 400 }, 1000, createjs.Ease.getPowInOut(4))
+        .to({ x: 400 }, 1000, createjs.Ease.circOut)
+        .to({ alpha: 0, y: 175 }, 500, createjs.Ease.getPowInOut(2))
+        .to({ alpha: 0, y: 225 }, 100)
+        .to({ alpha: 1, y: 200 }, 500, createjs.Ease.getPowInOut(2))
+        .to({ x: 100 }, 800, createjs.Ease.getPowInOut(2))
+        .to({ x: 10, y: 10 }, 800, createjs.Ease.getPowInOut(2))
+        // .call(handleComplete, [argument1, argument2], this); // 可接完成後處理
+        // .addEventListener("change", handleChange); // 偵聽change做事件處理
+
+
+      // 14. stage有個tick函數相當於setInterval，可以定期update，下面為使用範例
+      function update(event) {
+          if (event.paused !== 1) {
+            stage.update();  // 刷新舞台
+          }
+      }
+      // 14-1. 可pause
+      // createjs.Ticker.paused = 1;  // 在函数任何地方調用，會暫停
+      // createjs.Ticker.paused = 0;  // 恢復遊戲
+
+      // 14-2. setFPS使用setTimeOut控制動畫，RAF使用requestAnimationFrame，預設是setTimeOut FPS 20，使用RAF會忽略設定FPS，用RAF_SYNCHED等於兩種結合，createjs嘗試控制RAF，使用framerate或setFPS控制FPS。
+      // createjs.Ticker.setFPS(24);
+      createjs.Ticker.framerate = 24;
+      // createjs.Ticker.timingMode = createjs.Ticker.RAF;
+      createjs.Ticker.timingMode = createjs.Ticker.RAF_SYNCHED;
+
+      // 14-3. 有使用定期更新則可以把上面所有的stage.update()拿掉
+      createjs.Ticker.addEventListener('tick', update);
+
+
+    // =====================================================================================
+    // PreloadJS - 附加套件，掌管資源載入、AJAX優化、載入後的事件處理
+    // =====================================================================================
+      // 15. preloadjs
+      // 15-1. 如果單個檔案要載入用loadFile，多個檔案用loadManifest，會產生陣列。可以指定id之後直接呼叫id即可
+      // 15-2. 預載入分為3步:
+      // 15-2-1. 設定一個預載入物件(也可以直接queue.loadManifest({})不把物件提出來)
+      // 15-2-2. 明確載入資源的路徑以及命名，單個資源載入loadFile，多個資源載入loadManifest
+      // 15-2-3. 如果有需要可以繫結載入各個過程的事件監聽，事件監聽分五大類：
+      // 15-2-3-1. complete 佇列完成載入所有檔案時觸發
+      // 15-2-3-2. progress 當整個佇列發生改變時觸發
+      // 15-2-3-3. fileload 單個檔案完成載入時觸發
+      // 15-2-3-4. error 當佇列遇到任何錯誤時觸發
+      // 15-2-3-5. fileprogress 當佇列遇到任何檔案的錯誤時觸發。
+
+      // 設定靜態資源(示範15-2-1)
+      var manifest = [
+        { src: 'cute.png', id: 'cute' }
+      ];
+      // 載入資源(示範15-2-2)
+      // 最主要的Class就是LoadQueue
+      // 參數：[preferXHR=true] [basePath=""] [crossOrigin=""]，第一個預設true用xhr2，第二個會在最終路徑前新增
+      // 第三個是跨域CORS，要跨域就是new createjs.LoadQueue(true, '', 'anonymous')
+      var queue = new createjs.LoadQueue(); 
+      queue.installPlugin(createjs.Sound); // 有用到其他的可以預載入
+      queue.loadFile({id: 'sound', src: 'black.mp3'});
+      queue.loadManifest(manifest);
+
+      // 15-3. 使用json作為外部資源，這個json的格式可能就是我們的資源陣列的格式
+      // 當不是常見檔名或用?file=img.jpg這類參數時要標註type幫助解析
+      // e.g. type: createjs.Types.SOUND、type: createjs.Types.IMAGE
+      // e.g.：
+      // queue.loadManifest('path/to/manifest.json');
+      // queue.loadManifest({
+      //   src: 'manifest.json',
+      //   type: 'manifest'      // 這裡要特殊說明一下檔案型別
+      // })
+      // 15-3-1. type的種類有：BINARY、CSS、IMAGE、JAVASCRIPT、JSON、JSONP、MANIFEST、SOUND、SPRITESHEET、SVG、TEXT、VIDEO、XML
+
+      // 全部完成後處理(示範15-2-3-1)
+      queue.on('complete', handleComplete, this);
+      function handleComplete() {
+        // createjs.Sound.play("sound"); // 現在不能直接播放
+        quick.visible = true; // 改成讓播放按鈕露出
+
+        // 載入後將cute放在body
+        var cute = queue.getResult("cute");
+        cute.id += "cuteComplete";
+        cute.classList.add('complete');
+        document.body.appendChild(cute);
+      }
+
+      // 檔案載入完成後處理(示範15-2-3-3)
+      // 檔案load完後的事件，因為傳入一個音訊一個圖片會執行兩次，但最後判斷type是img才新增所以只會新增圖片
+      queue.on("fileload", handleFileLoad, this);
+      function handleFileLoad(event) {
+        // 這個item是傳進來的event物件中帶src的部分
+        var item = event.item; 
+        var type = item.type;
+        // 可以檢查傳進來的type
+        if (type == createjs.Types.IMAGE) {
+          event.result.id += "cuteFileload";
+          event.result.classList.add("fileload");
+          document.body.appendChild(event.result);
+        }
+      }
+
+      // 事件執行順序是fileLoad、fileLoad、complete，看className是fileload complete就可以知道先後，而id則被後面的complete取代，用+=也可以看到執行順序，但不知為啥兩個function只會append出一隻
+    }
+  </script>
+</body>
+</html>

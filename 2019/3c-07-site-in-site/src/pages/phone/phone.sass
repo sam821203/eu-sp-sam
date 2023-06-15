@@ -1,0 +1,45 @@
+// ==========================================================================
+// Collection Helpers 
+// ==========================================================================
+// @import "utils/sass/helpers/_collection"
+@import "~utils/sass/_common"
+
+// // ==========================================================================
+// // Plugins
+// // ==========================================================================
+// // @import "vendors/animate"
+
+// // ==========================================================================
+// // layout
+// // ==========================================================================
+@import "~layout/header/_header"
+@import "~layout/nav-sub-page/_nav-sub-page"
+@import "~layout/nav-bottom/_nav"
+
+// // ==========================================================================
+// // components
+// // ==========================================================================
+@import "~components/brand-list/_brand-list"
+@import "~components/hero-slider/_hero-slider"
+@import "~components/bn-slider/_bn-slider"
+@import "~components/phone-calendar/_phone-calendar"
+// // ==========================================================================
+// // Page
+// // ==========================================================================
+// common switch setting
+.sp__header
+  .info--phone
+    display: inline
+.nav__phone
+  display: none
+
+// page setting
+body
+  background-color: $gray-deep-dark
+.hero__wrap
+  +breakpoint-min($min-width-xl)
+    background: center 0 url("~utils/img/bg.jpg") no-repeat
+
+
+    
+

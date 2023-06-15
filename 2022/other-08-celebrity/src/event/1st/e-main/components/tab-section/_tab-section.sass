@@ -1,0 +1,84 @@
+// tab layout
+.promo__group--tab-section
+  overflow: hidden
+  .promo__wrap
+    .promo__zone
+      +aspect-ratio(960, 1068)
+      +bg-set(url("event/1st/e-main/components/tab-section/bg-tab.png"), 100%)
+      +breakpoint-min($min-width-xl)
+        +aspect-ratio(960, 822)
+        +bg-set(url("event/1st/e-main/components/tab-section/web-bg-tab.png"), auto)
+    .tab__wrap
+      padding: 23.3% 1.5% 0%
+      +breakpoint-min($min-width-xl)
+        padding-top: 25.2%
+      .tab__box
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+        +breakpoint-min($min-width-xl)
+          flex-wrap: nowrap
+      .tab__item
+        position: relative
+        width: 32%
+        margin-bottom: 1%
+        cursor: pointer
+        transition: all .2s
+        +breakpoint-min($min-width-xl)
+          width: 16%
+          margin-bottom: 0
+        .active
+          opacity: 1
+        &:hover, &.active
+          filter: brightness(1.2)
+          
+    .content__zone
+      .content__block
+        margin-top: 6.2%
+        +breakpoint-min($min-width-xl)
+          margin-top: 4%
+      .content__box
+        display: none
+        &.active
+          display: flex
+          align-items: center
+
+        .promo__item
+          width: 40%
+        .tab__slider
+          display: flex
+          justify-content: center
+          align-items: center
+          flex-wrap: nowrap
+          width: 60%
+          padding: 0.5% 1.5% 0 1.5%
+          +breakpoint-min($min-width-xl)
+            padding-top: 4.5%
+          .swiper-slide
+            width: 44%
+            transform: translateY(0%)
+            +breakpoint-min($min-width-xl)
+              width: 48%
+              transform: translateY(-6%)
+            .product.product--dynamic
+              border-radius: 2vw
+              background-color: $gray-deep-light
+              +breakpoint-min($min-width-xl)
+                border-radius: 16px
+              .product__img
+                border: 1px solid #0ff
+                border-bottom: none
+                border-radius: 2vw 2vw 0 0
+                +breakpoint-min($min-width-xl)
+                  border-radius: 16px 16px 0 0
+              .product__text
+                border: 1px solid #0ff
+                border-top: none
+                border-radius: 0 0 2vw 2vw
+                +breakpoint-min($min-width-xl)
+                  border-radius: 0 0 16px 16px
+              .product__name
+                height: 2.52em
+                padding: 2% 5%
+              .product__price
+                padding: 0 2% 4% 2%

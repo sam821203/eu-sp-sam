@@ -1,0 +1,272 @@
+body {
+  position: relative;
+  /* 背景顏色 */
+  background-color: #ac100e;
+}
+
+body:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(bg.jpg) center 0 no-repeat;
+  background-size: 100%;
+  overflow: hidden;
+}
+
+@media screen and (min-width:960px) {
+  body:before {
+    background: url(bg-web.jpg) center 0 no-repeat;
+    background-size: auto;
+  }
+}
+
+body.bg-fixed:before {
+  position: fixed;
+  height: 100vh;
+}
+
+.logo{
+  width: 22%;
+}
+
+/* logo排排站 */
+
+.promo__section--bn-slider {
+  overflow: hidden;
+}
+
+.promo__section {
+  padding: 9% 1% 0;
+}
+
+.promo__block {
+  margin: 8% auto 0;
+  width: 80%;
+}
+
+.tab__wrap {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffdb7a;
+  border-radius: 2vw;
+  padding: 4% 2%;
+  /* box-shadow: 1px 1px 3px inset #fff, 2px 2px 4px 1px #d8d8d8; */
+}
+
+.tab__head {
+  width: 20%;
+  height: 70vh;
+  overflow-y: auto;
+}
+
+.tab__head::-webkit-scrollbar{
+  display: none;
+}
+
+.tab__item {
+  margin-right: 1%;
+  margin-bottom: 5%;
+  width: 100%;
+  background-color: transparent;
+  color: #b7110e;
+  text-align: center;
+  line-height: 2;
+  border-radius: 2vw;
+  cursor: pointer;
+}
+
+.tab__item.active{
+  background-color: #b7110e;
+  color: #fff;
+}
+
+.tab__item .tab__pic {
+  margin: 0 auto;
+  width: 40%;
+}
+
+.tab__head .tab__pic img:last-child,
+.tab__head .active .tab__pic img:first-child {
+  display: none;
+}
+
+.tab__head .active .tab__pic img:last-child {
+  display: block;
+}
+
+.tab__item .tab__text {
+  font-size: 12px;
+  text-align: center;
+}
+
+.tab__head .active .tab__text {
+  color: fff;
+}
+
+.tab__item.active{
+  cursor: default;
+  pointer-events: none;
+}
+
+
+@media screen and (min-width: 960px) {
+
+  .promo__section{
+    padding-top: 120px;
+  }
+
+  .promo__block {
+    margin-top: 80px;
+    width: 750px;
+  }
+
+  .tab__wrap {
+    flex-wrap: wrap;
+    padding-top: 20px;
+  }
+
+  .tab__head {
+    display: flex;
+    /* flex-wrap: wrap; */
+    width: 100%;
+    height: auto;
+  }
+
+  .tab__item {
+    width: 12%;
+    border-radius: 15px;
+    margin-bottom: 15px;
+  }
+}
+
+
+.tab__body {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  padding: 2%;
+  width: 78%;
+  height: 70vh;
+  overflow-y: auto;
+  background-color: #fff;
+  border-radius: 2vw;
+
+  /* padding-top: 2%; */
+}
+
+.tab__body::-webkit-scrollbar{
+  display: none;
+}
+
+.tab__body h2 {
+  display: block;
+  margin-bottom: 1%;
+  width: 100%;
+}
+
+.tab__content {
+  margin: 2% 2% 0 0;
+  /* margin-right: 2%; */
+  width: 43%;
+  /* max-height: 85px; */
+  text-align: center;
+  line-height: 2;
+  font-size: 12px;
+}
+
+
+.tab__content .tab__pic {
+  border: 1px solid #d6d6d6;
+  /* background-color: #fff; */
+}
+
+.tab__content .tab__text {
+  margin-bottom: 3%;
+  padding: 2%;
+  color: #4e0100;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+
+@media screen and (min-width: 960px) {
+
+  .tab__body {
+    /* justify-content: space-between; */
+    padding: 2% 100px;
+    width: 100%;
+    height: auto;
+  }
+
+  .tab__content {
+    margin: 0 1% 1%;
+    width: 23%;
+    font-size: 18px;
+  }
+}
+
+
+.sort__wrap{
+  position: fixed;
+  z-index: 1;
+  top: 29%;
+  right: 3%;
+  width: 10%;
+  /* color: #333; */
+  text-align: center;
+}
+
+.sort__wrap a{
+  color: #b7110e;
+  font-size: 18px;
+  padding: 5%;
+}
+
+.sort__wrap a:hover{
+  color: fff;
+}
+
+@media screen and (min-width: 600px){
+  .sort__wrap{
+    top: 58vw;
+  }
+}
+
+@media screen and (min-width: 960px){
+  .sort__wrap{
+    top: 650px;
+    right: calc(50% - 455px);
+    width: 70px;
+    border-radius: 15px;
+  }
+}
+
+@media screen and (min-width: 1025px){
+
+  .sort__wrap{
+    padding: 10px 0;
+    top: 50%;
+    background-color: rgba(173, 16, 13, 0.4);
+    transform: translateY(-50%);
+    right: calc(50% - 555px);
+    backdrop-filter: blur(5px);
+  }
+  .sort__wrap a{
+    color: #fff;
+    font-size: 24px;
+  }
+}
+
+.stop-scrolling{
+  overflow: hidden;
+}
+.tab__content.hide,
+.tab__body h2.hide,
+.sort__item.hide {
+  display: none;
+}

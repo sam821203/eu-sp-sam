@@ -1,0 +1,47 @@
+.promo__event
+  padding: 3% 2% 1%
+  // +bg-set(url(~event/3rd/u-main/components/promo-event/bg-promo.png), contain, 2vw)
+
+  .event__wrap
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    // padding: 2.4% 5%
+    //background-color: $main-e-background-color-1st
+    // 固定位置模式
+    li
+      flex: 0 1 33%
+      -ms-flex: auto
+      +pos-set(relative, zero)
+      padding: 5% 1% 1.5%
+      transition: all 0.5s
+      text-align: center
+      &::after
+        content: ''
+        +pos-set(absolute, zero, -1%, 31.68%)
+        padding-bottom: 36.65%
+        width: 36.64%
+        pointer-events: none
+      @for $i from 1 through 3
+        &:nth-child(#{$i})
+          &::after
+            +bg-set(url(~event/1st/u-main/components/promo-event/items/icon-#{$i}.png), contain)
+
+      &:hover,
+      &:active
+        a
+          filter: brightness(120%) contrast(120%)
+          animation: key-rotate-from-to 0.3s
+
+      a
+        +pos-set(relative, zero)
+        transform-origin: 50% 18px
+
+  +breakpoint-min($min-width-xl)
+    padding: 30px 20px 5px
+    .event__wrap
+      li
+        padding-bottom: 15px
+
++key-rotate-from-to(12, -6)
+        

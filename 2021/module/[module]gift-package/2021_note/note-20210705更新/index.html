@@ -1,0 +1,331 @@
+<meta name="viewport" content="width=device-width">
+<meta charset="utf-8">
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  *:before, *:after {
+    box-sizing: border-box;
+  }
+  a {
+    display: block;
+    text-decoration: none;
+  }
+  ul {
+    list-style: none;
+  }
+  img {
+    width: 100%;
+    border: 0;
+  }
+  article,
+  main,
+  nav,
+  section {
+    display: block;
+  }
+  body {
+    margin:0;
+	  font-family: PingFangTC-regular, "LiHei Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Source Han Sans TC", "Microsoft JhengHei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" ;
+  }
+  .body-color{
+    /* 外部背景底色 */	  
+    background-color: #f1b310;
+  }
+  .sp--960 {
+    position: relative;
+    z-index: 0;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /*-- note start --*/
+  .note {	  
+    font-size: 15px;
+    word-break: break-all;
+	  line-height: 150%;
+  }
+  .note article {
+    padding: 1.5%;
+    /* 內部背景底色 */
+    background-color: #ffffff;
+	  border-radius: 5px;
+  }  
+  .note article a {	  
+	  display: inline;
+    color: #ce2212;
+	  text-decoration: underline;
+    word-break: break-all;
+  } 
+  .note article a:hover {
+	  text-decoration: none;	
+  }       
+  .note li{
+    padding: 5px;
+  }  
+  .note ol>li {
+    margin-left: 30px;
+  }   
+  .act_name {
+    font-size: 32px;	
+	  color: #fff;
+    /* 主標底色 */	  
+    background-color: #15151d;	
+	  line-height: 32px;
+	  text-align: center;
+    letter-spacing: 2px;	
+	  font-weight: bold;
+	  padding: 15px;
+	  border-radius: 5px;
+  }
+  .h2_style {
+	  font-size: 24px;
+    /* 活動名稱顏色 */	  
+	  color: #9b2121;
+	  line-height: 30px;
+	  margin-top: 15px;
+  }
+  @media (max-width: 700px) {
+	.act_name {
+	  font-size: 24px;
+	  line-height: 24px;	
+	 }	  
+	.h2_style {		
+	  font-size: 20px;
+    line-height: 24px;      
+	 }	  
+  }  
+  .p-notice {	
+	  font-size: 24px;  
+  	color: #555555;	
+	  line-height: 42px;  
+	  font-weight: bold;
+	  margin-top: 15px;
+  }  
+  @media (max-width: 700px) {
+	.p-notice {
+	  font-size: 20px;
+	 }	  
+  }    
+  .p-notice-words{
+	  color: #555555;
+  }          
+  .note .decimal-type{
+    /* 阿拉伯數字 */
+    list-style-type: decimal;
+  }
+  .note .lower-alpha-type{
+    /* 小寫英文字母 */
+    list-style-type: lower-alpha;   
+  }
+  .note .none-type{
+    /* 不顯示符號 */   
+    list-style-type: none;
+  }
+  .note .disc-type{
+    /* 實心圓形 */    
+    list-style-type: disc;
+  } 
+  .btn_a1 {	  
+    /* 按鈕底色 */
+    background-color: #ce2212;
+    padding: 5px 30px;  
+    border-radius: 5px;  
+  }
+  .btn_p1 {
+    font-size: 24px;	  
+    line-height: 52px;
+    font-weight: bold;
+    margin: 0 0 5px 35px;
+  }
+  .note article .btn_p1 a {
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s;		
+  }
+  .note article .btn_p1 a:hover {
+    /* 滑鼠移過 按鈕底色 */	  
+	  background-color: #ff5747;
+  }   
+  .note table.rwd-table {
+    width: 100%;
+    border: none;	
+    border-collapse: collapse;
+    background-color: #eeeeee; 
+    overflow: hidden;
+	  margin: 0 0 10px 0;
+  }
+  .note table.rwd-table th {
+    display: none;
+  }
+  .note table.rwd-table td {
+    display: block;
+    text-align: left;
+  }
+  .note table.rwd-table td:before {
+    content: attr(data-th) ": ";
+    display: inline-block;
+	  margin: 5px 5px 5px 0;
+    color: #9b2121;
+    font-weight: bold;
+  }
+  .note table.rwd-table tr:nth-child(even) {
+    background-color: #dadada;
+  }
+  .note table.rwd-table th, .rwd-table td {
+    margin: .5em 1em;
+  }
+  @media (min-width: 700px) {
+    .note table.rwd-table {
+      width: 95%;
+      border: 1px solid #15151d; 
+      background-color: #fff;
+	    margin: 0 auto 15px;
+    }
+    .note table.rwd-table tr:nth-child(even){
+      background: transparent;
+    }
+    .note table.rwd-table th {
+      /* 表頭底色 */		
+      background-color: #ffe39a; 
+    }
+    .note table.rwd-table th,
+    .note table.rwd-table td {
+      border: 1px solid #15151d;
+    }
+	  .note table.rwd-table td:nth-child(4) {
+      border: 1px solid #15151d;
+	  }	
+    .note table.rwd-table td:before {
+      display: none;
+    }
+    .note table.rwd-table th, .note table.rwd-table td {
+      display: table-cell;
+      padding: .25em .5em;
+      text-align: center;
+    }
+    .note table.rwd-table th, .note table.rwd-table td {
+      padding: 0.8em !important;
+    }
+  } 
+  /* 插入圖片 */		  
+  .photo_style {
+	  display:block;
+	  margin:0 auto;
+	  max-width:800px;
+	  padding: 20px;
+	}	
+  /*-- note end --*/
+</style>
+<div id="spWrap" class="sp__wallper">
+  <section class="note body-color" name="note">  
+    <div class="sp--960" style="padding:1% 0 3% 0;">
+      <article>
+		    <a name="note-top" id="note-top"></a>
+        <p class="act_name">廚電節</p>
+        <h2 class="h2_style">【麗克特指定家電滿2,500即可登記抽刀叉組】</h2>        
+        <ol class="decimal-type">
+          <li>活動期間：2020/5/1 AM00:00 – 2020/5/31 PM 23:59</li>
+		      <li>活動說明：活動期間凡購買家電館麗克特活動專區內之指定商品(電視購物商品、網聯通、專人OB除外；註:電視購物商品係指商品網頁有標記TV標籤之商品)，且單筆訂單滿$2,500元，完成登記並符合資格且過鑑賞期未退貨，即可參加登記抽活動，限量3名。</li>
+          <li>範例說明：小華於5/14，購買家電館<a href="#">麗克特氣炸鍋</a>(非電視購物商品)，訂單金額為$3,280元，並於活動期間內至登記頁登記，且過鑑賞期未退貨，即可參加登記抽刀叉組活動。
+            <ol class="lower-alpha-type">
+              <li>活動期間：2020/5/1 AM00:00 – 2020/5/31 PM 23:59</li>
+              <li>活動說明：活動期間凡購買家電館麗克特活動專區內之指定商品(電視購物商品、網聯通、專人OB除外；註:電視購物商品係指商品網頁有標記TV標籤之商品)，且單筆訂單滿$2,500元，完成登記並符合資格且過鑑賞期未退貨，即可參加登記抽活動，限量3名。</li>
+            </ol>			  
+		      </li>
+        </ol>
+      <!-- rwd table -->
+        <table class="rwd-table">
+          <tr>
+            <th>獎項</th>
+            <th>單筆訂單門檻</th>
+            <th>贈品寄送及發放時間</th>
+            <th>贈品數量</th>
+          </tr>
+          <tr>
+            <td data-th="獎項">日式刀叉組</td>
+            <td data-th="單筆訂單門檻">購買家電館麗克特活動專區內之指定商品，單筆滿2,500元並完成登記 (電視購物商品、網聯通、專人OB除外)</td>
+            <td data-th="贈品寄送及發放時間">統一於6/30前寄送</td>
+            <td data-th="贈品數量">東森、森森總限量3名</td>
+          </tr>
+          <tr>
+            <td data-th="獎項">日式刀叉組</td>
+            <td data-th="單筆訂單門檻">購買家電館麗克特活動專區內之指定商品，單筆滿2,500元並完成登記 (電視購物商品、網聯通、專人OB除外)</td>
+            <td data-th="贈品寄送及發放時間">統一於6/30前寄送</td>
+            <td data-th="贈品數量">東森、森森總限量3名</td>
+          </tr>		
+          <tr>
+            <td data-th="獎項">日式刀叉組</td>
+            <td data-th="單筆訂單門檻">購買家電館麗克特活動專區內之指定商品，單筆滿2,500元並完成登記 (電視購物商品、網聯通、專人OB除外)</td>
+            <td data-th="贈品寄送及發放時間">統一於6/30前寄送</td>
+            <td data-th="贈品數量">東森、森森總限量3名</td>
+          </tr>					
+        </table>   
+      <!-- rwd table -->
+        <table class="rwd-table">
+         <tr>
+           <th colspan="3">購買次日六個月內申請(逾期不得申請退還)</th>
+         </tr>
+           <tr>
+            <th>申請方式</th>
+            <th>線上申請</th>
+            <th>紙本申請</th>
+           </tr>
+           <tr>
+            <td data-th="申請方式">填寫申請書</td>
+            <td data-th="線上申請">至財政部稅務入口網>稅務資訊>「購買節能電器退還減徵貨物稅專區」 申請書登錄並上傳</td>
+            <td data-th="紙本申請">上網至「購買節能電器退還減徵貨物稅專區」下載或至任一國稅局臨櫃索取專用申請書需準備
+              <ol style="text-align: left;">
+                <li>申請書。</li>
+                <li>身分證或護照或居留證影本。</li>
+                <li>發票或收據影本，上面必需註明廠牌、品名及型號；如果是雲端或電子發票，則不必添附證明聯。</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <th colspan="3">國稅局免付費專線0800-000-321</th>
+          </tr>
+        </table>          
+      <!-- rwd table -->           
+        <table class="rwd-table">
+         <tr>
+          <th>填寫申請書</th>
+          <th>檢附資料</th>
+          <th>遞送資料</th>
+         <th rowspan="2">申請完成</th>
+         </tr>
+          <tr>
+            <td data-th="申請方式">國稅局網頁下載文件填寫</td>
+            <td data-th="檢附資料">
+              <ol style="text-align: left;">
+                <li>申請書。</li>
+                <li>身分證或護照或居留證影本。</li>
+                <li>發票或收據影本</li>
+              </ol>
+            </td>
+            <td data-th="遞送資料">就近國稅局申請</td>
+          </tr>
+        </table>        
+		    <p class="btn_p1"><a class="btn_a1" href="https://www.etmall.com.tw/Activity/Reg/210" target="_blank">點我登記</a></p><!-- 最多8字，超過會破版 -->
+        <a name="note-1" id="note-1"></a>        
+        <h2 class="h2_style">【Vitantonio指定家電滿1,500元登記抽好禮】</h2>
+        <ol class="decimal-type">
+          <li>活動期間：2020/5/1 AM00:00 – 2020/5/31 PM 23:59</li>
+          <li>活動說明：活動期間凡購買家電館Vitantonio活動專區內之指定商品(電視購物商品、網聯通、專人OB除外；註:電視購物商品係指商品網頁有標記TV標籤之商品)且單筆訂單滿$1,500元，完成登記並符合資格且過鑑賞期未退貨，即可參加登記抽活動，限量3名。</li>
+		      <li>活動參與品號：如贈品注意事項。</li>
+          <li>範例說明：小華於5/14，購買家電館Vitantonio鬆餅機(非電視購物商品)，訂單金額為$26,000元，並於活動期間內至登記頁登記，且過鑑賞期未退貨，即可參加登記抽好禮活動(贈品隨機贈送，恕不挑選)。</li>
+        </ol>   
+        <img class="photo_style" src="800x300.jpg" />		  
+		    <p class="btn_p1"><a class="btn_a1" href="https://www.etmall.com.tw/Activity/Reg/210" target="_blank">點我登記</a></p><!-- 最多8字，超過會破版 -->      
+        <p class="p-notice">贈獎注意事項</p>
+        <ol class="p-notice-words decimal-type">
+          <li>獎項詳細內容與規格以實物為準，獎項均不得轉換、轉讓或折換現金，中獎資格不可轉讓予第三人。領獎後獎品之使用與維護，東森購物概不負責，若因不可抗力因素造成贈品無法交件，東森購物可將贈品內容更換成等值商品做為替換。</li>
+          <li>主辦單位有權檢視本活動參加者之參加行為及中獎情形是否涉嫌不法或有違常理之異常狀況，包括但不限於下列情況：人為操作蓄意偽造、短時間異常多筆參與行為、透過任何電腦程式參與活動、詐欺或以任何其他不正當的方式意圖以進行不實或虛偽活動參與行為、或登錄資料不實或不正確或盜用任何第三人之資料，或有違反活動規範之行為。活動參加者因上述情形所獲得之活動資格及獎品，主辦方及活動小組保有變更、終止其參加活動資格、取消中獎資格或暫停活動的權利，並對於任何破壞本活動之行為保留法律追訴權，並就因此產生之損害，得向參加者請求賠償。</li>
+          <li>兌獎流程將由專人主動與得獎人聯繫。依稅法規定，若得獎人於東森購物兌換贈（獎）品金額達新台幣（下同）1,001元以上未達20,010元，將於次年初開立免扣繳憑單予得獎人並向主管稽徵機關申報。</li>
+        </ol>
+      </article>
+    </div>
+  </section>
+</div>

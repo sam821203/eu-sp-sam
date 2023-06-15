@@ -1,0 +1,400 @@
+<meta name="viewport" content="width=device-width">
+<!-- ============== 輪播 start ============== -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+<link rel="stylesheet" href="popWindow.css">
+<!-- ============== 輪播 end ============== -->
+<!-- 共用CSS -->
+<link rel="stylesheet" href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.css">
+<style>
+body {
+    margin:0;
+    background-color:#fff;
+    font-family: PingFangTC-regular, Roboto, "LiHei Pro", "Source Han Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, "Microsoft JhengHei", sans-serif;
+}
+    /* 調整logo位置大小 */
+    /* .logo {
+      top: 1%;
+      left: 1%;
+      width: 30%;
+      max-width: 220px;
+    } */
+
+    /* 連結測試 */
+    /* .sp__visual a{
+      filter: brightness(500%);
+    } */
+
+    /* 切片測試 */
+    /* .visual__fragment::before {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      border: 1px solid #00f;
+      pointer-events: none;
+    } */
+
+    /* 設定全畫面背景 */
+    /* .sp__main {
+      background: url(bg.jpg) center 0 no-repeat;
+    } */
+
+    /* 大網各區塊背景  */
+    @media screen and (min-width: 960px) {
+/*
+        .visual__block1 {
+            background: center 0 url("bg.jpg") no-repeat;
+        }
+*/
+
+        .visual__block1 {
+            background: center 0 url("bg_01.jpg") no-repeat;
+        }
+
+        .visual__block2 {
+            background: center 0 url("bg_02.jpg") no-repeat;
+        }
+
+        .visual__block3 {
+             background-color:#fff;
+        }
+    }
+
+    /*-- 動畫小物件 --*/
+    .animate__wrap {
+        position: relative;
+        z-index: 1;
+    }
+
+    /*-- 手機版：
+            1. 設定物件距離左邊與上邊的位置，單位可以使用"%"或"vw"
+            2. width 建議電腦版可以使用auto，手機版則可使用%調整
+     --*/
+    .animate__wrap .animate__obj--01 {
+        position: absolute;
+        top: 1vw;
+        left: 1vw;
+        width: auto;
+    }
+
+    /*-- 電腦版：
+            設定物件距離左邊與上邊的位置，單位可以使用"px"，左邊可以挑整clac()後面的px值
+            width 建議電腦版可以使用auto，手機版則可使用%調整
+     --*/
+    @media screen and (min-width: 960px) {
+        .animate__wrap .animate__obj--01 {
+            top: 0;
+            left: calc(50% - 480px);
+            width: auto;
+        }
+    }
+	
+    /* note */
+    /* ======================================== */
+    .note {
+        word-break: break-all;
+    }
+
+    .note article {
+        background-color: #000000;
+        color: #fff;
+        padding: 2%;
+    }
+
+    .note article a {
+        display: inline;
+    }
+
+    .note h2 {
+        padding: 2%;
+        font-size: 2rem;
+        line-height: 2;
+    }
+
+    .note p {
+        margin: 0;
+        padding: 1% 10%;
+        line-height: 1.6;
+        font-size: 1.4rem;
+    }
+
+    .note ol, .note ul {
+        padding: 0;
+        margin: auto;
+        margin: 0 5% 0 7%;
+        list-style: decimal;
+    }
+
+    .note ul {
+        list-style: disc;
+    }
+
+    .note table {
+        color: #5b5b5b;
+        border: 1px solid #c0c0c0;
+        border-right: 0;
+        border-bottom: 0;
+        width: 90%;
+        margin: 1% 0 2% 5.5%;
+        background-color: #FFFFFF;
+        font-size: 0.9em;
+    }
+
+    .note table td {
+        border-right: 1px solid #c0c0c0;
+        border-bottom: 1px solid #c0c0c0;
+        padding: 5px;
+        text-align: center;
+    }
+
+    .note table tr:first-child td, .note ol table tr:first-child td {
+        text-align: center;
+        background-color: #949494;
+        color: #f9f9f9;
+    }
+
+    .note ol table {
+        margin: 0;
+        width: 100%;
+        margin: 2% 0;
+    }
+
+    .note ol table td {
+        text-align: left;
+    }
+
+    .note ol table tr:first-child td {
+        white-space: nowrap;
+    }
+
+    @media screen and (max-width: 1024px) {
+        .note ol, .note ul {
+            margin: 0 5% 0 10%;
+        }        
+
+        .note table {
+            margin: 0 3%;
+            width: 94%;
+        }
+    }
+
+    /* 圖片 */
+    /* ======================================== */
+    .img--container {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .img--container img:nth-child(1),
+    .img--container img:nth-child(2),
+    .img--container img:nth-child(3) {
+        width: auto;
+        display: inline-block;
+    }
+
+    @media screen and (max-width: 768px) {
+
+        .img--container {
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+
+        .img--container img:nth-child(1),
+        .img--container img:nth-child(2),
+        .img--container img:nth-child(3) {
+            width: 94%;
+            margin-left: 3%;
+            margin-right: 3%;
+        }
+        .note p {
+            padding: 1% 5%;
+        }
+    }
+	 @media screen and (max-width: 767px) {
+        .note h2 {
+            font-size: 1.3rem;
+        }
+        .note p {
+            font-size: 1rem;
+        }
+     }	
+/* 跳出影片跑版加這個 */
+    .sp__wallper {
+        position: relative;
+        z-index: 0;
+    }
+    .open--window--wrap.change__text__style {
+        border: 1px solid #999;
+    }
+    .img--container, p {
+        margin-top: 3;
+        margin-bottom: 3%;
+    }
+</style>
+<!-- 旅遊專用bar區域 start 不要就移除-->
+<div id="barHome"></div>
+<!-- 旅遊專用bar區域 end-->
+<div id="iconHome"></div>
+<div id="spWrap" class="sp__wallper">
+    <!-- 動畫小物件 -->
+    <div class="animate__wrap">
+        <!--<img class="animate__obj&#45;&#45;01" src="https://www.etmall.com.tw/XML/content/DMSetting/Final/202004/SP_1115132/w/promo-main.png?t=637233280258177675" alt="">-->
+
+        <!-- 如果有多組物件，可以複製命名animate__obj--0{數字} css 也複製一份就可以一直往下生 -->
+        <!--<img class="animate__obj--02" src="" alt="">-->
+    </div>
+    <!-- 主視覺 -->
+    <main class="sp__main">
+        <div class="layout--main home--logo">
+            <a href="https://www.etmall.com.tw"><img class="logo" src="e-logo-w.png" alt="東森購物"></a>
+<!--            <a href="https://www.u-mall.com.tw"><img class="logo" src="u-logo-w.png" alt="森森購物"></a>-->
+        </div>
+        <section class="sp__visual visual__block1">
+            <div class="layout--main">
+                <ul class="visual--auto clearfix">
+                    <li class="visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/c3/140676" title="超乎你的想像Galaxy M11">
+                            <img src="2560sp_01.jpg" alt="超乎你的想像Galaxy M11">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="sp__visual visual__block2">
+            <div class="layout--main">
+                <ul class="visual--auto clearfix">
+                    <li class="visual__fragment width--auto">
+                        <div class="open-bigPhoto" data-dialog="movie--trailer">
+                            <img src="2560sp_02.jpg" alt="開箱影片">
+                        </div>
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <div class="open-bigPhoto" data-dialog="noteContent">
+				            <img src="2560sp_03.jpg" alt="開箱介紹">
+                        </div>
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/c3/140676" title="超乎你的想像Galaxy M11">
+                            <img src="2560sp_04.jpg" alt="超乎你的想像Galaxy M11">
+                        </a>
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <a href="#SP1" title="6.4吋大螢幕">
+                            <img src="2560sp_05.jpg" alt="6.4吋大螢幕">
+                        </a>
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <a href="#SP2" title="超強三鏡頭">
+                            <img src="2560sp_06.jpg" alt="超強三鏡頭">
+                        </a>
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <a href="#SP3" title="5000mAh超大電量">
+                            <img src="2560sp_07.jpg" alt="5000mAh超大電量">
+                        </a>
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <a href="#SP4" title="NFC感應支付">
+                            <img src="2560sp_08.jpg" alt="NFC感應支付">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="sp__visual visual__block3">
+            <div class="layout--main">
+                <ul class="visual--auto clearfix">
+                    <li class="visual__fragment width--auto" id="SP1">
+                        <img src="2560sp_09.jpg">
+                    </li>
+                    <li class="visual__fragment width--auto" id="SP2">
+                        <img src="2560sp_10.jpg">
+                    </li>
+                    <li class="visual__fragment width--auto" id="SP3">
+                        <img src="2560sp_11.jpg">
+                    </li>
+                    <li class="visual__fragment width--auto" id="SP4">
+                        <img src="2560sp_12.jpg">
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+</div>
+<!-- 彈出視窗 打開後內容 -->
+<!-- 彈出youtube內容 -->
+<!-- id 對應彈出的data-dialog -->
+
+<div class="open--window--wrap pop--videos" id="movie--trailer">
+    <iframe class="video--youtube pop--videos" id="video1" width="784" height="441"
+            src="https://www.youtube.com/embed/8yZV_pHt0N0?enablejsapi=1&amp;html5=1"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<!-- 彈出 NOTE -->
+<div class="open--window--wrap pop--images change__text__style" id="noteContent">
+    <section class="layout--main note" name="note" id="note">
+        <article>
+            <h2>【Samsung M11 開箱文】</h2>
+            <!-- 圖片 -->
+            <div class="img--container">
+                <img src="01.png" alt="">
+            </div>
+            <p>小平這次要為大家介紹的是三星M11，這是三星首款M系列手機在台販售，而且僅限線上通路購買，這款價格4000有找的手機，可說是麻雀雖小，五臟俱全，以下就來為大家介紹這款手機吸引人的規格。</p>
+            <!-- 圖片 -->
+            <div class="img--container">
+                <img src="02.jpg" alt="">
+            </div>
+            <p>手機使用6.4吋O極限全螢幕，並且支援杜比音效，帶給用戶全方位的視覺及聽覺體驗。</p>
+            <!-- 圖片 -->
+            <div class="img--container">
+                <img src="03.jpg" alt="">
+            </div>
+            <p>M11後置相機採用三鏡頭，主鏡頭為1300萬畫素，清晰拍下每一個片刻；500萬畫素的超廣角鏡頭，讓您平時聚會合照，或是大風景照都輕鬆拍；200萬畫素景深鏡頭，支援景深即時預覽，拍照前調整景深，突顯主視覺。同時也支援全景模式、專業模式提供使用者拍攝。前置自拍鏡頭使用挖孔屏，畫素為800萬，前置與後置鏡頭皆支援一鍵廣角及1080P錄影，整體拍攝以入門手機來說，CP值非常的高。</p>            <!-- 圖片 -->
+            <div class="img--container">
+                <img src="04.jpg" alt="">
+            </div>
+            <p>M11採用5000mAh超大電量，平時出門不必擔心電量不足的問題，同時支援15W閃電快充縮短充電時間。</p>
+            <!-- 圖片 -->
+            <div class="img--container">
+                <img src="05.jpg" alt="">
+            </div>
+            <p>M11提供臉部及指紋解鎖功能，另外還支援NFC電子支付，讓日常生活消費更加便利。強大的硬體功能配上親民的價格，M11可說是為入門機市場殺出了一條血路，對男女老少都是不錯的首選。</p>
+        </article>
+    </section>
+</div>
+
+
+<script src="https://polyfill.io/v3/polyfill.min.js"></script>
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<!-- ============== 輪播 start ============== -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+<!-- ============== 輪播 end ============== -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js"></script> -->
+<!-- 東森浮水印 -->
+<script id="scriptIconFloat" src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107916/float-icon.js"></script>
+<!-- 森森浮水印 -->
+<!--<script id="scriptIconFloat" src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1104381/float-icon.js"></script> -->
+<!-- 旅遊置頂bar
+<script id="scriptAddBn" src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106742/add-bn.js"></script> -->
+<!-- 共用JS -->
+<script id="generateScript"
+        src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.js"></script>
+<script>
+    var footerSlider = new Swiper(".swiper-container", {
+        autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+        },
+        autoHeight: true,
+        grabCursor: true,
+        loop: true,
+        speed: 1000,
+    });
+</script>
+<script src="popWindow.js"></script>
+<!-- ============== 輪播 end ============== -->

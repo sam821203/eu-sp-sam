@@ -1,0 +1,145 @@
+/*== common style ==*/
+body {
+  margin: 0;
+  padding: 0;
+}
+img {
+  display: block;
+  border: 0
+}
+.l--left{
+    float: left;
+}
+.l--right{
+    float: right;
+}
+.logo__sp{
+    width:190px;
+    height:100px;
+    position:absolute;
+    z-index:100;
+    left:55%;
+    top:0;
+    margin-left:-660px;
+}
+.sp-is--hide{opacity: 0;}
+
+.sp-fixed__nav{
+    background: url(../nav_bg1128.png) 0 0 no-repeat;
+    position: fixed;
+    z-index: 600;
+    width: 181px;
+    right: 50%;
+    /*margin-right: -650px;*/
+    right: -10px;
+    top: 5%;
+    display: none;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.sp-fixed__nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-top: 55px;
+}
+.sp-fixed__nav li{
+    /*text-align: center;*/
+    /*font-size: 16px;*/
+    padding-left: 55px;
+    height: 29px;
+}
+.sp-fixed__nav a{
+    /*background: url(../nav_bg.png) 0 0 repeat-y;*/
+    display: block;
+    color: #161412;
+    padding-top: 4px;
+    padding-bottom: 5px;
+    position: relative;
+    z-index: 1;
+    font-size: 15px;
+    text-decoration: none;
+}
+.sp-fixed__nav a:hover{
+    color: #fff;
+}
+.sp-fixed__nav a:hover:after{
+    content: "";
+    background: rgba(138, 43, 236, 0.9);
+    position: absolute;
+    z-index: -1;
+    width: 90px;
+    height: 29px;
+    top: 0;
+    left: -10px;
+   
+}
+.sp-fixed__nav li.sp-nav__home {
+    padding-left: 0;
+    margin-bottom: 5px;
+    height: 70px;
+}
+.sp-fixed__nav li.sp-nav__top{
+    height: 60px;
+}
+.sp-nav__home a{
+    /*background: url(../nav_home.png) 0 0 no-repeat;*/
+    height: 60px;
+    white-space: nowrap;
+    text-indent: 1000%;
+    overflow: hidden;
+    /*margin-bottom: -10px;*/
+}
+.sp-nav__home a:hover:after, .sp-nav__top a:hover:after{
+    background: none;
+}
+
+.sp-nav__top a{
+    /*background: url(../nav_top.png) 0 0 no-repeat;*/
+    height: 66px;
+    white-space: nowrap;
+    text-indent: 1000%;
+    overflow: hidden;
+}
+.sp-nav__home a:hover, .sp-nav__top a:hover{
+    background-position: right 0;
+}
+
+#spWrap.sp__wallper{
+    background-position: center 65px;
+}
+
+.sp__countdown, .sp__countdown2{
+    background: url(../sp_clock1212.jpg) center 0 no-repeat;
+    height: 65px;
+}
+.sp__countdown2{
+    background: url(../clock-2_01.jpg) center 0 no-repeat;
+    height: 65px;
+}
+.sp__countdown p, .sp__countdown2 p{
+    position: absolute;
+    z-index: 10;
+    top: 10px;
+    right: 50%;
+    font-size: 44px;
+    font-weight: bold;
+    color: #fff;
+    margin: 0;
+    margin-right: -350px;
+    padding: 0;
+}
+.sp__countdown2 p{
+    margin-right: -520px;
+}
+.sp__countdown span, .sp__countdown2 span{
+    margin-right: 80px;
+}
+.sp__countdown span:nth-child(2){
+    margin-right: 60px;
+}
+
+/*== common style ==*/

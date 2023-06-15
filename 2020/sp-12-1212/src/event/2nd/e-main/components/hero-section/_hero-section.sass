@@ -1,0 +1,291 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero__wrap
+  +pos-set(relative, second)
+  overflow: hidden
+
+  .hero__zone
+    +pos-set(relative, zero)
+
+  .hero__box
+    +pos-set(relative, ten)
+
+  .hero__title
+    &--main
+      +pos-set(relative, ten)
+      //background-image: url("~event/2nd/e-main/components/hero-section/title-bg.png")
+      padding-top: 7%
+      padding-bottom: 16%
+      padding-left: 0
+      padding-right: 0
+      text-align: left
+      width: 100%
+      overflow: hidden
+      .title__t1
+        position: relative
+        top: 0
+        left: 7%
+        width: 90%
+        animation: title-down 1s 1s linear both
+      .title__t2
+        position: absolute
+        animation: big-title 1s 1.5s linear both
+        top: 38.5%
+        left: 18%
+        width: 64%
+      .title__t3
+        position: absolute
+        animation: tada-long 4s .5s linear both infinite
+        top: 52%
+        right: 24.5%
+        width: 52%
+        z-index: 1
+
+      +breakpoint-min($min-width-xl)
+        width: auto
+        padding-top: 0
+        padding-bottom: 0
+        padding-left: 0
+        padding-right: 0
+        height: 580px
+        .title__t1
+          top: 42px
+          left: calc(50% - 429px)
+          width: auto
+        .title__t2
+          top: 316px
+          left: calc(50% - 307px)
+          width: auto
+        .title__t3
+          top: 436px
+          left: calc(50% - 250px)
+          width: auto
+
+  //- 裝飾
+  .title__decoration
+    position: absolute
+    top: 0
+    display: none
+    transform-origin: top center
+    animation: rotate--balloon 5s .5s linear both infinite
+    +breakpoint-min($min-width-xl)
+      left: calc(50% - 850px)
+      display: block
+
+  .ball__animated
+    +breakpoint-min($min-width-xl)
+      position: absolute
+      top: 0
+      left: 50%
+      transform: translateX(-50%)
+      //background-image: url("~event/2nd/e-main/components/hero-section/ball-animated.png")
+      background-image: url("https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1116824/ball-animated.png")
+      background-size: 2560px 1200px
+      width: 2560px
+      height: 1200px
+      z-index: 0
+  //- 誘因
+  .promo__zone
+    margin-top: -33%
+    position: relative
+    //background-color: $gray-deep-light
+    +breakpoint-min($min-width-xl)
+      margin-top: 0
+      background-color: transparent
+//
+//.parallax__background
+//  +breakpoint-min($min-width-xl)
+//    +pos-set(absolute, under)
+//    +bg-set(url("~event/2nd/e-main/components/hero-section/bg-fixed.png"), 2560px 1535px)
+//    width: 2560px
+//    height: 1535px
+//    // transform: translateY(-10%)
+//    //animation: 1s 2s behind-appear both
+//    pointer-events: none
+//    will-change: scroll-position
+//    top: 1605px
+//    left: 50%
+//    position: fixed
+//    transform: translateX(-50%)
+//    background-position: center
+//    transform-origin: center center
+//    top: 0
+//    opacity: 0
+
+.top--0
+  top: 0
+  opacity: 1
+
+@keyframes title-down
+  0%
+    transform: translateY(calc(-100vw * .5))
+  70%, 80%
+    transform: translateY(0) scale(0.8)
+  75%, 100%
+    transform: translateY(0) scale(1)
+
+@keyframes key-rotate-stop
+  0%
+    transform: rotate(0)
+  1%
+    transform: scale(1.1) rotate(-20deg)
+    filter: brightness(3)
+  2%
+    transform: scale(1) rotate(0)
+    filter: brightness(1)
+  3%
+    transform: scale(1.1) rotate(20deg)
+    filter: brightness(3)
+  4%
+    transform: scale(1) rotate(0)
+    filter: brightness(1)
+  10%
+    transform: rotate(0)
+
+@keyframes up-down
+  0%, 30%, 100%
+    transform: translateY(0)
+  20%, 40%, 60%
+    transform: translateY(-6%)
+  30%, 45%
+    transform: translateY(0)
+
+@keyframes up-down
+  0%, 8%, 12%, 16%, 74%, 78%, 82%, 100%
+    transform: scale(1) translateY(0)
+  10%, 14%, 76%, 80%
+    transform: scale(1.1) translateY(-6%)
+
+@keyframes up-appear
+  0%
+    transform: translateX(-20vw) translateY(-40vw)
+    opacity: 0
+  1%
+    transform: translateX(-20vw) translateY(-40vw)
+    opacity: 1
+  80%, 90%
+    transform: translateX(0) translateY(0)
+    opacity: 1
+  85%, 95%
+    transform: translateX(0) translateY(0)
+    opacity: 1
+  75%, 82.5%, 92.5%, 87.5%, 97.5%, 100%
+    transform: translateX(0) translateY(0)
+    opacity: 1
+
+@keyframes up-appear-skew
+  0%
+    transform: translateX(-20vw) translateY(-40vw)
+    opacity: 0
+  1%
+    opacity: 1
+  80%, 90%
+    transform: translateX(0) translateY(0) skew(-5deg, -5deg)
+    opacity: 1
+  85%, 95%
+    transform: translateX(0) translateY(0) skew(5deg, 5deg)
+    opacity: 1
+  75%, 82.5%, 92.5%, 87.5%, 97.5%, 100%
+    transform: translateX(0) translateY(0) skew(0)
+    opacity: 1
+
+@keyframes up-appear-skew-right
+  0%
+    transform: translateX(20vw) translateY(-40vw)
+    opacity: 0
+  1%
+    opacity: 1
+  80%, 90%
+    transform: translateX(0) translateY(0) skew(-5deg, -5deg)
+    opacity: 1
+  85%, 95%
+    transform: translateX(0) translateY(0) skew(5deg, 5deg)
+    opacity: 1
+  75%, 82.5%, 92.5%, 87.5%, 97.5%, 100%
+    transform: translateX(0) translateY(0) skew(0)
+    opacity: 1
+
+@keyframes behind-appear
+  0%
+    opacity: 1
+    left: 50%
+    transform: translateX(-50%) scale(0)
+  100%
+    opacity: 1
+    //transform-origin: center center
+    left: 50%
+    transform: translateX(-50%) scale(1)
+
+@keyframes big-title
+  0%
+    opacity: 0
+    transform: scale(0)
+  50%, 60%, 70%, 100%
+    opacity: 1
+    transform: scale(1)
+  55%, 65%
+    transform: scale(1.1) rotate(10deg)
+
+@keyframes rotate-title
+  from
+    transform: translateX(-50%) rotate(0)
+    filter: brightness(100%)
+  50%
+    filter: brightness(150%)
+  to
+    transform: translateX(-50%) rotate(360deg)
+    filter: brightness(100%)
+
+@keyframes fadeIn
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+@keyframes rotate--balloon
+  0%, 25%
+    transform: translateY(0) rotate(0)
+  10%
+    transform: translateY(-5%) rotate(-8deg)
+  5%, 15%
+    transform: translateY(-5%) rotate(0)
+  20%
+    transform: translateY(-5%) rotate(8deg)
+
+@keyframes breathing-light
+  0%, 60%, 100%
+    filter: brightness(100%) blur(0)
+  50%
+    filter: brightness(80%) blur(1px)
+  60%
+    filter: brightness(150%) blur(0)
+  70%
+    filter: brightness(200%) blur(0)
+  80%
+    filter: brightness(150%) blur(1px)
+
+@keyframes tada-long
+  from, 20%, 40%
+    -webkit-transform: scale3d(1, 1, 1)
+    transform: scale3d(1, 1, 1)
+  22%,
+  24%
+    -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg)
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg)
+
+  26%,
+  30%,
+  34%,
+  38%
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)
+
+  28%,
+  32%,
+  36%
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)
+  to
+    -webkit-transform: scale3d(1, 1, 1)
+    transform: scale3d(1, 1, 1)

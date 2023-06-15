@@ -1,0 +1,100 @@
+-
+  //- var promoItemE = [
+  //-   {
+  //-     link: "https://www.etmall.com.tw/Activity/CouponReceiveAll",
+  //-     imgSrc: "event/1st/e-main/components/promo-event/promo-event-1.png",
+  //-     alt: "領折價劵",
+  //-   },
+  //-   {
+  //-     link: "https://www.etmall.com.tw/member/taskActivity",
+  //-     imgSrc: "event/1st/e-main/components/promo-event/promo-event-2.png",
+  //-     alt: "挑戰任務",
+  //-   },
+  //-   {
+  //-     link: "https://www.etmall.com.tw/Activity/CouponReceiveAll",
+  //-     imgSrc: "event/1st/e-main/components/promo-event/promo-event-3.png",
+  //-     alt: "領折價劵",
+  //-   },
+  //-   {
+  //-     link: "https://www.etmall.com.tw/member/taskActivity",
+  //-     imgSrc: "event/1st/e-main/components/promo-event/promo-event-4.png",
+  //-     alt: "挑戰任務",
+  //-   },
+  //- slider start
+  //- {
+  //-   link: "https://media.etmall.com.tw/sp/13858/m/index.html",
+  //-   imgSrc: "event/1st/e-main/components/promo-event/items/promo-1.png",
+  //-   alt: "媽咪啾愛禮東森幣抽香奈兒鑽錶"
+  //- },
+  //- {
+  //-   link: "https://media.etmall.com.tw/sp/13474/m/index.html",
+  //-   imgSrc: "event/1st/e-main/components/promo-event/items/promo-1.png",
+  //-   alt: "寵愛新會員首購滿額抽SPA券"
+  //- },
+  //- slider end
+  //- ]
+
+//- - var promoItem = isU ? promoItemE : promoItemU
+
+//- TODO: 如果promo不和hero綁一起時要有自己的section和layout--main
+section.promo__group.promo__group--promo-event
+  .layout--main
+    .promo__wrap
+      .promo__decor 
+        img(src="event/1st/e-main/components/promo-event/decor-promo-event.png")
+      .promo__zone
+        .promo__item--1
+          a(href="") 
+            img(src="event/1st/e-main/components/promo-event/promo-event-1.png")
+        .promo__block
+          .promo__item--2
+            a(href="")
+              img(src="event/1st/e-main/components/promo-event/promo-event-2.png")
+          .promo__box
+            .promo__item--3
+              a(href="")
+                img(src="event/1st/e-main/components/promo-event/promo-event-3.png")
+            .promo__item--4
+              a(href="")
+                img(src="event/1st/e-main/components/promo-event/promo-event-4.png")
+
+
+
+
+
+          //- .event__wrap
+          //-   ul.event__box
+          //-     each data, index in promoItemE
+          //-       if index >= 2 && index < 8 
+          //-         li.promo__item
+          //-           a(href= data.link, title= data.alt)
+          //-             img(src= data.imgSrc, alt= data.alt)
+
+
+          //- .slider__box#scrollBackGround
+          //-   .swiper-container.container--promo-event
+          //-     ul.swiper-wrapper
+          //-       each data, index in promoItemE
+          //-         if index >= 8
+          //-           li.swiper-slide
+          //-             a(href= data.link, title=data.alt)
+          //-               img(src= data.imgSrc, data.alt)
+          //- .promo__wrap--special
+          //-   .promo__zone--special
+          //-     .promo__block
+          //-       ul.event__block
+          //-         each data, index in promoData
+          //-           if index == 0
+          //-             li.promo__item
+          //-               a(href= data.link, title= data.alt)
+          //-                 img(src= data.imgSrc, alt= data.alt)
+
+
+//- .promo__block
+//-   #promoSlider.swiper-container
+//-     ul.swiper-wrapper
+//-       each data, index in promoData
+//-         if index >= 6
+//-           li.swiper-slide
+//-             a(href= data.link, title=data.alt)
+//-               img(src= data.imgSrc, data.alt)

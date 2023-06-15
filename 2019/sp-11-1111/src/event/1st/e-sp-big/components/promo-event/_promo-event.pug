@@ -1,0 +1,14 @@
+- var promoDataE = [{link: "notyet", imgSrc: "~event/1st/e-sp-big/components/promo-event/items/promo-1.png", alt: "滿額登記抽999"}, {link: "#note-20th", imgSrc: "~event/1st/e-sp-big/components/promo-event/items/promo-2.png", alt: "歡慶20週年把幸福抽回家"}, {link: "#note-1000ticket", imgSrc: "~event/1st/e-sp-big/components/promo-event/items/promo-3.png", alt: "登記抽千元無敵券"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201910/SP_1109124/w/index.html", imgSrc: "~event/1st/e-sp-big/components/promo-event/items/promo-4.png", alt: "萊爾富超取登記喝咖啡"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201910/SP_1109124/w/index.html", imgSrc: "~event/1st/e-sp-big/components/promo-event/items/promo-5.png", alt: "萊爾富超取登記喝咖啡"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201910/SP_1109124/w/index.html", imgSrc: "~event/1st/e-sp-big/components/promo-event/items/promo-6.png", alt: "萊爾富超取登記喝咖啡"}, ]
+
+- var promoDataU = [{link: "notyet", imgSrc: "~event/1st/u-main/components/promo-event/items/promo-1.png", alt: ""}, {link: "notyet", imgSrc: "~event/1st/u-main/components/promo-event/items/promo-2.png", alt: ""}, {link: "notyet", imgSrc: "~event/1st/u-main/components/promo-event/items/promo-3.png", alt: ""}, {link: "notyet", imgSrc: "~event/1st/u-main/components/promo-event/items/promo-4.png", alt: ""}, ]
+
+- var promoData = isU? promoDataU : promoDataE
+
+.promo__event
+  ul.event__wrap
+    each data, index in promoData
+      - var anchorId = 'promoAnchor' + (index + 1)
+      - var imgId = 'promoImg' + (index + 1)
+      li
+        a(id= anchorId, href= data.link, title= data.alt)
+          img(id= imgId, src= data.imgSrc, alt= data.alt)

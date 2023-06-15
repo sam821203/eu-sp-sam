@@ -1,0 +1,64 @@
+//- 打開u-mall選項會自動轉換成U的logo和連結(預設etmall)
+//- 打開sp選項以切換行銷主視覺或是商品SP頁(main/ sp、預設是main)
+- var isU = true
+- var isSp = true
+
+// background
+style(type='text/css').
+    .main_group {
+        background-image: url('bg-960-01.jpg');
+    }
+
+    .sp__outFrame {
+        background-color: #13034C;
+    }
+
+    @media screen and (min-width: 960px) {
+        .sp__outFrame {
+            background-image: url('bg-2560-01.jpg');
+        }
+    }
+
+.sp__outFrame
+    main#spWrap.sp__wrap
+        section.hero.header__wrap
+            .layout--main
+
+                include /layout/logo/_logo.pug
+
+                .main_group
+                    .main_title.block--center
+                        h1(title="森森購物ｘ愛你一萬年")
+                            img(src="~pages/index-sp-u/img/1-title.png", alt="森森購物ｘ愛你一萬年" class="partial__title")
+                        img(src="~pages/index-sp-u/img/1-product.png", alt="森森購物ｘ愛你一萬年" class="partial__product")
+                    .title__decoration.block--center
+                        img(src="~pages/index-sp-u/img/1-title-sub.png", alt="愛你一萬年")
+                        img(src="~pages/index-sp-u/img/smallheart.png", alt="愛你一萬年")
+                        img(src="~pages/index-sp-u/img/smallheart.png", alt="愛你一萬年")
+
+            section.promo__event
+                .layout--main
+                    ul.event__wrap
+                        li.incentive--01
+                            a#changeAnchor(href="https://www.u-mall.com.tw/Activity/Reg/11", title="滿額登記抽千元無敵送")
+                                img#changeImg(src="~pages/index-sp-u/img/2-Button_01.png", alt="滿額登記抽千元無敵送")
+                        li.incentive--02
+                            a(href="https://www.u-mall.com.tw/Activity/Reg/11", title="首購送200折價券")
+                                img(src="~pages/index-sp-u/img/2-Button_02.png", alt="首購送200折價券")
+                        li.incentive--03
+                            a(href="https://www.u-mall.com.tw/Activity/CollectPointExchange", title="集點加價購")
+                                img(src="~pages/index-sp-u/img/2-Button_03.png", alt="集點加價購")
+                        li.incentive--04
+                            a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201907/SP_1104714/w/index.html", title="萊爾富登記送好禮")
+                                img(src="~pages/index-sp-u/img/2-Button_04.png", alt="萊爾富登記送好禮")
+//- script區
+//- polyfill 一般共用
+include /utils/pug/include/_polyfill-js.pug
+//- General 一般共用
+include /utils/pug/include/_general.pug
+//- 電梯
+include /utils/pug/include/_elevator-link.pug
+//- 浮水印
+include /utils/pug/include/_float-icon.pug
+//- 輪播cdn
+include /utils/pug/include/_slider-cdn-js.pug

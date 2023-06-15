@@ -1,0 +1,340 @@
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="slick.css">
+<style>
+  /* reset */
+  /* ======================================== */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  *:before, *:after {
+    box-sizing: border-box; }
+  a {
+    display: block;
+    text-decoration: none;
+  }
+  ul {
+    list-style: none;
+  }
+  img {
+    width: 100%;
+    border: 0;
+    vertical-align: middle;
+  }
+  article,
+  main,
+  nav,
+  section {
+    display: block;
+  }
+  body {
+    margin:0;
+    background-color: #6b370b;
+  	font-family: PingFangTC-regular, Roboto, "LiHei Pro", "Source Han Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, "Microsoft JhengHei", sans-serif;
+  }
+  .sp--1260 {
+    position: relative;
+    z-index: 0;
+    max-width: 1260px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .logo {
+    position: absolute;
+    z-index: 1;
+    /* 調整logo位置 */
+    top: 10px;
+    /*left: 70px;*/
+    width: 30%;
+    max-width: 220px;
+  }
+  .sp__title {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background: 50% 0 url(bg-top.jpg) no-repeat;
+    background-size: cover;
+    text-align: center;
+  }
+  .sp__title img {
+    display: inline;
+    width: 70%;
+  }
+  .sp__slide {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 120%;
+    /*width: 90%;*/
+    height: 0;
+    /* 手機版時輪播背景色如果要和body不同色時在下方設定*/
+    /*background-color: #6b370b;*/
+  }
+  .sp__slide a {
+    outline: 0;
+  }
+  .slider__wrap {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: center 0 url(background.png) no-repeat;
+    background-size: contain;
+  }
+  .sp__body {
+    background: center 0 url(bg.jpg);
+  }
+  .sp__promo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    padding: 19% 7% 7%;
+    background: center 0 url(bg-body.png) no-repeat;
+    background-size: contain;
+  }
+  .sp__box {
+    flex: 1 0 50%;
+  }
+  .sp__card {
+    position: relative;
+    z-index: 0;
+    padding-top: 149%;
+    height: 0;
+
+  }
+  .sp__card .card {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    perspective: 600px;
+    transform-style: preserve-3d;
+    transition: transform 0.6s linear, opacity 0.3s 0.3s linear;
+  }
+  .sp__card .front {
+    backface-visibility: hidden;
+  }
+  .sp__card .back {
+    transform: rotateY(180deg);
+    opacity: 0;
+  }
+  .sp__box:hover .back {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+  .sp__box:hover .front {
+    transform: rotateY(180deg);
+    opacity: 0;
+  }
+  .sp__box.open .back {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+  .sp__box.open .front {
+    transform: rotateY(180deg);
+    opacity: 0;
+  }
+  .sp__info {
+    position: relative;
+    z-index: 0;
+    margin-top: -20%;
+  }
+  .sp__info a:nth-child(2) {
+    position: relative;
+    z-index: -1;
+    margin-top: -18%;
+  }
+  @media screen and (min-width: 768px) {
+    .sp__header {
+      background: 40% 0 url(bg-top.jpg) no-repeat;
+      background-size: cover;
+    }
+    .sp__title {
+      position: relative;
+      z-index: 1;
+      padding-left: 5%;
+      text-align: left;
+      background-image: none;
+      pointer-events: none;
+    }
+    .sp__title img {
+      width: 55%;
+    }
+    .sp__slide {
+      position: absolute;
+      z-index: 0;
+      top: 32px;
+      right: 5%;
+      padding-top: 60%;
+      width: 43%;
+    }
+    .sp__info {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: -10%;
+    }
+    .sp__info a {
+      flex: 1 0 50%;
+    }
+    .sp__info a:nth-child(2) {
+      margin-top: 0;
+    }
+  }
+  @media screen and (min-width: 1260px) {
+    .sp__header {
+      height: 826px;
+      background-position: center 0;
+      background-size: unset;
+    }
+    .logo {
+      /* 調整logo位置 */
+      top: 30px;
+      left: 40px;
+    }
+    .sp__title {
+      padding: 55px 0 0 0;
+    }
+    .sp__title img {
+      margin-left: calc(50% - 605px);
+      width: 733px;
+    }
+    .sp__slide {
+      top: 50px;
+      right: calc(50% - 610px - 30px);
+      padding-top: 710px;
+      width: 610px;
+    }
+  }
+  .sp__info a {
+    transition: all 0.5s;
+  }
+  .sp__info a:hover {
+    filter: brightness(140%);
+  }
+
+  .sp__info {
+    animation: go-down 3s;
+  }
+
+  @keyframes go-down {
+    from {
+      transform: translateY(-30%);
+    }
+    90% {
+      transform: translateY(+8%);
+    }
+    to {
+      transform: translateY(0%);
+    }
+  }
+  /* 主視覺 */
+  /* ======================================== */	
+</style>
+<main id="spWrap" class="sp__wrap">
+	<header class="sp__header">
+    <div class="sp--1260">
+      <a href="https://www.etmall.com.tw" class="logo"><img src="ehs-logo.png" alt="東森購物"></a>
+    </div>
+		<div class="sp__title">
+      <div class="sp--1260">
+        <img src="title.png" alt="電玩藏寶圖">
+		  </div>
+    </div>
+    <div class="sp__slide">
+      <div id="slideWrap" class="slider__wrap">
+        <a href="https://www.etmall.com.tw//i/2083020"><img src="slide1.png" alt="驚喜商品"></a>
+        <a href="https://www.etmall.com.tw//i/2182730"><img src="slide2.png" alt="驚喜商品"></a>
+        <a href="https://www.etmall.com.tw/i/2187468"><img src="slide3.png" alt="驚喜商品"></a>
+        <a href="https://www.etmall.com.tw/i/2188996"><img src="slide4.png" alt="驚喜商品"></a>
+      </div>
+    </div>
+	</header>
+  <section class="sp__body">
+    <div class="sp--1260">
+      <div id="spPromo" class="sp__promo">
+        <div class="sp__box">
+          <a href="https://www.etmall.com.tw/i/2174763">
+            <div class="sp__card">
+              <div class="card back"><img src="card-1-1.png" alt="寶藏卡牌"></div>
+              <div class="card front"><img src="card-1.png" alt="寶藏內容"></div>
+            </div>
+          </a>
+        </div>
+        <div class="sp__box">
+          <a href="https://www.etmall.com.tw/i/2134766">
+            <div class="sp__card">
+              <div class="card back"><img src="card-2-1.png" alt="寶藏卡牌"></div>
+              <div class="card front"><img src="card-2.png" alt="寶藏內容"></div>
+            </div>
+          </a>
+        </div>
+        <div class="sp__box">
+          <a href="https://www.etmall.com.tw/i/2197304">
+            <div class="sp__card">
+              <div class="card back"><img src="card-3-1.png" alt="寶藏卡牌"></div>
+              <div class="card front"><img src="card-3.png" alt="寶藏內容"></div>
+            </div>
+          </a>
+        </div>
+        <div class="sp__box">
+          <a href="https://www.etmall.com.tw/i/2179396">
+            <div class="sp__card">
+              <div class="card back"><img src="card-4-1.png" alt="寶藏卡牌"></div>
+              <div class="card front"><img src="card-4.png" alt="寶藏內容"></div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="sp__info wow">
+        <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106646/w/index.html"><img src="E-1.png" alt="好康活動"></a>
+        <a href="#note1"><img src="E-2.png" alt="好康活動"></a>
+        <a href="#note1"><img src="E-3.png" alt="好康活動"></a>
+        <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201901/SP_1106818/w/index.html"><img src="E-4.png" alt="好康活動"></a>
+      </div>
+    </div>
+  </section>
+</main>
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script src="slick.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script>
+  function slideOpen() {
+    var slide = $('#slideWrap');
+
+    slide.slick({
+      arrows: false,
+      autoplay: true,
+      dots: false,
+      mobileFirst: true,
+    });
+
+    slide.on('touchend', function() {
+      slide.slick('slickPlay');
+    });
+  }
+  slideOpen();
+  function infiniteTurn() {
+    var cards = document.querySelectorAll('#spPromo > .sp__box');
+    var count = 0;
+    setInterval(function(){
+      for (var i = 0; i < cards.length; i++) {
+        cards[i].classList.remove('open');
+      }
+      cards[count].classList.add('open');
+      count++;
+      if (count === cards.length) count = 0;
+    }, 2000);
+  }
+  infiniteTurn();
+  new WOW().init();
+</script>
+<!-- 東森浮水印
+<script id="scriptIconFloat" src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105264/float-icon.js"></script> -->
+<!-- 森森浮水印
+<script id="scriptIconFloat" src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1102419/float-icon.js"></script> -->

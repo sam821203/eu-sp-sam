@@ -1,0 +1,82 @@
+// 各區共用
+.promo__group--dynamic-section
+  +pos-set(relative, zero)
+  .promo__title
+    +pos-set(relative)
+    padding-top: 5%
+    // margin-bottom: -3.5%
+    .title__decoration
+      +pos-set(absolute, base)
+      top: 5%
+      left: 7%
+      width: 32%
+
+    .title__pic
+      +pos-set(relative, zero)
+      margin-left: 15%
+      width: 75%
+  .promo__wrap
+    +pos-set(relative, zero)
+    padding: 2% 7%
+  .product__wrap
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    > div
+      width: 32%
+      margin-bottom: 1.5%
+
+  .product--dynamic
+    width: 100%
+    +aspect-ratio(281, 432, relative, zero, a)
+    +bg-set(url(event/3rd/e-main/components/dynamic-section/item-dynamic-section.png), 100%)
+  .product__block
+    padding: 6%
+  .product__name
+    margin-bottom: 1%
+  .product__price
+    span
+      &:last-child
+        font-size: 5vw
+  +breakpoint-max($max-width-xxs)
+    .product__price
+      span
+        &:last-child
+          font-size: 4vw
+  +breakpoint-min($max-width-md)
+    .product__name
+      margin-bottom: 3%
+      font-size: 3vw
+  +breakpoint-min($min-width-lg)
+    .product__name
+      margin-bottom: 22px
+      font-size: 20px
+    .product__price
+      span
+        &:last-child
+          font-size: 32px
+  +breakpoint-min($min-width-xl)
+    .product__name
+      margin-bottom: 36px
+      font-size: 24px
+    .product__price
+      span
+        &:last-child
+          font-size: 36px
+
+.promo__group--dynamic-section-1
+  .title__decoration
+    &.active
+      animation: heartBeat 2s infinite
+
+@keyframes heartBeat
+  0%
+    transform: scale(1)
+  14%
+    transform: scale(1.3)
+  28%
+    transform: scale(1)
+  42%
+    transform: scale(1.3)
+  70%
+    transform: scale(1)

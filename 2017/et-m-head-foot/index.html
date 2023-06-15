@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="tw">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,  user-scalable=no"/>
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="location" content="Taiwan" />
+	<meta name="title" content="ETMall東森購物網" />
+	<meta name="author" content="ETMall東森購物網" />
+	<meta name="subject" content="ETMall東森購物網" />
+	<meta name="language" content="Tradition Chinese" />
+	<meta name="abstract" content="ETMall東森購物網" />
+	<meta name="copyright" content="本網頁著作權屬ETMall東森購物網, All Rights Reserved" />
+	<meta name="designer" content="ETMall東森購物網" />
+	<meta name="publisher" content="ETMall東森購物網" />
+	<meta name="distribution" content="Global" />
+	<meta name="robots" content="All" />
+	<meta name="company" content="ETMall東森購物網" />
+	<title><!--[TITLE]-->│東森購物網</title>
+	<link rel="stylesheet" href="http://m.etmall.com.tw/Content/site?v=Ot6JV9W5Hp1VMc_EfOoUA1qeQFY__oiXGr_s9gmcwKE1">
+	<style type="text/css">
+		img, embed, object {
+		  display: block;
+		  max-width: 100%;
+		  height: auto;
+		  border: 0
+		}
+		* {
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+		*:before,
+		*:after {
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+		.m-sp__head {
+			background-color: #000;
+			position: relative;
+			height: 50px;
+			overflow: hidden;
+		}
+		.m-sp__head .logo {
+			display: block;
+			width: 144px;
+			/*height: 46px;*/
+			margin-left: auto;
+			margin-right: auto;
+			padding-top: 2px;
+			padding-bottom: 2px;
+		}
+		.m-sp__prev {
+			background: url('http://www.etmall.com.tw/E68Images/mobile/btn_back_w@2.png') center center no-repeat;
+			-webkit-background-size: 100%;
+			background-size: 100%;
+			width: 50px;
+			height: 50px;
+			display: block;
+			position: absolute;
+			z-index: 5;
+			left: 0;
+			top: 0;
+		}
+		.n-sp__box{
+			max-width:800px;
+			margin-left:auto;
+			margin-right:auto;
+			overflow:hidden;
+		}
+		.n-sp__box img{
+			width:100%;
+		}
+	</style>
+
+<script type="text/javascript" id="ga-ref.js">
+	(function(i, s, o, g, r, a, m) {
+	    i['GoogleAnalyticsObject'] = r;
+	    i[r] = i[r] || function() {
+	        (i[r].q = i[r].q || []).push(arguments)
+	    }, i[r].l = 1 * new Date();
+	    a = s.createElement(o),
+	        m = s.getElementsByTagName(o)[0];
+	    a.async = 1;
+	    a.src = g;
+	    m.parentNode.insertBefore(a, m)
+	})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+	ga('create', 'UA-70101511-1', 'auto');
+	ga('send', 'pageview');
+
+	ga('create', 'UA-36865869-1', 'auto', {
+	    'name': 'web',
+	    'allowLinker': true
+	});
+	ga('require', 'linker');
+	ga('web.linker:autoLink', ['www.etmall.com.tw']);
+	ga('web.send', 'pageview');
+
+</script>
+    
+</head>
+<body>
+	<header class="m-sp__head">
+		<a href="http://m.etmall.com.tw" class="m-sp__prev" title="回前頁"></a>
+		<a href="http://m.etmall.com.tw/" class="logo" target="_blank"><img src="http://m.etmall.com.tw/Images/btn_logo@2.png" alt="東森購物網"></a>
+	</header>
+	<main class="n-sp__wrap">
+    	<div class="n-sp__box">
+        	<!--[TEMPLATE]-->
+			<!--[CONTENT]-->
+			<!--[TEMPLATE2]-->
+        </div>
+	</main>
+</body>
+
+<script>
+$(document).on('click', '.GAEventTracking', function(e) {
+    /* ==== google tracking start ====*/
+    var PHRef = '';
+    var targetTagName = e.target.tagName.toLowerCase();
+    var itemNO = parseInt($(this).attr('GA_EventNum'));
+    var PicOrText;
+    if ($(this).attr('GA_EventPicTxt') == 'pro') {
+        PicOrText = (targetTagName == 'img') ? 'pic' : 'text';
+    } else {
+        PicOrText = jQuery(this).attr('GA_EventPicTxt');
+    }
+    if (itemNO == 0) {
+        var eventCategory = $(this).attr('GA_EventName') + '_' + PicOrText;
+    } else {
+        var eventCategory = $(this).attr('GA_EventName') + '_' + itemNO + '_' + PicOrText;
+    }
+    var eventAction = $(this).attr('ga_eventaction')
+    var eventLabel = $(this).attr('ga_eventlabel')
+    var eventHref = jQuery(this).attr('Href');
+    if (eventAction == undefined) {
+        switch (PicOrText) {
+            case ('pic'):
+                {
+                    eventAction = getADImgSrc(jQuery(this).find('img').attr('src'));
+                    break;
+                };
+            case ('text'):
+                {
+                    eventAction = $(this).text();
+                    break;
+                };
+            case ('pro'):
+                {
+                    if (targetTagName == 'img') {
+                        eventAction = getADImgSrc(jQuery(this).find('.n-pic').attr('src'));
+                    } else {
+                        eventAction = $(this).find('.n-pd_name').text();
+                    }
+                    break;
+                };
+        };
+    }
+    // alert('eventCategory = ' + eventCategory);
+    // alert('eventAction = ' + eventAction);
+    // alert('eventLabel = ' + eventLabel);
+    //PHRef
+    if ($(this).attr('Href').toLowerCase().indexOf('prod.aspx') != -1) {
+        (jQuery(this).attr('Href').indexOf('?') == -1) ? jQuery(this).attr('Href', eventHref + '?GAcode=' + eventCategory): jQuery(this).attr('Href', eventHref + '&GAcode=' + eventCategory);
+    }
+    ga('send', 'event', eventCategory, eventAction, eventLabel);
+    ga('mobile.send', 'event', eventCategory, eventAction, eventLabel);
+    /* ==== google tracking end ====*/
+})
+</script>
+
+</html>
+

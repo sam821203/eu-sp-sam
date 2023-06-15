@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <style type="text/css">
+        @media screen and (min-width: 641px) {
+            .n-sp__box .sp__wrap img,
+            .main-info img,
+            .firstInfo a img {
+                width: auto;
+            }
+        }
+
+        @media screen and (max-width: 320px) {
+            .sp__visual a {
+                width: 120px;
+                height: 70px;
+                top: -260px;
+                right: 0px;
+            }
+        }
+
+        @media screen and (min-width: 321px) and (max-width: 375px) {
+            .sp__visual a {
+                width: 140px;
+                height: 80px;
+                top: -305px;
+                right: calc(50% - 185px);
+            }
+        }
+
+        @media screen and (min-width: 376px) and (max-width: 426px) {
+            .sp__visual a {
+                width: 145px;
+                height: 80px;
+                top: -325px;
+                right: calc(50% - 195px);
+            }
+        }
+
+        @media screen and (min-width: 427px) and (max-width: 768px) {
+            .sp__visual a {
+                width: 180px;
+                height: 110px;
+                top: -410px;
+                right: calc(50% - 240px);
+            }
+        }
+
+        @media screen and (min-width: 769px) and (max-width: 1259px) {
+            .sp__visual a {
+                width: 180px;
+                height: 110px;
+                top: -410px;
+                right: calc(50% - 240px);
+            }
+        }
+
+        @media screen and (min-width: 1260px) {
+
+            .sp__visual a {
+                width: 350px;
+                height: 210px;
+                top: -810px;
+                right: calc(50% - 480px);
+            }
+        }
+    </style>
+</head>
+
+<body class="sp_page" style="background-color: #00a8ff;">
+
+<div id="iconHome"></div>
+<div id="elevatorHome"></div>
+
+<main id="spWrap" class="sp__wrap">
+    <section class="upper_layer" style="background-image: url(top1203-SP.jpg); background-repeat: no-repeat;">
+        <div id="openItem" class="logo">
+            <a href="https://www.u-mall.com.tw/">
+                <img src="logo.png"/>
+            </a>
+        </div>
+        <canvas id="firefork" class="firefork-wrap" width="1260px" height="600px"></canvas>
+    </section>
+
+    <!-- 副標連結 -->
+    <div class="sp__visual">
+        <a class="visual__main" href="#example"></a>
+    </div>
+
+    <section class="sp-content wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+        <aside class="incentive_layer">
+            <img src="incentive-line.png" class="incentive-line">
+            <div class="incentive-dot"></div>
+            <img src="incentive-line.png" class="incentive-line incentive-line__mo">
+            <div class="incentive-dot incentive-dot__mo"></div>
+            <div class="incentive__block ib-1">
+                <div class="incentive__block-sub">
+                    <img class="img01" src="incentive-01-sub.png"/>
+                </div>
+                <div class="incentive">
+                    <a href=" https://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1103299/w/index.html">
+                        <img class="incentive-main" src="E-1.png" alt="銀行最高回饋$2000"></a>
+                    <img class="light-card lc-1" src="box-light.png">
+                    <img src="box.png"></div>
+            </div>
+            <div class="incentive__block ib-2">
+                <div class="incentive__block-sub">
+                    <img class="img02" src="incentive-02-sub.png"/>
+                </div>
+                <div class="incentive">
+                    <a href="#coupon">
+                        <img class="incentive-main" src="E-2.png" alt="最高回饋10%折扣金"></a>
+                    <img class="light-card lc-2" src="box-light.png">
+                    <img src="box.png"></div>
+            </div>
+            <div class="incentive__block ib-3">
+                <div class="incentive__block-sub">
+                    <img class="img03" src="incentive-03-sub.png"/>
+                </div>
+                <div class="incentive">
+                    <a href="https://www.u-mall.com.tw/c3/123680">
+                        <img class="incentive-main" src="E-3.png" alt="寶藏這裡挖">
+                    </a>
+                    <img class="light-card lc-3" src="box-light.png">
+                    <img src="box.png">
+                </div>
+            </div>
+            <div class="incentive__block ib-4">
+                <div class="incentive__block-sub">
+                    <img class="img04" src="incentive-04-sub.png"/>
+                </div>
+                <div class="incentive">
+                    <a href="#prize">
+                        <img class="incentive-main" src="E-4.png" alt="滿額抽盛世公主雙人遊"/></a>
+                    <img class="light-card lc-4" src="box-light.png">
+                    <img src="box.png">
+                </div>
+            </div>
+        </aside>
+    </section>
+
+
+</main>
+
+<div id="goTopWrap"></div>
+<!--<script id="loadJS" src="load-indicator.js"></script>-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+<!----- 輪播 ----->
+
+<!----- 誘因動畫 ----->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+<!----- canva ----->
+<script src="fireworks.js"></script>
+
+<!----- 浮水印 ----->
+<script id="scriptIconFloat"
+        src="https://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1103045/float-icon.js"></script>
+
+<!----- 電梯 ----->
+<script type="text/javascript"
+        src="https://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1102593/generateVersion20181019.js"></script>
+
+<!-- goTop -->
+<script type="text/javascript"
+        src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106349/generateVersion20181019.js"></script>
+
+<script type="text/javascript">
+    var isUiWebview = /(WebView|(iPhone|iPod|iPad)(?!.*Safari\/))/gi.test(navigator.userAgent);
+    if (!isUiWebview) {
+        new WOW().init();
+    }
+
+    // canva resize
+    function draw() {
+        var canvas = document.getElementById('firefork');
+        var ctx = canvas.getContext('2d');
+        ctx.canvas.width = window.innerWidth;
+    }
+    draw();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,516 @@
+// // ==========================================================================
+// // Plugins
+// // ==========================================================================
+// // @import "vendors/animate"
+@import "~vendors/style/swiper-slider-custom"
+@import "~layout/header_s2/header"
+
+// // ==========================================================================
+// // components
+// // ==========================================================================
+
+// hero section
+// ===========================
+//@import "~event/1st/e-main/components/hero-section/_hero-section"
+//@import "~event/1st/e-main/components/background-decoration/_background-decoration"
+
+// other components
+// ===========================
+@import "~event/activities__overview/pages/bn-special/_bn-special"
+// // ==========================================================================
+// // Page
+// // ==========================================================================
+//$main-e-background-color: #000
+html
+  font-size: 10px
+a
+  cursor: pointer
+body
+  +pos-set(relative, zero)
+  //+bg-set(url("~event/1st/e-main/pages/index/bg-body.jpg"), inherit)
+  //background-repeat: repeat
+  color: #5d5d5d
+  +breakpoint-min($min-width-xl)
+    background-color: #f7f7f7
+    .icon__home
+      right: -50px
+
+.sp__wrap
+  +pos-set(relative, base)
+  max-width: 768px
+  margin: 0 auto
+  background-color: #ededed
+
+.sp__wrap a
+  display: block
+
+.navbar__anchor
+  position: -webkit-sticky
+  position: sticky
+  top: 0px
+  z-index: 100
+
+.anchor__ul
+  width: 100%
+  padding: 2% 0
+  display: flex
+  color: #fff
+  background-color: #000
+  text-align: center
+  font-size: 4vw
+  letter-spacing: .5px
+  li
+    width: 25%
+    a
+      color: #fff
+      &.active
+        color: #efc200
+
+.banner__section
+  width: 100%
+  max-width: 960px
+  font-size: 2.2rem
+  text-align: center
+  margin: 1.5% auto
+  letter-spacing: .1em
+  color: #787878
+  &:after, &:before
+    max-width: 390px
+    border: 0
+    border-top: 4px
+    border-top-color: #787878
+    border-style: double
+    position: absolute
+    clear: both
+    content: ' '
+    width: 30vw
+    height: 20px
+    margin-top: 12px
+  &:before
+    left: calc(50% + 65px)
+  &:after
+    right: calc(50% + 65px)
+
+.banner__web__hot
+  display: none
+.week__star, .shop__list
+  margin: 0 5px 5%
+  box-shadow: 2px 2px 5px #787878
+  border-radius: 6px
+  overflow: hidden
+  img
+    width: 100%
+  .week__star__info
+    position: relative
+    width: 100%
+    background-color: #ffffff
+    display: flex
+    padding: 2% 0 2% 3%
+    .info--left
+      width: 80vw
+    .info--right
+      width: 18vw
+      //padding: 6% 0
+      &:before
+        position: absolute
+        display: block
+        content: ''
+        box-sizing: border-box
+        //border-left: 1px
+        //border-top-color: #787878
+        //border-style: solid
+        width: 1px
+        height: 75%
+        background-color: #787878
+        top: 50%
+        transform: translateY(-50%)
+
+    .star__info
+      &__date
+        padding-top: 1%
+        color: #ff6291
+        font-size: 1.5rem
+        font-size: 3.75vw
+      &__hastag
+        background-color: #ff6291
+        color: #ffffff
+        font-size: 1.2rem
+        font-size: 3vw
+        margin-left: 2%
+        padding: 0 1%
+      &__title
+        font-size: 1.8rem
+        font-size: 4.8vw
+        font-weight: 700
+        letter-spacing: 2px
+        margin-bottom: 1%
+      &__txt
+        font-size: 1.5rem
+        font-size: 3.75vw
+      &__detail
+        position: absolute
+        top: 50%
+        right: 3vw
+        transform: translateY(-50%)
+        font-size: 1.8rem
+        font-size: 4.8vw
+        letter-spacing: 2px
+        color: #787878
+        cursor: pointer
+  .shop__list__info
+    position: relative
+    width: 100%
+    font-size: 1.5rem
+    font-size: 4vw
+    padding: 5px 0 5px 10px
+    background-color: #ffffff
+
+.shop__list
+  margin: 0 5px 3%
+  transition: .5s
+
+.member__group
+  width: 100%
+  display: flex
+  flex-wrap: wrap
+  margin-bottom: 4%
+  .member__title
+    display: none
+  .member__wrap
+    position: relative
+    flex: 1 0 calc(50% - 40px)
+    width: 43%
+    height: 34vw
+    max-height: 311px
+    background-image: url("~event/activities__overview/pages/index/member__bg-1.png")
+    background-size: cover
+    background-repeat: no-repeat
+    //align-self: center
+    //width: 100%
+    &:nth-child(2n+1)
+      margin: 0 5px 0 0
+    &:nth-child(2n)
+      margin: 0 0 0 5px
+    &.bg__s2
+      background-image: url("~event/activities__overview/pages/index/member__bg-2.png")
+    &.bg__s3
+      background-image: url("~event/activities__overview/pages/index/member__bg-3.png")
+    &.bg__s4
+      background-image: url("~event/activities__overview/pages/index/member__bg-4.png")
+    &__title
+      position: relative
+      z-index: 2
+      background-color: #000
+      color: #fff
+      font-size: 4vw
+      letter-spacing: 1px
+      padding-left: 6px
+      height: 5.5vw
+      //position: relative
+      //z-index: 2
+      //background-color: #ff6291
+      //height: 27px
+      //line-height: 27px
+      //color: #fff
+      //font-size: 1.5rem
+      //padding-left: 6px
+      &:after
+        position: absolute
+        content: ''
+        z-index: -1
+        border-top: 5.5vw solid transparent
+        border-left: 3vw solid transparent
+        border-right: 1px solid transparent
+        top: -1px
+        right: -1px
+        border-top-color: #e6e6e6
+        border-right-color: #e6e6e6
+
+    //position: absolute
+      //content: ''
+      //z-index: -1
+      //border-top: 27px solid transparent
+      //border-left: 25px solid transparent
+      //border-right: 15px solid transparent
+      //top: 0
+      //left: 0
+      //border-top-color: #ff296c
+      //border-left-color: #ff296c
+    &__txt
+      position: relative
+      z-index: 2
+      font-size: 4vw
+      line-height: 1.3
+      color: #323232
+      text-align: right
+      font-weight: 700
+      width: 75%
+      float: right
+      margin: 2% 4% 0 0
+    &__img
+      position: absolute
+      left: 10px
+      bottom: 10px
+      z-index: 1
+      img
+        width: 20vw
+        max-width: 200px
+    &__more
+      position: absolute
+      right: 12px
+      bottom: 17px
+      background-color: #ff6291
+      color: #fff
+      padding: 2px 3px
+      letter-spacing: 1px
+      border-radius: 2px
+
+//- web
++breakpoint-min($min-width-xl)
+  .sp__wrap
+    width: 100%
+    max-width: 1280px
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    padding-top: 80px
+  .navbar__anchor
+    display: none
+  .bs--01, .bs--02
+    display: none
+  .week__star, .member__group
+    width: 48%
+  .week__star
+    margin: 0 .6% 0 1.2%
+  .member__group
+    margin: 0 1.2% 0 .6%
+
+  .week__star, .shop__list
+    //margin: 0 5px 5%
+    box-shadow: none
+    border-radius: 0
+    overflow: hidden
+    img
+      width: 100%
+    .week__star__info
+      position: relative
+      width: 100%
+      background-color: #ffffff
+      display: flex
+      padding: 15px
+      .info--left
+        width: 80vw
+      .info--right
+        width: 18vw
+        &:before
+          width: 0
+          background-color: transparent
+
+      .star__info
+        &__date
+          font-size: 1.3rem
+          color: #999999
+        &__hastag
+          font-size: 1.3rem
+          padding: 0 4px
+          border-radius: 2px
+          background-color: #ff6291
+        &__title
+          font-size: 1.8rem
+          margin: 3px 0 5px 0
+        &__txt
+          font-size: 1.3rem
+        &__detail
+          right: 15px
+          top: inherit
+          transform: translate(0)
+          bottom: 35px
+          font-size: 1.8rem
+          color: #cc1e05
+          padding: 7px 10px
+          box-sizing: content-box
+          width: 125px
+          //height: 26px
+          //line-height: 24px
+          text-align: center
+          border: 1px solid #cc1e05
+          transition: .5s
+          &:hover
+            background-color: #cc1e05
+            color: #fff
+    .shop__list__info
+      font-size: 1.5rem
+      padding: 15px
+  .banner__m__hot
+    display: none
+  .banner__web__hot
+    position: absolute
+    display: block
+    font-size: 1.8rem
+    top: -27px
+    left: 0
+    z-index: 2
+    background-color: #ff6291
+    width: 230px
+    height: 27px
+    line-height: 27px
+    color: #fff
+    font-size: 1.5rem
+    padding-left: 6px
+    letter-spacing: 1px
+    &:after
+      position: absolute
+      content: ''
+      z-index: -1
+      border-top: 27px solid transparent
+      border-left: 25px solid transparent
+      border-right: 15px solid transparent
+      top: 0
+      left: 0
+      right: auto
+      border-top-color: #ff296c
+      border-left-color: #ff296c
+    .n-icon--hot-activity
+      display: inline-block
+      color: #fff
+      font-weight: 700
+      margin-right: 8px
+      margin-left: 3px
+      margin-top: 3px
+      background-image: url(https://www.etmall.com.tw/Resource/Bundle/Images/sprite-3bd44b27.png)
+      background-position: -590px -196px
+      width: 18px
+      height: 18px
+  .shop__group
+    position: relative
+    display: flex
+    flex-wrap: wrap
+    justify-content: flex-start
+    margin: 27px 0 0 0
+    background-color: #fff
+    padding: 15px 20px 0 20px
+    max-width: 1245px
+    a.shop__list
+      //flex: 0 0 31.7%
+      width: 31.7%
+      border: 1px solid #e1e1e1
+      margin: 0 1.2% 15px 1.2%
+      border-radius: 4px
+      overflow: hidden
+      &:nth-of-type(3n+2)
+        margin: 0 0 15px 0
+      &:hover
+        z-index: 9
+        transform: scale(1.05)
+        box-shadow: 0px 0px 16px #999999
+  .member__group
+    position: relative
+    background-color: #fff
+    padding-top: 40px
+    margin-right: 1%
+    .member__title
+      position: absolute
+      display: block
+      top: 8px
+      left: 10px
+      font-size: 1.8rem
+      color: #5d5d5d
+      font-weight: 700
+    .member__wrap
+      flex: 1 0 31%
+      width: 31%
+      height: auto
+      max-height: 311px
+      transition: .5s
+      &:nth-child(2n+1)
+        margin: 0
+      &:nth-child(2n)
+        margin: 0
+      &:nth-child(3n)
+        margin: 0 5px
+      &__title
+        font-size: 1.8rem
+        position: relative
+        z-index: 2
+        background-color: #ff6291
+        height: 27px
+        line-height: 27px
+        color: #fff
+        font-size: 1.5rem
+        padding-left: 6px
+        &:after
+          position: absolute
+          content: ''
+          z-index: -1
+          border-top: 27px solid transparent
+          border-left: 25px solid transparent
+          border-right: 15px solid transparent
+          top: 0
+          left: 0
+          right: auto
+          border-top-color: #ff296c
+          border-left-color: #ff296c
+        &.title__s2
+          background-color: #1893ff
+          &:after
+            border-top-color: #0075e8
+            border-left-color: #0075e8
+        &.title__s3
+          background-color: #ff836f
+          &:after
+            border-top-color: #fe2a00
+            border-left-color: #fe2a00
+      &__txt
+        position: relative
+        z-index: 2
+        font-size: 1.6rem
+        line-height: 1.3
+        color: #323232
+        text-align: right
+        font-weight: 700
+        width: 75%
+        float: right
+        margin: 10px 10px 0 0
+      &__img
+        position: absolute
+        left: 10px
+        bottom: 10px
+        z-index: 1
+        img
+          width: auto
+          max-width: 6vw
+      &__more
+        position: absolute
+        right: 12px
+        bottom: 17px
+        background-color: #ff6291
+        color: #fff
+        padding: 2px 3px
+        letter-spacing: 1px
+        border-radius: 2px
+      &:hover
+        z-index: 9
+        transform: scale(1.05)
+        box-shadow: 0px 0 16px #999999
++breakpoint-min($min-width-xxl)
+  .member__group
+    .member__wrap
+      &__img
+        img
+          max-width: 100px
+      &__more
+        position: absolute
+        right: 12px
+        bottom: 17px
+        background-color: #ff6291
+        color: #fff
+        padding: 2px 3px
+        letter-spacing: 1px
+        border-radius: 2px
+.h__50
+  height: 50px
+//- 開關
+.is-open
+  display: block !important
+.is-close
+  display: none !important

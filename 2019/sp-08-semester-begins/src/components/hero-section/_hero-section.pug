@@ -1,0 +1,23 @@
+- var heroBankData = {etmall: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201908/SP_1107836/w/index.html", umall: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201908/SP_1104315/w/index.html"}
+- var heroBankInfo = isU ? heroBankData.umall : heroBankData.etmall
+
+section.hero__wrap
+  .layout--main
+    .hero__zone
+      include /layout/header/_header.pug
+
+      .header__decoration
+      h1.hero__title.hero__title--main.block--center(title="你開學我放價")
+        img(src="~components/hero-section/title.png", alt="你開學我放價")
+      h2.hero__title.hero__title--sub.block--center
+        a(href= heroBankInfo, title="指定銀行最高回饋10%")
+          img(src="~components/hero-section/sub-title.png", alt="指定銀行最高回饋10%")
+
+      include /components/promo-event/_promo-event.pug
+
+  .hero__decoration
+
+  include /layout/background-decoration/_background-decoration.pug
+
+
+  

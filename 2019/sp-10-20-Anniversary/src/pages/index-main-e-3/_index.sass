@@ -1,0 +1,82 @@
+// ==========================================================================
+// Base
+// ==========================================================================
+@import "~utils/sass/_common"
+
+// // ==========================================================================
+// // Plugins
+// // ==========================================================================
+// // @import "vendors/animate"
+@import "vendors/style/swiper-slider-custom.sass"
++breakpoint-min($min-width-xl)
+  img, embed, object, .promo__slider.hero__slider img
+    width: auto
+// // ==========================================================================
+// // layout
+// // ==========================================================================
+@import "~layout/header/_header"
+@import "~layout/background-decoration/_background-decoration"
+
+// // ==========================================================================
+// // components
+// // ==========================================================================
+@import "~components/hero-section/_hero-section-e-3"
+@import "~components/hero-small-slider/_hero-small-slider"
+@import "~components/goods-slider/_goods-slider-e-3"
+@import "~components/promo-event/_promo-event-3"
+@import "~components/goods-slider-flip/_goods-slider-flip"
+@import "~components/bn-special/_bn-special"
+@import "~components/video-section/_video-section-e-3.sass"
+@import "~components/bank-section/_bank-section-e-3.sass"
+@import "~components/event-w4m2/_event-w4m2"
+@import "~components/bn-event/_bn-event-e-3.sass"
+// // ==========================================================================
+// // Page
+// // ==========================================================================
+body
+  //background-color: $main-e-background-color-e-3
+  background-image: url("~pages/index-main-e-3/img/1x1.jpg")
+//animation: 5s breathing-light infinite
+.sp__wrap
+  +pos-set(relative, zero)
+  +bg-set(url("~pages/index-main-e-3/img/960bg.jpg"), 100%)
+  //animation:
+  +breakpoint-min($min-width-xl)
+    +bg-set(url("~pages/index-main-e-3/img/bg.jpg"))
+
+.sp__wrap a
+  display: block
+
+.bg--light
+  position: absolute
+  top: calc(100vw * 0.48)
+  left: 50%
+  transform: translate(-50%, 20%)
+  background-size: 100%
+  width: 100%
+  background: linear-gradient(to right, transparent, #fff, transparent)
+  //background-image: url("~pages/index-main-e-3/img/bg-light.jpg")
+  height: calc(100vw * 0.725)
+  animation: 4s breathing-light infinite ease-in-out both
+
++breakpoint-min($min-width-xl)
+  .bg--light
+    position: absolute
+    top: 0
+    left: calc(50% - 160px)
+    transform: translate(0)
+    background-size: 100%
+    width: 100%
+    background: radial-gradient(circle, #fff, transparent)
+    //background-image: url("~pages/index-main-e-3/img/bg-light.jpg")
+    height: 467px
+    animation: 4s breathing-light infinite ease-in-out both
+
+@keyframes breathing-light
+  to, from
+    opacity: .1
+    filter: brightness(100%)
+
+  50%
+    opacity: .3
+    filter: brightness(120%)

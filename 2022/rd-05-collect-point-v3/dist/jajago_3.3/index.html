@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-Han-TW">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="collect-elevator-right.css">
+  <link href="vendor-collect-bundle.css" rel="stylesheet"><link href="collect-bundle.css" rel="stylesheet"></head>
+  <body>
+    <header class="header__wrap">
+      <div class="layout--main">
+        <div class="header__zone"><a class="logo logo--e" href="https://www.etmall.com.tw/"><img src="logo-new.svg" alt="東森購物"></a>
+        </div>
+      </div>
+    </header>
+    <div class="navRightBar" id="navRightBar"></div>
+    <main class="sp__wrap m-bottom--collect">
+      <section class="hero__wrap">
+        <div class="layout--main">
+          <div class="hero__block">
+            <div class="hero__box">
+              <h1 class="hero__title hero__title--main" title="集點加價購"><img src="title.png" alt="集點加價購"></h1>
+            </div>
+            <nav class="nav__wrap">
+              <div class="layout--main">
+                <div class="nav__block">
+                  <ul>
+                    <li><a href="#loyaltyCard" title="我的集點卡"><img src="nav-menu-1.png" alt="我的集點卡"></a></li>
+                    <li><a href="#collectChange" title="集點換好禮"><img src="nav-menu-2.png" alt="集點換好禮"></a></li>
+                    <li><a href="#collectBuy" title="集點購好物"><img src="nav-menu-3.png" alt="集點購好物"></a></li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div class="collect__group">
+      <section class="loyalty__wrap m-bottom--collect" id="loyaltyCard" data-title="我的集點卡">
+        <div class="layout--main">
+          <div class="loyalty__block">
+            <div class="decor__top"><img src="decor-card-top.png" alt=""></div>
+            <div class="loyalty__box">
+              <div class="point__wrap">
+                <div class="point__head">我的點數</div>
+                <div class="point__body">
+                  <div class="point__box"><span class="point" data-src="CustPoint">0</span><span>點</span></div>
+                  <div class="login__error jsLoginText"><span>請登入會員</span></div>
+                </div>
+              </div>
+              <div class="rule__wrap">
+                <div class="rule__box"><img src="collect-rule.png" alt="集點規則"></div>
+              </div>
+            </div>
+            <div class="decor__bottom"><img src="decor-card-bottom.png" alt=""></div>
+          </div>
+        </div>
+      </section>
+      <section class="exchange__wrap m-bottom--collect" id="collectChange" data-title="集點換好禮">
+        <div class="layout--main">
+          <div class="exchange__block">
+            <div class="decor__top"><img src="decor-exchange-top.png" alt=""></div>
+            <div class="exchange__box" data-src="Gift_Content">
+              <div class="rule__box"><span>完成登記之贈品將於</span><span data-src="NotificationTime"></span><span>前以我的禮物盒推播通知</span></div>
+            </div>
+            <div class="decor__bottom"><img src="decor-exchange-bottom.png" alt=""></div>
+          </div>
+        </div>
+      </section>
+      <div id="Gift_Template" style="display: none">
+        <div class="item__wrap">
+          <div class="item__box">
+            <div class="item__pic"><img data-src="/Image" alt=""></div>
+            <div class="item__intro">
+              <div class="item__name">
+                <div class="name__box"><span data-src="Name"></span></div>
+              </div>
+              <div class="item__quantity jsGoodsInventory"><span>尚餘</span><span data-src="Amount">0</span><span>組</span></div>
+            </div>
+          </div>
+          <div class="cta__box">
+            <div class="item__info jsItemInfo"><a href="javascript:void(0)" title="詳情">詳情</a></div>
+            <div class="item__cta">
+              <div class="cta cta--active"><a href="" title="立刻登記換"><span data-src="UsePoint">0</span><span>點登記換</span></a></div>
+              <div class="cta cta--closed" title="登記完畢">
+                <div>登記完畢</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="buy__wrap m-bottom--collect" id="collectBuy" data-title="集點購好物">
+        <div class="layout--main">
+          <div class="buy__block">
+            <div class="decor__top"><img src="decor-buy-top.png" alt=""></div>
+            <div class="buy__box" data-src="Jajago_Content">
+              <div class="rule__box"><span>完成登記之贈品將於</span><span data-src="NotificationTime"></span><span>前以我的禮物盒推播通知</span></div>
+            </div>
+            <div class="decor__bottom"><img src="decor-buy-bottom.png" alt=""></div>
+          </div>
+        </div>
+      </section>
+      <div id="Jajago_Template" style="display: none">
+        <div class="item__wrap">
+          <div class="item__box">
+            <div class="item__pic"><img data-src="/Image" alt=""></div>
+            <div class="item__intro">
+              <div class="item__point"><span data-src="UsePoint">0</span></div>
+              <div class="item__name">
+                <div class="name__box"><span data-src="Name"></span></div>
+              </div>
+              <div class="item__quantity jsGoodsInventory"><span>尚餘</span><span data-src="Amount">0</span><span>組</span></div>
+            </div>
+          </div>
+          <div class="cta__box">
+            <div class="item__info jsItemInfo"><a data-src="Link" href="" title="詳情"><span>詳情</span><img src="icon-buy.svg" alt=""></a></div>
+            <div class="item__cta">
+              <div class="cta cta--active"><a href="" title="登記購"><span>登記購</span></a></div>
+              <div class="cta cta--closed" title="登記完畢">
+                <div>登記完畢</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="note__wrap m-bottom--collect" id="noteWrap" data-title="活動詳情">
+        <div class="layout--main">
+          <div class="note__block">
+            <div class="decor__top"><img src="decor-note-top.png" alt=""></div>
+            <div class="note__box" data-src="Note"></div>
+            <div class="decor__bottom"><img src="decor-note-bottom.png" alt=""></div>
+          </div>
+        </div>
+      </section>
+      <aside class="btn__wrap"><a class="jsRecordList btn--record" href="javascript:void(0)" title="兌換紀錄">
+          <div class="decor__left"><img src="decor-record.svg" alt=""></div>
+          <div class="record__block"><img src="icon-record.svg" alt=""><span>兌換紀錄</span></div>
+          <div class="decor__right"><img src="decor-record.svg" alt=""></div></a></aside>
+      <script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+      <script src="https://media.etmall.com.tw/sp/12500/collect-elevator.js"></script>
+    </div>
+    <div class="modal">
+      <div class="modal__overlay full-parent">
+        <div class="overlay__block full-parent"></div>
+      </div>
+      <form class="dialog__block">
+        <div class="area-title">
+          <p></p>
+        </div>
+        <div class="scroll-section">
+          <div class="area-content">
+            <div class="area-subtitle"></div>
+            <div class="area-detail"></div>
+          </div>
+        </div>
+        <div class="area-clickBtn normal">
+          <button class="n-btn n-btn--cancel" type="button">取消</button>
+          <button class="n-btn" type="button">確定</button>
+        </div>
+      </form>
+    </div>
+    <div class="modal record-list">
+      <div class="modal__overlay full-parent">
+        <div class="overlay__block full-parent"></div>
+      </div>
+      <form class="dialog__block record-list__modal">
+        <div class="list__head">
+          <div class="modal__close"><img src="modal-close.svg" alt="關閉"></div>
+          <div class="list-title">
+            <p>兌換紀錄</p>
+          </div>
+        </div>
+        <div class="list__body">
+          <div class="list-content">
+            <table class="record-list-table" border="0">
+              <thead>
+                <tr>
+                  <th class="record-time" width="33%">日期</th>
+                  <th width="47%">獎項</th>
+                  <th width="20%">點數</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+            <div class="list-alert">未有兌換紀錄</div>
+          </div>
+          <div class="list-note">
+            <p>兌換說明及規定請參閱活動頁下方活動說明，謝謝。</p>
+          </div>
+        </div>
+      </form>
+    </div>
+  <script type="text/javascript" src="https://media.etmall.com.tw/sp/12500/vendor-collect-bundle.js"></script><script type="text/javascript" src="https://media.etmall.com.tw/sp/12500/collect-bundle.js"></script></body>
+</html>

@@ -1,0 +1,107 @@
+// ==========================================================================
+// Plugins
+// ==========================================================================
+// // @import vendors/animate
+// @import vendors/style/swiper-slider-custom
+@import vendors/style/swiper-safari-polyfill
+
+
+// ==========================================================================
+// first screen need
+// ==========================================================================
+// hero section
+@import event/2nd/e-main/components/hero-section/_hero-section
+// @import utils/bg-decoration-instance/parallax/_parallax
+
+// ==========================================================================
+// components
+// ==========================================================================
+// dynamic product 假宮格共用CSS
+@import layout/dynamic-product/_dynamic-product.sass
+
+// 一般components
+@import event/2nd/e-main/components/info-cover/_info-cover
+// @import event/2nd/e-main/components/bn-special/_bn-special
+// @import event/2nd/e-main/components/event-w2m2/_event-w2m2
+
+
+// ==========================================================================
+// Page
+// ==========================================================================
+body
+  +pos-set(relative)
+  background-color: $main-e-background-color-2nd
+
+// TODO: 修改EU nav佔位高度(影響logo距離上方高度，U每次要改)
+.navRightBar
+  // E
+  height: 39px
+  // U
+  // height: 15px
+  +breakpoint-min($min-width-xl)
+    height: auto
+
+.sp__wrap
+  // +pos-set(relative)
+  // +breakpoint-min($min-width-xl)
+  +pos-set(relative, 0, 0, 0)
+  top: 0
+  width: 100%
+  height: 100%
+  background: center 0 url(event/2nd/e-main/pages/index/index-web.jpg) no-repeat
+  background-size: auto
+  background-color: $main-e-background-color-2nd
+
+
+  .sp__visual
+    content: ''
+    max-width: 960px
+    background: center 0 url(event/2nd/e-main/pages/index/index.jpg) no-repeat
+    background-size: 100%
+    transition: all 0.5s
+
+
+
+.sp__wrap a
+  display: block
+
+  // .promo__title
+  //   text-align: center
+  // .decoration--background.decoration__wrap
+
+// parallax css
+// =================================
+// .decoration--background
+//   display: none
+
+//   +breakpoint-min($min-width-3xl)
+//     display: block
+//     // z-index: base(1)以上可蓋在主視覺上，zero(0)可在主視覺下，預設都在logo下(logo是500)
+//     +pos-set(absolute, under, 690px)
+//     width: 100%
+//     height: 100%
+//     pointer-events: none
+
+// .decoration__wrap
+//   +pos-set(sticky, zero, 0)
+.swiper-button--custom
+  top: 55%
+  margin-top: 0
+  width: 3.5%
+  transform: translateY(-50%)
+  &:after
+    content: ''
+  &:active,
+  &:hover
+    filter: brightness(120%)
+  // &.swiper-button-prev
+  //   left: 9.3%
+  //   +bg-set(url(event/2nd/e-main/pages/index/btn-slider-prev.png), contain, center, center)
+  // &.swiper-button-next
+  //   right: 9.3%
+  //   +bg-set(url(event/2nd/e-main/pages/index/btn-slider-next.png), contain, center, center)
+
+.decoration--top
+  +pos-set(absolute, zero)
+  pointer-events: none
+

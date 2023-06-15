@@ -1,0 +1,524 @@
+<meta charset="UTF-8" />
+<meta
+  name="viewport"
+  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+/>
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<!-- 共用CSS -->
+<link
+  rel="stylesheet"
+  href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116205/animate.min.css"
+/>
+<link
+  rel="stylesheet"
+  href="https://media.etmall.com.tw/sp/12500/generate_v1.2.css"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+/>
+
+<!-- [電梯步驟1] 電梯CSS 不用就關掉 -->
+<!-- 商品左電梯CSS，要使用還要在步驟3開啟左電梯data資料 -->
+<!-- <link id="localElevatorLeft" rel="stylesheet" href="sp-elevator-left.css"> -->
+
+<!-- 商品右電梯CSS，步驟3有測試div可以測試 -->
+<!-- <link id="localElevatorRight" rel="stylesheet" href="sp-elevator-right.css" /> -->
+<!-- [電梯步驟1] 電梯CSS END -->
+
+<style>
+  body {
+    /* 自行修正背景顏色 */
+    background-color: #a75bf1;
+  }
+
+  /* 調整logo位置大小 */
+  .logo {
+    top: 1%;
+    left: 1%;
+    width: 30%;
+    max-width: 220px;
+    transform: translate(12px, 12px);
+  }
+
+  @media screen and (min-width: 960px) {
+    .logo {
+      transform: translate(0px, 16px);
+    }
+  }
+
+  .home--logo {
+    z-index: 1;
+  }
+
+  /* 大網各區塊背景  */
+  .visual__block1 {
+    position: relative;
+    z-index: -1;
+    height: 768px;
+    background: url(bg.jpg) top center no-repeat;
+    background-size: 100%;
+  }
+
+  @media screen and (min-width: 768px) {
+    .visual__block1 {
+      height: 132vw;
+      min-height: 1200px;
+    }
+  }
+
+  @media screen and (min-width: 960px) {
+    .visual__block1 {
+      height: 1477px;
+      min-height: 1477px;
+      background-image: url(bg-web.jpg);
+      background-size: auto;
+    }
+  }
+
+  .body-color {
+    /* 外部背景底色 */
+    background-color: #3c49f1;
+  }
+
+  .layout--main {
+    position: relative;
+    z-index: 0;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .sp__icon {
+    position: absolute;
+    top: 39vw;
+    right: 5%;
+    width: 17%;
+  }
+
+  .sp__icon:hover {
+    transform: translateY(-2px);
+    filter: brightness(120%);
+  }
+
+  .sp__icon img {
+    width: 100%;
+  }
+
+  @media (min-width: 960px) {
+    .sp__icon {
+      top: 372px;
+      right: calc(50% - 420px);
+      width: 140px;
+    }
+  }
+
+  /* ===== note start ===== */
+  .note {
+    position: absolute;
+    top: 138vw;
+    left: 0;
+    padding-bottom: 2%;
+    font-size: 15px;
+    word-break: break-all;
+    line-height: 150%;
+  }
+
+  @media (min-width: 960px) {
+    .note {
+      top: 1320px;
+      left: calc(50% - 470px);
+    }
+  }
+
+  .moon__modal.promo__section {
+    position: absolute;
+    top: 87vw;
+    left: -2%;
+  }
+
+  @media screen and (min-width: 960px) {
+    .moon__modal.promo__section {
+      top: 830px;
+      left: calc(50% - 494px);
+    }
+  }
+
+  .moon__modal .promo__box {
+    display: flex;
+  }
+
+  .moon__modal .promo__item {
+    padding-top: 8%;
+  }
+
+  .moon__modal .promo__item:first-child {
+    padding-top: 0;
+    padding-left: 2.6%;
+  }
+
+  @media screen and (min-width: 960px) {
+    .moon__modal .promo__item:first-child {
+      padding-left: 4%;
+    }
+  }
+
+  .moon__modal .promo__item:last-child {
+    padding-top: 0;
+  }
+
+  .note__top {
+    position: relative;
+    z-index: -1;
+    height: 13vw;
+    text-align: center;
+    border-radius: 16px 16px 0 0;
+    box-shadow: -4px 7px 27px 5px #681db2;
+  }
+
+  .note__top .note__info {
+    padding: 2.5% 2% 1.5%;
+  }
+
+  @media screen and (min-width: 960px) {
+    .note__top {
+      height: 126px;
+    }
+
+    .note__top img {
+      width: auto;
+    }
+  }
+
+  .note__info li:not(:last-child) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5.5vw;
+    border-right: 1.5px solid #fff;
+  }
+
+  @media screen and (min-width: 960px) {
+    .note__info li:not(:last-child) {
+      height: 46px;
+      border-right: 2px solid #fff;
+    }
+  }
+
+  .note__wrap {
+    width: 100%;
+    background-color: #fff;
+    border-right: 1px solid #514afb;
+    border-bottom: 1px solid #514afb;
+    border-left: 1px solid #514afb;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 4px 4px 27px 5px #681db2;
+  }
+
+  @media screen and (min-width: 960px) {
+    .note__wrap {
+      width: 937px;
+    }
+  }
+
+  .note__zone {
+    padding: 0 2% 2%;
+  }
+
+  .note__info,
+  .note__box {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 3.5% 1%;
+    font-size: 3.6vw;
+    font-weight: 700;
+    line-height: 120%;
+    color: #24269f;
+    border-radius: 10px;
+  }
+
+  .note__info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 4.5vw;
+    color: #fff;
+    border-radius: 0;
+  }
+
+  .note__box li:last-child {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    height: 2.4em;
+    line-height: 124%;
+    overflow: hidden;
+  }
+
+  @media screen and (min-width: 768px) {
+    .note__box {
+      padding: 2.5% 1%;
+      font-size: 24px;
+    }
+
+    .note__info {
+      font-size: 30px;
+    }
+  }
+
+  .note__info li,
+  .note__box li {
+    width: 38%;
+    padding: 0 1%;
+    text-align: center;
+  }
+
+  .note__info li:first-child,
+  .note__box li:first-child {
+    width: 18%;
+  }
+
+  .note__info li:last-child,
+  .note__box li:last-child {
+    width: 44%;
+  }
+
+  .note__box:nth-child(even) {
+    color: #fff;
+    background-color: #c279ef;
+  }
+
+  /* ===== bn slider start ===== */
+  .bn-slider {
+    position: absolute;
+    top: 232vw;
+    left: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    .bn-slider {
+      position: absolute;
+      top: 217vw;
+      left: 0;
+    }
+  }
+
+  @media screen and (min-width: 960px) {
+    .bn-slider {
+      top: 2000px;
+      left: calc(50% - 495px);
+    }
+  }
+
+  .bn-slider .promo__wrap {
+    /* 增加寬度以符合包含陰影的圖片 */
+    /* width: 96.4vw; */
+    width: 100vw;
+    overflow: hidden;
+  }
+
+  @media screen and (min-width: 960px) {
+    .bn-slider .promo__wrap {
+      /* 增加寬度以符合包含陰影的圖片 */
+      width: 990px;
+    }
+  }
+</style>
+<div class="elevatorHome js--main--dialog" id="elevatorHome"></div>
+<div class="navRightBar" id="navRightBar"></div>
+<!-- 旅遊專用bar區域 start 不要就移除-->
+<!-- <div id="barHome"></div> -->
+<!-- 旅遊專用bar區域 end-->
+<div id="iconHome" class="layout--main home--icon"></div>
+
+<div id="spWrap" class="sp__wallper">
+  <!-- 動畫小物件 -->
+  <div class="animate__wrap">
+    <!-- 動畫 -->
+    <!-- <img
+      class="animate__obj--01 animate__animated animate__shakeX animate__delay-1s animate__slow animate__infinite"
+      src="ETcat.png"
+      alt=""
+    /> -->
+
+    <!--<img class="animate__obj&#45;&#45;01" src="圖片檔名" alt="圖片提示文字">-->
+    <!--<img class="animate__obj&#45;&#45;02" src="圖片檔名" alt="圖片提示文字">-->
+    <!--<img class="animate__obj&#45;&#45;03" src="圖片檔名" alt="圖片提示文字">-->
+    <!-- 如果有多組物件，可以複製命名animate__obj--0{數字} css 也複製一份就可以一直往下生 -->
+    <!--<img class="animate__obj--04" src="" alt="">-->
+  </div>
+  <main class="sp__main">
+    <div class="layout--main">
+      <div class="home--logo">
+        <a href="https://media.etmall.com.tw/sp/16724/m/index.html"
+          ><img class="logo" src="logo-new.svg" alt="東森購物"
+        /></a>
+      </div>
+    </div>
+    <div class="sp__visual visual__block1 body-color sp--modal"></div>
+    <div class="sp__icon">
+      <a href="https://media.etmall.com.tw/sp/16724/m/index.html">
+        <img src="icon.png" alt="回主會場">
+      </a>
+    </div>
+    <section class="promo__section moon__modal">
+      <div class="layout--main">
+        <div class="promo__wrap">
+          <ul class="promo__box">
+            <li class="promo__item">
+              <a href="https://www.etmall.com.tw/Activity/dl/LuckyDraw/d6cc3eefa45f6b98b2463206ecd976ca">
+                <img src="promo-section-1.png" alt="東森幣天天免費抽" />
+              </a>
+            </li>
+            <li class="promo__item">
+              <a href="https://media.etmall.com.tw/sp/16746/m/index.html">
+                <img src="promo-section-2.png" alt="東森限定送Uber乘車優惠" />
+              </a>
+            </li>
+            <li class="promo__item">
+              <a href="https://www.etmall.com.tw/Activity/CouponReceiveAll">
+                <img src="promo-section-3.png" alt="限量神券現折$520" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="note" name="note">
+      <div class="layout--main">
+        <div class="note__top">
+          <img src="note-top.png" alt="" />
+          <ul class="note__info">
+            <li>日期</li>
+            <li>名稱</li>
+            <li>內容</li>
+          </ul>
+        </div>
+        <div class="note__wrap">
+          <div class="note__zone">
+            <ul class="note__box">
+              <li>8/13-14</li>
+              <li>活動名稱活動名稱</li>
+              <li>活動內容活動內容活動內容活動內容活動內容活動內容活動內容</li>
+            </ul>
+            <ul class="note__box">
+              <li>8/13-14</li>
+              <li>活動名稱活動名稱</li>
+              <li>活動內容活動內容活動內容活動內容活動內容活動內容活動內容</li>
+            </ul>
+            <ul class="note__box">
+              <li>8/13-14</li>
+              <li>活動名稱活動名稱</li>
+              <li>活動內容活動內容活動內容活動內容活動內容活動內容活動內容</li>
+            </ul>
+            <ul class="note__box">
+              <li>8/13-14</li>
+              <li>活動名稱活動名稱</li>
+              <li>活動內容活動內容活動內容活動內容活動內容活動內容活動內容</li>
+            </ul>
+            <ul class="note__box">
+              <li>8/13-14</li>
+              <li>活動名稱活動名稱</li>
+              <li>活動內容活動內容活動內容活動內容活動內容活動內容活動內容</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bn-slider">
+      <div class="layout--main">
+        <div class="promo__wrap">
+          <div class="swiper-container" id="sliderBn">
+            <ul class="swiper-wrapper">
+              <li class="swiper-slide">
+                <a href="" title=""
+                  ><img class="swiper-lazy" src="bn-1.png" alt=""
+                /></a>
+              </li>
+              <li class="swiper-slide">
+                <a href="" title=""
+                  ><img class="swiper-lazy" src="bn-2.png" alt=""
+                /></a>
+              </li>
+              <li class="swiper-slide">
+                <a href="" title=""
+                  ><img class="swiper-lazy" src="bn-3.png" alt=""
+                /></a>
+              </li>
+              <li class="swiper-slide">
+                <a href="" title=""
+                  ><img class="swiper-lazy" src="bn-4.png" alt=""
+                /></a>
+              </li>
+              <li class="swiper-slide">
+                <a href="" title=""
+                  ><img class="swiper-lazy" src="bn-5.png" alt=""
+                /></a>
+              </li>
+              <li class="swiper-slide">
+                <a href="" title=""
+                  ><img class="swiper-lazy" src="bn-6.png" alt=""
+                /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script
+  id="generateScript"
+  src="https://media.etmall.com.tw/sp/12500/generate_v1.2.js"
+></script>
+
+<!--[電梯步驟2] 電梯 JS -->
+<!-- 商品左電梯單機版資料，不用就關掉，要使用還要上方步驟1開啟商品左電梯CSS -->
+<!-- <script id="dataElevatorLeft" src="data-elevator.js"></script> -->
+
+<!-- 測試商品右電梯用，上線前必須關掉-->
+<!--   <div data-title="ccc"></div>
+  <div data-title="ccc"></div>
+  <div data-title="ccc"></div> -->
+<!-- 線上自動切換電梯，無論如何都要有 -->
+<script
+  id="checkElevator"
+  src="https://media.etmall.com.tw/sp/11911/check-elevator.js?cinderella"
+></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<!-- [電梯步驟2] 電梯 JS END -->
+<script>
+  function sliderBnReady() {
+    var sliderBn = new Swiper("#sliderBn", {
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      initialSlide: Math.floor(
+        Math.random() *
+          document.querySelectorAll("#sliderBn .swiper-slide").length
+      ),
+      lazy: {
+        loadPrevNext: true,
+      },
+      loop: true,
+      pagination: {
+        el: "#sliderBnPager",
+        type: "bullets",
+        clickable: true,
+      },
+      slidesPerView: 1,
+      speed: 600,
+    });
+
+    return sliderBn;
+  }
+  sliderBnReady();
+</script>

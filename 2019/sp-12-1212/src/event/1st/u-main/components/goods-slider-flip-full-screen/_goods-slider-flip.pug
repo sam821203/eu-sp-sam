@@ -1,0 +1,21 @@
+- var goodsFlipDataE = [{link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201912/SP_1105723/w/index.html", imgSrc: "~event/1st/u-main/components/goods-slider-flip-full-screen/items/pic-1-min.png", alt: "美妝精選限時買1送2"}, {link: "https://www.u-mall.com.tw/np/72382", imgSrc: "~event/1st/u-main/components/goods-slider-flip-full-screen/items/pic-2-min.png", alt: "保健熱銷必買$1212up"}, {link: "https://www.u-mall.com.tw/c3/133210", imgSrc: "~event/1st/u-main/components/goods-slider-flip-full-screen/items/pic-3-1-min.png", alt: "realme限時驚喜好禮"},  {link: "https://www.u-mall.com.tw/np/70308", imgSrc: "~event/1st/u-main/components/goods-slider-flip-full-screen/items/pic-4-min.png", alt: "超值螢幕 送好禮"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201912/SP_1105705/w/index.html", imgSrc: "~event/1st/u-main/components/goods-slider-flip-full-screen/items/pic-5-min.png", alt: "服飾精品年終狂歡"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201912/SP_1105739/w/index.html", imgSrc: "~event/1st/u-main/components/goods-slider-flip-full-screen/items/pic-6-min.png", alt: "1212日用爽購抽舒潔"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201912/SP_1105700/w/index.html", imgSrc: "~event/1st/u-main/components/goods-slider-flip-full-screen/items/pic-7-min.png", alt: "大同40吋電視 $5990"},{link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201912/SP_1105704/w/index.html", imgSrc: "~event/1st/u-main/components/goods-slider-flip-full-screen/items/pic-8-min.png", alt: "旅遊最高折$5,000"}, ]
+
+
+
+//- var goodsFlipData = isU? goodsFlipDataU : goodsFlipDataE
+- var goodsFlipData = goodsFlipDataE
+
+.goods__wrap--flip.js-add__bg
+  //- .goods__decoration.goods__decoration--right
+  //- .goods__decoration.goods__decoration--left
+  .promo__slider
+    #sliderGoodsFlip.swiper-container
+      ul.swiper-wrapper
+        each data in goodsFlipData
+          li.swiper-slide
+            a(href= data.link, title= data.alt)
+              img(src= data.imgSrc, alt= data.alt)
+      //- #sliderGoodsFlipPager.swiper-pager-white.swiper-pagination
+    //- #sliderGoodsFlipPrev.swiper-button-white.swiper-button-prev
+    //- #sliderGoodsFlipNext.swiper-button-white.swiper-button-next
+

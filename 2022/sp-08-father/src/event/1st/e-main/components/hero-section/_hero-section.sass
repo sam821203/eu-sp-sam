@@ -1,0 +1,196 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__wrap
+    pointer-events: none
+  .hero__wrap
+    .hero__zone
+      +aspect-ratio(960, 575)
+      .hero__block
+        z-index: 1
+      .hero__title
+        opacity: 0
+        &--main
+          +pos-set(absolute, base, 14%, 6%)
+          width: 56%
+          .js-loading &
+            animation: main-rotate-out .6s .8s ease-in both, main-heartBeat 1.4s 1.4s ease-in-out
+        &--star1
+          +pos-set(absolute, base, 9.5%, 3%)
+          width: 62%
+          .js-loading &
+            animation: star-show .4s 2.4s linear 1 forwards, star-flash 2.4s 3.2s infinite
+          +breakpoint-min($min-width-xl)
+            top: 11%
+            left: calc(50% - 437px)
+        &--star2
+          +pos-set(absolute, base, 10.5%, 3%)
+          width: 59%
+          +breakpoint-min($min-width-xl)
+            top: 14%
+            left: calc(50% - 422px)
+          .js-loading &
+            animation: star-show .4s 2.4s linear 1 forwards, star-flash 2.4s 3.6s infinite
+        +breakpoint-min($min-width-xl)
+          width: auto
+.bg-web
+  &--sub
+    +pos-set(absolute, second, 51.5vw, -4%)
+    width: 100%
+    opacity: 0
+    .js-loading &
+      transform-origin: 85% 100%
+      animation: sub-show .8s .8s ease-in-out 1 forwards
+    +breakpoint-min($min-width-xl)
+      width: auto
+      top: 525px
+      left: calc(50% - 500px)
+      img
+        transform-origin: bottom left
+        transform: scale(1)
+        +breakpoint-min($min-width-xl)
+          transform: scale(1.11)
+  &--figure
+    +pos-set(absolute, base, 0.1%, 62%)
+    width: 36.5vw
+    +breakpoint-min($min-width-xl)
+      top: 0
+      left: calc(50% + 170px)
+    .js-loading &
+      animation-play-state: pause
+      +breakpoint-min($min-width-xl)
+        animation: figure-moving 4.2s 3.8s ease-in-out both alternate infinite
+        animation-play-state: running
+    > div
+      +pos-set(absolute, second, 0, 0)
+      width: 100%
+      opacity: 0
+      +breakpoint-min($min-width-xl)
+        width: auto
+      .js-loading &
+        transform-origin: center bottom
+    .no-move
+      .js-loading &
+        animation: figure-show .8s .8s ease-in-out 1 forwards, figure-heartBeat 1.4s 1.4s ease-in-out forwards, hero-flash 4s 1.8s steps(1) infinite
+    .move
+      .js-loading &
+        animation: figure-show .8s .8s ease-in-out 1 forwards, figure-heartBeat 1.4s 1.4s ease-in-out forwards, hero-move 4s 1.8s steps(1) infinite
+    img
+      width: 100%
+      +breakpoint-min($min-width-xl)
+        width: auto
+        max-width: 760px
+    
+  &--shine
+    +pos-set(absolute, under, 0%, 0%)
+    +bg-set(url(event/1st/e-main/pages/index/bg-shine-1.png), 100%)
+    width: 100%
+    transform-origin: 33% 1.9%
+    transform: scale(0)
+    +breakpoint-min($min-width-xl)
+      +bg-set(url(event/1st/e-main/pages/index/bg-web-shine-1.png), auto)
+    .js-loading &
+      animation: shine-zoomIn .6s 1s ease-in 1 forwards
+    &.active
+      display: none
+    .bg-shine2
+      +bg-set(url(event/1st/e-main/pages/index/bg-shine-2.png), 100%)
+      +breakpoint-min($min-width-xl)
+        +bg-set(url(event/1st/e-main/pages/index/bg-web-shine-2.png), auto)
+      .js-loading &
+        animation: hero-flash 4s 1s steps(1) infinite
+
+@keyframes main-rotate-out
+  0%
+    transform: scale(0.3) rotate(0deg)
+    opacity: 0
+  100%
+    transform: scale(1) rotate(360deg)
+    opacity: 1
+
+@keyframes main-heartBeat
+  0%
+    transform: scale(1) rotate(0deg) translate3d(0, 0, 0)
+  14%
+    transform: scale(1.15) rotate(5deg) translate3d(-5px, -8px, 0)
+  28%
+    transform: scale(1) rotate(0deg) translate3d(0, 0, 0)
+  42%
+    transform: scale(1.15) rotate(-5deg) translate3d(5px, -8px, 0)
+  70%, 100%
+    transform: scale(1) rotate(0deg) translate3d(0, 0, 0)
+
+@keyframes shine-zoomIn
+  from
+    opacity: 0
+    transform: scale(0)
+  100%
+    opacity: 1
+    transform: scale(1)
+
+@keyframes figure-heartBeat
+  0%
+    transform: scale(0.9) rotate(0deg) translate3d(0, 0, 0)
+  14%
+    transform: scale(1) rotate(-2deg) translate3d(2px, -4px, 0)
+  28%
+    transform: scale(0.9) rotate(0deg) translate3d(0, 0, 0)
+  42%
+    transform: scale(1) rotate(2deg) translate3d(-2px, -4px, 0)
+  70%
+    transform: scale(0.9) rotate(0deg) translate3d(0, 0, 0)
+
+@keyframes hero-flash
+  0%, 50%, to
+    opacity: 1
+  25%, 75%
+    opacity: 0
+
+@keyframes hero-move
+  0%, 50%, to
+    opacity: 0
+  25%, 75%
+    opacity: 1
+
+@keyframes figure-moving
+  0%, 100%
+    transform: translate(0, 0) 
+  40%, 48%, 56%, 60%
+    transform: rotate(0deg) translate(-70px, 0)
+  44%
+    transform: rotate(1deg) translate(-70px, 10px)
+  52%
+    transform: rotate(-1deg) translate(-70px, 10px)
+
+@keyframes figure-show
+  0%
+    opacity: 0
+    transform: scale(0)
+  100%
+    opacity: 1
+    transform: scale(0.9)
+
+@keyframes sub-show
+  0%
+    opacity: 0
+    transform: scale(0)
+  100%
+    opacity: 1
+    transform: scale(0.9)
+
+@keyframes star-flash
+  0%, 50%, 100%
+    opacity: 1
+  25%, 75%
+    opacity: 0
+
+@keyframes star-show
+  0%
+    transform: scale(0)
+    opacity: 0
+  100%
+    transform: scale(1)
+    opacity: 1

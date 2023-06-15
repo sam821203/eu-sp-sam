@@ -1,0 +1,190 @@
+// 每次顯示三品
+// 需要複製請連著"{},"整個區塊複製
+// 是價格的話請用'price'，會加上$符號，不是價格請用'text'，不會加上$符號
+// 區塊：整點特賣
+var dataDailyTime = [
+  [
+    // 07/29
+    {
+      productNumber: 2584357,
+      webLink: 'https://media.etmall.com.tw/sp/16520/m/index.html',
+      mobileLink: 'https://media.etmall.com.tw/sp/16520/m/index.html',
+      appLink: 'etmall://open?pgid=44&tb=0&url=https%3a%2f%2fmedia.etmall.com.tw%2fsp%2f16520%2fm%2fapp.html&t=%e5%9c%a8%e5%8f%a6%e4%b8%80%e5%80%8b%e4%b8%96%e7%95%8c%e7%ad%89%e4%ba%861%e5%b9%b4%7cETMall%e6%9d%b1%e6%a3%ae%e8%b3%bc%e7%89%a9',
+      name: "【LUX 麗仕】香氛皂 80G x 72入 (抗菌防疫專用)",
+      price: 599,
+    },
+    {
+      productNumber: 3096872,
+      webLink: '',
+      mobileLink: '',
+      appLink: '',
+      name: "",
+      price: 599,
+
+    },
+    {
+      productNumber: 3537216,
+      webLink: '',
+      mobileLink: '',
+      appLink: '',
+      name: "",
+      price: 599,
+    },
+  ],
+  [// 07/30
+    {
+      productNumber: 3115281,
+      webLink: '',
+      mobileLink: '',
+      appLink: '',
+      name: "",
+      price: 599,
+    },
+    {
+      productNumber: 2193870,
+      webLink: '',
+      mobileLink: '',
+      appLink: '',
+      name: "",
+      price: 599,
+    },
+    {
+      productNumber: 3269119,
+      webLink: '',
+      mobileLink: '',
+      appLink: '',
+      name: "",
+      price: 599,
+    },
+  ],
+  [// 07/31
+    {
+      productNumber: 3528692,
+      webLink: '',
+      mobileLink: '',
+      appLink: '',
+      name: "",
+      price: 599,
+    },
+    {
+      productNumber: 3513770,
+      webLink: '',
+      mobileLink: '',
+      appLink: '',
+      name: "",
+      price: 599,
+    },
+    {
+      productNumber: 3107359,
+      webLink: '',
+      mobileLink: '',
+      appLink: '',
+      name: "",
+      price: 599,
+    },
+  ],
+  [// 08/01
+    {
+      productNumber: 3529801,
+      webLink: '',
+      mobileLink: '',
+      appLink: '',
+      name: "",
+      price: 599,
+    },
+    {
+      productNumber: 2193870,
+      webLink: '',
+      mobileLink: '',
+      appLink: '',
+      name: "",
+      price: 599,
+    },
+    {
+      productNumber: 2838186,
+      webLink: '',
+      mobileLink: '',
+      appLink: '',
+      name: "",
+      price: 599,
+    },
+  ],
+  [// 08/02
+    {
+      productNumber: 1803203,
+      webLink: '',
+      mobileLink: '',
+      appLink: '',
+      name: "",
+      price: 599,
+    },
+    {
+      productNumber: 3526448,
+      webLink: '',
+      mobileLink: '',
+      appLink: '',
+      name: "",
+      price: 599,
+    },
+    {
+      productNumber: 2802394,
+      webLink: '',
+      mobileLink: '',
+      appLink: '',
+      name: "",
+      price: 599,
+    },
+  ],
+  [// 08/03
+    {
+      productNumber: 2372188,
+      webLink: '',
+      mobileLink: '',
+      appLink: '',
+      name: "",
+      price: 599,
+    },
+    {
+      productNumber: 3071489,
+      webLink: '',
+      mobileLink: '',
+      appLink: '',
+      name: "",
+      price: 599,
+    },
+    {
+      productNumber: 3527249,
+      webLink: '',
+      mobileLink: '',
+      appLink: '',
+      name: "",
+      price: 599,
+    },
+  ],
+  [// 08/04
+    {
+      productNumber: 2296487,
+      webLink: '',
+      mobileLink: '',
+      appLink: '',
+      name: "",
+      price: 599,
+    },
+    {
+      productNumber: 2316084,
+      webLink: '',
+      mobileLink: '',
+      appLink: '',
+      name: "",
+      price: 599,
+    },
+    {
+      productNumber: 3564875,
+      webLink: '',
+      mobileLink: '',
+      appLink: '',
+      name: "",
+      price: 599,
+    },
+  ]
+];

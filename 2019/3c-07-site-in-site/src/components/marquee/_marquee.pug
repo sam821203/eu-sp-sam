@@ -1,0 +1,17 @@
+//- TODO: 設定跑馬燈方向，--top / --bottom / --left / --right
+section.marquee.m-bottom--sm.marquee--right
+  .layout--main
+    .marquee__wrap
+      //- 直接直接砍掉.marquee__info就不會出現蓋板系統訊息的標籤，也可在sass設置display: none
+      .marquee__info 訊息 |
+      #marqueeBox.marquee__box
+        .marquee__item.marquee__item--active 
+          a(href="")
+            span 蝦蝦姊：雖然已經很美但想要更美蝦
+        .marquee__item
+          //- 不用連結的範例 
+          //- a(href="") 
+          span 鬍子哥：可是我更想看直播主用甚麼機型拍
+        .marquee__item
+          a(href="")
+            span 英媽媽：媽媽我更想知道19:00開播有沒有優惠

@@ -1,0 +1,45 @@
+.promo__group--table-1
+  th,
+  td
+    padding: 1.2% 2% 1%
+    width: 14%
+    +breakpoint-min($min-width-md)
+      padding: 1.2% 1.2% 1%
+.promo__group--table
+  .table__wrap
+    & p
+      padding-top: 3%
+      font-size: 14px
+      font-weight: bold
+  .table__box
+    padding: 3%
+    background-color: $gray-deep-light
+
+  table
+    width: 100%
+    text-align: center
+  tr
+    &:first-child
+      border-bottom: 1px solid $gray-deep-dark
+    &:nth-child(2n)
+      color: $gray-light
+      background-color: $gray-medium
+  th,
+  td
+    font-size: 14px
+    font-weight: bold
+    vertical-align: middle
+
+  +breakpoint-min($min-width-md)
+    .table__wrap p
+      font-size: 18px
+    th,
+    td
+      padding: 1.5%
+      font-size: 18px
+  +breakpoint-min($min-width-lg)
+    .table__box
+      padding: 2%
+    .table__wrap p
+      padding-top: 2%
+      font-size: 18px

@@ -1,0 +1,58 @@
+{
+  "name": "etmall-design-sp",
+  "version": "4.2.0",
+  "description": "東森購物SP頁",
+  "private": true,
+  "scripts": {
+    "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open",
+    "host": "cross-env NODE_ENV=development webpack-dev-server --mode development --open --host 172.20.10.5",
+    "build": "cross-env NODE_ENV=production webpack --mode production",
+    "build-dev": "cross-env NODE_ENV=development webpack --mode development"
+  },
+  "keywords": [
+    "etmall",
+    "u-mall",
+    "東森購物",
+    "森森購物"
+  ],
+  "author": "EmmaChien, JackDou",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "autoprefixer": "^9.8.6",
+    "babel-loader": "^8.2.3",
+    "chokidar": "^3.4.3",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^5.1.2",
+    "cross-env": "^5.2.0",
+    "css-loader": "^2.1.1",
+    "file-loader": "^4.3.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "image-webpack-loader": "^4.6.0",
+    "mini-css-extract-plugin": "^0.7.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "postcss-loader": "^3.0.0",
+    "pug-html-loader": "^1.1.5",
+    "sass": "^1.34.0",
+    "sass-loader": "^7.3.1",
+    "style-loader": "^0.23.1",
+    "url-loader": "^2.3.0",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "browserslist": [
+    "defaults",
+    "IE >= 10"
+  ],
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "gsap": "^3.5.1",
+    "lazyload": "^2.0.0-rc.2",
+    "parallax-js": "^3.1.0",
+    "swiper": "^6.7.5",
+    "wow.js": "^1.2.2"
+  }
+}

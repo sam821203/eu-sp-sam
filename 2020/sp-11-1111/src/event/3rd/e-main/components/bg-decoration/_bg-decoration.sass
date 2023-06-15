@@ -1,0 +1,34 @@
+.bg--decoration
+  +pos-set(relative, under)
+  .decoration__wrap
+    +pos-set(fixed, zero)
+    width: 100%
+    will-change: scroll-position
+  .decoration--under,
+  .decoration--under .layout--main,
+  .decoration__block
+    width: 100%
+    height: 100%
+  .decoration--under
+    animation: breathing-light 3s infinite alternate ease-in-out
+  .decoration__block
+    +bg-set(url("~event/3rd/e-main/components/bg-decoration/bg-decoration.jpg"), 100%)
+  .decoration--firefly
+    +pos-set(absolute, zero, 0, 0)
+    width: 100%
+    height: 100%  
+  
+  +breakpoint-min($min-width-xl)
+    .decoration--under
+      min-height: 1000px // 至少要有視差捲動背景圖的高度不然圖片會被吃掉
+      +bg-set(url("~event/3rd/e-main/components/bg-decoration/bg-decoration-web.jpg"), auto)
+      .decoration__block
+        display: none
+
+@keyframes breathing-light
+  0%
+    filter: brightness(50%)
+  50%
+    filter: brightness(110%)
+  100%
+    filter: brightness(110%)

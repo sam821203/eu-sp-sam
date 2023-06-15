@@ -1,0 +1,72 @@
+.bg-flower-container
+  +pos-set(fixed, zero, 0%, 0%)
+  height: 100vh
+  width: 100%
+  max-width: 100%
+  overflow: hidden
+  pointer-events: none
+  >div
+    display: block
+    +pos-set(absolute, zero, 0%, 0%, 0%, 0%)
+    width: 100%
+
+.promo__box--fore
+  animation: falling-down linear infinite
+
+.promo__box--middle
+  transform: translate3d(0, -100%, 0)
+  animation: falling-down-2 linear infinite
+
+.promo__box--back
+  transform: translate3d(0, -100%, 0)
+  animation: falling-down-3 linear infinite
+
+.foreground
+  background-image: url(utils/bg-decoration-instance/css-flower/flower-foreground.png)
+  animation-duration: 52s
+
+.middleground 
+  background-image: url(utils/bg-decoration-instance/css-flower/flower-middleground.png)
+  animation-duration: 28s
+
+.background 
+  background-image: url(utils/bg-decoration-instance/css-flower/flower-background.png)
+  animation-duration: 20s
+
+
+.delay--first
+  animation-delay: 5.5s
+  animation-duration: 20s
+
+.delay--second
+  animation-delay: 10s
+
+.delay--third
+  animation-delay: 15s
+
+
+@keyframes falling-down 
+  0% 
+    background-position: 0 0
+    opacity: 0
+  10%, 90%
+    opacity: 1
+  100% 
+    background-position: 100% 150vh
+    opacity: 0
+
+
+@keyframes falling-down-2
+  0% 
+    transform: translate3d(0, -100%, 0)
+  100% 
+    transform: translate3d(15%, 100%, 0)
+
+
+@keyframes falling-down-3
+  0% 
+    transform: translate3d(0, -100%, 0)
+  50%
+    transform: translate3d(-10%, 0%, 0)
+  100% 
+    transform: translate3d(15%, 100%, 0)

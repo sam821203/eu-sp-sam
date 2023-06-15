@@ -1,0 +1,39 @@
+.promo__group--w2m2
+  .promo__wrap
+    &:nth-child(odd)
+      background-color: $gray-deep-light
+    &:nth-child(even)
+      background-color: $main-e-background-color-1st
+    .good__wrap
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+      &.animated
+        animation: down-open 2s both
+      &--col1
+        li
+          flex: 1 0 100%
+          &:hover,
+          &:active
+            img
+              filter: brightness(115%) contrast(120%) 
+      &--col2
+        li
+          flex: 0 1 50%
+          &:hover,
+          &:active
+            img
+              filter: brightness(105%) contrast(110%)
+
+    // +breakpoint-min($min-width-lg)
+    //   .good__wrap
+    //     li
+    //       +flex(0, 0, 23.9%)
+
+@keyframes down-open
+  from
+    transform: translateY(8%)
+    opacity: 0
+  to
+    transform: translateY(0)
+    opacity: 1

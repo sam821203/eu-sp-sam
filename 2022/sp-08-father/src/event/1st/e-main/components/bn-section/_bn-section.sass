@@ -1,0 +1,40 @@
+.promo__group--bn-section
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__item
+    &--bg
+      +pos-set(absolute, under, 6%, 2.5%)
+      width: 95%
+      transform: translateY(50%)
+      +breakpoint-min($min-width-xl)
+        top: 50px
+        left: calc(50% - 430px)
+      &.active
+        animation: father-enlarge 1s ease-out 1
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .promo__wrap
+    +bg-set(url("~event/1st/e-main/components/bn-section/bg-bn-section.png"), 100%)
+    margin-top: 37.5%
+    +breakpoint-min($min-width-xl)
+      margin-top: 330px
+    .promo__zone
+      +aspect-ratio(952, 581)
+      .promo__block
+        padding: 21% 1.5% 0
+        .promo__box
+          cursor: pointer
+          img
+            width: 100%
+            +breakpoint-min($min-width-xl)
+              width: auto
+          &:hover
+            transition: all 0.6s ease
+            transform: translateY(-1%)
+            filter: brightness(1.2)
+
+@keyframes father-enlarge
+  0%, 100%
+    transform: scale(1)
+  50%
+    transform: scale(1.1)

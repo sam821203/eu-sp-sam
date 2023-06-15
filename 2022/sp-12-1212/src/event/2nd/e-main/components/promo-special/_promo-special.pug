@@ -1,0 +1,90 @@
+-
+  var promoSpecialData = [
+    { // 1
+      link: "https://media.etmall.com.tw/sp/19733/m/index.html#Taichung",
+      imgSrc: "event/2nd/e-main/components/promo-special/items/item-p-special-1.png",
+      alt: "最高回饋20%"
+    },
+    { // 2
+      link: "https://media.etmall.com.tw/sp/19733/m/index.html#citi",
+      imgSrc: "event/2nd/e-main/components/promo-special/items/item-p-special-2.png",
+      alt: "最高回饋15%"
+    },
+    { // 3
+      link: "https://media.etmall.com.tw/sp/19581/m/index.html",
+      imgSrc: "event/2nd/e-main/components/promo-special/items/item-p-special-3.png",
+      alt: "最高回饋11%"
+    },
+    { // 4
+      link: "https://media.etmall.com.tw/sp/19733/m/index.html#esun",
+      imgSrc: "event/2nd/e-main/components/promo-special/items/item-p-special-4.png",
+      alt: "最高回饋10%"
+    },
+  ]
+
+-
+  var promoSpecialSlider = [
+    { // 1
+      link: "https://media.etmall.com.tw/sp/19733/m/index.html#one",
+      imgSrc: "event/2nd/e-main/components/promo-special/items/bn-p-special-1.png",
+      alt: "單件商品滿$1,000送$100"
+    },
+    { // 2
+      link: "https://media.etmall.com.tw/sp/19733/m/index.html#sinopac",
+      imgSrc: "event/2nd/e-main/components/promo-special/items/bn-p-special-2.png",
+      alt: "累積分期滿$12,000送$1,200"
+    },
+    { // 3
+      link: "https://media.etmall.com.tw/sp/18972/m/index.html",
+      imgSrc: "event/2nd/e-main/components/promo-special/items/bn-p-special-3.png",
+      alt: "週四《玉山數位e卡 》最高享10%現金回饋"
+    },
+    { // 4
+      link: "https://media.etmall.com.tw/sp/19733/m/index.html#union",
+      imgSrc: "event/2nd/e-main/components/promo-special/items/bn-p-special-4.png",
+      alt: "累積分期滿$22,000送$2,000"
+    },
+    { // 5
+      link: "https://media.etmall.com.tw/sp/19733/m/index.html#mega",
+      imgSrc: "event/2nd/e-main/components/promo-special/items/bn-p-special-5.png",
+      alt: "累積分期滿$10,000送$1,000"
+    },
+    { // 6
+      link: "https://media.etmall.com.tw/sp/19733/m/index.html#sunnybank",
+      imgSrc: "event/2nd/e-main/components/promo-special/items/bn-p-special-6.png",
+      alt: "單件商品滿$3,000送$300"
+    },
+  ]
+
+section.promo__group.promo-special.m-bottom--md(data-title="銀行/支付")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--title
+        img(src="event/2nd/e-main/components/promo-special/decor-promo-sp-title.png", alt="")
+      .decor__item.decor__item--left
+        img(src="event/2nd/e-main/components/promo-special/decor-promo-sp-left.png", alt="")
+      .decor__item.decor__item--right
+        img(src="event/2nd/e-main/components/promo-special/decor-promo-sp-right.png", alt="")
+      .decor__item.decor__item--bottom
+        img(src="event/2nd/e-main/components/promo-special/decor-promo-sp-bottom.png", alt="")
+      .decor__item.decor__item--gift1
+        img(src="event/2nd/e-main/components/promo-special/decor-promo-sp-gift1.png", alt="")
+      .decor__item.decor__item--gift2#decorPromoSpecialGift2
+        img(src="event/2nd/e-main/components/promo-special/decor-promo-sp-gift2.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          ul.event__block
+            each data, index in promoSpecialData
+              li(id="promoSpecialItem" + (index + 1))
+                a(href= data.link, title=data.alt)
+                  img(src= data.imgSrc, alt=data.alt)
+          .promo__slider
+            .slider__wrap
+              .swiper-container#promoSpReady
+                ul.swiper-wrapper
+                  each data in promoSpecialSlider
+                    li.swiper-slide
+                      a(href= data.link, title=data.alt)
+                        img(src= data.imgSrc, alt=data.alt)
+

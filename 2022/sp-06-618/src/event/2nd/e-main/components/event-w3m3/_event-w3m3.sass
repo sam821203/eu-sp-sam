@@ -1,0 +1,83 @@
+.promo__group--w3m3
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__wrap
+    // +pos-set(relative, under)
+    pointer-events: none
+    .decor__item
+      &--bg
+        +pos-set(absolute, under, 6%, 2.5%)
+        width: 95%
+        +breakpoint-min($min-width-xl)
+          left: calc(50% - 458px)
+      &--title
+        +pos-set(absolute, zero, 0%, 23%)
+        width: 60%
+        +breakpoint-min($min-width-xl)
+          left: calc(50% - 255px)
+      &--left
+        +pos-set(absolute, base, 2%, 9%)
+        width: 15%
+        animation: flash-item 1s steps(2) infinite
+        +breakpoint-min($min-width-xl)
+          top: 40px
+          left: calc(50% - 380px)
+      &--right
+        +pos-set(absolute, base, 4%)
+        right: 9%
+        width: 10%
+        animation: flash-item 2s 1s steps(2) infinite
+        +breakpoint-min($min-width-xl)
+          top: 50px
+          right: calc(50% - 355px)
+      +breakpoint-min($min-width-xl)
+        width: auto
+  .promo__wrap
+    .promo__zone
+      +aspect-ratio(960, 1550)
+      .promo__block
+        +pos-set(absolute, base, 0%, 0%)
+        .event__wrap
+          padding-top: 29%
+          +breakpoint-min($min-width-xl)
+            padding-top: 260px
+          .good__wrap
+            display: flex
+            flex-wrap: wrap
+            justify-content: center
+            li
+              margin: .8%
+              width: 29%
+              a
+                transition: transform 0.5s
+                &:hover
+                  // transform: scale(1.05)
+                  filter: brightness(120%)
+                &.active
+                  animation: enlarge-light 1s 1
+      // .promo__block
+    
+
+@keyframes enlarge
+  0%
+    transform: scale(1) translateZ(0)
+  50%
+    transform: scale(1.1) translateZ(-50px)
+  100%
+    transform: scale(1) translateZ(0)
+
+@keyframes flash-item
+  0%, 23%, 30%, 100%
+    opacity: 1
+  20%, 25%
+    opacity: .3
+
+
+@keyframes enlarge-light
+  0%
+    transform: scale(1)
+  50%
+    transform: scale(1.05)
+    filter: brightness(130%)
+  100%
+    transform: scale(1)

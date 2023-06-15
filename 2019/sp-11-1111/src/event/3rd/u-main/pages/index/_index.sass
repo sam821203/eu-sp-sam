@@ -1,0 +1,83 @@
+// // ==========================================================================
+// // Plugins
+// // ==========================================================================
+// // @import "vendors/animate"
+@import "~vendors/style/swiper-slider-custom"
+
+// // ==========================================================================
+// // components
+// // ==========================================================================
+ㄉˋ
+// hero section
+// ===========================
+@import "~event/3rd/u-main/components/hero-section/_hero-section"
+@import "~event/3rd/u-main/components/background-decoration/_background-decoration"
+
+// other components
+// ===========================
+@import "~event/3rd/u-main/components/hero-small-slider/_hero-small-slider"
+@import "~event/3rd/u-main/components/goods-slider-flip/_goods-slider-flip"
+@import "~event/3rd/u-main/components/promo-event/_promo-event"
+@import "~event/3rd/u-main/components/scroll-x-section/_scroll-x-section"
+@import "~event/3rd/u-main/components/tab-section/_tab-section"
+@import "~event/3rd/u-main/components/countdown-section/_countdown-section"
+@import "~event/3rd/u-main/components/bn-special/_bn-special"
+@import "~event/3rd/u-main/components/game-map/_game-map"
+
+// @import "~components/goods-slider/_goods-slider"
+// @import "~components/video-section/_video-section.sass"
+// @import "~components/bank-section/_bank-section"
+// @import "~components/event-w4m2/_event-w4m2"
+// @import "~components/bn-event/_bn-event"
+// // ==========================================================================
+// // Page
+// // ==========================================================================
+body
+  +pos-set(relative, zero)
+  background-color: $main-e-background-color3
+  +breakpoint-min($min-width-xl)
+    .icon__home
+      right: -50px
+
+.parallax__background
+  +pos-set(absolute, under)
+  padding-top: 98%
+  width: 100%
+  +bg-set(url("~event/3rd/u-main/pages/index/bg-960.png"), 100%)
+  // transform: translateY(-10%)
+  //animation: flash-burst 4s infinite
+  pointer-events: none
+  will-change: scroll-position
+
+  +breakpoint-min($min-width-xl)
+    //padding-top: 26.17%
+    height: 610px
+    +bg-set(url("~event/3rd/u-main/pages/index/bg.png"), 2560px 610px, center , top)
+
+.sp__wrap
+  +pos-set(relative, base)
+
+.sp__wrap a
+  display: block
++breakpoint-min($min-width-xl)
+  .bg__mask
+    +bg-set(url("~event/3rd/u-main/pages/index/bg-mask.png"), 2560px 610px)
+    position: absolute
+    top: 0
+    left: 50%
+    transform: translateX(-50%)
+    overflow: hidden
+    width: 100%
+    height: 610px
+    z-index: 2
+    
+  .bg__decration-3
+    +bg-set(url("~event/3rd/u-main/components/background-decoration/bg-decoration-3.png"), 2560px 759px)
+    position: absolute
+    top: 0
+    left: 50%
+    transform: translateX(-50%)
+    overflow: hidden
+    width: 100%
+    height: 759px
+    z-index: 2

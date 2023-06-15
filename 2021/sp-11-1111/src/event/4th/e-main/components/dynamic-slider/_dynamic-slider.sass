@@ -1,0 +1,28 @@
+.promo__group--dynamic-slider
+  overflow: hidden
+  .promo__wrap
+    +aspect-ratio(960, 682)
+    +bg-set(url("event/3rd/e-main/components/dynamic-slider/bg-dynamic-slider.png?323"), 100%)
+    margin-top: -10%
+  .promo__zone
+    +pos-set(relative, zero)
+    padding: 0% 10% 11%
+  .promo__title
+    .decoration--dynamic-slider
+      .decoration--title
+        margin: 0% auto
+        width: 60%
+      .decoration__box--top
+        margin-top: -26%
+        padding-left: 11%
+
+  .promo__zone
+    .promo__block
+      margin: 8% 5% 0
+      +breakpoint-min($min-width-xl)
+        margin-top: 10%
+      .product__block
+        .product__img
+          border-radius: 0
+        .product__text
+          border-radius: 0

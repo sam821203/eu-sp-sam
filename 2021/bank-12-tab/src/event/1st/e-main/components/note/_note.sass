@@ -1,0 +1,19 @@
+.filter__note
+  padding: 3%
+  color: $gray-deep-light
+  background-color: $gray-medium
+  font-size: 16px
+  ol
+    margin-left: 2.5%
+    padding-left: 2.5%
+    list-style: decimal
+    ol
+      margin-left: 2.5%
+      list-style: lower-alpha
+    li
+      margin-bottom: 0.5em
+  +breakpoint-min($min-width-lg)
+    padding: 2%
+    font-size: 20px
+    ol ol
+      margin-left: 0.5%

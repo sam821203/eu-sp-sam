@@ -1,0 +1,28 @@
+.header__sub-nav
+  background-color: $main-color-yellow-2
+  .sub-nav__wrap
+    padding: 2.5% 5%
+    +breakpoint-min($min-width-lg)
+      position: absolute
+      z-index: map-get($zindex, zero)
+      top: 10px
+      right: 100px
+      padding: 10px 20px
+
+  .sub-nav__item
+    display: inline-block
+    &:first-child
+      display: none
+      +breakpoint-min($min-width-md)
+        display: inline-block
+
+    &:not(:last-child)
+      margin-right: 15px
+      +breakpoint-max($max-width-xxs)
+        margin-right: 3%
+  a
+    color: $main-color-blue-2
+    font-size: 16px
+    &:hover,
+    &.active
+      color: $main-color-pink-1

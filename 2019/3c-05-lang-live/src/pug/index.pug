@@ -1,0 +1,87 @@
+doctype html
+html(lang='zh-Hant-TW')
+  head
+    meta(name='viewport', content="width=device-width, initial-scale=1")
+
+  body
+    main#spWrap.sp__wrap
+      .sp--1260
+        #iconHome
+        header.header__wrap--sp.m-bottom--sm
+          a.logo(href="https://www.etmall.com.tw/")
+          .title__wrap--header
+            h1.pic
+              img(src="../img/title.png", alt="浪我們相約買個夠")
+      .landing__wrap
+        section.slider__wrap
+          #gallerySliders.gallery__sliders
+            each obj in data
+              .slide__item
+                .sp--1260
+                  .title__wrap--slide.m-bottom--sm
+                    .title__box
+                      .title__date.m-right-px--sm(style="background-color:" + obj.color)
+                        //- .background--decoration(style="background-color:" + obj.secondColor)
+                        //- .foreground--decoration(style="background-color:" + obj.color)
+                        div
+                          span 4
+                          span /
+                          span= obj.date 
+                      .title__slogan
+                        h2
+                          - var bgGradient = "linear-gradient(transparent, transparent 30%, " + obj.color + ' 30%, ' + obj.color + " 75%, transparent 75%, transparent 100%)"
+                          div
+                            span(style="background-image:" + bgGradient)= obj.title[0]
+                          div
+                            span(style="background-image:" + bgGradient)= obj.title[1]
+                  .item__box--sp.m-right--sm
+                    .item__image
+                      a(href= obj.item.href, title="明星商品")
+                        img(src= obj.item.src, alt="明星商品")
+                    .item__video--mobile
+                      - var colorBorder = "3px solid " + obj.color  
+                      a(href= obj.video.src, title="點我觀看", style="border: " + colorBorder)
+                        img(src= obj.video.img, alt="超夯直播前導預告")
+                  #thumbBox.thumb__box.m-bottom--lg
+                    img.card--current(src= obj.thumbs, alt="介紹卡片")
+                .marquee__wrap
+                  .sp--1260
+                    .marquee__info 系統
+                    .marquee__box
+                      div= obj.marquee[0]
+                      div= obj.marquee[1]
+                      div= obj.marquee[2]
+          .sp--1260
+            #slickBtnPrev.slick-button-prev.slick-button-custom
+            #slickBtnNext.slick-button-next.slick-button-custom
+
+        section.item__video--desktop
+          .sp--1260
+            #galleryVideos.gallery__videos
+              each obj, i in data
+                .slide__item
+                  .video__box
+                    .background--decoration
+                      .circle.circle--outer(style="background-color:" + obj.color)
+                      .circle.circle--inner(style="background-color:" + obj.secondColor)
+                    .video__main
+                      - var videoID = 'video' + (i + 1)
+                      iframe(id= videoID, class="video--youtube", src= obj.video.src + '?enablejsapi=1&html5=1', frameborder="0", allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;", allowfullscreen)
+
+      footer
+        section.bn-w4m2.sp--1260
+          ul.banner__wrap
+            li.banner__item
+              a(href="#act01", title="浪Live新會員送浪花")
+                img(src="../img/promo_3.png", alt="浪Live新會員送浪花")
+            li.banner__item
+              a(href="#act02", title="東森新會員送東森幣")
+                img(src="../img/promo_2.png", alt="東森新會員送東森幣")
+            li.banner__item
+              a(href="#act04", title="觀看直播享優惠")
+                img(src="../img/promo_1.png", alt="觀看直播享優惠")
+            li.banner__item
+              a(href="#act03", title="訂單登錄抽好禮")
+                img(src="../img/promo_4.png", alt="訂單登錄抽好禮")
+
+    script(src="../js/bundle.js")

@@ -1,0 +1,19 @@
+@import "~layout/logo/_logo.sass"
+@import "~layout/share-tools/_share-tools"
+@import "~layout/nav/_nav"
+
+.sp__header
+  +pos-set(sticky, twenty, 0)
+  width: 100%
+  background-color: $gray-deep-dark
+  .header__zone
+    +pos-set(relative, zero)
+
+  .header__block
+    +display-flex(">div")
+    justify-content: space-between
+    align-items: center
+    padding: 2.5% 5%
+
+    +breakpoint-min($min-width-lg)
+      padding: 10px 20px

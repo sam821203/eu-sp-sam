@@ -1,0 +1,306 @@
+<meta name="viewport" content="width=device-width">
+<style>
+  /* reset */
+  /* ======================================== */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  *:before, *:after {
+    box-sizing: border-box; }
+  a {
+    display: block;
+    text-decoration: none;
+  }
+  ul {
+    list-style: none;
+  }
+  img {
+    width: 100%;
+    border: 0;
+    vertical-align: middle;
+  }
+  article,
+  main,
+  nav,
+  section {
+    display: block;
+  }
+  body {
+    margin:0;
+    background-color:#f9cf2f;
+	font-family: PingFangTC-regular, Roboto, "LiHei Pro", "Source Han Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, "Microsoft JhengHei", sans-serif;
+  }
+  .sp--960 {
+    position: relative;	  	  
+    z-index: 0;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* 主視覺 */
+  /* ======================================== */
+  .logo a,
+  .sp__visual a{
+    display: block;
+    /* 測試用
+    border: 1px solid #f00;  */
+  }
+  
+  /* 調整logo位置 */  
+  .logo {
+    position: absolute;
+    z-index: 1;
+    top: 1%;
+    left: 1%;
+    width: 30%;
+    max-width: 220px;
+  }  
+  
+  /* 設定背景 */
+  .sp__main {
+    background: url(bg.jpg) center 0 no-repeat;
+  }
+  /* 設定前景 */
+  .sp__visual {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+  }
+  .visual__anchor,
+  .visual__main,
+  .visual__nav {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .visual__anchor {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }
+  .visual__main a,
+  .visual__nav a {
+    flex-grow: 1;
+  }
+  /* 設定高度，記得總和要100% */
+  /* 主視覺 */
+  .visual__main {
+    height: 50%;
+  }
+  /* 各nav */
+  .visual__nav.nav1 {
+    height: 12%;
+  } 
+  .visual__nav.nav2 {
+    height: 29%;
+  }     
+  .visual__nav.nav3 {
+    height: 9%;
+  }      
+  /* 如果需要個別設定每塊寬度(可不設) */
+  /* 主視覺 */
+  /* 如果設100%後面的就會掉下去 */
+  .visual__main a:nth-child(1) {
+    flex-grow: 0;
+    width: 100%;
+  }
+  /* 各視覺nav */
+  .visual__nav.nav1 a:nth-child(1) {
+    flex-grow: 0;
+    width: 70%;
+  }  
+  .visual__nav.nav1 a:nth-child(2) {
+    flex-grow: 0;
+    width: 30%;
+  }     
+  .visual__nav.nav2 a:nth-child(1) {
+    flex-grow: 0;
+    width: 100%;
+  } 
+  .visual__nav.nav3 a:nth-child(1) {
+    flex-grow: 0;
+    width: 100%;
+  }     
+  /* countdown */
+  /* ======================================== */
+  .countdown {
+  	position: relative;
+    width: 70%;
+    overflow: hidden;
+  }
+  .timer {
+    position: absolute;
+    top: calc(41% - 1em);
+    left: calc(75% - 1em);
+    font-size: 4vw;
+    font-weight: bold;
+  }
+  @media screen and (min-width: 768px) {
+    .timer {
+      top: calc(38.4% - 1em);
+      left: calc(75.5% - 1em);
+    }
+  }
+  @media screen and (min-width: 960px) {
+    .timer {
+      font-size: 40px;
+    }
+  }
+  /* 數字+冒號的樣式 */
+  .timer span {
+    display: inline-block;
+    color: #fff;
+    vertical-align: middle;
+    transform:translateY(-4px);
+  }
+  .date--out-range {
+    position: relative;
+    z-index: 0;
+  }
+  .date--out-range:before {
+    content: '>';
+    position: absolute;
+    z-index: 1;
+    top: 8px;
+    left: -12px;
+    font-size: 24px;
+    font-weight: normal;
+  }
+  /* 數字中的冒號"："的樣式 */
+  .timer span:nth-child(even) {
+    padding-left: 2px;
+    padding-right: 2px; 
+    font-size: 4vw;
+    font-weight: normal;
+  }
+  @media screen and (min-width: 960px) {
+    .timer span:nth-child(even) {
+      font-size: 40px;
+    }
+  }
+
+</style>
+<!--[if IE 9]>
+<style>
+  .visual__anchor,
+  .visual__main,
+  .visual__nav {
+    -js-display: flex;
+  }
+  .visual__anchor {
+    position: absolute !important;
+    height: 114.28% \ ;
+  }
+  .visual__main a,
+  .visual__nav a {
+    background-color: rgba(0, 0, 0, .0);
+    /*height: 100% !important \ ;*/
+  }
+  .build__anchor {
+    -js-display: flex;
+  }
+  .build-nav__item {
+    width: 12.5% \ ;
+  }
+  .banner__wrap {
+    -js-display: flex;
+    width: 100% \ ;
+  }
+  .bn-w2m1 .banner__item {
+    width: 50% \ ;    
+  }
+  .bn-w4m2 .banner__item {
+    width: 25% \ ;
+  }
+  .bn-w2m1.item--3 li:last-child {
+    width: 100% \ ;
+  }
+  .bn-w3m1 .banner__item {
+    width: 33.33% \ ;    
+  }
+  @media screen and (max-width: 1024px) {
+    .bn-w2m1 .banner__item {
+      width: 100% \ ;
+    }
+    .bn-w4m2 .banner__item {
+      width: 50% \ ;
+    }
+    .bn-w3m1 .banner__item {
+      width: 100% \ ; 
+    }
+  }
+</style>
+<![endif]-->
+<div id="spWrap" class="sp__wallper">
+  <!-- 旅遊置頂bar -->
+  <div id="barHome"></div>
+  <!-- 主視覺 -->
+  <main class="sp__main">
+    <div id="iconHome" class="sp--960">
+      <div class="sp__visual">
+      <!-- logo
+      <a href="https://www.etmall.com.tw" class="logo"><img src="ehs-logo.png" alt="東森購物"></a> -->
+        <div class="visual__anchor">
+          <div class="visual__main">
+          	<a></a>
+          </div>
+          <div class="visual__nav nav1">
+            <div class="countdown">
+              <div id="timer" class="timer"></div>
+            </div>
+            <a href="#note_top"></a>
+          </div>
+          <div class="visual__nav nav2">
+            <a></a>
+          </div>
+          <div class="visual__nav nav3">
+            <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201905/SP_1107830/w/index.html" target="_blank"></a>
+          </div>
+        </div>
+        <img src="index.jpg">
+      </div>
+
+      <div id="productWrap" class="product__wrap"></div>
+    </div>
+  </main>
+  <section class="countdown__wrap">
+  </section>    
+</div>  
+<!--[if IE 9]>
+  <script src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106742/flexibility.js"></script>
+  <script>flexibility(document.documentElement);</script>
+<![endif]-->
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<!-- 東森浮水印 -->
+<script id="scriptIconFloat" src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107916/float-icon.js"></script>
+<!-- 森森浮水印
+<script id="scriptIconFloat" src="https://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1104381/float-icon.js"></script> -->
+<!-- 旅遊置頂bar
+<script id="scriptAddBn" src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106742/add-bn.js"></script> -->
+<script id="data" src="data.js"></script>
+<script id="generateData" src="generateData.js"></script>
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script>$('a[href^="#"]').on('click',function(e){var target=$('a[name='+this.getAttribute('href').split('#')[1]+']')?$('a[name='+this.getAttribute('href').split('#')[1]+']'):$(this.getAttribute('href'));if(target.length){e.preventDefault();$('html,body').stop().animate({scrollTop:target.offset().top},500);}});</script>
+<script>
+  function goTop () {
+    var $goTop = $('#goTop');
+    $(window).on('scroll', function(){
+      var scrollHeight = $(this).scrollTop();
+      if(scrollHeight > 300) {
+        $goTop.fadeIn();
+      } else {
+        $goTop.fadeOut();
+      }
+    });
+    $(window).trigger('scroll');
+    $goTop.on('click', function(){
+      $('html,body').stop().animate({scrollTop:0},500);
+    });
+  }
+  goTop();
+</script>
+

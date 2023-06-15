@@ -1,0 +1,83 @@
+-
+  var promoSliderItem = [
+    {
+      link: "https://www.etmall.com.tw/i/3337316" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p1.png",
+      alt: "買就送東風濕紙巾",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2749039" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p2.png",
+      alt: "石墨烯抗菌高腰內褲送防塵袋",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3407686" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p3.png",
+      alt: "超輕量防曬外套送運動脖圍",
+    },
+    {
+      link: "https://www.etmall.com.tw/c3/45113" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p4.png",
+      alt: "買一送一．共2組",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3391037" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p5.png",
+      alt: "買一送一再加碼",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3286763" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p6.png",
+      alt: "買一送一．共2瓶",
+    },
+    {
+      link: "https://www.etmall.com.tw/c3/130453" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p7.png",
+      alt: "禾聯指定送氣炸鍋",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3365950" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p8.png",
+      alt: "東森獨家色電鍋超值組",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3403719" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p9.png",
+      alt: "拉桿式行動KTV+掃地機器人",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3400263" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p10.png",
+      alt: "小米手環6兩入組",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3273645" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p11.png",
+      alt: "任天堂 Switch 寶可夢 晶燦鑽石／明亮珍珠-雙包裝(中文版)",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3397876" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p12.png",
+      alt: "Apple音樂狂想組",
+    },
+  ]
+
+
+section.promo__group.promo__group--promo-slider.m-top--sm(data-title="春季邂購")
+  .layout--main
+    .decor__wrap
+      .decor__item#decorPromoSlider
+        img(src="event/1st/e-main/components/promo-slider/decor-promo-slider.png", alt="")
+      .decor__item#decorPromoSlider2
+        img(src="event/1st/e-main/components/promo-slider/decor-promo-slider-2.png", alt="")
+      .decor__item#decorPromoSlider3
+        img(src="event/1st/e-main/components/promo-slider/decor-promo-slider-3.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          .promo__slider.swiper-container#promoSliderItem
+            ul.swiper-wrapper
+              each data in promoSliderItem
+                li.swiper-slide
+                  a(href= data.link, title=data.alt)
+                    img(src= data.imgSrc, alt=data.alt)

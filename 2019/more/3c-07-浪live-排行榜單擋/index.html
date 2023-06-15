@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>排行榜</title>
+</head>
+<style>
+    /* ============= reset =============*/
+    * {
+        margin: 0;
+        padding: 0;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    *:before, *:after {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    a {
+        display: block;
+        text-decoration: none;
+    }
+
+    h1 {
+        line-height: 0;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    img {
+        border: 0;
+    }
+
+    main, header, footer, section {
+        display: block;
+    }
+
+    a:focus,
+    a:active,
+    a:hover {
+        outline: 0;
+    }
+
+    .clearfix:after {
+        content: '';
+        display: block;
+        clear: both;
+        *zoom: 1;
+    }
+
+    body {
+        font-family: PingFangTC-regular, "LiHei Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Source Han Sans TC", "Microsoft JhengHei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        background-color: #26023c;
+    }
+
+    /* main--block */
+    .leader__board {
+        background-image: url(down-bg--m.jpg);
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: 100% auto;
+    }
+
+    h1.main__title img {
+        width: 100%;
+        max-width: 640px;
+    }
+
+    h1.main__title,
+    .ranking__wrap__all {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .ranking__wrap {
+        position: relative;
+        width: 100%;
+        height: calc(100vw * 0.2);
+        margin: calc(100vw * 0.01) auto 0 auto;
+    }
+
+    .ranking {
+        position: absolute;
+        top: 0;
+        left: 1%;
+        z-index: 1;
+        width: 19%;
+    }
+
+    .ranking img {
+        width: 96%;
+    }
+
+    .contestant__wrap {
+        position: absolute;
+        top: 0;
+        z-index: 1;
+        left: 21%;
+        background: url(board-1.png);
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: 100%;
+        width: 77%;
+        height: calc(100vw * 0.2);
+    }
+
+    .contestant__name,
+    .contestant__score {
+        margin-left: calc(100vw * 0.3);
+        text-align: left;
+        line-height: 1.4;
+        margin-top: 1%;
+    }
+
+    .contestant__name {
+        font-size: calc(100vw * 0.069);
+        color: #fff;
+    }
+
+    .contestant__score {
+        font-size: calc(100vw * 0.047);
+        color: #ffff00;
+    }
+
+    @media screen and (min-width: 640px) {
+        h1.main__title img,
+        .ranking img {
+            width: auto;
+        }
+
+        .leader__board {
+            background-image: url(down-bg.jpg);
+            background-size: 2560px 820px;
+        }
+
+        .ranking__wrap {
+            max-width: 640px;
+            height: 120px;
+            margin: 10px auto 0 auto;
+        }
+
+        .ranking {
+            left: 10px;
+        }
+
+        .contestant__wrap {
+            left: 145px;
+            height: 117px;
+            width: 468px;
+        }
+
+        .contestant__name,
+        .contestant__score {
+            margin-left: 182px;
+            line-height: 1.1;
+            margin-top: 2.5%;
+        }
+
+        .contestant__name {
+            font-size: 44px;
+        }
+
+        .contestant__score {
+            font-size: 26px;
+        }
+    }
+</style>
+<body>
+<section class="leader__board">
+    <h1 class="main__title">
+        <img src="board.png" alt="人氣銷售排行榜">
+    </h1>
+    <div class="ranking__wrap__all">
+        <div class="ranking__wrap">
+            <div class="ranking">
+                <img src="no1.png"/>
+            </div>
+            <div class="contestant__wrap">
+                <div class="contestant__name">茶米Debby</div>
+                <div class="contestant__score">銷售亮度：<span>9527000</span></div>
+            </div>
+        </div>
+
+        <div class="ranking__wrap">
+            <div class="ranking">
+                <img src="no2.png"/>
+            </div>
+            <div class="contestant__wrap">
+                <div class="contestant__name">茶米Debby</div>
+                <div class="contestant__score">銷售亮度：<span>9527000</span></div>
+            </div>
+        </div>
+
+        <div class="ranking__wrap">
+            <div class="ranking">
+                <img src="no3.png"/>
+            </div>
+            <div class="contestant__wrap">
+                <div class="contestant__name">茶米Debby</div>
+                <div class="contestant__score">銷售亮度：<span>9527000</span></div>
+            </div>
+        </div>
+
+        <div class="ranking__wrap">
+            <div class="contestant__wrap">
+                <div class="contestant__name">茶米Debby</div>
+                <div class="contestant__score">銷售亮度：<span>9527000</span></div>
+            </div>
+        </div>
+
+        <div class="ranking__wrap">
+            <div class="contestant__wrap">
+                <div class="contestant__name">茶米Debby</div>
+                <div class="contestant__score">銷售亮度：<span>9527000</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

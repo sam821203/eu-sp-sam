@@ -1,0 +1,32 @@
+.sp__visual a
+  display: block
+.sp__visual
+  +pos-set(relative, zero)
+.visual__anchor,
+.visual__main,
+.visual__nav
+  display: flex
+  flex-wrap: wrap
+  width: 100%
+.visual__anchor
+  +pos-set(absolute, base)
+  width: 100%
+  height: 100%
+.visual__main
+  height: 100%
+
+// .visual__main a
+  // border: 1px solid #f00
+
+.visual__main a:nth-child(1)
+  width: 100%
+  height: 60%
+.visual__main a:nth-child(2)
+  width: 33.33%
+  height: 40%
+.visual__main a:nth-child(3)
+  width: 33.33%
+  height: 40%
+.visual__main a:nth-child(4)
+  width: 33.33%
+  height: 40%

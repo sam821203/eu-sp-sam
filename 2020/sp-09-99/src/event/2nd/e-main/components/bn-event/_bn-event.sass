@@ -1,0 +1,48 @@
+.promo__group--bn-event
+  .promo__wrap
+    +pos-set(relative, zero)
+    padding: 20.5% 4.5% 7%
+    +bg-set(url(~event/2nd/e-main/components/bn-event/bg-bn-event.png), 100%)
+    .swiper-wrapper
+      justify-content: space-between
+    
+    +breakpoint-min($min-width-xl)
+      padding: 205px 45px 40px
+
+    // lazyLoad CSS start
+    .swiper-slide
+      width: 49.3%
+      a
+        +aspect-ratio(640, 280, relative, zero, span)
+        img
+          +pos-set(absolute, base, 0, 0)
+    // lazyLoad CSS end
+
+    .bn-event-pager
+      bottom: 7%
+      left: 50%
+      transform: translateX(-50%)
+      .swiper-pagination-bullet
+        margin: 0 2px
+        width: 6px
+        height: 6px
+        background-color: $gray-medium
+        opacity: .8
+        outline: 0
+      .swiper-pagination-bullet-active
+        background-color: $main-e-background-color-2nd-3
+        opacity: 1
+
+      +breakpoint-min($min-width-lg)
+        bottom: 30px
+        .swiper-pagination-bullet
+          margin: 0 6px
+          width: 12px
+          height: 12px
+
+      +breakpoint-min($min-width-xl)
+        bottom: 15px
+        .swiper-pagination-bullet
+          margin: 0 8px
+          width: 16px
+          height: 16px

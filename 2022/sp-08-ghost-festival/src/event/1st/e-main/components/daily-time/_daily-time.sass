@@ -1,0 +1,103 @@
+.promo__group--daily-time
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__item
+    &--left
+      +pos-set(absolute, zero, 4%, 3%)
+      width: 19%
+      &.active
+        animation: shakeX2 2s linear infinite
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 440px)
+    &--right
+      +pos-set(absolute, base, 7%)
+      right: 4%
+      width: 19%
+      +breakpoint-min($min-width-xl)
+        right: calc(50% - 450px)
+    &--item
+      +pos-set(absolute, zero, 0%)
+      right: 0%
+      width: 13%
+      transform-origin: left bottom
+      &.active
+        animation: ghost-scale 1.2s .2s ease-in-out infinite alternate
+      +breakpoint-min($min-width-xl)
+        top: 15px
+        right: calc(50% - 495px)
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/daily-time/bg-daily-time.png), 100%)
+    margin-top: 1%
+  .promo__zone
+    +aspect-ratio(961, 778)
+  .product__wrap
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    padding: 27.6% 4% 0%
+    > div
+      width: 33%
+      margin-bottom: 1.5%
+      &:nth-child(1)
+        .product__time
+          +bg-set(url(event/1st/e-main/components/daily-time/daily-time-hour-1.png), 100%)
+      &:nth-child(2)
+        .product__time
+          +bg-set(url(event/1st/e-main/components/daily-time/daily-time-hour-2.png), 100%)
+      &:nth-child(3)
+        .product__time
+          +bg-set(url(event/1st/e-main/components/daily-time/daily-time-hour-3.png), 100%)
+  .product__block
+    padding: 0 4%
+  .product--dynamic
+    width: 100%
+  .product__time
+    margin-left: auto
+    margin-right: auto
+    padding-bottom: 26%
+    width: 97%
+    filter: brightness(50%)
+    + .product
+      filter: brightness(50%)
+    &.active
+      filter: grayscale(0)
+      + .product
+        filter: grayscale(0)
+    +breakpoint-min($min-width-xl)
+      padding-bottom: 28%
+
+  .product--dynamic
+    .product__name
+      +pos-set(relative, zero)
+      font-size: 3.3vw
+      padding-top: 1%
+      height: 2.43em
+      +breakpoint-min($min-width-xl)
+        margin-bottom: 2%
+        padding-top: 3%
+        height: 2.83em
+        font-size: 22px
+
+  .product__price
+    span
+      &:last-child
+        font-size: 3.6vw
+        +breakpoint-min($min-width-xl)
+          font-size: 32px
+
+
+@keyframes shakeX2
+  0%, 50%, to
+    transform: translateZ(0)
+  5%, 15%, 25%, 35%, 45%
+    transform: translate3d(-5px, 0, 0)
+  10%, 20%, 30%, 40%
+    transform: translate3d(5px, 0, 0)
+
+@keyframes ghost-scale
+  0%, 80%
+    transform: scale(1.1)
+  40%
+    transform: scale(.7)

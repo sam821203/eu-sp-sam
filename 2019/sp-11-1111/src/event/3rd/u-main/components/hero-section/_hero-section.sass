@@ -1,0 +1,244 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero__wrap
+  +pos-set(relative, second)
+  overflow: hidden
+
+  .hero__zone
+    +pos-set(relative, zero)
+    padding-top: 60%
+
+    // decoration
+    .zone__decoration
+      will-change: scroll-position
+      &--middle
+        top: 2%
+        left: -5%
+        margin-top: 8%
+        width: 20%
+        &.animated
+          animation: ufo-m-1 2s 0.3s both, ufo-patrol 10s 4s infinite
+        img
+          animation: ufo-patrol 10s infinite
+      &--right
+        top: 0
+        right: 0
+        margin-top: 25%
+        width: 15%
+        &.animated
+          animation: ufo-r-1 2s 0.3s both
+        img
+          animation:  ufo-patrol-y 10s infinite
+        
+
+
+  .hero__block
+    +pos-set(absolute, zero, 0, 0)
+    width: 100%
+    height: 100%
+
+  .hero__box
+    +pos-set(relative, zero)
+    &.animated
+      animation: big-open 0.5s both
+    +breakpoint-min($min-width-xl)
+      padding-top: 0
+
+  .hero__promo-link
+    +pos-set(absolute, base, 3%, null, null, 6%)
+    width: 25%
+    transform-origin: right bottom
+    animation: shake-me 3.75s infinite
+
+  .hero__title
+    &--main
+      +pos-set(relative, zero)
+      padding: 0% 29% 0 6%
+    .title__decoration
+      top: 11.1%
+      left: 13%
+      margin: 0 auto
+      +aspect-ratio(790, 400, absolute)
+      width: 74%
+
+
+      +breakpoint-min($min-width-xl)
+        top: 10.5%
+        left: 8.7%
+        width: 82.6%
+
+  .promo__block
+    +pos-set(relative, second)
+    min-height: calc(100vw * 0.8)
+    +breakpoint-min($min-width-xl)
+      min-height: 180px
+      margin-top: -100px
+  .promo__event·
+    +pos-set(absolute, second, 0, 50%, null, null)
+    width: 96%
+    transform: translateX(-50%)
+    +breakpoint-min($min-width-xl)
+      +pos-set(absolute, second, 0, 50%, null, null)
+
+  .goods__wrap--flip
+    //+pos-set(absolute, second, 0, null, null, 2%)
+    width: 40%
+    margin-left: calc(100vw * 0.55)
+    margin-top: calc(100vw * -0.2)
+    +breakpoint-min($min-width-xl)
+      width: auto
+      margin-left: 528px
+      margin-top: -352px
+
+  +breakpoint-min($min-width-xl)
+    .hero__zone
+      padding-top: 610px
+
+    .hero__title
+      &--main
+        padding: 0 280px 0 55px
+        text-align: center
+        transform: scale(1) translateY(0)
+
+    .goods__wrap--flip
+      margin-left: calc(50%)
+      //width: auto
+    .block__decoration
+      // &--main
+      //   top: -55px
+      //   left: 27%
+      //   padding-top: 50%
+      //   width: 50%
+      // &--sub
+      //   top: -155px
+      //   left: 17.5%
+      //   padding-top: 70%
+      //   width: 70%
+
+    .hero__promo-link
+      top: 10px
+      right: 90px
+
++key-rotate-self(360)
++key-rotate-self(-45, key-rotate-self-2)
++key-rotate-self(45, key-rotate-self-3)
+
+@keyframes big-open
+  from
+    transform: scale(5)
+  to
+    transform: scale(1)
+
+
+@keyframes flash-breath
+  from
+    filter: brightness(80%)
+  to
+    filter: brightness(250%)
+
+@keyframes scale-breath
+  from
+    transform: rotate(0) scale(1)
+  25%
+    transform: rotate(90deg) scale(0.8)
+  50%
+    transform: rotate(180deg) scale(1)
+  75%
+    transform: rotate(270deg) scale(0.9)
+  to
+    transform: rotate(360deg) scale(1)
+
+
+@keyframes shake-me
+  from
+    transform: rotate(0)
+  20%
+    transform: rotate(0)
+  21.5%
+    transform: rotate(5deg)
+  23%
+    transform: rotate(0)
+  24.5%
+    transform: rotate(-4deg)
+  26%
+    transform: rotate(0)
+  27%
+    transform: rotate(3deg)
+  28%
+    transform: rotate(0)
+  28.5%
+    transform: rotate(-2deg)
+  29%
+    transform: rotate(0)
+  to
+    transform: rotate(0)
+
+@keyframes ufo-patrol
+  from 
+    transform: translateX(0)
+  30%
+    transform: translateX(10%)
+  40%
+    transform: translateX(-10%)
+  50%
+    transform: translateX(10%)
+  60%
+    transform: translateX(0)
+  to
+    transform: translateX(0)
+
+@keyframes ufo-patrol-y
+  from 
+    transform: translateY(0)
+  25%
+    transform: translateY(10%)
+  50%
+    transform: translateY(-10%)
+  75%
+    transform: translateY(10%)
+  100%
+    transform: translateY(0)
+
+
+
+@keyframes bg-animation
+  0%
+    background-position-y: 0%
+    opacity: 0
+  0.1%
+    background-position-y: 0%
+    opacity: 1
+  20%
+    background-position-y: 100%
+    opacity: 1
+  20.1%
+    background-position-y: 100%
+    opacity: 0
+  100%
+    background-position-y: 0%
+    opacity: 0
+
+
+
+@keyframes ufo-m-1
+  from
+    transform: translate(-40vw, 2vh)
+  53%
+    transform: translate(2vw, 4vh)
+  74%
+    transform: translate(10vw, 8vh)  
+  to
+    transform: translate(0, 0)
+  
+  
+@keyframes ufo-r-1
+  from
+    transform: translate(36vw, -10vh)
+
+  63%
+    transform: translate(-10vw, 0vh)
+  86%
+    transform: translate(-5vw, 2vh)
+  to
+    transform: translate(0, 0)

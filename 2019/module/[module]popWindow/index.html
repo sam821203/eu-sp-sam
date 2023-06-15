@@ -1,0 +1,638 @@
+<meta name="viewport" content="width=device-width">
+<meta charset="utf-8">
+
+<!-- 輪播 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+
+<link rel="stylesheet" href="popWindow.css">
+<!--<![endif]-->
+<!--[if IE 9]>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/2.7.6/idangerous.swiper.min.css">
+<style>.swiper-button-prev {
+    display: none;
+}
+
+.swiper-button-next {
+    display: none;
+}</style>
+<![endif]-->
+<!-- 輪播END -->
+
+<!--[if IE 9]>
+<style>
+    .visual__anchor,
+    .visual__main,
+    .visual__nav {
+        -js-display: flex;
+    }
+
+    .visual__anchor {
+        position: absolute !important;
+        height: 114.28% \ ;
+    }
+
+    .visual__main a,
+    .visual__nav a {
+        background-color: rgba(0, 0, 0, .0);
+        /*height: 100% !important \ ;*/
+    }
+
+    .build__anchor {
+        -js-display: flex;
+    }
+
+    .build-nav__item {
+        width: 12.5% \ ;
+    }
+
+    .banner__wrap {
+        -js-display: flex;
+        width: 100% \ ;
+    }
+
+    .bn-w4m2 .banner__item {
+        width: 25% \ ;
+    }
+
+    .bn-w3m1 .banner__item {
+        width: 33.33% \ ;
+    }
+
+    @media screen and (max-width: 1024px) {
+        .bn-w4m2 .banner__item {
+            width: 50% \ ;
+        }
+    }
+</style>
+<![endif]-->
+
+<!-- NOTE -->
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    *:before, *:after {
+        box-sizing: border-box;
+    }
+
+    a {
+        display: block;
+        text-decoration: none;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    img {
+        width: 100%;
+        border: 0;
+        vertical-align: bottom;
+    }
+
+    article,
+    main,
+    nav,
+    section {
+        display: block;
+    }
+
+    body {
+        margin: 0;
+    }
+
+    .sp--1260 {
+        position: relative;
+        z-index: 0;
+        max-width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* note */
+    /* ======================================== */
+    .note {
+        word-break: break-all;
+    }
+
+    .note article {
+        background-color: #000000;
+        font: normal 1em/1.5 '微軟正黑體', Arial;
+        color: #fff;
+        padding-bottom: 3%;
+    }
+
+    .note article a {
+        display: inline;
+    }
+
+    .note hr {
+        background-color: #3c3c3c;
+        width: 100%;
+        margin: 0;
+        margin-bottom: 15px;
+        height: 8px;
+        border: 0;
+    }
+
+    .note h2 {
+        font-size: 1em;
+        line-height: 2;
+        margin: 5px 0 5px 3%;
+    }
+
+    .note p {
+        line-height: 1.5;
+        padding: 0 5%;
+        margin: 0;
+    }
+
+    .note ol, .note ul {
+        padding: 0;
+        margin: auto;
+        margin: 0 5% 0 7%;
+        list-style: decimal;
+    }
+
+    .note ul {
+        list-style: disc;
+    }
+
+    .note table {
+        color: #5b5b5b;
+        border: 1px solid #c0c0c0;
+        border-right: 0;
+        border-bottom: 0;
+        width: 90%;
+        margin: 1% 0 2% 5.5%;
+        background-color: #FFFFFF;
+        font-size: 0.9em;
+    }
+
+    .note table td {
+        border-right: 1px solid #c0c0c0;
+        border-bottom: 1px solid #c0c0c0;
+        padding: 5px;
+        text-align: center;
+    }
+
+    .note table tr:first-child td, .note ol table tr:first-child td {
+        text-align: center;
+        background-color: #949494;
+        color: #f9f9f9;
+    }
+
+    .note ol table {
+        margin: 0;
+        width: 100%;
+        margin: 2% 0;
+    }
+
+    .note ol table td {
+        text-align: left;
+    }
+
+    .note ol table tr:first-child td {
+        white-space: nowrap;
+    }
+
+    @media screen and (max-width: 1024px) {
+        .note ol, .note ul {
+            margin: 0 5% 0 10%;
+        }
+
+        .note table {
+            margin: 0 3%;
+            width: 94%;
+        }
+    }
+
+    /* 圖片 */
+    /* ======================================== */
+    .img--container {
+        display: inline-block;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .img--container img:nth-child(1),
+    .img--container img:nth-child(2),
+    .img--container img:nth-child(3) {
+        width: calc(100% / 3 - 4px);
+        display: inline-block;
+    }
+
+    @media screen and (max-width: 768px) {
+
+        .img--container {
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+
+        .img--container img:nth-child(1),
+        .img--container img:nth-child(2),
+        .img--container img:nth-child(3) {
+            width: 94%;
+            margin-left: 3%;
+            margin-right: 3%;
+        }
+    }
+
+    /* rwd table */
+    /* ======================================== */
+    .note table.rwd-table {
+        width: 94%;
+        /*color: #fff;*/
+        border: 1px solid #c0c0c0;
+        border-collapse: collapse;
+        background-color: #fff;
+        overflow: hidden;
+    }
+
+    .note table.rwd-table th {
+        display: none;
+    }
+
+    .note table.rwd-table td {
+        display: block;
+        border-right: 0;
+        text-align: left;
+    }
+
+    /* 注意此處的(4)要視一行有幾個td選項調整 */
+    .note table.rwd-table td:nth-child(4) {
+        border-bottom: 1px solid #c0c0c0;
+    }
+
+    .note table.rwd-table td:before {
+        content: attr(data-th) ": ";
+        display: inline-block;
+        width: 6em;
+        font-weight: bold;
+    }
+
+    .note table.rwd-table th, .rwd-table td {
+        text-align: left;
+    }
+
+    .note table.rwd-table tr {
+        border-color: #c0c0c0;
+    }
+
+    .note table.rwd-table tr:nth-child(even) {
+        background-color: #dadada;
+    }
+
+    .note table.rwd-table th, .rwd-table td {
+        margin: .5em 1em;
+    }
+
+    .note table.rwd-table th, .rwd-table td:before {
+        font-weight: bold;
+    }
+
+    @media (min-width: 700px) {
+        .note table.rwd-table {
+            width: 65%;
+        }
+
+        .note table.rwd-table tr:nth-child(even) {
+            background: transparent;
+        }
+
+        .note table.rwd-table th {
+            background-color: #949494;
+            color: #ffffff;
+        }
+
+        .note table.rwd-table th,
+        .note table.rwd-table td {
+            border-bottom: 1px solid #c0c0c0;
+            border-right: 1px solid #c0c0c0;
+        }
+
+        .note table.rwd-table td:before {
+            display: none;
+        }
+
+        .note table.rwd-table th, .note table.rwd-table td {
+            display: table-cell;
+            padding: .25em .5em;
+            text-align: center;
+        }
+
+        .note table.rwd-table th:first-child, .note table.rwd-table td:first-child {
+            padding-left: 0;
+        }
+
+        .note table.rwd-table th:last-child, .note table.rwd-table td:last-child {
+            padding-right: 0;
+        }
+
+        .note table.rwd-table th, .note table.rwd-table td {
+            padding: 0.8em !important;
+        }
+    }
+</style>
+
+<!-- 彈出視窗 底層 -->
+<section class="sp--960 bn-w4m2">
+    <ul class="banner__wrap">
+        <!-- 打開youtube -->
+        <li class="banner__item">
+            <div class="open-bigPhoto" data-dialog="movie--trailer">
+                <img src="promot01.png" alt="banner">
+            </div>
+        </li>
+
+        <!-- 打開圖片(小張) -->
+        <li class="banner__item">
+            <div class="open-bigPhoto" data-dialog="movie--desctription">
+                <img src="promot02.png" alt="banner">
+            </div>
+        </li>
+
+        <!-- 打開圖片(大張) -->
+        <li class="banner__item">
+            <div class="open-bigPhoto" data-dialog="img--detail">
+                <img src="promot03.png" alt="banner">
+            </div>
+        </li>
+
+        <li class="banner__item" id="isDeadline">
+            <div class="open-bigPhoto" data-dialog="noteContent">
+                <img src="promot04.png" alt="banner">
+            </div>
+        </li>
+    </ul>
+</section>
+
+<!-- 彈出視窗 打開後內容 -->
+<!-- 彈出youtube內容 -->
+<!-- id 對應彈出的data-dialog -->
+<div class="open--window--wrap pop--videos" id="movie--trailer">
+    <iframe class="video--youtube pop--videos" id="video1" width="784" height="441"
+            src="https://www.youtube.com/embed/8yZV_pHt0N0?enablejsapi=1&amp;html5=1"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<!-- 彈出照片(小張) -->
+<div class="open--window--wrap pop--images" id="movie--desctription">
+    <img src="movie-into.jpg" alt="banner">
+</div>
+
+<!-- 彈出照片(大張) -->
+<div class="open--window--wrap pop--images images--xl" id="img--detail">
+    <img src="openImg-3.jpg" alt="banner">
+</div>
+
+<!-- 彈出 NOTE -->
+<div class="open--window--wrap pop--images change__text__style" id="noteContent">
+    <section class="sp--1260 note" name="note" id="note">
+        <article>
+            <hr>
+            <h2>【消費送10%東森幣】</h2>
+            <p>活動期間：2018/11/1 00:00-2019/1/31 23:59<br>
+                活動辦法：活動期間於全通路消費(不含森森購物網)回饋10%東森幣。<br>
+                注意事項
+            </p>
+            <ol>
+                <li>活動期間於全通路消費(不含森森購物網)，無取消訂單或退貨，將於商品配送確認15天後，由系統自動將東森幣匯入到您購買的帳戶，發送後立即生效。</li>
+                <li>東森幣以單件商品的發票實付金額(特定專案商品除外)，計算當次回饋率10%後，採小數點後無條件進入，且單品消費最多送1,000枚東森幣，運費不計在實付金額中。</li>
+                <li>東森幣可於東森購物指定通路(不含森森購物網)消費時選擇使用，東森幣1 枚可折抵現金 1 元。</li>
+                <li>
+                    結帳時若消費之商品可使用東森幣折抵，系統將自動從最接近有效期限之東森幣折抵(倘會員選擇以東森幣折抵消費金額者，則一律採全數折抵，會員無法選擇以部分東森幣折抵金額)，會員於購物車結帳時就能自動算出可使用的東森幣並進行折抵。
+                </li>
+                <li>每次取得之東森幣依發送時間及該次活動規範，均有不同之有效期間，期限屆至，自動無效。</li>
+                <li>東森幣使用規則，請在參與獲取東森幣的活動前仔細閱讀活動說明。</li>
+                <li>票券類（包含餐券／服務票券／禮券與提貨券等預付儲值商品）、apple系列商品、旅遊、保險及汽機車…等專案商品，無法使用東森幣折抵。</li>
+                <li>商品是否適用東森幣，依結帳頁面(購物車)顯示或使用之系統設定為準。</li>
+                <li>東森幣限折抵指定商品類別之折扣金額，恕無法折抵售後服務、賠償等相關費用，如：運費、安裝處理費、商品缺損賠償等費用。</li>
+                <li>東森購物網保有活動變更、修改或終止本活動之權力，如有異動，修改後之內容將公佈在東森購物網上。</li>
+            </ol>
+            <h2>【雙人牌品牌介紹】</h2>
+            <p>德國雙人，體驗280年的經典傳奇<br>
+                時間驗證一切，它不動聲色，只留存經典。<br>
+                1731年，德國雙人誕生！雙人公司一直秉承著用創新科技製作高品質產品，並且為顧客提供優質的服務。德國雙人勇敢擺脫成功刀具公司、成功不銹鋼鍋具公司的自我記載，向自己構造的摩登廚房邁進，創造快樂廚房體驗。作為世界刀具，鍋具行家，雙人擁有超過2000種產品，在傳承德國優秀傳統與工藝的同時，更與世界名廚及時尚設計大師跨界合作，並在巴黎香榭麗舍設立了時尚旗艦店。在提供優質產品的同時，帶領雙立人摩登廚房理念，讓烹飪成為一種享受，把居家生活拓展到一個全新的境界，帶給人們看得見的良好品質和生活情趣。帶著這一理想，德國雙人將百年歷史的比利時皇家御用不銹鋼鍋具廠Demeyere及被譽為“法國國寶”的琺瑯鑄鐵鍋STAUB收入門下，擴建鞏固雙人鍋具、刀具王國。這個屬於世界的品牌，試圖滿足人類對美食與烹飪的熱情，讓現代的生活變得更加立體。
+            </p>
+            <h2>一、活動辦法：</h2>
+            <ol>
+                <li>集點換購：全通路消費累積滿1,000元，即可獲得1點；集滿3點即可用優惠價格換購雙人牌鍋具及刀具。</li>
+                <li>集點時間：2018/11/1~2019/1/31</li>
+                <li>換購時間：2018/11/16~2019/2/28</li>
+                <li>出貨時間：2018/12/1起陸續出貨</li>
+            </ol>
+            <h2>二、換購商品</h2>
+            <!-- rwd table -->
+            <table class="rwd-table">
+                <tr>
+                    <th>品名</th>
+                    <th>價值</th>
+                    <th>數量</th>
+                    <th>抽出日期</th>
+                </tr>
+                <tr>
+                    <td data-th="品名">ASUS S530UF輕薄筆電</td>
+                    <td data-th="價值">$30,900</td>
+                    <td data-th="數量">1</td>
+                    <td data-th="抽出日期">2018/11/11</td>
+                </tr>
+                <tr>
+                    <td data-th="品名">CANON M50 單機相機</td>
+                    <td data-th="價值">$28,900</td>
+                    <td data-th="數量">2</td>
+                    <td data-th="抽出日期">2018/11/30</td>
+                </tr>
+                <tr>
+                    <td data-th="品名">APPLE iPad 128G</td>
+                    <td data-th="價值">$13,900</td>
+                    <td data-th="數量">3</td>
+                    <td data-th="抽出日期">2018/12/12</td>
+                </tr>
+            </table>
+            <h2>三、注意事項</h2>
+            <ol>
+                <li>換購商品材質：</li>
+                <!-- note table style2-->
+                <table cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>商品名稱</td>
+                        <td>材質</td>
+                        <td>淨重/容量</td>
+                        <td>尺寸</td>
+                    </tr>
+                    <tr>
+                        <td>ZWILLING德國雙人單柄鍋16CM</td>
+                        <td>鍋身-18/10不銹鋼鍋底-18/0導磁不銹鋼鍋蓋-玻璃鍋蓋</td>
+                        <td>淨重：1.1KG<br>容量：1L</td>
+                        <td>內直徑：16cm<br>內高度：75±mm<br>外高度：80±mm</td>
+                    </tr>
+                    <tr>
+                        <td>ZWILLING德國雙人雙耳淺湯鍋20CM</td>
+                        <td>鍋身-18/10不銹鋼<br>鍋底-18/0導磁不銹鋼<br>鍋蓋-玻璃鍋蓋</td>
+                        <td>淨重：1.7KG<br>容量：2L</td>
+                        <td>內直徑：20cm<br>內高度：102±mm<br>外高度：105±mm</td>
+                    </tr>
+                    <tr>
+                        <td>ZWILLING德國雙人日式廚刀7吋</td>
+                        <td>刀-不銹鋼、塑膠手把</td>
+                        <td>淨重：130G</td>
+                        <td>7吋日式廚刀</td>
+                    </tr>
+                    <tr>
+                        <td>ZWILLING德國雙人單柄中式炒鍋30CM</td>
+                        <td>鍋身-18/10不銹鋼<br>鍋底-18/0導磁不銹鋼<br>鍋蓋-強化玻璃</td>
+                        <td>淨重：2.39KG<br>容量：4L</td>
+                        <td>內直徑：30cm<br>內高度：9.5cm<br>外高度：19cm</td>
+                    </tr>
+                    <tr>
+                        <td>ZWILLING德國雙人6件刀座組</td>
+                        <td>刀座-竹製<br>刀-不銹鋼、塑膠把手</td>
+                        <td>淨重：2.23KG</td>
+                        <td>中式片刀、中式剁刀、日式廚刀+主廚刀、削皮刀+刀座</td>
+                    </tr>
+                </table>
+                <li>活動時間內全通路消費(不含森森購物網)累積實付金額滿1,000元，即可獲得1點、滿2,000元獲得2點，以此類推。
+                <li>點數將於配送確認後16天生效，如訂單取消或退貨，則將收回點數。</li>
+                <li>本活動所累積之點數僅適用於活動期間兌換、使用，不可與其他活動合併使用，逾期作廢，亦不得兌換現金；於換購商品後，將扣除其換購點數</li>
+                <li>集點換購商品金額不列入本活動消費金額之計算。</li>
+                <li>換購商品採預購制，將於12/1依訂單順序進行出貨；本次活動鍋具共限量10萬組，數量有限換完為止。</li>
+                <li>本活動換購金額不得與東森幣、折扣金、語音折百、折價券、提貨券、商品券等其他行銷活動併用，且無法累積東森幣、PONTA點數。</li>
+                <li>換購之商品辦理退貨時，必須是全新狀態且包裝完整，否則將會影響退貨權限；辦理退貨完成後，換購點數最晚將於次日中午 12:00 前歸還點數，返還後之點數使用截止時間與贈給時使用期限相同。</li>
+                <li>換購商品依型號不同以實物為準，圖片僅供參考</li>
+                <li>東森購物保有最終解釋、調整與修改本活動辦法之權利，活動詳情及其他未盡事宜請至東森購物網查詢。</li>
+            </ol>
+            <!-- 圖片 -->
+            <div class="img--container">
+                <img src="E_Step1.jpg" alt="">
+                <img src="E_Step2.jpg" alt="">
+                <img src="E_Step3.jpg" alt="">
+            </div>
+            <h2>集點換購流程</h2>
+            <ol>
+                <li>東森購物全通路消費，累積滿1,000元獲1點，(包含電視、網路、APP、型錄、MOD、專人OB、OTT等通路)。
+                <li>累積滿3點以上，即可用換購價購買雙人牌鍋具</li>
+                <li>換購方式<br>
+                    (1) 專線換購：<br>
+                    撥打【0800-262626】，選擇要換購的商品，直接下單即可購買<br>
+                    (2) 線上/APP換購：<br>
+                    a.東森購物網【活動專區】<br>
+                    b.領取「鍋神折價券」<br>
+                    c.選擇要換購的商品，加入購物車<br>
+                    d.在購物車選用折價券完成折價購買。
+                </li>
+                <li>查詢點數：透過專人或登入東森購物此活動頁面，可查詢點數。</li>
+            </ol>
+        </article>
+    </section>
+</div>
+
+<!-- 輪播 -->
+<section class="sp__slider">
+    <div class="sp--960">
+        <div class="slider__wrap">
+            <div class="slider__box">
+                <div id="sliderMovie" class="swiper-container">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide">
+                            <a class="dialog__anchor" href="" title="熱門電影">
+                                <img src="./slider/book.jpg" alt="熱門電影">
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a class="dialog__anchor" href="" title="熱門電影">
+                                <img src="./slider/chicken.jpg" alt="熱門電影">
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a class="dialog__anchor" href="" title="熱門電影">
+                                <img src="./slider/picachu.jpg" alt="熱門電影">
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a class="dialog__anchor" href="" title="熱門電影">
+                                <img src="./slider/shazan.jpg" alt="熱門電影">
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a class="dialog__anchor" href="" title="熱門電影">
+                                <img src="./slider/us.jpg" alt="熱門電影">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="sliderMoivePrev" class="swiper-button-prev"></div>
+                <div id="sliderMoiveNext" class="swiper-button-next"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 輪播彈窗 -->
+<section id="movieDialog" class="movie__dialog">
+    <ul class="dialog__wrap">
+        <li class="dialog__item">
+            <div class="dialog__overlay">
+                <div class="movie__intro">
+                    <div class="btn--close"></div>
+                    <img src="./slider/movie-intro-book.jpg" alt="電影介紹">
+                </div>
+            </div>
+        </li>
+        <li class="dialog__item">
+            <div class="dialog__overlay">
+                <div class="movie__intro">
+                    <div class="btn--close"></div>
+                    <img src="./slider/movie-intro-chicken.jpg" alt="電影介紹">
+                </div>
+            </div>
+        </li>
+        <li class="dialog__item">
+            <div class="dialog__overlay">
+                <div class="movie__intro">
+                    <div class="btn--close"></div>
+                    <img src="./slider/movie-intro-picachu.jpg" alt="電影介紹">
+                </div>
+            </div>
+        </li>
+        <li class="dialog__item">
+            <div class="dialog__overlay">
+                <div class="movie__intro">
+                    <div class="btn--close"></div>
+                    <img src="./slider/movie-intro-shazan.jpg" alt="電影介紹">
+                </div>
+            </div>
+        </li>
+        <li class="dialog__item">
+            <div class="dialog__overlay">
+                <div class="movie__intro">
+                    <div class="btn--close"></div>
+                    <img src="./slider/movie-intro-us.jpg" alt="電影介紹">
+                </div>
+            </div>
+        </li>
+    </ul>
+</section>
+
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js"></script>
+<script src="popWindow.js"></script>
+
+
+<!--[if !IE]><!-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+<!--<![endif]-->
+<!--[if IE 9]>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/2.7.6/idangerous.swiper.min.js"></script>
+<![endif]-->

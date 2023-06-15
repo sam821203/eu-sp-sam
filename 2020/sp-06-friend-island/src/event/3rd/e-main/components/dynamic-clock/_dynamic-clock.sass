@@ -1,0 +1,51 @@
+.dynamic__clock
+  font-weight: bold
+  color: $gray-deep-light
+  transition: all 0.5s
+  opacity: 0
+  transform: translateX(8%)
+  &.active
+    opacity: 1
+    transform: translateX(0)
+  .clock__time
+    line-height: 120%
+    font-size: 6vw
+    text-shadow: 0 0 5px $main-e-background-color-3rd-2
+    text-align: center
+  .clock__hr
+    height: 0.2rem
+    background-color: $gray-deep-light
+    box-shadow: 0 0 1rem $main-e-background-color-3rd-2
+  .clock__date
+    text-align: center
+  .date__wrap,
+  .week__wrap
+    display: inline-block
+    vertical-align: middle
+  .date__wrap
+    line-height: 150%
+    font-size: 4.3vw
+    text-shadow: 0 0 5px $main-e-background-color-3rd-2
+  .week__wrap
+    padding: 0 1vw
+    color: $main-e-background-color-3rd-2
+    background-color: $gray-deep-light
+    border-radius: 100rem
+    font-size: 3vw
+    transform: translateY(1.2%)
+  .clock__week
+    text-align: center
+
+  +breakpoint-min($min-width-xl)
+    .clock__time
+      font-size: 44px
+    .clock__hr
+      height: 3px
+    .date__wrap
+      font-size: 28px
+    .week__wrap
+      padding: 0
+      width: 56px
+      font-size: 20px
+      text-align: center
+      transform: translateY(1px)

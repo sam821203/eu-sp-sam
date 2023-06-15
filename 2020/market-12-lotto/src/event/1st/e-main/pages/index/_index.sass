@@ -1,0 +1,83 @@
+// // ==========================================================================
+// // Plugins
+// // ==========================================================================
+// // @import "vendors/animate"
+@import "~vendors/style/swiper-slider-custom"
+@import "~swiper/swiper-bundle.css"
+
+// // ==========================================================================
+// // components
+// // ==========================================================================
+
+// hero section
+// ===========================
+@import "~event/1st/e-main/components/hero-section/_hero-section"
+//@import "~event/1st/e-main/components/daily-slider/_daily-slider"
+@import "~event/1st/e-main/components/tab-section/_tab-section"
+//@import "~event/1st/e-main/components/tab-slider-section/_tab-slider-section"
+//@import "~event/1st/e-main/components/bg-decoration/_bg-decoration"
+
+// other components
+// ===========================
+
+// // ==========================================================================
+// // Page
+// // ==========================================================================
+body
+  +pos-set(relative, zero)
+  background-color: $main-e-background-color-1st
+  +breakpoint-min($min-width-xl)
+    //background-image: url("~event/1st/e-main/pages/index/bg-line.jpg")
+    background-repeat: repeat-y
+    background-size: 2560px auto
+    background-position: top center
+
+.sp__wrap
+  +pos-set(relative, base)
+  //+bg-set(url("~event/1st/e-main/pages/index/bg.jpg"), 100%)
+  +breakpoint-min($min-width-xl)
+    //background: center top url("~event/1st/e-main/pages/index/bg-web.jpg") no-repeat
+    background-size: 2560px 1200px
+    overflow-x: hidden
+    z-index: -1
+
+.sp__wrap a
+  display: block
+.layout--main
+  max-width: 100%
+.max__width--100
+  max-width: 100%
+.records__wrap
+  position: relative
+  display: flex
+  justify-content: center
+  img
+    width: 96%
+    margin-top: -5%
+  .css-award__number
+    position: absolute
+    width: 47vw
+    height: 20vw
+    top: -5vw
+    left: 2vw
+  .css-record__pop
+    position: absolute
+    width: 47vw
+    height: 20vw
+    top: -5vw
+    right: 2vw
+
+.note__table
+  width: 100%
+  text-align: center
+  padding: 1% 2%
+  margin: 3% auto
+  td,th
+    border: 1px solid #fedddf
+    border-collapse: collapse
+    vertical-align: middle
+
+.open--window--wrap .list__style
+  .ul__dot
+    li
+      list-style-type: disc

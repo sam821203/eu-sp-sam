@@ -1,0 +1,97 @@
+-
+  var promoItemE = [
+    {
+      link: "https://www.etmall.com.tw/Activity/CouponReceiveAll",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-1.png",
+      alt: "領折價劵",
+    },
+    {
+      link: "https://www.etmall.com.tw/member/taskActivity",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-2.png",
+      alt: "挑戰任務",
+    },
+    {
+      link: "#note",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-3.png",
+      alt: "單筆滿額即贈口罩(50片/盒)"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/14398/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-4.png",
+      alt: "新會員好禮十選一",
+    },
+    {
+      link: "https://www.etmall.com.tw/member/taskActivity",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-5.png",
+      alt: "挑戰任務拿$200樂透金",
+    },
+    //- slider start
+    {
+      link: "https://media.etmall.com.tw/sp/10080/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-6-1.png",
+      alt: "防疫專區安心購",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/10080/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-6-2.png",
+      alt: "防疫專區安心購",
+    },
+    //- slider end
+    {
+      link: "https://media.etmall.com.tw/sp/13755/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-7.png",
+      alt: "彰化好物購週週送月月抽",
+    },
+  ]
+
+//- - var promoItem = isU ? promoItemE : promoItemU
+
+//- TODO: 如果promo不和hero綁一起時要有自己的section和layout--main
+section.promo__group.promo__group--promo-event.m-bottom--xl(data-title="幸福集氣購")
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          ul.promo__box
+            each data, index in promoItemE
+              if index == 0
+                li.promo__item
+                  a(href= data.link, title= data.alt)
+                    img(src= data.imgSrc, alt= data.alt)
+
+            li.promo__items
+              each data, index in promoItemE
+                if index >= 1 && index <= 2
+                  .promo__item
+                    a(href= data.link, title= data.alt)
+                      img(src= data.imgSrc, alt= data.alt)
+
+            each data, index in promoItemE
+              if index == 3
+                li.promo__item
+                  a(href= data.link, title= data.alt)
+                    img(src= data.imgSrc, alt= data.alt)
+            
+          .event__wrap
+            ul.event__item
+              each data, index in promoItemE
+                if index == 4 
+                  li.promo__item
+                    a(href= data.link, title= data.alt).full-parent
+                      img(src= data.imgSrc, alt= data.alt)
+
+            ul.slider__box
+              .swiper-container.container--promo-event
+                ul.swiper-wrapper
+                  each data, index in promoItemE
+                    if index >= 5 && index <= 6
+                      li.swiper-slide
+                        a(href= data.link, title= data.alt)
+                          img(src= data.imgSrc, alt= data.alt)
+
+            ul.event__item
+              each data, index in promoItemE
+                if index == 7
+                  li.promo__item
+                    a(href= data.link, title= data.alt, id="changeEventLink").full-parent
+                      img(src= data.imgSrc, alt= data.alt)

@@ -1,0 +1,35 @@
+section.hero__wrap
+  .hero__zone
+    .layout--main
+      .hero__block
+        .hero__box
+          //- 標題
+          h1.hero__title.hero__title--main.block--center.wow(title="集合啦！夏日森友會")
+            img#heroTitle(src="~event/3rd/e-main/components/hero-section/title.png", alt="集合啦！夏日森友會")
+
+    .title-decoration__wrap
+      .layout--main
+        .title__decoration.title__decoration--middle
+          .decoration__pic
+            img#decorationHand(src="~event/3rd/e-main/components/hero-section/decoration-boy.png", alt="")
+          .decoration__pic
+            img#decorationPaper(src="~event/3rd/e-main/components/hero-section/decoration-dog.png", alt="")
+        #decorationBottom.title__decoration.title__decoration--bottom
+          //- 動態時鐘
+          include /event/3rd/e-main/components/dynamic-clock/_dynamic-clock
+
+
+  .promo__zone
+    .layout--main
+      .promo__block
+        //- 行銷誘因
+        include /event/3rd/e-main/components/promo-event/_promo-event
+
+        //- 商品輪播
+          //- 副標
+        //- .hero__small__zone
+          //- include /event/3rd/e-main/components/hero-small-slider/_hero-small-slider
+
+  //- include /event/3rd/e-main/components/background-decoration/_background-decoration.pug
+
+

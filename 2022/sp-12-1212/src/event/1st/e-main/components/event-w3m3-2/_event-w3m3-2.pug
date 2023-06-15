@@ -1,0 +1,52 @@
+-
+  var w3m32Data = [
+    { // 1
+      link: "https://www.etmall.com.tw/p/194310",
+      imgSrc: "event/1st/e-main/components/event-w3m3-2/items/depart2-1.png",
+      alt: "【OB 嚴選】M-4XL全尺碼-舒適彈性輕刷磨毛踩腳褲"
+    },
+    { // 2
+      link: "https://www.etmall.com.tw/gp/166403",
+      imgSrc: "event/1st/e-main/components/event-w3m3-2/items/depart2-2.png",
+      alt: "Adidas 棒球帽-多色任選"
+    },
+    { // 3
+      link: "https://www.etmall.com.tw/i/3590270",
+      imgSrc: "event/1st/e-main/components/event-w3m3-2/items/depart2-3.png",
+      alt: "【娘家】大紅麴三盒組(30粒/盒)"
+    },
+    { // 4
+      link: "https://www.etmall.com.tw/gp/138084",
+      imgSrc: "event/1st/e-main/components/event-w3m3-2/items/depart2-4.png",
+      alt: "【台酒生技】黑酵母酒粕逆齡活膚青春露好評暢銷組 (120ml*5)"
+    },
+    { // 5
+      link: "https://media.etmall.com.tw/sp/10591/m/index.html",
+      imgSrc: "event/1st/e-main/components/event-w3m3-2/items/depart2-5.png",
+      alt: "【LG 樂金】13Kg WiFi蒸洗脫烘滾筒洗衣機"
+    },
+    { // 6
+      link: "https://media.etmall.com.tw/sp/13058/m/index.html",
+      imgSrc: "event/1st/e-main/components/event-w3m3-2/items/depart2-6.png",
+      alt: "任天堂 Switch 寶可夢 朱/紫 雙重包"
+    },
+  ]
+
+section.promo__group.promo__group--w3m3-2(data-title="品牌大賞")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--left#decorEventW3m32Left
+        img(src="event/1st/e-main/components/event-w3m3-2/decor-event-w3m3-2-left.png", alt="")
+      .decor__item.decor__item--right#decorEventW3m32Right
+        img(src="event/1st/e-main/components/event-w3m3-2/decor-event-w3m3-2-right.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          #w3m32Wrap.event__wrap
+            ul.good__wrap
+              each data, index in w3m32Data
+                li
+                  a(href= data.link, title= data.alt)
+                    - var hasImg = data.imgSrc ? true : false
+                    if (hasImg)
+                      img(src= data.imgSrc, alt= data.alt)

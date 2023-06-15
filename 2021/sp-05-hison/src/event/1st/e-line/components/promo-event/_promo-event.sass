@@ -1,0 +1,82 @@
+.promo__group--promo-event
+  +pos-set(relative, zero)
+  // padding: 10% 2% 0
+  // overflow: hidden
+  // +breakpoint-min($min-width-xl)
+  //   margin-top: -150px
+
+  .decoration--promo-bg
+    +pos-set(absolute, under)
+    top: -16%
+    left: 0
+    width: 75%
+    &.animated
+      animation: bounceInUp 1s 1s both
+    +breakpoint-min($min-width-xl)
+      top: -155px
+      width: 702px
+      left: calc(50% - 475px)
+
+  .promo__body
+    +pos-set(relative, zero)
+    padding: 0.5% 0 5.5%
+    +bg-set(url("~event/1st/e-line/components/promo-event/bg-promo.png"), 100%)
+
+    .decoration--sub
+      z-index: map-get($zindex, base)
+      top: 0
+      left: 1%
+      width: 27%
+      transform: translateY(-30%)
+
+    .promo__block
+      &:first-child
+        padding: 2.8% 5%
+        > ul
+          display: flex
+        li
+          &:active,
+          &:hover
+            transform: translateY(3%)
+            filter: hue-rotate(-15deg)
+
+      &:nth-child(2)
+        padding: 3% 10.5% 0
+        > ul
+          display: flex
+          flex-wrap: wrap
+          justify-content: space-between
+        li
+          width: 49.5%
+          &:active,
+          &:hover
+            filter: hue-rotate(-15deg)
+
+    .promo__slider
+      +pos-set(relative, zero)
+      padding: 0.1% 13% 0
+      li
+        margin-bottom: 0
+      +breakpoint-min($min-width-lg)
+      +breakpoint-min($min-width-xl)
+
+  .decoration--promo-fg
+    +pos-set(relative, second)
+    margin: -6% auto 0
+    width: 85%
+    pointer-events: none
+    +breakpoint-min($min-width-xl)
+      width: 704px
+      margin-top: -40px
+
+@keyframes item-rotate-Y
+  100%
+    transform: rotateY(360deg)
+
+@keyframes shakeY
+  0%,80%, to
+    transform: translateZ(0)
+  30%, 50%, 70%
+    transform: translate3d(0, -10px, 0)
+  40%, 60%
+    transform: translate3d(0, 10px, 0)

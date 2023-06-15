@@ -1,0 +1,268 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero__wrap
+  +pos-set(relative, base)
+  padding-top: 0
+  overflow: hidden
+  +breakpoint-min($min-width-xl)
+    padding-bottom: 400px
+  //padding-top: 2%
+
+  .hero__block
+    +pos-set(relative)
+    +bg-set(url(event/1st/u-main/components/hero-section/bg__front__stage.png), 100% auto)
+    .decoration--top
+      pointer-events: none
+    .decoration--presentBox-top,
+    .decoration--coin
+      left: 0
+      width: 100%
+
+    .decoration--presentBox-top
+      top: 48%
+      height: auto
+      transform: scale(0)
+      +breakpoint-min($min-width-xl)
+        width: auto
+      .js-loading &
+        animation: zoom-in-small 1s 0.5s both
+    .decoration--coin
+      z-index: 2
+      top: 0
+      //height: 100%
+      transform: scale(2)
+      opacity: 0
+      .js-loading &
+        animation: zoom-in-big 0.5s 0.5s both
+
+    .decoration--presentBox
+      top: 61%
+      left: 3%
+      width: 33%
+      z-index: 2
+      //opacity: 0
+      +breakpoint-min($min-width-xl)
+        top: 710px
+        left: calc(50% - 453px)
+        width: auto
+      .js-loading &
+        animation: jello-hero 1s 0.9s both ease-out infinite
+    .decoration--coin-left-d
+      display: none
+      +breakpoint-min($min-width-xl)
+        display: block
+        opacity: 0
+        position: absolute
+        width: auto
+        top: 220px
+        left: calc(50% - 1383px)
+      .js-loading &
+        animation: zoom-in-big 0.5s 0.5s both
+    .decoration--coin-right-d
+      display: none
+      +breakpoint-min($min-width-xl)
+        display: block
+        opacity: 0
+        position: absolute
+        width: auto
+        top: 5px
+        right: calc(50% - 1165px)
+      //width: 1084px
+      //height: 578px
+      .js-loading &
+        animation: zoom-in-big 0.7s 0.4s both
+    .decoration--ball
+      display: none
+      +breakpoint-min($min-width-xl)
+        display: block
+        opacity: 0
+        position: absolute
+        right: 0
+        width: 2560px
+        top: 670px
+        height: 749px
+        left: calc(50% - 1280px)
+      .js-loading &
+        animation: zoom-in-big 1s 0.6s both, tada--hero 3s 2s both infinite
+    .decoration--presentBox-d
+      display: none
+      +breakpoint-min($min-width-xl)
+        display: block
+        position: absolute
+        right: 0
+        width: 1993px
+        height: 545px
+        top: 718px
+        left: calc(50% - 997px)
+        transform: scale(0)
+      .js-loading &
+        animation: zoom-in-small 1s 0.7s both, translateY--hero 6s 3s infinite
+
+  .hero__box
+    +pos-set(relative)
+    //+aspect-ratio(776, 700)
+    margin-left: auto
+    margin-right: auto
+    width: 100%
+
+  .hero__title
+    &--main
+      +pos-set(relative, second)
+      padding-top: 32%
+      width: 100%
+      perspective: 600px
+      perspective-origin: center 0
+
+      .decoration--title
+        z-index: map-get($zindex, third)
+        top: 14vw
+        left: 0
+        width: 100%
+        animation: flash-title 2s 1s infinite, rotate-title 15s 1s infinite
+      +breakpoint-min($min-width-xl)
+        padding-top: 270px
+        .decoration--title
+          top: 80px
+
+      img
+        position: relative
+        transform-style: preserve-3d
+        transform-origin: center 80%
+        top: -13vw
+        z-index: 1
+      .slot__machine
+        position: relative
+        left: 7%
+        top: 0
+        width: 85%
+        z-index: 2
+      +breakpoint-min($min-width-xl)
+        img
+          top: -80px
+        .slot__machine
+          width: auto
+          top: 40px
+          left: calc(50% - 400px)
+
+  .decoration__title
+    top: 26.5%
+    right: 21%
+    width: 20.5%
+    +breakpoint-min($min-width-xl)
+      top: 128px
+      right: 140px
+
+@keyframes lightSpeedInLeft
+  0%
+    transform: translate3d(-300%, 0, 0) skewX(30deg)
+    opacity: 0
+  1%
+    opacity: 1
+  60%
+    transform: skewX(-20deg)
+    opacity: 1
+  80%
+    transform: skewX(5deg)
+    opacity: 1
+  to
+    transform: translateZ(0)
+    opacity: 1
+
+// @keyframes move-coin
+//   0%
+//     transform: translateX(-300%)
+//     opacity: 0
+//   1%
+//     opacity: 1
+//   100%
+//     transform: translateX(0)
+//     opacity: 1
+
+@keyframes move-ship
+  0%
+    transform: translate(100%, -90%)
+    opacity: 0
+  1%
+    opacity: 1
+  100%
+    transform: translate(0, 0)
+    opacity: 1
+
+@keyframes rotate-title
+  0%, 10%, 90%, 100%
+    transform: rotateY(0)
+  30%, 40%
+    transform: rotateY(8deg)
+  66%, 70%
+    transform: rotateY(-8deg)
+
+@keyframes flash-title
+  0%, 10%, 20%, 30%, 100%
+    filter: brightness(100%)
+  5%, 15%, 25%
+    filter: brightness(135%)
+
+@keyframes zoom-in-big
+  0%
+    transform: scale(2)
+  1%
+    opacity: 1
+  100%
+    transform: scale(1)
+    opacity: 1
+
+@keyframes zoom-in-small
+  0%
+    transform: scale(0)
+  100%
+    transform: scale(1)
+
+@keyframes jello-hero
+  0%, 11.1%
+    transform: translateZ(0)
+  22.2%
+    transform: skewX(-12.5deg) skewY(-12.5deg)
+  33.3%
+    transform: skewX(6.25deg) skewY(6.25deg)
+  44.4%
+    transform: skewX(-3.125deg) skewY(-3.125deg)
+  55.5%
+    transform: skewX(1.5625deg) skewY(1.5625deg)
+  66.6%
+    transform: skewX(-.78125deg) skewY(-.78125deg)
+  77.7%
+    transform: skewX(.390625deg) skewY(.390625deg)
+  88.8%
+    transform: skewX(-.1953125deg) skewY(-.1953125deg)
+  to
+    transform: translateZ(0)
+
+@keyframes tada--hero
+  0%
+    transform: scale(1)
+  3%, 7%
+    transform: scale(0.9) rotate(-3deg)
+  10%, 17%, 23%, 30%
+    transform: scale(1.1) rotate(3deg)
+  13%, 20%, 27%
+    transform: scale(1.1) rotate(-3deg)
+  33%, 100%
+    transform: scale(1) rotate(0)
+
+
+@keyframes translateY--hero
+  0%
+    transform: translateY(-10%)
+  6%
+    transform: translateY(0)
+  15%
+    transform: translateY(10%)
+  21%
+    transform: translateY(0)
+  36%
+    transform: translateY(10%)
+  51%,100%
+    transform: translateY(0)
+
+

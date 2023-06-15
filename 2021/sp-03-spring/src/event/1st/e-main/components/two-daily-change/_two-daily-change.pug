@@ -1,0 +1,64 @@
+section.promo__group.promo__group--two-daily-change(data-title="集氣")
+  .decoration--flower.move__3
+    img#scrollDoubleSlider_3(src="~assets/img/scroll__tree.png", alt="")
+  .promo__solid-color--bg
+  .promo__two-daily--bg
+  .layout--main
+    ul.two-daily-tab__wrap
+      li.tab__zone
+        #sliderTwoDailyChangeTabHead.tab__head--daily-2.promo__slider.swiper-container.swiper-no-swiping
+          ul.swiper-wrapper
+            // date 起始日期
+            li.tabs-slide
+              span 3
+              span 16-17
+            li.tabs-slide
+              span 3
+              span 18-19
+            li.tabs-slide
+              span 3
+              span 20-21
+            li.tabs-slide
+              span 3
+              span 22-23
+            li.tabs-slide
+              span 3
+              span 24-25
+            li.tabs-slide
+              span 3
+              span 26-27
+            li.tabs-slide
+              span 3
+              span 28-29
+            li.tabs-slide
+              span 3
+              span 30-31
+            li.tabs-slide
+              span 4
+              span 01-02
+            li.tabs-slide
+              span 4
+              span 03-04
+            li.tabs-slide
+              span 4
+              span 05-06
+      li.content__zone
+        ul#sliderTwoDailyChangeContent.tab__content--two-daily-change
+          - var date = 2
+          while date <= 9
+            - var activeContentClass = 'active'
+            - if (date != 2) activeContentClass = ''
+            li.two-daily-content__box(class= activeContentClass)
+              .tab__slider--two-daily-change.swiper-container
+                ul.item__group__wrap.swiper-wrapper
+            - date++
+          li.two-daily-content__box
+            .tab__slider--two-daily-change.swiper-container
+              ul.item__group__wrap.swiper-wrapper
+          li.two-daily-content__box
+            .tab__slider--two-daily-change.swiper-container
+              ul.item__group__wrap.swiper-wrapper
+          li.two-daily-content__box
+            .tab__slider--two-daily-change.swiper-container
+              ul.item__group__wrap.swiper-wrapper
+        .js__twoDailyChange__pager.two-daily-change-pager.swiper-pagination

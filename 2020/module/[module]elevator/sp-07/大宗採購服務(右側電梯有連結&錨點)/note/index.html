@@ -1,0 +1,248 @@
+<meta name="viewport" content="width=device-width">
+<meta charset="utf-8">
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        /*padding: 10px;*/
+    }
+
+    *:before, *:after {
+        box-sizing: border-box;
+    }
+
+    a {
+        display: block;
+        text-decoration: none;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    img {
+        width: 100%;
+        border: 0;
+    }
+
+    article,
+    main,
+    nav,
+    section {
+        display: block;
+    }
+
+    body {
+        margin: 0;
+        background-color: #fffad8;
+        font-family: PingFangTC-regular, Roboto, "LiHei Pro", "Source Han Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, "Microsoft JhengHei", sans-serif;
+    }
+
+    .sp--960 {
+        position: relative;
+        z-index: 0;
+        max-width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* note*/
+    .note {
+        font-weight: 500;
+        font-size: 15px;
+        word-break: break-all;
+        line-height: 150%;
+    }
+
+    .note article {
+        padding: 1.5%;
+        background-color: #fffad8;
+    }
+
+    .note article a {
+        /* 基本a樣式 */
+        display: inline;
+        color: #41c7c2;
+        text-decoration: underline;
+        word-break: break-all;
+    }
+
+    .note article a:hover {
+        text-decoration: none;
+    }
+
+    .note li {
+        padding: 5px;
+    }
+
+    .note ol > li {
+        margin-left: 30px;
+    }
+
+    .decimal-type {
+        list-style-type: decimal;
+    }
+
+    .none-type {
+        list-style-type: none;
+    }
+
+    .ticket_style {
+        display: block;
+        margin: 0 auto;
+        max-width: 820px;
+    }
+
+    .btn_a1 {
+        font-size: 32px;
+        background-color: #ff6446;
+        padding: 0;
+        margin: 0 auto;
+        color: #fff;
+        text-align: center;
+        line-height: 150%;
+        border-radius: 10px;
+        clear: both;
+        width: 100%;
+        box-sizing: border-box;
+        height: 60px;
+        /*margin-bottom: 20px;*/
+    }
+
+    .tableqa {
+        margin: 0 auto;
+        line-height: 200%;
+        font-size: 20px;
+        width: 100%;
+        margin-top: 20px;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .tableqa td.og {
+        color: #ff6446;
+    }
+
+    /* 改變li樣式 */
+    .modal .dialog__block.regist-activity-model li {
+        list-style: decimal;
+    }
+</style>
+<div id="spWrap" class="sp__wallper">
+    <section class="note" name="note">
+        <div class="sp--960" style="padding:1% 0 3% 0;">
+            <article>
+                <!-- <a name="note1" id="note1"></a> -->
+                <li style="list-style:none;" class="btn_a1" data-title="付款方式">付款方式</li>
+                <ol style="font-size: 20px;	color: #000; line-height: 30px; margin-top: 5px; margin-bottom: 30px; padding-left: 10px; padding-right: 10px;">
+                    <li>ATM、信用卡、電子支付…等。※實際以結帳頁呈現為主</li>
+                    <li>如使用現金匯款或ATM支付，請於表單內填寫。※不定時提供額外優惠</li>
+                </ol>
+
+                <li style="list-style:none;" class="btn_a1" data-title="注意事項">注意事項</li>
+                <ol style="font-size: 20px;	color: #000; line-height: 30px; margin-top: 5px; margin-bottom: 30px; padding-left: 10px; padding-right: 10px;">
+                    <li>收到商品後，若您還不確定是否將會辦理退貨，請勿將產品連上網路，避免開始保固時間。</li>
+                    <li>未確定保留商品前，勿拆用隨和附贈配件，以免影響您的退貨權益。</li>
+                    <li>10日猶豫期並非試用期，恕不提供試用、體驗等服務。如於猶豫期內申請退貨，需將商品恢復原狀。(含包裝、配件等；產品一經註冊可能需要酌收額外的費用)</li>
+                    <li>主商品/配件不可體驗，不可拆封。收到商品後，務必先仔細確認商品正確、外觀可接受，確定要購買後再開機使用。</li>
+                    <li>退/換貨時請用原紙箱包裝，並保留原配送單。※是否可單一品項退貨?是否有限定商品?</li>
+                </ol>
+
+                <li style="list-style:none;" class="btn_a1" data-title="常見問題">常見問題</li>
+                <table border="0" cellpadding="0" cellspacing="0" class="tableqa">
+                    <tbody>
+                        <tr>
+                            <td width="30%" align="left" bgcolor="#eee" class="og"
+                                style="padding-left: 10px; padding-right: 10px;">
+                                Q：請問是否能透過其他導購平台連結(如:Line、ShopBack)仍享有優惠價？
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#fff" style="padding-left: 10px; padding-right: 10px;">A：活動相關規範以東森購物網公告為主。</td>
+                        </tr>
+                        <tr>
+                            <td width="30%" align="left" bgcolor="#eee" class="og"
+                                style="padding-left: 10px; padding-right: 10px;">
+                                Q：如有其他商品採購需求，是否能成立專案訂單？
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#fff" style="padding-left: 10px; padding-right: 10px;">A：請填寫<a
+                                    href="https://docs.google.com/forms/d/1_mQBm0LQjK_2mmnWakrlVcFkVuiBHA_NwrVXUH2DeEE/edit?hl=zh-tw">大宗採購專案表單</a>，留下您的需求及希望付款方式，後續將由專員與您聯絡。
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="30%" align="left" bgcolor="#eee" class="og"
+                                style="padding-left: 10px; padding-right: 10px;">
+                                Q：此專案是否適用其他類別的商品(家電、生活用品...等等)？
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#fff" style="padding-left: 10px; padding-right: 10px;">
+                                A：此專案目前僅開放通訊類別商品(手機、平板、穿戴裝置、通訊周邊)，敬請見諒。若您有其他商品的採購需求，也可填寫表單，我們會轉至相關單位人員進行回覆。
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="30%" align="left" bgcolor="#eee" class="og"
+                                style="padding-left: 10px; padding-right: 10px;">
+                                Q：大宗企業採購之訂單金額含運費嗎？
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#fff" style="padding-left: 10px; padding-right: 10px;">A：商品報價皆為含運價格。</td>
+                        </tr>
+                        <tr>
+                            <td width="30%" align="left" bgcolor="#eee" class="og"
+                                style="padding-left: 10px; padding-right: 10px;">
+                                Q：為何大宗採購專案的報價比直接在賣場下單還貴？
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#fff" style="padding-left: 10px; padding-right: 10px;">
+                                A：因不定時會有「限時」、「限量」的折扣價，此優惠價恕不適用大宗採購專案。
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- 				<ol style="font-size: 20px;	color: #000; line-height: 30px; margin-top: 5px; margin-bottom: 30px; padding-left: 10px; padding-right: 10px;">
+                                    <li>
+                                        <ul>
+                                            <li>Q：請問是否能透過其他導購平台連結(如:Line、ShopBack)仍享有優惠價？</li>
+                                            <li>A：活動相關規範以東森購物網公告為主。</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li>Q：如有其他商品採購需求，是否能成立專案訂單？</li>
+                                            <li>A：請填寫<a href="https://docs.google.com/forms/d/1_mQBm0LQjK_2mmnWakrlVcFkVuiBHA_NwrVXUH2DeEE/edit?hl=zh-tw">大宗採購專案表單</a>，留下您的需求及希望付款方式，後續將由專員與您聯絡。</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li>Q：是否全網站商品皆可適用此大宗採購專案優惠？</li>
+                                            <li>A：目前僅開放通訊類別商品(手機、平板、穿戴裝置、通訊周邊)，敬請見諒。</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li>Q：此專案是否適用其他類別的商品(家電、生活用品...等等)？</li>
+                                            <li>A：此專案目前僅開放通訊類別商品(手機、平板、穿戴裝置、通訊周邊)，敬請見諒。若您有其他商品的採購需求，也可填寫表單，我們會轉至相關單位人員進行回覆。</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li>Q：大宗企業採購之訂單金額含運費嗎？</li>
+                                            <li>A：商品報價皆為含運價格。</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li>Q：為何大宗採購專案的報價比直接在賣場下單還貴？</li>
+                                            <li>A：因不定時會有「限時」、「限量」的折扣價，此優惠價恕不適用大宗採購專案。</li>
+                                        </ul>
+                                    </li>
+                                </ol> -->
+            </article>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,153 @@
+// // ==========================================================================
+// // login page
+// // ==========================================================================
+body.default__reset
+  .login__wrap
+    padding: 12px
+    margin: 12px 12px 24px
+    border-radius: 6px
+    box-shadow: $card-shadow
+    background: #fff
+    .login__title
+      font-size: 14px
+      margin: 0 0 8px
+      font-stretch: normal
+      font-style: normal
+      line-height: normal
+      letter-spacing: normal
+      &:after
+        display: block
+        content: ''
+        clear: both
+        height: 1px
+        width: 100%
+        margin: 8px 0 12px
+        background-color: $eckare-primary
+
+  .input__group
+    display: flex
+    flex-wrap: wrap
+    justify-content: flex-start
+    align-items: center
+    width: 100%
+    font-size: 16px
+    color: $eckare-primary-text
+    margin-bottom: 12px
+    p
+      width: 100%
+      font-size: 14px
+      color: $eckare-primary-text
+      margin-bottom: 4px
+    .input__wrap
+      width: 100%
+      position: relative
+      ::placeholder
+        color: $eckare-second-text
+      .styled__select, .styled__input, .styled__password
+        width: 100%
+        height: 40px
+        border-radius: 6px
+        padding: 8px 12px
+        border: solid 1px $eckare-background
+        &:focus
+          outline: none !important
+          border-color: $eckare-secondary
+          color: $eckare-primary-text
+      .styled__select
+        appearance: none
+        -moz-appearance: none
+        -webkit-appearance: none
+        background: url("~event/eckare/components/login-section/icon-normal-more.svg") transparent no-repeat
+        background-position: right 12px center
+        line-height: 1.5
+        color: $eckare-primary-text
+        option
+          color: $eckare-primary-text
+      .styled__password
+        background-position: right 12px center
+        position: relative
+      .password__eye
+        position: absolute
+        top: 10px
+        right: 12px
+      .tips
+        font-size: 12px
+        opacity: 0.94
+        color: $eckare-second-text
+      .verification__code
+        max-width: 100px
+        margin: 12px 0 0 0
+      .styled__checkbox
+        +styled__checkbox--radio
+        .checkmark
+          border-radius: 2px
+          &:after
+            left: 4px
+            top: 2px
+            width: 6px
+            height: 8px
+            border: solid 1px $eckare-primary
+            border-width: 0 2px 2px 0
+            transform: rotate(45deg)
+      .styled__radio
+        +styled__checkbox--radio
+        .checkmark
+          border-radius: 50%
+          &:after
+            left: 3px
+            top: 3px
+            width: 8px
+            height: 8px
+            background-color: $eckare-primary
+            border: solid 1px $eckare-primary
+            border-radius: 50%
+
+
+
+    &.remember__checked
+      margin: 18px 0
+
+  .login__button__group
+    +styled__button--01
+    .styled__no__member
+      width: 100%
+      font-size: 14px
+      height: 20px
+      color: $eckare-primary
+      text-align: center
+      margin: 16px 0
+
+  +breakpoint-min($min-width-lg)
+    .login__wrap
+      max-width: 492px
+      margin: 12px auto 24px
+    .login__button__group
+      display: flex
+      flex-wrap: wrap
+      button
+        width: 100%
+      .styled__no__member
+        width: 50%
+        margin: 16px 0
+        &:nth-of-type(1)
+          border-right: 1px solid $eckare-background
+
+  +breakpoint-min($min-width-xl)
+    .sp__wrap--eckare
+      position: relative
+      top: 0
+      left: 0
+      &:before
+        position: absolute
+        display: block
+        content: ''
+        clear: both
+        background: url("~event/eckare/components/login-section/img-arc.svg") transparent no-repeat
+        background-position: top center
+        height: 240px
+        width: 100%
+        top: -49px
+        left: 0
+        z-index: -1
+    .login__wrap
+      margin: 49px auto 24px

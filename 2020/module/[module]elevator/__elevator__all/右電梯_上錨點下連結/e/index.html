@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=big5" />
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- ============== 輪播 start ============== -->
+    <link rel="stylesheet"
+          href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116205/swiper.min.css">
+    <!-- ============== 輪播 end ============== -->
+    <!-- 共用CSS -->
+    <link rel="stylesheet"
+          href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116205/animate.min.css">
+    <link rel="stylesheet"
+          href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.css">
+    <link rel="stylesheet" type="text/css" href="sp-20190619.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: PingFangTC-regular, Roboto, "LiHei Pro", "Source Han Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, "Microsoft JhengHei", sans-serif;
+            background: #ce3f17 center 0 url("bg-m.jpg") no-repeat;
+            background-size: 100% auto;
+        }
+
+        @media screen and (min-width: 960px) {
+            body {
+                background: #ce3f17 center 0 url("bg.jpg") no-repeat;
+                background-size: 2560px auto;
+            }
+        }
+
+        .sp--960 {
+            position: relative;
+            z-index: 0;
+            max-width: 960px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* 主視覺 */
+        /* ======================================== */
+        .sp__visual a {
+            display: block;
+            /* 連結測試用
+            border: 1px solid #f00;*/
+        }
+
+        .sp__visual img {
+            display: block;
+        }
+
+        .logo {
+            position: absolute;
+            z-index: 99;
+            top: 0%;
+            left: 0.7%;
+            width: 17%;
+            height: 9%;
+        }
+
+        /* 設定前景 */
+        .sp__visual {
+            position: relative;
+            z-index: 0;
+            width: 100%;
+        }
+
+        .visual__anchor,
+        .visual__main,
+        .visual__nav {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .visual__anchor {
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+        }
+
+        .visual__main a,
+        .visual__nav a {
+            flex-grow: 1;
+        }
+
+        /* 設定高度，總和要100% */
+        /* ======================================== */
+        .visual__main {
+            height: 78%;
+        }
+
+        /* 各nav */
+        .visual__nav.nav1 {
+            height: 11%;
+        }
+
+        .visual__nav.nav2 {
+            height: 11%;
+        }
+
+        /* 設定寬度(可不設) */
+        /* ======================================== */
+        .visual__main a:nth-child(1) {
+            flex-grow: 0;
+            width: 100%;
+        }
+
+        /* 各視覺nav */
+        .visual__nav.nav1 a:nth-child(1) {
+            flex-grow: 0;
+            width: 25%;
+        }
+
+        .visual__nav.nav2 a:nth-child(1) {
+            flex-grow: 0;
+            width: 25%;
+        }
+
+        /*-- 動畫小物件 --*/
+        /* ======================================== */
+        .animate__wrap {
+            position: relative;
+            z-index: 1;
+        }
+
+        /*-- 手機版：設定物件距離左邊與上邊的位置，單位可以使用"%"或"vw";width:建議電腦版可以使用auto，手機版則可使用%調整 --*/
+        .animate__wrap .animate__obj--00 {
+            position: absolute;
+            top: 4vw;
+            left: 19.5vw;
+            width: 61%;
+        }
+
+        .animate__wrap .animate__obj--01 {
+            position: absolute;
+            top: 54.8vw;
+            left: 2vw;
+            width: 24%;
+        }
+
+        .animate__wrap .animate__obj--02 {
+            position: absolute;
+            top: 54.8vw;
+            left: 26vw;
+            width: 24%;
+        }
+
+        .animate__wrap .animate__obj--03 {
+            position: absolute;
+            top: 54.8vw;
+            left: 50vw;
+            width: 24%;
+        }
+
+        .animate__wrap .animate__obj--04 {
+            position: absolute;
+            top: 54.8vw;
+            left: 74vw;
+            width: 24%;
+        }
+
+        /*-- 電腦版：設定物件距離左邊與上邊的位置，單位可以使用"px"，左邊可以挑整clac()後面的px值;width:建議電腦版可以使用auto，手機版則可使用%調整 --*/
+        @media screen and (min-width: 960px) {
+            .animate__wrap .animate__obj--00 {
+                top: 40px;
+                left: calc(50% - 293px);
+                width: auto;
+            }
+
+            .animate__wrap .animate__obj--01:hover,
+            .animate__obj--02:hover,
+            .animate__obj--03:hover,
+            .animate__obj--04:hover {
+                filter: brightness(120%);
+                transform: scale(0.95);
+            }
+
+            .animate__wrap .animate__obj--01 {
+                top: 539px;
+                left: calc(50% - 450px);
+                width: auto;
+                transition: all 0.3s;
+            }
+
+            .animate__wrap .animate__obj--02 {
+                top: 539px;
+                left: calc(50% - 220px);
+                width: auto;
+                transition: all 0.3s;
+            }
+
+            .animate__wrap .animate__obj--03 {
+                top: 539px;
+                left: calc(50% - -10px);
+                width: auto;
+                transition: all 0.3s;
+            }
+
+            .animate__wrap .animate__obj--04 {
+                top: 539px;
+                left: calc(50% - -240px);
+                width: auto;
+                transition: all 0.3s;
+            }
+        }
+    </style>
+</head>
+<body>
+<!--<div class="elevatorHome js&#45;&#45;main&#45;&#45;dialog" id="elevatorHome"></div>-->
+<div class="navRightBar" id="navRightBar"></div>
+<div id="spWrap" class="sp__wallper">
+    <!-- <div id="barHome"></div> -->
+    <!-- 動畫小物件 -->
+    <div class="animate__wrap">
+        <div class="animate__wrap"><img
+                class="animate__obj--00 animate__animated animate__rubberBand animate__delay-1s animate__repeat-2"
+                src="5.png" alt="高PV嚴選"/></div>
+        <div class="animate__wrap"><a href="#1-5pv"><img class="animate__obj--01" src="index_01.png" title="1PV-5PV"
+                                                         alt="1PV-5PV"/></a></div>
+        <div class="animate__wrap"><a href="#5-10pv"><img class="animate__obj--02" src="index_02.png" title="5PV-10PV"
+                                                          alt="5PV-10PV"/></a></div>
+        <div class="animate__wrap"><a href="#10-39pv"><img class="animate__obj--03" src="index_03.png" title="10-39PV"
+                                                           alt="10PV-39PV"/></a></div>
+        <div class="animate__wrap"><a href="#40pv↑"><img class="animate__obj--04" src="index_04.png" title="40PV↑"
+                                                        alt="40PV↑"/></a></div>
+    </div>
+    <!-- 主視覺 -->
+    <main class="sp__main">
+        <div class="sp--960">
+            <div class="sp__visual">
+                <a href="https://www.etmall.com.tw" class="logo" title="東森購物"></a>
+                <div class="visual__anchor">
+                    <div class="visual__main"></div>
+                    <div class="visual__nav nav1">
+                        <a href="#愛美又健康" title="愛美又健康" alt="愛美又健康"></a>
+                        <a href="#食在幸福" title="食在幸福" alt="食在幸福"></a>
+                        <a href="#日用家電" title="日用家電" alt="日用家電"></a>
+                        <a href="#館長嚴選" title="館長嚴選" alt="館長嚴選"></a>
+                    </div>
+                    <div class="visual__nav nav2">
+                        <a href="https://www.etmall.com.tw/c1/34875" title="人氣美食" alt="人氣美食"></a>
+                        <a href="https://www.etmall.com.tw/c1/35160" title="民生日用" alt="民生日用"></a>
+                        <a href="https://www.etmall.com.tw/c1/34805" title="窈窕保健" alt="窈窕保健"></a>
+                        <a href="https://www.etmall.com.tw/c1/35053" title="服飾鞋包" alt="服飾鞋包"></a>
+                    </div>
+                </div>
+                <img src="index.jpg	">
+            </div>
+        </div>
+    </main>
+</div>
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<!-- 共用JS -->
+<script id="generateScript"
+        src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.js"></script>
+<script src="sp-script20190619.js"></script>
+<!-- ============== 輪播 end ============== -->
+</body>
+</html>

@@ -1,0 +1,90 @@
+// ==========================================================================
+// Plugins
+// ==========================================================================
+// // @import vendors/animate
+// @import vendors/style/swiper-slider-custom
+@import vendors/style/swiper-safari-polyfill
+
+
+// ==========================================================================
+// first screen need
+// ==========================================================================
+// hero section
+@import event/1st/u-main/components/hero-section/_hero-section
+@import utils/bg-decoration-instance/parallax/_parallax
+
+// ==========================================================================
+// components
+// ==========================================================================
+
+// 一般components
+@import event/1st/u-main/components/promo-event/_promo-event
+
+// ==========================================================================
+// Page
+// ==========================================================================
+body
+  +pos-set(relative)
+  background-color: $main-e-background-color-1st
+.navRightBar
+  height: 39px
+  +breakpoint-min($min-width-xl)
+    height: auto
+.sp__wrap
+  +pos-set(relative)
+  &::before
+    content: ''
+    +pos-set(fixed, under, 39px, 0)
+    width: 100%
+    height: 100vh
+    background: center 0 url(event/1st/u-main/pages/index/bg.jpg) no-repeat
+    background-size: 100%
+    transition: all 0.5s
+
+    +breakpoint-min($min-width-xl)
+      top: 0
+      background: center 0 url(event/1st/u-main/pages/index/bg-web.jpg) no-repeat
+      background-size: auto
+
+.sp__wrap a
+  display: block
+  // .promo__title
+  //   text-align: center
+  // .decoration--background.decoration__wrap
+
+// parallax css
+// =================================
+// .decoration--background
+//   display: none
+
+//   +breakpoint-min($min-width-3xl)
+//     display: block
+//     // z-index: base(1)以上可蓋在主視覺上，zero(0)可在主視覺下，預設都在logo下(logo是500)
+//     +pos-set(absolute, under, 690px)
+//     width: 100%
+//     height: 100%
+//     pointer-events: none
+
+// .decoration__wrap
+//   +pos-set(sticky, zero, 0)
+.swiper-button--custom
+  top: 55%
+  margin-top: 0
+  width: 3.5%
+  transform: translateY(-50%)
+  &:after
+    content: ''
+  &:active,
+  &:hover
+    filter: brightness(120%)
+  &.swiper-button-prev
+    left: 9.3%
+    +bg-set(url(event/1st/u-main/pages/index/btn-slider-prev.png), contain, center, center)
+  &.swiper-button-next
+    right: 9.3%
+    +bg-set(url(event/1st/u-main/pages/index/btn-slider-next.png), contain, center, center)
+
+.decoration--top
+  +pos-set(absolute, zero)
+  pointer-events: none
+

@@ -1,0 +1,36 @@
+.go-top
+  display: none
+  position: fixed
+  z-index: 999
+  right: 15px
+  bottom: 90px
+  width: 48px
+  height: 48px
+  background: rgba($gray-deep-dark, 0.7)
+  border-width: 1px
+  border-style: solid
+  border-top-color: rgba($gray-deep-light, 0)
+  border-right-color: rgba($gray-deep-light, 0.1)
+  border-bottom-color: rgba($gray-deep-light, 0.2)
+  border-left-color: rgba($gray-deep-light, 0.3)
+  border-radius: 50%
+  transition: all 0.4s linear
+  opacity: 0
+  cursor: pointer
+  pointer-events: none
+  +breakpoint-min($min-width-xl)
+    &:hover
+      background: rgba($gray-deep-dark, 1)
+      border-top-color: rgba($gray-deep-light, 1)
+      border-right-color: rgba($gray-deep-light, 0.7)
+      border-bottom-color: rgba($gray-deep-light, 0.8)
+      border-left-color: rgba($gray-deep-light, 0.9)
+
+.go-top.is-visible
+  display: block
+  opacity: 1
+  pointer-events: auto
+
+.go-top:focus,
+.go-top i:focus
+  outline: 0

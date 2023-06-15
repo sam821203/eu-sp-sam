@@ -1,0 +1,32 @@
+- var heroBankData = {etmall: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201908/SP_1107836/w/index.html", umall: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201908/SP_1104315/w/index.html"}
+- var heroBankInfo = isU ? heroBankData.umall : heroBankData.etmall
+
+section.hero__wrap.m-bottom--xl
+  .layout--main
+    .hero__zone
+      #heroBlock.hero__block
+        .hero__box.wow
+          //- 標題
+          h1.hero__title.hero__title--main.block--center.wow(title="2019歲末封館")
+            img(src="~event/1st/e-main/components/hero-section/title.png", alt="2019歲末封館")
+          .title-decoration__wrap
+            .title__decoration.title__decoration--top.wow
+            .title__decoration.decoration--blink.title__decoration--left
+            .title__decoration.decoration--blink.title__decoration--right-1
+            .title__decoration.decoration--blink.title__decoration--right-2
+            .title__decoration.title__decoration--bottom
+
+          //- 副標
+          include /event/1st/e-main/components/hero-small-slider/_hero-small-slider
+
+  .promo__block
+    .layout--main
+      .promo__zone
+        //- 商品輪播
+        include /event/1st/e-main/components/goods-slider-flip/_goods-slider-flip
+        //- include /event/1st/e-main/components/goods-slider/_goods-slider
+
+        .promo__box
+          //- 行銷誘因
+          include /event/1st/e-main/components/promo-event/_promo-event
+          include /event/1st/e-main/components/bn-special/_bn-special

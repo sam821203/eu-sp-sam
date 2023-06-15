@@ -1,0 +1,59 @@
+-
+  var w4m4Data = [
+    { // 1
+      link: "https://media.etmall.com.tw/sp/11937/m/index.html",
+      imgSrc: "event/1st/e-main/components/event-w4m4/items/item-w4m4-1.png",
+      alt: "美妝冬保養"
+    },
+    { // 2
+      link: "https://media.etmall.com.tw/sp/11940/m/index.html",
+      imgSrc: "event/1st/e-main/components/event-w4m4/items/item-w4m4-2.png",
+      alt: "保健熱銷品"
+    },
+    { // 3
+      link: "https://media.etmall.com.tw/sp/11919/m/index.html",
+      imgSrc: "event/1st/e-main/components/event-w4m4/items/item-w4m4-3.png",
+      alt: "3C超值敗"
+    },
+    { // 4
+      link: "https://media.etmall.com.tw/sp/12061/m/index.html",
+      imgSrc: "event/1st/e-main/components/event-w4m4/items/item-w4m4-4.png",
+      alt: "通訊返場再購"
+    },
+    { // 5
+      link: "https://media.etmall.com.tw/sp/9421/m/index.html",
+      imgSrc: "event/1st/e-main/components/event-w4m4/items/item-w4m4-5.png",
+      alt: "廚電超豪買"
+    },
+    { // 6
+      link: "https://media.etmall.com.tw/sp/11707/m/index.html",
+      imgSrc: "event/1st/e-main/components/event-w4m4/items/item-w4m4-6.png",
+      alt: "泰山購物節"
+    },
+    { // 7
+      link: "https://media.etmall.com.tw/sp/11819/m/index.html",
+      imgSrc: "event/1st/e-main/components/event-w4m4/items/item-w4m4-7.png",
+      alt: "日用SHOW好價"
+    },
+    { // 8
+      link: "https://www.etmall.com.tw/gp/152720",
+      imgSrc: "event/1st/e-main/components/event-w4m4/items/item-w4m4-8.png",
+      alt: "禦寒保暖"
+    },
+  ]
+
+section.promo__group.promo__group--w4m4.m-bottom--md(data-title="優惠攻略")
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        .promo__title.block--center(title="優惠攻略")
+          img(src="event/1st/e-main/components/event-w4m4/title-w4m4.png", alt="優惠攻略")
+        .event__wrap
+          .promo__block.m-bottom--xs
+            ul.good__wrap
+              each data, index in w4m4Data
+                li
+                  a(href= data.link, title= data.alt)
+                    - var hasImg = data.imgSrc ? true : false
+                    if (hasImg)
+                      img(src= data.imgSrc, alt= data.alt)

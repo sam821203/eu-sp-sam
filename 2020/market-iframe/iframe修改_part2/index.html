@@ -1,0 +1,506 @@
+<meta name="viewport" content="width=device-width">
+<!-- ============== 輪播 start ============== -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+<!-- ============== 輪播 end ============== -->
+<style>
+    /* reset */
+    /* ======================================== */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    *:before, *:after {
+        box-sizing: border-box;
+    }
+
+    a {
+        display: block;
+        text-decoration: none;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    img {
+        width: 100%;
+        border: 0;
+        vertical-align: middle;
+    }
+
+    article,
+    main,
+    nav,
+    section {
+        display: block;
+    }
+
+    body {
+        margin: 0;
+        background-color: #0d64b7;
+        font-family: PingFangTC-regular, Roboto, "LiHei Pro", "Source Han Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, "Microsoft JhengHei", sans-serif;
+    }
+
+    .sp--960 {
+        position: relative;
+        z-index: 0;
+        max-width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* 主視覺 */
+    /* ======================================== */
+    .logo a,
+    .sp__visual a {
+        display: block;
+        /* 連結測試用
+         border: 1px solid #f00; */
+    }
+
+    .sp__visual img {
+        display: block;
+        /* 切片測試用
+        border: 1px solid #faa; */
+    }
+
+    .logo {
+        position: absolute;
+        z-index: 1;
+        /* 調整logo位置 */
+        top: 0%;
+        left: 1%;
+        width: 30%;
+        max-width: 220px;
+    }
+
+    /* 設定背景 */
+    .sp__main {
+        background: url(bg.jpg) center 0 no-repeat;
+    }
+
+    /* 設定前景 */
+    .sp__visual {
+        position: relative;
+        z-index: 0;
+        width: 100%;
+    }
+
+    .visual__anchor,
+    .visual__main,
+    .visual__nav {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .visual__anchor {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+    }
+
+    .visual__main a,
+    .visual__nav a {
+        flex-grow: 1;
+    }
+
+    /* 設定高度，記得總和要100% */
+    /* 主視覺 */
+    .visual__main {
+        height: 23%;
+    }
+
+    /* 各nav */
+    .visual__nav.nav1 {
+        height: 6%;
+    }
+
+    .visual__nav.nav2 {
+        height: 10%;
+    }
+
+    .visual__nav.nav3 {
+        height: 16%;
+    }
+
+    .visual__nav.nav3 iframe, .video-container object, .video-container embed {
+        position: absolute;
+        top: 55%;
+        left: 42.5%;
+        width: 53%;
+        bottom: 20%
+    }
+
+    .visual__nav.nav4 {
+        height: 9.5%;
+    }
+
+    .visual__nav.nav5 {
+        height: 35.5%;
+    }
+
+    /* 如果需要個別設定每塊寬度(可不設) */
+    /* 主視覺 */
+    /* 如果設100%後面的就會掉下去 */
+    .visual__main a:nth-child(1) {
+        flex-grow: 0;
+        width: 100%;
+    }
+
+    /* 各視覺nav */
+    .visual__nav.nav1 a:nth-child(1) {
+        flex-grow: 0;
+        width: 25%;
+    }
+
+    .visual__nav.nav2 a:nth-child(1) {
+        flex-grow: 0;
+        width: 25%;
+    }
+
+    .visual__nav.nav3 a:nth-child(1) {
+        flex-grow: 0;
+        width: 40%;
+    }
+
+    .visual__nav.nav3 a:nth-child(2) {
+        flex-grow: 0;
+        width: 60%;
+    }
+
+    .visual__nav.nav4 a:nth-child(1) {
+        flex-grow: 0;
+        width: 40%;
+    }
+
+    .visual__nav.nav4 a:nth-child(2) {
+        flex-grow: 0;
+        width: 60%;
+    }
+
+    .visual__nav.nav5 a:nth-child(1) {
+        flex-grow: 0;
+        width: 50%;
+    }
+
+    .visual__bg {
+        display: flex;
+    }
+
+    .visual__bg img {
+        display: inline;
+        width: auto;
+    }
+
+    /* 組版nav */
+    /* ======================================== */
+    .build__anchor {
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    /* 設定組版nav樣式 */
+    .build__anchor {
+        border: 1px solid #fee;
+    }
+
+    .build__anchor a {
+        display: block;
+        padding: 10px 5px;
+        color: #fff;
+        background-color: #faa;
+        border: 1px solid #fee;
+        font-size: 30px;
+        transition: transform 0.16s;
+    }
+
+    .build__anchor a:hover,
+    .build__anchor a:active {
+        filter: brightness(105%) contrast(110%);
+        transform: scale(1.02);
+    }
+
+    /* 設定組版nav寬度(12.5% = 一列8個) */
+    .build-nav__item {
+        flex: 1 0 12.5%;
+        line-height: 200%;
+    }
+
+    @media screen and (max-width: 820px) {
+        /* 設定手機置底選項高度(可不設) */
+        /*body {
+          padding-bottom: 108px;
+        }*/
+        .build__nav {
+            position: fixed;
+            z-index: 5;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        /* 設定手機組版nav樣式(可不設) */
+        .build__anchor {
+            border: 1px solid #faa;
+        }
+
+        .build__anchor a {
+            color: #faa;
+            background-color: #fff;
+            border: 1px solid #faa;
+            font-size: 18px;
+        }
+
+        /* 設定手機組版nav寬度(可不設) */
+        .build-nav__item {
+            flex: 1 0 25%;
+        }
+    }
+
+    /* 自適應banner組 */
+    /* ======================================== */
+    .banner__title {
+        height: 65px;
+        background: center top no-repeat;
+    }
+
+    .banner__wrap {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .banner__item {
+        transition: all 0.3s;
+    }
+
+    .banner__item img {
+        width: 100%;
+    }
+
+    /* 設定一列2個(50%，3個就33.33%，4個就25%) */
+    .bn-w2m1 .banner__item {
+        flex: 1 0 50%;
+    }
+
+    /* 設定點下去與hover動畫 */
+    .bn-w2m1 .banner__item:hover,
+    .bn-w2m1 .banner__item:active {
+        /* 變小(<1時變小) */
+        transform: scale(0.98);
+        /* 亮度調暗(<100%時變暗) */
+        /*filter: brightness(95%);*/
+    }
+
+    /* 設定一列4個 */
+    .bn-w4m2 .banner__item {
+        flex: 1 0 25%;
+    }
+
+    /* 設定點下去與hover動畫 */
+    .bn-w4m2 .banner__item:hover,
+    .bn-w4m2 .banner__item:active {
+        /* 變大(>1時變大) */
+        transform: scale(1.05);
+        /* 亮度調亮(>100%時變亮) */
+        filter: brightness(115%);
+    }
+
+    @media screen and (max-width: 1024px) {
+        /* 設定手機時一列2個 */
+        .bn-w4m2 .banner__item {
+            flex: 1 0 50%;
+        }
+    }
+
+    /* 設定一列3個 */
+    .bn-w3m1 .banner__item {
+        flex: 1 0 33.33%;
+    }
+
+    /* 設定點下去與hover動畫 */
+    .bn-w3m1 .banner__item:hover,
+    .bn-w3m1 .banner__item:active {
+        /* 變大(>1時變大) */
+        transform: scale(1.05);
+        /* 亮度調亮(>100%時變亮) */
+        filter: brightness(115%);
+    }
+
+    @media screen and (max-width: 1024px) {
+        /* 設定手機時一列1個 */
+        .bn-w3m1 .banner__item {
+            flex: 1 0 100%;
+        }
+    }
+
+    /*-- 動畫小物件 --*/
+    .animate__wrap {
+        position: relative;
+        z-index: 1;
+    }
+
+    /*-- 手機版：
+            1. 設定物件距離左邊與上邊的位置，單位可以使用"%"或"vw"
+            2. width 建議電腦版可以使用auto，手機版則可使用%調整
+     --*/
+    .animate__wrap .animate__obj--01 {
+        position: absolute;
+        top: 1vw;
+        left: 1vw;
+        width: auto;
+    }
+
+    /*-- 電腦版：
+            設定物件距離左邊與上邊的位置，單位可以使用"px"，左邊可以挑整clac()後面的px值
+            width 建議電腦版可以使用auto，手機版則可使用%調整
+     --*/
+    @media screen and (min-width: 960px) {
+        .animate__wrap .animate__obj--01 {
+            top: 0;
+            left: calc(50% - 480px);
+            width: auto;
+        }
+    }
+    .visual__nav.nav3 {
+        height: 0;
+    }
+    .visual__nav.nav3 a:nth-child(1) {
+        height: 30vw;
+    }
+    .visual__nav.nav3 iframe {
+        height: 30vw;
+        top: 0%;
+    }
+    .yt__wrap {
+        position: relative;
+        padding-bottom: 26.25%; /* 16:9 */
+        padding-top: 0;
+        height: 0;
+        /*width: 76vw !important;*/
+        /*height: 26vw !important;*/
+    }
+
+    .yt__wrap iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    @media screen and (min-width: 960px) {
+        .visual__nav.nav3 a:nth-child(1) {
+            height: 360px;
+        }
+        .visual__nav.nav3 {
+            height: 16%;
+        }
+        .visual__nav.nav3 iframe {
+            height: 310px;
+            top: 13%;
+        }
+    }
+</style>
+<div id="spWrap" class="sp__wallper">
+    <!-- <div id="barHome"></div> -->
+    <!-- 動畫小物件 -->
+    <div class="animate__wrap">
+        <!--<img class="animate__obj&#45;&#45;01" src="https://www.etmall.com.tw/XML/content/DMSetting/Final/202004/SP_1115132/w/promo-main.png?t=637233280258177675" alt="">-->
+
+        <!-- 如果有多組物件，可以複製命名animate__obj--0{數字} css 也複製一份就可以一直往下生 -->
+        <!--<img class="animate__obj--02" src="" alt="">-->
+    </div>
+    <!-- 主視覺 -->
+    <main class="sp__main">
+        <div class="sp--960">
+            <a href="https://www.etmall.com.tw" class="logo"><img src="ehs-logo.png" alt="東森購物"></a>
+            <div class="sp__visual">
+                <div class="visual__anchor">
+                    <div class="visual__main">
+                    </div>
+                    <div class="visual__nav nav1">
+                        <a href="#########"></a>
+                        <a href="https://www.etmall.com.tw/c3/139057"></a>
+                        <a href="https://www.etmall.com.tw/c3/139057"></a>
+                        <a href="https://www.etmall.com.tw/Activity/Reg/71"></a>
+                    </div>
+                    <div class="visual__nav nav2">
+                        <a href="https://www.etmall.com.tw/c3/63311"></a>
+                        <a href="https://www.etmall.com.tw/c3/131124"></a>
+                        <a href="https://www.etmall.com.tw/c3/49888"></a>
+                        <a href="https://www.etmall.com.tw/i/5666612"></a>
+                    </div>
+                    <div class="visual__nav nav3 yt__wrap">
+                        <a href="https://www.etmall.com.tw/i/2657240"></a>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/KzaI1W8562s" frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                    </div>
+                    <div class="visual__nav nav4">
+                        <a href="https://www.etmall.com.tw/i/2657240"></a>
+                        <a href="https://www.etmall.com.tw/i/2657240"></a>
+                    </div>
+                    <div class="visual__nav nav5">
+                        <a href="https://www.etmall.com.tw/i/2661731"></a>
+                        <a href="https://www.etmall.com.tw/i/2589176"></a>
+                    </div>
+                </div>
+                <!-- 可以選擇一張大圖做背景，或是切成許多小圖作背景(並行載入會比較快) -->
+                <img src="index_01.jpg">
+                <img src="index_02.jpg">
+                <img src="index_03.jpg">
+                <!--<div class="visual__bg visual__bg&#45;&#45;top">-->
+                <!--<img src="index_01.jpg" alt="">-->
+                <!--<img src="index_02.jpg" alt="">-->
+                <!--</div>-->
+                <!--<div class="visual__bg visual__bg&#45;&#45;middle">-->
+                <!--<img src="index_03.jpg" alt="">-->
+                <!--</div>-->
+                <!--<div class="visual__bg visual__bg&#45;&#45;bottom">-->
+                <!--<img src="index_04.jpg" alt="">-->
+                <!--<a href="">-->
+                <!--<img src="index_05.jpg" alt="">-->
+                <!--</a>-->
+                <!--</div>-->
+            </div>
+        </div>
+    </main>
+
+
+</div>
+<script src="https://polyfill.io/v3/polyfill.min.js"></script>
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<!--<script id="generateScript" src="sp-normal/generate.js"></script>-->
+<!-- 東森浮水印 -->
+<script id="scriptIconFloat"
+        src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107916/float-icon.js"></script>
+<!-- 森森浮水印
+<script id="scriptIconFloat" src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1104381/float-icon.js"></script> -->
+<!-- 旅遊置頂bar
+<script id="scriptAddBn" src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106742/add-bn.js"></script> 
+<script id="scriptAddBn" src="add-bn/add-bn.js"></script> -->
+<!-- 共用JS -->
+<script id="generateScript"
+        src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.js"></script>
+<!-- ============== 輪播 start ============== -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+<script>
+    var footerSlider = new Swiper(".swiper-container", {
+        autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+        },
+        autoHeight: true,
+        grabCursor: true,
+        loop: true,
+        speed: 1000,
+    });
+</script>
+<!-- ============== 輪播 end ============== -->

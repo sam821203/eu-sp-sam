@@ -1,0 +1,64 @@
+.promo__event
+  padding: 3% 2% 1%
+  // +bg-set(url(~event/3rd/e-main/components/promo-event/bg-promo.png), contain, 2vw)
+
+  .event__wrap
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    // padding: 2.4% 5%
+    //background-color: $main-e-background-color-1st
+    // 固定位置模式
+    li
+      flex: 0 1 33%
+      -ms-flex: auto
+      +pos-set(relative, zero)
+      padding: 5% 1% 1.5%
+      transition: all 0.5s
+      text-align: center
+      &::after
+        content: ''
+        +pos-set(absolute, zero, -1%, 31.68%)
+        padding-bottom: 36.65%
+        width: 36.64%
+        pointer-events: none
+      @for $i from 1 through 6
+        &:nth-child(#{$i})
+          &::after
+            +bg-set(url(~event/1st/e-main/components/promo-event/items/icon-#{$i}.png), contain)
+
+      &:hover,
+      &:active
+        a
+          filter: brightness(120%) contrast(120%)
+          animation: key-rotate-from-to 0.3s
+
+      a
+        +pos-set(relative, zero)
+        transform-origin: 50% 18px
+
+      &:first-child
+        img:last-child
+          +pos-set(absolute, base, 23%, 8%)
+          width: 11vw
+          transform-origin: 50% 40%
+          animation: tada 2s infinite
+          +breakpoint-min($min-width-xl)
+            width: 104px
+
+      &:nth-child(6)
+        img:last-child
+          +pos-set(absolute, base, 21%, 7%)
+          width: 14vw
+          transform-origin: 50% 40%
+          +breakpoint-min($min-width-xl)
+            width: 141px    
+
+  +breakpoint-min($min-width-xl)
+    padding: 30px 20px 5px
+    .event__wrap
+      li
+        padding-bottom: 15px
+
++key-rotate-from-to(12, -6)
+        

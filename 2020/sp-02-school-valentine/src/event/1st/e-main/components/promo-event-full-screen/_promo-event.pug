@@ -1,0 +1,14 @@
+- var promoDataE = [{link: "#note", imgSrc: "~event/1st/e-main/components/promo-event-full-screen/items/promo-1.png", alt: "登記送$588折價券"}, {link: "https://www.etmall.com.tw/Activity/GroupSale", imgSrc: "~event/1st/e-main/components/promo-event-full-screen/items/promo-2.png", alt: "搶5折商品"},{link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202001/SP_1114613/w/index.html", imgSrc: "~event/1st/e-main/components/promo-event-full-screen/items/promo-3.png", alt: "買新春商品送肯德基券"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html", imgSrc: "~event/1st/e-main/components/promo-event-full-screen/items/promo-4.png", alt: "新會員首購登記抽COLDSTONE"},{link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202001/SP_1114677/w/index.html", imgSrc: "~event/1st/e-main/components/promo-event-full-screen/items/promo-5.png", alt: "最高享$150購物金"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114461/w/index.html", imgSrc: "~event/1st/e-main/components/promo-event-full-screen/items/promo-6.png", alt: "超取送$200"},]
+
+
+
+//- var promoData = isU? promoDataU : promoDataE
+
+.promo__event
+  ul.event__wrap
+    each data, index in promoDataE
+      - var anchorId = 'promoAnchor' + (index + 1)
+      - var imgId = 'promoImg' + (index + 1)
+      li
+        a(id= anchorId, href= data.link, title= data.alt)
+          img.lazyload(id= imgId, data-src= data.imgSrc, alt= data.alt, src="~utils/img/1x1_low.png")

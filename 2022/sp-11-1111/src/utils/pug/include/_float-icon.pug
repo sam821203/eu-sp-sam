@@ -1,0 +1,12 @@
+//- 浮水印切換eu、商品或行銷的script，如有更換請在下方更新
+//- 打開u-mall選項與main/sp選項會自動轉換script src
+if !isSp
+  if !isU
+    script#scriptIconFloat(src="https://media.etmall.com.tw/sp/7939/float-icon.js")
+  else if isU
+    //- script#scriptIconFloat(src="https://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1104382/float-icon.js")
+else if isSp
+  if !isU
+    script#scriptIconFloat(src="https://media.etmall.com.tw/sp/7938/float-icon.js")
+  else if isU
+    //- script#scriptIconFloat(src="https://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1104381/float-icon.js")

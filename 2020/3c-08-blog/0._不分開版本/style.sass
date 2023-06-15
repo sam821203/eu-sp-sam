@@ -1,0 +1,980 @@
+/* style.css
+/* reset
+/* ========================================
+
+*
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+
+  &:before, &:after
+    box-sizing: border-box
+
+a
+  display: block
+  text-decoration: none
+
+ul
+  list-style: none
+
+img
+  width: 100%
+  border: 0
+  vertical-align: middle
+
+button
+  border: none
+  background-color: transparent
+  font-family: inherit
+  padding: 0
+  cursor: pointer
+
+  &:focus
+    outline: 0
+
+article, main, nav, section
+  display: block
+
+body
+  margin: 0
+  font-family: "Microsoft JhengHei", PingFangTC-regular, Roboto, "LiHei Pro", "Source Han Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif
+
+.clearfix::after
+  content: ''
+  display: block
+  clear: both
+
+.layout--main
+  position: relative
+  z-index: 0
+  max-width: 960px
+  margin-left: auto
+  margin-right: auto
+
+//@mixin mixin__big__wrap
+//  display: flex
+//  flex-wrap: wrap
+//  max-width: 100%
+//  width: 100%
+
+/*******  blog 列表 */
+.top__banner
+  background-image: url("top__banner-bg-m.jpg")
+  background-size: 100% auto
+  height: 27vw
+  background-repeat: no-repeat
+  background-position: top center
+  margin: 0 auto
+  text-align: center
+
+  .main__title
+    font-size: 8.5vw
+    padding-top: 7vw
+    letter-spacing: 2vw
+    line-height: 1.2
+
+  .sub__title
+    font-size: 4vw
+    padding-top: 0px
+    letter-spacing: 2px
+
+.blog__wrap__list
+  max-width: 100%
+  width: 100%
+  margin: 10px auto
+  display: flex
+  flex-wrap: wrap
+  @media screen and (min-width: 768px)
+    margin: 20px auto
+.blog__wrap
+  position: relative
+  width: 90%
+  margin: 2% 4%
+  flex: 1 0 90%
+  border-radius: 4%
+  overflow: hidden
+
+  .blog__text, button
+    position: absolute
+    z-index: 2
+    color: #fff
+
+  .blog__text
+    height: 120vw
+    overflow: hidden
+
+  .blog__title
+    font-size: 7vw
+    padding: 3% 5% 0
+
+  /*height: 23vw;
+  /*overflow: hidden;
+
+  .blog__content
+    font-size: 4.5vw
+    padding: 2% 5% 0
+
+  button
+    bottom: 3%
+    right: 6%
+    background: transparent
+    border: 1px solid #fff
+    border-radius: 20px
+    padding: 4px 12px
+    cursor: pointer
+    transition-duration: .5s
+    color: #fff
+    font-size: 5vw
+
+    &:active, &:hover
+      background-color: #fff
+      border-color: #fff
+      color: #000
+  img
+    transition: .5s
+  &:hover
+    img
+      transform: scale(1.2)
+
+.image__cover
+  position: absolute
+  top: 0
+  left: 0
+  z-index: 1
+  background: linear-gradient(0.5turn, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3))
+  width: 100%
+  height: 100%
+
+/* main
+@media screen and (min-width: 768px)
+  /* blog 列表
+  .blog__wrap
+    width: 45%
+    margin: 2%
+    flex: 1 0 45%
+
+    .blog__text
+      height: 60vw
+
+    .blog__title
+      font-size: 4vw
+
+    .blog__content
+      font-size: 2.5vw
+    button
+      font-size: 15px
+@media screen and (min-width: 960px)
+  .top__banner
+    background-image: url("top__banner-bg.jpg")
+    background-size: 2560px auto
+    height: 250px
+
+    .main__title
+      font-size: 75px
+      padding-top: 55px
+      letter-spacing: 5px
+      line-height: 1.5
+
+    .sub__title
+      font-size: 28px
+      padding-top: 0px
+      letter-spacing: 2px
+
+  /* blog 列表
+
+  .blog__wrap__list
+    max-width: 1260px
+
+  .blog__wrap
+    width: 18%
+    margin: 0 1% 1%
+    flex: 1 0 18%
+    .blog__text
+      height: 292px
+    .blog__title
+      font-size: 18px
+
+    .blog__content
+      font-size: 14px
+      top: 21%
+      padding: 0 3%
+
+    button
+      /*padding: 2% 8%;
+      font-size: 15px
+      a
+        font-size: 14px
+
+/*******  blog 內文 */
+/* 每個區塊外層
+$fontSize__title-web: 48px
+$fontSize__title-mobile: 7vw
+$fontSize__title-mobile-425: 28px
+$fontSize__title-mobile-768: 36px
+$fontSize__content-web: 18px
+$fontSize__content-mobile: .875rem
+$fontSize__content-mobile-425: 1rem
+$fontSize__content-mobile-768: 18px
+@mixin blog2__wrap__specification
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  align-items: center
+  padding: 5%
+
+@mixin blog2__title__specification
+  //font-size: $fz
+  line-height: 1.2
+  font-weight: 700
+/* 連結樣式
+@mixin blog2__content__specification($align: center)
+  //font-size: $fz
+  letter-spacing: 1px
+  line-height: 1.5
+  text-align: $align
+/* 連結樣式
+@mixin blog2__a__specification
+  display: inline
+  color: #c62928
+  text-decoration: underline
+  font-weight: 700
+/* 大網最大寬-1260/960
+@mixin wrapWidthMax($maxWidth: 1280px)
+  .wrap__width--max
+    display: flex
+    align-items: center
+    justify-content: center
+    max-width: $maxWidth
+    margin: 0 auto
+
+// 文字設定
+.article
+  .title
+    font-size: $fontSize__title-mobile
+  .content
+    font-size: $fontSize__content-mobile
+.tips
+  font-size: $fontSize__content-mobile
+@media screen and (min-width: 426px)
+  .article
+    .title
+      font-size: $fontSize__title-mobile-425
+    .content
+      font-size: $fontSize__content-mobile-425
+  .tips
+    font-size: $fontSize__content-mobile-425
+  @media screen and (min-width: 768px)
+    .article
+      .title
+        font-size: $fontSize__title-mobile-768
+      .content
+        font-size: $fontSize__content-mobile-768
+    .tips
+      font-size: $fontSize__content-mobile-768
+  @media screen and (min-width: 960px)
+    .article
+      .title
+        font-size: $fontSize__title-web
+      .content
+        font-size: $fontSize__content-web
+    .tips
+      font-size: $fontSize__content-mobile-768
+/* 主圖片
+.blog__item__theme-top
+  position: relative
+  background-image: url("bg-blog__item__theme-top.jpg")
+  background-position: top center
+  background-repeat: no-repeat
+  background-size: 100% auto
+  background-attachment: fixed
+  max-height: 1000px
+  max-width: 2560px
+  margin: 0 auto
+  text-align: center
+  color: #fff
+  .blog__main__content
+    padding-top: 3vw
+    position: relative
+    z-index: 2
+    h1
+      font-size: 7vw
+      line-height: 1.2
+      padding: 0 5% 3%
+      height: 21vw
+      overflow: hidden
+    /*line-height: 1.5;
+    p
+      font-size: 4vw
+      padding: 0 5%
+
+  &:before
+    display: block
+    content: ''
+    clear: both
+    z-index: 1
+    position: absolute
+    background-color: rgba(0, 0, 0, 0.3)
+    width: 100%
+    top: 0
+    left: 0
+    height: 55vw
+    max-height: 1000px
+  height: 55vw
+
+  @media screen and (min-width: 960px)
+    //height: 528px
+    .blog__main__content
+      padding: 17vw 5% 0
+      h1
+        +blog2__title__specification
+        font-size: $fontSize__title-web
+        padding: 0
+        height: auto
+      p
+        font-size: 24px
+        padding: 0 5%
+
+/* 下拉按鈕
+.scroll__down
+  position: relative
+  z-index: 2
+  border-radius: 50%
+  background-color: #fbc842
+  width: 40px
+  height: 40px
+  border: 0
+  cursor: pointer
+  margin-top: 4vw
+  transition: .5s
+  &:before, &:after
+    display: block
+    content: ''
+    clear: both
+    z-index: 100
+    position: absolute
+    top: 13px
+    height: 14px
+    width: 3px
+    background-color: #fff
+    transform-origin: center bottom
+    cursor: pointer
+    transition-duration: .5s
+
+  &:before
+    transform: rotate(44deg)
+    right: 19px
+
+  &:after
+    transform: rotate(-44deg)
+    right: 18px
+  &:hover
+    transform: scale(1.2)
+  @media screen and (min-width: 960px)
+    width: 80px
+    height: 80px
+    margin-top: 35px
+    &:before, &:after
+      top: 22px
+      height: 34px
+      width: 5px
+
+    &:before
+      right: 39px
+
+    &:after
+      right: 36px
+/* 左圖右文
+.blog__item__theme-imageLeft
+  background-color: #f4f4f4
+  +blog2__wrap__specification
+  img
+    width: 100%
+    height: auto
+    margin-bottom: 5%
+
+  .article
+    .title
+      +blog2__title__specification
+      margin-bottom: 4vw
+
+    /*font-weight: 700;
+
+    .content
+      +blog2__content__specification(left)
+      width: auto
+      a
+        +blog2__a__specification
+  @media screen and (min-width: 960px)
+    padding: 50px 0
+    +wrapWidthMax
+    img
+      width: 47%
+      height: auto
+      margin: 0 2% auto auto
+
+    .article
+      width: 51%
+      .title
+        +blog2__title__specification
+        margin-bottom: 30px
+      .content
+        +blog2__content__specification(left)
+        width: auto
+
+/* 右圖左文
+.blog__item__theme-imageRight
+  background-color: #fff
+  +blog2__wrap__specification
+  .article
+    .content
+      +blog2__content__specification(left)
+      width: auto
+      margin-bottom: 5%
+
+    .title
+      +blog2__title__specification
+      margin-bottom: 4vw
+    .content a
+      +blog2__a__specification
+  img
+    width: 100%
+    height: auto
+  @media screen and (min-width: 960px)
+    padding: 50px 0
+    +wrapWidthMax
+    .article
+      width: 51%
+      .title
+        +blog2__title__specification
+        margin-bottom: 30px
+      .content
+        +blog2__content__specification(left)
+        margin-bottom: 0
+    img
+      width: 47%
+      height: auto
+      margin: 0 auto auto 2%
+/* 文字於圖上
+.blog__item__theme-textOnImage
+  position: relative
+  background-image: url("bg-blog__item__theme-textOnImage.jpg")
+  background-position: center center
+  background-repeat: no-repeat
+  background-size: cover
+  background-attachment: scroll
+  max-height: 1000px
+  max-width: 2560px
+  margin: 0 auto
+  text-align: center
+  color: #fff
+  top: 0
+
+  .content
+    padding-top: 3vw
+    position: relative
+    z-index: 2
+
+  .textOnImage__mask
+    display: block
+    content: ''
+    clear: both
+    z-index: 1
+    position: absolute
+    background-color: rgba(0, 0, 0, 0.7)
+    width: 100%
+    top: 0
+    left: 0
+    //height: 55vw
+    overflow: hidden
+
+  //height: 55vw
+  overflow: hidden
+
+  .article
+    padding-top: 4vw
+    padding-bottom: 2vw
+
+    .title
+      position: relative
+      z-index: 2
+      +blog2__title__specification
+      padding: 0 5% 3%
+
+    .content
+      +blog2__content__specification
+      padding: 0 5%
+
+      a
+        display: inline
+  @media screen and (min-width: 960px)
+    .content
+      padding-top: 30px
+    //&:before
+    //  max-height: 1000px
+
+    .article
+      padding-top: 20px
+      padding-bottom: 20px
+      max-width: 960px
+      margin: 0 auto
+      .title
+        +blog2__title__specification
+        padding: 0 5% 3%
+        height: auto
+      .content
+        +blog2__content__specification
+        padding: 0 5%
+
+/* 三張圖
+.blog__item__theme-threeColumn
+  background-color: #fbc842
+  +blog2__wrap__specification
+  li
+    padding-bottom: 5vw
+
+  .title
+    text-align: center
+    +blog2__title__specification
+    margin: 2vw auto
+
+  .content
+    +blog2__content__specification
+
+  @media screen and (min-width: 960px)
+    padding: 50px 0
+    +wrapWidthMax
+    ul.wrap__width--max
+      align-items: flex-start
+    li
+      padding-bottom: 0
+      width: 29%
+      flex: 1 0 29%
+      margin: 0 .5%
+
+    .title
+      // 三張圖標題
+      font-size: 24px
+      margin: 10px auto
+
+    .content
+      +blog2__content__specification
+
+/* 先文字在圖片
+.blog__item__theme-textUnderImage
+  +blog2__wrap__specification
+  .title
+    text-align: center
+    +blog2__title__specification
+    margin: 2vw auto 4vw auto
+
+  .content
+    +blog2__content__specification
+    margin-bottom: 1vw
+
+  @media screen and (min-width: 960px)
+    padding: 50px 0
+    +wrapWidthMax(960px)
+    .wrap__width--max
+      flex-wrap: wrap
+    .article
+      width: 100%
+    .title
+      +blog2__title__specification
+      margin: 10px auto 15px auto
+
+    .content
+      +blog2__content__specification
+      margin-bottom: 15px
+
+/* 兩圖切換
+.blog__item__theme-tabImage
+  background-color: #fbc842
+  +blog2__wrap__specification
+  .tab-group
+    width: 100%
+    list-style: none
+    padding: 0
+    margin: 0 0 10px 0
+    display: flex
+
+    li
+      width: 50%
+      flex: 1 0 50%
+
+  label
+    position: absolute
+    -webkit-transform: translateY(6px)
+    transform: translateY(6px)
+    left: 13px
+    color: #898989
+    -webkit-transition: all 0.25s ease
+    transition: all 0.25s ease
+    -webkit-backface-visibility: hidden
+    pointer-events: none
+
+  .tab-group
+    li a
+      text-decoration: none
+      padding: 4px
+      color: #a0b3b0
+      text-align: center
+      cursor: pointer
+      -webkit-transition: .5s ease
+      transition: .5s ease
+      text-decoration: none
+      +blog2__content__specification
+
+    &:after
+      content: ""
+      display: table
+      clear: both
+
+    li a:hover
+      background-color: #818181
+      color: #ffffff
+
+    .tab
+      background-color: #fff
+
+      &.active
+        background-color: #818181
+
+        a
+          color: #ffffff
+
+  .tab-content > div
+    display: none
+
+    &:first-child
+      display: block
+
+  .article .content
+    +blog2__content__specification
+    margin-bottom: 1vw
+  .tab__image
+    // 防止圖片太大
+    max-height: 71vw
+    overflow-y: hidden
+  @media screen and (min-width: 960px)
+    padding: 50px 0
+    +wrapWidthMax(960px)
+    .wrap__width--max
+      flex-wrap: wrap
+    .tab-content, .tab-group, .article
+      width: 100%
+    .article .content
+      +blog2__content__specification
+      margin-bottom: 10px
+      padding: 0 5%
+    .tab-group
+      li a
+        +blog2__content__specification
+    .tab__image
+      max-height: 750px
+
+/* 圖片輪播
+.blog__item__theme-imageSlider
+  background-color: #f4f4f4
+  +blog2__wrap__specification
+  .article
+    margin-bottom: 4vw
+  .title
+    text-align: center
+    +blog2__title__specification
+    margin: 2vw auto
+
+  .content
+    +blog2__content__specification
+    margin-bottom: 2vw
+
+  .swiper-container
+    padding-bottom: 6vw
+
+    .swiper-slide
+      &:hover, &:active
+        -webkit-filter: contrast(120%)
+        filter: contrast(120%)
+
+    .swiper-pagination-custom
+      bottom: 0
+
+      .swiper-pagination-bullet
+        width: 6px
+        height: 6px
+        margin: -1px 2px
+        opacity: 1
+        background-color: transparent
+        border: 1px solid #818181
+
+      .swiper-pagination-bullet-active
+        opacity: 1
+        background-color: #818181
+
+  .swiper-wrapper
+    &.disabled
+      transform: translate3d(0px, 0, 0) !important
+  .swiper-pagination
+    &.disabled
+      display: none
+
+  @media screen and (min-width: 960px)
+    padding: 50px 0
+    .wrap__width--max-swiper
+      width: 100%
+      display: block
+    .swiper-container, .article
+      width: 100%
+      max-width: 960px
+      margin: 0 auto
+    .article
+      margin-bottom: 40px
+    .title
+      +blog2__title__specification
+      margin: 20px auto
+
+    .content
+      +blog2__content__specification
+      margin-bottom: 20px
+
+    .swiper-container
+      padding-bottom: 40px
+      max-width: 960px
+      width: 100%
+
+      .swiper-pagination-custom
+        bottom: 0
+        .swiper-pagination-bullet
+          width: 12px
+          height: 12px
+          margin: -1px 6px
+
+/* 影片
+.blog__item__theme-movie
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  align-items: center
+  margin-bottom: 5vw
+
+  .article
+    padding: 5%
+
+  .title
+    text-align: center
+    +blog2__title__specification
+    margin: 2vw auto
+
+  .content
+    +blog2__content__specification
+    margin-bottom: 2vw
+  @media screen and (min-width: 960px)
+    margin-bottom: 20px
+    +wrapWidthMax
+    .wrap__width--max
+      flex-wrap: wrap
+    .article
+      padding: 3% 3% 2%
+    .title
+      +blog2__title__specification
+      margin: 20px auto
+    .content
+      +blog2__content__specification
+      margin-bottom: 20px
+/* youtube 部分
+/*影片
+.yt__wrap
+  position: relative
+  display: flex
+  justify-content: center
+  align-items: top
+  padding-top: 0
+  padding-bottom: 26.25%
+  /* 16:9
+  width: 100vw
+  height: 60vw
+  iframe
+    position: absolute
+    left: 0
+    width: 100%
+    height: 100%
+  @media screen and (min-width: 960px)
+    height: 810px
+
+/* 圖片下小字
+.blog__item__theme-smallTips
+  background-color: #f4f4f4
+  +blog2__wrap__specification
+
+  .tips
+    +blog2__content__specification
+    margin: 1vw auto 4vw auto
+
+  @media screen and (min-width: 960px)
+    padding: 50px 0
+    +wrapWidthMax(960px)
+    .wrap__width--max
+      flex-wrap: wrap
+    .tips
+      +blog2__content__specification
+      margin-bottom: 20px
+      margin-top: 10px
+/* 純文字
+.blog__item__theme-text
+  background-color: #fbc842
+  +blog2__wrap__specification
+
+  .title
+    text-align: center
+    +blog2__title__specification
+    margin: 2vw auto
+
+  .content
+    +blog2__content__specification
+    margin-bottom: 2vw
+
+    a
+      +blog2__a__specification
+
+  @media screen and (min-width: 960px)
+    padding: 50px 0
+    .article
+      display: flex
+      align-items: center
+      justify-content: center
+      max-width: 960px
+      margin: 0 auto
+      flex-wrap: wrap
+    .title
+      +blog2__title__specification
+      margin: 20px auto
+
+    .content
+      +blog2__content__specification
+      margin-bottom: 20px
+/* 回到上一頁
+.blog__item__theme-goBackPage
+  background-color: #fbc842
+  +blog2__wrap__specification
+  position: relative
+  &::before
+    position: absolute
+    top: 0
+    left: 50%
+    transform: translateX(-50%)
+    content: ''
+    clear: both
+    height: 1px
+    width: 100%
+    color: #fff
+    background-color: #ffffff
+  a
+    position: relative
+    box-sizing: border-box
+    border: 1px solid #fff
+    padding: 2% 5%
+    border-radius: 30vw
+    width: 45%
+    transition: .5s
+    &:hover
+      background-color: #fff
+      .btn__arrow
+        transition: .5s
+        &::before, &::after
+          background-color: #000
+  button
+    /*position: relative;
+    font-size: 4.5vw
+  @media screen and (min-width: 960px)
+    padding: 50px 0
+    a
+      padding: 1% 3%
+      border-radius: 100px
+      width: 28%
+      max-width: 400px
+    button
+      font-size: 32px
+  @media screen and (min-width: 1260px)
+    &::before
+      width: 1260px
+    a
+      width: 270px
+      padding: 15px 25px
+
+.btn__arrow
+  position: absolute
+  z-index: 1
+  top: 4vw
+  right: 0
+  width: 8vw
+  height: 3.5vw
+  transition: .5s
+  &::before, &::after
+    content: ''
+    position: absolute
+    z-index: 1
+    top: 0
+    left: 50%
+    width: 2px
+    height: 100%
+    background-color: #fff
+
+  &::before
+    transform: rotate(45deg)
+    top: 0.4vw
+    right: 0
+
+  &::after
+    transform: rotate(-45deg)
+    top: -2vw
+    right: 0
+  @media screen and (min-width: 960px)
+    top: 35%
+    right: -5%
+    width: 80px
+    height: 25px
+
+    &::before
+      top: 6px
+    &::after
+      top: -11px
+  @media screen and (min-width: 1260px)
+    top: 37%
+/* 側欄 icon
+.blog__right__icon
+  position: relative
+
+  ul
+    position: fixed
+    right: 5px
+    bottom: 30px
+    z-index: 100
+
+    li
+      text-align: right
+      transform: scale(0.7)
+      margin-bottom: -15px
+      img
+        text-align: right
+        width: 100%
+
+  @media screen and (min-width: 960px)
+    ul
+      right: 20px
+      bottom: 60px
+      li
+        margin-bottom: 5px
+        transition: .5s
+        transform: scale(1)
+        &:hover
+          transform: scale(1.2)
+        img
+          width: 50%
+          transform: translateY(0)
+  @media screen and (min-width: 1280px)
+    ul
+      right: 30px
+      bottom: 60px
+      li
+        margin-bottom: 10px
+        img
+          width: auto

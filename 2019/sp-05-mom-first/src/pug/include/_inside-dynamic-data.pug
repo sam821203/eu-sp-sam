@@ -1,0 +1,13 @@
+if !isSp
+  if! isU
+    script(src="../components/event-w2m1/data.w2m1.js")
+    script(src="../components/other-html/data.main-e.js")
+    script(src="../components/bn-group-w2m1-2/data.sp-2-e.js")
+    script(src="../components/bn-group-w2m1/data.sp.js")
+  else if isU
+    script(src="../components/event-w2m1/data.w2m1.js")
+    script(src="../components/other-html/data.main-u.js")
+    script(src="../components/bn-group-w2m1-2/data.sp-2-u.js")
+    script(src="../components/bn-group-w2m1/data.sp.js")
+else if isSp
+  script(src="../components/bn-group-w2m1/data.sp.js")

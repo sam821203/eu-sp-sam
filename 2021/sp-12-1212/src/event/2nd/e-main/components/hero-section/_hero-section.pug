@@ -1,0 +1,93 @@
+-
+  var heroTitleE = [
+    {
+      link: "#note",
+      imgSrc: "event/2nd/e-main/components/hero-section/sub-title-hero-section-1.png",
+      alt: "滿額送2,700"
+    },
+    {
+      link: "https://m.etmall.com.tw/Activity/Lottery/202112_be63d74405caeae167d3d75b7efba78e",
+      imgSrc: "event/2nd/e-main/components/hero-section/sub-title-hero-section-2.png",
+      alt: "集字抽Dyson"
+    },
+    {
+      link: " https://media.etmall.com.tw/sp/8130/m/index.html",
+      imgSrc: "event/2nd/e-main/components/hero-section/sub-title-hero-section-3.png",
+      alt: "集點換iPhone"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/11933/m/index.html",
+      imgSrc: "event/2nd/e-main/components/hero-section/sub-title-hero-section-4.png",
+      alt: "銀行最高回饋25%"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/12160/m/index.html",
+      imgSrc: "event/2nd/e-main/components/hero-section/sub-title-hero-section-4.png",
+      alt: "送KFC優惠券"
+    },
+  ]
+
+-
+  var heroTitleU = [
+    {
+      link: "https://media.u-mall.com.tw/sp/9704/m/index.html",
+      //- imgSrc: "event/2nd/u-main/components/promo-event/items/promo-1.png",
+      alt: "23家銀行 最高回饋15%"
+    },
+    {
+      link: "https://media.u-mall.com.tw/sp/9704/m/index.html",
+      //- imgSrc: "event/2nd/u-main/components/promo-event/items/promo-2.png",
+      alt: "花旗滿$20,000送$2,000"
+    },
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale",
+      //- imgSrc: "event/2nd/u-main/components/promo-event/items/promo-3.png",
+      alt: "限時瘋搶"
+    },
+  ]
+
+-var heroTitle = isU ? heroTitleU : heroTitleE
+
+.decor--stage
+  img(src="event/2nd/e-main/components/hero-section/decor-bridge.png", alt="")
+
+section.hero__wrap
+  .hero__decoration.full-parent
+    #body
+      #WebGL-output
+    .decor--city
+      img(src="event/2nd/e-main/components/hero-section/decor-city-left.png", alt="")
+      img(src="event/2nd/e-main/components/hero-section/decor-city-right.png", alt="")
+    .decor--left
+      img(src="event/2nd/e-main/components/hero-section/decor-plane-left.png", alt="")
+    .decor--ground
+      img(src="event/2nd/e-main/components/hero-section/decor-ground.png", alt="")
+    .decor--sky
+      img(src="event/2nd/e-main/components/hero-section/decor-web-sky.png", alt="")
+      img(src="event/2nd/e-main/components/hero-section/decor-sky.png", alt="")
+    .light__wrap
+      .decor--light.decor--light-front
+        img(src="event/2nd/e-main/components/hero-section/decor-light.png", alt="")
+      //- .decor--light.decor--light-back
+        img(src="event/2nd/e-main/components/hero-section/decor-light.png", alt="")
+
+
+  .layout--main
+    .hero__zone
+      .hero__stage
+      .hero__title
+        .hero__title--main
+          img(src="event/2nd/e-main/components/hero-section/main-title-hero-section.png", alt="")
+        .hero__title--sub.swiper-container#heroTitle(dir="rtl")
+          ul.swiper-wrapper
+            each data, index in heroTitle
+              li.swiper-slide
+                a(href= data.link, title=data.alt)
+                  img(src= data.imgSrc, data.alt)
+
+
+    .hero__zone--event
+      .hero__box--button
+          a(href="")
+      include /event/2nd/e-main/components/hero-section/hero-event/_hero-event
+      //- #heroBlock.hero__block

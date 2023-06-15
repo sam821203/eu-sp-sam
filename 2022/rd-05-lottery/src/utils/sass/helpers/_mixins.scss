@@ -1,0 +1,349 @@
+// ==========================================================================
+// mixins -- 較像程式碼所以用.scss保留{ }
+// ==========================================================================
+@use "sass:math";
+
+// ==========================================================================
+// Mixins for Layout
+// ==========================================================================
+// Clear Float
+// ==========================================================================
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+// base layout align center
+// ==========================================================================
+@mixin layout-center($width: 100%, $maxWidth: null) {
+  margin-left: auto;
+  margin-right: auto;
+  width: #{$width};
+  max-width: #{$maxWidth};
+}
+
+// horizontal vertical center
+// ==========================================================================
+@mixin hor-ver-center($width) {
+  width: $width + px;
+  position: absolute;
+  z-index: map-get($zindex, base);
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+// background set (for background size)
+// ==========================================================================
+@mixin bg-set(
+  $image,
+  $size: auto,
+  $pos-x: center,
+  $pos-y: 0,
+  $repeat: no-repeat,
+  $color: null
+) {
+  // 分開寫是為了ie9不支援漸層時可以吃到上面的bg-color
+  background-color: $color;
+  background: $image $color $pos-x $pos-y $repeat;
+  background-size: $size;
+}
+
+// position set
+// ==========================================================================
+@mixin pos-set(
+  $pos: relative,
+  $znumber: 0,
+  $top: null,
+  $left: null,
+  $bottom: null,
+  $right: null
+) {
+  position: $pos;
+  z-index: map-get($zindex, $znumber);
+  top: $top;
+  left: $left;
+  bottom: $bottom;
+  right: $right;
+}
+
+// ==========================================================================
+// Mixins for btn color setting
+// ==========================================================================
+@mixin btn-border($color) {
+  line-height: 140%; // for android
+  color: $color;
+  border-color: $color;
+  font-weight: bold;
+  &:hover,
+  &:focus {
+    color: lighten($color, 10%);
+    border-color: lighten($color, 10%);
+  }
+}
+
+@mixin btn-fill($color, $bgColor) {
+  padding: 0.8% 5%;
+  line-height: 140%; // for android
+  color: $color;
+  background-color: $bgColor;
+  font-weight: bold;
+  &:hover,
+  &:focus {
+    background-color: lighten($bgColor, 10%);
+  }
+}
+
+// breakpoint
+// ==========================================================================
+@mixin breakpoint-min($point) {
+  @media screen and (min-width: $point) {
+    @content;
+  }
+}
+
+@mixin breakpoint-max($point) {
+  @media screen and (max-width: $point) {
+    @content;
+  }
+}
+
+// ==========================================================================
+// Mixins for Text layout
+// ==========================================================================
+// hide text
+// ==========================================================================
+@mixin text-hide {
+  white-space: nowrap;
+  text-indent: 1000%;
+  overflow: hidden;
+}
+
+@mixin text-fool($num) {
+  height: $num;
+  overflow: hidden;
+}
+
+// setting img width height
+// ==========================================================================
+@mixin width-height($value) {
+  width: $value + px;
+  height: $value + px;
+  overflow: hidden;
+}
+
+// img loading
+// ==========================================================================
+@mixin img-loading {
+  background: url("../../Resource/img201703/1x1.png") no-repeat center center;
+  background-size: cover;
+}
+
+// ellipsis text
+// ==========================================================================
+@mixin txt-ellipsis($maxWidth) {
+  max-width: $maxWidth + px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// font size
+// ==========================================================================
+@mixin font-size($value) {
+  font-size: $value + px;
+  font-size: math.div($value, 10) + rem;
+}
+
+@mixin rwd-font($size) {
+  @if ($size == "sm") {
+    font-size: calc((0.4em + 1vmin) + (0.4em + 1vmax));
+  } @else if ($size == "md") {
+    font-size: calc((0.4em + 2vmin) + (0.4em + 2vmax));
+  } @else if ($size == "lg") {
+    font-size: calc((0.4em + 3vmin) + (0.4em + 3vmax));
+  }
+}
+
+@mixin font-range($min, $max) {
+  font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+  line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px) / (1600 - 300)));
+}
+
+// ==========================================================================
+// Css triangle
+// ==========================================================================
+%arrow-common {
+  width: 0;
+  height: 0;
+}
+
+@mixin arrow-top($left, $right, $bottom, $color, $vaule) {
+  @extend %arrow-common;
+  border-left: $left + px solid transparent;
+  border-right: $right + px solid transparent;
+  border-bottom: $bottom + px solid rgba($color, $vaule);
+}
+
+@mixin arrow-down($left, $right, $top, $color, $vaule) {
+  @extend %arrow-common;
+  border-left: $left + px solid transparent;
+  border-right: $right + px solid transparent;
+  border-top: $top + px solid rgba($color, $vaule);
+}
+
+@mixin arrow-right($top, $bottom, $left, $color, $vaule) {
+  @extend %arrow-common;
+  border-top: $top + px solid transparent;
+  border-bottom: $bottom + px solid transparent;
+  border-left: $left + px solid rgba($color, $vaule);
+}
+
+// ==========================================================================
+// Mixins for flex support to ie
+// ==========================================================================
+// for flex container
+@mixin display-flex($child: "li") {
+  display: flex;
+
+  // for IE9
+  // @include clearfix;
+  // #{$child} {
+  //   float: left;
+  // }
+}
+
+// for flex item
+@mixin flex($grow: 0, $shrink: 1, $basic: auto) {
+  flex: $grow $shrink $basic;
+}
+// for flex item + IE9
+// @mixin flex($grow: 0, $shrink: 1, $basic: auto, $width: $basic) {
+//   width: $width;
+//   flex: $grow $shrink $basic;
+// }
+
+@mixin nav-overflow-x() {
+  overflow-x: scroll;
+  /* for IE, firefox cacel scrollbar */
+  -ms-overflow-x: auto;
+  scrollbar-width: none;
+  /* for chrome, safari cacel scrollbar */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+// ==========================================================================
+// Aspect ratio Mixin
+// ==========================================================================
+@mixin aspect-ratio($width, $height, $pos: relative, $z: "", $tag: div) {
+  position: $pos;
+  @if ($z) {
+    z-index: map-get($zindex, $z);
+  }
+  &:before {
+    content: "";
+    display: block;
+    padding-bottom: math.div($height, $width) * 100%;
+    width: 100%;
+  }
+  > #{$tag} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    @if $tag != "img" {
+      height: 100%;
+    }
+  }
+}
+
+// ==========================================================================
+// modifier Mixin
+// ==========================================================================
+// 使用這個判斷可以避免在每個不同的網頁中存下了過多其他網頁的CSS設定
+// 如： hero--a、hero--b的CSS會在a.css和b.css中同時存在--a與--b的設定，
+// 但是使用這個mixin就能在a.css中只有hero--a、b.css中只有hero--b
+// 用法：先設定一個變數在不同需求中切換，如$src= etmall、$src= umall，
+// 再用+switch-class($src, etmall)中用--etmall的專屬設定，這樣在umall.css中就不會有--etmall的設定
+@mixin switch-class($variable, $value) {
+  @if ($variable == $value) {
+    @content;
+  }
+}
+
+// ==========================================================================
+// Swiper slider custom nav arrow Mixin
+// ==========================================================================
+// .swiper-butto-custom 指定色arrow樣式($color為不帶#的Hex六碼色碼)
+// 在.swiper-button-custom底下用
+@mixin swiper-button-custom($color) {
+  &.swiper-button-prev {
+    left: 0;
+    // fill%3D'%23色碼' => fill:'#色碼'
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23#{$color}'%2F%3E%3C%2Fsvg%3E");
+  }
+  &.swiper-button-next {
+    right: 0;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23#{$color}'%2F%3E%3C%2Fsvg%3E");
+  }
+}
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin flex-container($x-axis: center, $y-axis: center, $wrap: wrap) {
+  display: flex;
+  justify-content: $x-axis;
+  align-items: $y-axis;
+  flex-wrap: $wrap;
+}
+
+// @mixin font-styling(
+//   $size: 16px,
+//   $ratio: 1.5,
+//   $weight: 400,
+//   $align: left,
+//   $spacing: null
+// ) {
+//   font-size: $size;
+//   line-height: $size * $ratio;
+//   font-weight: $weight;
+//   text-align: $align;
+//   letter-spacing: $spacing;
+// }
+
+@mixin font-styling($size: 16px, $weight: 400, $align: left, $spacing: null) {
+  font-size: $size;
+  font-weight: $weight;
+  text-align: $align;
+  letter-spacing: $spacing;
+}
+
+@mixin padding-y($top, $bottom: $top) {
+  padding-top: $top;
+  padding-bottom: $bottom;
+}
+
+@mixin padding-x($left, $right: $left) {
+  padding-left: $left;
+  padding-right: $right;
+}
+
+@mixin margin-y($top, $bottom: $top) {
+  margin-top: $top;
+  margin-bottom: $bottom;
+}
+
+@mixin margin-x($left, $right: $left) {
+  margin-left: $left;
+  margin-right: $right;
+}

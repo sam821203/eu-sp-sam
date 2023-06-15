@@ -1,0 +1,19 @@
+.sp__main
+
+.sp__visual
+  a
+    display: block
+    // border: 1px solid $main-e-background-color-1st-2
+.decor__item
+  +pos-set(absolute, base, 80%, 25%)
+  width: 70%
+  pointer-events: none
+  &.animate__rollIn
+    animation: rollIn .5s linear 1
+  +breakpoint-min($min-width-xl)
+    top: 2140px
+    left: calc(50% - 200px)
+    width: auto
+
+  // animation: rollIn 1s linear infinite
+

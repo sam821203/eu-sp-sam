@@ -1,0 +1,48 @@
+-
+  var heroSliderDataE = [
+    {
+      link: "https://media.etmall.com.tw/sp/8222/m/index.html",
+      imgSrc: "~event/2nd/e-sp/components/hero-slider/items/product-1.png",
+      alt: "SKECHERS玩出經典8折起"
+    },
+    {
+      link: "https://www.etmall.com.tw/c3/126764",
+      imgSrc: "~event/2nd/e-sp/components/hero-slider/items/product-2.png",
+      alt: "SKECHERS玩出經典8折起"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2886152",
+      imgSrc: "~event/2nd/e-sp/components/hero-slider/items/product-3.png",
+      alt: "SKECHERS玩出經典8折起"
+    },
+  ]
+
+-
+  var heroSliderDataU = [
+    {
+      link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202008/SP_1106087/w/index.html",
+      imgSrc: "~event/2nd/u-main/components/hero-slider/items/mid-big-1.png",
+      alt: "20間銀行最高回饋10%"
+    },
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale",
+      imgSrc: "~event/2nd/u-main/components/hero-slider/items/mid-big-2.png",
+      alt: "整點最便宜"
+    },
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale?Day=Up",
+      imgSrc: "~event/2nd/u-main/components/hero-slider/items/mid-big-3.png",
+      alt: "天天最激殺"
+    },
+  ]
+
+- var heroSliderData = isU ? heroSliderDataU : heroSliderDataE
+
+.promo__wrap
+  #sliderHero.promo__slider.swiper-container
+    ul.swiper-wrapper
+      each data in heroSliderData
+        li.swiper-slide
+          a(href= data.link, title= data.alt)
+            img.swiper-lazy(data-src= data.imgSrc, alt="")
+            .swiper-lazy-preloader.swiper-lazy-preloader-black

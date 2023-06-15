@@ -1,0 +1,24 @@
+- var promoDataE = [{link: "https://www.etmall.com.tw/p/93633", imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-1.png", alt: "買就送頂級面膜"}, {link: "#note", imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-2.png", alt: "滿額送588"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202001/SP_1114613/w/index.html", imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-3.png", alt: "送肯德基58折券"}, {link: "https://www.etmall.com.tw/Activity/GroupSale", imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-4.png", alt: "集氣搶5折品"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html", imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-5.png", alt: "首購登記抽酷聖石冰淇淋"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202001/SP_1114677/w/index.html", imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-5.png", alt: "超商取貨最高送$100"}, ]
+
+- var promoDataU = [{link: "https://www.u-mall.com.tw/Activity/HourSale", imgSrc: "~event/2nd/u-main/components/promo-event/items/promo-1.png", alt: "整點最便宜"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1103367/w/index.html", imgSrc: "~event/2nd/u-main/components/promo-event/items/promo-2.png", alt: "20間銀行最高回饋10%"}, {link: "https://www.u-mall.com.tw/Activity/HourSale?Day=Up", imgSrc: "~event/2nd/u-main/components/promo-event/items/promo-3.png", alt: "天天最激殺"}, ]
+
+- var promoData = isU ? promoDataU : promoDataE
+
+.promo__event(data-title="早春煥新")
+  ul.event__wrap
+    //- 固定位置模式
+    //- each data, index in promoData
+    //-   - var anchorId = 'promoAnchor' + (index + 1)
+    //-   - var imgId = 'promoImg' + (index + 1)
+    //-   li
+    //-     a(id= anchorId, href= data.link, title= data.alt)
+    //-       img(id= imgId, src= data.imgSrc, alt= data.alt)
+
+    //- 位置不一模式
+    li
+      a(href= promoData[0].link, title= promoData[0].alt)
+    li
+      a(href= promoData[1].link, title= promoData[1].alt)
+    li
+      a(href= promoData[2].link, title= promoData[2].alt)
+    

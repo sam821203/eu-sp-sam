@@ -1,0 +1,136 @@
+style.
+    /* reset */
+    .calendar__wrap * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .calendar__wrap *::before, .calendar__wrap *::after {
+      box-sizing: border-box;
+    }
+  .calendar__wrap {
+    font-size: 10px;
+    overflow-x: scroll;
+    -ms-overflow-x: auto;
+    scrollbar-width: none;
+    white-space: nowrap; }
+    
+    .calendar__wrap::-webkit-scrollbar {
+      display: none; }
+
+  .newly__wrap {
+    position: relative;
+    z-index: 0;
+    padding-top: 16%;
+    height: 0; }
+    .newly__wrap .newly__item {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 12%;
+      max-width: 74px; }
+      .newly__wrap .newly__item.notyet a {
+        cursor: default; }
+    @media screen and (min-width: 768px) {
+      .newly__wrap {
+        padding-top: 95px; }
+        .newly__wrap .newly__item {
+          width: 75px; } }
+
+  @media screen and (min-width: 1368px) {
+    .timeline__wrap {
+      overflow: hidden; } }
+
+  .timeline__item {
+    font-size: 13px;
+    font-size: 1.3em;
+    display: inline-block;
+    position: relative;
+    z-index: 0;
+    margin-left: -0.3em;
+    padding: 1% 2.8%; }
+    .timeline__item:before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: calc(32% - 1px);
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #04dcdc; }
+    .timeline__item .timeline__dot {
+      width: 2em;
+      height: 2em;
+      background-image: url(../index/img/dot.png);
+      background-size: contain; }
+    .timeline__item .timeline__month {
+      margin-left: 0.25em;
+      color: #04dcdc; }
+    @media screen and (min-width: 768px) {
+      .timeline__item {
+        font-size: 20px;
+        font-size: 2em;
+        padding: 10px 20px; }
+        .timeline__item:before {
+          top: 29px; } }
+
+    /* .phone__calendar .timeline__item {width: 8%} */
+
+section.phone__calendar.m-bottom--sm
+  .layout--main(style="max-width: 960px;")
+    .calendar__wrap
+      .clendar__box
+        ul.newly__wrap(style="list-style: none")
+          li.newly__item(style="left: 10%")
+            a(href="#", title="新S10")
+              img(src="~components/phone-calendar/img/new-s10.png", alt="新S10")
+          li.newly__item(style="left: 28%")
+            a(href="#", title="新S10")
+              img(src="~components/phone-calendar/img/new-s10.png", alt="新S10")
+          li.newly__item(style="left: 52%")
+            a(href="#", title="新S10")
+              img(src="~components/phone-calendar/img/new-s10.png", alt="新S10")
+          li.newly__item(style="left: 68%")
+            a(href="#", title="新S10")
+              img(src="~components/phone-calendar/img/new-s10.png", alt="新S10")
+          li.newly__item.notyet(style="left: 72%")
+            a(href="javascript:void(0)", title="新iphone")
+              img(src="~components/phone-calendar/img/new-iphone.png", alt="新iphone")
+        ul.timeline__wrap(style="list-style: none")
+          li.timeline__item
+            .timeline__dot
+            .timeline__month 1月
+          li.timeline__item
+            .timeline__dot
+            .timeline__month 2月
+          li.timeline__item(style="width: 30%")
+            .timeline__dot
+            .timeline__month 3月
+          li.timeline__item
+            .timeline__dot
+            .timeline__month 4月
+          li.timeline__item
+            .timeline__dot
+            .timeline__month 5月
+          li.timeline__item(style="width: 30%")
+            .timeline__dot
+            .timeline__month 6月
+          li.timeline__item
+            .timeline__dot
+            .timeline__month 7月
+          li.timeline__item
+            .timeline__dot
+            .timeline__month 8月
+          li.timeline__item
+            .timeline__dot
+            .timeline__month 9月
+          li.timeline__item
+            .timeline__dot
+            .timeline__month 10月
+          li.timeline__item
+            .timeline__dot
+            .timeline__month 11月
+          li.timeline__item
+            .timeline__dot
+            .timeline__month 12月    

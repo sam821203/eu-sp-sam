@@ -1,0 +1,157 @@
+// body property
+// ==========================================================================
+body
+  font-family: $font-family-base
+
+// cleafix
+// ==========================================================================
+// .clearfix
+//   +clearfix
+
+// Global Img setting
+// ==========================================================================
+.sp__wrap img
+  width: 100%
+  +breakpoint-min($min-width-xl)
+    width: auto
+
+// Global width and height
+// ==========================================================================
+.layout--main
+  // position: relative
+  // z-index: map-get($zindex, zero)
+  @include layout-center($layout-switch-width-xl)
+
+// lists (note內的ul、ol不歸零)
+// ==========================================================================
+// .note ol
+//   list-style-type: decimal
+// .note ul
+//   list-style-type: disc
+
+// .block--center
+//   margin-left: auto
+//   margin-right: auto
+
+// .text--right
+//   text-align: right
+
+// .text--center
+//   text-align: center
+
+// .text--left
+//   text-align: left
+
+// Global margin property
+// ==========================================================================
+// 
+// Size abbreviation Introduction
+// 
+// Extra extra small = xxs
+// Extra small = xs
+// small = sm
+// Medium = md
+// Large = lg
+// Extra large = xl
+// Extra extra large = xxl
+// .m-top--xs
+//   margin-top: 1%
+
+// .m-top--sm
+//   margin-top: 2%
+
+// .m-top--md
+//   margin-top: 3%
+
+// .m-top--lg
+//   margin-top: 4%
+
+.m-bottom--xs
+  margin-bottom: 1%
+  +breakpoint-min($min-width-xl)
+    margin-bottom: 10px
+
+.m-bottom--sm
+  margin-bottom: 2%
+  +breakpoint-min($min-width-xl)
+    margin-bottom: 20px
+
+.m-bottom--md
+  margin-bottom: 3%
+  +breakpoint-min($min-width-xl)
+    margin-bottom: 30px
+
+.m-bottom--lg
+  margin-bottom: 4%
+  +breakpoint-min($min-width-xl)
+    margin-bottom: 40px
+
+.m-bottom--xl
+  margin-bottom: 5%
+  +breakpoint-min($min-width-xl)
+    margin-bottom: 50px
+
+// .m-right--xs
+//   margin-right: 1%
+
+// .m-right--sm
+//   margin-right: 2%
+
+// .m-right--md
+//   margin-right: 3%
+
+// .m-right-px--xs
+//   margin-right: 5px
+
+// .m-right-px--sm
+//   margin-right: 10px
+
+// .m-right-px--md
+//   margin-right: 15px
+
+// for word space
+.m-right--em
+  margin-right: 0.5em
+
+// Global layout
+// ==========================================================================
+// .padding-xs
+//   padding: 1%
+
+// .padding-sm
+//   padding: 2%
+
+// .padding-md
+//   padding: 3%
+
+// .padding-lg
+//   padding: 4%
+
+// .p-bottom--xs
+//   padding-bottom: 1%
+
+// .p-bottom--sm
+//   padding-bottom: 2%
+
+// .p-bottom--md
+//   padding-bottom: 3%
+
+// .p-bottom--lg
+//   padding-bottom: 4%
+
+// .p-bottom--xl
+//   padding-bottom: 5%
+
+
+// .default-border
+//   border: 1px solid $gray-medium
+
+
+// .one-screen
+//   width: 100%
+//   height: 100vh
+
+// Icon Home Setting
+// ==========================================================================
+// .icon__home
+//   z-index: map-get($zindex, twenty)

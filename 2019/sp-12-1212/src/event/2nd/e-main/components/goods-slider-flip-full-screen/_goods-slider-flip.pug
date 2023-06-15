@@ -1,0 +1,21 @@
+- var goodsFlipDataE = [{link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114222/w/index.html", imgSrc: "~event/2nd/e-main/components/goods-slider-flip-full-screen/items/pic-1-min.png", alt: "頑美購物1.2折up"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114204/w/index.html", imgSrc: "~event/2nd/e-main/components/goods-slider-flip-full-screen/items/pic-2-min.png", alt: "保健年終盛典5折UP"}, {link: "https://www.etmall.com.tw/c3/107930", imgSrc: "~event/2nd/e-main/components/goods-slider-flip-full-screen/items/pic-3-min.png", alt: "SAMSUNG旗艦機"},  {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114226/w/index.html", imgSrc: "~event/2nd/e-main/components/goods-slider-flip-full-screen/items/pic-4-min.png", alt: "MyCard大贏家 爽送70%"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114206/w/index.html", imgSrc: "~event/2nd/e-main/components/goods-slider-flip-full-screen/items/pic-5-min.png", alt: "年終狂歡2折up"}, {link: "https://www.etmall.com.tw/p/87767", imgSrc: "~event/2nd/e-main/components/goods-slider-flip-full-screen/items/pic-6-min.png", alt: "聯合利華滿額折$121"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114213/w/index.html", imgSrc: "~event/2nd/e-main/components/goods-slider-flip-full-screen/items/pic-7-min.png", alt: "LG A9+吸塵器"},{link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114205/w/index.html", imgSrc: "~event/2nd/e-main/components/goods-slider-flip-full-screen/items/pic-8-min.png", alt: "旅遊168up"}, ]
+
+
+
+//- var goodsFlipData = isU? goodsFlipDataU : goodsFlipDataE
+- var goodsFlipData = goodsFlipDataE
+
+.goods__wrap--flip(data-title="銀行好禮")
+  //- .goods__decoration.goods__decoration--right
+  //- .goods__decoration.goods__decoration--left
+  .promo__slider
+    #sliderGoodsFlip.swiper-container
+      ul.swiper-wrapper
+        each data in goodsFlipData
+          li.swiper-slide
+            a(href= data.link, title= data.alt)
+              img(src= data.imgSrc, alt= data.alt)
+      //- #sliderGoodsFlipPager.swiper-pager-white.swiper-pagination
+    //- #sliderGoodsFlipPrev.swiper-button-white.swiper-button-prev
+    //- #sliderGoodsFlipNext.swiper-button-white.swiper-button-next
+

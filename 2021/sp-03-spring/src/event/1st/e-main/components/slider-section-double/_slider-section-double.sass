@@ -1,0 +1,140 @@
+.slider__double
+  position: relative
+  height: 82vw
+  .slider__double__web--bg
+    +breakpoint-min($min-width-xl)
+      position: absolute
+      +bg-set(url("~event/1st/e-main/components/slider-section-double/slider-section-double_bg.png"))
+      background-size: 1147px 772px
+      width: 100%
+      height: 772px
+      left: 50%
+      top: 10px
+      transform: translateX(-50%)
+  .slider__double__wrap
+    +bg-set(url("~~event/1st/e-main/components/slider-section-double/slider-section-double_bg-m.png"), 100% auto)
+    padding-bottom: 20%
+    //padding: 8.5% 6% 2% 6%
+    .sweet__slider__wrap
+      display: flex
+      width: 85%
+      padding-top: 0
+      margin: 0 auto
+      li
+        //flex: 0 0 24%
+        padding: 0
+        opacity: 1
+        transition: transform 0.5s
+        a
+          transition: transform 0.5s
+        //&.swiper-slide-prev, &.swiper-slide-next
+        //  opacity: 0.6
+        //  transform: scale(0.8)
+        &:hover
+          a
+            //transform: scale(1.1)
+            filter: brightness(120%)
+    +breakpoint-min($min-width-xl)
+      background: none
+      padding-bottom: 0
+  .gallery-top
+    height: 27.5vw
+    box-sizing: border-box
+    padding: 0
+    width: 83%
+    margin: 0 auto
+    .swiper-slide
+      height: 100%
+  +breakpoint-min($min-width-xl)
+    height: 790px
+    .slider__double__wrap
+      //padding: 100px 4% 0
+      //height: 698px
+      margin: 0 5%
+      .sweet__slider__wrap
+        width: 100%
+        padding-top: 0
+        margin: 0 auto
+    .gallery-top
+      height: 210px
+      width: 90%
+      margin: 0 auto
+
+.slide-1, .slide-2, .slide-3
+  //background-size: 100% auto
+  //background-repeat: no-repeat
+  position: absolute
+  z-index: 1
+  img
+    &:nth-child(1)
+      display: block
+    &:nth-child(2)
+      display: none
+  &.focus__active
+    z-index: 2
+    img
+      &:nth-child(1)
+        display: none
+      &:nth-child(2)
+        display: block
+
+.slide-1
+  left: 0
+  top: 7vw
+  width: 29.5vw !important
+  //img
+    //width: 40vw
+.slide-2
+  width: 29.5vw !important
+  left: 25vw
+  top: 7vw
+.slide-3
+  width: 29.5vw !important
+  right: 3vw
+  top: 7vw
+
++breakpoint-min($min-width-xl)
+  .slide-1
+    top: 30px
+    left: 0
+    width: 295px !important
+  //img
+    //width: 40vw
+  .slide-2
+    top: 30px
+    left: 264px
+    width: 295px !important
+  .slide-3
+    top: 30px
+    right: -32px
+    width: 295px !important
+//
+//.slide-3
+//  background-image: url("~event/1st/e-main/components/slider-section-double/items/sweet_but3.png")
+//  background-size: 100% auto
+//  background-repeat: no-repeat
+//
+//.slide-4
+//  background-image: url("~event/1st/e-main/components/slider-section-double/items/sweet_but4.png")
+//  background-size: 100% auto
+//  background-repeat: no-repeat
+//
+//.slide-5
+//  background-image: url("~event/1st/e-main/components/slider-section-double/items/sweet_but5.png")
+//  background-size: 100% auto
+//  background-repeat: no-repeat
+//
+//.slide-6
+//  background-image: url("~event/1st/e-main/components/slider-section-double/items/sweet_but6.png")
+//  background-size: 100% auto
+//  background-repeat: no-repeat
+//
+//.slide-7
+//  background-image: url("~event/1st/e-main/components/slider-section-double/items/sweet_but7.png")
+//  background-size: 100% auto
+//  background-repeat: no-repeat
+//
+//.slide-8
+//  background-image: url("~event/1st/e-main/components/slider-section-double/items/sweet_but8.png")
+//  background-size: 100% auto
+//  background-repeat: no-repeat

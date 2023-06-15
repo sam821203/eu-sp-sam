@@ -1,0 +1,38 @@
+.promo__group--left-right
+  +pos-set(relative, zero)
+  padding-top: 10%
+  overflow: hidden
+  .decoration--left-right
+    +pos-set(absolute, zero)
+    top: 5%
+    left: 0
+    width: 100%
+  +breakpoint-min($min-width-xl)
+    padding-top: 100px
+    .decoration--left-right
+      top: 0
+      left: calc(50% - 470px)
+
+  .left-right__wrap
+    display: flex
+    justify-content: space-around
+    +pos-set(relative, zero)
+    padding: 29% 13% 12%
+    +bg-set(url(~event/2nd/e-main/components/left-right-section/bg-left-right.png), 100%)
+    +breakpoint-min($min-width-xl)
+      padding: 305px 110px 140px
+    .block--left,
+    .block--right
+      width: 48%
+      img
+        margin-left: auto
+        margin-right: auto
+  .item__box
+    text-align: center
+    &:hover,
+    &:active
+      > a
+        > img
+          filter: contrast(105%) brightness(105%)
+    &.close
+      pointer-events: none

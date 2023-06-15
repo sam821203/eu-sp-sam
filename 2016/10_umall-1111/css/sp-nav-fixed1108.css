@@ -1,0 +1,28 @@
+/*== nav style ==*/
+
+.sp-nav__1{
+    background: url(../nav_bg.png) 0 0 repeat-y;
+    position: relative;
+    width: 120px;
+    height: 31px;
+    z-index: 1;
+}
+.sp-nav__1 a{
+    background: rgba(113,1,171, 1);
+    position: absolute;
+    color: #fff;
+    z-index: -1;
+    width: 93px;
+    height: 31px;
+    top: 0;
+    right: 13px;
+}
+.sp-nav__1 a:hover{
+    background: rgba(255,182,9, 1);
+    color: #7101ab;
+}
+.sp-nav__1 a:hover:after{
+    background: none;
+}
+
+/*== nav style ==*/

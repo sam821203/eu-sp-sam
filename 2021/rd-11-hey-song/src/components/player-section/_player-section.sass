@@ -1,0 +1,38 @@
+.promo__group--player
+  position: relative
+  .promo__game
+    a
+      display: block
+      position: absolute
+      bottom: 28%
+      right: 15%
+      width: 35vw
+      height: 30vw
+  .promo__number
+    position: relative
+    z-index: 0
+    .text
+      // outline: 1px solid red
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      // margin: -20% auto 5.6%
+      text-align: center
+      h1
+        margin-bottom: 3%
+        font-size: 7vw
+        font-weight: 600
+        +breakpoint-min($min-width-xl)
+          font-size: 56px
+      input
+        width: 80%
+        height: 7vw
+        border: none
+        border-bottom: 2px solid $main-color-2
+        text-align: center
+        +breakpoint-min($min-width-xl)
+          font-size: 48px
+          height: 60px
+  
+

@@ -1,0 +1,427 @@
+<meta charset="utf-8">
+<style>
+/*== initial style ==*/
+
+img {
+    border: 0;
+}
+body {
+    font-family: Arial, Helvetica, 'LiHei', "Microsoft JhengHei", "PMingLiU", "微軟正黑體", "新細明體", sans-serif;
+    background-color:#160029;
+    font-size: 13px;
+}
+
+/*== initial style ==*/
+
+/*== picschange style ==*/
+.umall__wrapper{box-sizing: border-box;}
+.umall__wrapper::before, .umall__wrapper::after {box-sizing: border-box;}
+.uamll-sp-l-left{float: left;}
+.uamll-sp-l-right{float: right;}
+.clear {clear: both}
+.clearfix:before,
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    zoom: 1; 
+}
+.umall__sp-visual__box{
+    background: url(http://www.u-mall.com.tw/XML/content/DMSetting/Final/201612/SP_1025478/top1212_02.jpg) center 0 no-repeat;
+    width: 630px;
+    margin: 0 auto;
+    height: 537px;
+    position: relative;
+    /*margin-left: 630px;*/
+}
+/*主商品整體位置*/
+.umall__sp-visual__slider{
+    position: relative;
+    z-index: 2;
+    width:320px;
+    height: 254px;
+    margin: 175px 0px 0px 205px
+}
+.umall-sp-ad{
+    position: absolute;
+    left: 50px;
+    top: -36px;
+}
+.umall-sp-ad img{border: none
+}
+/*小商品整體位置*/
+.umall-sp-control {
+    position: absolute;
+    width: 310px;
+    right: -140px;
+    bottom: -150px;
+    z-index: 50;
+}
+.umall-sp-control a {
+    background-position: center 0;
+    background-repeat: no-repeat;
+    display: inline-block;
+    padding: 15px;
+    margin: 0 3px;
+    width: 69px;
+    height: 71px;
+    position: absolute;
+    z-index: 55;
+    white-space: nowrap;
+    text-indent: 1000%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+/*小商品個別位置*/
+.umall-sp-control .umall-sp-pic-1{
+    background-image: url(http://www.u-mall.com.tw/XML/content/DMSetting/Final/201612/SP_1025478/pic_small_handbag.png);
+    right: 55px;
+    bottom: 103px;
+}
+.umall-sp-control .umall-sp-pic-2{
+    background-image: url(http://www.u-mall.com.tw/XML/content/DMSetting/Final/201612/SP_1025478/pic_small_fashion.png);
+    right:132px;
+    bottom: 93px;
+}
+.umall-sp-control .umall-sp-pic-3{
+    background-image: url(http://www.u-mall.com.tw/XML/content/DMSetting/Final/201612/SP_1025478/pic_small_jewelry.png);
+    right: 210px;
+    bottom: 77px;
+}
+.umall-sp-control .umall-sp-pic-4{
+    background-image: url(http://www.u-mall.com.tw/XML/content/DMSetting/Final/201612/SP_1025478/pic_small_watch.png);
+    left: -50px;
+    bottom: 85px;
+}
+.umall-sp-control .umall-sp-pic-5{
+    background-image: url(http://www.u-mall.com.tw/XML/content/DMSetting/Final/201612/SP_1025478/pic_small_bag.png);
+    left: -124px;
+    bottom: 102px;
+}
+.umall-sp-btn-slogan{
+    width: 540px;
+    height: 335px;
+    position: absolute;
+    top: 21px;
+    right: 81px;
+    z-index: 1;
+}
+/*== page layout style ==*/
+.sp__wallper {
+    background: #5627f9 url(top1212_bg.jpg) center 0 no-repeat;
+}
+.sp--1260 {
+    margin: 0px auto;
+    position: relative;
+    width: 1260px;
+}
+
+
+.sp-clock__title, .sp-clock__box{box-sizing: border-box;}
+.sp-clock__title::before, .sp-clock__title::after, .sp-clock__box::before, .sp-clock__box::after {box-sizing: border-box;}
+.sp-clock__warp{
+    width: 48.5%;
+}
+.sp-clock__warp a{
+    text-decoration: none;
+    color: #000;
+}
+.sp-clock__warp a:hover .sp-clock__name{
+    text-decoration: underline;
+}
+.sp-clock__title{
+    background-color: #000;
+    padding: 6px 25px;
+    height: 84px;
+}
+.sp-clock__title img{
+    display: inline-block;
+    margin-right: 10px;
+}
+.sp-clock__title span{
+    font-size: 56px;
+    font-weight: bold;
+    color: #a5a5a5;
+}
+.sp-clock__title .sp-clock-pink img{
+    margin-top: 8px;
+    vertical-align: -8px;
+}
+.sp-clock__title .sp__pink-text{
+    color: #f847d9;
+    margin-right: 40px;
+}
+.sp-clock__title .sp__orange-text{
+    color: #ffa61b;
+    margin-right: 40px;
+}
+.sp-clock__title .sp-clock-orange img{
+    margin-top: 8px;
+    vertical-align: -8px;
+}
+.sp-clock__box{
+    background-color: #aa94f7;
+    padding: 25px 35px;
+}
+.sp-clokc__pic, .sp-clock__info{
+    display: inline-block;
+}
+
+.sp-clokc__pic{
+    width: 50%;
+}
+.sp-clock__info{
+    width: 45%;
+    padding-left: 20px;
+    vertical-align: top
+}
+.sp-clock__name{
+    font-size: 27px;
+    color: #000;
+    margin-bottom: 5px;
+    height: 108px;
+    overflow: hidden;
+}
+ @media all and (-ms-high-contrast:none)
+    {
+        .sp-clock__name {  height: 98px; } /* IE10 */
+        *::-ms-backdrop, .sp-clock__name {  height: 98px; } /* IE11 */
+    }
+.sp-clock__sub-price span{
+    text-decoration:  line-through;
+}
+.sp__price{
+    color: #ef0000;
+    font-size: 26px;
+    margin-top: 20px;
+}
+.sp__price span{
+    font-size: 58px;
+    font-weight: bold;
+}
+/*== page layout style ==*/
+</style>
+<script src="http://www.u-mall.com.tw/WebRes.aspx?r=HomeInTime&c=300"></script>
+<script type="text/javascript" src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201509/SP_1021444/js/sp-track.js"></script>
+<script type="text/javascript" src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201504/SP_1019163/Includes/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201509/SP_1021444/js/sp.slider.img.js" defer></script>
+<script type="text/javascript" src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201509/SP_1021444/js/sp.clock.war.js?1159" defer></script>
+<script type="text/javascript" src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201509/SP_1021444/js/generateVersion.js" defer></script>
+<div id="spWrap" class="sp__wallper">
+
+    <div class="sp--1260">
+        <table width="1260" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td><img src="top1212_01.jpg" border="0" /></td>
+                <td>
+                    <div class="umall__wrapper">
+                        <div class="umall__sp-visual__box clearfix">
+                        <div id="visualMain" class="umall__sp-visual__slider uamll-sp-l-left">
+                            <a class="umall-sp-ad" href="http://www.u-mall.com.tw/Pages/Prod.aspx?sid=30625&cid=55565&sc=01748731&kw=6137243&pi=0&PHRef=search_resultPRod_Img_101_pic" target="_blank" title="handbag"><img src="pic_big_handbag.png" alt="handbag" /></a>
+                            <a class="umall-sp-ad" href="http://www.u-mall.com.tw/Pages/Prod.aspx?sid=34980&cid=47535&sc=01748977&kw=6137489&pi=0&PHRef=search_resultPRod_Img_101_pic" target="_blank" title="fashion"><img src="pic_big_fashion.png" alt="fashion" /></a>
+                            <a class="umall-sp-ad" href="http://www.u-mall.com.tw/Pages/Prod.aspx?sid=30591&cid=35456&sc=01205839&kw=5764992&pi=0&PHRef=search_resultPRod_Img_101_pic" target="_blank" title="jewelry"><img src="pic_big_jewelry.png" alt="jewelry" /></a>
+                            <a class="umall-sp-ad" href="http://www.u-mall.com.tw/Pages/Prod.aspx?sid=30591&cid=54616&sc=01751921&kw=6140376&pi=0&PHRef=search_resultPRod_Img_101_pic" target="_blank" title="watch"><img src="pic_big_watch.png" alt="watch" /></a>
+                            <a class="umall-sp-ad" href="http://www.u-mall.com.tw/Pages/SProductList.aspx?StoreID=30591&CategoryID=94191" target="_blank" title="bag"><img src="pic_big_bag.png" alt="bag" /></a>
+                        </div>
+                        <a href="#" class="umall-sp-btn-slogan" title="雙12登台"></a>
+                    </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <table width="1260" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td>
+                    <a href="#" target="_blank"><img src="top1212_03.jpg" width="416" height="256" border="0" /></a>
+                </td>
+                <td>
+                    <a href="#" target="_blank"><img src="top1212_04.jpg" width="408" height="256" border="0" /></a>
+                </td>
+                <td>
+                    <a href="#" target="_blank"><img src="top1212_05.jpg" width="436" height="256" border="0" /></a>
+                </td>
+            </tr>
+        </table>
+        <table width="1260" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td><img src="top1212_06.jpg" width="1260" height="330" border="0" /></td>
+            </tr>
+        </table>
+        <table width="1260" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td>
+                    <a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201612/SP_1025580/index.html" target="_blank"><img src="top1212_07.jpg" width="261" height="374" border="0" /></a>
+                </td>
+                <td>
+                    <a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201611/SP_1025536/index.html" target="_blank"><img src="top1212_08.jpg" width="244" height="374" border="0" /></a>
+                </td>
+                <td>
+                    <a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201612/SP_1025538/index.html" target="_blank"><img src="top1212_09.jpg" width="243" height="374" border="0" /></a>
+                </td>
+                <td>
+                    <a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201612/SP_1025561/index.html" target="_blank"><img src="top1212_10.jpg" width="244" height="374" border="0" /></a>
+                </td>
+                <td>
+                    <a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201612/SP_1025553/index.html" target="_blank"><img src="top1212_11.jpg" width="268" height="374" border="0" /></a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201612/ SP_1025518/index.html" target="_blank"><img src="top1212_12.jpg" width="261" height="282" border="0" /></a>
+                </td>
+                <td>
+                    <a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201611/SP_1025525/index.html" target="_blank"><img src="top1212_13.jpg" width="244" height="282" border="0" /></a>
+                </td>
+                <td>
+                    <a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201612/SP_1025567/index.html" target="_blank"><img src="top1212_14.jpg" width="243" height="282" border="0" /></a>
+                </td>
+                <td>
+                    <a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201612/SP_1025586/index.html" target="_blank"><img src="top1212_15.jpg" width="244" height="282" border="0" /></a>
+                </td>
+                <td>
+                    <a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201612/SP_1025583/index.html" target="_blank"><img src="top1212_16.jpg" width="268" height="282" border="0" /></a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201612/SP_1025550/index.html" target="_blank"><img src="top1212_17.jpg" width="261" height="378" border="0" /></a>
+                </td>
+                <td>
+                    <a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201612/SP_1025447/index.html" target="_blank"><img src="top1212_18.jpg" width="244" height="378" border="0" /></a>
+                </td>
+                <td>
+                    <a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201612/SP_1025559/index.html" target="_blank"><img src="top1212_19.jpg" width="243" height="378" border="0" /></a>
+                </td>
+                <td>
+                    <a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201612/ SP_1025542/index.html" target="_blank"><img src="top1212_20.jpg" width="244" height="378" border="0" /></a>
+                </td>
+                <td>
+                    <a href="http://www.u-mall.com.tw/SimpleTemplate.aspx?SubPage=DMSetting/Final/201612/SP_1025596/index.html" target="_blank"><img src="top1212_21.jpg" width="268" height="378" border="0" /></a>
+                </td>
+            </tr>
+        </table>
+        <table width="1260" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td><img src="top1212_22.jpg" width="1260" height="71" /></td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top; padding: 30px 45px">
+                    <div id="spOnAir" class="sp-clock__warp l--left">
+
+                    </div>
+                    <div id="spNotice" class="sp-clock__warp l--right">
+
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+

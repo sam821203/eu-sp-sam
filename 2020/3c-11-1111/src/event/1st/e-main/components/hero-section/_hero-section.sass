@@ -1,0 +1,41 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero__wrap
+  +pos-set(relative, zero)
+  overflow: hidden
+  +breakpoint-min($min-width-xl)
+    background-size: auto
+
+  // .hero__zone
+
+  .hero__block
+    +pos-set(relative, zero)
+    padding-top: 5%
+
+  .hero__box
+    transform: translateX(-3.5%)
+    // width: 60.5%
+
+  .hero__title
+    animation: 1s 1s title-down both ease-out
+    //&--main
+    //  +pos-set(relative, base)
+    //  width: 100%
+    //  transform-origin: center top
+    //  animation: swing 0.75s 0.75s both
+
+  .promo__zone
+    // margin-top: 8%
+    //background-color: $gray-deep-light
+    +breakpoint-min($min-width-xl)
+      background-color: transparent
+
+
+@keyframes title-down
+  0%
+    transform: translateY(calc(-100vw * .5))
+  70%, 80%
+    transform: translateY(0) scale(1.2)
+  75%, 100%
+    transform: translateY(0) scale(1)

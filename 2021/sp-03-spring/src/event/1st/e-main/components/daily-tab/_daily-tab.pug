@@ -1,0 +1,69 @@
+section.promo__group.promo__group--daily-tab__buy(data-title="天天開搶")
+  .decoration--flower
+    img#scrollDoubleSlider(src="~assets/img/scroll__tree.png", alt="")
+  .layout--main
+    ul.tab__wrap
+      li.tab__zone
+        #dailyTabHead.tab__head--daily.promo__slider.swiper-container.swiper-no-swiping
+          ul.swiper-wrapper
+            - var date = 17
+            while date <= 31
+              - var activeClass = 'active--daily'
+              - if (date != 17) activeClass = ''
+              li.swiper-slide(class= activeClass)
+                span 3
+                if date < 10
+                  span= '0' + date++
+                else
+                  span= date++
+            li.swiper-slide
+              span 4
+              span 01
+            li.swiper-slide
+              span 4
+              span 02
+            li.swiper-slide
+              span 4
+              span 03
+            li.swiper-slide
+              span 4
+              span 04
+            li.swiper-slide
+              span 4
+              span 05
+            li.swiper-slide
+              span 4
+              span 06
+      li.content__zone
+        .tab__bg
+          img(src="~event/1st/e-main/components/daily-tab/bg-daily-tab.png")
+          img(src="~event/1st/e-main/components/daily-tab/bg-daily-tab-web.png")
+        ul#dailyTabFirstContent.tab__content--daily
+          - var date = 17
+          while date <= 31
+            - var activeContentClass = 'active'
+            - if (date != 17) activeContentClass = ''
+            li.content__box(class= activeContentClass)
+              .tab__slider--daily.swiper-container
+                ul.item__group__wrap.swiper-wrapper
+            - date++
+          li.content__box
+            .tab__slider--daily.swiper-container
+              ul.item__group__wrap.swiper-wrapper
+          li.content__box
+            .tab__slider--daily.swiper-container
+              ul.item__group__wrap.swiper-wrapper
+          li.content__box
+            .tab__slider--daily.swiper-container
+              ul.item__group__wrap.swiper-wrapper
+          li.content__box
+            .tab__slider--daily.swiper-container
+              ul.item__group__wrap.swiper-wrapper
+          li.content__box
+            .tab__slider--daily.swiper-container
+              ul.item__group__wrap.swiper-wrapper
+          li.content__box
+            .tab__slider--daily.swiper-container
+              ul.item__group__wrap.swiper-wrapper
+
+    img.mark__daily-open(src="~event/1st/e-main/components/daily-tab/mark__daily-open.png")

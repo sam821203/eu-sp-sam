@@ -1,0 +1,151 @@
+.promo__event
+  // margin-top: -5%
+  padding: 2% 1%
+  +bg-set(url(~event/2nd/e-main/components/promo-event/bg-promo.png), contain)
+  .event__wrap
+    +display-flex
+    flex-wrap: wrap
+    justify-content: center
+    padding: 0
+    // 固定位置模式
+    // li
+    //   +flex(1, 0, 50%)
+    //   padding: 0.5%
+    //   transition: all 0.5s
+    //   &:hover,
+    //   &:active
+        // filter: contrast(160%)
+        // img
+          // opacity: 0
+          // transition: all 0.5s
+          // transform: rotateY(360deg)
+
+    //- 位置不一模式
+    li
+      +flex(0, 0, 25%)
+      // padding-left: 1%
+      // padding-right: 1%
+      height: 29vw
+      overflow: hidden
+      // &:first-child,
+      // &:last-child
+        // +flex(0, 0, 20%)
+      .link__box,
+      a
+        +pos-set(relative, zero)
+        width: 100%
+        height: 100%
+
+      .link__box
+        > a
+          margin-bottom: 2%
+          height: 49%
+
+      .link__box > a,
+      a
+        // transform-origin: top left
+        &:before
+          content: ''
+          +pos-set(absolute, base)
+          +bg-set(url(~event/2nd/e-main/components/promo-event/decoration-promo.png), 100%)
+        &:hover,
+        &:active
+          // transition: all 0.5s
+          // transform: scale(1.5)
+          &:before
+            animation: tada 1s
+
+      .link__box
+        > a
+          &:before
+            bottom: 8%
+            // left: 3%
+            // padding-top: 20%
+            // width: 20%
+
+      a
+        &:before
+          bottom: 4%
+          right: 6%
+          padding-top: 20%
+          width: 20%
+          
+        &:first-child img
+          +pos-set(absolute, base)
+          bottom: 0
+          left: -2%
+          width: 85%
+          animation: tada2 2s infinite
+      // &:nth-child(3)
+      //   .link__box
+      //     > a
+      //       &:before
+      //         left: 4%
+
+      // &:nth-child(4)
+      //   a
+      //     &:before
+      //       left: 8%
+
+  // +breakpoint-max($min-width-xxs)
+  //  padding-bottom: 1.338%
+
+  +breakpoint-min($min-width-xl)
+    // padding: 77px 65px 20px 68px
+    background-size: 960px
+    .event__wrap
+      li
+        // padding-left: 3px
+        // padding-right: 3px
+        height: 275px
+
+      // .link__box
+      //   > a
+      //     &:before
+      //       top: 4px
+      //       left: 4px
+      //       padding-top: 15%
+      //       width: 15%
+
+      //   a
+      //     &:before
+      //       top: 4px
+      //       left: 9px
+      //       padding-top: 21.5%
+      //       width: 21.5%
+
+      //   &:nth-child(3)
+      //     .link__box
+      //       > a
+      //         &:before
+      //           left: 7px
+
+      //   &:nth-child(4)
+      //     a
+      //       &:before
+      //         left: 10px
+
+@keyframes tada2
+  from
+    -webkit-transform: scale3d(1, 1, 1)
+    transform: scale3d(1, 1, 1)
+  5%,
+  10%
+    -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg)
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg)
+
+  15%,
+  25%,
+  35%,
+  40%
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)
+
+  20%,
+  30%,
+  40%
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)
+  50%, to
+    -webkit-transform: scale3d(1, 1, 1)
+    transform: scale3d(1, 1, 1)

@@ -1,0 +1,84 @@
+.promo__group--scratch
+  +pos-set(relative, zero)
+  overflow: hidden
+  .promo__wrap
+    +aspect-ratio(933, 905)
+    .decor--top
+      +pos-set(absolute, under, -2%)
+      right: -3%
+      width: 24%
+      +breakpoint-min($min-width-xl)
+        top: 1%
+    .promo__zone
+      padding: 42.5% 8.3% 17.7%
+      +bg-set(url( event/1st/e-main/components/scratch-game/bg-scratch-game.png), 100%)
+    .promo__block
+      +pos-set(relative, zero)
+      .scratch__bottom
+        +pos-set(relative, zero)
+        background-repeat: no-repeat
+        background-size: 100%
+        a
+          cursor: pointer
+          &.disabled
+            pointer-events: none
+          img
+            height: 100%
+      .scratch__popup
+        +pos-set(absolute, zero, 50%, 50%)
+        padding: 2%
+        width: 40%
+        color: $gray-deep-light
+        background-color: $gray-medium
+        border: 1px solid $gray-deep-light
+        border-radius: 100px
+        font-size: 5vw
+        text-align: center
+        transition: opacity 0.3s ease-out
+        transform: translate(-50%, -50%)
+        pointer-events: none
+        opacity: 0
+        &.active
+          opacity: 1
+        +breakpoint-min($min-width-xl)
+          font-size: 28px
+
+      .canvas__box
+        +pos-set(absolute, base, 0, 0)
+        canvas
+          transition: opacity 0.75s
+          cursor: move
+        &::before
+          content:''
+          +pos-set(absolute, base)
+          bottom: -40%
+          right: 0
+          width: 25%
+          height: 50%
+          +bg-set(url( event/1st/e-main/components/scratch-game/hand-scratch-game.png), 100%)
+          pointer-events: none
+          opacity: 0
+        &.disabled
+          pointer-events: none
+          &::before
+            opacity: 1
+            animation: bounceInDown 1s 0.3s both
+
+@keyframes bounceInDown
+  0%, 60%, 75%, 90%, to
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+  0%
+    opacity: 0
+    transform: translate3d(0, -3000px, 0) scaleY(3)
+  60%
+    opacity: 1
+    transform: translate3d(0, 25px, 0) scaleY(.9)
+  75%
+    opacity: 1
+    transform: translate3d(0, -5px, 0) scaleY(.95)
+  90%
+    opacity: 1
+    transform: translate3d(0, 5px, 0) scaleY(.985)
+  to
+    opacity: 1
+    transform: translateZ(0)

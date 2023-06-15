@@ -1,0 +1,19 @@
+- var bankLink = {etmall: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201911/SP_1107839/w/index.html", umall: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201912/SP_1104319/w/index.html"}
+- var bankInfo = isU ? bankLink.umall : bankLink.etmall
+
+.promo__slider.hero__slider.wow
+  #sliderSmall.swiper-container
+    ul.swiper-wrapper
+      li.swiper-slide
+        h2.hero__title.hero__title--sub.block--center
+          a(id="heroPromoLink" href= bankInfo, title="聯邦_最高回饋$12,120刷卡金")
+            img(src="~event/2nd/u-main/components/hero-small-slider/items/sub-title-u1-min.png", alt="聯邦_最高回饋$12,120刷卡金")
+      li.swiper-slide
+        h2.hero__title.hero__title--sub.block--center
+          a(href= bankInfo, title="台新_滿$10,000送$800刷卡金")
+            img(src="~event/2nd/u-main/components/hero-small-slider/items/sub-title-u2-min.png", alt="台新_滿$10,000送$800刷卡金")
+      li.swiper-slide
+        h2.hero__title.hero__title--sub.block--center
+          a(href= bankInfo, title="花旗_滿$35,000送$5,000刷卡金")
+            img(src="~event/2nd/u-main/components/hero-small-slider/items/sub-title-u3-min.png", alt="花旗_滿$35,000送$5,000刷卡金")
+

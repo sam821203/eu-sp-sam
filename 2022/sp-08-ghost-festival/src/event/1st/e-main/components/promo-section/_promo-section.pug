@@ -1,0 +1,51 @@
+-
+  var promoSectionData = [
+    { // 1
+      link: "https://www.etmall.com.tw/Activity/CouponPage/331",
+      imgSrc: "event/1st/e-main/components/promo-section/items/item-p-1.png",
+      alt: "領券最高折$100元"
+    },
+    { // 2
+      link: "",
+      imgSrc: "event/1st/e-main/components/promo-section/items/item-p-2.png",
+      alt: "東森幣最高折10%"
+    },
+    { // 3
+      link: "https://media.etmall.com.tw/sp/15748/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-section/items/item-p-3.png",
+      alt: "Atome 中元每日特殺"
+    },
+    { // 4
+      link: "https://www.etmall.com.tw/Activity/dl/roulette2207",
+      imgSrc: "event/1st/e-main/components/promo-section/items/item-p-4.png",
+      alt: "命運輪盤抽好禮"
+    },
+  ]
+
+.section__decor--top
+  .decor--top#decorTopLeft
+    img(src="event/1st/e-main/components/promo-section/decor-section-left.png", alt="")
+  .decor--top#decorTopRight
+    img(src="event/1st/e-main/components/promo-section/decor-section-right.png", alt="")
+
+section.promo__group.promo__group--promo-section
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          ul.event__block
+            each data, index in promoSectionData
+              if index == 3
+                li
+                  a(href= data.link, title=data.alt, class="js--changeLink")
+                    img(src= data.imgSrc, alt=data.alt)
+              else
+                li
+                  a(href= data.link, title=data.alt)
+                    img(src= data.imgSrc, alt=data.alt)
+
+
+              //- each data, index in w1m1Data
+              //-   li
+              //-     a(href= data.link, title= data.alt)
+              //-       img(src= data.imgSrc, alt= data.alt)

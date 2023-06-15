@@ -1,0 +1,66 @@
+.promo__group--bank
+  .promo__zone
+    +bg-set(null, cover)
+  .promo__title
+    margin-top: 2%
+  .promo__wrap
+    +bg-set(url("~components/bank-section/bg-bank-mobile.png"), 100%)
+    padding-top: 60%
+    .promo__slider
+      padding: 0 2%
+      width: 100%
+    .swiper-container
+      width: 100%
+      height: 85%
+    .swiper-slide
+      width: 50%
+      a
+        transform: translateY(3%) scale(0.85)
+      img
+        transition: transform 1.2s
+        transform: rotate(8deg)
+    .swiper-slide-visible
+      img
+        transform: rotate(0deg)
+    .swiper-pager-white
+      bottom: 0.8%
+      .swiper-pagination-bullet
+        margin: 0 6px
+        width: 12px
+        height: 12px
+        background-color: $gray-deep-light
+    .swiper-button-prev,
+    .swiper-button-next
+      display: none
+  +breakpoint-min($min-width-lg)
+    .promo__zone
+      background-size: auto
+    .promo__wrap
+      +bg-set(url("~components/bank-section/bg-bank.png"), 100%)
+      padding-top: 42.5%
+      .promo__slider
+        padding: 3.5% 6%
+        .swiper-container
+          height: 80%
+        .swiper-slide
+          width: 25%
+          a
+            transform: translateY(10%) scale(0.91)
+        .swiper-pager-white
+          bottom: 10px
+        .swiper-button-prev,
+        .swiper-button-next
+          display: block
+          top: 39%
+        .swiper-button-prev
+          left: 2.85%
+        .swiper-button-next
+          right: 2.85%
+  +breakpoint-min($min-width-xl)
+    +bg-set(url("~components/bank-section/2560bg-05.jpg"))
+    .promo__wrap
+      .swiper-pager-white
+        .swiper-pagination-bullet
+          margin: 0 9px
+          width: 18px
+          height: 18px

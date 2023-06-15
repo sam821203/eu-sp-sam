@@ -1,0 +1,102 @@
+-
+  var promoSliderItem = [
+    {
+      link: "https://www.etmall.com.tw/gp/104343" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/p1.png",
+      alt: "迎夏囤貨3折起",
+    },
+    {
+      link: "https://www.etmall.com.tw/c3/162067" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/p2.png",
+      alt: "限時特惠5折up",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/14989/m/index.html" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/p3.png",
+      alt: "指定鍋具均一價$618",
+    },
+    {
+      link: "https://www.etmall.com.tw/p/153524" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/p4.png",
+      alt: "全館2件79折",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/10591/m/index.html" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/p5.png",
+      alt: "LG年中品牌慶瘋搶樂透金",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/11695/m/index.html" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/p6.png",
+      alt: "登記送家電豪禮",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/4369/m/index.html" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/p7.png",
+      alt: "618價格大解封",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/11387/m/index.html" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/p8.png",
+      alt: "618全館大特賣",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/14973/m/index.html" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/p9.png",
+      alt: "品牌聯慶滿額4重送",
+    },
+    {
+      link: "https://m.etmall.com.tw/gp/116998" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/p10.png",
+      alt: "塑崩褲2.5折全館買就送",
+    },
+    {
+      link: "https://www.etmall.com.tw/p/104685" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/p11.png",
+      alt: "LVxCHANEL熱銷3折UP",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/174414" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/p12.png",
+      alt: "健身大師全館五折",
+    },
+    {
+      link: "https://www.etmall.com.tw/p/175557" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/p13.png",
+      alt: "麗嬰房618滿額送",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/14348/m/index.html" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/p14.png",
+      alt: "毛毛商城好禮3重送",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/172917" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/p15.png",
+      alt: "限量住房下殺5折up",
+    },
+    {
+      link: "https://www.etmall.com.tw/ms/169458" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/p15.png",
+      alt: "允寶開館9折起",
+    },
+  ]
+
+
+section.promo__group.promo__group--promo-slider.m-bottom--lg(data-title="強檔推薦")
+  .layout--main
+    .promo__wrap
+      .decor__wrap.full-parent
+        .decor__item.decor__item--title#titlePromoSlider
+          img(src="event/2nd/e-main/components/promo-slider/title-promo-slider.png", alt="")
+        .decor__item.decor__item--item#decorPromoSliderItem
+          img(src="event/2nd/e-main/components/promo-slider/decor-promo-slider.png", alt="")
+      .promo__zone
+        .promo__block
+          .promo__slider.full-parent
+            .swiper-container#promoSliderItem
+              ul.swiper-wrapper
+                each data in promoSliderItem
+                  li.swiper-slide
+                    a(href= data.link, title=data.alt)
+                      img(src= data.imgSrc, alt=data.alt)

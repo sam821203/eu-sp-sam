@@ -1,0 +1,36 @@
+//- 打開u-mall選項會自動轉換成U的logo和連結(預設etmall)
+//- 打開sp選項以切換行銷主視覺或是商品SP頁(main/ sp、預設是main)
+- var isU = true
+- var isSp = true
+
+main#spWrap.sp__wrap.sp--sp-u
+  //- 背景特效
+  include ../../layout/bg-decoration/bg-decoration.pug
+
+  //- 切換不同main/sp header
+  //- 打開上方打開上方u-mall選項與main/sp會自動轉換成header
+  include ../../layout/header/_header.pug
+
+  //- 切換eu共用誘因 - 外連data資料
+  //- 打開上方u-mall選項會自動轉換成U的logo和連結
+  include ../../components/common-event/_common-event.pug
+
+  //- 切換eu sp誘因
+  //- 打開上方u-mall選項會自動轉換成U的logo和連結
+  include ../../components/event-w2m1/_event-w2m1.pug
+
+  //- 切換eu sp共用bn群 - 外連data資料
+  //- 打開上方u-mall選項會自動轉換成U的logo和連結
+  include ../../components/bn-group-w2m1/_bn-group-w2m1.pug
+
+//- script區
+//- General 一般共用
+include ../include/_general.pug
+//- 電梯
+include ../include/_elevator-link.pug
+//- 浮水印
+include ../include/_float-icon.pug
+//- 外部data
+include ../include/_outside-dynamic-data.pug
+//- 內部data
+include ../include/_inside-dynamic-data.pug

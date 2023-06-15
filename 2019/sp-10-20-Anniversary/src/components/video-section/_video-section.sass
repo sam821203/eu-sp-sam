@@ -1,0 +1,27 @@
+.promo__group--video
+  +bg-set(url("~components/video-section/video.png"),100% auto)
+  margin-top: 6%
+  .promo__title
+    margin-top: -0.3%
+  .promo__wrap
+    +aspect-ratio(16, 9.9)
+    .video__wrap
+      +pos-set(absolute, base, 0, 50%)
+      width: 95%
+      height: 95%
+      transform: translateX(-50%)
+      padding-bottom: 9%
+      iframe
+        margin: 4%
+        width: 92%
+        height: 92%
+
+  +breakpoint-min($min-width-xl)
+    margin-top: 0
+    .promo__wrap
+      .video__wrap
+        padding-bottom: 4%
+        iframe
+          margin: 2%
+          width: 96%
+          height: 96%

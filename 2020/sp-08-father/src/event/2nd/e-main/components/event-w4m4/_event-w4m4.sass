@@ -1,0 +1,22 @@
+.promo__group--w4m4
+  .promo__wrap
+    padding: 3% 5% 6% 3%
+    +bg-set(url("~event/2nd/e-main/components/event-w4m4/bg-event-w4m4.png"), 100%)
+    .good__wrap
+      display: flex
+      flex-wrap: wrap
+      // justify-content: space-between
+      li
+        flex: 0 1 25%
+        padding: 1% 0
+        a
+          text-align: center
+          transition: transform 0.5s
+        &:hover,
+        &:active
+          a
+            transform: translateY(-2%)
+
+    +breakpoint-min($min-width-xl)
+      padding: 50px 40px 66px 22px
+

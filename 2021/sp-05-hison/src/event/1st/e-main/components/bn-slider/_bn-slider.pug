@@ -1,0 +1,66 @@
+-
+  var bnSliderItemData = [
+    {
+      link: "https://www.etmall.com.tw/i/2048101",
+      imgSrc: "~event/1st/e-main/components/bn-slider/items/collect-1.png",
+      alt: "【WIDE VIEW】300孔增壓省水蓮蓬頭蛇管組(含軟管、蓮蓬頭ZH-300-P)"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2801946",
+      imgSrc: "~event/1st/e-main/components/bn-slider/items/collect-2.png",
+      alt: "Mr.J家居生活 無印風極簡設計伸縮書架-網+2801945"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2803209",
+      imgSrc: "~event/1st/e-main/components/bn-slider/items/collect-3.png",
+      alt: "(加111元真皮證件套)【PA真皮精品】質感手拿包 (橙色)"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2801216",
+      imgSrc: "~event/1st/e-main/components/bn-slider/items/collect-4.png",
+      alt: "雙11特談-(11元多1件)沒有臭 - 滅菌潔牙入門組 狗寶貝 (寵物身體除臭/去口臭/狗用)"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2802156",
+      imgSrc: "~event/1st/e-main/components/bn-slider/items/collect-5.png",
+      alt: "FORTE台塑生醫奢寵金萃緊緻亮白雙效面膜5入組(共25片)"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2486763",
+      imgSrc: "~event/1st/e-main/components/bn-slider/items/collect-6.png",
+      alt: "(加$111多雅漾旅行組)AVENE雅漾醒膚能量精華30mlx2入組(2021/09到期)"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2677701",
+      imgSrc: "~event/1st/e-main/components/bn-slider/items/collect-7.png",
+      alt: "【Angel LaLa天使娜拉】蜂王乳+芝麻素糖衣錠(30錠/盒x8盒) 加-Angel LaLa天使娜拉_EX 膠原蛋白粉5包(牛奶口味)"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2047208",
+      imgSrc: "~event/1st/e-main/components/bn-slider/items/collect-8.png",
+      alt: "順安一條根舒緩按摩霜5件組-網"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2768609",
+      imgSrc: "~event/1st/e-main/components/bn-slider/items/collect-9.png",
+      alt: "義大利Giaretti 二合一熱壓三明治鬆餅機-庫"
+    },
+  ]
+
+section.promo__group.promo__group--bn.m-bottom--md(data-title="集點專區")
+  .layout--main
+    .promo__title
+      #decoBnSlider.title__decoration
+        img(src="~event/1st/e-main/components/bn-slider/decoration-bn-slider.png", alt="")
+    .promo__wrap
+      .promo__bn
+        img(src="~event/1st/e-main/components/bn-slider/title-bn-slider.png", alt="集點加價購")
+      #sliderBn.promo__slider.swiper-container
+        ul.swiper-wrapper
+          each data in bnSliderItemData
+            li.swiper-slide
+              a(href= data.link, title= data.alt)
+                img.swiper-lazy(data-src= data.imgSrc, alt="")
+                .swiper-lazy-preloader.swiper-lazy-preloader-black
+
+      //- #sliderBnPager.bn__pager.swiper-pagination

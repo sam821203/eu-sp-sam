@@ -1,0 +1,72 @@
+-
+  var rankData = [
+    {
+      name: "一二三四五六七八九十一二三四",
+      price: "999,999,999",
+    },
+    {
+      name: "我是冠軍隊",
+      price: "999,999",
+    },
+    {
+      name: "乂煞氣a小隊乂",
+      price: "99,999",
+      isActive: true,
+    },
+    {
+      name: "我是嫩嫩隊",
+      price: "9,999",
+    },
+    {
+      name: "我是嫩嫩隊",
+      price: "999",
+    },
+    {
+      name: "一二三四五六七八九十一二三四",
+      price: "99",
+    },
+    {
+      name: "我是冠軍隊",
+      price: "99",
+    },
+    {
+      name: "我是冠軍隊",
+      price: "9",
+    },
+    {
+      name: "我是嫩嫩隊",
+      price: "9",
+    },
+    {
+      name: "我是嫩嫩隊",
+      price: "999",
+    },
+  ]
+
+- var tableHead = ["排名", "團隊名稱", ]
+- var tableData = rankData
+
+section.section--cell.promo__group.promo__group--rank.m-bottom--xl
+  .layout--main
+    .group__wrap
+      .group__title.block--center.m-bottom--lg
+        img#rank(src="~components/rank/title-rank.png", alt="排行榜")
+      .group__table
+        include /components/include/team-table/_team-table
+
+      .out__table.active
+        .out__box
+          img(src="~components/rank/out-rank.svg", alt="")
+        .team__table
+          table
+            tr.active
+              td 999+
+              td 乂煞氣a小隊乂
+              td
+                span $
+                span 0
+      .login__alert.active
+        .btn__box
+          a.btn--my.shape--capsule.capsule--main 查看我的團隊
+        //- FIXME: 研發用自己改的
+        //- .login--no-record.m-bottom--xl 無組隊記錄

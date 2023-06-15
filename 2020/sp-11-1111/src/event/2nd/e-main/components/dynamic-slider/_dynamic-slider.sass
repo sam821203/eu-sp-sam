@@ -1,0 +1,139 @@
+.promo__group--dynamic-slider
+  &.promo__group--dynamic-slider-1
+    .promo__wrap
+      +bg-set(url("~event/2nd/e-main/components/dynamic-slider/bg-dynamic-slider.png"), 100%)
+      padding: 21% 8% 5%
+      .product--dynamic
+        +bg-set(url("~event/2nd/e-main/components/dynamic-slider/item-dynamic-slider.png"), contain)
+      .product__img
+        margin-left: auto
+        margin-right: auto
+        width: 95%
+        border-radius: 13% 13% 0 0
+        // border: 1px solid #f00
+        overflow: hidden
+      .product__price
+        padding-bottom: 13%
+
+.promo__group--dynamic-slider
+  .promo__wrap
+    +pos-set(relative, zero)
+    padding: 19.5% 8% 5%
+  .swiper-wrapper
+    display: flex
+    .swiper-slide
+      width: 33%
+
+      // lazyLoad CSS start
+      .product__img
+        +aspect-ratio(500, 500, relative, zero, span)
+        img
+          +pos-set(absolute, base, 0, 0)
+      // lazyLoad CSS end
+
+  .dynamic__nav
+    top: 62%
+    outline: 0
+    &::after
+      font-size: 5vw
+      
+    &--prev
+      left: 1.5%
+    &--next
+      right: 1.5%
+    // +breakpoint-max($max-width-xxs)
+      // &--prev
+      //   left: 6%
+      // &--next
+      //   right: 6%
+    +breakpoint-min($min-width-lg)
+      &--prev
+        left: 3%
+      &--next
+        right: 3%
+    +breakpoint-min($min-width-xl)
+      &::after
+        font-size: 40px
+
+  .product--dynamic
+    padding: 5%
+    // +bg-set(url("~event/2nd/e-main/pages/index/item-dynamic-slider.png"), 100%)
+    background-color: $gray-deep-light
+    overflow: hidden
+    .product__name
+      display: -webkit-box
+      -webkit-line-clamp: 2
+      -webkit-box-orient: vertical
+      text-overflow: ellipsis
+      margin: 3% 0
+      padding: 0 6%
+      color: $gray-deep-dark
+      line-height: 110%
+      height: 2.1em
+      font-size: 12px
+      overflow: hidden
+    .product__price
+      padding: 0 5%
+      color: $primary-medium
+      font-weight: bold
+      span
+        &:first-child
+          font-size: 2vw
+        &:last-child
+          font-size: 3vw
+
+    +breakpoint-max($max-width-xxs)
+      .product__name
+        margin: 0
+
+    +breakpoint-min($min-width-lg)
+      .product__name
+        margin: 5% 0
+        font-size: 2.5vw
+      .product__price
+        span
+          &:first-child
+            font-size: 2vw
+          &:last-child
+            font-size: 3.5vw
+
+    +breakpoint-min($min-width-xl)
+      border-radius: 12px
+      .product__name
+        margin: 18px 0
+        font-size: 22px
+      .product__price
+        span
+          &:first-child
+            font-size: 16px
+          &:last-child
+            font-size: 30px
+
+.dynamic-slider-pager
+  bottom: 1.9%
+  left: 50%
+  transform: translateX(-50%)
+  .swiper-pagination-bullet
+    margin: 0 2px
+    width: 6px
+    height: 6px
+    background-color: $gray-medium
+    opacity: .8
+    outline: 0
+  .swiper-pagination-bullet-active
+    background-color: $main-e-background-color-2nd-2
+    opacity: 1
+
+  +breakpoint-min($min-width-lg)
+    bottom: 15px
+    .swiper-pagination-bullet
+      margin: 0 6px
+      width: 12px
+      height: 12px
+
+  +breakpoint-min($min-width-xl)
+    bottom: 22px
+    .swiper-pagination-bullet
+      margin: 0 7px
+      width: 14px
+      height: 14px

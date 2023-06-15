@@ -1,0 +1,100 @@
+-
+  var promoDataESlider = [
+  {link: "#note",
+  imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-slider-1.png",
+  alt: "消費滿$3,800送688"},
+  {link: "#note-top3",
+  imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-slider-2.png",
+  alt: "超值美妝禮盒$799"},
+  ]
+-
+  var promoDataE = [
+  {link: "#note",
+  imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-2.png",
+  alt: "消費滿額抽夏慕尼/陶板屋餐券"},
+  {link: "#note",
+  imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-3.png",
+  alt: "累積消費滿額最高回饋8,800"},
+  {link: "#note",
+  imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-3-m.png",
+  alt: "累積消費滿額最高回饋8,800"},
+  {link: "https://media.etmall.com.tw/sp/8871/m/index.html",
+  imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-4.png",
+  alt: "與媽媽的美好食光"},
+  {link: "https://media.etmall.com.tw/sp/9010/m/index.html",
+  imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-5.png",
+  alt: "中租享分期回饋$1,200"},
+  {link: "",
+  imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-6.png",
+  alt: "7-ELEVEN超取送太妃糖拿鐵"},
+  {link: "https://media.etmall.com.tw/sp/7663/m/index.html",
+  imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-7.png",
+  alt: "APP消費滿$6,000送雙人牌餐具組"},
+  ]
+
+-
+  var promoDataU = [
+  {link: "https://www.u-mall.com.tw/Activity/HourSale",
+  imgSrc: "~event/2nd/u-main/components/promo-event/items/promo-1.png",
+  alt: "限時瘋搶"},
+  {link: "https://media.u-mall.com.tw/sp/8237/m/index.html",
+  imgSrc: "~event/2nd/u-main/components/promo-event/items/promo-2.png",
+  alt: "臺銀_滿$3,000送$300東森提貨券"},
+  {link: "https://www.u-mall.com.tw/Activity/HourSale?Day=Up",
+  imgSrc: "~event/2nd/u-main/components/promo-event/items/promo-3.png",
+  alt: "天天最激殺"},
+  ]
+
+- var promoData = isU ? promoDataU : promoDataE
+.super__big
+  include /event/2nd/e-main/components/daily-change/_daily-change
+
+.promo__event(data-title="")
+  //-.promo__event__web--bg
+  .decoration--outer
+    .scroll__flower
+      img#promoSlider__deso-1(src="~event/2nd/e-main/components/promo-event/super_scroll__flower-all.png", alt="")
+  ul.event__wrap
+    //-li#dailyPromo
+    //-  span.js-month 10
+    //-  span.js-date 19
+    //-  a(href= promoData[0].link, title= promoData[0].alt)
+    //-    img(src= promoData[0].imgSrc, alt= promoData[0].alt)
+        //-img(class="promo__good" src="~event/2nd/e-main/components/promo-event/items/promo-1-good.png")
+        //-img(class="promo__go" src="~event/2nd/e-main/components/promo-event/items/promo-1-go.png")
+    li.first__layer
+      #sliderFirstPromo.swiper-container
+        ul.swiper-wrapper
+          li.swiper-slide
+            a(href= promoDataESlider[0].link, title= promoDataESlider[0].alt)
+              img(src= promoDataESlider[0].imgSrc, alt= promoDataESlider[0].alt)
+          li.swiper-slide
+            a(href= promoDataESlider[1].link, title= promoDataESlider[1].alt)
+              img(src= promoDataESlider[1].imgSrc, alt= promoDataESlider[1].alt)
+        #sliderFirstPromoPager.sliderFirstPromo-pager.swiper-pagination
+    li.first__layer
+      a(href= promoData[0].link, title= promoData[0].alt)
+        img(src= promoData[0].imgSrc, alt= promoData[0].alt)
+    li.first__layer
+      a(href= promoData[1].link, title= promoData[1].alt)
+        img(src= promoData[1].imgSrc, alt= promoData[1].alt)
+        img(src= promoData[2].imgSrc, alt= promoData[1].alt)
+    li.first__layer
+      a(href= promoData[3].link, title= promoData[3].alt)
+        img(src= promoData[3].imgSrc, alt= promoData[3].alt)
+    li.first__layer
+      a(href= promoData[4].link, title= promoData[4].alt)
+        img(src= promoData[4].imgSrc, alt= promoData[4].alt)
+    li.first__layer
+      a(href= promoData[5].link, title= promoData[5].alt)
+        img(src= promoData[5].imgSrc, alt= promoData[5].alt)
+    li.first__layer
+      a(href= promoData[6].link, title= promoData[6].alt)
+        img(src= promoData[6].imgSrc, alt= promoData[6].alt)
+
+  //.promo__event__front
+  //  img(src="~event/2nd/e-main/components/promo-event/img-promo__front.png")
+  //  img(src="~event/2nd/e-main/components/promo-event/img-promo__front-web.png")
+  include /event/2nd/e-main/components/bn-special/_bn-special
+  //
+  //include /event/2nd/e-main/components/text-slider/_text-slider

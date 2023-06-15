@@ -1,0 +1,190 @@
+.promo__group--daily-slider
+  overflow: hidden
+  +breakpoint-min($min-width-xl)
+    overflow: visible
+  .promo__wrap
+    +aspect-ratio(960, 1377)
+    +bg-set(url(event/1st/e-main/components/daily-slider/bg-daily-slider.png), 100%, center, center)
+    +breakpoint-min($min-width-xl)
+      // +aspect-ratio(960, 1739)
+      // +bg-set(url(event/1st/e-main/components/daily-slider/bg-web-daily-slider.png), 100%, center, center)
+  // .promo__zone
+    // +pos-set(relative, base)
+  .promo__title
+    .decoration--top
+      z-index: 1
+      margin-top: 1%
+      margin-left: 6%
+      width: 15%
+      animation: shake-daily-slider 1s linear infinite
+      +breakpoint-min($min-width-xl)
+        // margin-top: 0%
+        margin-left: 3%
+    .title__text
+      +pos-set(absolute, second, 16%, 12%)
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 374px)
+    .daily__countdown
+      display: flex
+      justify-content: space-around
+      width: 75%
+      +breakpoint-min($min-width-xl)
+        width: 726px
+      .time__block
+        display: flex
+        justify-content: space-around
+        align-items: center
+        width: 20%
+        font-size: 6vw
+        font-weight: 500
+        +breakpoint-min($min-width-xl)
+          font-size: 58px
+          &:first-child
+            .time__box
+              &:first-child
+                margin-left: 15%
+              &:last-child
+                margin-left: 24%
+        .time__box
+          color: $main-e-background-color-1st-3
+
+
+  .promo__zone
+    +pos-set(relative, base)
+    padding: 32% 5% 5%
+    +breakpoint-min($min-width-xl)
+      padding: 32.6% 4% 5%
+    .promo__block
+      .swiper-slide
+        display: flex
+        justify-content: space-around
+        flex-wrap: wrap
+        height: calc((100% - 10px) / 2)
+      .dynamic__item
+        width: 48%
+        margin-bottom: 2%
+        background-color: $gray-deep-light
+        border-radius: 3vw
+        +breakpoint-min($min-width-lg)
+          padding-bottom: 1%
+        +breakpoint-min($min-width-xl)
+          // padding-bottom: 2.5%
+          border-radius: 20px
+        .product--dynamic
+          +pos-set(relative, zero)
+          padding-bottom: 14%
+          +breakpoint-min($min-width-lg)
+            padding-bottom: 12%
+          +breakpoint-min($min-width-xl)
+            padding-bottom: 3%
+          &:before
+            content: '搶購中'
+            +pos-set(absolute, base)
+            bottom: 2%
+            left: 4%
+            margin: 3% auto 0
+            width: 90%
+            height: 5vw
+            line-height: 5vw
+            border-radius: 4vw
+            background-color: $main-e-background-color-1st-2
+            color: $gray-deep-light
+            font-size: 1.1em
+            text-align: center
+            +breakpoint-min($min-width-lg)
+              bottom: 1%
+              height: 30px
+              line-height: 30px
+              font-size: 20px
+            +breakpoint-min($min-width-xl)
+              bottom: 0%
+              height: 40px
+              line-height: 40px
+              font-size: 24px
+          &:after
+            content: ''
+            +pos-set(absolute, base)
+            bottom: -1%
+            right: 3%
+            +bg-set(url(event/1st/e-main/components/daily-slider/fire.svg), 100%)
+            width: 12%
+            height: 16%
+            animation: fire 1.3s 1.5s infinite ease-in-out
+            // +breakpoint-min($min-width-xl)
+              // bottom: -1%
+          .product__block
+            border-radius: 3vw
+            margin: 0 auto
+            // width: 90%
+        .product__img
+          margin: 0 auto
+          width: 80%
+          border-radius: 0px
+          img
+            +breakpoint-min($min-width-xl)
+              width: 100%
+        .product__text
+          margin: 0 auto
+          // width: 80%
+          border-radius: 0px
+          background-color: transparent
+          .product__name
+            margin: 1.7%
+            height: 5vw
+            font-size: 4vw
+            +breakpoint-min($min-width-xl)
+              margin: .7%
+              font-size: 24px
+              height: 53px
+        .product__price
+          margin: 1% auto
+          width: 90%
+          height: 5vw
+          line-height: 5vw
+          // border-radius: 4vw
+          color: $main-e-background-color-1st-2
+          +breakpoint-min($min-width-xl)
+            height: 70px
+            line-height: 40px
+
+          span
+            &:last-child
+              font-size: 5vw
+              +breakpoint-min($min-width-xl)
+                font-size: 36px
+
+
+@keyframes move-poli-daily-slider
+  0%
+    transform: translate(100%, -13%)
+    filter: drop-shadow(20px -5px 6px $main-e-background-color-2nd-2)
+    opacity: 0
+  1%, 50%
+    opacity: 1
+    filter: drop-shadow(20px -5px 6px $main-e-background-color-2nd-2)
+  100%
+    transform: translate(0, 0)
+    opacity: 1
+
+@keyframes shake-daily-slider
+  0%
+    transform: translateX(3%)
+  10%
+    transform: translateX(-3%)
+  20%
+    transform: translateX(3%)
+  30%
+    transform: translateX(-3%)
+  35%
+    transform: translateX(3%)
+  100%
+    transform: translateX(3%)
+
+@keyframes fire
+  0%
+    // transform: rotate3d(0, 0, 1, -4deg) skew(4deg)
+  50%
+    transform: scale(1.15)
+    filter: brightness(1.3)
+  100%
+    // transform: rotate3d(0, 0, 1, 0deg) skew(0deg)

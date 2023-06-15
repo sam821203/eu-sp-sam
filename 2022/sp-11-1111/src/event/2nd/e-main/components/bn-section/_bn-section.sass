@@ -1,0 +1,68 @@
+.bn-section
+  overflow: hidden
+  .decor__wrap
+    // padding-top: 10%
+    // +breakpoint-min($min-width-xl)
+      // padding-top: 6%
+  .decor__item
+    pointer-events: none
+    &--left
+      +pos-set(absolute, base, 5%, 4%)
+      width: 27%
+      // &.active
+        // z-index: map-get($zindex, base)
+      +breakpoint-min($min-width-xl)
+        top: 105px
+        left: calc(50% - 470px)
+        width: auto
+    &--right
+      +pos-set(absolute, base, 5%)
+      right: 0%
+      width: 30%
+      &.active
+        animation: tada 2s ease-in forwards infinite
+      +breakpoint-min($min-width-xl)
+        right: calc( 50% - 460px )
+    &--bottom
+      +pos-set(absolute, base)
+      bottom: -1%
+      right: 0%
+      width: 17%
+      transform-origin: right bottom
+      +breakpoint-min($min-width-xl)
+        right: calc( 50% - 490px )
+      &.active
+        animation: heartBeat 2s ease-in forwards infinite
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .promo__wrap
+    +bg-set(url("event/2nd/e-main/components/bn-section/bg-bn-section.png"), 100%)
+    .promo__zone
+      +aspect-ratio(960, 915)
+    .promo__box
+      margin: 35% auto 0
+      width: 78%
+      text-align: center
+      cursor: pointer
+      &:hover
+        transition: all 0.6s ease
+        transform: translateY(-1%)
+        filter: contrast()(1.2)
+
+@keyframes tada
+  0%
+    transform: scaleX(1)
+  5%, 10%
+    transform: scale3d(.9, .9, .9) rotate(-3deg)
+  15%, 25%, 35%
+    transform: scale3d(1.1, 1.1, 1.1) rotate(3deg)
+  20%, 30%, 40%
+    transform: scale3d(1.1, 1.1, 1.1) rotate(-3deg)
+  50%, 100%
+    transform: scaleX(1)
+
+@keyframes heartBeat
+  0%, 15.5%, 30%, 100%
+    transform: scale(1)
+  9%, 21.5%
+    transform: scale(1.2)

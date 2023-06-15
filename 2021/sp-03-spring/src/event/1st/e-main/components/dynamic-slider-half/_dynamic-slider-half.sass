@@ -1,0 +1,175 @@
+.promo__group--dynamic-slider-half
+  margin-bottom: 4.5vw
+  .promo__wrap
+    display: flex
+    +pos-set(relative, zero)
+    padding: 1% 1.5% 3%
+    +bg-set(url("~event/1st/e-main/components/dynamic-slider-half/bg-dynamic-slider-half.png"), 100% auto)
+    .pic__box
+      flex: 0 1 33%
+      // margin-right: 1.5%
+      padding: 2%
+      text-align: center
+      a
+        width: 100%
+        height: 100%
+    .slider__box
+      width: 67%
+      padding: 3% 2% 5% 0
+      position: relative
+      .promo__slider
+        +pos-set(relative, zero)
+        padding: 0
+        width: 100%
+        height: 100%
+        li
+          padding: 2%
+          text-align: center
+          background-color: #fff
+
+    .swiper-slide
+      width: 50%
+
+      // lazyLoad CSS start
+      .product__img
+        +aspect-ratio(500, 500, relative, zero, span)
+        img
+          +pos-set(absolute, base, 0, 0)
+    // lazyLoad CSS end
+
+    +breakpoint-min($min-width-xl)
+      padding: 33px 35px 68px 156px
+      .pic__box
+        flex: 0 1 19.55%
+        padding: 10px
+
+      .slider__box
+        width: 80.45%
+        padding: 2% 0 2% 1%
+        .promo__slider
+          padding: 0
+          .swiper-wrapper
+            display: flex
+            justify-content: space-between
+            .swiper-slide
+              //flex: 0 1 24.6%
+              padding: 0
+
+  .product--dynamic
+    height: 100%
+    //background-color: $gray-deep-light
+    overflow: hidden
+    .product__name
+      display: -webkit-box
+      -webkit-line-clamp: 2
+      -webkit-box-orient: vertical
+      text-overflow: ellipsis
+      margin: 3% 0
+      padding: 0 2%
+      color: $gray-deep-dark
+      line-height: 110%
+      height: 2.2em
+      font-size: 12px
+      overflow: hidden
+    .product__price
+      padding: 0 2%
+      color: $primary-medium
+      font-weight: bold
+      span
+        &:first-child
+          font-size: 2vw
+        &:last-child
+          font-size: 3vw
+
+    +breakpoint-max($max-width-xxs)
+      .product__name
+        margin: 0
+
+    +breakpoint-min($min-width-lg)
+      .product__name
+        margin: 5% 0
+        font-size: 2.5vw
+      .product__price
+        span
+          &:first-child
+            font-size: 2vw
+          &:last-child
+            font-size: 3.5vw
+
+    +breakpoint-min($min-width-xl)
+      .product__name
+        margin: 5px 0
+        font-size: 24px
+      .product__price
+        span
+          &:first-child
+            font-size: 29px
+          &:last-child
+            font-size: 46px
+  .swiper-button-prev,.swiper-button-next
+    width: 5vw
+    height: 6vw
+    margin-top: -2vw
+    opacity: 0
+    &::after
+      font-size: 3vw
+
+  .swiper-button-prev
+    left: -3vw
+  .swiper-button-next
+    right: -1.5vw
+  //- 消除間隙
+  +breakpoint-min($min-width-xl)
+    margin-bottom: 40px
+    .swiper-button-prev,.swiper-button-next
+      width: auto
+      height: auto
+      margin-top: -21px
+      &::after
+        font-size: 40px
+
+    .swiper-button-prev
+      left: -9px
+    .swiper-button-next
+      right: -23px
+
+.dynamic-slider-pager-4
+  bottom: .1vw
+  left: 50%
+  transform: translateX(-50%)
+  .swiper-pagination-bullet
+    margin: 0 4px
+  .swiper-pagination-bullet-active
+    width: 20px
+    height: 7px
+    vertical-align: middle
+    background-color: #3d161b
+    border: 0px
+    border-radius: 6px
+    margin-top: -1px
+
+  +breakpoint-min($min-width-xl)
+    bottom: -18px
+
+.arrow__wrap
+  img
+    position: absolute
+    width: 4vw
+    height: auto
+    &:nth-child(1)
+      top: 20vw
+      left: -3vw
+    &:nth-child(2)
+      top: 19.5vw
+      right: -1.5vw
+      transform: rotate(180deg)
+
+  +breakpoint-min($min-width-xl)
+    img
+      width: 40px
+      &:nth-child(1)
+        top: 168px
+        left: -13px
+      &:nth-child(2)
+        top: 164px
+        right: -36px

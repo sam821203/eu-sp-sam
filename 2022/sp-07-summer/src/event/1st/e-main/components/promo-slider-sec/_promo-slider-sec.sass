@@ -1,0 +1,54 @@
+.promo__group--promo-slider-sec
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__item
+    width: 100%
+    +breakpoint-min($min-width-xl)
+      width: auto
+    &--title
+      +pos-set(absolute, base, 0%)
+      right: 22%
+      width: 55%
+      max-width: 765px
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 250px)
+        right: 0%
+        width: fit-content
+    &--left
+      +pos-set(absolute, zero, 0%, 6%)
+      width: 34vw
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 400px)
+        width: auto
+      &.active
+        -webkit-animation: key-wind-rotate 8s linear 1.5s infinite both  
+        animation: key-wind-rotate 8s linear 1.5s infinite both
+    &--right
+      +pos-set(absolute, zero, 0%, 64%)
+      width: 32vw
+      +breakpoint-min($min-width-xl)
+        left: calc(50% + 140px)
+        width: auto
+      &.active
+        -webkit-animation: key-wind-rotate 8s linear 2s infinite both  
+        animation: key-wind-rotate 8s linear 2s infinite both
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/promo-slider-sec/bg-promo-slider-sec.png), 100%)
+    background-position: bottom
+    padding-top: 12%
+    .promo__zone
+      +aspect-ratio(960, 763)
+      .promo__block
+        padding: 12.5% 2% 0
+
+@keyframes key-wind-rotate
+  20%
+    transform: rotate(-2.8deg) skew(2.8deg)
+  40%
+    transform: rotate(2.2deg) skew(-2.2deg)
+  60%
+    transform: rotate(-0.8deg) skew(0.8deg)
+  80%
+    transform: rotate(0.4deg) skew(-0.4deg)
+  100%
+    transform: rotate(0deg)

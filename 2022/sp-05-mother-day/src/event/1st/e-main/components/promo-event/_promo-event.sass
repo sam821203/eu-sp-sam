@@ -1,0 +1,73 @@
+.promo__group--promo-event
+  +pos-set(relative)
+  // .promo__wrap--special
+  //   +aspect-ratio(960, 303)
+  //   .promo__zone--special
+  //     top: -4%
+  
+  .decor__block
+    .decor__item
+      &:first-child
+        +pos-set(absolute, base, -11%, 2.4%)
+        width: 77%
+        animation: jackInTheBox2 2s .6s linear 1
+        +breakpoint-min($min-width-xl)
+          top: -11%
+          left: calc(50% - 450px)
+          width: auto
+      &:last-child
+        +pos-set(absolute, base, -18%, 2%)
+        width: 98%
+        animation: jackInTheBox 2s .4s linear 1
+        +breakpoint-min($min-width-xl)
+          top: -17%
+          left: calc(50% - 460px)
+          width: auto
+
+  .promo__wrap
+    +aspect-ratio(960, 1236)
+  .promo__zone
+    +pos-set(relative, zero)
+    +bg-set(url(event/1st/e-main/components/promo-event/bg-promo-event.png), 100%)
+    .promo__block
+      padding: 18% 4% 0
+      li
+        &:hover
+          transform: translateY(-1%)
+          filter: brightness(1.1)
+      .promo__box
+        display: flex
+        justify-content: space-around
+        li
+          width: 48%
+      .event__wrap
+        margin-top: 5.5%
+        .event__box
+          display: flex
+          justify-content: space-around
+          flex-wrap: wrap
+          li
+            margin-bottom: 2%
+            width: 31%
+      .slider__box
+        margin-top: 5%
+
+
+.animate
+  // transition: 2s
+  animation: heartBeat 1.2s both 1 linear
+
+@keyframes heartBeat
+  0%
+    transform: scale(1)
+  14%
+    transform: scale(1.1)
+    filter: brightness(120%)
+  28%
+    transform: scale(1)
+    filter: brightness(120%)
+  42%
+    transform: scale(1.1)
+    filter: brightness(120%)
+  70%
+    transform: scale(1)

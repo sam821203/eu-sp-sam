@@ -1,0 +1,111 @@
+
+.team__block
+  .team__box
+    +bg-set(url(event/1st/e-main/pages/index/bg-section.png), 100%, null, null, repeat)
+
+  .team__figure
+    margin-bottom: 28px
+    padding-top: 8px
+    +breakpoint-min($min-width-lg)
+      margin-bottom: 72px
+    ul
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+    li
+      flex: 0 0 48%
+      +pos-set(relative, zero)
+
+  .team__info
+    margin: 0 16px 24px
+    padding: 4px
+    color: $gray-deep-light
+    text-align: center
+    .capsule
+      padding: 1% 4%
+    +breakpoint-min($min-width-lg)
+      margin-bottom: 48px
+
+  .team__group
+    padding: 15% 10% 24%
+    background-color: $gray-deep-dark
+    border: 2px solid transparent
+    border-radius: 8px
+    +breakpoint-min($min-width-lg)
+      border-radius: 24px
+      border-width: 6px
+
+  .team__group--1
+    border-color: $main-color-1
+  .team__group--2
+    border-color: $main-color-2
+
+  .team__intro
+    color: $gray-deep-light
+    text-align: center
+  .intro__body
+    background: rgba($gray-deep-light, 0.3)
+    box-shadow: inset 1px 1px 0px rgba($gray-deep-dark, 0.25)
+    border-radius: 4px
+    +breakpoint-min($min-width-lg)
+      box-shadow: inset 3px 3px 0px rgba($gray-deep-dark, 0.25)
+      border-radius: 12px
+    &--1
+      color: $gray-deep-dark
+      background: rgba($main-color-3, 0.95)
+      box-shadow: inset 1px 1px 0px rgba($gray-deep-light, 0.25)
+      +breakpoint-min($min-width-lg)
+        box-shadow: inset 3px 3px 0px rgba($gray-deep-light, 0.25)
+    &--2
+      color: $gray-deep-dark
+      background: rgba($main-color-4, 0.95)
+      box-shadow: inset 1px 1px 0px rgba($gray-deep-light, 0.25)
+      +breakpoint-min($min-width-lg)
+        box-shadow: inset 3px 3px 0px rgba($gray-deep-light, 0.25)
+
+    .intro--strong
+      font-size: 16px
+      font-weight: bold
+
+    +breakpoint-min($min-width-lg)
+      border-radius: 10px
+      .intro--strong
+        font-size: 32px
+    +breakpoint-min($min-width-xl)
+      .intro--strong
+        font-size: 42px
+
+  .team__status
+    +pos-set(absolute, zero)
+    top: -6%
+    left: 5%
+    padding-bottom: 26%
+    width: 90%
+    // transform: scale(1.05)
+    &--now
+      +bg-set(url(event/1st/e-main/components/team/status/team-now.png), 100%)
+    &--rank-1
+      +bg-set(url(event/1st/e-main/components/team/status/team-rank-1.png), 100%)
+    &--rank-2
+      +bg-set(url(event/1st/e-main/components/team/status/team-rank-2.png), 100%)
+
+  .btn__team
+    display: block
+    +pos-set(absolute, zero)
+    bottom: -6.5%
+    left: 1%
+    width: 98%
+    transition: all 0.6s
+    &:hover
+      transform: scale(1.05)
+
+  .team__pic
+    margin-bottom: 5%
+
+  .team__note
+    color: rgba($gray-deep-light, 0.7)
+    text-align: center
+
+
+
+

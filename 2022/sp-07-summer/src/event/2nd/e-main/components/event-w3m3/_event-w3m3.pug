@@ -1,0 +1,70 @@
+-
+  var w3m3Data = [
+    { // 1
+      link: "https://www.etmall.com.tw/Activity/CouponPage/380",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-1.png",
+      alt: "寵物用品天天狂降75折up"
+    },
+    { // 2
+      link: "https://www.etmall.com.tw/Activity/CouponPage/331",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-2.png",
+      alt: "中元限定領券最高折$100"
+    },
+    { // 3
+      link: "https://www.etmall.com.tw/Activity/CouponPage/360",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-3.png",
+      alt: "電子鎖領券最高現折$3000"
+    },
+    { // 4
+      link: "https://www.etmall.com.tw/Activity/CouponPage/350",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-4.png",
+      alt: "居家辦公最高折抵1200元"
+    },
+    { // 5
+      link: "https://www.etmall.com.tw/Activity/CouponPage/386",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-5.png",
+      alt: "美容器材 指定品領券享9折"
+    },
+    { // 6
+      link: "https://www.etmall.com.tw/Activity/CouponPage/382",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-6.png",
+      alt: "機能精選指定商品現折$100"
+    },
+    { // 7
+      link: "https://www.etmall.com.tw/Activity/CouponPage/315",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-7.png",
+      alt: "隱藏限定領券$85折"
+    },
+    { // 8
+      link: "https://www.etmall.com.tw/Activity/CouponPage/315",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-8.png",
+      alt: "Dyson領券最高折$2000"
+    },
+    { // 9
+      link: "https://www.etmall.com.tw/Activity/CouponPage/393",
+      imgSrc: "event/2nd/e-main/components/event-w3m3/items/depart-9.png",
+      alt: "環球嚴選 指定品領券最高折$150"
+    },
+  ]
+
+section.promo__group.promo__group--w3m3.m-bottom--xxl(data-title="品牌神券")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--title#titleEventW3m3
+        img(src="event/2nd/e-main/components/event-w3m3/title-event-w3m3.png" alt="")
+      .decor__item.decor__item--left#decorEventW3M3Left
+        img(src="event/2nd/e-main/components/event-w3m3/decor-event-w3m3-left.png" alt="")
+      .decor__item.decor__item--right#decorEventW3M3right
+        img(src="event/2nd/e-main/components/event-w3m3/decor-event-w3m3-right.png" alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          #w3m3Wrap.event__wrap
+            ul.good__wrap
+              each data, index in w3m3Data
+                li
+                  a(href= data.link, title= data.alt)
+                    .ice-shine
+                    - var hasImg = data.imgSrc ? true : false
+                    if (hasImg)
+                      img(src= data.imgSrc, alt= data.alt)

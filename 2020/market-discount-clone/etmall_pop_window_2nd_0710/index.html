@@ -1,0 +1,494 @@
+<meta name="viewport" content="width=device-width">
+<meta charset="utf-8">
+<!-- ============== 輪播 start ============== -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+<!-- ============== 輪播 end ============== -->
+<!-- 共用CSS -->
+<link rel="stylesheet" href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.css">
+<link rel="stylesheet" href="popWindow.css">
+<style>
+    /* 調整logo位置大小 */
+    /* .logo {
+      top: 1%;
+      left: 1%;
+      width: 30%;
+      max-width: 220px;
+    } */
+
+    /* 連結測試 */
+    /* .sp__visual a{
+      filter: brightness(500%);
+    } */
+
+    /* 切片測試 */
+    /* .visual__fragment::before {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      border: 1px solid #00f;
+      pointer-events: none;
+    } */
+
+    /* 設定全畫面背景 */
+    body {
+        background-color: #8096b2;
+    }
+
+    .sp__main {
+        background: url(bg_20200507.jpg) center 0 no-repeat;
+    }
+
+    /*排站*/
+    .build--1260 {
+        max-width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .margin-top-sm {
+        margin-top: 2%;
+    }
+
+    .margin-bottom-sm {
+        margin-bottom: 2%;
+    }
+
+    .margin-bottom-md {
+        margin-bottom: 4%;
+    }
+
+    .build__wrap {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .card--small-space .build__item {
+        margin-top: 0.4%;
+        margin-bottom: 0.4%;
+        background-color: #fff;
+        border: 1px solid #EDEDED;
+        transition: transform 0.16s;
+    }
+
+    .card--small-space .build__item:active,
+    .card--small-space .build__item:hover {
+        transform: scale(1.03);
+    }
+
+    @media screen and (min-width: 768px) {
+        .card--small-space .build__item {
+            margin-top: 0.2%;
+            margin-bottom: 0.2%;
+        }
+    }
+
+    .card--small-space .item__push span:before,
+    .card--small-space .item__push span:after {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #999;
+    }
+
+    .card--small-space .item__push span:before {
+        top: 0;
+    }
+
+    .card--small-space .item__push span:after {
+        bottom: 0;
+    }
+
+    /* 設定點下去與hover動畫 */
+    .bn-w2m1 .banner__item2:hover,
+    .bn-w2m1 .banner__item2:active {
+        /* 變大(>1時變大) */
+        transform: scale(1.05);
+        /* 亮度調亮(>100%時變亮) */
+        filter: brightness(115%);
+    }
+
+    @media screen and (max-width: 1024px) {
+        /* 設定手機時一列2個 */
+        .bn-w4m2 .banner__item {
+            flex: 1 0 48%;
+        }
+
+        /* ===== card--small-space setting end ===== */
+        /* ===== card--small-space item *4 setting start ===== */
+        .card--small-space.item--4 .build__item {
+            width: 48%;
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        .card--small-space.item--4 .build__item {
+            width: 24%;
+        }
+    }
+
+    /* 大圖打開 */
+    /* open note detail*/
+    .open-bigPhoto {
+        cursor: pointer;
+    }
+
+    @media screen and (min-width: 767px) and (max-width: 960px) {
+        /*.open-bigPhoto {*/
+            /*width: 50%;*/
+        /*}*/
+
+    }
+
+    /* ===== card--small-space item *4 setting end ===== */
+    .build__item a {
+        color: #5d5d5d;
+    }
+
+    .item__pic {
+        position: relative;
+        z-index: 0;
+        padding-top: 100%;
+        overflow: hidden;
+    }
+
+    .item__img {
+        display: block;
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    .item__info {
+        padding: 3%;
+    }
+
+    .item__push {
+        width: 100%;
+        height: 28px;
+        text-align: center;
+    }
+
+    .item__push span {
+        display: block;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        position: relative;
+        z-index: 0;
+        margin: 0 3%;
+        max-height: 28px;
+        line-height: 200%;
+        color: #cc1e05;
+        font-weight: bold;
+        overflow: hidden;
+    }
+
+    .item__name {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        text-overflow: ellipsis;
+        height: 36px;
+        line-height: 120%;
+        font-size: 15px;
+        overflow: hidden;
+    }
+
+    .item__price span:last-child {
+        color: #cc1e05;
+        font-size: 22px;
+    }
+
+    .prices {
+        text-decoration: line-through;
+    }
+
+    /*複製字串*/
+    .clioboard__wrap, .clioboard__wrap_2 {
+        position: relative;
+    }
+
+    .clioboard__wrap .copy_coupon,
+    .clioboard__wrap_2 .copy_coupon {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .clioboard__wrap .copy_coupon {
+        top: -66.5vw;
+        right: 18vw;
+        width: 65vw;
+        height: 16vw;
+        /*transform: skew(20deg, -17deg);*/
+    }
+
+    .clioboard__wrap_2 .copy_coupon {
+        top: 37vw;
+        left: 7vw;
+        width: 22vw;
+        height: 10vw;
+        transform: none;
+    }
+
+    @media screen and (min-width: 960px) {
+        .clioboard__wrap .copy_coupon {
+            top: -605px;
+            right: calc(50% - 298px);
+            width: 600px;
+            height: 135px;
+        }
+
+        .clioboard__wrap_2 .copy_coupon {
+            top: 372px;
+            left: 79px;
+            width: 205px;
+            height: 98px;
+        }
+    }
+
+
+    #notification div {
+        /*width: 150px;*/
+        padding: .3em 1em;
+        background-color: #eee;
+        border: 1px solid #CCC;
+        margin: .3em;
+        border-radius: 3px;
+        color: #222;
+        font-weight: bold;
+        font-size: 13px;
+        letter-spacing: 2px;
+        box-shadow: 2px 2px 2px #333;
+    }
+
+    #notification {
+        position: fixed;
+        right: 3px;
+        top: 3px;
+        z-index: 202;
+    }
+
+    .n__icon {
+        width: 15px;
+        height: 15px;
+        display: inline;
+        margin-right: 5px;
+        vertical-align: text-top;
+    }
+
+    .coupon__link {
+        position: absolute;
+        top: 41vw;
+        left: 39vw;
+        width: 21vw;
+        height: 9vw;
+
+    }
+    .coupon__detail {
+        position: absolute;
+        top: 41vw;
+        left: 66vw;
+        width: 21vw;
+        height: 10vw;
+    }
+    @media screen and (min-width: 960px) {
+        #notification div {
+            font-size: 22px;
+        }
+
+        #notification {
+            position: fixed;
+            right: 10px;
+            top: 10px;
+        }
+
+        .n__icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        .coupon__link {
+            top: 386px;
+            left: calc(50% - 116px);
+            width: 222px;
+            height: 91px;
+        }
+        .coupon__detail {
+            top: 386px;
+            left: calc(50% + 166px);
+            width: 213px;
+            height: 91px;
+        }
+    }
+</style>
+<div id="iconHome"></div>
+<div id="notification"></div>
+<div id="spWrap" class="sp__wallper">
+    <!-- 主視覺 -->
+    <main class="sp__main">
+        <div class="layout--main home--logo">
+        </div>
+        <section class="sp__visual">
+            <div class="layout--main">
+                <ul class="visual--auto clearfix">
+                    <li class="visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/">
+                            <img src="img_20200507_01.jpg">
+                        </a>
+
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <img src="img_20200507_02.jpg">
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <!--<a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202007/SP_1115826/w/index.html"-->
+                        <!--target="_blank">-->
+                        <div class="open-bigPhoto" data-dialog="img--detail">
+                            <img src="img_20200507_03.jpg">
+                        </div>
+                        <!--</a>-->
+                    </li>
+
+
+                    <li class="visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202007/SP_1115807/w/index.html">
+                            <img src="img_20200507_04.jpg">
+                        </a>
+                        <a href="https://3000.gov.tw/">
+                            <img src="img_20200507_05.jpg">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+</div>
+
+<!-- 彈出照片(大張) -->
+<div class="open--window--wrap pop--images" id="img--detail">
+    <div class="clioboard__wrap_2">
+        <input value="ETMALL3000" style="display:none;"/>
+        <button class="copy_coupon"></button>
+    </div>
+    <a class="coupon__link" href="https://www.etmall.com.tw/member/ecoupon"></a>
+    <a class="coupon__detail" href="#note"></a>
+    <img src="png_1500.png" alt="banner">
+</div>
+<script src="https://polyfill.io/v3/polyfill.min.js"></script>
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<!-- ============== 輪播 start ============== -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+<!-- ============== 輪播 end ============== -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js"></script> -->
+<!-- 東森浮水印 -->
+<script id="scriptIconFloat"
+        src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105264/float-icon.js"></script>
+<!-- 森森浮水印
+<script id="scriptIconFloat" src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1102419/float-icon.js"></script> -->
+<!-- 共用JS -->
+
+<script>
+    window.Clipboard = (function (window, document, navigator) {
+        var textArea,
+            copy;
+
+        function isOS() {
+            return navigator.userAgent.match(/ipad|iphone/i);
+        }
+
+        function createTextArea(text) {
+            textArea = document.createElement('textArea');
+            textArea.value = text;
+            document.body.appendChild(textArea);
+        }
+
+        function selectText() {
+            var range,
+                selection;
+
+            if (isOS()) {
+                range = document.createRange();
+                range.selectNodeContents(textArea);
+                selection = window.getSelection();
+                selection.removeAllRanges();
+                selection.addRange(range);
+                textArea.setSelectionRange(0, 999999);
+            } else {
+                textArea.select();
+            }
+        }
+
+        function copyToClipboard() {
+            document.execCommand("Copy");
+            document.body.removeChild(textArea);
+        }
+
+        copy = function (text) {
+            createTextArea(text);
+            selectText();
+            copyToClipboard();
+        };
+
+        return {
+            copy: copy
+        };
+    })(window, document, navigator);
+
+    $(".copy_coupon").on("click", function () {
+        var $this = $(this),
+            value = $this.prev("input").val();
+        window.Clipboard.copy(value);
+    });
+
+
+    "use strict";
+
+    function notification(note) {
+        var timer = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 5000;
+        var notifications = {};
+        var notifyBox = document.getElementById('notification');
+        notifications.container = document.createElement("div");
+        notifications.noImg = document.createElement("img");
+        notifications.noImg.setAttribute("src", "notification.png");
+        notifications.noImg.setAttribute("class", "n__icon");
+        notifications.note = document.createTextNode(note);
+        notifications.container.appendChild(notifications.noImg);
+        notifications.container.appendChild(notifications.note);
+        notifyBox.appendChild(notifications.container);
+        setTimeout(function () {
+            notifyBox.removeChild(notifications.container);
+        }, timer);
+    }
+
+    var clickNotification = document.querySelectorAll('.copy_coupon');
+    for (var i = 0; i < clickNotification.length; i++) {
+        clickNotification[i].addEventListener("click", function () {
+            notification("折扣碼複製成功");
+        });
+    }
+
+    // 參考codepen範例：https://codepen.io/sciento/pen/zzBGBK?__cf_chl_jschl_tk__=5a00e130c98d2c4c154389533bcf247f91b3394a-1594538534-0-AY3JysRH4gmWvdKWVhqk9Zg13I-_ORTLpa2w8Z-g9M7vFGPuA5tWT8b0o2uHQYOicSZ2vWrnqWqKsBZevX7p9LURKSCqxUp8z7IJ6xvu04p0hWrNN7K9H3sCl9ThT0Xc4TkFcSJesKDa8HbWH7Mn7Eo7VrU0O7jBaMQCLyQetoxa205Sjko4hblb0lQnHwwt-9j5LsmElYPQMptc1xWT6YRNt80V28gUjC5A5r9Uqbu_ps016slKIdxCswTGT7sNcrCHd0dpgRVolDFIVStXvS0ZtbmQ_3cSifByt3Hh8qI0yqZRXsnncMj9TMixAKFZbfqu2t7tzU8jzGYyziXNVm_SmILYdkLDmBHTQ5lqXnm0
+</script>
+<script id="generateScript"
+        src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.js"></script>
+<script src="popWindow.js"></script>
+<script>
+    var footerSlider = new Swiper(".swiper-container", {
+        autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+        },
+        autoHeight: true,
+        grabCursor: true,
+        loop: true,
+        speed: 1000,
+    });
+</script>

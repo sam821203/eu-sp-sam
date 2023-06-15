@@ -1,0 +1,33 @@
+.hero__wrap
+  +pos-set(relative, zero)
+  .hero__block
+    +pos-set(relative, zero)
+    .hero__bg
+      width: 100%
+      img
+        width: 100%
+        +breakpoint-min($min-width-xl)
+          width: auto
+      a
+        .btn-detail
+          +pos-set(absolute, base, 56%)
+          right: 1.2%
+          +size(13vw)
+          background-color: transparent
+          border-radius: 50%
+          transition: transform .2s ease-in
+          &:hover
+            transform: scale(1.1)
+          +breakpoint-min($min-width-xl)
+            +size(120px)
+    .hero__detail
+      +pos-set(absolute, base, 48px)
+      right: -4%
+      background-color: $warning-200
+      border-radius: 50%
+      +size(58px, 50px)
+      span
+        +pos-set(absolute, base, 50%, 12%)
+        transform: translateY(-50%)
+        +font-styling(15px, 700)
+        vertical-align: middle

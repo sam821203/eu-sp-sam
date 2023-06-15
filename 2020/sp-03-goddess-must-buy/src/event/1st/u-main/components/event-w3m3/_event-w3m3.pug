@@ -1,0 +1,17 @@
+- var w3m3DataE = [{link: "https://www.etmall.com.tw/c3/129245", imgSrc: "~event/1st/e-main/components/event-w3m3/items/sp-product-1.png", alt: "防潮箱九折"}, {link: "https://www.etmall.com.tw/c3/132041", imgSrc: "~event/1st/e-main/components/event-w3m3/items/sp-product-2.png", alt: "ASUS手機"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201909/SP_1109143/w/index.html", imgSrc: "~event/1st/e-main/components/event-w3m3/items/sp-product-3.png", alt: "資生堂58折"}, ]
+
+- var w3m3DataU = [{link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201909/SP_1105062/w/index.html", imgSrc: "~event/1st/u-main/components/event-w3m3/items/sp-product-1.png", alt: "微星品牌週"}, {link: "https://www.u-mall.com.tw/c3/132042", imgSrc: "~event/1st/u-main/components/event-w3m3/items/sp-product-2.png", alt: "ASUS新機"}, {link: "https://www.u-mall.com.tw/np/68051", imgSrc: "~event/1st/u-main/components/event-w3m3/items/sp-product-3.png", alt: "FORTE 39折起"}, ]
+
+- var w3m3Data = isU? w3m3DataU : w3m3DataE
+
+
+section.promo__group.promo__group--w3m3.m-bottom--lg
+  .layout--main
+    //- .promo__title.block--center.m-bottom--xs(data-title="a4")
+      //- img.lazyload(data-src="section-bn-05.png", src="~utils/img/1x1_low.png", alt="秋賞獻禮")
+    .promo__wrap
+      ul.good__wrap
+        each data in w3m3Data
+          li
+            a(href= data.link, title= data.alt)
+              img(src= data.imgSrc, alt= data.alt)

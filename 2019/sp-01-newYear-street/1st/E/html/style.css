@@ -1,0 +1,2160 @@
+/* ============= reset ============= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*:before, *:after {
+    box-sizing: border-box;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+}
+
+h1 {
+    line-height: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    border: 0;
+}
+
+main, header, footer, section {
+    display: block;
+}
+
+/* ============= global ============= */
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #cc9960;
+    background-size: 100% 100%;
+    /*background-image: linear-gradient(to bottom right, #04017F,#04017F 20%, #8028bd);*/
+    /*background-position: 0 200px;*/
+}
+
+body, td, th {
+    font-family: Helvetica, Arial, LiHei, "Microsoft JhengHei", "微軟正黑體", sans-serif;
+}
+
+.clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+    *zoom: 1;
+}
+
+.opacity--0 {
+    opacity: 0;
+}
+
+/* ================= 總體 ================= */
+
+.sp__wrap {
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    background: center top repeat;
+    display: block;
+    /*max-width: 640px;*/
+    width: 100%;
+    /*background-color: #b03030;*/
+    background-image: url(upper_bgs.jpg);
+    background-position-x: center;
+    position: relative;
+    /*box-shadow: 0 5px 16px rgba(0, 0, 0, 0.25), 0 12px 2px rgba(0, 0, 0, 0.22);*/
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+    left: calc(50% - 614px);
+    z-index: 101;
+}
+
+.logo img {
+    width: 70%;
+    height: auto;
+}
+
+.upper_layer img,
+.incentive_layer {
+    width: auto;
+}
+.sp__wrap .full-bg {
+    background-image: url(upper_bg-full.jpg);
+    background-repeat: no-repeat;
+    background-size: 2560px 1686px;
+    background-position: center;
+}
+/* ================= 主視覺 ================= */
+.upper_layer {
+    position: relative;
+    background-size: 2560px 720px;
+    background-position: center;
+    max-width: 2560px;
+    min-height: 720px;
+    /*max-width: 2560px;*/
+    /*height: 1400px;*/
+    margin-right: auto;
+    margin-left: auto;
+    background-image: none;
+}
+
+.main_group {
+    background-repeat: no-repeat;
+    background-position: center;
+    transform-origin: left;
+    height: 569px;
+    overflow: hidden;
+    margin-left: 80px;
+    margin-right: auto;
+    background-image: url('title--bg2.png');
+    background-position-y: 15px;
+    /* 動畫進場 */
+    /*background-image: url('title--bg.png');*/
+    /*animation: 2s .5s title-bg;*/
+    /*width: 1329px;*/
+}
+
+.main_title {
+    position: relative;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin-left: -40px;
+}
+
+.main_title img {
+    position: relative;
+    height: auto;
+    display: block;
+    z-index: 100;
+}
+
+.main_title img:nth-child(1) {
+    position: absolute;
+    top: 89px;
+    left: calc(50% - 109px);
+}
+
+.main_title img:nth-child(2) {
+    opacity: 0;
+    animation: 3s 2s title-effect forwards;
+    margin-left: 38px;
+}
+
+.title-bright {
+    width: 670px;
+    height: 487px;
+    position: absolute;
+    z-index: 101;
+    margin-left: 20px;
+    background-image: url(title-bright.png);
+    animation: 20s 3s flash-title steps(10) infinite;
+}
+
+/* ================= 裝飾 ================= */
+.upper_layer .description img {
+    position: absolute;
+    z-index: 1;
+}
+
+.upper_layer .description .desc_house {
+    z-index: 4;
+    position: relative;
+}
+
+.upper_layer .description .desc_house .house_lf {
+    z-index: 4;
+    top: 52px;
+    left: calc(50% - 766px);
+}
+
+.upper_layer .description .desc_house .house_rg {
+    z-index: 4;
+    position: absolute;
+    top: 63px;
+    right: calc(50% - 971px);
+}
+
+.upper_layer .description .upper_house {
+    z-index: 1;
+    top: 150px;
+    position: relative;
+}
+
+.upper_layer .description .upper_house .upperH_lf {
+    left: calc(50% - 1280px);
+    top: 82px;
+}
+
+.upper_layer .description .upper_house .upperH_rg {
+    right: calc(50% - 1280px);
+    top: 53px;
+
+}
+
+.upper_layer .description .desc_car {
+    z-index: 3;
+    top: 376px;
+    left: calc(50% - 474px);
+    margin-left: 0;
+    margin-top: 0;
+    animation: car-run 16s infinite;
+    max-width: 224px;
+}
+
+.upper_layer .description .lion-l {
+    position: relative;
+    z-index: 5;
+    /*animation: 12s lion-l-move infinite both;*/
+}
+
+.upper_layer .description .lion-l .body-l {
+    z-index: 5;
+    top: 381px;
+    left: calc(50% - 746px);
+    max-width: 277px;
+}
+
+.upper_layer .description .lion-l .head-l {
+    z-index: 5;
+    transform-origin: center center;
+    animation: 6s self-rotate infinite alternate;
+    top: 381px;
+    left: calc(50% - 641px);
+    max-width: 172px;
+}
+
+.upper_layer .description .lion-r {
+    position: relative;
+    z-index: 3;
+    animation: 16s lion-r-move infinite both;
+}
+
+.upper_layer .description .lion-r .body-r {
+    z-index: 3;
+    top: 278px;
+    max-width: 294px;
+    right: calc(50% - 635px);
+    transform: rotateY(0);
+}
+
+.upper_layer .description .lion-r .head-r {
+    z-index: 3;
+    top: 335px;
+    transform-origin: center center;
+    right: calc(50% - 465px);
+    animation: 6s self-rotate infinite alternate;
+    /*animation: 6s self-rotate infinite alternate, 16s lion-r-head-move infinite both;*/
+    max-width: 101px;
+}
+
+.upper_layer .description .desc__firecracker .fire-head {
+    z-index: 22;
+    bottom: 194px;
+    right: calc(50% - 402px);
+    animation: 10s 3s candle-light forwards infinite;
+    max-width: 150px;
+}
+
+.upper_layer .description .desc__firecracker .fire-body {
+    z-index: 21;
+    bottom: 114px;
+    right: calc(50% - 333px);
+    max-width: 83px;
+}
+
+.upper_layer .description img.firecracker-l {
+    z-index: 21;
+    bottom: 2px;
+    left: calc(50% - 340px);
+    /*transform: scale(.6) rotateY(180deg);*/
+    max-width: 83px;
+    transform: scale(.6) rotate(295deg);
+    transform-origin: top left;
+}
+
+.upper_layer .description .desc_gold {
+    top: 11px;
+    right: calc(50% - 587px);
+    max-width: 356px;
+}
+
+.upper_layer .description .desc_fair {
+    z-index: 4;
+    bottom: 112px;
+    right: calc(50% - 862px);
+    max-width: 242px;
+}
+
+.upper_layer .description .lf-staffpots {
+    top: 547px;
+    left: calc(50% - 644px);
+    z-index: 5;
+}
+
+.upper_layer .description .rg-eggplat {
+    top: 565px;
+    right: calc(50% - 761px);
+    z-index: 5;
+}
+
+.upper_layer .description .desc_boom {
+    display: none;
+    max-width: 150px;
+}
+
+/* ================= 誘因 ================= */
+.sp-content {
+    position: relative;
+    z-index: 20;
+    overflow: hidden;
+    width: 1100px;
+    height: auto;
+    margin: 0 auto 0 calc(50% - 508px);
+    top: -155px;
+}
+
+.incentive_layer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 2;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.incentive_layer:before,
+.incentive_layer:after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+.incentive_layer .incentive__block {
+    width: calc(1100px / 4 - 15px);
+    min-height: 173px;
+}
+
+.incentive_layer .incentive {
+    position: relative;
+}
+
+.incentive_layer .incentive__block img {
+    width: 100%;
+}
+
+.incentive__block .incentive .incentive-main:hover {
+    transform-origin: center;
+    animation: .5s .5s incentive-scale;
+}
+
+/* ================= 吉祥物 ================= */
+.mascot {
+    position: relative;
+}
+
+#mascot {
+    display: none;
+    opacity: 0;
+}
+
+#mascot.display_switch {
+    display: block;
+    opacity: 1;
+    transition: .5s;
+}
+
+.mascot img {
+    position: absolute;
+    z-index: 21;
+    /*width: 7%;*/
+    width: 250px;
+}
+
+.mascot img:nth-child(1) {
+    bottom: -100px;
+    left: calc(50% - 850px);
+}
+
+.mascot img:nth-child(2) {
+    bottom: -900px;
+    right: calc(50% - 800px);
+    transform: scale(0.8) rotate(20deg);
+}
+
+.mascot-sticky_01 {
+    position: fixed !important;
+    top: 10px !important;
+}
+
+.mascot-sticky_02 {
+    position: fixed !important;
+    bottom: 0 !important;
+}
+
+/* ================= 輪播 ================= */
+.carousel_layer {
+    width: 100%;
+    background: url(carousel-box.png) no-repeat;
+    background-size: 100% auto;
+    background-position: 50% 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel_layer,
+.carousel_layer .carousel__wrap {
+    height: 130px;
+}
+
+.carousel_layer .slick-list {
+    width: 91%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.carousel_layer .carousel__wrap {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel_layer img {
+    width: 100%;
+    margin-top: -7px;
+    margin-right: auto;
+    margin-left: auto;
+    transition: all 500ms ease-in-out;
+    border-radius: 5px;
+}
+
+.carousel_layer .slick-active img {
+    transform: scale(1, 1);
+}
+
+.carousel_layer .slick-next,
+.carousel_layer .slick-prev {
+    width: 43px;
+    height: 65px;
+    cursor: pointer;
+}
+
+.carousel_layer .slick-next {
+    right: 0;
+    opacity: 0;
+}
+
+.carousel_layer .slick-prev {
+    left: 0;
+    opacity: 0;
+}
+
+.carousel_layer-m {
+    display: none;
+}
+
+.carousel_layer-d {
+    display: block;
+    width: 96%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ================= 底層雲 ================= */
+.down__cloud {
+    background-image: url(down-cloud.png);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    height: 200px;
+    margin-top: -270px;
+    position: relative;
+    z-index: 2;
+}
+
+/* ================= 動畫 ================= */
+/* 2018-12 */
+/* 立牌 */
+@keyframes lipai-scale {
+    0%, 50%, 100% {
+        transform: scaleX(1);
+    }
+    25%, 75% {
+        transform: scaleX(-1);
+    }
+}
+
+/* 誘因hover */
+@keyframes incentive-scale {
+    0%, 100% {
+        transform: scaleX(1);
+    }
+    50% {
+        transform: scaleX(-1);
+    }
+}
+
+/* 摩天輪 */
+@keyframes ferris-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* process */
+@keyframes lightSpot-move {
+    0% {
+        transform: translateX(-40px);
+        filter: brightness(500%);
+        opacity: .8;
+    }
+    20% {
+        transform: translateX(73px);
+        filter: brightness(500%);
+        opacity: .8;
+    }
+    40% {
+        transform: translateX(220px);
+        filter: brightness(500%);
+        opacity: .8;
+    }
+    60% {
+        transform: translateX(390px);
+        filter: brightness(500%);
+        opacity: .8;
+    }
+    80% {
+        transform: translateX(525px);
+        filter: brightness(500%);
+        opacity: .8;
+    }
+    100% {
+        transform: translateX(615px);
+        filter: brightness(100%);
+        opacity: .8;
+    }
+}
+
+@keyframes lightSpot-move-mo {
+    0% {
+        transform: translateX(-40px);
+        filter: brightness(500%);
+        opacity: .8;
+    }
+    20% {
+        transform: translateX(80px);
+        filter: brightness(500%);
+        opacity: .8;
+    }
+    40% {
+        transform: translateX(270px);
+        filter: brightness(500%);
+        opacity: .8;
+    }
+    60% {
+        transform: translateX(600px);
+        filter: brightness(500%);
+        opacity: .8;
+    }
+    80% {
+        transform: translateX(625px);
+        filter: brightness(500%);
+        opacity: .8;
+    }
+    100% {
+        transform: translateX(615px);
+        filter: brightness(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes lightSpot-move-mo-425 {
+    0% {
+        transform: translateX(-40px);
+        filter: brightness(500%);
+        opacity: .8;
+    }
+    20% {
+        transform: translateX(100px);
+        filter: brightness(500%);
+        opacity: .8;
+    }
+    40% {
+        /* change */
+        transform: translateX(300px);
+        filter: brightness(500%);
+        opacity: .8;
+    }
+    60% {
+        transform: translateX(450px);
+        filter: brightness(500%);
+        opacity: .8;
+    }
+    80% {
+        transform: translateX(550px);
+        filter: brightness(500%);
+        opacity: .8;
+    }
+    100% {
+        transform: translateX(700px);
+        filter: brightness(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes lightSpot-move-l {
+    0% {
+        transform: translateX(-40px) scale(1);
+        filter: brightness(500%);
+        opacity: .8;
+    }
+    20% {
+        transform: translateX(73px) scale(1);
+        filter: brightness(300%);
+        opacity: .8;
+    }
+    40% {
+        transform: translateX(300px) scale(1);
+        filter: brightness(300%);
+        opacity: .8;
+    }
+    60% {
+        transform: translateX(480px) scale(1);
+        filter: brightness(500%);
+        opacity: .8;
+    }
+    80% {
+        transform: translateX(650px) scale(1);
+        filter: brightness(200%);
+        opacity: .8;
+    }
+    100% {
+        transform: translateX(769px) scale(1);
+        filter: brightness(100%);
+        opacity: .8;
+    }
+}
+
+@keyframes lightSpot-move-xl {
+    0% {
+        transform: translateX(-40px) scale(1);
+        filter: brightness(500%);
+        opacity: .8;
+    }
+    20% {
+        transform: translateX(130px) scale(1);
+        filter: brightness(300%);
+        opacity: .8;
+    }
+    40% {
+        /* change */
+        transform: translateX(450px) scale(1);
+        filter: brightness(300%);
+        opacity: .8;
+    }
+    60% {
+        transform: translateX(780px) scale(1);
+        filter: brightness(500%);
+        opacity: .8;
+    }
+    80% {
+        transform: translateX(1090px) scale(1);
+        filter: brightness(200%);
+        opacity: .8;
+    }
+    100% {
+        transform: translateX(1260px) scale(1);
+        filter: brightness(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes card-twinkling {
+    0% {
+        /*opacity: 1;*/
+        filter: brightness(500%);
+    }
+    25% {
+        /*opacity: .8;*/
+        filter: brightness(100%);
+    }
+    50% {
+        /*opacity: .8;*/
+        filter: brightness(100%);
+    }
+    75% {
+        /*opacity: .8;*/
+        filter: brightness(100%);
+    }
+    100% {
+        /*opacity: .8;*/
+        filter: brightness(100%);
+    }
+}
+
+/* 閃爍 */
+@keyframes breathing-light {
+    0%, 100% {
+        filter: brightness(100%);
+    }
+    25% {
+        filter: brightness(200%);
+    blur(2 px);
+    }
+    50% {
+        filter: brightness(300%);
+    blur(4 px);
+    }
+    75% {
+        filter: brightness(200%);
+    blur(2 px);
+    }
+}
+
+@keyframes cycle-flash {
+    0% {
+        opacity: 1;
+        filter: contrast(200%);
+    }
+    100% {
+        opacity: .8;
+        cursor: pointer;
+    }
+}
+
+/* 2019-01 */
+@keyframes self-rotate {
+    10%, 30%, 70%, 90% {
+        transform: rotate(15deg);
+    }
+    50% {
+        transform: rotate(-15deg);
+    }
+    60% {
+        transform: rotate(15deg);
+    }
+    0%, 20%, 40%, 80%, 100% {
+        transform: rotate(-15deg);
+    }
+}
+
+@keyframes left-move {
+    0%, 100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(50px);
+    }
+    75% {
+        transform: translateX(100px);
+    }
+}
+
+@keyframes lion-l-move {
+    0%, 50%, 100% {
+        transform: translateX(-150px);
+    }
+    60%, 70% {
+        transform: translateX(0);
+    }
+    75% {
+        transform: translateX(-30px);
+    }
+}
+
+@keyframes lion-r-move {
+    0%, 50%, 100% {
+        transform: translateX(130px);
+        -webkit-transform: translateX(130px);
+    }
+    60%, 70%, 75% {
+        transform: translateX(0);
+        -webkit-transform: translateX(0);
+    }
+}
+
+@keyframes car-run {
+    0% {
+        left: 0;
+        /*opacity: 0;*/
+    }
+    10%, 13% {
+        left: 15%;
+        opacity: 1;
+    }
+    40% {
+        left: 70%;
+        opacity: 1;
+    }
+    50% {
+        /*opacity: 0;*/
+    }
+    100% {
+        left: 200%;
+        /*opacity: 0;*/
+    }
+}
+
+@keyframes candle-light {
+    0% {
+        transform: translate(-20px, 50px) scale(0);
+    }
+    3% {
+        transform: translate(0, 0) scale(.3);
+    }
+    8%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+@keyframes flash-title {
+    0% {
+        background-position-y: 4870px;
+    }
+    5% {
+        background-position-y: 4870px;
+    }
+    7% {
+        background-position-y: 0;
+    }
+    100% {
+        background-position-y: 0;
+    }
+}
+
+@keyframes flash-title-m800 {
+    0% {
+        background-position-y: calc(4870px * 0.7);
+    }
+    5% {
+        background-position-y: calc(4870px * 0.7);
+    }
+    7% {
+        background-position-y: 0;
+    }
+    100% {
+        background-position-y: 0;
+    }
+}
+
+@keyframes flash-title-m-xl {
+    0% {
+        background-position-y: calc(4870px * 0.4);
+    }
+    5% {
+        background-position-y: calc(4870px * 0.4);
+    }
+    7% {
+        background-position-y: 0;
+    }
+    100% {
+        background-position-y: 0;
+    }
+}
+
+@keyframes flash-title-m-l {
+    0% {
+        background-position-y: calc(4870px * 0.35);
+    }
+    5% {
+        background-position-y: calc(4870px * 0.35);
+    }
+    7% {
+        background-position-y: 0;
+    }
+    100% {
+        background-position-y: 0;
+    }
+}
+
+@keyframes flash-title-m-sm {
+    0% {
+        background-position-y: calc(4870px * 0.3);
+    }
+    5% {
+        background-position-y: calc(4870px * 0.3);
+    }
+    7% {
+        background-position-y: 0;
+    }
+    100% {
+        background-position-y: 0;
+    }
+}
+
+@keyframes title-effect {
+    0% {
+        opacity: 1;
+        transform: scale(3.5);
+    }
+    10%, 40%, 45%, 53%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    43%, 50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+@keyframes title-bg {
+    0% {
+        width: 0;
+        /*background-size: 0;*/
+    }
+    100% {
+        width: 100%;
+        /*background-size: 100%;*/
+    }
+}
+
+/* ================= mobile size ================= */
+
+@media screen and (max-width: 320px) {
+    body {
+        background-size: auto;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    /* ================= 主視覺 ================= */
+    .upper_layer {
+        background-size: calc(1280px * 0.3) calc(360px * 0.3);
+        background-position: top center;
+        max-width: calc(1280px * 0.3);
+        min-height: calc(360px * 0.3);
+    }
+
+    .main_group {
+        background-size: calc(1328px * 0.3) calc(554px * 0.3);
+        height: calc(554px * 0.32);
+        margin-left: auto;
+    }
+
+    .main_title {
+        align-items: flex-start;
+        margin-top: 16px;
+        margin-left: 19px;
+    }
+
+    .main_title img:nth-child(1) {
+        top: 22px;
+        left: calc(50% - 41px);
+        width: calc(327px * 0.3);
+    }
+
+    .main_title img:nth-child(2) {
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .main_title img:nth-child(2),
+    .title-bright {
+        width: calc(670px * 0.3);
+    }
+
+    .title-bright {
+        margin-left: 0;
+        height: calc(487px * 0.3);
+        background-size: calc(670px * 0.3) calc(4870px * 0.3);
+        animation: 20s 3s flash-title-m-sm steps(10) infinite;
+    }
+
+    /* ================= 裝飾 ================= */
+    .upper_layer .description .desc_house .house_lf,
+    .upper_layer .description .desc_house .house_rg {
+        /*width: 47%;*/
+        width: 160px;
+
+    }
+
+    .upper_layer .description .desc_house {
+        top: 14px;
+    }
+
+    .upper_layer .description .desc_house .house_lf {
+        left: -95px;
+        top: 0;
+    }
+
+    .upper_layer .description .desc_house .house_rg {
+        right: -117px;
+        top: 0;
+    }
+
+    .upper_layer .description .upper_house .upperH_lf {
+        display: none;
+    }
+
+    .upper_layer .description .upper_house .upperH_rg {
+        width: calc(500px * 0.6);
+        right: -69%;
+        top: -97px;
+    }
+
+    .upper_layer .description .desc_car {
+        width: calc(224px * 0.3);
+        top: 128px;
+        left: calc(50% - 161px);
+        margin-top: 0;
+    }
+
+    .upper_layer .description .lion-l {
+        left: -8px;
+        top: -45px;
+    }
+
+    .upper_layer .description .lion-l .body-l {
+        top: 166px;
+        left: -27px;
+        max-width: calc(277px * 0.3);
+    }
+
+    .upper_layer .description .lion-l .head-l {
+        z-index: 5;
+        top: 166px;
+        left: 10px;
+        max-width: calc(172px * 0.3);
+    }
+
+    .upper_layer .description .lion-r {
+        top: -153px;
+        right: -30px;
+    }
+
+    .upper_layer .description .lion-r .body-r {
+        top: 236px;
+        right: 10px;
+        max-width: calc(294px * 0.3);
+    }
+
+    .upper_layer .description .lion-r .head-r {
+        top: 254px;
+        right: 62px;
+        max-width: calc(101px * 0.3);
+    }
+
+    .upper_layer .description .desc_gold {
+        width: 26%;
+        right: 3%;
+        top: 7%;
+    }
+
+    .upper_layer .description img.desc_fair {
+        bottom: -18px;
+        right: -20px;
+        width: 21%;
+    }
+
+    .upper_layer .description img.firecracker-l {
+        left: calc(50% - 107px);
+        top: 189px;
+        max-width: calc(83px * 0.4);
+    }
+
+    .upper_layer .description .desc__firecracker .fire-head {
+        bottom: calc(230px - 226px);
+        left: 64.5%;
+        animation: 10s 3s candle-light forwards infinite;
+        max-width: calc(150px * 0.35);
+    }
+
+    .upper_layer .description .desc__firecracker .fire-body {
+        bottom: calc(150px - 182px);
+        left: 63%;
+        max-width: calc(83px * 0.4);
+    }
+
+    .upper_layer .description img.firecracker-l,
+    .upper_layer .description .lf-staffpots {
+        display: none;
+    }
+
+    .upper_layer .description .desc_boom {
+        display: block;
+        z-index: 4;
+        top: 89px;
+        left: -30px;
+        max-width: calc(150px * 0.45);
+    }
+
+    /* ================= 誘因 ================= */
+    .sp-content {
+        width: 100%;
+        top: 0;
+        margin: 0 auto 0 auto;
+    }
+
+    .incentive_layer {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 12px;
+        margin-bottom: 0;
+    }
+
+    .incentive_layer .incentive__block {
+        width: calc(100% / 2 - 13px);
+        padding: 4px;
+        min-height: 106px;
+        margin-top: -3px;
+    }
+
+    .carousel_layer,
+    .carousel_layer .carousel__wrap {
+        height: 96px;
+    }
+
+    /* ================= 底層雲 ================= */
+    .down__cloud {
+        margin-top: -42px;
+        background-size: 936px 75px;
+        background-repeat: no-repeat;
+        height: 75px;
+    }
+
+    /* ================= 輪播 ================= */
+    .carousel_layer,
+    .carousel_layer .carousel__wrap {
+        height: 64px;
+    }
+
+    .carousel_layer-d {
+        display: none;
+    }
+
+    .carousel_layer-m {
+        display: block;
+        width: 89%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0;
+    }
+
+    .carousel_layer-m.carousel_layer {
+        background: url(carousel-box-m.png) no-repeat;
+        background-size: 100% 100%;
+        background-position: 50% 8%;
+    }
+
+    .carousel_layer .slick-next,
+    .carousel_layer .slick-prev {
+        width: 20px;
+        height: 40px;
+    }
+
+    .carousel_layer .slick-next {
+        right: 0px;
+        opacity: 0;
+    }
+
+    .carousel_layer .slick-prev {
+        left: 0px;
+        opacity: 0;
+    }
+
+    .carousel_layer img {
+        margin-top: 0;
+        padding-left: 2px;
+    }
+}
+
+@media screen and (min-width: 321px) and (max-width: 375px) {
+    body {
+        background-size: auto;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    /* ================= 主視覺 ================= */
+    .upper_layer {
+        background-size: calc(1280px * 0.4) calc(360px * 0.4);
+        background-position: top center;
+        max-width: calc(1280px * 0.4);
+        min-height: calc(360px * 0.4);
+    }
+
+    .main_group {
+        background-size: calc(1328px * 0.35) calc(554px * 0.35);
+        height: calc(554px * 0.37);
+        margin-left: auto;
+    }
+
+    .main_title {
+        align-items: flex-start;
+        margin-top: 16px;
+        margin-left: 19px;
+    }
+
+    .main_title img:nth-child(1) {
+        top: 25px;
+        left: calc(50% - 50px);
+        width: calc(327px * 0.35);
+    }
+
+    .main_title img:nth-child(2) {
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .main_title img:nth-child(2),
+    .title-bright {
+        width: calc(670px * 0.35);
+    }
+
+    .title-bright {
+        margin-left: 0;
+        height: calc(487px * 0.35);
+        background-size: calc(670px * 0.35) calc(4870px * 0.35);
+        animation: 20s 3s flash-title-m-l steps(10) infinite;
+    }
+
+    /* ================= 裝飾 ================= */
+    .upper_layer .description .desc_house .house_lf,
+    .upper_layer .description .desc_house .house_rg {
+        /*width: 47%;*/
+        width: 185px;
+
+    }
+
+    .upper_layer .description .desc_house {
+        top: 17px;
+    }
+
+    .upper_layer .description .desc_house .house_lf {
+        left: -111px;
+        top: -15px;
+    }
+
+    .upper_layer .description .desc_house .house_rg {
+        right: -134px;
+        top: 0;
+    }
+
+    .upper_layer .description .upper_house .upperH_lf {
+        display: none;
+    }
+
+    .upper_layer .description .upper_house .upperH_rg {
+        width: calc(500px * 0.7);
+        right: -70%;
+        top: -79px;
+    }
+
+    .upper_layer .description .desc_car {
+        width: calc(224px * 0.4);
+        top: 135px;
+        left: calc(50% - 173px);
+        margin-top: 0;
+    }
+
+    .upper_layer .description .lion-l {
+        left: -22px;
+        top: -41px;
+    }
+
+    .upper_layer .description .lion-l .body-l {
+        top: 166px;
+        left: -27px;
+        max-width: calc(277px * 0.4);
+    }
+
+    .upper_layer .description .lion-l .head-l {
+        z-index: 5;
+        top: 166px;
+        left: 22px;
+        max-width: calc(172px * 0.4);
+    }
+
+    .upper_layer .description .lion-r {
+        top: -141px;
+        right: -55px;
+    }
+
+    .upper_layer .description .lion-r .body-r {
+        top: 236px;
+        right: 20px;
+        max-width: calc(294px * 0.4);
+    }
+
+    .upper_layer .description .lion-r .head-r {
+        top: 256px;
+        right: 89px;
+        max-width: calc(101px * 0.4);
+    }
+
+    .upper_layer .description .desc_gold {
+        width: 26%;
+        right: 3%;
+        top: 8%;
+    }
+
+    .upper_layer .description img.desc_fair {
+        bottom: -18px;
+        right: -20px;
+        width: 21%;
+    }
+
+    .upper_layer .description img.firecracker-l {
+        left: 21%;
+        bottom: -43px;
+        max-width: calc(83px * 0.5);
+    }
+
+    .upper_layer .description .desc__firecracker .fire-head {
+        bottom: calc(230px - 225px);
+        left: 64.5%;
+        animation: 10s 3s candle-light forwards infinite;
+        max-width: calc(150px * 0.5);
+    }
+
+    .upper_layer .description .desc__firecracker .fire-body {
+        bottom: calc(150px - 187px);
+        left: 63%;
+        max-width: calc(83px * 0.5);
+    }
+
+    .upper_layer .description img.firecracker-l,
+    .upper_layer .description .lf-staffpots {
+        display: none;
+    }
+
+    .upper_layer .description .desc_boom {
+        display: block;
+        z-index: 4;
+        top: 89px;
+        left: -30px;
+        max-width: calc(150px * 0.45);
+    }
+
+    /* ================= 誘因 ================= */
+    .sp-content {
+        width: 100%;
+        top: 0;
+        margin: 0 auto 0 auto;
+    }
+
+    .incentive_layer {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+
+    .incentive_layer .incentive__block {
+        width: calc(100% / 2 - 13px);
+        padding: 3px;
+        min-height: 125px;
+    }
+
+    .carousel_layer,
+    .carousel_layer .carousel__wrap {
+        height: 96px;
+    }
+
+    /* ================= 底層雲 ================= */
+    .down__cloud {
+        margin-top: -42px;
+        background-size: 936px 75px;
+        background-repeat: no-repeat;
+        height: 75px;
+    }
+
+    /* ================= 輪播 ================= */
+    .carousel_layer,
+    .carousel_layer .carousel__wrap {
+        height: 74px;
+    }
+
+    .carousel_layer-d {
+        display: none;
+    }
+
+    .carousel_layer-m {
+        display: block;
+        width: 91%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0;
+    }
+
+    .carousel_layer-m.carousel_layer {
+        background: url(carousel-box-m.png) no-repeat;
+        background-size: 100% 100%;
+        background-position: 50% 8%;
+    }
+
+    .carousel_layer .slick-next,
+    .carousel_layer .slick-prev {
+        width: 20px;
+        height: 40px;
+    }
+
+    .carousel_layer .slick-next {
+        right: 0px;
+        opacity: 0;
+    }
+
+    .carousel_layer .slick-prev {
+        left: 0px;
+        opacity: 0;
+    }
+
+    .carousel_layer img {
+        margin-top: 0;
+        padding-left: 2px;
+    }
+}
+
+@media screen and (min-width: 376px) and (max-width: 426px) {
+    body {
+        background-size: auto;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    /* ================= 主視覺 ================= */
+    .upper_layer {
+        background-size: calc(1280px * 0.4) calc(360px * 0.4);
+        background-position: top center;
+        max-width: calc(1280px * 0.4);
+        min-height: calc(360px * 0.4);
+    }
+
+    .main_group {
+        background-size: calc(1328px * 0.38) calc(554px * 0.38);
+        height: calc(554px * 0.4);
+        margin-left: auto;
+    }
+
+    .main_title {
+        align-items: flex-start;
+        margin-top: 10px;
+        margin-left: 0;
+    }
+
+    .main_title img:nth-child(1) {
+        top: 25px;
+        left: calc(50% - 50px);
+        width: calc(327px * 0.4);
+    }
+
+    .main_title img:nth-child(2) {
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .main_title img:nth-child(2),
+    .title-bright {
+        width: calc(670px * 0.4);
+    }
+
+    .title-bright {
+        margin-left: 0;
+        height: calc(487px * 0.4);
+        background-size: calc(670px * 0.4) calc(4870px * 0.4);
+        animation: 20s 3s flash-title-m-xl steps(10) infinite;
+    }
+
+    /* ================= 裝飾 ================= */
+    .upper_layer .description .desc_house .house_lf,
+    .upper_layer .description .desc_house .house_rg {
+        /*width: 47%;*/
+        width: 185px;
+
+    }
+
+    .upper_layer .description .desc_house {
+        top: 24px;
+    }
+
+    .upper_layer .description .desc_house .house_lf {
+        left: -112px;
+        top: -22px;
+    }
+
+    .upper_layer .description .desc_house .house_rg {
+        right: -135px;
+        top: 0;
+    }
+
+    .upper_layer .description .upper_house .upperH_lf {
+        display: none;
+    }
+
+    .upper_layer .description .upper_house .upperH_rg {
+        width: calc(500px * 0.8);
+        right: -73%;
+        top: -79px;
+    }
+
+    .upper_layer .description .desc_car {
+        width: calc(224px * 0.4);
+        top: 135px;
+        left: calc(50% - 220px);
+        margin-top: 0;
+    }
+
+    .upper_layer .description .lion-l {
+        left: -25px;
+        top: -30px;
+    }
+
+    .upper_layer .description .lion-l .body-l {
+        top: 166px;
+        left: -27px;
+        max-width: calc(277px * 0.4);
+    }
+
+    .upper_layer .description .lion-l .head-l {
+        z-index: 5;
+        top: 166px;
+        left: 22px;
+        max-width: calc(172px * 0.4);
+    }
+
+    .upper_layer .description .lion-r {
+        top: -141px;
+        right: -35px;
+    }
+
+    .upper_layer .description .lion-r .body-r {
+        top: 236px;
+        right: 20px;
+        max-width: calc(294px * 0.4);
+    }
+
+    .upper_layer .description .lion-r .head-r {
+        top: 256px;
+        right: 89px;
+        max-width: calc(101px * 0.4);
+    }
+
+    .upper_layer .description .desc_gold {
+        width: 26%;
+        right: 3%;
+        top: 4%;
+    }
+
+    .upper_layer .description img.desc_fair {
+        bottom: -18px;
+        right: -24px;
+        width: 21%;
+    }
+
+    .upper_layer .description img.firecracker-l {
+        left: 21%;
+        bottom: -38px;
+        max-width: calc(83px * 0.5);
+    }
+
+    .upper_layer .description .desc__firecracker .fire-head {
+        bottom: calc(230px - 220px);
+        left: 64.5%;
+        animation: 10s 3s candle-light forwards infinite;
+        max-width: calc(150px * 0.5);
+    }
+
+    .upper_layer .description .desc__firecracker .fire-body {
+        bottom: calc(150px - 182px);
+        left: 63%;
+        max-width: calc(83px * 0.5);
+    }
+
+    .upper_layer .description img.firecracker-l,
+    .upper_layer .description .lf-staffpots {
+        display: none;
+    }
+
+    .upper_layer .description .desc_boom {
+        display: block;
+        z-index: 4;
+        top: 89px;
+        left: -30px;
+        max-width: calc(150px * 0.45);
+    }
+
+    /* ================= 誘因 ================= */
+    .sp-content {
+        width: 100%;
+        top: 0;
+        margin: 0 auto 0 auto;
+    }
+
+    .incentive_layer {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 12px;
+        margin-bottom: 0;
+    }
+
+    .incentive_layer .incentive__block {
+        width: calc(100% / 2 - 10px);
+        padding: 7px;
+        min-height: 145px;
+        margin-top: -12px;
+    }
+
+    .carousel_layer,
+    .carousel_layer .carousel__wrap {
+        height: 96px;
+    }
+
+    /* ================= 底層雲 ================= */
+    .down__cloud {
+        margin-top: -42px;
+        background-size: 936px 75px;
+        background-repeat: no-repeat;
+        height: 75px;
+    }
+
+    /* ================= 輪播 ================= */
+    .carousel_layer,
+    .carousel_layer .carousel__wrap {
+        height: 90px;
+    }
+
+    .carousel_layer img {
+        margin-top: 0;
+        padding-left: 2px;
+    }
+
+    .carousel_layer-d {
+        display: none;
+    }
+
+    .carousel_layer-m {
+        display: block;
+        width: 92%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0;
+    }
+
+    .carousel_layer-m.carousel_layer {
+        background: url(carousel-box-m.png) no-repeat;
+        background-size: 100% 100%;
+        background-position: 50% 8%;
+    }
+
+    .carousel_layer .slick-next,
+    .carousel_layer .slick-prev {
+        width: 20px;
+        height: 40px;
+    }
+
+    .carousel_layer .slick-next {
+        right: 0px;
+        opacity: 0;
+    }
+
+    .carousel_layer .slick-prev {
+        left: 0px;
+        opacity: 0;
+    }
+
+}
+
+@media screen and (min-width: 427px) and (max-width: 767px) {
+    /* ================= 總體 ================= */
+    .logo {
+        display: none;
+    }
+
+    /* ================= 主視覺 ================= */
+    .upper_layer {
+        background-size: calc(1280px * 0.6) calc(360px * 0.6);
+        background-position: top center;
+        max-width: calc(1280px * 0.6);
+        min-height: calc(360px * 0.6);
+    }
+
+    .main_group {
+        background-size: calc(1328px * 0.4) calc(554px * 0.4);
+        height: calc(554px * 0.45);
+        margin-left: auto;
+    }
+
+    .main_title {
+        align-items: flex-start;
+        margin-top: 40px;
+        margin-left: 0;
+    }
+
+    .main_title img:nth-child(1) {
+        top: 0;
+        left: calc(50% - 50px);
+        width: calc(327px * 0.4);
+    }
+
+    .main_title img:nth-child(2) {
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .main_title img:nth-child(2),
+    .title-bright {
+        width: calc(670px * 0.4);
+    }
+
+    .title-bright {
+        margin-left: 0;
+        height: calc(487px * 0.4);
+        background-size: calc(670px * 0.4) calc(4870px * 0.4);
+        animation: 20s 3s flash-title-m-xl steps(10) infinite;
+    }
+
+    /* ================= 裝飾 ================= */
+    .upper_layer .description .desc_house .house_lf,
+    .upper_layer .description .desc_house .house_rg {
+        /*width: 47%;*/
+        width: 200px;
+
+    }
+
+    .upper_layer .description .desc_house {
+        top: 20px;
+    }
+
+    .upper_layer .description .desc_house .house_lf {
+        left: -83px;
+        top: -30px;
+    }
+
+    .upper_layer .description .desc_house .house_rg {
+        right: -127px;
+        top: 0;
+    }
+
+    .upper_layer .description .upper_house .upperH_lf {
+        display: none;
+    }
+
+    .upper_layer .description .upper_house .upperH_rg {
+        width: calc(500px * 0.8);
+        right: -57%;
+        top: -70px;
+    }
+
+    .upper_layer .description .desc_car {
+        width: calc(224px * 0.4);
+        top: 137px;
+        left: calc(50% - 220px);
+        margin-top: 0;
+    }
+
+    .upper_layer .description .lion-l {
+        left: -20px;
+        top: 0;
+    }
+
+    .upper_layer .description .lion-l .body-l {
+        top: 166px;
+        left: -27px;
+        max-width: calc(277px * 0.4);
+    }
+
+    .upper_layer .description .lion-l .head-l {
+        z-index: 5;
+        top: 166px;
+        left: 15px;
+        max-width: calc(172px * 0.4);
+    }
+
+    .upper_layer .description .lion-r {
+        top: -105px;
+    }
+
+    .upper_layer .description .lion-r .body-r {
+        top: 236px;
+        right: 20px;
+        max-width: calc(294px * 0.4);
+    }
+
+    .upper_layer .description .lion-r .head-r {
+        top: 256px;
+        right: 89px;
+        max-width: calc(101px * 0.4);
+    }
+
+    .upper_layer .description .desc_gold {
+        width: 26%;
+        right: 5%;
+        top: 6%;
+    }
+
+    .upper_layer .description img.desc_fair {
+        bottom: -25px;
+        right: -40px;
+        width: 21%;
+    }
+
+    .upper_layer .description img.firecracker-l {
+        left: 21%;
+        bottom: -38px;
+        max-width: calc(83px * 0.5);
+    }
+
+    .upper_layer .description .desc__firecracker .fire-head {
+        bottom: calc(230px - 220px);
+        left: 63.5%;
+        animation: 10s 3s candle-light forwards infinite;
+        max-width: calc(150px * 0.5);
+    }
+
+    .upper_layer .description .desc__firecracker .fire-body {
+        bottom: calc(150px - 182px);
+        left: 63%;
+        max-width: calc(83px * 0.5);
+    }
+
+    .upper_layer .description img.firecracker-l,
+    .upper_layer .description .lf-staffpots {
+        display: none;
+    }
+
+    .upper_layer .description .desc_boom {
+        display: block;
+        z-index: 4;
+        top: 89px;
+        left: -30px;
+        max-width: calc(150px * 0.45);
+    }
+
+    /* ================= 誘因 ================= */
+    .sp-content {
+        width: 100%;
+        top: 0;
+        margin: 0 auto 0 auto;
+    }
+
+    .incentive_layer {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 0;
+    }
+
+    .incentive_layer .incentive__block {
+        width: calc(100% / 2 - 10px);
+        padding: 7px;
+        min-height: 145px;
+    }
+
+    .carousel_layer,
+    .carousel_layer .carousel__wrap {
+        height: 96px;
+    }
+
+    /* ================= 底層雲 ================= */
+    .down__cloud {
+        margin-top: -45px;
+        background-size: 936px 75px;
+        background-repeat: no-repeat;
+        height: 75px;
+    }
+
+    /* ================= 輪播 ================= */
+    .carousel_layer,
+    .carousel_layer .carousel__wrap {
+        min-height: 144px;
+    }
+
+    .carousel_layer img {
+        margin-top: -4px;
+    }
+
+    .carousel_layer-d {
+        display: none;
+    }
+
+    .carousel_layer-m {
+        display: block;
+        width: 96%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 15px;
+    }
+
+    .carousel_layer-m.carousel_layer {
+        background: url(carousel-box-m.png) no-repeat;
+        background-size: 100% 100%;
+        background-position: 50% 8%;
+    }
+
+    .carousel_layer .slick-next,
+    .carousel_layer .slick-prev {
+        width: 20px;
+        height: 40px;
+    }
+
+    .carousel_layer .slick-next {
+        right: 0px;
+        opacity: 0;
+    }
+
+    .carousel_layer .slick-prev {
+        left: 0px;
+        opacity: 0;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1259px) {
+    /* ================= 總體 ================= */
+    .logo {
+        display: none;
+    }
+
+    /* ================= 主視覺 ================= */
+    .upper_layer {
+        background-size: 1280px 360px;
+        background-position: top center;
+        max-width: 1280px;
+        min-height: 360px;
+    }
+
+    .main_group {
+        background-size: calc(1328px * 0.7) calc(554px * 0.7);
+        height: calc(554px * 0.75);
+        margin-left: auto;
+    }
+
+    .main_title img:nth-child(1) {
+        top: 73px;
+        left: calc(50% - 90px);
+        width: calc(327px * 0.7);
+    }
+
+    .main_title img:nth-child(2) {
+        margin-left: 0;
+        margin-top: -20px;
+    }
+
+    .main_title img:nth-child(2),
+    .title-bright {
+        width: calc(670px * 0.7);
+    }
+
+    .title-bright {
+        margin-left: 0;
+        height: calc(487px * 0.7);
+        background-size: calc(670px * 0.7) calc(4870px * 0.7);
+        animation: 20s 3s flash-title-m800 steps(10) infinite;
+        margin-top: -10px;
+    }
+
+    /* ================= 裝飾 ================= */
+    .upper_layer .description .desc_house .house_lf,
+    .upper_layer .description .desc_house .house_rg {
+        /*width: 47%;*/
+        width: 376px;
+
+    }
+
+    .upper_layer .description .desc_house .house_lf {
+        left: -225px;
+        top: -30px;
+    }
+
+    .upper_layer .description .desc_house .house_rg {
+        /*right: -31%;*/
+        right: -250px;
+        top: 2px;
+    }
+
+    .upper_layer .description .upper_house .upperH_lf {
+        display: none;
+    }
+
+    .upper_layer .description .upper_house .upperH_rg {
+        width: 500px;
+        right: -36%;
+    }
+
+    .upper_layer .description .desc_car {
+        /*width: 19%;*/
+        width: 158px;
+        top: 238px;
+        left: calc(50% - 352px);
+        margin-top: 0;
+    }
+
+    .upper_layer .description .lion-l {
+        left: -47px;
+        top: -15px;
+    }
+
+    .upper_layer .description .lion-l .body-l {
+        top: 248px;
+        left: -57px;
+        max-width: calc(277px * 0.8);
+    }
+
+    .upper_layer .description .lion-l .head-l {
+        z-index: 5;
+        top: 248px;
+        left: 24px;
+        max-width: calc(172px * 0.8);
+    }
+
+    .upper_layer .description .lion-r {
+        top: -105px;
+    }
+
+    .upper_layer .description .lion-r .body-r {
+        max-width: calc(294px * 0.8);
+        right: calc(50% - 514px);
+    }
+
+    .upper_layer .description .lion-r .head-r {
+        right: calc(50% - 369px);
+        max-width: calc(101px * 0.8);
+    }
+
+    .upper_layer .description .desc_gold {
+        width: 20%;
+        /*width: 200px;*/
+        right: 0;
+        top: 2%;
+    }
+
+    .upper_layer .description img.desc_fair {
+        width: 21%;
+        bottom: -5%;
+        right: -44px;
+    }
+
+    .upper_layer .description img.firecracker-l {
+        left: calc(50% - 265px);
+        bottom: calc(110px - 158px);
+        max-width: calc(83px * 0.8);
+    }
+
+    .upper_layer .description .desc__firecracker .fire-head {
+        bottom: calc(230px - 197px);
+        right: calc(50% - 272px);
+        animation: 10s 3s candle-light forwards infinite;
+        max-width: calc(150px * 0.8);
+    }
+
+    .upper_layer .description .desc__firecracker .fire-body {
+        bottom: calc(150px - 182px);
+        right: calc(50% - 218px);
+        max-width: calc(83px * 0.8);
+    }
+
+    .upper_layer .description img.firecracker-l,
+    .upper_layer .description .lf-staffpots {
+        display: none;
+    }
+
+    .upper_layer .description .desc_boom {
+        display: block;
+        z-index: 4;
+        top: 82px;
+        left: -44px;
+        max-width: calc(150px * 0.8);
+    }
+
+    /* ================= 誘因 ================= */
+    .sp-content {
+        width: 768px;
+        top: 0;
+        margin: 0 auto 0 auto;
+    }
+
+    .incentive_layer {
+        margin-bottom: 0;
+    }
+
+    .incentive_layer .incentive__block {
+        width: calc(768px / 4 - 20px);
+        min-height: 128px;
+    }
+
+    .carousel_layer,
+    .carousel_layer .carousel__wrap {
+        height: 96px;
+    }
+
+    .carousel_layer img {
+        margin-top: -9px;
+    }
+
+    .carousel_layer-d {
+        width: 95%;
+    }
+
+    .down__cloud {
+        margin-top: -120px;
+    }
+}
+
+@media screen and (min-width: 1440px) and (max-width: 1919px) {
+    .mascot img {
+        width: 150px;
+    }
+
+    .mascot img:nth-child(1) {
+        left: calc(50% - 715px);
+    }
+
+    .mascot img:nth-child(2) {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1920px) and (max-width: 2560px) {
+    .mascot img {
+        width: 250px;
+    }
+
+    .mascot img:nth-child(1) {
+        left: calc(50% - 850px);
+    }
+}
+
+/*@media screen and*/
+@media screen and (max-width: 1440px) {
+    .upper_layer .description .desc_fair {
+        right: -2%;
+    }
+
+    .upper_layer .description .rg-eggplat {
+        display: none;
+    }
+}
+@media screen and (max-width: 1259px) {
+    .upper_layer {
+        background-image: url(upper_bg.jpg);
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+    }
+
+    .sp__wrap .full-bg {
+        background-image: none;
+    }
+}

@@ -1,0 +1,99 @@
+// ==========================================================================
+// Plugins
+// ==========================================================================
+// // @import vendors/animate
+// @import vendors/style/swiper-slider-custom
+@import vendors/style/swiper-safari-polyfill
+
+// ==========================================================================
+// first screen need
+// ==========================================================================
+// hero section
+// @import utils/bg-decoration-instance/parallax/_parallax
+@import event/1st/e-main/components/hero-section/_hero-section
+  
+@import utils/bg-decoration-instance/canvas-confetti/_canvas-confetti
+
+// ==========================================================================
+// components
+// ==========================================================================
+// dynamic product 假宮格共用CSS
+@import layout/dynamic-product/_dynamic-product.sass
+
+// 一般components
+@import event/1st/e-main/components/promo-event/_promo-event
+@import event/1st/e-main/components/slider-w14/_slider-w14
+@import event/1st/e-main/components/info-cover/_info-cover
+@import event/1st/e-main/components/random-show/_random-show
+@import event/1st/e-main/components/slider-w2m2/_slider-w2m2
+@import event/1st/e-main/components/promo-section/_promo-section
+// @import event/1st/e-main/components/promo-slider-w3/_promo-slider-w3
+// @import event/1st/e-main/components/promo-slider-w2/_promo-slider-w2
+// @import event/1st/e-main/components/event-w3m3/_event-w3m3
+
+// ==========================================================================
+// Page
+// ==========================================================================
+body
+  +pos-set(relative)
+  background-color: $main-e-background-color-1st
+  overflow-x: hidden
+
+  .decor__bg
+    +pos-set(fixed, under, 0%, 0%)
+    +bg-set(url(event/1st/e-main/pages/index/bg.png), 100%)
+    +breakpoint-min($min-width-xl)
+      +pos-set(fixed, under, 0%, 0%)
+      +bg-set(url(event/1st/e-main/pages/index/bg-web.jpg), auto)
+      background-position: center 
+
+  .decor__fg
+    +pos-set(absolute, zero, 0%, 0%)
+    +bg-set(url(event/1st/e-main/pages/index/bg-top.png), 100%)
+    +breakpoint-min($min-width-xl)
+      +pos-set(absolute, zero, 0%, 0%)
+      +bg-set(url(event/1st/e-main/pages/index/bg-top-web.png), auto)
+  .decor__people
+    // +pos-set(absolute, base, 0%, 0%)
+    // +bg-set(url(event/1st/e-main/pages/index/bg-people.png), 100%)
+    +breakpoint-min($min-width-xl)
+      +pos-set(absolute, base, 480px, 0%)
+      +bg-set(url(event/1st/e-main/pages/index/bg-people.png), auto)
+      pointer-events: none
+      animation: people-move-up 0.5s 1.5s ease-out 1 forwards, people-dancing 1.8s 2s forwards infinite
+      overflow: hidden
+      
+
+
+// TODO: 修改EU nav佔位高度(影響logo距離上方高度，U每次要改)
+// .navRightBar
+//   height: 39px
+//   +breakpoint-min($min-width-xl)
+//     height: auto
+
+.decoration--top,
+.decor--top
+  +pos-set(absolute)
+  pointer-events: none
+
+section:not(.note)
+  // 有parallax scroll時圖層有relative就有預設z-index可能會遮到宮格，因此使用這個讓宮格也能有預設z-index
+  +pos-set(relative)
+  a
+    display: block
+
+@keyframes people-dancing
+  0%, 24%, 46%, 100%
+    transform: scale(1) translateY(0px)
+  12%
+    transform: scale(1.02) translateY(-7px)
+  36%
+    transform: scale(1.02) translateY(-9px)
+
+@keyframes people-move-up
+  0%
+    opacity: 0
+    transform: translate(0, 48px)
+  100%
+    opacity: 1
+    transform: translate(0px, 0)

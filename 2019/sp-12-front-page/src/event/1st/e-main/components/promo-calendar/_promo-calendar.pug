@@ -1,0 +1,22 @@
+section.promo__calendar
+  .layout--main
+    .calendar__wrap
+      .calendar__title(title="本月檔期")
+        img(src="~event/1st/e-main/components/promo-calendar/calendar-title.png", alt="本月檔期")
+      .calendar__cell
+        a(href="#food", title="吃美食")
+          div
+            span 1
+          div
+            span 吃美食
+          div
+
+      - var i = 2
+      while i <= 14
+        .calendar__cell
+          a(href="#cosmetics", title="美妝日")
+            div
+              span= i++
+            div
+              span 美妝日
+            div

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-Han-tw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="swiper.min.css">
+  <link rel="stylesheet" href="sp-20190619.css">
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  *:before, *:after {
+    box-sizing: border-box; }
+  a {
+    display: block;
+    text-decoration: none;
+  }
+  ul {
+    list-style: none;
+  }
+  img {
+    width: 100%;
+    border: 0;
+    display: block;
+  }
+  article,
+  main,
+  nav,
+  section {
+    display: block;
+  }
+  body {
+    margin:0;
+    background-color:#f3ce76;
+  }
+  .sp--1260 {
+    position: relative;
+    z-index: 0;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .sp--1260.icon_Home{
+    z-index: auto;
+  }
+  /* 主視覺 */
+  /* ======================================== */
+  .logo a,
+  .sp__visual a{
+    display: block;
+  }
+  .logo {
+    position: absolute;
+    z-index: 1;
+    /* 調整logo位置 */
+    top: 1%;
+    left: 1%;
+    width: 30%;
+    max-width: 220px;
+  }
+  /* 設定背景 */
+  .sp__main {
+    background: url(top201203bg.jpg) center 0 no-repeat;
+  }
+  /* 設定前景 */
+  .sp__visual {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+  }
+  .visual__anchor,
+  .visual__main,
+  .visual__nav {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .visual__anchor {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }
+  .visual__main a,
+  .visual__nav a {
+    flex-grow: 1;
+  }
+  /* 主視覺 */
+    .visual__main {
+    height: 100%;
+  }
+  .visual__main a:nth-child(1) {
+    flex-grow: 0;
+    width: 100%;
+    height: 52%
+  }
+  .visual__main a:nth-child(2) {
+    flex-grow: 0;
+    width: 50%;
+    height: 13%;
+  }
+  .visual__main a:nth-child(3) {
+    flex-grow: 0;
+    width: 50%;
+    height: 13%
+  }
+  .visual__main a:nth-child(4) {
+    flex-grow: 0;
+    width: 34%;
+    height: 8%;
+  }
+  .visual__main a:nth-child(5) {
+    flex-grow: 0;
+    width: 32%;
+    height: 8%
+  }
+  .visual__main a:nth-child(6) {
+    flex-grow: 0;
+    width: 34%;
+    height: 8%;
+  }
+  .visual__main a:nth-child(7) {
+    flex-grow: 0;
+    width: 34%;
+    height: 10%
+  }
+  .visual__main a:nth-child(8) {
+    flex-grow: 0;
+    width: 32%;
+    height: 10%;
+  }
+  .visual__main a:nth-child(9) {
+    flex-grow: 0;
+    width: 34%;
+    height: 10%
+  }
+  .visual__main a:nth-child(10) {
+    flex-grow: 0;
+    width: 34%;
+    height: 9%;
+  }
+  .visual__main a:nth-child(11) {
+    flex-grow: 0;
+    width: 32%;
+    height: 9%
+  }
+  .visual__main a:nth-child(12) {
+    flex-grow: 0;
+    width: 34%;
+    height: 9%;
+  }
+  .visual__main a:nth-child(13) {
+    flex-grow: 0;
+    width: 25%;
+    height: 8%
+  }
+  .visual__main a:nth-child(14) {
+    flex-grow: 0;
+    width: 25%;
+    height: 8%;
+  }
+  .visual__main a:nth-child(15) {
+    flex-grow: 0;
+    width: 25%;
+    height: 8%
+  }
+  .visual__main a:nth-child(16) {
+    flex-grow: 0;
+    width: 25%;
+    height: 8%
+  }
+  @media screen and (max-width: 1024px) {
+    .logo{
+      width: 24%;
+      left: 0;
+    }
+  }
+  .visual__main {
+    position: relative;
+    z-index: 0;
+  }
+  .promo__slider {
+    position: absolute;
+    z-index: 1;
+    top: 8%;
+    right: 0;
+    width: 45%;
+  }
+
+</style>
+</head>
+<body>
+<div class="navRightBar" id="navRightBar"></div>
+<div id="spWrap" class="sp__wallper">
+  <!-- 主視覺 -->
+  <main class="sp__main">
+    <div class="sp--1260">
+      <a href="https://www.etmall.com.tw" class="logo"><img src="ehs-logo.png" alt="東森購物"></a>
+      <div class="sp__visual">
+        <div class="visual__anchor">
+          <div class="visual__main">
+            <div class="promo__slider">
+              <div id="promoSlider" class="swiper-container">
+                <ul class="swiper-wrapper">
+                  <li class="swiper-slide">
+                    <a href="https://www.etmall.com.tw/i/2174903" title="【日本小林製藥】手握免貼式暖暖包">
+                      <img src="p1.png" alt="【日本小林製藥】手握免貼式暖暖包">
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="https://www.etmall.com.tw/i/2843319" title="【金牌主廚阿彰師】年菜10道組(10-12人份)【現+預】">
+                      <img src="p2.png" alt="【金牌主廚阿彰師】年菜10道組(10-12人份)【現+預】">
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="https://www.etmall.com.tw/i/2560999" title="【美國富及第】免耗材空氣清淨機">
+                      <img src="p3.png" alt="【美國富及第】免耗材空氣清淨機">
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <a href="#40PV"></a>
+            <a href="#年菜大賞"></a>
+            <a href="#1PV-10PV"></a>
+            <a href="#11PV-20PV"></a>
+            <a href="#21PV-30PV"></a>
+            <a href="#美妝保健"></a>
+            <a href="#居家日用"></a>
+            <a href="#3C家電"></a>
+            <a href="#休閒旅遊"></a>
+            <a href="#餐券美食"></a>
+            <a href="#流行時尚"></a>
+            <a href="https://www.etmall.com.tw/c1/34805"></a>
+            <a href="https://www.etmall.com.tw/c1/35160"></a>
+            <a href="https://www.etmall.com.tw/c1/34875"></a>
+            <a href="https://www.etmall.com.tw/c1/34964"></a>
+          </div>
+        </div>
+        <img src="top201203_02.jpg">
+        <img src="top201203_04.jpg">
+        <img src="top201203_05.jpg">
+        <img src="top201203_06.jpg">
+        <img src="top201203_07.jpg">
+      </div>
+    </div>
+  </main>
+</div>
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script src="swiper.min.js"></script>
+<script>$('a[href^="#"]').on('click',function(e){var target=$('a[name='+this.getAttribute('href').split('#')[1]+']');if(target.length){e.preventDefault();$('html,body').stop().animate({scrollTop:target.offset().top},500);}});</script>
+<!-- 浮水印 -->
+<script id="scriptIconFloat" src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105264/float-icon.js"></script>
+<!-- 共用JS -->
+<script id="generateScript"
+        src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.js"></script>
+<script>
+  var promoSlider = new Swiper('#promoSlider', {
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false,
+    },
+    effect : 'flip',
+    flipEffect: {
+      slideShadows : false,
+    },
+    grabCursor: true,
+    initialSlide: Math.floor(Math.random() * document.querySelectorAll('#promoSlider .swiper-slide').length),
+    loop: true,
+    speed: 600,
+  });
+</script>
+<script src="sp-script20190619.js"></script>
+</body>
+</html>

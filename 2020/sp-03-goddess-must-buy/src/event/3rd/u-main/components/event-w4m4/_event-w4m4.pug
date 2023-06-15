@@ -1,0 +1,46 @@
+-
+  var w4m2DataE = [
+  {
+    link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202003/SP_1114997/w/index.html",
+    imgSrc: "~event/3rd/u-main/components/event-w4m4/items/special-1.png",
+    alt: "食在安心5折UP"
+  },
+  {
+    link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202003/SP_1115015/w/index.html",
+    imgSrc: "~event/3rd/u-main/components/event-w4m4/items/special-2.png",
+    alt: "抗菌清潔日用宅"
+  },
+  {
+    link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202003/SP_1114925/w/index.html",
+    imgSrc: "~event/3rd/u-main/components/event-w4m4/items/special-3.png",
+    alt: "3C宅"
+  },
+  {
+    link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202002/SP_1114795/w/index.html",
+    imgSrc: "~event/3rd/u-main/components/event-w4m4/items/special-4.png",
+    alt: "家電宅"
+  },
+  ]
+
+-
+  var w4m2DataU = [
+  {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202003/SP_1106174/w/index.html", imgSrc: "~event/3rd/u-main/components/event-w4m4/items/special-1.png", alt: "食在安心5折UP"},
+  {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202003/SP_1106190/w/index.html", imgSrc: "~event/3rd/u-main/components/event-w4m4/items/special-2.png", alt: "抗菌清潔日用宅"},
+  {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202003/SP_1106137/w/index.html", imgSrc: "~event/3rd/u-main/components/event-w4m4/items/special-3.png", alt: "3C宅"},
+  {link: "https://www.u-mall.com.tw/c2/138264", imgSrc: "~event/3rd/u-main/components/event-w4m4/items/special-4.png", alt: "家電宅"},
+  ]
+
+- var w4m2Data = isU? w4m2DataU : w4m2DataE
+.decoration__boy__layout.wow
+  img.lazyload.decoration__boy(src="~utils/img/1x1_low.png" data-src="~event/3rd/u-main/components/event-w4m4/decoration__boy.png", alt="")
+//img.lazyload(data-src="decoration__boy.png", src="~utils/img/1x1_low.png", alt="")
+section.promo__group.promo__group--w4m4.m-bottom--md.wow(data-title="")
+  .layout--main
+    //- .promo__title.block--center.m-bottom--xs(data-title="a4")
+    //-   img.lazyload(data-src="section-bn-05.png", src="~utils/img/1x1_low.png", alt="秋賞獻禮")
+    .promo__wrap
+      ul.good__wrap
+        each data in w4m2Data
+          li
+            a(href= data.link, title= data.alt)
+              img(src= data.imgSrc, alt= data.alt)

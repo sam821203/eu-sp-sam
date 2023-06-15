@@ -1,0 +1,89 @@
+// 依附在別的section時
+.promo__group--bn-bank
+  margin-top: 6vw
+  .promo__wrap
+    +pos-set(relative, zero)
+    height: 66vw
+    padding: 15% 11% 10% 12%
+    // +bg-set(url("~event/3rd/e-main/components/bn-special/bg-special-p.png"), 100%)
+    +bg-set(null, 100%)  // 用JS判斷哪個月用哪個背景，要放在assets裡
+    .promo__slider
+      +pos-set(relative, zero)
+      width: 100%
+      height: 40vw
+      .swiper-container
+        display: flex
+        width: 100%
+        height: 100%
+        padding: 2% 0
+        .swiper-slide
+          // background-color: #faf
+          text-align: center
+          padding: 0 2%
+        // a
+        //   transition: transform 0.6s
+        //   transform: translateY(-27%) scale(0.6)
+        .swiper-slide,
+        .swiper-slide-duplicate
+          a,
+          img
+            transition: all 0.6s
+          a
+            transform: scale(1) translateY(30%)
+          img
+            filter: grayscale(100%)
+        .swiper-slide-active,
+        .swiper-slide-duplicate-active
+          z-index: map-get($zindex, ten)
+          a
+            transform: scale(1.5) translateY(10%)
+          img
+            filter: grayscale(0)
+          // lazyLoad CSS end
+
+            display: block
+            margin-left: auto
+            margin-right: auto
+
+  +breakpoint-min($min-width-xl)
+    margin-top: 70px
+    .promo__wrap
+      height: 647px
+      .promo__slider
+        height: 400px
+
+  .bn__bank__nav
+    top: 45.5%
+    opacity: 0
+    outline: 1
+    &::after
+      font-size: 5vw
+      
+    &--prev
+      left: 1%
+    &--next
+      right: 1%
+    +breakpoint-min($min-width-xl)
+      &--prev,&--next
+        top: 44%
+      &--prev
+        left: 4.5%
+      &--next
+        right: 3.5%
+      &::after
+        font-size: 40px
+  
+    +breakpoint-min($min-width-lg)
+      // .swiper-pagination-custom
+      //   .swiper-pagination-bullet
+      //     margin: 0 6px
+      //     width: 14px
+      //     height: 14px
+
+    // +breakpoint-min($min-width-xl)
+      // .swiper-pagination-custom
+      //   bottom: -30px
+      //   .swiper-pagination-bullet
+      //     margin: 0 8px
+      //     width: 16px
+      //     height: 16px

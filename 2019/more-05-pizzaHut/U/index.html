@@ -1,0 +1,543 @@
+<meta name="viewport" content="width=device-width">
+<meta charset="utf-8">
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    *:before, *:after {
+        box-sizing: border-box;
+    }
+
+    a {
+        display: block;
+        text-decoration: none;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    img {
+        width: 100%;
+        border: 0;
+    }
+
+    article,
+    main,
+    nav,
+    section {
+        display: block;
+    }
+
+    body {
+        margin: 0;
+        background-color: #940000;
+    }
+
+    .sp--1260 {
+        position: relative;
+        z-index: 0;
+        max-width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    /* 主視覺 */
+    /* ======================================== */
+    .logo a,
+    .sp__visual a,
+    .visual__nav.nav1 .open-bigPhoto {
+        display: block;
+        /* 測試用 */
+/*        border: 1px solid #f00;*/
+    }
+
+    .logo {
+        position: absolute;
+        z-index: 1;
+        /* 調整logo位置 */
+        top: 1%;
+        left: 1%;
+        width: 20%;
+        max-width: 220px;
+    }
+
+    /* 設定背景 */
+    .sp__main {
+        background: url(bg.jpg) center 0 no-repeat;
+    }
+
+    /* 設定前景 */
+    .sp__visual {
+        position: relative;
+        z-index: 0;
+        width: 100%;
+    }
+
+    .visual__anchor,
+    .visual__main,
+    .visual__nav {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .visual__anchor {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+    }
+
+    .visual__main a,
+    .visual__nav a {
+        flex-grow: 1;
+    }
+
+    /* 設定高度，記得總和要100% */
+    /* 主視覺 */
+    .visual__main {
+        /*height: 70%;*/
+        height: 8%;
+        margin-top: 55%;
+    }
+
+    /* 各nav */
+    .visual__nav.nav1 {
+        /*height: 20%;*/
+        height: 65%;
+    }
+
+    .visual__nav.nav2 {
+        height: 10%;
+    }
+
+    /* 如果需要個別設定每塊寬度(可不設) */
+    /* 主視覺 */
+    /* 如果設100%後面的就會掉下去 */
+    .visual__main a:nth-child(1) {
+        flex-grow: 0;
+        width: 100%;
+    }
+
+    .visual__main a:nth-child(2) {
+        flex-grow: 0;
+        width: 100%;
+    }
+
+    /* 各視覺nav */
+    .visual__nav.nav1 a,
+    .visual__nav.nav1 .open-bigPhoto {
+        width: 50%;
+    }
+
+    .visual__nav.nav1 a:nth-child(1),
+    .visual__nav.nav1 .open-bigPhoto:nth-child(1) {
+        flex-grow: 0;
+        width: 50%;
+    }
+
+    /* 組版nav */
+    /* ======================================== */
+    .build__anchor {
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    /* 設定組版nav樣式 */
+    .build__anchor {
+        border: 1px solid #fee;
+    }
+
+    .build__anchor a {
+        display: block;
+        padding: 10px 5px;
+        color: #fff;
+        background-color: #faa;
+        border: 1px solid #fee;
+        font-size: 30px;
+        transition: transform 0.16s;
+    }
+
+    .build__anchor a:hover,
+    .build__anchor a:active {
+        filter: brightness(105%) contrast(110%);
+        transform: scale(1.02);
+    }
+
+    /* 設定組版nav寬度(12.5% = 一列8個) */
+    .build-nav__item {
+        flex: 1 0 12.5%;
+        line-height: 200%;
+    }
+
+    @media screen and (max-width: 820px) {
+        body {
+            padding-bottom: 108px;
+        }
+
+        .build__nav {
+            position: fixed;
+            z-index: 5;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        /* 設定手機組版nav樣式(可不設) */
+        .build__anchor {
+            border: 1px solid #faa;
+        }
+
+        .build__anchor a {
+            color: #faa;
+            background-color: #fff;
+            border: 1px solid #faa;
+            font-size: 18px;
+        }
+
+        /* 設定手機組版nav寬度(可不設) */
+        .build-nav__item {
+            flex: 1 0 25%;
+        }
+    }
+
+    /* 自適應banner組 */
+    /* ======================================== */
+    .banner__title {
+        height: 65px;
+        background: center top no-repeat;
+    }
+
+    .banner__wrap {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .banner__item {
+        transition: all 0.3s;
+    }
+
+    .banner__item img {
+        width: 100%;
+    }
+
+    /* 設定一列2個(50%，3個就33.33%，4個就25%) */
+    .bn-w2m1 .banner__item {
+        flex: 1 0 50%;
+    }
+
+    /* 設定點下去與hover動畫 */
+    .bn-w2m1 .banner__item:hover,
+    .bn-w2m1 .banner__item:active {
+        /* 變小(<1時變小) */
+        transform: scale(0.98);
+        /* 亮度調暗(<100%時變暗) */
+        /*filter: brightness(95%);*/
+    }
+
+    @media screen and (max-width: 1024px) {
+        /* 設定手機時一列1個 */
+        .bn-w2m1 .banner__item {
+            flex: 1 0 100%;
+        }
+    }
+
+    /* 設定一列4個 */
+    .bn-w4m2 .banner__item {
+        flex: 1 0 25%;
+    }
+
+    /* 設定點下去與hover動畫 */
+    .bn-w4m2 .banner__item:hover,
+    .bn-w4m2 .banner__item:active {
+        /* 變大(>1時變大) */
+        transform: scale(1.05);
+        /* 亮度調亮(>100%時變亮) */
+        filter: brightness(115%);
+    }
+
+    @media screen and (max-width: 1024px) {
+        /* 設定手機時一列2個 */
+        .bn-w4m2 .banner__item {
+            flex: 1 0 50%;
+        }
+    }
+
+    /* 設定一列3個 */
+    .bn-w3m1 .banner__item {
+        flex: 1 0 33.33%;
+    }
+
+    /* 設定點下去與hover動畫 */
+    .bn-w3m1 .banner__item:hover,
+    .bn-w3m1 .banner__item:active {
+        /* 變大(>1時變大) */
+        transform: scale(1.05);
+        /* 亮度調亮(>100%時變亮) */
+        filter: brightness(115%);
+    }
+
+    @media screen and (max-width: 1024px) {
+        /* 設定手機時一列1個 */
+        .bn-w3m1 .banner__item {
+            flex: 1 0 100%;
+        }
+    }
+
+    /* note*/
+    /* ======================================== */
+    .note {
+        font-size: 18px;
+        word-break: break-all;
+    }
+
+    .note article {
+        padding: 1.5%;
+        background-color: #faa;
+        border: 1px solid #999;
+    }
+
+    .note article a {
+        display: inline;
+        color: #0065bf;
+        text-decoration: underline;
+        word-break: break-all;
+    }
+
+    .note article a:hover {
+        text-decoration: none;
+    }
+
+    .note h3 {
+        margin-left: 15px;
+    }
+
+    .note ol > li {
+        margin-left: 40px;
+    }
+
+    /* iframe 設定*/
+    .iframe__container {
+        position: relative;
+        z-index: 0;
+        padding-top: 300px;
+        overflow: hidden;
+    }
+
+    @media screen and (max-width: 600px) {
+        .iframe__container {
+            padding-top: 550px;
+        }
+    }
+
+    .iframe__container iframe {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* 大圖打開 */
+    /* open note detail*/
+    .open-bigPhoto,
+    .overlay-mask {
+        cursor: pointer;
+    }
+
+    .overlay-mask {
+        background: rgba(0, 0, 0, 0.8);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        z-index: 99;
+    }
+
+    .big--photo {
+        display: none;
+        position: fixed;
+        top: 0;
+        width: 80%;
+        margin: 3% auto;
+        overflow: auto;
+        z-index: 99;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    @media screen and (min-width: 600px) and (max-width: 1024px) {
+        .big--photo {
+            height: 100vh;
+        }
+    }
+
+    .big--photo img {
+        width: 100%;
+    }
+
+    .overlay-open {
+        display: block;
+        transition: 2.5s;
+    }
+
+    .overlay-animate {
+        transition: 2.5s;
+    }
+
+    .max-width-100 {
+        max-width: 100%;
+    }
+
+    .close-icon-btn {
+        position: relative;
+        cursor: pointer;
+    }
+
+    .close-icon {
+        position: fixed;
+        top: 10px;
+        right: 5px;
+        z-index: 1;
+        color: #f3ffea;
+        background-color: #f3ffea;
+        width: 18px;
+        height: 1px;
+        border: 2px solid #f3ffea;
+        border-radius: 110px;
+    }
+
+    .close-icon-r {
+        transform: rotate(-45deg);
+    }
+
+    .close-icon-l {
+        transform: rotate(45deg);
+    }
+
+    @media screen and (min-width: 769px) {
+        .big--photo {
+            width: auto;
+            margin: 1% auto;
+        }
+
+        .big--photo img {
+            width: auto;
+            height: 96vh;
+        }
+
+        .close-icon {
+            top: 10px;
+            right: 10px;
+            width: 18px;
+            border: 2px solid #f3ffea;
+        }
+    }
+
+
+    /* /.END 大圖打開 */
+</style>
+<div id="spWrap" class="sp__wallper">
+    <!-- 主視覺 -->
+    <main class="sp__main">
+        <div class="sp--1260">
+            <a href="https://www.u-mall.com.tw" class="logo"><img src="ehs-logo.png" alt="東森購物"></a>
+            <div class="sp__visual">
+                <div class="visual__anchor">
+                    <div class="visual__main">
+                        <a href="#note"></a>
+                    </div>
+                    <div class="visual__nav nav1">
+                        <!-- 第一張圖 -->
+                        <div class="open-bigPhoto"></div>
+                        <div class="big--photo">
+                            <img src="960-U-1.jpg" alt="">
+                        </div>
+
+                        <!-- 第二張圖 -->
+                        <div class="open-bigPhoto"></div>
+                        <div class="big--photo">
+                            <img src="960-U-2.jpg" alt="">
+                        </div>
+
+                        <!-- 第三張圖 -->
+                        <div class="open-bigPhoto"></div>
+                        <div class="big--photo">
+                            <img src="960-U-3.jpg" alt="">
+                        </div>
+
+                        <!-- 第四張圖 -->
+                        <div class="open-bigPhoto"></div>
+                        <div class="big--photo">
+                            <img src="960-U-4.jpg" alt="">
+                        </div>
+                    </div>
+
+                </div>
+                <img src="index.jpg">
+            </div>
+        </div>
+    </main>
+    <script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+    <script>$('a[href^="#"]').on('click', function (e) {
+        var target = $('a[name=' + this.getAttribute('href').split('#')[1] + ']');
+        if (target.length) {
+            e.preventDefault();
+            $('html,body').stop().animate({scrollTop: target.offset().top}, 500);
+        }
+    });</script>
+    <!-- 浮水印 -->
+<script id="scriptIconFloat"
+        src="https://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1103045/float-icon.js"></script>
+
+    <script>
+        // 了解詳情
+        $(document).on("click", ".open-bigPhoto", function () {
+            var $openCloseBtn = '';
+            var $overlayEvents = $(this).next();
+
+            $overlayEvents.before('<div class="overlay-mask"></div>');
+
+            // add close btn
+            $openCloseBtn += ('<div class="close-icon-btn">');
+            $openCloseBtn += ('<div class="close-icon close-icon-r"></div>');
+            $openCloseBtn += ('<div class="close-icon close-icon-l"></div>');
+            $openCloseBtn += ('</div>');
+            $overlayEvents.prepend($openCloseBtn);
+
+            $overlayEvents.fadeIn(200).addClass("overlay-open");
+            $(".sp--1260").css("z-index", "100");
+            $(".sp__visual").css("z-index", "100");
+            $(".big--photo img").css("z-index", "100");
+//            $(this).parents("body").find(".sp--1260").addClass("max-width-100");
+
+            $('body').css("overflow", "hidden");
+        })
+        $(document).on("click touch", ".close-icon-btn", function () {
+            closeOverlay();
+        });
+        $(document).on("click touch", ".overlay-mask", function () {
+            closeOverlay();
+        });
+        function closeOverlay() {
+            $(".close-icon-btn").remove();
+            $(".overlay-mask").remove();
+//            $(".big--photo").removeClass("overlay-open").fadeOut(200).addClass("overlay-animate");
+            $(".big--photo").removeClass("overlay-open").css('display', 'none');
+            $(".sp--1260").css("z-index", "");
+            $(".sp__visual").css("z-index", "");
+//            $(".sp--1260").removeClass("max-width-100");
+            $('body').css("overflow", "");
+        }
+    </script>

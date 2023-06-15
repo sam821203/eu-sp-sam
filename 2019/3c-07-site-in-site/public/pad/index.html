@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!--[if !IE]><!-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+<!--<![endif]-->
+<!--[if IE 9]>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/2.7.6/idangerous.swiper.min.css">
+<style>.swiper-button-prev{display: none;}.swiper-button-next{display: none;}</style>
+<![endif]-->
+  <link href="pad-bundle.css" rel="stylesheet">
+  <!-- <link href="theme.css" rel="stylesheet"> -->
+</head>
+  <body class="theme">
+    <script>var fbhtml_url = window.location.toString();</script>
+    <div class="icon__home layout--main" id="iconHome"></div>
+    <main class="sp__wrap" id="spWrap">
+      <header id="spHeader" class="sp__header">
+        <div class="layout--main">
+          <div class="header__zone"><a class="logo" href="https://www.etmall.com.tw/"><img src="img/logo-e.png" alt="東森購物"></a>
+            <div class="header__info header__info--common"><span class="info--sign">|</span><span class="info--common info--index">通訊</span><span class="info--common info--apple">APPLE</span><span class="info--common info--phone">手機</span><span class="info--common info--pad">平板</span><span class="info--common info--wear">智慧穿戴</span><span class="info--common info--accessories">配件</span><span>熱銷推薦</span></div>
+            <div class="share__wrap"><a class="share__icon share__icon--line" href="javascript: void(window.open(&apos;https://lineit.line.me/share/ui?url=&apos;.concat(encodeURIComponent(location.href))));" title="分享到LINE"><img src="img/line-icon.png" alt="分享到LINE"></a><a class="share__icon share__icon--fb" href="javascript:void(0);" title="分享到facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+fbhtml_url); return false;"><img src="img/facebook-icon.png" alt="分享到facebook"></a></div>
+          </div>
+          <div class="header__sub-nav">
+            <ul id="subNavCommon" class="sub-nav__wrap sub-nav__wrap--common">
+              <li class="sub-nav__item"><a href="https://etmall.com.tw" title="新機推薦">新機推薦</a></li>
+              <li class="sub-nav__item"><a href="buildOrder3" title="熱銷下殺">熱銷下殺</a></li>
+              <li class="sub-nav__item active"><a href="#brandList" title="品牌推薦">品牌推薦</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <section id="brandList" class="brand-list">
+        <div class="layout--main">
+          <ul class="brand__wrap">
+            <li class="brand__item"><a href="#" title="APPLE"><img src="img/APPLE.jpg" alt="APPLE"></a></li>
+            <li class="brand__item"><a href="#" title="SAMSUNG"><img src="img/samsung.jpg" alt="SAMSUNG"></a></li>
+            <li class="brand__item"><a href="#" title="OPPO"><img src="img/OPPO.jpg" alt="OPPO"></a></li>
+            <li class="brand__item"><a href="#" title="ASUS"><img src="img/asus.jpg" alt="ASUS"></a></li>
+            <li class="brand__item"><a href="#" title="SONY"><img src="img/sony.jpg" alt="SONY"></a></li>
+            <li class="brand__item"><a href="#" title="HUAWEI"><img src="img/huawei.jpg" alt="HUAWEI"></a></li>
+            <li class="brand__item"><a href="#" title="hTC"><img src="img/htc.jpg" alt="hTC"></a></li>
+            <li class="brand__item brand__item--others"><a href="#" title="title">
+                <div class="others__item"> <span>其他品牌</span><span>》</span></div></a></li>
+          </ul>
+        </div>
+      </section>
+      <section class="hero__wrap">
+        <div class="layout--main">
+          <div class="hero__zone">
+            <div class="hero__slider swiper-container" id="heroSlider">
+              <ul class="swiper-wrapper">
+                <li class="swiper-slide"><a href="https://www.etmall.com.tw" title="超值活動"><img src="img/hero-bn-1.jpg" alt="超值活動"></a></li>
+                <li class="swiper-slide"><a href="https://www.etmall.com.tw" title="超值活動"><img src="img/hero-bn-2.jpg" alt="超值活動"></a></li>
+                <li class="swiper-slide"><a href="https://www.etmall.com.tw" title="超值活動"><img src="img/hero-bn-3.jpg" alt="超值活動"></a></li>
+                <li class="swiper-slide"><a href="https://www.etmall.com.tw" title="超值活動"><img src="img/hero-bn-4.jpg" alt="超值活動"></a></li>
+                <li class="swiper-slide"><a href="https://www.etmall.com.tw" title="超值活動"><img src="img/hero-bn-1.jpg" alt="超值活動"></a></li>
+                <li class="swiper-slide"><a href="https://www.etmall.com.tw" title="超值活動"><img src="img/hero-bn-2.jpg" alt="超值活動"></a></li>
+              </ul>
+            </div>
+            <div class="hero__slider--pager swiper-pagination" id="heroSliderPager"></div>
+            <div class="hero__slider--prev swiper-button-white swiper-button-prev" id="heroSliderPrev"></div>
+            <div class="hero__slider--next swiper-button-white swiper-button-next" id="heroSliderNext"></div>
+          </div>
+        </div>
+      </section>
+      <nav class="nav__bottom" id="navBottom">
+        <div class="layout--main">
+          <ul class="nav__wrap">
+            <li class="nav__index"><a class="btn btn--nav-bottom" href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201907/SP_1108626/w/index.html" title="回通訊館主頁">通訊館</a></li>
+            <li class="nav__apple"><a class="btn btn--nav-bottom" href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201907/SP_1108627/w/index.html" title="APPLE">APPLE</a></li>
+            <li class="nav__phone"><a class="btn btn--nav-bottom" href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201907/SP_1108628/w/index.html" title="推薦手機">推薦手機</a></li>
+            <li class="nav__pad"><a class="btn btn--nav-bottom" href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201907/SP_1108629/w/index.html" title="平板電腦">平板電腦</a></li>
+            <li class="nav__wear"><a class="btn btn--nav-bottom" href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201907/SP_1108630/w/index.html" title="智慧手錶/環">智慧手錶/環</a></li>
+            <li class="nav__accessories"><a class="btn btn--nav-bottom" href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201907/SP_1108631/w/index.html" title="手機/平板周邊">手機/平板周邊</a></li>
+          </ul>
+        </div>
+      </nav>
+    </main><script src="https://polyfill.io/v3/polyfill.min.js"></script>
+    <script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script><!--[if !IE]><!-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+<!--<![endif]-->
+<!--[if IE 9]>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/2.7.6/idangerous.swiper.min.js"></script>
+<![endif]-->
+  <script type="text/javascript" src="pad-bundle.js"></script></body>
+</html>

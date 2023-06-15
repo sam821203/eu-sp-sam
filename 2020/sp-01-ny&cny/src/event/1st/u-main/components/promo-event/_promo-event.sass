@@ -1,0 +1,40 @@
+.promo__event
+  .event__wrap
+    +display-flex
+    flex-wrap: wrap
+    justify-content: center
+    padding: 0
+  li
+    &:nth-child(1)
+      +flex(0, 0, 63.57%)
+    &:nth-child(2)
+      +flex(0, 0, 36.43%)
+    &:nth-child(3)
+      +flex(0, 0, 56.65%)
+    &:nth-child(4)
+      +flex(0, 0, 43.35%)
+    
+    padding: 0.5%
+    transition: all 0.5s
+    &:hover,
+    &:active
+      filter: contrast(160%)
+      // img
+      //   opacity: 0
+      //   transition: all 0.5s
+      //   transform: rotateY(360deg)
+    img
+      &:last-child
+        display: none
+
+  +breakpoint-min($min-width-xl)
+    .event__wrap
+      display: block
+      li
+        width: 100%
+        img
+          &:first-child
+            display: none
+          &:last-child
+            display: block
+

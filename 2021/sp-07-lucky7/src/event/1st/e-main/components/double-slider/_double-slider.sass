@@ -1,0 +1,58 @@
+.promo__group--double-slider
+  +pos-set(relative, zero)
+  // .decoration--flower
+  //   +pos-set(absolute, zero)
+  //   top: 50%
+  //   left: 0
+  //   transform: translate(0, -50%)
+  //   img
+  //     margin-left: 0
+  //     margin-right: 0
+  //     will-change: scroll-position
+
+    // +breakpoint-min($min-width-xl)
+    //   top: 6.5%
+    //   left: 50%
+    //   width: 1080px
+    //   transform: translate(-50%, 0)
+
+
+  .double-slider__wrap
+    +pos-set(relative, zero)
+    padding: 22.5% 6.5% 0
+    height: 93vw
+    +bg-set(url(event/1st/e-main/components/double-slider/bg-double-slider.png), 100% auto, center,top)
+    +breakpoint-min($min-width-xl)
+      padding: 230px 80px 0
+      height: 890px
+      // +bg-set(url("event/1st/e-main/components/double-slider/bg-tab-slider-web.png"), 100% auto)
+    .double-slider__tab
+      margin-bottom: 2%
+      .swiper-slide
+        +pos-set(relative, zero)
+        width: 33%
+        // transition: all 0.3s
+        img
+          &:last-child
+            +pos-set(absolute, base, 0, 0)
+            width: 100%
+            opacity: 0
+            // transition: all 0.6s
+        &.active
+          img
+            &:last-child
+              opacity: 1
+
+    .double-slider__content
+      margin-left: auto
+      margin-right: auto
+      width: 95%
+      li
+        width: 33%
+        a
+          transition: all 0.3s
+        &:hover,
+        &:active
+          a
+            filter: brightness(120%)
+

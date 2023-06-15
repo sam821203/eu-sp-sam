@@ -1,0 +1,25 @@
+section.section--cell.promo__group.promo__group--create.m-bottom--xl
+  .layout--main
+    .group__wrap
+      .group__title.block--center.m-bottom--lg
+        img(src="~components/create-team/title-create.png", alt="創建團隊")
+
+      .group__zone.block--center
+        .group__form
+          form(action="")
+            .form__box.m-bottom--lg
+              .label__box
+                label.label--main(for="createTeam") 團隊名稱
+              .input__box
+                input#createTeam.shape--active.input--main.input--main-color(name="createTeam", placeholder="請輸入想創建的團隊名稱")
+
+            .form__rule.m-bottom--xl
+              .rule__title.m-bottom--xs 團隊命名規則說明
+              .rule__content
+                ol.decimal-type
+                  li 最多15個中文字以內，可使用英文，但不可重覆命名。
+                  li 名稱不可含有不雅、侮辱性語言或政治敏感字眼；若違反前述規則，東森購物網得取消參賽、得獎資格並追回相關獎項。
+
+            - var textSubmit = "確認送出"
+            include /components/include/form-cta/_form-cta
+

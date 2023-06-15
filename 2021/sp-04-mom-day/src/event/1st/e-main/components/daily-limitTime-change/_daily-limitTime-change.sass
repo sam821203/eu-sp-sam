@@ -1,0 +1,146 @@
+.sp__wrap
+  .promo__group.promo__group--limittime-change
+    position: relative
+    z-index: 1
+    top: 0
+    right: 0
+    width: 100%
+    overflow: hidden
+    height: 64vw
+    margin-bottom: 7vw
+    +bg-set(url(~event/1st/e-main/components/daily-limitTime-change/bg-limitsale-new.png), 100% auto)
+    +breakpoint-min($min-width-xl)
+      background-size: 960px 601px
+      //+bg-set(url(~event/1st/e-main/components/daily-limitTime-change/bg-daily-change-2.png), 1069px 781px)
+      top: 0
+      right: 0
+      width: auto
+      height: 601px
+      margin: 30px auto
+
+    .promo__wrap
+      +pos-set(relative, zero)
+
+    .promo__wrap
+      padding-top: 0
+      text-align: center
+      &:hover,
+      &:active
+        a
+          filter: brightness(105%) contrast(120%)
+
+.limit__time__item__wrap
+  ul
+    margin: 19vw auto auto auto
+    padding: 0 7%
+    .limit__time__item
+      display: none
+      &.active
+        display: block
+        display: flex
+      li
+        width: 32%
+        margin-right: 2%
+        filter: grayscale(1)
+        pointer-events: none
+        height: 45vw
+        +bg-set(url(~event/1st/e-main/components/daily-limitTime-change/limitsale-p-bg.png), 100% auto)
+        &:last-child
+          margin-right: 0
+        &.now__time
+          filter: grayscale(.4)
+          pointer-events: auto
+        img
+          padding: 4.5% 8%
+
+      .product--dynamic
+        //border: 1px solid $gray-medium
+        border-radius: 1vw
+        overflow: hidden
+        .product__img
+          //img
+          //  transform: scale(0.9)
+          //  +breakpoint-min($min-width-xl)
+          //    transform: scale(1)
+        .product__name
+          display: -webkit-box
+          -webkit-line-clamp: 2
+          -webkit-box-orient: vertical
+          text-overflow: ellipsis
+          margin: 1% 0
+          padding: 0 4%
+          color: $gray-deep-dark
+          line-height: 110%
+          height: 2.3em
+          font-size: 11px
+          overflow: hidden
+        .product__price
+          padding: 0 2%
+          color: $primary-medium
+          font-weight: 700
+          text-align: center
+          span
+            &:first-child
+              font-size: 2vw
+            &:last-child
+              font-size: 4vw
+
+        //+breakpoint-max($max-width-xxs)
+        //  .product__name
+        //    margin: 0
+
+        +breakpoint-min($min-width-lg)
+          .product__name
+            // margin: 5% 0
+            font-size: 3vw
+          .product__price
+            span
+              &:first-child
+                font-size: 2vw
+              &:last-child
+                font-size: 4vw
+
+        +breakpoint-min($min-width-xl)
+          border-radius: 12px
+          .product__name
+            margin: 20px 0 0 0
+            padding: 0 10px
+            font-size: 24px
+            height: 2.2em
+          .product__price
+            span
+              &:first-child
+                font-size: 29px
+              &:last-child
+                font-size: 46px
+
+  +breakpoint-min($min-width-xl)
+    ul
+      margin: 180px auto auto auto
+      padding: 0 6.5%
+      .limit__time__item
+        li
+          height: 450px
+
+img.decoration__alarm__clock
+  display: block
+  +pos-set(absolute, 1)
+  top: 0
+  left: 22vw
+  width: 13%
+  animation: tada 2s infinite both ease-out
+  +breakpoint-min($min-width-xl)
+    display: none
+
+
+@keyframes tada
+  0%
+    transform: scaleX(1)
+  10%, 20%
+    transform: scale3d(.9, .9, .9) rotate(-3deg)
+  30%, 50%, 70%, 90%
+    transform: scale3d(1.05, 1.05, 1.05) rotate(3deg)
+  40%, 60%, 80%
+    transform: scale3d(1.05, 1.05, 1.05) rotate(-3deg)
+  to
+    transform: scaleX(1)

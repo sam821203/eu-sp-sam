@@ -1,0 +1,63 @@
+//- TODO: 打開雙月選項切換雙月(預設單月：4292 / true = 雙月：5567)
+//- var isEven = true
+//- TODO: 打開2號電梯選項切換第二組電梯(預設第一組，true = 第二組 單月：4696 / 雙月：4697)
+- var isSecond = true
+//- TODO: 打開u-mall選項會自動轉換成U的logo和連結、電梯(預設etmall)
+//-- var isU = true
+//canvas#canvas
+#firefliesWrap.fireflies__wrap
+  - var quantity = 15
+  - for (var i = 1; i <= quantity; i++)
+    .firefly
+main#spWrap.sp__wrap.sp__wrap--e
+  //-#animateWrapHt
+  //-  .parallax__background
+  //-    .scroll--flower.flower__left
+  //-      img(src="~assets/img/scroll__sakura__left.png", alt="")
+  //-    .scroll--flower.flower__right
+  //-      img(src="~assets/img/scroll__sakura__right.png", alt="")
+
+  include /layout/header/_header
+
+  //- hero section
+  //- ===========================
+  include /event/2nd/e-main/components/hero-section/_hero-section
+
+  //- other components
+  //- ===========================
+  //- TODO: 如果promo不用和hero綁在一起時放這
+  include /event/2nd/e-main/components/promo-event/_promo-event
+  include /event/2nd/e-main/components/daily-change-2/_daily-change-2
+  include /event/2nd/e-main/components/one-item-slider/_one-item-slider
+  include /event/2nd/e-main/components/game-section/_game-section
+  include /event/2nd/e-main/components/event-w4m4/_event-w4m4
+  include /event/2nd/e-main/components/dynamic-slider/_dynamic-slider
+  include /event/2nd/e-main/components/collect__point/_collect__point
+  include /event/2nd/e-main/components/dynamic-slider-2/_dynamic-slider-2
+  include /event/2nd/e-main/components/daily-limitTime-change/_daily-limitTime-change
+  include /event/2nd/e-main/components/two-daily-change/_two-daily-change
+  include /event/2nd/e-main/components/dynamic-slider-half/_dynamic-slider-half
+  include /event/2nd/e-main/components/event-w9m9/_event-w9m9
+  include /event/2nd/e-main/components/bn-bank/_bn-bank
+
+//- script區
+include /utils/pug/_total-script
+//script(src="snowfall.jquery.js")
+//- 大牌倒數
+script#dataDaily(src="data-daily-2nd.js")
+//- 天天開搶
+script(src="data-everyDay-2nd.js")
+//- 遊戲
+script(src="data-game-timer-2nd.js")
+//- 24H快送
+script#dataDynamic(src="data-dynamic-2nd.js")
+//- 新品專區
+script(src="data-dynamic-2nd-2.js")
+//- 限時搶購 (未完成)
+script(src="data-daily-limitTime-change-2nd.js")
+//- 集氣購
+script(src="data-two-daily-change-2nd.js")
+//- 小檔活動
+script(src="data-dynamic-half-2nd.js")
+//- 春季下殺
+//script(src="data-tab-2nd.js")

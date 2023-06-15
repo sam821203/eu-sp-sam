@@ -1,0 +1,193 @@
+$height_mobile: 189vw
+$height_web: 1280px
+.promo__event
+  position: relative
+  height: $height_mobile
+  margin-top: -26vw
+  //+bg-set(url(~event/1st/e-line/components/promo-event/bg-promo-m.png), 100%)
+  .event__wrap
+    //display: flex
+    //flex-wrap: wrap
+    //justify-content: space-between
+    +bg-set(url(~event/1st/e-line/components/promo-event/bg-promo-2-m.png), 100%)
+    padding: 5% 3.5% 0
+    display: flex
+    justify-content: center
+    flex-wrap: wrap
+    flex: 0 0 100%
+    height: $height_mobile
+    //animation: fadeInUpBig 2s 1s both ease-out
+    //-ms-flex: 0 0 49%
+    //li#dailyPromo
+    //  font-size: 9px
+    li.first__layer
+      transition: all 0.5s
+      padding: 0
+      position: relative
+      filter: brightness(110%)
+      &:nth-child(1)
+        position: absolute
+        top: 66vw
+        left: 18vw
+        width: 34%
+        height: auto
+        animation: item-jump 12s 5s both ease-out infinite
+      &:nth-child(2)
+        position: absolute
+        top: 77vw
+        right: 16vw
+        width: 27%
+        animation: item-jump 10s 1.3s both ease-in-out infinite alternate
+      &:nth-child(3)
+        position: absolute
+        top: 117vw
+        left: 16vw
+        width: 68%
+        animation: item-jump 14s 2.5s both linear infinite alternate-reverse
+        img
+          &:nth-child(1)
+            display: none
+          &:nth-child(2)
+            display: block
+      &:nth-child(4)
+        position: absolute
+        top: 131vw
+        left: 16vw
+        width: 33%
+        animation: item-jump 15s .5s both linear infinite
+      &:nth-child(5)
+        position: absolute
+        top: 131vw
+        right: 16vw
+        width: 33%
+        animation: item-jump 8s 1.5s both linear infinite
+
+      &:hover
+        transform: translateY(-3%)
+        //filter: brightness(130%)
+
+  .promo__event__front
+    position: absolute
+    top: 41vw
+    left: 0
+    width: 100vw
+    height: 20vw
+    z-index: 2
+    img
+      &:nth-child(1)
+        display: block
+        width: 100%
+      &:nth-child(2)
+        display: none
+  +breakpoint-min($min-width-xl)
+    padding: 0
+    height: $height_web
+    margin-top: 0
+    background-image: none
+
+    .event__wrap
+      max-width: 960px
+      margin: 0 auto
+      background-image: none
+      padding: 1.5% 1% 0 1%
+      height: $height_web
+      &:before
+        position: absolute
+        content: ''
+        display: block
+        +bg-set(url(~event/1st/e-line/components/promo-event/bg-promo-2-web.png), 960px 1420px)
+        width: 960px
+        height: 1420px
+        top: -228px
+        left: calc(50% - 480px)
+      li.first__layer
+        &:nth-child(1)
+          top: 400px
+          left: calc(50% - 392px)
+          width: 242px
+          height: 303px
+        &:nth-child(2)
+          top: 483px
+          right: calc(50% - 80px)
+          width: auto
+        &:nth-child(3)
+          top: 358px
+          left: calc(50% + 104px)
+          width: auto
+          img
+            &:nth-child(1)
+              display: block
+            &:nth-child(2)
+              display: none
+        &:nth-child(4)
+          top: 501px
+          left: calc(50% + 104px)
+          width: auto
+        &:nth-child(5)
+          top: 640px
+          right: calc(50% - 426px)
+          width: auto
+          &:hover
+            transform: translateY(-3%)
+            filter: brightness(130%)
+
+    .promo__event__front
+      top: 410px
+      left: 0
+      width: 1222px
+      height: auto
+      z-index: 2
+      margin: 0 auto
+      left: calc(50% - 565px)
+      pointer-events: none
+      img
+        &:nth-child(1)
+          display: none
+        &:nth-child(2)
+          display: block
+//.promo__event__web--bg
+//  +breakpoint-min($min-width-xl)
+//    position: absolute
+//    //+bg-set(url(~event/1st/e-line/components/promo-event/bg-promo.png), 1222px 936px)
+//    background-position: top center
+//    max-width: 1222px
+//    width: 100%
+//    height: 936px
+//    left: calc(50% - 565px)
+//    top: -5px
+.promo__main
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  +breakpoint-min($min-width-xl)
+    top: -225px
+    z-index: 1
+    left: 50%
+    transform: translateX(-50%)
+
+@keyframes item-jump
+  40%, 42%
+    transform: translateY(-15%) scale(1)
+  0%, 39%, 41%, 43%, 76%, 78%, 80%
+    transform: translateY(0) scale(1)
+  77%
+    transform: translateX(-5%)
+  79%
+    transform: translateX(5%)
+
+@keyframes fadeInUpBig
+  0%
+    opacity: 0
+    transform: translateY(100px)
+  80%,90%
+    transform: translateY(-30px) scale(1.05)
+  85%,95%,100%
+    opacity: 1
+    transform: translateY(0) scale(1)
+
+//
+//.fadeInUpBig
+//  -webkit-animation-name: fadeInUpBig
+//  animation-name: fadeInUpBig
+

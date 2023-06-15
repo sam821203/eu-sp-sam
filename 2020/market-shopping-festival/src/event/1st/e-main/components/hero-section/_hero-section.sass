@@ -1,0 +1,131 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero__wrap
+  +pos-set(relative, zero)
+  // +bg-set(url("~event/1st/e-main/components/hero-section/bg-hero.jpg"), 100%)
+  // overflow: hidden
+  +breakpoint-min($min-width-xl)
+    background-size: auto
+
+  .hero__zone
+    +pos-set(relative, zero)
+    overflow: hidden
+
+  .hero__block
+    +pos-set(relative, zero)
+    padding-top: 7.5%
+    padding-left: 5%
+
+  .hero__box
+    width: 55%
+
+  .hero__title
+    &--main
+      +pos-set(relative, zero)
+      padding-top: 8%
+      width: 100%
+    .title
+      &--write
+        +pos-set(absolute, zero)
+        top: 0
+        left: 34%
+        padding-bottom: 5%
+        width: 45%
+        // &.wow
+        .title__path
+          animation: show-svg 2s 3s both ease-in
+      &__svg
+        width: 100%
+        height: 100%
+      &__path
+        stroke: $gray-deep-light
+        stroke-width: 1
+        stroke-linecap: butt
+        stroke-linejoin: round
+        fill-rule: nonzero
+        fill: $gray-deep-light
+        fill-opacity: 0
+        stroke-dashoffset: 653
+        stroke-dasharray: 653
+      &--main
+        +pos-set(relative, second)
+        &.animated
+          animation: zoom-in 1s both
+        img
+          &.animated
+            animation: flash-speed 8s infinite
+      &--slogan
+        +pos-set(relative, base)
+        width: 80%
+        &.animated
+          animation: slide-down 0.5s 1s both
+      &--date
+        width: 80%
+        &.animated
+          animation: slide-down 0.7s 1.5s both
+
+  .title-decoration__wrap
+    +pos-set(absolute, zero)
+    top: 0
+    right: 0
+    width: 50%
+    height: 100%
+    pointer-events: none
+    .title__decoration
+      &--middle
+        pointer-events: none
+        .decoration__pic
+          transform-origin: 35% bottom
+          animation: swing 1.5s 3s infinite
+
+
+  .promo__zone
+    // margin-top: 8%
+    //background-color: $gray-deep-light
+    +breakpoint-min($min-width-xl)
+      background-color: transparent
+
+@keyframes zoom-in
+  0%
+    opacity: 0
+    transform: scale3d(.3, .3, .3)
+  50%
+    opacity: 1
+
+@keyframes flash-speed
+  from, 19%, 21%, 22%, 24%, 39%, 41%, 44%, to
+    filter: brightness(100%)
+  20%, 23%, 40%, 43%,
+    filter: brightness(200%)
+
+@keyframes show-svg
+  99%
+    stroke-dashoffset: 0
+    fill-opacity: 1
+  to
+    stroke-dashoffset: 0
+    fill-opacity: 1
+    stroke-opacity: 0
+
+@keyframes slide-down
+  0%
+    transform: translate3d(0, -100%, 0)
+    opacity: 0
+  1%
+    opacity: 1
+  to
+    transform: translateZ(0)
+    opacity: 1
+
+@keyframes swing
+  10%
+    transform: rotate(10deg)
+  20%
+    transform: rotate(-6deg)
+  30%
+    transform: rotate(3deg)
+  40%
+    transform: rotate(-3deg)
+  to
+    transform: rotate(0deg)

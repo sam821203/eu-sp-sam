@@ -1,0 +1,634 @@
+<meta name="viewport" content="width=device-width">
+<meta charset="utf-8">
+<!-- 共用CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    *:before, *:after {
+        box-sizing: border-box;
+    }
+
+    a {
+        display: block;
+        text-decoration: none;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    img {
+        width: 100%;
+        border: 0;
+        display: block;
+    }
+
+    article,
+    main,
+    nav,
+    section {
+        display: block;
+    }
+
+    body {
+        margin: 0;
+        background: url(bg.jpg) center 0 no-repeat;
+        background-color: #8096b2; /*...................................背景色,1260把這行刪掉*/
+    }
+
+    .sp--1260 {
+        position: relative;
+        z-index: 0;
+        max-width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .sp--1260.icon_Home {
+        z-index: auto;
+    }
+
+    /* 主視覺 */
+    /* ======================================== */
+    .logo a,
+    .sp__visual a {
+        display: block;
+    }
+
+    .logo {
+        position: absolute;
+        z-index: 1;
+        /* 調整logo位置 */
+        top: 1%;
+        left: 1%;
+        width: 30%;
+        max-width: 220px;
+    }
+
+    /* 設定背景 */
+    .sp__main {
+        /*background: url(bg.jpg) center 0 no-repeat;/*..............背景底圖,1260把這行刪掉*/
+    }
+
+    /* 設定前景 */
+    .sp__visual, .sp__1 {
+        position: relative;
+        z-index: 0;
+        width: 100%;
+    }
+
+    /*...........................................................示意線條拿掉start*/
+    /*.visual__main a{
+      border: 1px solid #f00;
+    }*/
+    /*...........................................................示意線條拿掉end*/
+    .visual__anchor,
+    .visual__main,
+    .visual__nav {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .visual__anchor {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+    }
+
+    .visual__main a,
+    .visual__nav a {
+        flex-grow: 1;
+    }
+
+    /* 主視覺 */
+    /*...........................................................紅框區高度*/
+    .visual__main {
+        height: 100%;
+    }
+
+    /*...........................................................紅框區寬度*/
+    .visual__main a:nth-child(1) {
+        flex-grow: 0;
+        width: 70%;
+        height: 100%;
+    }
+
+    .visual__main a:nth-child(2) {
+        flex-grow: 0;
+        width: 30%;
+        height: 100%;
+    }
+
+    /* 自適應banner組 */
+    /* ======================================== */
+    .banner__title {
+        height: 65px;
+        background: center top no-repeat;
+    }
+
+    .banner__wrap {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .banner__item {
+        transition: all 0.3s;
+    }
+
+    .banner__item img {
+        width: 100%;
+    }
+
+    /* ...............................................................4變2 */
+    .bn-w4m2 .banner__item {
+        /*flex: 1 0 22%;
+        padding: 3%*/
+    }
+
+    .bn-w2m1 .banner__item2 {
+        flex: 1 0 33.3%;
+        padding: 0.5%
+    }
+
+    /* 設定點下去與hover動畫 */
+    .bn-w2m1 .banner__item2:hover,
+    .bn-w2m1 .banner__item2:active {
+        /* 變大(>1時變大) */
+        transform: scale(1.05);
+        /* 亮度調亮(>100%時變亮) */
+        filter: brightness(115%);
+    }
+
+    .bn-w2m1 .banner__item2.no__active:hover,
+    .bn-w2m1 .banner__item2.no__active:active {
+        /* 變大(>1時變大) */
+        transform: none;
+        /* 亮度調亮(>100%時變亮) */
+        filter: none;
+    }
+
+    @media screen and (max-width: 1024px) {
+        /* 設定手機時一列2個 */
+        .bn-w4m2 .banner__item {
+            flex: 1 0 48%;
+        }
+
+    }
+
+    /* 大圖打開 */
+    /* open note detail*/
+    .open-bigPhoto {
+        cursor: pointer;
+    }
+
+    .overlay-mask {
+        background: rgba(0, 0, 0, 0.8);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        z-index: 99;
+    }
+
+    .big--photo {
+        display: none;
+        position: fixed;
+        top: 0;
+        height: 100%;
+        width: 80%;
+        margin: 3% auto;
+        overflow: auto;
+        z-index: 99;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .overlay-open {
+        display: block;
+        transition: 2.5s;
+    }
+
+    .overlay-animate {
+        transition: 2.5s;
+    }
+
+    .max-width-100 {
+        max-width: 100%;
+    }
+
+    .close-icon-btn {
+        position: relative;
+        cursor: pointer;
+    }
+
+    .close-icon {
+        position: fixed;
+        top: 10px;
+        right: 5px;
+        z-index: 1;
+        color: #f3ffea;
+        background-color: #f3ffea;
+        width: 18px;
+        height: 1px;
+        border: 2px solid #f3ffea;
+        border-radius: 110px;
+    }
+
+    .close-icon-r {
+        transform: rotate(-45deg);
+    }
+
+    .close-icon-l {
+        transform: rotate(45deg);
+    }
+
+    @media screen and (min-width: 769px) {
+        .big--photo {
+            width: 30%;
+            margin: 1% auto;
+        }
+
+        .close-icon {
+            top: 10px;
+            right: 10px;
+            width: 18px;
+            border: 2px solid #f3ffea;
+        }
+    }
+
+    /* /.END 大圖打開 */
+
+    /*複製字串*/
+    .clioboard__wrap, .clioboard__wrap_2 {
+        position: relative;
+    }
+
+    .clioboard__wrap .copy_coupon,
+    .clioboard__wrap_2 .copy_coupon {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .clioboard__wrap .copy_coupon {
+        top: -66.5vw;
+        right: 18vw;
+        width: 65vw;
+        height: 16vw;
+        /*transform: skew(20deg, -17deg);*/
+    }
+
+    .clioboard__wrap_2 .copy_coupon {
+        top: -16vw;
+        right: 3vw;
+        width: 26vw;
+        height: 7vw;
+        transform: none;
+    }
+
+    @media screen and (min-width: 960px) {
+        .clioboard__wrap .copy_coupon {
+            top: -605px;
+            right: calc(50% - 298px);
+            width: 600px;
+            height: 135px;
+        }
+
+        .clioboard__wrap_2 .copy_coupon {
+            top: -154px;
+            right: 30px;
+            width: 249px;
+            height: 66px;
+        }
+    }
+
+    /* 動畫 */
+    /* ======================================== */
+    .animate__wrap {
+        position: relative;
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    .animate__wrap .animate__obj--01 {
+        position: absolute;
+        top: 73vw;
+        right: 4vw;
+        width: 25%;
+    }
+
+    @media screen and (min-width: 960px) {
+        .animate__wrap .animate__obj--01 {
+            top: 700px;
+            right: calc(50% - 420px);
+            width: auto;
+        }
+    }
+
+    #notification div {
+        /*width: 150px;*/
+        padding: .3em 1em;
+        background-color: #eee;
+        border: 1px solid #CCC;
+        margin: .3em;
+        border-radius: 3px;
+        color: #222;
+        font-weight: bold;
+        font-size: 13px;
+        letter-spacing: 2px;
+        box-shadow: 2px 2px 2px #333;
+    }
+
+    #notification {
+        position: fixed;
+        right: 3px;
+        top: 3px;
+        z-index: 10;
+    }
+
+    .n__icon {
+        width: 15px;
+        height: 15px;
+        display: inline;
+        margin-right: 5px;
+        vertical-align: text-top;
+    }
+
+    @media screen and (min-width: 960px) {
+        #notification div {
+            font-size: 22px;
+        }
+
+        #notification {
+            position: fixed;
+            right: 10px;
+            top: 10px;
+        }
+
+        .n__icon {
+            width: 24px;
+            height: 24px;
+        }
+    }
+</style>
+<!--[if IE 9]>
+<style>
+    .visual__anchor,
+    .visual__main,
+    .visual__nav {
+        -js-display: flex;
+    }
+
+    .visual__anchor {
+        position: absolute !important;
+        height: 114.28% \ ;
+    }
+
+    .visual__main a,
+    .visual__nav a {
+        background-color: rgba(0, 0, 0, .0);
+        /*height: 100% !important \ ;*/
+    }
+
+    .build__anchor {
+        -js-display: flex;
+    }
+
+    .build-nav__item {
+        width: 12.5% \ ;
+    }
+
+    .banner__wrap {
+        -js-display: flex;
+        width: 100% \ ;
+    }
+
+    .bn-w2m1 .banner__item {
+        width: 50% \ ;
+    }
+
+    .bn-w4m2 .banner__item {
+        width: 25% \ ;
+    }
+
+    .bn-w2m1.item--3 li:last-child {
+        width: 100% \ ;
+    }
+
+    .bn-w3m1 .banner__item {
+        width: 33.33% \ ;
+    }
+
+    @media screen and (max-width: 1024px) {
+        .bn-w2m1 .banner__item {
+            width: 100% \ ;
+        }
+
+        .bn-w4m2 .banner__item {
+            width: 50% \ ;
+        }
+
+        .bn-w3m1 .banner__item {
+            width: 100% \ ;
+        }
+    }
+</style>
+<![endif]-->
+<div id="notification"></div>
+<div id="spWrap" class="sp__wallper">
+    <div class="animate__wrap">
+        <img class="animate__obj--01 animate__animated animate__heartBeat animate__fast animate__infinite"
+             src="hand.png">
+    </div>
+    <!-- 主視覺 -->
+    <div class="sp--1260 icon_Home"><!-- 浮水印start(勿刪)-->
+        <div id="iconHome"></div>
+    </div>                          <!-- 浮水印end(勿刪)-->
+    <main class="sp__main">
+        <div class="sp--1260">
+            <a href="https://www.etmall.com.tw" class="logo"><img src="ehs-logo.png" alt="東森購物"></a><!-- 1260把這行刪掉 -->
+            <div class="sp__visual">
+                <img src="index.jpg">
+                <div class="clioboard__wrap">
+                    <input value="ETMALL3000" style="display:none;"/>
+                    <button class="copy_coupon"></button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <!-- 自適應banner組 --><!-- .................................................誘因 start -->
+    <section class="sp--1260 bn-w2m1">
+        <ul class="banner__wrap">
+            <li class="banner__item2 no__active">
+                <img src="promot1.png" alt="banner">
+                <div class="clioboard__wrap_2">
+                    <input value="ETMALL3000" style="display:none;"/>
+                    <button class="copy_coupon"></button>
+                </div>
+            </li>
+            <li class="banner__item2">
+                <a href="https://www.etmall.com.tw/member/ecoupon">
+                    <img src="promot2.png" alt="banner">
+                </a>
+            </li>
+            <li class="banner__item2">
+                <a href="#note">
+                    <img src="promot3.png" alt="banner">
+                </a>
+            </li>
+
+        </ul>
+    </section>
+
+    <!-- ............................................................誘因end -->
+    <div class="sp--1260">
+        <div class="sp__1">
+            <img src="ticket-bar.png">
+        </div>
+
+
+    </div>
+    <!-- ............................................................券 end -->
+</div>
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script>$('a[href^="#"]').on('click', function (e) {
+    var target = $('a[name=' + this.getAttribute('href').split('#')[1] + ']');
+    if (target.length) {
+        e.preventDefault();
+        $('html,body').stop().animate({scrollTop: target.offset().top}, 500);
+    }
+});</script>
+<!-- 浮水印 -->
+<!-- <script id="scriptIconFloat" src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105264/float-icon.js"></script> -->
+<!--[if IE 9]>
+<script src="flexibility.js"></script>
+<script>flexibility(document.documentElement);</script>
+<![endif]-->
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+<script>
+    // 了解詳情
+    $(document).on("click", ".open-bigPhoto", function () {
+        var $openCloseBtn = '';
+        var $overlayEvents = $(this).next();
+
+        $overlayEvents.before('<div class="overlay-mask"></div>');
+
+        // add close btn
+        $openCloseBtn += ('<div class="close-icon-btn">');
+        $openCloseBtn += ('<div class="close-icon close-icon-r"></div>');
+        $openCloseBtn += ('<div class="close-icon close-icon-l"></div>');
+        $openCloseBtn += ('</div>');
+        $overlayEvents.prepend($openCloseBtn);
+
+        $overlayEvents.fadeIn(200).addClass("overlay-open");
+        $(".sp__visual").css("z-index", "100");
+        $(".big--photo img").css("z-index", "100");
+//            $(this).parents("body").find(".sp--1260").addClass("max-width-100");
+    })
+    $(document).on("click", ".close-icon-btn", function () {
+        closeOverlay();
+    });
+    $(document).on("click", ".overlay-mask", function () {
+        closeOverlay();
+    });
+    function closeOverlay() {
+        $(".close-icon-btn").remove().fadeOut(200);
+        $(".overlay-mask").remove();
+//            $(".big--photo").removeClass("overlay-open").fadeOut(200).addClass("overlay-animate");
+        $(".big--photo").removeClass("overlay-open").css('display', 'none');
+        $(".sp__visual").css("z-index", "");
+//            $(".sp--1260").removeClass("max-width-100");
+    }
+</script>
+<script src='https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js'></script>
+<script>
+    window.Clipboard = (function (window, document, navigator) {
+        var textArea,
+            copy;
+
+        function isOS() {
+            return navigator.userAgent.match(/ipad|iphone/i);
+        }
+
+        function createTextArea(text) {
+            textArea = document.createElement('textArea');
+            textArea.value = text;
+            document.body.appendChild(textArea);
+        }
+
+        function selectText() {
+            var range,
+                selection;
+
+            if (isOS()) {
+                range = document.createRange();
+                range.selectNodeContents(textArea);
+                selection = window.getSelection();
+                selection.removeAllRanges();
+                selection.addRange(range);
+                textArea.setSelectionRange(0, 999999);
+            } else {
+                textArea.select();
+            }
+        }
+
+        function copyToClipboard() {
+            document.execCommand("Copy");
+            document.body.removeChild(textArea);
+        }
+
+        copy = function (text) {
+            createTextArea(text);
+            selectText();
+            copyToClipboard();
+        };
+
+        return {
+            copy: copy
+        };
+    })(window, document, navigator);
+
+    $(".copy_coupon").on("click", function () {
+        var $this = $(this),
+            value = $this.prev("input").val();
+        window.Clipboard.copy(value);
+    });
+
+
+    "use strict";
+
+    function notification(note) {
+        var timer = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 5000;
+        var notifications = {};
+        var notifyBox = document.getElementById('notification');
+        notifications.container = document.createElement("div");
+        notifications.noImg = document.createElement("img");
+        notifications.noImg.setAttribute("src", "notification.png");
+        notifications.noImg.setAttribute("class", "n__icon");
+        notifications.note = document.createTextNode(note);
+        notifications.container.appendChild(notifications.noImg);
+        notifications.container.appendChild(notifications.note);
+        notifyBox.appendChild(notifications.container);
+        setTimeout(function () {
+            notifyBox.removeChild(notifications.container);
+        }, timer);
+    }
+
+    var clickNotification = document.querySelectorAll('.copy_coupon');
+    for (var i = 0; i < clickNotification.length; i++) {
+        clickNotification[i].addEventListener("click", function () {
+            notification("折扣碼複製成功");
+        });
+    }
+</script>

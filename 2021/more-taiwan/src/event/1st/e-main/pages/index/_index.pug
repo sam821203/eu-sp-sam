@@ -1,0 +1,15 @@
+main#spWrap.sp__wrap
+  include /event/1st/e-main/components/nav/_nav
+  include /layout/header/_header
+
+  //- components
+  //- ===========================
+  include /event/1st/e-main/components/hero-section/_hero-section
+  .layout--main
+    .layout--web
+      include /event/1st/e-main/components/map-taiwan/_map-taiwan
+      include /event/1st/e-main/components/city-items/_city-items
+
+//- script區
+//- include /utils/pug/_total-script
+script(src='data-taiwan.js')

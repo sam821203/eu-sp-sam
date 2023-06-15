@@ -1,0 +1,14 @@
+- var goodsDataE = [{link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201908/SP_1108960/w/index.html", imgSrc: "~components/goods-slider/items/e/1-1.png", alt: "安晴Anqueen 觸控式氣炸鍋 4L"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201908/SP_1108964/w/index.html", imgSrc: "~components/goods-slider/items/e/1-2.png", alt: "Sodastream電動式氣泡水機power source旗艦機(白)"}, {link: "https://www.etmall.com.tw/np/80116", imgSrc: "~components/goods-slider/items/e/1-3.png", alt: "COACH 肩背包/斜背包/托特包/二用包(任選)"}, {link: "https://www.etmall.com.tw/c3/97088", imgSrc: "~components/goods-slider/items/e/1-4.png", alt: "Prosi普洛斯 白金抗菌MAX濃縮香水洗衣凝露"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201908/SP_1108898/w/index.html", imgSrc: "~components/goods-slider/items/e/1-5.png", alt: "上野物產-中秋豪華全牛排烤肉8件組(3~5人份)"}, ]
+
+- var goodsDataU = [{link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201908/SP_1105073/w/index.html", imgSrc: "~components/goods-slider/items/u/1-1.png", alt: "安晴Anqueen 觸控式氣炸鍋 4L"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201908/SP_1105076/w/index.html", imgSrc: "~components/goods-slider/items/u/1-2.png", alt: "Sodastream電動式氣泡水機power source旗艦機(白)"}, {link: "https://www.u-mall.com.tw/np/68052", imgSrc: "~components/goods-slider/items/u/1-3.png", alt: "今生金飾-輕舞墬(時尚黃金墬子)"}, {link: "https://www.u-mall.com.tw/c3/91639", imgSrc: "~components/goods-slider/items/u/1-4.png", alt: "珪藻土地墊買一送一"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201908/SP_1105011/w/index.html", imgSrc: "~components/goods-slider/items/u/1-5.png", alt: "YAMAHA 山葉機車 CygnusX 新勁戰125碟煞-超跑DNA"}, ]
+
+- var goodsData = isU? goodsDataU : goodsDataE
+
+.goods__wrap
+  .promo__slider
+    #sliderGoods.swiper-container
+      ul.swiper-wrapper
+        each data in goodsData
+          li.swiper-slide
+            a(href= data.link, title= data.alt)
+              img(src= data.imgSrc, alt= data.alt)

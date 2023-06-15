@@ -1,0 +1,28 @@
+.promo__event
+  padding: 2% 12%
+  // +bg-set(url(~event/3rd/e-main/components/promo-event/bg-promo.png), contain, 2vw)
+  .event__wrap
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    padding: 0
+    // 固定位置模式
+    li
+      flex: 0 1 33%
+      padding: 1.5% 3%
+      // transition: all 0.5s
+      filter: drop-shadow(0 0.5em 0 $gray-deep-dark)
+      &:hover,
+      &:active
+        filter: none
+        img
+          transform: translateY(3px)
+
+  +breakpoint-min($min-width-xl)
+    // padding: 77px 65px 10px 68px
+    .event__wrap
+      li
+        filter: drop-shadow(0 7px 0 $gray-deep-dark)
+        // padding-left: 3px
+        // padding-right: 3px
+        // height: 220px

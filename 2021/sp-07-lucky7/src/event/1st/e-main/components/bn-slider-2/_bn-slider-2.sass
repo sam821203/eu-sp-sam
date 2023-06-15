@@ -1,0 +1,89 @@
+//- 加入思源黑體
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC')
+.promo__group--bn-2
+  +pos-set(relative, zero)
+  .title__decoration
+    transform-origin: right
+    pointer-events: none
+  .promo__wrap
+    +pos-set(relative, zero)
+    padding: 20% 7% 0
+    height: 105vw
+    +bg-set(url("event/1st/e-main/components/bn-slider-2/bg-bn-slider-2.png"), 100% auto)
+    .promo__bn
+      margin-bottom: 3%
+    .swiper-slide
+      width: 33%
+      text-align: center
+      transition: all 0.5s
+      +bg-set(url("event/1st/e-main/components/bn-slider-2/bg-brands.png"), 100% auto)
+      &:hover,
+      &:active
+        transform: scale(0.95)
+      img
+        padding: 19% 0 8%
+      .content
+        display: flex
+        justify-content: center
+        align-items: center
+        color: #fff
+        line-height: 1.4
+        height: 10vw
+        font-size: 3vw
+        overflow: hidden
+        margin-top: 4%
+        font-family: 'Notot Sans TC',sans-serif
+    .swiper-wrapper
+      // FIXME: IE中swiper在slidesPerColumn有設定下不會自己補上flex-wrap: wrap，但現代瀏覽器手動在CSS補上會造成一開始較大的板塊飄移，所以用CSS前綴只幫IE手動補上，現代瀏覽器交給swiper自己補上
+      -ms-flex-wrap: wrap
+      li
+        width: auto
+        padding: 0 1.5%
+        height: 40vw
+    +breakpoint-min($min-width-xl)
+      padding: 215px 50px 70px
+      height: 988px
+      .swiper-wrapper
+        li
+          height: 376px
+      .swiper-slide
+        .content
+          height: 108px
+          font-size: 24px
+          margin-top: 6%
+  .detail__btn
+    position: absolute
+    top: 6vw
+    right: 7vw
+    width: 21vw
+    height: 13vw
+  +breakpoint-min($min-width-xl)
+    .promo__wrap
+      padding: 190px 60px 0
+    .detail__btn
+      top: 60px
+      right: 70px
+      width: 204px
+      height: 126px
+
+  .group__pager
+    bottom: 2.2%
+    left: 0
+    width: 100%
+    .swiper-pagination-bullet
+      margin: 0 4px
+      width: 12px
+      height: 12px
+      transition: all 0.3s
+      outline: 0
+      &.swiper-pagination-bullet-active
+        width: 24px
+        border-radius: 12px
+        background-color: $gray-deep-dark
+
+  +breakpoint-min($min-width-xl)
+    .group__pager
+      bottom: 35px
+
+
+

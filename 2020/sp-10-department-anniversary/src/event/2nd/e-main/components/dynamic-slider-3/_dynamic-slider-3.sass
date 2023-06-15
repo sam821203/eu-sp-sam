@@ -1,0 +1,45 @@
+// 因版型和1一樣所以共用
+.promo__group--dynamic-slider
+  &.slider__style3
+    .promo__wrap
+      padding: 13.5% 5.5% 10%
+      +bg-set(url("~event/2nd/e-main/components/dynamic-slider-3/bg-dynamic-slider-3.png"), 100%)
+    li
+      +bg-set(url("~event/2nd/e-main/components/dynamic-slider-3/bg-slider_3_pt.png"), 100%)
+  +breakpoint-min($min-width-xl)
+    &.slider__style3
+      .promo__wrap
+        padding: 13.5% 6.5% 16%
+      .product--dynamic
+        .product__img
+          padding: 2% 3%
+
+.dynamic-slider-pager
+  &.pager__style3
+    .swiper-pagination-bullet-active
+      background-color: #fda53b
+      opacity: 1
+
+#sliderDynamicPrev_3.swiper-button-prev,
+#sliderDynamicNext_3.swiper-button-next
+  width: 5vw
+  height: 6vw
+  margin-top: 1.4vw
+  opacity: 0
+  &::after
+    font-size: 3vw
+  +breakpoint-min($min-width-xl)
+    width: 48px
+    height: 58px
+    margin-top: 15px
+    &::after
+      font-size: 29px
+
+#sliderDynamicPrev_3.swiper-button-prev
+  left: .9vw
+  +breakpoint-min($min-width-xl)
+    left: 9px
+#sliderDynamicNext_3.swiper-button-next
+  right: .9vw
+  +breakpoint-min($min-width-xl)
+    right: 9px

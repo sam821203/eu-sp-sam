@@ -1,0 +1,498 @@
+<meta name="viewport" content="width=device-width">
+<meta charset="utf-8">
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  img {
+    width: 100%;
+    border: 0;
+    vertical-align: bottom;
+  }
+
+  article,
+  main,
+  nav,
+  section {
+    display: block;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  .layout--main {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* note */
+  /* ======================================== */
+  .note {
+    word-break: break-all;
+  }
+
+  .note article {
+    background-color: #8febff;
+    font: normal 1em/1.5 '微軟正黑體', Arial;
+    color: #2f3a42;
+    padding-bottom: 3%;
+  }
+
+  .note article a {
+    display: inline;
+    color: #036eb6;
+  }
+
+  .note article a:visited {
+    color: #601986;
+  }
+
+  .note article a:hover {
+    color: #fd2491;
+    text-decoration: underline;
+  }
+
+  .note hr {
+    background-color: #000000;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 15px;
+    height: 8px;
+    border: 0;
+  }
+
+  .note h2 {
+    color: #1c2a7f;
+    font-size: 1.4em;
+    line-height: 2;
+    margin: 5px 0 5px 3%;
+  }
+
+  .note p {
+    line-height: 1.5;
+    padding: 0 5%;
+    margin: 0;
+  }
+
+  .note ol,
+  .note ul {
+    padding: 0;
+    margin: auto;
+    margin: 0 5% 0.25em 7%;
+    list-style: decimal;
+  }
+  .note li {
+    margin-bottom: 0.25em;
+  }
+  .note li > ol,.note li > ul {
+    margin-left: 1.5em;
+  }
+  .note li > ol {
+    list-style: lower-alpha;
+  }
+
+  .note ul {
+    list-style: disc;
+  }
+  .note ul.list--custsom, .note ol.list--custsom {
+    list-style: none;
+    margin-left: 0;
+  }
+  
+
+  .note table {
+    color: #5b5b5b;
+    border: 1px solid #c0c0c0;
+    border-right: 0;
+    border-bottom: 0;
+    width: 90%;
+    margin: 1% 0 2% 5.5%;
+    background-color: #FFFFFF;
+    font-size: 0.9em;
+  }
+
+  .note table td {
+    border-right: 1px solid #c0c0c0;
+    border-bottom: 1px solid #c0c0c0;
+    padding: 5px;
+    text-align: center;
+  }
+
+  .note table tr:first-child td,
+  .note ol table tr:first-child td {
+    text-align: center;
+    background-color: #949494;
+    color: #f9f9f9;
+  }
+
+  .note ol table {
+    margin: 0;
+    width: 100%;
+    margin: 2% 0;
+  }
+
+  .note ol table td {
+    text-align: left;
+  }
+
+  .note ol table tr:first-child td {
+    white-space: nowrap;
+  }
+
+  @media screen and (max-width: 1024px) {
+
+    .note ol,
+    .note ul {
+      margin: 0 3.5% 0 7%;
+    }
+
+    .note table {
+      margin: 0 3%;
+      width: 100%;
+    }
+  }
+
+  /* 圖片 */
+  /* ======================================== */
+  .img--container {
+    display: inline-block;
+    width: 95%;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .img--container a:first-child {
+    margin-right: 2%;
+  }
+
+  .img--container img:nth-child(1),
+  .img--container img:nth-child(2),
+  .img--container img:nth-child(3) {
+    width: calc(100% / 3 - 4px);
+    display: inline-block;
+  }
+
+  @media screen and (max-width: 768px) {
+
+    .img--container {
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+    }
+
+    .img--container a:first-child {
+      margin-right: 0;
+    }
+
+    .img--container img:first-child {
+      margin-bottom: 2%;
+    }
+
+    .img--container img:nth-child(1),
+    .img--container img:nth-child(2),
+    .img--container img:nth-child(3) {
+      width: 94%;
+    }
+  }
+
+  /* rwd table */
+  /* ======================================== */
+  .note table.rwd-table {
+    width: 100%;
+    /*color: #fff;*/
+    border: 1px solid #c0c0c0;
+    border-collapse: collapse;
+    background-color: #fff;
+    overflow: hidden;
+  }
+
+  .note table.rwd-table th {
+    display: none;
+  }
+
+  .note table.rwd-table td {
+    display: block;
+    border-right: 0;
+    text-align: left;
+  }
+
+  .note table.rwd-table td:last-child {
+    border-bottom: 1px solid transparent;
+  }
+
+  .note table.rwd-table td:before {
+    content: attr(data-th) ": ";
+    display: inline-block;
+    width: 6em;
+    font-weight: bold;
+  }
+
+  .note table.rwd-table th,
+  .rwd-table td {
+    text-align: left;
+  }
+
+  .note table.rwd-table tr {
+    border-color: #c0c0c0;
+  }
+
+  .note table.rwd-table tr:nth-child(even) {
+    background-color: #dadada;
+  }
+
+  .note table.rwd-table th,
+  .rwd-table td {
+    margin: .5em 1em;
+  }
+
+  .note table.rwd-table th,
+  .rwd-table td:before {
+    font-weight: bold;
+  }
+
+  @media (min-width: 700px) {
+    .note table.rwd-table {
+      width: 100%;
+    }
+
+  .note table.rwd-table td:last-child {
+    border-bottom: 1px solid #c0c0c0;
+  }
+
+    .note table.rwd-table tr:nth-child(even) {
+      background: transparent;
+    }
+
+    .note table.rwd-table th {
+      background-color: #949494;
+      color: #ffffff;
+    }
+
+    .note table.rwd-table th,
+    .note table.rwd-table td {
+      border-bottom: 1px solid #c0c0c0;
+      border-right: 1px solid #c0c0c0;
+    }
+
+    .note table.rwd-table td:before {
+      display: none;
+    }
+
+    .note table.rwd-table th,
+    .note table.rwd-table td {
+      display: table-cell;
+      padding: .25em .5em;
+      text-align: center;
+    }
+
+    .note table.rwd-table th:first-child,
+    .note table.rwd-table td:first-child {
+      padding-left: 0;
+    }
+
+    .note table.rwd-table th:last-child,
+    .note table.rwd-table td:last-child {
+      padding-right: 0;
+    }
+
+    .note table.rwd-table th,
+    .note table.rwd-table td {
+      padding: 0.8em !important;
+    }
+  }
+
+  .img--container .qrcode--l {
+    display: inline-block !important;
+  }
+
+  .img--container .qrcode--m {
+    display: none !important;
+  }
+
+  @media (max-width: 768px) {
+    .img--container .qrcode--l {
+      display: none !important;
+    }
+
+    .img--container .qrcode--m {
+      display: inline-block !important;
+    }
+
+  }
+</style>
+<section class="layout--main note" name="note" id="note">
+  <article>
+    <hr>
+    <h2>【活動一、APP搶1元折價券-再回饋5%東森幣】</h2>
+    <ol>
+      <li>活動辦法：
+        <ol>
+          <li>活動時間：109/5/5 AM10:00~109/5/8 AM10:00</li>
+          <li>活動內容：搶1元折價券(每日80張，共發送240張)，限APP搶券，搶到者立即匯入，效期至隔日17:04，使用此張1元折價券折抵之商品，無取消/退貨者，折抵商品回饋5%東森幣!(每一商品最高上限500枚，活動區間每位會員最高上限500枚東森幣)。</li>
+          <li>相關折價券領取方式請參閱下方表格：</li>
+        </ol>
+        <table class="rwd-table">
+          <tr>
+            <th width="200">開放搶券</th>
+            <th width="90">搶券時間</th>
+            <th width="97">折價券面額</th>
+            <th width="125">折價券效期</th>
+            <th width="154">限量說明</th>
+            <th width="400">活動說明</th>
+          </tr>
+          <tr>
+            <td data-th="開放搶券">5/5 10:00-5/8 10:00</td>
+            <td data-th="搶券時間">17:05</td>
+            <td data-th="折價券面額">1元折價券</td>
+            <td data-th="折價券效期">至隔日17:04</td>
+            <td data-th="限量說明">每日80張</td>
+            <td data-th="活動說明">有使用此折價券商品，無取消退貨，回饋5%東森幣(每商品上限500枚)</td>
+          </tr>
+        </table>
+
+        </div>
+      </li>
+
+      <li>折價券使用說明：<br />
+        單一商品結帳金額滿$800元可使用此折價券，限APP成立訂單使用，排除電視館/票券類/手機商品，專案商品除外，以購物車結帳頁面為主，一經使用/訂單取消恕無法補發，效期至成功領取後隔日17:04。</li>
+      <li>東森幣匯入說明：<br />
+        5%東森幣計算邏輯=依發票實付金額回饋5%，共計最高500枚。(活動區間每位會員最高上限500枚東森幣)<br />
+        東森幣加給日期：<br />
+        原商品回饋=配送確認日+15天後匯入；加碼5%東森幣 = 2020/6/8 18:00匯入。<br />
+        東森幣使用效期：<br />
+        原商品回饋東森幣=匯入日+365天；加碼10倍東森幣 =2020/7/8 23:59，逾期失效。<br />
+      <li>東森幣回饋範例說明：
+        <ol>
+          <li>小明於APP活動頁面搶到1元折價券，並於日用館消費1,000元商品，使用1元折價券，訂單無取消/退貨，於6/8再送49枚東森幣(依發票實付金額)。(發票實付金額999x0.05= 49枚東森幣)。</li>
+          <li>小明於APP活動頁面分別於5/5、5/7皆搶到1元折價券共兩張，並訂購床組、沙發各別皆有使用1元折價券，床組發票實付金額$9,000、沙發發票實付金額$5,000，訂單無取消/退貨，故於6/8再送500枚東森幣。(因活動區間每位會員東森幣回饋5%上限500枚東森幣)</li>
+        </ol>
+      </li>
+      <li>活動規則：<br />
+        <ol>
+          <li>每會員於活動期間限登記乙次。 </li>
+          <li>此活動之折價券限APP通路使用。 </li>
+          <li>未於折價券使用期限內使用折抵者，該券將自動失效。</li>
+          <li>網連通會員恕無法參與活動。 </li>
+          <li>東森購物網保有活動變更、修改或終止本活動之權力，如有異動，修改後之內容將公佈在東森購物網上。</li>
+        </ol>
+      </li>
+    </ol><br />
+
+    <div class="img--container">
+      <a href="https://etu.tw/g3FlDI">
+        <img src="QR-IOS.jpg" alt="" class="qrcode--l">
+        <img src="QR-IOS-m.jpg" alt="" class="qrcode--m">
+      </a>
+      <a href="https://etu.tw/FvO05I">
+        <img src="QR-android.jpg" alt="" class="qrcode--l">
+        <img src="QR-android-m.jpg" alt="" class="qrcode--m">
+      </a>
+    </div><br />
+
+    <h2>【活動二、不限金額消費登記抽Dyson】-<a href="https://www.etmall.com.tw/Activity/Reg/198">點我登記</a></h2>
+    <ol>
+      <li>活動/登記時間：109/4/27 AM10:00~109/5/11 AM10:00</li>
+      <li>活動期間凡於東森購物網不限金額消費並於活動期間內完成登記，且無取消退貨，則有機會抽中Dyson豪禮(共抽6名)。</li>
+      <li>獎項：
+        <ul>
+          <li>Dyson 戴森 Pure Cool 智慧空氣清淨機涼風風扇 TP04(時尚白)*1台-(市價$22,900)</li>
+          <li>Dyson 戴森V8 Carbon Fibre SV10E 無線吸塵器*3台-(市價$19,900)</li>
+          <li>Dyson Airwrap Complete 造型捲髮器/造型器/捲髮器(全配組)*2台-(市價$17,600)</li>
+        </ul>
+      </li>
+      <li>中獎/兌獎注意事項：
+        <ol>
+          <li>6/8(一) 前抽出，兌獎流程將由專人主動與得獎人聯繫。</li>
+          <li>依稅法規定，若得獎人於東森購物兌換贈（獎）品金額達新台幣（下同）1,001元以上未達20,010元，將於次年初開立免扣繳憑單予得獎人並向主管稽徵機關申報；如達20,010元以上者，得獎人應回填兌獎收據單，並由東森購物代為扣繳得獎人應繳納獎品價值10%(外國人20%)之機會中獎所得稅金額後，東森購物始交付獎品並將於次年開立扣繳憑單予得獎人。</li>
+        </ol>
+      </li>
+      <li>注意事項：<br />
+        <ol>
+          <li>網連通會員恕無法參與活動。</li>
+          <li>每會員於活動期間限贈送乙次。</li>
+          <li>未於活動期間內完成登記者，恕無法參與活動。</li>
+          <li>此活動限東森購物網路通路</li>
+          <li>東森購物網保有活動變更、修改或終止本活動之權力，如有異動，修改後之內容將公佈在東森購物網上。</li>
+        </ol>
+      </li>
+    </ol><br />
+
+    <h2>【活動三、消費滿額登記送折價券】-<a href="https://www.etmall.com.tw/Activity/Reg/198">點我登記</a></h2>
+    <ol>
+      <li>活動一：
+        <ol>
+          <li>活動時間：109/4/27 AM10:00~109/6/1 AM10:00</li>
+          <li>活動內容：
+            <ul>
+              <li>活動期間於東森購物網消費累積發票實付金額滿$3,000並於活動期間內完成登記，且無取消退貨，可獲得300元折價券(200折價券*1、100折價券*1)。</li>
+              <li>每一會員限獲獎乙次。</li>
+            </ul>
+          <li>折價券匯入時間：<br />
+              於二個時段匯入：
+              <ul>
+                <li>6/22 17:00前匯入200元折價券(效期至6/28 23:59)</li>
+                <li>6/29 17:00前匯入100元折價券(效期至7/5 23:59)</li>
+              </ul>
+          </li>
+          <li>折價券適用說明：
+              <ul>
+                <li>200元折價券:單一商品結帳金額滿$1,800元可使用此折價券，適用全站商品，專案商品除外，以購物車結帳頁面為主，一經使用/訂單取消恕無法補發。</li>
+                <li>100元折價券:單一商品結帳金額滿$990元可使用此折價券，適用全站商品，專案商品除外，以購物車結帳頁面為主，一經使用/訂單取消恕無法補發。</li>
+              </ul>
+          </li>
+        </ol>
+      <li>活動二：
+          <ol>
+            <li>活動時間：109/4/27 AM10:00~109/5/11 AM10:00</li>
+            <li>活動內容：
+              <ul>
+                <li>活動期間於東森購物網消費累積發票實付金額滿$5,000並於活動期間內完成登記，且無取消退貨，升級送600元折價券(200折價券*3)。</li>
+                <li>每一會員限獲獎乙次。</li>
+              </ul>
+            </li>
+            <li>折價券匯入時間：<br />
+                於三個時段匯入：
+                <ul>
+                  <li>6/22 17:00前匯入200元折價券(效期至6/28 23:59)</li>
+                  <li>6/29 17:00前匯入200元折價券(效期至7/5 23:59)</li>
+                  <li>7/6 17:00前匯入200元折價券(效期至7/12 23:59)</li>
+                </ul>
+            </li>
+            <li>折價券適用說明：
+              <ul>
+                <li>200元折價券：單一商品結帳金額滿$1,800元可使用此折價券，適用全站商品，專案商品除外，以購物車結帳頁面為主，一經使用/訂單取消恕無法補發。</li>
+              </ul>
+            </li>
+          </ol>
+      </li>
+      <li>注意事項：
+        <ul class="list--custsom">
+          <li>※ 網連通會員恕無法參與活動。</li>
+          <li>※ 活動一及活動二擇優加給一次，恕無法重覆領取。</li>
+          <li>※ 每會員於活動期間限贈送乙次。(擇優加給)</li>
+          <li>※ 未於活動期間內完成登記者，恕無法參與活動。</li>
+          <li>※ 東森購物網保有活動變更、修改或終止本活動之權力，如有異動，修改後之內容將公佈在東森購物網上。</li>
+        </ul>
+      </li>
+    </ol>
+  </article>
+</section>

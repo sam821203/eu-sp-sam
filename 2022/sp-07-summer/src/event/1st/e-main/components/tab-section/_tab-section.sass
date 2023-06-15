@@ -1,0 +1,118 @@
+.promo__group--tab-section
+  overflow: hidden
+  .decor__item
+    &--title
+      +pos-set(absolute, second, 3.5%, 27%)
+      width: 46%
+      +breakpoint-min($min-width-xl)
+        top: 4.5%
+        left: calc(50% - 231px)
+    &--swan
+      +pos-set(absolute, base, 3%, 15%)
+      width: 22%
+      +breakpoint-min($min-width-xl)
+        top: 5%
+        left: calc(50% - 350px)
+    &--ball
+      +pos-set(absolute, base, 5.75%)
+      right: 20%
+      width: 14%
+      +breakpoint-min($min-width-xl)
+        top: 9%
+        right: calc( 50% - 290px )
+    &--left
+      +pos-set(absolute, zero, 0%, 2%)
+      width: 36%
+      &.active
+        -webkit-animation: key-wind-rotate 8s linear 1.5s infinite both  
+        animation: key-wind-rotate 8s linear 1.5s infinite both
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 470px)
+    &--right
+      +pos-set(absolute, zero, 0%)
+      right: 3%
+      width: 36%
+      &.active
+        -webkit-animation: key-wind-rotate 8s linear 2s infinite both  
+        animation: key-wind-rotate 8s linear 2s infinite both
+      +breakpoint-min($min-width-xl)
+        right: calc(50% - 440px)
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .promo__wrap
+    +aspect-ratio(952, 1014)
+    margin-top: 18%
+    +breakpoint-min($min-width-xl)
+      +aspect-ratio(951, 707)
+    .promo__zone
+      +bg-set(url("event/1st/e-main/components/tab-section/app-bg-tab.png"), 100%)
+      +breakpoint-min($min-width-xl)
+        +bg-set(url("event/1st/e-main/components/tab-section/web-bg-tab.png"), auto)
+
+      .tab__wrap
+        padding: 6% 2%
+        +breakpoint-min($min-width-xl)
+          padding: 4.75% 2%
+        .tab__box
+          display: flex
+          justify-content: space-between
+          flex-wrap: wrap
+          +breakpoint-min($min-width-xl)
+            flex-wrap: nowrap
+          .tab__item
+            position: relative
+            width: 32%
+            cursor: pointer
+            +breakpoint-min($min-width-xl)
+              width: 16%
+            &.active
+              filter: brightness(.88)
+        .content__zone
+          margin-top: -1%
+          .content__box
+            display: none
+            &.active
+              display: block
+            .item__wrap
+              display: flex
+              justify-content: center
+              flex-wrap: nowrap
+              padding: 8% 1% 0 2%
+              +breakpoint-min($min-width-xl)
+                padding-top: 1%
+              .swiper-slide
+                &:first-child
+                  width: 44%
+                  transform: translateY(0%)
+                  +breakpoint-min($min-width-xl)
+                    width: 48%
+                    transform: translateY(-6%)
+                &:nth-child(2),
+                &:nth-child(3)
+                  width: 28%
+                  padding-top: 12%
+                  +margin-x(0.5%)
+                  +breakpoint-min($min-width-xl)
+                    width: 26%
+                    padding-top: 17%
+                .product.product--dynamic
+                  border-radius: 2vw
+                  background-color: $gray-deep-light
+                  +breakpoint-min($min-width-xl)
+                    border-radius: 16px
+                  .product__img
+                    +breakpoint-min($min-width-xl)
+                      border-radius: 16px 16px 0 0 
+  @keyframes key-wind-rotate
+    20%
+      transform: rotate(-2.8deg) skew(2.8deg)
+    40%
+      transform: rotate(2.2deg) skew(-2.2deg)
+    60%
+      transform: rotate(-0.8deg) skew(0.8deg)
+    80%
+      transform: rotate(0.4deg) skew(-0.4deg)
+    100%
+      transform: rotate(0deg)
+
+      

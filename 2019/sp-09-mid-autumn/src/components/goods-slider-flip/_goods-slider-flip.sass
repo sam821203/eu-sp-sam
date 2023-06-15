@@ -1,0 +1,44 @@
+.goods__wrap--flip
+  +pos-set(relative, zero)
+  // +bg-set(url("~components/goods-slider-flip/bg-goods-flip.png"), 100%, center, 100%)
+  // +bg-set(url("~components/goods-slider-flip/bg-goods-flip.png"), contain)
+  // margin-left: -10%
+  .promo__slider
+    padding: 0 18%
+    width: 100%
+    .swiper-container
+      width: 100%
+      height: 85%
+    .swiper-slide
+      width: 100%
+
+  // .goods__decoration
+  //   +pos-set(absolute, zero)
+  //   +bg-set(url("components/goods-slider-flip/goods-decoration-light.png"), contain)
+  //   top: -1.5%
+  //   padding-top: 80%
+  //   width: 40%
+  //   height: 0
+  //   transform-origin: 20% 0
+  //   &.goods__decoration--left
+  //     left: 13%
+  //     animation: key-rotate-from-to 5s infinite alternate ease-in-out
+  //   &.goods__decoration--right
+  //     right: -18%
+  //     animation: key-rotate-self 5s infinite alternate ease-in-out
+  +breakpoint-min($min-width-xl)
+    // margin-left: 0
+    .promo__slider
+      padding: 0
+    // .goods__decoration
+    //   top: -60px
+    //   width: 310px
+    //   height: 647px
+      
+    //   &.goods__decoration--left
+    //     left: 20%
+    //   &.goods__decoration--right
+    //     right: -15%
+
+// +key-rotate-self(55)
+// +key-rotate-from-to(25, -30)

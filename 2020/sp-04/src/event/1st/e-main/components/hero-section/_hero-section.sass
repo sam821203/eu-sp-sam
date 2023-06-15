@@ -1,0 +1,158 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero__wrap
+  +pos-set(relative, second)
+  overflow: hidden
+
+  .hero__zone
+    +pos-set(relative, zero)
+
+  .hero__block
+  //+bg-set(url("~event/1st/e-main/components/hero-section/bg-hero.jpg"), cover)
+
+  .hero__box
+    +pos-set(relative, zero)
+
+  .hero__title
+    &--main
+      +pos-set(relative, zero)
+      padding-top: 10%
+      padding-bottom: 2.1%
+      padding-left: 12%
+      margin-left: auto
+      margin-right: auto
+      width: 92%
+      overflow: hidden
+      +breakpoint-min($min-width-xl)
+        width: auto
+        padding-top: 10.2%
+        padding-bottom: 2.1%
+        padding-left: 15.5%
+        padding-right: 0
+  // &.animated
+    // animation: small-open 1s both ease-out
+
+  .title-decoration__wrap
+    +pos-set(absolute, zero, 0, 0)
+    width: 100%
+    height: 100%
+    pointer-events: none
+    .title__decoration
+      +pos-set(absolute, zero)
+      &--top
+        top: 4%
+        left: 28%
+        width: 23.5%
+        &.animated
+          animation: 1s 1s title-down both ease-out
+        img
+          animation: 2s 2s key-rotate-stop both infinite ease-in-out
+        +breakpoint-min($min-width-xl)
+          top: 18px
+          left: calc(50% - 220px)
+          width: 33%
+
+  .promo__zone
+    margin-top: 8%
+    //background-color: $gray-deep-light
+    +breakpoint-min($min-width-xl)
+      background-color: transparent
+  .decoration--gift
+    position: relative
+    img
+      position: absolute
+      width: 12%
+    .gift--ten
+      top: -1.8vw
+      left: 45.6vw
+      animation: up-down 4s infinite alternate
+    .gift--1
+      top: -2.5vw
+      left: 58.6vw
+      width: 7.2vw
+      animation: up-down 5s 1s infinite alternate
+    .gift--2
+      top: -2.7vw
+      left: 66vw
+      width: 8vw
+      animation: up-down 5s 2s infinite alternate
+    .gift--3
+      top: -1.8vw
+      left: 74.6vw
+      width: 8.5vw
+      animation: up-down 5s 3s infinite alternate
+    .gift--finger
+      top: 1.1vw
+      left: 83.2vw
+      width: 7.5vw
+      animation: up-down 5s 5s infinite alternate
+    +breakpoint-min($min-width-xl)
+      .gift--ten
+        top: -27px
+        left: 438px
+        width: auto
+      .gift--1
+        top: -23px
+        left: 574px
+        width: auto
+      .gift--2
+        top: -26px
+        left: 638px
+        width: auto
+      //77px
+      .gift--3
+        top: -18px
+        left: 716px
+        width: auto
+      //82px
+      .gift--finger
+        top: 11px
+        left: 799px
+        width: auto
+  .sub__title
+    position: absolute
+    width: 80%
+    height: 16vw
+    top: 50vw
+    left: 18vw
+    +breakpoint-min($min-width-xl)
+      height: 153px
+      top: 480px
+      left: 173px
+//7.5vw
+@keyframes title-down
+  0%
+    transform: translateY(calc(-100vw * .5))
+  70%, 80%
+    transform: translateY(0) scale(1.2)
+  75%, 100%
+    transform: translateY(0) scale(1)
+
+@keyframes key-rotate-stop
+  0%
+    transform: rotate(0)
+  5%
+    transform: rotate(-20deg)
+  10%
+    transform: rotate(0)
+  15%
+    transform: rotate(20deg)
+  20%
+    transform: rotate(0)
+  100%
+    transform: rotate(0)
+
+@keyframes up-down
+  0%, 30%, 100%
+    transform: translateY(0)
+  20%, 40%, 60%
+    transform: translateY(-6%)
+  30%, 45%
+    transform: translateY(0)
+
+@keyframes up-down
+  0%, 8%, 12%, 16%, 74%, 78%, 82%, 100%
+    transform: scale(1) translateY(0)
+  10%, 14%, 76%, 80%
+    transform: scale(1.1) translateY(-6%)

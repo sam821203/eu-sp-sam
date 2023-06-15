@@ -1,0 +1,90 @@
+.promo__group--dynamic-slider
+  overflow: hidden
+  .promo__decor
+    +pos-set(absolute, under, 1%, 0%)
+    +breakpoint-min($min-width-xl)
+      left: calc(50% - 480px)
+  .promo__title
+    +pos-set(absolute, zero, 13%, 0%)
+    +breakpoint-min($min-width-xl)
+      top: 14.6%
+      left: calc(50% - 437px)
+  .promo__zone
+    +aspect-ratio(960, 1500)
+    +bg-set(url(event/1st/e-main/components/dynamic-slider/bg-dynamic-slider.png), 100%, center, 100%)
+    // +pos-set(relative, base)
+    // padding: 20% 5% 11%
+    .promo__block
+      width: 100%
+      margin: 0 auto
+      // margin: 2% 6%
+      .promo__slider
+        margin-top: 68%
+        // padding: 0 5%
+        width: 90%
+        .swiper-slide
+          width: 30%
+          margin-bottom: 2%
+        .product--dynamic
+          width: 93%
+          border-radius: 3px
+          .product__img
+            // border-radius:
+          .product__name
+            margin-bottom: 0
+            height: 1.25em
+            background-color: #fff
+            +breakpoint-min($min-width-xl)
+              padding-bottom: 3%
+              height: 2.35em
+          .product__price
+            padding-bottom: 3%
+            background-color: #fff
+            
+
+              
+
+
+  // TODO: 橫式
+  // .product__block
+  //   display: flex
+  //   justify-content: space-around
+
+  // // 共用類宮格樣式
+  // .product--dynamic
+  //   .product__block
+  //     padding: 0% 2%
+  //     // +bg-set(url(event/2nd/e-main/components/daily-slider/bg-dynamic-item.png), contain)
+  //   .product__name
+  //     margin-bottom: 1%
+  //     height: 50%
+  //   .product__price
+  //     width: 100%
+  //     text-align: center
+  //     color: $main-e-background-color-1st-2
+
+
+  //   .product__img
+  //     width: 50%
+  //     border-radius: 15px 0 0 15px
+  //     // border-radius: 0
+  //   .product__text
+  //     width: 50%
+  //     border-radius: 0 15px 15px 0
+  //     background-color: #fff
+
+@keyframes flap-left
+  0%
+    transform: rotate(0deg) 
+  50%
+    transform: rotate(-15deg) scaleY(.9)
+  to
+    transform: rotate(0deg)
+
+@keyframes flap-right
+  0%
+    transform: rotate(0deg) 
+  50%
+    transform: rotate(15deg) scaleY(.9)
+  to
+    transform: rotate(0deg)

@@ -1,0 +1,100 @@
+.promo__group--daily
+  margin-top: -5%
+  .decoration__title
+    +pos-set(relative, base)
+    padding-bottom: 10%
+    .decoration--daily-change
+      top: 5%
+      left: 50%
+      width: 20%
+      .pic__box
+        transform: translateX(-55%)
+      // transform-style: preserve-3d
+      img
+        &:first-child
+          // transform-origin: bottom
+          // animation: rotate-self 2s infinite linear
+        &:last-child
+          +pos-set(absolute, zero)
+          top: 0
+          left: 0
+          transform: scale(1.5)
+          animation: light-open 0.6s infinite linear alternate
+  +breakpoint-min($min-width-xl)
+    margin-top: -60px
+    .promo__title
+      padding-bottom: 125px
+      .decoration--daily-change
+        top: 50px
+        .pic__box
+          transform: translateX(-50%)
+
+  .promo__zone
+    +pos-set(relative, zero)
+    .title__text
+      +pos-set(absolute, base)
+    .daily__text
+      left: 19%
+      color: $gray-deep-light
+      font-size: 7vw
+      font-weight: bold
+      transform: translateY(13%)
+      span
+        &:nth-child(2)
+          font-size: 3vw
+
+    .daily__countdown
+      display: flex
+      justify-content: space-between
+      top: 51%
+      right: 13.6%
+      width: 32.3%
+      color: $gray-deep-light
+      font-size: 4vw
+      letter-spacing: 0.35em
+      pointer-events: none
+      // border: 1px solid #f00
+      .time__block
+        display: flex
+        justify-content: space-between
+        // margin-right: 0.5%
+        width: 25%
+        // border: 1px solid #fff
+
+        .time__box
+          width: 48%
+          text-align: right
+
+    +breakpoint-min($min-width-xl)
+      .daily__countdown
+        top: 385px
+        right: 131px
+        width: 308px
+        font-size: 40px
+
+  .promo__wrap--daily
+    +aspect-ratio(960, 757)
+  .promo__zone
+    padding: 23% 3% 0
+    +bg-set(url(event/1st/e-main/components/daily-change/bg-daily.png), 100%, center, 100%)
+    text-align: center
+    &:hover,
+    &:active
+      a
+        filter: brightness(102%) contrast(105%)
+
+    +breakpoint-min($min-width-xl)
+      padding: 223px 30px 0
+      background-size: auto
+
+@keyframes light-open
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+// @keyframes rotate-self
+//   0%
+//     transform: rotate3d(0, 0, 0)
+//   50%, 100%
+//     transform: rotate3d(0, 10, 1, 360deg)

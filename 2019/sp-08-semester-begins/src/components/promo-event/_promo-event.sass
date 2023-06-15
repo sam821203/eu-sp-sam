@@ -1,0 +1,36 @@
+.promo__event
+  +pos-set(relative, null)
+  padding: 12.9% 16.5% 8.5% 5%
+  +breakpoint-min($min-width-xl)
+    padding: 129px 16.5% 8.5% 5%
+  .event__wrap
+    +display-flex
+    flex-wrap: wrap
+    width: 65.5%
+    li
+      margin-right: 2%
+      padding: 0.5% 1%
+      width: 48%
+      &:last-child
+        width: 45%
+
+  .bonus
+    &__wrap
+      +pos-set(absolute, second, -19.5%, null, null, -2.3%)
+      width: 48.3%
+    &__item
+      transform-origin: bottom
+      animation: key-rotate-self2 6s infinite alternate linear
+    &__anchor
+      +pos-set(absolute, base, null, null, 3%, 8.5%)
+      width: 38%
+
+  .event__wrap,
+  .bonus__wrap
+    a
+      transition: all 0.5s
+      &:hover,
+      &:active
+        filter: brightness(120%)
+
++key-rotate-self(4, key-rotate-self2)

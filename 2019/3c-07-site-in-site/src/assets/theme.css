@@ -1,0 +1,164 @@
+/* 一般頁面 */
+/* 底色 */
+body.theme {
+  background-color: #faa;
+}
+
+/* 版頭下緣線條色 */
+.theme .sp__header {
+  border-bottom-color: #afa;
+}
+/* 一般頁面版頭選單下方指示條顏色 */
+.theme .sub-nav__wrap--common .sub-nav__item:before {
+  background-color: #afa;
+}
+/* 一般頁面次選單下緣線條色 */
+.theme .brand-list {
+  border-bottom-color: #afa;
+}
+
+/* 下方選單上緣線條色 */
+.theme .nav__bottom {
+  border-top-color: #afa;
+}
+/* 一般頁面"回通訊館"右邊線條色 */
+.theme .nav__wrap .nav__index {
+  border-right-color: #afa;
+}
+/* 下方選單按鈕色 */
+.theme .btn--nav-bottom {
+  color: #afa;
+  border-color: #afa;
+}
+/* 下方選單滑鼠滑過的顏色 */
+.theme .btn--nav-bottom:hover, .theme .btn--nav-bottom:active {
+  color: #aaa;
+  border-color: #aaa;
+}
+
+/* index主輪播主標字顏色 */
+.theme .sp__wrap:not(.sp__wrap--apple) .info__title {
+  color: #000;
+}
+/* index主輪播副標字顏色 */
+.theme .sp__wrap:not(.sp__wrap--apple) .info__sub-title {
+  color: #faa;
+}
+/* index主輪播價格字顏色 */
+.theme .sp__wrap:not(.sp__wrap--apple) .info__price {
+  color: #aff;
+}
+/* index主輪播了解更多按鈕 */
+.theme .sp__wrap:not(.sp__wrap--apple) .btn--info {
+  /* 字顏色 */
+  color: #afa;
+  /* 按鈕背景色 */
+  background-color: #000;
+}
+/* index主輪播了解更多按鈕滑鼠移過去的背景色 */
+.theme .sp__wrap:not(.sp__wrap--apple) .hero__slider--main a:hover .btn--info, .theme .sp__wrap:not(.sp__wrap--apple) .hero__slider--main a:active .btn--info {
+  background-color: #aff;
+}
+
+/* 跑馬燈 */
+.theme .marquee__wrap {
+  /* 動畫字體顏色 */
+  color: #aaf;
+  /* 跑馬燈背景底色 */
+  background-color: #ffa;
+}
+/* 有連結的動畫字體顏色(務必和上方動畫字體顏色一至) */
+.theme .marquee__wrap a {
+  color: #aaf;
+}
+/* 跑馬燈前方系統字設定 */
+.theme .marquee__info {
+  /* 系統字體顏色 */
+  color: #aff;
+  /* 系統區塊背景顏色 */
+  background-color: #fff
+}
+
+/* 一般頁面時間軸橫槓顏色 */
+.theme .timeline__item:before {
+  background-color: #ffa;
+}
+/* 一般頁面時間軸月份顏色 */
+.theme .timeline__item .timeline__month {
+  color: #ffa;
+}
+
+/* ======================================================= */
+
+/* 蘋果頁面 */
+/* 底色 */
+body.theme--apple {
+  background-color: #afa;
+}
+
+/* 版頭下緣線條色 */
+.theme--apple .sp__wrap--apple .sp__header {
+  border-bottom-color: #faf;
+}
+/* apple頁面版頭選單下方指示條顏色 */
+.theme--apple .sub-nav__wrap--apple .sub-nav__item:before {
+  background-color: #faf;
+}
+/* apple頁面次選單下緣線條色 */
+.theme--apple .apple-list {
+  border-bottom-color: #faf;
+}
+
+/* 下方選單上緣線條色 */
+.theme--apple .nav__bottom {
+  border-top-color: #faf;
+}
+/* apple頁面"回通訊館"右邊線條色 */
+.theme--apple .sp__wrap--apple .nav__wrap .nav__index {
+  border-right-color: #faf;
+}
+/* 下方選單按鈕色 */
+.theme--apple .sp__wrap--apple .btn--nav-bottom {
+  color: #faf;
+  border-color: #faf;
+}
+/* 下方選單滑鼠滑過的顏色 */
+.theme--apple .sp__wrap--apple .btn--nav-bottom:hover, 
+.theme--apple .sp__wrap--apple .btn--nav-bottom:active {
+  color: #aaa;
+  border-color: #aaa;
+}
+
+/* apple主輪播主標字顏色 */
+.theme .sp__wrap--apple .info__title {
+  color: #aaf;
+}
+/* apple主輪播副標字顏色 */
+.theme--apple .sp__wrap--apple .info__sub-title {
+  color: #faf;
+}
+/* apple主輪播價格字顏色 */
+.theme--apple .sp__wrap--apple .info__price {
+  color: #ffa;
+}
+/* apple主輪播了解更多按鈕 */
+.theme--apple .sp__wrap--apple .btn--info {
+  /* 字顏色 */
+  color: #faa;
+  /* 按鈕背景色 */
+  background-color: #fff;
+}
+/* apple主輪播了解更多按鈕滑鼠移過去的背景色 */
+.theme--apple .sp__wrap--apple .hero__slider--main a:hover .btn--info, .theme .sp__wrap:not(.sp__wrap--apple) .hero__slider--main a:active .btn--info {
+  background-color: #faf;
+}
+
+/* apple時間軸橫槓顏色 */
+.theme--apple .timeline__item:before {
+  background-color: #ffa;
+}
+
+/* apple時間軸月份顏色 */
+.theme--apple .timeline__item .timeline__month {
+  color: #ffa;
+}

@@ -1,0 +1,626 @@
+/* ============= reset =============*/
+$font-def: Helvetica, Arial, LiHei, "Microsoft JhengHei", "微軟正黑體", sans-serif
+
+$main-color: #005337
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  &:before, &:after
+    box-sizing: border-box
+
+a
+  display: block
+  text-decoration: none
+
+h1
+  line-height: 0
+
+ul
+  list-style: none
+
+img
+  border: 0
+
+main, header, footer, section
+  display: block
+
+/* ============= global =============*/
+body
+  margin: 0
+  padding: 0
+  width: 100%
+  background-color: $main-color
+  background-size: 100% 100%
+  /*background-image: linear-gradient(to bottom right, #04017F,#04017F 20%, #8028bd);
+  /*background-position: 0 200px;
+  font-family: $font-def
+
+td, th
+  font-family: $font-def
+
+.clearfix:after
+  content: ''
+  display: block
+  clear: both
+  *zoom: 1
+
+.opacity--0
+  opacity: 0
+
+/* ================= var =================*/
+$carousel-ht: 60px
+/* ================= 主視覺 =================*/
+.upper_layer
+  position: relative
+  background-image: none
+  min-height: auto
+  margin-right: auto
+  margin-left: auto
+
+.main_group
+  overflow: hidden
+  //background-image: url('upper_bg-m.jpg')
+  background-size: 100% auto
+  background-repeat: no-repeat
+  background-position: center top
+  height: auto
+  margin-left: auto
+  margin-right: auto
+  transform-origin: left
+
+.main_title
+  position: relative
+  z-index: 10
+  display: flex
+  align-items: flex-start
+  height: 100%
+  img
+    position: relative
+    height: auto
+    display: block
+    z-index: 10
+    &.main_title_1
+      top: 2px
+      width: 80%
+      margin-left: auto
+      margin-right: auto
+    &.main_title_2
+      position: absolute
+      top: 76%
+      left: 19%
+      width: 55%
+  .main_mask
+    img
+      position: absolute
+      &:nth-child(1)
+        width: 24.5%
+        top: 10%
+        left: 10%
+        animation: 4s title-mask forwards infinite
+      &:nth-child(2)
+        width: 21%
+        top: 18%
+        left: 32.5%
+        animation: 4s 1s title-mask forwards infinite
+      &:nth-child(3)
+        width: 19.5%
+        top: 19%
+        left: 49%
+        animation: 4s 2s title-mask forwards infinite
+      &:nth-child(4)
+        width: 21.5%
+        top: 1%
+        left: 65%
+        animation: 4s 3s title-mask forwards infinite
+
+/* ================= 裝飾 =================*/
+.upper_layer .description
+  img
+    position: absolute
+    z-index: 1
+    &:nth-child(1)
+      z-index: 15
+      top: 57%
+      left: -3%
+      width: 29%
+      transform-origin: bottom
+    &:nth-child(2)
+      z-index: 15
+      top: 57%
+      right: 20%
+      width: 23%
+      transform-origin: bottom
+    &:nth-child(3)
+      z-index: 15
+      top: 45%
+      right: 6%
+      width: 19%
+      transform-origin: bottom
+    &:hover
+      animation: 2s description-shake
+
+  .pigMove
+    animation: 4s pig-move both infinite
+  .orgMove
+    animation: 4s description-start
+
+.desc__envelope
+  .desc__envelope-1
+    display: none !important
+
+.upper_layer .desc__envelope-2
+  position: absolute
+  z-index: 5
+  display: block
+  width: 100%
+  left: 0
+  top: 0
+  img
+    width: 100%
+/* ================= 誘因 =================*/
+.sp-content
+  position: relative
+  z-index: 20
+  //overflow-x: hidden
+  width: 100%
+  height: auto
+  top: 0
+
+.incentive_layer
+  display: flex
+  z-index: 2
+  flex-wrap: wrap
+  align-items: center
+  justify-content: center
+  height: auto
+  margin-bottom: 0
+  &:before, &:after
+    content: ''
+    clear: both
+    display: block
+  .incentive__block
+    width: calc(100% / 2 - 13px)
+    //padding: 3px
+    margin: auto 5px
+    min-height: 106px
+    background-image: url('incentive-bg.png')
+    background-size: 100%
+    background-position-y: 22px
+    background-repeat: no-repeat
+    &:hover .incentive-main
+      transform-origin: center
+      animation: .5s .5s incentive-hover
+    .incentive
+      position: relative
+      .incentive-main
+        margin: 0 5%
+        transform: scale(0.9) translate(-5%, 0)
+      .incentive-click
+        position: absolute
+        bottom: -10%
+        left: 0
+    img
+      width: 100%
+/* ================= 輪播 =================*/
+.carousel_layer
+  display: flex
+  align-items: center
+  justify-content: flex-start
+  height: $carousel-ht
+  width: 100%
+  margin-left: auto
+  margin-right: auto
+  margin-top: 0
+  background-image: url('BN-carousel-m.png')
+  background-repeat: no-repeat
+  background-size: 100% 100%
+  background-position: 50% 8%
+  .carousel__wrap
+    display: flex !important
+    align-items: center
+    justify-content: center
+    height: $carousel-ht
+  .slick-list
+    width: 87%
+    margin: 0 auto
+    text-align: center
+  .slick-next, .slick-prev
+    width: 20px
+    height: 40px
+    cursor: pointer
+    opacity: 0
+  .slick-next
+    right: 5px
+  .slick-prev
+    left: 5px
+  img
+    width: 100%
+    margin-top: 0
+    margin-right: auto
+    margin-left: auto
+    padding-left: 2px
+    transition: all 500ms ease-in-out
+    border-radius: 5px
+  .slick-active img
+    transform: scale(1, 1)
+/* ================= 總體 =================*/
+
+.sp__wrap
+  position: relative
+  display: block
+  overflow: hidden
+  width: 100%
+  /*max-width: 640px;
+  margin-left: auto
+  margin-right: auto
+  //background-image: url('upper_bg.jpg')
+  background-position: center top
+  background-repeat: no-repeat
+
+.logo
+  position: absolute
+  top: 20px
+  left: calc(50% - 614px)
+  z-index: 101
+  img
+    width: 70%
+    height: auto
+
+.upper_layer img, .incentive_layer
+  width: auto
+
+
+/* ================= 動畫 =================*/
+@import modules/_keyframe.sass
+
+/* ================= mobile size =================*/
+
+@media screen and (max-width: 800px)
+  body
+    background-size: auto
+  .logo
+    display: none
+
+@media screen and (max-width: 320px)
+  /* ================= 主視覺 =================*/
+  .main_group
+    min-height: 165px
+
+  /* ================= 誘因 =================*/
+  .sp-content
+    margin: -6% auto 0 auto
+
+  /* ================= 輪播 =================*/
+  .carousel_layer
+    .slick-next, .slick-prev
+      width: 20px
+      height: 40px
+    .slick-next
+      right: 0
+    .slick-prev
+      left: 0
+
+@media screen and (min-width: 321px) and (max-width: 375px)
+  /* ================= var =================*/
+  $carousel-ht: 60px
+  /* ================= 主視覺 =================*/
+  .main_group
+    min-height: 193px
+  /* ================= 誘因 =================*/
+  .sp-content
+    margin: -8.5% auto 0 auto
+  .incentive_layer
+    .incentive__block
+      width: calc(100% / 2 - 4%)
+      min-height: 125px
+  /* ================= 輪播 =================*/
+  .carousel_layer
+    height: $carousel-ht
+    .carousel__wrap
+      height: $carousel-ht
+    .slick-next, .slick-prev
+      width: 20px
+      height: 40px
+    .slick-next
+      right: 5px
+    .slick-prev
+      left: 7px
+
+@media screen and (min-width: 376px) and (max-width: 426px)
+  /* ================= var =================
+  $carousel-ht: 70px
+  /* ================= 主視覺 =================
+  .main_group
+    min-height: 220px
+  /* ================= 誘因 =================
+  .sp-content
+    margin: -6% auto 0 auto
+  .incentive_layer
+    .incentive__block
+      width: calc(100% / 2 - 4%)
+      min-height: 145px
+  /* ================= 輪播 =================
+  .carousel_layer
+    height: $carousel-ht
+    .carousel__wrap
+      height: $carousel-ht
+    .slick-next, .slick-prev
+      width: 20px
+      height: 40px
+    .slick-next
+      right: 5px
+    .slick-prev
+      left: 7px
+
+@media screen and (min-width: 427px) and (max-width: 800px)
+  /* ================= var =================
+  $carousel-ht: 120px
+  /* ================= 主視覺 =================
+  .main_group
+    min-height: 388px
+
+  /* ================= 誘因 =================
+  .sp-content
+    margin: -5% auto 0 auto
+  .incentive_layer
+    .incentive__block
+      width: calc(100% / 2 - 20px)
+      min-height: 270px
+  /* ================= 輪播 =================
+  .carousel_layer
+    height: $carousel-ht
+    .carousel__wrap
+      height: $carousel-ht
+    .slick-next, .slick-prev
+      width: 30px
+      height: 50px
+    .slick-next
+      right: 2%
+    .slick-prev
+      left: 2%
+
+@media screen and (min-width: 427px) and (max-width: 550px)
+  /* ================= var =================
+  $carousel-ht: 90px
+  /* ================= 主視覺 =================
+  .main_group
+    min-height: 278px
+  /* ================= 誘因 =================
+  .sp-content
+    margin: -5% auto 0 auto
+  .incentive_layer
+    .incentive__block
+      width: calc(100% / 2 - 4%)
+      min-height: 195px
+  /* ================= 輪播 =================
+  .carousel_layer
+    height: $carousel-ht
+
+@media screen and (min-width: 551px) and (max-width: 640px)
+  /* ================= var =================
+  $carousel-ht: 100px
+  /* ================= 主視覺 =================
+  .main_group
+    min-height: 323px
+  /* ================= 誘因 =================
+  .sp-content
+    margin: -6% auto 0 auto
+  .incentive_layer
+    .incentive__block
+      width: calc(100% / 2 - 4%)
+      min-height: 220px
+  /* ================= 輪播 =================
+  .carousel_layer
+    height: $carousel-ht
+
+@media screen and (min-width: 801px) and (max-width: 1024px)
+  /* ================= var =================*/
+  $carousel-ht: 160px
+  /* ================= 主視覺 =================*/
+  .logo
+    left: 1%
+    top: 10px
+  .main_group
+    min-height: 520px
+  /* ================= 裝飾 =================*/
+  .upper_layer .description
+    img
+      &:nth-child(1)
+        top: 57%
+      &:nth-child(2)
+        top: 59%
+      &:nth-child(3)
+        top: 49%
+  /* ================= 誘因 =================*/
+  .sp-content
+    width: 100%
+    margin: -4.5% auto 0 auto
+  .incentive_layer
+    justify-content: space-around
+    .incentive__block
+      width: calc(100% / 4 - 2%)
+      min-height: 170px
+  /* ================= 輪播 =================
+  .carousel_layer
+    height: $carousel-ht
+    .carousel__wrap
+      height: $carousel-ht
+    .slick-next, .slick-prev
+      width: 30px
+      height: 65px
+    .slick-next
+      right: 2.5%
+    .slick-prev
+      left: 2.5%
+
+@media screen and (min-width: 1025px) and (max-width: 1280px)
+  /* ================= var =================*/
+  $carousel-ht: 190px
+  /* ================= 主視覺 =================*/
+  .main_group
+    min-height: 645px
+  /* ================= 裝飾 =================*/
+  .upper_layer .description
+    img
+      &:nth-child(1)
+        top: 55.5%
+      &:nth-child(2)
+        top: 59%
+      &:nth-child(3)
+        top: 49%
+  /* ================= 誘因 =================*/
+  .sp-content
+    width: 100%
+    margin: -5% auto 0 auto
+  .incentive_layer
+    justify-content: space-around
+    .incentive__block
+      width: calc(100% / 4 - 2%)
+      min-height: 200px
+  /* ================= 輪播 =================
+  .carousel_layer
+    height: $carousel-ht
+    .carousel__wrap
+      height: $carousel-ht
+    .slick-next, .slick-prev
+      width: 30px
+      height: 65px
+    .slick-next
+      right: 3%
+    .slick-prev
+      left: 3%
+
+@media screen and (min-width: 1281px)
+  /* ================= 主視覺 =================*/
+  .upper_layer
+    position: relative
+    max-width: 2560px
+    min-height: 950px
+    //background-image: url(upper_bg.jpg)
+    background-size: 2560px 950px
+    background-position: center top
+
+  .main_group
+    height: 950px
+    background-size: auto auto
+    .main_title img
+      &.main_title_1
+        width: auto
+        position: absolute
+        left: 50%
+        transform: translateX(-50%)
+      &.main_title_2
+        width: auto
+
+  .main_title
+    align-items: center
+    justify-content: center
+    img
+      &.main_title_2
+        position: absolute
+        top: 289px
+        left: calc(50% - 400px)
+    .main_mask
+      img
+        &:nth-child(1)
+          width: auto
+          top: 34px
+          left: calc(50% - 508px)
+        &:nth-child(2)
+          width: auto
+          top: 63px
+          left: calc(50% - 227px)
+        &:nth-child(3)
+          width: auto
+          top: 76px
+          left: calc(50% - 12px)
+        &:nth-child(4)
+          width: auto
+          top: 0
+          left: calc(50% + 194px)
+  /* ================= 裝飾 =================*/
+  .upper_layer .description
+    img
+      &:nth-child(1)
+        width: auto
+        top: 353px
+        left: calc(50% - 674px)
+      &:nth-child(2)
+        width: auto
+        top: 367px
+        left: calc(50% + 122px)
+      &:nth-child(3)
+        width: auto
+        top: 296px
+        left: calc(50% + 334px)
+  .desc__envelope
+    position: absolute !important
+    top: 0
+    left: calc(50% - 1142px)
+    z-index: 15
+    width: 100%
+    height: 100%
+    .desc__envelope-1
+      z-index: 5
+      width: auto
+      display: block !important
+  .upper_layer .desc__envelope-2
+    display: none
+  /* ================= 誘因 =================*/
+  .sp-content
+    //width: 2560px
+    margin: -397px auto 0 auto
+  //top: -155px
+
+  .incentive_layer
+    width: 1260px
+    margin-left: calc(50% - 650px)
+    justify-content: space-between
+    position: relative
+    z-index: 22
+    .incentive__block
+      width: calc(1260px / 4 - 15px)
+      min-height: 173px
+
+  /* ================= 輪播 =================*/
+  $carouselImg: 800px
+  .carousel_layer
+    height: 317px
+    margin-top: -65px
+    background-image: url('BN-carousel.png')
+    background-size: 2560px 317px
+    background-position: center
+    .carousel__wrap
+      height: auto
+    .slick-list
+      width: $carouselImg
+      margin-top: 90px
+    img
+      width: $carouselImg
+      height: auto
+    .slick-next, .slick-prev
+      width: 43px
+      height: 65px
+      top: 195px
+    .slick-prev
+      left: calc(50% - 450px)
+    .slick-next
+      right: calc(50% - 450px)
+
+//吉祥物尺寸
+@media screen and (min-width: 1440px) and (max-width: 1919px)
+  .mascot img
+    width: 150px
+    &:nth-child(1)
+      left: calc(50% - 715px)
+    &:nth-child(2)
+      display: none
+
+@media screen and (min-width: 1920px) and (max-width: 2560px)
+  .mascot img
+    width: 250px
+    &:nth-child(1)
+      left: calc(50% - 850px)
+
+

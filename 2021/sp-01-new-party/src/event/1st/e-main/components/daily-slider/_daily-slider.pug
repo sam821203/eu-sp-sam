@@ -1,0 +1,129 @@
+- 
+  var dailySliderNow = [
+    {
+      link: 2776110,
+      nowImgSrc: "~event/1st/e-main/components/daily-slider/items/now-daily-item-1.png",
+      alt: "10000 realme 30W Dart閃充行動電源-黑色"
+    }, 
+    {
+      link: 2799839,
+      nowImgSrc: "~event/1st/e-main/components/daily-slider/items/now-daily-item-2.png",
+      alt: "【漢克嚴選】美國產日本和牛級嫩肩沙朗牛排(120g)_16片_送_超大去骨雞腿排(300g)1片"
+    }, 
+    {
+      link: 2619343, 
+      nowImgSrc: "~event/1st/e-main/components/daily-slider/items/now-daily-item-3.png",
+      alt: "東森獨家限定價★ kolin歌林85L台灣製四層多功能紫外線殺菌烘碗機(美型白)KTK-UDR0185"
+    }, 
+    {
+      link: 1997479,
+      nowImgSrc: "~event/1st/e-main/components/daily-slider/items/now-daily-item-4.png",
+      alt: "女神光鑽爆水粉餅1空殼+2粉蕊 (SPF50+/PA+++ 兩色擇一)"
+    }, 
+    {
+      link: 2796640,
+      nowImgSrc: "~event/1st/e-main/components/daily-slider/items/now-daily-item-5.png",
+      alt: "歌林 Kolin-2.0L高級304不鏽鋼快煮壺KPK-UD2007S(倆入優惠價)"
+    }, 
+    {
+      link: 2782027,
+      nowImgSrc: "~event/1st/e-main/components/daily-slider/items/now-daily-item-6.png",
+      alt: "(東森獨家)【美國康寧 CORELLE】SNOOPY 復刻黑白7件式餐具組"
+    },
+    {
+      link: 2494082,
+      nowImgSrc: "~event/1st/e-main/components/daily-slider/items/now-daily-item-7.png",
+      alt: "[Jamieson健美生] 大包裝 鈣+D3 100顆(加拿大原裝進口)3入組(健美生Jamieson)"
+    },
+    {
+      link: 2760962,
+      nowImgSrc: "~event/1st/e-main/components/daily-slider/items/now-daily-item-8.png",
+      alt: "2雙+2件組【京美】長效支撐X型舒緩護膝2雙+醫療口罩50片/1盒(買就送24cm深型不沾平炒鍋)"
+    },
+    {
+      link: 2407813,
+      nowImgSrc: "~event/1st/e-main/components/daily-slider/items/now-daily-item-9.png",
+      alt: "限時送東森幣★SONY 55型 4K HDR智慧連網液晶電視 KD-55X7000G"
+    },
+    {
+      link: 2654184,
+      nowImgSrc: "~event/1st/e-main/components/daily-slider/items/now-daily-item-10.png",
+      alt: "舒潔 棉柔舒適抽取衛生紙 (100抽x20包x3串/箱)"
+    },
+    {
+      link: 1935980,
+      nowImgSrc: "~event/1st/e-main/components/daily-slider/items/now-daily-item-11.png",
+      alt: "德國webner葦柏納 蜜香玫瑰五彩卸妝精油100ml 2入"
+    },
+  ]
+
+- 
+  var dailySliderNext = [
+    {
+      nextImgSrc: "~event/1st/e-main/components/daily-slider/items/next-daily-item-2.png",
+      alt: dailySliderNow[1].alt,
+    }, 
+    {
+      nextImgSrc: "~event/1st/e-main/components/daily-slider/items/next-daily-item-3.png",
+      alt: dailySliderNow[2].alt,
+    }, 
+    {
+      nextImgSrc: "~event/1st/e-main/components/daily-slider/items/next-daily-item-4.png",
+      alt: dailySliderNow[3].alt,
+    }, 
+    {
+      nextImgSrc: "~event/1st/e-main/components/daily-slider/items/next-daily-item-5.png",
+      alt: dailySliderNow[4].alt,
+    }, 
+    {
+      nextImgSrc: "~event/1st/e-main/components/daily-slider/items/next-daily-item-6.png",
+      alt: dailySliderNow[5].alt,
+    },
+    {
+      nextImgSrc: "~event/1st/e-main/components/daily-slider/items/next-daily-item-7.png",
+      alt: dailySliderNow[6].alt,
+    },
+    {
+      nextImgSrc: "~event/1st/e-main/components/daily-slider/items/next-daily-item-8.png",
+      alt: dailySliderNow[7].alt,
+    },
+    {
+      nextImgSrc: "~event/1st/e-main/components/daily-slider/items/next-daily-item-9.png",
+      alt: dailySliderNow[8].alt,
+    }, 
+    {
+      nextImgSrc: "~event/1st/e-main/components/daily-slider/items/next-daily-item-10.png",
+      alt: dailySliderNow[9].alt,
+    },
+    {
+      nextImgSrc: "~event/1st/e-main/components/daily-slider/items/next-daily-item-11.png",
+      alt: dailySliderNow[10].alt,
+    },
+    {
+      nextImgSrc: "~event/1st/e-main/components/daily-slider/items/sold-out.png",
+      alt: "活動已結束",
+    },
+  ]
+
+
+
+section.promo__group.promo__group--daily-slider.m-bottom--md(data-title="天天開搶")
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        #dailyItem.daily__item
+          each dataNow, index in dailySliderNow
+            .item__box(class= (index== 0) ? "active": "")
+              a(href= ("https://www.etmall.com.tw/i/" + dataNow.link), title= dataNow.alt)
+                img(src= dataNow.nowImgSrc, alt= dataNow.alt)
+        .slider__wrap
+          #dailySlider.promo__slider.swiper-container
+            ul.swiper-wrapper
+              each dataNext, index in dailySliderNext
+                li.swiper-slide
+                  a(href="not-yet", title= dataNext.alt)
+                    img.swiper-lazy(data-src= dataNext.nextImgSrc, alt="")
+                  .swiper-lazy-preloader.swiper-lazy-preloader-white
+          #dailySliderPrev.swiper-button-prev.daily__nav--slider.daily__nav--prev
+          #dailySliderNext.swiper-button-next.daily__nav--slider.daily__nav--next
+      

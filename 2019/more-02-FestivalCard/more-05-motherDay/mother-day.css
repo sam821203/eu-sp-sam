@@ -1,0 +1,379 @@
+/* reset */
+/* ======================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+*:before, *:after {
+    box-sizing: border-box;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    display: inline;
+    width: 100%;
+    border: 0;
+    vertical-align: middle;
+}
+
+article,
+main,
+nav,
+section,
+header {
+    display: block;
+}
+
+/* reset end */
+
+body {
+    margin: 0;
+    /*background: #82c9d8 linear-gradient(135deg, #82c9d8 55%, #fddcc9 80%, #fce9c7 100%);*/
+    background: #eb6877;
+    font-family: PingFangTC-regular, Roboto, "LiHei Pro", "Source Han Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, "Microsoft JhengHei", sans-serif;
+}
+
+.sp--1260 {
+    position: relative;
+    z-index: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sp--1260.home__wrap {
+    z-index: 1;
+}
+
+/* 主視覺 */
+/* ======================================== */
+.logo a,
+.sp__visual a {
+    display: block;
+}
+
+.logo {
+    position: absolute;
+    z-index: 1;
+    bottom: .5%;
+    left: 0;
+    width: 25%;
+    max-width: 143px;
+}
+
+.sp__wrap {
+    background-color: #FADBE6;
+    /*background: url(bg.png) center 0 no-repeat;*/
+    /*background-size: 438px 729px;*/
+    overflow: hidden;
+    width: 438px;
+    /*height: 100vh;*/
+    margin: 0 auto;
+}
+
+.sp__main {
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.main-title {
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.sp__main img {
+    width: 85%;
+
+}
+
+.sub-wrap img {
+    width: 55%;
+}
+
+.sub-wrap .sub-title {
+    animation: rising-up 2s forwards;
+}
+
+.main-title span {
+    position: absolute;
+    z-index: 2;
+    top: 23%;
+    left: 22%;
+    width: 6%;
+}
+
+.sub-wrap {
+    position: relative;
+    margin-top: 50px;
+}
+
+@keyframes crown-fall {
+    0% {
+        transform: translate(0, -300px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes crown-rotate {
+    0% {
+        transform: rotate(0);
+    }
+    35% {
+        transform: rotate(40deg);
+    }
+    75% {
+        transform: rotate(-20deg);
+    }
+    0% {
+        transform: rotate(0);
+    }
+}
+
+@keyframes sunraise {
+    0% {
+        filter: brightness(100%) opacity(0);
+        transform: scaleX(1);
+    }
+    33% {
+        filter: brightness(250%) opacity(1);
+        transform: scaleX(1.8);
+    }
+    66% {
+        filter: brightness(250%) opacity(1);
+        transform: scaleX(1);
+    }
+    100% {
+        filter: brightness(220%) opacity(0.85);
+        transform: scaleX(1);
+    }
+}
+
+@keyframes cloud-move {
+    from {
+        transform: translateY(-75%) scale(1) skew(0) rotate(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-75%) scale(1.2) skew(8deg) rotate(-5deg);
+        opacity: 0.8;
+    }
+}
+
+@keyframes rising-up {
+    from {
+        transform: translateY(100%) scale(1.5);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes grow {
+    from {
+        stroke: transparent;
+        stroke-width: 0;
+    }
+    1% {
+        stroke: #fff;
+        stroke-width: 2;
+    }
+    50% {
+        stroke: #fff;
+        fill: rgba(255, 255, 255, 0);
+    }
+    90% {
+        stroke: #fff;
+        fill: #fff;
+    }
+    to {
+        stroke: #fff;
+        fill: #fff;
+        stroke-width: 0.1;
+        stroke-dashoffset: 0;
+    }
+}
+
+/* 輸入框 */
+/* ======================================== */
+.input-outer {
+    background-color: #82c9d8 linear-gradient(135deg, #82c9d8 55%, #fddcc9 80%, #fce9c7 100%);
+    height: 60px;
+    max-width: 1620px;
+    margin: 0 auto;
+    padding-top: 15px;
+}
+
+.input-group {
+    width: 438px;
+    margin: 0 auto;
+}
+
+.input-group .input-box {
+    width: 94%;
+    height: 34px;
+    margin-left: 2%;
+}
+
+.input-block, .share-block {
+    float: left;
+}
+
+.input-block {
+    width: calc(100% - 90px);
+}
+
+.share-block {
+    width: 90px;
+}
+
+.header__ico img {
+    height: 45px;
+    width: auto;
+    padding-left: 5px;
+}
+
+.bg-line a {
+    width: 35px;
+    height: 35px;
+    background: url('https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106167/line.jpg') no-repeat;
+    background-size: 35px, 35px;
+    border-radius: 5px;
+}
+
+.bg-facebook a {
+    width: 35px;
+    height: 35px;
+    background: url('facebook.png') no-repeat;
+    background-size: 35px, 35px;
+}
+
+.community__ico li {
+    display: inline-block;
+    cursor: pointer;
+    line-height: 40px;
+    margin-right: 5px;
+}
+
+/* 輸入框 顯示 */
+/* ======================================== */
+.domMain {
+    position: relative;
+    max-width: 438px;
+    margin: 0 auto;
+    background: #7d0000;
+    padding: 5px;
+    /*background: #82c9d8 linear-gradient(45deg, #82c9d8 55%, #fddcc9 80%, #fce9c7 100%);*/
+}
+
+.domMain-title {
+    margin: 0 auto;
+    font-size: 3rem;
+    text-align: center;
+    color: #ef6e88;
+}
+
+.domMain-sub-title {
+    margin: 0 auto;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #8f898e;
+}
+
+.domMain-content {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.domMain-name, .domMain-normal {
+    display: inline-flex;
+    text-align: right;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    margin-right: 10px;
+    color: #fff;
+    line-height: 2.5rem;
+}
+@media screen and (max-width: 767px) {
+    .domMain-name, .domMain-normal {
+        display: inline-flex;
+        text-align: right;
+        font-size: 2rem;
+        letter-spacing: 1px;
+        margin-top: 100px;
+        margin-right: 50px;
+        color: #fff;
+        line-height: 2.5rem;
+    }
+}
+
+.domMain-normal span {
+    font-size: 1.7rem;
+}
+
+/* 吉祥物 */
+/* ======================================== */
+.mascot {
+    position: relative;
+    z-index: 10;
+    margin-top: -15px;
+    margin-bottom: 5px;
+    width: 80%;
+}
+
+/* 愛心 canvas */
+/* ======================================== */
+
+canvas, #overlay {
+    position: absolute;
+    top: calc(50% - 235px);
+    left: calc(50% - 325px);
+}
+
+canvas {
+    z-index: -1;
+}
+
+#overlay {
+    width: 500px;
+    height: 500px;
+    background-color: transparent;
+}
+
+@media screen and (max-width: 767px) {
+
+    .sp__wrap {
+        width: 100%;
+    }
+
+    .domMain {
+        max-width: inherit;
+        width: 100%;
+    }
+
+    .input-group {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 375px) {
+
+    canvas, #overlay {
+        top: calc(50% - 255px);
+    }
+}

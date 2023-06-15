@@ -1,0 +1,35 @@
+doctype html
+html(lang="zh-Han-TW")
+  head
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="main-elevator-right.css")
+  body
+    include /layout/header/_header
+
+    #navRightBar.navRightBar
+
+    main.sp__wrap.m-bottom--collect
+
+      //- hero section
+      //- ===========================
+      include /event/1st/e-main/components/hero-section/_hero-section
+
+    //- other components
+    //- ===========================
+    //- TODO: 如果promo不用和hero綁在一起時放這
+    .collect__group
+      include /event/1st/e-main/components/loyalty-card/_loyalty-card
+      include /event/1st/e-main/components/collect-exchange/_collect-exchange
+      include /event/1st/e-main/components/collect-buy/_collect-buy
+      include /event/1st/e-main/components/note-section/_note-section
+      include /event/1st/e-main/components/float-record/_float-record
+
+      //- script區
+      include /utils/pug/include/_general.pug
+      script(src="main-elevator.js")
+
+    //- RD的彈窗結構，HTML必須要放並且display none，結構有三處共用兩組結構
+    include /event/1st/e-main/components/modal-template/_modal-item-info
+    include /event/1st/e-main/components/modal-template/_modal-record-list
+
+

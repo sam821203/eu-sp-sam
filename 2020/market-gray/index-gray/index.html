@@ -1,0 +1,368 @@
+<meta name="viewport" content="width=device-width">
+<meta charset="utf-8">
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    *:before,
+    *:after {
+        box-sizing: border-box;
+    }
+
+    a {
+        display: block;
+        text-decoration: none;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    img {
+        width: 100%;
+        border: 0;
+        display: block;
+    }
+
+    article,
+    main,
+    nav,
+    section {
+        display: block;
+    }
+
+    body {
+        margin: 0;
+        background-color: #ffc55f;
+        /*...................................背景色,1260把這行刪掉*/
+    }
+
+    .sp--1260 {
+        position: relative;
+        z-index: 0;
+        max-width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .sp--1260.icon_Home {
+        z-index: auto;
+    }
+
+    /* 主視覺 */
+    /* ======================================== */
+    .logo a,
+    .sp__visual a {
+        display: block;
+    }
+
+    .logo {
+        position: absolute;
+        z-index: 1;
+        /* 調整logo位置 */
+        top: 1%;
+        left: 1%;
+        width: 30%;
+        max-width: 220px;
+    }
+
+    /* 設定背景 */
+    .sp__main {
+        background: url(bg.jpg) center 0 no-repeat;
+        /*..............背景底圖,1260把這行刪掉*/
+    }
+
+    /* 設定前景 */
+    .sp__visual {
+        position: relative;
+        z-index: 0;
+        width: 100%;
+    }
+
+    /*...........................................................示意線條拿掉start*/
+    /*.visual__main a{
+    border: 1px solid #f00;
+  }*/
+    /*...........................................................示意線條拿掉end*/
+    .visual__anchor,
+    .visual__main,
+    .visual__nav {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .visual__anchor {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+    }
+
+    .visual__main a,
+    .visual__nav a {
+        flex-grow: 1;
+    }
+
+    /* 主視覺 */
+    /*...........................................................紅框區高度*/
+    .visual__main {
+        height: 100%;
+    }
+
+    /*...........................................................紅框區寬度*/
+    .visual__main a:nth-child(1) {
+        flex-grow: 0;
+        width: 70%;
+        height: 100%;
+    }
+
+    .visual__main a:nth-child(2) {
+        flex-grow: 0;
+        width: 30%;
+        height: 100%;
+    }
+
+    /* 自適應banner組 */
+    /* ======================================== */
+    .banner__title {
+        height: 65px;
+        background: center top no-repeat;
+    }
+
+    .banner__wrap {
+        display: flex;
+        flex-wrap: wrap;
+        /*position: absolute;*/
+        background: url(m960_02.jpg) top no-repeat;
+        background-size: 100% auto;
+    }
+
+    .banner__item {
+        transition: all 0.3s;
+    }
+
+    .banner__item img {
+        width: 100%;
+    }
+
+    /* ...............................................................4變2 */
+
+    .bn-w4m2 .banner__item {
+
+        flex: 1 0 14%;
+        margin: 1%;
+    }
+
+    /*
+  .bn-w2m1 .banner__item2 {
+    flex: 1 0 46%;
+    margin: 2%;
+  }
+*/
+    /* 設定點下去與hover動畫 */
+
+    .bn-w4m2 .banner__item:hover,
+    .bn-w4m2 .banner__item:active {
+        /*     變大(>1時變大) */
+        transform: scale(1.05);
+        /*     亮度調亮(>100%時變亮) */
+        filter: brightness(115%);
+    }
+
+    @media screen and (max-width: 1024px) {
+
+        /* 設定手機時一列2個 */
+        .bn-w4m2 .banner__item {
+            flex: 1 0 30%;
+
+        }
+
+        .banner__wrap {
+            display: flex;
+            flex-wrap: wrap;
+            /* position: absolute; */
+            /* top: -12%; */
+        }
+
+        .sp__main {
+            background: none;
+        }
+    }
+
+    /*
+    .bn-w2m1 .banner__item2 {
+    flex: 1 0 96%;
+    margin: 2%;
+  }
+*/
+    /* delete css bg gray */
+    body {
+        /* overflow: hidden; */
+        background-color: #c9c9c9;
+    }
+
+    .gray__bg {
+        filter: grayscale(1);
+        background-color: #c9c9c9;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        /*background-color: #000;*/
+        /*opacity: 0.8;*/
+        /*z-index: 9999;*/
+        /*overflow: hidden;*/
+        /*filter: grayScale(1);*/
+    }
+
+    .act__title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-size: 60px;
+        z-index: 9999;
+        text-align: center;
+        letter-spacing: 2px;
+        width: 80vw;
+        background: #000;
+        padding: 2vw 10vw;
+        white-space: nowrap;
+        /*height: 100vh;*/
+
+    }
+
+    @media screen and (max-width: 960px) {
+        .act__title {
+            white-space: normal;
+            font-size: calc(12vw);
+        }
+    }
+</style>
+<div class="elevatorHome js--main--dialog" id="elevatorHome"></div>
+<div class="navRightBar" id="navRightBar"></div>
+<div id="gray__bg" class="gray__bg">
+    <div class="act__title">2/26 PM12:00活動開始</div>
+    <div id="spWrap" class="sp__wallper">
+        <!-- 主視覺 -->
+        <div class="sp--1260 icon_Home">
+            <!-- 浮水印start(勿刪)-->
+            <div id="iconHome"></div>
+        </div> <!-- 浮水印end(勿刪)-->
+        <main class="sp__main">
+            <div class="sp--1260">
+                <a href="https://www.etmall.com.tw" class="logo"><img src="ehs-logo.png" alt="東森購物"></a>
+                <!-- 1260把這行刪掉 -->
+                <div class="sp__visual">
+                    <div class="visual__anchor">
+                        <!-- 紅框區 設定第一個a和第二個a的寬度會推擠後面a的寬度-->
+                        <div class="visual__main">
+                            <a></a>
+                            <a href="#note"></a>
+                        </div>
+                    </div>
+                    <img src="m960_01.jpg">
+                </div>
+                <section class="sp--1260 bn-w4m2">
+                    <div>
+                        <ul class="banner__wrap">
+                            <li class="banner__item">
+                                <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209912/SP_1105156/w/index.html">
+                                    <img src="01.png" alt="banner">
+                                </a>
+                            </li>
+                            <li class="banner__item">
+                                <a href="https://www.etmall.com.tw/Search?keyword=DEMON">
+                                    <img src="02.png" alt="banner">
+                                </a>
+                            </li>
+                            <li class="banner__item">
+                                <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202002/SP_1114833/w/index.html">
+                                    <img src="03.png" alt="banner">
+                                </a>
+                            </li>
+                            <li class="banner__item">
+                                <a href="https://www.etmall.com.tw/np/74048">
+                                    <img src="04.png" alt="banner">
+                                </a>
+                            </li>
+                            <li class="banner__item">
+                                <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202002/SP_1114756/w/index.html">
+                                    <img src="05.png" alt="banner">
+                                </a>
+                            </li>
+                            <li class="banner__item">
+                                <a href="https://www.etmall.com.tw/p/89657">
+                                    <img src="06.png" alt="banner">
+                                </a>
+                            </li>
+                            <li class="banner__item">
+                                <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202002/SP_1114806/w/index.html">
+                                    <img src="07.png" alt="banner">
+                                </a>
+                            </li>
+                            <li class="banner__item">
+                                <a href="https://www.etmall.com.tw/np/92817">
+                                    <img src="08.png" alt="banner">
+                                </a>
+                            </li>
+                            <li class="banner__item">
+                                <a href="https://www.etmall.com.tw/c2/103721">
+                                    <img src="09.png" alt="banner">
+                                </a>
+                            </li>
+                            <li class="banner__item">
+                                <a href="https://www.etmall.com.tw/c3/31885">
+                                    <img src="10.png" alt="banner">
+                                </a>
+                            </li>
+                            <li class="banner__item">
+                                <a href="https://www.etmall.com.tw/np/93920">
+                                    <img src="11.png" alt="banner">
+                                </a>
+                            </li>
+                            <li class="banner__item">
+                                <a href="https://www.etmall.com.tw/c1/131485">
+                                    <img src="12.png" alt="banner">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+        </main>
+
+
+        <!--<div data-title="aaa"></div>-->
+        <!-- ............................................................4變2 end -->
+
+    </div>
+</div> <!-- gray end -->
+    <script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+    <script>
+        $('a[href^="#"]').on('click', function (e) {
+            var target = $('a[name=' + this.getAttribute('href').split('#')[1] + ']');
+            if (target.length) {
+                e.preventDefault();
+                $('html,body').stop().animate({
+                    scrollTop: target.offset().top
+                }, 500);
+            }
+        });
+    </script>
+    <script id=""
+            src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1114856/generateVersion20190619.js"></script>
+    <!-- 浮水印 -->
+    <!-- <script id="scriptIconFloat" src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105264/float-icon.js"></script> -->
+    <!--[if IE 9]>
+    <script src="flexibility.js"></script>
+    <script>flexibility(document.documentElement);</script>
+    <![endif]-->
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>

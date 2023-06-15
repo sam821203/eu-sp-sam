@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-Han-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>東森購物Hami OTT</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    *:before, *:after {
+      box-sizing: border-box; }
+    a {
+      display: block;
+      text-decoration: none;
+    }
+    ul {
+      list-style: none;
+    }
+    img, video {
+      width: 100%;
+      border: 0;
+      display: block;
+    }
+    article,
+    main,
+    nav,
+    section {
+      display: block;
+    }
+    body {
+      font-family:PingFangTC-regular,"LiHei Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Source Han Sans TC","Microsoft JhengHei",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+      background-color: #000;
+
+    }
+    .layout--main {
+      position: relative;
+      z-index: 0;
+      max-width: 768px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    /* 主視覺 */
+    /* ======================================== */
+    /* 設定背景 */
+    .sp__main {
+      color: #fff;
+    }
+    .main__video {
+      overflow: hidden;
+    }
+    .video__block {
+      margin-bottom: 3%;
+    }
+    .video__head {
+      padding: 5% 16%;
+      background: 0 0 url("images/video-head.jpg") no-repeat;
+      background-size: 100%;
+      font-size: 5.5vw;
+      font-weight: bold;
+    }
+    .video__box {
+      position: relative;
+      z-index: 0;
+    }
+    .info__contact {
+      display: block;
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      bottom: 0;
+      padding: 3% 0 3% 14.5%;
+      width: 63%;
+      height: 23%;
+      background: url("images/ornament.png") no-repeat;
+      background-size: 100%;
+    }
+    .info__contact span {
+      color: #fff;
+      font-size: 3vw;
+    }
+    .info__contact span:last-child {
+      margin-left: 2%;
+      font-size: 4.2vw;
+      font-weight: bold;
+    }
+    @media screen and (max-width: 320px) {
+    .info__contact {
+      padding: 2% 0 2% 13.5%;
+    }
+    }
+    @media screen and (min-width: 768px) {
+      .video__head {
+        font-size: 36px;
+      }
+      .info__contact span {
+        font-size: 18px;
+      }
+      .info__contact span:last-child {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="spWrap" class="sp__wallper">
+    <!-- 主視覺 -->
+    <main class="sp__main">
+      <div class="layout--main">
+        <section class="main__banner">
+          <a href="https://m.etmall.com.tw/" target="_blank">
+            <img src="images/main-banner.jpg">
+          </a>
+        </section>
+        <section class="main__video">
+          <div class="promo__banner">
+            <img src="images/promo-ad.jpg">
+          </div>
+          <div class="video__block">
+            <div class="video__head"><span>東森購物一台</span></div>
+            <div class="video__box">
+            <video width="100%" height="100%" src="https://broadcast-ettoday.cdn.hinet.net/ettoday-broadcast/smil:etmall4.smil/playlist.m3u8"></video>
+            <a href="tel:0800-366-700" class="info__contact"><span>訂購專線</span><span>0800-366-700</span></a>
+          </div>
+          </div>
+          <div class="video__block">
+            <div class="video__head"><span>東森購物二台</span></div>
+            <div class="video__box">
+              <video width="100%" height="100%" src="https://broadcast-ettoday.cdn.hinet.net/ettoday-broadcast/smil:etmall3.smil/playlist.m3u8"></video>
+              <a href="tel:0800-366-700" class="info__contact"><span>訂購專線</span><span>0800-366-700</span></a>
+            </div>
+          </div>
+          <div class="video__block">
+            <div class="video__head"><span>東森購物三台</span></div>
+            <div class="video__box">
+              <video width="100%" height="100%"
+                src="https://broadcast-ettoday.cdn.hinet.net/ettoday-broadcast/smil:etmall1.smil/playlist.m3u8"></video>
+              <a href="tel:0800-366-700" class="info__contact"><span>訂購專線</span><span>0800-366-700</span></a>
+            </div>
+          </div>
+          <div class="video__block">
+            <div class="video__head"><span>東森購物五台</span></div>
+            <div class="video__box">
+              <video width="100%" height="100%"
+                src="https://broadcast-ettoday.cdn.hinet.net/ettoday-broadcast/smil:etmall2.smil/playlist.m3u8"></video>
+              <a href="tel:0800-366-700" class="info__contact"><span>訂購專線</span><span>0800-366-700</span></a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+  <script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+  <script>$('a[href^="#"]').on('click',function(e){var target=$('a[name='+this.getAttribute('href').split('#')[1]+']');if(target.length){e.preventDefault();$('html,body').stop().animate({scrollTop:target.offset().top},500);}});</script>
+  <!--[if IE 9]>
+    <script src="flexibility.js"></script>
+    <script>flexibility(document.documentElement);</script>
+  <![endif]-->
+  <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+</body>
+</html>

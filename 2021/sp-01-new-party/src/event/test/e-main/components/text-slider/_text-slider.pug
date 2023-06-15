@@ -1,0 +1,29 @@
+-
+  var keywords = [
+    '口罩',
+    '除濕機',
+    'Apple',
+    '酒精',
+    '保濕',
+    '保暖',
+    '抗菌',
+    '按摩',
+  ]
+
+section.promo__group.promo__group--text-slider.m-bottom--md(data-title="超級關鍵")
+  .layout--main
+    //- .promo__title.block--center.text--center
+    //-   img(src="~event/test/e-main/components/dynamic-slider-3/title-dynamic-slider-3.png", alt="你會喜歡")
+    .promo__wrap
+      #textSlider.promo__slider.swiper-container
+        .swiper-wrapper
+          each keyword in keywords
+            li.swiper-slide
+              a(href= "https://www.etmall.com.tw/Search?keyword=" + keyword)
+                .keyword= '#' + keyword
+
+      //- #sliderDynamicPager_2.dynamic-slider-pager.swiper-pagination
+      #sliderDynamicPrev_2.swiper-button-white.swiper-button-prev
+      #sliderDynamicNext_2.swiper-button-white.swiper-button-next
+
+//- data-dynamic-3.js在assets資料夾內、由index.pug外連過去

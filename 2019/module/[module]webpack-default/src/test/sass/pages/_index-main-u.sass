@@ -1,0 +1,38 @@
+// ==========================================================================
+// Collection Helpers 
+// ==========================================================================
+@import "helpers/_collection"
+
+// ==========================================================================
+// Plugins
+// ==========================================================================
+@import "vendors/_slick"
+// @import "_libs/_swiper"
+
+// ==========================================================================
+// layout
+// ==========================================================================
+@import "../../layout/header/main/_header.sass"
+@import "../../layout/bg-decoration/bg-decoration.sass"
+
+// ==========================================================================
+// components
+// ==========================================================================
+@import "../../components/common-event/_common-event.sass"
+@import "../../components/event-w2m1/_event-w2m1.sass"
+@import "../../components/event-w4m2/_event-w4m2.sass"
+@import "../../components/bn-group-w2m1-2/_bn-group-w2m1-2.sass"
+@import "../../components/bn-group-w2m1/_bn-group-w2m1.sass"
+
+// ==========================================================================
+// Page
+// ==========================================================================
+.sp__wrap
+  a
+    display: block
+
+.sp--main-u
+  @at-root body
+    background-image: $main-u-background-gradient
+    +breakpoint-min($min-width-xl)
+      background: center 0 url(../img/background-main-u.png) fixed no-repeat, $main-u-background-color $main-u-background-gradient

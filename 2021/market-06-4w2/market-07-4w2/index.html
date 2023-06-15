@@ -1,0 +1,1286 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+<!-- 共用JS -->
+<script
+        id="generateScript"
+        src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.js"
+></script>
+<meta name="viewport" content="width=device-width"/>
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+<style>
+  body {
+    font-family: 微軟正黑體;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.3;
+    background-color: #5a0302;
+  }
+
+  .title {
+    font-size: 22px;
+    color: #fff;
+    background-color: #a51b02;
+    border-radius: 100px;
+    display: inline-block;
+    padding: 0px 20px;
+    font-weight: bold;
+    letter-spacing: 3;
+    margin: 0px 0px 5px 0;
+    border-bottom: 2px solid #000;
+    align-self: center;
+  }
+
+  .title_1 {
+    font-size: 22px;
+    color: #fff;
+    background-color: #a51b02;
+    border-radius: 0px;
+    display: inline-block;
+    padding: 0px 20px;
+    font-weight: bold;
+    letter-spacing: 3;
+    margin: 0px 0px 5px 0;
+    border-bottom: 0px solid #000;
+    align-self: center;
+  }
+
+  .link {
+    display: inline-block;
+  }
+
+  .info_box {
+    border-radius: 10px;
+    background-color: #fff;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 30px;
+    margin-bottom: 20px;
+  }
+
+  .text01 {
+    color: #a51b02;
+    font-weight: bold;
+  }
+
+  .price {
+    text-align: center;
+    background-color: #eee;
+    margin: 10px 0;
+  }
+
+  .price td {
+    padding: 5px 0;
+  }
+
+  .info ol li {
+    list-style: square;
+    margin-left: 20px;
+  }
+
+  .info ul li {
+    list-style: decimal;
+    margin-left: 20px;
+  }
+
+  .info ul li.list-style-none {
+    list-style: none;
+    margin: auto;
+  }
+
+  .info ol {
+    margin: 10px 0;
+    background-color: #f8f4e4;
+    padding: 10px 20px;
+  }
+
+  .info ul {
+    padding: 0;
+  }
+
+  .info hr {
+    background-color: #505050;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 0px;
+    height: 1px;
+    border: 0;
+    margin: 10px 0px 10px 0;
+  }
+
+  /*  .info h1 {
+      font-size: 30px;
+    }*/
+
+  /* 自適應banner組 */
+  /* ======================================== */
+  .banner__title {
+    height: 65px;
+    background: center top no-repeat;
+  }
+
+  .banner__wrap {
+    padding: 0;
+    display: flex 0 0 30%;
+    flex-wrap: wrap;
+  }
+
+  .banner__item {
+    transition: all 0.3s;
+  }
+
+  .banner__item img {
+    width: 80%;
+    margin: auto;
+  }
+
+  .banner__item {
+    flex: 0 0 50%;
+    padding: 5px;
+    list-style: none;
+  }
+
+  .bn-w3m1 {
+    flex: 0 0 30%;
+    padding: 5px;
+    list-style: none;
+  }
+
+  @media screen and (max-width: 1024px) {
+
+    .info p {
+      /*font-size: 20px;*/
+      /*text-align: center;*/
+    }
+
+    .info_box {
+      margin: 5px 5px;
+      padding: 10px 10px;
+    }
+
+    .banner__item {
+      flex: 0 0 100%;
+      padding: 5px;
+      list-style: none;
+    }
+
+    .bn-w3m1 {
+      flex: 0 0 32%;
+      padding: 0px;
+      list-style: none;
+    }
+
+    .sp__main {
+      background: url(bg_02.jpg) center 0 repeat;
+    }
+  }
+
+  /*...................................................排站start*/
+  .build--1260 {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .margin-top-sm {
+    margin-top: 2%;
+  }
+
+  .margin-bottom-sm {
+    margin-bottom: 2%;
+  }
+
+  .margin-bottom-md {
+    margin-bottom: 4%;
+  }
+
+  .build__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .card--small-space .build__item {
+    margin-top: 0.5%;
+    margin-bottom: 1%;
+    background-color: #fff;
+    border: 1px solid #EDEDED;
+    transition: transform 0.16s;
+  }
+
+  .card--small-space .build__item:active,
+  .card--small-space .build__item:hover {
+    transform: scale(1.03);
+  }
+
+  @media screen and (min-width: 768px) {
+    .card--small-space .build__item {
+      margin-top: 0.5%;
+      margin-bottom: 0.5%;
+    }
+  }
+
+  .card--small-space .item__push span:before,
+  .card--small-space .item__push span:after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #999;
+  }
+
+  .card--small-space .item__push span:before {
+    top: 0;
+  }
+
+  .card--small-space .item__push span:after {
+    bottom: 0;
+  }
+
+  /* ===== card--small-space setting end ===== */
+  /* ===== card--small-space item *4 setting start ===== */
+  .card--small-space.item--4 .build__item {
+    width: 48%;
+    border-radius: 5px;
+    font-size: 3vw;
+  }
+
+  @media screen and (min-width: 768px) {
+    .card--small-space.item--4 .build__item {
+      width: 24%;
+      font-size: 15px;
+    }
+  }
+
+  /* ===== card--small-space item *4 setting end ===== */
+  .build__item a {
+    color: #5d5d5d;
+  }
+
+  .item__pic {
+    position: relative;
+    z-index: 0;
+    padding-top: 100%;
+    overflow: hidden;
+  }
+
+  .item__img {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  .item__info {
+    padding: 3%;
+  }
+
+  .item__push {
+    width: 100%;
+    height: 28px;
+    text-align: center;
+  }
+
+  .item__push span {
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    position: relative;
+    z-index: 0;
+    margin: 0 3%;
+    max-height: 28px;
+    line-height: 200%;
+    color: #cc1e05;
+    font-weight: bold;
+    overflow: hidden;
+  }
+
+  .item__name {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    height: 38px;
+    line-height: 120%;
+    font-size: 4.5vw;
+    overflow: hidden;
+  }
+
+  .item__price span:last-child {
+    color: #cc1e05;
+    font-size: 4.5vw;
+  }
+
+  @media screen and (min-width: 960px) {
+    .item__name {
+      font-size: 16px;
+    }
+
+    .item__price span:last-child {
+      font-size: 22px;
+    }
+  }
+
+  .prices {
+    text-decoration: line-through;
+  }
+
+  /*...................................................排站end*/
+
+  .card--small-space.item--4 .build__item.full__build__item {
+    width: 99%;
+    position: relative;
+    font-size: 12px;
+  }
+
+  .full__build__item .margin-bottom-sm {
+    margin-bottom: 0;
+  }
+
+  .build__item.full__build__item .item__box {
+    display: flex;
+  }
+
+  .build__item.full__build__item .item__pic,
+  .build__item.full__build__item .item__info {
+    width: 50%;
+  }
+
+  .build__item.full__build__item .item__info {
+    padding: 1.5%;
+  }
+
+  .build__item.full__build__item .item__pic {
+    padding-top: 50%;
+  }
+
+  .build__item.full__build__item .item__info .item__name {
+    text-align: left;
+    font-size: 4.5vw;
+    height: 10.4vw;
+  }
+
+  .build__item.full__build__item .item__info .prices {
+    color: #9c9c9c;
+    font-size: 3.5vw;
+  }
+
+  .build__item.full__build__item .item__info .item__price span:last-child {
+    font-size: 5vw;
+  }
+
+  .build__item.full__build__item .item__info .go__change {
+    position: absolute;
+    bottom: 2%;
+    right: 5%;
+    width: 40%;
+    border: 0;
+    background: #f01400;
+    padding: .5% 0;
+    background: -webkit-linear-gradient(to right, #f07219, #f01400, #f07219);
+    background: linear-gradient(to right, #f07219, #f01400, #f07219);
+    /*padding: 2%;*/
+    color: #fff;
+    font-size: 3.5vw;
+    font-weight: 700;
+    border-radius: 30px;
+    letter-spacing: 1px;
+  }
+
+  .item__password {
+    font-size: 1.1em;
+    color: #f24;
+  }
+
+  .title__wrap {
+    background-image: url(bar.png);
+    width: 100%;
+    height: 6.25vw;
+    line-height: 6.25vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 1vw;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    /*小網(小於960)文字大小*/
+    font-size: 3.5vw;
+  }
+  @media screen and (min-width: 768px) {
+    .card--small-space.item--4 .build__item.full__build__item {
+      font-size: 15px;
+    }
+  }
+
+  @media screen and (min-width: 960px) {
+    .build__item.full__build__item .item__info {
+      padding: 3%;
+    }
+
+    .full__build__item .margin-bottom-sm {
+      margin-bottom: 2%;
+    }
+
+    .build__item.full__build__item .item__info .item__name {
+      font-size: 36px;
+      height: 83px;
+    }
+
+    .build__item.full__build__item .item__info .prices,
+    .build__item.full__build__item .item__info .item__price span:last-child {
+      font-size: 22px;
+    }
+
+    .build__item.full__build__item .item__info .go__change {
+      bottom: 5%;
+      font-size: 22px;
+      border-radius: 30px;
+    }
+
+    .title__wrap {
+      background-size: 100% auto;
+      margin-bottom: 10px;
+      max-width: 840px;
+      height: 60px;
+      line-height: 60px;
+      /*大網(超過960)文字大小*/
+      font-size: 24px;
+    }
+  }
+
+</style>
+<div id="spWrap" class="sp__wallper">
+  <!-- 主視覺 -->
+  <div id="animateWrapHt" class="animate__wrap">
+    <a href="https://www.etmall.com.tw" class="logo"><img src="ehs-logo.png" alt="東森購物"/></a>
+    <img id="changeBar" class="animate__obj--01" src="but_game.png"/>
+  </div>
+  <main class="sp__main">
+    <div class="sp--1260">
+      <div class="sp__visual">
+        <div class="visual__anchor">
+          <!-- 紅框區 設定第一個a和第二個a的寬度會推擠後面a的寬度-->
+          <div class="visual__main">
+            <a></a>
+            <a href="#pk"></a>
+            <a href="#tv"></a>
+            <a></a>
+            <!-- 1大2小可刪掉這行 -->
+          </div>
+        </div>
+        <img src="index_01.jpg"/>
+      </div>
+
+      <section class="info">
+        <div class="info_box">
+          <h2 style="text-align: center; color: #ba160b">【什麼是兌換專區】</h2>
+          <hr>
+          <p style="text-align: center">
+            可用東森幣進行最高100%商品金額兌換的專區
+          </p>
+          <ul class="banner__wrap">
+            <li class="bn-w3m1 list-style-none">
+              <img src="誘因1.png" alt=""/>
+            </li>
+            <li class="bn-w3m1 list-style-none">
+              <img src="誘因2.png" alt=""/>
+            </li>
+            <li class="bn-w3m1 list-style-none">
+              <img src="誘因3.png" alt=""/>
+            </li>
+          </ul>
+          <br>
+          <h2 style="text-align: center; color: #ba160b">【熱門商品】</h2>
+          <hr>
+
+          <!-- .................排站start .................-->
+          <!-- .................第一區8品 start .................-->
+          <!--修改文字大小請搜尋：title__wrap-->
+          <div class="title__wrap">1：可用東森幣進行最高100%商品金額兌換的專區</div>
+          <section class="build__wrap build--1260  card--small-space item--4">
+            <div class="build__item">
+              <a href="">
+                <div class="item__box">
+                  <div class="item__pic">
+                    <img class="item__img" src="圖A.jpg" alt="【東森集團】牛年紅包組">
+                  </div>
+                  <div class="item__info">
+                    <p class="item__name margin-bottom-md">【東森集團】牛年紅包組</p>
+                    <div class="prices">
+                      <span>市價500元</span>
+                    </div>
+                    <div class="item__price margin-bottom-sm">
+                      <span>東森幣：</span>
+                      <span>500枚</span>
+                    </div>
+                    <div>
+                      <hr>
+                      <span>兌換至2021/1/31換完為止</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="build__item">
+              <a href="">
+                <div class="item__box">
+                  <div class="item__pic">
+                    <img class="item__img" src="圖B.jpg" alt="東森銷售TOP商品組">
+                  </div>
+                  <div class="item__info">
+                    <p class="item__name margin-bottom-md">東森銷售TOP商品組</p>
+                    <div class="prices">
+                      <span>市價430元</span>
+                    </div>
+                    <div class="item__price margin-bottom-sm">
+                      <span>東森幣：</span>
+                      <span>430枚</span>
+                    </div>
+                    <div>
+                      <hr>
+                      <span>上架日期2021/1/1~2021/1/31</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="build__item">
+              <a href="">
+                <div class="item__box">
+                  <div class="item__pic">
+                    <img class="item__img" src="圖C.jpg" alt="名留染/燙髮 1099優惠券">
+                  </div>
+                  <div class="item__info">
+                    <p class="item__name margin-bottom-md">名留染/燙髮
+                      1099優惠券</p>
+                    <div class="prices">
+                      <span>市價430元</span>
+                    </div>
+                    <div class="item__price margin-bottom-sm">
+                      <span>東森幣：</span>
+                      <span>430枚</span>
+                    </div>
+                    <div>
+                      <hr>
+                      <span>兌換至2021/1/15換完為止</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="build__item">
+              <a href="">
+                <div class="item__box">
+                  <div class="item__pic">
+                    <img class="item__img" src="圖D.jpg" alt="東森自然美 愉悅舒放課程6折券">
+                  </div>
+                  <div class="item__info">
+                    <p class="item__name margin-bottom-md">東森自然美
+                      愉悅舒放課程6折券</p>
+                    <div class="prices">
+                      <span>市價1800元</span>
+                    </div>
+                    <div class="item__price margin-bottom-sm">
+                      <span>東森幣：</span>
+                      <span>1800枚</span>
+                    </div>
+                    <div>
+                      <hr>
+                      <span>兌換至2021/1/31換完為止</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </section>
+          <section class="build__wrap build--1260  card--small-space item--4">
+            <div class="build__item">
+              <a href="">
+                <div class="item__box">
+                  <div class="item__pic">
+                    <img class="item__img" src="圖A.jpg" alt="【東森集團】牛年紅包組">
+                  </div>
+                  <div class="item__info">
+                    <p class="item__name margin-bottom-md">【東森集團】牛年紅包組</p>
+                    <div class="prices">
+                      <span>市價500元</span>
+                    </div>
+                    <div class="item__price margin-bottom-sm">
+                      <span>東森幣：</span>
+                      <span>500枚</span>
+                    </div>
+                    <div>
+                      <hr>
+                      <span>兌換至2021/1/31換完為止</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="build__item">
+              <a href="">
+                <div class="item__box">
+                  <div class="item__pic">
+                    <img class="item__img" src="圖B.jpg" alt="東森銷售TOP商品組">
+                  </div>
+                  <div class="item__info">
+                    <p class="item__name margin-bottom-md">東森銷售TOP商品組</p>
+                    <div class="prices">
+                      <span>市價430元</span>
+                    </div>
+                    <div class="item__price margin-bottom-sm">
+                      <span>東森幣：</span>
+                      <span>430枚</span>
+                    </div>
+                    <div>
+                      <hr>
+                      <span>上架日期2021/1/1~2021/1/31</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="build__item">
+              <a href="">
+                <div class="item__box">
+                  <div class="item__pic">
+                    <img class="item__img" src="圖C.jpg" alt="名留染/燙髮 1099優惠券">
+                  </div>
+                  <div class="item__info">
+                    <p class="item__name margin-bottom-md">名留染/燙髮
+                      1099優惠券</p>
+                    <div class="prices">
+                      <span>市價430元</span>
+                    </div>
+                    <div class="item__price margin-bottom-sm">
+                      <span>東森幣：</span>
+                      <span>430枚</span>
+                    </div>
+                    <div>
+                      <hr>
+                      <span>兌換至2021/1/15換完為止</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="build__item">
+              <a href="">
+                <div class="item__box">
+                  <div class="item__pic">
+                    <img class="item__img" src="圖D.jpg" alt="東森自然美 愉悅舒放課程6折券">
+                  </div>
+                  <div class="item__info">
+                    <p class="item__name margin-bottom-md">東森自然美
+                      愉悅舒放課程6折券</p>
+                    <div class="prices">
+                      <span>市價1800元</span>
+                    </div>
+                    <div class="item__price margin-bottom-sm">
+                      <span>東森幣：</span>
+                      <span>1800枚</span>
+                    </div>
+                    <div>
+                      <hr>
+                      <span>兌換至2021/1/31換完為止</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </section>
+          <!-- .................第二區4品 end .................-->
+          <div class="title__wrap">2：可用東森幣進行最高100%商品金額兌換的專區</div>
+          <section class="build__wrap build--1260  card--small-space item--4">
+            <div class="build__item">
+              <a href="">
+                <div class="item__box">
+                  <div class="item__pic">
+                    <img class="item__img" src="圖A.jpg" alt="【東森集團】牛年紅包組">
+                  </div>
+                  <div class="item__info">
+                    <p class="item__name margin-bottom-md">【東森集團】牛年紅包組</p>
+                    <div class="prices">
+                      <span>市價500元</span>
+                    </div>
+                    <div class="item__price margin-bottom-sm">
+                      <span>東森幣：</span>
+                      <span>500枚</span>
+                    </div>
+                    <div>
+                      <hr>
+                      <span>兌換至2021/1/31換完為止</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="build__item">
+              <a href="">
+                <div class="item__box">
+                  <div class="item__pic">
+                    <img class="item__img" src="圖B.jpg" alt="東森銷售TOP商品組">
+                  </div>
+                  <div class="item__info">
+                    <p class="item__name margin-bottom-md">東森銷售TOP商品組</p>
+                    <div class="prices">
+                      <span>市價430元</span>
+                    </div>
+                    <div class="item__price margin-bottom-sm">
+                      <span>東森幣：</span>
+                      <span>430枚</span>
+                    </div>
+                    <div>
+                      <hr>
+                      <span>上架日期2021/1/1~2021/1/31</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="build__item">
+              <a href="">
+                <div class="item__box">
+                  <div class="item__pic">
+                    <img class="item__img" src="圖C.jpg" alt="名留染/燙髮 1099優惠券">
+                  </div>
+                  <div class="item__info">
+                    <p class="item__name margin-bottom-md">名留染/燙髮
+                      1099優惠券</p>
+                    <div class="prices">
+                      <span>市價430元</span>
+                    </div>
+                    <div class="item__price margin-bottom-sm">
+                      <span>東森幣：</span>
+                      <span>430枚</span>
+                    </div>
+                    <div>
+                      <hr>
+                      <span>兌換至2021/1/15換完為止</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="build__item">
+              <a href="">
+                <div class="item__box">
+                  <div class="item__pic">
+                    <img class="item__img" src="圖D.jpg" alt="東森自然美 愉悅舒放課程6折券">
+                  </div>
+                  <div class="item__info">
+                    <p class="item__name margin-bottom-md">東森自然美
+                      愉悅舒放課程6折券</p>
+                    <div class="prices">
+                      <span>市價1800元</span>
+                    </div>
+                    <div class="item__price margin-bottom-sm">
+                      <span>東森幣：</span>
+                      <span>1800枚</span>
+                    </div>
+                    <div>
+                      <hr>
+                      <span>兌換至2021/1/31換完為止</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </section>
+          <!-- .................第二區4品 end .................-->
+          <!-- .................第三區12品 end .................-->
+          <div class="title__wrap">3：可用東森幣進行最高100%商品金額兌換的專區</div>
+          <section class="build__wrap build--1260  card--small-space item--4">
+            <div class="build__item">
+              <a href="">
+                <div class="item__box">
+                  <div class="item__pic">
+                    <img class="item__img" src="圖A.jpg" alt="【東森集團】牛年紅包組">
+                  </div>
+                  <div class="item__info">
+                    <p class="item__name margin-bottom-md">【東森集團】牛年紅包組</p>
+                    <div class="prices">
+                      <span>市價500元</span>
+                    </div>
+                    <div class="item__price margin-bottom-sm">
+                      <span>東森幣：</span>
+                      <span>500枚</span>
+                    </div>
+                    <div>
+                      <hr>
+                      <span>兌換至2021/1/31換完為止</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="build__item">
+              <a href="">
+                <div class="item__box">
+                  <div class="item__pic">
+                    <img class="item__img" src="圖B.jpg" alt="東森銷售TOP商品組">
+                  </div>
+                  <div class="item__info">
+                    <p class="item__name margin-bottom-md">東森銷售TOP商品組</p>
+                    <div class="prices">
+                      <span>市價430元</span>
+                    </div>
+                    <div class="item__price margin-bottom-sm">
+                      <span>東森幣：</span>
+                      <span>430枚</span>
+                    </div>
+                    <div>
+                      <hr>
+                      <span>上架日期2021/1/1~2021/1/31</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="build__item">
+              <a href="">
+                <div class="item__box">
+                  <div class="item__pic">
+                    <img class="item__img" src="圖C.jpg" alt="名留染/燙髮 1099優惠券">
+                  </div>
+                  <div class="item__info">
+                    <p class="item__name margin-bottom-md">名留染/燙髮
+                      1099優惠券</p>
+                    <div class="prices">
+                      <span>市價430元</span>
+                    </div>
+                    <div class="item__price margin-bottom-sm">
+                      <span>東森幣：</span>
+                      <span>430枚</span>
+                    </div>
+                    <div>
+                      <hr>
+                      <span>兌換至2021/1/15換完為止</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="build__item">
+              <a href="">
+                <div class="item__box">
+                  <div class="item__pic">
+                    <img class="item__img" src="圖D.jpg" alt="東森自然美 愉悅舒放課程6折券">
+                  </div>
+                  <div class="item__info">
+                    <p class="item__name margin-bottom-md">東森自然美
+                      愉悅舒放課程6折券</p>
+                    <div class="prices">
+                      <span>市價1800元</span>
+                    </div>
+                    <div class="item__price margin-bottom-sm">
+                      <span>東森幣：</span>
+                      <span>1800枚</span>
+                    </div>
+                    <div>
+                      <hr>
+                      <span>兌換至2021/1/31換完為止</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </section>
+          <section class="build__wrap build--1260  card--small-space item--4">
+            <div class="build__item">
+              <a href="">
+                <div class="item__box">
+                  <div class="item__pic">
+                    <img class="item__img" src="圖A.jpg" alt="【東森集團】牛年紅包組">
+                  </div>
+                  <div class="item__info">
+                    <p class="item__name margin-bottom-md">【東森集團】牛年紅包組</p>
+                    <div class="prices">
+                      <span>市價500元</span>
+                    </div>
+                    <div class="item__price margin-bottom-sm">
+                      <span>東森幣：</span>
+                      <span>500枚</span>
+                    </div>
+                    <div>
+                      <hr>
+                      <span>兌換至2021/1/31換完為止</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="build__item">
+              <a href="">
+                <div class="item__box">
+                  <div class="item__pic">
+                    <img class="item__img" src="圖B.jpg" alt="東森銷售TOP商品組">
+                  </div>
+                  <div class="item__info">
+                    <p class="item__name margin-bottom-md">東森銷售TOP商品組</p>
+                    <div class="prices">
+                      <span>市價430元</span>
+                    </div>
+                    <div class="item__price margin-bottom-sm">
+                      <span>東森幣：</span>
+                      <span>430枚</span>
+                    </div>
+                    <div>
+                      <hr>
+                      <span>上架日期2021/1/1~2021/1/31</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="build__item">
+              <a href="">
+                <div class="item__box">
+                  <div class="item__pic">
+                    <img class="item__img" src="圖C.jpg" alt="名留染/燙髮 1099優惠券">
+                  </div>
+                  <div class="item__info">
+                    <p class="item__name margin-bottom-md">名留染/燙髮
+                      1099優惠券</p>
+                    <div class="prices">
+                      <span>市價430元</span>
+                    </div>
+                    <div class="item__price margin-bottom-sm">
+                      <span>東森幣：</span>
+                      <span>430枚</span>
+                    </div>
+                    <div>
+                      <hr>
+                      <span>兌換至2021/1/15換完為止</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="build__item">
+              <a href="">
+                <div class="item__box">
+                  <div class="item__pic">
+                    <img class="item__img" src="圖D.jpg" alt="東森自然美 愉悅舒放課程6折券">
+                  </div>
+                  <div class="item__info">
+                    <p class="item__name margin-bottom-md">東森自然美
+                      愉悅舒放課程6折券</p>
+                    <div class="prices">
+                      <span>市價1800元</span>
+                    </div>
+                    <div class="item__price margin-bottom-sm">
+                      <span>東森幣：</span>
+                      <span>1800枚</span>
+                    </div>
+                    <div>
+                      <hr>
+                      <span>兌換至2021/1/31換完為止</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </section>
+          <section class="build__wrap build--1260  card--small-space item--4">
+            <div class="build__item">
+              <a href="">
+                <div class="item__box">
+                  <div class="item__pic">
+                    <img class="item__img" src="圖A.jpg" alt="【東森集團】牛年紅包組">
+                  </div>
+                  <div class="item__info">
+                    <p class="item__name margin-bottom-md">【東森集團】牛年紅包組</p>
+                    <div class="prices">
+                      <span>市價500元</span>
+                    </div>
+                    <div class="item__price margin-bottom-sm">
+                      <span>東森幣：</span>
+                      <span>500枚</span>
+                    </div>
+                    <div>
+                      <hr>
+                      <span>兌換至2021/1/31換完為止</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="build__item">
+              <a href="">
+                <div class="item__box">
+                  <div class="item__pic">
+                    <img class="item__img" src="圖B.jpg" alt="東森銷售TOP商品組">
+                  </div>
+                  <div class="item__info">
+                    <p class="item__name margin-bottom-md">東森銷售TOP商品組</p>
+                    <div class="prices">
+                      <span>市價430元</span>
+                    </div>
+                    <div class="item__price margin-bottom-sm">
+                      <span>東森幣：</span>
+                      <span>430枚</span>
+                    </div>
+                    <div>
+                      <hr>
+                      <span>上架日期2021/1/1~2021/1/31</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="build__item">
+              <a href="">
+                <div class="item__box">
+                  <div class="item__pic">
+                    <img class="item__img" src="圖C.jpg" alt="名留染/燙髮 1099優惠券">
+                  </div>
+                  <div class="item__info">
+                    <p class="item__name margin-bottom-md">名留染/燙髮
+                      1099優惠券</p>
+                    <div class="prices">
+                      <span>市價430元</span>
+                    </div>
+                    <div class="item__price margin-bottom-sm">
+                      <span>東森幣：</span>
+                      <span>430枚</span>
+                    </div>
+                    <div>
+                      <hr>
+                      <span>兌換至2021/1/15換完為止</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="build__item">
+              <a href="">
+                <div class="item__box">
+                  <div class="item__pic">
+                    <img class="item__img" src="圖D.jpg" alt="東森自然美 愉悅舒放課程6折券">
+                  </div>
+                  <div class="item__info">
+                    <p class="item__name margin-bottom-md">東森自然美
+                      愉悅舒放課程6折券</p>
+                    <div class="prices">
+                      <span>市價1800元</span>
+                    </div>
+                    <div class="item__price margin-bottom-sm">
+                      <span>東森幣：</span>
+                      <span>1800枚</span>
+                    </div>
+                    <div>
+                      <hr>
+                      <span>兌換至2021/1/31換完為止</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </section>
+          <!-- .................第三區12品 end .................-->
+          <!-- .................排站end .................-->
+
+          <br>
+          <h2 style="text-align: center; color: #ba160b">【兌換商品2步驟】</h2>
+          <hr>
+          <p>步驟1.登入東森購物</p>
+          <ul class="banner__wrap">
+            <li class="banner__item list-style-none">
+              <img src="go-inside-1-1.jpg" alt="step1"/>
+            </li>
+            <li class="banner__item list-style-none">
+              <img src="go-inside-1-2.jpg" alt="step2"/>
+            </li>
+          </ul>
+          <br>
+          <p>步驟2.開始兌換商品</p>
+          <ul class="banner__wrap">
+            <li class="banner__item list-style-none">
+              <img src="get-pp-1.jpg" alt="step1"/>
+            </li>
+            <li class="banner__item list-style-none">
+              <img src="get-pp-2.jpg" alt="step2"/>
+            </li>
+          </ul>
+          <br>
+          <h3 style="text-align: center;"><a class="link" href="https://www.etmall.com.tw"><span
+                  class="title">馬上前往</span></a></h3>
+          <br>
+          <h2 style="text-align: center; color: #ba160b">【注意事項與規則說明】</h2>
+          <hr/>
+          <ul>
+            <li><span class="text02">本活動僅限東森購物會員可參與。</span></li>
+            <li>專區商品包含東森幣全額折抵商品及東森幣部分折抵商品（例如可折抵商品金額40%）依結帳面呈現為主。</li>
+            <li>兌換商品之前請仔細確認商品內容、商品說明、注意事項及兌換規則，恕不接受取消兌換及退貨。</li>
+            <li>兌換到店取貨之商品請留意領取期限，若超過領取期限未到店兌換，則視同放棄兌換，不得要求退還東森幣。</li>
+            <li>
+              商品配送區域：
+              <ol>
+                <li>全額折抵商品限臺灣本島地區（外、離島地區請利用臺灣親友地址作為收貨地址）。</li>
+                <li>部分折抵商品配送區域依結帳頁面呈現為主。</li>
+              </ol>
+            </li>
+            <li>
+              兌換全額折抵商品時會請您填寫寄送地址，請務必填寫您可配合收件之地址，若因您個人原因導致商品無法配送，則不另行補寄兌換商品，並且不得要求退還東森幣。
+            </li>
+            <li>商品文案為原廠提供，若有變動敬請參照實際商品為準。網頁因拍攝關係，圖檔略有差異，實際已出貨為主。</li>
+            <li>當您選擇參與本專區兌換活動時，即視為已明瞭且同意接受本專區所有已揭示的兌換規則。</li>
+            <li>東森購物保留修改兌換規則的權利，並可能隨時揭示更新的規則，請您在兌換前詳加以留意。</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>
+
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script>
+  $('a[href^="#"]').on('click', function (e) {
+    var target = $('a[name=' + this.getAttribute('href').split('#')[1] + ']')
+    if (target.length) {
+      e.preventDefault()
+      $('html,body').stop().animate({scrollTop: target.offset().top}, 500)
+    }
+  })
+</script>
+<!-- 浮水印 -->
+<script
+        id="scriptIconFloat"
+        src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105264/float-icon.js"
+></script>
+
+<script>
+  // go top
+  // ================================
+  // function
+  var basicScrollTop = function () {
+    // The button
+    var btnTop = document.getElementById('goTop')
+    // Reveal the button
+    var btnReveal = function () {
+      if (window.scrollY >= 300) {
+        btnTop.classList.add('is-visible')
+      } else {
+        btnTop.classList.remove('is-visible')
+      }
+    }
+    // Smooth scroll top
+    var TopscrollTo = function () {
+      if (window.scrollY != 0) {
+        if (window.jQuery) {
+          $('html,body').stop().animate({scrollTop: 0}, 500)
+        } else {
+          setTimeout(function () {
+            window.scrollTo(0, window.scrollY - 100)
+            TopscrollTo()
+          }, 0)
+        }
+      }
+    }
+    // Listeners
+    window.addEventListener('scroll', btnReveal)
+    btnTop.addEventListener('click', TopscrollTo)
+  }
+  var goTopHtml = ''
+  var goTopNode = document.createElement('button')
+  goTopHtml = '<i class="fas fa-arrow-up" style="font-size: 20px;"></i>'
+  goTopNode.id = 'goTop'
+  goTopNode.classList.add('go-top')
+  goTopNode.innerHTML = goTopHtml
+
+  //    document.head.appendChild(fontAwesomeLink);
+  //    document.head.appendChild(goTopLink);
+  document.body.appendChild(goTopNode)
+  basicScrollTop()
+
+  // button 定位
+  function stickyButton() {
+    var winWt = document.body.offsetWidth
+    var winHt = document.body.clientHeight
+    var navTop = document.getElementById('animateWrapHt')
+    var changeBarFixed = document.getElementById('changeBar')
+    //        navTop.style.height = winHt;
+    //        navTop.setAttribute("style","+'height:'+ winHt'")
+    // tips: 加單位判斷會錯
+    var scrollTop = window.scrollY
+    var scrollTop_m = (window.scrollY * 100) / winWt
+
+    if (winWt <= 960 && scrollTop_m >= 76.5) {
+      changeBarFixed.style.position = 'fixed'
+      changeBarFixed.style.marginTop = '0'
+    } else if (winWt > 960 && scrollTop >= 735) {
+      changeBarFixed.style.position = 'fixed'
+      changeBarFixed.style.marginTop = '0'
+    } else if (scrollTop_m < 76.5 || scrollTop < 735) {
+      changeBarFixed.style.position = ''
+      changeBarFixed.style.marginTop = ''
+    }
+  }
+  window.addEventListener('load', stickyButton)
+  window.addEventListener('resize', stickyButton)
+
+  $.debounce = function (func, wait, immediate) {
+    var timeout
+    return function () {
+      var context = this,
+        args = arguments
+      var later = function () {
+        timeout = null
+        if (!immediate) func.apply(context, args)
+      }
+      var callNow = immediate && !timeout
+      clearTimeout(timeout)
+      timeout = setTimeout(later, wait)
+      if (callNow) func.apply(context, args)
+    }
+  }
+  $.throttle = function (func, wait) {
+    var context, args, timeout, throttling, more, result
+    var whenDone = $.debounce(function () {
+      more = throttling = false
+    }, wait)
+    return function () {
+      ;
+      (context = this), (args = arguments)
+      var later = function () {
+        timeout = null
+        if (more) func.apply(context, args)
+        whenDone()
+      }
+      if (!timeout) timeout = setTimeout(later, wait)
+
+      if (throttling) {
+        more = true
+      } else {
+        result = func.apply(context, args)
+      }
+      whenDone()
+      throttling = true
+      return result
+    }
+  }
+  var bind__handler = $.throttle(function (e) {
+    stickyButton()
+  }, 200)
+  window.addEventListener('scroll', bind__handler)
+
+  // 判斷
+  var isUiWebview = /(WebView|(iPhone|iPod|iPad)(?!.*Safari\/)(?!.*Line\/)|Android.*(wv|.0.0.0))(?!.*Line\/)/gi.test(
+    navigator.userAgent
+  )
+  var changeBar = document.getElementById('changeBar')
+  // is app
+  if (isUiWebview) {
+    changeBar.setAttribute('src', 'but_game.png')
+  }
+  // not app
+  else {
+    changeBar.setAttribute('src', 'but_game2.png')
+  }
+</script>

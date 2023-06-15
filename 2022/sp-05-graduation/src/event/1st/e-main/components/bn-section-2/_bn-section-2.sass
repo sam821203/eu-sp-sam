@@ -1,0 +1,64 @@
+.promo__group--bn-section-2
+  +pos-set(relative, zero)
+  overflow: hidden
+  // height: 500px
+  .decor__item
+    &--title
+      +pos-set(absolute, zero, 4%, 23%)
+      width: 55%
+      +breakpoint-min($min-width-xl)
+        top: 20px
+        left: calc(50% - 253px)
+    &--left
+      +pos-set(absolute, base, 0%, 9%)
+      width: 21%
+      +breakpoint-min($min-width-xl) 
+        // top: 5%
+        left: calc(50% - 375px)
+    &--right
+      +pos-set(absolute, base, 0%)
+      right: 9%
+      width: 21%
+      +breakpoint-min($min-width-xl)
+        // top: 5%
+        right: calc( 50% - 340px)
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .promo__wrap
+    +bg-set(url("~event/1st/e-main/components/bn-section-2/bg-bn-section-2.png"), 100%)
+    margin-top: 15%
+    +breakpoint-min($min-width-xl)
+      margin-top: 120px
+    .promo__zone
+      +aspect-ratio(938, 501)
+      // .promo__decor
+      .promo__block
+        padding: 9.5% 2.5% 0
+        .promo__box
+          cursor: pointer
+          &:hover
+            transition: all 0.6s ease
+            transform: translateY(-.5%)
+            filter: brightness(1.1)
+          +breakpoint-min($min-width-xl)
+            img
+              width: 100%
+
+
+@keyframes zoomInDown
+  0%
+    opacity: 0
+    -webkit-transform: scale3d(.1, .1, 0) translate3d(0, -1000px, 0)
+    transform: scale3d(.1, .1, 0) translate3d(0, -1000px, 0)
+    -webkit-animation-timing-function: cubic-bezier(.55, .055, .675, .19)
+    animation-timing-function: cubic-bezier(.55, .055, .675, .19)
+  60%
+    opacity: 1
+    -webkit-transform: scale3d(.475, .475, 0) translate3d(0, 60px, 0)
+    transform: scale3d(.475, .475, 0) translate3d(0, 60px, 0)
+    -webkit-animation-timing-function: cubic-bezier(.175, .885, .32, 1)
+    animation-timing-function: cubic-bezier(.175, .885, .32, 1)
+  100%
+    opacity: 1
+    -webkit-transform: scale3d(1, 1, 0) translate3d(0, 0, 0)
+    transform: scale3d(1, 1, 0) translate3d(0, 0, 0)

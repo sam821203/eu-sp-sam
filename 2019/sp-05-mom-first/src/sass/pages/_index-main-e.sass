@@ -1,0 +1,40 @@
+// ==========================================================================
+// Collection Helpers 
+// ==========================================================================
+@import "helpers/_collection"
+
+// ==========================================================================
+// Plugins
+// ==========================================================================
+@import "vendors/_slick"
+// @import "_libs/_swiper"
+// @import "vendors/animate"
+
+// ==========================================================================
+// layout
+// ==========================================================================
+@import "../../layout/header/main/_header.sass"
+@import "../../layout/bg-decoration/bg-decoration.sass"
+
+// ==========================================================================
+// components
+// ==========================================================================
+@import "../../components/common-event/_common-event.sass"
+@import "../../components/event-w2m1/_event-w2m1.sass"
+@import "../../components/event-w4m2/_event-w4m2.sass"
+@import "../../components/bn-group-w2m1-2/_bn-group-w2m1-2.sass"
+@import "../../components/bn-group-w2m1/_bn-group-w2m1.sass"
+
+// ==========================================================================
+// Page
+// ==========================================================================
+.sp__wrap
+  a
+    display: block
+
+// 利用sp__wrap不同classname控制sass代入body不同的css
+.sp--main-e
+  @at-root body
+    background-color: $main-e-background-color
+    +breakpoint-min($min-width-xl)
+      background: $main-e-background-color center 0 url(../img/background-main-e.png) fixed no-repeat   

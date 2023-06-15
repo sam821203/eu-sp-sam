@@ -1,0 +1,58 @@
+.promo__group--w3m3
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__wrap
+    padding-bottom: 4%
+  .decor__item
+
+    &--left
+      +pos-set(absolute, zero, 0%, 14%)
+      width: 19%
+      transform: translateX(-12%)
+      +breakpoint-min($min-width-xl)
+        left: calc( 50% - 340px )
+      &.active
+        animation: key-rotate-from-to 2.5s ease-in-out infinite both alternate
+
+    &--right
+      +pos-set(absolute, zero, 2%)
+      right: 12%
+      width: 18%
+      +breakpoint-min($min-width-xl)
+        right: calc( 50% - 350px )
+      &.active
+        .js-loading &
+          animation: scale-shine 1.8s linear infinite
+
+    +breakpoint-min($min-width-xl)
+      width: auto
+      
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/event-w3m3/bg-event-w3m3.png), 100%)
+  .promo__zone
+    +aspect-ratio(959, 1022)
+  .promo__block
+    padding: 24.2% 8% 0 8.4%
+    .good__wrap
+      display: flex
+      flex-wrap: wrap
+      justify-content: center
+      li
+        width: 31%
+        margin-bottom: 2%
+        a
+          transition: all 0.5s
+          &:hover,
+          &.active
+            transform: scale(0.95)
+            filter: contrast(1.1)
+
++key-rotate-from-to(-10, 10)
+
+@keyframes scale-shine
+  0%, 100%
+    transform: rotate(-10deg) scale(1)
+    filter: brightness(1)
+  50%
+    transform: rotate(6deg) scale(1.1)
+    filter: brightness(1.2)

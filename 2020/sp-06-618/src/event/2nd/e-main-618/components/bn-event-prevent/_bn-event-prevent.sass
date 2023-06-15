@@ -1,0 +1,70 @@
+
+.promo__group
+  .promo__zone
+    overflow: hidden
+  .promo__wrap
+    +pos-set(relative, zero)
+    .promo__slider
+      +pos-set(absolute, base, 0, 0)
+      width: 100%
+      height: 100%
+  +breakpoint-min($min-width-xl)
+    background-size: auto
+
+.promo__group-7, .promo__group-hot
+  margin-top: 1%
+  a
+    display: block
+  .promo__wrap
+    background: center 0 url("~event/2nd/e-main-618/components/bn-event-prevent/bg-bn-prevent.png") no-repeat
+    background-size: 100% auto
+    height: 39vw
+    .promo__slider
+      top: 22%
+      width: 90%
+      height: 64%
+      left: 50%
+      transform: translateX(-50%)
+      .swiper-slide
+        a
+          transform: translateY(-2.5%) scale(0.93)
+        +breakpoint-min($min-width-xl)
+          width: 50%
+          a
+            transform: scale(0.95) translateY(33%)
+    .promo-pager
+      bottom: 7.6vw
+      left: 50%
+      transform: translateX(-50%)
+      .swiper-pagination-bullet
+        margin: 0 2px
+        width: 6px
+        height: 6px
+        opacity: .8
+        background-color: #ffffff
+      .swiper-pagination-bullet-active
+        opacity: 1
+
+  +breakpoint-min($min-width-xl)
+    width: 100%
+    max-width: 995px
+    margin: 30px auto 0 auto
+    .promo__wrap
+      background-size: 100% auto
+      height: 375px
+      .promo__slider
+        top: 9%
+        img
+          width: 100%
+      .promo-pager
+        bottom: 70px
+        left: 50%
+        transform: translateX(-50%)
+        .swiper-pagination-bullet
+          margin: 0 4px
+          width: 8px
+          height: 8px
+.promo__group-hot
+  .promo__wrap
+    background: center 0 url("~event/2nd/e-main-618/components/bn-event-hot/bg-bn-hot.png") no-repeat
+    background-size: 100% auto

@@ -1,0 +1,47 @@
+-
+  var promoDataE = [
+    {
+      link: "#",
+      imgSrc: "event/1st/e-sp/components/promo-event/items/promo-1.png",
+      alt: "主打品"
+    },
+    {
+      link: "https://www.google.com/",
+      imgSrc: "event/1st/e-sp/components/promo-event/items/promo-2.png",
+      alt: "$199元刮好運"
+    },
+  ]
+
+-
+  var promoDataU = [
+    {
+      link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202007/SP_1106086/w/index.html",
+      imgSrc: "event/1st/u-sp/components/promo-event/items/promo-1.png",
+      alt: "20間銀行最高回饋10%"
+    },
+    {
+      link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202007/SP_1106703/w/index.html",
+      imgSrc: "event/1st/u-sp/components/promo-event/items/promo-2.png",
+      alt: "台中購物節 讓你開好車住豪宅"
+    },
+  ]
+
+- var promoData = isU ? promoDataU : promoDataE
+
+//- TODO: 如果promo不和hero綁一起時要有自己的section和layout--sp
+section.promo__group.promo__group--promo-event.m-bottom--sm(data-title="")
+  .layout--main
+    //- .promo__head.promo__title
+    //-   img(src="", alt="")
+
+    .promo__wrap
+      .promo__event
+        ul.event__wrap.event__wrap--top
+          li.promo__discount
+            a(href= promoData[0].link, title= promoData[0].alt)
+              img(src= promoData[0].imgSrc, alt= promoData[0].alt)
+          li
+            a(href= promoData[1].link, title= promoData[1].alt)
+              img(src= promoData[1].imgSrc, alt= promoData[1].alt)
+
+

@@ -1,0 +1,440 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    *:before,
+    *:after {
+        box-sizing: border-box;
+    }
+
+    a {
+        display: block;
+        text-decoration: none;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    img {
+        border: 0;
+    }
+
+    section {
+        display: block;
+    }
+
+    body {
+        font-size: 14px;
+        font-family: Helvetica, Arial, "LiHei Pro", "Microsoft JhengHei", "微軟正黑體", sans-serif;
+    }
+
+    .build--m-frame {
+        max-width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .margin-top-sm {
+        margin-top: 2%;
+    }
+
+    .margin-bottom-sm {
+        margin-bottom: 2%;
+    }
+
+    .margin-bottom-md {
+        margin-bottom: 4%;
+    }
+
+    .build__wrap {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    /* ===== animation setting start ===== */
+    .build__wrap.wow {
+        animation: .5s bounce-in-left both;
+    }
+
+    @keyframes bounce-in-left {
+        from {
+            transform: translateX(-30%);
+        }
+
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    /* ===== animation setting end ===== */
+    /* ===== card--ten-space setting start ===== */
+    .card--ten-space .build__item {
+        margin-bottom: 0.8%;
+        background-color: #fff;
+        border: 1px solid #EDEDED;
+        transition: transform 0.16s;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+    }
+
+    .card--ten-space .build__item:active,
+    .card--ten-space .build__item:hover {
+        transform: scale(1.05);
+    }
+
+    @media screen and (min-width: 768px) {
+        .card--ten-space .build__item {
+            margin-bottom: 0.35%;
+        }
+    }
+
+    /* ===== card--ten-space setting end ===== */
+    /* ===== card--ten-space item *6 setting start ===== */
+
+    .card--ten-space.item--10 .build__item {
+        width: 19%;
+        margin: .33%
+    }
+
+    .card--ten-space .build__item,
+    .card--ten-space .item__img {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .card--ten-space .item__info {
+        position: relative;
+    }
+
+    .card--ten-space .item__name {
+        height: 37px;
+        margin-top: 5px;
+    }
+
+    .card--ten-space .item__push span {
+        color: #fff;
+        font-weight: 400;
+    }
+
+    /* ===== card--ten-space item *6 setting end ===== */
+    /* ===== item-push background-color setting start ===== */
+    .card--ten-space .item__push.bg__blue {
+        background: #3000b1;
+        background: -webkit-linear-gradient(to right, #1a00ea, #3000b1, #1a00ea);
+        background: linear-gradient(to right, #1a00ea, #3000b1, #1a00ea);
+        border-radius: 20px;
+        color: #fff;
+        letter-spacing: 1.5px;
+    }
+
+    .card--ten-space .item__push.bg__green {
+        background: #3CA55C;
+        background: -webkitlinear-gradient(to right, #7fc313, #3CA55C, #7fc313);
+        background: linear-gradient(to right, #7fc313, #3CA55C, #7fc313);
+        border-radius: 20px;
+        color: #fff;
+        letter-spacing: 1.5px;
+    }
+
+    .card--ten-space .item__push.bg__red {
+        background: #f01400;
+        background: -webkit-linear-gradient(to right, #f07219, #f01400, #f07219);
+        background: linear-gradient(to right, #f07219, #f01400, #f07219);
+        border-radius: 20px;
+        color: #fff;
+        letter-spacing: 1.5px;
+    }
+
+    .card--ten-space .build__item.black__bg {
+        background-color: #362e2b;
+        border-radius: 10px;
+        padding: 5px;
+    }
+
+    .card--ten-space .build__item.black__bg a,
+    .card--ten-space .black__bg .item__push span {
+        color: #ddd;
+    }
+
+    .card--ten-space .build__item.black__bg .item__price span:last-child {
+        background-color: rgba(#EDEDED, .5);
+        color: #fff;
+        font-weight: 700;
+    }
+
+    .card--ten-space .item__push--outerFrame {
+        width: 100%;
+        height: 28px;
+        text-align: center;
+    }
+
+    .card--ten-space .item__push {
+        position: relative;
+        z-index: 1;
+        line-height: 140%;
+        height: auto;
+    }
+
+    /* ===== item-push background-color setting end ===== */
+
+    @media screen and (max-width: 768px) {
+        .card--ten-space.item--10 .build__item {
+            width: 49%;
+            margin: .5% .25%;
+        }
+
+        .card--ten-space .build__item {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .card--ten-space .item__push--outerFrame {
+            height: 21px;
+            font-size: 13px;
+        }
+
+        .card--ten-space .item__push span {
+            max-height: 21px;
+            line-height: 170%;
+            letter-spacing: 0;
+        }
+
+        .card--ten-space .item__name {
+            height: 32px;
+            font-size: 14px;
+        }
+    }
+
+    .build__item a {
+        color: #5d5d5d;
+    }
+
+    .item__pic {
+        position: relative;
+        z-index: 0;
+        padding-top: 100%;
+        overflow: hidden;
+    }
+
+    .item__img {
+        display: block;
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    .item__info {
+        padding: 2%;
+    }
+
+    .item__push {
+        width: 100%;
+        height: 28px;
+        text-align: center;
+    }
+
+    .item__push span {
+        display: block;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        position: relative;
+        z-index: 0;
+        margin: 0 3%;
+        max-height: 28px;
+        line-height: 200%;
+        color: #cc1e05;
+        font-weight: bold;
+        overflow: hidden;
+    }
+
+    .item__name {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        text-overflow: ellipsis;
+        height: 36px;
+        line-height: 120%;
+        font-size: 15px;
+        overflow: hidden;
+    }
+
+    .item__price span:last-child {
+        color: #cc1e05;
+        font-size: 22px;
+    }
+</style>
+
+<section class="build__wrap build--m-frame card--ten-space item--10 wow">
+    <div class="build__item">
+        <a href="https://www.etmall.com.tw/Apple-MacBook-Air-13-3%E5%90%8B-%E7%AD%86%E8%A8%98%E5%9E%8B%E9%9B%BB%E8%85%A6-i5-8G-128G/i/2220751">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img" src="https://media.etmall.com.tw/NXimg/002220/2220751/2220751_XL.jpg" alt="">
+                </div>
+                <div class="item__info">
+                    <p class="item__name margin-bottom-md">Apple MacBook Air 13.3吋 筆記型電腦 i5/8G/128G</p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span>32,900</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="build__item">
+        <a href="https://www.etmall.com.tw/Apple-MacBook-Air-13-3%E5%90%8B-%E7%AD%86%E8%A8%98%E5%9E%8B%E9%9B%BB%E8%85%A6-i5-8G-128G/i/2220751">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img" src="https://media.etmall.com.tw/NXimg/002220/2220751/2220751_XL.jpg" alt="">
+                </div>
+                <div class="item__info">
+                    <p class="item__name margin-bottom-md">Apple MacBook Air 13.3吋 筆記型電腦 i5/8G/128G</p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span>32,900</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="build__item">
+        <a href="https://www.etmall.com.tw/Apple-MacBook-Air-13-3%E5%90%8B-%E7%AD%86%E8%A8%98%E5%9E%8B%E9%9B%BB%E8%85%A6-i5-8G-128G/i/2220751">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img" src="https://media.etmall.com.tw/NXimg/002220/2220751/2220751_XL.jpg" alt="">
+                </div>
+                <div class="item__info">
+                    <p class="item__name margin-bottom-md">Apple MacBook Air 13.3吋 筆記型電腦 i5/8G/128G</p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span>32,900</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="build__item">
+        <a href="https://www.etmall.com.tw/Apple-MacBook-Air-13-3%E5%90%8B-%E7%AD%86%E8%A8%98%E5%9E%8B%E9%9B%BB%E8%85%A6-i5-8G-128G/i/2220751">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img" src="https://media.etmall.com.tw/NXimg/002220/2220751/2220751_XL.jpg" alt="">
+                </div>
+                <div class="item__info">
+                    <p class="item__name margin-bottom-md">Apple MacBook Air 13.3吋 筆記型電腦 i5/8G/128G</p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span>32,900</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="build__item">
+        <a href="https://www.etmall.com.tw/Apple-MacBook-Air-13-3%E5%90%8B-%E7%AD%86%E8%A8%98%E5%9E%8B%E9%9B%BB%E8%85%A6-i5-8G-128G/i/2220751">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img" src="https://media.etmall.com.tw/NXimg/002220/2220751/2220751_XL.jpg" alt="">
+                </div>
+                <div class="item__info">
+                    <p class="item__name margin-bottom-md">Apple MacBook Air 13.3吋 筆記型電腦 i5/8G/128G</p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span>32,900</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="build__item">
+        <a href="https://www.etmall.com.tw/Apple-MacBook-Air-13-3%E5%90%8B-%E7%AD%86%E8%A8%98%E5%9E%8B%E9%9B%BB%E8%85%A6-i5-8G-128G/i/2220751">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img" src="https://media.etmall.com.tw/NXimg/002220/2220751/2220751_XL.jpg" alt="">
+                </div>
+                <div class="item__info">
+                    <p class="item__name margin-bottom-md">Apple MacBook Air 13.3吋 筆記型電腦 i5/8G/128G</p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span>32,900</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="build__item">
+        <a href="https://www.etmall.com.tw/Apple-MacBook-Air-13-3%E5%90%8B-%E7%AD%86%E8%A8%98%E5%9E%8B%E9%9B%BB%E8%85%A6-i5-8G-128G/i/2220751">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img" src="https://media.etmall.com.tw/NXimg/002220/2220751/2220751_XL.jpg" alt="">
+                </div>
+                <div class="item__info">
+                    <p class="item__name margin-bottom-md">Apple MacBook Air 13.3吋 筆記型電腦 i5/8G/128G</p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span>32,900</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="build__item">
+        <a href="https://www.etmall.com.tw/Apple-MacBook-Air-13-3%E5%90%8B-%E7%AD%86%E8%A8%98%E5%9E%8B%E9%9B%BB%E8%85%A6-i5-8G-128G/i/2220751">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img" src="https://media.etmall.com.tw/NXimg/002220/2220751/2220751_XL.jpg" alt="">
+                </div>
+                <div class="item__info">
+                    <p class="item__name margin-bottom-md">Apple MacBook Air 13.3吋 筆記型電腦 i5/8G/128G</p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span>32,900</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="build__item">
+        <a href="https://www.etmall.com.tw/Apple-MacBook-Air-13-3%E5%90%8B-%E7%AD%86%E8%A8%98%E5%9E%8B%E9%9B%BB%E8%85%A6-i5-8G-128G/i/2220751">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img" src="https://media.etmall.com.tw/NXimg/002220/2220751/2220751_XL.jpg" alt="">
+                </div>
+                <div class="item__info">
+                    <p class="item__name margin-bottom-md">Apple MacBook Air 13.3吋 筆記型電腦 i5/8G/128G</p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span>32,900</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="build__item">
+        <a href="https://www.etmall.com.tw/Apple-MacBook-Air-13-3%E5%90%8B-%E7%AD%86%E8%A8%98%E5%9E%8B%E9%9B%BB%E8%85%A6-i5-8G-128G/i/2220751">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img" src="https://media.etmall.com.tw/NXimg/002220/2220751/2220751_XL.jpg" alt="">
+                </div>
+                <div class="item__info">
+                    <p class="item__name margin-bottom-md">Apple MacBook Air 13.3吋 筆記型電腦 i5/8G/128G</p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span>32,900</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>

@@ -1,0 +1,115 @@
+- var bankLink = {etmall: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202007/SP_1114870/w/index.html", umall: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202007/SP_1106086/w/index.html"}
+- var bankInfo = isU ? bankLink.umall : bankLink.etmall
+- var bankPageName = {"玉山": '#esun', "中信": "#ctbc", "國泰": "#cathay", "台新": "#Taishin", "花旗": "#citi", "富邦": "#taipeifubon", "永豐": "#sinopac", "聯邦": "#union", "一銀": "#one", "遠銀": "#fareasten", "滙豐": "#hsbc", "華南": "#huanan", "新光": "#shinkong", "星展": "#dbs", "合作金庫": "#tcb", "凱基": "#kgi", "上海銀行": "#shanghai", "土銀": "#landbank", "日盛": "#jihsun", "臺銀": "#bot", "陽信": "#sunnybank", "樂天": "#rakuten"}
+
+
+//- TODO: 給別的component引入時不需要前兩行要切換
+//- section.promo__group.promo__group--bn-special
+  //- .layout--main
+
+.promo__slider
+  #sliderSpecialTop.swiper-container
+    ul.swiper-wrapper
+      li.swiper-slide
+        a(title="凱基滿$18,000送$1,800")
+          div 1
+      li.swiper-slide
+        a(title="凱基滿$18,000送$1,800")
+          div 2
+      li.swiper-slide
+        a(title="永豐滿$25,000送$2,500")
+          div 3
+      li.swiper-slide
+        a(title="永豐滿$25,000送$2,500")
+          div 4
+      li.swiper-slide
+        a(title="永豐滿$25,000送$2,500")
+          div 5
+      li.swiper-slide
+        a(title="永豐滿$25,000送$2,500")
+          div 6
+      li.swiper-slide
+        a(title="凱基滿$18,000送$1,800")
+          div 7
+      li.swiper-slide
+        a(title="凱基滿$18,000送$1,800")
+          div 8
+
+  #sliderSpecial.swiper-container
+    ul.swiper-wrapper
+      li.swiper-slide
+        a(href= bankInfo + bankPageName["凱基"], title="凱基滿$18,000送$1,800") 1
+          img(src="~event/test/u-main/components/bn-special/items/bank-1.png", alt="凱基滿$18,000送$1,800")
+      li.swiper-slide
+        a(href= bankInfo + bankPageName["凱基"], title="凱基滿$18,000送$1,800") 2
+          img(src="~event/test/u-main/components/bn-special/items/bank-1.png", alt="凱基滿$18,000送$1,800")
+      li.swiper-slide
+        a(href= bankInfo + bankPageName["永豐"], title="永豐滿$25,000送$2,500") 3
+          img(src="~event/test/u-main/components/bn-special/items/bank-2.png", alt="永豐滿$25,000送$2,500")
+      li.swiper-slide
+        a(href= bankInfo + bankPageName["永豐"], title="永豐滿$25,000送$2,500") 4
+          img(src="~event/test/u-main/components/bn-special/items/bank-2.png", alt="永豐滿$25,000送$2,500")
+      li.swiper-slide
+        a(href= bankInfo + bankPageName["凱基"], title="凱基滿$18,000送$1,800") 5
+          img(src="~event/test/u-main/components/bn-special/items/bank-1.png", alt="凱基滿$18,000送$1,800")
+      li.swiper-slide
+        a(href= bankInfo + bankPageName["凱基"], title="凱基滿$18,000送$1,800") 6
+          img(src="~event/test/u-main/components/bn-special/items/bank-1.png", alt="凱基滿$18,000送$1,800")
+      li.swiper-slide
+        a(href= bankInfo + bankPageName["永豐"], title="永豐滿$25,000送$2,500") 7
+          img(src="~event/test/u-main/components/bn-special/items/bank-2.png", alt="永豐滿$25,000送$2,500")
+      li.swiper-slide
+        a(href= bankInfo + bankPageName["永豐"], title="永豐滿$25,000送$2,500") 8
+          img(src="~event/test/u-main/components/bn-special/items/bank-2.png", alt="永豐滿$25,000送$2,500")
+      li.swiper-slide
+        a(href= bankInfo + bankPageName["凱基"], title="凱基滿$18,000送$1,800") 9
+          img(src="~event/test/u-main/components/bn-special/items/bank-1.png", alt="凱基滿$18,000送$1,800")
+      li.swiper-slide
+        a(href= bankInfo + bankPageName["凱基"], title="凱基滿$18,000送$1,800") 10
+          img(src="~event/test/u-main/components/bn-special/items/bank-1.png", alt="凱基滿$18,000送$1,800")
+      li.swiper-slide
+        a(href= bankInfo + bankPageName["永豐"], title="永豐滿$25,000送$2,500") 11
+          img(src="~event/test/u-main/components/bn-special/items/bank-2.png", alt="永豐滿$25,000送$2,500")
+      li.swiper-slide
+        a(href= bankInfo + bankPageName["永豐"], title="永豐滿$25,000送$2,500") 12
+          img(src="~event/test/u-main/components/bn-special/items/bank-2.png", alt="永豐滿$25,000送$2,500")
+      li.swiper-slide
+        a(href= bankInfo + bankPageName["凱基"], title="凱基滿$18,000送$1,800") 13
+          img(src="~event/test/u-main/components/bn-special/items/bank-1.png", alt="凱基滿$18,000送$1,800")
+      li.swiper-slide
+        a(href= bankInfo + bankPageName["凱基"], title="凱基滿$18,000送$1,800") 14
+          img(src="~event/test/u-main/components/bn-special/items/bank-1.png", alt="凱基滿$18,000送$1,800")
+      li.swiper-slide
+        a(href= bankInfo + bankPageName["永豐"], title="永豐滿$25,000送$2,500") 15
+          img(src="~event/test/u-main/components/bn-special/items/bank-2.png", alt="永豐滿$25,000送$2,500")
+      li.swiper-slide
+        a(href= bankInfo + bankPageName["永豐"], title="永豐滿$25,000送$2,500") 16
+          img(src="~event/test/u-main/components/bn-special/items/bank-2.png", alt="永豐滿$25,000送$2,500")
+      li.swiper-slide
+        a(href= bankInfo + bankPageName["凱基"], title="凱基滿$18,000送$1,800") 17
+          img(src="~event/test/u-main/components/bn-special/items/bank-1.png", alt="凱基滿$18,000送$1,800")
+      li.swiper-slide
+        a(href= bankInfo + bankPageName["凱基"], title="凱基滿$18,000送$1,800") 18
+          img(src="~event/test/u-main/components/bn-special/items/bank-1.png", alt="凱基滿$18,000送$1,800")
+      li.swiper-slide
+        a(href= bankInfo + bankPageName["永豐"], title="永豐滿$25,000送$2,500") 19
+          img(src="~event/test/u-main/components/bn-special/items/bank-2.png", alt="永豐滿$25,000送$2,500")
+      li.swiper-slide
+        a(href= bankInfo + bankPageName["永豐"], title="永豐滿$25,000送$2,500") 20
+          img(src="~event/test/u-main/components/bn-special/items/bank-2.png", alt="永豐滿$25,000送$2,500")
+      li.swiper-slide
+        a(href= bankInfo + bankPageName["凱基"], title="凱基滿$18,000送$1,800") 21
+          img(src="~event/test/u-main/components/bn-special/items/bank-1.png", alt="凱基滿$18,000送$1,800")
+      li.swiper-slide
+        a(href= bankInfo + bankPageName["凱基"], title="凱基滿$18,000送$1,800") 22
+          img(src="~event/test/u-main/components/bn-special/items/bank-1.png", alt="凱基滿$18,000送$1,800")
+      li.swiper-slide
+        a(href= bankInfo + bankPageName["永豐"], title="永豐滿$25,000送$2,500") 23
+          img(src="~event/test/u-main/components/bn-special/items/bank-2.png", alt="永豐滿$25,000送$2,500")
+      li.swiper-slide
+        a(href= bankInfo + bankPageName["永豐"], title="永豐滿$25,000送$2,500") 24
+          img(src="~event/test/u-main/components/bn-special/items/bank-2.png", alt="永豐滿$25,000送$2,500")
+
+    //- #sliderSpecialPager.swiper-pagination-custom.swiper-pagination
+  #sliderSpecialPrev.swiper-button-custom.swiper-custom-prev
+  #sliderSpecialNext.swiper-button-custom.swiper-custom-next

@@ -1,0 +1,261 @@
+<meta name="viewport" content="width=device-width">
+<style>
+  /* reset */
+  /* ======================================== */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  *:before, *:after {
+    box-sizing: border-box; }
+  a {
+    display: block;
+    text-decoration: none;
+	
+  }
+  ul {
+    list-style: none;
+  }
+  img {
+    width: 100%;
+    border: 0;
+    vertical-align: middle;
+  }
+  article,
+  main,
+  nav,
+  section {
+    display: block;
+  }
+  body {
+    margin:0;
+  }
+  .sp--1260 {
+    position: relative;
+    z-index: 0;
+    max-width:1260px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* note */
+  /* ======================================== */
+  .padding--tb{
+    padding-bottom: 5%;
+    padding-top: 2%;
+  }
+  .note {
+    font-size: 18px;
+    word-break: break-all;
+  }
+  .note article {
+    padding: 1.5%;
+    background-color: #faa;
+    border: 1px solid #999;
+  }
+  .note article a {
+    display: inline;
+    color: #0065bf;
+    text-decoration: underline;
+    word-break: break-all;
+  }
+  .note article a:hover {
+    text-decoration: none;
+  }
+  .note h3 {
+    margin-left: 15px;
+  }
+  .note ol>li {
+    margin-left: 40px;
+  }
+  /* rwd table */
+  /* ======================================== */
+  .rwd-table {
+    width: 100%;
+    /*color: #fff;*/
+    border: 1px solid #999;
+    border-collapse: collapse;
+    background-color: #fff;
+    overflow: hidden;
+  }
+  .rwd-table th {
+    display: none;
+  }
+  .rwd-table td {
+    display: block;
+  }
+  /* 注意此處的(4)要視一行有幾個td選項調整 */
+  .rwd-table td:nth-child(4) {
+    border-bottom: 1px solid #999;
+  }
+  .rwd-table td:before {
+    content: attr(data-th) ": ";
+    display: inline-block;
+    width: 6em;
+    font-weight: bold;
+  }
+  .rwd-table th, .rwd-table td {
+    text-align: left;
+  }
+  .rwd-table tr {
+    border-color: #999;
+  }
+  .rwd-table tr:nth-child(even) {
+    /*background-color: #afa;*/
+  }
+  .rwd-table th, .rwd-table td {
+    margin: .5em 1em;
+  }
+  .rwd-table th, .rwd-table td:before {
+    /*color: #dd5;*/
+    font-weight: bold;
+  }
+  @media (min-width: 700px) {
+    .rwd-table {
+      width: 65%;
+    }
+    .rwd-table th {
+      /*background-color: #ffa;*/
+    }
+    .rwd-table th,
+    .rwd-table td {
+      border-bottom: 1px solid #999;
+    }
+    .rwd-table td:before {
+      display: none;
+    }
+    .rwd-table th, .rwd-table td {
+      display: table-cell;
+      padding: .25em .5em;
+    }
+    .rwd-table th:first-child, .rwd-table td:first-child {
+      padding-left: 0;
+    }
+    .rwd-table th:last-child, .rwd-table td:last-child {
+      padding-right: 0;
+    }
+    .rwd-table th, .rwd-table td {
+      padding: 0.8em !important;
+    }
+  }
+
+  /* iframe 設定*/
+  /* ======================================== */
+  .iframe__container {
+    position: relative;
+    z-index: 0;
+    padding-top: 300px;
+    overflow: hidden;
+  }
+  @media screen and (max-width: 600px) {
+    .iframe__container {
+      padding-top: 550px;
+    }
+  }
+  .iframe__container iframe {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>
+<section class="note" name="note">
+  <div class="sp--1260 padding--tb">
+    <article>
+      <h2 style="font-size:24px;">【玉山銀行旅展專案 分期滿額送好禮】</h2>
+      <h3>活動期間：2018/9/3-2018/9/17</h3>
+      <h3>活動對象：玉山銀行信用卡持卡人</h3>
+      <h3>活動商品：限購買歡樂旅行社旅遊商品(商品規格裡有歡樂旅行社字號之商品)</h3>
+      <h3>分期滿額送贈：</h3>
+      <ol>
+        <li style="list-style:none;">單月累積分期滿3,000元送50元刷卡金</li>
+        <li style="list-style:none;">單月累積分期滿18,000元送500元刷卡金</li>
+        <li style="list-style:none;">(需登錄：<a href="https://card.esunbank.com.tw/EsunCreditweb/txnservice/Activity/RegisterEvent?EventId=18S9025#b">https://card.esunbank.com.tw/EsunCreditweb/txnservice/Activity/RegisterEvent?EventId=18S9025#b</a>，活動期間每月每歸戶回饋上限500元刷卡金)</li>
+      </ol>
+      <h2 style="font-size:24px;">【旅遊館加碼滿額贈】</h2>
+      <h3>活動期間：107年9月3日至107年9月17日</h3>
+      <h3>活動期間累積分期滿21,000元以上加贈「210元刷卡金」</h3>
+      <h3>活動商品：限購買歡樂旅行社旅遊商品(商品規格裡有歡樂旅行社字號之商品)</h3>
+      <h3>分期滿額送贈：</h3>
+      <ol>
+        <li style="list-style:none;">單月累積分期滿3,000元送50元刷卡金</li>
+        <li style="list-style:none;">單月累積分期滿18,000元送500元刷卡金</li>
+        <li style="list-style:none;">(需額外登錄：<a href="https://card.esunbank.com.tw/EsunCreditweb/txnservice/Activity/RegisterEvent?EventId=18S9036">https://card.esunbank.com.tw/EsunCreditweb/txnservice/Activity/RegisterEvent?EventId=18S9036</a>，活動期間每歸戶限回饋乙次) </li>
+      </ol>
+      <h2 style="font-size:24px;">【分期滿額送東森幣】</h2>
+      <ol>
+        <li>活動期間於東森購物網以玉山銀行信用卡刷卡購買由歡樂旅行社提供之旅遊館商品，累積滿額$15,000(含一次和分期)加碼贈500枚東森幣。(需登錄，活動期間每歸戶限回饋乙次，限量100名)</li>
+        <li>東森幣限量回饋說明：回饋順序將以「持卡人成功登錄名次」由先至後進行優先排序，但仍須於活動指定期間內「符合本活動消費門檻」之成功交易訂單作為回饋依據。</li>
+        <li>(旅遊館專案活動加碼贈500枚東森幣，將於商品配送確認後30天，且無退貨後，東森購物於2018/10/31前由系統將500枚東森幣匯入您購買時的帳號（使用效期至107/11/15止，逾期自動無效）。</li>
+        <li>活動登錄網址：<a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201809/SP_1105608/m.html">https://www.etmall.com.tw/XML/content/DMSetting/Final/201809/SP_1105608/m.html</a></li>
+        <li>若該筆訂單事後銷退，則所贈送之「東森幣」將自動扣回，如帳戶內東森幣不足扣抵時，將於該帳戶下次取得東森幣時如實扣回。</li>
+      </ol>
+      <h3>注意事項：</h3>
+      <ol>
+        <li>需於活動期間來電02-2995-1513按1按1028登錄「東森滿額贈刷卡金」活動可參加【分期滿額贈】，【旅遊館加碼滿額贈】請於官網線上登錄，始符合回饋資格，回饋將於次月20日起陸續回饋於正卡人帳戶，正附卡合併計算，【分期滿額贈】每月每歸戶回饋上限500元，【旅遊館加碼滿額贈】活動期間每歸戶回饋上限210元。</li>
+        <li>登錄後符合活動資格者，將不再享有原信用卡卡片之紅利點數、現金回饋、家樂福紅利點數、OPENPOINT 點數、Dream Card點數、HAPPYGO點數、P幣等基本回饋及其他專案優惠。 </li>
+        <li>倘持卡人發生以下事項，則不予回饋：產生簽帳爭議而暫停付款、停卡、掛失不補發、不續卡、遲繳、欠款或違反玉山銀行信用卡會員約定條款事項者。 </li>
+        <li>玉山icash聯名卡、Debit卡、公司卡及採購卡等恕不適用本活動。</li>
+        <li>活動以實際訂單計算，若付款失敗、訂單取消、退貨，該筆訂單將不列入回饋資格，帳單結算時，本人名下若無任何有效卡，將取消回饋資格。 </li>
+        <li>本活動不適用於東森購物與森森百貨之消費保險、生前契約、簽證、兵險、機場稅、燃油附加費等商品或服務。</li>
+        <li>玉山銀行與東森購物保留活動修改、變更及終止之權利。</li>
+      </ol>
+      <h2 style="font-size:24px;">【滿3萬送1,200東森幣】</h2>
+      <h3>活動期間：2018/9/3-2018/9/17</h3>
+      <h3>東森會員不限刷卡銀行與付款方式，活動期間單一客戶滿額即贈。</h3>
+      <h3>活動內容：</h3>
+      <ol>
+        <li style="list-style:none;">【消費滿額禮】 </li>
+        <li style="list-style:none;">活動期間於東森購物網購買由旅遊館之旅遊商品(排除餐券與美容票券)，消費累積滿$30,000加碼贈1,200枚東森幣（活動期間每會員限回饋乙次，玉山銀行刷卡送之東森幣則不重覆回饋）。</li>
+        <li style="list-style:none;">旅遊館專案活動加碼贈1,200枚東森幣，將於商品配送確認後30天，且無退貨後，東森購物於2018/10/31前由系統將1,200枚東森幣匯入您購買時的帳號（使用效期至107/11/15止，逾期自動無效）</li>
+      </ol>
+      <h2 style="font-size:24px;">【東森幣購物使用規則】</h2>
+      <h3>東森幣使用規則，請在參與獲取東森幣的活動前仔細閱讀以下網頁說明：</h3>
+      <h3>※東森幣相關說明：<a href="https://www.etmall.com.tw/HelpCenter/EHSCoinDescription">https://www.etmall.com.tw/HelpCenter/EHSCoinDescriptio</a></h3>
+      <h3>※東森幣常見問題：<a href="https://www.etmall.com.tw/HelpCenter/EHSCoinQuestion">https://www.etmall.com.tw/HelpCenter/EHSCoinQuestion</a></h3>
+      <ol>
+        <li>東森幣可於東森購物指定通路(不含森森購物網)消費時選擇使用，東森幣1枚可折抵現金1元，折抵上限 詳第3點說明。 </li>
+          <li>購買商品時，除3C家電、餐券、旅遊、保險及汽機車等專案商品外或專案活動之限制外，東森幣可與折扣金合併使用，惟合併折抵最高上限為商品應付金額之30%，且單筆上限金額為3,000元，單日最高２萬元的抵用限制。 </li>
+          <li>結帳時若消費之商品可使用東森幣折抵，系統將自動從最接近有效期限之東森幣折抵(倘會員選擇以東森幣 折抵消費金額者，則一律採全數折抵，會員無法選擇以部分東森幣折抵金額)，會員於購物車結帳時就能 自動算出可使用的東森幣並進行折抵。</li>
+          <li>每次取得之東森幣依發送時間及該次活動規範，均有不同之有效期間，期限屆至，自動無效。</li>
+          <li>若該筆訂單事後銷退，則所贈送之「東森幣」將自動扣回，如帳戶內東森幣不足扣抵時，將於該帳戶下次 取得東森幣時如實扣回。</li>
+          <li>商品是否適用東森幣折抵，依結帳頁面(購物車)顯示或使用之系統設定為準。 </li>
+          <li>東森幣限折抵指定商品類別之折扣金額，恕無法折抵售後服務、賠償等相關費用，如：運費、安裝處理費、商品缺損賠償等費用。</li>
+          <li>東森購物保有活動變更、修改或終止本活動之權力，如有異動，修改後之內容將公佈在東森購物網上。</li>
+      </ol>
+      <h3>抽獎獎項</h3>
+      <table class="rwd-table">
+        <tr>
+          <th>品名</th>
+          <th>價值</th>
+          <th>數量</th>
+          <th>抽出日期</th>
+        </tr>
+        <tr>
+          <td data-th="品名">ASUS S530UF輕薄筆電</td>
+          <td data-th="價值">$30,900</td>
+          <td data-th="數量">1</td>
+          <td data-th="抽出日期">2018/11/11</td>
+        </tr>
+        <tr>
+          <td data-th="品名">CANON M50 單機相機</td>
+          <td data-th="價值">$28,900</td>
+          <td data-th="數量">2</td>
+          <td data-th="抽出日期">2018/11/30</td>
+        </tr>
+        <tr>
+          <td data-th="品名">APPLE iPad 128G</td>
+          <td data-th="價值">$13,900</td>
+          <td data-th="數量">3</td>
+          <td data-th="抽出日期">2018/12/12</td>
+        </tr>
+      </table>
+    </article>
+    <!-- 登錄頁 -->
+    <!-- <div class="iframe__container">
+        <iframe style="background: #636; overflow-x: hidden; vertical-align: bottom;" src="https://event.etmall.com/aform/?t=1" frameborder="0" scrolling="no"></iframe>
+    </div> -->
+  </div>
+</section>

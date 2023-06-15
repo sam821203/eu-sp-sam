@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <title>送您一份祝福</title>
+    <meta property="og:title" content="送您一份祝福">
+    <meta property="og:image" content="card.jpg">
+    <meta property="og:description" content="送您一份祝福">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <style>
+        /* reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        *:before,
+        *:after {
+            box-sizing: border-box;
+        }
+
+        a {
+            display: block;
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            border: 0;
+        }
+
+        main, article, aside, details, figcaption, figure,
+        footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-size: 14px;
+            font-family: PingFangTC-regular, Roboto, "LiHei Pro", "Source Han Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, "Microsoft JhengHei", sans-serif;
+            background-color: #3B419D;
+        }
+
+        table img {
+            max-width: 100%;
+        }
+
+        input {
+            padding: 0;
+        }
+        /* rwd title */
+
+        .main-card {
+            max-width: 1620px;
+            max-height: 1458px;
+            margin: 0 auto;
+            position: relative;
+            background-image: url('card-bg.jpg');
+            background-size: 1620px 1458px;
+            background-repeat: no-repeat;
+            background-position: top center;
+            text-align: center;
+        }
+
+        .input-outer {
+            /*left: calc(50% - 364px);*/
+            background-color: #3B419D;
+            height: 50px;
+            max-width: 1620px;
+            margin: 0 auto;
+        }
+        .input-group {
+            width: 895px;
+            margin: 0 auto;
+        }
+
+        .input-group .input-box {
+            width: 90%;
+            height: 34px;
+            margin-left: 9%;
+        }
+
+
+        /*.community__ico {*/
+        /*float: right;*/
+        /*}*/
+        .input-block, .share-block {
+            float: left;
+        }
+
+        .input-block {
+            width: calc(92% - 85px);
+        }
+
+        .share-block {
+            width: 85px;
+        }
+
+        .header__ico img {
+            height: 45px;
+            width: auto;
+            padding-left: 5px;
+        }
+
+        .bg-line a {
+            width: 35px;
+            height: 35px;
+            background: url('https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106167/line.jpg') no-repeat;
+            background-size: 35px, 35px;
+            border-radius: 5px;
+        }
+
+        .bg-facebook a {
+            width: 35px;
+            height: 35px;
+            background: url('facebook.png') no-repeat;
+            background-size: 35px, 35px;
+        }
+
+        .community__ico li {
+            display: inline-block;
+            cursor: pointer;
+            line-height: 40px;
+            margin-right: 5px;
+        }
+
+        @media screen and (max-width: 895px) {
+            .main-card img {
+                width: 100%;
+            }
+            .input-group {
+                width: 100%;
+            }
+            .input-group .input-box {
+                width: 86%;
+                margin-left: 12%;
+            }
+            .input-block {
+                width: calc(92% - 85px);
+            }
+        }
+    </style>
+</head>
+<body>
+<script>
+    var fbhtml_url = window.location.toString();
+</script>
+<div class="main-card">
+    <canvas id="canvas" width="100" height="100" hidden></canvas>
+    <img src="" alt="" id="imageTarget">
+</div>
+<!--<a id="downloadAnchor" href="#" download="canvas-test.jpg">下載</a>-->
+<div class="input-outer">
+
+    <div class="input-group">
+        <div class="input-block">
+
+            <input id="text" maxlength="7" class="input-box" type="text" placeholder="輸入您的大名傳送祝福">
+
+            <!--<input id="submit" class="btn-submit btn-control" type="submit" value="合成">-->
+            <!--<input id="clean" class="btn-clean btn-control" type="button" value="清除">-->
+        </div>
+        <div class="share-block">
+
+            <ul class="community__ico">
+                <li class="bg-line">
+                    <a href="javascript: void(window.open('https://lineit.line.me/share/ui?url=' .concat(encodeURIComponent(location.href)) ));"
+                       title="分享給 LINE 好友">
+                    </a>
+                </li>
+                <li class="bg-facebook">
+                    <a href="javascript:void(0);"
+                       onclick="window.open('http://www.facebook.com/sharer/sharer.php?u='+fbhtml_url); return false;"
+                       title="分享給 Facebook 好友"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script src="main.js"></script>
+</body>
+</html>

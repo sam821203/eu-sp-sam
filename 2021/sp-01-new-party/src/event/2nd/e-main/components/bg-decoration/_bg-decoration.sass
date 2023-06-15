@@ -1,0 +1,28 @@
+.sp__wrap
+  +pos-set(relative)
+  +breakpoint-min($min-width-xl)
+    .decoration--foreground
+      +pos-set(absolute, under)
+      top: 580px
+      left: 0
+      width: 100%
+      height: 100%
+
+      .decoration--mountain
+        +pos-set(absolute, zero, 0 ,0)
+        width: 100%
+        height: 100%
+        background: center 0 url("~event/2nd/e-main/components/bg-decoration/bg-mountain.png") no-repeat
+
+      .decoration--spark
+        +pos-set(absolute, base)
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: center 0 url("~event/2nd/e-main/components/bg-decoration/bg-spark.png") repeat-y
+        transition: all 0.3s
+        will-change: scroll-position
+
+    .promo__group
+      +pos-set(relative, base)

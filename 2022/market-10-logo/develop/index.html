@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- ============== 輪播css ============== -->
+  <link rel="stylesheet" href="https://media.etmall.com.tw/sp/12500/swiper.min.css">
+  <!-- ============== 共用css ============== -->
+  <link rel="stylesheet" href="https://media.etmall.com.tw/sp/12500/animate.min.css">
+  <link rel="stylesheet" href="https://media.etmall.com.tw/sp/12500/generate_v1.3.1.css">
+
+  <!-- [電梯步驟1] 電梯CSS 不用就關掉 -->
+  <!-- 商品左電梯CSS，要使用還要在步驟2開啟左電梯data資料 -->
+  <!-- <link id="localElevatorLeft" rel="stylesheet" href="sp-elevator-left.css"> -->
+
+  <!-- 商品右電梯CSS，步驟2有測試div可以測試 -->
+  <!-- <link id="localElevatorRight" rel="stylesheet" href="sp-elevator-right.css"> -->
+  <!-- [電梯步驟1] 電梯CSS END -->
+  <link rel="stylesheet" href="app.css">
+
+</head>
+
+<!-- 是否要固定背景，不要就拿掉class -->
+
+<body class="bg-fixed">
+
+  <div class="navRightBar" id="navRightBar"></div>
+  <div class="elevatorHome js--main--dialog" id="elevatorHome"></div>
+
+  <div class="sp__wallper" id="spWrap">
+
+    <main class="sp__main">
+      <div class="layout--main home--logo">
+        <a href="https://www.etmall.com.tw"><img class="logo" src="ehs-logo.png" alt="東森購物"></a>
+      </div>
+
+      <section class="promo__section--bn-slider">
+        <div class="layout--main">
+          <div class="promo__block">
+            <div class="swiper-container" id="swiperstyBanner">
+              <ul class="swiper-wrapper">
+                <li class="swiper-slide">
+                  <div class="banner__item">
+                    <a href="#" title="第一個banner">
+                      <img src="750x328_1.jpg" alt="第一個banner">
+                    </a>
+                  </div>
+                </li>
+                <li class="swiper-slide">
+                  <div class="banner__item">
+                    <a href="#" title="第一個banner">
+                      <img src="750x328_2.jpg" alt="第一個banner">
+                    </a>
+                  </div>
+                </li>
+                <li class="swiper-slide">
+                  <div class="banner__item">
+                    <a href="#" title="第一個banner">
+                      <img src="750x328_3.jpg" alt="第一個banner">
+                    </a>
+                  </div>
+                </li>
+                <li class="swiper-slide">
+                  <div class="banner__item">
+                    <a href="#" title="第一個banner">
+                      <img src="750x328_4.jpg" alt="第一個banner">
+                    </a>
+                  </div>
+                </li>
+            </div>
+          </div>
+      </section>
+
+    </main>
+
+    <section class="promo__section">
+      <div class="layout--main">
+
+        <div class="tab__wrap">
+
+          <div id="tabHead" class="tab__head">
+            <div class="jsTabItem tab__item tab--all active">
+              <div class="tab__pic">
+                <img src="tabs/tab-0.png" alt="全部品牌">
+                <img src="tabs/tab-0-active.png" alt="全部品牌">
+              </div>
+              <div class="tab__text">全部品牌</div>
+            </div>
+
+          </div>
+
+
+          <div id="tabBody" class="tab__body"></div>
+
+        </div>
+        
+        
+        <div id="sortWrap" class="sort__wrap"></div>
+
+      </div>
+    </section>
+
+
+  </div>
+  <!-- ============== 共用JS ============== -->
+  <script src="https://media.etmall.com.tw/sp/12500/jquery-3.6.0.min.js"></script>
+  <script id="generateScript" src="https://media.etmall.com.tw/sp/12500/generate_v1.2.js"></script>
+
+  <!--[電梯步驟2] 電梯 JS -->
+  <!-- 商品左電梯單機版資料，不用就關掉，要使用還要上方步驟1開啟商品左電梯CSS -->
+  <!-- <script id="dataElevatorLeft" src="data-elevator.js"></script> -->
+
+  <!-- 線上自動切換電梯，無論如何都要有 -->
+  <script id="checkElevator" src="https://media.etmall.com.tw/sp/11911/check-elevator.js"></script>
+  <!-- [電梯步驟2] 電梯 JS END -->
+
+  <!-- [測試區] -->
+  <!-- 測試商品右電梯用，上線前必須關掉-->
+  <!-- <div data-title="ccc"></div> -->
+  <!-- 測試霸道電梯用，開啟時上方自動切換電梯要關閉，這支正式上線時需關閉、上方的要開啟回來 -->
+  <!-- <script id="checkElevator" src="https://media.etmall.com.tw/sp/14841/test-elevator.js?87"></script> -->
+
+
+  <!-- ============== 滾動動畫 start ============== -->
+  <script src="wow.min.js"></script>
+  <script>
+    new WOW().init();
+  </script>
+  <!-- ============== 滾動動畫 end ============== -->
+
+  <!-- ============== 輪播 start ============== -->
+  <script src="https://media.etmall.com.tw/sp/12500/swiper.min.js"></script>
+  <script>
+
+    var promoSliderItem = new Swiper('#swiperstyBanner', {
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      },
+      grabCursor: true,
+      lazy: {
+        loadPrevNext: true,
+      },
+      loop: true,
+      perspective: true,
+      // effect: "flip",
+      // flipEffect: {
+      //   slideShadows: false,
+      // },
+      slidesPerView: 1,
+      speed: 600,
+      watchSlidesProgress: true,
+      watchSlidesVisibility: true,
+    });
+
+  </script>
+
+  <!-- ============== 輪播 end ============== -->
+  <script>
+    // 要顯示注音Nav的Logo數量要求
+    const sortNavShowLimit = 3;
+    // 不屬於注音分類的預設title名稱
+    const defaultTitleName = '#';
+  </script>
+  <script src="fetch.js"></script>
+</body>
+
+</html>

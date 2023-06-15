@@ -1,0 +1,53 @@
+// ==========================================================================
+// slick-cacarousel
+// ==========================================================================
+@import '../../node_modules/slick-carousel/slick/slick'
+
+//custom arrow
+.pager__arrow
+  position: relative
+  width: 30px
+  height: 40px
+  cursor: pointer
+  &:before,
+  &:after
+    content: ''
+    position: absolute
+    z-index: 1
+    left: 30%
+    width: 40%
+    height: 50%
+    background-color: $gray-deep-dark
+  &:before
+    top: 0
+  &:after
+    top: 50%
+.arrow--prev
+  &:before
+    transform: skew(-30deg)
+  &:after
+    transform: skew(30deg)
+.arrow--next
+  &:before
+    transform: skew(30deg)
+  &:after
+    transform: skew(-30deg)
+
+//custom pager style
+.pager__wrap
+  .slick-slide
+    // margin-right: -80px
+    outline: 0
+    img
+      // transform: scale(0.8)
+      position: relative
+      z-index: map-get($zindex, zero)
+      box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2)
+      filter: grayscale(100%)
+    &.slick-current.slick-active
+      img
+        // transform: scale(1.2)
+        z-index: map-get($zindex, base)
+        box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19)
+        filter: grayscale(0)
+

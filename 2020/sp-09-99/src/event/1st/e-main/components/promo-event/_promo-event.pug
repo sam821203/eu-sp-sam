@@ -1,0 +1,96 @@
+- 
+  var promoDataE = [
+    {
+      link: "#",
+      imgSrc: "~event/1st/e-main/components/promo-event/items/promo-1.png",
+      alt: "每日一物"
+    }, 
+    {
+      link: "#note",
+      imgSrc: "~event/1st/e-main/components/promo-event/items/promo-2.png",
+      alt: "滿$3999送$999"
+    }, 
+    {
+      link: "#note", 
+      imgSrc: "~event/1st/e-main/components/promo-event/items/promo-3.png",
+      alt: "手機兩個9 抽最高999東森幣"
+    }, 
+    {
+      link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      imgSrc: "~event/1st/e-main/components/promo-event/items/promo-4.png",
+      alt: "首購登記請你吃冰"
+    }, 
+    {
+      link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202008/SP_1116218/w/index.html",
+      imgSrc: "~event/1st/e-main/components/promo-event/items/promo-5.png",
+      alt: "花月秋賞 月餅線上購"
+    }, 
+    {
+      link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202007/SP_1116046/w/index.html",
+      imgSrc: "~event/1st/e-main/components/promo-event/items/promo-6.png",
+      alt: "APP下單3次登記送霜淇淋"
+    },
+    {
+      link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202008/SP_1116239/w/index.html",
+      imgSrc: "~event/1st/e-main/components/promo-event/items/promo-7.png",
+      alt: "萊爾富超取請你喝中冰拿"
+    }, 
+    {
+      link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202007/SP_1116046/w/index.html",
+      imgSrc: "~event/1st/e-main/components/promo-event/items/promo-8.png",
+      alt: "APP獨享優惠"
+    },
+  ]
+
+- 
+  var promoDataU = [
+    {
+      link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202008/SP_1106087/w/index.html", 
+      imgSrc: "~event/1st/u-main/components/promo-event/items/promo-1.png",
+      alt: "20間銀行最高回饋10%"
+    }, 
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale", 
+      imgSrc: "~event/1st/u-main/components/promo-event/items/promo-2.png",
+      alt: "整點最便宜"
+    }, 
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale?Day=Up", 
+      imgSrc: "~event/1st/u-main/components/promo-event/items/promo-3.png",
+      alt: "天天最激殺"
+    }, 
+  ]
+
+- var promoData = isU ? promoDataU : promoDataE
+
+//- TODO: 如果promo不和hero綁一起時要有自己的section和layout--main
+section.promo__group.promo__group--promo-event.m-bottom--sm(data-title="超激划算")
+  .layout--main
+    //- .promo__head.promo__title
+    //-   img(src="", alt="")
+
+    .promo__body
+      .promo__event
+        ul.event__wrap.event__wrap--top
+          li#dailyPromo
+            a(href= promoData[0].link, title= promoData[0].alt)
+              img(src= promoData[0].imgSrc, alt= promoData[0].alt)
+          li
+            a#promoAnchor2(href= promoData[1].link, title= promoData[1].alt)
+              img(src= promoData[1].imgSrc, alt= promoData[1].alt)
+            a(href= promoData[2].link, title= promoData[2].alt)
+              img(src= promoData[2].imgSrc, alt= promoData[2].alt)
+          li
+            a(href= promoData[3].link, title= promoData[3].alt)
+              img(src= promoData[3].imgSrc, alt= promoData[3].alt)
+            a(href= promoData[4].link, title= promoData[4].alt)
+              img(src= promoData[4].imgSrc, alt= promoData[4].alt)
+          li
+            a(href= promoData[5].link, title= promoData[5].alt)
+              img(src= promoData[5].imgSrc, alt= promoData[5].alt)
+          li
+            a(href= promoData[6].link, title= promoData[6].alt)
+              img(src= promoData[6].imgSrc, alt= promoData[6].alt)
+          li
+            a(href= promoData[7].link, title= promoData[7].alt)
+              img(src= promoData[7].imgSrc, alt= promoData[7].alt)

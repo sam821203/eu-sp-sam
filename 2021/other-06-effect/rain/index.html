@@ -1,0 +1,148 @@
+﻿<!--範例：https://codepen.io/arickle/pen/XKjMZY-->
+<!DOCTYPE HTML>
+<html lang='zh-tw'>
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 原本css 不用複製 -->
+  <link rel="stylesheet" href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.css">
+  <style>
+    /* reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    *:before,
+    *:after {
+      box-sizing: border-box;
+    }
+
+    a {
+      display: block;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    img {
+      border: 0;
+    }
+
+    main, article, aside, details, figcaption, figure,
+    footer, header, hgroup, menu, nav, section {
+      display: block;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-size: 14px;
+      font-family: PingFangTC-regular, Roboto, "LiHei Pro", "Source Han Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, "Microsoft JhengHei", sans-serif;
+      /* 自行修正背景顏色 */
+      background-color: #77a7dc;
+    }
+
+    /* 大網各區塊背景  */
+    @media screen and (min-width: 960px) {
+      .visual__block1 {
+        background: center 0 url("bg_01.jpg") no-repeat;
+      }
+    }
+  </style>
+
+  <!-- 步驟1 加雨CSS -->
+  <link rel="stylesheet" href="effects-rain.css">
+
+  <style>
+    /*-- 手機版 --*/
+    .rain__wrap {
+      width: 100%;
+      height: 40vh;
+      pointer-events: none;
+      /*background: linear-gradient(to bottom, #202020, #111119);*/
+    }
+
+    /* 落下的雨 */
+    .stem {
+      /*雨滴寬度*/
+      width: 3px;
+      height: 40%;
+      /*雨滴顏色*/
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+    }
+
+    /*-- 電腦版 --*/
+    @media screen and (min-width: 960px) {
+      .rain__wrap {
+        width: 100%;
+        height: 80vh;
+        /*background: linear-gradient(to bottom, #202020, #111119);*/
+      }
+    }
+
+  </style>
+  <!-- 步驟1 加雨CSS end -->
+
+  <!-- 預設css 不用複製 -->
+</head>
+<body>
+
+<!-- 步驟2 加雨的html 會希望放在最前面 -->
+
+<!--不同class name 效果 -->
+<!-- 1. class="splat-toggle" 落下會反彈效果 -->
+<!-- 2. class="back-row-toggle" 不知是什麼 -->
+<!-- 3. class="single-toggle" 雨滴單點 -->
+<!-- 4. class="rain__skew-right" 雨從"右上"往"左下" -->
+<!-- 5. class="rain__skew-left" 雨從"左上"往"右下" -->
+
+<div class="rain__wrap back-row-toggle splat-toggle splat-toggle"></div>
+<!-- 步驟2 end -->
+
+
+
+<div id="spWrap" class="sp__wallper">
+  <!-- 主視覺 -->
+  <main class="sp__main">
+    <section class="sp__visual visual__block1">
+      <div class="layout--main">
+        <ul class="visual--auto clearfix">
+          <li class="visual__fragment width--auto">
+            <img src="index_01.jpg" alt="雨季懶人包">
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</div>
+
+
+<!-- 步驟3 在最後面加入javascript，記得要把去檔案夾中複製到SP頁的檔案夾裡面 -->
+<!-- 通常大禮包已經有這支檔案，如果沒有須自行加連結 -->
+<script type="text/javascript" src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<!-- 通常大禮包已經有這支檔案，如果沒有須自行加連結 -->
+<script id="generateScript"
+        src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.js"></script>
+<!-- 新增的js連結 -->
+<script src="effects-rain.js"></script>
+<!-- 步驟3 end -->
+
+</body>
+</html>
+
+
+
+<!-- 完整的html -->
+<!--<div class="rain__wrap back-row-toggle splat-toggle">-->
+<!--<div class="rain front-row"></div>-->
+<!--<div class="rain back-row"></div>-->
+<!--</div>-->

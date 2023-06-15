@@ -1,0 +1,143 @@
+
+.promo__group--random .promo__wrap {
+    padding: 10% 4.5% 4.5% 6%;
+    background: center 0 url("index_04.png") no-repeat;
+    background-size: 100%;
+    height: 47vw;
+}
+
+.promo__group--random .promo__wrap .good__wrap {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: 100%
+}
+
+.promo__group--random .promo__wrap .good__wrap li {
+    flex: 1 0 23%;
+    padding: 0;
+    margin: 1%
+}
+
+.promo__group--random .promo__wrap .good__wrap li:nth-child(1) {
+    animation: breathing-light 6s both ease-out infinite
+}
+
+.promo__group--random .promo__wrap .good__wrap li:nth-child(2) {
+    animation: breathing-light 6s 2s both ease-out infinite
+}
+
+.promo__group--random .promo__wrap .good__wrap li:nth-child(3) {
+    animation: breathing-light 6s 3s both ease-out infinite
+}
+
+.promo__group--random .promo__wrap .good__wrap li:nth-child(4) {
+    animation: breathing-light 6s 4s both ease-out infinite
+}
+
+.promo__group--random .promo__wrap .good__wrap li a {
+    width: 100%;
+    text-align: center;
+    transition: transform 0.5s;
+    border-radius: 0.5em
+}
+
+.promo__group--random .promo__wrap .good__wrap li.odd a {
+    background-color: #ffc84e
+}
+
+.promo__group--random .promo__wrap .good__wrap li.odd a:hover,
+.promo__group--random .promo__wrap .good__wrap li.odd a:active,
+.promo__group--random .promo__wrap .good__wrap li.odd a.active {
+    background-color: #f79fff
+}
+
+.promo__group--random .promo__wrap .good__wrap li.even a {
+    background-color: #fff
+}
+
+.promo__group--random .promo__wrap .good__wrap li.even a:hover, .promo__group--random .promo__wrap .good__wrap li.even a:active, .promo__group--random .promo__wrap .good__wrap li.even a.active {
+    background-color: #ff9fbc
+}
+
+@media screen and (min-width: 960px) {
+    .promo__group--random .promo__wrap {
+        padding: 21% 10.5% 12.5% 15%
+    }
+
+    .promo__group--random .promo__wrap .good__wrap li {
+        margin: 1.5% 1%
+    }
+}
+
+.promo__group--card .card__wrap {
+    display: none
+}
+
+.promo__group--card .card__wrap.active {
+    display: block
+}
+
+.promo__group--card .card__box {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: center;
+    justify-content: center
+}
+
+.promo__group--card .card__item {
+    position: relative;
+    z-index: 0;
+    -ms-flex: 0 0 30%;
+    flex: 0 0 30%;
+    perspective: 600px;
+    cursor: pointer
+}
+
+.promo__group--card .card__front, .promo__group--card .card__back {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transition: all 0.3s
+}
+
+.promo__group--card .card__front {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: rotateY(180deg)
+}
+
+
+@media screen and (min-width: 960px) {
+    .promo__group--random .promo__wrap {
+        padding: 10% 4.5% 4.5% 6%;
+        background-size: 960px 454px;
+        height: 454px;
+    }
+}
+
+.promo__group--card .card__item.active .card__back {
+    transform: rotateY(-180deg)
+}
+
+.promo__group--card .card__item.active .card__front {
+    transform: rotateY(0)
+}
+
+@keyframes breathing-light {
+    0%, 5%, 15% {
+        -webkit-filter: brightness(100%);
+        filter: brightness(100%)
+    }
+    10% {
+        -webkit-filter: brightness(200%);
+        filter: brightness(200%)
+    }
+}

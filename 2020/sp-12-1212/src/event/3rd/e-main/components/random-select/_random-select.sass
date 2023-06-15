@@ -1,0 +1,118 @@
+.promo__group--random
+  .promo__wrap
+    padding: 21% 10.5% 12.5% 14%
+    +bg-set(url("~event/3rd/e-main/components/random-select/bg-random-select.png"), 100%)
+    //+bg-set(url("https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1116824/bg-random-select.png"), 100%)
+    .good__wrap
+      display: flex
+      flex-wrap: wrap
+      // justify-content: space-around
+      // margin-left: 1%
+      width: 100%
+      li
+        flex: 1 0 30%
+        -ms-flex: 1 0 25%
+        padding: 1.5%
+        margin: 1%
+        &:nth-child(1)
+          animation: breathing-light 6s 1s both ease-out infinite
+          //transform: translateX(-2%)
+        &:nth-child(2)
+          animation: breathing-light 6s 1.5s both ease-out infinite
+          //transform: translateX(1%)
+        &:nth-child(3)
+          animation: breathing-light 6s 2s both ease-out infinite
+          //transform: translateX(3%)
+        &:nth-child(4)
+          //transform: translate(-2% 2%)
+          animation: breathing-light 6s 4.5s both ease-out infinite
+        &:nth-child(5)
+          //transform: translate(1% 2%)
+          animation: breathing-light 6s 5s both ease-out infinite
+        &:nth-child(6)
+          //transform: translate(1% 2%)
+          animation: breathing-light 6s 2.5s both ease-out infinite
+        &:nth-child(7)
+          //transform: translateX(-2%)
+          animation: breathing-light 6s 4s both ease-out infinite
+        &:nth-child(8)
+          animation: breathing-light 6s 3.5s both ease-out infinite
+          //transform: translateX(0)
+        &:nth-child(9)
+          //transform: translate(1% 2%)
+          animation: breathing-light 6s 3s both ease-out infinite
+        a
+          width: 100%
+          text-align: center
+          transition: transform 0.5s
+          border-radius: 0.5em
+          img
+            //transform: translateY(1.5%)
+
+        &.odd
+          a
+            background-color: #ffc84e
+            &:hover,
+            &:active,
+            &.active
+              background-color: #f79fff
+        &.even
+          a
+            background-color:  #fff
+            &:hover,
+            &:active,
+            &.active
+              background-color: #ff9fbc
+
+    +breakpoint-min($min-width-xl)
+      padding: 21% 10.5% 12.5% 15%
+      .good__wrap
+        li
+          margin: 1.5% 1%
+
+
+.promo__group--card
+  .card__wrap
+    display: none
+    &.active
+      display: block
+
+  .card__box
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+  .card__item
+    +pos-set(relative, zero)
+    flex: 0 0 30%
+    //margin: .5%
+    perspective: 600px
+    cursor: pointer
+
+  .card__front,
+  .card__back
+    backface-visibility: hidden
+    transition: all 0.3s
+
+
+  .card__front
+    +pos-set(absolute, under, 0, 0)
+    width: 100%
+    height: 100%
+    transform-style: preserve-3d
+    transform: rotateY(180deg)
+    img
+      transform: scale(0.9)
+      +breakpoint-min($min-width-xl)
+        transform: translateY(5%) scale(1)
+
+  .card__item.active .card__back
+    transform: rotateY(-180deg)
+
+  .card__item.active .card__front
+    transform: rotateY(0)
+
+@keyframes breathing-light
+  0%,5%,15%
+    filter: brightness(100%)
+  10%
+    filter: brightness(200%)

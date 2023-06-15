@@ -1,0 +1,71 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero__wrap
+  +pos-set(relative, zero)
+  padding-bottom: 10%
+  overflow: hidden
+  +breakpoint-min($min-width-xl)
+    background-size: auto
+
+  // .hero__zone
+
+  .hero__block
+    +pos-set(relative, zero)
+    padding-top: 1.5%
+
+  // .hero__box
+
+  .hero__title
+    &--main
+      +pos-set(relative, base)
+      width: 100%
+      transform-origin: center top
+      animation: bright-title 2s infinite steps(2)
+
+  .hero__title--sub
+    margin-left: 5%
+    width: 45%
+    text-align: center
+    animation: bright-hero 1.8s infinite alternate
+  .decoration--hero
+    +pos-set(absolute, base)
+    bottom: -15%
+    right: 0
+    width: 50%
+    transform-origin: 60% bottom
+    animation: rotate-hero 1.8s infinite alternate
+    &::before
+      content: ''
+      +pos-set(absolute, zero)
+      top: 38%
+      left: -3%
+      width: 20%
+      height: 20%
+      +bg-set(url(event/1st/e-main/components/hero/decoration-flash.png), 100%)
+      animation: flash-hero 1.8s infinite alternate
+
+@keyframes rotate-hero
+  0%, 40%
+    transform: rotate(-3deg)
+  20%, 60%, 100%
+    transform: rotate(10deg)
+
+@keyframes flash-hero
+  0%, 40%
+    opacity: 1
+  20%, 60%, 100%
+    opacity: 0
+
+@keyframes bright-hero
+  0%, 40%
+    filter: brightness(115%)
+  20%, 60%, 100%
+    filter: brightness(100%)
+
+@keyframes bright-title
+  0%, 10%, 20%,100%
+    filter: brightness(100%)
+  5%, 15%
+    filter: brightness(120%)
+

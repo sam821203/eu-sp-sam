@@ -1,0 +1,126 @@
+.dynamic-slider-w3m3
+  // +pos-set(relative, zero)
+  overflow: hidden
+  .decor__wrap
+    padding-bottom: 8%
+    +breakpoint-min($min-width-xl)  
+      padding-bottom: 4%
+  .decor__item
+    &--left
+      +pos-set(absolute, zero, 3%, 15%)
+      width: 18%
+      transform: translateY(12px)
+      &.active
+        animation: message-scale 1s .2s ease-in-out infinite alternate
+      +breakpoint-min($min-width-xl)
+        top: 2%
+        left: calc(50% - 290px)
+    &--right
+      +pos-set(absolute, zero, 3%)
+      right: 16%
+      width: 18%
+      opacity: 1
+      &.active
+        animation: stamp .3s both, thump-up 2.2s .6s ease-in-out 1
+      +breakpoint-min($min-width-xl)
+        top: 0
+        right: calc(50% - 290px)
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/dynamic-slider-w3m3/bg-dynamic-slider-w3m3.png), 100%)
+    margin-top: 2%
+    .promo__zone
+      +aspect-ratio(960, 600)
+      .promo__block
+        padding: 15.5% 4% 0
+        +breakpoint-min($min-width-xl)
+          padding: 17.5% 4% 0
+      .promo__slider
+        overflow: hidden
+        .swiper-slide
+          display: flex
+          justify-content: space-around
+          flex-wrap: wrap
+        .dynamic__item
+          width: 30%
+          margin-bottom: 2%
+          &:nth-child(2)
+            margin-top: -15%
+            background-color: transparent
+            width: 40%
+            .product--dynamic
+              padding-bottom: 0%
+              .product__img
+                &::before
+                  padding-bottom: 120%
+            .product__img
+              border: none
+              margin-top: 36%
+            .product__text
+              display: none
+          .product__img
+            border-bottom: none
+          .product__text
+            border-top: none
+            padding: 1.5%
+          +breakpoint-min($min-width-xl)
+            .product__img,
+            .product__text
+              border-width: 2px
+
+@keyframes bounceIn
+  0%, 20%, 40%, 60%, 80%, to
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+  0%
+    transform: scale3d(.7, .7, .7)
+  20%
+    transform: scale3d(1, 1, 1)
+  40%
+    transform: scale3d(.9, .9, .9)
+  60%
+    transform: scale3d(1.02, 1.02, 1.02)
+  80%
+    transform: scale3d(.97, .97, .97)
+  to
+    transform: scaleX(1)
+
+@keyframes swing
+  20%
+    transform: rotate(5deg)
+  40%
+    transform: rotate(-5deg)
+  60%
+    transform: rotate(5deg)
+  80%
+    transform: rotate(-5deg)
+  to
+    transform: rotate(0deg)
+
+@keyframes message-scale
+  0%, 80%
+    opacity: 1
+    transform: translateY(0) scale(1.1)
+  40%
+    opacity: 0.8
+    transform: translateY(8px) scale(.8)
+
+@keyframes stamp
+  0%
+    opacity: 0
+    transform: scale(10)
+  1%
+    opacity: 1
+  80%
+    opacity: 1
+    transform: scale(.8)
+  100%
+    opacity: 1
+    transform: scale(1)
+
+@keyframes thump-up
+  0%, 15.5%, 30%, 100%
+    transform-origin: right bottom
+    transform: rotate(0)
+  9%, 21.5%
+    transform: rotate(6deg)

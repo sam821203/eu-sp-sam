@@ -1,0 +1,151 @@
+// ==========================================================================
+// Plugins
+// ==========================================================================
+// // @import vendors/animate
+// @import vendors/style/swiper-slider-custom
+@import vendors/style/swiper-safari-polyfill
+
+// ==========================================================================
+// first screen need
+// ==========================================================================
+// hero section
+@import event/2nd/e-main/components/hero-section/_hero-section
+
+// @import utils/bg-decoration-instance/css-firework-2/_css-firework-2
+
+// ==========================================================================
+// components
+// ==========================================================================
+// dynamic product 假宮格共用CSS
+@import layout/dynamic-product/_dynamic-product.sass
+
+// 一般components
+@import event/2nd/e-main/components/promo-slider/_promo-slider
+@import event/2nd/e-main/components/promo-special/_promo-special
+@import event/2nd/e-main/components/promo-event/_promo-event
+@import event/2nd/e-main/components/daily-slider/_daily-slider
+@import event/2nd/e-main/components/tab-section/_tab-section
+@import event/2nd/e-main/components/dynamic-slider/_dynamic-slider
+@import event/2nd/e-main/components/bn-section/_bn-section
+@import event/2nd/e-main/components/event-w3m3/_event-w3m3
+@import event/2nd/e-main/components/dynamic-slider-half/_dynamic-slider-half
+@import event/2nd/e-main/components/bn-section-2/_bn-section-2
+@import event/2nd/e-main/components/daily-time/_daily-time
+@import event/2nd/e-main/components/bn-slider/_bn-slider
+@import event/2nd/e-main/components/bn-special/_bn-special
+
+// ==========================================================================
+// Page
+// ==========================================================================
+body
+  +pos-set(relative)
+  background-color: $main-e-background-color-2nd
+  overflow-x: hidden
+  // height: 1000vh
+
+  .decor__bg
+    +pos-set(fixed, under, 0%, 0%)
+    +breakpoint-min($min-width-xl)
+      +bg-set(url(event/2nd/e-main/pages/index/bg-web.jpg), auto)
+
+  .decor__fg
+    +pos-set(absolute, zero, 0%, 0%)
+    +bg-set(url(event/2nd/e-main/pages/index/bg-top.jpg), 100%)
+    +breakpoint-min($min-width-xl)
+      +bg-set(url(event/2nd/e-main/pages/index/bg-top-web.jpg), auto)
+
+  .decor__hero
+    display: none
+    +breakpoint-min($min-width-xl)
+      display: block
+      +pos-set(absolute, base, 377px, 0%)
+      +bg-set(url(event/2nd/e-main/pages/index/bg-decor.png), auto)
+      pointer-events: none
+
+  .decor__wrap--hero
+    +pos-set(absolute, zero, 0%, 0%)
+    width: 100vw
+    height: 100vh
+    overflow: hidden
+    .decor__firework
+      &:first-child
+        +pos-set(absolute, zero, -0.3%, 40%)
+        width: 75%
+        animation: bounceInUp 2.4s ease-in 1 forwards
+        +breakpoint-min($min-width-xl)
+          top: 280px
+          left: calc(50% - 770px)
+          width: 452px
+      &:nth-child(2)
+        +pos-set(absolute, zero, .5%, 4%)
+        width: 25%
+        animation: bounceInUp 3.1s ease-in 1 forwards
+        +breakpoint-min($min-width-xl)
+          top: 140px
+          left: calc(50% - 900px)
+          width: 246px
+      &:nth-child(3)
+        +pos-set(absolute, zero, 440px, calc(50% - 960px))
+        max-width: 262px
+        animation: bounceInUp 1s ease-in 1 forwards
+      &:nth-child(4)
+        +pos-set(absolute, zero, 60px)
+        right: calc(50% - 730px)
+        max-width: 384px
+        animation: bounceInUp 2.4s ease-in 1 forwards
+      &:nth-child(5)
+        +pos-set(absolute, zero, 270px)
+        right: calc(50% - 880px)
+        max-width: 204px
+        animation: bounceInUp 1s ease-in 1 forwards
+      &:nth-child(6)
+        +pos-set(absolute, zero, 440px)
+        right: calc(50% - 860px)
+        max-width: 344px
+        animation: bounceInUp 3.1s ease-in 1 forwards
+
+// TODO: 修改EU nav佔位高度(影響logo距離上方高度，U每次要改)
+.navRightBar
+  height: 39px
+  +breakpoint-min($min-width-xl)
+    height: auto
+
+.decoration--top,
+.decor--top
+  +pos-set(absolute)
+  pointer-events: none
+
+section:not(.note)
+  // 有parallax scroll時圖層有relative就有預設z-index可能會遮到宮格，因此使用這個讓宮格也能有預設z-index
+  +pos-set(relative)
+  a
+    display: block
+
+@keyframes zoomIn
+  0%
+    opacity: 0
+    transform: scale3d(.3, .3, .3)
+  50%
+    opacity: 1
+
+@keyframes showItem
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+@keyframes bounceInUp
+  0%, 60%, 75%, 90%, to
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+  0%
+    opacity: 0
+    transform: translate3d(0, 3000px, 0) scaleY(5)
+  60%
+    opacity: 1
+    transform: translate3d(0, -20px, 0) scaleY(.9)
+  75%
+    transform: translate3d(0, 10px, 0) scaleY(.95)
+  90%
+    transform: translate3d(0, -5px, 0) scaleY(.985)
+  to
+    transform: translateZ(0)

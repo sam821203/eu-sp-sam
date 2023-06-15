@@ -1,0 +1,65 @@
+-
+  var randomChooseData = [
+    {
+      link: "https://www.etmall.com.tw/i/3052575",
+      imgSrc: "event/3rd/e-main/components/random-choose/items/choose-1.png",
+      alt: "正官庄 活蔘3盒"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3047196",
+      imgSrc: "event/3rd/e-main/components/random-choose/items/choose-2.png",
+      alt: "童樂繪金飾 兒童手鍊"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3059929",
+      imgSrc: "event/3rd/e-main/components/random-choose/items/choose-3.png",
+      alt: "理膚寶水凝膠買一送一"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3060441",
+      imgSrc: "event/3rd/e-main/components/random-choose/items/choose-4.png",
+      alt: "新鱷魚防蚊片+髮捲型"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2608972",
+      imgSrc: "event/3rd/e-main/components/random-choose/items/choose-5.png",
+      alt: "正宗福伯代言苦瓜膠囊"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2985824",
+      imgSrc: "event/3rd/e-main/components/random-choose/items/choose-6.png",
+      alt: "小米手環5"
+    },
+  ]
+
+section.promo__group.promo__group--choose.m-bottom--lg(data-title="連連看")
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        .btn__wrap
+          #btnChooseBox.btn__box
+            a(href="", title="點我開連！")
+            a(href="", title="點我開連！")
+            a(href="", title="點我開連！")
+        #chooseLineBox.line__wrap
+          .line__box--bg
+            img(src="event/3rd/e-main/components/random-choose/choose-line.png", alt="")
+          .line__btn
+            img(src="event/3rd/e-main/components/random-choose/btn-choose.png", alt="")
+          .line__box.line__box--a
+          .line__box.line__box--b
+          .line__box.line__box--c
+        .card__wrap
+          ul#cardBox.card__box
+            each data in randomChooseData
+              li
+                .card__item
+                  .card__front
+                    a(href= data.link, title= data.alt)
+                      img(src= data.imgSrc, alt= data.alt)
+                  .card__back(title="謎之獎勵")
+                    img(src="event/3rd/e-main/components/random-choose/choose-back.png", alt="謎之獎勵")
+        .decoration--top.decoration--gift.decoration--gift-left
+          img(src="event/3rd/e-main/components/random-choose/decoration-choose-1.png", alt="")
+        .decoration--top.decoration--gift.decoration--gift-right
+          img(src="event/3rd/e-main/components/random-choose/decoration-choose-2.png", alt="")

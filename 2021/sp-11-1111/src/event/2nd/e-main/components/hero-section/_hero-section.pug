@@ -1,0 +1,65 @@
+section.hero__wrap
+  #bgSky.background--hero.background--hero-1
+
+  include /utils/bg-decoration-instance/canvas-firework-2/_canvas-firework-2
+
+  //- 大網城牆後雲霄飛車
+  .decoration--top.decoration__car
+    #bgCarLeft.decoration--top.decoration__car--left
+      img(src="event/2nd/e-main/components/hero-section/decor-web/decor-car-left.png", alt="")
+    #bgCarRight.decoration--top.decoration__car--right
+      img(src="event/2nd/e-main/components/hero-section/decor-web/decor-car-right.png", alt="")
+  #bgCastle.background--hero.background--hero-2
+
+  //- 飛機
+  include /utils/bg-decoration-instance/threejs-plane/_threejs-plane
+
+  #bgRoadLight.decoration--top.decoration__road-light
+  .decoration--top.decoration__background
+  .hero__zone
+    //- 大網裝飾相關
+    include /event/2nd/e-main/components/hero-section/decor-web/_decor-web
+
+    .layout--main
+
+
+      #heroBlock.hero__block
+
+        .hero__box
+
+          //- 摩天輪相關
+          include /event/2nd/e-main/components/hero-section/ferris/_ferris
+
+          .hero__title.hero__title--main.block-center
+            //- 標題
+            .decoration--top.title__icon
+              img(src="event/2nd/e-main/components/hero-section/title-icon.png", alt="暖身慶")
+            h1
+              .title__box.title--decor
+                .decoration--title
+                  .decor__box
+                    img(src="event/2nd/e-main/components/hero-section/title-1.png", alt="1")
+                .decoration--title
+                  .decor__box
+                    img(src="event/2nd/e-main/components/hero-section/title-1.png", alt="1")
+                .decoration--title
+                  .decor__box
+                    img(src="event/2nd/e-main/components/hero-section/title-1.png", alt="1")
+                .decoration--title
+                  .decor__box
+                    img(src="event/2nd/e-main/components/hero-section/title-1.png", alt="1")
+              .title__box.title--main
+                img(src="event/2nd/e-main/components/hero-section/title.png", alt="嗨Fun購好玩")
+              .title__box.title--sub
+                img(src="event/2nd/e-main/components/hero-section/title-sub.png", alt="百萬東森幣，最高折抵80%")
+
+          .decoration--top.decoration__spotlight.decoration__spotlight--left
+            img(src="event/2nd/e-main/components/hero-section/decor-spotlight.png", alt="")
+          .decoration--top.decoration__spotlight.decoration__spotlight--right
+            img(src="event/2nd/e-main/components/hero-section/decor-spotlight.png", alt="")
+
+    //- 禮物檯相關
+    include /event/2nd/e-main/components/hero-section/hero-items/_hero-items
+
+  .decoration--top.decoration__foreground
+

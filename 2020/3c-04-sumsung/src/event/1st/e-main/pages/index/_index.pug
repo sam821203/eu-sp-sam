@@ -1,0 +1,22 @@
+//- TODO: 打開u-mall選項會自動轉換成U的logo和連結(預設etmall)
+//- - var isU = true
+//- TODO: 打開會切換SP連結(要去utils/pug/include/_elevator-link中設定sp連結)
+//- - var isSp = true
+
+
+main#spWrap.sp__wrap.sp__wrap--e
+  include /layout/header/_header
+  //- #parallaxBg.parallax__background
+  //- .parallax__background
+
+  //- hero section
+  //- ===========================
+  include /event/1st/e-main/components/hero-section/_hero-section
+  .decoration--promo
+
+  //- other components
+  //- ===========================
+  include /event/1st/e-main/components/event-w2m2/_event-w2m2
+
+//- script區
+include /utils/pug/_total-script

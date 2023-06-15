@@ -1,0 +1,47 @@
+//- TODO: 打開雙月選項切換雙月(預設單月)
+- var isEven = true
+//- TODO: 打開2號電梯選項切換第二組電梯(預設第一組)
+- var isSecond = true
+//- TODO: 打開u-mall選項會自動轉換成U的logo和連結、電梯(預設etmall)
+//-- var isU = true
+
+//- 如果放在hero-section會出現重load的感覺
+include /event/2nd/e-main/components/bg-decoration/_bg-decoration
+
+main#spWrap.sp__wrap.sp__wrap--e
+  include /layout/header/_header
+  //- #parallaxBg.parallax__background
+  //- .parallax__background
+
+  //- hero section
+  //- ===========================
+  include /event/2nd/e-main/components/hero-section/_hero-section
+  include /event/2nd/e-main/components/daily-slider/_daily-slider
+  include /event/2nd/e-main/components/tab-section/_tab-section.pug
+  include /event/2nd/e-main/components/left-right-section/_left-right-section
+
+  //- other components
+  //- ===========================
+  include /event/2nd/e-main/components/dynamic-slider/_dynamic-slider
+  include /event/2nd/e-main/components/mid-big-slider/_mid-big-slider.pug
+  include /event/2nd/e-main/components/random-select/_random-select.pug
+  include /event/2nd/e-main/components/tab-slider-section/_tab-slider-section
+  //include /event/2nd/e-main/components/dynamic-slider-2/_dynamic-slider-2
+  include /event/2nd/e-main/components/bn-bank/_bn-bank.pug
+  include /event/2nd/e-main/components/dynamic-slider-3/_dynamic-slider-3
+  //include /event/2nd/e-main/components/event-w4m2/_event-w4m2
+
+//- script區
+include /utils/pug/_total-script
+//- tabs區
+script(src="snowfall.jquery.js")
+script#dataTab(src="data-tab-2nd.js")
+//- BT21區
+script(src="data-dynamic-2nd.js")
+script#dataDaily(src="data-daily-2nd.js")
+//script#check(src="check.js")
+//- 第一顆區
+//script(src="data-promo.js")
+script(src="data-ticket.js")
+//script#dataDynamicHalf(src="data-dynamic-half.js")
+

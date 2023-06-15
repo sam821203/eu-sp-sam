@@ -1,0 +1,91 @@
+.promo__group--card
+  padding-top: 3%
+  .card__info
+    display: none
+    margin-left: 5%
+    &.active
+      display: block
+
+    .info--mobile,
+    .info--web
+      +pos-set(relative, zero)
+      a
+        +pos-set(absolute, base)
+
+    .info--web
+      display: none
+    +breakpoint-min($min-width-xl)
+      .info--mobile
+        display: none
+      .info--web
+        display: block     
+
+    img
+      width: 95%
+
+    .info--mobile
+      .btn--download
+        left: 11.7%
+        padding-bottom: 26.5%
+        width: 70%
+        &:first-of-type
+          top: 17%
+          // border: 1px solid #f00
+        &:nth-of-type(2)
+          top: 45%
+          // border: 1px solid #0f0
+      .btn--app
+        left: 11.7%
+        bottom: 8%
+        padding-bottom: 11.7%
+        width: 68%
+        // border: 1px solid #00f
+
+    .info--web
+      .btn--download
+        bottom: 2.2%
+        padding-bottom: 10%
+        width: 26.6%
+        &:first-of-type
+          left: 18.4%
+          // border: 1px solid #f00
+        &:last-of-type
+          right: 27.1%
+          // border: 1px solid #00f
+
+  .card__wrap
+    display: none
+    &.active
+      display: block 
+
+  .card__box
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+  .card__item
+    +pos-set(relative, zero)
+    flex: 0 0 30%
+    margin: .5%
+    perspective: 600px
+    cursor: pointer
+
+  .card__front,
+  .card__back
+    backface-visibility: hidden
+    transition: all 0.3s
+
+
+  .card__front
+    +pos-set(absolute, under, 0, 0)
+    width: 100%
+    height: 100%
+    transform-style: preserve-3d
+    transform: rotateY(180deg)
+  
+  .card__item.active .card__back
+    transform: rotateY(-180deg)
+  
+  .card__item.active .card__front
+    transform: rotateY(0)
+
+  

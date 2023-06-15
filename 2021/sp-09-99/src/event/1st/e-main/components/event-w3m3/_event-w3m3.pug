@@ -1,0 +1,62 @@
+-
+  var w3m3Data = [
+    {
+      link: "https://media.etmall.com.tw/sp/10889/m/index.html",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-1.png",
+      alt: "美妝玩美樂翻天3折起"
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/123605",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-2.png",
+      alt: "保健瘋殺限時快搶"
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/142474",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-3.png",
+      alt: "LG Gram 輕贏隨行好禮送"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/10641/m/index.html",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-4.png",
+      alt: "家電中秋大下殺"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/10722/m/index.html",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-5.png",
+      alt: "月圓中秋 相聚好食光"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/10867/m/index.html",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-6.png",
+      alt: "夏末日用狂歡慶 涼夏3折up"
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/142353",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-7.png",
+      alt: "萬件女裝出清$99up"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/10422/m/index.html",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-8.png",
+      alt: "今夏這樣購滿額多重送"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/10838/m/index.html",
+      imgSrc: "event/1st/e-main/components/event-w3m3/items/depart-9.png",
+      alt: "秋想去旅行5折up"
+    },
+  ]
+
+section.promo__group.promo__group--w3m3.m-bottom--sm(data-title="熱門活動")
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        #w3m3Wrap.event__wrap
+          .promo__block.m-bottom--xs
+            ul.good__wrap
+              each data, index in w3m3Data
+                li
+                  a(href= data.link, title= data.alt)
+                    - var hasImg = data.imgSrc ? true : false
+                    if (hasImg)
+                      img(src= data.imgSrc, alt= data.alt)

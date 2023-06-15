@@ -1,0 +1,190 @@
+.promo__group--daily-slider
+  .promo__wrap
+    padding: 9% 10% 0
+    height: 70vw
+    +bg-set(url(event/1st/e-main/components/daily-slider/bg-daily-slider.png), 100% auto, center, 0)
+  a
+    &:hover,
+    &:active
+      filter: brightness(102%) contrast(105%)
+
+  // TODO: 橫式
+  .product__block
+    display: flex
+    justify-content: space-between
+
+  .daily__slider
+    +pos-set(relative, zero)
+    padding-left: 13%
+    padding-right: 12%
+    width: 100%
+    +bg-set(url(event/1st/e-main/components/daily-slider/bg-dynamic-item.png), contain)
+    .swiper-container
+      width: 100%
+      li
+        width: 100%
+    .swiper-button--custom
+      +pos-set(absolute, third, 48%)
+      width: 7%
+      &.swiper-button-prev
+        left: 9%
+      &.swiper-button-next
+        right: 9%
+
+    // TODO: 如果每個item共用圖則在這設定，不共用則到JS中建立換圖邏輯
+    .product__intro
+      +bg-set(url(event/1st/e-main/components/daily-slider/intro-item.png), 100%, center, 36%)
+
+  .daily__block
+    display: flex
+    justify-content: space-between
+    .daily__box
+      width: 49%
+    .product__intro
+      +bg-set(url(event/1st/e-main/components/daily-slider/intro-item-notyet.png), 100%, center, 16%)
+
+  // 共用類宮格樣式
+  .product--dynamic
+    .product__block
+      padding: 2.5% 5% 5%
+      // +bg-set(url(event/1st/e-main/components/daily-slider/bg-dynamic-item.png), contain)
+    .product__name
+      margin-bottom: 1%
+    .product__intro
+      margin: 2.5% auto
+      padding: 3% 5%
+      width: 100%
+      color: $gray-deep-light
+    .product__price
+      width: 100%
+
+    .product__img
+      width: 44%
+      // border-radius: 3vw 0 0 3vw
+      border-radius: 0
+    .product__text
+      width: 54%
+      // border-radius: 0 3vw 3vw 0
+      border-radius: 0
+    // +breakpoint-min($min-width-xl)
+    //   .product__img
+    //     border-radius: 28px 0 0 28px
+    //   .product__text
+    //     border-radius: 0 28px 28px 0
+
+  // 雙區塊類宮格差異部分樣式
+  .daily__slider
+    .product__block
+      padding-top: 5.5%
+    .product__name
+      margin-bottom: 2%
+    .product__price
+      span
+        &:last-child
+          font-size: 5.5vw
+    .product__intro
+      margin: 1.5% auto
+      font-size: 4.5vw
+      font-weight: bold
+
+  .daily__block
+    .product--dynamic
+      +pos-set(relative, zero)
+      +bg-set(url(event/1st/e-main/components/daily-slider/bg-dynamic-items.png), 100% auto)
+      filter: grayscale(100%)
+      padding-bottom: 9%
+    .product__block
+      padding: 7% 5% 5%
+      .product__img
+        width: 45%
+    .product__text
+      display: flex
+      flex-wrap: wrap
+    .product__name
+      margin-top: 10%
+    .product__price
+      display: none
+    .product__intro
+      order: 10
+      padding: 1% 1.5%
+      font-size: 3vw
+      font-weight: normal
+
+  // 最後一天處理
+  .daily--next
+    &.active
+      .product--dynamic
+        filter: none
+      .product__name
+        -webkit-line-clamp: 1
+        margin-top: 0
+        height: 1.2em
+      .product__price
+        display: block
+      .product__intro
+        +bg-set(url(event/1st/e-main/components/daily-slider/intro-item.png), 100%, center, 28%)
+
+
+
+    // 最後一天處理
+    .daily--next
+      &.active
+        .product__price
+          span
+            &:last-child
+              font-size: 3vw
+
+  +breakpoint-min($min-width-lg)
+    .daily__slider
+      .product__intro
+        font-size: 34px
+        margin: 5% auto
+    .daily__block
+      .product__intro
+        padding: 2% 2.5%
+        font-size: 24px
+      .intro--month
+        margin-left: 0
+
+    // 最後一天處理
+    .daily--next
+      &.active
+        .product__intro
+          padding: 2% 4%
+        .product__price
+          span
+            &:last-child
+              font-size: 28px
+
+  +breakpoint-min($min-width-xl)
+    .promo__wrap
+      height: 674px
+    .daily__slider
+      .product__intro
+        font-size: 40px
+        margin: 0 auto
+        padding: 4% 7%
+    .daily__block
+      .product__intro
+        padding: 2% 5%
+        font-size: 28px
+    .product__name
+      font-size: 24px
+      // margin-bottom: 40px
+    .product__text
+      .product__price
+        span
+          &:last-child
+            font-size: 76px
+
+    // 最後一天處理
+    .daily--next
+      &.active
+        .product__intro
+          font-size: 28px
+        .product__name
+          // margin-bottom: 10px
+        .product__price
+          span
+            &:last-child
+              font-size: 36px

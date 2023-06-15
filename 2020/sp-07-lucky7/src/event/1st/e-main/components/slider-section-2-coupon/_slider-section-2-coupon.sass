@@ -1,0 +1,93 @@
+.slider__20off
+  position: relative
+  padding: 0
+  margin-top: 1%
+  +bg-set(url("~event/1st/e-main/components/slider-section-2-coupon/bg__slider__coupon.png"), 100%)
+  background-size: 100% auto
+  height: 97vw
+  .swiper-container
+    margin-left: auto
+    margin-right: auto
+    width: 92%
+    height: 90.5%
+    .swiper-slide
+      &:hover,
+      &:active
+        filter: contrast(120%)
+      img
+        display: block
+        margin-left: auto
+        margin-right: auto
+    .swiper-pagination-custom
+      margin-top: 1%
+      .swiper-pagination-bullet
+        width: 2.7vw
+        height: 2.7vw
+        max-width: 12px
+        max-height: 12px
+        margin: 0 5px
+        //background-color: #ffffff
+      .swiper-pagination-bullet-active
+        opacity: 1
+  +breakpoint-min($min-width-xl)
+    height: 980px
+    width: 100%
+    max-width: 995px
+    margin: 0 auto 0 auto
+    .swiper-container
+      height: auto
+      .swiper-pagination-custom
+        .swiper-pagination-bullet
+          width: 16px
+          height: 16px
+          margin: 0 6px
+
+.slider__20off__goods
+  margin-top: 27.5vw
+  .slider__20off__item
+    border: 1px solid #646464
+    border-radius: 5px
+    //+bg-set(url("~event/1st/e-main/components/slider-section-2-coupon/bg__slider__coupon__good.png"), 100%)
+    height: 53vw
+    img
+      width: 92%
+      margin-top: 0
+    .good__title__20off
+      font-size: 3.5vw
+      line-height: 4vw
+      height: 8vw
+      overflow: hidden
+      color: #5d5d5d
+      padding: 0 4%
+    .price__init
+      font-size: 11px
+      font-weight: 500
+      padding-right: 1%
+      vertical-align: baseline
+      color: #cc1e05
+      padding-left: 4%
+    .coupon_price
+      color: #cc1e05
+      text-align: left
+      font-size: 4.5vw
+      //font-size: 1.5rem
+  +breakpoint-min($min-width-xl)
+    margin-top: 284px
+    padding-bottom: 100px
+    .slider__20off__item
+      height: 473px
+      img
+        margin-top: 20px
+      .good__title__20off
+        font-size: 15px
+        line-height: 20px
+        height: 60px
+        margin-top: 5px
+      .coupon_price
+        margin-top: 52px
+        font-size: 22px
+      .price__init
+        font-size: 13px
+        padding-right: 0.5%
+
+

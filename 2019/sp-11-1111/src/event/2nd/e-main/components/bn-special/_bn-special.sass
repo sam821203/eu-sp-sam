@@ -1,0 +1,25 @@
+.promo__group--bn-special
+  margin-top: 4%
+  li > a
+   > img:last-child
+     display: none
+
+  .promo__slider
+    height: 100%
+    .swiper-container
+      height: 100%
+      .swiper-pagination
+        // bottom: -8%
+
+  +breakpoint-min($min-width-xl)
+    margin-top: 0
+    li > a
+     > img:first-child
+       display: none
+     > img:last-child
+       display: block
+       margin-left: auto
+       margin-right: auto
+
+    .promo__slider
+      // height: 120px

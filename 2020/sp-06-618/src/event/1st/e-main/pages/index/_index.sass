@@ -1,0 +1,48 @@
+// // ==========================================================================
+// // Plugins
+// // ==========================================================================
+// // @import "vendors/animate"
+@import "~vendors/style/swiper-slider-custom"
+
+// // ==========================================================================
+// // components
+// // ==========================================================================
+
+// hero section
+// ===========================
+@import "~event/1st/e-main/components/hero-section/_hero-section"
+// @import "~event/1st/e-main/components/background-decoration/_background-decoration"
+
+// other components
+// ===========================
+//- @import "~event/1st/e-main/components/hero-small-slider/_hero-small-slider"
+@import "~event/1st/e-main/components/promo-event/_promo-event"
+@import "~event/1st/e-main/components/slider-section-1-collect/_slider-section-1-collect"
+@import "~event/1st/e-main/components/slider-section-2-20off/_slider-section-2-20off"
+@import "~event/1st/e-main/components/tab-section/_tab-section"
+//- @import "~event/1st/e-main/components/connect-anchor/_connect-anchor"
+@import "~event/1st/e-main/components/bn-special/_bn-special"
+//- 共用css 只換了背景圖
+@import "~event/1st/e-main/components/bn-event-prevent/_bn-event-prevent"
+@import "~event/1st/e-main/components/event-w4m4/_event-w4m4"
+// // ==========================================================================
+// // Page
+// // ==========================================================================
+body
+  +pos-set(relative, zero)
+  background-color: $main-e-background-color-1st
+  +breakpoint-min($min-width-xl)
+    //background-image: url("~event/1st/e-main/pages/index/bg-line.jpg")
+    background-repeat: repeat-y
+    background-size: 2560px auto
+    background-position: top center
+
+.sp__wrap
+  +pos-set(relative, base)
+  +bg-set(url("~event/1st/e-main/pages/index/bg.jpg"), 100%)
+  +breakpoint-min($min-width-xl)
+    background: center top url("~event/1st/e-main/pages/index/bg-web.jpg") no-repeat
+    background-size: 2560px 1402px
+
+.sp__wrap a
+  display: block

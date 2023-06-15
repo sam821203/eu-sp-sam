@@ -1,0 +1,11 @@
+.logo
+  display: none
+  +breakpoint-min($min-width-xl)
+    display: block
+    position: absolute
+    top: 25px
+    left: calc(50% - 450px)
+    z-index: map-get($zindex, logo)
+    img
+      width: 70%
+      height: auto

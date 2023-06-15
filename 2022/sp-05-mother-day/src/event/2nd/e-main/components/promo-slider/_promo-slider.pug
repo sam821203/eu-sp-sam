@@ -1,0 +1,93 @@
+-
+  var promoSliderItem = [
+    {
+      link: "https://www.etmall.com.tw/gp/138084" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/p1.jpg",
+      alt: "國營保養75折起",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/169210" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/p2.jpg",
+      alt: "媽咪健康星指標",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/13927/m/index.html" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/p3.jpg",
+      alt: "全系列5折起",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/14055/m/index.html" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/p4.jpg",
+      alt: "天天是BUYDAY",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/10019/m/index.html" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/p5.jpg",
+      alt: "媽咪好眠床3折up",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/10591/m/index.html" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/p6.jpg",
+      alt: "LG送萬元好禮",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/13859/m/index.html" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/p7.jpg",
+      alt: "開賣享好禮",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/13849/m/index.html" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/p8.jpg",
+      alt: "全場4折起",
+    },
+    {
+      link: "https://m.etmall.com.tw/gp/116998" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/p9.jpg",
+      alt: "PP塑崩褲二代新上市25折",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/14143/m/index.html" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/p10.jpg",
+      alt: "精品/手錶65折起",
+    },
+    {
+      link: "https://www.etmall.com.tw/bs/113208" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/p11.jpg",
+      alt: "combi品牌週6折up",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/144142" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/p12.jpg",
+      alt: "輝葉全館85折起%東森幣",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/13664/m/index.html" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/p13.jpg",
+      alt: "寵物用品博覽會",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/13594/m/index.html" ,
+      imgSrc: "event/2nd/e-main/components/promo-slider/item/p14.jpg",
+      alt: "澎湖花火節20週年",
+    },
+  ]
+
+
+section.promo__group.promo__group--promo-slider(data-title="強檔推薦")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--title#titlePromoSlider
+        img(src="event/2nd/e-main/components/promo-slider/title-promo-slider.png", alt="")
+      .decor__item.decor__item--left#decorPromoSliderLeft
+        img(src="event/2nd/e-main/components/promo-slider/decor-promo-slider-left.png", alt="")
+      .decor__item.decor__item--right#decorPromoSliderRight
+        img(src="event/2nd/e-main/components/promo-slider/decor-promo-slider-right.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block.full-parent
+          .promo__slider.swiper-container#promoSliderItem
+            ul.swiper-wrapper
+              each data in promoSliderItem
+                li.swiper-slide
+                  a(href= data.link, title=data.alt)
+                    img(src= data.imgSrc, alt=data.alt)

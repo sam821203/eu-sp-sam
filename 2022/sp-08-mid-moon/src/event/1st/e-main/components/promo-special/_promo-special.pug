@@ -1,0 +1,29 @@
+-
+  var promoSpecialData = [
+    { // 1
+      link: "https://media.etmall.com.tw/sp/16273/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-special/items/item-p-special-1.png",
+      alt: "中秋名月 抽樂透金1000枚"
+    },
+    { // 2
+      link: "#note",
+      imgSrc: "event/1st/e-main/components/promo-special/items/item-p-special-2.png",
+      alt: "美食滿額抽Uber 乘車優惠"
+    },
+    { // 3
+      link: "https://www.etmall.com.tw/Activity/CouponReceiveAll",
+      imgSrc: "event/1st/e-main/components/promo-special/items/item-p-special-3.png",
+      alt: "限量神券現折 $300"
+    },
+  ]
+
+section.promo__group.promo-special
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          ul.event__block
+            each data, index in promoSpecialData
+              li(id="promoSpecialItem" + (index + 1))
+                a(href= data.link, title=data.alt)
+                  img(src= data.imgSrc, alt=data.alt)

@@ -1,0 +1,91 @@
+-
+  var promoPuzzle = [
+  //- 1, 2, 3
+    {
+      link: "",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/puzzle_01.png",
+      alt: "拼出百萬大獎"
+    },
+    {
+      link: "",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/puzzle_02.png",
+      alt: "拼出百萬大獎"
+    },
+    {
+      link: "",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/puzzle_03.png",
+      alt: "拼出百萬大獎"
+    },
+    //- 4, 5, 6
+    {
+      link: "",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/puzzle_04.png",
+      alt: "拼出百萬大獎"
+    },
+    {
+      link: "",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/puzzle_05.png",
+      alt: "拼出百萬大獎"
+    },
+    {
+      link: "",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/puzzle_06.png",
+      alt: "拼出百萬大獎"
+    },
+    //- 7, 8, 9
+    {
+      link: "",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/puzzle_07.png",
+      alt: "拼出百萬大獎"
+    },
+    {
+      link: "",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/puzzle_08.png",
+      alt: "拼出百萬大獎"
+    },
+    {
+      link: "",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/puzzle_09.png",
+      alt: "拼出百萬大獎"
+    },
+  ]
+
+- var promoPuzzle = promoPuzzle
+
+//- TODO: 如果promo不和hero綁一起時要有自己的section和layout--main
+section.promo__group.promo__group--promo-event.m-bottom--sm
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          .promo__box
+            each data, index in promoPuzzle
+              if index <=2
+                .promo__box--item
+                  a(href= data.link, title=data.alt) 
+                    img(src= data.imgSrc, alt= data.alt)
+          .promo__box
+            each data, index in promoPuzzle
+              if index > 2 && index <= 5
+                .promo__box--item
+                  a(href= data.link, title=data.alt) 
+                    img(src= data.imgSrc, alt= data.alt)
+          .promo__box
+            each data, index in promoPuzzle
+              if index >5 && index <= 8
+                .promo__box--item
+                  a(href= data.link, title=data.alt) 
+                    img(src= data.imgSrc, alt= data.alt)
+
+
+    .title__box
+      a(href="") 
+        img(src="event/2nd/e-main/components/promo-event/items/promo-title.png", alt="")
+      
+//- ul.swiper-wrapper
+//-   each data, index in promoData
+//-     if index < 2
+//- if index >= 2 && index < 4
+//-       li.swiper-slide
+//-         a(href= data.link, title=data.alt)
+//-           img(src= data.imgSrc, data.alt)

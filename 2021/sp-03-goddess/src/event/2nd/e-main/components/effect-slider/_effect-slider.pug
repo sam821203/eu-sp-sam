@@ -1,0 +1,102 @@
+-
+  var effectDataE = [
+    {
+      link: "https://www.etmall.com.tw/i/2231197",
+      imgSrc: "~event/2nd/e-main/components/effect-slider/items/effect-item-1.png",
+      alt: " 築地一番鮮-月亮無籽葡萄2包(1kg /包)"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2653988",
+      imgSrc: "~event/2nd/e-main/components/effect-slider/items/effect-item-2.png",
+      alt: "透氣網眼防水床包式保潔墊-單雙加 均一價"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2825754",
+      imgSrc: "~event/2nd/e-main/components/effect-slider/items/effect-item-3.png",
+      alt: "折疊式便攜直立握把輕量鋁合金五節伸縮登山杖"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2852108",
+      imgSrc: "~event/2nd/e-main/components/effect-slider/items/effect-item-4.png",
+      alt: "5+1件組【闕蘭絹】花朵蕾絲100%蠶絲內褲5件(送蠶絲口罩套)"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/5811550",
+      imgSrc: "~event/2nd/e-main/components/effect-slider/items/effect-item-5.png",
+      alt: "Parfum 巴黎帕芬 經典香水摩洛哥胜肽護髮油100mlX2(3款可選)-網"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2858415",
+      imgSrc: "~event/2nd/e-main/components/effect-slider/items/effect-item-6.png",
+      alt: "Elizabeth Arden 雅頓 21天霜 75ml"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2912232",
+      imgSrc: "~event/2nd/e-main/components/effect-slider/items/effect-item-7.png",
+      alt: "摩戴舒 醫用口罩(未滅菌)-大甲鎮瀾宮禮盒組(2盒/組，共100片)-內附平安符"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2749009",
+      imgSrc: "~event/2nd/e-main/components/effect-slider/items/effect-item-8.png",
+      alt: "DV 笛絲薇夢 全新升級-醇耀妍-沙棘版x10盒"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2887685",
+      imgSrc: "~event/2nd/e-main/components/effect-slider/items/effect-item-9.png",
+      alt: "含基本安裝【TOSHIBA 福利品 東芝】55型 4K Android TV 六真色PRO 智慧聯網 三規4KHDR液晶顯示器 (55U7900VS)-庫"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2760182",
+      imgSrc: "~event/2nd/e-main/components/effect-slider/items/effect-item-10.png",
+      alt: "小米手環5"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2798765",
+      imgSrc: "~event/2nd/e-main/components/effect-slider/items/effect-item-11.png",
+      alt: "華米Amazfit Neo珊瑚橙智能手錶 "
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2913293",
+      imgSrc: "~event/2nd/e-main/components/effect-slider/items/effect-item-12.png",
+      alt: "Microsoft微軟 New Surface Pro 觸控商務筆電"
+    },
+  ]
+
+-
+  var effectDataU = [
+    {
+      link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202008/SP_1106087/w/index.html",
+      imgSrc: "~event/2nd/u-main/components/effect-slider/items/effect-item-1.png",
+      alt: "20間銀行最高回饋10%"
+    },
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale",
+      imgSrc: "~event/2nd/u-main/components/effect-slider/items/effect-item-2.png",
+      alt: "整點最便宜"
+    },
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale?Day=Up",
+      imgSrc: "~event/2nd/u-main/components/effect-slider/items/effect-item-3.png",
+      alt: "天天最激殺"
+    },
+  ]
+
+- var effectData = isU ? effectDataU : effectDataE
+
+section.promo__group.promo__group--effect.m-bottom--md(data-title="38折up")
+  .layout--main
+    //- .promo__title.block--center.text--center
+    //-   img(src="~event/2nd/e-main/components/effect-slider/title-effect.png", alt="加111元多一件")
+
+    .promo__wrap
+      #sliderEffect.promo__slider.swiper-container
+        ul.swiper-wrapper
+          each data in effectData
+            li.swiper-slide
+              a(href= data.link, title= data.alt)
+                img.swiper-lazy(data-src= data.imgSrc, alt="")
+                .swiper-lazy-preloader.swiper-lazy-preloader-black
+
+        //- #sliderEffectPrev.swiper-button-white.swiper-button-prev.effect__nav.effect__nav--prev
+        //- #sliderEffectNext.swiper-button-white.swiper-button-next.effect__nav.effect__nav--next
+      #sliderEffectPager.effect__pager.swiper-pagination

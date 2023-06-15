@@ -1,0 +1,53 @@
+// // ==========================================================================
+// // Plugins
+// // ==========================================================================
+// // @import "vendors/animate"
+@import "~vendors/style/swiper-slider-custom"
+@import "~swiper/swiper-bundle.css"
+
+// hero section
+// ===========================
+@import "~event/1st/e-other-item/components/hero-section/_hero-section"
+
+//@import "~utils/bg-decoration-instance/canvas-firwork/_canvas-firwork.sass"
+// // ==========================================================================
+// // components
+// // ==========================================================================
+@import "~event/1st/e-other-item/components/promo-event/_promo-event"
+
+// // ==========================================================================
+// // Page
+// // ==========================================================================
+body
+  +pos-set(relative, zero)
+  background-color: $sp-e-sp-background-color-1st
+
+.sp__wrap
+  +pos-set(relative, zero)
+  +bg-set(url("~event/1st/e-other-item/pages/index/bg.jpg"), 100%)
+
+  +breakpoint-min($min-width-xl)
+    background: center 0 url("~event/1st/e-other-item/pages/index/bg.jpg") no-repeat, center 0 url("~event/1st/e-other-item/pages/index/bg-web.jpg") no-repeat
+    background-size: auto
+
+.sp__wrap a
+  display: block
+
+// =================================
+.decoration--background
+  display: none
+
+  +breakpoint-min($min-width-3xl)
+    display: block
+    // z-index: base(1)以上可蓋在主視覺上，zero(0)可在主視覺下，預設都在logo下(logo是500)
+    +pos-set(absolute, under, 690px)
+    width: 100%
+    height: 100%
+    pointer-events: none
+
+.decoration__wrap
+  +pos-set(sticky, zero, 0)
+
+.canvas--firework
+  position: absolute
+  top: 0

@@ -1,0 +1,41 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero__wrap
+  +pos-set(relative, zero)
+  padding-top: 3.2vh
+  padding-bottom: 2.8vh
+  overflow: hidden
+  +breakpoint-min($min-width-xl)
+    +pos-set(absolute, base)
+    top: 165px
+    left: calc(50% + 12px)
+    padding-top: 0
+    padding-bottom: 0
+
+  .hero__title
+    &--main
+
+      opacity: 0
+      .js-loading &
+        opacity: 1
+        animation: zoom-in 0.5s ease-in both
+
+      h1
+        height: 14vh
+        +bg-set(url(event/1st/e-main/components/hero-section/title.png), contain)
+        img
+          display: none
+        +breakpoint-min($min-width-xl)
+          background: none
+          height: auto
+          img
+            display: inline
+
+@keyframes zoom-in
+  0%
+    transform: scale(0)
+    opacity: 0
+  100%
+    transform: scale(1)
+    opacity: 1

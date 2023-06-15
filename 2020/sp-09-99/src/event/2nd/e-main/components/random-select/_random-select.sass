@@ -1,0 +1,59 @@
+.promo__group--random
+  .promo__wrap
+    padding: 21% 4% 4%
+    +bg-set(url("~event/2nd/e-main/components/random-select/bg-random-select.png"), 100%)
+    .good__wrap
+      display: flex
+      flex-wrap: wrap
+      // justify-content: space-around
+      // margin-left: 1%
+      width: 100%
+      li
+        flex: 1 0 30%
+        padding: 1%
+        a
+          width: 100%
+          // text-align: center
+          // transition: transform 0.5s
+          border-radius: 0.5em
+          img
+            transition: transform 0.5s
+            box-shadow: 2px 2px 3px $main-e-background-color-2nd-4
+
+        a
+          &:hover,
+          &:active,
+          &.active
+            img
+              transform: scale(1.05)
+              box-shadow: 5px 5px 3px $main-e-background-color-2nd-4
+
+        // &.odd
+        //   a
+        //     background-color: $main-e-background-color-2nd-random-1
+        //     &:hover,
+        //     &:active,
+        //     &.active
+        //       background-color: $main-e-background-color-2nd-random-3
+        // &.even
+        //   a
+        //     background-color: $main-e-background-color-2nd-random-2
+        //     &:hover,
+        //     &:active,
+        //     &.active
+        //       background-color: $main-e-background-color-2nd-random-4
+
+    +breakpoint-min($min-width-xl)
+      padding-top: 220px
+      .good__wrap
+        li
+          a
+            img
+              box-shadow: 6px 6px 3px $main-e-background-color-2nd-4
+
+          a
+            &:hover,
+            &:active,
+            &.active
+              img
+                box-shadow: 10px 10px 3px $main-e-background-color-2nd-4

@@ -1,0 +1,181 @@
+//- RD的兌換紀錄Modal的結構，需留在底部並display: none
+.modal.record-list
+  .modal__overlay.full-parent
+    .overlay__block.full-parent
+  form.dialog__block.record-list__modal
+    .list__head
+      .modal__close
+        img(src="event/1st/e-main/components/modal-template/modal-close.svg", alt="關閉")
+      .list-title
+        p 投注紀錄
+    .list__body
+      .list-content
+        //- .record-list-table
+        //-   .card__head 
+        //-     .head__item 賽爾維亞 vs 巴西
+        //-     .head__item 12/01 賽事
+        //-   .card__box
+        //-     .card__item
+        //-       .card__text.light-gray
+        //-         span.light-gray 下注時間
+        //-         span 2022/11/24 12:23
+        //-       .card__text
+        //-         span.light-gray 下注金額
+        //-         img(src="event/1st/e-main/components/modal-template/e-coin.png", alt="")
+        //-         span.text--bold 100
+        //-     .card__item 
+        //-       .card__text 投注隊伍
+        //-       .card__text.text--bold 賽爾維亞
+        //-   .card__footer
+        //-     .footer--item
+        //-       span 獲得獎金
+        //-       span 賠率
+        //-       span 1.3
+        //-     .footer--item.text--bold
+        //-       img(src="event/1st/e-main/components/modal-template/e-coin.png", alt="")
+        //-       span 尚未中獎
+
+        //- .record-list-table.lose
+        //-   .card__head 
+        //-     .head__item 賽爾維亞 vs 巴西
+        //-     .head__item 12/01 賽事
+        //-   .card__box
+        //-     .card__item
+        //-       .card__text.light-gray
+        //-         span.light-gray 下注時間
+        //-         span 2022/11/24 12:23
+        //-       .card__text
+        //-         span.light-gray 下注金額
+        //-         img(src="event/1st/e-main/components/modal-template/e-coin.png", alt="")
+        //-         span.text--bold 100
+        //-     .card__item 
+        //-       .card__text 投注隊伍
+        //-       .card__text.text--bold 賽爾維亞
+        //-   .card__footer
+        //-     .footer--item
+        //-       span 獲得獎金
+        //-       span 賠率
+        //-       span 1.3
+        //-     .footer--item.text--bold
+        //-       img(src="event/1st/e-main/components/modal-template/e-coin.png", alt="")
+        //-       span 未中獎
+        
+        //- .record-list-table.win
+        //-   .card__head 
+        //-     .head__item 賽爾維亞 vs 巴西
+        //-     .head__item 12/01 賽事
+        //-   .card__box
+        //-     .card__item
+        //-       .card__text.light-gray
+        //-         span.light-gray 下注時間
+        //-         span 2022/11/24 12:23
+        //-       .card__text
+        //-         span.light-gray 下注金額
+        //-         img(src="event/1st/e-main/components/modal-template/e-coin.png", alt="")
+        //-         span.text--bold 100
+        //-     .card__item 
+        //-       .card__text 投注隊伍
+        //-       .card__text.text--bold 巴西
+        //-   .card__footer
+        //-     .footer--item
+        //-       span 獲得獎金
+        //-       span 賠率
+        //-       span 1.3
+        //-     .footer--item.text--bold 
+        //-       img(src="event/1st/e-main/components/modal-template/e-coin.png", alt="")
+        //-       span 1,000,000
+
+
+        .record-list-table
+          .card__head 四強預測
+          .card__box
+            .card__item
+              .card__text.light-gray
+                span.light-gray 下注時間
+                span 2022/11/24 12:23
+              .card__text
+                span.light-gray 下注金額
+                img(src="event/1st/e-main/components/modal-template/e-coin.png", alt="")
+                span.text--bold 100
+            .card__item 
+              .card__text 投注隊伍
+              .card__text.text--bold 巴西
+          .card__footer
+            .footer--item
+              span 獲得獎金
+              //- span 賠率
+              //- span 1.3
+            .footer--item.footer--result.text--bold 
+              img(src="event/1st/e-main/components/modal-template/e-coin.png", alt="")
+              span 尚未開獎
+            .footer--item.footer__btn
+              a.btn__info
+                span 詳情
+                img(src="event/1st/e-main/components/modal-template/arrow-right.svg", alt="")
+
+        
+
+
+        .record-list-table.lose
+          .card__head 四強預測
+          .card__box
+            .card__item
+              .card__text.light-gray
+                span.light-gray 下注時間
+                span 2022/11/24 12:23
+              .card__text
+                span.light-gray 下注金額
+                img(src="event/1st/e-main/components/modal-template/e-coin.png", alt="")
+                span.text--bold 100
+            .card__item 
+              .card__text 投注隊伍
+              .card__text.text--bold 巴西
+          .card__footer
+            .footer--item
+              span 獲得獎金
+              //- span 賠率
+              //- span 1.3
+            .footer--item.footer--result.text--bold 
+              img(src="event/1st/e-main/components/modal-template/e-coin.png", alt="")
+              span 未中獎
+            .footer--item.footer__btn
+              a.btn__info
+                span 詳情
+                img(src="event/1st/e-main/components/modal-template/arrow-right.svg", alt="")
+
+
+        .record-list-table.win
+          .card__head 四強預測
+          .card__box
+            .card__item
+              .card__text.light-gray
+                span.light-gray 下注時間
+                span 2022/11/24 12:23
+              .card__text
+                span.light-gray 下注金額
+                img(src="event/1st/e-main/components/modal-template/e-coin.png", alt="")
+                span.text--bold 100
+            .card__item 
+              .card__text 投注隊伍
+              .card__text.text--bold 巴西
+          .card__footer
+            .footer--item
+              span 獲得獎金
+              //- span 賠率
+              //- span 1.3
+            .footer--item.footer--result.text--bold 
+              img(src="event/1st/e-main/components/modal-template/e-coin.png", alt="")
+              span 1,000,000
+            .footer--item.footer__btn
+              a.btn__info
+                span 詳情
+                img(src="event/1st/e-main/components/modal-template/arrow-right.svg", alt="")
+
+
+      //- .list-alert 未有投注紀錄
+
+
+
+
+      .list-note
+        p 兌換說明及規定請參閱活動頁下方活動說明，謝謝。

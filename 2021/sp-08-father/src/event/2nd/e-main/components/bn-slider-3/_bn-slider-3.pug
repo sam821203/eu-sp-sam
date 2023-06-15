@@ -1,0 +1,61 @@
+-
+  var bnSliderItemData3 = [
+    {
+      link: "https://www.etmall.com.tw/c3/34128",
+      imgSrc: "event/2nd/e-main/components/bn-slider-3/items/super-1.png",
+      alt: "護得住 超吸水x抑菌率99%"
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/113734",
+      imgSrc: "event/2nd/e-main/components/bn-slider-3/items/super-2.png",
+      alt: "PP波瑟楓妮 石墨烯懶人塑崩褲2.5折"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3087384",
+      imgSrc: "event/2nd/e-main/components/bn-slider-3/items/super-3.png",
+      alt: "楊丞琳 SEIKO廣告款7折up"
+    },
+    {
+      link: "https://www.etmall.com.tw/p/139205",
+      imgSrc: "event/2nd/e-main/components/bn-slider-3/items/super-4.png",
+      alt: "吳依霖 台塑沐浴夏日慶7折up"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2588018",
+      imgSrc: "event/2nd/e-main/components/bn-slider-3/items/super-5.png",
+      alt: "ELLA 伊絲婷甜蜜愛戀洗髮組"
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2607552",
+      imgSrc: "event/2nd/e-main/components/bn-slider-3/items/super-6.png",
+      alt: "陳美鳳 大研生醫 視易適葉黃素-添加蝦紅素.智利酒果.山桑子.亞麻仁油2盒入(共60粒)-網"
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/130107",
+      imgSrc: "event/2nd/e-main/components/bn-slider-3/items/super-7.png",
+      alt: "吳姍儒 SodaStream 買指定主機送水瓶"
+    },
+    {
+      link: "https://www.etmall.com.tw/c3/158105",
+      imgSrc: "event/2nd/e-main/components/bn-slider-3/items/super-8.png",
+      alt: "曾沛慈 OMIX	真無線耳機$799起"
+    },
+  ]
+
+section.promo__group.promo__group--bn-3.m-bottom--lg(data-title="名人帶貨")
+  .layout--main
+    .promo__title
+      img(src="event/2nd/e-main/components/bn-slider-3/title-bn-3.png", alt="名人帶貨")
+    .promo__wrap
+      .promo__zone
+        .decoration--top.decoration--bn-3
+          img(src="event/2nd/e-main/components/bn-slider-3/decoration-bn-3.png", alt="")
+        #sliderBn3.promo__slider.swiper-container
+          ul.swiper-wrapper
+            each data in bnSliderItemData3
+              li.swiper-slide
+                a(href= data.link, title= data.alt)
+                  img.swiper-lazy(data-src= data.imgSrc, alt="")
+                  .swiper-lazy-preloader.swiper-lazy-preloader-black
+
+      //- #sliderBnPager.bn__pager.swiper-pagination

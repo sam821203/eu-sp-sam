@@ -1,0 +1,58 @@
+.promo__group--promo-slider-w3
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__wrap
+    padding-top: 6%
+    +breakpoint-min($min-width-xl)
+      padding-top: 3%
+
+  .decor__item
+    width: 100%
+    +breakpoint-min($min-width-xl)
+      width: auto
+    &--left
+      +pos-set(absolute, under, 0%, 0%)
+      width: 23%
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 484px)
+        width: auto
+      img
+        .js-loading &
+          animation: up-down 3s -1s ease-in-out infinite
+
+    &--right
+      +pos-set(absolute, under, 0)
+      right: 0
+      width: 18%
+      +breakpoint-min($min-width-xl)
+        right: calc(50% - 484px)
+        width: auto
+      img
+        .js-loading &
+          animation: up-down 3s -2.4s ease-in-out infinite
+
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/promo-slider-w3/bg-promo-slider-w3.png), 100%)
+    background-position: bottom
+    padding-top: 12%
+    .promo__zone
+      +aspect-ratio(960, 763)
+      .promo__block
+        padding-top: 11.5%
+        padding-left: 1%
+        padding-right: 1%
+        ul.swiper-wrapper
+          display: none
+          &.active
+            display: flex
+            justify-content: space-around
+          .swiper-slide
+            width: 33%
+
+@keyframes up-down
+  0%
+    transform: translateY(0)
+  50%
+    transform: translateY(14%)
+  100%
+    transform: translateY(0)  

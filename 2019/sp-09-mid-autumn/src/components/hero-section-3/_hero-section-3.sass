@@ -1,0 +1,63 @@
+.hero__wrap
+  +pos-set(relative, null)
+  overflow: hidden
+  .hero__zone
+    +pos-set(relative, zero)
+    // +bg-set(url("~components/hero-section/960bg-01.jpg"), 100%)
+    padding-top: 5%
+
+  .hero__title
+    &--main
+      +pos-set(relative, null)
+      // padding-top: 1%
+      padding-left: 3.5%
+      width: 85%
+      img
+        // margin-left: 40px
+        &:first-child
+          display: none
+
+        &:last-child
+          +pos-set(relative, second)
+
+      & + .promo__slider
+        +pos-set(relative, null)
+        margin-top: -14%
+        margin-left: 20%
+
+  +breakpoint-min($min-width-xl)
+    // +bg-set(url("~components/hero-section/2560bg-01.jpg"))
+    .hero__zone
+      padding-top: 0px
+
+    .hero__title
+      &--main
+        margin-left: 54px
+        padding-top: 43px
+        padding-left: 0
+        width: 521px
+        img
+          &:first-child
+            display: block
+            +pos-set(absolute, third)
+            top: 125px
+            left: -130px
+            width: 189px
+            pointer-events: none
+            animation: crown-fall both 2s 2s ease-out
+      & + .promo__slider
+        +pos-set(relative, null)
+        margin-top: -90px
+        margin-left: 90px
+
+    .hero__block
+      +display-flex(">div")
+      flex-wrap: wrap
+      +pos-set(relative, zero)
+    .hero__box
+      +flex(0, 0, 60%)
+      +pos-set(relative, second)
+
+    .goods__wrap--flip
+      +flex(0, 1, 46%)
+      +pos-set(absolute, third, 228px, null, null, -28px)

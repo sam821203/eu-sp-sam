@@ -1,0 +1,26 @@
+
+main#spWrap.sp__wrap.sp__wrap--e
+  include /layout/header/_header
+
+  include /event/index-main-e-2/components/hero-section/_hero-section
+
+  include /event/index-main-e-2/components/two-medium-slider/_two-medium-slider
+
+  //include /event/index-main-e-2/components/bn-special/_bn-special
+  //include /event/index-main-e-2/components/video-section/_video-section
+  include /event/index-main-e-2/components/promo-event-w3/_promo-event-w3.pug
+
+  //include /event/index-main-e-2/components/bank-section/_bank-section
+
+  //include /event/index-main-e-2/components/event-w4m2/_event-w4m2
+  .bg-wrap-2
+    include /event/index-main-e-2/components/bn-special/_bn-special
+    include /event/index-main-e-2/components/countdown-section/_countdown-section
+//- script區
+//script(src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.dom.min.js")
+//script(src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.min.js")
+//script(src="event/index-main-e-2/components/canva-effect/canva-effect.js")
+//script(src="firework.js")
+include /utils/pug/_total-script
+script#dataCountdown(src="data-promo.js")
+script#dataCountdown(src="data-countdown.js")

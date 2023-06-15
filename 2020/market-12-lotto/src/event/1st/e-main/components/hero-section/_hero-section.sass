@@ -1,0 +1,199 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero__wrap
+  +pos-set(relative, second)
+  overflow: hidden
+
+  .hero__zone
+    +pos-set(relative, zero)
+
+  .hero__box
+    +pos-set(relative, ten)
+
+  .hero__title
+    position: relative
+    &--main
+      +pos-set(relative, ten)
+      //background-image: url("~event/1st/e-main/components/hero-section/title-bg.png")
+      padding: 0 0 0 0
+      width: 100%
+      overflow: hidden
+      .title__t1
+        position: relative
+        top: 0
+        left: 0
+        width: 100%
+    .ehsn__coin__wrap
+      position: absolute
+      display: flex
+      top: 32vw
+      color: #e4d84b
+      font-size: 5vw
+      //width: 10vw
+      //height: 10vw
+      left: 55vw
+      z-index: 4
+      //&:after
+      //  display: block
+      //  content: ''
+      //  clear: both
+      //  background-image: url(~event/1st/e-main/components/hero-section/icon_E.png)
+        ba
+    .coin__image
+      margin-top: .5vw
+      margin-left: 2vw
+      width: 5vw
+    //position: absolute
+.top--0
+  top: 0
+  opacity: 1
+.css-content__detail
+  position: absolute
+  width: 19vw
+  height: 7vw
+  top: 42vw
+  right: 2vw
+.open--window--wrap
+  margin: 0 auto
+  &.pop-content__detail
+    background-color: #940000
+    top: 0
+    transform: translateX(-50%) translateY(0)
+    height: 100vh
+    padding: 3% 2%
+  .title
+    display: block
+    width: 34%
+    margin: 0 auto
+    padding: 1% 0
+
+  .closeButton
+    position: absolute
+    top: 0
+    right: 0
+    width: 11%
+  .line
+    background-color: rgba(48, 3, 3, 0.6)
+    border: 0
+    height: 3px
+    margin-top: 3%
+  .content
+    padding: 2%
+    height: 73vh
+    overflow: auto
+  p,h3,.list__style
+    color: #f7feaa
+    font-size: 2.5vw
+  p
+    margin-bottom: 5%
+  h3,li
+    margin-bottom: 1%
+  .list__style
+    li
+      list-style-type: decimal
+      margin-left: 5%
+  .table__record__wrap
+    width: 100%
+    background-color: #f38c38
+    display: flex
+    justify-content: center
+    align-items: center
+    margin: 0 auto 3% auto
+    border-radius: 4px
+    padding: 2% 0
+  .lotto__ticket
+    width: 100%
+    text-align: center
+    border-radius: 4px
+    font-weight: 400
+    margin: 0 auto 3% auto
+    font-size: 2.5vw
+    thead
+      background-color: #f38c38
+      tr
+        th
+          color: #feedc5
+          padding: 2%
+          &:first-child
+            border-right: 1px solid #fff
+      &:first-child
+        tr
+          th
+            &:first-child
+              border-top-left-radius: 4px
+            &:last-child
+              border-top-right-radius: 4px
+    tbody
+      background-color: #feedc5
+      tr
+        td
+          color: #000
+          padding: 2%
+      &:last-child
+        tr
+          &:last-child
+            td
+              &:first-child
+                border-bottom-left-radius: 4px
+              &:last-child
+                border-bottom-right-radius: 4px
+  .record__ticket
+    width: 93%
+    text-align: center
+    border-radius: 4px
+    font-weight: 400
+    font-size: 2.5vw
+    box-sizing: border-box
+    thead
+      background-color: #f38c38
+      tr
+        th
+          color: #feedc5
+          padding: 2%
+          font-size: 4.5vw
+    tbody
+      background-color: #feedc5
+      padding: 0 2%
+      tr
+        position: relative
+        padding: 0 3%
+        border-bottom: 1px solid #737373
+        border-right: 5px solid #feedc5
+        border-left: 5px solid #feedc5
+
+        &:last-child
+          border-bottom: 0
+        //&::after
+        //  position: absolute
+        //  display: block
+        //  content: ''
+        //  clear: both
+        //  width: 85%
+        //  margin: 0 auto
+        //  left: 50%
+        //  height: 1px
+        //  background-color: #737373
+        //  transform: translateX(-50%)
+        //&:first-child
+        //  &::after
+        //      height: 0
+        td
+          color: #000
+          padding: 2%
+          vertical-align: middle
+    .award__date
+      color: #737373
+    .award__date__end
+      color: #7c4815
+    .lotto__num__style
+      span
+        display: inline-block
+        color: #000
+        background-color: #fcd431
+        border-radius: 50%
+        padding: 3px
+        font-size: 4vw
+        width: 7vw
+        height: 7vw
+        margin-right: 2px

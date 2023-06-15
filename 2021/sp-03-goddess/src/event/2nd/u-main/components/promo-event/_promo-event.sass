@@ -1,0 +1,34 @@
+.promo__group--promo-event
+  +pos-set(relative, zero)
+  margin-top: -16%
+  padding: 0 2%
+  overflow: hidden
+  +breakpoint-min($min-width-lg)
+    margin-top: -160px
+
+  .promo__body
+    +pos-set(relative, zero)
+    +bg-set(url("~event/2nd/u-main/components/promo-event/bg-promo.png"), 100%)
+    .event__wrap
+      display: flex
+      flex-wrap: wrap
+      padding: 34% 4% 18%
+      justify-content: space-between
+      > li
+        margin-bottom: 5%
+        &:active,
+        &:hover
+          filter: hue-rotate(-15deg)
+        &:nth-child(1),
+          width: 54%
+        &:nth-child(2),
+          width: 44%
+        &:nth-child(3),
+          width: 100%
+
+    .promo__slider
+      +pos-set(relative, zero)
+      padding: 11% 8% 2%
+
+      +breakpoint-min($min-width-xl)
+        padding-top: 125px

@@ -1,0 +1,58 @@
+-
+  var promoDataBn = [
+    {
+      link: "",
+      imgSrc: "event/1st/e-main/components/banner/items/depart-1.png",
+      alt: "手機"
+    },
+    {
+      link: "",
+      imgSrc: "event/1st/e-main/components/banner/items/depart-2.png",
+      alt: "平板"
+    },
+    {
+      link: "",
+      imgSrc: "event/1st/e-main/components/banner/items/depart-3.png",
+      alt: "筆電"
+    },
+    {
+      link: "",
+      imgSrc: "event/1st/e-main/components/banner/items/depart-4.png",
+      alt: "電腦周邊"
+    },
+    {
+      link: "",
+      imgSrc: "event/1st/e-main/components/banner/items/depart-5.png",
+      alt: "手機周邊"
+    },
+    {
+      link: "",
+      imgSrc: "event/1st/e-main/components/banner/items/depart-6.png",
+      alt: "智慧穿戴"
+    },
+    {
+      link: "",
+      imgSrc: "event/1st/e-main/components/banner/items/depart-7.png",
+      alt: "電玩娛樂"
+    },
+    {
+      link: "",
+      imgSrc: "event/1st/e-main/components/banner/items/depart-8.png",
+      alt: "耳機喇叭"
+    },
+  ]
+
+- var promoDataBn = promoDataBn
+
+section#bnSlider.promo__group.promo__group--bn(data-title="裝備闖關")
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          .promo__box
+            img(src="event/1st/e-main/components/banner/title-5.png", alt="")
+          ul.event__wrap
+            each data, index in promoDataBn
+              li 
+                a(href= data.link, title=data.alt) 
+                  img(src= data.imgSrc, alt= data.alt)

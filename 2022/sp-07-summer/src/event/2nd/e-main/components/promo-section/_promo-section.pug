@@ -1,0 +1,40 @@
+-
+  var promoSectionData = [
+    { // 1
+      link: "https://www.etmall.com.tw/Activity/dl/LuckyDraw/b56e966a9bf2e1961c9dc088c6c8742a",
+      imgSrc: "event/2nd/e-main/components/promo-section/items/item-p-1.png",
+      alt: "周末加碼免費抽東森幣"
+    },
+    { // 2
+      link: "https://m.etmall.com.tw/Activity/Lottery/2dc11a34ba50c8f48e901fcc1bcb60f9",
+      imgSrc: "event/2nd/e-main/components/promo-section/items/item-p-2.png",
+      alt: "訂單滿額抽樂透金"
+    },
+    { // 3
+      link: "https://www.etmall.com.tw/Activity/CouponReceiveAll",
+      imgSrc: "event/2nd/e-main/components/promo-section/items/item-p-3.png",
+      alt: "每日00:00搶限量神劵"
+    },
+    { // 4
+      link: "https://www.etmall.com.tw/member/taskActivity",
+      imgSrc: "event/2nd/e-main/components/promo-section/items/item-p-4.png",
+      alt: "挑戰任務拿$1100"
+    },
+  ]
+
+section.promo__group.promo__group--promo-section(data-title="攻略")
+  .layout--main
+    .decor__wrap.full-parent
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          ul.event__block
+            each data, index in promoSectionData
+              if index == 3
+                li
+                  a(href= data.link, title=data.alt, class="js--changeLink")
+                    img(src= data.imgSrc, alt=data.alt)
+              else
+                li
+                  a(href= data.link, title=data.alt)
+                    img(src= data.imgSrc, alt=data.alt)

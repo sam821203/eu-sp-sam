@@ -1,0 +1,138 @@
+- 
+  var promoDataE = [
+    {
+      link: "javascript:void(1111)",
+      imgSrc: "~event/3rd/e-main/components/promo-event/items/promo-1.png",
+      alt: ""
+    }, 
+    {
+      link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      imgSrc: "~event/3rd/e-main/components/promo-event/items/promo-2.png",
+      alt: "首購登記送中冰美"
+    }, 
+    {
+      link: "#note", 
+      imgSrc: "~event/3rd/e-main/components/promo-event/items/promo-3.png",
+      alt: "消費$5,500滿額贈送"
+    }, 
+    {
+      link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202010/SP_1116674/w/index.html",
+      imgSrc: "~event/3rd/e-main/components/promo-event/items/promo-4.png",
+      alt: "中租零卡分期0利率"
+    }, 
+    {
+      link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202011/SP_1116683/w/index.html",
+      imgSrc: "~event/3rd/e-main/components/promo-event/items/promo-5.png",
+      alt: "別再闖貨了！"
+    },
+    {
+      link: "javascript:void(1111)",
+      imgSrc: "~event/3rd/e-main/components/promo-event/items/promo-6.png",
+      alt: ""
+    }, 
+    {
+      link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202010/SP_1116646/w/index.html",
+      imgSrc: "~event/3rd/e-main/components/promo-event/items/promo-7.png",
+      alt: "AFTEE 無卡分期0利率"
+    }, 
+
+    //- slider start
+    {
+      link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202010/SP_1116553/w/index.html",
+      imgSrc: "~event/3rd/e-main/components/promo-event/items/promo-8.png",
+      alt: "嘉義優鮮 最高折抵20%"
+    },
+    {
+      link: "https://www.etmall.com.tw/bs/147866",
+      imgSrc: "~event/3rd/e-main/components/promo-event/items/promo-8-2.png",
+      alt: "彰化購物專區"
+    },
+    {
+      link: "https://media.etmall.com.tw/SP/6524/m/index.html",
+      imgSrc: "~event/3rd/e-main/components/promo-event/items/promo-8-3.png",
+      alt: "AFTEE 雙11瘋購物"
+    },
+    //- slider end
+  ]
+
+- 
+  var promoDataU = [
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale", 
+      imgSrc: "~event/3rd/u-main/components/promo-event/items/promo-1.png",
+      alt: "整點最便宜"
+    }, 
+    {
+      link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202010/SP_1106089/w/index.html", 
+      imgSrc: "~event/3rd/u-main/components/promo-event/items/promo-2.png",
+      alt: "21間銀行最高回饋$3,500"
+    }, 
+    {
+      link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202010/SP_1106089/w/index.html#one", 
+      imgSrc: "~event/3rd/u-main/components/promo-event/items/promo-3.png",
+      alt: "第一銀行滿$1,000送$111刷卡金"
+    }, 
+  ]
+
+- var promoData = isU ? promoDataU : promoDataE
+
+//- TODO: 如果promo不和hero綁一起時要有自己的section和layout--main
+section.promo__group.promo__group--promo-event.m-bottom--md(data-title="爽購攻略")
+  .layout--main
+    //- .promo__head.promo__title
+    //-   img(src="", alt="")
+
+    .promo__body
+      .promo__event
+        .event__wrap
+          .promo__zone.promo--flex
+            .promo__block
+              .promo__item
+                a.item__anchor--none(href= promoData[0].link, title= promoData[0].alt)
+                  img(src= promoData[0].imgSrc, alt= promoData[0].alt)
+              .promo__item
+                a(href= promoData[1].link, title= promoData[1].alt)
+                  img(src= promoData[1].imgSrc, alt= promoData[1].alt)
+            .promo__block
+              .promo__box.promo--flex
+                .decoration--promo
+                  img(src="~event/3rd/e-main/components/promo-event/decoration-arrow-1.png", alt="")
+                .promo__item
+                  a(href= promoData[2].link, title= promoData[2].alt)
+                    img(src= promoData[2].imgSrc, alt= promoData[2].alt)
+              .promo__box
+                .decoration--promo.direction--reverse
+                  img(src="~event/3rd/e-main/components/promo-event/decoration-arrow-2.png", alt="")
+                .promo__item
+                  a(href= promoData[3].link, title= promoData[3].alt)
+                    img(src= promoData[3].imgSrc, alt= promoData[3].alt)
+          .promo__zone
+            .promo__block.promo--flex
+              .promo__item
+                a(href= promoData[4].link, title= promoData[4].alt)
+                  img(src= promoData[4].imgSrc, alt= promoData[4].alt)
+              .decoration--promo
+                img(src="~event/3rd/e-main/components/promo-event/decoration-arrow-4.png", alt="")
+            .promo__block.promo--flex
+              .decoration--promo
+                img(src="~event/3rd/e-main/components/promo-event/decoration-arrow-3.png", alt="")
+              .promo__item
+                a.item__anchor--none(href= promoData[5].link, title= promoData[5].alt)
+                  img(src= promoData[5].imgSrc, alt= promoData[5].alt)
+              .promo__item
+                a(href= promoData[6].link, title= promoData[6].alt)
+                  img(src= promoData[6].imgSrc, alt= promoData[6].alt)
+          .promo__slider
+            #sliderPromo.swiper-container
+              ul.swiper-wrapper
+                li.swiper-slide
+                  a(href= promoData[7].link, title=promoData[7].alt)
+                    img(src= promoData[7].imgSrc, promoData[7].alt)
+                li.swiper-slide
+                  a(href= promoData[8].link, title=promoData[8].alt)
+                    img(src= promoData[8].imgSrc, promoData[8].alt)
+                li.swiper-slide
+                  a(href= promoData[9].link, title=promoData[8].alt)
+                    img(src= promoData[9].imgSrc, promoData[8].alt)
+
+

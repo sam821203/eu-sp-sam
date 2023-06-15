@@ -1,0 +1,26 @@
+//- TODO: 打開雙月選項切換雙月(預設單月：4292 / true = 雙月：5567)
+//- - var isEven = true
+//- TODO: 打開2號電梯選項切換第二組電梯(預設第一組，true = 第二組 單月：4696 / 雙月：4697)
+- var isSecond = true
+//- TODO: 打開u-mall選項會自動轉換成U的logo和連結、電梯(預設etmall)
+- var isU = true
+
+main#spWrap.sp__wrap.sp__wrap--e
+  include /layout/header/_header
+
+  .decoration--background
+    .decoration__wrap
+      img(src="event/1st/u-main/pages/index/bg-fix.png", alt="")
+
+  //- hero section
+  //- ===========================
+  include /event/1st/u-main/components/hero-section/_hero-section
+
+  //- other components
+  //- ===========================
+  //- TODO: 如果promo不用和hero綁在一起時放這
+  include /event/1st/u-main/components/promo-event/_promo-event
+  
+//- script區
+include /utils/pug/_total-script
+

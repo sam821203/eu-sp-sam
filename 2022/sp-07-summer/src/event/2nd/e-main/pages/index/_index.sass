@@ -1,0 +1,195 @@
+// ==========================================================================
+// Plugins
+// ==========================================================================
+// // @import vendors/animate
+// @import vendors/style/swiper-slider-custom
+@import vendors/style/swiper-safari-polyfill
+
+// ==========================================================================
+// first screen need
+// ==========================================================================
+// hero section
+@import event/2nd/e-main/components/hero-section/_hero-section
+// @import utils/bg-decoration-instance/parallax/_parallax
+// @import utils/bg-decoration-instance/css-firework-2/_css-firework-2
+// @import "utils/bg-decoration-instance/css-firework/_css-firework"
+@import "utils/bg-decoration-instance/canvas-firework/_canvas-firework"
+
+// ==========================================================================
+// components
+// ==========================================================================
+// dynamic product 假宮格共用CSS
+@import layout/dynamic-product/_dynamic-product.sass
+
+// 一般components
+@import event/2nd/e-main/components/promo-event/_promo-event
+@import event/2nd/e-main/components/promo-section/_promo-section
+// @import event/2nd/e-main/components/promo-slider/_promo-slider
+@import event/2nd/e-main/components/dynamic-slider/_dynamic-slider
+@import event/2nd/e-main/components/dynamic-slider-2/_dynamic-slider-2
+@import event/2nd/e-main/components/tab-section/_tab-section
+@import event/2nd/e-main/components/event-w3m3/_event-w3m3
+@import event/2nd/e-main/components/bn-slider/_bn-slider
+@import event/2nd/e-main/components/beat-game/_beat-game
+@import event/2nd/e-main/components/promo-slider-sec/_promo-slider-sec
+@import event/2nd/e-main/components/promo-slider-2/_promo-slider-2
+@import event/2nd/e-main/components/bn-section/_bn-section
+@import event/2nd/e-main/components/daily-time/_daily-time
+
+
+// ==========================================================================
+// Page
+// ==========================================================================
+body
+  +pos-set(relative)
+  background-color: $main-e-background-color-2nd
+  .bg-web
+    overflow: hidden
+    .fire-work
+      width: 100%
+      .canvas--firework
+        z-index: 0
+        height: auto
+    &--top
+      +pos-set(fixed, zero, 0%, 0%)
+      +bg-set(url(event/2nd/e-main/pages/index/bg-app-top.png), 100%)
+      transition: all 1.1s ease-in-out
+      +breakpoint-min($min-width-xl)
+        top: 0
+        +bg-set(url(event/2nd/e-main/pages/index/bg-web-top.png), 100%)
+        background-size: cover
+        transition: all 1.1s ease-in-out
+      +breakpoint-min($min-width-4xl)
+        top: -6%
+        transition: all 0.8s ease-in-out
+      &.bg-fixed
+        background-position-y: 0
+        +breakpoint-min($min-width-xl)
+          background-position-y: -300px
+        +breakpoint-min($min-width-3xl)
+          background-position-y: -420px
+    &--bottom
+      +pos-set(fixed, zero, -4%, 0)
+      +bg-set(url(event/2nd/e-main/pages/index/bg-app.png), 100%)
+      transition: all 1.4s .3s ease-in
+      +breakpoint-min($min-width-xl)
+        top: 0
+        +bg-set(url(event/2nd/e-main/pages/index/bg-web.png), auto)
+      +breakpoint-min($min-width-4xl)
+        transition: all .8s ease-in-out
+    &--boat
+      +pos-set(fixed, zero, -3%, -11%)
+      width: 76%
+      transition: all 2s ease-out
+      +breakpoint-min($min-width-lg)
+        top: -2%
+      +breakpoint-min($min-width-xl)
+        top: 60px 
+        left: calc(50% - 640px)
+        width: auto
+        max-width: 620px
+      +breakpoint-min($min-width-3xl)
+        top: 42px 
+        left: calc(50% - 760px)
+        max-width: 700px
+      .boat__wrap
+        transform: translateY(0%)
+        transition: all 2s ease-out
+        img
+          animation: rock-boat 2.5s ease-in-out infinite
+  
+  &.bg-fixed
+    .bg-web--bottom
+      background-position-y: 30px
+      transition: all .8s
+      +breakpoint-min($min-width-xl)
+        transition: all .8s
+        background-position-y: -300px
+      +breakpoint-min($min-width-xl)
+        transition: all .8s ease-in-out
+    .bg-web--boat
+      left: calc(50% - 560px)
+      transition: all 2s ease-in-out
+      animation-play-state: paused
+      .boat__wrap
+        transform: translateY(62%)
+        +breakpoint-min($min-width-lg)
+          transform: translateY(82%)
+        +breakpoint-min($min-width-xl)
+          transform: translateY(22%)
+        img
+          transition: all 2s ease-out
+          animation-play-state: paused
+
+.js--loadBoatAnime
+  animation: boatout-mobile 1s 1.6s ease-out 1 both, boatOut2 .4s 2s linear 1 forwards
+  +breakpoint-min($min-width-xl)
+    animation: boatOut 1s 1.2s ease-out 1 both, boatOut2 .4s 1s linear 1 forwards, boatBack 4s 3s alternate infinite
+  +breakpoint-min($min-width-3xl)
+    animation: boatout-3xl 1s 1.2s ease-out 1 both, boatOut2 .4s 1s linear 1 forwards, boatBack 4s 3s alternate infinite
+    
+// TODO: 修改EU nav佔位高度(影響logo距離上方高度，U每次要改)
+.navRightBar
+  height: 39px
+  +breakpoint-min($min-width-xl)
+    height: auto
+
+.decoration--top,
+.decor--top
+  +pos-set(absolute)
+  pointer-events: none
+
+section:not(.note)
+  // 有parallax scroll時圖層有relative就有預設z-index可能會遮到宮格，因此使用這個讓宮格也能有預設z-index
+  +pos-set(relative)
+  a
+    display: block
+
+@keyframes bg-flash
+  0%, 50%, to
+    opacity: 1
+  25%, 75%
+    opacity: 0
+
+@keyframes boatBack
+  0%
+    transform: translateX(0px)
+  100%
+    transform: translateX(60px)
+
+@keyframes rock-boat 
+  50% 
+    transform: rotate(2deg) translateY(-3px)
+
+@keyframes boatOut
+  0%
+    top: 200px
+    transform-origin: bottom right
+    transform: rotate(8deg) scale(0) 
+  100%
+    top: 5.5%
+    transform: rotate(8deg) scale(1) 
+
+@keyframes boatOut2
+  0%
+    transform: rotate(8deg)
+  100%
+    transform: rotate(0deg)
+
+@keyframes boatout-mobile
+  0%
+    top: 200px
+    transform-origin: bottom right
+    transform: rotate(15deg) scale(0) 
+  100%
+    top: -3%
+    transform: rotate(15deg) scale(1) 
+
+@keyframes boatout-3xl
+  0%
+    top: 200px
+    transform-origin: bottom right
+    transform: rotate(8deg) scale(0) 
+  100%
+    top: 2.5%
+    transform: rotate(8deg) scale(1) 

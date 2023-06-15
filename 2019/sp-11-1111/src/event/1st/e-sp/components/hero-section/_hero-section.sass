@@ -1,0 +1,97 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero__wrap
+  +pos-set(relative, base)
+  overflow: hidden
+
+  .hero__decoration
+    +pos-set(absolute, base)
+    pointer-events: none
+
+  .hero__zone
+    +pos-set(relative, zero)
+  
+    // decoration
+    .top__decoration
+      top: -6%
+      width: 20%
+      height: 100%
+      +bg-set(url("~event/1st/e-sp/components/hero-section/top-decoration.png"), 100%)
+      transform-origin: top
+      &--left
+        left: -5%
+      &--right
+        right: -5%
+
+    .zone__decoration
+      &--left
+        display: none
+      &--middle
+        width: 20%
+        top: 8%
+        left: -5%
+      &--right
+        width: 15%
+        top: 35%
+        right: -2%
+      +breakpoint-min($min-width-xl)
+        display: block
+        top: 450px
+        width: 100%
+
+  .block__decoration
+    +pos-set(absolute, under, -17%, 25%)
+    padding-top: 53%
+    width: 53%
+    height: 0
+    +bg-set(url("~event/1st/e-sp/components/hero-section/block-decoration.png"), 100%)
+  
+  .hero__box
+    +pos-set(relative, zero)
+
+  .hero__promo-link
+    +pos-set(absolute, base, 10%, null, null, 6%)
+    width: 27%
+
+  .hero__title
+    &--main
+      padding: 3% 13% 0
+
+  .promo__block
+    +display-flex(">div")
+  .promo__event
+    +flex(0, 1, 50%)
+    +pos-set(absolute, second, null, null, null, 2%)
+  .goods__wrap--flip
+    +flex(0, 1, 70%)
+
+  +breakpoint-min($min-width-xl)
+    .hero__zone
+      padding-top: 30px
+
+    .hero__title
+      &--main
+        padding: 0
+        text-align: center
+        .title__box
+          &.title__date
+            display: block
+            top: 75px
+            left: 50px
+            width: 106px
+          &.title__decoration
+            top: 130px
+            left: 10px
+            width: 175px
+    .block__decoration
+      top: -55px
+      left: 27%
+      padding-top: 50%
+      width: 50%
+      // +display-flex(">div")
+      // flex-wrap: wrap
+      // +pos-set(relative, zero)
+    .hero__promo-link
+      top: 10px
+      right: 70px

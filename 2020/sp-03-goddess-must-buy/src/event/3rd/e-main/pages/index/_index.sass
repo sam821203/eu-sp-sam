@@ -1,0 +1,39 @@
+// // ==========================================================================
+// // Plugins
+// // ==========================================================================
+// // @import "vendors/animate"
+@import "~vendors/style/swiper-slider-custom"
+
+// // ==========================================================================
+// // components
+// // ==========================================================================
+
+// hero section
+// ===========================
+@import "~event/3rd/e-main/components/hero-section/_hero-section"
+// @import "~event/3rd/e-main/components/background-decoration/_background-decoration"
+
+// other components
+// ===========================
+//@import "~event/3rd/e-main/components/hero-small-slider/_hero-small-slider"
+@import "~event/3rd/e-main/components/promo-event/_promo-event"
+@import "~event/3rd/e-main/components/event-w4m4/_event-w4m4"
+// @import "~event/3rd/e-main/components/event-w4m2/_event-w4m2"
+// @import "~event/3rd/e-main/components/connect-anchor/_connect-anchor"
+// @import "~event/3rd/e-main/components/bn-special/_bn-special"
+// // ==========================================================================
+// // Page
+// // ==========================================================================
+body
+  +pos-set(relative, zero)
+  background-color: $main-e-background-color-3rd
+
+.sp__wrap
+  +pos-set(relative, base)
+  +bg-set(url("~event/3rd/e-main/pages/index/bg.jpg"), 100%)
+  +breakpoint-min($min-width-xl)
+    background: center 0 url("~event/3rd/e-main/pages/index/bg-web.jpg") no-repeat
+    background-size: auto
+
+.sp__wrap a
+  display: block

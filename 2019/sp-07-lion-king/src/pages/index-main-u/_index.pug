@@ -1,0 +1,165 @@
+//- 打開u-mall選項會自動轉換成U的logo和連結(預設etmall)
+//- 打開sp選項以切換行銷主視覺或是商品SP頁(main/ sp、預設是main)
+- var isU = true
+//- - var isSp = true
+
+main#spWrap.sp__wrap
+  section.hero.header__wrap
+    .layout--main
+
+      include /layout/logo/_logo.pug
+
+      .header__decoration
+      h1.title__wrap--main.block--center(title="夏日繽紛")
+        img(src="~pages/index-main-u/img/1-title.png", alt="夏日繽紛")
+      .hero__pic.block--center
+        img(src="~pages/index-main-u/img/1-poster.png", alt= "5折起")
+  section.promo__event
+    .layout--main
+      ul.event__wrap
+        li
+          a#changeAnchor(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1103167/w/index.html", title="指定銀行最高回饋10%")
+            img#changeImg(src="~pages/index-main-u/img/2-Button_01.png", alt="指定銀行最高回饋10%")
+        li
+          a(href="https://www.u-mall.com.tw/Activity/Reg/8", title="消費滿萬送千")
+            img(src="~pages/index-main-u/img/2-Button_02.png", alt="消費滿萬送千")
+        li
+          a(href="https://www.u-mall.com.tw/Activity/Reg/8", title="首購登記送$100")
+            img(src="~pages/index-main-u/img/2-Button_03.png", alt="首購登記送$100")
+        li
+          a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201907/SP_1104714/w/index.html", title="萊爾富取件加價購")
+            img(src="~pages/index-main-u/img/2-Button_04.png", alt="萊爾富取件加價購")
+  //- section.promo__group.promo__group-3
+  //-   .layout--main
+  //-     .promo__wrap
+  //-       #sliderPoint.promo__slider.swiper-container
+  //-         ul.swiper-wrapper
+  //-           li.swiper-slide
+  //-             a(href="#", title="人氣話題商品")
+  //-               img(src="~pages/index-main-u/img/3-pp_01.png", alt="人氣話題商品")
+  //-           li.swiper-slide
+  //-             a(href="#", title="人氣話題商品")
+  //-               img(src="~pages/index-main-u/img/3-pp_02.png", alt="人氣話題商品")
+  //-       #sliderPointPrev.swiper-button-prev
+  //-       #sliderPointNext.swiper-button-next
+  section.promo__group.promo__group-4
+    .layout--main
+      .promo__wrap
+        ul.good__wrap
+          li
+            a(href="https://www.u-mall.com.tw/c2/32042", title="品牌強打")
+              img(src="~pages/index-main-u/img/4-pp_01.png", alt="品牌強打")
+          li
+            a(href="https://www.u-mall.com.tw/c2/63304", title="品牌強打")
+              img(src="~pages/index-main-u/img/4-pp_02.png", alt="品牌強打")
+          li
+            a(href="https://www.u-mall.com.tw/c3/125141", title="品牌強打")
+              img(src="~pages/index-main-u/img/4-pp_03.png", alt="品牌強打")
+          li
+            a(href="https://www.u-mall.com.tw/c3/124766", title="品牌強打")
+              img(src="~pages/index-main-u/img/4-pp_04.png", alt="品牌強打")
+          li
+            a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201906/SP_1104556/w/index.html", title="品牌強打")
+              img(src="~pages/index-main-u/img/4-pp_05.png", alt="品牌強打")
+          li
+            a(href="https://www.u-mall.com.tw/p/58504", title="品牌強打")
+              img(src="~pages/index-main-u/img/4-pp_06.png", alt="品牌強打")
+          li
+            a(href="https://www.u-mall.com.tw/c3/131010", title="品牌強打")
+              img(src="~pages/index-main-u/img/4-pp_07.png", alt="品牌強打")
+          li
+            a(href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201906/SP_1108393/w/index.html", title="品牌強打")
+              img(src="~pages/index-main-u/img/4-pp_08.png", alt="品牌強打")
+  section.promo__group.promo__group-5
+    .layout--main
+      .promo__wrap
+        .promo__slider
+          #sliderBank.swiper-container
+            ul.swiper-wrapper
+              li.swiper-slide
+                a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201907/SP_1104314/w/index.html", title="銀行回饋")
+                  img(src="~pages/index-main-u/img/5-pp_01.png", alt="銀行回饋")
+              li.swiper-slide
+                a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201907/SP_1104314/w/index.html", title="銀行回饋")
+                  img(src="~pages/index-main-u/img/5-pp_02.png", alt="銀行回饋")
+              li.swiper-slide
+                a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201907/SP_1104314/w/index.html", title="銀行回饋")
+                  img(src="~pages/index-main-u/img/5-pp_03.png", alt="銀行回饋")
+              li.swiper-slide
+                a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201907/SP_1104314/w/index.html", title="銀行回饋")
+                  img(src="~pages/index-main-u/img/5-pp_04.png", alt="銀行回饋")
+              li.swiper-slide
+                a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201907/SP_1104314/w/index.html", title="銀行回饋")
+                  img(src="~pages/index-main-u/img/5-pp_05.png", alt="銀行回饋")
+              li.swiper-slide
+                a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201907/SP_1104314/w/index.html", title="銀行回饋")
+                  img(src="~pages/index-main-u/img/5-pp_06.png", alt="銀行回饋")
+              li.swiper-slide
+                a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201907/SP_1104314/w/index.html", title="銀行回饋")
+                  img(src="~pages/index-main-u/img/5-pp_07.png", alt="銀行回饋")
+              li.swiper-slide
+                a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201907/SP_1104314/w/index.html", title="銀行回饋")
+                  img(src="~pages/index-main-u/img/5-pp_08.png", alt="銀行回饋")
+  section.promo__group.promo__group-6
+      .layout--main
+        .promo__wrap
+          #sliderRank.promo__slider.swiper-container
+            ul.swiper-wrapper
+              li.swiper-slide
+                a(href="https://www.u-mall.com.tw/c2/32047", title="熱銷瘋搶商品")
+                  img(src="~pages/index-main-u/img/6-pp_01.png", alt="熱銷瘋搶商品")
+              li.swiper-slide
+                a(href="https://www.u-mall.com.tw/c2/59548", title="熱銷瘋搶商品")
+                  img(src="~pages/index-main-u/img/6-pp_02.png", alt="熱銷瘋搶商品")
+              li.swiper-slide
+                a(href="https://www.u-mall.com.tw/c3/132493", title="熱銷瘋搶商品")
+                  img(src="~pages/index-main-u/img/6-pp_03.png", alt="熱銷瘋搶商品")
+              li.swiper-slide
+                a(href="https://www.u-mall.com.tw/p/64369", title="熱銷瘋搶商品")
+                  img(src="~pages/index-main-u/img/6-pp_04.png", alt="熱銷瘋搶商品")
+              li.swiper-slide
+                a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201906/SP_1104556/w/index.html", title="熱銷瘋搶商品")
+                  img(src="~pages/index-main-u/img/6-pp_05.png", alt="熱銷瘋搶商品")
+              li.swiper-slide
+                a(href="https://www.u-mall.com.tw/p/58504", title="熱銷瘋搶商品")
+                  img(src="~pages/index-main-u/img/6-pp_06.png", alt="熱銷瘋搶商品")
+              li.swiper-slide
+                a(href="https://www.etmall.com.tw/c3/127406", title="熱銷瘋搶商品")
+                  img(src="~pages/index-main-u/img/6-pp_07.png", alt="熱銷瘋搶商品")
+              li.swiper-slide
+                a(href="https://www.u-mall.com.tw/i/2233117", title="熱銷瘋搶商品")
+                  img(src="~pages/index-main-u/img/6-pp_08.png", alt="熱銷瘋搶商品")
+            #sliderRankPrev.swiper-button-white.swiper-button-prev
+            #sliderRankNext.swiper-button-white.swiper-button-next
+  section.promo__group.promo__group-7
+    .layout--main
+      .promo__wrap
+        #sliderEvent.promo__slider.swiper-container.p-bottom--sm
+          .swiper-wrapper
+            li.swiper-slide
+              a(href="https://www.u-mall.com.tw/c2/59548", title="精選推薦")
+                img(src="~pages/index-main-u/img/7-640x280-BN_01.jpg", alt="精選推薦")
+            li.swiper-slide
+              a(href="https://www.u-mall.com.tw/c3/122141", title="精選推薦")
+                img(src="~pages/index-main-u/img/7-640x280-BN_02.jpg", alt="精選推薦")
+            li.swiper-slide
+              a(href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201905/SP_1104485/w/index.html", title="精選推薦")
+                img(src="~pages/index-main-u/img/7-640x280-BN_03.jpg", alt="精選推薦")
+            li.swiper-slide
+              a(href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201906/SP_1108393/w/index.html", title="精選推薦")
+                img(src="~pages/index-main-u/img/7-640x280-BN_04.jpg", alt="精選推薦")
+        #sliderEventPrev.swiper-button-white.swiper-button-prev
+        #sliderEventNext.swiper-button-white.swiper-button-next
+  footer
+
+//- script區
+//- polyfill 一般共用
+include /utils/pug/include/_polyfill-js.pug
+//- General 一般共用
+include /utils/pug/include/_general.pug
+//- 電梯
+include /utils/pug/include/_elevator-link.pug
+//- 浮水印
+include /utils/pug/include/_float-icon.pug
+//- 輪播cdn
+include /utils/pug/include/_slider-cdn-js.pug

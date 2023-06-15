@@ -1,0 +1,137 @@
+// tab layout
+.promo__group--tab-section
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__wrap
+    padding-top: 6%
+    // +breakpoint-min($min-width-xl)
+      // padding-top: 0
+  .decor__item
+    &--left1
+      +pos-set(absolute, under, 0%, 0%)
+      width: 17%
+      &.active
+        animation: bounceDown 1.2s linear 5
+      +breakpoint-min($min-width-xl)
+        left: calc( 50% - 480px )
+    &--left2
+      +pos-set(absolute, base, 0%, 11%)
+      width: 50%
+      +breakpoint-min($min-width-xl)
+        left: calc( 50% - 380px )
+    &--right
+      +pos-set(absolute, under, 0%)
+      right: 0%
+      width: 34%
+      &.active
+        animation: bounceDown 1.2s linear 5
+      +breakpoint-min($min-width-xl)
+        right: calc( 50% - 470px )
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .promo__wrap
+    +aspect-ratio(911, 1676)
+  .promo__zone
+    +bg-set(url("event/2nd/e-main/components/tab-section/bg-tab-section.png"), 100%)
+  .promo__block
+    padding: 15% 4% 0
+  .promo__slider
+    padding: 1% 2% 0
+
+  // 背景圖
+
+  .swiper-wrapper
+    padding-top: 1%
+    +breakpoint-min($min-width-xl)
+      padding-top: 25px
+  .pagination
+    display: flex
+    margin: 0
+  .swiper-pagination-bullets .swiper-pagination-bullet
+    display: block
+    width: 16.4%
+    height: auto
+    background: transparent
+    opacity: 1
+    margin-top: 7%
+    margin-left: -0.8%
+    transition: all .5s
+    +breakpoint-min($min-width-xl)
+      margin-left: 0px
+    &:first-child
+      // margin-left: .7%
+      +breakpoint-min($min-width-xl)
+        margin-left: -5px
+    &.swiper-pagination-bullet-active
+      margin-top: 0
+  
+
+  .swiper-slide
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    margin-bottom: 1.2%
+    padding: 3% 2% 1%
+    border-radius: 4vw
+    box-shadow: 1px 1px 3px inset $gray-light-opacity, 2px 2px 4px 1px $main-e-background-color-2nd-2
+    +breakpoint-min($min-width-xl)
+      border-radius: 35px
+      padding-top: 30px
+      // padding-bottom: 0
+  .tab--1
+    background-color: $main-e-background-color-2nd-3
+  .tab--2
+    background-color: $main-e-background-color-2nd-4
+  .tab--3
+    background-color: $main-e-background-color-2nd-5
+  .tab--4
+    background-color: $main-e-background-color-2nd-6
+  +breakpoint-min($min-width-xl)
+    margin-bottom: 2%
+
+  .dynamic__item--tab
+    width: 33%
+    margin-bottom: 2%
+    &:last-child
+      animation: heartBeat 2s ease-in infinite
+      img
+        padding-top: 26%
+        padding-left: 12%
+        +breakpoint-min($min-width-xl)
+          padding-top: 90px
+          padding-left: 60px
+    +breakpoint-min($min-width-xl)
+      margin-bottom: 15px
+  .product.product--dynamic
+    margin-right: auto
+    margin-left: auto
+    width: 95%
+    +breakpoint-min($min-width-xl)
+      width: 95%
+    .product__name
+      margin-bottom: 0px
+      background-color: #fff
+      +breakpoint-min($min-width-xl)
+        font-size: 26px
+        height: 2.43em
+    .product__price
+      background-color: #fff
+      border-radius: 0 0 2vw 2vw
+      +breakpoint-min($min-width-xl)
+        border-radius: 0 0 20px 20px
+      span
+        &:last-child
+          +breakpoint-min($min-width-xl)
+            font-size: 36px
+
+@keyframes bounceDown
+  0%, 20%, 53%, to
+    transform: translateZ(0)
+  40%, 43%
+    transform: translate3d(0, 30px, 0) scaleY(1.1)
+  70%
+    transform: translate3d(0, 15px, 0) scaleY(1.05)
+  80%
+    transform: translateZ(0) scaleY(.95)
+  90%
+    transform: translate3d(0, 4px, 0) scaleY(1.02)

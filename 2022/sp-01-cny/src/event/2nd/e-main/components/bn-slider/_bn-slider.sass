@@ -1,0 +1,36 @@
+.promo__group--bn
+  +pos-set(relative, zero)
+  overflow: hidden
+  .promo__decor
+    +pos-set(relative, zero)
+    max-width: 960px
+    .decor__item
+      &:first-child
+        +pos-set(absolute, base, 0%, 12%)
+        margin-top: 2%
+        width: 40%
+      &:last-child
+        +pos-set(absolute, under, 0%, 0%)
+        &.active
+          animation: wave 2s linear infinite
+      
+
+  .promo__wrap
+    +aspect-ratio(960, 1200)
+  .promo__zone
+    +pos-set(relative, zero)
+    +bg-set(url(event/2nd/e-main/components/bn-slider/bg-bn-slider.png), 100%)
+    .promo__slide
+      padding: 0% 6%
+      margin-top: 49%
+      .swiper-container
+        margin-top: 3%
+
+
+@keyframes wave
+  0%
+    transform: rotateX(10deg)
+  50%
+    transform: rotateX(-10deg)
+  100%
+    transform: rotateX(10deg)

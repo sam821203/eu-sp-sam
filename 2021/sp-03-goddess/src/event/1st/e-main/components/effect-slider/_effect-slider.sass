@@ -1,0 +1,53 @@
+.promo__group--effect
+  .promo__wrap
+    +pos-set(relative, zero)
+    transition: all 0.6s ease
+    +bg-set(url("~event/1st/e-main/components/effect-slider/bg-effect-slider.png"), 100%)
+    .promo__slider
+      padding-top: 55%
+      padding-bottom: 20%
+    .swiper-slide
+      width: 33%
+      text-align: center
+
+    .swiper-slide-shadow-left,
+    .swiper-slide-shadow-right,
+      border-radius: 10px
+      overflow: hidden
+      +breakpoint-min($min-width-lg)
+        border-radius: 24px
+
+  .effect__pager
+    bottom: 9%
+    left: 0
+    width: 100%
+    .swiper-pagination-bullet
+      margin: 0 4px
+      width: 12px
+      height: 12px
+      transition: all 0.3s
+      outline: 0
+      &.swiper-pagination-bullet-active
+        width: 24px
+        border-radius: 12px
+        background-color: $gray-deep-dark
+
+  +breakpoint-min($min-width-md)
+    .effect__pager
+      .swiper-pagination-bullet
+        margin: 0 6px
+        width: 18px
+        height: 18px
+        &.swiper-pagination-bullet-active
+          width: 36px
+          border-radius: 18px
+  +breakpoint-min($min-width-xl)
+    .promo__wrap
+      .promo__slider
+        padding-top: 540px
+        padding-bottom: 190px
+
+    .effect__pager
+      bottom: 130px
+
+

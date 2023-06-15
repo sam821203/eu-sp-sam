@@ -1,0 +1,136 @@
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!-- ============== 輪播 start ============== -->
+<link rel="stylesheet" href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116205/swiper.min.css">
+<!-- ============== 輪播 end ============== -->
+<!-- 共用CSS -->
+<link rel="stylesheet" href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116205/animate.min.css">
+<link rel="stylesheet" href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.css">
+<link rel="stylesheet" href="./style.css">
+
+<div id="iconHome" class="layout--main home--icon"></div>
+<div id="spWrap" class="sp__wallper">
+
+	<!-- 主視覺 -->
+	<main class="sp__main">
+		<div class="layout--main home--logo">
+			<a href="https://www.etmall.com.tw"><img class="logo" src="logo.png" alt="東森購物"></a>
+		</div>
+		<section class="sp__visual visual__block">
+			<div class="layout--main">
+				<ul class="visual--auto clearfix">
+					<li class="visual__fragment width--auto">
+						<img src="top210907_02.jpg">
+					</li>
+					<li class="visual__fragment width--auto">
+						<ol class="zone1">
+							<li>為保障消費者權益及減少消費爭議，請各供應商於本公司通路銷售「電信管制射頻器材」商品時，應於網頁標示型號及審驗合格標籤或符合性聲明標籤資訊，如無相關資訊者，請勿將商品上架銷售。
+							</li>
+							<li>
+								依電信管理法第66條第1項：「電信管制射頻器材除經主管機關專案核准外，應符合技術規範，經審驗合格，始得販賣。」另電信管制射頻器材審驗管理辦法第19條第1項：「於網際網路販賣電信管制射頻器材者，應於該網際網路網頁標示其型號及審驗合格標籤或符合性聲明標籤資訊。但最終產品得僅標示其型號及其組裝之非隨插即用射頻模組（組件）之審驗合格標籤資訊。但最終產品得僅標示其型號及其組裝之非隨插即用射頻模組（組件）之審驗合格標籤資訊。
+							</li>
+							<li>
+								下方為業經國家通訊傳播委員會(以下簡稱NCC)廢止審驗證明之無線機上盒清冊。如有銷售附件所示廠牌、型號之商品者，應立即將商品下架，以免因違反電信管理法第66條第1項及第81條第1項規定，而遭處新臺幣1萬元以上20萬元以下罰鍰。
+							</li>
+						</ol>
+					</li>
+					<li class="visual__fragment width--auto">
+						<img src="top210907bar.png">
+					</li>					
+					<div class="table__wrap--rwd"></div>
+					<div class="table__wrap" align="center"></div>
+				</ul>
+			</div>
+		</section>
+	</main>
+</div>
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-1.7.2.min.js"></script> -->
+<!-- ============== 輪播 start ============== -->
+<script src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116205/swiper.min.js"></script>
+<!-- ============== 輪播 end ============== -->
+<!-- 東森浮水印
+<script id="scriptIconFloat"
+        src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107916/float-icon.js"></script> -->
+<!-- 森森浮水印
+<script id="scriptIconFloat" src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1104381/float-icon.js"></script> -->
+<!-- 旅遊置頂bar
+<script id="scriptAddBn" src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106742/add-bn.js"></script> -->
+<!-- 共用JS -->
+<script id="generateScript"
+	src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.js"></script>
+
+<!-- ============== 輪播 start ============== -->
+<script>
+	// 使用說明 ---------
+	// AJAX要在localhost的環境才能觀看，windows系統要裝Apache (Xampp)，mac可用內建的系統，步驟如下：
+	//	 1. 終端機開啟 cd 到該資料夾
+	// 	 2. 指令： php -S 0.0.0.0:1234
+	//		  可自由設定port，只要不跟已有的port重複即可，只是因為方便才習慣設成1234
+	// 	 3. localhost:1234 開啟
+	// 	 4. 關掉終端機視窗就關閉連線了
+	// 或是用live server 打開
+
+	$(document).ready(function () {
+				$.ajax({
+					url: './data.csv',
+					dataType: 'text', //xml,json,html,script,jsonp,text(csv,tsv)
+					cache: false,
+					success: function (res) {
+						// console.log(res); //確認有抓到捏
+						//字串切割成陣列
+						var resDate = res.split(/\n|\r\n/); //match on \n or \r\n
+						var tableData = '<div class="table__wrap--rwd">';
+						var tableDataWeb = '<table class="table table-bordered">';
+						// 小網
+						for (var i = 0; i < resDate.length; i++) {
+							var cellData = resDate[i].split(','); 
+							var titleData = resDate[0].split(',');
+								if( i !== 0){
+								tableData += '<div class="rwd__box">';
+								tableData += 	'<ul class="title">';
+								tableData += 	'<li>' + titleData[1] + '</li>';
+								tableData += 	'<li>' + titleData[2] + '</li>';
+								tableData += 	'<li>' + titleData[3] + '</li>';
+								tableData += 	'<li>' + titleData[4] + '</li>';
+								tableData += 	'<li>' + titleData[5] + '</li>';
+								tableData += 	'</ul>';
+								tableData += '<ul class="content">';
+								tableData += 	'<li>' + cellData[1] + '</li>';
+								tableData += 	'<li>' + cellData[2] + '</li>';
+								tableData += 	'<li>' + cellData[3] + '</li>';
+								tableData += 	'<li>' + cellData[4] + '</li>';
+								tableData += 	'<li>' + cellData[5] + '</li>';
+								tableData += 	'<li>' + cellData[6] + '</li>';
+								tableData += 	'</ul>';
+								tableData += 	'</div>';
+								}
+						}
+						tableData += '</div>';
+						$('.table__wrap--rwd').html(tableData);
+						// 大網
+						for (var i = 0; i < resDate.length; i++) {
+							var cellData = resDate[i].split(',');
+								tableDataWeb += '<tr class="table-bordered">';
+							for (var j = 0; j < cellData.length; j++) {
+								if (i == 0) {  //第一列==標題 <th></th>
+									tableDataWeb += '<th class="table-bordered">' + cellData[j] + '</th>';
+								} else if (i == 1) {
+									tableDataWeb += '<td class="table-bordered">' + cellData[j] + '</td>';
+								} else {
+									tableDataWeb += '<td class="table-bordered">' + cellData[j] + '</td>';
+								}
+							}
+							tableDataWeb += '</tr>';
+						}
+						tableDataWeb += '</div>';
+						$('.table__wrap').html(tableDataWeb);
+					},
+				})
+			});
+
+
+</script>
+<!-- ============== 輪播 end ============== -->

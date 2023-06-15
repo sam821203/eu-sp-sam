@@ -1,0 +1,92 @@
+.promo__group--dynamic-slider-half-2
+  .promo__title
+    +pos-set(relative)
+    padding-top: 5%
+    // margin-bottom: -3.5%
+    .title__decoration
+      animation: move-ship-left 3s 0.6s both ease-out infinite
+      +pos-set(absolute, base)
+      top: 5vw
+      left: 7%
+      width: 26%
+      +breakpoint-min($min-width-xl)
+        top: 34px
+        width: auto
+  .promo__wrap
+    display: flex
+    +pos-set(relative, zero)
+    padding: 20% 6% 0
+    height: 79vw
+    +bg-set(url(event/1st/e-main/components/dynamic-slider-half-2/bg-dynamic-slider-half-2.png), 100%)
+    overflow: hidden
+    .pic__box
+      flex: 0 1 30%
+    .slider__box
+      padding-left: 2%
+      width: 70.5%
+      .promo__slider
+        +pos-set(relative, zero)
+        width: 100%
+
+    // .pic__box,
+    // .swiper-slide
+      // +bg-set(url("event/1st/e-main/components/dynamic-slider-half/bg-dynamic-slider-half-item.png"), 100%)
+
+    .swiper-slide
+      width: 50%
+
+    .decoration--top
+      bottom: 6%
+      width: 34%
+      &.decoration--left
+        right: 59%
+        animation: flash-self 2s steps(2) infinite
+      &.decoration--right
+        left: 61.2%
+        animation: flash-self 2s steps(2) infinite reverse
+
+
+    +breakpoint-min($min-width-xl)
+      padding: 177px 60px 0
+      height: 678px
+      +bg-set(url(event/1st/e-main/components/dynamic-slider-half-2/bg-dynamic-slider-half-2-web.png), auto)
+      .pic__box
+        flex: 0 1 24%
+
+      .slider__box
+        padding-left: 10px
+        width: 76%
+        .promo__slider
+          .swiper-wrapper
+            display: flex
+            justify-content: space-between
+
+      .decoration--top
+        width: auto
+        &.decoration--left
+          right: 59%
+        &.decoration--right
+          left: 61.2%
+
+      .product__name
+        margin-bottom: 20px
+
+
+@keyframes flash-self
+  0%
+    filter: brightness(100%)
+  100%
+    filter: brightness(150%)
+
+@keyframes move-ship-left
+  0%
+    transform: translate(-20vw, 90%)
+    opacity: 0
+  10%
+    opacity: 1
+  30%,89%
+    transform: translate(0, 0)
+    opacity: 1
+  90%,100%
+    transform: translate(0, 0)
+    opacity: 0

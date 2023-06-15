@@ -1,0 +1,69 @@
+// 各區共用
+.promo__group--dynamic-section
+  +pos-set(relative, zero)
+  overflow: hidden
+  // .product__name
+    // margin-bottom: 1%
+  .product__price
+    span
+      &:last-child
+        font-size: 3.5vw
+
+  +breakpoint-max($max-width-xxs)
+    .product__price
+      span
+        &:last-child
+          font-size: 3vw
+  +breakpoint-min($min-width-md)
+    .product__name
+      margin-bottom: 1.5%
+      font-size: 3vw
+  +breakpoint-min($min-width-lg)
+    .product__name
+      margin-bottom: 8px
+      font-size: 20px
+    .product__price
+      span
+        &:last-child
+          font-size: 28px
+  +breakpoint-min($min-width-xl)
+    .product__name
+      margin-bottom: 11px
+      font-size: 24px
+    .product__price
+      span
+        &:last-child
+          font-size: 36px
+
+.promo__group--dynamic-section-1
+  .decoration__dynamic-section
+    top: -2%
+    left: 5%
+    width: 90%
+  .promo__wrap
+    +aspect-ratio(960, 1068)
+    // +bg-set(url(event/1st/e-main/components/dynamic-section/bg-dynamic-section.png), 100%)
+  .promo__zone
+    +pos-set(relative, zero)
+    padding: 0% 2%
+  .promo__title
+    width: 52%
+  .product--dynamic
+    width: 100%
+    +aspect-ratio(303, 422, relative, zero, a)
+    +bg-set(url(event/1st/e-main/components/dynamic-section/item-dynamic-section.png), 100%)
+  .product__block
+    padding: 6.5% 6.8% 5.5% 5.3%
+  .product__img,
+  .product__text
+    border-radius: 0
+
+  .promo__slider
+    width: 100%
+    height: 100%
+    .swiper-slide
+      width:32.5%
+      height: 40% // for IE
+      height: fit-content
+      +breakpoint-min($min-width-xl)
+        margin-bottom: 3px

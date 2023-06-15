@@ -1,0 +1,27 @@
+section.promo__group.promo__group--daily-tab.m-bottom--sm(data-title="天天開搶")
+  .layout--main
+    ul.tab__wrap
+      li.tab__zone
+        #dailyTabHead.tab__head--daily.promo__slider.swiper-container
+          ul.swiper-wrapper
+            - var date = 8
+            while date <= 18
+              - var activeClass = 'active--daily'
+              - if (date != 8) activeClass = ''
+              li.swiper-slide(class= activeClass)
+                span 1
+                span /
+                if date < 10
+                  span= '0' + date++
+                else
+                  span= date++
+      li.content__zone
+        ul#dailyTabContent.tab__content--daily
+          - var date = 8
+          while date <= 18
+            - var activeContentClass = 'active'
+            - if (date != 8) activeContentClass = ''
+            li.content__box(class= activeContentClass)
+              .tab__slider--daily.swiper-container
+                ul.item__wrap.swiper-wrapper
+            - date++

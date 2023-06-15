@@ -1,0 +1,75 @@
+-
+  var promoSpecialData = [
+    {
+      link: "https://media.etmall.com.tw/sp/19581/m/index.html",
+      imgSrc: "event/2nd/e-main/components/promo-special/items/item-p-special-1.png",
+      alt: "zingala銀角零卡	最高回饋11%"
+    },
+    { 
+      link: "https://media.etmall.com.tw/sp/19210/m/index.html#esun",
+      imgSrc: "event/2nd/e-main/components/promo-special/items/item-p-special-2.png",
+      alt: "玉山銀行 最高回饋10%"
+    },
+    { 
+      link: "https://media.etmall.com.tw/sp/19210/m/index.html#one",
+      imgSrc: "event/2nd/e-main/components/promo-special/items/item-p-special-3.png",
+      alt: "第一銀行 最高回饋25%"
+    },
+  ]
+
+-
+  var promoSpecialSlider = [
+    { // 1
+      link: "https://media.etmall.com.tw/sp/19210/m/index.html#citi",
+      imgSrc: "event/2nd/e-main/components/promo-special/items/bn-p-special-1.png",
+      alt: "花旗 單件商品分期滿$10,000送$800"
+    },
+    { // 2
+      link: "https://media.etmall.com.tw/sp/19210/m/index.html#dbs",
+      imgSrc: "event/2nd/e-main/components/promo-special/items/bn-p-special-2.png",
+      alt: "星展銀行 累積分期滿$38,000送$3,200"
+    },
+    { // 3
+      link: "https://media.etmall.com.tw/sp/18972/m/index.html",
+      imgSrc: "event/2nd/e-main/components/promo-special/items/bn-p-special-3.png",
+      alt: "玉山 週四《玉山數位e卡 》最高享10%現金回饋"
+    },
+    { // 4
+      link: "https://media.etmall.com.tw/sp/19210/m/index.html#entie",
+      imgSrc: "event/2nd/e-main/components/promo-special/items/bn-p-special-4.png",
+      alt: "安泰 累積分期滿$11,111送$1,111"
+    },
+    { // 5
+      link: "https://media.etmall.com.tw/sp/19210/m/index.html#shinkong",
+      imgSrc: "event/2nd/e-main/components/promo-special/items/bn-p-special-5.png",
+      alt: "新光銀行 累積分期滿$12,000送$1,200"
+    },
+    { // 6
+      link: "https://media.etmall.com.tw/sp/19210/m/index.html#aftee",
+      imgSrc: "event/2nd/e-main/components/promo-special/items/bn-p-special-6.png",
+      alt: "AFTEE 週二舊客不限金額回饋10% AFTEE折價券"
+    },
+  ]
+
+section.promo__group.promo-special
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--item
+        img(src="event/2nd/e-main/components/promo-special/decor-promo-sp.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          ul.event__block
+            each data, index in promoSpecialData
+              li(id="promoSpecialItem" + (index + 1))
+                a(href= data.link, title=data.alt)
+                  img(src= data.imgSrc, alt=data.alt)
+          .promo__slider
+            .slider__wrap
+              .swiper-container#PromoSpReady
+                ul.swiper-wrapper
+                  each data in promoSpecialSlider
+                    li.swiper-slide
+                      a(href= data.link, title=data.alt)
+                        img(src= data.imgSrc, alt=data.alt)
+

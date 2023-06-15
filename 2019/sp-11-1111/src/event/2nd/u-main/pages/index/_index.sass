@@ -1,0 +1,48 @@
+// // ==========================================================================
+// // Plugins
+// // ==========================================================================
+// // @import "vendors/animate"
+@import "~vendors/style/swiper-slider-custom"
+
+// // ==========================================================================
+// // components
+// // ==========================================================================
+
+// hero section
+// ===========================
+@import "~event/2nd/u-main/components/hero-section/_hero-section"
+@import "~event/2nd/u-main/components/background-decoration/_background-decoration"
+
+// other components
+// ===========================
+@import "~event/2nd/u-main/components/hero-small-slider/_hero-small-slider"
+@import "~event/2nd/u-main/components/promo-event/_promo-event"
+// // ==========================================================================
+// // Page
+// // ==========================================================================
+body
+  +pos-set(relative, zero)
+  background-color: $main-e-background-color
+  +breakpoint-min($min-width-xl)
+    +bg-set(url("~event/2nd/u-main/pages/index/bg-down.jpg"), 100%, center, 116px, repeat-y, $main-e-background-color)
+    .icon__home
+      right: -50px
+
+.parallax__background
+  +pos-set(absolute, under)
+  padding-top: 115%
+  width: 100%
+  +bg-set(url("~event/2nd/u-main/pages/index/bg-960.jpg"), 100%)
+  // transform: translateY(-10%)
+  animation: flash-burst 4s infinite
+  pointer-events: none
+  will-change: scroll-position
+
+  +breakpoint-min($min-width-xl)
+    padding-top: 26.17%
+    +bg-set(url("~event/2nd/u-main/pages/index/bg.jpg"), contain, 55%)
+.sp__wrap
+  +pos-set(relative, base)
+
+.sp__wrap a
+  display: block

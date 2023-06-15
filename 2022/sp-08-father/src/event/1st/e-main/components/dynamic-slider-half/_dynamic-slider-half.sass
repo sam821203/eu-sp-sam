@@ -1,0 +1,85 @@
+.promo__group--dynamic-slider-half
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__wrap
+    .decor__item
+      &--left
+        +pos-set(absolute, zero, 3%, 0%)
+        width: 45%
+        transform: translateY(-30%)
+        +breakpoint-min($min-width-xl)
+          left: calc(50% - 490px)
+          width: auto
+      &--right
+        +pos-set(absolute, base, 4.5%)
+        right: 21%
+        width: 21%
+        transform: rotate(-2deg)
+        transform-origin: bottom left
+        +breakpoint-min($min-width-xl)
+          top: 1%
+          right: calc(50% - 240px)
+          padding-top: 3%
+          width: auto
+        .js-loading &
+          animation: crown-shine 2.4s linear 1.2s infinite
+  .promo__wrap
+    +aspect-ratio(952, 1662)
+    margin-top: 14%
+  .promo__zone
+    +bg-set(url(event/1st/e-main/components/dynamic-slider-half/bg-dynamic-slider-half.png), 100%)
+    padding: 30% 4% 0
+    +breakpoint-min($min-width-xl)
+      padding-top: 31%
+      +padding-x(1.5%)
+    .promo__block
+      display: flex
+      justify-content: space-between
+      height: 30%
+      margin-bottom: 4%
+      .promo__box
+        width: 26%
+        +breakpoint-min($min-width-xl)
+          width: auto
+        img
+          width: 91%
+          +breakpoint-min($min-width-xl)
+            width: auto
+            transform-origin: top
+            transform: scale(0.95)
+      .slider__box
+        width: 74%
+        +breakpoint-min($min-width-xl)
+          width: 75%
+        .promo__slider
+          .swiper-slide
+            .product--dynamic
+              width: 100%
+              .product__block
+                padding: 1.5% 2%
+                .product__img
+                  border-radius: 2vw 2vw 0 0
+                  +breakpoint-min($min-width-xl)
+                    border-radius: 22px 22px 0 0
+                .product__text
+                  border-radius: 0 0 2vw 2vw
+                  +breakpoint-min($min-width-xl)
+                    border-radius: 0 0 22px 22px
+                  .product__name
+                    padding-top: 4%
+                    height: 8.7vw
+                    font-size: 3.3vw
+                    +breakpoint-min($min-width-xl)
+                      padding-top: 2%
+                      height: 60px
+                      font-size: 22px
+                  .product__price
+                    padding: 3% 2%
+
+  @keyframes crown-shine
+    0%, 100%
+      transform: rotate(-2deg) scale(1)
+      filter: brightness(1)
+    50%
+      transform: rotate(2deg) scale(1.08)
+      filter: brightness(1.15)

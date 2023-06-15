@@ -1,0 +1,32 @@
+.promo__group--promo-event
+  margin-top: -18%
+  overflow: hidden
+  +breakpoint-min($min-width-xl)
+    margin-top: -150px
+.promo__event
+  +pos-set(relative, base)
+  a
+    &:active,
+    &:hover
+      filter: brightness(130%)
+  .promo__zone
+    a
+      &:active,
+      &:hover
+        transform: scale(1.05)
+  .event__wrap
+    padding: 0 1%
+  .promo--flex
+    display: flex
+  .promo__box
+    +pos-set(relative, zero)
+  // 結構
+  .promo__zone
+    &:first-child
+    .promo__item
+      &:nth-child(2)
+        width: 67%
+        +breakpoint-min($min-width-xl)
+          width: 365px
+
+

@@ -1,0 +1,94 @@
+<meta name="viewport" content="width=device-width">
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+<div id="spWrap" class="sp__wallper">
+  <!-- 主視覺 -->
+  <main class="sp__main">
+    <div class="layout--main">
+      <a href="https://www.u-mall.com.tw/" class="logo"><img src="u-logo.png" alt="東森購物"></a>
+      <div class="sp__visual">
+        <div class="visual__anchor"><!-- 紅框區 設定第一個a和第二個a的寬度會推擠後面a的寬度-->
+          <div class="visual__main">
+            <!-- 注意此處要填入主視覺位置 -->
+            <a id="mainAnchor" href=""></a>
+          </div>
+        </div>
+        <img src="index.jpg">
+      </div>
+    </div>
+  </main>
+
+  <section class="top-table__wrap">
+    <div class="layout--main">
+      <div id="sp1stTableWrap" class="bank__box"></div>
+    </div>
+  </section>
+
+  <section id="departmentWrap" class="department__wrap">
+    <div class="layout--main">
+      <div id="filterDepartment" class="form form--department">
+        <select id="departmentSelect" name="dataDepartment"></select>
+      </div>
+      <div class="bn-w1m1">
+        <div id="departmentDataZone" class="department__box"></div>
+        <div id="notMatchDepartment" class="department__box hide-show">
+          <div class="department__no">哦哦！沒有符合您選擇條件的結果，請重新選擇。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bank__wrap">
+    <div class="layout--main">
+      <div id="filterBank" class="form form--bank">
+        <select id="dateSelect" name="dataDate"></select>
+        <select id="costSelect" name="dataCost"></select>
+        <select id="bankSelect" name="bank"></select>
+      </div>
+      <div id="resultBank" class="result">
+        <div>
+          <p>您篩選的條件是</p>
+          <hr>
+          <ul id="statusZone"></ul>
+          <a id="btnClean" class="btn--clean">清空篩選</a>
+        </div>
+      </div>
+      <div class=" bn-w1m1">
+        <div id="bankDataZone" class="bank__box"></div>
+        <div id="notMatchBox" class="bank__box hide-show">
+          <div class="bank__no">哦哦！沒有符合您篩選條件的結果，請重新篩選。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="note" name="note">
+    <div class="layout--main">
+      <article>
+        <hr>
+            <h2>注意事項</h2>
+            <ol>
+              <li>東森幣可於東森購物指定通路(不含森森購物網)消費時選擇使用，東森幣1 枚可折抵現金 1 元。</li>
+              <li>東森幣最高可折抵上限為商品應付金額之30%（惟得依特定商品、專案活動依個案進行可折抵幣數之調整，悉依結帳頁面(購物車)顯示或使用之系統設定為準），且有單筆上限金額為3,000，單日最高２萬的抵用限制。</li>
+              <li>結帳時若消費之商品可使用東森幣折抵，系統將自動從最接近有效期限之東森幣折抵(倘會員選擇以東森幣折抵消費金額者，則一律採全數折抵，會員無法選擇以部分東森幣折抵金額)，會員於購物車結帳時就能自動算出可使用的東森幣並進行折抵。</li>
+              <li>每次取得之東森幣依發送時間及該次活動規範，均有不同之有效期間，期限屆至，自動無效。</li>
+              <li>票券類（包含餐券／服務票券／禮券與提貨券等預付儲值商品）、apple系列商品、旅遊、保險及汽機車…等專案商品，無法使用東森幣折抵。</li>
+              <li>商品是否適用東森幣，依結帳頁面(購物車)顯示或使用之系統設定為準。</li>
+              <li>東森幣限折抵指定商品類別之折扣金額，恕無法折抵售後服務、賠償等相關費用，如：運費、安裝處理費、商品缺損賠償等費用。</li>
+              <li>折價券每券限使用單件商品一次，逾期視同自動作廢，訂單取消、退貨亦無法再次使用。加價購、服務性票券、汽機車、旅遊、保險、禮券等專案商品，恕不適用本折價券。</li>
+              <li>凡商品置入購物車，未出現優惠折價券欄位或輸入折價券露出「不適用」，即代表此為專案商品，無法參加優惠折價活動。</li>
+              <li>東森購物網所發送之折價券可與折扣金或紅利金合併使用，並僅限於東森購物網網站購買商品時選擇使用。</li>
+              <li>折價券回饋屬於記名式優惠，禁止轉讓他人使用，亦不可要求轉換為現金。</li>
+              <li>東森幣之完整使用規則，請詳東森幣常見問題（東森購物網站會員服務/APP幫助中心→常見問題→東森幣常見問題）</li>
+              <li>東森購物網保有活動變更、修改或終止本活動之權力，如有異動，修改後之內容將公佈在東森購物網上。</li>
+            </ol>
+      </article>
+    </div>
+  </section>
+</div>
+
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script src="global.js"></script>
+<script src="dataBank.js"></script>
+<script src="dataDepartment.js"></script>
+<script src="generateData.js"></script>

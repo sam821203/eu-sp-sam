@@ -1,0 +1,33 @@
+-
+  var promoData = [
+    {
+      link: "#feedback",
+      imgSrc: "~components/promo/items/promo-1.png",
+      alt: "累積滿$20,001最高回饋1.5%(1%東森幣+0.5%禮物卡)"
+    },
+    {
+      link: "#feedback",
+      imgSrc: "~components/promo/items/promo-2.png",
+      alt: "累積滿$60,001最高回饋2.5%(1.5%東森幣+1%禮物卡)"
+    },
+    {
+      link: "#feedback",
+      imgSrc: "~components/promo/items/promo-3.png",
+      alt: "累積滿$100,001最高回饋4%(2%東森幣+2%禮物卡)"
+    },
+    {
+      link: "#rank",
+      imgSrc: "~components/promo/items/promo-4.png",
+      alt: "消費排行榜前10名最高回饋10%(5%東森幣+5%禮物卡)"
+    },
+  ]
+
+section.promo__group.promo__group--promo.m-bottom--fixed
+  .layout--main
+    .group__wrap
+      ul
+        each data in promoData
+            li
+              a(href= data.link, title= data.alt)
+                img(src= data.imgSrc, alt= data.alt)
+

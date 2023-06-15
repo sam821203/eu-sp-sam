@@ -1,0 +1,50 @@
+.event__wrap--w2m1
+  transform: translateY(-2%)
+  +breakpoint-min($min-width-lg)
+    transform: translateY(-2.8%)
+  .layout--main
+    position: relative
+    .btn--prev-event-w2m1,
+    .btn--next-event-w2m1
+      position: absolute
+      z-index: map-get($zindex, base)
+      top: 46%
+      width: 6.5%
+      height: 15%
+      +breakpoint-min($min-width-lg)
+        width: 5%
+        top: 53%
+    .btn--prev-event-w2m1
+      left: 4%
+    .btn--next-event-w2m1
+      right: 4%
+  .event__zone
+    padding: 4.5% 10% 0
+    &--e
+      background: url("../components/event-w2m1/event-w2m1-background-mobile-e.png") no-repeat
+      background-size: 100%
+    &--u
+      background: url("../components/event-w2m1/event-w2m1-background-mobile-u.png") no-repeat
+      background-size: 100%
+    a
+      transition: all 0.5s
+      &:hover
+        transform: scale(0.95)
+        filter: brightness(120%)
+    +breakpoint-min($min-width-lg)
+      display: flex
+      padding: 9.6% 8% 1.5%
+      &--e
+        background: url("../components/event-w2m1/event-w2m1-background-web-e.png") no-repeat
+        background-size: 100%
+      &--u
+        background: url("../components/event-w2m1/event-w2m1-background-web-u.png") no-repeat
+        background-size: 100%
+      a
+        margin: 0 0.8%
+      .slick-slide
+        padding: 0 0.8%
+        a
+          margin: 0
+
+

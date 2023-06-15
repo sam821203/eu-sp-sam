@@ -1,0 +1,21 @@
+.header__zone
+  position: relative
+  .logo
+    // TODO:有無版頭要不要放logo在此控制
+    display: none
+    position: absolute
+    z-index: map-get($zindex, base)
+    top: 5%
+    left: 13.5%
+    width: 12.5%
+
+  .header__title--main,
+  .header__title--sp
+    padding-bottom: 8%
+    overflow: hidden
+    img
+      transform: translate(0, 12.6%) scale(1.25)
+    +breakpoint-min($min-width-xl)
+      overflow: unset
+      img
+        transform: translate(0.77%, 12.6%) scale(1.25)

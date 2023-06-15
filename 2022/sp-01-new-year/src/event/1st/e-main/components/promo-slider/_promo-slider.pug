@@ -1,0 +1,98 @@
+-
+  var promoSliderItem = [
+    {
+      link: "https://media.etmall.com.tw/sp/12327/m/index.html" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p1.png",
+      alt: "美妝風雲榜2折起",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/12560/m/index.html" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p2.png",
+      alt: "東森獨家送RO仙境傳說：新世代的誕生虛寶",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/10669/m/index.html" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p3.png",
+      alt: "狂送10%東森幣",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/154241" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p4.png",
+      alt: "5折up",
+    },
+    //- {
+    //-   link: "" ,
+    //-   imgSrc: "event/1st/e-main/components/promo-slider/item/p5.png",
+    //-   alt: "測試測試測試測試測試測試",
+    //- },
+    {
+      link: "https://www.etmall.com.tw/p/154492" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p6.png",
+      alt: "專櫃名包大集合",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/4369/m/index.html" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p7.png",
+      alt: "2022 新年換新機",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/156153" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p8.png",
+      alt: "保健歡慶迎新熱銷優惠",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/12577/m/index.html" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p9.png",
+      alt: "春節拜年準備",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/104783" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p10.png",
+      alt: "保健人氣熱銷",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/12299/m/index.html" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p11.png",
+      alt: "年終最大檔3折起",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/12525/m/index.html" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p12.png",
+      alt: "新春虎來報3折起",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/156792" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p13.png",
+      alt: "尾牙聚餐餐券",
+    },{
+      link: "https://www.etmall.com.tw/s/5" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p14.png",
+      alt: "下單登記抽豪禮",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/12415/m/index.html" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p15.png",
+      alt: "下單登記抽豪禮",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/12493/m/index.html" ,
+      imgSrc: "event/1st/e-main/components/promo-slider/item/p16.png",
+      alt: "下單抽萬元豪禮",
+    },
+  ]
+
+
+section.promo__group.promo__group--promo-slider.m-bottom--lg(data-title="尾牙強檔")
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        .decor__wrap.full-parent
+          .promo__decor#decorPromoSlider
+            img(src="event/1st/e-main/components/promo-slider/decor-promo-slider.png", alt="")
+      .promo__block
+        .promo__slider.swiper-container#promoSliderItem
+          ul.swiper-wrapper
+            each data in promoSliderItem
+              li.swiper-slide
+                a(href= data.link, title=data.alt)
+                  img(src= data.imgSrc, alt=data.alt)

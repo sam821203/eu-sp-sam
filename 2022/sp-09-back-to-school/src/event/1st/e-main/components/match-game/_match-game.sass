@@ -1,0 +1,135 @@
+.promo__group--match
+  +pos-set(relative, zero)
+  .promo__wrap
+    +aspect-ratio(960, 1530)
+    .promo__zone
+      padding: 32% 2.6% 0
+      +bg-set(url(event/1st/e-main/components/match-game/bg-match-game.png), 100% auto)
+    .promo__title
+      +pos-set(absolute, zero, 0%)
+      right: 1%
+      width: 28%
+      +breakpoint-min($min-width-xl)
+        margin-left: 7%
+      &.active
+        animation: figure-enlarge 1s ease-out 1
+
+  .card__box
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+
+  .card__item
+    +pos-set(relative, zero)
+    width: 23.5%
+    perspective: 600px
+    margin-bottom: 2%
+    cursor: pointer
+    &.animation
+      transition: 1s
+      animation: headShake 1.2s both 1 linear
+
+  .card__front,
+  .card__back
+    backface-visibility: hidden
+    transition: all 0.3s
+
+  .card__front
+    +pos-set(absolute, under, 0, 0)
+    width: 100%
+    height: 100%
+    transform-style: preserve-3d
+    transform: rotateY(180deg)
+
+  // 狀態設定
+  .card__item
+    &::before
+      content: ''
+      +pos-set(absolute, zero)
+      bottom: -5%
+      right: -5%
+      width: 30%
+      height: 30%
+      opacity: 0
+    // open或match時翻開
+    &.open,
+    &.match
+      .card__back
+        transform: rotateY(-180deg)
+      .card__front
+        transform: rotateY(0)
+
+    // match時有動畫
+    &.match
+      +pos-set(relative, zero)
+      // 0.3s翻牌transition時間
+      animation: shinning 0.8s 0.3s
+      &::before
+        animation: bounceInDown 1s 0.3s both
+      // match後卡片可以被點連結
+      .card__front
+        pointer-events: auto
+        a
+          cursor: alias
+
+    // 沒match時有動畫
+    &.unmatched
+      // 0.3s翻牌transition時間
+      animation: shakeX3 0.3s 0.3s
+
+    // 卡片被翻開後、正確後要不能在觸發點擊(會影響JS偵測判斷)
+    &.disabled
+      pointer-events: none
+
+/* animations */
+@keyframes shake-shinning
+  0%, 100%
+    transform: translateY(2%)
+  50%
+    transform: translateY(-2%)
+    filter: brightness(150%)
+
+@keyframes shinning
+  0%, 100%
+    filter: brightness(100%)
+  50%
+    filter: brightness(300%)
+
+@keyframes bounceInDown
+  0%, 60%, 75%, 90%, to
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+  0%
+    opacity: 0
+    transform: translate3d(0, -3000px, 0) scaleY(3)
+  60%
+    opacity: 1
+    transform: translate3d(0, 25px, 0) scaleY(.9)
+  75%
+    opacity: 1
+    transform: translate3d(0, -10px, 0) scaleY(.95)
+  90%
+    opacity: 1
+    transform: translate3d(0, 5px, 0) scaleY(.985)
+  to
+    opacity: 1
+    transform: translateZ(0)
+
+@keyframes headShake
+  0%
+    transform: translateX(0)
+  6.5%
+    transform: translateX(-6px) rotateY(-9deg)
+  18.5%
+    transform: translateX(5px) rotateY(7deg)
+  31.5%
+    transform: translateX(-3px) rotateY(-5deg)
+  43.5%
+    transform: translateX(2px) rotateY(3deg)
+  50%
+    transform: translateX(0)
+
+@keyframes figure-enlarge
+  0%, 100%
+    transform: scale(1)
+  50%
+    transform: scale(1.1)

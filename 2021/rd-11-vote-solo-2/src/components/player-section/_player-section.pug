@@ -1,0 +1,34 @@
+section.promo__group.promo__group--player.m-bottom--md
+  .layout--main
+    .promo__head.m-bottom--sm
+      include include/_player-title
+    .promo__body
+      .tab__zone.tab__zone--player
+        .tab__block.tab__block--player
+          .tab__content
+            .content__box.active
+              .content__container
+                ul.content__wrapper
+                  - var n = 0
+                  while n < 6
+                    - var pet = (n==0) ? 'dog' : 'cat'
+                    li
+                      .player__dynamic.player__dynamic--player
+                        .player__pic
+                            .pic__box(style='background-image: url(../assets/fake-' + pet + '.jpg)')
+                        .player__name 報名名稱最多一排報名名稱最多一排報名名稱最多一排報名名稱最多一排報名名稱最多一排
+                        .player__number
+                          span 編號：
+                          span 5847852
+                        .player__info
+                          .info__votes
+                            .player__votes
+                              .votes__label 票數
+                              .votes__value 90,847
+                        .player__cta
+                          a.btn--cta.btn--capsule(href="")
+                            .cta__text
+                              span 前往投票
+                      - n++
+              .dynamic__wrap
+                a.btn--dynamic.btn--capsule.btn--yellow-1 看更多

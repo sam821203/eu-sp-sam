@@ -1,0 +1,16 @@
+@import "~layout/logo/_logo.sass"
+@import "~layout/share-tools/_share-tools"
+
+.header__zone
+  // display: none
+  +pos-set(absolute, bnElems)
+  top: 2px
+  left: 0
+  width: 100%
+  .layout--main
+    +display-flex(">div")
+    align-items: center
+
+  +breakpoint-min($min-width-xl)
+    // display: block
+    top: 15px

@@ -1,0 +1,116 @@
+.daily-time
+  overflow: hidden
+  .decor__wrap
+    padding-top: 8%
+  .decor__item
+    &--title
+      +pos-set(absolute, under, 2.5%, 7%)
+      width: 72%
+      +breakpoint-min($min-width-xl)
+        top: 6.5%
+        left: calc(50% - 370px)
+        width: auto
+      &.active
+        z-index: map-get($zindex, base)
+        animation: jump-out-bounce 1s both
+    &--right
+      +pos-set(absolute, under, 2%)
+      right: 7.5%
+      width: 23%
+      +breakpoint-min($min-width-xl)
+        top: 7%
+        right: calc(50% - 358px)
+      &.active
+        z-index: map-get($zindex, base)
+        animation: jump-out-bounce 1s both, tada 2s 1s ease-in-out infinite
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/daily-time/bg-daily-time.png), 100%)
+  .promo__zone
+    +aspect-ratio(960, 872)
+  .promo__block
+    padding: 21% 2% 0%
+    +breakpoint-min($min-width-xl)
+      padding-top: 220px
+  .product__wrap
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    > div
+      width: 33%
+      &:nth-child(1)
+        .product__time
+          +bg-set(url(event/1st/e-main/components/daily-time/daily-time-hour-1.png), 100%)
+      &:nth-child(2)
+        .product__time
+          +bg-set(url(event/1st/e-main/components/daily-time/daily-time-hour-2.png), 100%)
+      &:nth-child(3)
+        .product__time
+          +bg-set(url(event/1st/e-main/components/daily-time/daily-time-hour-3.png), 100%)
+  .product__block
+    padding: 0 2%
+  .product--dynamic
+    width: 100%
+  .product__time
+    margin-left: auto
+    margin-right: auto
+    padding-bottom: 48%
+    margin-bottom: 5.2%
+    filter: brightness(50%)
+    + .product
+      filter: brightness(50%)
+    &.active
+      filter: grayscale(0)
+      + .product
+        filter: grayscale(0)
+    +breakpoint-min($min-width-xl)
+      padding-bottom: 148px
+
+  .product--dynamic
+    .product__name
+      +pos-set(relative, zero)
+      font-size: 3.7vw
+      margin: 3%
+      height: 2.43em
+      line-height: 125% !important
+      +breakpoint-min($min-width-xl)
+        padding-top: 3%
+        height: 2.83em
+        font-size: 22px
+
+  .product__price
+    margin: 3%
+    span
+      &:last-child
+        font-size: 4.6vw
+        +breakpoint-min($min-width-xl)
+          font-size: 32px
+
++key-rotate-from-to(-10, 10)
+
+@keyframes jump-out-bounce
+  0%, 20%, 53%, to
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+    transform: translateZ(0)
+  40%, 43%
+    animation-timing-function: cubic-bezier(.755, .05, .855, .06)
+    transform: translate3d(0, -16%, 0) scaleY(1.05)
+  70%
+    animation-timing-function: cubic-bezier(.755, .05, .855, .06)
+    transform: translate3d(0, -10%, 0) scaleY(1.025)
+  80%
+    transition-timing-function: cubic-bezier(.215, .61, .355, 1)
+    transform: translateZ(0) scaleY(.95)
+  90%
+    transform: translate3d(0, -5%, 0) scaleY(1.01)
+
+@keyframes tada
+  0%, 55%
+    transform: scaleX(1)
+  5%, 10%
+    transform: scale3d(.9,.9,.9) rotate(-3deg)
+  15%, 25%, 35%, 45%
+    transform: scale3d(1.05,1.05,1.05) rotate(3deg)
+  20%, 30%, 40%
+    transform: scale3d(1.05,1.05,1.05) rotate(-3deg)

@@ -1,0 +1,35 @@
+.login__wrap
+  h3.login__title 會員登入
+  .input__group
+    p.js__input__title 語系
+    .js__input__wrap.input__wrap
+      select.styled__select
+        option 繁體中文
+        option 簡體中文
+        option English
+  .input__group
+    p.js__input__title 帳號
+    .js__input__wrap.input__wrap
+      input.styled__input(placeholder="會員編號或身分證號")
+  .input__group
+    p.js__input__title 密碼
+    .js__input__wrap.input__wrap
+      input.styled__password(type="password" placeholder="4-10位數密碼")
+      img.password__eye(src="~event/eckare/components/login-section/icon-active-eye.svg")
+  .input__group
+    p.js__input__title 驗證碼
+    .js__input__wrap.input__wrap
+      input.styled__input(placeholder="輸入下方驗證碼")
+      img(class="verification__code" src="~event/eckare/components/login-section/code3x.png", alt="")
+      //p.tips Input caption message.
+  .input__group.remember__checked
+    .input__wrap
+      .styled__checkbox
+        label(for="remember__info") 記住登入資訊
+          input(type="checkbox" id="remember__info" class="styled__checkbox")
+          span.checkmark
+  .login__button__group
+    button 登入
+    .styled__no__member 忘記帳號/密碼 ?
+    .styled__no__member 如何加入會員
+

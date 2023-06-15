@@ -1,0 +1,41 @@
+// ==========================================================================
+// Collection Helpers 
+// ==========================================================================
+// @import "utils/sass/helpers/_collection"
+@import "~utils/sass/_common"
+
+// // ==========================================================================
+// // Plugins
+// // ==========================================================================
+// // @import "vendors/animate"
+
+// // ==========================================================================
+// // layout
+// // ==========================================================================
+@import "~layout/header/_header"
+@import "~layout/nav-bottom/_nav"
+@import "~layout/nav-apple/_nav-apple"
+
+// // ==========================================================================
+// // components
+// // ==========================================================================
+@import "~components/apple-list/_apple-list"
+@import "~components/hero-slider-main/_hero-slider-main"
+@import "~components/bn-slider/_bn-slider"
+// // ==========================================================================
+// // Page
+// // ==========================================================================
+// common switch setting
+.sp__header
+  .info--apple
+    display: inline-block
+    padding-top: 1px
+    font-weight: bold
+  span:last-child
+    display: none
+.nav__apple
+  display: none
+
+// page setting
+body
+  background-color: $gray-light

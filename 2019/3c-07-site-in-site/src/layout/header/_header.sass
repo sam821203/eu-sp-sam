@@ -1,0 +1,53 @@
+@import "~layout/logo/_logo.sass"
+
+// all common sub-page color style
+.sp__header
+  border-bottom-color: $primary-medium
+
+// apple sub-page color style
+.sp__wrap--apple
+  .sp__header
+    border-bottom-color: $gray-deep-light
+
+.sp__header
+  position: sticky
+  z-index: map-get($zindex, 5k)
+  top: 0
+  color: $gray-deep-light
+  background-color: $gray-deep-dark
+  border-bottom-style: solid
+  border-bottom-width: 1px
+  .header__zone
+    padding: 1.5% 2.5%
+  .header__info
+    +font-size($fz-18)
+    display: inline-block
+    vertical-align: middle
+  .info--sign
+    margin-left: 0.4rem
+    margin-right: 0.6rem
+  .info--common
+    display: none
+  .share__wrap
+    padding-top: 4px 
+    float: right
+  .share__icon
+    display: inline-block
+    margin-left: 10px
+    width: 25px
+
+  +breakpoint-min($min-width-lg)
+    border-bottom-width: 2px
+    .header__zone
+      padding: 10px 25px
+    .header__info
+      +font-size($fz-28)
+    .info--sign
+      margin-left: 1rem
+      margin-right: 1.2rem
+    .share__wrap
+      padding-top: 6px
+    .share__icon
+      width: 38px
+
+

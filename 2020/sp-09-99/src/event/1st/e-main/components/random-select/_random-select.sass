@@ -1,0 +1,38 @@
+.promo__group--random
+  .promo__wrap
+    padding: 6.5% 6% 5.5%
+    +bg-set(url("~event/1st/e-main/components/random-select/bg-random-select.png"), 100%)
+    .good__wrap
+      display: flex
+      flex-wrap: wrap
+      // justify-content: space-around
+      // margin-left: 1%
+      width: 100%
+      li
+        flex: 1 0 30%
+        padding: 1%
+        a
+          width: 100%
+          text-align: center
+          transition: transform 0.5s
+          border-radius: 0.5em
+          img
+            transform: translateY(1.5%)
+
+        &.odd
+          a
+            background-color: $main-e-background-color-1st-random-1
+            &:hover,
+            &:active,
+            &.active
+              background-color: $main-e-background-color-1st-random-3
+        &.even
+          a
+            background-color: $main-e-background-color-1st-random-2
+            &:hover,
+            &:active,
+            &.active
+              background-color: $main-e-background-color-1st-random-4
+
+    +breakpoint-min($min-width-xl)
+      padding-top: 68px

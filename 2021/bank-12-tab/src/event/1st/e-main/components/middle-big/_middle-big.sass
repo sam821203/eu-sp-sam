@@ -1,0 +1,92 @@
+.promo__group--big
+  .content__wrap
+    background-color: $gray-medium
+  .content__box
+    display: none
+    opacity: 0
+    &.active
+      display: block
+      animation: fade-in 0.3s forwards
+
+  .bank__wrap
+    +pos-set(relative, zero)
+
+  // 這色跟fixed的promo__title background-color一樣色
+  .bank__logo
+    +pos-set(sticky, base, 0)
+    background-color: $gray-deep-light
+    border-bottom: 1px solid $gray-dark
+
+    +breakpoint-min($min-width-xl)
+      top: 60px
+
+  .btn--back
+    +pos-set(absolute, zero)
+    padding: 12px
+    top: 10px
+    left: 0
+    width: 48px
+    .text--web
+      display: none
+    +breakpoint-min($min-width-xl)
+      width: auto
+      transition: transform 0.3s
+      cursor: pointer
+      .text--web
+        display: inline
+        margin-left: 6px
+        line-height: 24px
+        color: $primary-medium
+        font-size: 20px
+        vertical-align: middle
+      &:hover
+        transform: scale(1.1)
+
+  .promo__box
+    &:not(:last-child)
+      margin-bottom: 15px
+
+  .promo__title,
+  .info__box,
+  .info__head,
+  .info__body p,
+  .info__body li,
+  .info__box a
+    margin-bottom: 10px
+
+  .promo__title
+    padding: 10px
+    color: $gray-light
+    background-color: $gray-dark
+    font-size: 20px
+    font-weight: bold
+
+  .promo__info
+    font-size: 16px
+
+  .info__box
+    &:not(:last-child)
+      border-bottom: 1px dashed $gray-deep-dark
+  .bottom-dash
+    padding-bottom: 10px
+    &:not(:last-child)
+      border-bottom: 1px dashed $gray-deep-dark
+
+  .info__head
+    color: $primary-medium
+    font-weight: bold
+
+  .info__box a
+    margin-left: auto
+    margin-right: auto
+    width: 250px
+
+  .btn--cta
+    padding: 10px
+    font-size: 16px
+
+@keyframes fade-in
+  0%
+    opacity: 0.3
+  100%
+    opacity: 1

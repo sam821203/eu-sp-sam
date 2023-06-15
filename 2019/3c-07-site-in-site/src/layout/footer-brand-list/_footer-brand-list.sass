@@ -1,0 +1,28 @@
+.sp__footer
+  padding-top: 1.5%
+  background-color: $gray-deep-light
+  +breakpoint-min($min-width-lg)
+    padding-top: 10px
+.foot__title
+  +font-size($fz-20)
+  padding: 1% 0
+  color: $primary-medium
+  background-color: $gray-deep-dark
+  text-align: center
+  +breakpoint-min($min-width-lg)
+    padding: 2px 0
+    +font-size($fz-28)
+  +breakpoint-min($min-width-xl)
+    +font-size($fz-36)
+.footer__wrap
+  +display-flex
+  flex-wrap: wrap
+  padding: 0 1%
+  .footer-brand__item
+    +flex(0, 0, 25%)
+    padding: 1%
+  +breakpoint-min($min-width-lg)
+    padding: 0
+    .footer-brand__item
+      +flex(0, 0, 12.5%)
+      padding: 0

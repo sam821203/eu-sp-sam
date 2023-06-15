@@ -1,0 +1,43 @@
+.promo__group--map
+  +pos-set(relative, zero)
+
+  .promo__wrap
+    svg
+      width: 100%
+      height: calc(63.5vh + 39px)
+
+    .map-block
+      fill: $main-e-map-color-1st-1
+      stroke: $gray-dark
+
+    .effect-block
+      transition: all 0.6s
+
+      // 縣市兩者都有時active會掛在map-block上方的g群組
+      .active .map-block,
+      // 正常單一縣市
+      .map-block.active
+        fill: $main-e-map-color-1st-2
+
+    .map-font
+      fill: $gray-dark
+      pointer-events: none
+
+    .map-shadow
+      fill: $gray-dark
+
+  +breakpoint-min($min-width-xl)
+    width: 51.5%
+    .promo__wrap
+      svg
+        height: auto
+
+    .effect-block
+      // 正常單一縣市
+      &.js-hover-active:hover .map-block:not(.active)
+        fill: lighten($main-e-map-color-1st-2, 15%)
+        cursor: pointer
+
+      // 縣市兩者都有時active會掛在map-block上方的g群組
+      &.js-hover-active:hover .active .map-block
+        fill: $main-e-map-color-1st-2

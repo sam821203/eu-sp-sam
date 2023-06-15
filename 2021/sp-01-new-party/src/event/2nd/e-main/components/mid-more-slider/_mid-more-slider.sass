@@ -1,0 +1,67 @@
+.promo__group--mid-more
+  .promo__wrap
+    // margin-top: -15%
+    transition: all 0.6s ease
+    // padding-top: 70%
+    +bg-set(url("~event/2nd/e-main/components/mid-more-slider/bg-mid-more.png"), 100%)
+    .promo__slider
+      padding: 18% 3.2% 8%
+    .swiper-slide
+      +pos-set(relative, zero)
+      // background-color: #faf
+      text-align: center
+      // a
+      //   transition: transform 0.6s
+      //   transform: translateY(-27%) scale(0.6)
+
+    .swiper-slide,
+    .swiper-slide-duplicate
+      a,
+      img,
+        transition: all 0.6s
+      a
+          transform: translateY(6%) scale(0.6)
+      img
+        opacity: 0.5
+      .text__box
+        +pos-set(absolute, base)
+        bottom: 5%
+        left: -1%
+        padding: 1% 2% 1% 1%
+        width: 100%
+        color: $gray-deep-dark
+        opacity: 0
+        transition: all 0.5s
+
+    .swiper-slide-active,
+    .swiper-slide-duplicate-active
+      z-index: map-get($zindex, zero)
+      a
+        transform: translateY(0) scale(1)
+      img
+        opacity: 1
+      .text__box
+        bottom: 49%
+        font-size: 3.2vw
+        opacity: 1
+        +breakpoint-min($min-width-xl)
+          font-size: 32px
+
+  // .mid-more__nav
+  //   top: 35%
+  //   outline: 0
+  //   &::after
+  //     font-size: 8vw
+      
+  //   &--prev
+  //     left: 5%
+  //   &--next
+  //     right: 5%
+  //   +breakpoint-min($min-width-lg)
+  //     &--prev
+  //       left: 8%
+  //     &--next
+  //       right: 8%
+  //   +breakpoint-min($min-width-xl)
+  //     &::after
+  //       font-size: 60px

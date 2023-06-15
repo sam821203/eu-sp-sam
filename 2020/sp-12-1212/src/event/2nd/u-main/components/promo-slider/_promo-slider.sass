@@ -1,0 +1,104 @@
+// .promo__group--bn-special
+//   margin-left: auto
+//   margin-right: auto
+.promo__slider.promo__slider-1
+  top: -31vw
+  position: relative
+  z-index: 10
+  //padding-top: 3%
+  //padding-bottom: 3%
+  //background: center 0 url("~event/2nd/u-main/components/bn-special/promo-bank-bg.png") no-repeat
+  //background-size: 100% auto
+  transition: all 0.6s ease
+  .swiper-container
+    margin-left: auto
+    margin-right: auto
+    width: 85%
+    height: 40vw
+    // height: 100%
+    // .swiper-slide
+      // transition: transform 0.5s
+      // transform: translateY(-100%)
+    // .swiper-slide-active,
+    // .swiper-slide-duplicate-active,
+      // transform: translateY(0)
+    .swiper-slide
+      &:hover,
+      &:active
+        filter: contrast(120%)
+      img
+        display: block
+        margin-left: auto
+        margin-right: auto
+  .swiper-slide,
+  .swiper-slide-duplicate
+    a,
+    img
+      transition: all 0.6s
+    a
+      transform: translateY(50%) scale(0.7) rotate(-360deg)
+      -ms-transform: translateY(30%) scale(1) rotate(-360deg)
+    img
+  //filter: grayscale(100%)
+  .swiper-slide-active,
+  .swiper-slide-duplicate-active
+    z-index: map-get($zindex, ten)
+    a
+      transform: translateY(28%) scale(1.35) rotate(0)
+      -ms-transform: translateY(30%) scale(1) rotate(0)
+    img
+      filter: grayscale(0)
+
+  .swiper-slide-next,
+  .swiper-slide-prev
+    a
+      transform: translateY(50%) scale(0.7) rotate(-360deg)
+      -ms-transform: translateY(30%) scale(1) rotate(-360deg)
+  .swiper-slide-duplicate-next,
+  .swiper-slide-duplicate-prev
+    a
+      transform: translateY(50%) scale(0.4) rotate(0)
+      -ms-transform: translateY(30%) scale(1) rotate(0)
+
+  #sliderSpecialPrev, #sliderSpecialNext
+    opacity: 0
+    width: 6vw
+    height: 7vw
+    margin-top: -2vw
+    background-size: 6vw 7vw
+  #sliderSpecialNext
+    right: 0
+  #sliderSpecialPrev
+    left: 0
+  +breakpoint-min($min-width-xl)
+    top: -45px
+    .swiper-container
+      height: 390px
+    #sliderSpecialNext, #sliderSpecialPrev
+      width: 27px
+      height: 44px
+      margin-top: -22px
+      background-size: 27px 44px
+    #sliderSpecialNext
+      right: 21px
+      top: 56%
+    #sliderSpecialPrev
+      left: 21px
+      top: 56%
+    .swiper-slide-active,
+    .swiper-slide-duplicate-active
+      a
+        transform: translateY(25%) scale(1.4) rotate(0)
+        -ms-transform: translateY(30%) scale(1) rotate(0)
+// 當大小網不一樣時
+// img
+//   &:last-child
+//     display: none
+//   +breakpoint-min($min-width-xl)
+//     &:first-child
+//       display: none
+//     &:last-child
+//       display: block
+//       margin-left: auto
+//       margin-right: auto
+

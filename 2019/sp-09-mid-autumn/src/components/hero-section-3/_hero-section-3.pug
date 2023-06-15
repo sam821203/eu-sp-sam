@@ -1,0 +1,21 @@
+- var heroBankData = {etmall: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201908/SP_1107836/w/index.html", umall: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201908/SP_1104315/w/index.html"}
+- var heroBankInfo = isU ? heroBankData.umall : heroBankData.etmall
+
+include /layout/background-decoration/_background-decoration.pug
+
+section.hero__wrap
+  .layout--main
+    .hero__zone
+      .hero__block
+        .hero__box
+          h1.hero__title.hero__title--main.block--center(title="99激搶、狂灑32萬！")
+            img(src="~components/hero-section-3/title-crown.png", alt="")
+            img(src="~components/hero-section-3/title.png", alt="99激搶、狂灑32萬！")
+
+          include /components/hero-small-slider/_hero-small-slider
+
+        include /components/goods-slider-flip/_goods-slider-flip
+
+      include /components/promo-event-2/_promo-event-2
+
+      include /components/bn-special/_bn-special

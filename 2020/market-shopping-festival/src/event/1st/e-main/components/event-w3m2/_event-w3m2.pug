@@ -1,0 +1,73 @@
+- 
+  var w3m2DataE = [
+    {
+      link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202007/SP_1115834/w/index.html",
+      imgSrc: "~event/1st/e-main/components/event-w3m2/items/brand-1.png",
+      alt: "台中之最 限時必選"
+    }, 
+    {
+      link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202007/SP_1115838/w/index.html",
+      imgSrc: "~event/1st/e-main/components/event-w3m2/items/brand-2.png",
+      alt: "玩樂購物 一應俱全"
+    }, 
+    {
+      link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202007/SP_1115839/w/index.html", 
+      imgSrc: "~event/1st/e-main/components/event-w3m2/items/brand-3.png",
+      alt: "健康台中 活力十足"
+    }, 
+    {
+      link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202007/SP_1115840/w/index.html",
+      imgSrc: "~event/1st/e-main/components/event-w3m2/items/brand-4.png",
+      alt: "尋味台中 農產最讚"
+    }, 
+    {
+      link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202007/SP_1115841/w/index.html",
+      imgSrc: "~event/1st/e-main/components/event-w3m2/items/brand-5.png",
+      alt: "旅居台中 一遊未盡"
+    }, 
+    {
+      link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202007/SP_1115842/w/index.html",
+      imgSrc: "~event/1st/e-main/components/event-w3m2/items/brand-6.png",
+      alt: "食在好味 美食首都"
+    }, 
+  ]
+
+- 
+  var w3m2DataU = [
+    {
+      link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202006/SP_1106085/w/index.html", 
+      imgSrc: "~event/1st/u-main/components/event-w3m2/items/brand-1.png",
+      alt: "20間銀行最高回饋10%"
+    }, 
+    {
+      link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201407/SP_1019204/w/index.html", 
+      imgSrc: "~event/1st/u-main/components/event-w3m2/items/brand-2.png",
+      alt: "下單現折$100"
+    }, 
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale", 
+      imgSrc: "~event/1st/u-main/components/event-w3m2/items/brand-3.png",
+      alt: "整點最便宜"
+    }, 
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale?Day=Up", 
+      imgSrc: "~event/1st/u-main/components/event-w3m2/items/brand-4.png",
+      alt: "天天最激殺"
+    }, 
+  ]
+ 
+- var w3m2Data = isU? w3m2DataU : w3m2DataE
+
+
+section.promo__group.promo__group--w3m2.m-bottom--sm
+  .layout--main
+    //- .promo__zone.lazyload(data-src="960bg-04.jpg")
+    .promo__zone
+      .promo__title.block--center(title="六大主題")
+        //- img.lazyload(data-src="section-bn-05.png", src="~utils/img/1x1_low.png", alt="秋賞獻禮")
+    .promo__wrap
+      ul.good__wrap
+        each data in w3m2Data
+          li
+            a(href= data.link, title= data.alt)
+              img(src= data.imgSrc, alt= data.alt)

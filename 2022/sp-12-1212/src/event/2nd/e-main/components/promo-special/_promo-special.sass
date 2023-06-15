@@ -1,0 +1,139 @@
+.promo-special
+  overflow: hidden
+  margin-top: -5%
+  +breakpoint-min($min-width-xl)
+    margin-top: -30px
+
+  .decor__item
+    &--title
+      +pos-set(absolute, base, 6%, 22%)
+      width: 54%
+      pointer-events: none
+      animation: up-down 2.6s linear infinite
+      +breakpoint-min($min-width-xl)
+        top: 5%
+        left: calc( 50% - 238px )
+        width: auto
+
+    &--left
+      +pos-set(absolute, base, 4%, 13%)
+      width: 20%
+      pointer-events: none
+      animation: up-down 2.6s linear infinite
+      +breakpoint-min($min-width-xl)
+        left: calc( 50% - 312px )
+        width: auto
+
+    &--right
+      +pos-set(absolute, base, 1%)
+      right: 12%
+      width: 24%
+      pointer-events: none
+      animation: up-down 2.6s linear infinite
+      +breakpoint-min($min-width-xl)
+        right: calc( 50% - 368px )
+        width: auto
+
+    &--bottom
+      +pos-set(absolute, zero)
+      bottom: 0
+      width: 100%
+      pointer-events: none
+      animation: up-down 2.6s linear infinite
+      +breakpoint-min($min-width-xl)
+        bottom: 10px
+        right: calc( 50% - 482px )
+        width: auto
+
+    &--gift1
+      +pos-set(absolute, base)
+      bottom: 2.2%
+      left: 1.1%
+      display: none
+      width: 18.5%
+      pointer-events: none
+      animation: up-down 2.6s linear infinite
+      +breakpoint-min($min-width-xl)
+        bottom: 3.6%
+        left: calc( 50% - 465px )
+        display: block
+        width: auto
+
+    &--gift2
+      +pos-set(absolute, base)
+      bottom: 1.5%
+      right: 1.1%
+      display: none
+      width: 18.5%
+      pointer-events: none
+      transform: scale(0)
+      transform-origin: bottom center
+      +breakpoint-min($min-width-xl)
+        bottom: 4.4%
+        right: calc( 50% - 462px )
+        display: block
+        width: auto
+      &.active
+        animation: tree-grow .6s ease-out forwards, tree-moveX 1.6s .8s linear infinite
+
+  .promo__zone
+    +aspect-ratio(960, 865)
+    +breakpoint-min($min-width-xl)
+      +aspect-ratio(960, 820)
+
+  .promo__block
+    padding: 22% 2% 0
+    +breakpoint-min($min-width-xl)
+      padding: 218px 10px 0 20px
+  .event__block
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    margin-bottom: 2%
+    li
+      width: calc(25% - 2px)
+      transition: .2s
+      +breakpoint-min($min-width-xl)
+        width: calc(25% - 8px)
+      &:hover
+        transform: translateY(-2%)
+        filter: contrast(1.2)
+        
+  .promo__slider
+    +pos-set(relative, zero)
+    background-position: right
+    padding-bottom: 25%
+    +breakpoint-min($min-width-xl)
+      background-position: right
+    .slider__wrap
+      +pos-set(absolute, zero, 11%, 1%)
+      width: 98%
+      +breakpoint-min($min-width-lg)
+        top: 18%
+        width: 100%
+      +breakpoint-min($min-width-xl)
+        top: 24px
+        left: calc(50% - 330px)
+        width: 70%
+
+    .swiper-slide
+      display: flex
+      justify-content: center
+
+@keyframes tree-moveX
+  0%, 100%
+    filter: brightness(100%)
+    transform: translateX(0)
+  50%
+    filter: brightness(130%)
+    transform: translateX(-40%)
+
+@keyframes tree-grow
+  0%
+    opacity: 0
+    transform: scale(0)
+  50%
+    opacity: 1
+    transform: scale(20%)
+  95%, 100%
+    transform: scale(1)

@@ -1,0 +1,258 @@
+<meta charset="UTF-8">
+<meta name="viewport"
+  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!-- ============== 輪播 start ============== -->
+<!-- <link rel="stylesheet" href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116205/swiper.min.css"> -->
+<!-- ============== 輪播 end ============== -->
+<!-- 共用CSS -->
+<link rel="stylesheet" href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116205/animate.min.css">
+<link rel="stylesheet" href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.css">
+<link rel="stylesheet" href="./style.css">
+<!-- <link rel="stylesheet" href="index.css"> -->
+<!-- [電梯步驟1] 電梯CSS 不用就關掉 -->
+<!-- 商品左電梯CSS，要使用還要在步驟3開啟左電梯data資料 -->
+<!-- <link id="localElevatorLeft" rel="stylesheet" href="sp-elevator-left.css"> -->
+
+<!-- 商品右電梯CSS，步驟3有測試div可以測試 -->
+<link id="localElevatorRight" rel="stylesheet" href="sp-elevator-right.css">
+<!-- [電梯步驟1] 電梯CSS END -->
+<!-- [電梯步驟2] 電梯 html 無論如何都要有 -->
+<div class="elevatorHome js--main--dialog" id="elevatorHome"></div>
+<div class="navRightBar" id="navRightBar"></div>
+<!-- [電梯步驟2] 電梯 html END -->
+
+<!--<div id="barHome"></div>-->
+<div id="iconHome" class="layout--main home--icon"></div>
+<div id="spWrap" class="sp__wallper">
+  <!-- 動畫小物件 -->
+  <div class="animate__wrap">
+    <!-- 如果有多組物件，可以複製命名animate__obj--0{數字} css 也複製一份就可以一直往下生 -->
+    <!--  <img class="animate__animated animate__obj--01 animate__headShake animate__delay-1s animate__infinite" src="ani.png"
+        title="沒看錯" alt="沒看錯"> -->
+  </div>
+  <!-- 主視覺 -->
+  <main class="sp__main">
+    <div class="layout--main home--logo">
+      <a href="https://www.etmall.com.tw"><img class="logo" src="ehs-logo.png" alt="東森購物"></a>
+    </div>
+    <section class="sp__visual">
+      <div class="layout--main">
+        <ul class="visual--auto clearfix">
+          <li class="visual__fragment width--auto">
+            <img src="index_01.png" title="冷氣達人教你怎麼選" alt="">
+          </li>
+          <li class="visual__fragment width--auto">
+            <a href="https://media.etmall.com.tw/sp/10615/m/index.html" title="冷氣下殺請點我">
+              <img src="index_02.png" alt="冷氣達人教你怎麼選">
+            </a>
+          </li>
+          <li class="visual__fragment width--auto">
+            <img src="index_03.png" alt="冷氣達人教你怎麼選">
+          </li>
+          <li class="visual__fragment width--auto">
+            <img src="index_04.png" alt="冷氣達人教你怎麼選">
+          </li>
+          <!-- <li class="visual__fragment width--auto">
+            <img src="index_06.png" alt="冷氣達人教你怎麼選">
+          </li> -->
+          <li class="calc__wrap">
+            <div class="calc__head">
+              <div class="calc__title">
+                <img src="calc-title.png" alt="冷房能力試算">
+              </div>
+            </div>
+            <div class="calc__body">
+              <div class="calc__block">
+                <div class="condition__1st">
+                  <div class="block__title">
+                    <span>Step1. 請輸入預安裝的空間大小</span>
+                    <span>(請輸入整數)</span>
+                  </div>
+                  <div class="row">
+                    <div class="js-radio text__label">
+                      <input class="checkedBox" type="radio" name="space">算法1:
+                      <label>
+                        <input type="number" inputmode="numeric" placeholder="空間坪數" class="input--space" name="space_01">
+                        坪
+                      </label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="js-radio text__label">
+                      <input class="checkedBox" type="radio" name="space">算法2:
+                      <label>
+                        <span>坪數換算</span>
+                        <!-- <br> -->
+                        <input type="number" inputmode="numeric" placeholder="長度" class="input--space" name="inputHeight">
+                        <span>公尺</span>
+                      </label>
+                      <label>
+                        <span> x </span>
+                        <input type="number" inputmode="numeric" placeholder="寬度" class="input--space" name="inputWidth">
+                        <span>公尺</span>                      
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="condition__2nd">
+                  <div class="block__title">
+                    <span>Step2. 選擇您的環境條件</span>
+                    <div>(如無以下特殊環境條件，請不必勾選)</div>
+                  </div>
+                  <div class="label__wrap">
+                    <label>
+                      <input class="checkedBox" type="checkbox" value="1.2" id="sunExposure" name="env"/>
+                      <span>西曬</span>
+                    </label>
+                    <label>
+                      <input class="checkedBox" type="checkbox" value="1.2" id="topFloor" name="env"/>
+                      <span>頂樓</span>
+                    </label>
+                    <label>
+                      <input class="checkedBox" type="checkbox" value="1.2" id="heatSource" name="env"/>
+                      <span>有熱源</span>
+                    </label>
+                    <label>
+                      <input class="checkedBox" type="checkbox" value="1.2" id="highCeiling" name="env"/>
+                      <span>挑高樓層</span>
+                    </label>
+                    <label>
+                      <input class="checkedBox" type="checkbox" value="2" id="sheetMetal" name="env"/>
+                      <span>鐵皮屋</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="button__wrap">
+                  <div class="button" id="result">
+                    <img src="04_icon-1.png" alt="開始計算">
+                  </div>
+                  <div class="button" id="resetButton">
+                    <img src="04_icon-2.png" alt="">
+                  </div>
+                </div>
+
+                <div class="condition__3rd">
+                  <div class="block__title">
+                    <span>試算結果如下</span>
+                  </div>
+                  <div class="promo__block">
+                    <div class="promo__box">
+                      <div class="text--top" id="spaceValue1">
+                        <p>空間大小為</p>
+                        <span>5坪</span>
+                      </div>
+                      <div class="text--bottom" id="spaceValue2">
+                        <p>冷房能力</p>
+                        <span> 4.00 kw/h</span>
+                        <p>以上</p>
+                      </div>
+                    </div>
+                    <div class="promo__box">
+                      <div class="promo__item item--hide">
+                        <a href="https://www.etmall.com.tw/gp/161666">
+                          <img src="04_icon-3.png" alt="">
+                        </a>
+                      </div>
+                      <div class="promo__item item--hide">
+                        <a href="https://www.etmall.com.tw/gp/161673">
+                          <img src="04_icon-3.png" alt="">
+                        </a>
+                      </div>
+                      <div class="promo__item item--hide">
+                        <a href="https://www.etmall.com.tw/gp/161674">
+                          <img src="04_icon-3.png" alt="">
+                        </a>
+                      </div>
+                      <div class="promo__item item--hide">
+                        <a href="https://www.etmall.com.tw/gp/161676">
+                          <img src="04_icon-3.png" alt="">
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </li>
+          <li class="visual__fragment width--auto">
+            <img src="index_07.png" alt="冷氣達人教你怎麼選">
+          </li>
+          <li class="visual__fragment width--auto">
+            <img src="index_08.png" alt="冷氣達人教你怎麼選">
+          </li>
+          <li class="visual__fragment width--auto">
+            <img src="index_09.png" alt="冷氣達人教你怎麼選">
+          </li>
+          <li class="visual__fragment width--auto">
+            <img src="index_10.png" alt="冷氣達人教你怎麼選">
+          </li>
+          <li class="visual__fragment width--auto">
+            <img src="index_11.png" alt="冷氣達人教你怎麼選">
+          </li>
+          <li class="visual__fragment width--auto">
+            <img src="index_12.png" alt="冷氣達人教你怎麼選">
+          </li>
+          <li class="visual__fragment width--auto">
+            <img src="index_13.png" alt="冷氣達人教你怎麼選">
+          </li>
+          <li class="visual__fragment width--auto">
+            <img src="index_14.png" alt="冷氣達人教你怎麼選">
+          </li>
+          <li class="visual__fragment width--auto">
+            <img src="index_15.png" alt="冷氣達人教你怎麼選">
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</div>
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<!-- ============== 輪播 start ============== -->
+<!-- <script src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116205/swiper.min.js"></script> -->
+<!-- ============== 輪播 end ============== -->
+<!-- 東森浮水印
+<script id="scriptIconFloat"
+        src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107916/float-icon.js"></script> -->
+<!-- 森森浮水印
+<script id="scriptIconFloat" src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1104381/float-icon.js"></script> -->
+<!-- 旅遊置頂bar
+<script id="scriptAddBn" src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106742/add-bn.js"></script> -->
+<!-- 共用JS -->
+<script id="generateScript"
+  src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.js"></script>
+<!--[電梯步驟3] 電梯 JS -->
+<!-- 商品左電梯單機版資料，不用就關掉，要使用還要上方步驟1開啟商品左電梯CSS -->
+<!-- <script id="dataElevatorLeft" src="data-elevator.js"></script> -->
+
+<!-- 測試商品右電梯用，上線前必須關掉-->
+<!-- <div data-title="ccc"></div> -->
+
+<!-- 線上自動切換電梯，無論如何都要有 -->
+<script id="checkElevator" src="https://media.etmall.com.tw/sp/11911/check-elevator.js"></script>
+<!-- [電梯步驟3] 電梯 JS END -->
+
+<script>
+  //- 如果在sp-elevator.css裡面把下方欄位(.footer__box)改成display:none的話，把預留出來的空間刪掉
+  $( function () {
+    var display = $( "#footerBox" ).css( "display" );
+    if ( display === "none" ) {
+      $( "body" ).removeClass( "safe-area-padding-bottom" );
+    }
+  } );
+  function scrollAddFixed () {
+    var windowHeight = window.innerHeight;
+    if ( window.scrollY >= 3000 - windowHeight ) {
+      document.body.classList.add( 'bg-fixed' );
+    } else {
+      document.body.classList.remove( 'bg-fixed' );
+    }
+  }
+
+  document.addEventListener( 'scroll', scrollAddFixed );
+
+</script>
+<script src="index.js"></script>
+<!-- <script src="product.js"></script> -->

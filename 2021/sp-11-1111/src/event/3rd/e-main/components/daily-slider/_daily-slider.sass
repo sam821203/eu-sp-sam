@@ -1,0 +1,51 @@
+.promo__group--daily-slider
+  overflow: hidden
+  +breakpoint-min($min-width-xl)
+    overflow: visible
+  .promo__wrap
+    +aspect-ratio(960, 1184)
+    +bg-set(url(event/3rd/e-main/components/daily-slider/bg-daily-slider.png), 100%, center, center)
+    margin-top: -3%
+    margin-left: 3%
+  .promo__zone
+    +pos-set(relative, zero)
+    padding: 0% 10% 11%
+  .promo__title
+    .decoration--daily-slider
+      .decoration--title
+        margin: 0% auto
+        width: 60%
+      .decoration--top
+        margin-left: 3%
+
+
+  .promo__zone
+    padding: 0% 8% 11%
+    .promo__block
+      padding: 11% 14% 8% 12%
+      +breakpoint-min($min-width-xl)
+        padding: 12% 10% 8% 8%
+      .promo__slider
+        .product--dynamic
+          padding-bottom: 7%
+          // padding: 2% 2% 2% 2%
+          .product__block
+            border-radius: 2vw
+            margin: 0 auto
+            width: 90%
+          // .product__img
+          // .product__text
+          //   width: 90%
+
+
+@keyframes move-poli-daily-slider
+  0%
+    transform: translate(100%, -13%)
+    filter: drop-shadow(20px -5px 6px $main-e-background-color-2nd-2)
+    opacity: 0
+  1%, 50%
+    opacity: 1
+    filter: drop-shadow(20px -5px 6px $main-e-background-color-2nd-2)
+  100%
+    transform: translate(0, 0)
+    opacity: 1

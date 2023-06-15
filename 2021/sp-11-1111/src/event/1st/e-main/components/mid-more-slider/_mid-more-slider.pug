@@ -1,0 +1,119 @@
+-
+  var midMoreDataE = [
+    {
+      link: "https://www.etmall.com.tw/gp/138084",
+      imgSrc: "event/1st/e-main/components/mid-more-slider/item/mid-big-01.png",
+      alt: "台酒75折up",
+      text: "台酒75折up",
+    },
+    {
+      link: "https://www.etmall.com.tw/bc2/143502",
+      imgSrc: "event/1st/e-main/components/mid-more-slider/item/mid-big-02.png",
+      alt: "天使娜拉",
+      text: "天使娜拉",
+    },
+    {
+      link: "https://www.etmall.com.tw/np/110454",
+      imgSrc: "event/1st/e-main/components/mid-more-slider/item/mid-big-03.png",
+      alt: "小兒利撒爾",
+      text: "小兒利撒爾",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/11283/m/index.html",
+      imgSrc: "event/1st/e-main/components/mid-more-slider/item/mid-big-04.png",
+      alt: "可口可樂",
+      text: "可口可樂",
+    },
+    {
+      link: "https://www.etmall.com.tw/p/147615",
+      imgSrc: "event/1st/e-main/components/mid-more-slider/item/mid-big-05.png",
+      alt: "戶外趣",
+      text: "戶外趣",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/11425/m/index.html",
+      imgSrc: "event/1st/e-main/components/mid-more-slider/item/mid-big-06.png",
+      alt: "國際",
+      text: "國際",
+    },
+    {
+      link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202005/SP_1115505/w/index.html",
+      imgSrc: "event/1st/e-main/components/mid-more-slider/item/mid-big-07.png",
+      alt: "小米",
+      text: "小米",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/8716/m/index.html",
+      imgSrc: "event/1st/e-main/components/mid-more-slider/item/mid-big-08.png",
+      alt: "象印 x 大金",
+      text: "象印 x 大金",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/11628/m/index.html",
+      imgSrc: "event/1st/e-main/components/mid-more-slider/item/mid-big-09.png",
+      alt: "伊萊克斯",
+      text: "伊萊克斯",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/4369/m/index.html",
+      imgSrc: "event/1st/e-main/components/mid-more-slider/item/mid-big-10.png",
+      alt: "APPLE",
+      text: "APPLE",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/11630/m/index.html",
+      imgSrc: "event/1st/e-main/components/mid-more-slider/item/mid-big-11.png",
+      alt: "Acer",
+      text: "Acer",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/149081",
+      imgSrc: "event/1st/e-main/components/mid-more-slider/item/mid-big-12.png",
+      alt: "法國特福",
+      text: "法國特福",
+    },
+  ]
+
+-
+  var midMoreDataU = [
+    {
+      link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202008/SP_1106087/w/index.html",
+      imgSrc: "~event/1st/u-main/components/mid-more-slider/items/mid-more-1.png",
+      alt: "滿$3000送300",
+      text: "我愛東森東森愛我",
+    },
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale",
+      imgSrc: "~event/1st/u-main/components/mid-more-slider/items/mid-more-2.png",
+      alt: "滿$3000送300",
+      text: "我愛東森東森愛我",
+    },
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale?Day=Up",
+      imgSrc: "~event/1st/u-main/components/mid-more-slider/items/mid-more-3.png",
+      alt: "滿$3000送300",
+      text: "我愛東森東森愛我",
+    },
+  ]
+
+- var midMoreData = isU ? midMoreDataU : midMoreDataE
+
+section.promo__group.promo__group--mid-more.m-bottom--md(data-title="品牌大賞")
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        .decoration__box#MidMoreSliderTitle
+          img(src="event/1st/e-main/components/mid-more-slider/title-mid-more-slider.png", alt="")
+      #sliderMidMore.promo__slider.swiper-container
+        ul.swiper-wrapper
+          each data in midMoreData
+            li.swiper-slide
+              a(href= data.link, title= data.alt)
+                img.swiper-lazy(data-src= data.imgSrc, alt= data.alt)
+                .swiper-lazy-preloader.swiper-lazy-preloader-white
+                .text__box
+                  span= data.text
+
+        //- #sliderMidMorePrev.swiper-button-white.swiper-button-prev.mid-more__nav.mid-more__nav--prev
+        //- #sliderMidMoreNext.swiper-button-white.swiper-button-next.mid-more__nav.mid-more__nav--next
+      //- #sliderMidMorePager.mid-more__pager.swiper-pagination

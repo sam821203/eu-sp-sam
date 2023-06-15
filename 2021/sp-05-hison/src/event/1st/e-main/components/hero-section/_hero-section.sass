@@ -1,0 +1,98 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero__wrap
+  +pos-set(relative, base)
+  // overflow: hidden
+  // +bg-set(url("~event/1st/e-main/components/hero-section/bg-hero-web.jpg"), 100%)
+  // overflow: hidden
+  // +breakpoint-min($min-width-xl)
+  //   background-size: auto
+
+  .decoration__hero
+    top: 0
+    left: 0
+    width: 100%
+    animation: bounceInDown 2s 1s both
+    +breakpoint-min($min-width-xl)
+      padding-bottom: 212px
+      +bg-set(url(~event/1st/e-main/components/hero-section/decoration-hero-web.png))
+      img
+        display: none
+
+  .hero__block
+    +pos-set(relative)
+    padding: 4.5% 0.5% 1.5%
+
+  .hero__box
+    +pos-set(relative)
+    // transform: scale(1.05)
+    // +breakpoint-min($min-width-xl)
+    //   background-size: auto
+
+  .hero__title
+    &--main
+      +pos-set(relative, second)
+      padding-top: 7%
+      width: 67%
+      transform-origin: bottom right
+    &.animated
+      animation: bounceInUp 1.2s both
+
+  .decoration__title
+    top: 26.5%
+    right: 21%
+    width: 20.5%
+    &.animated
+      animation: rotate-in 0.4s 0.3s both ease-in
+    +breakpoint-min($min-width-xl)
+      top: 128px
+      right: 140px
+
+@keyframes rotate-in
+  0%
+    opacity: 0
+  2%
+    opacity: 1
+    transform: translateY(-60%) scale(6) rotate(0)
+  100%
+    opacity: 1
+    transform: translateY(0) scale(1) rotate(720deg)
+
+@keyframes bounceInUp
+  0%, 60%, 75%, 90%, to
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+  0%
+    opacity: 0
+    transform: translate3d(0, 50px, 0) scale(0)
+  60%
+    opacity: 1
+    transform: translate3d(0, -10px, 0) scale(1.1)
+  75%
+    opacity: 1
+    transform: translate3d(0, 5px, 0) scale(.985)
+  90%
+    opacity: 1
+    transform: translate3d(0, -2px, 0) scale(1.05)
+  to
+    opacity: 1
+    transform: translateZ(0)
+
+@keyframes bounceInDown
+  0%, 60%, 75%, 90%, to
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+  0%
+    opacity: 0
+    transform: translate3d(0, -50%, 0) scaleY(0.5)
+  60%
+    opacity: 1
+    transform: translate3d(0, 10%, 0) scaleY(1.5)
+  to
+    transform: translateZ(0)
+
+// TODO: 如果hero和promo要共用主視覺時的共用區塊背景設定
+  // .promo__zone
+    // margin-top: 8%
+    //background-color: $gray-deep-light
+    // +breakpoint-min($min-width-xl)
+      // background-color: transparent

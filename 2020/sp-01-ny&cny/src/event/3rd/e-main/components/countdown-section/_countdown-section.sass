@@ -1,0 +1,121 @@
+.promo__group--countdown
+  +bg-set(url("~event/3rd/e-main/components/countdown-section/bg-countdown.png"), 100%)
+  +breakpoint-min($min-width-xl)
+    +bg-set(url("~event/3rd/e-main/components/countdown-section/bg-countdown.png"), auto)
+
+.countdown__wrap
+  +pos-set(relative, zero)
+  // +bg-set(url("~event/1st/e-main/components/countdown-section/bg-countdown.png"), 100%)
+  // +aspect-ratio(957, 688)
+  .swiper-button
+    &-prev,
+    &-next
+      top: 58%
+      width: 4%
+      background-image: none
+      outline: 0
+    &-prev
+      left: 13.7%
+    &-next
+      right: 14.2%
+
+  .timer__wrap
+    position: relative
+    padding: 20.3% 0 1%
+    color: $gray-deep-light
+    font-size: 3.2vw
+    text-align: center
+    > span
+      display: inline-block
+      text-align: left
+      &:first-child
+        width: 2.5em
+      &:last-child
+        width: 4em
+
+  .product__wrap--countdown
+    // margin-left: 18.2%
+    margin-left: auto
+    margin-right: auto
+    padding: 2% 0 7%
+    +breakpoint-max($min-width-xxs)
+      padding: 0.6% 0 8%
+    width: 80%
+    .product
+      background-color: $gray-deep-light
+      a
+        color: $gray-dark
+        font-size: calc(0.5vw + 0.5vh + 0.4vmin)
+        > div
+          margin-bottom: 2% 
+      img
+        width: 100%
+      .product__img
+        padding: 0 10%
+      .product__name
+        +font-size(13)
+        +text-fool(2.6em)
+        margin-bottom: 7%
+      .product__price
+        span
+          &:first-child
+            font-size: 12px 
+          &:last-child
+            +font-size(14)
+            color: $primary-medium
+            font-weight: bold
+    // li
+      // padding: 0 calc(100vw * 0.01125)
+  +breakpoint-min($min-width-lg)
+    .timer__wrap
+      font-size: calc(0.95vw + 0.9vh + 1.2vmin)
+
+    .product__wrap--countdown
+      padding: 1% 0 5.7%
+      .product
+        .product__img
+          padding: 0
+        .product__name
+          padding: 1%
+        .product__price
+          padding: 1%
+          span
+            &:first-child
+              font-size: 12px
+            &:last-child
+              font-size: 20px
+        .product__name
+          +font-size(16)
+          +text-fool(3em)
+
+  +breakpoint-min($min-width-xl)
+    // margin-left: auto
+    // margin-right: auto
+    width: 100%
+    // background-size: 960px 608px
+    // height: 671px
+    .swiper-button
+      &-prev,
+      &-next
+        top: 54%
+        width: 4%
+      &-prev
+        left: calc(50% - 345px)
+      &-next
+        right: calc(50% - 340px)
+    .timer__wrap
+      // padding: 32px calc(50% - 283px)
+      font-size: 32px
+
+    .product__wrap--countdown
+      // padding: 65px 0 0 0
+      .product
+        .product__price
+          span
+            &:first-child
+              font-size: 14px
+            &:last-child
+              font-size: 28px
+        .product__name
+          +font-size(20)
+

@@ -1,0 +1,43 @@
+// ==========================================================================
+// Button
+// ==========================================================================
+
+// Button core
+// ==========================================================================
+.btn
+  display: inline-block
+  zoom: 1
+  line-height: normal
+  white-space: nowrap
+  vertical-align: middle
+  text-align: center
+  cursor: pointer
+  -webkit-user-drag: none
+  user-select: none
+
+.btn::-moz-focus-inner
+  padding: 0
+  border: 0
+
+// Button Style
+// ==========================================================================
+.btn
+  border: 1px solid transparent
+  padding: 0 0.4rem
+  text-align: center
+  @include font-size($fz-16)
+
+.btn:focus
+  outline: 0
+
+.btn-hidden
+  display: none
+
+.btn--primary
+  color: $primary-medium
+  border-color: $primary-medium
+  font-weight: bold
+  &:hover, &:focus
+    color: lighten($primary-medium, 10%)
+    border-color: lighten($primary-medium, 10%)
+

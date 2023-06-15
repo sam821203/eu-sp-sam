@@ -1,0 +1,59 @@
+.dynamic-slider
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__wrap
+    // +pos-set(relative, under)
+    padding-bottom: 10%
+    +breakpoint-min($min-width-xl)
+      // padding-bottom: 820px
+    .decor__item
+      &--left
+        +pos-set(absolute, base, 0%, 6%)
+        width: 25%
+        &.active
+          animation: flip-self 1.5s steps(1) infinite
+        +breakpoint-min($min-width-xl)
+          left: calc(50% - 400px)
+      &--right
+        +pos-set(absolute, base, 4%)
+        right: 8%
+        width: 24%
+        +breakpoint-min($min-width-xl)
+          right: calc(50% - 365px)
+      +breakpoint-min($min-width-xl)
+        width: auto
+  .promo__wrap
+    +bg-set(url(event/2nd/e-main/components/dynamic-slider/bg-dynamic-slider.png?343), 100%, center, center)
+    .promo__zone
+      +aspect-ratio(960, 715)
+      .promo__block
+        padding: 24.3% 7.6% 0%
+        +breakpoint-min($min-width-xl)
+          padding-top: 240px
+        .product__img
+          border: 1px solid $main-e-background-color-1st-3
+          border-bottom: none
+        .product__text
+          border: 1px solid $main-e-background-color-1st-3
+          border-top: none
+          padding: 1.5%
+        +breakpoint-min($min-width-xl)
+          .product__img,
+          .product__text
+            border-width: 2px
+          .product__price
+            span
+              &:last-child
+                font-size: 28px
+
+          .product__price
+            span
+              &:last-child
+                font-size: 28px
+
+
+@keyframes flip-self
+  0%, 100%
+    transform: scaleX(-1)
+  50%
+    transform: scale(1)

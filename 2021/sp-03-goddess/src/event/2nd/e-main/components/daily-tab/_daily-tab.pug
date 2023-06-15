@@ -1,0 +1,32 @@
+section.promo__group.promo__group--daily-tab.m-bottom--md(data-title="女神報到")
+  .decoration--daily-tab
+    img#scrollDailyTab(src="~event/2nd/e-main/pages/index/decoration-light.png", alt="")
+    img#scrollDailyTab2(src="~event/2nd/e-main/components/daily-tab/decoration-daily-tab-2.png", alt="")
+
+  .layout--main
+
+    ul.tab__wrap
+      li.tab__zone
+        #dailyTabHead.tab__head--daily.promo__slider.swiper-container
+          ul.swiper-wrapper
+            - var date = 5
+            while date <= 16
+              - var activeClass = 'active--daily'
+              - if (date != 5) activeClass = ''
+              li.swiper-slide(class= activeClass)
+                span 3
+                span /
+                if date < 10
+                  span= '0' + date++
+                else
+                  span= date++
+      li.content__zone
+        ul#dailyTabContent.tab__content--daily
+          - var date = 5
+          while date <= 16
+            - var activeContentClass = 'active'
+            - if (date != 5) activeContentClass = ''
+            li.content__box(class= activeContentClass)
+              .tab__slider--daily.swiper-container
+                ul.swiper-wrapper
+            - date++

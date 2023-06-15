@@ -1,0 +1,121 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero__wrap
+  +pos-set(relative, second)
+  overflow: hidden
+
+  .hero__zone
+    +pos-set(relative, zero)
+        
+  .hero__block
+    +pos-set(relative, zero)
+
+  .hero__box
+    +pos-set(relative, zero)                        
+
+  .hero__title
+    &--main
+      +pos-set(absolute, second, 3%, 29%)
+      width: 38%
+      &.animated
+        animation: small-open 1s both ease-out
+      
+  .title-decoration__wrap
+    +pos-set(relative, zero)
+    pointer-events: none
+
+    .title__decoration
+      +pos-set(absolute, base)
+      height: 100%
+      &--bg-day
+        top: 0
+        left: 0
+        width: 100%
+        +bg-set(url(~event/1st/e-main/components/hero-section/bg-hero-night.jpg), 100%)
+
+      &--left
+        top: 13%
+        left: -7%
+        width: 38.6%
+        .decoration--leaf
+          +pos-set(absolute, zero)
+          top: 8.5%
+          left: 43%
+          padding-bottom: 60%
+          width: 60%
+          +bg-set(url(~event/1st/e-main/components/hero-section/decoration-hero-left-leaf-day.png), contain)
+          &.decoration--night
+            +bg-set(url(~event/1st/e-main/components/hero-section/decoration-hero-left-leaf-night.png), contain)
+        .decoration--girl
+          +pos-set(absolute, zero, 0, 0)
+          padding-bottom: 131.76%
+          width: 100%
+          +bg-set(url(~event/1st/e-main/components/hero-section/decoration-hero-left-day.png), contain)
+          &.decoration--night
+            +bg-set(url(~event/1st/e-main/components/hero-section/decoration-hero-left-night.png), contain)
+
+      &--right
+        top: 27%
+        right: -1%
+        width: 37%
+        .decoration--leaf
+          +pos-set(absolute, zero)
+          top: -6%
+          right: 48%
+          padding-bottom: 60%
+          width: 50%
+          +bg-set(url(~event/1st/e-main/components/hero-section/decoration-hero-right-leaf-day.png), contain)
+          &.decoration--night
+            +bg-set(url(~event/1st/e-main/components/hero-section/decoration-hero-right-leaf-night.png), contain)
+
+        .decoration--dog
+          +pos-set(absolute, zero, 0, 0)
+          padding-bottom: 94.92%
+          width: 100%
+          +bg-set(url(~event/1st/e-main/components/hero-section/decoration-hero-right-day.png), contain)
+          &.decoration--night
+            +bg-set(url(~event/1st/e-main/components/hero-section/decoration-hero-right-night.png), contain)
+
+      &--web
+        display: none
+
+    +breakpoint-min($min-width-xl)
+      &--web
+        display: block
+        +pos-set(absolute, under, 0 , 0)
+        width: 100%
+        height: 100%
+        .title__decoration--bg-day
+          +bg-set(url(~event/1st/e-main/components/hero-section/bg-hero-day-web.jpg), cover)
+        .title__decoration--bg-night
+          width: 100%
+          height: 100%
+          +bg-set(url(~event/1st/e-main/components/hero-section/bg-hero-night-web.jpg), cover)
+
+  .promo__zone
+    +pos-set(relative, base)
+    margin-top: -16%
+
+    +breakpoint-min($min-width-xl)
+      margin-top: -150px
+      +bg-set(url(~event/1st/e-main/components/promo-event/bg-promo-web.png), auto)
+
+.opacity-change
+  animation: opacity-change 8s infinite alternate ease-in-out both
+.opacity-change--reverse
+  animation: opacity-change 8s infinite alternate-reverse ease-in-out both
+
+@keyframes small-open
+  from
+    transform: scale(0)
+    opacity: 0
+  to
+    transform: scale(1)
+    opacity: 1
+
+@keyframes opacity-change
+  from, 25%
+    opacity: 1
+  75%, to
+    opacity: 0

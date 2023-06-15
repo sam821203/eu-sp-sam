@@ -1,0 +1,142 @@
+// // ==========================================================================
+// // Plugins
+// // ==========================================================================
+ // @import "vendors/animate"
+// @import "~vendors/style/swiper-slider-custom"
+@import '~vendors/style/swiper-safari-polyfill'
+
+// // ==========================================================================
+// // 1st screen need
+// // ==========================================================================
+//@import "utils/bg-decoration-instance/css-firework/_css-firework"
+// hero section
+// ===========================
+@import "~event/1st/e-main/components/hero-section/_hero-section"
+
+// // ==========================================================================
+// // components
+// // ==========================================================================
+@import "~event/1st/e-main/components/daily-change/_daily-change"
+@import "~event/1st/e-main/components/promo-event/_promo-event"
+@import "~event/1st/e-main/components/bn-special/_bn-special"
+@import "~event/1st/e-main/components/daily-change-2/_daily-change-2"
+@import "~event/1st/e-main/components/one-item-slider/_one-item-slider"
+@import "~event/1st/e-main/components/game-section/_game-section"
+@import "~event/1st/e-main/components/event-w4m4/_event-w4m4"
+@import "~event/1st/e-main/components/dynamic-slider/_dynamic-slider"
+@import "~event/1st/e-main/components/collect__point/_collect__point"
+@import "~event/1st/e-main/components/dynamic-slider-2/_dynamic-slider-2"
+@import "~event/1st/e-main/components/daily-limitTime-change/_daily-limitTime-change"
+@import "~event/1st/e-main/components/two-daily-change/_two-daily-change"
+@import "~event/1st/e-main/components/dynamic-slider-half/_dynamic-slider-half"
+@import "~event/1st/e-main/components/event-w9m9/_event-w9m9"
+@import "~event/1st/e-main/components/bn-bank/_bn-bank"
+@import "~event/1st/e-main/components/deco-scroll-effect/_deco-scroll-effect"
+
+
+// // ==========================================================================
+// // Page
+// // ==========================================================================
+body
+  +pos-set(relative)
+  background-color: $main-e-background-color-1st
+
+  +breakpoint-min($min-width-xl)
+    background: $main-e-background-color-1st center 0 url("~event/1st/e-main/pages/index/bg-web.jpg") no-repeat
+    background-size: 2560px 1884px
+    height: 1884px
+
+.sp__wrap
+  +pos-set(relative)
+  background: $main-e-background-color-1st center 0 url("~event/1st/e-main/pages/index/bg.jpg") no-repeat
+  background-size: 100% auto
+  +breakpoint-min($min-width-xl)
+    background: center 0 url("~event/1st/e-main/pages/index/bg.jpg") no-repeat
+    background-size: 960px auto
+    //.decoration--foreground
+    //  +pos-set(absolute, zero)
+    //  top: 6.9%
+    //  left: 0
+    //  width: 100%
+    //  height: 100%
+    //  background: center 0 url("~event/1st/e-main/pages/index/bg-decoration-web.png") no-repeat,
+    //.promo__group
+    //  +pos-set(relative, base)
+
+.sp__wrap a
+  display: block
+  .promo__title
+    text-align: center
+
+a.logo
+  width: 12%
+  top: 0
+  left: 1%
+  //display: none
+  +breakpoint-min($min-width-xl)
+    left: calc(50% - 550px)
+    top: -10px
+    display: block
+.bg__relative
+  position: relative
+// parallax css
+// =================================
+// .decoration--background
+//   display: none
+
+//   +breakpoint-min($min-width-3xl)
+//     display: block
+//     // z-index: base(1)以上可蓋在主視覺上，zero(0)可在主視覺下，預設都在logo下(logo是500)
+//     +pos-set(absolute, under, 690px)
+//     width: 100%
+//     height: 100%
+//     pointer-events: none
+
+// .decoration__wrap
+//   +pos-set(sticky, zero, 0)
+
+.parallax__background
+  display: none
+  &.active
+    display: block
+.scroll--flower
+  display: none
+  +breakpoint-min($min-width-xl)
+    display: block
+    pointer-events: none
+    will-change: scroll-position
+    +pos-set(fixed, zero)
+    img
+      margin-left: 0
+      margin-right: 0
+      will-change: scroll-position
+    &.flower__left
+      top: 10%
+      left: -40px
+      transform-origin: top left
+      animation: key-wind-rotate-3 15s 5s infinite ease-in-out
+      img
+        transform: scale(0.55)
+        transform-origin: top left
+      //+bg-set(url("~assets/img/scroll__sakura__left.png"), 100% auto)
+      //width: 604px
+      //height: 1268px
+    &.flower__right
+      top: 20%
+      right: -40px
+      transform-origin: top right
+      animation: key-wind-rotate-3 15s 5s infinite ease-in-out
+      img
+        transform: scale(0.55)
+        transform-origin: top right
+      //+bg-set(url("~assets/img/scroll__sakura__right.png"), 100% auto)
+      //width: 735px
+      //height: 747px
+
+  +breakpoint-min($min-width-4xl)
+    &.flower__left
+      img
+        transform: scale(0.7)
+    &.flower__right
+      img
+        transform: scale(0.7)

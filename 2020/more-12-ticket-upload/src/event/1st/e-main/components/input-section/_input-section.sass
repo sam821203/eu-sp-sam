@@ -1,0 +1,110 @@
+.promo__group--input
+  +pos-set(relative, zero)
+  margin-top: -7%
+  font-size: 12px
+  +breakpoint-min($min-width-lg)
+    font-size: 16px
+  +breakpoint-min($min-width-xl)
+    margin-top: -90px
+
+  .btn
+    font-size: 1.4em
+    border-radius: 2px
+    vertical-align: middle
+  .btn--border
+    display: inline-block
+    +btn-border($main-e-color-1st)
+  .btn--submit
+    +btn-fill($gray-deep-light, $main-e-color-1st)
+  .btn--upload
+    padding: 0
+    margin-right: 1%
+
+  .input
+    font-size: 1.4em
+    line-height: 170%
+    vertical-align: middle
+    &:focus
+      outline-color: $main-e-color-1st
+
+  .input__block
+    margin-left: auto
+    margin-right: auto
+    width: 92%
+    border-radius: 2.5em
+    overflow: hidden
+  .input__title
+    line-height: 180%
+    font-size: 1.8em
+    font-weight: bold
+    color: $gray-deep-light
+    background-color: $main-e-color-1st
+    text-align: center
+  .input__box
+    padding: 6% 5%
+    background-color: $gray-deep-light
+    text-align: center
+    &--promo2
+      li
+        margin-bottom: 4%
+        > span
+          margin-right: 0.5%
+          font-size: 1.6em
+          vertical-align: middle
+        a
+          color: $main-e-color-2nd
+          font-size: 1.4em
+          text-decoration: underline
+          &:hover,
+          &:active
+            color: $main-e-color-1st
+            text-decoration: none
+        img
+          margin-left: 2%
+          width: 13%
+
+        .btn--border,
+        .btn--submit
+          padding: 0 4%
+  .input
+    &--coin-exchange
+      margin-right: 1%
+      width: 64%
+    &--cvs
+      padding: 0.2em 1%
+      width: 72.2%
+    &--ticket
+      &-1st
+        width: 3.2em
+        text-transform: uppercase
+      &-2nd
+        width: calc(71% - 3.2em)
+
+  .pop__content
+    margin-left: auto
+    margin-right: auto
+    padding: 2%
+    width: 80%
+    max-width: 768px
+    border-radius: 6px
+    background-color: $gray-deep-light
+    overflow: hidden
+    table,
+    th,
+    td
+      border: 1px solid $main-e-color-2nd
+
+    table
+      width: 100%
+      line-height: 180%
+      font-size: 1.4em
+      text-align: center
+
+    th,
+    td
+      &:last-child
+        color: $gray-deep-light
+        background-color: $main-e-color-1st
+        
+
+

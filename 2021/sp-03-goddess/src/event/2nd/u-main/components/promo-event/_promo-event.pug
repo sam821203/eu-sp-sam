@@ -1,0 +1,104 @@
+-
+  var promoDataE = [
+    {
+      link: "#note",
+      imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-1.png",
+      alt: "最高送5,588"
+    },
+    {
+      link: "井",
+      imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-2.png",
+      alt: "吃肯德基蛋撻"
+    },
+    {
+      link: "井",
+      imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-3.png",
+      alt: "免費升級B套餐"
+    },
+    {
+      link: "#note",
+      imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-4.png",
+      alt: "$1,388抽美妝豪禮"
+    },
+    {
+      link: "井",
+      imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-5.png",
+      alt: "中租回饋5%提貨券"
+    },
+    {
+      link: "井",
+      imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-6.png",
+      alt: "滿額送BT21刷具組"
+    },
+    {
+      link: "井",
+      imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-7.png",
+      alt: "送你開工紅包$50"
+    },
+    {
+      link: "井",
+      imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-8.png",
+      alt: "送環保餐具組"
+    },
+    //- slider start
+    {
+      link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1116815/w/index.html",
+      imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-9.png",
+      alt: "彰化好物購"
+    },
+    //- slider end
+  ]
+
+-
+  var promoDataU = [
+    {
+      link: "https://media.u-mall.com.tw/sp/7801/m/index.html",
+      imgSrc: "~event/2nd/u-main/components/promo-event/items/promo-1.png",
+      alt: "22間銀行最高回饋20%"
+    },
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale",
+      imgSrc: "~event/2nd/u-main/components/promo-event/items/promo-2.png",
+      alt: "限時瘋搶"
+    },
+
+    {
+      link: "https://media.u-mall.com.tw/sp/7801/m/index.html#union",
+      imgSrc: "~event/2nd/u-main/components/promo-event/items/promo-3.png",
+      alt: "聯邦滿最高回饋10%刷卡金"
+    },
+    {
+      link: "https://media.u-mall.com.tw/sp/7846/m/index.html",
+      imgSrc: "~event/2nd/u-main/components/promo-event/items/promo-4.png",
+      alt: "彰化好物購"
+    },
+  ]
+
+- var promoData = isU ? promoDataU : promoDataE
+
+//- TODO: 如果promo不和hero綁一起時要有自己的section和layout--main
+section.promo__group.promo__group--promo-event.m-bottom--md(data-title="必敗攻略")
+
+  .layout--main
+    //- .promo__head.promo__title
+    //-   img(src="", alt="")
+
+    .promo__body
+      ul#promoEvent.event__wrap
+        each data, index in promoData
+          if index <= 2
+            li
+              a(href= data.link, title= data.alt)
+                img(src= data.imgSrc, alt= data.alt)
+      .promo__slider
+        #sliderPromo.swiper-container
+          ul.swiper-wrapper
+            each data, index in promoData
+              if index > 2
+                li.swiper-slide
+                  a(href= data.link, title=data.alt)
+                    img(src= data.imgSrc, data.alt)
+        //- #sliderPromoPrev.swiper-button-black.swiper-button-prev
+        //- #sliderPromoNext.swiper-button-black.swiper-button-next
+
+

@@ -1,0 +1,118 @@
+/*== initial style ==*/
+
+body, h1 {
+  margin: 0;
+  padding: 0;
+}
+img {
+  display: block;
+  border: 0
+}
+
+/*== initial style ==*/
+
+/*== layout style ==*/
+body{
+  background-color: #0c0b0b;
+}
+
+.sp-logo{
+	margin-left: 0;
+	padding-top: 10px;
+  padding-left: 20px;
+}
+.sp--940{
+	width: 940px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.sp-warpper{
+  background: url(../images/e_mall_halloween-slice_01.jpg) center 0 no-repeat;
+}
+.sp-container{
+	position: relative;
+	z-index: 1;
+}
+.sp-visual__box{
+	position: relative;
+	z-index: 2;
+}
+.hype__wrap{
+    z-index: 10;
+    margin: -55px auto 0;
+}
+.HYPE_scene{
+	background: none !important; 
+}
+.sp-pumpkin--top{
+	position: absolute;
+	z-index: 3;
+	left: -1px;
+    bottom: 0;
+}
+.sp-ghost--left, .sp-eye--left{
+	position: absolute;
+	left: 0;
+	opacity:0
+}
+.sp-ghost--left{
+	width: 109px;
+	height: 103px;
+	left: -30px;
+	top: 880px;
+}
+.sp-eye--left{
+	width: 285px;
+	height: 135px;
+	left: -230px;
+	top: 1040px;
+}
+
+/*== layout style ==*/
+
+/*== css3 animate ==*/
+
+.ghost--effect{
+	-moz-animation: fade-1 14s infinite;
+	-webkit-animation: fade-1 14s infinite;
+	animation: fade-1 14s infinite;
+}
+
+@-moz-keyframes fade-1 {
+	0%   { opacity:0; left: -30px}
+  	50%  { opacity:1; left: -90px}
+  	100% { opacity:0; left: -130px}
+}
+@-webkit-keyframes fade-1 {
+	0%   { opacity:0; left: -30px}
+  	50%  { opacity:1; left: -90px}
+  	100% { opacity:0; left: -130px}
+}
+@keyframes fade-1{
+	0%   { opacity:0; left: -30px}
+  	50%  { opacity:1; left: -90px}
+  	100% { opacity:0; left: -130px}
+}
+
+.eye--effect{
+	-moz-animation: blinking-1 3s 2s infinite;
+	-webkit-animation: blinking-1 3s 2s infinite;
+	animation: blinking-1 3s 2s infinite;
+}
+
+@-moz-keyframes blinking-1 {
+	0%   { opacity:0; }
+  	50%  { opacity:1; }
+  	100% { opacity:0; }
+} 
+@-webkit-keyframes blinking-1 {
+	0%   { opacity:0; }
+  	50%  { opacity:1; }
+  	100% { opacity:0; }
+}  	
+@keyframes blinking-1{
+	0%   { opacity:0; }
+  	50%  { opacity:1; }
+  	100% { opacity:0; }
+}
+/*== css3 animate ==*/

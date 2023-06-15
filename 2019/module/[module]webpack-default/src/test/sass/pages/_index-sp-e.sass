@@ -1,0 +1,36 @@
+// ==========================================================================
+// Collection Helpers 
+// ==========================================================================
+@import "helpers/_collection"
+
+// ==========================================================================
+// Plugins
+// ==========================================================================
+@import "vendors/_slick"
+// @import "_libs/_swiper"
+
+// ==========================================================================
+// layout
+// ==========================================================================
+@import "../../layout/header/sp/_header.sass"
+@import "../../layout/bg-decoration/bg-decoration.sass"
+
+// ==========================================================================
+// components
+// ==========================================================================
+@import "../../components/common-event/_common-event.sass"
+@import "../../components/event-w2m1/_event-w2m1.sass"
+@import "../../components/bn-group-w2m1/_bn-group-w2m1.sass"
+
+// ==========================================================================
+// Page
+// ==========================================================================
+.sp__wrap
+  a
+    display: block
+
+.sp--sp-e
+  @at-root body
+    background-color: $sp-e-background-color
+    +breakpoint-min($min-width-xl)
+      background: $sp-e-background-color center 0 url(../img/background-sp.png) fixed no-repeat

@@ -1,0 +1,55 @@
+-
+  var bnSliderItemData = [
+    {
+      link: "https://www.etmall.com.tw/Activity/CollectPointExchangeActivity/20210894cdc93e",
+      imgSrc: "event/2nd/e-main/components/bn-slider/items/collect-1.png",
+      alt: "集點加價購"
+    },
+    {
+      link: "https://www.etmall.com.tw/Activity/CollectPointExchangeActivity/20210894cdc93e",
+      imgSrc: "event/2nd/e-main/components/bn-slider/items/collect-2.png",
+      alt: "集點加價購"
+    },
+    {
+      link: "https://www.etmall.com.tw/Activity/CollectPointExchangeActivity/20210894cdc93e",
+      imgSrc: "event/2nd/e-main/components/bn-slider/items/collect-3.png",
+      alt: "集點加價購"
+    },
+    {
+      link: "https://www.etmall.com.tw/Activity/CollectPointExchangeActivity/20210894cdc93e",
+      imgSrc: "event/2nd/e-main/components/bn-slider/items/collect-4.png",
+      alt: "集點加價購"
+    },
+    {
+      link: "https://www.etmall.com.tw/Activity/CollectPointExchangeActivity/20210894cdc93e",
+      imgSrc: "event/2nd/e-main/components/bn-slider/items/collect-5.png",
+      alt: "集點加價購"
+    },
+    {
+      link: "https://www.etmall.com.tw/Activity/CollectPointExchangeActivity/20210894cdc93e",
+      imgSrc: "event/2nd/e-main/components/bn-slider/items/collect-6.png",
+      alt: "集點加價購"
+    },
+  ]
+section#bnSlider.promo__group.promo__group--bn.m-bottom--lg(data-title="集點專區")
+  .layout--main
+    .promo__title
+      a(href="", title="集點加價購")#titleBnSlider
+        img(src="event/2nd/e-main/components/bn-slider/title-bn-slider.png", alt="集點加價購")
+        .promo__title--decor
+          img(src="event/2nd/e-main/components/bn-slider/decor-bn-slider.png", alt="")
+
+        //- .promo__bn
+    .promo__wrap
+      .promo__zone
+        .promo__zone--decor 
+          img(src="event/2nd/e-main/components/bn-slider/decor-bn-slider.png", alt="")
+        .promo__slider
+          #sliderBn.swiper-container
+            ul.swiper-wrapper
+              each data, index in bnSliderItemData
+                li.swiper-slide
+                  a(href= data.link, title= data.alt)
+                    img.swiper-lazy(data-src= data.imgSrc, alt="")
+                    .swiper-lazy-preloader.swiper-lazy-preloader-black
+      //- #sliderBnPager.bn__pager.swiper-pagination

@@ -1,0 +1,135 @@
+.bg-web
+  +pos-set(absolute, zero, 0%, 0%)
+  +bg-set(url(event/1st/e-main/pages/index/bg-web-01.png), 260%)
+  overflow: hidden
+  &--second
+    +pos-set(absolute, base, 0%, 0%)
+    +bg-set(url(event/1st/e-main/pages/index/bg-web-03.png), 260%)
+    width: 100%
+    height: 100vh
+    animation: slideInLeft 2s ease-in 1
+  &--third
+    +pos-set(absolute, second, 0%, 0%)
+    +bg-set(url(event/1st/e-main/pages/index/bg-web-04.png), 260%)
+  &--top
+    +pos-set(absolute, fourth, 0%, 0%)
+    +bg-set(url(event/1st/e-main/pages/index/bg-web-05.png), 260%)
+  &--main
+    +pos-set(absolute, third, 0%, 0%)
+    +bg-set(url(event/1st/e-main/pages/index/bg-web-main.png), 260%)
+    width: 100%
+    height: 120vh
+    // .js-loading &
+    animation: slideInUp 2.1s ease-in 1
+  &--bottom
+    +pos-set(fixed, under, 0%, 0%)
+    +bg-set(url(event/1st/e-main/pages/index/bg-web-02.png), 260%)
++breakpoint-min($min-width-xl)
+  .bg-web
+    +bg-set(url(event/1st/e-main/pages/index/bg-web-01.png), auto)
+    >div
+      background-size: auto
+    &--bottom
+      background-size: auto
+      // top: 1900px
+  
+  // // ==========================================================================
+// // main
+// // ==========================================================================
+.hero
+  +pos-set(relative, zero)
+  // +bg-set(url(event/1st/e-main/components/hero-section/bg-hero.png), 100%)
+  overflow: hidden
+
+  .hero__wrap
+    +aspect-ratio(960, 1016)
+
+  // .hero__zone
+
+  .hero__title
+    z-index: map-get($zindex, second)
+    text-align: center
+    animation: slideInDown 1s ease-in-out 1
+    &--main
+      +pos-set(relative)
+      margin: 0% auto
+      width: 92%
+        // animation: stamp-swing 1s both
+    &--sub
+      +pos-set(absolute, second, 40.7%, 21.3%)
+      width: 57%
+      height: 10%
+      animation: showUp 2s linear 1
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 274px)
+    &--decor
+      .decor__item
+        &:first-child
+          +pos-set(absolute, second, 17%, 29%)
+          width: 4%
+          animation: showUp 2.2s linear 1, flash 3s 2.3s infinite
+        &:nth-child(2)
+          +pos-set(absolute, second, 34.5%, 13.2%)
+          width: 5.7%
+          animation: showUp 2.2s linear 1, flash 1.9s .8s infinite
+        &:last-child
+          +pos-set(absolute, second, 26%)
+          right: 11%
+          width: 7%
+          animation: showUp 2.2s linear 1, flash 2.3s 1.1s infinite
+
+
+  .hero__block
+    .hero__box 
+      +pos-set(absolute, base, 50%)
+      right: 5%
+      width: 25%
+      animation: rotate 20s linear infinite
+    .hero__item
+      +pos-set(absolute, base, 53.4%)
+      right: 10.6%
+      width: 13.7%
+
+
+@keyframes flash
+  0%, 50%, to
+    opacity: 1
+  25%, 75%
+    opacity: 0
+
+@keyframes rotate
+  0%
+    transform: rotate(0)
+  to
+    transform: rotate(360deg)
+
+@keyframes slideInDown
+  0%
+    transform: translate3d(0, -100%, 0)
+    visibility: visible
+  to
+    transform: translateZ(0)
+
+@keyframes slideInLeft
+  0%
+    transform: translate3d(-20%, 0, 0)
+    opacity: .4
+    // visibility: visible
+  to
+    transform: translateZ(0)
+    opacity: 1
+
+@keyframes slideInUp
+  0%
+    transform: translate3d(0, 15%, 0) scale(.7)
+    opacity: .4
+    // visibility: visible
+  to
+    transform: translateZ(0) scale(1)
+    opacity: 1
+
+@keyframes showUp
+  0%, 80%
+    opacity: 0
+  100%
+    opacity: 1

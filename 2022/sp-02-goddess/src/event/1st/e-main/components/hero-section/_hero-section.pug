@@ -1,0 +1,73 @@
+-
+  var heroTitleE = [
+    {
+      link: "#note",
+      imgSrc: "event/1st/e-main/components/hero-section/sub-title-1.png",
+      alt: "全站滿$38,000贈1,800禮物卡",
+    },
+    {
+      link: "",
+      imgSrc: "event/1st/e-main/components/hero-section/sub-title-2.png",
+      alt: "挑戰任務領5,800東森幣",
+    },
+  ]
+
+.bg-web.full-parent
+  .bg-web--second
+  .bg-web--third.full-parent
+  .bg-web--top.full-parent
+  .bg-web--main
+.bg-web--bottom.full-parent
+
+section.hero
+
+  //- .decor--top.decor--hero
+  .layout--main
+    .hero__wrap
+      .hero__zone
+        .hero__title.hero__title--main
+            img(src="event/1st/e-main/components/hero-section/title-hero-section.png", alt="")
+        .hero__title--sub.swiper-container#heroTitle
+          ul.swiper-wrapper
+            each data, index in heroTitleE
+              li.swiper-slide
+                a(href= data.link, title=data.alt)
+                  img(src= data.imgSrc, data.alt)
+        .hero__title--decor
+          .decor__item
+            img(src="event/1st/e-main/components/hero-section/top-bright-1.png", alt="")
+          .decor__item
+            img(src="event/1st/e-main/components/hero-section/top-bright-2.png", alt="")
+          .decor__item
+            img(src="event/1st/e-main/components/hero-section/top-bright-3.png", alt="")
+
+        .hero__block
+          .hero__box
+            img(src="event/1st/e-main/components/hero-section/top-flower.png", alt="")
+          .hero__item
+            a(href="")
+              img(src="event/1st/e-main/components/hero-section/word.png", alt="")
+
+
+//- 前景滑鼠parallax相關
+include /utils/bg-decoration-instance/parallax/_parallax
+
+  //-         .decor--top.decor--bird
+  //-           img(src="event/1st/e-main/components/hero-section/decor-bird.png", alt="")
+  //-         h1
+  //-           img(src="event/1st/e-main/components/hero-section/title.png", alt="東森購物網金虎年賀新春")
+  //-       .hero__title.hero__title--sub
+  //-         h2
+  //-           img(src="event/1st/e-main/components/hero-section/subtitle.png", alt="東森購物網春節發百萬紅包")
+  //-         .decor--top.decor--sub
+  //-           .decor--tiger-1
+  //-             img(src="event/1st/e-main/components/hero-section/decor-tiger-1.png", alt="")
+  //-           .decor--tiger-2
+  //-             img(src="event/1st/e-main/components/hero-section/decor-tiger-2.png", alt="")
+  //- .decor--hero-2
+  //-   .decor--top.decor--cloud
+  //-     img(src="event/1st/e-main/components/hero-section/decor-cloud.png", alt="")
+  //-   .decor--top.decor--cloud-2
+  //-     img(src="event/1st/e-main/components/hero-section/decor-cloud.png", alt="")
+
+  //- include /utils/bg-decoration-instance/css-firework-2/_css-firework-2

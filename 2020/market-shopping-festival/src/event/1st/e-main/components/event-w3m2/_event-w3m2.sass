@@ -1,0 +1,28 @@
+.promo__group--w3m2
+  .promo__zone
+  .promo__title
+    padding-bottom: 12%
+    +bg-set(url("~event/1st/e-main/components/event-w3m2/section-bn.png"), 100%)
+    // margin-top: 1%
+    // margin-bottom: 1%
+    // margin-top: -0.5%
+  .promo__wrap
+    margin-bottom: 6% // 主視覺結尾添加的，若在中間可刪
+    .good__wrap
+      +display-flex
+      flex-wrap: wrap
+      justify-content: space-between
+      padding: 0 4%
+      li
+        +flex(0, 0, 48%)
+        padding: 1% 0
+        transition: all 0.5s
+        &:hover,
+        &:active
+          transform: translateY(-3%)
+          filter: brightness(105%) contrast(105%)
+    +breakpoint-min($min-width-lg)
+      .good__wrap
+        padding: 0 20px
+        li
+          +flex(0, 0, 32%)

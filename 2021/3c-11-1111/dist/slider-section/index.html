@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="vendor-bundle.css" rel="stylesheet"><link href="app-bundle.css" rel="stylesheet"></head>
+  <body>
+    <div class="elevatorHome js--main--dialog" id="elevatorHome"></div>
+    <div class="navRightBar" id="navRightBar"></div>
+    <div class="icon__home layout--main" id="iconHome"></div>
+    <main class="sp__wrap" id="spWrap">
+      <!-- 從此處開始複製 -->
+      <section class="promo__group promo__group--dynamic-slider m-bottom--lg" data-title="彈珠活動">
+        <div class="layout--main">
+          <div class="promo__wrap">
+            <div class="promo__zone">
+              <div class="promo__block">
+                <div class="promo__box"><img src="title-2.png" alt=""></div>
+                <div class="promo__slide full-parent">
+                  <div class="promo__slide--parent swiper-container full-parent" id="dynamicSlide">
+                    <ul class="swiper-wrapper">
+                      <!-- 1. 每張.swiper-slide 為一個slide，若要新增刪除都以整組li為單位以避免出錯 -->
+                      <!-- 2. 日期 大bn 和商品都分開命名，如有需要可以分開設定css -->
+                      <!-- 3. 輪播可在app-bundle.js 裡開啟autoplay -->
+                      <li class="swiper-slide">
+                        <div class="slide__box">
+                          <div class="slide__box--date">11/1</div>
+                          <div class="slide__box--bn"><a href="https://media.etmall.com.tw/sp/11387/m/index.html" alt="小米全系列"><img src="bn-slider-1.png" alt="小米全系列"></a>
+                            <div class="bn--mask"></div>
+                          </div>
+                          <div class="slide__box--item">
+                            <div class="item__box"><a href="https://www.etmall.com.tw/i/3215429"><img src="slider-promo-1-1.png" alt="POCO M3 Pro 5G手機(4G/64G)"></a></div>
+                            <div class="item__box"><a href="https://www.etmall.com.tw/i/3210247"><img src="slider-promo-1-2.png" alt="小米 11 Lite NE 5G手機 6.55吋 八核心 (8G/128G)"></a></div>
+                            <div class="item__box"><a href="https://www.etmall.com.tw/i/3077906"><img src="slider-promo-1-3.png" alt="小米手環 6 送錶帶與保護貼"></a></div>
+                            <div class="item__box"><a href="https://www.etmall.com.tw/i/3192047"><img src="slider-promo-1-4.png" alt="10000 小米行動電源 3 快充版 銀色"></a></div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="swiper-slide">
+                        <div class="slide__box">
+                          <div class="slide__box--date">11/2</div>
+                          <div class="slide__box--bn"><a href="https://media.etmall.com.tw/sp/11735/m/index.html" alt="指定機種最高送提貨券4,000元"><img src="bn-slider-2.png" alt="指定機種最高送提貨券4,000元"></a>
+                            <div class="bn--mask"></div>
+                          </div>
+                          <div class="slide__box--item">
+                            <div class="item__box"><a href="https://www.etmall.com.tw/i/3192022"><img src="slider-promo-2-1.png" alt="SONY Xperia 5 III 5G智慧手機 (8G/256G)"></a></div>
+                            <div class="item__box"><a href="https://www.etmall.com.tw/i/3129366"><img src="slider-promo-2-2.png" alt="SONY Xperia 1 III 5G智慧手機 (12G/256G)"></a></div>
+                            <div class="item__box"><a href="https://www.etmall.com.tw/i/"><img src="slider-promo-2-3.png" alt="SONY Xperia 1 III 5G智慧手機 (512G)"></a></div>
+                            <div class="item__box"><a href="https://www.etmall.com.tw/i/3134656"><img src="slider-promo-2-4.png" alt="SONY Xperia 10 III 5G防水手機 (6G/128G)"></a></div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="swiper-slide">
+                        <div class="slide__box">
+                          <div class="slide__box--date">11/3</div>
+                          <div class="slide__box--bn"><a href="https://media.etmall.com.tw/sp/11644/m/index.html" alt="週週大獎"><img src="bn-slider-3.png" alt="週週大獎"></a>
+                            <div class="bn--mask"></div>
+                          </div>
+                          <div class="slide__box--item">
+                            <div class="item__box"><a href=""><img src="slider-promo-3-1.png" alt="Gash 500點"></a></div>
+                            <div class="item__box"><a href=""><img src="slider-promo-3-2.png" alt="Gash 300點"></a></div>
+                            <div class="item__box"><a href=""><img src="slider-promo-3-3.png" alt="Gash 1000點"></a></div>
+                            <div class="item__box"><a href=""><img src="slider-promo-3-4.png" alt="Gash 3000點"></a></div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="swiper-slide">
+                        <div class="slide__box">
+                          <div class="slide__box--date">11/4</div>
+                          <div class="slide__box--bn"><a href="https://media.etmall.com.tw/sp/11736/m/index.html" alt="新機上市首銷活動$3,111元起"><img src="bn-slider-4.png" alt="新機上市首銷活動$3,111元起"></a>
+                            <div class="bn--mask"></div>
+                          </div>
+                          <div class="slide__box--item">
+                            <div class="item__box"><a href="https://www.etmall.com.tw/i/3239208"><img src="slider-promo-4-1.png" alt="realme GT Neo2 5G (8+128)-黑薄荷"></a></div>
+                            <div class="item__box"><a href="https://www.etmall.com.tw/i/"><img src="slider-promo-4-2.png" alt="realme narzo 50i"></a></div>
+                            <div class="item__box"><a href="https://www.etmall.com.tw/i/3239206"><img src="slider-promo-4-3.png" alt="realme narzo 50A 續航王者遊戲機4G/128G-清晨藍"></a></div>
+                            <div class="item__box"><a href="https://www.etmall.com.tw/i/3045131"><img src="slider-promo-4-4.png" alt="realme GT 5G S888全速戰神旗艦機(8G/128G)-深海飛艇"></a></div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+  <script type="text/javascript" src="vendor-bundle.js"></script><script type="text/javascript" src="app-bundle.js"></script></body>
+</html>

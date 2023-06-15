@@ -1,0 +1,135 @@
+-
+  var promoDataE = [
+    {
+      link: "https://media.etmall.com.tw/sp/10563/m/index.html",
+      imgSrc: "event/3rd/e-main/components/promo-event/items/promo-1.png",
+      alt: "新會員首購送好禮2088"
+    },
+    //- slider start
+    {
+      link: "https://media.etmall.com.tw/sp/12065/m/index.html",
+      imgSrc: "event/3rd/e-main/components/promo-event/items/promo-4.png",
+      alt: "東森幣擴大折抵80%"
+    },
+    //- {
+    //-   link: "井",
+    //-   imgSrc: "event/3rd/e-main/components/promo-event/items/promo-2.png",
+    //-   alt: "再送BT21擴香石/水晶球"
+    //- },
+    //- slider end
+    {
+      link: "#note",
+      imgSrc: "event/3rd/e-main/components/promo-event/items//promo-2.png",
+      alt: "最高20%"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/11482/m/index.html",
+      imgSrc: "event/3rd/e-main/components/promo-event/items/promo-5.png",
+      alt: "指定銀行最高享$11,111刷卡金"
+    },
+    {
+      link: "https://www.etmall.com.tw/Activity/CollectPointExchangeActivity/2021115dbb1cb0",
+      imgSrc: "event/3rd/e-main/components/promo-event/items/promo-3.png",
+      alt: "集點換好禮購好物"
+    },
+    //- slider start
+    {
+      link: "https://media.etmall.com.tw/sp/11936/m/index.html",
+      imgSrc: "event/3rd/e-main/components/promo-event/items/promo-6.png",
+      alt: "西部小華堡買一送一"
+    },
+    //-     {
+    //-   link: "井",
+    //-   imgSrc: "event/3rd/e-main/components/promo-event/items/promo-6.png",
+    //-   alt: "全家超取抽好禮"
+    //- },
+    //- slider end
+    //- slider start
+    //- {
+    //-   link: "https://media.etmall.com.tw/sp/10670/m/index.html",
+    //-   imgSrc: "event/3rd/e-main/components/promo-event/items/promo-4-2.png",
+    //-   alt: "紅標+綠標 買就回饋20% "
+    //- },
+    //- slider end
+    //- slider start
+      {
+      link: "https://media.etmall.com.tw/sp/11411/m/index.html",
+      imgSrc: "event/3rd/e-main/components/promo-event/items/promo-7-6.png",
+      alt: "全民拚經濟"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/10713/m/index.html",
+      imgSrc: "event/3rd/e-main/components/promo-event/items/promo-7-1.png",
+      alt: "彰化好物購"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/11528/m/index.html",
+      imgSrc: "event/3rd/e-main/components/promo-event/items/promo-7-2.png",
+      alt: "臺中購物節"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/10141/m/index.html",
+      imgSrc: "event/3rd/e-main/components/promo-event/items/promo-7-3.png",
+      alt: "桃園樂購節"
+    },
+    {
+      link: "https://www.etmall.com.tw/bs/154029",
+      imgSrc: "event/3rd/e-main/components/promo-event/items/promo-7-4.png",
+      alt: "嘉義優鮮"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/11906/m/index.html",
+      imgSrc: "event/3rd/e-main/components/promo-event/items/promo-7-5.png",
+      alt: "指定銀行24、30期 0利率"
+    },
+  ]
+
+-
+  var promoDataU = [
+    {
+      link: "https://media.u-mall.com.tw/sp/9704/m/index.html",
+      imgSrc: "event/3rd/u-main/components/promo-event/items/promo-1.png",
+      alt: "23家銀行 最高回饋15%"
+    },
+    {
+      link: "https://media.u-mall.com.tw/sp/9704/m/index.html",
+      imgSrc: "event/3rd/u-main/components/promo-event/items/promo-2.png",
+      alt: "花旗滿$20,000送$2,000"
+    },
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale",
+      //- imgSrc: "event/3rd/u-main/components/promo-event/items/promo-3.png",
+      alt: "限時瘋搶"
+    },
+  ]
+
+- var promoData = isU ? promoDataU : promoDataE
+
+//- TODO: 如果promo不和hero綁一起時要有自己的section和layout--main
+section.promo__group.promo__group--promo-event
+  .layout--main
+    .promo__wrap
+      #promoEvent.promo__zone
+        .promo__block
+          ul.event__wrap
+            each data, index in promoData
+              if index == 1 || index == 5
+                li
+                  .swiper-container
+                    ul.swiper-wrapper
+                      li.swiper-slide
+                        a(href= data.link, title=data.alt)
+                          img(src= data.imgSrc, data.alt)
+              else if index < 6
+                li
+                  a(href= data.link, title= data.alt)
+                    img(src= data.imgSrc, alt= data.alt)
+        .promo__block
+          #promoSlider.swiper-container
+            ul.swiper-wrapper
+              each data, index in promoData
+                if index >= 6
+                  li.swiper-slide
+                    a(href= data.link, title=data.alt)
+                      img(src= data.imgSrc, data.alt)
+

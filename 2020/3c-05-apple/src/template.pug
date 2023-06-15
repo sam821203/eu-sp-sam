@@ -1,0 +1,16 @@
+doctype html
+html(lang='zh-Hant-TW')
+  head
+    //- facebook分享script
+    script
+      | var fbhtml_url = window.location.toString();
+    include utils/pug/_total-head
+
+    //- TODO: 打開可測試是否會被app的太空垃圾影響，但是注意正式dist時要關閉
+    //- =======================================================================
+    //- link(rel="stylesheet3", type="text/css", href="~vendors/style/site.css")
+    //- =======================================================================
+
+  body
+    //- main section 主視覺區
+    include pages/index/_index.pug

@@ -1,0 +1,57 @@
+- 
+  var w2m2DataE = [
+    {
+      link: "https://www.etmall.com.tw/c3/139328",
+      imgSrc: "~event/1st/e-main/components/event-w2m2/items/sp-product-1.jpg",
+      alt: "Samsung Galaxy S20 Ultra 5G"
+    },
+    {
+      link: "https://www.etmall.com.tw/c3/139328",
+      imgSrc: "~event/1st/e-main/components/event-w2m2/items/sp-product-2.jpg",
+      alt: "Samsung Galaxy S20 5G"
+    },
+    {
+      link: "https://www.etmall.com.tw/c3/139328",
+      imgSrc: "~event/1st/e-main/components/event-w2m2/items/sp-product-3.jpg",
+      alt: "Samsung Galaxy S20+ 5G"
+    },
+  ]
+
+- 
+  var w2m2DataU = [
+    {
+      link: "https://www.u-mall.com.tw/c3/139329",
+      imgSrc: "~event/1st/u-main/components/event-w2m2/items/sp-product-1.jpg",
+      alt: "Samsung Galaxy S20 Ultra 5G"
+    },
+    {
+      link: "https://www.u-mall.com.tw/c3/139329",
+      imgSrc: "~event/1st/u-main/components/event-w2m2/items/sp-product-2.jpg",
+      alt: "Samsung Galaxy S20 5G"
+    },
+    {
+      link: "https://www.u-mall.com.tw/c3/139329",
+      imgSrc: "~event/1st/u-main/components/event-w2m2/items/sp-product-3.jpg",
+      alt: "Samsung Galaxy S20+ 5G"
+    },
+  ]
+
+- var w2m2Data = isU? w2m2DataU : w2m2DataE
+
+
+section.promo__group.promo__group--w2m2
+  .promo__wrap
+    .layout--main
+      ul.good__wrap.good__wrap--col1.wow
+        li
+          a(href= w2m2Data[0].link, title= w2m2Data[0].alt)
+            img(src= w2m2Data[0].imgSrc, alt= w2m2Data[0].alt)
+  .promo__wrap
+    .layout--main
+      ul.good__wrap.good__wrap--col2.wow
+        li
+          a(href= w2m2Data[1].link, title= w2m2Data[1].alt)
+            img(src= w2m2Data[1].imgSrc, alt= w2m2Data[1].alt)
+        li
+          a(href= w2m2Data[2].link, title= w2m2Data[2].alt)
+            img(src= w2m2Data[2].imgSrc, alt= w2m2Data[2].alt)

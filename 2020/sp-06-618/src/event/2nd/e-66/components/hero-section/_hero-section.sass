@@ -1,0 +1,355 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero__wrap
+  +pos-set(relative, second)
+  overflow: hidden
+
+  .hero__zone
+    +pos-set(relative, zero)
+
+  .hero__box
+    +pos-set(relative, ten)
+
+  .hero__title
+    &--main
+      +pos-set(relative, ten)
+      //background-image: url("~event/2nd/e-66/components/hero-section/title-bg.png")
+      background-size: 67% auto
+      background-repeat: no-repeat
+      background-position: top center
+      padding-top: 0
+      padding-bottom: 23%
+      padding-left: 0
+      text-align: center
+      margin-left: auto
+      margin-right: auto
+      width: 92%
+      overflow: hidden
+      .title__txt
+        position: relative
+        top: 8.5vw
+        width: 70%
+        animation: big-title 1s linear both
+        &.title__t2
+          position: absolute
+          width: 36%
+          top: 27vw
+          right: 16vw
+          animation: title-open .1s 1s linear both
+        &.title__coupon
+          position: absolute
+          width: 23%
+          top: 17vw
+          right: 18vw
+          transform-origin: left bottom
+          animation: title-down 1.5s linear both, jello 2s 2s infinite
+
+      .title__circle
+        animation: rotate-title 6s infinite linear
+        -ms-transform: translateX(-50%)
+        -ms-animation: none
+        position: absolute
+        top: 0
+        left: 50%
+        transform-origin: center
+        //transform: translateX(-50%)
+        width: 63vw
+        height: 63vw
+
+      +breakpoint-min($min-width-xl)
+        width: auto
+        padding-top: 2%
+        padding-bottom: 0
+        padding-left: 0
+        padding-right: 0
+        height: 670px
+        .title__txt
+          top: 67px
+          width: auto
+          &.title__coupon
+            width: auto
+            top: 165px
+            right: calc(50% - 276px)
+          &.title__t2
+            width: auto
+            top: 259px
+            right: calc(50% - 279px)
+        .title__circle
+          width: 616px
+          height: 619px
+  // &.animated
+    // animation: small-open 1s both ease-out
+
+  //.title-decoration__wrap
+  //  +pos-set(relative, zero, -8vw, 2%)
+  .title__decoration
+    img
+      display: none
+    +breakpoint-min($min-width-xl)
+      width: 96%
+      height: 100%
+      pointer-events: none
+      +pos-set(absolute, under)
+      top: 0
+      img
+        position: absolute
+        display: block
+        z-index: -1
+      .left-1
+        width: 409px
+        height: 519px
+        left: calc(50% - 1216px)
+        top: 145px
+        animation: up-appear 0.5s linear both
+      .left-2
+        width: 687px
+        height: 696px
+        top: 0
+        left: calc(50% - 1036px)
+        animation: up-appear-skew .5s 0.3s linear both
+      .left-3
+        width: 305px
+        height: 340px
+        top: 776px
+        left: calc(50% - 1288px)
+        animation: up-appear-skew .8s 1.6s linear both
+      .left-4
+        width: 294px
+        height: 281px
+        top: 643px
+        left: calc(50% - 829px)
+        animation: up-appear-skew 1s 1.6s linear both
+      .right-1
+        width: 294px
+        height: 281px
+        right: calc(50% - 753px)
+        top: -41px
+        animation: up-appear-skew .5s 0.8s linear both
+      .right-2
+        width: 406px
+        height: 197px
+        top: 0
+        right: calc(50% - 1330px)
+        animation: up-appear-skew .5s 1.2s linear both
+      .right-3
+        width: 600px
+        height: 591px
+        top: 310px
+        right: calc(50% - 1033px)
+        animation: up-appear-skew .7s 1.8s linear both
+      .right-4
+        width: 574px
+        height: 422px
+        top: 189px
+        right: calc(50% - 1333px)
+        animation: up-appear-skew .7s 1.5s linear both
+
+  .ci-decoration__wrap
+    +pos-set(absolute, null, 0, 0)
+    width: 100%
+    height: 100%
+    pointer-events: none
+    .ci__decoration
+      +pos-set(absolute, zero)
+      &--top
+        top: 10%
+        left: 37%
+        width: 13%
+        z-index: 10
+        &.animated
+          animation: 1s 1s title-down both ease-out
+        img
+          animation: 4s 2s key-rotate-stop both infinite ease-in-out
+        +breakpoint-min($min-width-xl)
+          width: auto
+
+  //+breakpoint-min($min-width-xl)
+  //  +pos-set(relative, zero, -82px, 2%)
+
+  .promo__zone
+    margin-top: 12%
+    position: relative
+    //background-color: $gray-deep-light
+    +breakpoint-min($min-width-xl)
+      margin-top: 117px
+      background-color: transparent
+
+.parallax__background
+  +breakpoint-min($min-width-xl)
+    +pos-set(absolute, under)
+    //+bg-set(url("~event/2nd/e-66/components/hero-section/decoration-goods.png"), 100% auto)
+    width: 2227px
+    height: 868px
+    // transform: translateY(-10%)
+    animation: 1s 2s behind-appear both
+    pointer-events: none
+    will-change: scroll-position
+    top: 81px
+    left: 50%
+    transform: translateX(-50%)
+    background-position: center
+    transform-origin: center center
+
+#IMG_1
+  display: block
+  height: 196px
+  left: 0px
+  position: absolute
+  top: 0px
+  width: 588px
+//animation: bunting 6s ease-in-out infinite
+
+
+@keyframes bunting
+  0%
+    transform: skew(-7deg) scale(1)
+  50%
+    transform: skew(6deg) scale(1.1)
+  100%
+    transform: skew(-7deg) scale(1)
+
+@keyframes title-down
+  0%
+    transform: translateY(calc(-100vw * .5))
+  70%, 80%
+    transform: translateY(0) scale(1.2)
+  75%, 100%
+    transform: translateY(0) scale(1)
+
+@keyframes title-open
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+@keyframes key-rotate-stop
+  0%
+    transform: rotate(0)
+  1.5%
+    transform: rotate(-20deg)
+  3%
+    transform: rotate(0)
+  4.5%
+    transform: rotate(20deg)
+  6%
+    transform: rotate(0)
+  100%
+    transform: rotate(0)
+
+@keyframes up-down
+  0%, 30%, 100%
+    transform: translateY(0)
+  20%, 40%, 60%
+    transform: translateY(-6%)
+  30%, 45%
+    transform: translateY(0)
+
+@keyframes up-down
+  0%, 8%, 12%, 16%, 74%, 78%, 82%, 100%
+    transform: scale(1) translateY(0)
+  10%, 14%, 76%, 80%
+    transform: scale(1.1) translateY(-6%)
+
+@keyframes up-appear
+  0%
+    transform: translateX(-20vw) translateY(-40vw)
+    opacity: 0
+  1%
+    transform: translateX(-20vw) translateY(-40vw)
+    opacity: 1
+  80%, 90%
+    transform: translateX(0) translateY(0)
+    opacity: 1
+  85%, 95%
+    transform: translateX(0) translateY(0)
+    opacity: 1
+  75%, 82.5%, 92.5%, 87.5%, 97.5%, 100%
+    transform: translateX(0) translateY(0)
+    opacity: 1
+
+@keyframes up-appear-skew
+  0%
+    transform: translateX(-20vw) translateY(-40vw)
+    opacity: 0
+  1%
+    opacity: 1
+  80%, 90%
+    transform: translateX(0) translateY(0) skew(-5deg, -5deg)
+    opacity: 1
+  85%, 95%
+    transform: translateX(0) translateY(0) skew(5deg, 5deg)
+    opacity: 1
+  75%, 82.5%, 92.5%, 87.5%, 97.5%, 100%
+    transform: translateX(0) translateY(0) skew(0)
+    opacity: 1
+
+@keyframes behind-appear
+  0%
+    opacity: 1
+    left: 50%
+    transform: translateX(-50%) scale(0)
+  100%
+    opacity: 1
+    //transform-origin: center center
+    left: 50%
+    transform: translateX(-50%) scale(1)
+
+@keyframes big-title
+  0%
+    opacity: 0
+    transform: scale(0)
+  50%, 60%, 70%, 100%
+    opacity: 1
+    transform: scale(1)
+  55%, 65%
+    transform: scale(1.1) rotate(10deg)
+
+@keyframes rotate-title
+  from
+    transform: translateX(-50%) rotate(0)
+    filter: brightness(100%)
+  50%
+    filter: brightness(150%)
+  to
+    transform: translateX(-50%) rotate(360deg)
+    filter: brightness(100%)
+
+@keyframes jello
+  from, 11.1%, to
+    -webkit-transform: translate3d(0, 0, 0)
+    transform: translate3d(0, 0, 0)
+
+  22.2%
+    -webkit-transform: skewX(-8.5deg) skewY(-8.5deg)
+    transform: skewX(-8.5deg) skewY(-8.5deg)
+
+  33.3%
+    -webkit-transform: skewX(6.25deg) skewY(6.25deg)
+    transform: skewX(6.25deg) skewY(6.25deg)
+
+  44.4%
+    -webkit-transform: skewX(-3.125deg) skewY(-3.125deg)
+    transform: skewX(-3.125deg) skewY(-3.125deg)
+
+  55.5%
+    -webkit-transform: skewX(1.5625deg) skewY(1.5625deg)
+    transform: skewX(1.5625deg) skewY(1.5625deg)
+
+  66.6%
+    -webkit-transform: skewX(-0.78125deg) skewY(-0.78125deg)
+    transform: skewX(-0.78125deg) skewY(-0.78125deg)
+
+  77.7%
+    -webkit-transform: skewX(0.390625deg) skewY(0.390625deg)
+    transform: skewX(0.390625deg) skewY(0.390625deg)
+
+  88.8%
+    -webkit-transform: skewX(-0.1953125deg) skewY(-0.1953125deg)
+    transform: skewX(-0.1953125deg) skewY(-0.1953125deg)
+
+.jello
+  -webkit-animation-name: jello
+  animation-name: jello
+  -webkit-transform-origin: center
+  transform-origin: center

@@ -1,0 +1,34 @@
+section.hero__wrap.m-bottom--lg
+  .hero__zone
+    .layout--main
+      #heroBlock.hero__block
+        .hero__box.wow
+          //- 標題
+          h1.hero__title.hero__title--main.block--center.wow(title="女王有購狂")
+            img(src="~event/1st/e-main/components/hero-section/title.png", alt="女王有購狂")
+          .title-decoration__wrap
+            img(src="~event/1st/e-main/components/hero-section/decoration-queen.png", alt="")
+            .title__decoration.title__decoration--top
+              .decoration--gift.wow
+              .decoration--light.wow
+    .title-decoration__wrap.title-decoration__wrap--web
+      img(src="~event/1st/e-main/components/hero-section/decoration-queen-web.png", alt="")
+      .title__decoration.title__decoration--top
+        .decoration--gift.wow
+          //- 副標
+          //- include /event/1st/e-main/components/hero-small-slider/_hero-small-slider
+
+        //- .block-decoration.decoration--left
+        //- .block-decoration.decoration--right
+
+  .promo__zone
+    .layout--main
+      .promo__block
+        //- 行銷誘因
+        include /event/1st/e-main/components/promo-event/_promo-event
+
+        //- 商品輪播
+        //- include /event/1st/e-main/components/goods-slider-flip/_goods-slider-flip
+        //- include /event/1st/e-main/components/goods-slider/_goods-slider
+
+  include /event/1st/e-main/components/background-decoration/_background-decoration

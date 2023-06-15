@@ -1,0 +1,145 @@
+-
+  var promoDataE = [
+    {
+      link: "#note",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-1.png",
+      alt: "滿$618抽Acer 輕薄教育筆電"
+    },
+    {
+      link: "#note",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-2.png",
+      alt: "滿額最高送1,688"
+    },
+    {
+      link: "#note",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-1-1.png",
+      alt: "滿$618抽Acer 輕薄教育筆電"
+    },
+    {
+      link: "#note",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-2-1.png",
+      alt: "滿額最高送1,688"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/7663/m/index.html",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-3.png",
+      alt: "APP消費滿額抽冷淬面膜"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/9862/m/index.html",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-4.png",
+      alt: "賓果連連看 成線送大獎"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/7663/m/index.html",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-5.png",
+      alt: "新會員首購送衛生紙"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/9698/m/index.html",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-6.png",
+      alt: "指定超取送中冰拿"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/9738/m/index.html",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-7.png",
+      alt: "滿額請你在家看電影"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/9737/m/index.html",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-8.png",
+      alt: "下單抽1元甜點材料包"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/9738/m/index.html",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-7-1.png",
+      alt: "滿額請你在家看電影"
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/9737/m/index.html",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-8-1.png",
+      alt: "下單抽1元甜點材料包"
+    },
+    //- slider start
+    {
+      link: "https://media.etmall.com.tw/sp/9161/m/index.html",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-9.png",
+      alt: "23家銀行 最高回饋20%"
+    },
+    {
+      link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209912/SP_1105156/w/index.html",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-10.png",
+      alt: "最高回饋20%東森幣"
+    },
+    //- slider end
+  ]
+
+-
+  var promoDataU = [
+    {
+      link: "https://media.u-mall.com.tw/sp/9162/m/index.html",
+      imgSrc: "event/2nd/u-main/components/promo-event/items/promo-1.png",
+      alt: "凱基銀行 滿$8,000送$1,600"
+    },
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale",
+      imgSrc: "event/2nd/u-main/components/promo-event/items/promo-2.png",
+      alt: "限時瘋搶"
+    },
+    {
+      link: "https://media.u-mall.com.tw/sp/9162/m/index.html",
+      imgSrc: "event/2nd/u-main/components/promo-event/items/promo-3.png",
+      alt: "23家銀行 最高回饋20%"
+    },
+  ]
+
+- var promoData = isU ? promoDataU : promoDataE
+
+//- TODO: 如果promo不和hero綁一起時要有自己的section和layout--main
+section.promo__group.promo__group--promo-event.m-bottom--lg
+  .layout--main
+    .promo__title
+      .decoration--top.decoration--top-right
+        img(src="event/2nd/e-main/components/promo-event/decoration-promo.png", alt="")
+    .promo__wrap
+      .promo__zone
+        #scrollPromo.decoration--top.decoration--mid-right
+          img(src="event/2nd/e-main/components/promo-event/decoration-promo-2.png", alt="")
+        #promoEvent.event__wrap
+          .promo__block.m-bottom--sm
+            ul
+              each data, index in promoData
+                if index < 4
+                  li.js-time-check
+                    a(href= data.link, title= data.alt)
+                      img(src= data.imgSrc, alt= data.alt)
+          .promo__block.m-bottom--sm
+              each data, index in promoData
+                if index == 4
+                  a(href= data.link, title= data.alt)
+                    img(src= data.imgSrc, alt= data.alt)
+          .promo__block.m-bottom--sm
+            ul
+              each data, index in promoData
+                if index > 4 && index <= 7
+                  li
+                    a(href= data.link, title= data.alt)
+                      img(src= data.imgSrc, alt= data.alt)
+          .promo__block.m-bottom--sm
+            ul
+              each data, index in promoData
+                if index > 7 && index <= 11
+                  li.js-time-check
+                    a(href= data.link, title= data.alt)
+                      img(src= data.imgSrc, alt= data.alt)
+        .promo__slider
+          #sliderPromo.swiper-container
+            ul.swiper-wrapper
+              each data, index in promoData
+                if index > 11
+                  li.swiper-slide
+                    a(href= data.link, title=data.alt)
+                      img(src= data.imgSrc, data.alt)
+          //- #sliderPromoPrev.swiper-button--custom.swiper-button-prev
+          //- #sliderPromoNext.swiper-button--custom.swiper-button-next
+

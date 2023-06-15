@@ -1,0 +1,155 @@
+.dynamic-slider-w2m2-2
+  // +pos-set(relative, zero)
+  overflow: hidden
+  .decor__wrap
+    padding-bottom: 18.5%
+  .decor__item
+
+    &--title
+      +pos-set(absolute, under, 6%, 23%)
+      width: 52%
+      +breakpoint-min($min-width-xl)
+        top: 50px
+        left: calc(50% - 230px)
+
+    &--left
+      +pos-set(absolute, zero, 5%, 11%)
+      width: 18%
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 310px)
+      &.active
+        .js-loading &
+          animation: coin-moveY 2.4s infinite cubic-bezier(0.68, -0.55, 0.265, 1.55)
+
+    &--right
+      +pos-set(absolute, zero, 6%)
+      right: 13%
+      width: 18%
+      +breakpoint-min($min-width-xl)
+        top: 7%
+        right: calc( 50% - 345px )
+      &.active
+        .js-loading &
+          animation: scale-shine 1.6s linear infinite
+
+    &--light
+      +pos-set(absolute, zero, 50%, 0)
+      width: 100%
+      mix-blend-mode: plus-lighter
+      animation: light-flash-2 2.2s ease-out infinite
+      +breakpoint-min($min-width-xl)
+        top: 260px
+        left: calc(50% - 478px)
+
+    +breakpoint-min($min-width-xl)
+      width: auto
+
+  .promo__wrap
+    +bg-set(url(event/2nd/e-main/components/dynamic-slider-w2m2-2/bg-dynamic-slider-w2m2-2.png), 100%)
+    margin-top: 4.6%
+    +breakpoint-min($min-width-xl)
+      +bg-set(url(event/2nd/e-main/components/dynamic-slider-w2m2-2/bg-dynamic-slider-w2m2-2-web.png))
+      margin-top: 2%
+  .promo__zone
+    +aspect-ratio(921, 740)
+    +breakpoint-min($min-width-xl)
+      +aspect-ratio(921, 680)
+  .promo__block
+    padding: 1% 2.1%
+    +breakpoint-min($min-width-xl)
+      padding-top: 6px
+  .banner__slider
+    +pos-set(relative, zero)
+    background-position: right
+    +breakpoint-min($min-width-xl)
+      background-position: right
+    .slider__wrap
+      +pos-set(absolute, zero)
+      width: 100%
+      margin: 0 auto
+      transform: translateY(3%) scale(1.005)
+      +breakpoint-min($min-width-lg)
+        transform: translateY(11%) scale(1.16)
+      +breakpoint-min($min-width-xl)
+        right: calc(50% - 333px)
+        width: 74%
+        transform: translate(1%, 4%) scale(1.008)
+      .swiper-slide
+        text-align: center
+        img
+          border-radius: 10px !important
+          +breakpoint-min($min-width-xl)
+            border-radius: 22px !important
+
+  .promo__slider
+    overflow: hidden
+    height: 77vw
+    max-height: 760px
+    margin-top: 16%
+
+    .dynamic__item
+      .product--dynamic
+        width: 100%
+        margin: 0
+        +breakpoint-min($min-width-xl)
+          width: 93% !important
+          .product__name
+            margin-top: 5px
+            margin-bottom: 15px
+          .product__price
+            span
+              &:last-child
+                font-size: 32px
+
+      &:first-child
+        +pos-set(absolute, zero, 17%, 11%)
+        width: 34.6%
+        .product__img
+          border-radius: 10px 10px 0 0 !important
+        +breakpoint-min($min-width-xl)
+          top: 8.4%
+          left: calc(50% - 353px)
+          width: 36.8%
+          .product__img
+            border-radius: 22px 22px 0 0 !important
+
+      &:last-child
+        +pos-set(absolute, zero, 17%)
+        right: 11%
+        width: 34.6%
+        .product__img
+          border-radius: 10px 10px 0 0 !important
+        +breakpoint-min($min-width-xl)
+          top: 8.4%
+          right: calc(50% - 378px)
+          width: 36.8%
+          .product__img
+            border-radius: 22px 22px 0 0 !important
+
+    .swiper-slide-prev
+      opacity: 0
+      
+
+@keyframes scale-shine
+  0%, 100%
+    transform: rotate(-10deg) scale(1)
+    filter: brightness(1)
+  50%
+    transform: rotate(6deg) scale(1.1)
+    filter: brightness(1.2)
+
+@keyframes coin-moveY
+  0%, 100%
+    top: 8%
+    z-index: 0
+    opacity: 1
+  50%, 81%
+    top: 30%
+    z-index: -1
+    opacity: 0
+
+@keyframes light-flash-2
+  0%, 100%
+    filter: brightness(200%)
+  50%
+    filter: brightness(40%)

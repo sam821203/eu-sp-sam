@@ -1,0 +1,100 @@
+<!-- swiper v3 v4只支援IE10以上，IE9用v2，不用支援時把CSS與JS的if IE 9之後砍掉即可 -->
+<!-- ======================= swiper CSS start ============================= -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+<!--[if IE 9]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/2.7.6/idangerous.swiper.min.css">
+<![endif]-->
+
+<!-- ======================= swiper CSS end ============================= -->
+
+<style>
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+a {
+	display: block;
+	text-decoration: none;
+}
+ul {
+	list-style: none;
+}
+img {
+	width: 100%;
+	border: 0;
+	display: block;
+}
+article,  main,  nav,  section {
+	display: block;
+}
+.footer {
+	background: url(act-bg.jpg) no-repeat;
+	background-size: contain;
+}
+.footer li img {
+	display: block;
+  margin: 8% auto;
+  width: 65%;
+}
+</style>
+
+<body>
+	<!-- swiper的主結構：.swiper-container > .swiper-wrapper > .swiper-slide * n (classname必填)-->
+	<footer id="footer" class="footer swiper-container">
+		<ul class="swiper-wrapper">
+			<li class="swiper-slide">
+				<a href="">
+					<img src="640x280-1.jpg" alt="熱門活動">
+				</a>
+			</li>
+			<li class="swiper-slide">
+				<a href="">
+					<img src="640x280-2.jpg" alt="熱門活動">
+				</a>
+			</li>
+		</ul>
+	</footer>
+
+<!-- ======================= swiper JS start ============================= -->
+
+<!-- 針對IE9的plyfill -->
+<script src="https://polyfill.io/v3/polyfill.min.js"></script>
+<!-- swiper v4.5本體，需注意IE9用的v2.7.6要放在後面以覆蓋此處設定 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+<!-- 自定義動畫檔案 -->
+<script src="swiper-custom.js"></script>
+<script>
+	var footerSlider = new Swiper(".swiper-container", {
+		autoplay: {
+			delay: 2000,
+			disableOnInteraction: false,
+		},
+		autoHeight: true,
+		grabCursor: true,
+		loop: true,
+		speed: 1000,
+
+		// custom animation setting
+		watchSlidesProgress: true,
+		// 照此格式輸入swiper-custom內自定義的動畫
+		on: new MakeAnimateObject(rotateY360)
+	});
+</script>
+<!--[if IE 9]>
+  <script src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106742/flexibility.js"></script>
+  <script>flexibility(document.documentElement);</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/2.7.6/idangerous.swiper.min.js"></script>
+  <script>
+    var footerSlider = new Swiper(".swiper-container", {
+      autoplay: 2000,
+      autoplayDisableOnInteraction: false,
+      calculateHeight: true,
+      loop: true,
+    });
+  </script>
+<![endif]-->
+<!-- ======================= swiper JS end ============================= -->
+
+</body>

@@ -1,0 +1,68 @@
+.sp__wrap
+  .promo__group.promo__group--daily
+    position: absolute
+    top: 7.6vw
+    right: 1vw
+    width: 61vw
+    overflow: hidden
+    +breakpoint-min($min-width-xl)
+      top: 77px
+      right: 0
+      width: auto
+
+    .promo__wrap
+      +pos-set(relative, zero)
+      .title__text
+        +pos-set(absolute, base)
+
+
+      // .daily__text
+      //   left: 19%
+      //   color: $gray-deep-light
+      //   font-size: 7vw
+      //   font-weight: bold
+      //   transform: translateY(13%)
+      //   span
+      //     &:nth-child(2)
+      //       font-size: 3vw
+      .daily__countdown
+        display: flex
+        justify-content: space-between
+        top: 36.4vw
+        right: 27.6vw
+        padding-top: 0
+        width: 36%
+        font-size: 3.5vw
+        color: $gray-deep-light
+        letter-spacing: 0.35em
+        pointer-events: none
+        // border: 1px solid #f00
+        .time__block
+          display: flex
+          justify-content: space-between
+          width: 24%
+          // border: 1px solid #fff
+
+          .time__box
+            width: 48%
+            text-align: right
+
+      +breakpoint-min($min-width-xl)
+        .daily__countdown
+          top: 351px
+          right: calc(50% - 23px)
+          width: 34%
+          font-size: 31px
+          .time__block
+            width: 18%
+
+    .promo__wrap
+      padding-top: 0
+      text-align: center
+      &:hover,
+      &:active
+        a
+          filter: brightness(105%) contrast(120%)
+
+      +breakpoint-min($min-width-xl)
+        background-size: auto

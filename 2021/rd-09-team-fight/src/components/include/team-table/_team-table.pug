@@ -1,0 +1,15 @@
+//- TODO: 外面要設好tableHead陣列、tableData陣列
+.team__table
+  table
+    tr
+      th= tableHead[0]
+      th= tableHead[1]
+      th 累計金額
+    each data, index in tableData
+      - var activeClass = data.isActive ? "active" : ""
+      tr(class = activeClass)
+        td= index + 1
+        td= data.name
+        td
+          span $
+          span= data.price

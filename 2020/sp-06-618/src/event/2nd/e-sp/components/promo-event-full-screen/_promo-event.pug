@@ -1,0 +1,20 @@
+-
+  var promoDataE = [
+  {link: "https://www.etmall.com.tw/i/2485653", imgSrc: "~event/2nd/e-sp/components/promo-event-full-screen/items/promo-1.png", alt: "kanebo送好禮"},
+  {link: "#note", imgSrc: "~event/2nd/e-sp/components/promo-event-full-screen/items/promo-2.png", alt: "訊聯生技滿額送"},
+  ]
+
+- var promoDataU = [{link: "https://www.u-mall.com.tw/Activity/HourSale", imgSrc: "~event/2nd/u-main/components/promo-event/items/promo-1.png", alt: "整點最便宜"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1103367/w/index.html", imgSrc: "~event/2nd/u-main/components/promo-event/items/promo-2.png", alt: "20間銀行最高回饋10%"}, {link: "https://www.u-mall.com.tw/Activity/HourSale?Day=Up", imgSrc: "~event/2nd/u-main/components/promo-event/items/promo-3.png", alt: "天天最激殺"}, ]
+
+- var promoData = isU ? promoDataU : promoDataE
+
+.promo__event.m-bottom--lg(data-title="")
+  ul.event__wrap
+    li.promo__discount
+      a(href= promoData[0].link, title= promoData[0].alt)
+        img(src= promoData[0].imgSrc, alt= promoData[0].alt)
+    li
+      a(href= promoData[1].link, title= promoData[1].alt)
+        img(src= promoData[1].imgSrc, alt= promoData[1].alt)
+
+

@@ -1,0 +1,56 @@
+-
+  var promoDataE = [
+  {link: "#note",
+  imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-1.png",
+  alt: "單筆滿額送$688"},
+  {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202012/SP_1116859/w/index.html",
+  imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-2.png",
+  alt: "東森幣100枚搶iPhone"},
+  {link: "https://media.etmall.com.tw/sp/7647/m/index.html",
+  imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-3.png",
+  alt: "滿額送BT21牛仔布餐具組"},
+  {link: "#note",
+  imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-4.png",
+  alt: "下載抽ASHIYA眼部安瓶"},
+  {link: "https://media.etmall.com.tw/sp/7663/m/index.html",
+  imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-5.png",
+  alt: "APP下單3次送鍋寶陶瓷杯"},
+  {link: "https://media.etmall.com.tw/sp/7663/m/index.html",
+  imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-6.png",
+  alt: "首購送全家中熱美"},
+  {link: "https://media.etmall.com.tw/sp/7692/m/index.html",
+  imgSrc: "~event/2nd/e-main/components/promo-event/items/promo-7.png",
+  alt: "團圓食刻 幸福年菜"},
+  ]
+
+-
+  var promoDataU = [
+  {link: "https://www.u-mall.com.tw/Activity/HourSale",
+  imgSrc: "~event/2nd/u-main/components/promo-event/items/promo-1.png",
+  alt: "限時瘋搶"},
+  {link: "https://media.u-mall.com.tw/sp/7801/m/index.html",
+  imgSrc: "~event/2nd/u-main/components/promo-event/items/promo-2.png",
+  alt: "20間銀行最高回饋11%"},
+  {link: "https://media.u-mall.com.tw/sp/7801/m/index.html",
+  imgSrc: "~event/2nd/u-main/components/promo-event/items/promo-3.png",
+  alt: "花旗_最高回饋8%刷卡金"},
+  {link: "https://media.u-mall.com.tw/sp/7846/m/index.html",
+  imgSrc: "~event/2nd/u-main/components/promo-event/items/promo-4.png",
+  alt: "彰化好物購"}, ]
+
+- var promoData = isU ? promoDataU : promoDataE
+.promo__event(data-title="")
+  .promo__event__web--bg
+  ul.event__wrap
+    li
+      a(href= promoData[0].link, title= promoData[0].alt)
+        img(src= promoData[0].imgSrc, alt= promoData[0].alt)
+    li
+      a(href= promoData[1].link, title= promoData[1].alt)
+        img(src= promoData[1].imgSrc, alt= promoData[1].alt)
+    li
+      a(href= promoData[2].link, title= promoData[2].alt)
+        img(src= promoData[2].imgSrc, alt= promoData[2].alt)
+    li
+      a(href= promoData[3].link, title= promoData[3].alt)
+        img(src= promoData[3].imgSrc, alt= promoData[3].alt)

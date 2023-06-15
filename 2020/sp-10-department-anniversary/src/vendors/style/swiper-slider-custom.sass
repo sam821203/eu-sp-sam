@@ -1,0 +1,38 @@
+// .swiper-pager-white 白點pager樣式
+.swiper-container
+  .swiper-pager-white
+    bottom: 0
+    .swiper-pagination-bullet
+      margin: 0 6px
+      width: 12px
+      height: 12px
+      background-color: $gray-deep-light
+      +breakpoint-min($min-width-xl)
+        margin: 0 9px
+        width: 18px
+        height: 18px
+
+// .swiper-pager-custom 指定色pager樣式
+.swiper-container
+  .swiper-pagination-custom
+    bottom: 0
+    .swiper-pagination-bullet
+      margin: 0 6px
+      width: 12px
+      height: 12px
+      +breakpoint-min($min-width-xl)
+        margin: 0 9px
+        width: 18px
+        height: 18px
+    .swiper-pagination-bullet-active
+      background-color: $main-custom-slider-pager-color
+
+// .swiper-butto-custom 指定色arrow樣式($color為不帶#的Hex六碼色碼)
+.swiper-pager-custom
+  +swiper-button-custom(eb6100)
+
+//  swiper-button 左右arrow 小版樣式
+.swiper-button-small
+  width: 15px
+  height: 24px
+  background-size: 15px 24px

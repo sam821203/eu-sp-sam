@@ -1,0 +1,33 @@
+-
+  var w2m2DataE = [
+  {link: "https://www.etmall.com.tw/p/85933", imgSrc: "~event/1st/e-main/components/event-w2m2/items/brand_1.jpg", alt: "曼黛瑪璉"},
+  {link: "https://www.etmall.com.tw/gp/107447", imgSrc: "~event/1st/e-main/components/event-w2m2/items/brand_2.jpg", alt: "COACH"},
+  {link: "https://www.etmall.com.tw/bs/140133", imgSrc: "~event/1st/e-main/components/event-w2m2/items/brand_3.jpg", alt: "生活工場"},
+  {link: "https://www.etmall.com.tw/np/98898", imgSrc: "~event/1st/e-main/components/event-w2m2/items/brand_4.jpg", alt: "牛爾"},
+  {link: "https://www.etmall.com.tw/gp/106781", imgSrc: "~event/1st/e-main/components/event-w2m2/items/brand_5.jpg", alt: "白蘭氏"},
+  {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202007/SP_1115983/w/index.html", imgSrc: "~event/1st/e-main/components/event-w2m2/items/brand_6.jpg", alt: "飛利浦"},
+  {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202005/SP_1115505/w/index.html", imgSrc: "~event/1st/e-main/components/event-w2m2/items/brand_7.jpg", alt: "Apple"},
+  {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202008/SP_1116068/w/index.html", imgSrc: "~event/1st/e-main/components/event-w2m2/items/brand_8.jpg", alt: "ASUS"},
+  ]
+
+-
+  var w2m2DataU = [
+  {link: "https://www.u-mall.com.tw/c1/45051", imgSrc: "~event/1st/u-main/components/event-w2m2/items/event-w2m2-img-1.png", alt: "開架保養"},
+  {link: "https://www.u-mall.com.tw/np/73924", imgSrc: "~event/1st/u-main/components/event-w2m2/items/event-w2m2-img-2.png", alt: "關鍵保健"},
+  {link: "notyet", imgSrc: "~event/1st/u-main/components/event-w2m2/items/event-w2m2-img-3.png", alt: "notyet"},
+  {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202002/SP_1106075/w/index.html", imgSrc: "~event/1st/u-main/components/event-w2m2/items/event-w2m2-img-4.png", alt: "豪禮狂送"},
+  ]
+
+- var w2m2Data = isU? w2m2DataU : w2m2DataE
+
+
+section.promo__group.promo__group--w2m2.m-bottom--lg(data-title="戀戀愛牌")
+  .promo__wrap
+    #eventw2m2.swiper-container.good__wrap
+      ul.swiper-wrapper
+        each data in w2m2Data
+          li.swiper-slide
+            a(href= data.link, title= data.alt)
+              img(src= data.imgSrc, alt= data.alt)
+    #eventw2m2Prev.swiper-button-white.swiper-button-prev
+    #eventw2m2Next.swiper-button-white.swiper-button-next

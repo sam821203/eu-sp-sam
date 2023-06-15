@@ -1,0 +1,90 @@
+- 
+  var promoDataE = [
+    {
+      link: "https://www.etmall.com.tw/Activity/MidyearLotteryTicket/2020",
+      imgSrc: "~event/3rd/e-main/components/promo-event/items/promo-1.png",
+      alt: "$199元刮好運"
+    }, 
+    {
+      link: "#note",
+      imgSrc: "~event/3rd/e-main/components/promo-event/items/promo-2.png",
+      alt: "下單抽switch主機+遊戲片"
+    }, 
+    {
+      link: "#note", 
+      imgSrc: "~event/3rd/e-main/components/promo-event/items/promo-3.png",
+      alt: "滿額送$300"
+    }, 
+    {
+      link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      imgSrc: "~event/3rd/e-main/components/promo-event/items/promo-4.png",
+      alt: "首購最高回饋500枚東森幣"
+    }, 
+    {
+      link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202006/SP_1115588/w/index.html",
+      imgSrc: "~event/3rd/e-main/components/promo-event/items/promo-5.png",
+      alt: "萊爾富超取送$50"
+    }, 
+    {
+      link: "#note",
+      imgSrc: "~event/3rd/e-main/components/promo-event/items/promo-6.png",
+      alt: "APP下單登記送洗衣膠球"
+    },
+    {
+      link: "https://www.etmall.com.tw/Activity/HourSale",
+      imgSrc: "~event/3rd/e-main/components/promo-event/items/promo-7.png",
+      alt: "天天最激殺"
+    }, 
+    {
+      link: "https://www.etmall.com.tw/Activity/GroupSale",
+      imgSrc: "~event/3rd/e-main/components/promo-event/items/promo-8.png",
+      alt: "集氣搶5折品"
+    },
+  ]
+
+- 
+  var promoDataU = [
+    {
+      link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202006/SP_1106085/w/index.html", 
+      imgSrc: "~event/3rd/u-main/components/promo-event/items/promo-1.png",
+      alt: "20間銀行最高回饋10%"
+    }, 
+    {
+      link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201407/SP_1019204/w/index.html", 
+      imgSrc: "~event/3rd/u-main/components/promo-event/items/promo-2.png",
+      alt: "下單現折$100"
+    }, 
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale", 
+      imgSrc: "~event/3rd/u-main/components/promo-event/items/promo-3.png",
+      alt: "整點最便宜"
+    }, 
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale?Day=Up", 
+      imgSrc: "~event/3rd/u-main/components/promo-event/items/promo-4.png",
+      alt: "天天最激殺"
+    }, 
+  ]
+ 
+- var promoData = isU ? promoDataU : promoDataE
+
+
+.promo__event(data-title="森友會")
+
+  ul.event__wrap.event__wrap--top
+    li.promo__discount
+      a(href= promoData[0].link, title= promoData[0].alt)
+        img(src= promoData[0].imgSrc, alt= promoData[0].alt)
+    li
+      a(href= promoData[1].link, title= promoData[1].alt)
+        img(src= promoData[1].imgSrc, alt= promoData[1].alt)
+    li
+      a(href= promoData[2].link, title= promoData[2].alt)
+        img(src= promoData[2].imgSrc, alt= promoData[2].alt)
+    li
+      a(href= promoData[3].link, title= promoData[3].alt)
+        img(src= promoData[3].imgSrc, alt= promoData[3].alt)
+
+  include /event/3rd/u-main/components/bn-special/_bn-special
+
+    

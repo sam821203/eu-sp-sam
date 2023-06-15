@@ -1,0 +1,349 @@
+/* Color palette */
+:root {
+    --01: #cc1e05;
+    --02: #ff296c;
+    --03: #f5a623;
+    --04: #750cf2;
+    --05: #f24c0c;
+    --06: #293cfc;
+    --07: #4a90e2;
+    --08: #1dae7f;
+    --09: #0069a1;
+    --10: #e73b2b;
+    --11: #800e53;
+    --12: #0dc7d2;
+    --13: #d098db;
+    --14: #c97e04;
+    --15: #7ed321;
+    --warm-blue: #5856d6;
+}
+body {
+    font-family: PingFangTC-regular, "LiHei Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Source Han Sans TC", "Microsoft JhengHei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    margin: 0;
+    padding: 0;
+}
+.cards__wrap {
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.cards__group {
+    display: flex;
+    /*justify-content: space-between;*/
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: auto 8px;
+}
+
+.card__def {
+    position: relative;
+    width: calc(33.3% - 4px);
+    height: 68px;
+    border-radius: 8px;
+    margin: auto 4px 4px 0;
+    overflow: hidden;
+}
+.card__def:nth-of-type(3n+3) {
+    margin: auto 0 4px 0;
+}
+
+.card__def img, .card__def h4,
+.card__def button,
+.card__def p, .card__def .keyWord {
+    position: absolute;
+    z-index: 1;
+    text-align: left;
+    /*color: #333;*/
+    /*color: var(--01);*/
+}
+
+.card__def h4 {
+    top: 4px;
+    left: 5px;
+    width: 74px;
+    height: 16px;
+    line-height: normal;
+    overflow-x: hidden;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.3px;
+    color: #ffffff;
+}
+
+.card__def p {
+    top: 19px;
+    left: 0;
+
+    width: 58px;
+    height: 15px;
+    line-height: normal;
+    overflow-x: hidden;
+    font-size: 10px;
+    -webkit-transform: scale(0.83);
+    display: inline-block;
+    letter-spacing: normal;
+    color: #ffffff;
+}
+
+.card__def button {
+    top: 43px;
+    left: 5px;
+    width: 36px;
+    height: 16px;
+    line-height: normal;
+    background-color: #fff;
+    border-radius: 20% / 50%;
+    outline: 0;
+    border: 0;
+
+}
+
+.card__def button span {
+    display: inline-block;
+    width: 25px;
+    font-size: 9px;
+    -webkit-transform: scale(0.75);
+    height: inherit;
+    line-height: inherit;
+    overflow-x: hidden;
+    text-align: left;
+    position: relative;
+    left: -5px;
+}
+
+.arrow-right {
+    width: 5px;
+    height: 8px;
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    /*padding-top: 4px;*/
+    /*line-height: 16px;*/
+}
+
+.card__def .keyWord {
+    bottom: 6px;
+    right: 4px;
+
+    /*width: 36px;*/
+    /*height: 47px;*/
+    transform: rotate(20deg);
+    text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
+    font-size: 36px;
+    font-weight: bold;
+    text-align: right;
+    color: #ffffff;
+
+}
+
+.left-bg-light {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 47px;
+    height: 59px;
+    object-fit: contain;
+}
+
+.right-bg-light {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+    height: 67px;
+    object-fit: contain;
+}
+
+@media screen and (min-width: 768px) {
+    .cards__group {
+        margin: auto 16px;
+    }
+
+    .card__def {
+        position: relative;
+        width: calc(25% - 8px);
+        height: 118px;
+        border-radius: 8px;
+        margin: auto 8px 9px 0;
+    }
+    .card__def:nth-of-type(3n+3) {
+        margin: auto 8px 9px 0;
+    }
+
+    .card__def:nth-of-type(4n+4) {
+        margin: auto 0 9px 0;
+    }
+
+    .card__def h4 {
+        top: 8px;
+        left: 5px;
+        width: 120px;
+        height: 28px;
+        font-size: 22px;
+        letter-spacing: normal;
+    }
+
+    .card__def p {
+        top: 34px;
+        left: 8px;
+        width: 78px;
+        height: 24px;
+        font-size: 16px;
+        -webkit-transform: scale(1);
+    }
+
+    .card__def button {
+        top: 84px;
+        left: 5px;
+        width: 54px;
+        height: 24px;
+        border-radius: 20% / 50%;
+    }
+
+    .card__def button span {
+        width: 30px;
+        font-size: 14px;
+        -webkit-transform: scale(1);
+        line-height: 22px;
+        left: 0;
+    }
+
+    .arrow-right {
+        width: 8px;
+        height: 12.8px;
+    }
+
+    .card__def .keyWord {
+        bottom: 8px;
+        right: 6px;
+        text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
+        font-size: 64px;
+
+    }
+
+    .left-bg-light {
+        width: 79px;
+        height: 100px;
+    }
+
+    .right-bg-light {
+        width: 88px;
+        height: 118px;
+    }
+
+}
+
+
+.color--1 {
+    background: var(--01);
+}
+.color--1 button {
+    color: var(--01);
+}
+
+.color--2 {
+    background: var(--02);
+}
+.color--2 button {
+    color: var(--02);
+}
+
+.color--3 {
+    background: var(--03);
+}
+.color--3 button {
+    color: var(--03);
+}
+
+.color--4 {
+    background: var(--04);
+}
+.color--4 button {
+    color: var(--04);
+}
+
+.color--5 {
+    background: var(--05);
+}
+.color--5 button {
+    color: var(--05);
+}
+
+.color--6 {
+    background: var(--06);
+}
+.color--6 button {
+    color: var(--06);
+}
+
+.color--7 {
+    background: var(--07);
+}
+.color--7 button {
+    color: var(--07);
+}
+
+.color--8 {
+    background: var(--08);
+}
+.color--8 button {
+    color: var(--08);
+}
+
+.color--9 {
+    background: var(--09);
+}
+.color--9 button {
+    color: var(--09);
+}
+
+.color--10{
+    background: var(--10);
+}
+.color--10 button {
+    color: var(--10);
+}
+
+.color--11 {
+    background: var(--11);
+}
+.color--11 button {
+    color: var(--11);
+}
+
+.color--12 {
+    background: var(--12);
+}
+.color--12 button {
+    color: var(--12);
+}
+
+.color--13 {
+    background: var(--13);
+}
+.color--13 button {
+    color: var(--13);
+}
+
+.color--14 {
+    background: var(--14);
+}
+.color--14 button {
+    color: var(--14);
+}
+
+.color--15 {
+    background: var(--15);
+}
+.color--15 button {
+    color: var(--15);
+}
+
+/*.color--2 .arrow-right polygon,*/
+/*.color--2 .arrow-right path,*/
+/*.color--2 .arrow-right svg {*/
+/*fill: var(--03);*/
+/*background-color: var(--03);*/
+/*}*/

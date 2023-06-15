@@ -1,0 +1,121 @@
+- 
+  var dailySliderNow = [
+    {
+      link: 2692144,
+      nowImgSrc: "~event/2nd/e-main/components/daily-slider/items/now-daily-item-1.png",
+      alt: "Normady 諾曼地女鞋MIT台灣製手工鞋 -15款"
+    }, 
+    {
+      link: 2845934,
+      nowImgSrc: "~event/2nd/e-main/components/daily-slider/items/now-daily-item-2.png",
+      alt: "ASHIYA馬胎盤精華液2+1組"
+    }, 
+    {
+      link: 2463744,
+      nowImgSrc: "~event/2nd/e-main/components/daily-slider/items/now-daily-item-3.png",
+      alt: "MONS (三件一組)羊毛針織上衣名品經典百搭"
+    }, 
+    {
+      link: 2767404,
+      nowImgSrc: "~event/2nd/e-main/components/daily-slider/items/now-daily-item-4.png",
+      alt: "Acer i7旗艦觸控筆電加送32吋顯示器"
+    }, 
+    {
+      link: 2723942,
+      nowImgSrc: "~event/2nd/e-main/components/daily-slider/items/now-daily-item-5.png",
+      alt: "WMF PROFISELECT 不沾煎鍋(28CM)+2841361WMF PALMA 餐具四件組(活動用)"
+    }, 
+    {
+      link: 2424091,
+      nowImgSrc: "~event/2nd/e-main/components/daily-slider/items/now-daily-item-6.png",
+      alt: "台塑生醫醫之方緩釋B群雙層錠60錠8+1入組(加1元多1件)"
+    },
+    {
+      link: 2836296,
+      nowImgSrc: "~event/2nd/e-main/components/daily-slider/items/now-daily-item-7.png",
+      alt: "小米手環 5限量送錶帶"
+    },
+    {
+      link: 2811743,
+      nowImgSrc: "~event/2nd/e-main/components/daily-slider/items/now-daily-item-8.png",
+      alt: "Kiehls契爾氏 金盞花植物精華化妝水 250ml"
+    },
+    {
+      link: 2602785,
+      nowImgSrc: "~event/2nd/e-main/components/daily-slider/items/now-daily-item-9.png",
+      alt: "舒味思 氣泡水-伯爵紅茶500ml(24入/箱)"
+    },
+    {
+      link: 2801207,
+      nowImgSrc: "~event/2nd/e-main/components/daily-slider/items/now-daily-item-10.png",
+      alt: "ECOVACS 科沃斯 DEEBOT OZMO 900 智慧清潔掃拖機器人"
+    },
+  ]
+
+- 
+  var dailySliderNext = [
+    {
+      nextImgSrc: "~event/2nd/e-main/components/daily-slider/items/next-daily-item-2.png",
+      alt: dailySliderNow[1].alt,
+    }, 
+      {
+        nextImgSrc: "~event/2nd/e-main/components/daily-slider/items/next-daily-item-3.png",
+        alt: dailySliderNow[2].alt,
+      },
+      {
+        nextImgSrc: "~event/2nd/e-main/components/daily-slider/items/next-daily-item-4.png",
+        alt: dailySliderNow[3].alt,
+      },
+      {
+        nextImgSrc: "~event/2nd/e-main/components/daily-slider/items/next-daily-item-5.png",
+        alt: dailySliderNow[4].alt,
+      },
+      {
+        nextImgSrc: "~event/2nd/e-main/components/daily-slider/items/next-daily-item-6.png",
+        alt: dailySliderNow[5].alt,
+      },
+      {
+        nextImgSrc: "~event/2nd/e-main/components/daily-slider/items/next-daily-item-7.png",
+        alt: dailySliderNow[6].alt,
+      },
+      {
+        nextImgSrc: "~event/2nd/e-main/components/daily-slider/items/next-daily-item-8.png",
+        alt: dailySliderNow[7].alt,
+      },
+      {
+        nextImgSrc: "~event/2nd/e-main/components/daily-slider/items/next-daily-item-9.png",
+        alt: dailySliderNow[8].alt,
+      },
+      {
+        nextImgSrc: "~event/2nd/e-main/components/daily-slider/items/next-daily-item-10.png",
+        alt: dailySliderNow[9].alt,
+      },
+      {
+        nextImgSrc: "~event/2nd/e-main/components/daily-slider/items/sold-out.png",
+        alt: "活動已結束",
+      },
+  ]
+
+
+
+section.promo__group.promo__group--daily-slider(data-title="天天開搶")
+  .daily-slider--bg
+    .layout--main
+      .promo__wrap
+        .promo__zone
+          #dailyItem.daily__item
+            each dataNow, index in dailySliderNow
+              .item__box(class= (index== 0) ? "active": "")
+                a(href= ("https://www.etmall.com.tw/i/" + dataNow.link), title= dataNow.alt)
+                  img(src= dataNow.nowImgSrc, alt= dataNow.alt)
+          .slider__wrap
+            #dailySlider.promo__slider.swiper-container
+              ul.swiper-wrapper
+                each dataNext, index in dailySliderNext
+                  li.swiper-slide
+                    a(href="", title= dataNext.alt,style="pointer-events: none")
+                      img.swiper-lazy(data-src= dataNext.nextImgSrc, alt="")
+                    .swiper-lazy-preloader.swiper-lazy-preloader-white
+            #dailySliderPrev.swiper-button-prev.daily__nav--slider.daily__nav--prev
+            #dailySliderNext.swiper-button-next.daily__nav--slider.daily__nav--next
+

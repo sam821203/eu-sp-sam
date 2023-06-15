@@ -1,0 +1,36 @@
+//- 靠頁面的isSecond變數切換第二組電梯
+//- 電梯menu切換eu的script，如有更換請在下方更新
+//- 打開u-mall選項與單雙月選項會自動轉換script src
+- var elevatorNormal = true
+- var elevatorSecond = false
+- var elevatorSp = false
+
+if isSecond
+  - elevatorNormal = false
+  - elevatorSecond = true
+if isSp
+  - elevatorNormal = false
+
+//- 一般單雙月電梯(自動切換)
+if elevatorNormal
+  if !isEven
+    if !isU
+      script(src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1104292/generateVersion20190619.js")
+    else if isU
+      //- script(src="https://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1101787/generateVersion20190619.js")
+  else if isEven
+    if !isU
+      script(src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105567/generateVersion20190619.js")
+    else if isU
+      //- script(src="https://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1102593/generateVersion20190619.js")
+
+//- 對對碰電梯(自動切換)
+if elevatorSecond
+  if !isU
+    script(src="https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114696/generateVersion20190619.js")
+  else if isU
+    //- script(src="https://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1114697/generateVersion20190619.js")
+
+//- TODO: 分館SP電梯(手動輸入)
+if elevatorSp
+  script(src="https://www.etmall.com.tw/XML/content/DMSetting/Final/201910/SP_1114026/w/generateVersion20190619.js")

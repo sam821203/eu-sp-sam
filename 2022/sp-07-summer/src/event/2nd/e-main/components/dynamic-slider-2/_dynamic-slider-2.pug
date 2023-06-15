@@ -1,0 +1,73 @@
+-
+  var tabContent1 = [
+    {
+      link: "https://www.etmall.com.tw/c3/97100" ,
+      imgSrc: "event/2nd/e-main/components/dynamic-slider-2/items/item/tab-item-1-1.png",
+      alt: "春暖花開 女神歸來",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/138084" ,
+      imgSrc: "event/2nd/e-main/components/dynamic-slider-2/items/item/tab-item-1-2.png",
+      alt: "國營口碑保養75折up",
+    },
+    {
+      link: "https://www.etmall.com.tw/p/159720" ,
+      imgSrc: "event/2nd/e-main/components/dynamic-slider-2/items/item/tab-item-1-3.png",
+      alt: "滿$888送擴香瓶",
+    },
+  ]
+-
+  var tabContent2 = [
+    {
+      link: "https://www.etmall.com.tw/p/164865" ,
+      imgSrc: "event/2nd/e-main/components/dynamic-slider-2/items/item/tab-item-2-1.png",
+      alt: "康寧▼全館滿$2000 再折$200",
+    },
+    {
+      link: "https://www.etmall.com.tw/c3/17570" ,
+      imgSrc: "event/2nd/e-main/components/dynamic-slider-2/items/item/tab-item-2-2.png",
+      alt: "舒酸定品牌狂歡慶",
+    },
+    {
+      link: "https://www.etmall.com.tw/p/164277" ,
+      imgSrc: "event/2nd/e-main/components/dynamic-slider-2/items/item/tab-item-2-3.png",
+      alt: "春夏新品 滿額大FUN送",
+    },
+  ]
+
+section.promo__group.promo__group--dynamic-slider2.m-bottom--lg(data-title="普渡拜BUY")
+  .layout--main
+    .decor__wrap
+      .decor__item.decor__item--title
+        img(src="event/2nd/e-main/components/dynamic-slider-2/decor-slider2-title.png" alt="")
+      .decor__item.decor__item--left#decorSlider2LeftGhost
+        img(src="event/2nd/e-main/components/dynamic-slider-2/decor-ghost-left.png" alt="")
+      .decor__item.decor__item--right#decorSlider2RightGhost
+        img(src="event/2nd/e-main/components/dynamic-slider-2/decor-ghost-right.png" alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          .item__wrap
+            a(href="https://media.etmall.com.tw/sp/15433/m/index.html") 
+              img(src="event/2nd/e-main/components/dynamic-slider-2/items/item/dynamic-slider2-item.png" alt="")
+          .promo__slider.swiper-container#dynamicSliderSection2
+            .swiper-wrapper
+
+//- 版型結構
+//- .product.product--dynamic
+//-   a(href="data.網址" title="data.商品名")
+//-     .product__block
+//-       .product__intro
+//-         .intro__date
+//-           span 5
+//-           span /
+//-           span 28
+//-       .product__img
+//-         img.swiper-lazy(alt="" src="https://media.etmall.com.tw/nximg/002834/2834592/2834592-1_xxl.jpg")
+//-       .product__text
+//-         .product__brand
+//-         .product__name
+//-           span data.商品名data.商品名data.商品名data.商品名data.商品名data.商品名data.商品名
+//-         .product__price
+//-           span $
+//-           span 888,888

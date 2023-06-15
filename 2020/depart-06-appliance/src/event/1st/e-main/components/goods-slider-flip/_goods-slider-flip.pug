@@ -1,0 +1,55 @@
+- 
+  var goodsFlipDataE = [
+    {
+      link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201911/SP_1113897/w/index.html",
+      imgSrc: "~event/1st/e-main/components/goods-slider-flip/items/product-1.png",
+      alt: "美妝大牌狂降最低1折up"
+    },
+    {
+      link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201910/SP_1113998/w/index.html",
+      imgSrc: "~event/1st/e-main/components/goods-slider-flip/items/product-2.png",
+      alt: "服飾/內衣狂歡3折起"
+    },
+    {
+      link: "https://www.etmall.com.tw/c3/132041",
+      imgSrc: "~event/1st/e-main/components/goods-slider-flip/items/product-3.png",
+      alt: "ZenFone 6 新色好禮多重送"
+    },
+  ]
+
+- 
+  var goodsFlipDataU = [
+    {
+      link: "http://www.u-mall.com.tw/XML/content/DMSetting/Final/201909/SP_1105066/w/index.html",
+      imgSrc: "~event/1st/e-main/components/goods-slider-flip/items/product-1.png",
+      alt: "好神拖-全館8折起搞定居家大小事"
+    },
+    {
+      link: "https://www.u-mall.com.tw/p/68011",
+      imgSrc: "~event/1st/e-main/components/goods-slider-flip/items/product-2.png",
+      alt: "台塑生醫Dr’s Formula全館55折起買大送小"
+    },
+    {
+      link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201909/SP_1105098/w/index.html",
+      imgSrc: "~event/1st/e-main/components/goods-slider-flip/items/product-3.png",
+      alt: "亞培-滿萬送吸塵器"
+    }
+  ]
+
+- var goodsFlipData = isU? goodsFlipDataU : goodsFlipDataE
+
+#goodsFlip.goods__wrap--flip
+  //- .goods__decoration.goods__decoration--right
+  //- .goods__decoration.goods__decoration--left
+  canvas#canvasFirefly.goods__background
+  .promo__slider
+    #sliderGoodsFlip.swiper-container
+      ul.swiper-wrapper
+        each data in goodsFlipData
+          li.swiper-slide
+            a(href= data.link, title= data.alt)
+              img(src= data.imgSrc, alt= data.alt)
+      //- #sliderGoodsFlipPager.swiper-pager-white.swiper-pagination
+    //- #sliderGoodsFlipPrev.swiper-button-white.swiper-button-prev
+    //- #sliderGoodsFlipNext.swiper-button-white.swiper-button-next
+

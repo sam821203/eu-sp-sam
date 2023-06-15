@@ -1,0 +1,106 @@
+.modal__wrap
+  // +pos-set(fixed, twenty)
+  // top: 50%
+  // left: 5%
+  width: 90%
+  max-width: 960px
+  border-radius: 20px
+  border: 1px solid #000
+  // transform: translateY(-50%)
+  .modal__head
+    padding: 10px 0
+    background-color: $main-color-yellow-1
+    font-size: 30px
+    text-align: center
+    border-radius: 20px 20px 0 0
+    overflow: hidden
+  .modal__body
+    +pos-set(relative, zero)
+    padding: 20px 0
+    color: $gray-dark
+    background-color: $gray-deep-light
+    border-radius: 0 0 20px 20px
+    font-size: 16px
+    .data__wrap
+      padding: 0 10px
+      height: 396px
+      font-size: 16px
+      overflow: auto
+    .data--none
+      display: none
+      +pos-set(absolute, zero)
+      top: 50%
+      left: 50%
+      width: 100%
+      text-align: center
+      transform: translate(-50%, -50%)
+    &.none
+      .data--none
+        display: block
+    .modal__info
+      padding: 20px 10px 0
+      a
+        color: $main-color-blue-2
+        text-decoration: underline
+        &:hover,
+        &:active,
+          text-decoration: none
+
+  +breakpoint-min($min-width-lg)
+    .modal__head,
+    .modal__body
+      padding: 20px 0
+      .data__wrap
+        font-size: 20px
+        overflow: auto
+      .modal__info
+        font-size: 16px
+
+.rwd-table
+  width: 100%
+  th
+    display: none
+    vertical-align: middle
+  td
+    display: flex
+    padding: 5px
+    width: 100%
+    vertical-align: middle
+    span,
+    &::before
+      display: inline-block
+      width: 49%
+      text-align: right
+    &::before
+      content: attr(data-th)
+      text-align: left
+    &:first-child
+      padding-top: 10px
+    &:last-child
+      padding-bottom: 10px
+      border-bottom: 1px solid $gray-dark
+  +breakpoint-min($min-width-lg)
+    th,
+    td,
+      display: table-cell
+      width: auto
+      text-align: left
+      &:first-child,
+      &:last-child,
+        padding: 15px
+      &:last-child
+        border-bottom: 0
+      &:nth-child(2)
+        width: 26%
+        text-align: center
+    td
+      &::before
+        display: none
+      span
+        display: inline
+    tr
+      &:first-child
+        border-top: 1px solid $gray-dark
+        border-bottom: 1px solid $gray-dark
+    tr:nth-of-type(2n)
+      background: $gray-light

@@ -1,0 +1,166 @@
+-
+  var promoItemE = [
+    {
+      link: "https://www.etmall.com.tw/Activity/CouponReceiveAll",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-0-1.png",
+      alt: "領折價劵",
+    },
+    {
+      link: "https://www.etmall.com.tw/member/taskActivity",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-0-2.png",
+      alt: "挑戰任務",
+    },
+    //- slider start
+    {
+      link: "https://www.etmall.com.tw/member/taskActivity",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-1.png",
+      alt: "APP下單滿額送$300",
+    },
+    {
+      link: "https://www.etmall.com.tw/member/taskActivity",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-1.png",
+      alt: "APP下單滿額送$300",
+    },
+    //- slider end
+    {
+      link: "https://media.etmall.com.tw/sp/13474/m/index.html",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-2.png",
+      alt: "新會員首購滿額抽SPA體驗劵",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/13389/m/index.html",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-3.png",
+      alt: "Atome最高現折$2,688",
+    },
+    //- slider start
+    {
+      link: "https://media.etmall.com.tw/sp/13263/m/index.html",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-4.png",
+      alt: "嘉義優鮮迎春賞味祭",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/13263/m/index.html",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-4.png",
+      alt: "嘉義優鮮迎春賞味祭",
+    },
+    //- slider end
+    {
+      link: "https://media.etmall.com.tw/sp/13103/m/index.html",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-5.png",
+      alt: "銀行優惠最高回饋40%",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/13234/m/index.html",
+      imgSrc: "event/2nd/e-main/components/promo-event/items/promo-6.png",
+      alt: "全站消費不限金額送KFC優惠券",
+    },
+    //- slider start
+    //- {
+    //-   link: "https://media.etmall.com.tw/sp/12373/m/index.html",
+    //-   imgSrc: "event/2nd/e-main/components/promo-event/items/promo-7-1.png",
+    //-   alt: "【指定銀行最高享】$10,168刷卡金",
+    //- },
+    //- {
+    //-   link: "https://media.etmall.com.tw/sp/12373/m/index.html#chailease",
+    //-   imgSrc: "event/2nd/e-main/components/promo-event/items/promo-7-2.png",
+    //-   alt: "【中租零卡分期】零卡分期 最高享$2,400東森提貨劵",
+    //- },
+    //- slider end
+    //- slider start
+    //- {
+    //-   link: "https://www.etmall.com.tw/activity/dl/votepopularityranking/Localfruit",
+    //-   imgSrc: "event/2nd/e-main/components/promo-event/items/promo-8-1.png",
+    //-   alt: "東森農場投票抽好禮",
+    //- },
+    //- {
+    //-   link: "",
+    //-   imgSrc: "event/2nd/e-main/components/promo-event/items/promo-8-2.png",
+    //-   alt: "拼出萬元好禮",
+    //- },
+    //- {
+    //-   link: "",
+    //-   imgSrc: "event/2nd/e-main/components/promo-event/items/promo-8-3.png",
+    //-   alt: "APP下單滿$1500登記抽氣炸鍋",
+    //- },
+    //- slider end
+  ]
+
+-
+  var promoItemU = [
+    {
+      link: "https://media.u-mall.com.tw/sp/9704/m/index.html",
+      //- imgSrc: "event/2nd/u-main/components/promo-event/items/promo-1.png",
+      alt: "23家銀行 最高回饋15%"
+    },
+    {
+      link: "https://media.u-mall.com.tw/sp/9704/m/index.html",
+      //- imgSrc: "event/2nd/u-main/components/promo-event/items/promo-2.png",
+      alt: "花旗滿$20,000送$2,000"
+    },
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale",
+      //- imgSrc: "event/2nd/u-main/components/promo-event/items/promo-3.png",
+      alt: "限時瘋搶"
+    },
+  ]
+
+//- - var promoItem = isU ? promoItemE : promoItemU
+
+//- TODO: 如果promo不和hero綁一起時要有自己的section和layout--main
+section.promo__group.promo__group--promo-event.m-bottom--lg
+  .decor__block
+    .decor__item
+      img(src="event/2nd/e-main/components/promo-event/decor-promo-event-1.png", alt="")
+    .decor__item
+      img(src="event/2nd/e-main/components/promo-event/decor-promo-event-2.png", alt="")
+
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        .event__wrap
+          .promo__block
+            ul.promo__box
+              each data, index in promoItemE
+                if index < 2
+                  li.promo__item
+                    a(href= data.link, title= data.alt)
+                      img(src= data.imgSrc, alt= data.alt)
+            .event__wrap
+              ul
+                each data, index in promoItemE
+                  if index == 2
+                    li.promo__item
+                      a(href= data.link, title=data.alt)
+                        img(src= data.imgSrc, data.alt)
+              ul.event__box
+                each data, index in promoItemE
+                  if index == 4
+                    li.promo__item
+                      a(href= data.link, title= data.alt)
+                        img(src= data.imgSrc, alt= data.alt)
+              ul.event__item
+                each data, index in promoItemE
+                  if index == 5
+                    li.promo__item
+                      a(href= data.link, title= data.alt).full-parent
+                        img(src= data.imgSrc, alt= data.alt)
+            .event__block
+              .swiper-container.container--promo-event
+                ul.swiper-wrapper
+                  each data, index in promoItemE
+                    if index >= 6 && index < 8
+                      li.swiper-slide
+                        a(href= data.link, title=data.alt)
+                          img(src= data.imgSrc, data.alt)
+              ul.event__box
+                each data, index in promoItemE
+                  if index == 8
+                    li.promo__item
+                      a(href= data.link, title= data.alt)
+                        img(src= data.imgSrc, alt= data.alt)
+              ul.event__item
+                each data, index in promoItemE
+                  if index == 9
+                    li.promo__item
+                      a(href= data.link, title= data.alt).full-parent
+                        img(src= data.imgSrc, alt= data.alt)

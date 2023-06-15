@@ -1,0 +1,187 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero__wrap
+  +pos-set(relative, second)
+  overflow: hidden
+
+  .hero__zone
+    +pos-set(relative, zero)
+        
+  // .hero__block
+
+  .hero__box
+    +pos-set(relative, zero)                        
+
+  .hero__title
+    &--main
+      +pos-set(relative, zero)
+      overflow: hidden
+      img
+        transform: translate(0.7%, -3.5%) scale(1.17)
+      &.animated
+        animation: small-open 1s both ease-out
+
+  .title-decoration__wrap
+    +pos-set(absolute, zero, 0, 0)
+    width: 100%
+    height: 100%
+    pointer-events: none
+    .title__decoration
+      +pos-set(absolute, zero)
+      &.decoration--blink
+        padding-top: 17%
+        width: 11.73%
+        +bg-set(url(~event/1st/e-main/components/hero-section/title-decoration.png))
+        animation: key-show-hide 0.6s infinite alternate linear both
+        &.title__decoration
+          &--left
+            top: 40%
+            left: 2%
+            transform: scale(0.42)
+            animation-delay: 1s
+          &--right-1
+            top: 36%
+            right: 3%
+            transform: scale(0.42)
+            animation-delay: 1.5s
+          &--right-2
+            top: 45%
+            right: 0%
+            transform: scale(0.22)
+            animation-delay: 1.2s
+
+          +breakpoint-min($min-width-lg)
+            &--left
+              top: 47%
+              transform: scale(0.8)
+            &--right-1
+              top: 42%
+              transform: scale(0.8)
+            &--right-2
+              top: 49%
+              transform: scale(0.5)
+
+          +breakpoint-min($min-width-xl)
+            &--left
+              top: 240px
+              transform: scale(1)
+            &--right-1
+              top: 210px
+              transform: scale(1)
+            &--right-2
+              top: 240px
+
+      &--top
+        top: 20%
+        right: 6.6%
+        padding-top: 14%
+        width: 12%
+        +bg-set(url(~event/1st/e-main/components/hero-section/decoration-hat.png), contain)
+        &.animated
+          animation: crown-fall 2s both
+
+      &--bottom
+        top: 30%
+        left: 0
+        padding-top: 25%
+        width: 100%
+        +bg-set(url(~event/1st/e-main/components/hero-section/decoration-light.png), contain)
+
+      +breakpoint-min($min-width-xl)
+        &--top
+          top: 92px
+        &--bottom
+          top: 145px
+
+  .promo__block
+    +pos-set(relative, second)
+    padding-top: 11.5%
+    +bg-set(url(~event/1st/e-main/components/hero-section/bg-promo-event.png), cover)
+
+    .promo__box
+      padding: 3.5% 10% 3.5%
+
+    +breakpoint-min($min-width-xl)
+      padding-top: 120px
+      +bg-set(url(~event/1st/e-main/components/hero-section/bg-promo-event-web.png))
+      .promo__zone
+        +display-flex(">div")
+        padding: 0 20px 8px 60px
+
+      .goods__wrap--flip
+        +flex(0, 0, 49%)
+      .promo__box
+        +flex(0, 0, 51%)
+        padding: 10px 0 0 0
+
++key-show-hide
+
+@keyframes crown-fall
+  0%
+    transform: translate(0, -200%) rotate(100deg)
+  100%
+    transform: translate(0, 0) rotate(0)
+
+@keyframes small-open
+  from
+    transform: scale(0)
+    opacity: 0
+  to
+    transform: scale(1)
+    opacity: 1
+
+// @keyframes flash-breath
+//   from
+//     filter: brightness(80%)
+//   to
+//     filter: brightness(250%)
+
+// @keyframes scale-breath
+//   from
+//     transform: rotate(0) scale(1)
+//   25%
+//     transform: rotate(90deg) scale(0.8)
+//   50%
+//     transform: rotate(180deg) scale(1)
+//   75%
+//     transform: rotate(270deg) scale(0.9)
+//   to
+//     transform: rotate(360deg) scale(1)
+
+// @keyframes flipInX
+//   from
+//     -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg)
+//     transform: perspective(400px) rotate3d(1, 0, 0, 90deg)
+//     -webkit-animation-timing-function: ease-in
+//     animation-timing-function: ease-in
+//     opacity: 0
+//   40%
+//     -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg)
+//     transform: perspective(400px) rotate3d(1, 0, 0, -20deg)
+//     -webkit-animation-timing-function: ease-in
+//     animation-timing-function: ease-in
+//   60%
+//     -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg)
+//     transform: perspective(400px) rotate3d(1, 0, 0, 10deg)
+//     opacity: 1
+//   80%
+//     -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg)
+//     transform: perspective(400px) rotate3d(1, 0, 0, -5deg)
+//   to
+//     -webkit-transform: perspective(400px)
+//     transform: perspective(400px)
+
+// @keyframes breathing-light
+//   0%, 100%
+//     filter: brightness(100%)
+
+//   25%
+//     filter: brightness(200%) blur(2px)
+
+//   50%
+//     filter: brightness(300%) blur(4px)
+
+//   75%
+//     filter: brightness(200%) blur(2px)
+

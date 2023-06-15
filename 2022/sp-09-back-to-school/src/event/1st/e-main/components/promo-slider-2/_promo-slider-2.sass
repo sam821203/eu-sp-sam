@@ -1,0 +1,27 @@
+.promo__group--promo-slider-2
+  +pos-set(relative, zero)
+  overflow: hidden
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/promo-slider-2/bg-promo-slider-2.png), 100%)
+    +breakpoint-min($min-width-xl)
+      background-size: auto
+    .promo__zone
+      +aspect-ratio(953, 1093)
+      .promo__block
+        .swiper-container
+          height: 100%
+        .swiper-slide,
+        .swiper-slide-duplicate
+          width: 31%
+          a
+            transition: all .6s
+            opacity: 0
+        .swiper-slide-active,
+        .swiper-slide-duplicate-active
+          z-index: map-get($zindex, base)
+          a
+            transition: all 1.6s
+            filter: brightness(105%)
+            opacity: 1
+            +breakpoint-min($min-width-xl)
+              width: auto

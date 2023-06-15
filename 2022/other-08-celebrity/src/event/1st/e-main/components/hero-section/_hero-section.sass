@@ -1,0 +1,39 @@
+.hero
+  +pos-set(relative, zero)
+  overflow: hidden
+  .hero__wrap
+    .hero__zone
+      +aspect-ratio(960, 702)
+    .hero__title
+      +pos-set(absolute, base, 4%, 0)
+      width: 100%
+      .title__sub
+        +pos-set(absolute, base, 3%)
+        right: -1%
+        width: 70%
+        transform: scale(1)
+        animation: sub-stamp .5s 1s both, sub-thump-up 2.2s 1.8s ease-in-out 1
+        +breakpoint-min($min-width-xl)
+          top: 6%
+          right: 0
+          width: auto
+
+@keyframes sub-stamp
+  0%
+    opacity: 0
+    transform: scale(10)
+  1%
+    opacity: 1
+  80%
+    opacity: 1
+    transform: scale(.8)
+  100%
+    opacity: 1
+    transform: scale(1)
+
+@keyframes sub-thump-up
+  0%, 15.5%, 30%, 100%
+    transform-origin: 90% 0%
+    transform: rotate(0)
+  9%, 21.5%
+    transform: rotate(4deg)

@@ -1,0 +1,84 @@
+.promo__group--tab
+  .tab__wrap
+    +display-flex
+    +bg-set(url("~event/1st/e-sp-big/components/tab-section/bg-tab-m.png"), 99%)
+
+    .tab__zone
+      +flex(0, 1, 34.2%)
+      padding: 1.1%
+    .content__zone
+      +flex(0, 1, 65.5%)
+      padding: 2% 1.4% 2% 0
+      .content__block,
+      .content__box
+        width: 100%
+        height: 100%
+
+  .tab__item
+    padding: 0.5%
+    cursor: pointer
+    img:not(:first-child)
+      display: none
+    &.active
+      cursor: default
+      img
+        &:first-child
+          display: none
+        &:nth-child(2)
+          display: block
+    &:active,
+    &:hover
+      filter: brightness(120%)
+    &.active
+      &:active,
+      &:hover
+        filter: brightness(100%)
+
+  .content__box
+    display: none
+    &.active
+      display: block
+    .content__item
+      float: left
+      padding: 1%
+      width: 50%
+      &:active,
+      &:hover
+        filter: contrast(150%)
+
+  +breakpoint-min($min-width-xl)
+    .tab__wrap
+      display: block
+      +bg-set(url("~event/1st/e-sp-big/components/tab-section/bg-tab.png"),903px 603px , center, 14px)
+
+      .tab__zone,
+      .content__zone
+        margin-left: 4.5%
+        padding: 0
+        width: 90%
+        .tab__box
+          +display-flex
+          flex-wrap: wrap
+          justify-content: center
+
+    .tab__item
+      +flex(0, 0, 25%)
+      padding: 0
+      height: 65px
+      img
+        &:first-child
+          display: none
+        &:nth-child(3)
+          display: block
+      &.active
+        img
+          &:nth-child(2),
+          &:nth-child(3)
+            display: none
+          &:last-child
+            display: block
+
+    .content__box
+      padding: 5px 20px 15px
+      .content__item
+        width: 33.33%

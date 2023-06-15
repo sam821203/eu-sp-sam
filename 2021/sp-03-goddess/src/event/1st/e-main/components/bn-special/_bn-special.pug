@@ -1,0 +1,192 @@
+//- 當需要跨月時(前一個月)，填入的資料由這邊設定，將所有月份資料填上，
+//- 再由JS決定月份顯示哪些li(li.swiper-slide.month--prev、li.swiper-slide.month--now)
+-
+  var bankLinkPrev = {
+    etmall: "https://media.etmall.com.tw/sp/7800/m/index.html",
+    umall: "https://media.u-mall.com.tw/sp/7801/m/index.html"
+  }
+
+-
+  var bankLinkNext = {
+    etmall: "https://media.etmall.com.tw/sp/7433/m/index.html",
+    umall: "https://media.u-mall.com.tw/sp/7434/m/index.html"
+  }
+
+- var bankInfoPrev = isU ? bankLinkPrev.umall : bankLinkPrev.etmall
+- var bankInfoNext = isU ? bankLinkNext.umall : bankLinkNext.etmall
+//- 銀行方便複製貼上用
+-
+  var bankPageName = {
+    "玉山": '#esun',
+    "玉山銀行": '#esun',
+
+    "中信": "#ctbc",
+
+    "國泰": "#cathay",
+    "國泰世華銀行": "#cathay",
+
+    "台新": "#Taishin",
+    "台新銀行": "#Taishin",
+
+    "花旗": "#citi",
+    "花旗銀行": "#citi",
+
+    "富邦": "#taipeifubon",
+    "富邦銀行": "#taipeifubon",
+
+    "永豐": "#sinopac",
+    "永豐銀行": "#sinopac",
+
+    "聯邦": "#union",
+    "聯邦商銀": "#union",
+
+    "一銀": "#one",
+    "第一銀行": "#one",
+
+    "遠銀": "#fareasten",
+    "遠東銀行": "#fareasten",
+
+    "滙豐": "#hsbc",
+    "滙豐銀行": "#hsbc",
+
+    "華南": "#huanan",
+    "華南銀行": "#huanan",
+
+    "新光": "#shinkong",
+    "新光銀行": "#shinkong",
+
+    "星展": "#dbs",
+    "星展銀行": "#dbs",
+
+    "合庫": "#tcb",
+    "合作金庫": "#tcb",
+    "合作金庫銀行": "#tcb",
+
+    "凱基": "#kgi",
+    "凱基銀行": "#kgi",
+
+    "上銀": "#shanghai",
+    "上海銀行": "#shanghai",
+
+    "土銀": "#landbank",
+    "土地銀行": "#landbank",
+
+    "日盛": "#jihsun",
+    "日盛銀行": "#jihsun",
+
+    "臺灣企銀": "#tbb",
+
+    "臺銀": "#bot",
+    "臺灣銀行": "#bot",
+
+    "陽信": "#sunnybank",
+    "陽信銀行": "#sunnybank",
+
+    "樂天": "#rakuten",
+    "樂天銀行": "#rakuten",
+  }
+
+
+//- TODO: 給別的component引入時不需要前兩行要切換
+section#bnSpecial.promo__group.promo__group--bn-special.m-bottom--md(data-title="銀行活動")
+  .layout--main
+    //- .promo__title.block--center.text--center
+    //-   img(src="~event/1st/e-main/components/bn-special/title-special.png", alt="銀行活動")
+
+    #bnSpecialPromoWrap.promo__wrap
+      //- .pic__box
+        //- a.month--prev(href="", title="")
+        //-   img(src="~event/1st/e-main/components/bn-special/item-special-p-0.png" alt="22間銀行最高回饋$3000")
+        //- a.month--next(href="", title="")
+        //-   img(src="~event/1st/e-main/components/bn-special/item-special-n-0.png" alt="22間銀行最高回饋$3300")
+      .slider__box
+        .promo__slider
+          #sliderSpecial.swiper-container
+            ul.swiper-wrapper
+              //- prev
+              li.swiper-slide.month--prev
+                a(href= bankInfoPrev + bankPageName["合作金庫銀行"], title="合作金庫銀行全月獻禮滿$3,500送$200")
+                  img.swiper-lazy(data-src="~event/1st/e-main/components/bn-special/items/bank-p-1.png", alt="")
+                  .swiper-lazy-preloader.swiper-lazy-preloader-white
+              li.swiper-slide.month--prev
+                a(href= bankInfoPrev + bankPageName["遠東銀行"], title="遠東銀行全月獻禮滿$6,000享3%")
+                  img.swiper-lazy(data-src="~event/1st/e-main/components/bn-special/items/bank-p-2.png", alt="")
+                  .swiper-lazy-preloader.swiper-lazy-preloader-white
+              li.swiper-slide.month--prev
+                a(href= bankInfoPrev + bankPageName["國泰世華銀行"], title="國泰世華銀行全月獻禮滿$12,000送$500")
+                  img.swiper-lazy(data-src="~event/1st/e-main/components/bn-special/items/bank-p-3.png", alt="")
+                  .swiper-lazy-preloader.swiper-lazy-preloader-white
+              li.swiper-slide.month--prev
+                a(href= bankInfoPrev + bankPageName["臺灣企銀"], title="臺灣企銀全月獻禮滿$12,000送$700")
+                  img.swiper-lazy(data-src="~event/1st/e-main/components/bn-special/items/bank-p-4.png", alt="")
+                  .swiper-lazy-preloader.swiper-lazy-preloader-white
+              li.swiper-slide.month--prev
+                a(href= bankInfoPrev + bankPageName["花旗銀行"], title="花旗銀行全月獻禮滿$12,000送$1,000")
+                  img.swiper-lazy(data-src="~event/1st/e-main/components/bn-special/items/bank-p-5.png", alt="")
+                  .swiper-lazy-preloader.swiper-lazy-preloader-white
+              li.swiper-slide.month--prev
+                a(href= bankInfoPrev + bankPageName["聯邦商銀"], title="聯邦商銀全月獻禮滿$15,000享5%")
+                  img.swiper-lazy(data-src="~event/1st/e-main/components/bn-special/items/bank-p-6.png", alt="")
+                  .swiper-lazy-preloader.swiper-lazy-preloader-white
+              li.swiper-slide.month--prev
+                a(href= bankInfoPrev + bankPageName["玉山銀行"], title="玉山銀行全月獻禮滿$15,000送$800")
+                  img.swiper-lazy(data-src="~event/1st/e-main/components/bn-special/items/bank-p-7.png", alt="")
+                  .swiper-lazy-preloader.swiper-lazy-preloader-white
+              li.swiper-slide.month--prev
+                a(href= bankInfoPrev + bankPageName["華南銀行"], title="華南銀行全月獻禮滿$15,000送$900")
+                  img.swiper-lazy(data-src="~event/1st/e-main/components/bn-special/items/bank-p-8.png", alt="")
+                  .swiper-lazy-preloader.swiper-lazy-preloader-white
+              li.swiper-slide.month--prev
+                a(href= bankInfoPrev + bankPageName["永豐銀行"], title="永豐銀行全月獻禮滿$25,000送$1,500")
+                  img.swiper-lazy(data-src="~event/1st/e-main/components/bn-special/items/bank-p-9.png", alt="")
+                  .swiper-lazy-preloader.swiper-lazy-preloader-white
+              li.swiper-slide.month--prev
+                a(href= bankInfoPrev + bankPageName["星展銀行"], title="星展銀行全月獻禮滿$30,000送$2,600")
+                  img.swiper-lazy(data-src="~event/1st/e-main/components/bn-special/items/bank-p-10.png", alt="")
+                  .swiper-lazy-preloader.swiper-lazy-preloader-white
+
+              //- next
+              li.swiper-slide.month--next
+                a(href= bankInfoNext + bankPageName["凱基銀行"], title="凱基銀行全月獻禮滿$1,000送$180")
+                  img.swiper-lazy(data-src="~event/1st/e-main/components/bn-special/items/bank-n-1.png", alt="")
+                  .swiper-lazy-preloader.swiper-lazy-preloader-white
+              li.swiper-slide.month--next
+                a(href= bankInfoNext + bankPageName["兆豐銀行"], title="兆豐銀行全月獻禮滿$1,000送$200")
+                  img.swiper-lazy(data-src="~event/1st/e-main/components/bn-special/items/bank-n-2.png", alt="")
+                  .swiper-lazy-preloader.swiper-lazy-preloader-white
+              li.swiper-slide.month--next
+                a(href= bankInfoNext + bankPageName["臺灣銀行"], title="臺灣銀行全月獻禮滿$1,500送$300")
+                  img.swiper-lazy(data-src="~event/1st/e-main/components/bn-special/items/bank-n-3.png", alt="")
+                  .swiper-lazy-preloader.swiper-lazy-preloader-white
+              li.swiper-slide.month--next
+                a(href= bankInfoNext + bankPageName["國泰世華銀行"], title="國泰世華銀行全月獻禮滿$12,000送$500")
+                  img.swiper-lazy(data-src="~event/1st/e-main/components/bn-special/items/bank-n-4.png", alt="")
+                  .swiper-lazy-preloader.swiper-lazy-preloader-white
+              li.swiper-slide.month--next
+                a(href= bankInfoNext + bankPageName["玉山銀行"], title="玉山銀行全月獻禮滿$15,000送$800")
+                  img.swiper-lazy(data-src="~event/1st/e-main/components/bn-special/items/bank-n-5.png", alt="")
+                  .swiper-lazy-preloader.swiper-lazy-preloader-white
+              li.swiper-slide.month--next
+                a(href= bankInfoNext + bankPageName["華南銀行"], title="華南銀行期間限定滿$16,888送$1,688")
+                  img.swiper-lazy(data-src="~event/1st/e-main/components/bn-special/items/bank-n-6.png", alt="")
+                  .swiper-lazy-preloader.swiper-lazy-preloader-white
+              li.swiper-slide.month--next
+                a(href= bankInfoNext + bankPageName["花旗銀行"], title="花旗銀行期間限定滿$20,000送$2,000")
+                  img.swiper-lazy(data-src="~event/1st/e-main/components/bn-special/items/bank-n-7.png", alt="")
+                  .swiper-lazy-preloader.swiper-lazy-preloader-white
+              li.swiper-slide.month--next
+                a(href= bankInfoNext + bankPageName["聯邦商銀"], title="聯邦商銀期間限定滿$25,000送$2,500")
+                  img.swiper-lazy(data-src="~event/1st/e-main/components/bn-special/items/bank-n-8.png", alt="")
+                  .swiper-lazy-preloader.swiper-lazy-preloader-white
+              li.swiper-slide.month--next
+                a(href= bankInfoNext + bankPageName["永豐銀行"], title="永豐銀行期間限定滿$38,000送$4,000")
+                  img.swiper-lazy(data-src="~event/1st/e-main/components/bn-special/items/bank-n-9.png", alt="")
+                  .swiper-lazy-preloader.swiper-lazy-preloader-white
+              li.swiper-slide.month--next
+                a(href= bankInfoNext + bankPageName["新光銀行"], title="新光銀行登錄驚喜抽滿$8,888送$888")
+                  img.swiper-lazy(data-src="~event/1st/e-main/components/bn-special/items/bank-n-10.png", alt="")
+                  .swiper-lazy-preloader.swiper-lazy-preloader-white
+
+          //- #sliderSpecialPager.swiper-pagination-custom.swiper-pagination
+        //- #sliderSpecialPrev.swiper-button-white.swiper-button-prev.special__nav.special__nav--prev
+        //- #sliderSpecialNext.swiper-button-white.swiper-button-next.special__nav.special__nav--next

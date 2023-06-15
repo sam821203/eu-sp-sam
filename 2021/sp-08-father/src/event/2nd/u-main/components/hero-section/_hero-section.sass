@@ -1,0 +1,136 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero__wrap
+  +pos-set(relative, base)
+  padding-top: 3%
+  overflow: hidden
+  +breakpoint-min($min-width-xl)
+    padding-top: 90px
+
+  .hero__zone
+    .layout--web
+      display: none
+    +breakpoint-min($min-width-xl)
+      .layout--web
+        display: block
+        .decoration--hero
+          z-index: map-get($zindex, base)
+          top: 80px
+          left: calc(50% - 475px)
+          opacity: 0
+          .js-loading &
+            animation: fade-up-web 3s 1.5s infinite
+
+      .layout--main
+        display: none
+
+      .hero__title
+        &--web
+          height: 499px
+          text-align: center
+          img
+            opacity: 0
+            .js-loading &
+              animation: zoom-in 0.5s ease-in both
+          .decoration--title
+            z-index: map-get($zindex, third)
+            top: 230px
+            left: calc(50% - 140px)
+            width: 209px
+            opacity: 0
+            .js-loading &
+              animation: go-left 0.3s 0.55s ease-in both, tada 2.5s 1.8s infinite
+
+  .hero__block
+    +pos-set(relative)
+
+  .hero__box
+    +pos-set(relative)
+    +aspect-ratio(838, 795)
+    margin-left: auto
+    margin-right: auto
+    width: 87.29%
+    +breakpoint-min($min-width-xl)
+      display: none
+
+    .decoration--hero
+      top: 8%
+      left: -1%
+      width: 92%
+      opacity: 0
+      .js-loading &
+        animation: fade-up 3s 1s infinite both
+
+  .hero__title
+    &--main
+      +pos-set(relative, second)
+      width: 100%
+      img
+        opacity: 0
+        .js-loading &
+          animation: zoom-in 0.5s ease-in both
+
+      .decoration--title
+        z-index: map-get($zindex, third)
+        top: 54%
+        left: 30%
+        width: 23.5%
+        opacity: 0
+        .js-loading &
+          animation: go-left 0.3s 0.55s both, tada 2.5s 2s infinite
+
+@keyframes tada
+  0%
+    transform: scaleX(1)
+  5%, 10%
+    transform: scale3d(.9, .9, .9) rotate(-3deg)
+  15%, 25%, 35%, 45%
+    transform: scale3d(1.1, 1.1, 1.1) rotate(3deg)
+  20%, 30%, 40%
+    transform: scale3d(1.1, 1.1, 1.1) rotate(-3deg)
+  50%, 100%
+    transform: scaleX(1)
+
+@keyframes go-left
+  0%
+    transform: translate(-300%, 50%)
+    opacity: 0
+  10%
+    opacity: 1
+
+  100%
+    transform: translate(0, 0)
+    opacity: 1
+
+@keyframes zoom-in
+  0%
+    transform: scale(0)
+    opacity: 0
+  100%
+    transform: scale(1)
+    opacity: 1
+
+@keyframes fade-up
+  0%
+    transform: translate(-5%, 10%) scale(0.5)
+    opacity: 0
+  90%
+    transform: translateY(0) scale(1)
+    opacity: 1
+  100%
+    transform: translateY(0) scale(1)
+    opacity: 0
+
+@keyframes fade-up-web
+  0%
+    transform: translateY(10%) scale(0.95)
+    opacity: 0
+  10%
+    opacity: 1
+  60%
+    transform: translateY(0) scale(1)
+    opacity: 1
+  80%, 100%
+    transform: translateY(0) scale(1)
+    opacity: 0

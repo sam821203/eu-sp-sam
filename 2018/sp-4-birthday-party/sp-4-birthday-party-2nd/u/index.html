@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<head>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		* {
+ 		 box-sizing: border-box; }
+  		*:before, *:after {
+    		box-sizing: border-box; }
+	    a {
+	    	display: block;
+	    	line-height: 0;
+	    	text-decoration: none;
+	    }
+	    h1 {
+	    	line-height: 0;
+	    }
+		ul {
+			list-style: none;
+		}
+		img {
+			border: 0;
+		}
+		main, header, footer, section {
+			display: block;
+		}
+		body {
+			width: 100%;
+			margin: 0;
+  			padding: 0;
+			background-color: #ec3945;
+		  	font-family: Arial, Helvetica, 'LiHei', "Microsoft JhengHei", "PMingLiU", "微軟正黑體", "新細明體", sans-serif;  
+		}
+		.clearfix:after {
+			content: '';
+			display: block;
+			clear: both;
+			*zoom: 1;
+		}
+
+		.sp__wrap {
+			position: relative;
+			width: 100%;
+		}
+
+		.sp__wrap:after {
+			content: '';
+			position: absolute;
+			z-index: 0;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: center top url(bg.jpg) no-repeat;
+			background-size: cover;
+			animation: 5s flash infinite alternate;
+		}
+
+		@keyframes flash {
+			from ,to {
+				opacity: 1;
+			}
+			50% {
+				opacity: 0;
+			}
+		}
+
+		.sp--1260 {
+			position: relative;
+			width: 1260px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		svg {
+			position: absolute;
+			z-index: 10;
+			width: 25px;
+			height: 25px;
+		}
+/* ================= header ================= */
+		.sp-logo {
+			position: absolute;
+			z-index: 20;
+			top: 20px;
+			left: 0;
+			cursor: pointer;
+		}
+
+		.side-info {
+			position: absolute;
+			z-index: 30;
+			top: 519px;
+			right: 2%;
+			width: 186px;
+		}
+
+		.side-info img {
+			width: 100%;
+		}
+		
+/* ================= main-visual ================= */
+		.sp-title {
+			position: relative;
+			z-index: 1;
+			padding-top: 7px;
+		}
+
+		.main-title {
+			position: relative;
+			z-index: 5;
+		}
+
+		.main-title > img:first-child {
+			position: relative;
+			z-index: 0;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+
+		.main-title > img:nth-child(2) {
+			position: absolute;
+			z-index: 8;
+			top: -7%;
+			left: 47%;
+			margin-left: -233px;
+			margin-top: 55px;
+		}
+		.main-title > a {
+			position: absolute;
+			z-index: 9;
+			top: 4%;
+			left: 56.1%;
+		}
+		.main-title > a:hover {
+			transform: scale(1.05); 
+		}
+		.main-title > a:hover img {
+			filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2)) drop-shadow( 0 3px 3px rgba(0,0,0,0.35));
+		}
+		.main-title > a > img:nth-child(1) {
+			animation: 3s 0.5s self-shake ease-out infinite;
+		}
+		.main-title > a > img:nth-child(2) {
+			position: absolute;
+			z-index: 9;
+			top: 43.2%;
+			left: 12%;
+			animation: 3s 0.5s self-scale ease-out infinite;
+		}
+
+		.cls-title {
+			top: 48%;
+			right: 27%;
+			fill: #fadbda;
+			transform: rotate(35deg);
+		}
+
+		@keyframes self-scale {
+			from ,50%, to{
+				transform: scale(1)  translateX(0)
+			} 
+
+			3.5% {
+			transform: scale(1) translateX(-6px) rotateY(-9deg);
+			}
+
+			9.5% {
+			transform: scale(1) translateX(5px) rotateY(7deg);
+			}
+
+			16.5% {
+			transform: scale(1) translateX(-3px) rotateY(-5deg);
+			}
+
+			22.5% {
+			transform: scale(1) translateX(2px) rotateY(3deg);
+			}
+			25% {
+			transform: scale(1) translateX(0);
+			}
+			62% {
+			transform: scale(1.2) translateX(0);
+			}
+			75% {
+			transform: scale(1) translateX(0);
+			}
+			87% {
+			transform: scale(1.2) translateX(0);
+			}
+		}
+
+		@keyframes self-shake {
+		  0% {
+		    transform: translateX(0);
+		  }
+
+		  3.5% {
+		    transform: translateX(-6px) rotateY(-9deg);
+		  }
+
+		  9.5% {
+		    transform: translateX(5px) rotateY(7deg);
+		  }
+
+		  16.5% {
+		    transform: translateX(-3px) rotateY(-5deg);
+		  }
+
+		  22.5% {
+		    transform: translateX(2px) rotateY(3deg);
+		  }
+
+		  25% {
+		    transform: translateX(0);
+		  }
+		}
+
+/* ================= subtitle ================= */
+		.subtitle {
+			position: absolute;
+			z-index: 5;
+			top: 57px;
+			right: 2%;
+			width: 290px;
+			height: 450px;
+			padding-top: 20px;
+			color: #f2d69f;
+			background-color: #5d3222;
+			font-size: 18px;
+			text-align: center;
+		}
+
+		.subtitle h2 {
+			font-weight: normal;
+		}
+
+		.subtitle a {
+			position: relative;
+			z-index: 35;
+		}
+
+		.subtitle img {
+			margin-top: 10px;
+			transition: all 0.3s;
+		}
+
+		.subtitle img:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 8px 13px rgba(0,0,0,0.2), 0 3px 3px rgba(0,0,0,0.35);
+		}
+/* ================= bg-dec ================= */
+		.bg-dec {
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 507px;
+		}
+/* ================= main0 ================= */
+		.main0 {
+			position: relative;
+			z-index: 1;
+			width: 100%;
+			min-width: 1260px;
+			height: 200px;
+			background: center top url(bg-main0.jpg) repeat-x;
+		}
+
+		.main0--info-a {
+			position: absolute;
+			z-index: 1;
+			top: -107px;
+			left: 28px;
+			width: 318px;
+			height: 402px;
+		}
+
+		.main0--info-a img {
+			position: absolute;
+		}
+
+		.main0--info-a img:first-child {
+			z-index: 2;
+			top: 0;
+			left: 0;
+			filter: drop-shadow(8px 3px 5px rgba(0,0,0,.35));
+			
+		}
+		.main0--info-a img:last-child {
+			z-index: 1;
+			top: 4px;
+			left: 3px;
+			transform-origin: center;
+			animation: 12s self-rotate infinite linear;
+		}
+
+		.main0--info-a:hover img:last-child {
+			animation-duration: 2s;
+		}
+
+		.main0-title {
+			position: relative;
+			top: 15px;
+			left: 52%;
+			transform: translateX(-50%);
+		}
+
+		@keyframes self-rotate {
+			from {
+				transform: rotate(0deg);
+			}
+			to {
+				transform: rotate(720deg);
+			}
+		}
+
+/* ================= main-content ================= */
+		.sp-content	{
+			position: relative;
+			z-index: 20;
+			top: 0;
+			overflow: hidden;
+		}
+
+		.main-info {
+			position: relative;
+			z-index: 0;
+			height: 512px;
+			padding: 35px 20px;
+			background: center top url(bg-main.jpg) no-repeat;			
+		}
+
+		.main--info-a {
+			position: relative;
+			z-index: 0;
+			float: left;
+			padding: 23px 20px;
+			transition: all 0.2s ease-in-out;
+		}
+
+		.main--info-a:nth-child(1) {
+			white-space: nowrap;
+		}
+		.main--info-a:nth-child(2) {
+			padding: 2px 25px 0 13px; 
+		}
+		.main--info-a:nth-child(3) {
+			padding-top: 18px;
+			padding-right: 35px;
+		}
+		.main--info-a:nth-child(4) {
+			padding-top: 32px;
+			padding-left: 15px;
+			padding-right: 5px;
+		}
+
+		.main--info-a:hover {
+			transform: scale(1.05);
+			transform-origin: center;
+			filter: brightness(115%) hue-rotate(5deg) drop-shadow(0 5px 10px rgba(0,0,0,0.2)) drop-shadow( 0 3px 3px rgba(0,0,0,0.35));
+		}
+
+
+/* ================= svg & banner ================= */
+		.cls-main1 {
+			top: 25px;
+			left: 240px;
+			fill: #f7c9dd;
+			transition: all 0.2s;
+		}
+		.main--info-a:nth-child(1):hover .cls-main1 {
+			transform: rotate(15deg);
+		}
+
+		.cls-main2 {
+			top: 135px;
+			left: 225px;
+			fill: #bae3f9;
+			transform: rotate(35deg);
+			transition: all 0.2s;
+		}
+
+		.main--info-a:nth-child(2):hover .cls-main2 {
+			transform: rotate(15deg);
+			filter:drop-shadow(0 5px 10px rgba(0,0,0,0.2)) drop-shadow( 0 3px 3px rgba(0,0,0,0.35));
+		}
+
+		.cls-main3 {
+			top: 90px;
+			left: 205px;
+			fill: #ca4844;
+			transform: rotate(15deg);
+			transition: all 0.2s;
+		}
+		.main--info-a:nth-child(3):hover .cls-main3 {
+			transform: rotate(-15deg);
+			filter:drop-shadow(0 5px 10px rgba(0,0,0,0.2)) drop-shadow( 0 3px 3px rgba(0,0,0,0.35));
+		}
+		.banner {
+			position: relative;
+			z-index: 1;
+			transition: all 0.3s;
+		}
+		.banner:hover {
+			transform: scale(1.02);
+			transform-origin: center;
+			filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2)) drop-shadow( 0 3px 3px rgba(0,0,0,0.35));			
+		}
+/* ================= table hover setting ================= */
+		td[width^="2"] {
+			transition: all 0.3s;
+		}
+
+		td[width^="2"] a {
+			transition: all 0.3s;
+		}
+
+		td[width^="2"] td {
+			transition: all 0.3s;
+		}
+
+		td[width^="2"]:hover {
+			transform: translateY(-6px);
+			box-shadow: 0 5px 10px rgba(0,0,0,0.2), 0 3px 3px rgba(0,0,0,0.35);
+		}
+		td[width^="2"]:hover a {
+			color: #ec3945 !important;
+		}
+
+		td[width^="2"]:hover td {
+			color: #ec3945 !important;
+		}
+	</style>
+</head>
+<body>
+	<div id="bgDec" class="bg-dec">
+		<canvas id="canvas"></canvas>
+	</div>
+	<main class="sp__wrap">
+		<header>
+			<div class="sp--1260">
+				<div class="sp-logo">
+					<a href="http://www.u-mall.com.tw/" title="Umall森森購物網" target="_top">
+						<img src="logo.png" alt="Umall森森購物網">
+					</a>
+			  	</div>
+				<aside class="side-info">
+					<img src="line.png" alt="LINE's & APP's QR-code">
+				</aside>
+				<div class="subtitle">
+					<h2>精選專屬優惠商品</h2>
+					<a id="ASRC" href="" title="點我購買專屬優惠商品！">
+						<img id="IMGSRC" src="" alt="專屬優惠商品">
+					</a>
+				</div>
+				<div class="sp-title">
+					<h1 class="main-title" title="幸福媽咪慶 -- Umall森森購物網">
+						<img src="title.png" alt="">
+						<img id="h1Img" src="title1.png" alt="幸福媽咪慶4/16-5/02">
+						<a id="timeOut" href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201804/SP_1101666/index.html" title="LINE購物，全館5%回饋！">
+							<img src="title-line.png" alt="LINE購物，全館都回饋！">
+							<img src="title-sp.png" alt="5%">
+						</a>
+					</h1>
+				</div>
+			</div>
+		</header>
+		</div>
+		<section class="main0">
+			<div class="sp--1260">
+				<a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201804/SP_1101524/index.html" class="main0--info-a" title="點我進入輪盤活動頁面！">
+					<img src="main0-1.png" alt="輪盤">
+					<img src="main0-2.png" alt="旋轉的輪盤面">	
+				</a>
+				<img class="main0-title" src="main0.png" alt="下單天天抽豪華露營體驗">
+			</div>
+		</section>
+		<section class="sp-content">
+			<div class="sp--1260">
+				<div class="banner"><a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201804/SP_1101666/index.html" title="LINE購物，全館5%回饋！"><img src="banner.jpg" alt="LINE購物，全館5%回饋！"></a></div>
+				<div class="main-info clearfix">
+					<a href="http://www.u-mall.com.tw/SimpleTemplate.aspx?SubPage=DMSetting/Final/201804/SP_1101639/index.html" class="main--info-a" title="單日累計送">
+						<img src="main1.png" alt="單日累計送">
+						<svg class="cls-main1"><path d="M10.775,8.686C5.967-1.489-.776-1.708.073,4.817c1.606,7.539,5.03,13,10.56,18.694,4.448-2.6,8.6-6.668,11.871-15.025,3.957-12.844-6.526-9.733-11.729.2"/></svg>
+					</a>
+					<a href="http://www.u-mall.com.tw/SimpleTemplate.aspx?SubPage=DMSetting/Final/201804/SP_1101657/index.html" class="main--info-a" title="消費滿額抽蛋糕">
+						<img src="main2.png" alt="消費滿額抽蛋糕">
+						<svg class="cls-main2"><path d="M10.775,8.686C5.967-1.489-.776-1.708.073,4.817c1.606,7.539,5.03,13,10.56,18.694,4.448-2.6,8.6-6.668,11.871-15.025,3.957-12.844-6.526-9.733-11.729.2"/></svg>
+					</a>
+					<a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201804/SP_1101640/index.html" class="main--info-a" title="會員專屬優惠">
+						<img src="main3.png" alt="會員專屬優惠">
+						<svg class="cls-main3"><path d="M10.775,8.686C5.967-1.489-.776-1.708.073,4.817c1.606,7.539,5.03,13,10.56,18.694,4.448-2.6,8.6-6.668,11.871-15.025,3.957-12.844-6.526-9.733-11.729.2"/></svg>
+					</a>
+					<a href="http://www.u-mall.com.tw/SimpleTemplate.aspx?SubPage=DMSetting/Final/201804/SP_1101521/index.html" class="main--info-a" title="刷卡享好康">
+						<img src="main4.png" alt="刷卡享好康"></a>
+				</div>
+			</div>
+		</section>
+	</main>
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script src="createjs.js"></script>
+<script>
+	function widthAdd() {
+		var widthValue = window.innerWidth;
+		if (widthValue < 1680) {
+			var $body = $('body');
+			var $table = $('a[name]~table');
+			var hAlign = widthValue * 0.5;
+			$body.css('width', widthValue);
+			$table.css({
+				'margin-left': hAlign,
+				'transform': 'translateX(-50%)'
+			});			
+		}
+	}
+	widthAdd();
+
+	function spTimeOut() {
+		var dateNow = Date.now();
+		var dateTimeOut = new Date(2018,4,1);
+		var $h1Img = $('#h1Img');
+		var $timeOut = $('#timeOut');
+		var $banner = $('.banner');
+
+		if( dateNow > dateTimeOut ) {
+			$h1Img.attr('src', 'title2.png');
+			$timeOut.hide();
+			$banner.hide();
+		}
+	}
+	spTimeOut();
+
+	var canvas;
+	var stage;
+	var container;
+	var captureContainers;
+	var captureIndex;
+
+	function heartInit() {
+
+		canvas = document.getElementById("canvas");
+		stage = new createjs.Stage(canvas);
+		canvas.width = window.innerWidth;
+		canvas.height = 507;
+
+		var w = canvas.width;
+		var h = canvas.height;
+
+		container = new createjs.Container();
+		stage.addChild(container);
+
+		captureContainers = [];
+		captureIndex = 0;
+
+		for (var i = 0; i < 4; i++) {
+			var heart = new createjs.Shape();
+			heart.graphics.beginFill(createjs.Graphics.getHSL(Math.random() * 100 - 45, 100, 50 + Math.random() * 45));
+			heart.graphics.moveTo(0, -12).curveTo(1, -20, 8, -20).curveTo(16, -20, 16, -10).curveTo(16, 0, 0, 12);
+			heart.graphics.curveTo(-16, 0, -16, -10).curveTo(-16, -20, -8, -20).curveTo(-1, -20, 0, -12);
+			heart.y = -100;
+
+			container.addChild(heart);
+		}
+
+		for (i = 0; i < 100; i++) {
+			var captureContainer = new createjs.Container();
+			captureContainer.cache(0, 0, w, h);
+			captureContainers.push(captureContainer);
+		}
+
+		createjs.Ticker.timingMode = createjs.Ticker.RAF;
+		createjs.Ticker.on("tick", tick);
+	}
+
+	function tick(e) {
+		var w = canvas.width;
+		var h = canvas.height;
+		var l = container.numChildren;
+
+		captureIndex = (captureIndex + 1) % captureContainers.length;
+		stage.removeChildAt(0);
+		var captureContainer = captureContainers[captureIndex];
+		stage.addChildAt(captureContainer, 0);
+		captureContainer.addChild(container);
+
+		for (var i = 0; i < l; i++) {
+			var heart = container.getChildAt(i);
+			if (heart.y < -80) {
+			  heart._x = Math.random() * w;
+			  heart.y = h * (1 + Math.random()) + 50;
+			  heart.perX = (1 + Math.random() * 2.5) * h;
+			  heart.offX = Math.random() * h * 1.5;
+			  heart.ampX = heart.perX * 0.1 * (0.15 + Math.random());
+			  heart.velY = -Math.random() * 8 - 8;
+			  heart.scaleX = heart.scaleY = Math.random() * 0.5 + 0.5;
+			  heart._rotation = Math.random() * 40 - 20;
+			  heart.alpha = Math.random() * 1 + 0.2;
+			  heart.compositeOperation = Math.random() < 0.33 ? "lighter" : "source-over";
+			}
+			var int = (heart.offX + heart.y) / heart.perX * Math.PI * 2;
+			heart.y += heart.velY * heart.scaleX / 8 - 1;
+			heart.x = heart._x + Math.cos(int) * heart.ampX;
+			heart.rotation = heart._rotation + Math.sin(int) * 30;
+		}
+
+		captureContainer.updateCache("source-over");
+
+		stage.update(e);
+	}
+	heartInit();
+</script>
+<script>
+			  var time = new Date();	  
+		  var days = time.getDate();
+		  var min = time.getMinutes();
+		  var n = time.getDate(); 
+          if(n>30)
+		  {	 
+			document.getElementById("IMGSRC").src ="product_11.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href ="https://www.etmall.com.tw/i/1958662"
+		  }else if(n>29)
+		  {	 
+			document.getElementById("IMGSRC").src ="product_07.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href ="https://www.etmall.com.tw/i/1828622"
+		  }else if(n>28)
+		  {	 
+			document.getElementById("IMGSRC").src ="product_10.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href ="http://www.u-mall.com.tw/Prod?nm=&sid=31402&cid=33004&sc=02204656"
+		  }else if(n>27)
+		  {	 
+			document.getElementById("IMGSRC").src ="product_10.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href ="http://www.u-mall.com.tw/Prod?nm=&sid=31402&cid=33004&sc=02204656"
+		  }
+		  else if(n>26)
+		  {	 
+			document.getElementById("IMGSRC").src ="product_09.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href ="http://www.u-mall.com.tw/Prod?nm=&sid=31402&cid=76046&sc=01893662"
+		  }
+		  else if(n>25)
+		  {	 
+			document.getElementById("IMGSRC").src ="product_09.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href ="http://www.u-mall.com.tw/Prod?nm=&sid=31402&cid=76046&sc=01893662"
+		  }
+		  else if(n>24)
+		  {	 
+			document.getElementById("IMGSRC").src ="product_08.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href ="http://www.u-mall.com.tw/Prod?nm=&sid=31402&cid=33056&sc=02217832"
+		  }
+		  else if(n>23)
+		  {	 
+			document.getElementById("IMGSRC").src ="product_06.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href ="http://www.u-mall.com.tw/Prod?nm=&sid=31402&cid=33056&sc=02217832"
+		  }
+		  else if(n>22)
+		  {	
+			document.getElementById("IMGSRC").src ="product_05.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href ="http://www.u-mall.com.tw/Prod?nm=&sid=31402&cid=33056&sc=02270876"
+		  }
+		  else if(n>21)
+		  {	
+			document.getElementById("IMGSRC").src ="product_05.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href ="http://www.u-mall.com.tw/Prod?nm=&sid=31402&cid=33778&sc=02179639"
+		  }
+		  else if(n>20)
+		  {	
+			document.getElementById("IMGSRC").src ="product_01.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href ="http://www.u-mall.com.tw/Prod?nm=&sid=31402&cid=96239&sc=02295019"
+		  }
+		  else if(n>19)
+		  {	
+			document.getElementById("IMGSRC").src ="5.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href ="http://www.u-mall.com.tw/Prod?nm=&sid=31402&cid=105022&sc=02109112"
+		  }		  
+		  else if(n>18)
+		  {	
+			document.getElementById("IMGSRC").src ="3.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href ="http://www.u-mall.com.tw/Prod?nm=&sid=31402&cid=76046&sc=02083676"
+		  }
+		  else if(n>17)
+		  {	
+			document.getElementById("IMGSRC").src ="3.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href ="http://www.u-mall.com.tw/Prod?nm=&sid=31402&cid=76046&sc=02083676"
+		  }
+		  else if(n>16)
+		  {	
+			document.getElementById("IMGSRC").src ="1.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href ="http://www.u-mall.com.tw/Prod?nm=&sid=31402&cid=81623&sc=01985071"
+		  }		
+		  else if(n>15)
+		  {	
+			document.getElementById("IMGSRC").src ="1.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href ="http://www.u-mall.com.tw/Prod?nm=&sid=31402&cid=81623&sc=01985071"
+		  }
+		  else if(n>1)
+		  {
+			document.getElementById("IMGSRC").src ="product_12.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href ="https://www.etmall.com.tw/i/1828622"
+		  }
+		  else if(n>0)
+		  {
+			document.getElementById("IMGSRC").src ="product_12.jpg"+ '?' + '0' + days + min;
+			document.getElementById("ASRC").href ="https://www.etmall.com.tw/i/1828622"
+		  }
+</script>
+</body>
+</html>

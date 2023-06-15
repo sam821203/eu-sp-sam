@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-Han-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .pool--people>li.active {
+      background-color: #faa;
+    }
+    .pool--gift>li.active {
+      background-color: #faf;
+    }
+    .btn {
+      
+    }
+    .btn.active {
+      cursor: pointer;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <div id="show" class="show">
+  </div>
+  <div id="pool">
+    <ul id="peoplePool" class="pool--people">
+      <li>張三</li>
+      <li>李四</li>
+      <li>趙武</li>
+    </ul>
+    <ul id="giftPool" class="pool--gift">
+      <li>MAC</li>
+      <li>WIN</li>
+      <li>紙板</li>
+    </ul>
+  </div>
+  <span id="btn" class="btn active">開始抽獎</span>
+  <script>
+    var btn = document.getElementById('btn');
+    var show = document.getElementById('show');
+    var peoplePool = document.querySelectorAll('#peoplePool>li');
+    var peopleArray = Array.apply(null, peoplePool);
+    var gift = document.querySelectorAll('#giftPool>li');
+    var giftArray = Array.apply(null, document.querySelectorAll('#giftPool>li'));
+    var newPeopleArray = [];
+    var newGiftArray = [];
+    var random;
+
+    function getRandomIndex(Arr){
+      return Math.floor(Math.random() * Arr.length);
+    }
+
+    function shuffle(originArr, newArr){
+      random = getRandomIndex(originArr);
+      var unit = originArr.splice(random, 1);
+      unit[0].classList.add('active');
+      newArr.push(unit[0].innerText);
+    }
+
+    function showResult(){
+      var result = `${newPeopleArray[newPeopleArray.length - 1]}抽中了${newGiftArray[newGiftArray.length - 1]}`;
+      var fragment = document.createElement('div');
+      fragment.append(result);
+      show.append(fragment);
+    }
+
+    function initClick(){
+      shuffle(peopleArray, newPeopleArray);
+      shuffle(giftArray, newGiftArray);
+      showResult();
+      if (peopleArray.length === 0) {
+        btn.innerText = "抽獎已結束！";
+        btn.classList.remove('active');
+        btn.removeEventListener('click', initClick)
+      }
+    }
+
+    btn.addEventListener('click', initClick);
+    
+  </script>
+</body>
+</html>

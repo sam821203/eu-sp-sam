@@ -1,0 +1,77 @@
+.promo__event
+  // margin-top: -5%
+  padding: 6.8% 4% 2.2%
+  +bg-set(url(~event/1st/e-main/components/promo-event/bg-promo.png), 100%)
+  .event__wrap
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    padding: 0
+    li
+      flex: 0 0 49.5%
+      transition: all 0.5s
+      &:hover
+        transform: translateY(-3%)
+        filter: brightness(130%)
+    li.promo__discount
+      position: relative
+      .promo__go, .promo__good
+        width: auto
+        position: absolute
+        z-index: 11
+      .promo__go
+        right: calc(100vw * 0.02)
+        top: calc(100vw * 0.163)
+        width: 22%
+      .promo__good
+        right: calc(100vw * 0.08)
+        top: calc(100vw * 0.024)
+        width: 25%
+      &:hover
+        filter: none
+        transform: translateY(0)
+        .promo__go, .promo__good
+          animation: tada 1s
+  +breakpoint-min($min-width-xl)
+    padding: 78px 50px 32px
+    .event__wrap
+      li.promo__discount
+        position: relative
+        .promo__go, .promo__good
+          position: absolute
+          z-index: 11
+        .promo__go
+          right: 45px
+          top: 175px
+        .promo__good
+          right: 70px
+          top: 23px
+        &:hover
+          filter: none
+          transform: translateY(0)
+          .promo__go, .promo__good
+            animation: tada 1s
+@keyframes tada
+  from
+    -webkit-transform: scale3d(1, 1, 1)
+    transform: scale3d(1, 1, 1)
+  10%,
+  20%
+    -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg)
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg)
+
+  30%,
+  50%,
+  70%,
+  90%
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)
+
+  40%,
+  60%,
+  80%
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)
+  to
+    -webkit-transform: scale3d(1, 1, 1)
+    transform: scale3d(1, 1, 1)

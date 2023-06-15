@@ -1,0 +1,69 @@
+// parallax css
+// =================================
+.deoration--background
+  //display: none
+  // z-index: base(1)以上可蓋在主視覺上，zero(0)可在主視覺下，預設都在logo下(logo是500)
+  +pos-set(absolute !important, base, 0, 0)
+  overflow: hidden
+  pointer-events: none
+
+  +breakpoint-min($min-width-xl)
+    display: block
+
+.decoration__wrap
+  width: 100%
+  height: 100vh
+  +breakpoint-min($min-width-xl)
+    height: 100%
+.decoration__item
+  width: 100%
+  height: 100%
+  img
+    +pos-set(relative, zero, null, 50%)
+    transform: translateX(-50%)
+  // TODO: 每次修改parallax img的寬以符合實際圖片尺寸 dd
+  .bg__decration-1
+    top: calc(100vw * -0.2)
+    left: calc(100vw * 0.7)
+    width: 40%
+    animation: 20s 0s ferris-rotate infinite linear
+  .bg__decration-1-left
+    top: calc(100vw * 0.03)
+    left: calc(100vw * -0.36)
+    width: 25%
+    animation: 15s 0s ferris-rotate infinite linear
+    transform-origin: center
+  .bg__decration-2
+    top: calc(100vw * 0)
+    left: calc(100vw * -0.04)
+    width: 40%
+    animation: 10s 0s car-move infinite linear both
+  .bg__decration-leaf-m
+    top: calc(100vw * 0.55)
+    left: calc(100vw * -0.39)
+    width: 25%
+
+  +breakpoint-min($min-width-xl)
+    // TODO: 每次修改parallax img的寬以符合實際圖片尺寸 dd
+    .bg__decration-1
+      top: -380px
+      left: calc(50% + 350px)
+      width: auto
+      max-width: 589px
+      transform-origin: center
+    .bg__decration-1-left
+      top: -70px
+      left: calc(50% - 1040px)
+      width: 30%
+      max-width: 307px
+      animation: 15s 0s ferris-rotate infinite linear
+      transform-origin: center
+    .bg__decration-2
+      position: absolute
+      top: 340px
+      left: 0
+      width: auto
+      min-height: 218px
+    .bg__decration-leaf-m
+      display: none
+

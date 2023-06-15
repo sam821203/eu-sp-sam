@@ -1,0 +1,18 @@
+- var goodsFlipDataE = [{link: "https://www.etmall.com.tw/np/64075", imgSrc: "~event/1st/e-main/components/goods-slider-flip/items/product-1.png", alt: "專櫃大牌年終慶1折up"}, {link: "https://www.etmall.com.tw/np/89163", imgSrc: "~event/1st/e-main/components/goods-slider-flip/items/product-2.png", alt: "DV窈窕迎跨年5折up"}, {link: "https://www.etmall.com.tw/c2/107787", imgSrc: "~event/1st/e-main/components/goods-slider-flip/items/product-3.png", alt: "iPhone 92折起"},  {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114276/w/index.html", imgSrc: "~event/1st/e-main/components/goods-slider-flip/items/product-4.png", alt: "課金升級VIP送MyCard150點"}, {link: "https://www.etmall.com.tw/np/89705", imgSrc: "~event/1st/e-main/components/goods-slider-flip/items/product-5.png", alt: "年終保暖大賞外套$599up"}, {link: "https://www.etmall.com.tw/p/88850", imgSrc: "~event/1st/e-main/components/goods-slider-flip/items/product-6.png", alt: "品牌聯合滿899折111"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114384/w/index.html", imgSrc: "~event/1st/e-main/components/goods-slider-flip/items/product-7.png", alt: "icon熱銷破萬台日虎泡腳機限時下殺"},{link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114275/w/index.html", imgSrc: "~event/1st/e-main/components/goods-slider-flip/items/product-8.png", alt: "旅遊最後清艙"}, ]
+
+- var goodsFlipDataU = [{link: "https://www.u-mall.com.tw/p/72714", imgSrc: "~event/1st/u-main/components/goods-slider-flip/items/product-1.png", alt: "台塑髮品年終慶買六送一"}, {link: "https://www.u-mall.com.tw/p/66431", imgSrc: "~event/1st/u-main/components/goods-slider-flip/items/product-2.png", alt: "華齊堂滿額送好禮"}, {link: "https://www.u-mall.com.tw/c2/63307", imgSrc: "~event/1st/u-main/components/goods-slider-flip/items/product-3.png", alt: "iPhone 92折起"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201912/SP_1105726/w/index.html", imgSrc: "~event/1st/u-main/components/goods-slider-flip/items/product-4.png", alt: "MyCard大贏家 爽送70%"}, {link: "https://www.u-mall.com.tw/np/74043", imgSrc: "~event/1st/u-main/components/goods-slider-flip/items/product-5.png", alt: "https://www.u-mall.com.tw/np/74043"}, {link: "https://www.u-mall.com.tw/p/73541", imgSrc: "~event/1st/u-main/components/goods-slider-flip/items/product-6.png", alt: "品牌聯合滿899折111"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201912/SP_1105837/w/index.html", imgSrc: "~event/1st/u-main/components/goods-slider-flip/items/product-7.png", alt: "日虎泡腳機限時下殺"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201912/SP_1105756/w/index.html", imgSrc: "~event/1st/u-main/components/goods-slider-flip/items/product-8.png", alt: "旅遊最後清艙"}, ]
+
+- var goodsFlipData = isU? goodsFlipDataU : goodsFlipDataE
+
+#goodsFlip.goods__wrap--flip
+  .promo__slider
+    #sliderGoodsFlip.swiper-container
+      ul.swiper-wrapper
+        each data in goodsFlipData
+          li.swiper-slide
+            a(href= data.link, title= data.alt)
+              img(src= data.imgSrc, alt= data.alt)
+      //- #sliderGoodsFlipPager.swiper-pager-white.swiper-pagination
+    //- #sliderGoodsFlipPrev.swiper-button-white.swiper-button-prev
+    //- #sliderGoodsFlipNext.swiper-button-white.swiper-button-next
+

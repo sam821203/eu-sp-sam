@@ -1,0 +1,97 @@
+-
+  var promoSliderItem = [
+    {
+      link: "https://media.etmall.com.tw/sp/10222/m/index.html" ,
+      imgSrc: "event/3rd/e-main/components/promo-slider/item/p1.png",
+      alt: "日立滿額登記最高送烤箱",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/10532/m/index.html" ,
+      imgSrc: "event/3rd/e-main/components/promo-slider/item/p2.png",
+      alt: "中央牌風扇瘋殺83折",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/11387/m/index.html" ,
+      imgSrc: "event/3rd/e-main/components/promo-slider/item/p3.png",
+      alt: "小米旗艦館",
+    },
+    {
+      link: "https://www.etmall.com.tw/p/175416" ,
+      imgSrc: "event/3rd/e-main/components/promo-slider/item/p4.png",
+      alt: "環保碳粉匣任2件88折",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/124729" ,
+      imgSrc: "event/3rd/e-main/components/promo-slider/item/p5.png",
+      alt: "人氣暢銷夯物3折起",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/170977" ,
+      imgSrc: "event/3rd/e-main/components/promo-slider/item/p6.png",
+      alt: "夏日孅窈最低3折起",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/15271/m/index.html" ,
+      imgSrc: "event/3rd/e-main/components/promo-slider/item/p7.png",
+      alt: "大人Fun暑價爽購4折up",
+    },
+    {
+      link: "https://www.etmall.com.tw/p/171701",
+      imgSrc: "event/3rd/e-main/components/promo-slider/item/p8.png",
+      alt: "熱銷米麵滿額折",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/165411" ,
+      imgSrc: "event/3rd/e-main/components/promo-slider/item/p9.png",
+      alt: "618歡慶3折起",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/165677" ,
+      imgSrc: "event/3rd/e-main/components/promo-slider/item/p10.png",
+      alt: "adidas ultraboost 55折up",
+    },
+    {
+      link: "https://www.etmall.com.tw/p/175804" ,
+      imgSrc: "event/3rd/e-main/components/promo-slider/item/p11.png",
+      alt: "滿就送品牌老帽",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/176785" ,
+      imgSrc: "event/3rd/e-main/components/promo-slider/item/p12.png",
+      alt: "健康一夏",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/15174/m/index.html" ,
+      imgSrc: "event/3rd/e-main/components/promo-slider/item/p13.png",
+      alt: "隋棠育兒法寶",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/14348/m/index.html" ,
+      imgSrc: "event/3rd/e-main/components/promo-slider/item/p14.png",
+      alt: "毛毛商城3重送",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/175327" ,
+      imgSrc: "event/3rd/e-main/components/promo-slider/item/p15.png",
+      alt: "暑假親子出遊趣",
+    },
+  ]
+
+
+section.promo__group.promo__group--promo-slider.m-bottom--lg(data-title="強檔推薦")
+  .layout--main
+    .promo__wrap
+      .decor__wrap.full-parent
+        .decor__item.decor__item--title#titlePromoSlider
+          img(src="event/3rd/e-main/components/promo-slider/title-promo-slider.png", alt="")
+        .decor__item.decor__item--item#decorPromoSliderItem
+          img(src="event/3rd/e-main/components/promo-slider/decor-promo-slider.png", alt="")
+      .promo__zone
+        .promo__block
+          .promo__slider.full-parent
+            .swiper-container#promoSliderItem
+              ul.swiper-wrapper
+                each data in promoSliderItem
+                  li.swiper-slide
+                    a(href= data.link, title=data.alt)
+                      img(src= data.imgSrc, alt=data.alt)

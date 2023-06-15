@@ -1,0 +1,93 @@
+.promo__group--game
+  overflow: hidden
+  padding-top: 6%
+  +breakpoint-min($min-width-xl)
+    padding-top: 0
+    overflow: visible
+  .game__wrap
+    // +aspect-ratio(1, 1)
+
+    display: none
+    padding: 20% 4.2% 9% 3.8%
+    // padding: 26% 6.2% 7% 5.8%
+    +bg-set(url("event/1st/e-main/components/puzzle/bg-puzzle.png"), 100%)
+    animation: game-bounce 1s infinite
+    &.active
+      display: block
+      &.finished
+        animation: game-wobble 0.3s 1s infinite, fadeOut 3s 3s both
+        .game__block
+          +pos-set(relative)
+          &::after
+            content: ''
+            +pos-set(absolute, base, -10%, 0)
+            +size(105%)
+            background: $gray-deep-light
+            animation: game-blowup 1.8s 2s both
+    .info__decor
+      +pos-set(absolute, base, -25%, 84%)
+      +size(22%, auto)
+      transform-origin: bottom right 
+      animation: game-hammer 1s cubic-bezier(0.82, 0.32, 0.59, 1.01) infinite
+
+  .game__block
+    +aspect-ratio(1, 1)
+
+  canvas
+    width: 100%
+    height: 100%
+
+@keyframes game-wobble
+  from
+    transform: translate3d(0, 0, 0)
+  15%
+    transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg)
+  30%
+    transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg)
+  45%
+    transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg)
+  60%
+    transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg)
+  75%
+    transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg)
+  to
+    transform: translate3d(0, 0, 0)
+
+@keyframes game-blowup
+  from
+    border-radius: 50%
+    transform: scale(0)
+    filter: blur(20px)
+    opacity: 0
+  50%
+    opacity: 1
+  70%
+    border-radius: 50%
+    filter: blur(20px)
+    opacity: 1
+  to
+    border-radius: 5%
+    transform: scale(1.2)
+    filter: blur(5px)
+    opacity: 1
+
+@keyframes game-fadeOut
+  from
+    opacity: 1
+
+  to
+    opacity: 0
+
+@keyframes game-hammer
+  0%,50%,70%
+    transform: rotate(0deg)
+  20%
+    transform: rotate(30deg)
+  60%
+    transform: rotate(1deg)
+
+@keyframes game-bounce
+  0%,49%,70%
+    transform: translateY(0)
+  50%
+    transform: translateY(-0.2em)

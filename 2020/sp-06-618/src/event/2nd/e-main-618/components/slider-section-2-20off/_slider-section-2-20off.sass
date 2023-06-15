@@ -1,0 +1,78 @@
+.slider__20off
+  position: relative
+  padding: 0
+  margin-top: 1%
+  +bg-set(url("~event/2nd/e-main-618/components/slider-section-2-20off/bg__slider__20off.png"), 100%)
+  background-size: 100% auto
+  height: 62vw
+  .swiper-container
+    margin-left: auto
+    margin-right: auto
+    width: 85%
+    height: 86.5%
+    .swiper-slide
+      &:hover,
+      &:active
+        filter: contrast(120%)
+      img
+        display: block
+        margin-left: auto
+        margin-right: auto
+    .swiper-pagination-custom
+      margin-top: 1%
+      .swiper-pagination-bullet
+        width: 6px
+        height: 6px
+        margin: -1px 2px
+        background-color: #ffffff
+      .swiper-pagination-bullet-active
+        opacity: 1
+  +breakpoint-min($min-width-xl)
+    height: 596px
+    width: 100%
+    max-width: 995px
+    margin: 0 auto 0 auto
+    .swiper-container
+      height: auto
+      .swiper-pagination-custom
+        .swiper-pagination-bullet
+          width: 8px
+          height: 8px
+          margin: -1px 4px
+
+.slider__20off__goods
+  margin-top: 9.5vw
+  .slider__20off__item
+    +bg-set(url("~event/2nd/e-main-618/components/slider-section-2-20off/bg__slider__20off__good.png"), 100%)
+    height: 42vw
+    img
+      width: 92%
+      margin-top: 8%
+    .good__title__20off
+      font-size: 2.6vw
+      line-height: 3.8vw
+      height: 7.6vw
+      overflow: hidden
+      color: #5d5d5d
+      padding: 0 4%
+    .most__give__back
+      color: #fff
+      margin-top: 3.25vw
+      text-align: center
+      font-size: 3.3vw
+  +breakpoint-min($min-width-xl)
+    margin-top: 92px
+    .slider__20off__item
+      height: 435px
+      img
+        margin-top: 20px
+      .good__title__20off
+        font-size: 15px
+        line-height: 20px
+        height: 60px
+        margin-top: 5px
+      .most__give__back
+        margin-top: 52px
+        font-size: 22px
+
+

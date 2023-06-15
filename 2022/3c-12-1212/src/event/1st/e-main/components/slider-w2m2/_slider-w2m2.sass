@@ -1,0 +1,83 @@
+.slider-w2m2
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__wrap
+    padding-bottom: 3%
+  .decor__item
+    pointer-events: none
+    &--left
+      +pos-set(absolute, second)
+      bottom: 0%
+      left: 2%
+      width: 35%
+      transform-origin: left bottom
+      animation: spotlight 2s linear infinite alternate
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 430px)
+    &--right
+      +pos-set(absolute, second)
+      bottom: 0%
+      right: 2%
+      width: 35%
+      transform-origin: right bottom
+      animation: spotlightReverse 2s linear infinite alternate
+      +breakpoint-min($min-width-xl)
+        // top: 10px
+        right: calc(50% - 430px)
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/slider-w2m2/bg-slider-w2m2.png), 100%)
+    // margin-top: 5%
+  .promo__zone
+    +aspect-ratio(960, 467)
+  .promo__block
+    padding: 0% 3%
+    +breakpoint-min($min-width-xl)
+      // padding-top: 180px
+    .swiper-slide
+      display: flex
+      transition: all 0.5s
+    .swiper-slide:not(.swiper-slide-active)
+      opacity: 0 !important
+      .swiper-box
+        opacity: 0
+        transition: all .5s ease-in
+    .swiper-slide.swiper-slide-visible,
+    .swiper-slide-active,
+    .swiper-slide-duplicate-active
+      transform-style: preserve-3d
+      perspective: 300px
+      .swiper-box
+        opacity: 1
+        &:first-child
+          animation: zoomIn .5s linear forwards
+        &:last-child
+          animation: slideInRight .5s linear forwards
+
+@keyframes zoomIn
+  0%
+    opacity: 0
+    transform: scale3d(.3, .3, .3)
+  50%
+    opacity: 1
+
+@keyframes slideInRight
+  0%
+    transform: translate3d(100%, 0, 0)
+    visibility: visible
+  to
+    transform: translateZ(0)
+    opacity: 1
+
+@keyframes spotlight
+  0%
+    transform: rotate(25deg)
+  100%
+    transform: rotate(-10deg)
+
+@keyframes spotlightReverse
+  0%
+    transform: rotate(-10deg)
+  100%
+    transform: rotate(25deg)

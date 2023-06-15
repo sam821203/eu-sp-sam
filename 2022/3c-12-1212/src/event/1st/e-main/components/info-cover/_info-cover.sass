@@ -1,0 +1,58 @@
+.promo__group--cover
+  .info__cover
+    display: none
+    background: url(event/1st/e-main/components/info-cover/bg-info-cover.png)
+    background-repeat: no-repeat
+    background-size: 100%
+    +breakpoint-min($min-width-xl)
+      background: url(event/1st/e-main/components/info-cover/bg-info-cover-web.png)
+      background-repeat: no-repeat
+      background-size: auto
+    &.active
+      display: block
+    &--wrap
+      +aspect-ratio(960, 1022)
+      +breakpoint-min($min-width-xl)
+        +aspect-ratio(960, 1399)
+
+  .info__block
+    padding: 15% 10% 0
+  .info--main
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-around
+    a
+      margin-bottom: 2%
+      &:hover
+        transition: .5s all
+        transform: translateY(-2%)
+        filter: saturate(1.2)
+      &:nth-child(4)
+        display: none
+      +breakpoint-min($min-width-xl)
+        margin-bottom: 25px
+        // width: auto
+        &:first-child
+          order: 2
+          width: 48%
+        &:nth-child(2)
+          order: 3
+          width: 48%
+        &:nth-child(3)
+          display: none
+        &:nth-child(4)
+          display: block
+          order: 5
+        &:last-child
+          order: 1
+
+  .btn
+    &--app
+      margin-top: 2%
+      width: 60%
+    &--note
+      margin-top: 2%
+      +breakpoint-min($min-width-xl)
+        margin-top: 30px
+
+  

@@ -1,0 +1,346 @@
+<meta name="viewport" content="width=device-width">
+<meta charset="utf-8">
+<link rel="stylesheet" href="sp-20190619.css">
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  *:before, *:after {
+    box-sizing: border-box; }
+  a {
+    display: block;
+    text-decoration: none;
+  }
+  ul {
+    list-style: none;
+  }
+  img {
+    width: 100%;
+    border: 0;
+    display: block;
+  }
+  article,
+  main,
+  nav,
+  section {
+    display: block;
+  }
+  body {
+    margin:0;
+    background-color:#000000;/*...................................背景色,1260把這行刪掉*/
+  }
+  .sp--1260 {
+    position: relative;
+    z-index: 0;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .sp--1260.icon_Home{
+    z-index: auto;
+  }
+  /* 主視覺 */
+  /* ======================================== */
+  .logo a,
+  .sp__visual a{
+    display: block;
+  }
+  .logo {
+    position: absolute;
+    z-index: 1;
+    /* 調整logo位置 */
+    top: 0.5%;
+    left: 0.5%;
+    width: 30%;
+    max-width: 220px;
+  }
+  /* 設定背景 */
+  .sp__main {
+    background: url(bg.jpg) center 0 no-repeat;/*..............背景底圖,1260把這行刪掉*/
+  }
+  /* 設定前景 */
+  .sp__visual {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+  }
+  /*...........................................................示意線條拿掉start*/
+/*  .visual__main a{
+    border: 1px solid #f00;
+  }*/
+  /*...........................................................示意線條拿掉end*/
+  .visual__anchor,
+  .visual__main,
+  .visual__nav {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .visual__anchor {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }
+  .visual__main a,
+  .visual__nav a {
+    flex-grow: 1;
+  }
+  /* 主視覺 */
+  /*...........................................................紅框區高度*/
+  .visual__main {
+    height: 100%;
+  }
+  /* 如果需要個別設定每塊寬度(可不設) */
+  /* 如果設100%後面的就會掉下去 */
+  /*...........................................................紅框區設定寬度高度*/
+  .visual__main a:nth-child(1) {
+    flex-grow: 0;
+    width: 100%;
+    height: 14%
+  }
+  .visual__main a:nth-child(2) {
+    flex-grow: 0;
+    width: 33%;
+    height: 13%;
+  }
+  .visual__main a:nth-child(3) {
+    flex-grow: 0;
+    width: 33%;
+    height: 13%;
+  }
+  .visual__main a:nth-child(4) {
+    flex-grow: 0;
+    width: 33%;
+    height: 13%;
+  }
+  .visual__main a:nth-child(5) {
+    flex-grow: 0;
+    width: 33%;
+    height: 13%;
+  }
+  .visual__main a:nth-child(6) {
+    flex-grow: 0;
+    width: 33%;
+    height: 13%;
+  }
+  .visual__main a:nth-child(7) {
+    flex-grow: 0;
+    width: 33%;
+    height: 13%;
+  }
+  .visual__main a:nth-child(8) {
+    flex-grow: 0;
+    width: 50%;
+    height: 10%;
+  }
+  .visual__main a:nth-child(9) {
+    flex-grow: 0;
+    width: 50%;
+    height: 10%;
+  }
+  .visual__main a:nth-child(10) {
+    flex-grow: 0;
+    width: 50%;
+    height: 10%;
+  }
+  .visual__main a:nth-child(11) {
+    flex-grow: 0;
+    width: 50%;
+    height: 10%;
+  }
+  .visual__main a:nth-child(12) {
+    flex-grow: 0;
+    width: 50%;
+    height: 9%;
+  }
+  .visual__main a:nth-child(13) {
+    flex-grow: 0;
+    width: 50%;
+    height: 9%;
+  }
+  .visual__main a:nth-child(14) {
+    flex-grow: 0;
+    width: 50%;
+    height: 11%;
+  }
+  .visual__main a:nth-child(15) {
+    flex-grow: 0;
+    width: 50%;
+    height: 11%;
+  }
+  .visual__main a:nth-child(16) {
+    flex-grow: 0;
+    width: 50%;
+    height: 9%;
+  }
+  .visual__main a:nth-child(17) {
+    flex-grow: 0;
+    width: 50%;
+    height: 9%;
+  }
+  .visual__main a:nth-child(18) {
+    flex-grow: 0;
+    width: 50%;
+    height: 11%;
+  }
+  .visual__main a:nth-child(19) {
+    flex-grow: 0;
+    width: 50%;
+    height: 11%;
+  }
+  .visual__main .pic__box {
+    margin-left: auto;
+    margin-right: auto;
+    width: 88%;
+  }
+  .visual__main a:nth-child(2) .pic__box,
+  .visual__main a:nth-child(3) .pic__box,
+  .visual__main a:nth-child(4) .pic__box {
+    padding-top: 50%;
+  }
+  .visual__main a:nth-child(5) .pic__box,
+  .visual__main a:nth-child(6) .pic__box,
+  .visual__main a:nth-child(7) .pic__box {
+    padding-top: 13%;
+  }
+  .visual__main a:nth-child(3n-1) .pic__box {
+    transform: translateX(10%);
+  }
+  .visual__main a:nth-child(3n+1) .pic__box {
+    transform: translateX(-10%);
+  }
+  .visual__main a .pic__box img {
+    transform-origin: 50% 70%;
+    transition: all 0.5s;
+  }
+  .visual__main a:hover .pic__box img {
+    transform: scale(1.1);
+  }
+  .visual__main .countdown__wrap {
+    position: relative;
+    z-index: 0;
+  }
+  .visual__main .time__wrap {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    z-index: 1;
+    bottom: 19%;
+    right: 18.5%;
+    width: 42%;
+    /* background-color:#f00; */
+    pointer-events: none;
+  }
+  .visual__main .time__wrap .time__block {
+    display: flex;
+    width: 24%;
+  }
+  .visual__main .time__wrap .time__box {
+    padding: 0 7%;
+    width: 50%;
+    line-height: 120%;
+    font-size: 6vw;
+  }
+  @media screen and (min-width: 960px) {
+    .visual__main .time__wrap .time__box {
+      font-size: 60px;
+    }    
+  }
+</style>
+<div class="elevatorHome js--main--dialog" id="elevatorHome"></div>
+<div class="navRightBar" id="navRightBar"></div>
+<div id="spWrap" class="sp__wallper">
+  <!-- 主視覺 -->
+  <div class="sp--1260 icon_Home"><!-- 浮水印start(勿刪)-->
+    <div id="iconHome"></div>
+  </div>                          <!-- 浮水印end(勿刪)-->
+  <main class="sp__main">
+    <div class="sp--1260">
+      <a href="https://www.etmall.com.tw" class="logo"><img src="ehs-logo.png" alt="東森購物"></a><!-- 1260把這行刪掉 -->
+      <div class="sp__visual">
+        <div class="visual__anchor"><!-- 紅框區 設定第一個a和第二個a的寬度會推擠後面a的寬度-->
+          <div class="visual__main">
+            <a>
+              <div class="countdown__wrap">
+                <div class="time__wrap">
+                  <div class="time__block">
+                    <div class="time__box"><span id="dailyHourTens">0</span></div>
+                    <div class="time__box"><span id="dailyHourUnits">0</span></div>
+                  </div>
+                  <div class="time__block">
+                    <div class="time__box"><span id="dailyMinTens">0</span></div>
+                    <div class="time__box"><span id="dailyMinUnits">0</span></div>
+                  </div>
+                  <div class="time__block">
+                    <div class="time__box"><span id="dailySecTens">0</span></div>
+                    <div class="time__box"><span id="dailySecUnits">0</span></div>
+                  </div>
+                </div>
+                <img src="time.png" alt="">
+              </div>
+            </a>
+            <a href="https://www.etmall.com.tw/i/2728036" data-title="東森嚴選">
+              <div class="pic__box">
+                <img src="p_01.png" alt="">
+              </div>
+            </a>
+            <a href="https://www.etmall.com.tw/i/2595095">
+              <div class="pic__box">
+                <img src="p_02.png" alt="">
+              </div>
+            </a>
+            <a href="https://www.etmall.com.tw/i/2634543">
+              <div class="pic__box">
+                <img src="p_03.png" alt="">
+              </div>
+            </a>
+            <a href="https://www.etmall.com.tw/i/2824377" data-title="自然美破盤">
+              <div class="pic__box">
+                <img src="p_04.png" alt="">
+              </div>
+            </a>
+            <a href="https://www.etmall.com.tw/i/2824376">
+              <div class="pic__box">
+                <img src="p_05.png" alt="">
+              </div>
+            </a>
+            <a href="https://www.etmall.com.tw/i/2824375">
+              <div class="pic__box">
+                <img src="p_06.png" alt="">
+              </div>
+            </a>
+            <a href="https://www.etmall.com.tw/i/2712256" data-title="高PV熱銷"></a>
+            <a href="https://www.etmall.com.tw/i/2711790"></a>
+            <a href="https://www.etmall.com.tw/i/2403174"></a>
+            <a href="https://www.etmall.com.tw/i/2768609"></a>
+            <a href="https://www.etmall.com.tw/i/2653388"></a>
+            <a href="https://www.etmall.com.tw/i/2766117"></a>
+            <a href="https://www.etmall.com.tw/i/2768608"></a>
+            <a href="https://www.etmall.com.tw/i/2763995"></a>
+            <a href="https://www.etmall.com.tw/i/2794060"></a>
+            <a href="https://www.etmall.com.tw/i/2772473"></a>
+            <a href=""></a>
+            <a href="https://www.etmall.com.tw/i/6190111"></a>
+            <!-- 1大2小可刪掉這行 -->
+          </div>
+        </div>
+        <img src="index.jpg">
+        <img src="index_02.jpg">
+        <img src="index_03.jpg">
+        <img src="index_04.jpg">
+      </div>
+    </div>
+  </main>
+</div>
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script>$('a[href^="#"]').on('click',function(e){var target=$('a[name='+this.getAttribute('href').split('#')[1]+']');if(target.length){e.preventDefault();$('html,body').stop().animate({scrollTop:target.offset().top},500);}});</script>
+<script type="text/javascript" src="sp-script20190619.js" defer></script>
+<!-- 浮水印 -->
+<script id="scriptIconFloat" src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105264/float-icon.js"></script>
+<!-- 共用JS -->
+<script id="generateScript"
+        src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.js"></script>
+<script src="app-bundle.js"></script>

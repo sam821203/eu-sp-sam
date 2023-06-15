@@ -1,0 +1,205 @@
+// 天天開搶
+.promo__group--daily-slider
+  overflow: hidden
+  +breakpoint-min($min-width-xl)
+    overflow: visible
+  .promo__wrap
+    +aspect-ratio(960, 900)
+  .promo__zone
+    display: flex
+    // justify-content: space-between
+    +pos-set(relative, zero)
+    padding: 1.7% 6.5% 0 13.2%
+    +bg-set(url(event/1st/e-main/components/daily-slider/bg-daily-slider.png), 100%)
+  a
+    &:hover,
+    &:active
+      filter: brightness(102%) contrast(105%)
+
+  // .decoration--daily-slider
+  //   z-index: map-get($zindex, base)
+  //   top: 0%
+  //   right: 3%
+  //   width: 23%
+
+  // TODO: 橫式
+  // .product__block
+  //   display: flex
+  //   justify-content: space-between
+
+    // 共用類宮格樣式
+  .product--dynamic
+    // .product__block
+      // padding: 1% 5%
+      // +bg-set(url(event/1st/e-main/components/daily-slider/bg-dynamic-item.png), contain)
+    .product__intro
+      // margin: 2.5% auto
+      // padding: 5% 5% 3.5%
+      width: 100%
+      color: $gray-deep-light
+    .product__img
+      margin-bottom: 3%
+      width: 100%
+      // border-radius: 3vw 0 0 3vw
+      border-radius: 0
+      text-align: center
+    .product__name
+      color: $gray-deep-light
+      +breakpoint-min($min-width-xl)
+    .product__price
+      width: 100%
+      color: $gray-deep-light
+
+    .product__text
+      width: 100%
+      background-color: transparent
+      // border-radius: 0 3vw 3vw 0
+      border-radius: 0
+    // +breakpoint-min($min-width-xl)
+    //   .product__img
+    //     border-radius: 28px 0 0 28px
+    //   .product__text
+    //     border-radius: 0 28px 28px 0
+
+  // 雙區塊類宮格差異部分樣式
+  .daily__slider
+    +pos-set(relative, zero)
+    width: 52%
+    // +bg-set(url(event/1st/e-main/components/daily-slider/bg-dynamic-item.png), contain)
+    .swiper-container
+      width: 100%
+      // border-radius: 6.5vw
+      li
+        width: 100%
+    .product__block
+      display: flex
+      flex-wrap: wrap
+      padding: 0 1.9% 0 10.3%
+      +breakpoint-min($min-width-xl)
+        padding: 0% 0.1% 0% 11%
+      // .product__intro
+      //   order: 1
+      // .product__text
+      //   order: 2
+
+    // TODO: 如果每個item共用圖則在這設定，不共用則到JS中建立換圖邏輯
+    .product__intro
+      margin-bottom: 12.9%
+      padding-top: 11.9%
+      padding-left: 0%
+      font-weight: bold
+      color: $main-e-background-color-1st-2
+      font-size: 4vw
+      +breakpoint-min($min-width-md)
+        margin-bottom: 13.2%
+        font-size: 2.5rem
+      +breakpoint-min($min-width-xl)
+        padding-top: 13.2%
+        font-size: 3rem
+
+    .product__name
+      margin-bottom: 1%
+      +breakpoint-min($min-width-xl)
+        font-size: 2.2rem
+        padding: 0 3%
+
+    .product__price
+      span
+        &:last-child
+          font-size: 5.5vw
+          +breakpoint-min($min-width-xl)
+            font-size: 60px
+
+  .daily__block
+    padding-top: 11%
+    width: 44%
+    .product__block
+      padding: 2% 17.8% 0 5%
+    .product--dynamic
+      +pos-set(relative, zero)
+    .product__intro
+      margin-bottom: 7.62%
+      padding-top: 17.8%
+      padding-left: 3%
+      font-weight: bold
+      color: $main-e-background-color-1st-3
+      font-size: 3vw
+      +breakpoint-min($min-width-md)
+        margin-bottom: 7.62%
+        padding-top: 17.8%
+        font-size: 2.5rem
+      +breakpoint-min($min-width-xl) 
+        margin-bottom: 9.42%
+        padding-top: 18%
+        padding-left: 8%
+        font-size: 2.9rem
+
+    .product__img
+      filter: grayscale(100%)
+      +breakpoint-min($min-width-xl)
+        margin-bottom: 7%
+    .product__text
+      display: flex
+      flex-wrap: wrap
+    .product__name
+      padding: 0 6%
+      +breakpoint-min($min-width-xl)
+        font-size: 2.2rem
+    .product__price
+      display: none
+
+  // 最後一天處理
+  .daily--next
+    &.active
+      .product__img
+        width: 63%
+        filter: none
+      .product__name
+        -webkit-line-clamp: 1
+        margin-top: 0
+        height: 1.2em
+      .product__price
+        display: block
+      .product__intro
+        // +bg-set(url(event/1st/e-main/components/daily-slider/intro-item.png), 100%)
+    // 最後一天處理
+    .daily--next
+      &.active
+        .product__price
+          span
+            &:last-child
+              font-size: 3vw
+    // 最後一天處理
+    .daily--next
+      &.active
+        .product__price
+          span
+            &:last-child
+              font-size: 28px
+
+    .daily__block
+      .product__intro
+        margin-bottom: 48px
+        font-size: 40px
+      .product--dynamic
+        .product__img
+          margin-bottom: 15px
+      .product__name
+        font-size: 28px
+      .product__text
+        .product__price
+          span
+            &:last-child
+              font-size: 66px
+
+    // 最後一天處理
+    .daily--next
+      &.active
+        .product__intro
+          font-size: 44px
+        .product__name
+          margin-bottom: 0
+        .product__price
+          span
+            &:last-child
+              font-size: 36px

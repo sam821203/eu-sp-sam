@@ -1,0 +1,48 @@
+.promo__group--flip-card
+  .card__box
+    display: flex
+    flex-wrap: wrap
+    padding: 1% 0.5%
+    li
+      +pos-set(relative, zero)
+      flex: 1 0 24%
+      perspective: 600px
+      padding: 0.5%
+      cursor: pointer
+      &:active,
+      &:hover
+        z-index: map-get($zindex, base)
+        transform: scale(1.1)
+
+        
+
+  .card__item
+    +pos-set(relative, zero)
+
+  .card__front,
+  .card__back
+    +pos-set(relative, zero)
+    backface-visibility: hidden
+    transition: all 0.3s
+
+  .card__front
+    +pos-set(absolute, zero, 0, 0)
+    width: 100%
+    height: 100%
+    transform-style: preserve-3d
+    transform: rotateY(180deg)
+  
+  .card__back.active
+    &::before
+      content: ''
+      +pos-set(absolute, base, 0, 0)
+      width: 100%
+      height: 100%
+      border: 4px solid $gray-deep-light
+      overflow: hidden
+      pointer-events: none
+
+  .card__item.active .card__back
+    transform: rotateY(-180deg)
+  .card__item.active .card__front
+    transform: rotateY(0)

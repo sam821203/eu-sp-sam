@@ -1,0 +1,52 @@
+-
+  var w3m3Data = [
+    { // 1
+      link: "https://www.etmall.com.tw/i/3668931",
+      imgSrc: "event/3rd/e-main/components/event-w3m3/items/depart-1.png",
+      alt: "【超值箱購】日本KAO新柔舒蒸氣眼罩12枚入X12盒(多款香味任選)-網"
+    },
+    { // 2
+      link: "https://www.etmall.com.tw/i/2428991",
+      imgSrc: "event/3rd/e-main/components/event-w3m3/items/depart-2.png",
+      alt: "【湧鵬生技】苦瓜胜肽10+2組,本組合共12盒(苦瓜胜肽:綠咖啡:酵母鉻:每盒60顆:共720顆)"
+    },
+    { // 3
+      link: "https://www.etmall.com.tw/i/3652918",
+      imgSrc: "event/3rd/e-main/components/event-w3m3/items/depart-3.png",
+      alt: "【獨家超值組】惠而浦除濕機+獨立式蒸烤箱"
+    },
+    { // 4
+      link: "https://www.etmall.com.tw/i/3263285",
+      imgSrc: "event/3rd/e-main/components/event-w3m3/items/depart-4.png",
+      alt: "PHILIPS 飛利浦 USB 有線滑鼠 SPK7234-黑色 超值5入組"
+    },
+    { // 5
+      link: "https://www.etmall.com.tw/i/3725319",
+      imgSrc: "event/3rd/e-main/components/event-w3m3/items/depart-5.png",
+      alt: "【禾鴻】青農契作橙蜜香小番茄禮盒5斤x2盒"
+    },
+    { // 6
+      link: "https://www.etmall.com.tw/i/3653243",
+      imgSrc: "event/3rd/e-main/components/event-w3m3/items/depart-6.png",
+      alt: "Mr.box 可堆疊卡扣式防塵提把收納盒18入"
+    },
+  ]
+
+section.promo__group.promo__group--w3m3.m-bottom--lg(data-title="限時開團")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--left#decorEventW3m3Left
+        img(src="event/3rd/e-main/components/event-w3m3/decor-event-w3m3-left.png", alt="")
+      .decor__item.decor__item--right#decorEventW3m3Right
+        img(src="event/3rd/e-main/components/event-w3m3/decor-event-w3m3-right.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          #w3m3Wrap.event__wrap
+            ul.good__wrap
+              each data, index in w3m3Data
+                li
+                  a(href= data.link, title= data.alt)
+                    - var hasImg = data.imgSrc ? true : false
+                    if (hasImg)
+                      img(src= data.imgSrc, alt= data.alt)

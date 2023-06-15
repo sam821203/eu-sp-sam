@@ -1,0 +1,27 @@
+.hero__zone
+  .hero__slider
+    width: 72%
+    // height: 500px
+    +aspect-ratio(455, 180)
+    +bg-set(url("components/hero-small-slider/bg-small-slider.png"), 100%)
+
+  .hero__title
+    &--sub
+      +pos-set(relative, third)
+      // padding-top: 12%
+      // width: 100%
+      // height: 0
+      a
+        // +pos-set(absolute, base, 10%, 0)
+        // padding: 1.8% 5%
+        // height: 100%
+
+  +breakpoint-min($min-width-xl)
+    .hero__slider
+      width: 455px
+      height: 180px
+      .hero__title
+        &--sub
+
+          a
+            // +pos-set(absolute, base, 12%, 6%)

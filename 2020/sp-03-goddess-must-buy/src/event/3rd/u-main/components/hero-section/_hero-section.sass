@@ -1,0 +1,122 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero__wrap
+  +pos-set(relative, second)
+  overflow: hidden
+
+  .hero__zone
+    +pos-set(relative, zero)
+        
+  .hero__block
+    //+bg-set(url("~event/3rd/u-main/components/hero-section/bg-hero.jpg"), cover)
+
+  .hero__box
+    +pos-set(relative, zero)                        
+
+  .hero__title
+    &--main
+      +pos-set(relative, zero)
+      padding-top: 2%
+      padding-bottom: 2.1%
+      margin-left: auto
+      margin-right: auto
+      // width: 90%
+      overflow: hidden
+      // &.animated
+        // animation: small-open 1s both ease-out
+      &.animated
+        animation: 1s title-down both ease-out
+      img
+        animation: 6s 3s key-rotate-stop both infinite
+  .title-decoration__wrap
+    +pos-set(absolute, zero, 0, 0)
+    width: 100%
+    height: 100%
+    pointer-events: none
+    .title__decoration
+      +pos-set(absolute, zero)
+      &--top
+        top: 7%
+        left: 0
+        width: 33%
+        &.animated
+          animation: 1s 1s title-down both ease-out
+        img
+          animation: 2s 2s key-rotate-stop both infinite ease-in-out
+        +breakpoint-min($min-width-xl)
+          top: 45px
+
+
+    //img
+    //  margin-left: 21%
+    //  width: 78%
+      //animation: up-down 1.5s infinite alternate
+
+  .promo__zone
+    position: relative
+    z-index: 1
+    margin-top: calc(100vw * -0.073)
+    +breakpoint-min($min-width-xl)
+      margin-top: -71px
+  .promo__event, .promo__group--w4m4,.decoration__boy__layout
+    &.animated
+      animation: 1s .5s fadeInLeft both ease-out
+    //background-color: $gray-deep-light
+    +breakpoint-min($min-width-xl)
+      margin-top: -30px
+      background-color: transparent
+
+//@keyframes title-down
+//  0%
+//    transform: translateY(calc(-100vw * .8))
+//  70%, 80%
+//    transform: translateY(0) scale(1.2)
+//  75%, 100%
+//    transform: translateY(0) scale(1)
+
+@keyframes title-down
+  0%
+    opacity: 0
+    transform: scale(0)
+  30%
+    transform: scale(1)
+  70%, 80%
+    transform: translateY(0) scale(1.2)
+  75%, 100%
+    transform: translateY(0) scale(1)
+  100%
+    opacity: 1
+
+@keyframes key-rotate-stop
+  0%,10%
+    transform: rotate(0)
+  11%
+    transform: rotate(-10deg)
+  12%
+    transform: rotate(0)
+  13%
+    transform: rotate(10deg)
+  14%
+    transform: rotate(0)
+  100%
+    transform: rotate(0)
+
+@keyframes up-down
+  0%, 30%, 100%
+    transform: translateY(0)
+  20%, 40%, 60%
+    transform: translateY(-6%)
+  30%, 45%
+    transform: translateY(0)
+
+
+@keyframes fadeInLeft
+  from
+    opacity: 0
+    -webkit-transform: translate3d(-100%, 0, 0)
+    transform: translate3d(-100%, 0, 0)
+  to
+    opacity: 1
+    -webkit-transform: translate3d(0, 0, 0)
+    transform: translate3d(0, 0, 0)

@@ -1,0 +1,40 @@
+-
+  var promoDataE = [
+    {
+      link: "https://media.etmall.com.tw/sp/11526/m/index.html",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-1.png",
+      alt: "雙11嗨Fun購好玩"
+    },
+    {
+      link: "#note-top1",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-2.png",
+      alt: "新會員註冊送888東森幣"
+    },
+    {
+      link: "#note-top2",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-3.png",
+      alt: "指定銀行最高回饋25%"
+    },
+    {
+      link: "https://www.etmall.com.tw/Activity/TeamLeaderboard",
+      imgSrc: "event/1st/e-main/components/promo-event/items/promo-4.png",
+      alt: "組隊消費 10% 回饋"
+    },
+  ]
+
+- var promoData = promoDataE
+
+//- TODO: 如果promo不和hero綁一起時要有自己的section和layout--main
+section.promo__group.promo__group--promo-event(data-title="戳椪糖").m-bottom--lg
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          .promo__box
+            img(src="event/1st/e-main/components/promo-event/title-1.png", alt="")
+          ul.event__wrap
+            each data, index in promoData
+              li 
+                a(href= data.link, title=data.alt) 
+                  img(src= data.imgSrc, alt= data.alt)
+

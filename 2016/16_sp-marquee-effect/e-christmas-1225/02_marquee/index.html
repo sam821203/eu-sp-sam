@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="tw">
+<head>
+<meta charset="UTF-8">
+<title>marquee effect</title>
+<script type="text/javascript" src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201504/SP_1019163/Includes/jquery-1.7.2.js"></script>
+<style>
+	img{
+		display: block;
+        border: 0;
+	}
+	.sp-wish__wrap,
+	.sp-wish__wrap:before, .sp-wish__wrap:after {
+	  box-sizing: border-box;
+	}
+	.sp-wish__wrap{
+		height: 34px;
+		padding: 0 10px;
+		overflow: hidden;
+	}
+	.sp-wish__wrap ul{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		overflow: hidden;
+	}
+	.sp-wish__wrap li{
+		overflow: hidden;
+	}
+	.sp-wish__wrap a{ 
+		display:block;
+		font-size: 20px;
+		color: #fff100;
+		padding: 5px 0;
+		text-decoration: none
+	}
+</style>
+</head>
+<body>
+
+<table width="1260" height="362" border="0" align="center" cellpadding="0" cellspacing="0" id="___01">
+    <tr>
+        <td colspan="3">
+            <img src="images/main_xm_01.jpg" width="1260" height="183" alt=""></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="images/main_xm_02.jpg" width="268" height="53" alt=""></td>
+        <td width="841" height="53" bgcolor="#000">
+            <div id="spWishBox" class="sp-wish__wrap">
+                <ul>
+                    <li><a href=""><span>1. 張小姐: </span>許願想要 <span>Apple iPhone 7 4.7吋 32G 智慧手機</span></a></li>
+                    <li><a href=""><span>2. 蔡小姐: </span>許願想要 <span>大日 DAINICHI 智能溫控煤油電暖器</span></a></li>
+                    <li><a href=""><span>3. 洪先生: </span>許願想要 <span>飛利浦全自動咖啡機</span></a></li>
+                </ul>
+            </div>
+        </td>
+        <td>
+            <img src="images/main_xm_04.jpg" width="151" height="53" alt=""></td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <a href="#"><img src="images/main_xm_05.jpg" width="1260" height="126" alt=""></a>
+        </td>
+    </tr>
+</table>
+
+</body>
+<script type="text/javascript">
+;(function ($) {
+
+    function spMarquee() {
+
+        var $spWishBox = $('#spWishBox'),
+            $wishUl = $spWishBox.find('ul'),
+            $wishLi = $spWishBox.find('li'),
+            _liHeiht = $wishLi.height(),
+            _lis = $wishLi.length,
+            maxPadd = (_lis - 1) * _liHeiht; //可移動高度 = 全部 li 的高度 - 第一個li顯示高度
+
+        var currentMarginTop = 0;
+
+        $spWishBox.css({
+            'height': _liHeiht
+        });
+
+        function animateSlider() {
+            
+            function moveRows() {
+                $wishUl.animate({
+                    'margin-top': currentMarginTop - _liHeiht // 0 - 一開始的 li 高度
+                }, 800);
+                currentMarginTop -= _liHeiht; // currentMarginTop -_liHeiht
+            }
+
+            if (currentMarginTop == -(maxPadd)) {
+                $wishUl.css({
+                    'margin-top': 0
+                })
+                currentMarginTop = 0;
+            } 
+            moveRows();
+
+        }
+
+
+        autoSlide = setInterval(function() {
+            animateSlider();
+        }, 3000);
+
+
+
+    }
+    spMarquee();
+
+} (jQuery));	
+
+</script>
+</html>

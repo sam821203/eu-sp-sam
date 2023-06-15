@@ -1,0 +1,204 @@
+.promo__group--tab-slider
+  .tab__wrap
+    +display-flex
+    //+bg-set(url("~event/test/e-main/components/tab-slider-section/bg-tab-m.png"), 99%)
+    position: relative
+    z-index: 1
+    display: block
+    //height: 145vw
+
+    .tab__zone
+      padding: 0
+      width: 90%
+      //+flex(0, 1, 34.2%)
+      //padding: 1.1%
+      .tab__box
+        +display-flex
+        // flex-wrap: wrap
+        justify-content: center
+        position: relative
+        top: 0
+        left: 10.5%
+        width: 90%
+        cursor: pointer
+    .content__zone
+      +flex(0, 1, 100%)
+      padding: 6% 6.5% 10%
+      +bg-set(url("~event/test/e-main/components/tab-slider-section/bg-tab-slider.png"), 100% auto)
+      .content__block
+        width: 100%
+        height: 100%
+        .content__item
+          width: 33%
+          // +breakpoint-min($min-width-lg)
+          //   width: 33%
+
+        //img
+        //  transform: scale(0.9)
+      .slider__tab
+        position: relative
+        padding: 0 0 7vw
+        top: 5vw
+      .content__box
+
+      // 點點與箭頭
+      // .swiper-slider-dot
+      //   bottom: 1.5vw
+      //   .swiper-pagination-bullet
+      //     width: 2.7vw
+      //     height: 2.7vw
+      //     max-width: 12px
+      //     max-height: 12px
+      //     margin: 0 5px
+      //   +breakpoint-min($min-width-xl)
+      //     bottom: 110px
+      //     .swiper-pagination-bullet
+      //       width: 16px
+      //       height: 16px
+      //       margin: 0 6px
+      // .sliderTabPager-prev
+      //   left: -8.5%
+      //   //width: 7vw
+      //   //height: 11vw
+      //   //background-size: 7vw 11vw
+      //   &:after
+      //     font-size: 6vw
+      //     color: #AD0734
+      // .sliderTabPager-next
+      //   right: -7.5%
+      //   //width: 7vw
+      //   //height: 11vw
+      //   //background-size: 7vw 11vw
+      //   &:after
+      //     font-size: 6vw
+      //     color: #AD0734
+      // +breakpoint-max($max-width-xxs)
+      //   .sliderTabPager-prev
+      //     left: -10%
+      //   .sliderTabPager-next
+      //     right: -9%
+      // +breakpoint-min($min-width-lg)
+      //   .sliderTabPager-prev
+      //     display: none
+      //     left: -6.5%
+      //   .sliderTabPager-next
+      //     display: none
+      //     // right: -4vw
+      // +breakpoint-min($min-width-xl)
+      //   .sliderTabPager-prev
+      //     left: 35px
+      //     top: 36%
+      //     &:after
+      //       font-size: 44px
+      //   .sliderTabPager-next
+      //     right: 43px
+      //     top: 36%
+      //     &:after
+      //       font-size: 44px
+
+  .tab__item
+    // +flex(0, 0, 25%)
+    padding: 0 1%
+    flex: 0 1 auto
+    // img
+    //   &:first-child
+    //     display: block
+    //   &:last-child
+    //     display: none
+    // &.active
+      // img
+      //   &:first-child
+      //     display: none
+      //   &:last-child
+      //     display: block
+    &:active,
+    &:hover
+      filter: brightness(150%)
+    &.active
+      filter: brightness(180%)
+
+  .content__box
+    display: none
+    top: 0
+    left: 0
+    position: relative
+    padding: 0
+    width: 100%
+    .swiper-wrapper
+      flex-direction: inherit
+      flex-wrap: nowrap
+      align-content: flex-start
+    &.active
+      display: block
+    .content__item
+      float: left
+      padding: 0 1%
+      //width: 30%
+      //border: 1px solid #ccc
+      //border-radius: 10px
+      // img
+      //   border: 3px solid transparent
+      //   border-image: linear-gradient(to top right, #cbb570 0%, #f3b060 25%, #fd1892 50%, #36b6b6 75%, #cbb570 100%)
+      //   border-image-slice: 1
+      //+bg-set(url("~event/test/e-main/components/tab-slider-section/items/tab/tab-bg-frame.png"), 100% auto)
+      &:active,
+      &:hover
+        filter: contrast(120%)
+      a
+        &:first-child
+          margin-left: -2%
+
+  +breakpoint-min($min-width-lg)
+    .tab__wrap
+      .content__zone
+        // +bg-set(url("~event/test/e-main/components/tab-slider-section/bg-tab-slider-web.png"), 100% auto)
+        .slider__tab
+          padding: 0 0 50px
+
+      .tab__zone
+        .tab__box
+          // top: 30px
+          // left: 30px
+    .content__box
+      .content__item
+        .content__text
+          font-size: 2.6rem
+          height: 63px
+        .content__price
+          font-size: 2.2rem
+  +breakpoint-min($min-width-xl)
+    .tab__wrap
+      display: block
+      //height: 1392px
+
+      .tab__zone
+        width: 100%
+        .tab__box
+          +display-flex
+          flex-wrap: wrap
+          justify-content: center
+          // top: 15px
+          left: 50px
+      .content__zone
+        margin: auto
+        padding: 12% 6.5% 6%
+        width: 100%
+        .slider__tab
+          // padding: 0 0 150px
+          top: 0
+        .content__box
+          // width: 100%
+          // padding: 0 8%
+          // top: 40px
+          // left: calc(50% - 460px)
+    .tab__item
+      // +flex(0, 0, 25%)
+      //padding: 0
+      width: auto
+      img
+        margin: 0 auto
+
+    .content__box
+      padding: 5px 20px 15px
+      .content__item
+        width: 32%

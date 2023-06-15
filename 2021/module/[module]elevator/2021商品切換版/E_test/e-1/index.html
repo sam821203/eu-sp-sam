@@ -1,0 +1,1164 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/javascript" src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="sp-20190619.css">
+<script src="https://hammerjs.github.io/dist/hammer.js" defer></script>
+<script type="text/javascript" src="sp-script20190619.js" defer></script>
+<style type="text/css">
+* {
+    box-sizing: border-box;
+}
+</style>
+
+<!--test 下滾-->
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    border: 0;
+}
+
+section {
+    display: block;
+}
+
+body {
+    font-size: 14px;
+    font-family: Helvetica, Arial, "LiHei Pro", "Microsoft JhengHei", "微軟正黑體", sans-serif;
+}
+
+.build--1260 {
+    /*TODO*/
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.margin-top-sm {
+    margin-top: 2%;
+}
+
+.margin-bottom-sm {
+    margin-bottom: 2%;
+}
+
+.margin-bottom-md {
+    margin-bottom: 4%;
+}
+
+.build__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* ===== animation setting start ===== */
+.build__wrap.wow {
+    animation: .5s bounce-in-left both;
+}
+
+@keyframes bounce-in-left {
+    from {
+        transform: translateX(-30%);
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* ===== animation setting end ===== */
+
+/* ===== build--4a1tt3s01 setting start ===== */
+.build--4a1tt3s01 .build__item {
+    margin-bottom: 0.8%;
+    background-color: #fff;
+    border: 1px solid #EDEDED;
+    transition: transform 0.16s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.build--4a1tt3s01 .build__item:active,
+.build--4a1tt3s01 .build__item:hover {
+    transform: scale(1.05);
+}
+
+@media screen and (min-width: 768px) {
+    .build--4a1tt3s01 .build__item {
+        margin-bottom: 0.35%;
+    }
+}
+
+/* ===== build--4a1tt3s01 setting end ===== */
+/* ===== build--4a1tt3s01 item *6 setting start ===== */
+
+.build--4a1tt3s01.item--4 .build__item {
+    width: 24%;
+    margin: .33%
+}
+
+.build--4a1tt3s01 .build__item,
+.build--4a1tt3s01 .item__img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.build--4a1tt3s01 .item__info {
+    position: relative;
+}
+
+.build--4a1tt3s01 .item__name {
+    height: 37px;
+    margin-top: 5px;
+}
+
+.build--4a1tt3s01 .item__push span {
+    color: #fff;
+    font-weight: 400;
+}
+
+/* ===== build--4a1tt3s01 item *6 setting end ===== */
+/* ===== item-push background-color setting start ===== */
+.build--4a1tt3s01 .item__push.bg__blue {
+    background: #3000b1;
+    background: -webkit-linear-gradient(to right, #1a00ea, #3000b1, #1a00ea);
+    background: linear-gradient(to right, #1a00ea, #3000b1, #1a00ea);
+    border-radius: 20px;
+    color: #fff;
+    letter-spacing: 1.5px;
+}
+
+.build--4a1tt3s01 .item__push.bg__green {
+    background: #3CA55C;
+    background: -webkitlinear-gradient(to right, #7fc313, #3CA55C, #7fc313);
+    background: linear-gradient(to right, #7fc313, #3CA55C, #7fc313);
+    border-radius: 20px;
+    color: #fff;
+    letter-spacing: 1.5px;
+}
+
+.build--4a1tt3s01 .item__push.bg__red {
+    background: #f01400;
+    background: -webkit-linear-gradient(to right, #f07219, #f01400, #f07219);
+    background: linear-gradient(to right, #f07219, #f01400, #f07219);
+    border-radius: 20px;
+    color: #fff;
+    letter-spacing: 1.5px;
+}
+
+.build--4a1tt3s01 .item__push--outerFrame {
+    width: 100%;
+    height: 28px;
+    text-align: center;
+}
+
+.build--4a1tt3s01 .item__push {
+    position: relative;
+    z-index: 1;
+    line-height: 140%;
+    height: auto;
+}
+
+.build--4a1tt3s01 {
+    background-color: #626483;
+    background-color: <!-- [CSS_BACKGROUND_COLOR] -->;
+}
+
+.build--4a1tt3s01 .build__banner {
+    text-align: center;
+    background-color: #626483;
+    background-color: <!-- [CSS_BACKGROUND_COLOR] -->;
+    border: 0;
+    box-shadow: none;
+}
+
+.build--4a1tt3s01 .build__item:active, .build--4a1tt3s01 .build__banner:hover {
+    transform: scale(1);
+}
+
+.build--4a1tt3s01 .build__banner .bn__title {
+    font-size: 1.8em;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    max-height: 30px;
+    overflow-y: hidden;
+    color: #fff67f;
+    color: <!-- [CSS_COLOR] -->;
+}
+
+.build--4a1tt3s01 .build__banner .bn__sub__title {
+    font-size: 1.1em;
+    color: #fff;
+    max-height: 18px;
+    overflow-y: hidden;
+}
+
+.build--4a1tt3s01 .build__banner .item__pic {
+    margin-top: 3%;
+}
+
+.build--4a1tt3s01 .build__banner .item__pic img {
+    max-width: 202px;
+}
+
+.build--4a1tt3s01 .build__banner .bn__go {
+    position: relative;
+    vertical-align: middle;
+    bottom: 9%;
+    left: 50%;
+    transform: translateX(-25%);
+}
+
+.build--4a1tt3s01 .build__banner .bn__go img {
+    width: 65%;
+}
+
+/* ===== item-push background-color setting end ===== */
+
+@media screen and (max-width: 768px) {
+    .build--4a1tt3s01.item--4 .build__item {
+        width: 49%;
+        margin: 1% .25%;
+    }
+
+    .build--4a1tt3s01 .build__item.build__banner {
+        box-shadow: none;
+    }
+
+    .build--4a1tt3s01 .build__banner .bn__title {
+        margin-top: 5%;
+        margin-bottom: 2%;
+        max-height: 30px;
+    }
+
+    .build--4a1tt3s01 .build__banner .item__pic img {
+        max-width: 330px;
+    }
+
+    .build--4a1tt3s01 .build__banner .bn__go img {
+        width: 65%;
+    }
+
+    .build--4a1tt3s01 .item__push--outerFrame {
+        height: 21px;
+        font-size: 13px;
+    }
+
+    .build--4a1tt3s01 .item__push span {
+        max-height: 21px;
+        line-height: 170%;
+        letter-spacing: 0;
+    }
+
+    .build--4a1tt3s01 .item__name {
+        height: 32px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 426px) and (max-width: 768px) {
+
+    .build--4a1tt3s01 .build__banner .bn__go {
+        bottom: 12%;
+    }
+
+    .build--4a1tt3s01 .build__banner .bn__go img {
+        width: 60%;
+    }
+}
+
+.build__item a {
+    color: #5d5d5d;
+}
+
+.item__pic {
+    position: relative;
+    z-index: 0;
+    padding-top: 100%;
+    overflow: hidden;
+}
+
+.item__img {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.item__info {
+    padding: 2%;
+}
+
+.item__push {
+    width: 100%;
+    height: 28px;
+    text-align: center;
+}
+
+.item__push span {
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    position: relative;
+    z-index: 0;
+    margin: 0 3%;
+    max-height: 28px;
+    line-height: 200%;
+    color: #cc1e05;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.item__name {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    height: 36px;
+    line-height: 120%;
+    font-size: 15px;
+    overflow: hidden;
+}
+
+.item__price span:last-child {
+    color: #cc1e05;
+    font-size: 22px;
+}
+
+/* banner 表頭 */
+section {
+    display: block;
+}
+
+.title__wrap {
+    max-width: 1260px;
+    margin: .5% auto;
+    padding: 0;
+}
+
+.title__wrap__img {
+    margin: 0;
+    height: 65px;
+    border: 0;
+    background: 50% 0%/auto auto no-repeat;
+}
+
+/* banner 表頭 end */
+</style>
+<!--test 下滾-->
+
+<div class="elevatorHome js--main--dialog" id="elevatorHome"></div>
+
+<div class="navRightBar" id="navRightBar"></div>
+<style>
+#myElement {
+    background: silver;
+    height: 300px;
+    text-align: center;
+    font: 30px/300px Helvetica, Arial, sans-serif;
+}
+</style>
+<div id="myElement"></div>
+<div id="spWrap" class="sp__wallper">
+    <div id="spContainer"><!-- 主情境 -->
+
+    </div>
+    <div class="" style="height: 2000px; background: #333;"></div>
+</div>
+
+<!--測試用，底部的fixed nav-->
+<!-- <div class="footer__box">-->
+<!--<ul class="footer__ul">-->
+<!--&lt;!&ndash;<li class="footer__list">&ndash;&gt;-->
+<!--&lt;!&ndash;<img src="icon-1.png" alt="">&ndash;&gt;-->
+<!--&lt;!&ndash;<p>分會場</p>&ndash;&gt;-->
+<!--&lt;!&ndash;</li>&ndash;&gt;-->
+<!--<li class="footer__list js-ElevatorBtn-m" data-dialog="elevatorHome_2">-->
+<!--<img src="icon-1.png" alt="">-->
+<!--<p>B會場</p>-->
+<!--</li>-->
+<!--<li class="footer__list icon__main">-->
+<!--<a href="https://media.etmall.com.tw/sp/9475/m/index.html">-->
+<!--<img src="icon-2.png" alt="">-->
+<!--<p>主會場</p>-->
+<!--</a>-->
+<!--</li>-->
+<!--<li class="footer__list js-ElevatorBtn-m" data-dialog="elevatorHome">-->
+<!--<img src="icon-3.png" alt="">-->
+<!--<p>熱門活動</p>-->
+<!--</li>-->
+<!--&lt;!&ndash;<li class="footer__list">&ndash;&gt;-->
+<!--&lt;!&ndash;<img src="icon-3.png" alt="">&ndash;&gt;-->
+<!--&lt;!&ndash;<p>熱門活動</p>&ndash;&gt;-->
+<!--&lt;!&ndash;</li>&ndash;&gt;-->
+<!--&lt;!&ndash;<li class="footer__list"></li>&ndash;&gt;-->
+<!--&lt;!&ndash;<li class="footer__list"></li>&ndash;&gt;-->
+<!--</ul>-->
+<!--</div> -->
+
+
+
+<!--test 下滾-->
+<!-- banner 表頭 -->
+<section class="title__wrap" data-title="a1">
+    <a href="<!--[BANNER_LINK_1]-->">
+        <div class="title__wrap__img lazyload"
+             data-src="https://www.etmall.com.tw/XML/content/DMSetting/Final/201908/SP_1108617/w/ca128bar1.jpg"></div>
+    </a>
+</section>
+<!-- banner 表頭 end -->
+<section class="build__wrap build--1260 build--4a1tt3s01 item--4 wow">
+    <div class="build__item build__banner">
+        <div class="bn__title">
+            <!--[CUSTOM_TAG1_1]-->
+        </div>
+        <div class="bn__sub__title">
+            <!--[CUSTOM_TAG2_1]-->
+        </div>
+        <div class="item__pic">
+            <img class="item__img lazyload" src="https://media.etmall.com.tw/NXimg/002369/2369802/2369802_LM.jpg"
+                 alt="">
+        </div>
+        <div class="bn__go">
+            <a href="<!--[BANNER_LINK_2]-->">
+                <img class="item__img " src="go.png" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="build__item">
+        <a href="<!--[GOOD_LINK_1]-->">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img " src="https://media.etmall.com.tw/NXimg/002369/2369802/2369802_LM.jpg"
+                         alt="">
+                </div>
+                <div class="item__info">
+
+                    <p class="item__name margin-bottom-md"><!--[GOOD_NAME_1]--></p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span><!--[GOOD_SALEPRC_1]--></span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="build__item">
+        <a href="<!--[GOOD_LINK_2]-->">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img " src="https://media.etmall.com.tw/NXimg/002369/2369802/2369802_LM.jpg"
+                         alt="">
+                </div>
+                <div class="item__info">
+                    <p class="item__name margin-bottom-md"><!--[GOOD_NAME_2]--></p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span><!--[GOOD_SALEPRC_2]--></span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="build__item">
+        <a href="<!--[GOOD_LINK_3]-->">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img" src="https://media.etmall.com.tw/NXimg/002369/2369802/2369802_LM.jpg" alt="">
+                </div>
+                <div class="item__info">
+                    <p class="item__name margin-bottom-md"><!--[GOOD_NAME_3]--></p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span><!--[GOOD_SALEPRC_3]--></span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</section>
+<!-- banner 表頭 -->
+<section class="title__wrap" data-title="a2">
+    <a href="<!--[BANNER_LINK_1]-->">
+        <div class="title__wrap__img lazyload"
+             data-src="https://www.etmall.com.tw/XML/content/DMSetting/Final/201908/SP_1108617/w/ca128bar1.jpg"></div>
+    </a>
+</section>
+<!-- banner 表頭 end -->
+<section class="build__wrap build--1260 build--4a1tt3s01 item--4 wow">
+    <div class="build__item build__banner">
+        <div class="bn__title">
+            <!--[CUSTOM_TAG1_1]-->
+        </div>
+        <div class="bn__sub__title">
+            <!--[CUSTOM_TAG2_1]-->
+        </div>
+        <div class="item__pic">
+            <img class="item__img " src="https://media.etmall.com.tw/NXimg/002369/2369802/2369802_LM.jpg" alt="">
+        </div>
+        <div class="bn__go">
+            <a href="<!--[BANNER_LINK_2]-->">
+                <img class="item__img " src="go.png" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="build__item">
+        <a href="<!--[GOOD_LINK_1]-->">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img " src="https://media.etmall.com.tw/NXimg/002369/2369802/2369802_LM.jpg"
+                         alt="">
+                </div>
+                <div class="item__info">
+
+                    <p class="item__name margin-bottom-md"><!--[GOOD_NAME_1]--></p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span><!--[GOOD_SALEPRC_1]--></span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="build__item">
+        <a href="<!--[GOOD_LINK_2]-->">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img " src="https://media.etmall.com.tw/NXimg/002369/2369802/2369802_LM.jpg"
+                         alt="">
+                </div>
+                <div class="item__info">
+                    <p class="item__name margin-bottom-md"><!--[GOOD_NAME_2]--></p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span><!--[GOOD_SALEPRC_2]--></span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="build__item">
+        <a href="<!--[GOOD_LINK_3]-->">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img " src="https://media.etmall.com.tw/NXimg/002369/2369802/2369802_LM.jpg"
+                         alt="">
+                </div>
+                <div class="item__info">
+                    <p class="item__name margin-bottom-md"><!--[GOOD_NAME_3]--></p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span><!--[GOOD_SALEPRC_3]--></span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</section>
+<!-- banner 表頭 -->
+<section class="title__wrap" data-title="stop4">
+    <a href="<!--[BANNER_LINK_1]-->">
+        <div class="title__wrap__img lazyload"
+             data-src="https://www.etmall.com.tw/XML/content/DMSetting/Final/201908/SP_1108617/w/ca128bar1.jpg"></div>
+    </a>
+</section>
+<!-- banner 表頭 end -->
+<section class="build__wrap build--1260 build--4a1tt3s01 item--4 wow">
+    <div class="build__item build__banner">
+        <div class="bn__title">
+            <!--[CUSTOM_TAG1_1]-->
+        </div>
+        <div class="bn__sub__title">
+            <!--[CUSTOM_TAG2_1]-->
+        </div>
+        <div class="item__pic">
+            <img class="item__img " src="https://media.etmall.com.tw/NXimg/002369/2369802/2369802_LM.jpg" alt="">
+        </div>
+        <div class="bn__go">
+            <a href="<!--[BANNER_LINK_2]-->">
+                <img class="item__img " src="go.png" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="build__item">
+        <a href="<!--[GOOD_LINK_1]-->">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img" src="https://media.etmall.com.tw/NXimg/002369/2369802/2369802_LM.jpg" alt="">
+                </div>
+                <div class="item__info">
+
+                    <p class="item__name margin-bottom-md"><!--[GOOD_NAME_1]--></p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span><!--[GOOD_SALEPRC_1]--></span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="build__item">
+        <a href="<!--[GOOD_LINK_2]-->">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img " src="https://media.etmall.com.tw/NXimg/002369/2369802/2369802_LM.jpg"
+                         alt="">
+                </div>
+                <div class="item__info">
+                    <p class="item__name margin-bottom-md"><!--[GOOD_NAME_2]--></p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span><!--[GOOD_SALEPRC_2]--></span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="build__item">
+        <a href="<!--[GOOD_LINK_3]-->">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img " src="https://media.etmall.com.tw/NXimg/002369/2369802/2369802_LM.jpg"
+                         alt="">
+                </div>
+                <div class="item__info">
+                    <p class="item__name margin-bottom-md"><!--[GOOD_NAME_3]--></p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span><!--[GOOD_SALEPRC_3]--></span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</section>
+<!-- banner 表頭 -->
+<section class="title__wrap" data-title="stop123">
+    <a href="<!--[BANNER_LINK_1]-->">
+        <div class=""></div>
+    </a>
+</section>
+<!-- banner 表頭 end -->
+<section class="build__wrap build--1260 build--4a1tt3s01 item--4 wow">
+    <div class="build__item build__banner">
+        <div class="bn__title">
+            <!--[CUSTOM_TAG1_1]-->
+        </div>
+        <div class="bn__sub__title">
+            <!--[CUSTOM_TAG2_1]-->
+        </div>
+        <div class="item__pic">
+            <img class="item__img " src="https://media.etmall.com.tw/NXimg/002369/2369802/2369802_LM.jpg" alt="">
+        </div>
+        <div class="bn__go">
+            <a href="<!--[BANNER_LINK_2]-->">
+                <img class="item__img" src="go.png" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="build__item">
+        <a href="<!--[GOOD_LINK_1]-->">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img" src="https://media.etmall.com.tw/NXimg/002369/2369802/2369802_LM.jpg" alt="">
+                </div>
+                <div class="item__info">
+
+                    <p class="item__name margin-bottom-md"><!--[GOOD_NAME_1]--></p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span><!--[GOOD_SALEPRC_1]--></span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="build__item">
+        <a href="<!--[GOOD_LINK_2]-->">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img " src="https://media.etmall.com.tw/NXimg/002369/2369802/2369802_LM.jpg"
+                         alt="">
+                </div>
+                <div class="item__info">
+                    <p class="item__name margin-bottom-md"><!--[GOOD_NAME_2]--></p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span><!--[GOOD_SALEPRC_2]--></span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="build__item">
+        <a href="<!--[GOOD_LINK_3]-->">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img " src="https://media.etmall.com.tw/NXimg/002369/2369802/2369802_LM.jpg"
+                         alt="">
+                </div>
+                <div class="item__info">
+                    <p class="item__name margin-bottom-md"><!--[GOOD_NAME_3]--></p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span><!--[GOOD_SALEPRC_3]--></span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</section>
+<!-- banner 表頭 -->
+<section class="title__wrap" data-title="a5">
+    <a href="<!--[BANNER_LINK_1]-->">
+        <div class=""></div>
+    </a>
+</section>
+<!-- banner 表頭 end -->
+<section class="build__wrap build--1260 build--4a1tt3s01 item--4 wow">
+    <div class="build__item build__banner">
+        <div class="bn__title">
+            <!--[CUSTOM_TAG1_1]-->
+        </div>
+        <div class="bn__sub__title">
+            <!--[CUSTOM_TAG2_1]-->
+        </div>
+        <div class="item__pic">
+            <img class="item__img " src="https://media.etmall.com.tw/NXimg/002369/2369802/2369802_LM.jpg" alt="">
+        </div>
+        <div class="bn__go">
+            <a href="<!--[BANNER_LINK_2]-->">
+                <img class="item__img " src="go.png" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="build__item">
+        <a href="<!--[GOOD_LINK_1]-->">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img " src="https://media.etmall.com.tw/NXimg/002369/2369802/2369802_LM.jpg"
+                         alt="">
+                </div>
+                <div class="item__info">
+
+                    <p class="item__name margin-bottom-md"><!--[GOOD_NAME_1]--></p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span><!--[GOOD_SALEPRC_1]--></span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="build__item">
+        <a href="<!--[GOOD_LINK_2]-->">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img " src="https://media.etmall.com.tw/NXimg/002369/2369802/2369802_LM.jpg"
+                         alt="">
+                </div>
+                <div class="item__info">
+                    <p class="item__name margin-bottom-md"><!--[GOOD_NAME_2]--></p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span><!--[GOOD_SALEPRC_2]--></span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="build__item">
+        <a href="<!--[GOOD_LINK_3]-->">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img " src="https://media.etmall.com.tw/NXimg/002369/2369802/2369802_LM.jpg"
+                         alt="">
+                </div>
+                <div class="item__info">
+                    <p class="item__name margin-bottom-md"><!--[GOOD_NAME_3]--></p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span><!--[GOOD_SALEPRC_3]--></span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</section>
+<!-- banner 表頭 -->
+<section class="title__wrap" data-title="a6">
+    <a href="<!--[BANNER_LINK_1]-->">
+        <div class=""></div>
+    </a>
+</section>
+<!-- banner 表頭 end -->
+<section class="build__wrap build--1260 build--4a1tt3s01 item--4 wow">
+    <div class="build__item build__banner">
+        <div class="bn__title">
+            <!--[CUSTOM_TAG1_1]-->
+        </div>
+        <div class="bn__sub__title">
+            <!--[CUSTOM_TAG2_1]-->
+        </div>
+        <div class="item__pic">
+            <img class="item__img " src="https://media.etmall.com.tw/NXimg/002369/2369802/2369802_LM.jpg" alt="">
+        </div>
+        <div class="bn__go">
+            <a href="<!--[BANNER_LINK_2]-->">
+                <img class="item__img " src="go.png" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="build__item">
+        <a href="<!--[GOOD_LINK_1]-->">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img " src="https://media.etmall.com.tw/NXimg/002369/2369802/2369802_LM.jpg"
+                         alt="">
+                </div>
+                <div class="item__info">
+
+                    <p class="item__name margin-bottom-md"><!--[GOOD_NAME_1]--></p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span><!--[GOOD_SALEPRC_1]--></span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="build__item">
+        <a href="<!--[GOOD_LINK_2]-->">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img " src="https://media.etmall.com.tw/NXimg/002369/2369802/2369802_LM.jpg"
+                         alt="">
+                </div>
+                <div class="item__info">
+                    <p class="item__name margin-bottom-md"><!--[GOOD_NAME_2]--></p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span><!--[GOOD_SALEPRC_2]--></span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="build__item">
+        <a href="<!--[GOOD_LINK_3]-->">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img " src="https://media.etmall.com.tw/NXimg/002369/2369802/2369802_LM.jpg"
+                         alt="">
+                </div>
+                <div class="item__info">
+                    <p class="item__name margin-bottom-md"><!--[GOOD_NAME_3]--></p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span><!--[GOOD_SALEPRC_3]--></span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</section>
+<!-- banner 表頭 -->
+<section class="title__wrap" data-title="a7">
+    <a href="<!--[BANNER_LINK_1]-->">
+        <div class=""></div>
+    </a>
+</section>
+<!-- banner 表頭 end -->
+<section class="build__wrap build--1260 build--4a1tt3s01 item--4 wow">
+    <div class="build__item build__banner">
+        <div class="bn__title">
+            <!--[CUSTOM_TAG1_1]-->
+        </div>
+        <div class="bn__sub__title">
+            <!--[CUSTOM_TAG2_1]-->
+        </div>
+        <div class="item__pic">
+            <img class="item__img " src="https://media.etmall.com.tw/NXimg/002369/2369802/2369802_LM.jpg" alt="">
+        </div>
+        <div class="bn__go">
+            <a href="<!--[BANNER_LINK_2]-->">
+                <img class="item__img " data-src="go.png" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="build__item">
+        <a href="<!--[GOOD_LINK_1]-->">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img " src="https://media.etmall.com.tw/NXimg/002369/2369802/2369802_LM.jpg"
+                         alt="">
+                </div>
+                <div class="item__info">
+
+                    <p class="item__name margin-bottom-md"><!--[GOOD_NAME_1]--></p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span><!--[GOOD_SALEPRC_1]--></span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="build__item">
+        <a href="<!--[GOOD_LINK_2]-->">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img " src="https://media.etmall.com.tw/NXimg/002369/2369802/2369802_LM.jpg"
+                         alt="">
+                </div>
+                <div class="item__info">
+                    <p class="item__name margin-bottom-md"><!--[GOOD_NAME_2]--></p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span><!--[GOOD_SALEPRC_2]--></span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="build__item">
+        <a href="<!--[GOOD_LINK_3]-->">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img " src="https://media.etmall.com.tw/NXimg/002369/2369802/2369802_LM.jpg"
+                         alt="">
+                </div>
+                <div class="item__info">
+                    <p class="item__name margin-bottom-md"><!--[GOOD_NAME_3]--></p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span><!--[GOOD_SALEPRC_3]--></span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</section>
+<!-- banner 表頭 -->
+<section class="title__wrap" data-title="a8">
+    <a href="<!--[BANNER_LINK_1]-->">
+        <div class=""></div>
+    </a>
+</section>
+<!-- banner 表頭 end -->
+<section class="build__wrap build--1260 build--4a1tt3s01 item--4 wow">
+    <div class="build__item build__banner">
+        <div class="bn__title">
+            <!--[CUSTOM_TAG1_1]-->
+        </div>
+        <div class="bn__sub__title">
+            <!--[CUSTOM_TAG2_1]-->
+        </div>
+        <div class="item__pic">
+            <img class="item__img " src="https://media.etmall.com.tw/NXimg/002369/2369802/2369802_LM.jpg" alt="">
+        </div>
+        <div class="bn__go">
+            <a href="<!--[BANNER_LINK_2]-->">
+                <img class="item__img " src="go.png" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="build__item">
+        <a href="<!--[GOOD_LINK_1]-->">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img " src="https://media.etmall.com.tw/NXimg/002369/2369802/2369802_LM.jpg"
+                         alt="">
+                </div>
+                <div class="item__info">
+
+                    <p class="item__name margin-bottom-md"><!--[GOOD_NAME_1]--></p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span><!--[GOOD_SALEPRC_1]--></span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="build__item">
+        <a href="<!--[GOOD_LINK_2]-->">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img " src="https://media.etmall.com.tw/NXimg/002369/2369802/2369802_LM.jpg"
+                         alt="">
+                </div>
+                <div class="item__info">
+                    <p class="item__name margin-bottom-md"><!--[GOOD_NAME_2]--></p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span><!--[GOOD_SALEPRC_2]--></span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="build__item">
+        <a href="<!--[GOOD_LINK_3]-->">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img " src="https://media.etmall.com.tw/NXimg/002369/2369802/2369802_LM.jpg"
+                         alt="">
+                </div>
+                <div class="item__info">
+                    <p class="item__name margin-bottom-md"><!--[GOOD_NAME_3]--></p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span><!--[GOOD_SALEPRC_3]--></span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</section>
+<!-- banner 表頭 -->
+<section class="title__wrap" data-title="a9">
+    <a href="<!--[BANNER_LINK_1]-->">
+        <div class=""></div>
+    </a>
+</section>
+<!-- banner 表頭 end -->
+<section class="build__wrap build--1260 build--4a1tt3s01 item--4 wow">
+    <div class="build__item build__banner">
+        <div class="bn__title">
+            <!--[CUSTOM_TAG1_1]-->
+        </div>
+        <div class="bn__sub__title">
+            <!--[CUSTOM_TAG2_1]-->
+        </div>
+        <div class="item__pic">
+            <img class="item__img " src="https://media.etmall.com.tw/NXimg/002369/2369802/2369802_LM.jpg" alt="">
+        </div>
+        <div class="bn__go">
+            <a href="<!--[BANNER_LINK_2]-->">
+                <img class="item__img " src="go.png" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="build__item">
+        <a href="<!--[GOOD_LINK_1]-->">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img " src="https://media.etmall.com.tw/NXimg/002369/2369802/2369802_LM.jpg"
+                         alt="">
+                </div>
+                <div class="item__info">
+
+                    <p class="item__name margin-bottom-md"><!--[GOOD_NAME_1]--></p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span><!--[GOOD_SALEPRC_1]--></span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="build__item">
+        <a href="<!--[GOOD_LINK_2]-->">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img " src="https://media.etmall.com.tw/NXimg/002369/2369802/2369802_LM.jpg"
+                         alt="">
+                </div>
+                <div class="item__info">
+                    <p class="item__name margin-bottom-md"><!--[GOOD_NAME_2]--></p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span><!--[GOOD_SALEPRC_2]--></span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="build__item">
+        <a href="<!--[GOOD_LINK_3]-->">
+            <div class="item__box">
+                <div class="item__pic">
+                    <img class="item__img " src="https://media.etmall.com.tw/NXimg/002369/2369802/2369802_LM.jpg"
+                         alt="">
+                </div>
+                <div class="item__info">
+                    <p class="item__name margin-bottom-md"><!--[GOOD_NAME_3]--></p>
+                    <div class="item__price margin-bottom-sm">
+                        <span>$</span>
+                        <span><!--[GOOD_SALEPRC_3]--></span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</section>
+<div class="">我是底部</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js"></script>
+<!--<script src="popWindow.js"></script>-->
+<script>
+var initLazyload = lazyload();
+</script>
+
+
+<!--test 下滾-->
+
+
+<!-- 教學 -->
+
+<!--
+這包是電梯的js檔
+1. 掛著這隻js就可以自動產生這包裡面的小網電梯
+   以後只要在程式碼最下方掛這行就好：
+
+   <script id="scriptIconFloat" src="上傳位置/generateVersion20181019.js"></script>
+
+2. 斜角標以後換擋只要檔名一樣蓋過，上傳到這個位置沒問題了！
+
+3. 這隻js會自動判斷：
+	a. 如果有id="spWrap"，會抓這個id的地方自動放在最上方。
+
+       所以記得在想外框的父層設id是比較好控制的。
+
+	** jing備註:第一次修改因為直接掛html(非使用js)為了怕衝突，把id改掉造成後面無法自己產生出來問題(需另外加html)。
+
+
+4. 如果要修改電梯的(連結/館別名稱)，可在"sp-script20181019.js"這支js裡面搜尋
+   navContent[
+    {
+       "linkUrl": "連結",
+       "words"  : "館別名稱"
+     },
+    ]
+     第一個固定是主會場，其他則看該月要連結到什麼館別。
+
+5. 欲修改網址有幾個地方需要修改，「index.html」裡面的"CSS/JS"的URL,「generateVersion20181019.js」這支裡面的"CSS/JS"的URL。
+
+6. 最後，這是for小網自適應電梯，預設是直接出現在上面，變大的呈現方式也是一樣~
+
+	have fun~     by Jing Chen
+-->

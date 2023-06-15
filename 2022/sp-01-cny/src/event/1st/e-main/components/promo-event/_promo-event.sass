@@ -1,0 +1,129 @@
+.promo__group--promo-event
+  +pos-set(relative)
+  // overflow: hidden
+  // margin-top: -48%
+  // +breakpoint-min($min-width-xl)
+  //   margin-top: -540px
+  .decor--promo-web
+    display: none
+    +breakpoint-min($min-width-xl)
+      display: block
+      +pos-set(relative, under, -148px)
+      height: 466px
+      pointer-events: none
+      overflow: hidden
+      .decor--lamp
+        &-left
+          top: 0
+          left: calc(50% - 990px)
+        &-right
+          top: 1px
+          right: calc(50% - 860px)
+
+  .decor--promo
+    z-index: map-get($zindex, base)
+    top: -66%
+    left: 0
+    max-height: 309px
+    pointer-events: none
+    .decor--lamp
+      top: -1px
+      width: 20%
+      &-left
+        top: 0
+        left: 0
+        img
+          transform: scaleX(-1)
+      &-right
+        top: 0
+        right: 0
+    +breakpoint-min($min-width-xl)
+      top: -105px
+
+  .promo__wrap--special
+    +aspect-ratio(960, 157)
+    +breakpoint-min($min-width-xl)
+      margin-top: -466px
+  .promo__zone--special
+    +pos-set(relative, zero)
+    padding: 0 9%
+    .event__block
+      display: flex
+      justify-content: space-between
+      li
+        width: 49%
+
+  .promo__wrap
+    +aspect-ratio(960, 1234)
+  .promo__zone
+    +pos-set(relative, zero)
+    padding: 3% 5% 0
+    +bg-set(url(event/1st/e-main/components/promo-event/bg-promo-event.png), 100%)
+    .promo__block
+      .promo__box
+        display: flex
+        .event__block
+          width: 65%
+          height: 100%
+          .swiper-container
+            margin: 7% -1% 0 22%
+          .event__box
+            margin-top: 7%
+            width: 50%
+            +breakpoint-min($min-width-xl)
+              margin-top: 8%
+        .event__item
+          padding: 1% 1% 0 6%
+          width: 35%
+          +breakpoint-min($min-width-xl)
+            padding-top: 4%
+        &:nth-child(2)
+          li
+            &:first-child
+              margin-top: 4%
+              +breakpoint-min($min-width-xl)
+                margin-top: 7%
+            &:nth-child(2)
+              margin-top: -28%
+              padding-right: 4%
+              +breakpoint-min($min-width-xl)
+                margin-top: -23%
+                padding-left: 3%
+            &:last-child
+              +breakpoint-min($min-width-xl)
+                margin-top: 3%
+                margin-left: 1%
+
+      .slider__box
+        margin-top: -18%
+        padding-left: 29%
+        &:last-child
+          margin-top: 14%
+          padding-left: 0%
+          +breakpoint-min($min-width-xl)
+            margin-top: 16%
+
+
+
+.animate
+  // transition: 2s
+  animation: heartBeat 1.5s 1s both 1 linear
+
+@keyframes heartBeat
+  0%
+    transform: scale(1)
+  14%
+    transform: scale(1.05)
+    filter: brightness(1.02)
+  28%
+    transform: scale(1)
+    filter: brightness(1.1)
+  42%
+    transform: scale(1.05)
+    filter: brightness(1.07)
+  64%
+    transform: scale(1)
+    filter: brightness(1.1)
+  70%
+    transform: scale(1)
+

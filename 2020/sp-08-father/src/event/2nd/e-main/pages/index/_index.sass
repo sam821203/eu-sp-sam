@@ -1,0 +1,58 @@
+// // ==========================================================================
+// // Plugins
+// // ==========================================================================
+// // @import "vendors/animate"
+@import "~vendors/style/swiper-slider-custom"
+
+// hero section
+// ===========================
+@import "~event/2nd/e-main/components/hero-section/_hero-section"
+@import "~event/2nd/e-main/components/bn-special/_bn-special"
+
+// // ==========================================================================
+// // components
+// // ==========================================================================
+@import "~event/2nd/e-main/components/promo-event/_promo-event"
+@import "~event/2nd/e-main/components/flip-card/_flip-card"
+@import "~event/2nd/e-main/components/event-w4m4-no-item/_event-w4m4-no-item"
+@import "~event/2nd/e-main/components/dynamic-slider/_dynamic-slider"
+// @import "~event/2nd/e-main/components/dynamic-slider-2/_dynamic-slider-2" // 因版型和1一樣所以共用
+@import "~event/2nd/e-main/components/bn-event/_bn-event"
+// @import "~event/2nd/e-main/components/dynamic-slider-3/_dynamic-slider-3" // 因版型和1一樣所以共用
+@import "~event/2nd/e-main/components/event-w4m4/_event-w4m4"
+
+
+// // ==========================================================================
+// // Page
+// // ==========================================================================
+body
+  +pos-set(relative, zero)
+  background-color: $main-e-background-color-2nd
+
+.sp__wrap
+  +pos-set(relative, zero)
+  +bg-set(url("~event/2nd/e-main/pages/index/bg.jpg"), 100%)
+
+  +breakpoint-min($min-width-xl)
+    background: center 0 url("~event/2nd/e-main/pages/index/bg.jpg") no-repeat, center 0 url("~event/2nd/e-main/pages/index/bg-web.jpg") no-repeat
+    background-size: auto
+
+.sp__wrap a
+  display: block
+
+  .decoration--background.decoration__wrap// parallax css
+// =================================
+.decoration--background
+  display: none
+
+  +breakpoint-min($min-width-3xl)
+    display: block
+    // z-index: base(1)以上可蓋在主視覺上，zero(0)可在主視覺下，預設都在logo下(logo是500)
+    +pos-set(absolute, under, 690px)
+    width: 100%
+    height: 100%
+    pointer-events: none
+
+.decoration__wrap
+  +pos-set(sticky, zero, 0)
+

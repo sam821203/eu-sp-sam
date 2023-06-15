@@ -1,0 +1,18 @@
+section.promo__group.promo__group--match.m-bottom--lg(data-title="配對好康")
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        .promo__title#decorMatchGame
+          img(src="event/1st/e-main/components/match-game/decor-match-game.png", alt="")
+        #cardWrap.card__wrap
+          ul#cardBox.card__box
+            - var i = 0;
+            while i < 12
+              li.card__item
+                .card__front
+                  a
+                    img
+                .card__back(title="翻牌享好康！")
+                  img(src="event/1st/e-main/components/match-game/card-back.png", alt="翻牌享好康！")
+              - i++
+

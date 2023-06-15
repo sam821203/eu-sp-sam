@@ -1,0 +1,101 @@
+- 
+  var midMoreDataE = [
+    {
+      link: "https://www.etmall.com.tw/gp/111582",
+      imgSrc: "~event/2nd/e-main/components/mid-more-slider/items/mid-more-1.png",
+      alt: "京美",
+      text: "銀纖維護膝$1111",
+    }, 
+    {
+      link: "https://www.etmall.com.tw/p/107699",
+      imgSrc: "~event/2nd/e-main/components/mid-more-slider/items/mid-more-2.png",
+      alt: "熹歐禾",
+      text: "韓國美型內衣$111",
+    }, 
+    {
+      link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202011/SP_1116664/w/index.html", 
+      imgSrc: "~event/2nd/e-main/components/mid-more-slider/items/mid-more-3.png",
+      alt: "BRITA",
+      text: "任買一壺多一芯",
+    }, 
+    {
+      link: "https://www.etmall.com.tw/p/115061",
+      imgSrc: "~event/2nd/e-main/components/mid-more-slider/items/mid-more-4.png",
+      alt: "Diplona",
+      text: "美體洗沐搶1折up",
+    }, 
+    {
+      link: "https://www.etmall.com.tw/p/114564",
+      imgSrc: "~event/2nd/e-main/components/mid-more-slider/items/mid-more-5.png",
+      alt: "ivenor",
+      text: "雙11搶孅購5折UP",
+    }, 
+    {
+      link: "https://www.etmall.com.tw/gp/114832",
+      imgSrc: "~event/2nd/e-main/components/mid-more-slider/items/mid-more-6.png",
+      alt: "台塑生醫",
+      text: "囤貨必敗3折起",
+    },
+    {
+      link: "https://www.etmall.com.tw/c2/138366",
+      imgSrc: "~event/2nd/e-main/components/mid-more-slider/items/mid-more-7.png",
+      alt: "realme",
+      text: "限時超低價",
+    },
+    {
+      link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202010/SP_1116585/w/index.html",
+      imgSrc: "~event/2nd/e-main/components/mid-more-slider/items/mid-more-8.png",
+      alt: "象印",
+      text: "滿額登記抽電子鍋",
+    }, 
+    {
+      link: "https://www.etmall.com.tw/i/2775258",
+      imgSrc: "~event/2nd/e-main/components/mid-more-slider/items/mid-more-9.png",
+      alt: "GoPro",
+      text: "旗艦新機上市",
+    }, 
+  ]
+
+- 
+  var midMoreDataU = [
+    {
+      link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202008/SP_1106087/w/index.html", 
+      imgSrc: "~event/2nd/u-main/components/mid-more-slider/items/mid-more-1.png",
+      alt: "滿$3000送300",
+      text: "我愛東森東森愛我",
+    }, 
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale", 
+      imgSrc: "~event/2nd/u-main/components/mid-more-slider/items/mid-more-2.png",
+      alt: "滿$3000送300",
+      text: "我愛東森東森愛我",
+    }, 
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale?Day=Up", 
+      imgSrc: "~event/2nd/u-main/components/mid-more-slider/items/mid-more-3.png",
+      alt: "滿$3000送300",
+      text: "我愛東森東森愛我",
+    }, 
+  ]
+
+- var midMoreData = isU ? midMoreDataU : midMoreDataE
+
+section.promo__group.promo__group--mid-more.m-bottom--md(data-title="品牌大賞")
+  .layout--main
+    //- .promo__title.block--center.text--center
+    //-   img(src="~event/2nd/e-main/components/mid-more-slider/title-mid-more.png", alt="")
+
+    .promo__wrap
+      #sliderMidMore.promo__slider.swiper-container
+        ul.swiper-wrapper
+          each data in midMoreData
+            li.swiper-slide
+              a(href= data.link, title= data.alt)
+                img.swiper-lazy(data-src= data.imgSrc, alt= data.alt)
+                .swiper-lazy-preloader.swiper-lazy-preloader-white
+                .text__box
+                  span= data.text
+
+        #sliderMidMorePrev.swiper-button-white.swiper-button-prev.mid-more__nav.mid-more__nav--prev
+        #sliderMidMoreNext.swiper-button-white.swiper-button-next.mid-more__nav.mid-more__nav--next
+      //- #sliderMidMorePager.mid-more__pager.swiper-pagination

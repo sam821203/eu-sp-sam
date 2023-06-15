@@ -1,0 +1,28 @@
+.promo__event
+  +pos-set(relative, base)
+  margin-top: -1%
+  .event__wrap
+    display: flex
+    flex-wrap: wrap
+    padding: 0 0.5%
+    li
+      flex: 0 1 50%
+      &:nth-child(3),
+      &:nth-child(4),
+        margin-top: -2.5%
+      a
+        text-align: center
+        transition: all 0.5s
+        &:hover,
+        &:active
+          transform: translateY(2%)
+    &--top
+      li
+        &:nth-child(2),
+        &:nth-child(4),
+          padding-top: 1%
+
+    &--bottom
+      margin-top: -1.5%
+      padding-bottom: 2.2%
+        

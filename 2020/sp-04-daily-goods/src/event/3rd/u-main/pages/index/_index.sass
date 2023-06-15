@@ -1,0 +1,44 @@
+// // ==========================================================================
+// // Plugins
+// // ==========================================================================
+// // @import "vendors/animate"
+@import "~vendors/style/swiper-slider-custom"
+
+// // ==========================================================================
+// // components
+// // ==========================================================================
+
+// hero section
+// ===========================
+@import "~event/3rd/u-main/components/hero-section/_hero-section"
+@import "~event/3rd/u-main/components/decoration-slider/_decoration-slider.sass"
+
+// other components
+// ===========================
+//@import "~event/3rd/u-main/components/hero-small-slider/_hero-small-slider"
+@import "~event/3rd/u-main/components/promo-event/_promo-event"
+//@import "~event/3rd/u-main/components/goods-slider/_goods-slider"
+// @import "~event/3rd/u-main/components/event-w4m2/_event-w4m2"
+// @import "~event/3rd/u-main/components/connect-anchor/_connect-anchor"
+@import "~event/3rd/u-main/components/bn-special/_bn-special"
+// // ==========================================================================
+// // Page
+// // ==========================================================================
+body
+  +pos-set(relative, zero)
+  background-color: $main-e-background-color-3rd
+  +breakpoint-min($min-width-xl)
+    background-image: url("~event/3rd/u-main/pages/index/bg-line.jpg")
+    background-repeat: repeat-y
+    background-size: 2560px auto
+    background-position: top center
+
+.sp__wrap
+  +pos-set(relative, base)
+  +bg-set(url("~event/3rd/u-main/pages/index/bg.jpg"), 100%)
+  +breakpoint-min($min-width-xl)
+    background: center 0 url("~event/3rd/u-main/pages/index/bg-web.jpg") no-repeat
+    background-size: auto
+
+.sp__wrap a
+  display: block

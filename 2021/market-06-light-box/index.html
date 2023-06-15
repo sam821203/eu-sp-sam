@@ -1,0 +1,192 @@
+<meta name="viewport" content="width=device-width">
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+  a {
+    display: block;
+    text-decoration: none;
+  }
+  ul {
+    list-style: none;
+  }
+  img {
+    max-width: 100%;
+    border: 0;
+    display: block;
+  }
+  article,
+  main,
+  nav,
+  section {
+    display: block;
+  }
+  body {
+    margin: 0;
+    background-color: #f0b704;
+    /*...................................背景色,1260把這行刪掉*/
+  }
+  .ani_wrap {
+    position: relative;
+    z-index: 1;
+  }
+  .ani_wrap .ani_obj {
+    position: absolute;
+    top: 155px;
+    left: calc(50% - 300px);
+    width: 65%;
+    animation-duration: 2s;
+  }
+  .layout--main {
+    position: relative;
+    z-index: 0;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .layout--main.icon_Home {
+    z-index: auto;
+  }
+  /* 主視覺 */
+  /* ======================================== */
+  .logo a,
+  .sp__visual a {
+    display: block;
+  }
+
+  .logo {
+    position: absolute;
+    z-index: 1;
+    /* 調整logo位置 */
+    top: 1%;
+    left: 1%;
+    width: 30%;
+    max-width: 220px;
+  }
+
+  /* 設定背景 */
+  .sp__main {
+    background: url(bg.jpg) center 0 no-repeat;
+  }
+  /* 設定前景 */
+  .sp__visual {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+  }
+/*...........................................................示意線條拿掉end*/
+  .visual__anchor,
+  .visual__main,
+  .visual__nav {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .visual__anchor {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }
+  .visual__main a,
+  .visual__nav a {
+    flex-grow: 1;
+  }
+  /* 主視覺 */
+  /*...........................................................紅框區高度*/
+  .visual__main {
+    height: 100%;
+  }
+  /*...........................................................紅框區寬度*/
+  /* 設定點下去與hover動畫 */
+  .btn__wrap li:hover,
+  .btn__wrap li:active {
+    /* 變大(>1時變大) */
+    transform: scale(1.05);
+    /* 亮度調亮(>100%時變亮) */
+    filter: brightness(115%);
+  }
+  .btn__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 2%
+  }
+  .btn__wrap  a  img{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .btn__wrap li:nth-child(1),
+  .btn__wrap li:nth-child(2) {
+    width: 50%;
+  }
+  .btn__wrap li:nth-child(3){
+    width: 100%;
+  }
+  @media screen and (max-width: 960px) {
+    .ani_wrap .ani_obj {
+      top: 12vw;
+      left: 15vw;
+      width: 77%;
+    }
+  }
+</style>
+<div id="spWrap" class="sp__wallper">
+  <!-- 主視覺 -->
+  <div class="layout--main icon_Home">
+    <!-- 浮水印start(勿刪)-->
+    <div id="iconHome"></div>
+  </div> <!-- 浮水印end(勿刪)-->
+  <main class="sp__main">
+    <div class="layout--main">
+      <div class="ani_wrap">
+        <img class="ani_obj animate__animated animate__tada animate__infinite" src="title.png">
+      </div>
+      <a href="https://www.etmall.com.tw" class="logo"><img src="ehs-logo.png" alt="東森購物"></a>
+      <div class="sp__visual">
+        <img src="index.jpg">
+      </div>
+    </div>
+  </main>
+  <section class="layout--main">
+    <ul class="btn__wrap">
+      <li>
+        <a href="https://play.google.com/store/apps/details?id=com.hyxen.app.etmall&hl=zh_TW" title="到Google Play下載東森購物APP">
+          <img src="android.png" alt="到Google Play下載東森購物APP">
+        </a>
+      </li>
+      <li>
+        <a href="https://apps.apple.com/tw/app/ehs%E6%9D%B1%E6%A3%AE%E8%B3%BC%E7%89%A9/id974433138" title="到App Store下載東森購物APP">
+          <img src="apple.png" alt="到App Store下載東森購物APP">
+        </a>
+      </li>
+      <li>
+        <a title="APP限定！不要再用滑鼠了！快去APP～" onclick="n('etmall://open?pgid=44&tb=0&url=https%3a%2f%2fmedia.etmall.com.tw%2fsp%2f9770%2fm%2fapp.html&t=APP%e9%99%90%e5%ae%9a%e9%80%81200%e6%9e%9a%e6%9d%b1%e6%a3%ae%e5%b9%a3%7cETMall%e6%9d%b1%e6%a3%ae%e8%b3%bc%e7%89%a9')">
+          <img src="app_1.png" alt="APP限定！點我送200枚東森幣！">
+        </a>
+      </li>
+    </ul>
+  </section>
+</div>
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script>$('a[href^="#"]').on("click",function(e){var target=$("a[name="+this.getAttribute("href").split("#")[1]+"]");if(target.length){e.preventDefault();$("html,body").stop().animate({scrollTop:target.offset().top},500)}});</script>
+<!-- 浮水印 -->
+<script id="scriptIconFloat"
+  src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105264/float-icon.js"></script>
+<!-- 共用JS -->
+<script id="generateScript"
+  src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.js"></script>
+<script>
+  function e(){var e=/(WebView|(iPhone|iPod|iPad)(?!.*Safari\/)(?!.*Line\/)|Android.*(wv|.0.0.0))(?!.*Line\/)/gi.test(navigator.userAgent);if(e)return true;else return false}if(e())location.href="etmall://open?pgid=44&tb=0&url=https%3a%2f%2fmedia.etmall.com.tw%2fsp%2f9770%2fm%2fapp.html&t=APP%e9%99%90%e5%ae%9a%e9%80%81200%e6%9e%9a%e6%9d%b1%e6%a3%ae%e5%b9%a3%7cETMall%e6%9d%b1%e6%a3%ae%e8%b3%bc%e7%89%a9";
+
+  function n(e,t=25,a){var n=Date.now();var r=setTimeout(function(){var e=Date.now();if(e-n>t+100)return;else alert("請先裝東森購物app，才會自動跳轉。")},t);window.location=e}
+
+</script>

@@ -1,0 +1,147 @@
+// ==========================================================================
+// Base
+// ==========================================================================
+@import "~utils/sass/_common.sass"
+// // ==========================================================================
+// // Plugins
+// // ==========================================================================
+// // @import "vendors/animate"
+
+// // ==========================================================================
+// // layout
+// // ==========================================================================
+@import "layout/logo/_logo.sass"
+@import "~components/bn-special/_bn-special.sass"
+// @import "../../layout/header/main/_header.sass"
+// @import "../../layout/bg-decoration/bg-decoration.sass"
+
+// // ==========================================================================
+// // components
+// // ==========================================================================
+// @import "../../components/common-event/_common-event.sass"
+// @import "../../components/event-w2m1/_event-w2m1.sass"
+// @import "../../components/event-w4m2/_event-w4m2.sass"
+// @import "../../components/bn-group-w2m1-2/_bn-group-w2m1-2.sass"
+// @import "../../components/bn-group-w2m1/_bn-group-w2m1.sass"
+
+// // ==========================================================================
+// // Page
+// // ==========================================================================
+
+
+// // ==========================================================================
+// // mixin
+
+@mixin setting__background($image, $size, $repeat, $position)
+  background-image: $image
+  background-size: $size
+  background-repeat: $repeat
+  background-position: $position
+  @content
+
+@mixin setting__mobile-left($top:.5, $left:.5, $width:.5)
+  top: calc(100vw * #{$top})
+  left: calc(100vw * #{$left})
+  width: calc(100vw * #{$width})
+
+@mixin setting__mobile-right($top:.5, $right:.5, $width:.5)
+  top: calc(100vw * #{$top})
+  right: calc(100vw * #{$right})
+  width: calc(100vw * #{$width})
+
+// 通用版本
+@mixin setting__postion($top, $position, $position_unit, $width)
+  top: $top
+  #{$position}: $position_unit
+  width: $width
+
+// // ==========================================================================
+$sp-e-background-color: #eabcc9
+//.sp__wrap a
+//  display: block
+
+body
+  background-color: $sp-e-background-color
+.btn--promo
+  transition: all 0.5s
+  &:hover
+    transform: scale(1.05)
+    filter: brightness(120%)
+
+.layout--main
+  position: relative
+
+.sp__wrap
+  position: relative
+  display: block
+  overflow: hidden
+  width: 100%
+  margin-left: auto
+  margin-right: auto
+  +breakpoint-min($min-width-xl)
+    max-width: 960px
+
+.main_group
+  overflow: hidden
+  +setting__background(url('pages/index-sp-e/img/bg-960-01.jpg'), 100% auto, no-repeat, center top)
+  transform-origin: left
+  height: auto
+  min-height: calc(100vw * 0.86)
+  +breakpoint-min($min-width-xl)
+    min-height: 823px
+
+.main_title
+  margin: 0 auto
+  position: relative
+  z-index: map-get($zindex, title)
+  display: flex
+  align-items: flex-start
+  height: 100%
+  img
+    position: absolute
+    height: auto
+    display: block
+  .partial__title
+    z-index: map-get($zindex, title)
+    +setting__postion(0, 'left', 0, 100%)
+    animation: 8s 2s card-twinkling both ease-out infinite
+    +breakpoint-min($min-width-xl)
+      +setting__postion(0, 'left', 0, 100%)
+
+.promo__event
+  position: relative
+  z-index: map-get($zindex, title)
+  margin-top: calc(-100vw * 0.235)
+  .event__wrap
+    +display-flex
+    flex-wrap: wrap
+    li
+      width: 23%
+      margin: 0 .5%
+      list-style: none
+      transition: all 0.5s
+      &:hover
+        transform: scale(1.05)  translateY(-7%)
+        filter: brightness(125%)
+      a
+        img
+          transition: all 0.5s
+          width: 100%
+  +breakpoint-min($min-width-xl)
+    margin-top: -221px
+
+
+.bn-special-frame
+  margin-top: calc(100vw * 0.036)
+  +breakpoint-min($min-width-xl)
+    margin-top: 35px
+.sp__outFrame
+  background-color: $sp-e-background-color
+  +setting__background(none, 100% auto, no-repeat, center top)
+  +breakpoint-min($min-width-xl)
+    background-image: url('pages/index-sp-e/img/bg-2560-01.jpg')
+    background-size: 2560px 823px
+    min-height: 823px
+
+
+

@@ -1,0 +1,53 @@
+// // // ==========================================================================
+// // // main
+// // // ==========================================================================
+.hero__wrap
+  +pos-set(relative, base)
+  overflow: hidden
+  .hero__zone
+    // outline: 1px solid red
+    +aspect-ratio(960, 750)
+    .hero__block
+      // display: flex
+      // margin-top: 20%
+      .hero__item
+        .hero--title
+          +pos-set(absolute)
+          bottom: 22%
+          left: 9%
+          width: 60%
+          &--sub
+            +pos-set(absolute)
+            bottom: 12%
+            left: 3%
+            width: 68%
+
+        .hero--icon
+          +pos-set(absolute)
+          bottom: 23%
+          left: 55%
+          width: 20%
+          &:hover
+            animation: pulse .5s
+            filter: brightness(1.15)
+        &:last-child
+          +pos-set(absolute)
+          top: 23%
+          right: -1%
+          width: 33%
+
+
+@keyframes pulse
+  0%
+    transform: scaleX(1)
+  50%
+    transform: scale3d(1.05, 1.05, 1.05)
+  60%
+    transform: scaleX(1)
+  90%
+    transform: scale3d(1.05, 1.05, 1.05)
+  to
+    transform: scaleX(1)
+
+
+

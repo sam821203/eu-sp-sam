@@ -1,0 +1,48 @@
+//- TODO: 打開雙月選項切換雙月(預設單月：7658 / true = 雙月：7659)
+- var isEven = true
+//- TODO: 打開2號電梯選項切換第二組電梯(預設第一組，true = 第二組 單月：7660 / 雙月：7661)
+//- - var isSecond = true
+//- TODO: 打開u-mall選項會自動轉換成U的logo和連結、電梯(預設etmall)
+//- - var isU = true
+main#spWrap.sp__wrap
+  include /layout/header/_header
+
+  //- hero section
+  //- ===========================
+  include /utils/bg-decoration-instance/parallax/_parallax
+  include /event/1st/e-main/components/hero-section/_hero-section
+  //- .decoration--foreground
+
+  //- other components
+  //- ===========================
+  //- TODO: 如果promo不用和hero綁在一起時放這
+  include /event/1st/e-main/components/promo-event/_promo-event
+  include /event/1st/e-main/components/daily-change/_daily-change
+  include /event/1st/e-main/components/event-w3m3/_event-w3m3
+  include /event/1st/e-main/components/daily-slider/_daily-slider
+  include /event/1st/e-main/components/bn-slider/_bn-slider
+  include /event/1st/e-main/components/event-w1m1/_event-w1m1
+  include /event/1st/e-main/components/event-w1m1-2/_event-w1m1-2
+  include /event/1st/e-main/components/bn-slider-2/_bn-slider-2
+  include /event/1st/e-main/components/dynamic-section/_dynamic-section
+  include /event/1st/e-main/components/dynamic-section-2/_dynamic-section-2
+  //- include /event/1st/e-main/components/dynamic-slider/_dynamic-slider
+  include /event/1st/e-main/components/bn-slider-3/_bn-slider-3
+  include /event/1st/e-main/components/dynamic-slider-half-2/_dynamic-slider-half-2
+  include /event/1st/e-main/components/dynamic-slider-half/_dynamic-slider-half
+  include /event/1st/e-main/components/bn-special/_bn-special
+  include /event/1st/e-main/components/daily-time/_daily-time
+  include /event/1st/e-main/components/two-day-slider/_two-day-slider
+
+//- script區
+include /utils/pug/_total-script
+script#dataDaily(src='data-daily.js')
+script#dataDailySlider(src='data-daily-slider.js')
+script#dataGame(src='data-game.js')
+script#dataDynamicSection(src='data-dynamic-section.js')
+script#dataDynamicSection2(src='data-dynamic-section-2.js')
+//- script#dataDynamic(src='data-dynamic.js')
+script#dataDynamicHalf(src='data-dynamic-half.js')
+script#dataDynamicHalf2(src='data-dynamic-half-2.js')
+script#dataTwoDay(src='data-two-day.js')
+script#dataDailyTime(src='data-daily-time.js')

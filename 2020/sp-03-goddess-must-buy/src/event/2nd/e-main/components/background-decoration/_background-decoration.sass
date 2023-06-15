@@ -1,0 +1,30 @@
+// parallax css
+// =================================
+.deoration--background
+  display: none
+  // z-index: base(1)以上可蓋在主視覺上，zero(0)可在主視覺下，預設都在logo下(logo是500)
+  +pos-set(absolute !important, base, 0, 0)
+  overflow: hidden
+  pointer-events: none
+
+  +breakpoint-min($min-width-xl)
+    display: block
+
+.decoration__wrap
+  width: 100%
+  height: 100vh
+.decoration__item
+  width: 100%
+  height: 100%
+  img
+    +pos-set(relative, zero, null, 50%)
+    transform: translateX(-50%)
+  // TODO: 每次修改parallax img的寬以符合實際圖片尺寸
+  &:first-child img
+    top: -15px
+    left: 52%
+    width: 2560px
+  &:last-child img
+    top: 0
+    width: 1532px
+

@@ -1,0 +1,223 @@
+//- 純色底
+.promo__solid-color--bg
+  position: absolute
+  //+bg-set(url("~event/3rd/e-main/components/daily-tab/bg-solid-color.jpg"))
+  +bg-set(url("https://media.etmall.com.tw/sp/8249/bg-solid-color.jpg"))
+  background-size: 100% auto
+  width: 100vw
+  height: 75vw
+  +breakpoint-min($min-width-xl)
+    //+bg-set(url("~event/3rd/e-main/components/daily-tab/bg-solid-color-web.jpg"))
+    +bg-set(url("https://media.etmall.com.tw/sp/8249/bg-solid-color-web.jpg"))
+    background-size: 2560px 670px
+    width: 100%
+    height: 670px
+    left: 50%
+    top: 0
+    transform: translateX(-50%)
+.promo__daily--bg
+  +breakpoint-min($min-width-xl)
+    position: absolute
+    //+bg-set(url("~event/3rd/e-main/components/daily-tab/bg-daily-tab-web.png"))
+    +bg-set(url("https://media.etmall.com.tw/sp/8249/bg-daily-tab-web.png"))
+    background-size: 1665px 650px
+    width: 100%
+    height: 650px
+    left: 50%
+    top: -80px
+    transform: translateX(-50%)
+
+.promo__group--daily-tab
+  height: 75vw
+  .tab__wrap
+    position: relative
+    padding: 12% 14% 14%
+    //+bg-set(url(~event/3rd/e-main/components/daily-tab/bg-daily-tab.png), 100%)
+    +bg-set(url(https://media.etmall.com.tw/sp/8249/bg-daily-tab.png), 100%)
+    .tab__zone
+      position: absolute
+      height: 10vw
+      width: 80vw
+      top: 53vw
+      left: 50%
+      transform: translateX(-50%)
+      z-index: 2
+
+  .tab__head--daily
+    display: flex
+    li
+      position: relative
+      flex: 1 0 20%
+      color: #fff
+      font-weight: bold
+      text-align: center
+      cursor: pointer
+      height: 21vw
+      //filter: grayscale(1) brightness(2.5)
+      //+bg-set(url(~event/3rd/e-main/components/daily-tab/bg-daily-tab-date.png), contain)
+      +bg-set(url(https://media.etmall.com.tw/sp/8249/bg-daily-tab-date.png), contain)
+
+      span
+        position: absolute
+        &:nth-child(1)
+          top: 7vw
+          left: 4vw
+          font-size: 5.5vw
+        &:nth-child(2)
+          top: 12.5vw
+          left: 7.2vw
+          font-size: 5vw
+      &.active
+        color: #fff
+        //filter: grayscale(0)
+        //+bg-set(url(~event/3rd/e-main/components/daily-tab/bg-daily-tab-date-active.png), contain)
+        +bg-set(url(https://media.etmall.com.tw/sp/8249/bg-daily-tab-date-active.png), contain)
+      &.active,
+      &:active,
+      &:hover
+        color: $gray-light
+
+      &.daily-active
+        color: #fff
+        //filter: grayscale(0)
+        //+bg-set(url(~event/3rd/e-main/components/daily-tab/bg-daily-tab-today.png), contain)
+        +bg-set(url(https://media.etmall.com.tw/sp/8249/bg-daily-tab-today.png), contain)
+
+  .content__box
+    display: none
+    &.active
+      display: block
+
+  .content__box
+    li
+      +pos-set(relative, zero)
+      padding: 8% 3% 3%
+      border-radius: 10px
+      overflow: hidden
+      .banner__wrap
+        +pos-set(absolute, base)
+        bottom: 0
+        right: 10%
+        width: 35%
+        pointer-events: none
+        .promo__banner
+          padding: 5% 10%
+          color: $gray-deep-light
+          border-radius: 100px
+          font-size: 4vw
+          text-align: center
+          overflow: hidden
+          &--now
+            display: none
+            background-color: #cd1953
+          &--wait
+            background-color: #f2a100
+        &.active
+          .promo__banner
+            &--now
+              display: block
+            &--wait
+              display: none
+
+      .product--dynamic
+        .product__block
+          display: flex
+          widows: 100%
+          height: 100%
+          .product__img
+            width: 50%
+            +aspect-ratio(350, 350, relative, zero, img)
+            &:after
+              position: absolute
+              display: block
+              content: ''
+              clear: both
+              top: 0
+              left: 0
+              width: 9vw
+              height: 9vw
+              z-index: 1
+              +breakpoint-min($min-width-xl)
+                width: 60px
+                height: 60px
+          .product__text
+            margin-left: 3%
+            width: 50%
+          .product__name
+            display: -webkit-box
+            -webkit-line-clamp: 3
+            -webkit-box-orient: vertical
+            text-overflow: ellipsis
+            margin-bottom: 0
+            padding: 0
+            color: $gray-deep-dark
+            line-height: 120%
+            height: 3.5em
+            font-size: 4vw
+            overflow: hidden
+          .product__price
+            color: $primary-medium
+            font-weight: bold
+            text-align: center
+            span
+              &:first-child
+                font-size: 3vw
+              &:last-child
+                font-size: 6vw
+
+  +breakpoint-min($min-width-xl)
+    height: 669px
+    .tab__wrap
+      background: none
+      padding: 11% 0 14%
+      .tab__zone
+        height: auto
+        width: 860px
+        top: 446px
+    .tab__head--daily
+      li
+        height: 202px
+        span
+          &:nth-child(1)
+            top: 67px
+            left: 38px
+            font-size: 53px
+          &:nth-child(2)
+            top: 120px
+            left: 77px
+            font-size: 48px
+
+    .content__box
+      li
+        padding: 6% 1% 0
+        .banner__wrap
+          .promo__banner
+            font-size: 26px
+        .product--dynamic
+          .product__block
+            .product__name
+              font-size: 26px
+            .product__price
+              span
+                line-height: 1.2
+                &:first-child
+                  font-size: 29px
+                &:last-child
+                  font-size: 58px
+
+.activity__time__out
+  .product--dynamic
+    filter: grayscale(100%) !important
+    pointer-events: none !important
+  .banner__wrap
+    display: none
+
+//- 圖片日期標
+@for $i from 1 through 9
+  .promo__group--daily-tab
+    .content__box
+      &:nth-child(#{$i})
+        li .product--dynamic .product__block .product__img
+          &:after
+            //+bg-set(url(~event/3rd/e-main/components/daily-tab/date/daily-tab-item-date-#{$i}.png), 100% auto)
+            +bg-set(url(https://media.etmall.com.tw/sp/8249/daily-tab-item-date-#{$i}.png), 100% auto)

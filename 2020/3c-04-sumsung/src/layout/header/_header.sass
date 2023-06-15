@@ -1,0 +1,15 @@
+@import "~layout/logo/_logo.sass"
+// @import "~layout/share-tools/_share-tools"
+
+.header__zone
+  +pos-set(relative, base)
+  padding: 4.5% 4%
+  width: 100%
+  background-color: $gray-deep-dark
+  .layout--main
+    display: flex
+    align-items: center
+
+  +breakpoint-min($min-width-xl)
+    padding: 40px
+

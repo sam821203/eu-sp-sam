@@ -1,0 +1,178 @@
+.exchange__wrap
+  img
+    vertical-align: top
+  .exchange__box
+    padding-left: 4%
+    padding-right: 4%
+    +bg-set(url(~event/1st/e-main/components/collect-exchange/bg-exchange.png), 100%, null, null,repeat)
+    > ul
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+      width: 100%
+      li
+        flex: 0 0 100%
+        margin-bottom: 3.5%
+        &:last-child
+          margin-bottom: 0
+    a
+      text-align: center
+      transition: all 0.3s
+      &:hover,
+      &:active
+        filter: brightness(120%)
+
+    .item__cta
+      .cta--active
+        display: none
+    .item__cta
+      .cta--active
+        display: none
+    .item__cta.active,
+    .active .item__cta
+      .cta--active
+        display: block
+      .cta--closed
+        display: none
+
+  .item__wrap
+    padding: 3%
+    +bg-set(url(~event/1st/e-main/components/collect-exchange/bg-exchange-item.png), 100%)
+
+  .item__box
+    display: flex
+    padding: 0 5.5%
+    width: 100%
+
+  .item__pic
+    flex: 0 0 44%
+    +aspect-ratio(170, 170, img)
+    // 因應RD CSS添加 start
+    width: 44%
+    height: 100%
+    img
+      margin-top: 0
+      margin-left: 0
+      width: 100%
+      height: auto
+    // 因應RD CSS添加 end
+  .item__intro
+    flex: 1 1 56%
+    +pos-set(relative, zero)
+    padding-top: 5%
+    .name__box
+      +pos-set(relative, zero)
+      height: calc(95% - 1.35em)
+      overflow: hidden
+    .item__name
+      +pos-set(absolute, zero, 50%, 50%)
+      transform: translate(-50%, -50%)
+      width: 100%
+      max-height: 100%
+      line-height: 130%
+      color: $gray-deep-light
+      font-size: 6vw
+      font-weight: bold
+      text-align: center
+
+    .item__quantity
+      +pos-set(absolute, zero)
+      left: 0
+      bottom: 5%
+      width: 100%
+      height: 1.35em
+      color: $gray-deep-light
+      font-size: 4vw
+      text-align: center
+
+  .cta__box
+    display: flex
+    padding: 0 5.5%
+
+  .item__info
+    flex: 0 1 40%
+    padding-top: 2.5%
+    +breakpoint-min($min-width-md)
+      padding-bottom: 3.5%
+    a
+      margin-left: auto
+      margin-right: auto
+      width: 60%
+  .item__cta
+    flex: 0 0 60%
+    padding-right: 2%
+    .cta
+      padding: 4.5% 2% 0
+
+  .btn__wrap
+    +pos-set(relative, zero)
+    .point__wrap
+      +pos-set(absolute, base)
+      top: 53%
+      left: 50%
+      width: 100%
+      max-width: 185px
+      transform: translate(-50%, -50%)
+      .point__box
+        margin-left: 4.2%
+        width: 20%
+        line-height: 100%
+        text-align: right
+        color: $gray-deep-dark
+        font-size: 8vw
+        font-weight: bold
+        +breakpoint-min($min-width-md)
+          font-size: 6vw
+        +breakpoint-min($min-width-lg)
+          font-size: 32px
+
+  +breakpoint-min($min-width-lg)
+    .exchange__box
+      > ul
+        justify-content: space-between
+        li
+          flex: 0 0 49%
+          margin-bottom: 2%
+          &:nth-last-child(2)
+            margin-bottom: 0
+    .item__intro
+      .item__name
+        font-size: 24px
+      .item__quantity
+        font-size: 18px
+    .cta__box
+      padding: 0 6%
+    .item__info
+      padding: 5px 0 10px
+    .item__cta
+      .cta
+        padding-top: 5%
+
+  +breakpoint-min($min-width-xl)
+    .item__intro
+      .item__name
+        font-size: 28px
+      .item__quantity
+        font-size: 20px
+    .item__info
+      padding: 12px 0 5px
+    .item__cta
+      .cta
+        padding-top: 12px
+    .btn__wrap
+      .point__wrap
+        .point__box
+          margin-left: 10px
+
+.decoration__bottom
+  +pos-set(relative, zero)
+  .exchange__note
+    +pos-set(absolute, base, 50%, 0)
+    width: 100%
+    color: $main-e-background-color-1st
+    font-size: 3.5vw
+    font-weight: bold
+    text-align: center
+    transform: translateY(-50%)
+    +breakpoint-min($min-width-lg)
+      font-size: 24px

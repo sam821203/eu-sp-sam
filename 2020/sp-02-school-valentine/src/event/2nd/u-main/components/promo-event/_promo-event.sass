@@ -1,0 +1,60 @@
+.promo__event
+  // margin-top: -5%
+  padding: 2% 3%
+  +bg-set(url(~event/2nd/u-main/components/promo-event/bg-promo.png), contain)
+  .event__wrap
+    +display-flex
+    flex-wrap: wrap
+    justify-content: center
+    padding: 0
+    // 固定位置模式
+    // li
+    //   +flex(1, 0, 50%)
+    //   padding: 0.5%
+    //   transition: all 0.5s
+    //   &:hover,
+    //   &:active
+        // filter: contrast(160%)
+        // img
+          // opacity: 0
+          // transition: all 0.5s
+          // transform: rotateY(360deg)
+
+    //- 位置不一模式
+    li
+      +flex(0, 0, 33%)
+      // padding-left: 1%
+      // padding-right: 1%
+      height: 29vw
+      overflow: hidden
+      // &:first-child,
+      // &:last-child
+        // +flex(0, 0, 20%)
+      .link__box,
+      a
+        +pos-set(relative, zero)
+        width: 100%
+        height: 100%
+        &:before
+          content: ''
+          +pos-set(absolute, base)
+          +bg-set(url(~event/2nd/u-main/components/promo-event/decoration-promo.png), 100%)
+        &:hover,
+        &:active
+          // transition: all 0.5s
+          // transform: scale(1.5)
+          &:before
+            animation: tada 1s
+
+      a
+        &:before
+          bottom: 3%
+          right: 6%
+          padding-top: 15%
+          width: 15%
+
+  +breakpoint-min($min-width-xl)
+    background-size: 960px
+    .event__wrap
+      li
+        height: 275px

@@ -1,0 +1,50 @@
+.promo__group--dynamic-slider
+  // 兩區共用，省檔案大小
+  // +pos-set(relative, zero)
+  // .swiper-wrapper
+  //   display: flex
+  //   .swiper-slide
+  //     width: 33%
+  // .promo__wrap
+  //   +pos-set(relative, zero)
+  &.promo__group--dynamic-slider-2
+    .promo__wrap
+      +bg-set(url("~event/1st/e-main/components/dynamic-slider-2/bg-dynamic-slider-2.png"), 100%)
+      padding: 16.5% 3.5% 6%
+    .product__block
+      padding: 6% 4% 4%
+    .product--dynamic
+      padding: 1.7% 2.7% 0 3%
+      +bg-set(url("~event/1st/e-main/components/dynamic-slider-2/item-dynamic-slider-2.png"), 100%)
+    .product__img
+      border-radius: 8px
+      overflow: hidden
+    .product__name
+      margin-bottom: 0
+      color: $gray-deep-light
+    .product__price
+      margin-bottom: 2%
+      color: $main-e-background-color-1st-2
+      span
+        &:last-child
+          font-size: 5.5vw
+    +breakpoint-max($max-width-xxs)
+      .product__name
+        margin: 0
+    +breakpoint-min($min-width-lg)
+      .product__img
+        border-radius: 18px
+      .product__price
+        margin-bottom: 12px
+    +breakpoint-min($min-width-xl)
+      .product__img
+        border-radius: 22px
+      .product__name
+        margin: 10px 0
+        font-size: 22px
+      .product__price
+        span
+          &:first-child
+            font-size: 16px
+          &:last-child
+            font-size: 48px

@@ -1,0 +1,258 @@
+<meta name="viewport" content="width=device-width">
+<!-- ============== 輪播 start ============== -->
+<link rel="stylesheet" href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116205/swiper.min.css">
+<!-- ============== 輪播 end ============== -->
+<!-- 共用CSS -->
+<link rel="stylesheet" href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116205/animate.min.css">
+<link rel="stylesheet" href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.css">
+<link rel="stylesheet" href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.css">
+<style>
+  body {
+    /* 自行修正背景顏色 */
+    background-color: #70a5de;
+  }
+
+  /* 調整logo位置大小 */
+  /* .logo {
+      top: 1%;
+      left: 1%;
+      width: 30%;
+      max-width: 220px;
+    } */
+
+  /* 連結測試 */
+  /* .sp__visual a{
+      filter: brightness(500%);
+    } */
+
+  /* 切片測試 */
+  /* .visual__fragment::before {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      border: 1px solid #00f;
+      pointer-events: none;
+    } */
+
+  /* 設定全畫面背景 */
+  /* .sp__main {
+      background: url(bg.jpg) center 0 no-repeat;
+    } */
+
+  /* 大網各區塊背景  */
+  @media screen and (min-width: 960px) {
+    .visual__block1 {
+      background: url(bg_01.jpg?2011250456) #70a5de center 0 no-repeat;
+    }
+  }
+
+  /*-- 動畫小物件 --*/
+  .animate__wrap {
+    position: relative;
+    z-index: 1;
+  }
+
+  /*-- 手機版：
+    1. 設定物件距離左邊與上邊的位置，單位可以使用"%"或"vw"
+    2. width 建議電腦版可以使用auto，手機版則可使用%調整
+  --*/
+  .animate__wrap .animate__obj--01 {
+    position: absolute;
+    top: 10vw;
+    left: 12vw;
+    width: 75%;
+  }
+
+  /*-- 電腦版：
+    設定物件距離左邊與上邊的位置，單位可以使用"px"，左邊可以挑整clac()後面的px值
+    width 建議電腦版可以使用auto，手機版則可使用%調整
+  --*/
+  @media screen and (min-width: 960px) {
+    .animate__wrap .animate__obj--01 {
+      top: 23px;
+      left: calc(50% - 382px);
+      width: auto;
+    }
+  }
+
+  /*X軸隱藏*/
+  .sp__wallper {
+    overflow-x: hidden;
+  }
+  /* rain */
+  .sp__visual {
+    position: relative;
+    z-index: 0;
+  }
+  .decoration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  .decoration canvas {
+    width: 100%;
+    height: 100%;
+  }
+
+</style>
+<!-- 旅遊專用bar區域 start 不要就移除-->
+<div id="barHome"></div>
+<!-- 旅遊專用bar區域 end-->
+<div id="iconHome" class="layout--main home--icon"></div>
+<div id="spWrap" class="sp__wallper">
+  <!-- 主視覺 -->
+  <main class="sp__main">
+    <div class="layout--main home--logo">
+      <a href="https://www.etmall.com.tw"><img class="logo" src="ehs-logo.png" alt="東森購物"></a>
+    </div>
+    <!-- 動畫小物件 -->
+    <div class="animate__wrap">
+      <img class="animate__obj--01 animate__animated animate__bounceInDown An animate element animate__animated"
+        src="img_20210312-00.png" alt="梅雨颱風退散">
+    </div>
+    <section class="sp__visual visual__block1">
+      <div class="decoration">
+        <canvas id="canvas"></canvas>
+      </div>
+      <div class="layout--main">
+        <ul class="visual--auto clearfix">
+          <li class="visual__fragment width--auto">
+            <img src="index_01.jpg">
+          </li>
+          <li class="visual__fragment width--auto">
+            <a href="https://media.etmall.com.tw/sp/8326/m/index.html" title="必Buy">
+              <img src="index_02.jpg">
+            </a>
+          </li>
+          <li class="visual__fragment width--auto">
+            <a href="https://media.etmall.com.tw/sp/8653/m/index.html" title="呵護">
+              <img src="index_03.jpg" alt="">
+            </a>
+          </li>
+          <li class="visual__fragment width--auto">
+            <a href="https://media.etmall.com.tw/sp/8627/m/index.html" title="實用">
+              <img src="index_04.jpg">
+            </a>
+          </li>
+          <li class="visual__fragment width--auto">
+            <a href="https://media.etmall.com.tw/sp/8627/m/index.html" title="實用">
+              <img src="index_05.jpg">
+            </a>
+
+          </li>
+          <li class="visual__fragment width--auto">
+            <a href="https://media.etmall.com.tw/sp/8627/m/index.html" title="實用">
+              <img src="index_06.jpg">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</div>
+<!--<script src="https://polyfill.io/v3/polyfill.min.js"></script>-->
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<!-- ============== 輪播 start ============== -->
+<script src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116205/swiper.min.js"></script>
+<!-- ============== 輪播 end ============== -->
+<!-- <script src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116205/lazyload.js"></script> -->
+<!-- 東森浮水印 -->
+<script id="scriptIconFloat"
+  src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107916/float-icon.js"></script>
+<!-- 森森浮水印
+<script id="scriptIconFloat" src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1104381/float-icon.js"></script> -->
+<!-- 旅遊置頂bar
+<script id="scriptAddBn" src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106742/add-bn.js"></script> -->
+<!-- 共用JS -->
+<script id="generateScript"
+  src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.js"></script>
+<script>
+//important variables
+var canvas = document.getElementById("canvas"),
+	ctx = canvas.getContext("2d"),
+	w = canvas.width = window.innerWidth,
+	h = canvas.height = window.innerHeight;
+//atributes and statistics
+var angle = w > 600 ? 5.0 : 4.9;
+var starCount = w > 600 ? 50 : 20;
+var count = w > 600 ? 100 : 40;
+var speed = w > 600 ? 15 : 10;
+var len = 50,
+	arcSpeed = 0.7,
+	sky = [],
+	rain = [];
+//calculated variables
+var xConst = len * Math.cos(angle),
+	yConst = len * Math.sin(angle);
+
+var drop = function() {
+	this.x = Math.random() * w;
+	this.y = Math.random() * h - h / 4;
+	this.ylimit = Math.random() * h / 4 + 3 * h / 4 + 10;
+	this.xlimit = (this.ylimit - this.y) * (this.x - this.x + xConst) / (this.y - this.y + yConst) + this.x;
+	this.arc = 10;
+	this.draw = function() {
+		ctx.beginPath();
+		if (this.y < this.ylimit) {
+			ctx.moveTo(this.x, this.y);
+		} else {
+			ctx.moveTo(this.xlimit, this.ylimit);
+			if (this.arc >= 10) {
+				this.arc = 0;
+				this.arcx = this.xlimit;
+			}
+		}
+		ctx.lineTo(xConst + this.x, yConst + this.y);
+		ctx.stroke();
+		//draw arc
+		if (this.arc < 10) {
+			ctx.save();
+			ctx.translate(this.arcx, this.ylimit);
+			ctx.scale(2, 1);
+			ctx.strokeStyle = "rgba(255, 255, 255, " + (10-this.arc)/10 + ")";
+			ctx.beginPath();
+			ctx.arc(0, 0, this.arc, 0, 2 * Math.PI);
+			ctx.stroke();
+			ctx.restore();
+		}
+	}
+	this.update = function() {
+		var a = Math.PI + angle;
+		this.x = speed * Math.cos(a) + this.x;
+		this.y = speed * Math.sin(a) + this.y;
+		if (this.x < -xConst) {
+			this.x = w;
+			this.xlimit = (this.ylimit - this.y) * (this.x - this.x + xConst) / (this.y - this.y + yConst) + this.x;
+		}
+		if (yConst + this.y > this.ylimit) {
+			this.y = 0;
+			this.xlimit = (this.ylimit - this.y) * (this.x - this.x + xConst) / (this.y - this.y + yConst) + this.x;
+		}
+		if (this.arc < 10) {
+			this.arc += arcSpeed;
+		}
+	}
+}
+for (var i = 0; i < count; i++) {
+	rain.push(new drop());
+}
+
+function draw() {
+  ctx.clearRect(0, 0, w, h);
+	ctx.strokeStyle = '#fff';
+
+	for (var i = 0; i < rain.length; i++) {
+		rain[i].draw();
+		rain[i].update();
+	}
+	window.requestAnimationFrame(draw);
+}
+draw();
+</script>
+<!-- ============== 輪播 end ============== -->

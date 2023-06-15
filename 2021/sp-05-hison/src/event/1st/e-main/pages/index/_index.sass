@@ -1,0 +1,106 @@
+// // ==========================================================================
+// // Plugins
+// // ==========================================================================
+// // @import "vendors/animate"
+// @import "~vendors/style/swiper-slider-custom"
+@import '~vendors/style/swiper-safari-polyfill'
+
+
+// // ==========================================================================
+// // 1st screen need
+// // ==========================================================================
+// hero section
+// ===========================
+@import "~event/1st/e-main/components/hero-section/_hero-section"
+
+// // ==========================================================================
+// // components
+// // ==========================================================================
+
+// dynamic product 假宮格共用CSS
+// ===========================
+@import "~layout/dynamic-product/_dynamic-product.sass"
+
+@import "~event/1st/e-main/components/daily-change/_daily-change"
+@import "~event/1st/e-main/components/promo-event/_promo-event"
+@import "~event/1st/e-main/components/daily-slider/_daily-slider"
+@import "~event/1st/e-main/components/dynamic-section/_dynamic-section"
+@import "~event/1st/e-main/components/dynamic-section-2/_dynamic-section-2"
+@import "~event/1st/e-main/components/dynamic-slider/_dynamic-slider"
+@import "~event/1st/e-main/components/dynamic-slider-2/_dynamic-slider-2"
+@import "~event/1st/e-main/components/bn-slider/_bn-slider"
+@import "~event/1st/e-main/components/bn-special/_bn-special"
+@import "~event/1st/e-main/components/dynamic-slider-half/_dynamic-slider-half"
+@import "~event/1st/e-main/components/left-right-section/_left-right-section"
+@import "~event/1st/e-main/components/two-day-slider/_two-day-slider"
+@import "~event/1st/e-main/components/daily-time/_daily-time"
+@import "~event/1st/e-main/components/event-w3m3/_event-w3m3"
+
+// // ==========================================================================
+// // Page
+// // ==========================================================================
+body
+  +pos-set(relative)
+  background: $main-e-background-color-1st center 0 url("~event/1st/e-main/pages/index/bg.jpg") no-repeat
+  background-size: 100%
+  transition: all 0.5s
+
+  +breakpoint-min($min-width-xl)
+    background: $main-e-background-color-1st center 0 url("~event/1st/e-main/pages/index/bg-web.jpg") no-repeat fixed
+    background-size: auto
+
+.sp__wrap
+  +pos-set(relative)
+  // +breakpoint-min($min-width-xl)
+  //   .decoration--foreground
+  //     +pos-set(absolute, zero)
+  //     top: 6.9%
+  //     left: 0
+  //     width: 100%
+  //     height: 100%
+  //     background: center 0 url("~event/1st/e-main/pages/index/bg-decoration-web.png") no-repeat,
+  //   .promo__group
+  //     +pos-set(relative, base)
+
+.sp__wrap a
+  display: block
+  // .promo__title
+  //   text-align: center
+  // .decoration--background.decoration__wrap
+
+// parallax css
+// =================================
+// .decoration--background
+//   display: none
+
+//   +breakpoint-min($min-width-3xl)
+//     display: block
+//     // z-index: base(1)以上可蓋在主視覺上，zero(0)可在主視覺下，預設都在logo下(logo是500)
+//     +pos-set(absolute, under, 690px)
+//     width: 100%
+//     height: 100%
+//     pointer-events: none
+
+// .decoration__wrap
+//   +pos-set(sticky, zero, 0)
+.swiper-button--custom
+  top: 55%
+  margin-top: 0
+  width: 3.5%
+  transform: translateY(-50%)
+  &:after
+    content: ''
+  &:active,
+  &:hover
+    filter: brightness(120%)
+  &.swiper-button-prev
+    left: 9.3%
+    +bg-set(url(~event/1st/e-main/pages/index/btn-slider-prev.png), contain, center, center)
+  &.swiper-button-next
+    right: 9.3%
+    +bg-set(url(~event/1st/e-main/pages/index/btn-slider-next.png), contain, center, center)
+
+.decoration--top
+  +pos-set(absolute, zero)
+  pointer-events: none
+

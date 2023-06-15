@@ -1,0 +1,69 @@
+-
+  var promoSlider2Item = [
+    {
+      link: "https://www.etmall.com.tw/gp/138084" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-2/item/item-p-1.png",
+      alt: "國營口碑保養75折up",
+    },
+    {
+      link: "https://www.etmall.com.tw/p/156937" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-2/item/item-p-2.png",
+      alt: "新年盛宴狂歡慶29折起",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/12631/m/index.html" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-2/item/item-p-3.png",
+      alt: "鍋寶3折起滿額贈保鮮盒",
+    },
+    {
+      link: "https://www.etmall.com.tw/c3/119100" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-2/item/item-p-4.png",
+      alt: "好孕迎新75折up",
+    },
+    {
+      link: "https://www.etmall.com.tw/p/154800" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-2/item/item-p-5.png",
+      alt: "歲末酬賓 滿額送隔熱墊",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/10320/m/index.html" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-2/item/item-p-6.png",
+      alt: "指定滿額送豪禮",
+    },
+    {
+      link: "https://www.etmall.com.tw/c2/138366" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-2/item/item-p-7.png",
+      alt: "尾牙瘋狂下殺",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/156562" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-2/item/item-p-8.png",
+      alt: "贈65W PD快充器",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/144348" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-2/item/item-p-9.png",
+      alt: "tokuyo年終購狂",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/12459/m/index.html" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-2/item/item-p-10.png",
+      alt: "歲末感恩祭49折up",
+    },
+  ]
+
+
+section.promo__group.promo__group--promo-slider--sec.m-bottom--lg(data-title="品牌狂折")
+  .layout--main
+    .promo__wrap
+      .decor__wrap.full-parent
+        .promo__decor#decorPromoSlider2
+          img(src="event/1st/e-main/components/promo-slider-2/decor-promo-slider-2.png", alt="")
+      .promo__zone
+        .promo__block
+          .promo__slider.swiper-container#promoSlider2Item
+            ul.swiper-wrapper
+              each data in promoSlider2Item
+                li.swiper-slide
+                  a(href= data.link, title=data.alt)
+                    img(src= data.imgSrc, alt=data.alt)

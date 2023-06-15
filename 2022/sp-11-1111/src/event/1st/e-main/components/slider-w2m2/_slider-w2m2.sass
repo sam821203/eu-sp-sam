@@ -1,0 +1,90 @@
+.slider-w2m2
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__wrap
+    padding-bottom: 3%
+  .decor__item
+    &--left
+      +pos-set(absolute, zero, 0%, 12%)
+      width: 19%
+      transform-origin: left center
+      &.active
+        animation: swing-2 2s linear infinite
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 360px)
+    &--right
+      +pos-set(absolute, zero, -1%)
+      right: 4%
+      width: 15%
+      animation: heartBeat 1.5s linear infinite
+      +breakpoint-min($min-width-xl)
+        top: 10px
+        right: calc(50% - 420px)
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .promo__wrap
+    +bg-set(url(event/1st/e-main/components/slider-w2m2/bg-slider-w2m2.png), 100%)
+    // margin-top: 5%
+  .promo__zone
+    +aspect-ratio(941, 932)
+  .promo__block
+    padding: 13.6% 1% 0
+    +breakpoint-min($min-width-xl)
+      padding-top: 180px
+    .swiper-slide
+      display: flex
+      transition: all 0.5s
+    .swiper-box
+      &:first-child
+        padding-top: 6.6%
+        +breakpoint-min($min-width-xl)
+          padding-top: 65px
+          padding-left: 10px
+      +breakpoint-min($min-width-xl)
+        &:last-child
+          padding-left: 50px
+    .swiper-slide.swiper-slide-visible
+      .swiper-box
+        &:first-child
+          animation: slideInLeft .5s linear forwards
+        &:last-child
+          animation: slideInRight .5s linear forwards
+
+@keyframes slideInLeft
+  0%
+    transform: translate3d(-100%, 0, 0)
+    visibility: visible
+  to
+    transform: translateZ(0)
+    opacity: 1
+
+@keyframes slideInRight
+  0%
+    transform: translate3d(100%, 0, 0)
+    visibility: visible
+  to
+    transform: translateZ(0)
+    opacity: 1
+
+@keyframes tada-origin
+  0%, 50%, 100%
+    transform: scaleX(1)
+  5%, 10%
+    transform: scale3d(.9, .9, .9) rotate(-3deg)
+  15%, 25%, 35%, 45%
+    transform: scale3d(1.1, 1.1, 1.1) rotate(3deg)
+  20%, 30%, 40%
+    transform: scale3d(1.1, 1.1, 1.1) rotate(-3deg)
+
+
+@keyframes swing-2
+  10%
+    transform: rotate(15deg)
+  20%
+    transform: rotate(0deg)
+  30%
+    transform: rotate(7deg)
+  40%
+    transform: rotate(0deg)
+  50%
+    transform: rotate(2deg)

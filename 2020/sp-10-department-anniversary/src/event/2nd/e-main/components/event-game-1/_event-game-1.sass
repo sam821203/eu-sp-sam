@@ -1,0 +1,51 @@
+.promo__group--game-1
+  .promo__wrap
+    +pos-set(relative, zero)
+    padding-top: 0
+    padding-bottom: 15%
+    +bg-set(url("~event/2nd/e-main/components/event-game-1/bg-event-game-1.png"), 100%)
+    position: relative
+    display: flex
+    justify-content: center
+    img
+      //position: relative
+      &:nth-child(1)
+        margin-top: 19vw
+        //left: 50%
+        //transform: translateX(-50%)
+        width: 40%
+        height: auto
+        animation: iocn-light-3 8s 1.7s linear both infinite
+  +breakpoint-min($min-width-xl)
+    .promo__wrap
+      img
+        &:nth-child(1)
+          margin-top: 178px
+          width: auto
+
+
+
+.red__envelope__wrap
+  position: absolute
+  //border: 1px solid #f24
+  top: 16vw
+  width: 94vw
+  height: 41vw
+  left: 50%
+  transform: translateX(-50%)
+  z-index: -1
+  overflow: hidden
+  +breakpoint-min($min-width-xl)
+    top: 155px
+    width: 900px
+    height: 390px
+
+
+@keyframes iocn-light-3
+  0%, 41%, 45%, 49%, 91%, 95%, 99%
+    left: 50%
+    transform: scale(1)
+  43%, 47%, 93%, 97%
+    left: 50%
+    transform: scale(1.1)
+    filter: brightness(130%)

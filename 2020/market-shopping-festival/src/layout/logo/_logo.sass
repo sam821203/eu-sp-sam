@@ -1,0 +1,16 @@
+.logo
+  position: absolute
+  z-index: 10
+  top: 10px
+  left: 6.5%
+  width: 20%
+
+  &.logo--e
+    max-width: 220px
+  &.logo--u
+    max-width: 150px
+  +breakpoint-min($min-width-xl)
+    // width: 20%
+    // top: -6px
+    // margin-left: 0
+    left: calc(50% - 415px)

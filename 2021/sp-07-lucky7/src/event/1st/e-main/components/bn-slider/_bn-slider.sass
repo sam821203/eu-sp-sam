@@ -1,0 +1,62 @@
+.promo__group--bn
+  +pos-set(relative, zero)
+  .promo__title
+    +pos-set(relative)
+    padding-bottom: 2.5%
+  .title__decoration
+    +pos-set(absolute, zero, 0, 0)
+    width: 100%
+    text-align: center
+  .promo__wrap
+    +pos-set(relative, zero)
+    padding: 14.5% 9% 0
+    height: 80vw
+    margin-bottom: 1%
+    +bg-set(url(event/1st/e-main/components/bn-slider/bg-bn-slider.png), 100%)
+    text-align: center
+    .promo__bn
+      margin-bottom: 1.5%
+    .swiper-slide
+      width: 33%
+      text-align: center
+      transition: all 0.5s
+    a
+      &:hover,
+      &:active
+        filter: brightness(105%) contrast(105%)
+
+  // .two-item__pager
+  //   bottom: 0
+  //   left: 0
+  //   width: 100%
+  //   .swiper-pagination-bullet
+  //     margin: 0 4px
+  //     width: 12px
+  //     height: 12px
+  //     transition: all 0.3s
+  //     outline: 0
+  //     &.swiper-pagination-bullet-active
+  //       width: 24px
+  //       border-radius: 12px
+  //       background-color: $gray-deep-dark
+
+  +breakpoint-min($min-width-md)
+    .promo__wrap
+      padding-bottom: 9%
+    // .two-item__pager
+    //   .swiper-pagination-bullet
+    //     margin: 0 6px
+    //     width: 18px
+    //     height: 18px
+    //     &.swiper-pagination-bullet-active
+    //       width: 36px
+    //       border-radius: 18px
+  +breakpoint-min($min-width-xl)
+    .promo__wrap
+      padding: 150px 65px 0
+      height: 774px
+    // .two-item__pager
+    //   bottom: 0
+
+
+

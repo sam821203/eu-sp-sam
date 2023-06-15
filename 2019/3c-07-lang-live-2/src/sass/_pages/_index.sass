@@ -1,0 +1,391 @@
+// ==========================================================================
+// Collection Helpers 
+// ==========================================================================
+@import "_helpers/_collection"
+
+// ==========================================================================
+// Plugins
+// ==========================================================================
+@import "_libs/_slick"
+// @import "_libs/_swiper"
+
+// ==========================================================================
+// Page
+// ==========================================================================
+body
+  background-color: $orimary-bg
+
+.sp__wrap
+  +font-size($fz-18)
+  background-color: $orimary-bg-m
+
+.header__wrap--sp
+  position: relative
+  padding: 3% 4% 0
+
+.logo
+  position: absolute
+  z-index: map-get($zindex, fifth)
+  top: 6.5%
+  left: 31%
+  width: 64%
+  padding-top: 13%
+
+.slider__wrap
+  .sp--desktop--m
+    position: relative
+    z-index: map-get($zindex, fifth)
+
+.gallery__sliders
+  z-index: map-get($zindex, second)
+  .slide__item
+    width: 100%
+    a
+      display: block
+      outline: 0
+
+.title__wrap--slide
+  color: $gray-dark
+  .title__box
+    display: flex
+    justify-content: center
+    margin-left: calc(-100vw * 0.1)
+
+.title__date
+  +font-size($fz-28)
+  position: relative
+  width: 2.2em
+  height: 2.2em
+  border-radius: 50%
+  div
+    position: absolute
+    z-index: map-get($zindex, zero)
+    top: 0.4em
+    left: 50%
+    transform: translateX(-50%)
+  // .background--decoration,
+  // .foreground--decoration
+  //   top: 0
+  //   z-index: map-get($zindex, zero)
+  //   width: 100%
+  //   height: 100%
+  //   border-radius: 50%
+  //   transform: translateX(-50%)
+  //   animation: morph 60s linear infinite
+  // .background--decoration
+  //   transform: translateX(-50%) scale(1.3)
+  //   animation: morph 30s linear infinite
+  span
+    font-weight: bold
+    &:nth-child(2)
+      +font-size($fz-20)
+      font-weight: normal
+
+.title__slogan
+  color: $gray-deep-light
+  h2
+    +font-size($fz-20)
+    max-height: 3em
+    vertical-align: bottom
+    overflow: hidden
+    div:last-child
+      margin-top: -0.3em
+    span
+      padding-left: 0.3em
+      padding-right: 0.3em
+      line-height: 150%
+
+.item__box--sp
+  display: flex
+  .item__image
+    width: 70%
+  .item__video--mobile
+    width: 30%
+    a
+      width: 75%
+      border-radius: 6px
+      img
+        border-radius: 3px
+
+.item__video--desktop
+  display: none
+
+.video__box
+  position: relative
+  z-index: map-get($zindex, zero)
+  width: 100%
+  height: 757px
+  top: 95px
+  .background--decoration
+    position: absolute
+    z-index: map-get($zindex, zero)
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    border-radius: 50%
+    overflow: hidden
+    .circle
+      position: absolute
+      z-index: map-get($zindex, base)
+      transform-style: preserve-3d
+      outline: 1px solid transparent
+      will-change: border-radius, transform, opacity
+    .circle--outer
+      top: 8%
+      left: 16%
+      width: 78% //77.4%
+      height: 64% //64.8%
+      border-radius: 42% 58% 60% 40% / 45% 45% 55% 55%
+      animation: morph 60s linear infinite
+    .circle.circle--inner
+      top: 14%
+      left: 24%
+      width: 63% //63.9%
+      height: 53% //54.9%
+      border-radius: 42% 58% 60% 40% / 45% 45% 55% 55%
+      animation: morph 30s ease-in infinite
+
+@keyframes morph
+  0%, 100%
+    border-radius: 42% 58% 60% 40% / 45% 45% 55% 55%
+    transform: translate3d(0, 0, 0) rotate(0)
+  34%
+    border-radius: 60% 40% 46% 54% / 30% 29% 61% 60%
+    transform: translate3d(0, 5px, 0) rotate(135deg)
+  50%
+    opacity: .89
+    transform: translate3d(0, 0, 0) rotate(270deg)
+  67%
+    border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%
+    transform: translate3d(0, -3px, 0) rotate(360deg)
+
+.video__main
+  position: relative
+  z-index: map-get($zindex, third)
+  top: 0
+  left: 60px
+  margin-left: auto
+  margin-right: auto
+  padding: 30px 57px 80px 22px
+  width: 330px
+  height: 670px
+  background-image: url(../img/decoration_phone.png)
+  //background-position: 0 95px
+  iframe
+    width: 100%
+    height: 100%
+
+.thumb__box
+  // 啟動輪播後img會換成block屬性因此兩種置中都加
+  text-align: center
+  img
+    margin-left: auto
+    margin-right: auto
+    width: 80%
+  .card--others
+    display: none
+    filter: grayscale(100%)
+
+.marquee__wrap
+  height: 2em
+  color: $gray-deep-light
+  background-color: rgba($gray-dark, .7)
+  overflow: hidden
+  .sp--desktop--m
+    position: relative
+  .marquee__info
+    position: absolute
+    z-index: map-get($zindex, base)
+    top: 0.33em
+    left: 0.15em
+    width: 3em
+    height: 1.4em
+    text-align: center
+    color: $gray-medium
+    background-color: $gray-deep-light
+    border-radius: 20%/50%
+  .marquee__box
+    display: inline-block
+    position: relative
+    line-height: 2em
+    white-space: nowrap
+    will-change: auto
+    animation: 9s marquee infinite linear
+    div
+      +font-size($fz-15)
+      margin-left: 4.1em
+  +breakpointMaxWidth($small-mobile)
+    .marquee__info
+      +font-size($fz-15)
+      top: 0.48em
+    .marquee__box div
+      +font-size($fz-13)
+
+@keyframes marquee
+  from
+    transform: translateY(1.3em)
+  to
+    transform: translateY(-100%)
+
+.slick-button-custom
+  position: absolute
+  z-index: map-get($zindex, twenty)
+  top: calc(-100vw *0.3)
+  padding-top: 13%
+  width: 8.5%
+  height: 0
+  outline: 0
+  cursor: pointer
+  &:before,
+  &:after
+    content: ''
+    position: absolute
+    z-index: 1
+    left: 30%
+    width: 40%
+    height: 50%
+    background-color: $gray-deep-light
+  &:before
+    top: 0.1%
+  &:after
+    bottom: 0.1%
+
+.slick-button-prev
+  left: 0.7%
+  &:before
+    transform: skew(-30deg)
+  &:after
+    transform: skew(30deg)
+
+.slick-button-next
+  right: 0.7%
+  &:before
+    transform: skew(30deg)
+  &:after
+    transform: skew(-30deg)
+
+footer
+  background-color: $footer-color
+  max-width: 2560px
+  margin: 0 auto
+
+.bn-w4m2
+  // 填補slick display block造成的空白
+  margin-top: -6px
+  margin-bottom: 0.75%
+  .banner__wrap
+    display: flex
+    flex-wrap: wrap
+    padding: 1%
+    li
+      list-style: none
+    .banner__item
+      margin: 1% 1%
+      width: 48%
+      transition: all 0.3s
+      &:hover,
+      &:active
+        transform: scale(1.05)
+        filter: brightness(115%)
+      & a
+        display: block
+      & img
+        width: 100%
+      +breakpoint($min-desktop)
+        width: 23%
+
+
+// 裝飾
+.star__wrap
+  position: relative
+  img
+    position: absolute
+    z-index: map-get($zindex, sixth)
+    top: 0
+    width: auto
+  img:nth-child(1)
+    top: calc(100vw * 0.2)
+    right: calc(100vw * 0.055)
+    width: calc(100vw * 0.035)
+    animation: 3s 4s zoomInOut infinite linear
+  // big
+  img:nth-child(2)
+    top: calc(100vw * 0.07)
+    right: calc(100vw * 0.08)
+    width: calc(100vw * 0.08)
+    animation: 2s 4s zoomInOut infinite linear
+  img:nth-child(3)
+    top: calc(100vw * 0.03)
+    right: calc(100vw * 0.04)
+    width: calc(100vw * 0.035)
+    animation: 3s 4s zoomInOut infinite linear
+  img:nth-child(4)
+    top: calc(100vw * 0.0625)
+    right: calc(100vw * 0.18)
+    width: calc(100vw * 0.035)
+    animation: 3s 4s zoomInOut infinite linear
+  img:nth-child(5)
+    top: calc(100vw * 0.1625)
+    right: calc(100vw * 0.27)
+    width: calc(100vw * 0.035)
+    animation: 3s 4s zoomInOut infinite linear
+  // big
+  img:nth-child(6)
+    top: calc(100vw * 0.25)
+    right: calc(100vw * 0.02)
+    width: calc(100vw * 0.08)
+    animation: 2s 4s zoomInOut infinite linear
+  +breakpoint($min-desktop)
+    img:nth-child(1)
+      top: 122px
+      right: calc(50% - 20px)
+      width: 1.5%
+    img:nth-child(2)
+      top: 49px
+      right: calc(50% - 7px)
+      width: 4%
+    img:nth-child(3)
+      top: 30px
+      right: calc(50% - 27px)
+      width: 1.5%
+    img:nth-child(4)
+      top: 40px
+      right: calc(50% + 45px)
+      width: 1.5%
+    img:nth-child(5)
+      top: 94px
+      right: calc(50% + 90px)
+      width: 1.5%
+    img:nth-child(6)
+      top: 145px
+      right: calc(50% - 33px)
+      width: 4%
+//@keyframes zoomInOut
+//  0%, 100%
+//    transform: scale(1)
+//  34%
+//    transform: scale(1.2) rotate(20deg)
+//    filter: brightness(2)
+//  67%
+//    transform: scale(1.2) rotate(-20deg)
+@keyframes zoomInOut
+  0%, 100%
+    transform: scale(1)
+  34%
+    transform: scale(1.2)
+    filter: brightness(2)
+  67%
+    transform: scale(1.2)
+
+//
+.margin-thumb__box
+  margin-top: 4%
+  margin-bottom: 6%
+  +breakpoint($min-desktop)
+    margin-top: 0
+    margin-bottom: 4%
+
+@import './_include/_pad'
+@import './_include/_ranking.sass'
+@import './_include/_desktop'

@@ -1,0 +1,50 @@
+.event__wrap--w4m2
+  transform: translateY(-1%)
+  +breakpoint-min($min-width-lg)
+    transform: translateY(-2.8%)
+  .layout--main
+    position: relative
+    .tilte__zone--event
+      padding: 2% 18% 3%
+    .btn--prev-event-w4m2,
+    .btn--next-event-w4m2
+      position: absolute
+      z-index: map-get($zindex, base)
+      top: 46%
+      width: 6.5%
+      height: 15%
+      +breakpoint-min($min-width-lg)
+        width: 5%
+        top: 53%
+    .btn--prev-event-w4m2
+      left: 4%
+    .btn--next-event-w4m2
+      right: 4%
+  .event__zone
+    padding: 6% 5% 4%
+    background: url("../components/event-w4m2/event-w4m2-background-mobile.png") no-repeat
+    background-size: 100%
+    .slick-list
+      border-radius: 20px
+      overflow: hidden
+    .slick-slide
+      padding: 0 2px
+    .slick-cloned,
+    .slick-active
+      animation: rotate-self2 1s both
+      transition: transform 300ms ease-in-out
+    a
+      transition: all 0.5s
+      &:hover
+        transform: scale(0.95)
+        filter: brightness(120%)
+    +breakpoint-min($min-width-lg)
+      display: flex
+      padding: 5.5% 2% 3.5%
+      background: url("../components/event-w4m2/event-w4m2-background-web.png") no-repeat
+      background-size: 100%
+      .slick-slide
+        padding: 0 10px
+
+
+

@@ -1,0 +1,749 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- ============== 輪播 start ============== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+    <!-- ============== 輪播 end ============== -->
+    <!-- 共用CSS -->
+    <link rel="stylesheet"
+          href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.css">
+    <style>
+        /* 調整logo位置大小 */
+        /* .logo {
+          top: 1%;
+          left: 1%;
+          width: 30%;
+          max-width: 220px;
+        } */
+
+        /* 連結測試 */
+        /* .sp__visual a{
+          filter: brightness(500%);
+        } */
+
+        /* 切片測試 */
+        /* .visual__fragment::before {
+          content: '';
+          position: absolute;
+          z-index: 1;
+          width: 100%;
+          height: 100%;
+          border: 1px solid #00f;
+          pointer-events: none;
+        } */
+
+        /* 設定全畫面背景 */
+        body {
+            background-color: #fff;
+        }
+
+        .sp__main {
+            background: url(bg_01.jpg) center 0 no-repeat;
+        }
+
+    </style>
+    <style>
+
+        .promo__group--tab .tab__wrap {
+            display: -ms-flexbox;
+            display: flex;
+            display: block;
+            height: 113vw;
+            background: center 0 url("index_07.jpg") no-repeat;
+            background-size: 100%
+        }
+
+        .promo__group--tab .tab__wrap .tab__zone {
+            padding: 0;
+            width: 90%;
+            margin: 0 auto
+        }
+
+        .promo__group--tab .tab__wrap .tab__zone .tab__box {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -ms-flex-pack: center;
+            justify-content: center;
+            position: relative;
+            top: 11.8vw;
+            left: 0;
+            color: #00013a;
+            font-weight: 700;
+            font-size: 3.8vw;
+            font-style: italic;
+            font-family: Arial
+        }
+
+        .promo__group--tab .tab__wrap .tab__zone .tab__box .tab-01,
+        .promo__group--tab .tab__wrap .tab__zone .tab__box .tab-02,
+        .promo__group--tab .tab__wrap .tab__zone .tab__box .tab-03,
+        .promo__group--tab .tab__wrap .tab__zone .tab__box .tab-04,
+        .promo__group--tab .tab__wrap .tab__zone .tab__box .tab-05,
+        .promo__group--tab .tab__wrap .tab__zone .tab__box .tab-06 {
+            position: absolute;
+            cursor: pointer;
+        }
+
+        .promo__group--tab .tab__wrap .tab__zone .tab__box .tab-04,
+        .promo__group--tab .tab__wrap .tab__zone .tab__box .tab-05,
+        .promo__group--tab .tab__wrap .tab__zone .tab__box .tab-06 {
+            top: 8.7vw;
+        }
+
+        .promo__group--tab .tab__wrap .tab__zone .tab__box .tab-01,
+        .promo__group--tab .tab__wrap .tab__zone .tab__box .tab-04 {
+            left: 7vw
+        }
+
+        .promo__group--tab .tab__wrap .tab__zone .tab__box .tab-02,
+        .promo__group--tab .tab__wrap .tab__zone .tab__box .tab-05 {
+            left: 33vw
+        }
+
+        .promo__group--tab .tab__wrap .tab__zone .tab__box .tab-03,
+        .promo__group--tab .tab__wrap .tab__zone .tab__box .tab-06 {
+            left: 61vw
+        }
+
+        .promo__group--tab .tab__wrap .tab__zone .tab__box .tab__item__price__init {
+            font-size: 2.3vw;
+            padding-left: 1%;
+            vertical-align: baseline
+        }
+
+        .promo__group--tab .tab__wrap .content__zone {
+            -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+            padding: 27.5% 4% 2% 5%;
+        }
+
+        .promo__group--tab .tab__wrap .content__zone .content__block,
+        .promo__group--tab .tab__wrap .content__zone .content__box {
+            width: 100%;
+            height: 80vw;
+            overflow: auto;
+        }
+
+        .promo__group--tab .tab__wrap .content__zone .content__block.tabs__goods, .promo__group--tab .tab__wrap .content__zone .content__box.tabs__goods {
+            width: 90%;
+            margin: 0 auto
+        }
+
+        .promo__group--tab .tab__item {
+            padding: 0 2%;
+            width: 31%
+        }
+
+        .promo__group--tab .tab__item.active {
+            color: #ef4a4a
+        }
+
+        .promo__group--tab .tab__item:active, .promo__group--tab .tab__item:hover {
+            -webkit-filter: brightness(110%);
+            filter: brightness(110%)
+        }
+
+        .promo__group--tab .tab__item.active:active, .promo__group--tab .tab__item.active:hover {
+            -webkit-filter: brightness(100%);
+            filter: brightness(100%)
+        }
+
+        .promo__group--tab .content__box {
+            display: none
+        }
+
+        .promo__group--tab .content__box.active {
+            display: block
+        }
+
+        .promo__group--tab .content__box .content__item {
+            float: left;
+            padding: 0;
+            width: 31%;
+            margin: 1% .5% .5% .5%;
+        }
+
+        .promo__group--tab .content__box .content__item:active, .promo__group--tab .content__box .content__item:hover {
+            -webkit-filter: contrast(150%);
+            filter: contrast(150%)
+        }
+
+        @media screen and (min-width: 960px) {
+            .promo__group--tab {
+                margin-top: 15px
+            }
+
+            .promo__group--tab .tab__wrap {
+                display: block;
+                height: 1087px;
+                background: center 0 url("index_07.jpg") no-repeat;
+                background-size: 100% auto
+            }
+
+            .promo__group--tab .tab__wrap .tab__zone .tab__box {
+                top: 113px;
+                font-size: 40px
+            }
+
+            .promo__group--tab .tab__wrap .content__zone .content__block,
+            .promo__group--tab .tab__wrap .content__zone .content__box {
+                height: 777px;
+            }
+
+            .promo__group--tab .tab__wrap .tab__zone .tab__box .tab-04,
+            .promo__group--tab .tab__wrap .tab__zone .tab__box .tab-05,
+            .promo__group--tab .tab__wrap .tab__zone .tab__box .tab-06 {
+                top: 81px;
+            }
+
+            .promo__group--tab .tab__wrap .tab__zone .tab__box .tab-01,
+            .promo__group--tab .tab__wrap .tab__zone .tab__box .tab-04 {
+                left: 79px;
+            }
+
+            .promo__group--tab .tab__wrap .tab__zone .tab__box .tab-02,
+            .promo__group--tab .tab__wrap .tab__zone .tab__box .tab-05 {
+                left: 324px;
+            }
+
+            .promo__group--tab .tab__wrap .tab__zone .tab__box .tab-03,
+            .promo__group--tab .tab__wrap .tab__zone .tab__box .tab-06 {
+                left: 585px;
+            }
+
+            .promo__group--tab .tab__wrap .tab__zone .tab__box .tab__item__price__init {
+                font-size: 22px
+            }
+
+            .promo__group--tab .tab__wrap .content__zone {
+                padding: 27.5% 3% 2% 4%;
+            }
+
+            .promo__group--tab .tab__wrap .content__zone .content__block.tabs__goods,
+            .promo__group--tab .tab__wrap .content__zone .content__box.tabs__goods {
+                width: 94%
+            }
+
+            .promo__group--tab .tab__item {
+                padding: 0;
+                width: 25%;
+                height: 65px
+            }
+
+            .promo__group--tab .tab__item img {
+                margin: 0 auto
+            }
+
+            .promo__group--tab .content__box {
+                padding: 5px 20px 15px
+            }
+
+            .promo__group--tab .content__box .content__item {
+                width: 31.3%;
+                margin: 0 .5% .5% .5%;
+            }
+        }
+
+        .tabs__goods .content__item {
+            /*background: center 0 url(bg__slider__good.png) no-repeat;*/
+            background-size: 100%;
+            height: 25vw;
+        }
+
+        .tabs__goods .content__item img {
+            width: 100%;
+            margin: 0;
+        }
+
+        .tabs__goods .content__item .tab__good__title {
+            font-size: 2.6vw;
+            line-height: 3.8vw;
+            height: 7.5vw;
+            padding: 0 4%;
+            overflow: hidden;
+            color: #5d5d5d
+        }
+
+        .tabs__goods .content__item .tab__good__price {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-pack: end;
+            justify-content: flex-end;
+            margin: 1% 7% auto auto;
+            color: #cc1e05;
+            font-size: 4.5vw;
+            font-weight: 700;
+            -ms-flex-align: baseline;
+            align-items: baseline
+        }
+
+        .tabs__goods .content__item .tab__good__price .price__init {
+            font-size: 11px;
+            font-weight: 500;
+            padding-right: 1%;
+            vertical-align: baseline
+        }
+
+        @media screen and (min-width: 960px) {
+            .tabs__goods .content__item {
+                height: 248px;
+            }
+
+            .tabs__goods .content__item .tab__good__title {
+                font-size: 15px;
+                line-height: 20px;
+                height: 60px;
+                margin-top: 5px
+            }
+
+            .tabs__goods .content__item .tab__good__price {
+                margin: 12% 5% auto auto;
+                font-size: 24px
+            }
+
+            .tabs__goods .content__item .tab__good__price .price__init {
+                font-size: 13px;
+                padding-right: 0.5%
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div id="iconHome"></div>
+<div id="spWrap" class="sp__wallper">
+    <!-- 主視覺 -->
+    <main class="sp__main">
+        <div class="layout--main home--logo">
+            <a href="https://www.etmall.com.tw"><img class="logo" src="ehs-logo.png" alt="東森購物"></a>
+        </div>
+        <section class="sp__visual">
+            <div class="layout--main">
+                <ul class="visual--auto clearfix">
+                    <li class="visual__fragment width--auto">
+                        <img src="index_01.jpg">
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <img src="index_02.jpg">
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <a href="#note" title="週週抽iPhone11">
+                            <img src="index_03.jpg" alt="週週抽iPhone11">
+                        </a>
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <a href="#note" title="滿額最高抽6,180東森幣">
+                            <img src="index_04.jpg" alt="滿額最高抽6,180東森幣">
+                        </a>
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <a href="#note" title="使用APP下單滿2次登記送洗衣膠球">
+                            <img src="index_05.jpg" alt="使用APP下單滿2次登記送洗衣膠球">
+                        </a>
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <a href="#note" title="滿$3,000送$1,688">
+                            <img src="index_06.jpg" alt="滿$3,000送$1,688">
+                        </a>
+                    </li>
+                    <!--<li class="visual__fragment width&#45;&#45;auto">-->
+                    <!--<img src="index_07.jpg">-->
+                    <!--</li>-->
+                </ul>
+
+
+                <section class="promo__group promo__group--tab js-add__bg" data-title="618一路發">
+                    <div class="layout--main">
+                        <ul class="tab__wrap">
+                            <li class="tab__zone">
+                                <ul class="tab__box" id="tabBox">
+                                    <li class="tab__item tab-01 active" title="保健嚴選">保健嚴選</li>
+                                    <li class="tab__item tab-02" title="美妝達人">美妝達人</li>
+                                    <li class="tab__item tab-03" title="3C家電">3C家電</li>
+                                    <li class="tab__item tab-04" title="食品飲料">食品飲料</li>
+                                    <li class="tab__item tab-05" title="生活用品">生活用品</li>
+                                    <li class="tab__item tab-06" title="鞋服家寢">鞋服家寢</li>
+                                </ul>
+                            </li>
+                            <li class="content__zone">
+                                <ul class="content__block tabs__goods" id="contentBlock">
+                                    <li class="content__box clearfix active">
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202006/SP_1115675/w/index.html">
+                                                <img src="Logozone-1-1-min.png" alt="華陀 8%">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/p/102343">
+                                                <img src="Logozone-1-2-min.png" alt="Angel lala">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/p/101509">
+                                                <img src="Logozone-1-3-min.png" alt="ivenor">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/np/101765">
+                                                <img src="Logozone-1-4-min.png" alt="台塑">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/np/101666">
+                                                <img src="Logozone-1-5-min.png" alt="正官庄">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/p/101508">
+                                                <img src="Logozone-1-6-min.png" alt="日本味王">
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="content__box clearfix">
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/np/101587">
+                                                <img src="Logozone-2-1-min.png" alt="美島水肌">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202006/SP_1115584/w/index.html">
+                                                <img src="Logozone-2-2-min.png" alt="FORTE">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/np/100479">
+                                                <img src="Logozone-2-3-min.png" alt="台塑生醫">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/np/98898">
+                                                <img src="Logozone-2-4-min.png" alt="NARUKO牛爾">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/p/102318">
+                                                <img src="Logozone-2-5-min.png" alt="Bio-essence碧歐斯">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/p/101237">
+                                                <img src="Logozone-2-6-min.png" alt="age20">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/np/94534">
+                                                <img src="Logozone-2-7-min.png" alt="台酒台鹽">
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="content__box clearfix">
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/c3/142461">
+                                                <img src="Logozone-3-1-min.png" alt="國際牌">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/c3/142457">
+                                                <img src="Logozone-3-2-min.png" alt="dyson">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/c3/142456">
+                                                <img src="Logozone-3-3-min.png" alt="LG">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/c3/142458">
+                                                <img src="Logozone-3-4-min.png" alt="日立">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/c3/142462">
+                                                <img src="Logozone-3-5-min.png" alt="飛利浦">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/c3/142467">
+                                                <img src="Logozone-3-6-min.png" alt="石頭">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/c3/142460">
+                                                <img src="Logozone-3-7-min.png" alt="大同">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/c3/142469">
+                                                <img src="Logozone-3-8-min.png" alt="鍋寶">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/c3/142466">
+                                                <img src="Logozone-3-9-min.png" alt="安晴">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/c3/142470">
+                                                <img src="Logozone-3-10-min.png" alt="富及第">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/c3/142471">
+                                                <img src="Logozone-3-11-min.png" alt="IRIS">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/c3/142472">
+                                                <img src="Logozone-3-12-min.png" alt="小紫">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/c2/49036">
+                                                <img src="Logozone-3-13-min.png" alt="ACER">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/c2/48959">
+                                                <img src="Logozone-3-14-min.png" alt="ASUS">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/c3/142473">
+                                                <img src="Logozone-3-15-min.png" alt="SAMSUNG">
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="content__box clearfix">
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/p/100297">
+                                                <img src="Logozone-4-1-min.png" alt="添好運">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/c3/141476">
+                                                <img src="Logozone-4-2-min.png" alt="長榮">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/c3/110581">
+                                                <img src="Logozone-4-3-min.png" alt="泰山">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/p/101991">
+                                                <img src="Logozone-4-4-min.png" alt="盛香珍">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/c3/131797">
+                                                <img src="Logozone-4-5-min.png" alt="UCC">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202005/SP_1115480/w/index.html">
+                                                <img src="Logozone-4-6-min.png" alt="可口可樂">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/c3/123300">
+                                                <img src="Logozone-4-7-min.png" alt="阿一鮑魚">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/c3/139910">
+                                                <img src="Logozone-4-8-min.png" alt="黑橋牌">
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="content__box clearfix">
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202005/SP_1115575/w/index.html">
+                                                <img src="Logozone-5-1-min.png" alt="西華">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202005/SP_1115544/w/index.html">
+                                                <img src="Logozone-5-2-min.png" alt="鍋寶">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/np/74048">
+                                                <img src="Logozone-5-3-min.png" alt="Brita">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/p/101772">
+                                                <img src="Logozone-5-4-min.png" alt="牛頭牌">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/c3/34251">
+                                                <img src="Logozone-5-5-min.png" alt="舒潔">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/c3/140371">
+                                                <img src="Logozone-5-6-min.png" alt="東風">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/c3/42465">
+                                                <img src="Logozone-5-7-min.png" alt="日本獅王">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/p/101584">
+                                                <img src="Logozone-5-8-min.png" alt="妙管家">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/c3/26807">
+                                                <img src="Logozone-5-9-min.png" alt="春風">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/c3/26807">
+                                                <img src="Logozone-5-10-min.png" alt="日本大王">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/c3/39076">
+                                                <img src="Logozone-5-11-min.png" alt="倍潔雅">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/np/102161">
+                                                <img src="Logozone-5-12-min.png" alt="普洛斯">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/np/102509">
+                                                <img src="Logozone-5-13-min.png" alt="達麗">
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="content__box clearfix">
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202005/SP_1115521/w/index.html">
+                                                <img src="Logozone-6-1-min.png" alt="TIMBERLAND">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/c3/142575">
+                                                <img src="Logozone-6-2-min.png" alt="生活工場">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/c3/142574">
+                                                <img src="Logozone-6-3-min.png" alt="東妮">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/c3/135521">
+                                                <img src="Logozone-6-4-min.png" alt="日本直人木業">
+                                            </a>
+                                        </div>
+                                        <div class="content__item">
+                                            <a href="https://www.etmall.com.tw/p/67031">
+                                                <img src="Logozone-6-5-min.png" alt="奧黛莉">
+                                            </a>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+</div>
+</body>
+<script src="https://polyfill.io/v3/polyfill.min.js"></script>
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<!-- ============== 輪播 start ============== -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+<!-- ============== 輪播 end ============== -->
+<!--<script id="generateScript" src="generate.js"></script>-->
+<!-- <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js"></script> -->
+<!-- 東森浮水印 -->
+<script id="scriptIconFloat"
+        src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105264/float-icon.js"></script>
+<!-- 森森浮水印
+<script id="scriptIconFloat" src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1102419/float-icon.js"></script> -->
+<!-- 共用JS -->
+<script id="generateScript"
+        src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.js"></script>
+<script>
+    var footerSlider = new Swiper(".swiper-container", {
+        autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+        },
+        autoHeight: true,
+        grabCursor: true,
+        loop: true,
+        speed: 1000,
+    });
+</script>
+
+<script>
+    // export var initBuildTab = buildTab();
+
+    //    import { getTabGoodsData } from 'event/2nd/e-main-618/components/tab-section/tab-section.js'
+    function buildTab() {
+        var tabBox = document.getElementById('tabBox');
+        var tabItems = Array.apply(null, tabBox.querySelectorAll('.tab__item'));
+        var contentBlock = document.getElementById('contentBlock');
+        var contentBox = Array.apply(null, contentBlock.querySelectorAll('.content__box'));
+        var dateNow = dateCheck() - 1; // change date to zero start
+
+        if (tabItems.length !== contentBox.length) {
+            console.error('Tab Item數量與Content Box數量不符');
+            return false;
+        }
+
+        tabItems.forEach(function (el, index) {
+            if (index === dateNow) {
+                addActive(tabItems, dateNow);
+                addActive(contentBox, index);
+            }
+
+            function clickActive() {
+                addActive(tabItems, index);
+                addActive(contentBox, index);
+            }
+
+            if (el.addEventListener) {
+                el.addEventListener('click', clickActive, false);
+            }
+            else if (el.attachEvent) {
+                el.addEventListener('onclick', clickActive);
+
+            }
+        });
+    }
+
+    function addActive(arrayElementIn, elementIndex) {
+        arrayElementIn.forEach(function (el) {
+            el.classList.remove('active');
+        });
+        arrayElementIn[elementIndex].classList.add('active');
+    }
+
+    function dateCheck() {
+        var date = new Date().getDate();
+        return date;
+    }
+    buildTab();
+
+</script>
+</html>
+

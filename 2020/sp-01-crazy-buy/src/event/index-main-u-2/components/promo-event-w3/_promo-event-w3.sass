@@ -1,0 +1,59 @@
+.promo__event-w3
+  +pos-set(relative, null)
+  +breakpoint-min($min-width-xl)
+    padding: 0
+  .event__wrap
+    +display-flex
+    flex-wrap: wrap
+    justify-content: center
+    width: 100%
+    li
+      margin-right: 0
+      padding: 0
+      width: 33.3%
+      +breakpoint-min($min-width-xl)
+        width: 24%
+  .event__wrap
+    li
+      padding: 0 0 3% 0
+      transform-origin: bottom
+      img
+        transition: all .5s
+      &:hover,
+      &:active
+        img
+          transform: translateY(-5%)
+    a
+      transition: all 0.5s
+    +breakpoint-min($min-width-xl)
+      li
+        padding: 2% 0
+        max-width: 320px
+
+.promo__event__bg-decoration
+  position: relative
+  img
+    position: absolute
+    z-index: 0
+    width: 100%
+    top: calc(100vw * -0.29)
+    left: 0
+    &:nth-child(2)
+      display: none
+  +breakpoint-min($min-width-xl)
+    img
+      position: absolute
+      z-index: 0
+      width: 100%
+      top: -230px
+      left: 0
+      &:nth-child(1)
+        display: none
+      &:nth-child(2)
+        display: block
+  +breakpoint-min($min-width-3xl)
+    img
+      width: 1394px
+      top: -315px
+      left: 50%
+      transform: translateX(-50%)

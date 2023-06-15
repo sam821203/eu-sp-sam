@@ -1,0 +1,59 @@
+.promo__group.promo__group--event
+  .promo__zone
+    // +bg-set(null, cover)
+  .promo__title
+    +bg-set(url("~components/bn-event/section-bn-06.png"))
+    // margin-top: -2.4%
+  .promo__wrap
+    padding-top: 45%
+    margin-bottom: 2%
+    .promo__slider
+      +bg-set(url("~components/bn-event/bg-bn.png"), 100%)
+      padding: 5% 9.5% 0
+    .swiper-container
+      width: 100%
+      height: 100%
+    .swiper-slide
+      a
+        transform: translateY(0%) scale(0.95) 
+    .swiper-pager-white
+      bottom: -1%
+    .swiper-button-white
+      top: 57%
+      width: 15px
+      height: 24px
+      background-size: 15px 24px
+    .swiper-button-prev
+      left: 4%
+    .swiper-button-next
+      right: 4%
+  +breakpoint-min($min-width-lg)
+    .promo__wrap
+      padding-top: 32%
+      .promo__slider
+        +bg-set(url("~components/bn-event/bg-bn-web.png"), 100%)
+        padding: 2% 4% 0
+      .swiper-container
+        height: 95%
+      .swiper-slide
+        width: 50%
+        a
+          transform: translateY(21%) scale(0.9)
+      .swiper-pager-white
+        bottom: 4%
+      .swiper-button-prev,
+      .swiper-button-next
+        top: 53%
+      .swiper-button-prev
+        left: 1%
+      .swiper-button-next
+        right: 1%
+  +breakpoint-min($min-width-xl)
+    // +bg-set(url("~components/bn-event/2560bg-06.jpg"))
+    .swiper-slide
+      a
+        transform: translateY(21%) scale(0.1)
+    .promo__wrap
+      .swiper-pager-white
+        // bottom: 0
+

@@ -1,0 +1,785 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- ============== 輪播 start ============== -->
+  <link rel="stylesheet" href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116205/swiper.min.css">
+  <!-- ============== 輪播 end ============== -->
+  <!-- 共用CSS -->
+  <link rel="stylesheet" href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116205/animate.min.css">
+  <link rel="stylesheet" href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.css">
+  <style>
+    body {
+      /* 自行修正背景顏色 */
+      background: #510474 url(bg_01-m.jpg) no-repeat;
+      background-size: 100% auto;
+      background-position: center top;
+    }
+
+    @media screen and (min-width: 960px) {
+      body {
+
+        background: #510474 url(bg_01.jpg) no-repeat;
+        background-size: 2560px 1850px;
+      }
+    }
+
+    /* 調整logo位置大小 */
+    .logo {
+      top: 2vw;
+      left: 2%;
+      width: 18%;
+      max-width: 177px;
+    }
+
+    /* 連結測試 */
+    /* .sp__visual a{
+          filter: brightness(500%);
+        } */
+
+    /* 切片測試 */
+
+    /* 設定全畫面背景 */
+    /* .sp__main {
+          background: url(bg.jpg) center 0 no-repeat;
+        } */
+
+    .sp__visual.visual__block1 {
+      z-index: 1;
+    }
+
+    .bingo__wrap {
+      background: url(bg_bingo.png) no-repeat;
+      background-size: 100% auto;
+      background-position: center top;
+      height: 95vw;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20% 10% 4% 10%;
+      position: relative;
+    }
+
+    .bingo__wrap .bingo__item {
+      padding: 0;
+      margin: 0;
+      height: 21vw;
+    }
+
+    /*.bingo__wrap .bingo__item:nth-child(n+4) {*/
+    /*margin: 1% 2% 0;*/
+    /*}*/
+
+    /* 大網各區塊背景  */
+    /*@media screen and (min-width: 960px) {*/
+    /*.visual__block1 {*/
+    /*background: url(bg_01.jpg) no-repeat;*/
+    /*background-size: 2560px 1850px;*/
+    /*}*/
+    /*}*/
+
+    .hidden {
+      overflow: hidden;
+    }
+
+    .overlay-mask {
+      cursor: pointer;
+      background: rgba(0, 0, 0, 0.8);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      z-index: 10;
+    }
+
+    .cs--tiles input {
+      display: none;
+    }
+
+    .cs--tiles .bingo__item {
+      display: flex;
+      position: absolute;
+      /*height: 85px;*/
+      transform: translateX(-50%);
+      transition: all 0.15s 0.15s;
+      z-index: 1;
+      width: calc(100% / 3 - 10%);
+    }
+
+    .cs--tiles .bingo__item .cs--tile {
+      /*background: #36f;*/
+      position: relative;
+      margin: auto;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      transition: all 0.15s 0.15s, background 0.15s;
+    }
+
+    .cs--tiles .bingo__item .cs--tile:hover {
+      /*box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.75);*/
+      /*background: #668cff;*/
+      /*filter: brightness(150%);*/
+
+      animation: item-jump 2s both ease-out;
+      animation-iteration-count: 1;
+
+    }
+
+    .cs--tiles .bingo__item .cs--tile .cs--content {
+      transition: all 0.15s, max-height 0s;
+      opacity: 0;
+      pointer-events: none;
+      overflow: hidden;
+      max-height: 0;
+    }
+
+    .cs--tiles .bingo__item .cs--tile .cs-open {
+      cursor: pointer;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    .cs--tiles .bingo__item .cs--tile .cs-close {
+      cursor: pointer;
+      transition: all 0.15s;
+      position: absolute;
+      opacity: 0;
+      top: 6vw;
+      right: 3vw;
+      transform: rotateZ(45deg) translateX(-50%) translateY(-50%);
+      font-size: 12vw;
+      color: #333;
+    }
+
+    @media screen and (min-width: 768px) {
+      .cs--tiles .bingo__item .cs--tile .cs-close {
+        top: 36px;
+        right: 24px;
+        font-size: 48px;
+      }
+    }
+
+    .cs--tiles input:checked+.bingo__item {
+      position: fixed;
+      transition: all 0.25s;
+      width: 80%;
+      max-width: 640px;
+      height: auto;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      z-index: 10;
+    }
+
+    .cs--tiles input:checked+.bingo__item:before {
+      position: absolute;
+      display: block;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      z-index: 2;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .cs--tiles input:checked+.bingo__item .cs--tile {
+      transition: all 0.25s;
+      /*background: #3b3;*/
+      /*height: 80%;*/
+      /*width: 80%;*/
+      display: flex;
+      flex-direction: column;
+      /*padding: 20px;*/
+      /*box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);*/
+    }
+
+    .cs--tiles input:checked+.bingo__item .cs--tile:hover {
+      cursor: initial;
+      animation: none;
+    }
+
+    .cs--tiles input:checked+.bingo__item .cs--tile .cs-open {
+      display: none;
+    }
+
+    .cs--tiles input:checked+.bingo__item .cs--tile .cs-close {
+      transition: all 0.15s 0.25s;
+      opacity: 1;
+    }
+
+    .cs--tiles input:checked+.bingo__item .cs--tile .cs-close:hover {
+      transition: all 0.15s;
+      opacity: 0.5;
+    }
+
+    /*文字變化*/
+    .cs--tiles .bingo__item .cs--tile .cs--text {
+      transition: all 0.15s 0.15s;
+      width: 100%;
+      text-align: center;
+      line-height: 70px;
+      white-space: nowrap;
+      text-transform: uppercase;
+    }
+
+    .cs--tiles input:checked+.bingo__item .cs--tile .cs--text {
+      transition: all 0.15s 0.25s;
+      font-size: 24px;
+      line-height: 50px;
+    }
+
+    .cs--tiles input:checked+.bingo__item .cs--tile .cs--content {
+      flex: 1;
+      transition: all 0.25s 0.4s, max-height 0s 0.4s, flex 0s 0.4s;
+      opacity: 1;
+      margin-top: 10px;
+      pointer-events: initial;
+      width: 100%;
+      max-height: 1000000px;
+      overflow: hidden;
+
+    }
+
+    .cs--tiles input:checked+.bingo__item .cs--tile .cs--content img {
+      border-top-left-radius: 25px;
+      border-bottom-left-radius: 25px;
+      border-bottom-right-radius: 25px;
+    }
+
+    .cs--tiles input:checked+.bingo__item .first__image {
+      display: none;
+    }
+
+    .bingo__item:nth-of-type(1) {
+      left: calc(0 * 33.334% + 1 * 16.667% + 7%);
+      top: calc(0 * 25vw + 21vw);
+    }
+
+    .bingo__item:nth-of-type(2) {
+      left: calc(1 * 33.334% + 1 * 16.667%);
+      top: calc(0 * 25vw + 21vw);
+    }
+
+    .bingo__item:nth-of-type(3) {
+      left: calc(2 * 33.334% + 1 * 16.667% - 8%);
+      top: calc(0 * 25vw + 21vw);
+    }
+
+    .bingo__item:nth-of-type(4) {
+      left: calc(0 * 33.334% + 1 * 16.667% + 7%);
+      top: calc(1 * 25vw + 19vw);
+    }
+
+    .bingo__item:nth-of-type(5) {
+      left: calc(1 * 33.334% + 1 * 16.667%);
+      top: calc(1 * 25vw + 19vw);
+    }
+
+    .bingo__item:nth-of-type(6) {
+      left: calc(2 * 33.334% + 1 * 16.667% - 8%);
+      top: calc(1 * 25vw + 19vw);
+    }
+
+    .bingo__item:nth-of-type(7) {
+      left: calc(0 * 33.334% + 1 * 16.667% + 7%);
+      top: calc(2 * 25vw + 18vw);
+    }
+
+    .bingo__item:nth-of-type(8) {
+      left: calc(1 * 33.334% + 1 * 16.667%);
+      top: calc(2 * 25vw + 18vw);
+    }
+
+    .bingo__item:nth-of-type(9) {
+      left: calc(2 * 33.334% + 1 * 16.667% - 8%);
+      top: calc(2 * 25vw + 18vw);
+    }
+
+
+    .bingo__item:nth-of-type(1) .first__image {
+      animation: pp-jump 12s 5s both ease-out infinite;
+    }
+
+    .bingo__item:nth-of-type(2) .first__image {
+      animation: pp-jump 10s 1.3s both ease-in-out infinite alternate;
+    }
+
+    .bingo__item:nth-of-type(3) .first__image {
+      animation: pp-jump 14s 2.5s both linear infinite alternate-reverse;
+    }
+
+    .bingo__item:nth-of-type(4) .first__image {
+      animation: pp-jump 15s .5s both linear infinite;
+    }
+
+    .bingo__item:nth-of-type(5) .first__image {
+      animation: pp-jump 13s 1s both linear infinite reverse;
+    }
+
+    .bingo__item:nth-of-type(6) .first__image {
+      animation: pp-jump 12s 2s both ease-in-out infinite alternate;
+    }
+
+    .bingo__item:nth-of-type(7) .first__image {
+      animation: pp-jump 6s 5s both ease-out infinite;
+    }
+
+    .bingo__item:nth-of-type(8) .first__image {
+      animation: pp-jump 6s .7s both linear infinite;
+    }
+
+    .bingo__item:nth-of-type(9) .first__image {
+      animation: pp-jump 7s 3.5s both linear infinite alternate-reverse;
+    }
+
+    @media screen and (min-width: 960px) {
+      .logo {
+        top: 20px;
+      }
+
+      .cs--tiles input:checked+.bingo__item {
+        width: auto;
+        max-width: 640px;
+        height: 80vh;
+        left: 50%;
+        top: 30px;
+        transform: translateX(-50%) translateY(0);
+      }
+
+      .cs--tiles input:checked+.bingo__item .cs--tile .cs--content img {
+        width: auto;
+        max-width: 640px;
+        height: 80vh;
+      }
+
+      .bingo__wrap {
+        background-size: 960px 946px;
+        height: 946px;
+        padding: 20% 10% 0% 10%;
+      }
+
+      .bingo__item .first__image {
+        width: auto;
+      }
+
+      .bingo__wrap .bingo__item {
+        margin: 0;
+        height: 217px;
+      }
+
+      .bingo__item:nth-of-type(1) {
+        top: calc(0 * 225px + 195px);
+      }
+
+      .bingo__item:nth-of-type(2) {
+        top: calc(0 * 225px + 195px);
+      }
+
+      .bingo__item:nth-of-type(3) {
+        top: calc(0 * 225px + 195px);
+      }
+
+      .bingo__item:nth-of-type(4) {
+        top: calc(1 * 225px + 195px);
+      }
+
+      .bingo__item:nth-of-type(5) {
+        top: calc(1 * 225px + 195px);
+      }
+
+      .bingo__item:nth-of-type(6) {
+        top: calc(1 * 225px + 195px);
+      }
+
+      .bingo__item:nth-of-type(7) {
+        top: calc(2 * 225px + 195px);
+      }
+
+      .bingo__item:nth-of-type(8) {
+        top: calc(2 * 225px + 195px);
+      }
+
+      .bingo__item:nth-of-type(9) {
+        top: calc(2 * 225px + 195px);
+      }
+    }
+
+    @keyframes item-jump {
+
+      0%,
+      12%,
+      18%,
+      22%,
+      28% {
+        transform: translateY(0) scale(1);
+        transform-origin: bottom center;
+      }
+
+      15%,
+      25% {
+        transform: translateY(-10%) scale(1.1);
+        transform-origin: bottom center;
+      }
+    }
+
+    @keyframes pp-jump {
+
+      40%,
+      44% {
+        transform: translateX(-5%) translateY(0) scale(1) skew(5deg);
+        filter: brightness(150%);
+        transform-origin: bottom center;
+      }
+
+      42%,
+      46% {
+        transform: translateX(5%) translateY(0) scale(1) skew(-5deg);
+        filter: brightness(120%);
+        transform-origin: bottom center;
+      }
+
+      77%,
+      79% {
+        transform: translateX(0) translateY(-5%) scale(1);
+        filter: brightness(150%);
+      }
+
+      0%,
+      39%,
+      41%,
+      43%,
+      45%,
+      47%,
+      76%,
+      78%,
+      80% {
+
+        transform: translateX(0) translateY(0) scale(1);
+        filter: brightness(100%);
+      }
+    }
+    .bingo__item.active::before {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      background: center 0 url(item-active.png) no-repeat;
+      background-size: contain;
+      pointer-events: none;
+    }
+    .bingo__frame {
+      position: relative;
+    }
+    .bingo__status {
+      position: absolute;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .bingo__status > div{
+      opacity: 0;
+    }
+    .status--column,
+    .status--slash {
+      top: 17%;
+      left: 8.5%;
+      width: 83%;
+      height: 83%;
+    }
+    .status--row {
+      top: 19.5%;
+      left: 0;
+      width: 100%;
+      height: 74%;
+    }
+    .status--slash {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .status--column {
+      display: flex;
+    }
+    .col-3 {
+      width: 33%;
+      height: 100%;
+      background: center 0 url(column-active.png) no-repeat;
+      background-size: contain;
+    }
+    .row-3 {
+      width: 100%;
+      height: 33%;
+      background: center 0 url(row-active.png) no-repeat;
+      background-size: contain;
+    }
+    .slash--left,
+    .slash--right {
+      width: 100%;
+      height: 100%;
+    }
+    .slash--left {
+      background: center 0 url(slash-left-active.png) no-repeat;
+      background-size: contain;
+    }
+    .slash--right {
+      background: center 0 url(slash-right-active.png) no-repeat;
+      background-size: contain;
+    }
+    .col-3.active,
+    .row-3.active,
+    .slash--left.active,
+    .slash--right.active {
+      opacity: 1;
+    }
+    .bingo__alert {
+      margin: 0 auto;
+      width: 80%;
+      max-width: 960px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 旅遊專用bar區域 start 不要就移除-->
+  <!-- 旅遊專用bar區域 end-->
+  <div id="iconHome" class="layout--main home--icon"></div>
+  <div id="spWrap" class="sp__wallper">
+    <!-- 主視覺 -->
+    <main class="sp__main">
+      <div class="layout--main home--logo">
+        <a href="https://www.etmall.com.tw"><img class="logo" src="ehs-logo.png" alt="東森購物"></a>
+      </div>
+
+      <section class="sp__visual visual__block1">
+        <div class="layout--main">
+          <div id="overlay"></div>
+          <ul class="visual--auto clearfix">
+            <li class="visual__fragment width--auto">
+              <img src="title.png">
+            </li>
+          </ul>
+          <div class="bingo__frame">
+            <ul class="bingo__wrap cs--tiles">
+              <input class="input__check" type="checkbox" id="demo-1" />
+              <li class="bingo__item active">
+                <div class="cs--tile">
+                  <img src="pp-1.png" class="first__image">
+                  <label class="cs-open js-open-1" for="demo-1"></label>
+                  <label class="cs-close" for="demo-1">+</label>
+                  <div class="cs--content">
+                    <a href="https://www.etmall.com.tw/i/3050913">
+                      <img src="modal-1.jpg">
+                    </a>
+                  </div>
+                </div>
+              </li>
+
+              <input class="input__check" type="checkbox" id="demo-2" />
+              <li class="bingo__item">
+                <div class="cs--tile">
+                  <img src="pp-2.png" class="first__image">
+                  <label class="cs-open js-open-2" for="demo-2"></label>
+                  <label class="cs-close" for="demo-2">+</label>
+                  <div class="cs--content">
+                    <a href="https://www.etmall.com.tw/i/2951234">
+                      <img src="modal-2.jpg">
+                    </a>
+                  </div>
+                </div>
+              </li>
+
+              <input class="input__check" type="checkbox" id="demo-3" />
+              <li class="bingo__item">
+                <div class="cs--tile">
+                  <img src="pp-3.png" class="first__image">
+                  <label class="cs-open js-open-3" for="demo-3"></label>
+                  <label class="cs-close" for="demo-3">+</label>
+                  <div class="cs--content">
+                    <a href="https://www.etmall.com.tw/i/2593370">
+                      <img src="modal-3.jpg">
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <input class="input__check" type="checkbox" id="demo-4" />
+              <li class="bingo__item">
+                <div class="cs--tile">
+                  <img src="pp-4.png" class="first__image">
+                  <label class="cs-open js-open-4" for="demo-4"></label>
+                  <label class="cs-close" for="demo-4">+</label>
+                  <div class="cs--content">
+                    <a href="https://www.etmall.com.tw/i/2411123">
+                      <img src="modal-4.jpg">
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <input class="input__check" type="checkbox" id="demo-5" />
+              <li class="bingo__item">
+                <div class="cs--tile">
+                  <img src="pp-5.png" class="first__image">
+                  <label class="cs-open js-open-5" for="demo-5"></label>
+                  <label class="cs-close" for="demo-5">+</label>
+                  <div class="cs--content">
+                    <a href="https://www.etmall.com.tw/i/2718452">
+                      <img src="modal-5.jpg">
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <input class="input__check" type="checkbox" id="demo-6" />
+              <li class="bingo__item">
+                <div class="cs--tile">
+                  <img src="pp-6.png" class="first__image">
+                  <label class="cs-open js-open-6" for="demo-6"></label>
+                  <label class="cs-close" for="demo-6">+</label>
+                  <div class="cs--content">
+                    <a href="https://www.etmall.com.tw/i/2749741">
+                      <img src="modal-6.jpg">
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <input class="input__check" type="checkbox" id="demo-7" />
+              <li class="bingo__item">
+                <div class="cs--tile">
+                  <img src="pp-7.png" class="first__image">
+                  <label class="cs-open js-open-7" for="demo-7"></label>
+                  <label class="cs-close" for="demo-7">+</label>
+                  <div class="cs--content">
+                    <a href="https://www.etmall.com.tw/i/3050888">
+                      <img src="modal-7.jpg">
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <input class="input__check" type="checkbox" id="demo-8" />
+              <li class="bingo__item">
+                <div class="cs--tile">
+                  <img src="pp-8.png" class="first__image">
+                  <label class="cs-open js-open-8" for="demo-8"></label>
+                  <label class="cs-close" for="demo-8">+</label>
+                  <div class="cs--content">
+                    <a href="https://www.etmall.com.tw/i/2865823">
+                      <img src="modal-8.jpg">
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <input class="input__check" type="checkbox" id="demo-9" />
+              <li class="bingo__item">
+                <div class="cs--tile">
+                  <img src="pp-9.png" class="first__image">
+                  <label class="cs-open js-open-9" for="demo-9"></label>
+                  <label class="cs-close" for="demo-9">+</label>
+                  <div class="cs--content">
+                    <a href="https://www.etmall.com.tw/i/2880087">
+                      <img src="modal-9.jpg">
+                    </a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="bingo__status status--column">
+              <div class="col-3 col-3--1 active"></div>
+              <div class="col-3 col-3--2 active"></div>
+              <div class="col-3 col-3--3 active"></div>
+            </div>
+            <div class="bingo__status status--row">
+              <div class="row-3 row-3--1 active"></div>
+              <div class="row-3 row-3--2 active"></div>
+              <div class="row-3 row-3--3 active"></div>
+            </div>
+            <div class="bingo__status status--slash">
+              <div class="slash--left active"></div>
+            </div>
+            <div class="bingo__status status--slash">
+              <div class="slash--right active"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="bingo__alert">
+        <img src="bingo-alert.png" alt="恭喜中獎！">
+      </div>
+    </main>
+  </div>
+  <!--<script src="https://polyfill.io/v3/polyfill.min.js"></script>-->
+  <script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+  <!-- ============== 輪播 start ============== -->
+  <script src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116205/swiper.min.js"></script>
+  <!-- ============== 輪播 end ============== -->
+  <!-- <script src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116205/lazyload.js"></script> -->
+  <!-- 東森浮水印 -->
+  <script id="scriptIconFloat"
+    src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107916/float-icon.js"></script>
+  <!-- 森森浮水印
+<script id="scriptIconFloat" src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1104381/float-icon.js"></script> -->
+  <!-- 旅遊置頂bar
+<script id="scriptAddBn" src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106742/add-bn.js"></script> -->
+  <!-- 共用JS -->
+  <script id="generateScript"
+    src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.js"></script>
+  <script>
+    $( function () {
+      clickModule();
+      function clickModule() {
+        $( document ).on( "click", ".input__check", function () {
+          //        console.log($(this).is(":checked"))
+          // console.log( 'open', $( this ).next().find( "cs-open" ).is( ":checked" ) )
+          // console.log( 'close', $( this ).next().find( "cs-close" ).is( ":checked" ) )
+
+          var isCheck = $( this ).is( ":checked" );
+          var overlay = $( "#overlay" );
+          overlay.removeClass( "overlay-mask" );
+          if ( isCheck ) {
+            overlay.addClass( "overlay-mask" );
+            $( 'body' ).addClass( "hidden" );
+          }
+          else {
+            overlay.removeClass( "overlay-mask" );
+            $( 'body' ).removeClass( "hidden" );
+          }
+        } );
+        //TODO 待優化
+        $( document ).on( "click", "#overlay", function () {
+          $( this ).removeClass( "overlay-mask" );
+          var bingoLabel_1 = $( ".bingo__item .js-open-1" ).attr( 'for' );
+          var bingoLabel_2 = $( ".bingo__item .js-open-2" ).attr( 'for' );
+          var bingoLabel_3 = $( ".bingo__item .js-open-3" ).attr( 'for' );
+          var bingoLabel_4 = $( ".bingo__item .js-open-4" ).attr( 'for' );
+          var bingoLabel_5 = $( ".bingo__item .js-open-5" ).attr( 'for' );
+          var bingoLabel_6 = $( ".bingo__item .js-open-6" ).attr( 'for' );
+          var bingoLabel_7 = $( ".bingo__item .js-open-7" ).attr( 'for' );
+          var bingoLabel_8 = $( ".bingo__item .js-open-8" ).attr( 'for' );
+          var bingoLabel_9 = $( ".bingo__item .js-open-9" ).attr( 'for' );
+
+
+          $( '#' + bingoLabel_1 ).prop( 'checked', false );
+          $( '#' + bingoLabel_2 ).prop( 'checked', false );
+          $( '#' + bingoLabel_3 ).prop( 'checked', false );
+          $( '#' + bingoLabel_4 ).prop( 'checked', false );
+          $( '#' + bingoLabel_5 ).prop( 'checked', false );
+          $( '#' + bingoLabel_6 ).prop( 'checked', false );
+          $( '#' + bingoLabel_7 ).prop( 'checked', false );
+          $( '#' + bingoLabel_8 ).prop( 'checked', false );
+          $( '#' + bingoLabel_9 ).prop( 'checked', false );
+
+          $( 'body' ).removeClass( "hidden" );
+        } );
+      }
+    } )
+  </script>
+</body>
+</html>

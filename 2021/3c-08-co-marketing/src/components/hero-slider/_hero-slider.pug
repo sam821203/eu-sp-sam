@@ -1,0 +1,25 @@
+//- TODO: 各家廠商第二層子nav的設定
+- var heroPagerPartnerClassName = "hero__slider--pager-" + partner
+
+//- 都是假圖，所以各館沒差
+section.hero__wrap.m-bottom--sm
+  .layout--main
+    .hero__zone
+      #heroSlider.hero__slider.swiper-container
+        ul.swiper-wrapper
+          li.swiper-slide
+            a(href="https://www.etmall.com.tw", title="超值活動")
+              img(src="~components/hero-slider/img/hero-bn-1.jpg", alt="超值活動")
+          li.swiper-slide
+            a(href="https://www.etmall.com.tw", title="超值活動")
+              img(src="~components/hero-slider/img/hero-bn-2.jpg", alt="超值活動")
+          li.swiper-slide
+            a(href="https://www.etmall.com.tw", title="超值活動")
+              img(src="~components/hero-slider/img/hero-bn-3.jpg", alt="超值活動")
+          li.swiper-slide
+            a(href="https://www.etmall.com.tw", title="超值活動")
+              img(src="~components/hero-slider/img/hero-bn-4.jpg", alt="超值活動")
+
+      #heroSliderPager.hero__slider--pager.swiper-pagination(class= heroPagerPartnerClassName)
+      //- #heroSliderPrev.hero__slider--prev.swiper-button-white.swiper-button-prev
+      //- #heroSliderNext.hero__slider--next.swiper-button-white.swiper-button-next

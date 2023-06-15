@@ -1,0 +1,20 @@
+#overlayWrap.overlay__wrap
+  #overlayMask.overlay__mask
+
+  .overlay__decoration
+    //- apple
+    include /utils/bg-decoration-instance/canvas-firework/_canvas-firework
+    //- mi
+    include /utils/bg-decoration-instance/canvas-firework-2/_canvas-firework-2
+
+  #overlayBody.overlay__body
+    button#btnClose.btn--close
+      i.far.fa-times-circle
+    //- TODO: 一般蓋板
+    //- a(href="", title="")
+          img(src="~components/overlay/overlay-content.png", alt="")
+          img(src="~components/overlay/overlay-content-web.png", alt="")
+    //- TODO: custom: 不用連結的蓋板
+    a(title="點我立刻關閉")
+      img(src="~components/overlay/overlay-content.png", alt="")
+      img(src="~components/overlay/overlay-content-web.png", alt="")

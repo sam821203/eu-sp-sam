@@ -1,0 +1,85 @@
+//- 品牌專區
+-
+  var w4m4noItemDataE = [
+    {
+      itemLink: "https://www.etmall.com.tw/np/112359",
+      itemAlt: "TIMBERLAND",
+    },
+    {
+      itemLink: "https://www.etmall.com.tw/gp/104713",
+      itemAlt: "品牌包",
+    },
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202010/SP_1116598/w/index.html",
+      itemAlt: "黛安芬",
+    },
+    {
+      itemLink: "https://www.etmall.com.tw/gp/112018",
+      itemAlt: "船井雙效代謝8折up",
+    },
+    {
+      itemLink: "https://www.etmall.com.tw/p/112318",
+      itemAlt: "妍選洋行",
+    },
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202009/SP_1116550/w/index.html",
+      itemAlt: "家電",
+    },
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/202005/SP_1115505/w/index.html",
+      itemAlt: "Apple",
+    },
+    {
+      itemLink: "https://www.etmall.com.tw/c3/146843",
+      itemAlt: "GoPro",
+    },
+  ]
+
+- 
+  var w4m4noItemDataU = [
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      itemAlt: "滿額送$300",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      itemAlt: "滿額送$300",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      itemAlt: "滿額送$300",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      itemAlt: "滿額送$300",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      itemAlt: "滿額送$300",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      itemAlt: "滿額送$300",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      itemAlt: "滿額送$300",
+    }, 
+    {
+      itemLink: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html",
+      itemAlt: "滿額送$300",
+    }, 
+  ]
+
+- var w4m4noItemData = isU? w4m4noItemDataU : w4m4noItemDataE
+
+section.promo__group.promo__group--w4m4-no-item(data-title="品牌專區")
+  .layout--main
+    //- .promo__title.block--center.text--center
+    //-   img(src="~event/2nd/e-main/components/event-w4m4-no-item/title-event-w4m4-no-item.png", alt="")
+    .promo__wrap
+      ul.good__wrap
+        each data in w4m4noItemData
+          li
+            a(href= data.itemLink, title= data.itemAlt)
+

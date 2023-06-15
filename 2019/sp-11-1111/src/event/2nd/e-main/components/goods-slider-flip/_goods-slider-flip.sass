@@ -1,0 +1,58 @@
+.goods__wrap--flip
+  +pos-set(relative, zero)
+  +bg-set(url("~event/2nd/e-main/components/goods-slider-flip/bg-goods-flip.png"), 100%, center, 660%)
+  margin-left: -12%
+  .goods__background
+    +pos-set(absolute, zero, 0, 0)
+    width: 100%
+    height: 100%
+  .promo__slider
+    +pos-set(relative, zero)
+    margin-left: auto
+    margin-right: auto
+    width: 55%
+    height: 100%
+    .swiper-container
+      width: 100%
+      height: 100%
+    .swiper-slide
+      width: 100%
+    // #sliderGoodsFlipPrev.swiper-button-prev,
+    // #sliderGoodsFlipNext.swiper-button-next
+    //   width: 15px
+    //   height: 35px
+    //   margin-top: 102px
+    //   z-index: 10
+    //   background-size: 15px 35px
+    //   opacity: 0
+
+    // #sliderGoodsFlipPrev.swiper-button-prev
+    //   left: 13px
+    // #sliderGoodsFlipNext.swiper-button-next
+    //   right: 42px
+
+
+  +breakpoint-min($min-width-xl)
+    // margin-top: -1.5%
+    // margin-left: 0
+    padding-bottom: 20px
+    background-position-y: 40px
+    .promo__slider
+      margin-top: -20px
+      margin-left: 20%
+      width: 55%
+      a
+        text-align: center
+
+      // .swiper-container
+          // max-width: 530px
+      // #sliderGoodsFlipPrev.swiper-button-prev,
+      // #sliderGoodsFlipNext.swiper-button-next
+      //   margin-top: 174px
+      // #sliderGoodsFlipPrev.swiper-button-prev
+      //   left: 27px
+      // #sliderGoodsFlipNext.swiper-button-next
+      //   right: 139px
+
+// +key-rotate-self(55)
+// +key-rotate-from-to(25, -30)

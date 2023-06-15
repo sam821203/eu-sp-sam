@@ -1,0 +1,280 @@
+// ==========================================================================
+// Collection Helpers 
+// ==========================================================================
+@import "utils/sass/helpers/_collection"
+
+// // ==========================================================================
+// // Plugins
+// // ==========================================================================
+// // @import "vendors/animate"
+
+// // ==========================================================================
+// // layout
+// // ==========================================================================
+@import "layout/logo/_logo.sass"
+// @import "../../layout/header/main/_header.sass"
+// @import "../../layout/bg-decoration/bg-decoration.sass"
+
+// // ==========================================================================
+// // components
+// // ==========================================================================
+// @import "../../components/common-event/_common-event.sass"
+// @import "../../components/event-w2m1/_event-w2m1.sass"
+// @import "../../components/event-w4m2/_event-w4m2.sass"
+// @import "../../components/bn-group-w2m1-2/_bn-group-w2m1-2.sass"
+// @import "../../components/bn-group-w2m1/_bn-group-w2m1.sass"
+
+// // ==========================================================================
+// // Page
+// // ==========================================================================
+body
+  background-color: $main-e-background-color
+.sp__wrap a
+  display: block
+.btn--promo
+  transition: all 0.5s
+  &:hover
+    transform: scale(1.05)
+    filter: brightness(120%)
+.hero
+  padding-bottom: 4.5%
+  height: auto // 抵擋太空垃圾
+  background: center 0 url("pages/index-main-e/img/2560-01.jpg") no-repeat
+  background-size: cover
+  .header__decoration
+    position: absolute
+    z-index: map-get($zindex, zero)
+    top: 0
+    right: 2.5%
+    padding: 5%
+    width: 20%
+    height: 0
+    background: url("pages/index-main-e/img/1-material_01.png") no-repeat
+    background-size: contain
+  .title__wrap--main
+    padding-top: 4%
+    width: 80%
+  +breakpoint-min($min-width-xl)
+    padding-bottom: 50px
+.promo__event
+  background: center 0 url("pages/index-main-e/img/2560-02.jpg") no-repeat
+  background-size: cover
+  .event__wrap
+    +display-flex
+    flex-wrap: wrap
+    li
+      width: 33%
+      &:nth-child(1),
+      &:nth-child(2)
+        width: 50%
+      a
+        transition: all 0.5s
+        &:hover
+          filter: brightness(150%)
+.promo__group
+  .promo__wrap
+    position: relative
+    z-index: map-get($zindex, zero)
+    .promo__slider,
+    .video__wrap
+      position: absolute
+      z-index: map-get($zindex, base)
+      top: 20%
+      left: 0
+      width: 100%
+      height: 80%
+.promo__group-3
+  background: center 0 url("pages/index-main-e/img/2560-03.jpg") no-repeat
+  background-size: cover
+  .promo__wrap
+    padding-top: 91%
+    .swiper-slide
+      a
+        transition: transform 0.6s
+        transform: translateY(-30%) scale(0.6)
+    +breakpoint-min($min-width-lg)
+      .swiper-slide
+        a
+          transform: translateY(70%) scale(0.5)
+        img
+          filter: grayscale(100%)
+      .swiper-slide-active
+        a
+          transform: scale(1.5) translateY(8%)
+        img
+          filter: grayscale(0)
+.promo__group-4
+  background: center 0 url("pages/index-main-e/img/2560-04.jpg") no-repeat
+  background-size: cover
+  .promo__wrap
+    padding-top: 80.5%
+    .video__wrap
+      padding-bottom: 6%
+      top: 22%
+      height: 73%
+      iframe
+        width: 100%
+        height: 100%
+.promo__group-5
+  background: center 0 url("pages/index-main-e/img/2560-05.jpg") no-repeat
+  background-size: cover
+  .promo__wrap
+    padding-top: 83.5%
+  .limit__wrap
+    +display-flex(">div")
+    padding: 20% 0 8%
+    .limit__slider
+      padding: 0 0 10% 10%
+      width: 43%
+      .swiper-button-white
+        top: 108.2%
+        transform: scale(0.4)
+    .limit__info
+      padding: 1%
+      padding: 0% \0
+      .btn--limit-info
+        width: 60%
+.promo__group-6
+  background: center 0 url("pages/index-main-e/img/2560-06.jpg") no-repeat
+  background-size: cover
+  .promo__wrap
+    padding-top: 70%
+    &:after
+      content: ''
+      position: absolute
+      z-index: map-get($zindex, fifth)
+      top: 75%
+      left: 25%
+      width: 24%
+      height: 13%
+      background: url("pages/index-main-e/img/6-material_01.png") no-repeat
+      background-size: contain
+      pointer-events: none
+      +breakpoint-min($min-width-xl)
+        top: 73%
+        left: 10%
+        width: 24%
+        height: 13%
+    .promo__slider
+      height: 70%
+      +breakpoint-min($min-width-xl)
+        height: 70%
+    .swiper-slide
+      a
+        transition: transform 0.6s
+        transform: translateY(-18%) scale(0.5)
+    .swiper-slide-active
+        a
+          transform: translateY(-18%) scale(0.65)
+    .promo-pager
+      bottom: 20px
+      .swiper-pagination-bullet
+        margin: 0 8px
+        width: 16px
+        height: 16px
+      .swiper-pagination-bullet-active
+        background-color: $main-e-slider-pager-color
+    .swiper-button-white
+      top: 93%
+      transform: scale(0.6)
+    .swiper-button-prev
+      left: 23%
+    .swiper-button-next
+      right: 23%
+    .button__wrap
+      position: absolute
+      z-index: map-get($zindex, zero)
+      bottom: 0
+      left: 50%
+      width: 30%
+      height: 10%
+      transform: translateX(-50%)
+      .btn--see-more
+        margin-top: -12%
+    +breakpoint-min($min-width-xl)
+      .swiper-slide
+        a
+          transform: translateY(-15%) scale(0.6)
+      .swiper-slide-active,
+      .swiper-slide-active + .swiper-slide
+        a
+          transform: scale(0.9) translateY(-5%)
+      .button__wrap
+        .btn--see-more
+          margin-top: -10%
+.promo__group-7
+  background: center 0 url("pages/index-main-e/img/2560-07.jpg") no-repeat
+  background-size: cover
+  .promo__wrap
+    padding-top: 41.2%
+    .promo__slider
+      top: 25%
+      height: 75%
+      background: center 0 url("pages/index-main-e/img/7-bg_03-mobile.png") no-repeat
+      background-size: cover
+      .swiper-slide
+        a
+          transform: translateY(-12.5%) scale(0.6)
+      +breakpoint-min($min-width-xl)
+        background: center url("pages/index-main-e/img/7-bg_03.png") no-repeat
+        background-size: 100%
+        .swiper-slide
+          width: 50%
+          a
+            transform: scale(0.85) translateY(22%)
+    .swiper-button-white
+      top: 66%
+      transform: scale(0.6)
+      +breakpoint-min($min-width-xl)
+        display: none
+    .swiper-button-prev
+      left: 8%
+    .swiper-button-next
+      right: 8%
+.promo__group-8
+  background: center 1% url("pages/index-main-e/img/8-bar.png") no-repeat, center 0 url("pages/index-main-e/img/2560-08.jpg") no-repeat
+  background-size: 83%, cover
+  .promo__wrap
+    padding-top: 13%
+    .good__wrap
+      +display-flex
+      flex-wrap: wrap
+      li
+        width: 50%
+        transition: transform 0.5s
+        &:hover
+          transform: translateY(-3%)
+    +breakpoint-min($min-width-lg)
+      padding-top: 12%
+      .good__wrap
+        li
+          width: 25%
+
+.promo__group-9
+  background: center 0 url("pages/index-main-e/img/2560-09.jpg") no-repeat
+  background-size: cover
+  .promo__wrap
+    padding-top: 51%
+    .promo__slider
+      top: 24%
+      height: 76%
+      .swiper-slide
+        a
+          transform: translateY(-12.5%) scale(0.5)
+        +breakpoint-min($min-width-xl)
+          width: 50%
+          a
+            transform: scale(0.85) translateY(22%)
+    .swiper-button-white
+      top: 56%
+      transform: scale(0.6)
+      +breakpoint-min($min-width-xl)
+        display: none
+    .swiper-button-prev
+      left: 8%
+    .swiper-button-next
+      right: 8%
+
++breakpoint-min($min-width-xl)
+  .promo__group
+    background-size: auto

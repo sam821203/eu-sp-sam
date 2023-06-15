@@ -1,0 +1,62 @@
+.promo__group--promo-event
+  +pos-set(relative)
+  // overflow: hidden
+  .decor__wrap
+    pointer-events: none
+    .decor__item
+      +pos-set(absolute, base, -8%, 6%)
+      width: 90%
+      +breakpoint-min($min-width-xl)
+        top: -70px
+        left: calc(50% - 400px)
+        width: auto
+
+  .promo__wrap
+    +aspect-ratio(927, 882)
+  .promo__zone
+    +pos-set(relative, zero)
+    +bg-set(url(event/1st/e-main/components/promo-event/bg-promo-event.png), 100%)
+    .promo__block
+      padding: 11% 4% 0 5%
+      li
+        &:hover
+          transform: translateY(-1%)
+          filter: brightness(130%)
+      .promo__box
+        display: flex
+        justify-content: space-around
+        li
+          width: 48%
+      .event__wrap
+        margin-top: 5.5%
+        .event__box
+          display: flex
+          justify-content: space-around
+          flex-wrap: wrap
+          li
+            margin-bottom: 2%
+            width: 31%
+      .slider__box
+        margin: 3.5% 2% 0
+        +breakpoint-min($min-width-xl)
+          margin-top: 40px
+
+
+.animate
+  // transition: 2s
+  animation: heartBeat 1.2s both 1 linear
+
+@keyframes heartBeat
+  0%
+    transform: scale(1)
+  14%
+    transform: scale(1.1)
+    filter: brightness(130%)
+  28%
+    transform: scale(1)
+    filter: brightness(130%)
+  42%
+    transform: scale(1.1)
+    filter: brightness(130%)
+  70%
+    transform: scale(1)

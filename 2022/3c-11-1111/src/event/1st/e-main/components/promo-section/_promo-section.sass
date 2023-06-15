@@ -1,0 +1,17 @@
+.promo__group--promo-section
+  +pos-set(relative, zero)
+  overflow: hidden
+  margin-top: -26%
+  +breakpoint-min($min-width-xl)
+    margin-top: -250px
+  .promo__wrap
+    .promo__zone
+      +aspect-ratio(932, 453)
+      .promo__block
+        .event__block
+          display: flex
+          justify-content: space-between
+          li
+            width: 24.5%
+            &:nth-child(even)
+              padding-top: 6%

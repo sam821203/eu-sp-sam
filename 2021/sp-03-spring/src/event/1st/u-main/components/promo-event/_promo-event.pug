@@ -1,0 +1,53 @@
+-
+  var promoDataE = [
+  {link: "#note",
+  imgSrc: "~event/1st/u-main/components/promo-event/items/promo-1.png",
+  alt: "消費滿額送1,100"},
+  {link: "https://media.etmall.com.tw/sp/7663/m/index.html",
+  imgSrc: "~event/1st/u-main/components/promo-event/items/promo-2.png",
+  alt: "首購送ASHIYA白皙菁華"},
+  {link: "https://media.etmall.com.tw/sp/8698/m/index.html",
+  imgSrc: "~event/1st/u-main/components/promo-event/items/promo-3.png",
+  alt: "萊爾富超取送中杯熱拿鐵"},
+  {link: "https://media.etmall.com.tw/sp/8583/m/index.html",
+  imgSrc: "~event/1st/u-main/components/promo-event/items/promo-4.png",
+  alt: "零卡分期(logo) 分期回饋5%"},
+  {link: "https://media.etmall.com.tw/sp/8722/m/index.html",
+  imgSrc: "~event/1st/u-main/components/promo-event/items/promo-5.png",
+  alt: "APP下單滿額免費招待燒井(logo)金黃吉士薯條"},
+  ]
+
+-
+  var promoDataU = [
+    {link: "https://www.u-mall.com.tw/Activity/HourSale",
+    imgSrc: "~event/1st/u-main/components/promo-event/items/promo-1.png",
+    alt: "限時瘋搶"},
+    {link: "https://media.u-mall.com.tw/sp/8237/m/index.html",
+    imgSrc: "~event/1st/u-main/components/promo-event/items/promo-2.png",
+    alt: "臺銀_滿$3,000送$300東森提貨券"},
+  ]
+
+- var promoData = isU ? promoDataU : promoDataE
+.promo__event(data-title="")
+  .promo__event__web--bg
+  ul.event__wrap.wow
+    //li#dailyPromo
+    //  span.js-month 10
+    //  span.js-date 19
+    //  a(href= promoData[0].link, title= promoData[0].alt)
+    //    img(src= promoData[0].imgSrc, alt= promoData[0].alt)
+        //img(class="promo__good" src="~event/1st/u-main/components/promo-event/items/promo-1-good.png")
+        //img(class="promo__go" src="~event/1st/u-main/components/promo-event/items/promo-1-go.png")
+    li
+      a(href= promoData[0].link, title= promoData[0].alt)
+        img(src= promoData[0].imgSrc, alt= promoData[0].alt)
+    li
+      a#changeFirstPromo(href= promoData[1].link, title= promoData[1].alt)
+        img#changeFirstPromoImg(src= promoData[1].imgSrc, alt= promoData[1].alt)
+
+  .promo__event__front
+    img(src="~event/1st/u-main/components/promo-event/img-promo__front.png")
+    img(src="~event/1st/u-main/components/promo-event/img-promo__front-web.png")
+  include /event/1st/u-main/components/bn-special/_bn-special
+  //
+  //include /event/1st/u-main/components/text-slider/_text-slider

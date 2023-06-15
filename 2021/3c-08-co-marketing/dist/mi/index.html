@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <script>var fbhtml_url = window.location.toString();</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+  <link href="app-bundle.css" rel="stylesheet"></head>
+  <body>
+    <div class="overlay__wrap" id="overlayWrap">
+      <div class="overlay__mask" id="overlayMask"></div>
+      <div class="overlay__decoration">
+        <canvas class="canvas--firework-2" id="canvasFirework2"></canvas>
+      </div>
+      <div class="overlay__body" id="overlayBody">
+        <button class="btn--close" id="btnClose"><i class="far fa-times-circle"></i></button><a title="點我立刻關閉"><img src="overlay-content.png" alt=""><img src="overlay-content-web.png" alt=""></a>
+      </div>
+    </div>
+    <main class="sp__wrap sp__wrap--mi" id="spWrap">
+      <header class="sp__header">
+        <div class="layout--main">
+          <div class="header__zone"><a class="logo logo--e-mi" href="https://www.etmall.com.tw/" title="東森購物-小米授權經銷商"><img src="logo-e-mi.png" alt="東森購物-小米授權經銷商"></a>
+            <div class="share__wrap"><a class="share__icon share__icon--fb" href="javascript:void(0);" title="分享到facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+fbhtml_url); return false;"><img src="facebook-icon.png" alt="分享到facebook"></a></div>
+          </div>
+          <div class="header__nav">
+            <ul class="nav__wrap nav__wrap--mi" id="navPartner">
+              <li class="nav__item"><a href="#" title="智慧手機">智慧手機</a></li>
+              <li class="nav__item"><a href="#" title="智慧家電">智慧家電</a></li>
+              <li class="nav__item"><a href="#" title="智慧生活">智慧生活</a></li>
+              <li class="nav__item"><a href="#" title="智慧3C">智慧3C</a></li>
+              <li class="nav__item"><a href="#" title="手機/充電周邊">手機/充電周邊</a></li>
+              <li class="nav__item"><a href="#" title="耳機喇叭">耳機喇叭</a></li>
+              <li class="nav__item"><a href="#" title="生活周邊">生活周邊</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <section class="sub-nav sub-nav--mi" id="subNav">
+        <div class="layout--main">
+          <ul class="sub-nav__wrap">
+            <li class="sub-nav__list" id="phoneList">
+              <ul class="sub-list__wrap">
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/140407" title="小米11"><img src="iphone-se.png" alt="小米11">
+                    <div class="item__info">
+                      <div>小米11</div>
+                      <div></div>
+                      <div class="item__notice">New</div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/135891" title="小米11 Lite 5G"><img src="iphone-11-pro.png" alt="小米11 Lite 5G">
+                    <div class="item__info">
+                      <div>小米11</div>
+                      <div>Lite 5G</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/135892" title="小米10T  Lite"><img src="iphone-11-pro-max.png" alt="小米10T  Lite">
+                    <div class="item__info">
+                      <div>小米10T</div>
+                      <div> Lite</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/135647" title="小米10T Pro"><img src="iphone-11.png" alt="小米10T Pro">
+                    <div class="item__info">
+                      <div>小米10T</div>
+                      <div>Pro</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/125979" title="小米10T"><img src="iphone-xs.png" alt="小米10T">
+                    <div class="item__info">
+                      <div>小米10T</div>
+                      <div></div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/125961" title="小米10 Lite 5G"><img src="iphone-xr.png" alt="小米10 Lite 5G">
+                    <div class="item__info">
+                      <div>小米10</div>
+                      <div>Lite 5G</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/111700" title="Redmi Note 10S"><img src="iphone-8.png" alt="Redmi Note 10S">
+                    <div class="item__info">
+                      <div>Redmi Note</div>
+                      <div>10S</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/140407" title="Redmi Note 10 5G"><img src="iphone-se.png" alt="Redmi Note 10 5G">
+                    <div class="item__info">
+                      <div>Redmi Note</div>
+                      <div>10 5G</div>
+                      <div class="item__notice">New</div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/135891" title="Redmi Note 10 Pro"><img src="iphone-11-pro.png" alt="Redmi Note 10 Pro">
+                    <div class="item__info">
+                      <div>Redmi Note</div>
+                      <div>10 Pro</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/135892" title="Redmi 9T"><img src="iphone-11-pro-max.png" alt="Redmi 9T">
+                    <div class="item__info">
+                      <div>Redmi 9T</div>
+                      <div></div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/135647" title="Redmi Note 9 Pro"><img src="iphone-11.png" alt="Redmi Note 9 Pro">
+                    <div class="item__info">
+                      <div>Redmi Note</div>
+                      <div>9 Pro</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/125979" title="Redmi Note 9"><img src="iphone-xs.png" alt="Redmi Note 9">
+                    <div class="item__info">
+                      <div>Redmi Note</div>
+                      <div>9</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/125961" title="Redmi Note 9T"><img src="iphone-xr.png" alt="Redmi Note 9T">
+                    <div class="item__info">
+                      <div>Redmi Note</div>
+                      <div>9T</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/111700" title="POCO X3 Pro"><img src="iphone-8.png" alt="POCO X3 Pro">
+                    <div class="item__info">
+                      <div>POCO X3</div>
+                      <div>Pro</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/125961" title="POCO M3"><img src="iphone-xr.png" alt="POCO M3">
+                    <div class="item__info">
+                      <div>POCO M3</div>
+                      <div></div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/111700" title="POCO F3 5G"><img src="iphone-8.png" alt="POCO F3 5G">
+                    <div class="item__info">
+                      <div>POCO F3</div>
+                      <div>5G</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+              </ul>
+            </li>
+            <li class="sub-nav__list" id="homeList">
+              <ul class="sub-list__wrap">
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/137368" title="智慧顯示器"><img src="ipad-9.png" alt="智慧顯示器">
+                    <div class="item__info">
+                      <div>智慧顯示器</div>
+                      <div></div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/107856" title="掃拖機器人"><img src="ipad-10.png" alt="掃拖機器人">
+                    <div class="item__info">
+                      <div>掃拖機器人</div>
+                      <div></div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/127890" title="無線吸塵器"><img src="ipad-air.png" alt="無線吸塵器">
+                    <div class="item__info">
+                      <div>無線吸塵器</div>
+                      <div></div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/127891" title="小米 空氣淨化器"><img src="ipad-mini.png" alt="小米 空氣淨化器">
+                    <div class="item__info">
+                      <div>小米</div>
+                      <div>空氣淨化器</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/124186" title="智慧 空氣循環扇"><img src="ipad-11.png" alt="智慧 空氣循環扇">
+                    <div class="item__info">
+                      <div>智慧</div>
+                      <div>空氣循環扇</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/140383" title="直流變頻 電風扇"><img src="ipad-12.png" alt="直流變頻 電風扇">
+                    <div class="item__info">
+                      <div>直流變頻</div>
+                      <div>電風扇</div>
+                      <div class="item__notice">New</div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/137368" title="調理機"><img src="ipad-9.png" alt="調理機">
+                    <div class="item__info">
+                      <div>調理機</div>
+                      <div></div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/107856" title="電子鍋"><img src="ipad-10.png" alt="電子鍋">
+                    <div class="item__info">
+                      <div>電子鍋</div>
+                      <div></div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/127890" title="電磁爐"><img src="ipad-air.png" alt="電磁爐">
+                    <div class="item__info">
+                      <div>電磁爐</div>
+                      <div></div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/127891" title="恆溫電水壺"><img src="ipad-mini.png" alt="恆溫電水壺">
+                    <div class="item__info">
+                      <div>恆溫電水壺</div>
+                      <div></div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/124186" title="水離子 吹風機"><img src="ipad-11.png" alt="水離子 吹風機">
+                    <div class="item__info">
+                      <div>水離子</div>
+                      <div>吹風機</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/140383" title="聲波 電動牙刷"><img src="ipad-12.png" alt="聲波 電動牙刷">
+                    <div class="item__info">
+                      <div>聲波</div>
+                      <div>電動牙刷</div>
+                      <div class="item__notice">New</div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/138125" title="兒童聲波 電動牙刷"><img src="macbook-pro-16.png" alt="兒童聲波 電動牙刷">
+                    <div class="item__info">
+                      <div>兒童聲波</div>
+                      <div>電動牙刷</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/107864" title="電動刮鬍刀"><img src="imac.png" alt="電動刮鬍刀">
+                    <div class="item__info">
+                      <div>電動刮鬍刀</div>
+                      <div></div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/132477" title="螢幕掛燈"><img src="mac-mini.png" alt="螢幕掛燈">
+                    <div class="item__info">
+                      <div>螢幕掛燈</div>
+                      <div></div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+              </ul>
+            </li>
+            <li class="sub-nav__list" id="lifeList">
+              <ul class="sub-list__wrap">
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/107862" title="小米體重計"><img src="macbook-air.png" alt="小米體重計">
+                    <div class="item__info">
+                      <div>小米體重計</div>
+                      <div></div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/107863" title="小米濾水壺"><img src="macbook-pro-13.png" alt="小米濾水壺">
+                    <div class="item__info">
+                      <div>小米濾水壺</div>
+                      <div></div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/138125" title="自動感應 洗手機"><img src="macbook-pro-16.png" alt="自動感應 洗手機">
+                    <div class="item__info">
+                      <div>自動感應</div>
+                      <div>洗手機</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/107864" title="床頭燈"><img src="imac.png" alt="床頭燈">
+                    <div class="item__info">
+                      <div>床頭燈</div>
+                      <div></div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/132477" title="吸頂燈"><img src="mac-mini.png" alt="吸頂燈">
+                    <div class="item__info">
+                      <div>吸頂燈</div>
+                      <div></div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/107862" title="檯燈"><img src="macbook-air.png" alt="檯燈">
+                    <div class="item__info">
+                      <div>檯燈</div>
+                      <div></div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/107863" title="感應夜燈"><img src="macbook-pro-13.png" alt="感應夜燈">
+                    <div class="item__info">
+                      <div>感應夜燈</div>
+                      <div></div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/138125" title="小米 智慧門鈴"><img src="macbook-pro-16.png" alt="小米 智慧門鈴">
+                    <div class="item__info">
+                      <div>小米</div>
+                      <div>智慧門鈴</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/107864" title="藍牙 溫濕度計"><img src="imac.png" alt="藍牙 溫濕度計">
+                    <div class="item__info">
+                      <div>藍牙</div>
+                      <div>溫濕度計</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/132477" title="LED 智慧燈泡"><img src="mac-mini.png" alt="LED 智慧燈泡">
+                    <div class="item__info">
+                      <div>LED</div>
+                      <div>智慧燈泡</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/132477" title="智慧插座 Zigbee"><img src="mac-mini.png" alt="智慧插座 Zigbee">
+                    <div class="item__info">
+                      <div>智慧插座</div>
+                      <div>Zigbee</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+              </ul>
+            </li>
+            <li class="sub-nav__list" id="3cList">
+              <ul class="sub-list__wrap">
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/119242" title="小米 電腦螢幕"><img src="airPods.png" alt="小米 電腦螢幕">
+                    <div class="item__info">
+                      <div>小米</div>
+                      <div>電腦螢幕</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/137725" title="小米 曲面螢幕"><img src="airpods-pro.png" alt="小米 曲面螢幕">
+                    <div class="item__info">
+                      <div>小米</div>
+                      <div>曲面螢幕</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/134219" title="小米手錶"><img src="homepod.png" alt="小米手錶">
+                    <div class="item__info">
+                      <div>小米手錶</div>
+                      <div></div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/119242" title="小米手環"><img src="airPods.png" alt="小米手環">
+                    <div class="item__info">
+                      <div>小米手環</div>
+                      <div></div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/137725" title="小米 行車記錄器"><img src="airpods-pro.png" alt="小米 行車記錄器">
+                    <div class="item__info">
+                      <div>小米</div>
+                      <div>行車記錄器</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/134219" title="小米盒子"><img src="homepod.png" alt="小米盒子">
+                    <div class="item__info">
+                      <div>小米盒子</div>
+                      <div></div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/119242" title="小米 小愛音箱"><img src="airPods.png" alt="小米 小愛音箱">
+                    <div class="item__info">
+                      <div>小米</div>
+                      <div>小愛音箱</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/137725" title="小米 智慧攝影機"><img src="airpods-pro.png" alt="小米 智慧攝影機">
+                    <div class="item__info">
+                      <div>小米</div>
+                      <div>智慧攝影機</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/134219" title="小米無線 雙模滑鼠"><img src="homepod.png" alt="小米無線 雙模滑鼠">
+                    <div class="item__info">
+                      <div>小米無線</div>
+                      <div>雙模滑鼠</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/134219" title="小米WiFi 訊號延伸器"><img src="homepod.png" alt="小米WiFi 訊號延伸器">
+                    <div class="item__info">
+                      <div>小米WiFi</div>
+                      <div>訊號延伸器</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+              </ul>
+            </li>
+            <li class="sub-nav__list" id="accessoriesList">
+              <ul class="sub-list__wrap">
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/121795" title="線材"><img src="earbuds.png" alt="線材">
+                    <div class="item__info">
+                      <div>線材</div>
+                      <div></div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/121796" title="小米延長線"><img src="headphones.png" alt="小米延長線">
+                    <div class="item__info">
+                      <div>小米延長線</div>
+                      <div></div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/121798" title="魔方延長線"><img src="wired-headset.png" alt="魔方延長線">
+                    <div class="item__info">
+                      <div>魔方延長線</div>
+                      <div></div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/121795" title="小米 USB 3.0 HUB"><img src="earbuds.png" alt="小米 USB 3.0 HUB">
+                    <div class="item__info">
+                      <div>小米 USB</div>
+                      <div>3.0 HUB</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/121796" title="小米 行動電源"><img src="headphones.png" alt="小米 行動電源">
+                    <div class="item__info">
+                      <div>小米</div>
+                      <div>行動電源</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/121798" title="Redmi 行動電源"><img src="wired-headset.png" alt="Redmi 行動電源">
+                    <div class="item__info">
+                      <div>Redmi</div>
+                      <div>行動電源</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/121795" title="小米Type-C 充電器"><img src="earbuds.png" alt="小米Type-C 充電器">
+                    <div class="item__info">
+                      <div>小米Type-C</div>
+                      <div>充電器</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/121796" title="小米 USB 充電器"><img src="headphones.png" alt="小米 USB 充電器">
+                    <div class="item__info">
+                      <div>小米 USB</div>
+                      <div>充電器</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/121798" title="小米2 Port USB充電器"><img src="wired-headset.png" alt="小米2 Port USB充電器">
+                    <div class="item__info">
+                      <div>小米2 Port</div>
+                      <div>USB充電器</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/121796" title="小米車用 充電器"><img src="headphones.png" alt="小米車用 充電器">
+                    <div class="item__info">
+                      <div>小米車用</div>
+                      <div>充電器</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c3/121798" title="小米自拍桿"><img src="wired-headset.png" alt="小米自拍桿">
+                    <div class="item__info">
+                      <div>小米自拍桿</div>
+                      <div></div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+              </ul>
+            </li>
+            <li class="sub-nav__list" id="soundList">
+              <ul class="sub-list__wrap">
+                <li class="sub-list__item"><a href="" title="小米真無線 藍牙耳機"><img src="apple-tv.png" alt="小米真無線 藍牙耳機">
+                    <div class="item__info">
+                      <div>小米真無線</div>
+                      <div>藍牙耳機</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="" title="小米 藍牙耳機"><img src="apple-watch.png" alt="小米 藍牙耳機">
+                    <div class="item__info">
+                      <div>小米</div>
+                      <div>藍牙耳機</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c2/107791" title="小米 圈鐵耳機"><img src="apple-accessories.png" alt="小米 圈鐵耳機">
+                    <div class="item__info">
+                      <div>小米</div>
+                      <div>圈鐵耳機</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="" title="小米方盒子 藍牙喇叭"><img src="apple-tv.png" alt="小米方盒子 藍牙喇叭">
+                    <div class="item__info">
+                      <div>小米方盒子</div>
+                      <div>藍牙喇叭</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="" title="小米戶外 藍牙喇叭"><img src="apple-watch.png" alt="小米戶外 藍牙喇叭">
+                    <div class="item__info">
+                      <div>小米戶外</div>
+                      <div>藍牙喇叭</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+              </ul>
+            </li>
+            <li class="sub-nav__list" id="othersList">
+              <ul class="sub-list__wrap">
+                <li class="sub-list__item"><a href="" title="小米便攜 相片印表機"><img src="apple-tv.png" alt="小米便攜 相片印表機">
+                    <div class="item__info">
+                      <div>小米便攜</div>
+                      <div>相片印表機</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="" title="小米 液晶手寫板"><img src="apple-watch.png" alt="小米 液晶手寫板">
+                    <div class="item__info">
+                      <div>小米</div>
+                      <div>液晶手寫板</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c2/107791" title="小米旅行箱"><img src="apple-accessories.png" alt="小米旅行箱">
+                    <div class="item__info">
+                      <div>小米旅行箱</div>
+                      <div></div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="" title="小米雙肩包"><img src="apple-tv.png" alt="小米雙肩包">
+                    <div class="item__info">
+                      <div>小米雙肩包</div>
+                      <div></div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="" title="電動打氣機"><img src="apple-watch.png" alt="電動打氣機">
+                    <div class="item__info">
+                      <div>電動打氣機</div>
+                      <div></div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="" title="電動起子機"><img src="apple-tv.png" alt="電動起子機">
+                    <div class="item__info">
+                      <div>電動起子機</div>
+                      <div></div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="" title="米兔 智慧積木"><img src="apple-watch.png" alt="米兔 智慧積木">
+                    <div class="item__info">
+                      <div>米兔</div>
+                      <div>智慧積木</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="https://www.etmall.com.tw/c2/107791" title="自動折疊傘"><img src="apple-accessories.png" alt="自動折疊傘">
+                    <div class="item__info">
+                      <div>自動折疊傘</div>
+                      <div></div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="" title="螺絲起子"><img src="apple-tv.png" alt="螺絲起子">
+                    <div class="item__info">
+                      <div>螺絲起子</div>
+                      <div></div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="" title="空氣淨化器 濾芯"><img src="apple-watch.png" alt="空氣淨化器 濾芯">
+                    <div class="item__info">
+                      <div>空氣淨化器</div>
+                      <div>濾芯</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+                <li class="sub-list__item"><a href="" title="聲波 電動牙刷頭"><img src="apple-watch.png" alt="聲波 電動牙刷頭">
+                    <div class="item__info">
+                      <div>聲波</div>
+                      <div>電動牙刷頭</div>
+                      <div class="item__notice"></div>
+                    </div></a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="hero__wrap m-bottom--sm">
+        <div class="layout--main">
+          <div class="hero__zone">
+            <div class="hero__slider swiper-container" id="heroSlider">
+              <ul class="swiper-wrapper">
+                <li class="swiper-slide"><a href="https://www.etmall.com.tw" title="超值活動"><img src="hero-bn-1.jpg" alt="超值活動"></a></li>
+                <li class="swiper-slide"><a href="https://www.etmall.com.tw" title="超值活動"><img src="hero-bn-2.jpg" alt="超值活動"></a></li>
+                <li class="swiper-slide"><a href="https://www.etmall.com.tw" title="超值活動"><img src="hero-bn-3.jpg" alt="超值活動"></a></li>
+                <li class="swiper-slide"><a href="https://www.etmall.com.tw" title="超值活動"><img src="hero-bn-4.jpg" alt="超值活動"></a></li>
+              </ul>
+            </div>
+            <div class="hero__slider--pager swiper-pagination hero__slider--pager-mi" id="heroSliderPager"></div>
+          </div>
+        </div>
+      </section>
+      <section class="marquee marquee--bottom active marquee--mi" id="marquee">
+        <div class="layout--main">
+          <div class="marquee__wrap">
+            <div class="marquee__box" id="marqueeBox">
+              <div class="marquee__item marquee__item--active"><a href="https://www.etmall.com.tw/" title="活動熱門消息專區"><span>活動熱門消息專區</span></a></div>
+              <div class="marquee__item"><a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202005/SP_1114867/w/index.html" title="銀行消息專區"><span>銀行消息專區</span></a></div>
+              <div class="marquee__item"><a href="https://www.etmall.com.tw/" title="最新熱門消息專區"><span>最新熱門消息專區</span></a></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+  <script type="text/javascript" src="app-bundle.js"></script></body>
+</html>

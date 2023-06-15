@@ -1,0 +1,72 @@
+.promo__group--mid-more
+  .promo__wrap
+    transition: all 0.6s ease
+    +aspect-ratio(960, 650)
+    +bg-set(url("~event/4th/e-main/components/mid-more-slider/bg-mid-more-slider.png"), 100%)
+    .promo__zone
+      .decoration__box
+        +pos-set(absolute, base)
+        top: -14%
+        left: 0%
+        +breakpoint-min($min-width-xl)
+          left: 3%
+    .promo__slider
+      padding-top: 19%
+      padding-bottom: 2%
+    .swiper-slide
+      +pos-set(relative, zero)
+      text-align: center
+
+    .swiper-slide,
+    .swiper-slide-duplicate
+      a,
+      img
+        transition: all 0.6s
+      a
+          transform: translateY(5%) scale(0.7)
+      img
+        opacity: 0.5
+      .text__box
+        +pos-set(absolute, base)
+        bottom: 5%
+        left: -1%
+        padding: 1% 2% 1% 1%
+        width: 100%
+        color: #eb2f19
+        font-weight: bold
+        opacity: 0
+        transition: all 0.5s
+
+    .swiper-slide-active,
+    .swiper-slide-duplicate-active
+      z-index: map-get($zindex, zero)
+      a
+        transform: translateY(-9%) scale(1.1)
+      img
+        opacity: 1
+      .text__box
+        left: 1%
+        bottom: 40%
+        font-size: 3.2vw
+        opacity: 1
+        +breakpoint-min($min-width-xl)
+          font-size: 32px
+
+  .mid-more__nav
+    top: 35%
+    outline: 0
+    &::after
+      font-size: 8vw
+
+    &--prev
+      left: 5%
+    &--next
+      right: 5%
+    +breakpoint-min($min-width-lg)
+      &--prev
+        left: 8%
+      &--next
+        right: 8%
+    +breakpoint-min($min-width-xl)
+      &::after
+        font-size: 60px

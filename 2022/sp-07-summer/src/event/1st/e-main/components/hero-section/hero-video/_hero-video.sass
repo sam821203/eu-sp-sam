@@ -1,0 +1,18 @@
+.video__wrap
+  .hero__video
+    +pos-set(absolute, zero)
+    bottom: 40%
+    right: 0%
+    +breakpoint-min($min-width-xl)
+      bottom: 42%
+      right: calc(50% - 485px)
+    +breakpoint-min($min-width-3xl)
+      bottom: 30%
+      right: calc(50% - 565px)
+  video
+    width: 38vw
+    +breakpoint-min($min-width-xl)
+      width: auto
+      max-width: 310px
+    +breakpoint-min($min-width-3xl)
+      max-width: 370px

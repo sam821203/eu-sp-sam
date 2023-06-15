@@ -1,0 +1,19 @@
+doctype html
+html(lang='zh-Hant-TW')
+  head
+    include /utils/pug/_total-head
+    //include pop__window.sass
+
+    //- TODO: 打開可測試是否會被app的太空垃圾影響，但是注意正式dist時要關閉
+    //- =======================================================================
+    //- link(rel="stylesheet3", type="text/css", href="~vendors/style/site.css")
+    //- =======================================================================
+
+  body.default__reset.bg-gray
+    //- main section 主視覺區
+    include /event/eckare/components/pop__window-section/_pop__window-section
+
+      //- other components
+      //- ===========================
+    //- script區
+    include  /utils/pug/_total-script

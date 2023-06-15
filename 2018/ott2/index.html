@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="theme-color" content="#cc1e05">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="img/logo/favicon.ico">
+  <link rel="icon" sizes="130x130" href="img/logo/Logo.png">
+  <link rel="apple-touch-icon" sizes="130x130" href="img/logo/Logo.png">
+  <link rel="apple-touch-icon" sizes="260x260" href="img/logo/Logo@2x.png">
+  <link rel="apple-touch-icon" sizes="390x390" href="img/logo/Logo@3x.png">
+  <title>東森直播頻道</title>
+  <meta name="description" content="東森購物ETMall的直播頻道">
+  <meta name="keywords" content="ETMall,東森,直播">
+  <meta itemprop="name" content="東森直播頻道"> 
+  <meta itemprop="description" content="東森購物ETMall的直播頻道"> 
+  <meta itemprop="image" content="img/logo/Logo.png">
+  <meta property="og:title" content="母親節禮物">
+  <meta property="og:description" content="東森購物ETMall的直播頻道">
+  <meta property="og:url" content="https://www.etmall.com.tw">
+  <meta property="og:image" content="img/logo/Logo@2x.png">
+  <meta property="og:type" content="video">
+  <meta property="og:site_name" content="ETmall">
+  <meta property="og:locale" content="zh_TW">
+  <script type="application/ld+json">
+    {
+    "video":{
+      "@context": "http://schema.org",
+      "@type": "VideoObject",
+      "audience" : "東森購物",
+      "description": "東森購物ETMall的直播頻道",
+      "image": "img/logo/Logo.png",
+      "name" : "東森直播頻道",
+      }
+    }
+  </script>
+  <style>
+  main,article, aside, details, figcaption, figure, 
+  footer, header, hgroup, menu, nav, section {
+    display: block;
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  *:before, *:after {
+    box-sizing: border-box; }
+  a {
+    display: block;
+    text-decoration: none;
+  }
+  ul {
+    list-style: none;
+  }
+  img {
+    border: 0;
+    vertical-align: middle;
+  }
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    background-color: #1e1e1e;
+    font-family: PingFangTC-regular, Roboto, "LiHei Pro", "Source Han Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, "Microsoft JhengHei", sans-serif;
+  }
+  .video__head {
+    display: none;
+  }
+  .video__body {
+    padding-top: 10px;
+  }
+  .video__item {
+    position: relative;
+    z-index: 0;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    background-color: #000;
+    overflow: hidden;
+  }
+  .video__item:before,
+  .video__item:after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    width: 30px;
+    height: 100%;
+    background: url(img/cube.svg) repeat;
+  }
+  .video__item:before {
+    left: -10px;
+  }
+  .video__item:after {
+    right: -20px;
+  }
+  .item__wrap {
+    position: relative;
+    z-index: 0;
+    padding-top: 65%;
+  }
+  .item__box {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .item__content {
+    position: relative;
+    z-index: 0;
+    height: calc(100% - 42px);
+  }
+  .video__info {
+    pointer-events: none;
+  }
+  .iframe__wrap {
+    height: 100%;
+  }
+  .video__title {
+    padding: 10px;
+    color: #5d5d5d;
+    background-color: #fff;
+    font-size: 16px;
+  }
+  .info__logo {
+    position: absolute;
+    z-index: 1;
+    top: 5px;
+    right: 5px;
+    width: 25px;
+    height: 25px;
+    background-image: url(img/logo/logo.png);
+    background-size: 100%;
+  }
+  .btn--play {
+    position: absolute;
+    z-index: 1;
+    top: calc(50% - 25px);
+    left: calc(50% - 25px);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0,0,0,.5);
+    border-radius: 50%;
+  }
+  .btn--play:after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: calc(50% - 10px);
+    left: calc(50% - 6px);
+    border-top: 10px solid transparent;
+    border-right: 18px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 18px solid #fff;
+  }
+  .info__contact {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    bottom: 0;
+    width: 250px;
+    height: 45px;
+    color: #fff;
+    background: url(img/ornament.png) no-repeat;
+    background-size: contain;
+  }
+  .info__contact span {
+    line-height: 45px;
+  }
+  .info__contact span:first-child {
+    margin-left: 60px;
+    margin-right: 5px;
+    font-size: 12px;
+  }
+  .info__contact span:last-child {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .more__wrap {
+    display: none;
+  }
+  @media screen and (min-width: 768px) {
+    .video__body {
+      padding-top: 20px;
+    }
+    .video__list {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+    .video__item {
+      margin-bottom: 0;
+      padding: 25px 10px;
+      flex: 1 0 50%;
+    }
+    .video__item:before,
+    .video__item:after {
+      top: auto;
+      left: 0;
+      width: 100%;
+      height: 20px;
+      background-position-x: -15px;
+    }
+    .video__item:before {
+      top: -5px;
+    }
+    .video__item:after {
+      display: none;
+    }
+    .video__item:nth-last-child(2):after,
+    .video__item:last-child:after {
+      display: block;
+      bottom: -5px;
+    }  
+  }
+  @media screen and (min-width: 1260px) {
+    .video__item:before,
+    .video__item:after,
+    .video__item:nth-last-child(2):after,
+    .video__item:last-child:after {
+      display: none;
+    }
+    .video__wrap {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+    .video__head {
+      display: block;
+      position: relative;
+      z-index: 0;
+      padding: 50px 0 20px;
+      border-bottom: 2px solid #f85c4b;
+    }
+    .video__head:before,
+    .video__head:after {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+    }
+    .video__head:before {
+      right: 0;
+      width: 155px;
+      height: 6px;
+      background-color: #f85c4b;
+    }
+    .video__head:after {
+      right: 155px;
+      border-top: 3px solid transparent;
+      border-right: 3px solid #f85c4b;
+      border-bottom: 3px solid #f85c4b;
+      border-left: 3px solid transparent;
+    }
+    .head__title img {
+      width: 60px;
+    }
+    .head__title span {
+      margin-left: 20px;
+      color: #fff;
+      font-size: 40px;
+      vertical-align: middle;
+    }
+    .video__body {
+      display: flex;
+      align-items: flex-start;
+      padding-top: 30px;
+    }
+    .video__list {
+      justify-content: space-between;
+    }
+    .video__item {
+      flex: 0 1 32%;
+      margin-bottom: 2%;
+      padding: 0;
+    }
+    .item__content {
+      height: calc(100% - 57px);
+    }
+    .video__title {
+      font-size: 26px;
+    }
+    .info__logo {
+      top: 10px;
+      right: 10px;
+      width: 40px;
+      height: 40px;
+    }
+    .btn--play {
+      top: calc(50% - 43px);
+      left: calc(50% - 43px);
+      width: 86px;
+      height: 86px;
+    }
+    .btn--play:after {
+      top: calc(50% - 18px);
+      left: calc(50% - 10px);
+      border-top: 18px solid transparent;
+      border-right: 30px solid transparent;
+      border-bottom: 18px solid transparent;
+      border-left: 30px solid #fff;
+    }
+    .info__contact {
+      width: 350px;
+      height: 67px;
+    }
+    .info__contact span {
+      line-height: 67px;
+    }
+    .info__contact span:first-child {
+      margin-left: 80px;
+      margin-right: 10px;
+      font-size: 14px;
+    }
+    .info__contact span:last-child {
+      font-size: 20px;
+    }
+    .more__wrap {
+      margin-left: 1.5%;
+      width: 400px;
+      height: 410px;
+      background: center 0 url(img/more.png);
+      background-size: cover;
+    }
+    .more__wrap.show {
+      display: block;
+    }
+    .more__wrap a {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    .more__title {
+      position: relative;
+      z-index: 0;
+      margin-top: 113px;
+      padding: 40px 0 40px 13%;
+      height: 174px;
+      color: #fff;
+      font-size: 36px;
+      background-color: rgba(52,52,52,.5);
+    }
+    .more__title:after {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      top: calc(50% - 22px);
+      right: 6.5%;
+      width: 44px;
+      height: 44px;
+      background-image: url(img/arrow.svg);
+    }
+    .more__title span {
+      vertical-align: middle;
+    }
+    .more__title .icon--cart {
+      vertical-align: middle;
+    }
+    .show-more .video__item {
+      flex: 0 1 49%;
+      margin-bottom: 2%;
+      padding: 0;
+    }
+    .show-more .more__wrap {
+      display: block;
+    }
+  }
+  .yt-no--icon .info__logo {
+      display: none;
+    }
+  .yt-no--icon .btn--play {
+    display: none;
+  }
+  /* in 16:9 full screen, make all content in 100vh */
+  @media screen and (max-aspect-ratio: 16/9) and (min-width: 1680px) {
+    .show-more .video__list {
+      width: 74%;
+    }
+  }
+  </style>
+</head>
+<body>
+  <main id="videoWrap" class="video__wrap">
+    <header class="video__head">
+      <div class="head__title"><img src="img/logo/logo.png" alt="東森購物"><span>東森購物直播頻道</span></div>
+    </header>
+    <!-- 用classname:"show-more"控制是否要顯示"點我看更多"的版型 / 用classname:"yt-no--icon"控制當影片是youtube時，右上方logo以及播放按鈕不出現 -->
+    <section class="video__body show-more yt-no--icon">
+      <ul class="video__list">
+        <li class="video__item">
+          <div class="item__wrap">
+            <div class="item__box">
+              <div class="item__content">
+                <div class="video__info">
+                  <div class="info__logo"></div>
+                  <div class="btn--play"></div>
+                  <div class="info__contact"><span>訂購專線</span><span>0800-600-599</span></div>
+                </div>
+                <div class="iframe__wrap">
+                  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/bherwK4CWOw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+              </div>
+              <div class="video__title">
+                <span>東森購物一台</span>
+              </div>
+              </div>
+          </div>
+        </li>
+        <li class="video__item">
+          <div class="item__wrap">
+            <div class="item__box">
+              <div class="item__content">
+                <div class="video__info">
+                  <div class="info__logo"></div>
+                  <div class="btn--play"></div>
+                  <div class="info__contact"><span>訂購專線</span><span>0800-600-599</span></div>
+                </div>
+                <div class="iframe__wrap">
+                  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ghULE_hifWU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+              </div>
+              <div class="video__title">
+                <span>東森購物二台</span>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="video__item">
+          <div class="item__wrap">
+            <div class="item__box">
+              <div class="item__content">
+                <div class="video__info">
+                  <div class="info__logo"></div>
+                  <div class="btn--play"></div>
+                  <div class="info__contact"><span>訂購專線</span><span>0800-600-599</span></div>
+                </div>
+                <div class="iframe__wrap">
+                  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/jn2RDPrK6FE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+              </div>
+              <div class="video__title">
+                <span>東森購物三台</span>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="video__item">
+          <div class="item__wrap">
+            <div class="item__box">
+              <div class="item__content">
+                <div class="video__info">
+                  <div class="info__logo"></div>
+                  <div class="btn--play"></div>
+                  <div class="info__contact"><span>訂購專線</span><span>0800-600-599</span></div>
+                </div>
+                <div class="iframe__wrap">
+                  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/5ZPpnI8EFbM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+              </div>
+              <div class="video__title">
+                <span>東森購物四台</span>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="more__wrap">
+        <a href="">
+          <div class="more__title">
+            <span>
+              <img class="icon--cart" src="img/icon_cart_white_x_24.svg" alt="cart"> 
+              <span>點我</span>
+              <br>
+              <span>前往商城</span>
+            </span>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

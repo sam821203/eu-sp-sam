@@ -1,0 +1,186 @@
+<style>
+	body {
+		font-family: Helvetica, Arial, '微軟正黑體', sans-serif;
+}
+	img {
+		border: 0;
+	}
+	.mainContent {
+		background-color:#d0fdff;
+ 	  background-image:url(u-20161209_bg.jpg);
+		background-position:center 0;
+		background-repeat:no-repeat;
+	}
+	.sp__wallper {
+		margin: 0px auto;
+		position: relative;
+		width: 1260px;
+	}
+	.desire_bar{
+		width: 715px;
+		height: 60px;
+		background-color: #4a9057;
+		color: #FFFFFF;
+		font-size: 22px;
+		line-height: 60px;
+		text-align: center;
+	}
+    .sp-wish__wrap,
+    .sp-wish__wrap:before, .sp-wish__wrap:after {
+      box-sizing: border-box;
+    }
+    .sp-wish__wrap{
+        height: 34px;
+        padding: 0 20px;
+        overflow: hidden;
+        background-color: #4a9057;
+        color: #FFFFFF;
+        width: 715px;
+    }
+    .sp-wish__wrap ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        overflow: hidden;
+    }
+    .sp-wish__wrap li{
+        overflow: hidden;
+    }
+    .sp-wish__wrap a{ 
+        display:block;
+        font-size: 20px;
+        color: #FFFFFF;
+        padding: 5px 0;
+        font-size: 22px;
+        text-decoration: none
+    }
+</style>
+<script type="text/javascript" src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201504/SP_1019163/Includes/jquery-1.7.2.js"></script>
+<div class="sp__wallper">
+    <table width="1260" align="center" border="0" cellspacing="0" cellpadding="0">
+        <tbody>
+            <tr>
+                <td>
+                    <table width="1260" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td><img src="u-20161209_01-logo.jpg" width="670" height="600" alt="" /></td>
+                                <td><img src="u-20161209_02.gif" width="590" height="600" alt="" /></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table width="1260" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td><img src="u-20161209_03.jpg" width="445" height="230" alt="" /></td>
+                                <td><img src="u-20161209_04.jpg" width="235" height="230" alt="" /></td>
+                                <td><img src="u-20161209_05.jpg" width="195" height="230" alt="" /></td>
+                                <td><img src="u-20161209_06.jpg" width="154" height="230" alt="" /></td>
+                                <td><img src="u-20161209_07.jpg" width="231" height="230" alt="" /></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="u-20161209_08.jpg" width="1260" height="81" alt="" /></td>
+            </tr>
+            <tr>
+                <td>
+                    <table width="1260" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td><img src="u-20161209_09.jpg" width="401" height="60" alt="" /></td>
+                                <td style="background-color: #4a9057;">
+                                    <!-- <p class="desire_bar">某某某許願想要禮物禮物禮物禮物禮物禮物禮物禮物禮物禮物禮物禮</p> -->
+                                    <div id="spWishBox" class="sp-wish__wrap">
+                                        <ul>
+                                            <li><a href=""><span>1. 張小姐: </span>許願想要 <span>Apple iPhone 7 4.7吋 32G 智慧手機</span></a></li>
+                                            <li><a href=""><span>2. 蔡小姐: </span>許願想要 <span>大日 DAINICHI 智能溫控煤油電暖器</span></a></li>
+                                            <li><a href=""><span>3. 洪先生: </span>許願想要 <span>飛利浦全自動咖啡機</span></a></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td><img src="u-20161209_11.jpg" width="144" height="60" alt="" /></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="u-20161209_12.jpg" width="1260" height="270" alt="" /></td>
+            </tr>
+            <tr>
+                <td>
+                    <table width="1260" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td><img src="u-20161209_13.jpg" width="450" height="92" alt="" /></td>
+                                <td><a href="#"><img src="u-20161209_14.jpg" width="354" height="92" alt="" /></a></td>
+                                <td><img src="u-20161209_15.jpg" width="456" height="92" alt="" /></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="u-20161209_16.jpg" width="1260" height="207" alt="" /></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<script type="text/javascript">
+;(function ($) {
+
+    function spMarquee() {
+
+        var $spWishBox = $('#spWishBox'),
+            $wishUl = $spWishBox.find('ul'),
+            $wishLi = $spWishBox.find('li'),
+            _liHeiht = $wishLi.height(),
+            _lis = $wishLi.length,
+            maxPadd = (_lis - 1) * _liHeiht; //可移動高度 = 全部 li 的高度 - 第一個li顯示高度
+
+        var currentMarginTop = 0;
+
+        $spWishBox.css({
+            'height': _liHeiht
+        });
+
+        function animateSlider() {
+            
+            function moveRows() {
+                $wishUl.animate({
+                    'margin-top': currentMarginTop - _liHeiht // 0 - 一開始的 li 高度
+                }, 800);
+                currentMarginTop -= _liHeiht; // currentMarginTop -_liHeiht
+            }
+
+            if (currentMarginTop == -(maxPadd)) {
+                $wishUl.css({
+                    'margin-top': 0
+                })
+                currentMarginTop = 0;
+            } 
+            moveRows();
+
+        }
+
+
+        autoSlide = setInterval(function() {
+            animateSlider();
+        }, 3000);
+
+
+
+    }
+    spMarquee();
+
+} (jQuery));    
+
+</script>
+

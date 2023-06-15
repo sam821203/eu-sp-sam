@@ -1,0 +1,54 @@
+.promo__group--bn-special
+  +pos-set(relative, zero)
+  overflow: hidden
+  .promo__title
+    +pos-set(relative)
+  .decoration--bn-special
+    z-index: map-get($zindex, base)
+    top: 0
+    left: 0
+    width: 100%
+    text-align: center
+    &-2
+      z-index: map-get($zindex, second)
+      top: 56.5%
+      right: 19.3%
+      width: 20%
+      animation: flash 2s infinite steps(1)
+
+  .promo__wrap
+    +aspect-ratio(960, 815)
+  .promo__zone
+    +pos-set(relative, zero)
+    padding: 20% 5% 0
+    // +bg-set(null, 100%)  // 用JS判斷哪個月用哪個背景，要放在assets裡
+    +bg-set(url(event/2nd/e-main/components/bn-special/bg-special-p.png), 100%)
+    // +breakpoint-min($min-width-xl)
+    //   padding: 240px 30px 270px
+
+  .slider__box,
+  .promo__slider
+    +pos-set(relative, zero)
+  .swiper-container
+    display: flex
+
+    .swiper-slide,
+    .swiper-slide-duplicate
+      +aspect-ratio(381, 419, relative, zero, a)
+      width: 33%
+      a
+        transition: all 0.6s
+        transform: translateY(12%) scale(0.8)
+        filter: brightness(50%)
+    .swiper-slide-active,
+    .swiper-slide-duplicate-active
+      z-index: map-get($zindex, base)
+      a
+        transform: translateY(23%) scale(1.32)
+        filter: brightness(105%)
+
+@keyframes flash
+  0%, 50%, to
+    opacity: 1
+  25%, 75%
+    opacity: 0

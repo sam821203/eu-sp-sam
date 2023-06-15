@@ -1,0 +1,625 @@
+// ==========================================================================
+// Collection Helpers 
+// ==========================================================================
+@import "utils/sass/helpers/_collection"
+
+// // ==========================================================================
+// // Plugins
+// // ==========================================================================
+// // @import "vendors/animate"
+
+// // ==========================================================================
+// // layout
+// // ==========================================================================
+@import "layout/logo/_logo.sass"
+// @import "../../layout/header/main/_header.sass"
+// @import "../../layout/bg-decoration/bg-decoration.sass"
+
+// // ==========================================================================
+// // components
+// // ==========================================================================
+// @import "../../components/common-event/_common-event.sass"
+// @import "../../components/event-w2m1/_event-w2m1.sass"
+// @import "../../components/event-w4m2/_event-w4m2.sass"
+// @import "../../components/bn-group-w2m1-2/_bn-group-w2m1-2.sass"
+// @import "../../components/bn-group-w2m1/_bn-group-w2m1.sass"
+
+// // ==========================================================================
+// // Page
+// // ==========================================================================
+body
+  background-color: $main-e-background-color
+//.sp__wrap a
+//  display: block
+
+.header__wrap
+  +breakpoint-min($min-width-xl)
+    img
+      width: auto
+
+
+// // ==========================================================================
+// // mixin
+
+@mixin setting__background($image, $size, $repeat, $position)
+  background-image: $image
+  background-size: $size
+  background-repeat: $repeat
+  background-position: $position
+  @content
+
+@mixin setting__mobile-left($top:.5, $left:.5, $width:.5)
+  top: calc(100vw * #{$top})
+  left: calc(100vw * #{$left})
+  width: calc(100vw * #{$width})
+
+@mixin setting__mobile-right($top:.5, $right:.5, $width:.5)
+  top: calc(100vw * #{$top})
+  right: calc(100vw * #{$right})
+  width: calc(100vw * #{$width})
+
+// 通用版本
+@mixin setting__postion($top, $position, $position_unit, $width)
+  top: $top
+  #{$position}: $position_unit
+  width: $width
+
+// // ==========================================================================
+
+.btn--promo
+  transition: all 0.5s
+  &:hover
+    transform: scale(1.05)
+    filter: brightness(120%)
+
+.layout--main
+  position: relative
+
+.sp__wrap
+  position: relative
+  display: block
+  overflow: hidden
+  width: 100%
+  margin-left: auto
+  margin-right: auto
+  +breakpoint-min($min-width-xl)
+    max-width: 960px
+    overflow: visible
+
+.main_group
+  overflow: hidden
+  +setting__background(url('pages/index--u-88/img/bg-960-01.jpg'), 100% auto, no-repeat, center top)
+  transform-origin: left
+  height: auto
+  min-height: calc(100vw * 1)
+  .title__wrap--main
+    img
+      +setting__postion(calc(100vw * .19), 'left', calc(100vw * .019), 62%)
+      z-index: 2
+      animation: 10s card-twinkling infinite both
+  .title__bg
+    +setting__postion(calc(100vw * .028), 'left', calc(-100vw * .031), 84%)
+    z-index: 1
+    animation: 5s color__change infinite both
+  .main__product
+    //+setting__postion(0, 'left', 0, 80%)
+    z-index: 3
+    //animation: 8s chair-rotate infinite both
+  .main__titleSub
+    +setting__postion(calc(100vw * .42), 'left', calc(100vw * .03), 53%)
+    z-index: 2
+
+  .title__decoration
+    position: absolute
+    z-index: map-get($zindex, title__decoration)
+    +setting__postion(0, 'left', 0, 100%)
+    height: 100%
+    img
+      width: 20%
+      position: absolute
+      &:nth-child(1), &:nth-child(2),
+      &:nth-child(3), &:nth-child(4),
+      &:nth-child(5)
+        display: none
+      &:nth-child(6)
+        +setting__postion(calc(100vw * .22), 'right', calc(100vw * .24), 7%)
+        animation: 1s 1.5s title-down both
+      &:nth-child(7)
+        +setting__postion(calc(100vw * .56), 'left', calc(100vw * .03), 11%)
+        transform: rotate(50deg)
+        animation: 2s title-down both
+  +breakpoint-min($min-width-xl)
+    overflow: visible
+    min-height: 1053px
+    .title__wrap--main
+      img
+        +setting__postion(167px, 'left', -3px, 65%)
+    .title__bg
+      +setting__postion(15px, 'left', -75px, auto)
+    .main__product
+      //+setting__postion(0, 'right', 0px, auto)
+      transform: scale(.98)
+    .main__titleSub
+      +setting__postion(388px, 'left', 16px, auto)
+
+    .title__decoration
+      img
+        width: auto
+        &:nth-child(1), &:nth-child(2),
+        &:nth-child(3), &:nth-child(4),
+        &:nth-child(5)
+          display: block
+        &:nth-child(1)
+          +setting__postion(710px, 'left', calc(50% + 765px), auto)
+          animation: 2s title-down both
+        &:nth-child(2)
+          +setting__postion(713px, 'left', calc(50% - 1055px), auto)
+          animation: 1s 1s title-down both
+        &:nth-child(3)
+          +setting__postion(261px, 'left', calc(50% + 963px), auto)
+          animation: 2.5s title-down both
+        &:nth-child(4)
+          +setting__postion(337px, 'left', calc(50% - 930px), auto)
+          animation: 1.5s title-down forward
+          &:hover
+            animation: 2s chair-rotate infinite both
+        &:nth-child(5)
+          +setting__postion(115px, 'left', calc(50% + 425px), auto)
+          animation: 1s title-down both
+        &:nth-child(6)
+          +setting__postion(195px, 'right', calc(50% - 232px), auto)
+        &:nth-child(7)
+          +setting__postion(545px, 'left', calc(50% - 473px), auto)
+
+.main_title
+  margin: 0 auto
+  position: relative
+  z-index: map-get($zindex, title)
+  display: flex
+  align-items: flex-start
+  height: 100%
+  img
+    position: absolute
+    height: auto
+    display: block
+
+.promo__event
+  margin-top: calc(-100vw * 0.27)
+  padding-bottom: 15px
+  position: relative
+  z-index: map-get($zindex, title)
+  .event__wrap
+    +display-flex
+    flex-wrap: wrap
+    li
+      &.incentive--01
+        width: 28.75%
+        position: relative
+        animation: 4.8s circle_translateY_m infinite both
+        top: calc(-100vw * 0.03125)
+      &.incentive--02
+        width: 24.375%
+        animation: 4.5s 1s circle_translateY_m infinite both
+      &.incentive--03
+        width: 25%
+        animation: 4.2s 3s circle_translateY_m infinite both
+      &.incentive--04
+        width: 21.875%
+        animation: 4s 2s circle_translateY_m infinite both
+      a
+        img
+          transition: all 0.5s
+          width: 100%
+  +breakpoint-min($min-width-xl)
+    margin-top: -298px
+    .event__wrap
+      li
+        &.incentive--01
+          width: 30%
+          animation: 4.8s circle_translateY infinite both
+          animation: none
+          top: -160px
+        &.incentive--02
+          width: 24%
+          animation: 4.5s 1s circle_translateY infinite both
+          animation: none
+        &.incentive--03
+          margin-top: -65px
+          width: 24.5%
+          animation: 4.2s 3s circle_translateY infinite both
+          animation: none
+        &.incentive--04
+          margin-top: 60px
+          width: 21.5%
+          animation: 4s 2s circle_translateY infinite both
+          animation: none
+        a
+          img
+            transition: all 0.5s
+            width: 100%
+            &:hover
+              //filter: saturate(150%)
+              animation: .4s circle_rotate
+
+.sp__outFrame
+  background-color: $sp-e-background-color
+  +setting__background(none, 100% auto, no-repeat, center top)
+  +breakpoint-min($min-width-xl)
+    background-image: url('pages/index--u-88/img/bg-2560-01.jpg')
+    background-size: 2560px 1063px
+    min-height: 1063px
+    overflow: hidden
+
+.decoration-2-left
+  +breakpoint-min($min-width-xl)
+    position: absolute
+    z-index: 4
+    top: 989px
+    left: calc(50% - 1118px)
+    width: 668px
+    height: 783px
+    background: center top url("pages/index--u-88/img/2-decoration-all-1.png") no-repeat
+    background-size: 668px 783px
+
+.decoration-2-right
+  +breakpoint-min($min-width-xl)
+    position: absolute
+    z-index: 4
+    top: 989px
+    right: calc(50% - 1070px)
+    width: 514px
+    height: 783px
+    background: center top url("pages/index--u-88/img/2-decoration-all-2.png") no-repeat
+    background-size: 514px 783px
+
+.bar_catchplay
+  display: block
+  background: center top url("pages/index--u-88/img/catchplay_s.png") no-repeat
+  background-size: 96% auto
+  height: calc(100vw * 0.174)
+  margin-bottom: 5px
+  position: relative
+  z-index: 3
+  +breakpoint-min($min-width-xl)
+    background: center top url("pages/index--u-88/img/bg-2560-catchplay.jpg") no-repeat, center top url("pages/index--u-88/img/catchplay.png") no-repeat
+    height: 110px
+    background-size: 2560px 110px
+    margin-bottom: 0
+
+// // ==========================================================================
+// // 輪播
+.promo__group
+  .promo__wrap
+    position: relative
+    z-index: map-get($zindex, zero)
+    .promo__slider,
+    .video__wrap
+      position: absolute
+      z-index: map-get($zindex, base)
+      top: 20%
+      left: 0
+      width: 100%
+      height: 80%
+
+.promo__group-3
+  background: center 0 url("pages/index--u-88/img/bg-2560-03.jpg") no-repeat
+  background-size: cover
+  .promo__wrap
+    padding-top: 62%
+    .promo__slider
+      top: 20%
+    .swiper-slide
+      a
+        display: block
+        transition: transform 0.6s
+        transform: translateY(-20%) scale(0.5)
+    +breakpoint-min($min-width-lg)
+      padding-top: 57%
+      .promo__slider
+        top: 19%
+      .swiper-slide
+        a
+          transform: translateY(-10%) scale(0.8)
+        img
+          //filter: grayscale(100%)
+          opacity: .8
+      .swiper-slide-active
+        a
+          transform: translateY(30%) scale(1.5)
+        img
+          filter: grayscale(0)
+          opacity: 1
+  .swiper-button-next, .swiper-button-prev
+    width: 17px
+    height: 31px
+    background-size: 17px 31px
+    +breakpoint-min($min-width-xl)
+      width: 27px
+      height: 44px
+      background-size: 27px 44px
+
+.promo__group-4
+  background: center 0 url("pages/index--u-88/img/bg-2560-04.jpg") no-repeat
+  background-size: cover
+  .promo__wrap
+    padding-top: 71%
+    .video__wrap
+      padding-bottom: 6%
+      top: 23%
+      width: 88%
+      height: 78%
+      left: 50%
+      transform: translateX(-48.3%)
+      iframe
+        width: 100%
+        height: 100%
+
+.promo__group-5
+  background: center 0 url("pages/index--u-88/img/bg-2560-05.jpg") no-repeat
+  background-size: 260% auto
+  .layout--main, .promo__wrap
+    max-width: 100%
+    +breakpoint-min($min-width-xl)
+      max-width: 1240px
+  a
+    display: block
+  .promo__wrap
+    padding-top: 64%
+    .promo__slider
+      height: 70%
+      +breakpoint-min($min-width-xl)
+        height: 70%
+        top: 21%
+    .swiper-slide
+      a
+        transition: transform 0.6s
+        transform: translate(-48%, -15%) scale(0.7)
+    .swiper-slide-active,
+    .swiper-slide-active + .swiper-slide
+      a
+        transform: translate(-48%, 2%) scale(.9)
+    .promo-pager
+      bottom: 20px
+      .swiper-pagination-bullet
+        margin: 0 8px
+        width: 16px
+        height: 16px
+      .swiper-pagination-bullet-active
+        background-color: $main-e-slider-pager-color
+    .swiper-button-white
+      top: 93%
+      transform: scale(0.6)
+    .swiper-button-prev
+      left: 23%
+    .swiper-button-next
+      right: 23%
+    .button__wrap
+      position: absolute
+      z-index: map-get($zindex, zero)
+      bottom: 0
+      left: 50%
+      width: 30%
+      height: 10%
+      transform: translateX(-50%)
+      .btn--see-more
+        margin-top: -12%
+    +breakpoint-minMax(960px, 1239px)
+      padding-top: 60%
+      .swiper-slide
+        //margin: 0 1%
+        a
+          transform: translate(-30%, -23%) scale(0.6)
+          img
+            width: 350px !important
+      .swiper-slide-active,
+      .swiper-slide-active + .swiper-slide
+        a
+          transform: translate(-34%, 0) scale(.85)
+      .button__wrap
+        .btn--see-more
+          margin-top: -10%
+    +breakpoint-min(1240px)
+      padding-top: 52%
+      .swiper-slide
+        a
+          transform: scale(0.8) translate(-8%, -24%)
+      .swiper-slide-active,
+      .swiper-slide-active + .swiper-slide
+        a
+          transform: scale(0.9) translate(-1%, 4%)
+      .button__wrap
+        .btn--see-more
+          margin-top: -10%
+
+.promo__group-6
+  .promo__wrap
+    padding-top: 58%
+    background: center top url("pages/index--u-88/img/bg-2560-06-m.png") no-repeat
+    background-size: contain
+    .promo__slider
+      top: 23%
+      padding: 0 4.5%
+      width: 92%
+      background-size: 92%
+      left: 50%
+      transform: translateX(-50%)
+      .swiper-container
+        margin: 0 auto
+        width: 96%
+        height: 90%
+
+      .swiper-slide
+        width: 50%
+        padding: 0 2%
+        a
+          transform: translateY(0) scale(0.92)
+        img
+          transition: transform 1.2s
+          transform: rotate(8deg)
+      .swiper-slide-visible
+        img
+          transform: rotate(0deg)
+      .slider-bank-prev, .slider-bank-next
+        width: calc(100vw * 0.06)
+        height: calc(100vw * 0.06)
+        margin-top: calc(-100vw * 0.073)
+        background-size: calc(100vw * 0.1) calc(100vw * 0.1)
+        opacity: 0
+      .slider-bank-prev
+        margin-left: calc(-100vw * 0.0373)
+      .slider-bank-next
+        margin-right: calc(-100vw * 0.0373)
+    .promo-pager
+      bottom: calc(100vw * 0.03125)
+      left: 50%
+      transform: translateX(-50%)
+      .swiper-pagination-bullet
+        margin: 0 2px
+        width: 6px
+        height: 6px
+        opacity: .8
+        background-color: #ffffff
+      .swiper-pagination-bullet-active
+        background-color: #ff8383
+        opacity: 1
+  +breakpoint-min($min-width-xl)
+    .promo__wrap
+      padding-top: 46%
+      background: center top url("pages/index--u-88/img/bg-2560-06.png") no-repeat
+      .promo__slider
+        top: 30%
+        .swiper-container
+          width: 100%
+        .swiper-wrapper
+          top: 0
+        .swiper-slide
+          width: 24%
+          padding: 0 8px
+          a
+            transform: translateY(0) scale(1)
+        .slider-bank-prev, .slider-bank-next
+          width: 27px
+          height: 44px
+          margin-top: -120px
+          background-size: 27px 44px
+          opacity: 0
+        .slider-bank-prev
+          margin-left: -20px
+        .slider-bank-next
+          margin-right: -20px
+      .promo-pager
+        bottom: 80px
+        left: 50%
+        transform: translateX(-50%)
+        .swiper-pagination-bullet
+          margin: 0 4px
+          width: 10px
+          height: 10px
+
+.promo__group-7
+  a
+    display: block
+  .promo__wrap
+    background: center 0 url("pages/index--u-88/img/bg-2560-07-m.png") no-repeat
+    background-size: contain
+    padding-top: 62%
+    .promo__slider
+      top: 20%
+      width: 90%
+      height: 64%
+      left: 50%
+      transform: translateX(-50%)
+      .swiper-slide
+        a
+          transform: translateY(-2.5%) scale(0.9)
+        +breakpoint-min($min-width-xl)
+          width: 50%
+          a
+            transform: scale(0.95) translateY(33%)
+    .promo__bngroup-prev, .promo__bngroup-next
+      width: calc(100vw * 0.04)
+      height: calc(100vw * 0.04)
+      margin-top: calc(-100vw * 0.01)
+      background-size: calc(100vw * 0.04) calc(100vw * 0.06)
+      opacity: 0
+    .promo__bngroup-prev
+      margin-left: calc(100vw * 0.02)
+    .promo__bngroup-next
+      margin-right: calc(100vw * 0.02)
+    .promo-pager
+      bottom: calc(100vw * 0.065)
+      left: 50%
+      transform: translateX(-50%)
+      .swiper-pagination-bullet
+        margin: 0 2px
+        width: 6px
+        height: 6px
+        opacity: .8
+        background-color: #ffffff
+      .swiper-pagination-bullet-active
+        background-color: #ff82bc
+        opacity: 1
+  +breakpoint-min($min-width-xl)
+    .promo__wrap
+      background: center 0 url("pages/index--u-88/img/bg-2560-07.png") no-repeat
+      background-size: auto
+      padding-top: 43%
+      .promo__slider
+        top: 15%
+      .promo__bngroup-prev, .promo__bngroup-next
+        width: 27px
+        height: 44px
+        margin-top: -20px
+        background-size: 27px 44px
+      .promo__bngroup-prev
+        margin-left: 15px
+      .promo__bngroup-next
+        margin-right: 15px
+
+      .promo-pager
+        bottom: 70px
+        left: 50%
+        transform: translateX(-50%)
+        .swiper-pagination-bullet
+          margin: 0 4px
+          width: 10px
+          height: 10px
+
+
+
+.promo__group-88
+  position: relative
+  top: calc(100vw * 0.105)
+  left: calc(100vw * 0.41)
+  z-index: 21
+  .limit__wrap
+    +display-flex(">div")
+    .limit__slider
+      width: 68%
+      .swiper-button-white
+        top: calc(100vw * 0.58)
+        transform: scale(0.2)
+        &.swiper-button-prev
+          left: calc(50% - 30px)
+        &.swiper-button-next
+          right: calc(50% - 30px)
+    .main__product
+      margin: calc(100vw * 0.03125) auto auto calc(-100vw * 0.028)
+  +breakpoint-min($min-width-xl)
+    top: 100px
+    left: 396px
+    .limit__wrap
+      .limit__slider
+        width: 450px
+        .swiper-button-white
+          top: 572px
+          transform: scale(0.4)
+          &.swiper-button-prev
+            left: calc(65% - 50px)
+          &.swiper-button-next
+            right: calc(35% - 50px)
+      .main__product
+        margin: 32px auto auto -19px
++breakpoint-min($min-width-xl)
+  .promo__group
+    background-size: auto

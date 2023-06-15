@@ -1,0 +1,40 @@
+-
+  var bnW2M1 = [
+    {
+      link: "#" ,
+      imgSrc: "event/1st/e-main/components/bn-w2m1/800x300_1.jpg",
+      alt: "第一個banner",    
+    },
+    {
+      link: "#" ,
+      imgSrc: "event/1st/e-main/components/bn-w2m1/800x300_2.jpg",
+      alt: "第二個banner",    
+    },
+    {
+      link: "#" ,
+      imgSrc: "event/1st/e-main/components/bn-w2m1/800x300_3.jpg",
+      alt: "第三個banner",    
+    },
+    {
+      link: "#" ,
+      imgSrc: "event/1st/e-main/components/bn-w2m1/800x300_4.jpg",
+      alt: "第四個banner",    
+    },
+  ]
+
+section.bn-w2m1
+  .layout--main
+    .banner__title
+    ul.banner__wrap.clearfix
+      each data in bnW2M1
+        li.banner__item
+          a(href= data.link, title=data.alt)
+            img(src= data.imgSrc, alt=data.alt)
+      //- li.banner__item
+      //-   a(href="#")
+      //-     img(src="event/1st/e-main/components/bn-w2m1/800x300_1.jpg", alt="")
+      //- li.banner__item
+      //-   a(href="#")
+      //-     img(src="event/1st/e-main/components/bn-w2m1/800x300_2.jpg", alt="")
+
+

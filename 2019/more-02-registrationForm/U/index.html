@@ -1,0 +1,1301 @@
+<meta name="viewport" content="width=device-width">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<meta charset="utf-8">
+<style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+    
+        *:before, *:after {
+            box-sizing: border-box;
+        }
+    
+        a {
+            display: block;
+            text-decoration: none;
+        }
+    
+        ul {
+            list-style: none;
+        }
+    
+        img {
+            width: 100%;
+            border: 0;
+            display: block;
+        }
+    
+        article,
+        main,
+        nav,
+        section {
+            display: block;
+        }
+    
+        body {
+            margin: 0;
+            font-size: 14px;
+            font-family: PingFangTC-regular, Roboto, "LiHei Pro", "Source Han Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, "Microsoft JhengHei", sans-serif;
+        }
+    
+        .sp--1260 {
+            position: relative;
+            z-index: 0;
+            max-width: 1260px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    
+        .sp--1260.icon_Home {
+            z-index: auto;
+        }
+    
+        /* 主視覺 */
+        /* ======================================== */
+        .logo a,
+        .sp__visual a {
+            display: block;
+        }
+    
+        .logo {
+            position: absolute;
+            z-index: 1;
+            /* 調整logo位置 */
+            top: 1%;
+            left: 1%;
+            width: 30%;
+            max-width: 220px;
+        }
+    
+        /* 設定背景 */
+        .sp__main {
+        }
+    
+        /* 設定前景 */
+        .sp__visual {
+            position: relative;
+            z-index: 0;
+            width: 100%;
+        }
+    
+        .visual__anchor,
+        .visual__main,
+        .visual__nav {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+    
+        .visual__anchor {
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+        }
+    
+        .visual__main a,
+        .visual__nav a {
+            flex-grow: 1;
+        }
+    
+        /* 主視覺 */
+        .visual__main {
+            height: 100%;
+        }
+    
+        .visual__main a:nth-child(1) {
+            flex-grow: 0;
+            width: 100%;
+            height: 100%;
+        }
+    
+        .dwbg {
+            /*height: 100%;*/
+            /*background: #003f7f url(log181226_03.jpg) center 0 no-repeat;*/
+            background-color: #f43232;
+            padding-bottom: 4%;
+        }
+    
+        div.bar {
+            position: relative;
+            margin: auto;
+            width: 85%;
+            border-radius: 999em;
+            /*padding: 6px;*/
+            /*background-image: url(barbg.png);*/
+            background-size: contain;
+            border:6px solid rgba(0,0,0,0.2);
+            /*box-shadow: 0px 5px 0px rgba(0, 0, 0, 0.7);*/
+        }
+    
+        div.bar a {
+            border-radius: 999em;
+            padding: 1rem;
+            /*background-image: url(barbgin.png);*/
+            background-color: #FFFFFF;
+            background-size: contain;
+            color: #6a6a6a;
+            padding-left: 3%;
+        }
+    
+        div.bar div {
+            vertical-align: middle;
+        }
+    
+        .icon {
+            display: inline-block;
+            font: bold 3rem/11rem arial;
+            width: 12rem;
+            height: 12rem;
+            background-color: #ed3030;
+            text-align: center;
+            border: 0.15em solid #ee5d56;
+            border-radius: 999em;
+            color: #FFFFFF;
+            margin: 0.5rem 0.7rem 1.2rem
+        }
+    
+        .w {
+            display: inline-block;
+            text-align: center;
+            width: 48rem;
+            font: bold 1.7rem/1.2 "微軟正黑體";
+        }
+    
+        .w h1 {
+            font-size: 2.5rem;
+            color: #000000;
+            height: 3.1rem;
+            overflow: hidden;
+            width: 95%;
+            margin: auto;
+        }
+    
+        div.bar h3 {
+            background-image: url(barbutbg.png);
+            padding: 0.3rem 1.8rem;
+            background-size: contain;
+            border-radius: 999rem;
+            color: #f7c568;
+            width: auto;
+            margin-top: 1rem;
+            margin-left: -2rem;
+        }
+    
+        .sec2 {
+            background-color: #d64776;
+            border: 0.15em solid #f77799;
+        }
+    
+        .sec3 {
+            background-color: #ed5c23;
+            border: 0.15em solid #f08151;
+        }
+    
+        .sec4 {
+            background-color: #ffa02b;
+            border: 0.15em solid #fee151;
+        }
+    
+        .sec5 {
+            background-color: #60ba2a;
+            border: 0.15em solid #92db55;
+        }
+    
+        .sec6 {
+            background-color: #22b3a7;
+            border: 0.15em solid #88efdc;
+        }
+    
+        .sec7 {
+            background-color: #197bce;
+            border: 0.15em solid #58e4e7;
+        }
+    
+        .sec8 {
+            background-color: #2c3196;
+            border: 0.15em solid #5b93e6;
+        }
+    
+        .sec9 {
+            background-color: #b746d8;
+            border: 0.15em solid #e17af4;
+        }
+    
+        .sec10 {
+            background-color: #6f2fed;
+            border: 0.15em solid #935fe6;
+        }
+    
+        /* note*/
+        /* ======================================== */
+        .note {
+            word-break: break-all;
+        }
+    
+        .note article {
+            background-color: #4b0209;
+            font: normal 1em/1.5 '微軟正黑體', Arial;
+            color: #ffbaba;
+            padding-bottom: 3%;
+        }
+    
+        .note hr {
+            background-color: #fffff;
+            width: 100%;
+            margin: 0;
+            margin-bottom: 15px;
+            height: 8px;
+            border: 0;
+        }
+    
+        .note h2 {
+            font-size: 1em;
+            line-height: 2;
+            margin: 5px 3%;
+            color: #FFFFFF;
+        }
+    
+        .note p {
+            line-height: 1.5;
+            padding: 0 5%;
+            margin: 0;
+        }
+    
+        .note ol, .note ul {
+            padding: 0;
+            margin: auto;
+            margin: 0 6%;
+            list-style: decimal;
+        }
+    
+        .note ul {
+            list-style: disc;
+        }
+    
+        .note table {
+            color: #ffbaba;
+            border: 1px solid #84252a;
+            border-right: 0;
+            border-bottom: 0;
+            width: 70%;
+            margin: 1% 0 1% 5%;
+            background-color: #4b0209;
+            font-size: 0.9em;
+        }
+    
+        .note table td {
+            border-right: 1px solid #84252a;
+            border-bottom: 1px solid #84252a;
+            padding: 5px;
+            text-align: center;
+        }
+    
+        .note table tr:first-child td, .note ol table tr:first-child td {
+            text-align: center;
+            background-color: #7c1418;
+            color: #ffbaba;
+            white-space: nowrap;
+        }
+    
+        .note img {
+            width: 80%;
+            margin: 10px 0;
+        }
+    
+        /* iframe 設定*/
+        .iframe__container {
+            height: 280px;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+    
+        .iframe__container iframe {
+            width: 615px;
+            height: 100%;
+            overflow-x: hidden;
+            vertical-align: bottom;
+        }
+    
+        /* 標題顏色*/
+        .t-icon {
+            /*display: inline-block;*/
+            width: 2rem;
+            height: 2rem;
+            background-color: #ed3030;
+            text-align: center;
+            border: 0.15em solid #ee5d56;
+            border-radius: 10px;
+            color: #FFFFFF;
+            padding: 2px 8px;
+            margin: 0.5rem auto;
+        }
+    
+        .t-sec2 {
+            background-color: #d64776;
+            border: 0.15em solid #f77799;
+        }
+    
+        .t-sec3 {
+            background-color: #ed5c23;
+            border: 0.15em solid #f08151;
+        }
+    
+        .t-sec4 {
+            background-color: #ffa02b;
+            border: 0.15em solid #fee151;
+        }
+    
+        .t-sec5 {
+            background-color: #60ba2a;
+            border: 0.15em solid #92db55;
+        }
+    
+        .t-sec6 {
+            background-color: #22b3a7;
+            border: 0.15em solid #88efdc;
+        }
+    
+        .t-sec7 {
+            background-color: #197bce;
+            border: 0.15em solid #58e4e7;
+        }
+    
+        .t-sec8 {
+            background-color: #2c3196;
+            border: 0.15em solid #5b93e6;
+        }
+    
+        .t-sec9 {
+            background-color: #b746d8;
+            border: 0.15em solid #e17af4;
+        }
+    
+        .t-sec10 {
+            background-color: #6f2fed;
+            border: 0.15em solid #935fe6;
+        }
+    
+        /* open note detail*/
+        .overlay-mask {
+            background: rgba(51, 51, 51, 0.5);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+    
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            height: 100%;
+            width: 80%;
+            margin: 3% auto;
+            overflow: auto;
+            z-index: 99;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    
+        .overlay-open {
+            display: block;
+            transition: 2.5s;
+        }
+    
+        .overlay-animate {
+            transition: 2.5s;
+        }
+    
+        .max-width-100 {
+            max-width: 100%;
+        }
+    
+        .close-icon-btn {
+            position: relative;
+            cursor: pointer;
+        }
+    
+        .close-icon {
+            position: fixed;
+            top: 15px;
+            right: 15px;
+            color: #f3ffea;
+            background-color: #f3ffea;
+            width: 25px;
+            height: 1px;
+            border: 3px solid #f3ffea;
+            border-radius: 110px;
+        }
+    
+        .close-icon-r {
+            transform: rotate(-45deg);
+        }
+    
+        .close-icon-l {
+            transform: rotate(45deg);
+        }
+    
+        /* accordion */
+        .accordion {
+            display: flex;
+            margin: 0 auto;
+            flex-direction: column;
+            /*border-top: 1px solid #d9e5e8;*/
+        }
+    
+        .accordion li {
+            /*border-bottom: 1px solid #d9e5e8;*/
+            position: relative;
+        }
+    
+        .accordion li .detail {
+            display: none;
+            margin: 10px auto;
+            /*padding: 10px 25px 30px;*/
+            /*color: #6b97a4;*/
+        }
+    
+        .accordion .accordion-title {
+            width: 95%;
+            display: block;
+            cursor: pointer;
+            font-weight: 600;
+            line-height: 3;
+            font-size: 16px;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            text-indent: 6px;
+            user-select: none;
+            background-color: #eee;
+            height: 48px;
+            -webkit-line-clamp: 1;
+            border-radius: 14px;
+            border: 1px solid #dedbdb;
+            margin: auto;
+            margin-bottom: 2px;
+        }
+    
+        .accordion .accordion-title:after {
+            width: 8px;
+            height: 8px;
+            border-right: 1px solid #4a6e78;
+            border-bottom: 1px solid #4a6e78;
+            position: absolute;
+            right: 5%;
+            content: " ";
+            top: 20px;
+            transform: rotate(-45deg);
+            -webkit-transition: all 0.2s ease-in-out;
+            -moz-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+        }
+    
+        .accordion-title .t-wt {
+            width: 95%;
+            height: 3rem;
+            overflow: hidden;
+        }
+    
+        .accordion-title.active:after {
+            transform: rotate(45deg);
+            -webkit-transition: all 0.2s ease-in-out;
+            -moz-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+        }
+    
+        
+    
+        .con-order-active {
+            order: -1;
+        }
+    
+        @media screen and (max-width: 1024px) {
+            .dwbg {
+                background-size: contain;
+            }
+    
+            div.bar {
+                width: 98%;
+            }
+    
+            .w {
+                width: 46rem;
+                font-size: 1.5rem;
+            }
+    
+            .w h1 {
+                font-size: 1.72rem;
+                height: 2.5rem;
+            }
+    
+            .icon {
+                margin: 0rem 0.3rem 0.4rem;
+                line-height: 10rem;
+                width: 11rem;
+                height: 11rem;
+            }
+        }
+    
+        @media screen and (max-width: 800px) {
+            div.bar a {
+                padding-bottom: 1rem;
+            }
+    
+            .w {
+                width: 33rem;
+                font-size: 1.25rem;
+            }
+    
+            .icon {
+                font: bold 2.5rem/7.5rem arial;
+                width: 8rem;
+                height: 8rem;
+            }
+    
+            div.bar h3 {
+                margin-top: 0.5rem;
+            }
+    
+            .note table {
+                width: 90%;
+            }
+    
+            .note ol {
+                margin: 0 5% 0 10%;
+            }
+    
+            .note img {
+                width: 100%;
+                margin: 5px 0;
+            }
+    
+            /* open note detail*/
+            .overlay {
+                width: 90%;
+                margin: 2% auto;
+            }
+        }
+    
+        @media screen and (max-width: 640px) {
+            div.bar a {
+                padding: 0.5rem;
+            }
+    
+            .icon {
+                line-height: 7rem;
+                width: 8rem;
+                height: 8rem;
+                margin: 0.2rem 0.5rem 0 0.3rem;
+            }
+    
+            .w {
+                left: 8rem;
+                width: 27rem;
+                font-size: 1rem;
+            }
+    
+            .w h1 {
+                font-size: 1.4rem;
+                letter-spacing: -1px;
+                height: 1.8rem;
+            }
+        }
+    
+        @media screen and (max-width: 600px) {
+            .icon {
+                line-height: 6.5rem;
+                width: 7rem;
+                height: 7rem;
+                font-size: 2.2rem;
+            }
+    
+            .w {
+                width: 26rem;
+                letter-spacing: 0px;
+                font-size: 1rem;
+            }
+        }
+    
+        @media screen and (max-width: 617px) {
+            .iframe__container {
+                height: 480px;
+            }
+    
+            .iframe__container iframe {
+                margin: 0;
+                width: 100%;
+            }
+        }
+    
+        @media screen and (max-width: 480px) {
+            div.bar {
+                border-radius: 1rem;
+            }
+    
+            div.bar a {
+                border-radius: 1rem;
+                padding: 0.5rem;
+            }
+    
+            .icon {
+                display: block;
+                font: bold 1rem/2rem arial;
+                width: 100%;
+                height: auto;
+                margin: 0;
+                border-width: 4px;
+                position: relative;
+            }
+    
+            .w {
+                width: 100%;
+                font-size: 0.9rem;
+            }
+    
+            .w h1 {
+                font-size: 1.25rem;
+                letter-spacing: -1px;
+                height: 1.5rem;
+                margin: 0.2rem auto;
+            }
+    
+            div.bar h3 {
+                margin-top: 0.5rem;
+                margin-left: auto;
+            }
+        }
+    
+        @media screen and (max-width: 390px) {
+            .w h1 {
+                font-size: 1rem;
+                margin: 0.2rem auto 0;
+            }
+    
+            .bar span {
+                display: block;
+            }
+    
+            .iframe__container {
+                height: 450px;
+            }
+    
+            .banner__item img {
+                width: 100%;
+            }
+        }
+        @media screen and (max-width: 360px) {
+            .iframe__container {
+                height: 560px;
+            }
+        }
+        @media screen and (min-width: 1025px) {
+            div.bar {
+                width: 95%;
+            }
+    
+            .icon {
+                font: bold 3rem/8rem arial;
+                width: 9rem;
+                height: 9rem;
+            }
+    
+            .w {
+                width: 37rem;
+            }
+    
+            .accordion.screen-size {
+                max-width: 90%;
+            }
+        }
+    
+        @media screen and (min-width: 1260px) {
+            .icon {
+                font: bold 3rem/11rem arial;
+                width: 11rem;
+                height: 11rem;
+            }
+    
+            .w {
+                width: 50rem;
+            }
+        }
+    
+        /* 圖片 */
+        .img--container {
+            display: inline-block;
+            width: 90%;
+            margin-left: 5%;
+            margin-right: 5%;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+    
+        .img--container img:nth-child(1),
+        .img--container img:nth-child(2),
+        .img--container img:nth-child(3) {
+            width: calc(100% / 3 - 4px);
+            display: inline-block;
+        }
+    
+        @media screen and (max-width: 1024px) {
+            .note ol, .note ul {
+                margin: 0 5% 0 10%;
+            }
+    
+            .note table {
+                margin: 0 3%;
+                width: 94%;
+            }
+        }
+    
+        /* 圖片 */
+        @media screen and (max-width: 768px) {
+    
+            .img--container {
+                margin-left: auto;
+                margin-right: auto;
+                width: 100%;
+            }
+    
+            .img--container img:nth-child(1),
+            .img--container img:nth-child(2),
+            .img--container img:nth-child(3) {
+                width: 94%;
+                margin-left: 3%;
+                margin-right: 3%;
+            }
+        }
+        .is-open{
+                display: block;
+            }
+            .is-close{
+                display: none;
+            }
+    
+    </style>
+    <!--[if IE 9]>
+    <style>
+        .visual__anchor,
+        .visual__main,
+        .visual__nav {
+            -js-display: flex;
+        }
+    
+        .visual__anchor {
+            position: absolute !important;
+            height: 114.28% \ ;
+        }
+    
+        .visual__main a,
+        .visual__nav a {
+            background-color: rgba(0, 0, 0, .0);
+            /*height: 100% !important \ ;*/
+        }
+    
+        .build__anchor {
+            -js-display: flex;
+        }
+    
+        .build-nav__item {
+            width: 12.5% \ ;
+        }
+    
+        .banner__wrap {
+            -js-display: flex;
+            width: 100% \ ;
+        }
+    
+        .bn-w2m1 .banner__item {
+            width: 50% \ ;
+        }
+    
+        .bn-w4m2 .banner__item {
+            width: 25% \ ;
+        }
+    
+        .bn-w2m1.item--3 li:last-child {
+            width: 100% \ ;
+        }
+    
+        .bn-w3m1 .banner__item {
+            width: 33.33% \ ;
+        }
+    
+        @media screen and (max-width: 1024px) {
+            .bn-w2m1 .banner__item {
+                width: 100% \ ;
+            }
+    
+            .bn-w4m2 .banner__item {
+                width: 50% \ ;
+            }
+    
+            .bn-w3m1 .banner__item {
+                width: 100% \ ;
+            }
+        }
+    </style>
+<![endif]-->
+<div id="spWrap" class="sp__wallper">
+    <!-- 主視覺 -->
+    <main class="sp__main" id="sp_loginForm">
+        <div class="sp--1260">
+            <div class="sp__visual">
+                <div class="visual__anchor">
+                    <div class="visual__main">
+                        <a></a>
+                    </div>
+                </div>
+                <img src="log190221_01.jpg">
+                <img src="log190221_02.jpg">
+            </div>
+            <div class="dwbg">
+                <ul class="accordion screen-size">
+
+                    <!--第一區-->
+                    <li id="eForm01" class="accordion-content">
+                        <a class="accordion-title">
+                            <div class="t-wt">
+                                <span class="t-icon">U301</span>
+                                累積消費登記送$400折扣金
+                            </div>
+                        </a>
+                        <div class="detail">
+                            <div class="bar">
+                                <a href="#note">
+                                    <div class="icon">U301</div>
+                                    <div class="w">
+                                        <h1>累積消費滿額滿件登記送$400折扣金</h1>
+                                        <p>
+                                            <span>活動時間：</span>3/4 AM10:00 -3/11 AM10:00<br>
+                                            活動期間於美妝/保健/日用/婦幼/服飾/鞋包/內衣館累積消費實付金額滿$2,000元(含)以上，於表單登記相關資料，符合資格即贈$400元折扣金。
+
+                                        </p>
+                                        <h3 class="w open-comment">詳細活動辦法請點我</h3>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="iframe__container">
+                                <iframe src="https://event.etmall.com/umall/bank_ctbc_2" frameborder="0"
+                                        scrolling="no"></iframe>
+                            </div>
+                        </div>
+
+                        <div class="overlay">
+                            <section class="note">
+                                <div class="close-icon-btn">
+                                    <div class="close-icon close-icon-r"></div>
+                                    <div class="close-icon close-icon-l"></div>
+                                </div>
+                                <article>
+                                    <hr>
+                                    <h2>【單筆消費滿$2,000元，登記送$400折扣金】-U301</h2>
+                                    <ol>
+                                        <li>活動期間 : 3/4 AM 10:00 -3/11 AM 10:00</li>
+                                        <li>登記期間 : 3/4 AM 10:00 -3/11 AM 11:00</li>
+                                        <li>活動說明 : 活動期間於美妝/保健/日用/婦幼/服飾/鞋包館/內衣館累積消費發票實付金額滿$2,000元(含)以上(限森森購物網下單)，於表單登記相關資料，符合資格即贈$400元折扣金。一個會員限制登記一次，限得一次的$400元折扣金，恕不累積。</li>
+                                        <li>加給效期 : 無取消/退貨者將於2019/3/22(五)10:00灌入，效期至2019/4/22(一)23:59，逾期失效。</li>
+                                        <li>範例說明 : 小美於美妝/保健/日用/婦幼/服飾/鞋包館/內衣館累積消費三筆各別都滿$2,000元，於表單登記兩次訂單編號，將拿到400元折扣金。</li>
+                                    </ol>
+                                    <h2>注意事項</h2>
+                                    <ol>
+                                        <li>折扣金可於森森購物指定通路(不含東森購物網)消費時選擇使用，折扣金1 枚可折抵現金 1 元，折抵上限詳本大項第2、3點說明。</li>
+                                        <li>購買商品時，除有特定商品或專案活動之限制外，折扣金可與折價券合併使用，惟合併折抵最高上限為商品應付金額之30%，且單筆上限金額為3,000，單日最高２萬的抵用限制。</li>
+                                        <li>結帳時若消費之商品可使用折扣金折抵，系統將自動從最接近有效期限之折扣金折抵(倘會員選擇以折扣金折抵消費金額者，則一律採全數折抵，會員無法選擇以部分折扣金折抵金額)，會員於購物車結帳時就能自動算出可使用的折扣金並進行折抵。</li>
+                                        <li>每次取得之折扣金依發送時間及該次活動規範，均有不同之有效期間，期限屆至，自動無效。</li>
+                                        <li>折扣金使用規則，請在參與獲取折扣金的活動前仔細閱讀活動說明。</li>
+                                        <li>票券類（包含餐券／服務票券／禮券與提貨券等預付儲值商品）、apple系列商品、旅遊、保險及汽機車…等專案商品，無法使用折扣金折抵。</li>
+                                        <li>商品是否適用折扣金，依結帳頁面(購物車)顯示或使用之系統設定為準。</li>
+                                        <li>折扣金限折抵指定商品類別之折扣金額，恕無法折抵售後服務、賠償等相關費用，如：運費、安裝處理費、商品缺損賠償等費用。</li>
+                                        <li>森森購物網保有活動變更、修改或終止本活動之權力，如有異動，修改後之內容將公佈在森森購物網上。</li>
+                                    </ol>
+                                </article>
+                            </section>
+                        </div>
+                    </li>
+
+                    <!--第二區-->
+                    <li id="eForm02" class="accordion-content">
+                        <a class="accordion-title">
+                            <div class="t-wt">
+                                <span class="t-icon t-sec2">U302</span>
+                                消費登記加碼送10%折扣金
+                            </div>
+                        </a>
+                        <div class="detail">
+                            <div class="bar">
+                                <a href="#note">
+                                    <div class="icon sec2">U302</div>
+                                    <div class="w">
+                                        <h1>消費登記加碼送10%折扣金</h1>
+                                        <p><span>活動/登記時間：</span>3/4 AM00:00 -4/1 AM10:00<br>
+                                            活動期間不限消費金額，於表單登記相關資料，符合資格者。活動期間一張訂單登記一次，兩張訂單登記兩次，依此類推。單品最高回饋$1,000元折扣金。
+                                        </p>
+                                        <h3 class="w open-comment">詳細活動辦法請點我</h3>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="iframe__container">
+                                <iframe src="https://event.etmall.com/etmall/bank_jihsun_2" frameborder="0"
+                                        scrolling="no"></iframe>
+                            </div>
+                        </div>
+                        <div class="overlay">
+                            <section class="note">
+                                <div class="close-icon-btn">
+                                    <div class="close-icon close-icon-r"></div>
+                                    <div class="close-icon close-icon-l"></div>
+                                </div>
+                                <article>
+                                    <hr>
+                                      <h2>【消費登記加碼送10%折扣金】-U302</h2>
+                                    <ol>
+                                        <li>活動期間 : 3/4 AM 00:00 -4/1 AM10:00</li>
+                                        <li>登記期間 : 3/4 AM 00:00 -4/1 AM11:00</li>
+                                        <li>活動說明 : 活動期間不限消費發票實付金額(限森森購物網下單)，於表單登記相關資料，符合資格者。活動期間一張訂單登記一次，兩張訂單登記兩次，依此類推。會員不限制登記之訂單張數。單品最高回饋$1,000元折扣金，每位會員活動期間最高回饋1,000元折扣金。</li>
+                                        <li>不適用館別、分類及商品 : 票券類（包含餐券／服務票券／禮券與提貨券/預付儲值商品）、apple系列商品、旅遊、保險及汽機車/專案商品。</li>
+                                        <li>加給效期 : 無取消/退貨者將於2019/4/12(五)17:00匯入，效期至2019/5/12(六)23:59，逾期失效。</li>
+                                    </ol>
+                                    <h2>注意事項</h2>
+                                    <ol>
+                                        <li>折扣金可於森森購物指定通路(不含東森購物網)消費時選擇使用，折扣金1 枚可折抵現金 1 元，折抵上限詳本大項第2、3點說明。</li>
+                                        <li>購買商品時，除有特定商品或專案活動之限制外，折扣金可與折價券合併使用，惟合併折抵最高上限為商品應付金額之30%，且單筆上限金額為3,000，單日最高２萬的抵用限制。</li>
+                                        <li>結帳時若消費之商品可使用折扣金折抵，系統將自動從最接近有效期限之折扣金折抵(倘會員選擇以折扣金折抵消費金額者，則一律採全數折抵，會員無法選擇以部分折扣金折抵金額)，會員於購物車結帳時就能自動算出可使用的折扣金並進行折抵。</li>
+                                        <li>每次取得之折扣金依發送時間及該次活動規範，均有不同之有效期間，期限屆至，自動無效。</li>
+                                        <li>折扣金使用規則，請在參與獲取折扣金的活動前仔細閱讀活動說明。</li>
+                                        <li>票券類（包含餐券／服務票券／禮券與提貨券等預付儲值商品）、apple系列商品、旅遊、保險及汽機車…等專案商品，無法使用折扣金折抵。</li>
+                                        <li>商品是否適用折扣金，依結帳頁面(購物車)顯示或使用之系統設定為準。</li>
+                                        <li>折扣金限折抵指定商品類別之折扣金額，恕無法折抵售後服務、賠償等相關費用，如：運費、安裝處理費、商品缺損賠償等費用。</li>
+                                        <li>森森購物網保有活動變更、修改或終止本活動之權力，如有異動，修改後之內容將公佈在森森購物網上。</li>
+                                    </ol>
+
+                                </article>
+                            </section>
+                        </div>
+                    </li>
+
+                    <!-- 第三區-->
+                    <li id="eForm03" class="accordion-content">
+                        <a class="accordion-title">
+                            <div class="t-wt">
+                                <span class="t-icon t-sec3">U303</span>
+                                累積消費登記送200元提貨券
+                            </div>
+                        </a>
+                        <div class="detail">
+                            <div class="bar">
+                                <a href="#note">
+                                    <div class="icon sec3">U303</div>
+                                    <div class="w">
+                                        <h1>消費滿3件滿$3,800登記送$200元提貨券</h1>
+                                        <p><span>活動/登記時間：</span>3/4 AM10:00 -3/11 AM10:00<br>
+                                            活動期間累積消費實付金額滿$3,800元(含)以上且滿3件，於表單登記相關資料，符合資格者可獲得$200元提貨券。活動期間一張訂單登記一次，恕不累贈。
+                                        </p>
+                                        <h3 class="w open-comment">詳細活動辦法請點我</h3>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="iframe__container">
+                                <iframe src="https://event.etmall.com/aform/?t=2" frameborder="0"
+                                        scrolling="no"></iframe>
+                            </div>
+                        </div>
+                        <div class="overlay">
+                            <section class="note">
+                                <div class="">
+
+                                    <div class="close-icon-btn">
+                                        <div class="close-icon close-icon-r"></div>
+                                        <div class="close-icon close-icon-l"></div>
+                                    </div>
+                                    <article>
+                                    <hr>
+                                    <h2>【消費滿3件滿$3,800登記送$200元提貨券】-U303</h2>
+                                    <ol>
+                                        <li>活動期間 : 3/4 AM 10:00 -3/11 AM 10:00</li>
+                                        <li>登記期間 : 3/4 AM 10:00 -3/11 AM 10:00</li>
+                                        <li>活動說明 : 活動期間累積消費發票實付金額滿$3,800元(含)以上且滿3件(含)以上(限森森購物網下單)，於表單登記相關資料，符合資格者可獲得$200元提貨券。活動期間一張訂單登記一次，兩張訂單登記兩次，依此類推。每日限量100名，活動期間共送出600名。會員不限制登記之訂單張數。活動期間一個會員限得乙張$200元提貨券，恕不累贈。</li>
+                                        <li>加給效期 : 無取消/退貨者將於2019/3/22(五)17:00匯入電子提貨券至會員帳戶內，提貨券無效期限制。</li>
+                                        <li>範例說明 : 小華消費三筆訂單各別$3,800元，總消費金額$11,400元，商品消費總件數為5件，且為當日前100名於表單登記兩次訂單編號，將可拿到乙張$200元提貨券。</li>
+                                    </ol>
+                                    <p>每日限量100名，活動期間共送出600名。</p>
+                                    <h2>注意事項</h2>
+                                    <ol>
+                                        <li>折扣金可於森森購物指定通路(不含東森購物網)消費時選擇使用，折扣金1 枚可折抵現金 1 元，折抵上限詳本大項第2、3點說明。</li>
+                                        <li>購買商品時，除有特定商品或專案活動之限制外，折扣金可與折價券合併使用，惟合併折抵最高上限為商品應付金額之30%，且單筆上限金額為3,000，單日最高２萬的抵用限制。</li>
+                                        <li>結帳時若消費之商品可使用折扣金折抵，系統將自動從最接近有效期限之折扣金折抵(倘會員選擇以折扣金折抵消費金額者，則一律採全數折抵，會員無法選擇以部分折扣金折抵金額)，會員於購物車結帳時就能自動算出可使用的折扣金並進行折抵。</li>
+                                        <li>每次取得之折扣金依發送時間及該次活動規範，均有不同之有效期間，期限屆至，自動無效。</li>
+                                        <li>折扣金使用規則，請在參與獲取折扣金的活動前仔細閱讀活動說明。</li>
+                                        <li>票券類（包含餐券／服務票券／禮券與提貨券等預付儲值商品）、apple系列商品、旅遊、保險及汽機車…等專案商品，無法使用折扣金折抵。</li>
+                                        <li>商品是否適用折扣金，依結帳頁面(購物車)顯示或使用之系統設定為準。</li>
+                                        <li>折扣金限折抵指定商品類別之折扣金額，恕無法折抵售後服務、賠償等相關費用，如：運費、安裝處理費、商品缺損賠償等費用。</li>
+                                        <li>森森購物網保有活動變更、修改或終止本活動之權力，如有異動，修改後之內容將公佈在森森購物網上。</li>
+                                    </ol>
+
+                                </article>
+                                </div>
+                            </section>
+                        </div>
+                    </li>
+
+                    <!--第四區-->
+                    <li id="eForm04" class="accordion-content">
+                        <a class="accordion-title">
+                            <div class="t-wt">
+                                <span class="t-icon t-sec4">U304</span>
+                                單筆消費滿件登記送15%折扣金
+                            </div>
+                        </a>
+                        <div class="detail">
+                            <div class="bar">
+                                <a href="#note">
+                                    <div class="icon sec4">U304</div>
+                                    <div class="w">
+                                        <h1>單筆消費滿3件登記送15%折扣金</h1>
+                                        <p><span>活動/登記時間：</span>3/11 AM10:00 -3/19 AM10:00<br>
+                                            活動期間單筆消費滿3件(含)以上，且無取消或退貨，即可登記加碼送實付發票金額15%折扣金，單筆訂單最高領$1,000枚折扣金，每位會員活動期間最多填寫兩筆訂單，最高可獲得$2,000枚折扣金。
+                                        </p>
+                                        <h3 class="w open-comment">詳細活動辦法請點我</h3>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="iframe__container">
+                                <iframe src="https://event.etmall.com/umall/bank_ctbc_2" frameborder="0"
+                                        scrolling="no"></iframe>
+                            </div>
+                        </div>
+                        <div class="overlay">
+                            <section class="note">
+                                <div class="close-icon-btn">
+                                    <div class="close-icon close-icon-r"></div>
+                                    <div class="close-icon close-icon-l"></div>
+                                </div>
+                                <article>
+                                    <hr>
+                                    <h2>【單筆消費滿3件，登記送15%折扣金】-U304</h2>
+                                    <ol>
+                                        <li>活動期間 : 3/11 AM10:00 -3/19 AM 10:00</li>
+                                        <li>登記期間 : 3/11 AM10:00 -3/19 AM 11:00</li>
+                                        <li>活動說明 : 活動期間單筆消費滿3件(含)以上，且無取消或退貨，即可登記加碼送實付發票金額15%折扣金，單筆訂單最高領$1,000枚折扣金，每位會員活動期間最多填寫兩筆訂單，最高可獲得$2,000枚折扣金。(3C館、家電館、票券商品、旅遊館類商品不參加此活動)</li>
+                                        <li>範例說明:小森於活動期間共購買三筆實付金額$8,000元訂單，每筆訂單皆有三件商品，三筆訂單皆登錄活動頁面，總共獲得$2,000枚折扣金。</li>
+                                        
+                                    </ol>                                  
+                                    <h2>注意事項</h2>
+                                    <ol>
+                                        <li>折扣金可於森森購物指定通路(不含東森購物網)消費時選擇使用，折扣金1 枚可折抵現金 1 元，折抵上限詳本大項第2、3點說明。</li>
+                                        <li>購買商品時，除有特定商品或專案活動之限制外，折扣金可與折價券合併使用，惟合併折抵最高上限為商品應付金額之30%，且單筆上限金額為3,000，單日最高２萬的抵用限制。</li>
+                                        <li>結帳時若消費之商品可使用折扣金折抵，系統將自動從最接近有效期限之折扣金折抵(倘會員選擇以折扣金折抵消費金額者，則一律採全數折抵，會員無法選擇以部分折扣金折抵金額)，會員於購物車結帳時就能自動算出可使用的折扣金並進行折抵。</li>
+                                        <li>每次取得之折扣金依發送時間及該次活動規範，均有不同之有效期間，期限屆至，自動無效。</li>
+                                        <li>折扣金使用規則，請在參與獲取折扣金的活動前仔細閱讀活動說明。</li>
+                                        <li>票券類（包含餐券／服務票券／禮券與提貨券等預付儲值商品）、apple系列商品、旅遊、保險及汽機車…等專案商品，無法使用折扣金折抵。</li>
+                                        <li>商品是否適用折扣金，依結帳頁面(購物車)顯示或使用之系統設定為準。</li>
+                                        <li>折扣金限折抵指定商品類別之折扣金額，恕無法折抵售後服務、賠償等相關費用，如：運費、安裝處理費、商品缺損賠償等費用。</li>
+                                        <li>森森購物網保有活動變更、修改或終止本活動之權力，如有異動，修改後之內容將公佈在森森購物網上。</li>
+                                    </ol>
+
+                                </article>
+                            </section>
+                        </div>
+                    </li>
+
+                    <!--第五區-->
+                    <li id="eForm05" class="accordion-content">
+                        <a class="accordion-title">
+                            <div class="t-wt">
+                                <span class="t-icon t-sec5">U305</span>
+                                活動頁面商品登記送10%折扣金
+                            </div>
+                        </a>
+                        <div class="detail">
+                            <div class="bar">
+                                <a href="#note">
+                                    <div class="icon sec5">U305</div>
+                                    <div class="w">
+                                        <h1>活動頁面商品登記送10%折扣金</h1>
+                                        <p><span>活動/登記時間：</span>3/15 AM10:00-3/19AM10:00<br>
+                                            活動期間於活動頁面商品消費，且完成結帳無取消退貨，在活動期間於登記表單登記成功，即可獲得實付金額10%折扣金。每人活動期間最高可獲得回饋$1,000折扣金。
+                                        </p>
+                                        <h3 class="w open-comment">詳細活動辦法請點我</h3>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="iframe__container">
+                                <iframe src="https://event.etmall.com/etmall/bank_sinopac_1" frameborder="0"
+                                        scrolling="no"></iframe>
+                            </div>
+                        </div>
+                        <div class="overlay">
+                            <section class="note">
+                                <div class="close-icon-btn">
+                                    <div class="close-icon close-icon-r"></div>
+                                    <div class="close-icon close-icon-l"></div>
+                                </div>
+                                <article>
+                                    <hr>
+                                    <h2>【活動頁面商品登記送10%折扣金】-U305</h2>
+                                    <ol>
+                                        <li>活動期間 : 3/15 AM10:00-3/19 AM10:00</li>
+                                        <li>登記期間 : 3/15 AM10:00-3/19 AM11:00</li>
+                                        <li>活動說明:活動期間於活動頁面商品消費，且完成結帳無取消退貨，在活動期間於登記表單登記成功，即可獲得實付金額10%折扣金。每人活動期間最高可獲得回饋$1,000折扣金。</li>
+                                        <li>加給日期/效期:於4/1(一)12:00PM前加給，東森幣使用效期至5/1(三)23:59</li>
+                                        <li>範例說明:小明於活動期間至森森主活動頁面購買商品累積滿$12,000元，且於表單登記成功，即可獲得$1,000枚東森幣。</li>
+                                    </ol>                                  
+                                    <h2>注意事項</h2>
+                                    <ol>
+                                        <li>折扣金可於森森購物指定通路(不含東森購物網)消費時選擇使用，折扣金1 枚可折抵現金 1 元，折抵上限詳本大項第2、3點說明。</li>
+                                        <li>購買商品時，除有特定商品或專案活動之限制外，折扣金可與折價券合併使用，惟合併折抵最高上限為商品應付金額之30%，且單筆上限金額為3,000，單日最高２萬的抵用限制。</li>
+                                        <li>結帳時若消費之商品可使用折扣金折抵，系統將自動從最接近有效期限之折扣金折抵(倘會員選擇以折扣金折抵消費金額者，則一律採全數折抵，會員無法選擇以部分折扣金折抵金額)，會員於購物車結帳時就能自動算出可使用的折扣金並進行折抵。</li>
+                                        <li>每次取得之折扣金依發送時間及該次活動規範，均有不同之有效期間，期限屆至，自動無效。</li>
+                                        <li>折扣金使用規則，請在參與獲取折扣金的活動前仔細閱讀活動說明。</li>
+                                        <li>票券類（包含餐券／服務票券／禮券與提貨券等預付儲值商品）、apple系列商品、旅遊、保險及汽機車…等專案商品，無法使用折扣金折抵。</li>
+                                        <li>商品是否適用折扣金，依結帳頁面(購物車)顯示或使用之系統設定為準。</li>
+                                        <li>折扣金限折抵指定商品類別之折扣金額，恕無法折抵售後服務、賠償等相關費用，如：運費、安裝處理費、商品缺損賠償等費用。</li>
+                                        <li>森森購物網保有活動變更、修改或終止本活動之權力，如有異動，修改後之內容將公佈在森森購物網上。</li>
+                                    </ol>
+
+                                </article>
+                            </section>
+                        </div>
+                    </li>
+
+                    <!--第六區-->
+                    <li id="eForm06" class="accordion-content">
+                        <a class="accordion-title">
+                            <div class="t-wt">
+                                <span class="t-icon t-sec6">U306</span>
+                                累積消費登記送200元提貨券
+                            </div>
+                        </a>
+                        <div class="detail">
+                            <div class="bar">
+                                <a href="#note">
+                                    <div class="icon sec6">U306</div>
+                                    <div class="w">
+                                        <h1>累積消費登記送200元提貨券</h1>
+                                        <p><span>活動/登記時間：</span>3/19 AM10:00 -3/26AM10:00<br>
+                                            活動期間累積消費發票實付金額滿$3,000元(含)以上且購買4件商品(含)以上，於表單登記相關資料，符合資格者可獲得$200元提貨券。一個會員限得乙張，恕不累贈。每日限量100名。
+                                        </p>
+                                        <h3 class="w open-comment">詳細活動辦法請點我</h3>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="iframe__container">
+                                <iframe src="https://event.etmall.com/umall/bank_ctbc_3" frameborder="0"
+                                        scrolling="no"></iframe>
+                            </div>
+                        </div>
+                        <div class="overlay">
+                            <section class="note">
+                                <div class="close-icon-btn">
+                                    <div class="close-icon close-icon-r"></div>
+                                    <div class="close-icon close-icon-l"></div>
+                                </div>
+                                <article>
+                                    <hr>
+                                    <h2>【累積消費滿$3,000元且滿4件，登記送$200元提貨券】-U306</h2>
+                                    <ol>
+                                        <li>活動期間 : 3/19 AM10:00 -3/26 AM 10:00</li>
+                                        <li>登記期間 : 3/19 AM10:00 -3/26 AM 11:00</li>
+                                        <li>活動說明 :活動期間累積消費發票實付金額滿$3,000元(含)以上且購買4件商品(含)以上，於表單登記相關資料，未取消/退貨，符合資格者可獲得$200元提貨券。活動期間一個會員限得乙張$200元東森提貨券，恕不累贈。每日限量100名，活動期間共送出700名得獎者。</li>
+                                        <li>加給效期 : 無取消/退貨者將於2019/4/9(二)17:00匯入電子提貨券至會員帳戶內，提貨券無效期限制。</li>
+                                    </ol>                                  
+                                    <h2>注意事項</h2>
+                                    <ol>
+                                        <li>折扣金可於森森購物指定通路(不含東森購物網)消費時選擇使用，折扣金1 枚可折抵現金 1 元，折抵上限詳本大項第2、3點說明。</li>
+                                        <li>購買商品時，除有特定商品或專案活動之限制外，折扣金可與折價券合併使用，惟合併折抵最高上限為商品應付金額之30%，且單筆上限金額為3,000，單日最高２萬的抵用限制。</li>
+                                        <li>結帳時若消費之商品可使用折扣金折抵，系統將自動從最接近有效期限之折扣金折抵(倘會員選擇以折扣金折抵消費金額者，則一律採全數折抵，會員無法選擇以部分折扣金折抵金額)，會員於購物車結帳時就能自動算出可使用的折扣金並進行折抵。</li>
+                                        <li>每次取得之折扣金依發送時間及該次活動規範，均有不同之有效期間，期限屆至，自動無效。</li>
+                                        <li>折扣金使用規則，請在參與獲取折扣金的活動前仔細閱讀活動說明。</li>
+                                        <li>票券類（包含餐券／服務票券／禮券與提貨券等預付儲值商品）、apple系列商品、旅遊、保險及汽機車…等專案商品，無法使用折扣金折抵。</li>
+                                        <li>商品是否適用折扣金，依結帳頁面(購物車)顯示或使用之系統設定為準。</li>
+                                        <li>折扣金限折抵指定商品類別之折扣金額，恕無法折抵售後服務、賠償等相關費用，如：運費、安裝處理費、商品缺損賠償等費用。</li>
+                                        <li>森森購物網保有活動變更、修改或終止本活動之權力，如有異動，修改後之內容將公佈在森森購物網上。</li>
+                                    </ol>
+
+                                </article>
+                            </section>
+                        </div>
+                    </li>
+
+                    <!--第七區-->
+                    <li id="eForm07" class="accordion-content">
+                        <a class="accordion-title">
+                            <div class="t-wt">
+                                <span class="t-icon t-sec7">U307</span>
+                                累積消費登記送500枚折扣金
+                            </div>
+                        </a>
+                        <div class="detail">
+                            <div class="bar">
+                                <a href="#note">
+                                    <div class="icon sec7">U307</div>
+                                    <div class="w">
+                                        <h1>累積消費登記送500枚折扣金</h1>
+                                        <p><span>活動/登記時間：</span>3/26 AM10:00 -3/30 AM10:00<br>
+                                            <span>活動內容：</span>活動期間累積消費滿3件(含)以上且發票實付滿$5,000元(含)以上，無取消或退貨，即可登記送$500枚折扣金，每位會員最高領$500枚折扣金。
+                                        </p>
+                                        <h3 class="w open-comment">詳細活動辦法請點我</h3>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="iframe__container">
+                                <iframe src="https://event.etmall.com/etmall/bank_sinopac_1" frameborder="0"
+                                        scrolling="no"></iframe>
+                            </div>
+                        </div>
+                        <div class="overlay">
+                            <section class="note" name="note" id="note">
+                                <div class="close-icon-btn">
+                                    <div class="close-icon close-icon-r"></div>
+                                    <div class="close-icon close-icon-l"></div>
+                                </div>
+                                <article>
+                                    <hr>
+                                    <h2>【累積消費滿3件且滿$5,000，登記送$500枚折扣金】-U307</h2>
+                                    <ol>
+                                        <li>活動期間 : 3/26 AM10:00 -3/30 A10:00</li>
+                                        <li>登記期間 : 3/26 AM10:00 -3/30 A10:00</li>
+                                        <li>活動說明 :活動期間累積消費滿3件(含)以上且發票實付滿$5,000元(含)已上，無取消或退貨，即可登記送$500枚折扣金，每位會員最高領$500枚折扣金，折扣金將於4/15(一)前灌入，效期至5/15(三)23:59截止。(3C館、家電館、票券商品、旅遊館類商品不參加此活動)。</li>
+                                        <li>範例說明:小森於活動期間共購買三筆實付金額$2,000元訂單，每筆訂單皆有三件商品，三筆訂單皆登錄活動頁面，總共獲得$500折扣金。</li>
+                                    </ol>                                  
+                                    <h2>注意事項</h2>
+                                    <ol>
+                                        <li>折扣金可於森森購物指定通路(不含東森購物網)消費時選擇使用，折扣金1 枚可折抵現金 1 元，折抵上限詳本大項第2、3點說明。</li>
+                                        <li>購買商品時，除有特定商品或專案活動之限制外，折扣金可與折價券合併使用，惟合併折抵最高上限為商品應付金額之30%，且單筆上限金額為3,000，單日最高２萬的抵用限制。</li>
+                                        <li>結帳時若消費之商品可使用折扣金折抵，系統將自動從最接近有效期限之折扣金折抵(倘會員選擇以折扣金折抵消費金額者，則一律採全數折抵，會員無法選擇以部分折扣金折抵金額)，會員於購物車結帳時就能自動算出可使用的折扣金並進行折抵。</li>
+                                        <li>每次取得之折扣金依發送時間及該次活動規範，均有不同之有效期間，期限屆至，自動無效。</li>
+                                        <li>折扣金使用規則，請在參與獲取折扣金的活動前仔細閱讀活動說明。</li>
+                                        <li>票券類（包含餐券／服務票券／禮券與提貨券等預付儲值商品）、apple系列商品、旅遊、保險及汽機車…等專案商品，無法使用折扣金折抵。</li>
+                                        <li>商品是否適用折扣金，依結帳頁面(購物車)顯示或使用之系統設定為準。</li>
+                                        <li>折扣金限折抵指定商品類別之折扣金額，恕無法折抵售後服務、賠償等相關費用，如：運費、安裝處理費、商品缺損賠償等費用。</li>
+                                        <li>森森購物網保有活動變更、修改或終止本活動之權力，如有異動，修改後之內容將公佈在森森購物網上。</li>
+                                    </ol>
+
+
+                                </article>
+                            </section>
+                        </div>
+                    </li>
+
+                    
+                    <!--data end-->
+
+                </ul>
+            </div>
+
+        </div>
+    </main>
+</div>
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script src="index.js"></script>
+<script></script>
+<!--[if IE 9]>
+<script src="flexibility.js"></script>
+<script>flexibility(document.documentElement);</script>
+<![endif]-->
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>

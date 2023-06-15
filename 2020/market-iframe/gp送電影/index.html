@@ -1,0 +1,539 @@
+<meta name="viewport" content="width=device-width">
+<!-- ============== 輪播 start ============== -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+<!-- ============== 輪播 end ============== -->
+<link rel="stylesheet" href="popWindow.css">
+<!-- 共用CSS -->
+<link rel="stylesheet" href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.css">
+<style>
+    /* 調整logo位置大小 */
+    /* .logo {
+      top: 1%;
+      left: 1%;
+      width: 30%;
+      max-width: 220px;
+    } */
+
+    /* 連結測試 */
+    /* .sp__visual a{
+      filter: brightness(500%);
+    } */
+
+    /* 切片測試 */
+    /* .visual__fragment::before {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      border: 1px solid #00f;
+      pointer-events: none;
+    } */
+
+    /* 設定全畫面背景 */
+    body {
+        background-color: #041936;
+    }
+
+    .sp__main {
+        background: url(top200526bg.jpg) center 0 no-repeat;
+    }
+
+    /* ================= 輪播套件必添加CSS start ================= */
+    .bn-slider__wrap {
+        /*background-color: #ffa;*/
+        /* background: center 0 url("2560-07.jpg") no-repeat;
+        background-size: cover; */
+    }
+
+    .bn-slider__zone {
+        position: relative;
+        z-index: 0;
+        padding: 2% 3.5% 0 3.5%;
+        background: center 0 url("top200526_04.jpg") no-repeat;
+        background-size: 100% auto;
+    }
+
+    .bn-slider__slider--pager {
+        left: 50%;
+        bottom: 4%;
+        text-align: center;
+        transform: translateX(-50%);
+    }
+
+    .bn-slider__slider--pager .swiper-pagination-bullet {
+        margin: 0 4px;
+    }
+
+    .bn-slider__slider--pager .swiper-pagination-bullet-active {
+        background-color: #fff;
+    }
+
+    .bn-slider__slider--prev,
+    .bn-slider__slider--next {
+        top: calc(50% + 11px);
+        width: 14px;
+        height: 22px;
+        background-size: contain;
+    }
+
+    .bn-slider__slider--prev {
+        left: 3.5%;
+    }
+
+    .bn-slider__slider--next {
+        right: 3.5%;
+    }
+
+    .bn__slider {
+        width: 47%;
+    }
+    .bn__slider .swiper-slide img {
+        width: 100%;
+    }
+    @media screen and (min-width: 810px) {
+        .bn-slider__zone {
+            padding: 7px 0px 8px;
+            text-align: center;
+            background-size: 100% auto;
+        }
+
+        .bn__slider .swiper-slide {
+            width: calc(50% - 20px);
+        }
+
+        .swiper-slide img {
+            width: auto;
+        }
+    }
+
+    @media screen and (max-width: 360px) {
+        .bn-slider__slider--pager {
+            bottom: 3%;
+        }
+    }
+
+    /* ================= 輪播套件必添加CSS end ================= */
+    /* note */
+    /* ======================================== */
+    .note {
+        word-break: break-all;
+    }
+
+    .note article {
+        background-color: #041936;
+        font: normal 1rem/1.5 '微軟正黑體', Arial;
+        color: #7fb5ff;
+        padding-bottom: 3%;
+        padding-top: 5px;
+    }
+
+    .note article a {
+        display: inline;
+        color: #7fb5ff;
+        text-decoration: underline;
+    }
+
+    .note article a:visited {
+        color: #7fb5ff;
+    }
+
+    .note article a:hover {
+        color: #FFFFFF;
+    }
+
+    .note article a.but {
+        background-color: #7fb5ff;
+        border-radius: 5px;
+        padding: 3px 10px;
+        color: #041936;
+        text-decoration: none;
+    }
+
+    .note article a.but:hover {
+        background-color: #0044a6;
+        border: 1px solid #0044a6;
+        color: #7fb5ff;
+        text-decoration: none;
+    }
+
+    .note hr {
+        background-color: #0044a6;
+        width: 100%;
+        margin: 0;
+        margin-bottom: 15px;
+        height: 8px;
+        border: 0;
+    }
+
+    .note h2 {
+        color: #7fb5ff;
+        font-size: 1.2rem;
+        line-height: 1.5;
+        margin: 5px 3% 10px;
+    }
+
+    .note p {
+        line-height: 1.5;
+        padding: 0 5%;
+        margin: 0;
+    }
+
+    .note ol,
+    .note ul {
+        padding: 0;
+        margin: auto;
+        margin: 0 5% 0.25em 4%;
+        list-style: decimal;
+    }
+
+    .note li {
+        margin-bottom: 0.25em;
+    }
+
+    .note li > ol, .note li > ul {
+        margin-left: 1.5em;
+    }
+
+    .note li > ol {
+        list-style: lower-alpha;
+    }
+
+    .note ul {
+        list-style: disc;
+    }
+
+    .note ul.list--custsom, .note ol.list--custsom {
+        list-style: none;
+        margin-left: 0;
+    }
+
+    .note table {
+        color: #5b5b5b;
+        border: 1px solid #c0c0c0;
+        border-right: 0;
+        border-bottom: 0;
+        width: 90%;
+        margin: 1% 0 2% 5.5%;
+        background-color: #FFFFFF;
+        font-size: 0.9em;
+    }
+
+    .note table td {
+        border-right: 1px solid #c0c0c0;
+        border-bottom: 1px solid #c0c0c0;
+        padding: 5px;
+        text-align: center;
+    }
+
+    .note table tr:first-child td,
+    .note ol table tr:first-child td {
+        text-align: center;
+        background-color: #949494;
+        color: #f9f9f9;
+    }
+
+    .note ol table {
+        margin: 0;
+        width: 100%;
+        margin: 2% 0;
+    }
+
+    .note ol table td {
+        text-align: left;
+    }
+
+    .note ol table tr:first-child td {
+        white-space: nowrap;
+    }
+
+    .note ol li {
+        list-style: disc;
+    }
+
+    @media screen and (max-width: 1024px) {
+
+        .note ol,
+        .note ul {
+            margin: 0 3.5% 0 7%;
+        }
+
+        .note table {
+            margin: 0 3%;
+            width: 100%;
+        }
+
+        .note article a.but {
+            display: inline-block;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+
+</style>
+<div id="iconHome"></div>
+<div id="spWrap" class="sp__wallper">
+    <!-- 主視覺 -->
+    <main class="sp__main">
+        <section class="sp__visual">
+            <div class="layout--main">
+                <ul class="visual--auto clearfix">
+                    <li class="visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/">
+                            <img src="top200528_02.jpg">
+                        </a>
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <img src="top200528_03.jpg">
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <a href="#note">
+                            <img src="top200528_05.jpg">
+                        </a>
+                    </li>
+                    <li style="width: 100%;">
+                        <section class="bn-slider__wrap">
+                            <div class="layout--main">
+                                <div class="bn-slider__zone">
+                                    <div class="bn__slider swiper-container" id="bnSlider">
+                                        <ul class="swiper-wrapper">
+                                            <li class="swiper-slide">
+                                                <a href="#note">
+                                                    <img src="poster1.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li class="swiper-slide">
+                                                <a href="#note">
+                                                    <img src="poster2.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li class="swiper-slide">
+                                                <a href="#note">
+                                                    <img src="poster3.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li class="swiper-slide">
+                                                <a href="#note">
+                                                    <img src="poster4.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li class="swiper-slide">
+                                                <a href="#note">
+                                                    <img src="poster5.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li class="swiper-slide">
+                                                <a href="#note">
+                                                    <img src="poster6.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li class="swiper-slide">
+                                                <a href="#note">
+                                                    <img src="poster7.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li class="swiper-slide">
+                                                <a href="#note">
+                                                    <img src="poster8.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li class="swiper-slide">
+                                                <a href="#note">
+                                                    <img src="poster9.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li class="swiper-slide">
+                                                <a href="#note">
+                                                    <img src="poster10.jpg" alt="">
+                                                </a>>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </li>
+                    <li class="visual__fragment width--auto open-bigPhoto" data-dialog="movie--trailer">
+                        <a href="#">
+                            <img src="top200526_05.jpg" alt="白頭山預告">
+                        </a>
+                    </li>
+                    <li class="visual__fragment width--auto open-bigPhoto" data-dialog="movie--trailer-2">
+                        <a href="#">
+                            <img src="top200526_06.jpg" alt="82年生的金智英">
+                        </a>
+                    </li>
+                    <li class="visual__fragment width--auto open-bigPhoto" data-dialog="movie--trailer-3">
+                        <a href="#">
+                            <img src="top200526_07.jpg" alt="鋒迴路轉">
+                        </a>
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <a href="#note">
+                            <img src="top200526_08.jpg" alt="送GP+15日無限觀看">
+                        </a>
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202005/SP_1115533/w/index.html"
+                           target="_blank">
+                            <img src="top200526_09.jpg" alt="週週抽iPhone11">
+                        </a>
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202005/SP_1115533/w/index.html"
+                           target="_blank">
+                            <img src="top200526_10.jpg" alt="滿額抽6,180">
+                        </a>
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202005/SP_1115533/w/index.html"
+                           target="_blank">
+                            <img src="top200526_11.jpg" alt="滿額送$888">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <div class="open--window--wrap pop--videos" id="movie--trailer">
+            <iframe class="video--youtube pop--videos" id="video1" width="560" height="315"
+                    src="https://www.youtube.com/embed/3-u5aDJe-G4"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+        </div>
+        <div class="open--window--wrap pop--videos" id="movie--trailer-2">
+            <iframe class="video--youtube pop--videos" id="video2" width="560" height="315"
+                    src="https://www.youtube.com/embed/cnOhCVqxwhE"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+        </div>
+        <div class="open--window--wrap pop--videos" id="movie--trailer-3">
+            <iframe class="video--youtube pop--videos" id="video3" width="560" height="315"
+                    src="https://www.youtube.com/embed/5v4mP9ENxWo"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+        </div>
+    </main>
+    <section class="layout--main note" name="note" id="note">
+        <article>
+            <hr>
+            <h2>【消費送車庫GP+15日免費無限觀看序號(限量50,000組)】<a href="https://www.etmall.com.tw/Activity/Reg/220"
+                                                   class="but">點我登記</a></h2>
+            <ul>
+                <li>活動期間：109/5/25 AM10:00-109/6/19 AM10:00</li>
+                <li>活動說明：活動期間於東森購物網不限金額消費並於活動期間內完成登記，且無取消退貨，即可獲得車庫GP+15日免費無限觀看序號，限量50,000組。
+                    活動區間每會員限獲獎乙次。活動給獎區間請參閱下方表格：
+                </li>
+            </ul>
+            <h2>【兌換流程】<a href="#" class="but open-bigPhoto" data-dialog="img--detail">流程示意圖</a></h2></h2>
+            <ul>
+                <li>(1)至<a href="https://garageplay.tw/plus/15d?tk=sn-cpc-gppm-bd-etmall-15d"
+                           style="text-decoration: underline;">GP+兌換頁</a></li>
+                <li>(2)輸入優惠序號並依指示註冊完成後即可享15天線上無限看免費體驗</li>
+                <li>注意事項：<br/>
+                    <ol>
+                        <li>本電子序號為無償發行的優惠序號，不得轉售或轉贈、僅限使用一次、不得要求兌換現金或其他商品或服務，並僅限於兌換期限內使用完畢，逾期失效，遺失恕不補發。</li>
+                        <li>本優惠限新註冊會員使用，且無法與其他優惠合併使用。</li>
+                        <li>免費體驗結束後將恢復正常收費每月199，每期自動續訂，若服務不適合可自行取消續訂。</li>
+                        <li>免費體驗期間內如擬取消續訂，可於體驗期間首日起算72小時後執行取消續訂，另請於體驗期間屆滿至少72小時以前完成取消續訂，以免產生下一期帳單。</li>
+                        <li>詳細兌換辦法及注意事項以兌換平台網頁之規定與說明為準，平台廠商保留取消、終止、修改本活動的一切權利。</li>
+                    </ol>
+                </li>
+                <li>活動規則：<br/>
+                    <ol>
+                        <li>每會員於活動期間限登記乙次。</li>
+                        <li>此活動限東森購物網路通路。</li>
+                        <li>未於活動期間內完成登記者，恕無法參與活動。</li>
+                        <li>網連通會員恕無法參與活動。</li>
+                        <li>東森購物網保有活動變更、修改或終止本活動之權力，如有異動，修改後之內容將公佈在東森購物網上。</li>
+                    </ol>
+                </li>
+            </ul>
+        </article>
+    </section>
+    <div class="open--window--wrap pop--images images--xl" id="img--detail">
+        <img src="popstep.jpg" alt="banner">
+    </div>
+</div>
+<script src="https://polyfill.io/v3/polyfill.min.js"></script>
+
+<!-- ================= 輪播套件必添加start ================= -->
+
+<!--[if !IE]><!-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+<!--<![endif]-->
+<!--[if IE 9]>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/2.7.6/idangerous.swiper.min.js"></script>
+<![endif]-->
+<script>
+    function detectWindowWidth(width, functionWeb, functionMobile) {
+        var windowWidth = document.body.clientWidth;
+        if (windowWidth >= width) {
+            if (typeof (functionWeb) === "function") return functionWeb();
+        } else {
+            if (typeof (functionMobile) === "function") return functionMobile();
+        }
+    }
+    function detectApp(toDoInWebview, toDoInBrowser) {
+        var isUiWebview = /(WebView|(iPhone|iPod|iPad)(?!.*Safari\/)(?!.*Line\/)|Android.*(wv|.0.0.0))(?!.*Line\/)/gi.test(navigator.userAgent);
+        if (isUiWebview) return toDoInWebview;
+        else return toDoInBrowser;
+    }
+    function isIE9() {
+        if (navigator.appName.indexOf("Internet Explorer") != -1) {
+            // not IE10, IE11
+            var badBrowser = navigator.appVersion.indexOf("MSIE 1") == -1;
+            if (badBrowser) return true;
+        }
+    }
+    var bnSlider = new Swiper('#bnSlider', {
+        autoplay: isIE9() ? 2000 : {
+            delay: 2000,
+            disableOnInteraction: false,
+        },
+        allowTouchMove: true,
+        slidesPerView: 1,
+        calculateHeight: true, // ie9 prevent float wrong height
+        grabCursor: true,
+        initialSlide: Math.floor(Math.random() * document.querySelectorAll('#bnSlider .swiper-slide').length),
+        loop: true,
+        // spaceBetween: 30,
+        centeredSlides: false,
+        speed: 600,
+        navigation: {
+            nextEl: '#bnSliderNext',
+            prevEl: '#bnSliderPrev',
+        },
+        // breakpoints: {
+        //     959: {
+        //         slidesPerView: 1,
+        //     }
+        // },
+        pagination: isIE9() ? '#bnSliderPager' : {
+            el: '#bnSliderPager',
+            type: 'bullets',
+            clickable: true,
+        },
+        paginationClickable: true, // ie9 only
+    });
+    function bnSliderStart() {
+        bnSlider.init();
+        bnSlider.autoplay.start();
+    }
+    detectApp(window.addEventListener('load', bnSliderStart), bnSliderStart);
+    //    detectWindowWidth(960, null, detectAppInit);
+</script>
+<!-- ================= 輪播套件必添加end ================= -->
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script src="popWindow.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js"></script> -->
+<!-- 東森浮水印 -->
+<script id="scriptIconFloat"
+        src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105264/float-icon.js"></script>
+<!-- 森森浮水印
+<script id="scriptIconFloat" src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1102419/float-icon.js"></script> -->
+<!-- 共用JS -->
+<script id="generateScript"
+        src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.js"></script>

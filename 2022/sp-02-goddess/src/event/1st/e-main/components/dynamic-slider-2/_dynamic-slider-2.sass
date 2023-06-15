@@ -1,0 +1,23 @@
+.promo__group--dynamic-slider-2
+  overflow: hidden
+  +pos-set(relative, zero)
+  .decor__wrap
+    pointer-events: none
+    .promo__decor
+      +pos-set(absolute, under, 0%, 0%)
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 397px)
+  .promo__wrap
+    +aspect-ratio(948, 1334)
+    margin-top: 23%
+    .promo__zone
+      +bg-set(url("event/1st/e-main/components/dynamic-slider-2/bg-dynamic-slider-2.png"), 100%)
+      .promo__block
+        margin: 22.5% 4% 0
+        +breakpoint-min($min-width-xl)
+          margin-top: 25%
+        .swiper-container
+          .swiper-wrapper
+            .swiper-slide
+              padding: .5%
+

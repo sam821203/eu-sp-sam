@@ -1,0 +1,74 @@
+.promo__group--promo-section
+  +pos-set(relative, zero)
+  overflow: hidden
+  margin-top: -20%
+  +breakpoint-min($min-width-xl)
+    margin-top: -200px
+  .decor__wrap
+    pointer-events: none
+    .decor__item
+      &--title
+        +pos-set(absolute, zero, 0%, 10%)
+        width: 80%
+        +breakpoint-min($min-width-xl)
+          left: calc(50% - 388px)
+      &--item-1
+        +pos-set(absolute, base, 4%)
+        right: 24%
+        width: 9%
+        +breakpoint-min($min-width-xl)
+          top: 16px
+          right: calc(50% - 230px)
+      &--item-2
+        +pos-set(absolute, base, 14%)
+        right: 20%
+        width: 8%
+        +breakpoint-min($min-width-xl)
+          top: 85px
+          right: calc(50% - 270px)
+      +breakpoint-min($min-width-xl)
+        width: auto
+  .promo__wrap
+    +bg-set(url("event/3rd/e-main/components/promo-section/bg-promo-section.png"), 100%)
+    margin-top: 7%
+    .promo__zone
+      +aspect-ratio(932, 453)
+      .promo__block
+        padding: 12.5% 1% 0
+        +breakpoint-min($min-width-xl)
+          padding: 125px 10px 0 20px
+        .event__block
+          display: flex
+          justify-content: space-between
+          li
+            width: 24.5%
+            &:hover
+              transition: all 0.2s
+              transform: translateY(-2%)
+              filter: brightness(120%)
+    
+@keyframes slideInDown
+  0%
+    transform: translate3d(0, -100%, 0)
+    visibility: visible
+  to
+    transform: translateZ(0)
+
+@keyframes flipInY
+  0%
+    transform: perspective(400px) scaleX(1) translateZ(0) rotateY(180deg)
+    animation-timing-function: ease-out
+  40%
+    transform: perspective(400px) scaleX(1) translateZ(50px) rotateY(-20deg)
+    filter: brightness(110%)
+    animation-timing-function: ease-out
+  50%
+    transform: perspective(400px) scaleX(1) translateZ(50px) rotateY(-10deg)
+    filter: brightness(110%)
+    animation-timing-function: ease-in
+  80%
+    transform: perspective(400px) scale3d(1, 1, 1) translateZ(0) rotateY(0deg)
+    animation-timing-function: linear
+  to
+    transform: perspective(400px) scaleX(1) translateZ(0) rotateY(0deg)
+    animation-timing-function: linear

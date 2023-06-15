@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<head>
+	<link rel="stylesheet" href="animate.css">
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		* {
+ 		 box-sizing: border-box; }
+  		*:before, *:after {
+    		box-sizing: border-box; }
+	    a {
+	    	display: block;
+	    	text-decoration: none;
+	    }
+		header a, section a {
+			line-height: 0;
+		}
+	    h1 {
+	    	line-height: 0;
+	    }
+		ul {
+			list-style: none;
+		}
+		img {
+			border: 0;
+		}
+		main, header, footer, section {
+			display: block;
+		}
+		body {
+			width: 100%;
+			min-width: 1260px;
+			margin: 0;
+  			padding: 0;
+			background: center top #34b8e9 url(bg.jpg) fixed;
+		}
+		body, td, th {
+		font-family: Arial, Helvetica, LiHei, "Microsoft JhengHei", PMingLiU, "微軟正黑體", "新細明體", sans-serif;
+		}
+		.clearfix:after {
+			content: '';
+			display: block;
+			clear: both;
+			*zoom: 1;
+		}
+
+		.sp__wrap {
+			position: relative;
+			width: 100%;
+			overflow: hidden;
+		}
+
+		.sp--1260 {
+			position: relative;
+			width: 1260px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+/* ================= bg-dec ================= */
+
+		.desc {
+			position: fixed;
+			transform-style: preserve-3d; 
+		}
+
+		.in-desc {
+			transition: 0.3s transform;
+		}
+
+		.in-desc:hover {
+			transform: translateZ(30px);
+			animation-play-state: paused;
+		}
+
+		.desc1 {
+			top: 63px;
+			left: calc(50% - 900px);
+		}
+
+		.in-desc1 {
+			width: 151px;
+			height: 151px;
+			background-image: url(desc1.png);
+			
+		}
+
+		.desc2 {
+			top: 327px;
+			left: calc(50% - 825px);
+		}
+
+		.in-desc2 {
+			width: 168px;
+			height: 168px;
+			background-image: url(desc2.png);
+			animation: 2s floating infinite linear;
+		}
+
+		.desc3 {
+			top: 525px;
+			left: calc(50% - 985px);
+
+		}
+
+		.in-desc3 {
+			width: 192px;
+			height: 192px;
+			background-image: url(desc3.png);
+		}
+
+		.desc4 {
+			top: 180px;
+			left: calc(50% - 658px);
+		}
+
+		.in-desc4 {
+			width: 177px;
+			height: 177px;
+			background-image: url(desc4.png);
+		}		
+
+		.desc5 {
+			top: 405px;
+			left: calc(50% - 268px);
+		}
+
+		.in-desc5 {
+			width: 107px;
+			height: 107px;
+			background-image: url(desc5.png);
+		}		
+
+		.desc6 {
+			top: -10px;
+			left: calc(50% - 15px);
+		}
+
+		.in-desc6 {
+			width: 158px;
+			height: 159px;
+			background-image: url(desc6.png);
+		}
+
+		.desc7 {
+			top: 345px;
+			left: calc(50% + 513px);
+		}
+
+		.in-desc7 {
+			width: 176px;
+			height: 176px;
+			background-image: url(desc7.png);
+		}
+
+		.desc8 {
+			top: 85px;
+			left: calc(50% + 645px);
+		}
+
+		.in-desc8 {
+			width: 209px;
+			height: 209px;
+			background-image: url(desc8.png);
+			animation: 2s floating infinite linear;
+		}
+
+		.desc9 {
+			top: 610px;
+			left: calc(50% + 765px);
+		}
+
+		.in-desc9 {
+			width: 131px;
+			height: 131px;
+			background-image: url(desc9.png);
+		}
+
+		.desc10 {
+			top: 320px;
+			left: calc(50% + 835px);
+		}
+
+		.in-desc10 {
+			width: 173px;
+			height: 173px;
+			background-image: url(desc10.png);
+		}
+
+		.swing {
+			transform-origin: center;
+		}
+
+		@keyframes floating {
+			from, 50%, to {transform: translateY(0px);}
+			25% {transform: translateY(15px);}
+			75% {transform: translateY(-15px);}
+		}
+
+		.burst {
+			animation: 1s burst;
+		}
+
+		@keyframes burst {
+			from { 
+				top: 250px;
+				left: 50%;
+			}
+		}
+/* ================= header ================= */
+		.sp-logo {
+			position: absolute;
+			z-index: 20;
+			top: 30px;
+			left: 20px;
+		}
+
+		.side-info {
+			position: absolute;
+			z-index: 30;
+			top: 525px;
+			right: 2.8%;
+			width: 163px;
+		}
+
+		.side-info img {
+			width: 100%;
+		}
+
+		.side-info a {
+			position: absolute;
+			z-index: 21;
+			left: 0;
+			width: 100%;
+		}
+
+		.side-info a:nth-child(2) {
+			top: 0;
+			height: 30%;
+			padding: 10px;
+		}
+
+		.side-info a:nth-child(2) img {
+			animation: 1.5s 2s self-scale infinite ease-in-out;
+		}
+
+		@keyframes self-scale {
+			from, to {
+				transform: scale(1);
+			}
+			50% {
+				transform: scale(1.12);
+			}
+		}	
+/* ================= main-visual ================= */
+		.sp-title {
+			position: relative;
+			z-index: 1;
+			padding-top: 40px;
+			height: 525px;
+		}
+
+		.main-title {
+			margin-left: 13.4%;
+		}
+
+		.main-title > img {
+			display: inline;
+		}
+/* ================= subtitle ================= */
+		.subtitle {
+			position: absolute;
+			z-index: 5;
+			top: 38px;
+			right: 4.4%;
+			width: 469px;
+			height: 491px;
+			padding-left: 10px;
+			text-align: center;
+		}
+
+		.sub-content {
+			width: 469px;
+			height: 491px;
+			padding-top: 135px; 
+			background: url(bg-subtitle.png) no-repeat;
+			transform-origin: center;
+		}
+
+		.sub-desc {
+			position: absolute;
+			z-index: 4;			
+		}
+
+		.sub1 {
+			top: -5px;
+			right: 0;
+			width: 78px;
+			height: 104px;
+			background-image: url(bg-sub1.png);
+		}
+
+		.sub2 {
+			bottom: 0;
+			left: 0;
+			width: 71px;
+			height: 97px;
+			background-image: url(bg-sub2.png);
+		}
+
+		.subtitle a {
+			width: 90%;
+			height: 95%;
+			border-radius: 50%;
+		}
+
+		.sub-content:hover {
+			animation: 1s swing;
+		}
+
+/* ================= main0 ================= */
+		.main0 {
+			position: relative;
+			z-index: 2;
+			width: 100%;
+			min-width: 1260px;
+			padding-top: 15px;
+			text-align: center;
+		}
+
+		.main0--info-a {
+			position: absolute;
+			z-index: 1;
+			top: -130px;
+			left: -210px;
+			width: 600px;
+			height: 350px;
+		}
+
+		.main0--info-a img {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 100%;
+		}
+
+		.main0--info-a img:first-child {
+			z-index: 3;
+			
+		}
+		.main0--info-a img:last-child {
+			z-index: 1;
+		}
+
+		.main0-title {
+			display: inline;
+			margin-left: 12%;
+		}
+
+/* ================= main-content ================= */
+		.sp-content	{
+			position: relative;
+			z-index: 0;
+			top: 0;
+		}
+
+		.main-info {
+			position: relative;
+			z-index: 0;
+		}
+
+		.main--info-a {
+			position: relative;
+			z-index: 2;
+			float: left;
+			background: center url(bg-main.png) no-repeat;
+			background-size: contain; 
+			border-radius: 50%;
+			text-align: center;
+			transition: all 0.2s ease-in-out;
+		}
+
+		.main--info-a img {
+			display: inline-block;
+			transition: all 0.3s;
+			
+		}
+
+		.main--info-a:nth-child(1) {
+			width: 370px;
+			height: 370px;
+			padding-top: 45px;
+			white-space: nowrap;
+		}
+
+		.main--info-a:nth-child(1) img {
+			width: 80%;
+			margin-top: calc(50% - 170px);
+		}
+
+		.main--info-a:nth-child(2) {
+			z-index: 10;
+			width: 360px;
+			height: 360px;
+			margin-left: -30px;
+		}
+
+		.main--info-a:nth-child(2) img {
+			width: 70%;
+			margin-top: calc(50% - 125px);
+			margin-left: 20px;
+
+		}
+
+		.main--info-a:nth-child(3) {
+			width: 315px;
+			height: 315px;
+			margin-left: -30px;
+		}
+
+		.main--info-a:nth-child(3) img {
+			width: 75%;
+			margin-top: calc(50% - 105px);  
+		}
+
+		.main--info-a:nth-child(4) {
+			width: 260px;
+			height: 260px;
+			margin-left: -35px;
+			margin-top: 35px;
+		}
+
+		.main--info-a:nth-child(4) img {
+			width: 80%;
+			margin-top: calc(50% - 85px);  
+		}
+
+		.main--info-a:hover {
+			animation: 1s jello;
+		}
+
+		.main--info-a:nth-child(4):hover {
+			animation: 1s rubberBand;
+		}
+
+		.main--info-a:hover img {
+			transform: scale(0.99) translateY(-15px);
+			transform-origin: center;
+			filter: brightness(105%) hue-rotate(5deg);
+		}
+
+/* ================= table hover setting ================= */
+		td[width^="2"] {
+			transition: all 0.3s;
+		}
+
+		td[width^="2"] a {
+			transition: all 0.3s;
+		}
+
+		td[width^="2"] td {
+			transition: all 0.3s;
+		}
+
+		td[width^="2"]:hover {
+			transform: translateY(-6px);
+			box-shadow: 0 5px 10px rgba(0,0,0,0.2), 0 3px 3px rgba(0,0,0,0.35);
+		}
+		td[width^="2"]:hover a {
+			color: #34b8e9 !important;
+		}
+
+		td[width^="2"]:hover td {
+			color: #34b8e9 !important;
+		}
+    </style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+	<main id="spWrap" class="sp__wrap">
+			<div class="desc desc1 ani ani1" data-tilt="">
+				<div class="in-desc in-desc1"></div>
+			</div>
+			<div class="desc desc2 ani ani2" data-tilt="">
+				<div class="in-desc in-desc2"></div>
+			</div>
+			<div class="desc desc3 ani ani3" data-tilt="">
+				<div class="in-desc in-desc3"></div>
+			</div>
+			<div class="desc desc4 ani ani4" data-tilt="">
+				<div class="in-desc in-desc4"></div>
+			</div>
+			<div class="desc desc5 ani ani5" data-tilt="">
+				<div class="in-desc in-desc5"></div>
+			</div>
+			<div class="desc desc6 ani ani6" data-tilt="">
+				<div class="in-desc in-desc6"></div>
+			</div>
+			<div class="desc desc7 ani ani7" data-tilt="">
+				<div class="in-desc in-desc7"></div>
+			</div>
+			<div class="desc desc8 ani ani8" data-tilt="">
+				<div class="in-desc in-desc8"></div>
+			</div>
+			<div class="desc desc9 ani ani9" data-tilt="">
+				<div class="in-desc in-desc9"></div>
+			</div>
+			<div class="desc desc10 ani ani10" data-tilt="">
+				<div class="in-desc in-desc10"></div>
+			</div>
+		<header>
+			<div class="sp--1260">
+				<div class="sp-logo">
+					<a href="https://www.u-mall.com.tw/" title="Umall森森購物網" target="_top">
+						<img src="logo.png" alt="Umall森森購物網">
+					</a>
+			  	</div>
+				<aside class="side-info">
+					<img src="line.png" alt="LINE's & APP's QR-code">
+					<a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201805/SP_1101796/index.html" target="_blank"><img src="line-content.png" alt="LINE購物優惠"></a>
+				</aside>
+				<div class="subtitle">
+					<a id="ASRC" href="" title="點我購買APP專屬優惠商品！">
+						<div class="sub-content">
+							<img id="IMGSRC" src="product.png" alt="APP專屬優惠商品">
+						</div>
+					</a>						
+					<div class="sub-desc sub1"></div>
+					<div class="sub-desc sub2"></div>
+				</div>
+				<div class="sp-title">
+					<h1 class="main-title" title="立夏最殺 -- Umall森森購物網">
+						<img src="title.png" alt="立夏最殺 -- Umall森森購物網">
+					</h1>
+				</div>
+			</div>
+		</header>
+		</div>
+		<section class="main0">
+			<div class="sp--1260">
+				<a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201805/SP_1101847/index.html" class="main0--info-a" title="點我進入抓抓樂活動頁面！">
+					<img id="main0Img" src="main0-1.png" alt="抓抓樂機台">
+					<img src="main0-2.png" alt="抓抓樂獎項">	
+				</a>
+				<img class="main0-title" src="main0.png" alt="下單玩瘋狂抓抓樂抽豪禮">
+			</div>
+		</section>
+		<section class="sp-content">
+			<div class="sp--1260">
+				<div class="main-info clearfix">
+					<a href="http://www.u-mall.com.tw/SimpleTemplate.aspx?SubPage=DMSetting/Final/201805/SP_1101844/index.html" class="main--info-a" title="單日累計送">
+						<img src="main1.png" alt="單日累計送">
+					</a>
+					<a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201805/SP_1101846/index.html" class="main--info-a" title="會員專屬優惠">
+						<img src="main2.png" alt="會員專屬優惠">
+					</a>
+					<a href="http://www.u-mall.com.tw/SimpleTemplate.aspx?SubPage=DMSetting/Final/201805/SP_1101674/index.html" class="main--info-a" title="刷卡享好康"><img src="main3.png" alt="刷卡享好康"></a>
+					<a href="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201805/SP_1101897/index.html" class="main--info-a" title="新北政府補助"><img src="main4.png" alt="新北政府補助"></a>
+				</div>
+			</div>
+		</section>
+	</main>
+<script src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/201504/SP_1019163/Includes/jquery-1.7.2.js"></script>
+<script src="tilt.jquery.min.js"></script>	
+<script>
+	function apngControl() {
+		var main0 = document.querySelector('.main0');
+		var img = document.querySelector('#main0Img');
+		main0.addEventListener('mouseenter', function(){
+				img.src = 'main0-3.png';
+		});
+		main0.addEventListener('mouseleave', function(){
+				img.src = 'main0-1.png';
+		});	
+	}
+	apngControl();
+
+	function moreRandom() {
+		function randomSelect(e){
+			return Math.floor(Math.random() * e);	
+		};
+		var $ani = $('.ani');
+		var animationName = ['bounce', 'rubberBand', 'shake', 'swing', 'wobble', 'jello'];
+		var animationNum = animationName.length;
+		var className;
+
+		$ani.on('mouseenter', function(){
+			$(this).removeClass(function (index, css) {
+   				className = (css.match (/(^|\s)ani\S+/g) || []).join(' ').split(' ')[1];
+   				return className;
+			});
+		});
+
+		$ani.on('mouseleave', function(){
+			$(this).addClass(className);
+		});
+
+		setInterval(function(){
+			$ani.removeClass('animated bounce rubberBand shake swing wobble jello');
+			$('.ani' + randomSelect($ani.length)).addClass('animated').addClass(animationName[randomSelect(animationNum)]);
+		}, randomSelect(2000) + 2000);
+	}
+	requestAnimationFrame(moreRandom);
+
+	$(document).ready(function() {
+		var $ani = $('.ani');
+
+		$ani.addClass('burst');
+
+		setTimeout(function(){
+			$ani.removeClass('burst');
+			$ani.css('z-index', 10);
+
+			$(window).on('scroll', function(){
+				var top = $ani.offset().top;
+				var $desc1 = $('.desc1');
+				var $desc2 = $('.desc2');
+				var $desc3 = $('.desc3');
+				var $desc8 = $('.desc8');
+				var $desc9 = $('.desc9');
+				var $desc10 = $('.desc10');
+
+				if (top > 80) {
+					$ani.css('z-index', -1);
+
+					function addZ(e) {
+						e.css('z-index', 10);
+					}
+
+					addZ($desc1);
+					addZ($desc2);
+					addZ($desc3);
+					addZ($desc8);
+					addZ($desc9);
+					addZ($desc10);
+
+				} else {
+					$ani.css('z-index', 10);
+				}
+			});
+		}, 1000);
+	});
+</script>		
+</body>
+</html>

@@ -1,0 +1,73 @@
+.promo__event
+  margin-top: -5%
+  padding: 8.5% 4.5% 0.3%
+  +bg-set(url(~event/3rd/u-main/components/promo-event/bg-promo.png), contain, 2vw)
+  .event__wrap
+    +display-flex
+    flex-wrap: wrap
+    justify-content: center
+    padding: 0
+    // 固定位置模式
+    // li
+    //   +flex(1, 0, 50%)
+    //   padding: 0.5%
+    //   transition: all 0.5s
+    //   &:hover,
+    //   &:active
+        // filter: contrast(160%)
+        // img
+          // opacity: 0
+          // transition: all 0.5s
+          // transform: rotateY(360deg)
+
+    //- 位置不一模式
+    li
+      // padding-left: 1%
+      // padding-right: 1%
+      height: 22vw
+      overflow: hidden
+      // background-color: #f00
+      margin-right: 1%
+      &:first-child,
+        +flex(1, 0, 45%)
+      &:nth-child(2),
+        +flex(1, 0, 27%)
+      &:last-child,
+        +flex(1, 0, 24%)
+        margin-right: 0
+      a
+        +pos-set(relative, zero)
+        width: 100%
+        height: 100%
+        transform-origin: top left
+        &:before
+          content: ''
+          +pos-set(absolute, base)
+          +bg-set(url(~event/3rd/u-main/components/promo-event/decoration-promo.png), 100%)
+          top: 1.2vw
+          left: 1.8vw
+          padding-top: 6vw
+          width: 6vw
+        &:hover,
+        &:active
+          transition: all 0.5s
+          transform: scale(1.5)
+          &:before
+            transition: all 0.5s
+            transform: rotate(360deg)
+
+  +breakpoint-min($min-width-xl)
+    padding: 77px 65px 0 68px
+    background-position-x: 46px
+    background-size: 908px auto
+    .event__wrap
+      li
+        // padding-left: 3px
+        // padding-right: 3px
+        height: 200px
+        a
+          &:before
+            top: 10px
+            left: 15px
+            padding-top: 50px
+            width: 50px

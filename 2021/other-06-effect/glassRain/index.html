@@ -1,0 +1,169 @@
+﻿<!DOCTYPE HTML>
+<html lang='zh-tw'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 預設css 不用複製 -->
+  <style>
+    /* reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    *:before,
+    *:after {
+      box-sizing: border-box;
+    }
+
+    a {
+      display: block;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    img {
+      border: 0;
+    }
+
+    main, article, aside, details, figcaption, figure,
+    footer, header, hgroup, menu, nav, section {
+      display: block;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-size: 14px;
+      font-family: PingFangTC-regular, Roboto, "LiHei Pro", "Source Han Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, "Microsoft JhengHei", sans-serif;
+    }
+
+    /*預設css 不用複製*/
+    body {
+      /* 自行修正背景顏色 */
+      background-color: #77a7dc;
+    }
+
+    img {
+      width: 100%;
+    }
+  </style>
+
+  <!--/* 步驟1 加毛玻璃 CSS */-->
+  <!--/* 步驟1 加毛玻璃 CSS end */-->
+  <style>
+    .glass__rain--layout {
+      position: relative;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    #canvas {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+    .plane img {
+      display: none;
+    }
+
+    /*-- 手機版：--*/
+    /* 設定背景圖片大小＆位置 */
+    .glass__rain--layout,
+    .plane {
+      width: 100%;
+      height: 40vh;
+      top: 0;
+      left: 0;
+    }
+
+    /* 設定圖片大小 */
+    .glass__rain--effect {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 80%;
+      height: auto;
+      transform: translateX(-50%);
+    }
+
+    /*-- 電腦版：--*/
+    @media screen and (min-width: 960px) {
+      .glass__rain--layout,
+      .plane {
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+      }
+
+      .glass__rain--effect {
+        left: 50%;
+        top: 0;
+        width: auto;
+        height: auto;
+        transform: translateX(-50%);
+      }
+    }
+  </style>
+</head>
+<body>
+<!--範例 https://codepen.io/AlainBarrios/details/xeLjKx-->
+<div id="spWrap" class="sp__wallper">
+  <main class="sp__main">
+    <section class="sp__visual visual__block1">
+      <div class="layout--main">
+
+        <!-- 步驟2 加入毛玻璃的html 會希望放在最前面 -->
+        <div id="wrap-texture" class="glass__rain--layout">
+          <!-- div that will hold our WebGL canvas id改名要去css/js裡面改 -->
+          <div id="canvas"></div>
+          <div class="plane">
+            <!-- 背景圖 -->
+            <img data-sampler="dispImage" id="texture" src="bg__demo.jpg" crossorigin="anonymous"/>
+          </div>
+          <!-- 大標 -->
+          <img class="glass__rain--effect" src="title-1.png" alt="">
+        </div>
+        <!-- 步驟2 end -->
+
+        <!-- 自動組版切片 -->
+        <ul class="visual--auto clearfix" style="margin-top: 100px;">
+          <li class="visual__fragment width--auto">
+            <img data-sampler="dispImage" id="texture" src="bg__demo.jpg">
+          </li>
+          <li class="visual__fragment width--auto">
+            <img data-sampler="dispImage" id="texture" src="bg__demo.jpg">
+          </li>
+          <li class="visual__fragment width--auto">
+            <img data-sampler="dispImage" id="texture" src="bg__demo.jpg">
+          </li>
+          <li class="visual__fragment width--auto">
+            <img data-sampler="dispImage" id="texture" src="bg__demo.jpg">
+          </li>
+          <li class="visual__fragment width--auto">
+            <img data-sampler="dispImage" id="texture" src="bg__demo.jpg">
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- 步驟3 在最後面加入javascript，記得要把去檔案夾中複製到SP頁的檔案夾裡面 -->
+<script src="curtains.min.js"></script>
+<script src="effects-glassRain.js"></script>
+<!-- 步驟3 end -->
+</body>
+</html>

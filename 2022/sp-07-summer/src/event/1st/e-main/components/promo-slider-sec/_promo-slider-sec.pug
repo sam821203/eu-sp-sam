@@ -1,0 +1,53 @@
+-
+  var promoSliderItem = [
+    {
+      link: "https://www.etmall.com.tw/i/23442074" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-sec/item/p-sec-item-1.png",
+      alt: "買大送小laura mercier蘿拉蜜思 煥顏透明蜜粉(29g)#透明色 加贈Anna sui許願精靈淡香水(5ml)",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3363974" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-sec/item/p-sec-item-2.png",
+      alt: "一家人益生菌S強酵升級版100包",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3481149" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-sec/item/p-sec-item-3.png",
+      alt: "2入防油皮革長地墊",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2427974" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-sec/item/p-sec-item-4.png",
+      alt: "奧莉薇閣26吋行李箱",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3430120" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-sec/item/p-sec-item-5.png",
+      alt: "SAMSUNG Galaxy M33 5G (6G/128G)",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3246708" ,
+      imgSrc: "event/1st/e-main/components/promo-slider-sec/item/p-sec-item-6.png",
+      alt: "Microsoft微軟 設計師精簡鍵盤",
+    },
+  ]
+
+
+section.promo__group.promo__group--promo-slider-sec.m-bottom--lg(data-title="買一送一")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--title
+        img(src="event/1st/e-main/components/promo-slider-sec/title-promo-slider-sec.png", alt="")
+      .decor__item.decor__item--left#promoSliderSecLeft
+        img(src="event/1st/e-main/components/promo-slider-sec/decor-promo-sec-left.png", alt="")
+      .decor__item.decor__item--right#promoSliderSecRight
+        img(src="event/1st/e-main/components/promo-slider-sec/decor-promo-sec-right.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          .promo__slider.swiper-container#promoSliderSecItem
+            ul.swiper-wrapper
+              each data in promoSliderItem
+                li.swiper-slide
+                  a(href= data.link, title=data.alt)
+                    img(src= data.imgSrc, alt=data.alt)

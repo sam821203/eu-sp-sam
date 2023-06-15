@@ -1,0 +1,39 @@
+// hero section
+// ===========================
+@import "~event/1st/e-main/components/hero-section/_hero-section"
+
+// // ==========================================================================
+// // api components
+// // ==========================================================================
+@import "~event/1st/e-main/components/loyalty-card/_loyalty-card"
+@import "~event/1st/e-main/components/collect-exchange/_collect-exchange"
+@import "~event/1st/e-main/components/collect-buy/_collect-buy"
+@import "~event/1st/e-main/components/note/_note"
+
+// // ==========================================================================
+// // rd components
+// // ==========================================================================
+@import "~event/1st/e-main/components/rd-part/_rd-part"
+
+// // ==========================================================================
+// // Page
+// // ==========================================================================
+body
+  +pos-set(relative, zero)
+  background-color: $main-e-background-color-1st
+  // background: $main-e-background-color-1st center 0 url("~event/1st/e-main/pages/index/bg.jpg") no-repeat
+  // background-size: 100%
+
+  +breakpoint-min($min-width-xl)
+    background: $main-e-background-color-1st center 0 url("~event/1st/e-main/pages/index/bg-web.jpg") no-repeat
+    background-size: auto
+
+.sp__wrap
+  +pos-set(relative, zero)
+
+.sp__wrap a
+  display: block
+
+
+
+

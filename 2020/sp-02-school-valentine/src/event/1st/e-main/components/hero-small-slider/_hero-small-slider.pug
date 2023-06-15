@@ -1,0 +1,19 @@
+- var bankLink = {etmall: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209902/SP_1106649/w/index.html", umall: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201909/SP_1104316/w/index.html"}
+- var bankInfo = isU ? bankLink.umall : bankLink.etmall
+
+.promo__slider.hero__slider.wow
+  #sliderSmall.swiper-container
+    ul.swiper-wrapper
+      li.swiper-slide
+        h2.hero__title.hero__title--sub.block--center
+          a(href= bankInfo, title="花旗滿15,000送1,200")
+            img(src="~event/1st/e-main/components/hero-small-slider/items/sub-title-1.png", alt="花旗滿15,000送1,200")
+      li.swiper-slide
+        h2.hero__title.hero__title--sub.block--center
+          a(href= bankInfo, title="永豐滿20,000送1,800")
+            img(src="~event/1st/e-main/components/hero-small-slider/items/sub-title-2.png", alt="永豐滿20,000送1,800")
+      li.swiper-slide
+        h2.hero__title.hero__title--sub.block--center
+          a(href= bankInfo, title="花旗滿30,000送3,000")
+            img(src="~event/1st/e-main/components/hero-small-slider/items/sub-title-3.png", alt="花旗滿30,000送3,000")
+

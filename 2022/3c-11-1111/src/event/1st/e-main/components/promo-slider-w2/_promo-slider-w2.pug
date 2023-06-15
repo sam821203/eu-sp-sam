@@ -1,0 +1,124 @@
+-
+  var promoSliderW2Item = [
+    { // 10/31-11/4
+      startDateIndex: "1",
+      child:[
+        {
+          link: "https://www.etmall.com.tw/i/3612604" ,
+          imgSrc: "event/1st/e-main/components/promo-slider-w2/item/p-w2-item-1.png",
+          alt: "ASUS Vivobook 17吋 i5 8G 512G 大螢幕筆電",
+        },
+        {
+          link: "javascript:;" ,
+          imgSrc: "event/1st/e-main/components/promo-slider-w2/item/p-w2-item-2.png",
+          alt: "ACER Aspire 5 17.3吋 i5 8G 512G 大尺寸筆電",
+        },
+      ]
+    },
+    { // 11/4-11/7
+      startDateIndex: "5",
+      child:[
+        {
+          link: "https://www.etmall.com.tw/i/3598697" ,
+          imgSrc: "event/1st/e-main/components/promo-slider-w2/item/p-w2-item-3.png",
+          alt: "(4G/64G) Samsung 三星 Galaxy Tab A8 X200 平板",
+        },
+        {
+          link: "javascript:;" ,
+          imgSrc: "event/1st/e-main/components/promo-slider-w2/item/p-w2-item-4.png",
+          alt: "(4G/64G)Lenovo 聯想 Tab M10 Plus 平板",
+        },
+      ]
+    },
+    { // 11/7-11/10
+      startDateIndex: "8",
+      child:[
+        {
+          link: "https://www.etmall.com.tw/i/3459663" ,
+          imgSrc: "event/1st/e-main/components/promo-slider-w2/item/p-w2-item-5.png",
+          alt: "(免運)五合一快充編織充電線(PD/QC/Lighting/TYPE-C/Micro USB) ",
+        },
+        {
+          link: "javascript:;" ,
+          imgSrc: "event/1st/e-main/components/promo-slider-w2/item/p-w2-item-6.png",
+          alt: "",
+        },
+      ]
+    },
+    { // 11/10-11/11
+      startDateIndex: "11",
+      child:[
+        {
+          link: "https://www.etmall.com.tw/i/3725735" ,
+          imgSrc: "event/1st/e-main/components/promo-slider-w2/item/p-w2-item-7.png",
+          alt: "【SHOKZ】 OPENRUN骨傳導藍牙運動耳機(S803)",
+        },
+        {
+          link: "javascript:;" ,
+          imgSrc: "event/1st/e-main/components/promo-slider-w2/item/p-w2-item-8.png",
+          alt: "",
+        },
+      ]
+    },
+    { // 11/11-11/12
+      startDateIndex: "12",
+      child:[
+        {
+          link: "https://www.etmall.com.tw/i/3432053" ,
+          imgSrc: "event/1st/e-main/components/promo-slider-w2/item/p-w2-item-9.png",
+          alt: "Apple iPhone 13 128G",
+        },
+        {
+          link: "javascript:;" ,
+          imgSrc: "event/1st/e-main/components/promo-slider-w2/item/p-w2-item-10.png",
+          alt: "",
+        },
+      ]
+    },
+    { // 11/12-11/13
+      startDateIndex: "13",
+      child:[
+        {
+          link: "https://www.etmall.com.tw/i/3470552" ,
+          imgSrc: "event/1st/e-main/components/promo-slider-w2/item/p-w2-item-11.png",
+          alt: "Redmi Note 11S 4G手機 6.43吋 八核心(6G/128G)",
+        },
+        {
+          link: "javascript:;" ,
+          imgSrc: "event/1st/e-main/components/promo-slider-w2/item/p-w2-item-12.png",
+          alt: "",
+        },
+      ]
+    },
+    { // 11/13-11/14
+      startDateIndex: "14",
+      child:[
+        {
+          link: "https://www.etmall.com.tw/i/3505617" ,
+          imgSrc: "event/1st/e-main/components/promo-slider-w2/item/p-w2-item-13.png",
+          alt: "Apple iPad mini 64G 8.3吋 WiFi 2022",
+        },
+        {
+          link: "javascript:;" ,
+          imgSrc: "event/1st/e-main/components/promo-slider-w2/item/p-w2-item-14.png",
+          alt: "",
+        },
+      ]
+    },
+  ]
+
+section.promo__group.promo__group--promo-slider-w2.m-bottom--lg
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          .promo__slider.swiper-container#promoSliderW2Item
+            each data, index in promoSliderW2Item
+              ul.swiper-wrapper.container--promo-slider-w2
+                .date--index= data.startDateIndex
+                
+                - var dataChild = data.child
+                each child, index in dataChild
+                    li.swiper-slide
+                      a(href= child.link, title=child.alt)
+                        img(src= child.imgSrc, alt=child.alt)

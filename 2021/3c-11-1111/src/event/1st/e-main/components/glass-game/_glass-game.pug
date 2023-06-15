@@ -1,0 +1,58 @@
+-
+  var pokeItemData = [
+    {
+      imgSrc: "event/1st/e-main/components/glass-game/game/glass-1.png",
+    },
+    {
+      imgSrc: "event/1st/e-main/components/glass-game/game/glass-1.png",
+    },
+    {
+      imgSrc: "event/1st/e-main/components/glass-game/game/glass-1.png",
+    },
+    {
+      imgSrc: "event/1st/e-main/components/glass-game/game/glass-1.png",
+    },
+    {
+      imgSrc: "event/1st/e-main/components/glass-game/game/glass-1.png",
+    },
+    {
+      imgSrc: "event/1st/e-main/components/glass-game/game/glass-1.png",
+    },
+    {
+      imgSrc: "event/1st/e-main/components/glass-game/game/glass-1.png",
+    },
+    {
+      imgSrc: "event/1st/e-main/components/glass-game/game/glass-1.png",
+    },
+    {
+      imgSrc: "event/1st/e-main/components/glass-game/game/glass-1.png",
+    },
+  ]
+
+section.promo__group.promo__group--poking.m-bottom--lg(data-title="踩玻璃")
+  .layout--main
+    .promo__wrap
+      .promo__zone
+        .promo__title
+          img(src="event/1st/e-main/components/glass-game/title-3.png", alt="") 
+        #pokeItem.promo__block
+          each data in pokeItemData
+            .promo__box
+              a
+                img(src= data.imgSrc, alt= alt)
+                .promo__box--top
+                  img(src="event/1st/e-main/components/glass-game/game/glass-1-break.png", alt="")
+                .foot--print
+                  img(src="event/1st/e-main/components/glass-game/glass-footprint.png", alt="")
+                //- .promo__box--product
+                //-   img(src="event/1st/e-main/components/glass-game/game/glass-1-p1.png", alt="")
+                
+        #pokeItemWrap.popup__wrap
+          //- .popup__overlay
+          .popup__block
+              a(href="")
+                img(src="assets/e/img/1.png", alt="")
+                //- img(src="", alt="")
+                //- .popup__alert 成功!
+        .item--click#clickButton
+

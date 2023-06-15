@@ -1,0 +1,14 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero__wrap
+  +pos-set(relative, zero)
+  overflow: hidden
+
+  .hero__zone
+    +aspect-ratio(960, 1140)
+    .hero__box
+      display: flex
+      .hero__item
+        &:hover
+          filter: brightness(1.2)

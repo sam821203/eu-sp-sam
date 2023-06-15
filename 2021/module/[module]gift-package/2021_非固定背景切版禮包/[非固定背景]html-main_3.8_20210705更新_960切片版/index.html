@@ -1,0 +1,521 @@
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!-- ============== 輪播 start ============== -->
+<link rel="stylesheet" href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116205/swiper.min.css">
+<!-- ============== 輪播 end ============== -->
+<!-- 共用CSS -->
+<link rel="stylesheet" href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116205/animate.min.css">
+<link rel="stylesheet" href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.css">
+<!-- [電梯步驟1] 電梯CSS，非線上版可以在裡面換顏色/圖片名稱 -->
+<link rel="stylesheet" href="sp-elevator.css">
+<!-- [電梯步驟1] 電梯CSS END -->
+<style>
+  /* reset */
+  /* ======================================== */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  *:before, *:after {
+    box-sizing: border-box;
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  img {
+    width: 100%;
+    border: 0;
+    vertical-align: middle;
+  }
+
+  article,
+  main,
+  nav,
+  section {
+    display: block;
+  }
+
+  body {
+    margin: 0;
+    background-color: #f4d7d3;
+    font-family: PingFangTC-regular, Roboto, "LiHei Pro", "Source Han Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, "Microsoft JhengHei", sans-serif;
+  }
+
+  .sp--960 {
+    position: relative;
+    z-index: 0;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* 主視覺 */
+  /* ======================================== */
+  .logo a,
+  .sp__visual a {
+    display: block;
+    /* 連結測試用 */
+    border: 1px solid #f00;
+  }
+
+  /* .logo {
+      position: absolute;
+      z-index: 1;
+      top: 1%;
+      left: 1%;
+      width: 30%;
+      max-width: 220px;
+  } */
+
+  /* 設定背景 */
+  .sp__main {
+    background: url(bg.jpg) center 0 no-repeat;
+  }
+
+  /* 設定前景 */
+  .sp__visual {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+  }
+
+  .visual__anchor,
+  .visual__main,
+  .visual__nav {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .visual__anchor {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }
+
+  .visual__main a,
+  .visual__nav a {
+    flex-grow: 1;
+  }
+
+  /* 設定高度，記得總和要100% */
+  /* 主視覺 */
+  .visual__main {
+    height: 45%;
+  }
+
+  /* 各nav */
+  .visual__nav.nav1 {
+    height: 30%;
+  }
+
+  .visual__nav.nav2 {
+    height: 25%;
+  }
+
+  /* 如果需要個別設定每塊寬度(可不設) */
+  /* 主視覺 */
+  /* 如果設100%後面的就會掉下去 */
+  .visual__main a:nth-child(1) {
+    flex-grow: 0;
+    width: 100%;
+  }
+
+  /* 各視覺nav */
+  .visual__nav.nav1 a:nth-child(1) {
+    flex-grow: 0;
+    width: 100%;
+  }
+
+  .visual__nav.nav2 a:nth-child(1) {
+    flex-grow: 0;
+    width: 34%;
+  }
+
+  .visual__nav.nav2 a:nth-child(2) {
+    flex-grow: 0;
+    width: 32%;
+  }
+
+  .visual__bg {
+    display: flex;
+  }
+
+  .visual__bg img {
+    display: inline;
+    width: auto;
+  }
+
+  /* 組版nav */
+  /* ======================================== */
+  .build__anchor {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  /* 設定組版nav樣式 */
+  .build__anchor {
+    border: 1px solid #fee;
+  }
+
+  .build__anchor a {
+    display: block;
+    padding: 10px 5px;
+    color: #fff;
+    background-color: #faa;
+    border: 1px solid #fee;
+    font-size: 30px;
+    transition: transform 0.16s;
+  }
+
+  .build__anchor a:hover,
+  .build__anchor a:active {
+    filter: brightness(105%) contrast(110%);
+    transform: scale(1.02);
+  }
+
+  /* 設定組版nav寬度(12.5% = 一列8個) */
+  .build-nav__item {
+    flex: 1 0 12.5%;
+    line-height: 200%;
+  }
+
+  @media screen and (max-width: 820px) {
+    /* 設定手機置底選項高度(可不設) */
+    /*body {
+      padding-bottom: 108px;
+    }*/
+    .build__nav {
+      position: fixed;
+      z-index: 5;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    /* 設定手機組版nav樣式(可不設) */
+    .build__anchor {
+      border: 1px solid #faa;
+    }
+
+    .build__anchor a {
+      color: #faa;
+      background-color: #fff;
+      border: 1px solid #faa;
+      font-size: 18px;
+    }
+
+    /* 設定手機組版nav寬度(可不設) */
+    .build-nav__item {
+      flex: 1 0 25%;
+    }
+  }
+
+  /* 自適應banner組 */
+  /* ======================================== */
+  .banner__title {
+    height: 65px;
+    background: center top no-repeat;
+  }
+
+  .banner__wrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .banner__item {
+    transition: all 0.3s;
+  }
+
+  .banner__item img {
+    width: 100%;
+  }
+
+  /* 設定一列2個(50%，3個就33.33%，4個就25%) */
+  .bn-w2m1 .banner__item {
+    flex: 1 0 50%;
+  }
+
+  /* 設定點下去與hover動畫 */
+  .bn-w2m1 .banner__item:hover,
+  .bn-w2m1 .banner__item:active {
+    /* 變小(<1時變小) */
+    transform: scale(0.98);
+    /* 亮度調暗(<100%時變暗) */
+    /*filter: brightness(95%);*/
+  }
+
+  /* 設定一列4個 */
+  .bn-w4m2 .banner__item {
+    flex: 1 0 25%;
+  }
+
+  /* 設定點下去與hover動畫 */
+  .bn-w4m2 .banner__item:hover,
+  .bn-w4m2 .banner__item:active {
+    /* 變大(>1時變大) */
+    transform: scale(1.05);
+    /* 亮度調亮(>100%時變亮) */
+    filter: brightness(115%);
+  }
+
+  @media screen and (max-width: 1024px) {
+    /* 設定手機時一列2個 */
+    .bn-w4m2 .banner__item {
+      flex: 1 0 50%;
+    }
+  }
+
+  /* 設定一列3個 */
+  .bn-w3m1 .banner__item {
+    flex: 1 0 33.33%;
+  }
+
+  /* 設定點下去與hover動畫 */
+  .bn-w3m1 .banner__item:hover,
+  .bn-w3m1 .banner__item:active {
+    /* 變大(>1時變大) */
+    transform: scale(1.05);
+    /* 亮度調亮(>100%時變亮) */
+    filter: brightness(115%);
+  }
+
+  @media screen and (max-width: 1024px) {
+    /* 設定手機時一列1個 */
+    .bn-w3m1 .banner__item {
+      flex: 1 0 100%;
+    }
+  }
+
+  /*-- 動畫小物件 --*/
+  .animate__wrap {
+    position: relative;
+    z-index: 1;
+  }
+
+  /*-- 手機版：
+          1. 設定物件距離左邊與上邊的位置，單位可以使用"%"或"vw"
+          2. width 建議電腦版可以使用auto，手機版則可使用%調整
+   --*/
+  .animate__wrap .animate__obj--01 {
+    position: absolute;
+    top: 1vw;
+    left: 1vw;
+    width: auto;
+  }
+
+  /*-- 電腦版：
+          設定物件距離左邊與上邊的位置，單位可以使用"px"，左邊可以挑整clac()後面的px值
+          width 建議電腦版可以使用auto，手機版則可使用%調整
+   --*/
+  @media screen and (min-width: 960px) {
+    .animate__wrap .animate__obj--01 {
+      top: 0;
+      left: calc(50% - 480px);
+      width: auto;
+    }
+  }
+</style>
+
+<!-- [電梯步驟2] 電梯 html -->
+<div class="elevatorHome js--main--dialog" id="elevatorHome"></div>
+<div class="navRightBar" id="navRightBar" style="display: none;"></div>
+<!-- 右電梯關閉，需打開把display:none拿掉
+  測試右邊電梯是否正確方法：打開 <div data-title="a1"></div>，如果畫面出現a1代表正確，右電梯需要跳錨點連到宮格，請企劃自行在宮格的替代文字裡面填寫文字 -->
+<!-- [電梯步驟2] 電梯 html END -->
+
+<div id="spWrap" class="sp__wallper">
+  <!-- <div id="barHome"></div> -->
+  <!-- 動畫小物件 -->
+  <div class="animate__wrap">
+    <!--<img class="animate__obj--01" src="圖片檔名" alt="圖片提示文字">-->
+    <!--<img class="animate__obj--02" src="圖片檔名" alt="圖片提示文字">-->
+    <!--<img class="animate__obj--03" src="圖片檔名" alt="圖片提示文字">-->
+    <!-- 如果有多組物件，可以複製命名animate__obj--0{數字} css 也複製一份就可以一直往下生 -->
+  </div>
+  <!-- 主視覺 -->
+  <main class="sp__main">
+    <div class="sp--960">
+      <div class="layout--main home--logo">
+        <a href="https://www.etmall.com.tw"><img class="logo" src="umall-logo.png" alt="東森購物"></a>
+      </div>
+      <div class="sp__visual">
+        <div class="visual__anchor">
+          <div class="visual__main">
+            <a href="https://1.com"></a>
+          </div>
+          <div class="visual__nav nav1">
+            <a href="https://2.com"></a>
+          </div>
+          <div class="visual__nav nav2">
+            <a href="https://6.com"></a>
+            <a href="https://7.com"></a>
+            <a href="https://8.com"></a>
+          </div>
+        </div>
+        <!-- 可以選擇一張大圖做背景，或是切成許多小圖作背景(並行載入會比較快) -->
+        <img src="index.jpg">
+      </div>
+    </div>
+  </main>
+  <!-- 組版用nav -->
+  <nav class="build__nav sp--960">
+    <ul class="build__anchor">
+      <li class="build-nav__item"><a href="#a1"><span>王朝</span></a></li>
+      <li class="build-nav__item"><a href="#a2"><span>馬漢</span></a></li>
+      <li class="build-nav__item"><a href="#a3"><span>張龍</span></a></li>
+      <li class="build-nav__item"><a href="#a4"><span>趙虎</span></a></li>
+      <li class="build-nav__item"><a href="#a5"><span>翻天鼠</span></a></li>
+      <li class="build-nav__item"><a href="#a6"><span>徹地鼠</span></a></li>
+      <li class="build-nav__item"><a href="#a7"><span>鑽山鼠</span></a></li>
+      <li class="build-nav__item"><a href="#a8"><span>錦毛鼠</span></a></li>
+    </ul>
+  </nav>
+  <!-- 自適應banner組 -->
+  <section class="sp--960 bn-w4m2">
+    <div class="banner__title" style="background-image: url(bar.png);"></div>
+    <ul class="banner__wrap">
+      <li class="banner__item">
+        <a href="<!--[LINK1]-->">
+          <img src="menu_01.png" alt="banner">
+        </a>
+      </li>
+      <li class="banner__item">
+        <a href="<!--[LINK2]-->">
+          <img src="menu_02.png" alt="banner">
+        </a>
+      </li>
+      <li class="banner__item">
+        <a href="<!--[LINK3]-->">
+          <img src="menu_03.png" alt="banner">
+        </a>
+      </li>
+      <li class="banner__item">
+        <a href="<!--[LINK4]-->">
+          <img src="menu_04.png" alt="banner">
+        </a>
+      </li>
+    </ul>
+  </section>
+  <!-- 自適應banner組 -->
+  <section class="sp--960 bn-w2m1">
+    <div class="banner__title" style="background-image: url(bar.png);"></div>
+    <ul class="banner__wrap">
+      <li class="banner__item">
+        <a href="<!--[LINK1]-->">
+          <img src="800x300_1.jpg" alt="banner">
+        </a>
+      </li>
+      <li class="banner__item">
+        <a href="<!--[LINK2]-->">
+          <img src="800x300_2.jpg" alt="banner">
+        </a>
+      </li>
+      <li class="banner__item">
+        <a href="<!--[LINK3]-->">
+          <img src="800x300_3.jpg" alt="banner">
+        </a>
+      </li>
+      <li class="banner__item">
+        <a href="<!--[LINK4]-->">
+          <img src="800x300_4.jpg" alt="banner">
+        </a>
+      </li>
+    </ul>
+  </section>
+  <!-- 自適應banner組 -->
+  <section class="sp--960 bn-w2m1">
+    <div class="banner__title" style="background-image: url(bar.png);"></div>
+    <ul class="banner__wrap">
+      <li class="banner__item">
+        <a href="<!--[LINK1]-->">
+          <img src="rwd-nav_1.jpg" alt="banner">
+        </a>
+      </li>
+      <li class="banner__item">
+        <a href="<!--[LINK2]-->">
+          <img src="rwd-nav_2.jpg" alt="banner">
+        </a>
+      </li>
+      <li class="banner__item">
+        <a href="<!--[LINK3]-->">
+          <img src="rwd-nav_3.jpg" alt="banner">
+        </a>
+      </li>
+    </ul>
+  </section>
+  <!-- 自適應banner組 -->
+  <section class="sp--960 bn-w3m1">
+    <div class="banner__title" style="background-image: url(bar.png);"></div>
+    <ul class="banner__wrap">
+      <li class="banner__item">
+        <a href="<!--[LINK1]-->">
+          <img src="menu_01.png" alt="banner">
+        </a>
+      </li>
+      <li class="banner__item">
+        <a href="<!--[LINK2]-->">
+          <img src="menu_02.png" alt="banner">
+        </a>
+      </li>
+      <li class="banner__item">
+        <a href="<!--[LINK3]-->">
+          <img src="menu_03.png" alt="banner">
+        </a>
+      </li>
+    </ul>
+  </section>
+</div>
+<!--<script src="https://polyfill.io/v3/polyfill.min.js"></script>-->
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<!-- ============== 輪播 start ============== -->
+<script src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116205/swiper.min.js"></script>
+<!-- ============== 輪播 end ============== -->
+<!-- <script src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116205/lazyload.js"></script> -->
+<!-- 東森浮水印
+<script id="scriptIconFloat"
+        src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107916/float-icon.js"></script> -->
+<!-- 森森浮水印
+<script id="scriptIconFloat" src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1104381/float-icon.js"></script> -->
+<!-- 旅遊置頂bar
+<script id="scriptAddBn" src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106742/add-bn.js"></script> -->
+<!-- 共用JS -->
+<script id="generateScript"
+        src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.js"></script>
+<!--[電梯步驟3] 電梯 JS
+    data-elevator.js 是填寫下方欄位資料的js
+    sp-elevator.js   是共用的線上js
+-->
+<script src="data-elevator.js"></script>
+<script src="https://media.etmall.com.tw/sp/10382/sp-elevator.js"></script>
+<!-- [電梯步驟3] 電梯 JS END -->
+<!-- ============== 輪播 start ============== -->
+<script>
+  var footerSlider = new Swiper(".swiper-container", {
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false,
+    },
+    autoHeight: true,
+    grabCursor: true,
+    loop: true,
+    speed: 1000,
+  });
+
+</script>
+<!-- ============== 輪播 end ============== -->

@@ -1,0 +1,36 @@
+- var heroBankData = {etmall: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201908/SP_1107836/w/index.html", umall: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201908/SP_1104315/w/index.html"}
+- var heroBankInfo = isU ? heroBankData.umall : heroBankData.etmall
+
+section.hero__wrap
+  .layout--main
+    .hero__zone
+      #heroBlock.hero__block
+        .hero__box.wow
+          //- 標題
+          h1.hero__title.hero__title--main.block--center.wow(title="好禮鼠不完")
+            img(src="~event/3rd/u-main/components/hero-section/title.png", alt="好禮鼠不完")
+          .title-decoration__wrap
+            .title__decoration.title__decoration--top
+              .decoration--butterfly
+            .title__decoration.title__decoration--bottom.wow
+              .decoration--car
+
+          //- 副標
+          include /event/3rd/u-main/components/hero-small-slider/_hero-small-slider
+
+        .block-decoration.decoration--left
+        .block-decoration.decoration--right
+
+  .promo__block
+    .layout--main
+      .promo__zone
+        //- 行銷誘因
+        include /event/3rd/u-main/components/promo-event/_promo-event
+
+        //- 商品輪播
+        //- include /event/3rd/u-main/components/goods-slider-flip/_goods-slider-flip
+        include /event/3rd/u-main/components/goods-slider/_goods-slider
+
+  include /event/3rd/u-main/components/background-decoration/_background-decoration.pug
+
+

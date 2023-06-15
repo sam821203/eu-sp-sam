@@ -1,0 +1,150 @@
+// // ==========================================================================
+// // main
+// // ==========================================================================
+.hero__wrap
+  +pos-set(relative, zero)
+  width: 100%
+  overflow: hidden
+  // +bg-set(url("~event/1st/e-main/components/hero-section/bg-hero-web.jpg"), 100%)
+  // overflow: hidden
+  // +breakpoint-min($min-width-xl)
+  //   background-size: auto
+
+  .hero__block
+    +pos-set(relative)
+    padding-top: 5%
+    padding-bottom: 16%
+
+    // +breakpoint-min($min-width-xl)
+    //   padding-bottom: 135px
+
+  .hero__box
+    +pos-set(relative)
+    // margin-left: 5%
+    // width: 90%
+    // background: center 100% url("~event/1st/e-main/components/hero-section/bg-title-1.png") no-repeat, center 100% url("~event/1st/e-main/components/hero-section/bg-title-2.png") no-repeat
+    // background-size: 100%
+
+    // +breakpoint-min($min-width-xl)
+    //   background-size: auto
+    .hero__title--main
+      +pos-set(relative, third)
+      margin-left: 28%
+      width: 72%
+      &.animated
+        animation: bounceInUp 1s both
+      +breakpoint-min($min-width-xl)
+        // margin-left: 87px
+        // width: 100%
+
+  .decoration__title
+    +pos-set(absolute, base)
+    width: 100%
+    // transform: scale(1.1)
+    pointer-events: none
+    &.decoration--top
+      top: -56%
+      right: 7%
+      width: 58%
+      transform-origin: top right
+      animation: key-wind-rotate 12s infinite ease-in-out
+      +breakpoint-min($min-width-xl)
+        top: -290px
+        right: 4%
+        width: 60%
+
+    &.decoration--goddess
+      top: -5%
+      left: -42%
+      width: 75%
+      img
+        &:last-child
+          +pos-set(absolute, base)
+          bottom: 14%
+          right: 28%
+          width: 20%
+          animation: grow 1.5s 1.5s both
+      &.animated
+        animation: fadeInLeft 2s 0.2s both
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 860px)
+        img
+          &:last-child
+            bottom: 85px
+            right: 240px
+
+  .hero__title
+    &--main
+      +pos-set(relative, zero)
+      margin-left: 7%
+      width: 80%
+      // text-align: center
+      transform-origin: center
+
+  .decoration--cloud
+    +pos-set(absolute, second)
+    bottom: 0
+    left: 0
+    width: 100%
+    height: 90%
+    background-image: url(~event/1st/e-main/components/hero-section/decoration-cloud.png)
+    background-size: cover
+    animation: cloud-move 40s infinite alternate ease-in-out
+    +breakpoint-min($min-width-xl)
+      height: 665px
+      background-position-y: 100px
+      background-size: auto
+
++key-wind-rotate(-6, 8)
+
+@keyframes cloud-move
+  0%, 10%
+    background-position-x: 150%
+  90%, 100%
+    background-position-x: -150%
+
+@keyframes grow
+  0%
+    opacity: 0
+    transform: scale(0)
+  50%
+    opacity: 1
+    transform: scale(10%)
+  95%
+    transform: scale(1.2)
+100%
+    transform: scale(100%)
+
+@keyframes bounceInUp
+  0%, 60%, 75%, 90%, to
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+  0%
+    opacity: 0
+    transform: translate3d(0, 50px, 0) scale(0)
+  60%
+    opacity: 1
+    transform: translate3d(0, -10px, 0) scale(1.1)
+  75%
+    opacity: 1
+    transform: translate3d(0, 5px, 0) scale(.985)
+  90%
+    opacity: 1
+    transform: translate3d(0, -2px, 0) scale(1.05)
+  to
+    opacity: 1
+    transform: translateZ(0)
+
+@keyframes fadeInLeft
+  0%
+    opacity: 0
+    transform: translateX(-50px)
+
+  opacity: 1
+    transform: translateX(0)
+
+// TODO: 如果hero和promo要共用主視覺時的共用區塊背景設定
+  // .promo__zone
+    // margin-top: 8%
+    //background-color: $gray-deep-light
+    // +breakpoint-min($min-width-xl)
+      // background-color: transparent

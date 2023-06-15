@@ -1,0 +1,61 @@
+- var p = true
+- var pet = p ? 'dog' : 'cat'
+
+section.promo__group.promo__group--intro
+  .layout--main
+    //- .promo__head.m-bottom--sm
+    //-   include include/_player-title
+    .promo__body
+      .player__dynamic.player__dynamic--intro
+        .intro__wrap
+          .intro__view
+            .pic__wrap
+              .slider__container
+                ul.slider__wrapper
+                  - var n = 0
+                  while n < 3
+                    li.slider__item
+                      .player__pic
+                        .pic__box(style='background-image: url(../assets/fake-' + pet + '.jpg)')
+                    - n++
+              .slider__ui
+                .slider__pager-wrap
+                  .slider__pager.active
+                  .slider__pager
+                  .slider__pager
+          .intro__content
+            .info__wrap
+              .info__team
+                .team__label
+
+              .player__name 20字20字20字20字20字20字20字20字20字20字
+              .player__number
+                span 編號：
+                span 5847852
+              .player__info
+                .info__intro
+                  .intro__label.shape--gray 介紹
+
+                  .intro__text
+                    p 牧羊犬是一類受人馴養的犬種，屬於活潑且聰明的犬隻。原來的培養目的為了對家畜，尤其是羊隻進行守衛與集趕。除了原先的作業用途之外，現今的許多牧羊犬成為了家中的寵物。
+                .info__votes
+                  .player__votes
+                    .votes__label.shape--gray 目前票數
+                    .votes__value 90,847
+            .vote__wrap
+              .vote__box
+                button.btn--vote.btn--radius.btn--blur 許願
+              .share__box
+                a(href="", title="分享再加票！").btn--share.btn--radius.btn--blur 分享
+              .share__text
+                span 不限次數分享，分享
+                  span 1
+                  | 次加
+                  span 1
+                  | 票，最多加
+                  span 5
+                  | 票
+      .back__wrap
+        a(href="", title="返回列表").btn--back.btn--radius.btn--blur.btn--gray
+          img(src="~components/intro-section/icon-back.svg", alt="返回列表")
+          span 返回列表

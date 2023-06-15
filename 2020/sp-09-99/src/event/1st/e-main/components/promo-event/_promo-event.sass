@@ -1,0 +1,39 @@
+.promo__event
+  +pos-set(relative, base)
+  margin-top: -3.2%
+  .event__wrap
+    display: flex
+    flex-wrap: wrap
+    padding: 1% 2.5%
+    li
+      padding: 0.5%
+      a
+        text-align: center
+        transition: all 0.5s
+        &:hover,
+        &:active
+          transform: translateY(2%)
+      &:nth-child(1)
+        flex: 0 0 49%
+      &:nth-child(2)
+        flex: 1 0 49%
+        a:first-child
+          padding-bottom: 2%
+      &:nth-child(3)
+        display: flex
+        flex: 0 0 100%
+        a:first-child
+          padding-right: 1%
+      &:nth-child(4)
+        flex: 0 0 100%
+
+      &:nth-child(5),
+        flex: 1 0 48.1%
+      &:nth-child(6)
+        flex: 1 0 47.9%
+
+    +breakpoint-min($min-width-xl)
+      padding: 1% 50px
+
+
+

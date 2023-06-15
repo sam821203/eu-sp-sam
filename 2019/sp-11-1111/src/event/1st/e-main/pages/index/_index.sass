@@ -1,0 +1,59 @@
+// // ==========================================================================
+// // Plugins
+// // ==========================================================================
+// // @import "vendors/animate"
+@import "~vendors/style/swiper-slider-custom"
+
+// // ==========================================================================
+// // components
+// // ==========================================================================
+
+// hero section
+// ===========================
+@import "~event/1st/e-main/components/hero-section/_hero-section"
+@import "~event/1st/e-main/components/background-decoration/_background-decoration"
+
+// other components
+// ===========================
+@import "~event/1st/e-main/components/hero-small-slider/_hero-small-slider"
+@import "~event/1st/e-main/components/goods-slider-flip/_goods-slider-flip"
+@import "~event/1st/e-main/components/promo-event/_promo-event"
+@import "~event/1st/e-main/components/scroll-x-section/_scroll-x-section"
+@import "~event/1st/e-main/components/tab-section/_tab-section"
+@import "~event/1st/e-main/components/countdown-section/_countdown-section"
+@import "~event/1st/e-main/components/bn-special/_bn-special"
+@import "~event/1st/e-main/components/game-map/_game-map"
+
+// @import "~components/goods-slider/_goods-slider"
+// @import "~components/video-section/_video-section.sass"
+// @import "~components/bank-section/_bank-section"
+// @import "~components/event-w4m2/_event-w4m2"
+// @import "~components/bn-event/_bn-event"
+// // ==========================================================================
+// // Page
+// // ==========================================================================
+body
+  +pos-set(relative, zero)
+  background-color: $main-e-background-color
+  +breakpoint-min($min-width-xl)
+    +bg-set(url("~event/1st/e-main/pages/index/bg-down.jpg"), 100%, center, 116px, repeat-y, $main-e-background-color)
+    .icon__home
+      right: -50px
+
+.parallax__background
+  +pos-set(absolute, under)
+  padding-top: 63.54%
+  width: 100%
+  +bg-set(url("~event/1st/e-main/pages/index/bg-960.jpg"), 100%)
+  animation: flash-burst 2s infinite
+  pointer-events: none
+  will-change: scroll-position
+
+  +breakpoint-min($min-width-xl)
+    padding-top: 23.82%
+    +bg-set(url("~event/1st/e-main/pages/index/bg.jpg"), contain, 55%)
+.sp__wrap
+  +pos-set(relative, base)
+
+.sp__wrap a
+  display: block

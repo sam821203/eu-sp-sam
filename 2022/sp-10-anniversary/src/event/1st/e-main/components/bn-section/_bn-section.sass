@@ -1,0 +1,55 @@
+.bn-section
+  overflow: hidden
+  .decor__wrap
+    // padding-top: 10%
+    // +breakpoint-min($min-width-xl)
+      // padding-top: 6%
+    .decor__item
+      pointer-events: none
+      &--left
+        +pos-set(absolute, base, 11%, 3%)
+        width: 31%
+        &.active
+          // z-index: map-get($zindex, base)
+          // animation: move-poli-right 3.2s ease-in forwards
+        +breakpoint-min($min-width-xl)
+          top: 105px
+          left: calc(50% - 470px)
+          width: auto
+      &--right
+        +pos-set(absolute, under, 0%)
+        right: 0%
+        width: 92%
+        +breakpoint-min($min-width-xl)
+          right: calc( 50% - 460px )
+      +breakpoint-min($min-width-xl)
+        width: auto
+  .promo__wrap
+    .promo__zone
+      +aspect-ratio(960, 1088)
+      .promo__block
+        .promo__box
+          text-align: center
+          cursor: pointer
+          &:hover
+            transition: all 0.6s ease
+            transform: translateY(-1%)
+            filter: brightness(1.2)
+
+@keyframes up-down
+  0%, 100%
+    transform: translateY(5%)
+  50%
+    transform: translateY(-5%)
+
+@keyframes move-poli-right
+  0%, 100%
+    transform: translate(0, 0)
+  10%, 22%
+    transform: translate(20%, -12%) scaleY(1.05)
+  16%, 28%
+    transform: translate(20%, 0) rotate(0deg)
+  40%
+    transform: translate(10%, -12%) rotate(3deg)
+  48%
+    transform: translate(0, 0)

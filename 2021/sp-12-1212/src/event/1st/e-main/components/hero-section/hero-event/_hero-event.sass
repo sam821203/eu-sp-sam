@@ -1,0 +1,43 @@
+.hero__zone--event
+  .hero__box--button
+    a
+      +pos-set(absolute, second, -70%, 29%)
+      // background: #f0f0f0
+      width: 40%
+      height: 38%
+      cursor: pointer
+      +breakpoint-min($min-width-xl)
+        top: -75%
+  +pos-set(relative, zero)
+  +breakpoint-min($min-width-xl)
+    margin-top: -10%
+  .event__block
+    +aspect-ratio(960, 430)
+    +breakpoint-min($min-width-xl)
+      +aspect-ratio(960, 380)
+    .event__box
+      +pos-set(absolute, zero)
+      width: 45%
+      cursor: pointer
+      &:hover
+        transition: .5s
+        transform: translateY(-2%)
+        filter: brightness(1.2)
+      &:first-child
+        +pos-set(absolute, zero)
+        top: -10%
+        left: 0%
+      &:nth-last-child(2)
+        +pos-set(absolute, base)
+        top: 7%
+        left: 52%
+        transform: translateX(-50%)
+        &:hover
+          transform: translate(-50%, -2%)
+        +breakpoint-min($min-width-xl)
+          top: 0%
+      &:last-child
+        +pos-set(absolute, zero)
+        top: -10%
+        left: 58%
+        

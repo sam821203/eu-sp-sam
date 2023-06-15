@@ -1,0 +1,98 @@
+.promo__group--daily-time
+  +pos-set(relative, zero)
+  margin-top: -12%
+  width: 100%
+  .promo__title
+    +pos-set(relative)
+    padding-bottom: 13%
+    overflow-y: visible
+  .decoration__title
+    z-index: map-get($zindex, base)
+    top: 90%
+    left: 17.5%
+    width: 16%
+    &.active
+      animation: shakeX 1.2s infinite
+  +breakpoint-min($min-width-xl)
+    margin-top: -100px
+    .decoration__title
+      left: calc( 50% - 310px )
+
+  .promo__wrap
+    +aspect-ratio(960, 727)
+  .promo__zone
+    +pos-set(relative, zero)
+    padding: 18.5% 4.5% 0
+    +bg-set(url(event/1st/e-main/components/daily-time/bg-daily-time.png), 100%)
+  .product__wrap
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    > div
+      width: 32%
+      margin-bottom: 1.5%
+      &:nth-child(1)
+        .product__time
+          +bg-set(url(event/1st/e-main/components/daily-time/daily-time-hour-1.png), 100%)
+      &:nth-child(2)
+        .product__time
+          +bg-set(url(event/1st/e-main/components/daily-time/daily-time-hour-2.png), 100%)
+      &:nth-child(3)
+        .product__time
+          +bg-set(url(event/1st/e-main/components/daily-time/daily-time-hour-3.png), 100%)
+
+  .product__block
+    padding: 3% 2.5%
+  .product--dynamic
+    width: 100%
+    +bg-set(url(layout/dynamic-product/bg-dynamic-item.png), 100%)
+  .product__time
+    margin-left: auto
+    margin-right: auto
+    padding-bottom: 30%
+    width: 90%
+    filter: brightness(50%)
+    + .product
+      filter: brightness(50%)
+    &.active
+      filter: grayscale(0)
+      + .product
+        filter: grayscale(0)
+
+  .product__name
+    font-size: 3.3vw
+  .product__price
+    span
+      &:last-child
+        font-size: 3.6vw
+  +breakpoint-max($max-width-xxs)
+    .product__name
+      margin: 0
+  +breakpoint-min($min-width-lg)
+    .product__name
+      font-size: 24px
+      margin-bottom: 1%
+    .product__price
+      span
+        &:last-child
+          font-size: 28px
+  +breakpoint-min($min-width-xl)
+    .product__block
+      padding: 5px
+    .product__name
+      margin-bottom: 12px
+    .product__price
+      span
+        &:last-child
+          font-size: 40px
+
+@keyframes shakeX
+  0%, 50%, to
+    -webkit-transform: translateZ(0)
+    transform: translateZ(0)
+  5%, 15%, 25%, 35%, 45%
+    -webkit-transform: translate3d(-10px, 0, 0)
+    transform: translate3d(-10px, 0, 0)
+  10%, 20%, 30%, 40%
+    -webkit-transform: translate3d(10px, 0, 0)
+    transform: translate3d(10px, 0, 0)

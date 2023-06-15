@@ -1,0 +1,405 @@
+<meta charset="UTF-8">
+<meta name="viewport"
+  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!-- ============== 輪播 start ============== -->
+<link rel="stylesheet" href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116205/swiper.min.css">
+<!-- ============== 輪播 end ============== -->
+<!-- 共用CSS -->
+<link rel="stylesheet" href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116205/animate.min.css">
+<link rel="stylesheet" href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.css">
+<!-- [電梯步驟1] 電梯CSS，非線上版可以在裡面換顏色/圖片名稱 -->
+<link rel="stylesheet" href="sp-elevator.css">
+<!-- [電梯步驟1] 電梯CSS END -->
+<style>
+  body {
+    /* 自行修正背景顏色 */
+    background: url(bg-m.jpg) #210330 center 0 no-repeat;
+    background-size: 100% auto;
+    background-attachment: fixed;
+  }
+
+  @media screen and (min-width: 960px) {
+    body {
+      background: url(bg.jpg) #210330 center 0 no-repeat;
+      background-size: 2560px auto;
+      background-attachment: fixed;
+    }
+  }
+
+  /* 調整logo位置大小 */
+  /* .logo {
+    top: 1%;
+    left: 1%;
+    width: 30%;
+    max-width: 220px;
+  } */
+
+  /* 連結測試 */
+  /* .sp__visual a{
+    filter: brightness(500%);
+  } */
+
+  /* 切片測試 */
+  /* .visual__fragment::before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #00f;
+    pointer-events: none;
+  } */
+
+  /*-- 動畫小物件 --*/
+  /* ======================================== */
+  .animate__wrap {
+    position: relative;
+    z-index: 1;
+  }
+
+  /*-- 手機版：設定物件距離左邊與上邊的位置，單位可以使用"%"或"vw";width:建議電腦版可以使用auto，手機版則可使用%調整 --*/
+  .animate__wrap .animate__obj--01 {
+    position: absolute;
+    top: 30.2vw;
+    left: 24vw;
+    width: 53%;
+  }
+
+  /*-- 電腦版：設定物件距離左邊與上邊的位置，單位可以使用"px"，左邊可以挑整clac()後面的px值;width:建議電腦版可以使用auto，手機版則可使用%調整 --*/
+  @media screen and (min-width: 960px) {
+    .animate__wrap .animate__obj--01 {
+      top: 284px;
+      left: calc(50% - 249px);
+      width: 521px;
+    }
+  }
+  .date__wrap {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .date__box {
+    width: 50%;
+  }
+  .sp__visual .date__change {
+    display: none;
+  }
+  .sp__visual .date__change.active {
+    display: block;
+  }
+
+</style>
+<!-- [電梯步驟2] 電梯 html -->
+<!-- 左電梯
+<div class="elevatorHome js--main--dialog" id="elevatorHome"></div> -->
+<!-- 右電梯 -->
+<div class="navRightBar" id="navRightBar" style="display: none;"></div>
+<!-- 右電梯關閉，需打開把display:none拿掉
+  測試右邊電梯是否正確方法：打開 <div data-title="a1"></div>，如果畫面出現a1代表正確，右電梯需要跳錨點連到宮格，請企劃自行在宮格的替代文字裡面填寫文字 -->
+<!-- [電梯步驟2] 電梯 html END -->
+
+<!--<div id="barHome"></div>-->
+<div id="iconHome" class="layout--main home--icon"></div>
+<div id="spWrap" class="sp__wallper">
+  <!-- 動畫小物件 -->
+  <div class="animate__wrap">
+    <!-- 如果有多組物件，可以複製命名animate__obj--0{數字} css 也複製一份就可以一直往下生 -->
+    <img class="animate__animated animate__obj--01 animate__heartBeat animate__delay-1s animate__infinite" src="ani.png"
+      title="沒看錯" alt="沒看錯">
+  </div>
+  <!-- 主視覺 -->
+  <main class="sp__main">
+    <div class="layout--main home--logo">
+      <a href="https://www.etmall.com.tw"><img class="logo" src="ehs-logo.png" alt="東森購物"></a>
+    </div>
+    <section class="sp__visual">
+      <div class="layout--main">
+        <ul class="visual--auto clearfix">
+          <li class="visual__fragment width--auto">
+            <a href="#" title="">
+              <img src="10027index_01.png" title="" alt="">
+            </a>
+          </li>
+
+          <li class="visual__fragment width--auto">
+
+            <img src="10027index_02.png" alt="">
+
+          </li>
+          <li class="visual__fragment width--auto">
+            <a href="https://www.u-mall.com.tw/p/110927" title="">
+              <img src="10027index_03.png" alt="">
+            </a>
+          </li>
+          <li class="visual__fragment width--auto">
+            <a href="https://www.u-mall.com.tw/gp/110928" title="">
+              <img src="10027index_04.png" alt="">
+            </a>
+            <a href="https://www.u-mall.com.tw/Activity/dl/HeySongETMall" title="">
+              <img src="10027index_05.png" alt="">
+            </a>
+            <a href="https://www.u-mall.com.tw/c3/123655" title="">
+              <img src="10027index_06.png" alt="">
+            </a>
+          </li>
+          <li class="visual__fragment width--auto">
+
+          </li>
+          <li class="visual__fragment width--auto">
+
+          </li>
+          <li class="visual__fragment width--auto">
+
+            <img src="10027index_07.png" alt="">
+
+          </li>
+          <li class="visual__fragment width--auto">
+            <a href="https://www.u-mall.com.tw/c3/126156" title="">
+              <img src="10027index_08.png" alt="">
+            </a>
+          </li>
+          <li class="visual__fragment width--auto">
+            <a href="https://www.u-mall.com.tw/c3/126156" title="">
+              <img src="10027index_09.png" alt="">
+            </a>
+          </li>
+          <li class="visual__fragment width--auto">
+            <a href="https://www.u-mall.com.tw/c3/126156" title="">
+              <img src="10027index_10.png" alt="">
+            </a>
+          </li>
+          <li class="visual__fragment width--auto">
+            <a href="https://www.u-mall.com.tw/c3/126156" title="">
+              <img src="10027index_11.png" alt="">
+            </a>
+          </li>
+          <li class="visual__fragment width--auto">
+            <a href="https://www.u-mall.com.tw/c3/126156" title="">
+              <img src="10027index_12.png" alt="">
+            </a>
+          </li>
+          <li class="visual__fragment width--auto">
+            <a href="https://www.u-mall.com.tw/c3/126156" title="">
+              <img src="10027index_13.png" alt="">
+            </a>
+          </li>
+          <li class="visual__fragment width--auto">
+
+            <img src="10027index_14.png" alt="">
+
+          </li>
+        </ul>
+        <ul class="date__wrap">
+          <li class="date__box">
+            <a class="js--change date__change active" href="https://www.u-mall.com.tw/c3/126156" title="">
+              <img src="date/1.png" alt="">
+            </a>
+            <a class="js--change date__change" href="31-1" title="">
+              <img src="date/31-1.png" alt="">
+            </a>
+            <a class="js--change date__change" href="1-1" title="">
+              <img src="date/1-1.png" alt="">
+            </a>
+            <a class="js--change date__change" href="2-1" title="">
+              <img src="date/2-1.png" alt="">
+            </a>
+            <a class="js--change date__change" href="3-1" title="">
+              <img src="date/3-1.png" alt="">
+            </a>
+            <a class="js--change date__change" href="4-1" title="">
+              <img src="date/4-1.png" alt="">
+            </a>
+            <a class="js--change date__change" href="5-1" title="">
+              <img src="date/5-1.png" alt="">
+            </a>
+            <a class="js--change date__change" href="6-1" title="">
+              <img src="date/6-1.png" alt="">
+            </a>
+            <a class="js--change date__change" href="7-1" title="">
+              <img src="date/7-1.png" alt="">
+            </a>
+          </li>
+          <li class="date__box">
+            <a class="js--change date__change active" href="https://www.u-mall.com.tw/c3/126156" title="">
+              <img src="date/2.png" alt="">
+            </a>
+            <a class="js--change date__change" href="31-2" title="">
+              <img src="date/31-2.png" alt="">
+            </a>
+            <a class="js--change date__change" href="1-2" title="">
+              <img src="date/1-2.png" alt="">
+            </a>
+            <a class="js--change date__change" href="2-2" title="">
+              <img src="date/2-2.png" alt="">
+            </a>
+            <a class="js--change date__change" href="3-2" title="">
+              <img src="date/3-2.png" alt="">
+            </a>
+            <a class="js--change date__change" href="4-2" title="">
+              <img src="date/4-2.png" alt="">
+            </a>
+            <a class="js--change date__change" href="5-2" title="">
+              <img src="date/5-2.png" alt="">
+            </a>
+            <a class="js--change date__change" href="6-2" title="">
+              <img src="date/6-2.png" alt="">
+            </a>
+            <a class="js--change date__change" href="7-2" title="">
+              <img src="date/7-2.png" alt="">
+            </a>
+          </li>
+          <li class="date__box">
+            <a class="js--change date__change active" href="https://www.u-mall.com.tw/c3/126156" title="">
+              <img src="date/3.png" alt="">
+            </a>
+            <a class="js--change date__change" href="31-3" title="">
+              <img src="date/31-3.png" alt="">
+            </a>
+            <a class="js--change date__change" href="1-3" title="">
+              <img src="date/1-3.png" alt="">
+            </a>
+            <a class="js--change date__change" href="2-3" title="">
+              <img src="date/2-3.png" alt="">
+            </a>
+            <a class="js--change date__change" href="3-3" title="">
+              <img src="date/3-3.png" alt="">
+            </a>
+            <a class="js--change date__change" href="4-3" title="">
+              <img src="date/4-3.png" alt="">
+            </a>
+            <a class="js--change date__change" href="5-3" title="">
+              <img src="date/5-3.png" alt="">
+            </a>
+            <a class="js--change date__change" href="6-3" title="">
+              <img src="date/6-3.png" alt="">
+            </a>
+            <a class="js--change date__change" href="7-3" title="">
+              <img src="date/7-3.png" alt="">
+            </a>
+          </li>
+          <li class="date__box">
+            <a class="js--change date__change active" href="https://www.u-mall.com.tw/c3/126156" title="">
+              <img src="date/4.png" alt="">
+            </a>
+            <a class="js--change date__change" href="31-4" title="">
+              <img src="date/31-4.png" alt="">
+            </a>
+            <a class="js--change date__change" href="1-4" title="">
+              <img src="date/1-4.png" alt="">
+            </a>
+            <a class="js--change date__change" href="2-4" title="">
+              <img src="date/2-4.png" alt="">
+            </a>
+            <a class="js--change date__change" href="3-4" title="">
+              <img src="date/3-4.png" alt="">
+            </a>
+            <a class="js--change date__change" href="4-4" title="">
+              <img src="date/4-4.png" alt="">
+            </a>
+            <a class="js--change date__change" href="5-4" title="">
+              <img src="date/5-4.png" alt="">
+            </a>
+            <a class="js--change date__change" href="6-4" title="">
+              <img src="date/6-4.png" alt="">
+            </a>
+            <a class="js--change date__change" href="7-4" title="">
+              <img src="date/7-4.png" alt="">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</div>
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<!-- ============== 輪播 start ============== -->
+<script src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1116205/swiper.min.js"></script>
+<!-- ============== 輪播 end ============== -->
+<!-- 東森浮水印
+<script id="scriptIconFloat"
+        src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107916/float-icon.js"></script> -->
+<!-- 森森浮水印
+<script id="scriptIconFloat" src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1104381/float-icon.js"></script> -->
+<!-- 旅遊置頂bar
+<script id="scriptAddBn" src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106742/add-bn.js"></script> -->
+<!-- 共用JS -->
+<script id="generateScript"
+  src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.js"></script>
+<!--[電梯步驟3] 電梯 JS
+    data-elevator.js 是填寫下方欄位資料的js
+    sp-elevator.js   是共用的線上js
+
+<script src="data-elevator.js"></script>
+<script src="https://media.etmall.com.tw/sp/10382/sp-elevator.js"></script>-->
+<!-- [電梯步驟3] 電梯 JS END -->
+
+<script>
+  //- 如果在sp-elevator.css裡面把下方欄位(.footer__box)改成display:none的話，把預留出來的空間刪掉
+  $( function () {
+    var display = $( "#footerBox" ).css( "display" );
+    if ( display === "none" ) {
+      $( "body" ).removeClass( "safe-area-padding-bottom" );
+    }
+  } );
+</script>
+<script>
+  var dateNow = new Date();
+  var startDateString = '2022/1/30 12:00';
+  var startDate = new Date(startDateString);
+  var dateArray = createDateArray(startDateString, 9);
+
+  dateChange();
+
+  function createDateArray(originDate, length, intervalsDay) {
+    var startDay = new Date(originDate);
+    var startTime = new Date(originDate).getTime();
+    var dateArray = [];
+    var index = 0;
+    var intervalsDay = intervalsDay || 1; // 間隔日期，預設每隔一天
+
+    while(index < length) {
+      // setDate會修改原始資料造成日期不準(變成+1、+2、+4...)所以要設兩個變數startDay與Date分開取得原始資料來運算
+      var dateItem = startDay.setTime(startTime + parseInt(index * intervalsDay * 24 * 60 * 60 * 1000));
+      // console.log(new Date(dateItem));
+
+      dateArray.push(new Date(dateItem));
+      index++;
+    }
+
+    return dateArray;
+  }
+
+  function loopElement(index){
+    var ArrayDateBox = Array.apply( null, document.querySelectorAll( '.date__box' ) );
+    ArrayDateBox.forEach( function ( el ) {
+      var ArrayChangeAnchor = Array.apply( null, el.querySelectorAll( '.js--change' ) );
+
+      ArrayChangeAnchor.forEach( function ( link ) {
+        link.classList.remove( 'active' );
+      } );
+      ArrayChangeAnchor[index].classList.add( 'active' );
+    } );
+  }
+
+  function dateChange() {
+
+    if ( dateNow < startDate ) return false;
+
+    dateArray.forEach( function ( date, index, thisArray ) {
+      // 0 ~ 倒數第二個
+      if ( date <= dateNow && dateNow < thisArray[index + 1]) {
+
+        loopElement(index);
+
+      // last ~ 之後
+      } else if(date <= dateNow && index == thisArray.length - 1) {
+
+        loopElement(index);
+      }
+    })
+
+  }
+</script>

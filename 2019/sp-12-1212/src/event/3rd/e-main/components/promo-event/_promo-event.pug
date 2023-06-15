@@ -1,0 +1,14 @@
+- var promoDataE = [{link: "https://www.etmall.com.tw/Activity/GroupSale", imgSrc: "~event/3rd/e-main/components/promo-event/items/promo-1.png", alt: "搶5折商品"}, {link: "#note", imgSrc: "~event/3rd/e-main/components/promo-event/items/promo-2.png", alt: "抽東京來回機票"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114297/w/index.html", imgSrc: "~event/3rd/e-main/components/promo-event/items/promo-3.png", alt: "萊爾富超取送焙茶可可"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114296/w/index.html", imgSrc: "~event/3rd/e-main/components/promo-event/items/promo-4.png", alt: "指定商品買就送衛生紙"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html", imgSrc: "~event/3rd/e-main/components/promo-event/items/promo-5.png", alt: "新會員滿額送泡湯券"}, {link: "https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107517/w/index.html", imgSrc: "~event/3rd/e-main/components/promo-event/items/promo-6.png", alt: "首購送mister donut"},]
+
+- var promoDataU = [{link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201912/SP_1104319/w/index.html", imgSrc: "~event/3rd/u-main/components/promo-event/items/promo-1.png", alt: "20間銀行最高回饋10%"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1103167/w/index.html", imgSrc: "~event/3rd/u-main/components/promo-event/items/promo-2.png", alt: "瘋搶撇步"}, {link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201912/SP_1105778/w/index.html", imgSrc: "~event/3rd/u-main/components/promo-event/items/promo-3.png", alt: "萊爾富超取送焙茶可可"}, {link: "https://www.u-mall.com.tw/Activity/HourSale", imgSrc: "~event/3rd/u-main/components/promo-event/items/promo-4.png", alt: "天天最激殺"}, ]
+
+- var promoData = isU? promoDataU : promoDataE
+
+.promo__event
+  ul.event__wrap
+    each data, index in promoData
+      - var anchorId = 'promoAnchor' + (index + 1)
+      - var imgId = 'promoImg' + (index + 1)
+      li
+        a(id= anchorId, href= data.link, title= data.alt)
+          img(id= imgId, src= data.imgSrc, alt= data.alt)

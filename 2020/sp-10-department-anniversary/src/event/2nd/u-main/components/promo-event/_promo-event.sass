@@ -1,0 +1,60 @@
+.promo__event
+  padding: 0 1.5% 0
+  height: 33vw
+  margin-top: 0
+  margin-top: 0
+  //+bg-set(url(~event/2nd/u-main/components/promo-event/bg-promo.png), 100%)
+  .event__wrap
+    //display: flex
+    //flex-wrap: wrap
+    //justify-content: space-between
+    padding: 0
+    li
+      display: flex
+      justify-content: center
+      flex: 0 0 100%
+      -ms-flex: 0 0 49%
+      transition: all 0.5s
+      position: relative
+      &:nth-child(1)
+        img
+          position: absolute
+          top: 0
+          left: 0
+          width: 48%
+      &:nth-child(2)
+        img
+          position: absolute
+          top: 0
+          left: 46.5vw
+          width: 26%
+      &:nth-child(3)
+        img
+          position: absolute
+          top: 0
+          right: 0
+          width: 26%
+      &:hover
+        transform: translateY(-3%)
+        filter: brightness(130%)
+
+  +breakpoint-min($min-width-xl)
+    padding: 0
+    height: 315px
+    .event__wrap
+      li
+        &:nth-child(1)
+          img
+            left: calc(50% - 480px)
+            width: auto
+        &:nth-child(2)
+          img
+            left: calc(50% - 25px)
+            width: auto
+        &:nth-child(3)
+          img
+            right: calc(50% - 480px)
+            width: auto
+        &:hover
+          transform: translateY(-3%)
+          filter: brightness(130%)

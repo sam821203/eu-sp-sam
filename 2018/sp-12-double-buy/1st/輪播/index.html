@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <style type="text/css">
+        @media screen and (min-width: 641px) {
+            .n-sp__box .sp__wrap img,
+            .main-info img,
+            .firstInfo a img {
+                width: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="carousel_frame">
+    <aside class="carousel_layer carousel_layer-d">
+        <div class="carousel__wrap">
+            <a href="">
+                <img src="BN-1.jpg"/>
+            </a>
+        </div>
+        <div class="carousel__wrap">
+            <a href="">
+                <img src="BN-2.jpg"/>
+            </a>
+        </div>
+        <div class="carousel__wrap">
+            <a href="">
+                <img src="BN-3.jpg"/>
+            </a>
+        </div>
+    </aside>
+
+    <!--mobile-->
+    <aside class="carousel_layer carousel_layer-m">
+        <div class="carousel__wrap">
+            <a href="">
+                <img src="BN-m-1.jpg"/>
+            </a>
+        </div>
+        <div class="carousel__wrap">
+            <a href="">
+                <img src="BN-m-2.jpg"/>
+            </a>
+        </div>
+        <div class="carousel__wrap">
+            <a href="">
+                <img src="BN-m-3.jpg"/>
+            </a>
+        </div>
+    </aside>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+
+<!----- 輪播 ----->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+
+
+<script type="text/javascript">
+
+    $(function () {
+        $('.carousel_layer').slick({
+            autoplay: true,
+            autoplaySpeed: 3000,
+        });
+    })
+
+</script>
+</body>
+</html>

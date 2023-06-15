@@ -1,0 +1,123 @@
+.promo__group--rank
+  +pos-set(relative, zero)
+  .promo__title
+    margin-left: auto
+    margin-right: auto
+    width: 50%
+    max-width: 288px
+    text-align: center
+    +breakpoint-min($min-width-lg)
+      margin-left: 5%
+      width: 30%
+
+  .content__wrapper,
+  .slider__wrapper
+    .rank__star
+      +pos-set(absolute, base)
+      top: 2%
+      left: 3%
+      padding-bottom: 25%
+      width: 25%
+      pointer-events: none
+      &--1
+        +bg-set(url(~components/rank-section/icon-star-1.png), cover)
+      &--2
+        +bg-set(url(~components/rank-section/icon-star-2.png), cover)
+      &--3
+        +bg-set(url(~components/rank-section/icon-star-3.png), cover)
+      &--n
+        +bg-set(url(~components/rank-section/icon-star-n.png), cover)
+      span
+        +pos-set(absolute, base)
+        top: 50%
+        left: 50%
+        color: $gray-deep-light
+        font-size: 2vw
+        font-weight: bold
+        transform: translate(-50%, -50%)
+
+        +breakpoint-min($min-width-lg)
+          font-size: 32px
+        +breakpoint-min($min-width-xl)
+          font-size: 40px
+
+.slider__ui
+  display: flex
+  justify-content: center
+  width: 100%
+  transform: translateY(10px)
+  .slider__prev
+    +arrow-left(8, 8, 16, $btn-color-pink-3)
+  .slider__next
+    +arrow-right(8, 8, 16, $btn-color-pink-3)
+  .slider__pager-wrap
+    display: flex
+    padding: 1px 5px
+  .slider__pager
+    margin-left: 10px
+    margin-right: 10px
+    width: 12px
+    height: 12px
+    background-color: $btn-color-pink-4
+    border-radius: 50%
+    &.active,
+    &:active,
+    &:hover
+      background-color: $btn-color-yellow-2
+
+  +breakpoint-min($min-width-lg)
+    transform: translateY(20px)
+    .slider__prev
+      border-top-width: 12px
+      border-bottom-width: 12px
+      border-right-width: 24px
+    .slider__next
+      border-top-width: 12px
+      border-bottom-width: 12px
+      border-left-width: 24px
+    .slider__pager-wrap
+      padding: 2px 8px
+    .slider__pager
+      margin-left: 15px
+      margin-right: 15px
+      width: 18px
+      height: 18px
+
+.player__dynamic--rank
+  .player__info
+    display: flex
+    align-items: flex-end
+
+  .info__votes
+    flex: 1
+    text-align: right
+
+  .team__label
+    margin-bottom: 3%
+    +aspect-ratio(125, 50)
+    width: 50px
+
+    +breakpoint-min($min-width-lg)
+      margin-bottom: 12px
+      width: 100px
+
+  .votes__label
+    display: inline-block
+    +capsule-set($gray-deep-light, 40px, 2px)
+    font-size: 12px
+    +breakpoint-min($min-width-lg)
+      width: 70px
+      font-size: 20px
+
+// 列表 player list
+// .player__dynamic
+//   .player__votes
+//     span
+//       &:first-child
+//         color: $gray-deep-dark
+//         font-size: 12px
+//       &:last-child
+//         color: $main-color-pink-1
+//         font-size: 16px
+//         font-weight: bold
+

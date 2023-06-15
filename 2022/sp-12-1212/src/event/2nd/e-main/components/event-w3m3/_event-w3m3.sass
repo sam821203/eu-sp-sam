@@ -1,0 +1,68 @@
+.promo__group--w3m3
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__wrap
+    padding-bottom: 4%
+
+  .decor__item
+    &--left
+      +pos-set(absolute, under, 0%, 12%)
+      width: 19%
+      +breakpoint-min($min-width-xl)
+        left: calc( 50% - 350px )
+      &.active
+        z-index: map-get($zindex, base)
+        animation: jump-right 2.4s ease-in forwards
+
+    &--right
+      +pos-set(absolute, under, 2%)
+      right: 12%
+      width: 18%
+      +breakpoint-min($min-width-xl)
+        right: calc( 50% - 350px )
+      &.active
+        z-index: map-get($zindex, base)
+        animation: scale-shine 1.8s linear infinite
+
+    +breakpoint-min($min-width-xl)
+      width: auto
+      
+  .promo__wrap
+    +bg-set(url(event/2nd/e-main/components/event-w3m3/bg-event-w3m3.png), 100%)
+  .promo__zone
+    +aspect-ratio(959, 1010)
+  .promo__block
+    padding: 24.2% 8% 0 8.4%
+    .good__wrap
+      display: flex
+      flex-wrap: wrap
+      justify-content: center
+      li
+        width: 31%
+        margin-bottom: 2%
+        a
+          transition: all 0.5s
+          &:hover,
+          &.active
+            transform: scale(0.95)
+            filter: contrast(1.1)
+
+@keyframes scale-shine
+  0%, 100%
+    transform: rotate(-10deg) scale(1)
+    filter: brightness(1)
+  50%
+    transform: rotate(6deg) scale(1.1)
+    filter: brightness(1.2)
+
+@keyframes jump-right
+  0%, 100%
+    transform: translate(0, 0)
+  10%, 22%
+    transform: translate(25%, 0%) scaleY(1.05) rotate(30deg)
+  16%, 28%
+    transform: translate(25%, 8%) rotate(30deg)
+  40%
+    transform: translate(0, 0) rotate(0deg)
+  48%
+    transform: translate(0, 0)

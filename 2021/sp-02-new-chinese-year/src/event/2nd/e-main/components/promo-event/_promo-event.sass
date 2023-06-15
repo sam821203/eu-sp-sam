@@ -1,0 +1,135 @@
+
+.promo__event
+  position: relative
+  padding: 0 1.5% 0
+  height: 149vw
+  margin-top: -2vw
+  //+bg-set(url(~event/2nd/e-main/components/promo-event/bg-promo-m.png), 100%)
+  +bg-set(url(https://media.etmall.com.tw/sp/8249/bg-promo-m.png), 100%)
+  .event__wrap
+    //display: flex
+    //flex-wrap: wrap
+    //justify-content: space-between
+    padding: 0
+    li#dailyPromo
+      font-size: 9px
+    li
+      display: flex
+      justify-content: center
+      flex: 0 0 100%
+      -ms-flex: 0 0 49%
+      transition: all 0.5s
+      padding: .5%
+      position: relative
+      &:nth-child(1)
+        position: absolute
+        top: 28.5vw
+        left: 2vw
+        width: 30%
+        animation: item-jump 12s 5s both ease-out infinite
+      &:nth-child(2)
+        position: absolute
+        top: 27vw
+        right: 4vw
+        width: 56%
+        animation: item-jump 10s 1.3s both ease-in-out infinite alternate
+      &:nth-child(3)
+        position: absolute
+        top: 53.5vw
+        left: 2vw
+        width: 59%
+        animation: item-jump 14s 2.5s both linear infinite alternate-reverse
+      &:nth-child(4)
+        position: absolute
+        top: 56vw
+        right: 0
+        width: 33%
+        animation: item-jump 15s .5s both linear infinite
+      &:nth-child(5)
+        position: absolute
+        top: 80.5vw
+        left: 2vw
+        width: 29%
+        animation: item-jump 13s 1s both linear infinite reverse
+      &:nth-child(6)
+        position: absolute
+        top: 80.5vw
+        left: 37vw
+        width: 25%
+        animation: item-jump 12s 2s both ease-in-out infinite alternate
+      &:nth-child(7)
+        position: absolute
+        top: 81vw
+        right: 1vw
+        width: 31%
+        animation: item-jump 6s 5s both ease-out infinite
+
+      &:hover
+        transform: translateY(-3%)
+        filter: brightness(130%)
+
+
+  +breakpoint-min($min-width-xl)
+    padding: 0
+    height: 1442px
+    margin-top: -80px
+    background-image: none
+
+    .event__wrap
+      li
+        &:nth-child(1)
+          top: 299px
+          left: calc(50% - 450px)
+          width: auto
+        &:nth-child(2)
+          top: 249px
+          right: calc(50% - 480px)
+          width: auto
+        &:nth-child(3)
+          top: 500px
+          width: auto
+          left: calc(50% - 470px)
+        &:nth-child(4)
+          top: 535px
+          right: calc(50% - 495px)
+          width: auto
+        &:nth-child(5)
+          top: 770px
+          left: calc(50% - 445px)
+          width: auto
+        &:nth-child(6)
+          top: 775px
+          left: calc(50% - 109px)
+          width: auto
+        &:nth-child(7)
+          top: 775px
+          right: calc(50% - 500px)
+          width: auto
+        &:hover
+          transform: translateY(-3%)
+          filter: brightness(130%)
+
+.promo__event__web--bg
+  +breakpoint-min($min-width-xl)
+    position: absolute
+    //+bg-set(url(~event/2nd/e-main/components/promo-event/bg-promo.png), 1732px 1397px)
+    +bg-set(url(https://media.etmall.com.tw/sp/8249/bg-promo.png), 1732px 1397px)
+    background-position: top center
+    max-width: 1732px
+    width: 100%
+    height: 1397px
+    left: 50%
+    top: 10px
+    transform: translateX(-50%)
+
+
+@keyframes item-jump
+  40%, 42%
+    transform: translateY(-15%) scale(1)
+    filter: brightness(120%)
+  0%, 39%, 41%, 43%, 76%, 78%, 80%
+    transform: translateY(0) scale(1)
+  77%
+    transform: translateX(-5%)
+  79%
+    transform: translateX(5%)

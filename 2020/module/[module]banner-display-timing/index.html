@@ -1,0 +1,539 @@
+<meta name="viewport" content="width=device-width">
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    *:before, *:after {
+        box-sizing: border-box;
+    }
+
+    a {
+        display: block;
+        text-decoration: none;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    img {
+        width: 100%;
+        border: 0;
+        display: block;
+    }
+
+    article,
+    main,
+    nav,
+    section {
+        display: block;
+    }
+
+    body {
+        margin: 0;
+        /*background-color:#58ce9e;*/
+        background-image: url(bg-2560.jpg);
+        background-size: 2560px auto;
+        background-repeat: repeat-y;
+        background-position: top center;
+
+        /*...................................背景色,1260把這行刪掉*/
+    }
+
+    .ani_wrap {
+        position: relative;
+        z-index: 1;
+    }
+
+    .ani_wrap .ani_obj {
+        position: absolute;
+        top: 30px;
+        left: calc(50% - 220px);
+        width: 50%;
+        animation-duration: 2s;
+    }
+
+    .sp--1260 {
+        position: relative;
+        z-index: 0;
+        max-width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .sp--1260.icon_Home {
+        z-index: auto;
+    }
+
+    /* 主視覺 */
+    /* ======================================== */
+    .logo a,
+    .sp__visual a {
+        display: block;
+    }
+
+    .logo {
+        position: absolute;
+        z-index: 1;
+        /* 調整logo位置 */
+        top: 0%;
+        left: 1%;
+        width: 30%;
+        max-width: 220px;
+    }
+
+    /* 設定背景 */
+    .sp__main {
+        background: url(bg.jpg) center 0 no-repeat; /*..............背景底圖,1260把這行刪掉*/
+    }
+
+    /* 設定前景 */
+    .sp__visual {
+        position: relative;
+        z-index: 0;
+        width: 100%;
+    }
+
+    /*...........................................................示意線條拿掉start*/
+    /*.visual__main a,.visual__main3 a{
+      border: 1px solid #f00;
+    }*/
+    /*...........................................................示意線條拿掉end*/
+    .visual__anchor,
+    .visual__main, .visual__main3,
+    .visual__nav {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .visual__anchor {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+    }
+
+    .visual__main a, .visual__main3 a,
+    .visual__nav a {
+        flex-grow: 1;
+    }
+
+    /* 主視覺 */
+    /*...........................................................紅框區高度*/
+    .visual__main, .visual__main3 {
+        height: 100%;
+    }
+
+    /* 如果需要個別設定每塊寬度(可不設) */
+    /* 如果設100%後面的就會掉下去 */
+    /*...........................................................紅框區設定寬度高度*/
+    /* top區 */
+    .visual__main a:nth-child(1) {
+        flex-grow: 0;
+        width: 100%;
+        height: 60%
+    }
+
+    .visual__main a:nth-child(2) {
+        flex-grow: 0;
+        width: 35%;
+        height: 25%;
+    }
+
+    .visual__main a:nth-child(3) {
+        flex-grow: 0;
+        width: 65%;
+        height: 25%;
+    }
+
+    .visual__main a:nth-child(4) {
+        flex-grow: 0;
+        width: 100%;
+        height: 15%
+    }
+
+    /* 商品區 */
+
+    .visual__main3 a:nth-child(1) {
+        flex-grow: 0;
+        width: 100%;
+        height: 10%
+    }
+
+    .visual__main3 a:nth-child(2) {
+        flex-grow: 0;
+        width: 27%;
+        height: 18%
+    }
+
+    .visual__main3 a:nth-child(3) {
+        flex-grow: 0;
+        width: 23%;
+        height: 18%
+    }
+
+    .visual__main3 a:nth-child(4) {
+        flex-grow: 0;
+        width: 23%;
+        height: 18%
+    }
+
+    .visual__main3 a:nth-child(5) {
+        flex-grow: 0;
+        width: 27%;
+        height: 18%
+    }
+
+    .visual__main3 a:nth-child(6) {
+        flex-grow: 0;
+        width: 27%;
+        height: 18%
+    }
+
+    .visual__main3 a:nth-child(7) {
+        flex-grow: 0;
+        width: 23%;
+        height: 18%
+    }
+
+    .visual__main3 a:nth-child(8) {
+        flex-grow: 0;
+        width: 23%;
+        height: 18%
+    }
+
+    .visual__main3 a:nth-child(9) {
+        flex-grow: 0;
+        width: 27%;
+        height: 18%
+    }
+
+    .visual__main3 a:nth-child(10) {
+        flex-grow: 0;
+        width: 100%;
+        height: 55%
+    }
+
+    .hidden {
+        display: block;
+    }
+
+    .note {
+        word-break: break-all;
+    }
+
+    .note article {
+        background-color: #fd7272;
+        font: normal 1em/1.5 '微軟正黑體', Arial;
+        color: #fefbfb;
+        padding-bottom: 3%;
+    }
+
+    .note article a {
+        display: inline;
+        color: #fff190;
+    }
+
+    .note article a:visited {
+        color: #fff190;
+    }
+
+    .note article a:hover {
+        color: #fff190;
+        text-decoration: underline;
+    }
+
+    .note hr {
+        background-color: #b89494;
+        width: 100%;
+        margin: 0;
+        margin-bottom: 15px;
+        height: 8px;
+        border: 0;
+    }
+
+    .note h2 {
+        color: #fefbfb;
+        font-size: 1.4em;
+        line-height: 2;
+        margin: 5px 0 5px 3%;
+    }
+
+    .note p {
+        line-height: 1.5;
+        padding: 0 5%;
+        margin: 0;
+    }
+
+    .note ol,
+    .note ul {
+        padding: 0;
+        margin: auto;
+        margin: 0 5% 0.25em 7%;
+        list-style: decimal;
+    }
+
+    .note li {
+        margin-bottom: 0.25em;
+    }
+
+    .note li > ol, .note li > ul {
+        margin-left: 1.5em;
+    }
+
+    .note li > ol {
+        list-style: number;
+    }
+
+    .note ul {
+        list-style: disc;
+    }
+
+    .note ul.list--custsom, .note ol.list--custsom {
+        list-style: none;
+        margin-left: 0;
+    }
+
+    .banner__title {
+        height: 65px;
+        background: center top no-repeat;
+    }
+
+    .banner__wrap {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .banner__item {
+        transition: all 0.3s;
+    }
+
+    .banner__item img {
+        width: 100%;
+    }
+
+    .bn-w3m1 .banner__item {
+
+        flex: 0 0 25%;
+        padding: 5px;
+        list-style: none;
+    }
+
+    /* 需替換的banner 大網出現第一張，小網出現第二張 */
+    .hidden {
+        display: none;
+    }
+    .hidden-m {
+        display: block;
+    }
+    @media screen and (min-width: 960px) {
+        .hidden {
+            display: block;
+        }
+        .hidden-m {
+            display: none;
+        }
+    }
+    /* /.END 需替換的banner 大網出現第一張，小網出現第二張 */
+
+
+    @media screen and (max-width: 1024px) {
+        .ani_wrap .ani_obj {
+            top: 3vw;
+            left: 26vw;
+            width: 50%;
+        }
+
+        .logo {
+            top: 0%;
+
+        }
+
+        .note ol,
+        .note ul {
+            margin: 0 3.5% 0 7%;
+        }
+
+        .note table {
+            margin: 0 3%;
+            width: 100%;
+        }
+
+        .bn-w3m1 .banner__item {
+            flex: 1 0 50%;
+        }
+    }
+
+
+</style>
+<div id="spWrap" class="sp__wallper">
+    <!-- 主視覺 -->
+    <div class="sp--1260 icon_Home"><!-- 浮水印start(勿刪)-->
+        <div id="iconHome"></div>
+    </div>                          <!-- 浮水印end(勿刪)-->
+    <main class="sp__main">
+        <div class="sp--1260">
+            <div class="ani_wrap">
+                <img class="ani_obj animate__animated animate__rubberBand
+ animate__slower animate__infinite" src="app.png">
+            </div>
+            <a href="https://www.etmall.com.tw" class="logo"><img src="ehs-logo.png" alt="東森購物"></a><!-- 1260把這行刪掉 -->
+            <div class="sp__visual">
+                <div class="visual__anchor"><!-- 紅框區 設定第一個a和第二個a的寬度會推擠後面a的寬度-->
+                    <!-- top區 -->
+                    <div class="visual__main">
+                        <a></a>
+                        <a href="#bar"></a>
+                        <a href="#note"></a>
+                        <a href="http://etu.tw/98SBCe/"></a>
+
+                    </div>
+                </div>
+                <img src="index_01.jpg">
+
+                <img src="index_02.jpg">
+            </div>
+            <!-- 需替換的banner 大網出現第一張，小網出現第二張 -->
+            <div class="sp__visual">
+                <img class="hidden-m" src="index_03.jpg">
+                <img class="hidden" src="index_04.jpg">
+            </div>
+            <div class="sp__visual">
+                <div class="visual__anchor">
+                    <!-- 商品區 -->
+                    <div class="visual__main3">
+
+                        <a></a>
+                        <a href="https://www.etmall.com.tw/i/2623165"></a>
+                        <a href="https://www.etmall.com.tw/i/2724165"></a>
+                        <a href="https://www.etmall.com.tw/i/2717513"></a>
+                        <a href="https://www.etmall.com.tw/i/2644264"></a>
+
+                        <a href="https://www.etmall.com.tw/i/2724294"></a>
+                        <a href="https://www.etmall.com.tw/i/2726262"></a>
+                        <a href="https://www.etmall.com.tw/i/2716135"></a>
+                        <a href="https://www.etmall.com.tw/i/2709320"></a>
+                        <a></a>
+                    </div>
+                </div>
+
+                <img src="index_05.jpg" id="bar">
+                <img src="index_06.jpg">
+
+            </div>
+        </div>
+        <div class="sp--1260">
+            <section class="layout--main note" name="note" id="note">
+                <article>
+                    <hr>
+                    <h2>【活動一、APP下單獨享價】限此活動頁商品</h2>
+                    <ul>
+                        <li>活動時間：109/8/26 AM10:00-109/9/11 AM10:00</li>
+                        <li>活動說明：活動期間於東森購物網APP下單即可享指定商品APP獨享價。</li>
+                        <li>活動規則：<br>
+                            ※此活動限東森購物APP。<br>
+                            ※網連通會員恕無法參與活動。<br>
+                            ※東森購物網保有活動變更、修改或終止本活動之權力，如有異動，修改後之內容將公佈在東森購物網上。
+
+                        </li>
+
+                    </ul>
+
+                    <h2>【活動二、APP下單3次登記送全家霜淇淋(限量500名)】<a href="https://www.etmall.com.tw/Activity/Reg/220">>>>點我登記</a>
+                    </h2>
+                    <ul>
+                        <li>活動時間：109/8/26 AM10:00-109/9/25 AM10:00</li>
+                        <li>活動內容：活動期間使用東森購物APP下單滿3次，無取消/退貨，於9/25 AM10:00前至活動頁面點選<a
+                                href="https://www.etmall.com.tw/Activity/Reg/220">【我要登記】</a>即有機會獲得全家霜淇淋(限量500名)。
+                        </li>
+                        <li>抽獎時間：10/20(二)18:00前以APP推播訊息通知發送兌換PIN碼。</li>
+                    </ul>
+                    <h2>【我的禮物盒說明】</h2>
+                    <ul>
+                        <li>給獎名單不另行通知，給獎名單及獎項明細，將置入於【我的禮物盒】功能中即可查詢，給獎日以APP推播通知。</li>
+                        <li>【我的禮物盒】功能僅限行動裝置、APP支援。</li>
+                        <li>【我的禮物盒】查詢方式：</li>
+                        開啟東森購物行動裝置、APP→會員中心→點選【我的禮物盒】→選擇欲觀看獲獎明細→查詢獲獎活動資訊
+                        <li>查詢途徑示意如下：
+                            <section class="sp--1260 bn-w3m1 banner__item  ">
+                                <ul class="banner__wrap">
+                                    <li class="banner__item">
+                                        <img src="step1.jpg" alt="banner">
+                                    </li>
+                                    <li class="banner__item">
+                                        <img src="step2.jpg" alt="banner">
+                                    </li>
+                                    <li class="banner__item">
+                                        <img src="step3.jpg" alt="banner">
+                                    </li>
+                                    <li class="banner__item">
+                                        <img src="step4.jpg" alt="banner">
+                                    </li>
+                                </ul>
+                            </section>
+                        </li>
+                        <li>查看APP推播通知步驟
+                            <section class="sp--1260 bn-w3m1 banner__item  ">
+                                <ul class="banner__wrap">
+                                    <li class="banner__item">
+                                        <img src="app-1.jpg" alt="banner">
+                                    </li>
+                                    <li class="banner__item">
+                                        <img src="app-2.jpg" alt="banner">
+                                    </li>
+                                </ul>
+                            </section>
+                        </li>
+                        <li>活動規則<br>
+                            ※每會員於活動期間限登記乙次。<br>
+                            ※此活動限東森購物APP限定。<br>
+                            ※未於活動期間內完成登記者，恕無法參與活動。<br>
+                            ※網連通、購享賺會員恕無法參與活動。<br>
+                            東森購物網保有活動變更、修改或終止本活動之權力，如有異動，修改後之內容將公佈在東森購物網上。
+                        </li>
+                    </ul>
+
+
+                </article>
+            </section>
+        </div>
+    </main>
+
+</div>
+
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script>
+    $('a[href^="#"]').on('click', function (e) {
+        var target = $('a[name=' + this.getAttribute('href').split('#')[1] + ']');
+        if (target.length) {
+            e.preventDefault();
+            $('html,body').stop().animate({scrollTop: target.offset().top}, 500);
+        }
+    });
+
+    // 判斷大小網出現的banner不同，app 都消失
+    var isUiWebview = /(WebView|(iPhone|iPod|iPad)(?!.*Safari\/)(?!.*Line\/)|Android.*(wv|.0.0.0))(?!.*Line\/)/gi.test(navigator.userAgent);
+    var hidden_2 = document.querySelector('.hidden-m');
+    var hidden = document.querySelector('.hidden');
+    // is app
+    if (isUiWebview) {
+        hidden_2.setAttribute("style", "display: none;");
+        hidden.setAttribute("style", "display: none;");
+    }
+    // not app
+    else {
+        hidden_2.setAttribute("style", "");
+        hidden.setAttribute("style", "");
+    }
+</script>
+<!-- 浮水印 -->
+<script id="scriptIconFloat"
+        src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105264/float-icon.js"></script>
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+<!-- 共用JS -->

@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="app-bundle.css" rel="stylesheet"></head>
+  <body>
+    <div class="elevatorHome js--main--dialog" id="elevatorHome"></div>
+    <div class="navRightBar" id="navRightBar"></div>
+    <div class="icon__home layout--main" id="iconHome"></div>
+    <main class="sp__wrap sp__wrap--e" id="spWrap">
+      <header class="header__zone">
+        <div class="layout--main"><a class="logo logo--e" href="https://www.etmall.com.tw/"><img src="logo-white.png" alt="東森購物"></a>
+        </div>
+      </header>
+      <section class="hero__wrap">
+        <div class="layout--main">
+          <div class="hero__zone">
+            <div class="hero__block" id="heroBlock">
+              <div class="hero__box" title="勸敗攻略，天天來天天有驚喜"><img src="title.jpg" alt="勸敗攻略，天天來天天有驚喜"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="promo__calendar">
+        <div class="layout--main">
+          <div class="calendar__wrap">
+            <div class="calendar__title" title="本月檔期"><img src="calendar-title.png" alt="本月檔期"></div>
+            <!-- 沒活動的日子calendar__cell的第二個div中span拿掉字就不會出現，class手動加上notyet就可以防止出現手指符號、hover效果與被點擊 -->
+            <div class="calendar__cell notyet"><a href="" title="">
+                <div><span>1</span></div>
+                <div><span></span></div>
+                <div></div></a></div>
+            <div class="calendar__cell"><a href="#travel" title="美妝日">
+                <div><span>2</span></div>
+                <div><span>動．遊</span></div>
+                <div></div></a></div>
+            <div class="calendar__cell"><a href="#health" title="保健日">
+                <div><span>3</span></div>
+                <div><span>保健日</span></div>
+                <div></div></a></div>
+            <div class="calendar__cell"><a href="#popular" title="流行日">
+                <div><span>4</span></div>
+                <div><span>流行日</span></div>
+                <div></div></a></div>
+            <div class="calendar__cell"><a href="#infomation" title="資訊日">
+                <div><span>5</span></div>
+                <div><span>資訊日</span></div>
+                <div></div></a></div>
+            <div class="calendar__cell"><a href="#furniture" title="傢寢日">
+                <div><span>6</span></div>
+                <div><span>傢寢日</span></div>
+                <div></div></a></div>
+            <div class="calendar__cell"><a href="#appliances" title="家電日">
+                <div><span>7</span></div>
+                <div><span>家電日</span></div>
+                <div></div></a></div>
+            <div class="calendar__cell"><a href="#food" title="美食">
+                <div><span>8</span></div>
+                <div><span>美食</span></div>
+                <div></div></a></div>
+            <div class="calendar__cell"><a href="#cosmetics" title="美妝日">
+                <div><span>9</span></div>
+                <div><span>美妝日</span></div>
+                <div></div></a></div>
+            <div class="calendar__cell"><a href="#supplies" title="日用">
+                <div><span>10</span></div>
+                <div><span>日用</span></div>
+                <div></div></a></div>
+            <div class="calendar__cell"><a href="#communication" title="通訊日">
+                <div><span>11</span></div>
+                <div><span>通訊日</span></div>
+                <div></div></a></div>
+            <div class="calendar__cell notyet"><a href="" title="">
+                <div><span>12</span></div>
+                <div><span></span></div>
+                <div></div></a></div>
+            <div class="calendar__cell"><a href="#children" title="婦幼日">
+                <div><span>13</span></div>
+                <div><span>婦幼日</span></div>
+                <div></div></a></div>
+            <div class="calendar__cell notyet"><a href="" title="">
+                <div><span>14</span></div>
+                <div><span></span></div>
+                <div></div></a></div>
+          </div>
+        </div>
+      </section>
+      <section class="daily__promo">
+        <div class="layout--main">
+          <div class="daily__wrap">
+            <div class="daily__box m-bottom--sm" id="travel">
+              <div class="daily__title"><span class="date__box">12.2</span><span class="title__box">動．遊</span></div>
+              <div class="daily__info">
+                <div class="info__box"> 
+                  <div class="info__title">優惠1：旅遊大清艙</div>
+                  <div class="info__content">雙人出國含稅1,680</div>
+                </div>
+                <div class="info__box"> 
+                  <div class="info__title">優惠2：年終獻禮</div>
+                  <div class="info__content">全館5折起</div>
+                </div>
+              </div>
+              <ul class="daily__item">
+                <li><a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114231/w/index.html" title="金廈含稅5日雙人券">
+                    <div class="item__box">
+                      <div class="pic__wrap">
+                        <div class="item__pic"><img src="items/1202travel.jpg" alt="金廈含稅5日雙人券"></div>
+                      </div>
+                      <div class="item__intro">
+                        <div class="item__name">金廈含稅5日雙人券</div>
+                        <div class="item__price"><span>$</span><span>1,680</span></div>
+                      </div>
+                    </div></a></li>
+                <li><a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114231/w/index.html" title="X-BIKE小漾智能跑步機">
+                    <div class="item__box">
+                      <div class="pic__wrap">
+                        <div class="item__pic"><img src="https://media.etmall.com.tw/NXimg/002213/2213175/2213175-1_XL.jpg?t=17521436735" alt="X-BIKE小漾智能跑步機"></div>
+                      </div>
+                      <div class="item__intro">
+                        <div class="item__name">X-BIKE小漾智能跑步機</div>
+                        <div class="item__price"><span>$</span><span>12,120</span></div>
+                      </div>
+                    </div></a></li>
+                <li><a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114231/w/index.html" title="Bogazy限量20吋鋁框行李箱">
+                    <div class="item__box">
+                      <div class="pic__wrap">
+                        <div class="item__pic"><img src="https://media.etmall.com.tw/NXimg/002354/2354723/2354723-1_XL.jpg?t=17531630621" alt="Bogazy限量20吋鋁框行李箱"></div>
+                      </div>
+                      <div class="item__intro">
+                        <div class="item__name">Bogazy限量20吋鋁框行李箱</div>
+                        <div class="item__price"><span>$</span><span>1,212</span></div>
+                      </div>
+                    </div></a></li>
+              </ul>
+            </div>
+            <div class="daily__box m-bottom--sm" id="health">
+              <div class="daily__title"><span class="date__box">12.3</span><span class="title__box">保健日</span></div>
+              <div class="daily__info">
+                <div class="info__box"> 
+                  <div class="info__title">優惠1：全館36折起</div>
+                  <div class="info__content">台塑生醫雙12感謝祭</div>
+                </div>
+                <div class="info__box"> 
+                  <div class="info__title">優惠2：生日慶68折up</div>
+                  <div class="info__content">正官庄120週年現搶優惠</div>
+                </div>
+              </div>
+              <ul class="daily__item">
+                <li><a href="https://www.etmall.com.tw/np/87087" title="台塑生醫益生菌6入">
+                    <div class="item__box">
+                      <div class="pic__wrap">
+                        <div class="item__brand"><img src="logo/1203Dr.Formulalogo.png" alt="台塑生醫"></div>
+                        <div class="item__pic"><img src="https://media.etmall.com.tw/NXimg/002012/2012699/2012699-1_XL.jpg?t=17641398940" alt="台塑生醫益生菌6入"></div>
+                      </div>
+                      <div class="item__intro">
+                        <div class="item__name">台塑生醫益生菌6入</div>
+                        <div class="item__price"><span>$</span><span>2,360</span></div>
+                      </div>
+                    </div></a></li>
+                <li><a href="https://www.etmall.com.tw/np/87087" title="正官庄活蔘28D2盒">
+                    <div class="item__box">
+                      <div class="pic__wrap">
+                        <div class="item__brand"><img src="logo/1203kgclogo.jpg" alt="正官庄"></div>
+                        <div class="item__pic"><img src="https://media.etmall.com.tw/NXimg/002229/2229224/2229224-1_XL.jpg?t=17444120762" alt="正官庄活蔘28D2盒"></div>
+                      </div>
+                      <div class="item__intro">
+                        <div class="item__name">正官庄活蔘28D2盒</div>
+                        <div class="item__price"><span>$</span><span>2,970</span></div>
+                      </div>
+                    </div></a></li>
+                <li><a href="https://www.etmall.com.tw/np/87087" title="華陀高麗蔘元飲6盒">
+                    <div class="item__box">
+                      <div class="pic__wrap">
+                        <div class="item__brand"><img src="logo/1203hua-tologo.png" alt="華陀"></div>
+                        <div class="item__pic"><img src="https://media.etmall.com.tw/NXimg/001959/1959278/1959278-1_XL.jpg?t=17326141603" alt="華陀高麗蔘元飲6盒"></div>
+                      </div>
+                      <div class="item__intro">
+                        <div class="item__name">華陀高麗蔘元飲6盒</div>
+                        <div class="item__price"><span>$</span><span>1,212</span></div>
+                      </div>
+                    </div></a></li>
+              </ul>
+            </div>
+            <div class="daily__box m-bottom--sm" id="popular">
+              <div class="daily__title"><span class="date__box">12.4</span><span class="title__box">流行日</span></div>
+              <div class="daily__info">
+                <div class="info__box"> 
+                  <div class="info__title">優惠1：服飾│內衣│鞋包</div>
+                  <div class="info__content">任2件$1212</div>
+                </div>
+                <div class="info__box"> 
+                  <div class="info__title">優惠2：內衣內褲</div>
+                  <div class="info__content">限搶$1元起</div>
+                </div>
+              </div>
+              <ul class="daily__item">
+                <li><a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114206/w/index.html" title="MKD精品款羊毛大衣">
+                    <div class="item__box">
+                      <div class="pic__wrap">
+                        <div class="item__pic"><img src="https://media.etmall.com.tw/NXimg/002415/2415060/2415060-1_XL.jpg?t=17641500820" alt="MKD精品款羊毛大衣"></div>
+                      </div>
+                      <div class="item__intro">
+                        <div class="item__name">MKD精品款羊毛大衣</div>
+                        <div class="item__price"><span>$</span><span>799</span></div>
+                      </div>
+                    </div></a></li>
+                <li><a href="" title="Cherry baby 咖啡紗內衣">
+                    <div class="item__box">
+                      <div class="pic__wrap">
+                        <div class="item__pic"><img src="https://media.etmall.com.tw/NXimg/002477/2477243/2477243-1_XL.jpg?t=17632307670" alt="Cherry baby 咖啡紗內衣"></div>
+                      </div>
+                      <div class="item__intro">
+                        <div class="item__name">Cherry baby 咖啡紗內衣</div>
+                        <div class="item__price"><span>$</span><span>912</span></div>
+                      </div>
+                    </div></a></li>
+                <li><a href="" title="A.S.O休閒鞋三款任選">
+                    <div class="item__box">
+                      <div class="pic__wrap">
+                        <div class="item__brand"><img src="logo/1204A.S.Ologo.jpg" alt="台塑生醫"></div>
+                        <div class="item__pic"><img src="https://media.etmall.com.tw/NXimg/002474/2474031/2474031-1_XL.jpg?t=17628666674" alt="A.S.O休閒鞋三款任選"></div>
+                      </div>
+                      <div class="item__intro">
+                        <div class="item__name">A.S.O休閒鞋三款任選</div>
+                        <div class="item__price"><span>$</span><span>1,499</span></div>
+                      </div>
+                    </div></a></li>
+              </ul>
+            </div>
+            <div class="daily__box m-bottom--sm" id="infomation">
+              <div class="daily__title"><span class="date__box">12.5</span><span class="title__box">資訊日</span></div>
+              <div class="daily__info">
+                <div class="info__box"> 
+                  <div class="info__title">優惠1：3C館歡慶1212</div>
+                  <div class="info__content">消費享Motorola耳機 超殺加購價</div>
+                </div>
+                <div class="info__box"> 
+                  <div class="info__title">優惠2：精選螢幕年終狂歡</div>
+                  <div class="info__content">購買指定螢幕 送360度快充磁吸線</div>
+                </div>
+              </div>
+              <ul class="daily__item">
+                <li><a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201911/SP_1114156/w/index.html" title="改機升級 電競筆電">
+                    <div class="item__box">
+                      <div class="pic__wrap">
+                        <div class="item__brand"><img src="logo/1205asuslogo.png" alt="ASUS"></div>
+                        <div class="item__pic"><img src="https://media.etmall.com.tw/NXimg/002386/2386109/2386109-1_XL.jpg?t=17626254101" alt="改機升級 電競筆電"></div>
+                      </div>
+                      <div class="item__intro">
+                        <div class="item__name">改機升級 電競筆電</div>
+                        <div class="item__price"><span>$</span><span>36,463</span></div>
+                      </div>
+                    </div></a></li>
+                <li><a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201911/SP_1114156/w/index.html" title="GoPro8 旅遊專屬">
+                    <div class="item__box">
+                      <div class="pic__wrap">
+                        <div class="item__brand"><img src="logo/1205GoPrologo.png" alt="GoPro"></div>
+                        <div class="item__pic"><img src="https://media.etmall.com.tw/NXimg/002457/2457522/2457522-1_XL.jpg?t=17632205518" alt="GoPro8 旅遊專屬"></div>
+                      </div>
+                      <div class="item__intro">
+                        <div class="item__name">GoPro8 旅遊專屬</div>
+                        <div class="item__price"><span>$</span><span>16,900</span></div>
+                      </div>
+                    </div></a></li>
+                <li><a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201911/SP_1114156/w/index.html" title="快速列印 不妥協的品質">
+                    <div class="item__box">
+                      <div class="pic__wrap">
+                        <div class="item__brand"><img src="logo/1205HPlogo.png" alt="HP"></div>
+                        <div class="item__pic"><img src="https://media.etmall.com.tw/NXimg/002059/2059349/2059349-1_XL.jpg?t=17600968033" alt="快速列印 不妥協的品質"></div>
+                      </div>
+                      <div class="item__intro">
+                        <div class="item__name">快速列印 不妥協的品質</div>
+                        <div class="item__price"><span>$</span><span>1,212</span></div>
+                      </div>
+                    </div></a></li>
+              </ul>
+            </div>
+            <div class="daily__box m-bottom--sm" id="furniture">
+              <div class="daily__title"><span class="date__box">12.6</span><span class="title__box">傢寢日</span></div>
+              <div class="daily__info">
+                <div class="info__box"> 
+                  <div class="info__title">優惠1：人氣熱銷冬日暖寢</div>
+                  <div class="info__content">全民開搶攻略5折up</div>
+                </div>
+                <div class="info__box"> 
+                  <div class="info__title">優惠2：傢俱寢飾年終回饋</div>
+                  <div class="info__content">決戰雙12惠戰到底</div>
+                </div>
+              </div>
+              <ul class="daily__item">
+                <li><a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114231/w/index.html" title="英格利三人布沙發">
+                    <div class="item__box">
+                      <div class="pic__wrap">
+                        <div class="item__brand"><img src="logo/1206H&Dlogo.jpg" alt="H&D"></div>
+                        <div class="item__pic"><img src="https://media.etmall.com.tw/NXimg/001848/1848532/1848532-1_XL.jpg?t=17615050455" alt="英格利三人布沙發"></div>
+                      </div>
+                      <div class="item__intro">
+                        <div class="item__name">英格利三人布沙發</div>
+                        <div class="item__price"><span>$</span><span>9,612</span></div>
+                      </div>
+                    </div></a></li>
+                <li><a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114231/w/index.html" title="100%天然羽毛被">
+                    <div class="item__box">
+                      <div class="pic__wrap">
+                        <div class="item__brand"><img src="logo/1206Hiltonlogo.jpg" alt="Hilton希爾頓"></div>
+                        <div class="item__pic"><img src="https://media.etmall.com.tw/NXimg/002454/2454353/2454353-1_XL.jpg?t=17642988217" alt="100%天然羽毛被"></div>
+                      </div>
+                      <div class="item__intro">
+                        <div class="item__name">100%天然羽毛被</div>
+                        <div class="item__price"><span>$</span><span>1,212</span></div>
+                      </div>
+                    </div></a></li>
+                <li><a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114231/w/index.html" title="雙人純棉加厚冬被">
+                    <div class="item__box">
+                      <div class="pic__wrap">
+                        <div class="item__brand"><img src="logo/1206HOYACASAlogo.jpg" alt="HOYACASA"></div>
+                        <div class="item__pic"><img src="https://media.etmall.com.tw/NXimg/002488/2488051/2488051-1_XL.jpg?t=17641486830" alt="雙人純棉加厚冬被"></div>
+                      </div>
+                      <div class="item__intro">
+                        <div class="item__name">雙人純棉加厚冬被</div>
+                        <div class="item__price"><span>$</span><span>1,280</span></div>
+                      </div>
+                    </div></a></li>
+              </ul>
+            </div>
+            <div class="daily__box m-bottom--sm" id="appliances">
+              <div class="daily__title"><span class="date__box">12.7</span><span class="title__box">家電日</span></div>
+              <div class="daily__info">
+                <div class="info__box"> 
+                  <div class="info__title">優惠1：日立最高送1500提貨券</div>
+                  <div class="info__content">冰洗狂送1212東森幣+西堤餐券</div>
+                </div>
+                <div class="info__box"> 
+                  <div class="info__title">優惠2：飛利浦獨家抽萬用鍋</div>
+                  <div class="info__content">滿額登記再送王品餐券</div>
+                </div>
+              </div>
+              <ul class="daily__item">
+                <li><a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114198/w/index.html" title="大同40吋電視">
+                    <div class="item__box">
+                      <div class="pic__wrap">
+                        <div class="item__brand"><img src="logo/1207TATUNGlogo.jpg" alt="大同"></div>
+                        <div class="item__pic"><img src="https://media.etmall.com.tw/NXimg/002450/2450221/2450221-1_XL.jpg?t=17616277730" alt="大同40吋電視"></div>
+                      </div>
+                      <div class="item__intro">
+                        <div class="item__name">大同40吋電視</div>
+                        <div class="item__price"><span>$</span><span>5,990</span></div>
+                      </div>
+                    </div></a></li>
+                <li><a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114198/w/index.html" title="品夏5.2L氣炸鍋">
+                    <div class="item__box">
+                      <div class="pic__wrap">
+                        <div class="item__pic"><img src="https://media.etmall.com.tw/NXimg/002457/2457512/2457512-1_XL.jpg?t=17631718071" alt="品夏5.2L氣炸鍋"></div>
+                      </div>
+                      <div class="item__intro">
+                        <div class="item__name">品夏5.2L氣炸鍋</div>
+                        <div class="item__price"><span></span><span>結帳驚喜價</span></div>
+                      </div>
+                    </div></a></li>
+                <li><a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114198/w/index.html" title="國際一級能效除濕機">
+                    <div class="item__box">
+                      <div class="pic__wrap">
+                        <div class="item__brand"><img src="logo/1207PANASONIClogo.jpg" alt="國際"></div>
+                        <div class="item__pic"><img src="https://media.etmall.com.tw/NXimg/002329/2329674/2329674-1_XL.jpg?t=17626298378" alt="國際一級能效除濕機"></div>
+                      </div>
+                      <div class="item__intro">
+                        <div class="item__name">國際一級能效除濕機</div>
+                        <div class="item__price"><span></span><span>結帳驚喜價</span></div>
+                      </div>
+                    </div></a></li>
+              </ul>
+            </div>
+            <div class="daily__box m-bottom--sm" id="food">
+              <div class="daily__title"><span class="date__box">12.8</span><span class="title__box">美食</span></div>
+              <div class="daily__info">
+                <div class="info__box"> 
+                  <div class="info__title">優惠1：漢來全系列餐券</div>
+                  <div class="info__content">挑戰全台最低價</div>
+                </div>
+                <div class="info__box"> 
+                  <div class="info__title">優惠2：品牌美食年終犒賞</div>
+                  <div class="info__content">吃個痛快5折up</div>
+                </div>
+              </div>
+              <ul class="daily__item">
+                <li><a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114244/w/index.html" title="鮮一杯老舊金山拿鐵">
+                    <div class="item__box">
+                      <div class="pic__wrap">
+                        <div class="item__brand"><img src="logo/1208kamilllogo.jpg" alt="鮮一杯"></div>
+                        <div class="item__pic"><img src="https://media.etmall.com.tw/NXimg/002408/2408633/2408633-1_XL.jpg?t=17582740648" alt="鮮一杯老舊金山拿鐵"></div>
+                      </div>
+                      <div class="item__intro">
+                        <div class="item__name">鮮一杯老舊金山拿鐵</div>
+                        <div class="item__price"><span>$</span><span>585</span></div>
+                      </div>
+                    </div></a></li>
+                <li><a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114244/w/index.html" title="高雄美濃橙蜜香蕃茄">
+                    <div class="item__box">
+                      <div class="pic__wrap">
+                        <div class="item__pic"><img src="https://media.etmall.com.tw/NXimg/002475/2475601/2475601-1_XL.jpg?t=17631083633" alt="高雄美濃橙蜜香蕃茄"></div>
+                      </div>
+                      <div class="item__intro">
+                        <div class="item__name">高雄美濃橙蜜香蕃茄</div>
+                        <div class="item__price"><span>$</span><span>699</span></div>
+                      </div>
+                    </div></a></li>
+                <li><a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114244/w/index.html" title="膳食家湯品買6送2">
+                    <div class="item__box">
+                      <div class="pic__wrap">
+                        <div class="item__brand"><img src="logo/1208sanshijialogo.jpg" alt="膳食家"></div>
+                        <div class="item__pic"><img src="https://media.etmall.com.tw/NXimg/002477/2477355/2477355-1_XL.jpg?t=17632851557" alt="膳食家湯品買6送2"></div>
+                      </div>
+                      <div class="item__intro">
+                        <div class="item__name">膳食家湯品買6送2</div>
+                        <div class="item__price"><span>$</span><span>599</span></div>
+                      </div>
+                    </div></a></li>
+              </ul>
+            </div>
+            <div class="daily__box m-bottom--sm" id="cosmetics">
+              <div class="daily__title"><span class="date__box">12.9</span><span class="title__box">美妝日</span></div>
+              <div class="daily__info">
+                <div class="info__box"> 
+                  <div class="info__title">優惠1：專櫃爆款狂降3折up</div>
+                  <div class="info__content">PK百貨・霸氣瘋殺</div>
+                </div>
+                <div class="info__box"> 
+                  <div class="info__title">優惠2：開架醫美夯品122up</div>
+                  <div class="info__content">超低折扣買起來</div>
+                </div>
+              </div>
+              <ul class="daily__item">
+                <li><a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114222/w/index.html" title="百優加大版$2222">
+                    <div class="item__box">
+                      <div class="pic__wrap">
+                        <div class="item__pic"><img src="https://media.etmall.com.tw/NXimg/002394/2394613/2394613-1_XL.jpg?t=17576428204" alt="百優加大版$2222"></div>
+                      </div>
+                      <div class="item__intro">
+                        <div class="item__name">百優加大版$2222</div>
+                        <div class="item__price"><span>$</span><span>2,222</span></div>
+                      </div>
+                    </div></a></li>
+                <li><a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114222/w/index.html" title="理膚寶水多容安舒緩修護2入">
+                    <div class="item__box">
+                      <div class="pic__wrap">
+                        <div class="item__pic"><img src="https://media.etmall.com.tw/NXimg/002490/2490220/2490220-1_XL.jpg?t=17642020394" alt="理膚寶水多容安舒緩修護2入"></div>
+                      </div>
+                      <div class="item__intro">
+                        <div class="item__name">理膚寶水多容安舒緩修護2入</div>
+                        <div class="item__price"><span>$</span><span>1,212</span></div>
+                      </div>
+                    </div></a></li>
+                <li><a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114222/w/index.html" title="Kamill護手霜買1送2">
+                    <div class="item__box">
+                      <div class="pic__wrap">
+                        <div class="item__pic"><img src="https://media.etmall.com.tw/NXimg/002487/2487643/2487643-1_XL.jpg?t=17641334918" alt="Kamill護手霜買1送2"></div>
+                      </div>
+                      <div class="item__intro">
+                        <div class="item__name">Kamill護手霜買1送2</div>
+                        <div class="item__price"><span>$</span><span>299</span></div>
+                      </div>
+                    </div></a></li>
+              </ul>
+            </div>
+            <div class="daily__box m-bottom--sm" id="supplies">
+              <div class="daily__title"><span class="date__box">12.10</span><span class="title__box">日用</span></div>
+              <div class="daily__info">
+                <div class="info__box"> 
+                  <div class="info__title">優惠1：1212日用爽購禮</div>
+                  <div class="info__content">滿額1212抽舒潔衛生紙</div>
+                </div>
+                <div class="info__box"> 
+                  <div class="info__title">優惠2：東森幣回饋10%</div>
+                  <div class="info__content">專區商品期間限定</div>
+                </div>
+              </div>
+              <ul class="daily__item">
+                <li><a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114253/w/index.html" title="白蘭含熊洗衣精16包">
+                    <div class="item__box">
+                      <div class="pic__wrap">
+                        <div class="item__pic"><img src="https://media.etmall.com.tw/NXimg/002411/2411733/2411733-1_XL.jpg?t=17631258654" alt="白蘭含熊洗衣精16包"></div>
+                      </div>
+                      <div class="item__intro">
+                        <div class="item__name">白蘭含熊洗衣精16包</div>
+                        <div class="item__price"><span>$</span><span>1,212</span></div>
+                      </div>
+                    </div></a></li>
+                <li><a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114253/w/index.html" title="象印不鏽鋼保溫瓶組820ML+480ML">
+                    <div class="item__box">
+                      <div class="pic__wrap">
+                        <div class="item__brand"><img src="logo/1210ZOJIRUSHIlogo.jpg" alt="象印"></div>
+                        <div class="item__pic"><img src="https://media.etmall.com.tw/NXimg/002414/2414493/2414493-1_XL.jpg?t=17625441070" alt="象印不鏽鋼保溫瓶組820ML+480ML"></div>
+                      </div>
+                      <div class="item__intro">
+                        <div class="item__name">象印不鏽鋼保溫瓶組820ML+480ML</div>
+                        <div class="item__price"><span>$</span><span>1,212</span></div>
+                      </div>
+                    </div></a></li>
+                <li><a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114253/w/index.html" title="真心良品收納箱38L-4入">
+                    <div class="item__box">
+                      <div class="pic__wrap">
+                        <div class="item__brand"><img src="logo/1210jehlogo.jpg" alt="真心良品"></div>
+                        <div class="item__pic"><img src="https://media.etmall.com.tw/NXimg/001937/1937560/1937560-1_XL.jpg?t=16676327116" alt="真心良品收納箱38L-4入"></div>
+                      </div>
+                      <div class="item__intro">
+                        <div class="item__name">真心良品收納箱38L-4入</div>
+                        <div class="item__price"><span>$</span><span>1,212</span></div>
+                      </div>
+                    </div></a></li>
+              </ul>
+            </div>
+            <div class="daily__box m-bottom--sm" id="communication">
+              <div class="daily__title"><span class="date__box">12.11</span><span class="title__box">通訊日</span></div>
+              <div class="daily__info">
+                <div class="info__box"> 
+                  <div class="info__title">優惠1：SAMSUNG旗艦機</div>
+                  <div class="info__content">官方登錄送耳機</div>
+                </div>
+                <div class="info__box"> 
+                  <div class="info__title">優惠2：iPad新機</div>
+                  <div class="info__content">"95折扣一起購Go"</div>
+                </div>
+              </div>
+              <ul class="daily__item">
+                <li><a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114291/w/index.html" title="Galaxy Note10+ (12G/256G)">
+                    <div class="item__box">
+                      <div class="pic__wrap">
+                        <div class="item__brand"><img src="logo/1211asuslogo.jpg" alt="SAMSUNG"></div>
+                        <div class="item__pic"><img src="https://media.etmall.com.tw/NXimg/002490/2490058/2490058-1_XL.jpg?t=17641990477" alt="Galaxy Note10+ (12G/256G)"></div>
+                      </div>
+                      <div class="item__intro">
+                        <div class="item__name">Galaxy Note10+ (12G/256G)</div>
+                        <div class="item__price"><span>$</span><span>30,788</span></div>
+                      </div>
+                    </div></a></li>
+                <li><a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114291/w/index.html" title="2019 iPad 32G">
+                    <div class="item__box">
+                      <div class="pic__wrap">
+                        <div class="item__pic"><img src="https://media.etmall.com.tw/NXimg/002466/2466459/2466459-1_XL.jpg?t=17642352201" alt="2019 iPad 32G"></div>
+                      </div>
+                      <div class="item__intro">
+                        <div class="item__name">2019 iPad 32G</div>
+                        <div class="item__price"><span>$</span><span>10,900</span></div>
+                      </div>
+                    </div></a></li>
+                <li><a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201912/SP_1114291/w/index.html" title="ROGII旗艦升級再現">
+                    <div class="item__box">
+                      <div class="pic__wrap">
+                        <div class="item__brand"><img src="logo/1211asuslogo.jpg" alt="ASUS"></div>
+                        <div class="item__pic"><img src="https://media.etmall.com.tw/NXimg/002438/2438713/2438713-1_XL.jpg?t=17607084409" alt="ROGII旗艦升級再現"></div>
+                      </div>
+                      <div class="item__intro">
+                        <div class="item__name">ROGII旗艦升級再現</div>
+                        <div class="item__price"><span>$</span><span>32,900</span></div>
+                      </div>
+                    </div></a></li>
+              </ul>
+            </div>
+            <div class="daily__box m-bottom--sm" id="children">
+              <div class="daily__title"><span class="date__box">12.13</span><span class="title__box">婦幼日</span></div>
+              <div class="daily__info">
+                <div class="info__box"> 
+                  <div class="info__title">優惠1：世界玩具特賣會</div>
+                  <div class="info__content">冰雪奇緣2新品上市</div>
+                </div>
+                <div class="info__box"> 
+                  <div class="info__title">優惠2：1212瘋狂搶購</div>
+                  <div class="info__content">限時特惠38折up</div>
+                </div>
+              </div>
+              <ul class="daily__item">
+                <li><a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201911/SP_1114187/w/index.html" title="Skater保溫瓶">
+                    <div class="item__box">
+                      <div class="pic__wrap">
+                        <div class="item__pic"><img src="https://media.etmall.com.tw/NXimg/002457/2457708/2457708-1_XL.jpg?t=17619261802" alt="Skater保溫瓶"></div>
+                      </div>
+                      <div class="item__intro">
+                        <div class="item__name">Skater保溫瓶</div>
+                        <div class="item__price"><span>$</span><span>891</span></div>
+                      </div>
+                    </div></a></li>
+                    <li><a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201911/SP_1114187/w/index.html" title="LOG樂格兩用滑板車">
+                    <div class="item__box">
+                      <div class="pic__wrap">
+                        <div class="item__pic"><img src="https://media.etmall.com.tw/NXimg/002487/2487523/2487523-1_XL.jpg?t=17641326324" alt="LOG樂格兩用滑板車"></div>
+                      </div>
+                      <div class="item__intro">
+                        <div class="item__name">LOG樂格兩用滑板車</div>
+                        <div class="item__price"><span>$</span><span>1,212</span></div>
+                      </div>
+                    </div></a></li>
+                    <li><a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201911/SP_1114187/w/index.html" title="德國NUK獨家組合">
+                    <div class="item__box">
+                      <div class="pic__wrap">
+                        <div class="item__brand"><img src="logo/1213chiccologo.png" alt="chicco"></div>
+                        <div class="item__pic"><img src="https://media.etmall.com.tw/NXimg/002458/2458028/2458028-1_XL.jpg?t=17634910607" alt="德國NUK獨家組合"></div>
+                      </div>
+                      <div class="item__intro">
+                        <div class="item__name">德國NUK獨家組合</div>
+                        <div class="item__price"><span>$</span><span>1,112</span></div>
+                      </div>
+                    </div></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="table__wrap m-bottom--md">
+        <div class="layout--main">
+          <div class="table__zone">
+            <div class="table__title m-bottom--xs" title="省錢攻略"><img src="table-title.png" alt="省錢攻略"></div>
+            <div class="table__box">
+              <table>
+                <tr>
+                  <th>時間</th>
+                  <th>活動</th>
+                  <th>內容</th>
+                </tr>
+                <tr>
+                  <td>12/1~12/8</td>
+                  <td>紅包狂灑</td>
+                  <td>天天搶紅包決戰1212</td>
+                </tr>
+                <tr>
+                  <td>12/2~12/9</td>
+                  <td>訂單特價</td>
+                  <td>哀鳳買一送三</td>
+                </tr>
+                <tr>
+                  <td>12/1~12/8</td>
+                  <td>紅包狂灑</td>
+                  <td>天天搶紅包決戰1212</td>
+                </tr>
+                <tr>
+                  <td>12/2~12/9</td>
+                  <td>訂單特價</td>
+                  <td>哀鳳買一送三</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="https://polyfill.io/v3/polyfill.min.js"></script>
+    <script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+  <script type="text/javascript" src="app-bundle.js"></script></body>
+</html>

@@ -1,0 +1,36 @@
+// // ==========================================================================
+// // Plugins
+// // ==========================================================================
+// // @import "vendors/animate"
+@import "~vendors/style/swiper-slider-custom"
+
+// // ==========================================================================
+// // components
+// // ==========================================================================
+
+// hero section
+// ===========================
+@import "~event/2nd/u-main/components/hero-section/_hero-section"
+
+// other components
+// ===========================
+@import "~event/2nd/u-main/components/hero-small-slider/_hero-small-slider"
+@import "~event/2nd/u-main/components/promo-event/_promo-event"
+@import "~event/2nd/u-main/components/connect-anchor/_connect-anchor"
+// // ==========================================================================
+// // Page
+// // ==========================================================================
+body
+  +pos-set(relative, zero)
+  background-color: $main-e-background-color-2nd
+
+.sp__wrap
+  +pos-set(relative, base)
+  +bg-set(url("~event/2nd/u-main/pages/index/bg.jpg"), 100%)
+  animation: bg-change 1s steps(2) infinite
+  +breakpoint-min($min-width-xl)
+    background: center 0 url("~event/2nd/u-main/pages/index/bg.jpg") no-repeat, center 0 url("~event/2nd/u-main/pages/index/bg-web.jpg") no-repeat
+    background-size: auto
+
+.sp__wrap a
+  display: block

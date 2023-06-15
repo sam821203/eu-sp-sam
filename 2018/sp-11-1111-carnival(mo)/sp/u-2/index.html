@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css"></style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <style>
+        .opacity--0 {
+            opacity: 0;
+        }
+        @media screen and (min-width: 641px) {
+            .n-sp__box .sp__wrap img,
+            .main-info img,
+            .firstInfo a img {
+                width: auto;
+            }
+        }
+        .secInfo .secInfo-slider .cycle-pager img {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body class="sp_page" style="background: #e6104e;">
+<div id="iconHome"></div>
+<div id="elevatorHome"></div>
+<main id="spWrap" class="sp__wrap"
+      style="background: center top url(11-bg.png) no-repeat;
+    background-size: 100% auto;">
+
+    <section class="spotlight_group">
+        <div class="spotlight spotLight_L"></div>
+        <div class="spotlight spotLight_R"></div>
+    </section>
+    <section class="sp-content">
+        <div class="main-info clearfix">
+            <img id="openItem2" src="title.png" class="main-title wow fadeInDownBig" />
+        </div>
+        <div class="firstInfo clearfix wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">
+            <div class="firstInfo-row-1">
+                <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201811/SP_1106072/m/m.html#note">
+                    <img src="1-1.png" class="wow flipInY" data-wow-duration="2.5s" data-wow-delay=".5s"/>
+                </a>
+                <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201811/SP_1106182/m/m.html">
+                    <img src="1-2.png" class="wow flipInY" data-wow-duration="2.5s" data-wow-delay=".5s"/>
+                </a>
+            </div>
+            <div class="firstInfo-row-2">
+                <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201811/SP_1106091/m/m.html">
+                    <img src="1-3.png" class="wow flipInY" data-wow-duration="2.5s" data-wow-delay=".5s"/>
+                </a>
+                <a href="https://www.etmall.com.tw/XML/content/DMSetting/Final/201811/SP_1106074/m/m.html">
+                    <img src="1-4.png" class="wow flipInY" data-wow-duration="2.5s" data-wow-delay=".5s"/>
+                </a>
+            </div>
+        </div>
+        <div class="fourInfo clearfix wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">
+            <div class="fourInfo-row-1">
+                <a href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201811/SP_1102836/m/m.html">
+                    <img src="4-1.png" class="wow flipInY" data-wow-duration="2.5s" data-wow-delay=".5s"
+                         alt="泡湯券滿額抽"/>
+                </a>
+                <a href="https://www.u-mall.com.tw/XML/content/DMSetting/Final/201811/SP_1102939/m/m.html">
+                    <img src="4-2.png" class="wow flipInY" data-wow-duration="2.5s" data-wow-delay=".5s"
+                         alt="流行紡品任2件 83折"/>
+                </a>
+            </div>
+            <div class="fourInfo-row-2">
+                <a href="#A99">
+                    <img src="4-3.png" class="wow flipInY" data-wow-duration="2.5s" data-wow-delay=".5s"
+                         alt="專區 買一送一"/>
+                </a>
+                <a href="#A99">
+                    <img src="4-4.png" class="wow flipInY" data-wow-duration="2.5s" data-wow-delay=".5s"
+                         alt="爆殺好物 5折"/>
+                </a>
+            </div>
+        </div>
+
+    </section>
+</main>
+
+<!--<script id="loadJS" src="load-indicator.js"></script>-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+
+<script id="scriptIconFloat"
+        src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1103045/float-icon.js"></script>
+<script type="text/javascript"
+        src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1103042/generateVersion20181019.js"></script>
+
+<script type="text/javascript">
+    var isUiWebview = /(WebView|(iPhone|iPod|iPad)(?!.*Safari\/))/gi.test(navigator.userAgent);
+    if (!isUiWebview) {
+        new WOW().init();
+    }
+
+    // 高度過高問題
+    function pageHt() {
+        var pageHt = $('.sp-content').outerHeight();
+        $('.sp__wrap').css('height', pageHt);
+    }
+    pageHt();
+    $(window).resize(function () {
+        pageHt();
+    });
+</script>
+</body>
+</html>

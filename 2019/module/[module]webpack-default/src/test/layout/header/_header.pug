@@ -1,0 +1,9 @@
+//- 可在頁面上用isU = true控制logo與連結網址
+- var siteData = {etmall: {link: "https://www.etmall.com.tw/", imgSrc: "../layout/header/logo-e.png", alt: "東森購物"}, umall: {link: "https://www.u-mall.com.tw/", imgSrc: "../layout/header/logo-u.png", alt: "森森購物"}}
+- var siteInfo = isU ? siteData.umall : siteData.etmall
+
+//- 切換不同main/sp header
+if !isSp
+  include ../header/main/_header-main.pug
+else if isSp
+  include ../header/sp/_header-sp.pug

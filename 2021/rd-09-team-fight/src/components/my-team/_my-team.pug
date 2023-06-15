@@ -1,0 +1,71 @@
+-
+  var myTeamData = [
+    {
+      name: "*A↗HA↘HA↗HA*",
+      price: "999,999,999",
+    },
+    {
+      name: "*欸*",
+      price: "999,999",
+    },
+    {
+      name: "*卍霸氣a中二乂*",
+      price: "99,999",
+      isActive: true,
+    },
+    {
+      name: "*嫩*",
+      price: "9,999",
+    },
+    {
+      name: "*哇*",
+      price: "999",
+    },
+  ]
+
+- var tableHead = ["名次", "團員名稱", ]
+- var tableData = myTeamData
+
+section.section--cell.promo__group.promo__group--my.m-bottom--xl
+  .layout--main
+    .group__wrap
+      .group__title.block--center.m-bottom--lg
+        img(src="~components/my-team/title-my.png", alt="我的團隊")
+
+      .group__nav.m-bottom--fixed
+        .nav__item
+          a.btn--nav.shape--capsule.capsule--gradient 退出隊伍
+        .nav__item
+          a.btn--nav.shape--capsule.capsule--gradient 邀請好友
+        .nav__item
+          a.btn--nav.shape--capsule.capsule--gradient 團隊排行榜
+
+      .group__table.m-bottom--md
+        .team__info.m-bottom--lg
+          .info__title 團隊名稱
+          .info__name 一二三四五六七八九十一二三四
+          .info__number
+            span 團隊編號：
+            span EHS5487
+
+        include /components/include/team-table/_team-table
+
+        .team__total
+          .total__title 團隊總累計
+          .total__price
+            span $
+            span 99,999,999
+
+      .group__alert
+        .alert__title.m-bottom--xs
+          span 還差
+          span 2
+          span 人成團
+        .alert__content
+          p 隊伍成立時間：
+          span 2021/10/14 AM10:00-2021/10/19 PM23:59
+            span (10/19 PM23:59後不可成立新隊伍)
+          p 可換隊時間：
+            span 2021/10/14 AM10:00-2021/10/20 PM12:00
+
+

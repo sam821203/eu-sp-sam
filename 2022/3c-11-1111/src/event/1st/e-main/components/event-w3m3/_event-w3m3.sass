@@ -1,0 +1,39 @@
+.promo__group--w3m3
+  +pos-set(relative, zero)
+  overflow: hidden
+  .decor__wrap
+    .decor__item
+      text-align: center
+  .promo__wrap
+    .promo__zone
+      +aspect-ratio(960, 1050)
+    .promo__block
+      +pos-set(absolute, base, 0%, 0%)
+    .event__wrap
+      padding-top: 3%
+    .good__wrap
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-around
+      li
+        position: relative
+        width: 33%
+        text-align: center
+        transform: scale(1.05)
+        +breakpoint-min($min-width-xl)
+          width: auto
+        &:nth-child(3n+2)
+          margin-top: 4%
+        a 
+          overflow: hidden
+          .stamp
+            +pos-set(absolute, base, 0, 51%)
+            transform: translate(-50%, 0)
+            transition: transform .4s
+          &:hover
+            .stamp
+              transform: translate(-50%, -12px)
+          &.active
+            .stamp
+              transition: transform .4s
+              transform: translate(-50%, -7%)

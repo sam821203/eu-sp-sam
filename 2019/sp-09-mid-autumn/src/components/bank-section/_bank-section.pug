@@ -1,0 +1,27 @@
+- var bankLink = {etmall: "https://www.etmall.com.tw/XML/content/DMSetting/Final/201909/SP_1107837/w/index.html", umall: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/201909/SP_1104316/w/index.html"}
+- var bankInfo = isU ? bankLink.umall : bankLink.etmall
+
+- var bankDataE = [{link: bankInfo, imgSrc: "~components/bank-section/items/e/bank-01.png", alt: "點我看銀行回饋"}, {link: bankInfo, imgSrc: "~components/bank-section/items/e/bank-02.png", alt: "點我看銀行回饋"}, {link: bankInfo, imgSrc: "~components/bank-section/items/e/bank-03.png", alt: "點我看銀行回饋"}, {link: bankInfo, imgSrc: "~components/bank-section/items/e/bank-04.png", alt: "點我看銀行回饋"}, {link: bankInfo, imgSrc: "~components/bank-section/items/e/bank-05.png", alt: "點我看銀行回饋"}, {link: bankInfo, imgSrc: "~components/bank-section/items/e/bank-06.png", alt: "點我看銀行回饋"}, {link: bankInfo, imgSrc: "~components/bank-section/items/e/bank-07.png", alt: "點我看銀行回饋"}, {link: bankInfo, imgSrc: "~components/bank-section/items/e/bank-08.png", alt: "點我看銀行回饋"}, ]
+
+- var bankDataU = [{link: bankInfo, imgSrc: "~components/bank-section/items/u/bank-01.png", alt: "點我看銀行回饋"}, {link: bankInfo, imgSrc: "~components/bank-section/items/u/bank-02.png", alt: "點我看銀行回饋"}, {link: bankInfo, imgSrc: "~components/bank-section/items/u/bank-03.png", alt: "點我看銀行回饋"}, {link: bankInfo, imgSrc: "~components/bank-section/items/u/bank-04.png", alt: "點我看銀行回饋"}, {link: bankInfo, imgSrc: "~components/bank-section/items/u/bank-05.png", alt: "點我看銀行回饋"}, {link: bankInfo, imgSrc: "~components/bank-section/items/u/bank-06.png", alt: "點我看銀行回饋"}, {link: bankInfo, imgSrc: "~components/bank-section/items/u/bank-07.png", alt: "點我看銀行回饋"}, {link: bankInfo, imgSrc: "~components/bank-section/items/u/bank-08.png", alt: "點我看銀行回饋"}, ]
+
+- var bankData = isU? bankDataU : bankDataE
+
+
+section.promo__group.promo__group--bank
+  .layout--main
+    //- .promo__zone.lazyload(data-src="960bg-05.jpg")
+    .promo__zone
+      .promo__title.block--center.m-bottom--xs(data-title="a3")
+        //- img.lazyload(data-src="section-bn-04.png", src="~utils/img/1x1_low.png", alt="銀行回饋")
+      .promo__wrap
+        .promo__slider
+          #sliderBank.swiper-container
+            ul.swiper-wrapper
+              each data in bankData
+                li.swiper-slide
+                  a(href= data.link, title= data.alt)
+                    img(src= data.imgSrc, alt= data.alt)
+            #sliderBankPager.swiper-pager-white.swiper-pagination
+          #sliderBankPrev.swiper-button-white.swiper-button-prev
+          #sliderBankNext.swiper-button-white.swiper-button-next

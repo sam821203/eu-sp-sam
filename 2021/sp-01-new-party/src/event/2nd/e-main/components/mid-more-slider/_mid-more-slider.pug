@@ -1,0 +1,102 @@
+-
+  var midMoreDataE = [
+    {
+      link: "https://www.etmall.com.tw/c3/132479",
+      imgSrc: "~event/2nd/e-main/components/mid-more-slider/items/mid-more-1.png",
+      alt: "統一食品",
+      text: "統一食品 新年特惠",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/7479/m/index.html",
+      imgSrc: "~event/2nd/e-main/components/mid-more-slider/items/mid-more-2.png",
+      alt: "EASY SHOP",
+      text: "開運內衣2折up",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/7664/m/index.html",
+      imgSrc: "~event/2nd/e-main/components/mid-more-slider/items/mid-more-3.png",
+      alt: "LooCa",
+      text: "抽50型4K液晶",
+    },
+    {
+      link: "https://www.etmall.com.tw/bs/148566",
+      imgSrc: "~event/2nd/e-main/components/mid-more-slider/items/mid-more-4.png",
+      alt: "ASHIYA",
+      text: "$1101送茶樹乾洗手",
+    },
+    {
+      link: "https://www.etmall.com.tw/p/121042",
+      imgSrc: "~event/2nd/e-main/components/mid-more-slider/items/mid-more-5.png",
+      alt: "華陀",
+      text: "華陀 送雞精膠囊",
+    },
+    {
+      link: "https://www.etmall.com.tw/p/121032",
+      imgSrc: "~event/2nd/e-main/components/mid-more-slider/items/mid-more-6.png",
+      alt: "日本味王",
+      text: "日本味王滿額送禮",
+    },
+    {
+      link: "https://www.etmall.com.tw/gp/114201",
+      imgSrc: "~event/2nd/e-main/components/mid-more-slider/items/mid-more-7.png",
+      alt: "dyson",
+      text: "回饋10%東森幣",
+    },
+    {
+      link: "https://www.etmall.com.tw/c3/145300",
+      imgSrc: "~event/2nd/e-main/components/mid-more-slider/items/mid-more-8.png",
+      alt: "ASUS",
+      text: "ASUS新年好禮放送",
+    },
+    {
+      link: "https://media.etmall.com.tw/sp/7607/m/index.html",
+      imgSrc: "~event/2nd/e-main/components/mid-more-slider/items/mid-more-9.png",
+      alt: "MyCard",
+      text: "滿額送Switch",
+    },
+  ]
+
+-
+  var midMoreDataU = [
+    {
+      link: "https://www.u-mall.com.tw/XML/content/DMSetting/Final/202008/SP_1106087/w/index.html",
+      imgSrc: "~event/2nd/u-main/components/mid-more-slider/items/mid-more-1.png",
+      alt: "滿$3000送300",
+      text: "我愛東森東森愛我",
+    },
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale",
+      imgSrc: "~event/2nd/u-main/components/mid-more-slider/items/mid-more-2.png",
+      alt: "滿$3000送300",
+      text: "我愛東森東森愛我",
+    },
+    {
+      link: "https://www.u-mall.com.tw/Activity/HourSale?Day=Up",
+      imgSrc: "~event/2nd/u-main/components/mid-more-slider/items/mid-more-3.png",
+      alt: "滿$3000送300",
+      text: "我愛東森東森愛我",
+    },
+  ]
+
+- var midMoreData = isU ? midMoreDataU : midMoreDataE
+
+section.promo__group.promo__group--mid-more.m-bottom--md(data-title="品牌大賞")
+  .layout--main
+    //- .promo__title.block--center.text--center
+    //-   img(src="~event/2nd/e-main/components/mid-more-slider/title-mid-more.png", alt="")
+
+    .promo__wrap
+      .promo__slider
+        #sliderMidMore.swiper-container
+          ul.swiper-wrapper
+            each data in midMoreData
+              li.swiper-slide
+                a(href= data.link, title= data.alt)
+                  img.swiper-lazy(data-src= data.imgSrc, alt= data.alt)
+                  .swiper-lazy-preloader.swiper-lazy-preloader-white
+                  .text__box
+                    span= data.text
+
+        //- #sliderMidMorePrev.swiper-button-white.swiper-button-prev.mid-more__nav.mid-more__nav--prev
+        //- #sliderMidMoreNext.swiper-button-white.swiper-button-next.mid-more__nav.mid-more__nav--next
+      //- #sliderMidMorePager.mid-more__pager.swiper-pagination

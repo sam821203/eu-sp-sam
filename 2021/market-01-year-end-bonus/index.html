@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--[if !IE]><!-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+    <!--<![endif]-->
+    <!--[if IE 9]>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/2.7.6/idangerous.swiper.min.css">
+    <style>
+    .swiper-button-prev {
+        display: none;
+    }
+
+    .swiper-button-next {
+        display: none;
+    }
+    </style>
+    <![endif]-->
+    <link href="app-bundle.css" rel="stylesheet">
+    <style>
+    .hero__wrap .hero__zone {
+        padding: 0;
+    }
+    .top__wrap {
+        position: relative;
+        height: 58vw;
+    }
+
+    .top__wrap img {
+        position: absolute;
+        top: 1vw;
+        left: 6vw;
+        width: 53vw;
+    }
+    .top__wrap .goods__wrap--flip {
+        position: relative;
+        width: auto;
+        top: 0;
+        width: 50%;
+        text-align: right;
+        display: block;
+        float: right;
+    }
+    .top__wrap .goods__wrap--flip .promo__slider {
+        position: absolute;
+        top: 1vw;
+        right: 9vw;
+        width: 100%;
+        height: auto;
+    }
+    .top__wrap .goods__wrap--flip .promo__slider img {
+        transform: scale(1);
+    }
+    .promo__group--scroll-x .scroll-x__wrap {
+        padding: 3.3% 6% 0 0%;
+        overflow: hidden;
+        width: 84%;
+    }
+    .promo__group--scroll-x .scroll-x__wrap .scroll-x__zone {
+        display: inline-flex;
+        overflow: visible;
+        /*width: 100%;*/
+        /*overflow-x: scroll;*/
+        /*width: 100%;*/
+        /*display: block;*/
+        /*overflow-x: inherit;*/
+        /*scrollbar-width: inherit;*/
+    }
+    .promo__group--scroll-x .scroll-x__wrap .scroll-x__zone li {
+        margin-right: 2%;
+    }
+    .promo__group--tab .tab__wrap {
+        padding: 3.5% 2% 3% 3%;
+    }
+    .promo__group--tab .tab__wrap .tab__zone {
+        width: 44.2%;
+        flex: 0 1 44.2%;
+    }
+    .promo__group--tab .tab__wrap .content__zone {
+        width: 60.5%;
+        flex: 0 1 60.5%;
+        padding: 3% 1% 0% 0%;
+    }
+    @media screen and (min-width: 960px) {
+        .top__wrap {
+            position: relative;
+            height: 580px;
+        }
+
+        .top__wrap img {
+            top: 10px;
+            left: 0;
+            width: auto;
+        }
+        .top__wrap .goods__wrap--flip {
+            right: 0;
+
+        }
+        /*.top__wrap .goods__wrap--flip .promo__slider img {*/
+            /*transform: scale(1.1);*/
+        /*}*/
+        .top__wrap .goods__wrap--flip .promo__slider {
+            top: 76px;
+            right: calc(50% - 283px);
+            width: 100%;
+        }
+        .promo__group--scroll-x .scroll-x__wrap {
+            padding: 0;
+            width: 84%;
+            margin: 1% 0 0 2vw;
+        }
+        .promo__group--scroll-x .scroll-x__wrap .scroll-x__zone li {
+            width: 25%;
+            flex: 1 0 25%;
+        }
+        .hero__wrap {
+            margin-bottom: 3%;
+        }
+        .promo__group--tab {
+            margin-top: 80px;
+        }
+        .promo__group--tab .tab__item {
+            width: 31.5%;
+            flex: 0 0 31.5%;
+            margin-bottom: 1%;
+        }
+        .promo__group--tab .tab__wrap .tab__zone {
+            width: 90%;
+            flex: 0 1 90%;
+        }
+        .promo__group--tab .tab__wrap .content__zone {
+            width: 90%;
+            flex: 0 1 90%;
+            padding: 1% 0 0% 0%;
+        }
+    }
+
+    @media screen and (min-width: 1440px) {
+        .promo__group--scroll-x .scroll-x__wrap {
+            margin: 1% 0 0 3vw;
+        }
+    }
+    </style>
+</head>
+<body>
+<main class="sp__wrap sp__wrap--e" id="spWrap">
+    <header class="header__zone">
+        <div class="layout--main"><a class="logo logo--e" href="https://www.etmall.com.tw/"><img src="logo-white.png"
+                                                                                                 alt="東森購物"></a>
+        </div>
+    </header>
+    <section class="hero__wrap">
+        <div class="layout--main">
+            <div class="hero__zone">
+                <div class="promo__block">
+                    <div class="top__wrap">
+                        <img src="m-1.png" alt="">
+                        <div class="goods__wrap--flip">
+                            <div class="promo__slider">
+                                <div class="swiper-container" id="sliderGoodsFlip">
+                                    <ul class="swiper-wrapper">
+                                        <li class="swiper-slide"><a href="https://www.etmall.com.tw/np/"
+                                                                    title="Impress涼夏洋裝"><img src="product-1.png"
+                                                                                             alt="Impress涼夏洋裝"></a></li>
+                                        <li class="swiper-slide"><a href="https://www.etmall.com.tw/p/67031"
+                                                                    title="EASY SHOP內衣褲瘋殺"><img src="product-2.png"
+                                                                                                alt="EASY SHOP內衣褲瘋殺"></a>
+                                        </li>
+                                        <li class="swiper-slide"><a href="https://www.etmall.com.tw/i/2587100"
+                                                                    title="Adidas/New Balance下殺不留"><img
+                                                src="product-3.png"
+                                                alt="Adidas/New Balance下殺不留"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <section class="promo__group promo__group--scroll-x m-bottom--xs">
+                        <div class="layout--main">
+                            <div class="scroll-x__wrap swiper-container" id="sliderScrollX2">
+                                <!--<ul class="scroll-x__zone scroll-x__zone-2 swiper-wrapper">-->
+                                <ul class="scroll-x__zone swiper-wrapper">
+                                    <li class="swiper-slide"><a href="https://www.etmall.com.tw/p/105751"><img
+                                            src="logo-1.jpg"></a></li>
+                                    <li class="swiper-slide"><a href="https://www.etmall.com.tw/gp/113781"><img
+                                            src="logo-2.jpg"></a></li>
+                                    <li class="swiper-slide"><a href="https://www.etmall.com.tw/c2/139106"><img
+                                            src="logo-3.jpg"></a></li>
+                                    <li class="swiper-slide"><a href="https://www.etmall.com.tw/gp/109672"><img
+                                            src="logo-4.jpg"></a></li>
+                                    <li class="swiper-slide"><a href="https://www.etmall.com.tw/gp/107513"><img
+                                            src="logo-5.jpg"></a></li>
+                                    <li class="swiper-slide"><a href="https://www.etmall.com.tw/gp/112843"><img
+                                            src="logo-6.jpg"></a></li>
+                                    <li class="swiper-slide"><a href="https://www.etmall.com.tw/c2/99198"><img
+                                            src="logo-7.jpg"></a></li>
+                                    <li class="swiper-slide"><a href="https://www.etmall.com.tw/c2/99198"><img
+                                            src="logo-8.jpg"></a></li>
+                                    <li class="swiper-slide"><a href="https://www.etmall.com.tw/c2/99198"><img
+                                            src="logo-9.jpg"></a></li>
+                                    <li class="swiper-slide"><a href="https://www.etmall.com.tw/c2/99198"><img
+                                            src="logo-10.jpg"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="promo__group promo__group--tab">
+        <div class="layout--main">
+            <ul class="tab__wrap">
+                <li class="tab__zone">
+                    <ul class="tab__box" id="tabBox">
+                        <li class="tab__item active" title="品牌強檔"><img src="tab-d1-m.png" alt="品牌強檔"><img
+                                src="tab-l1-m.png" alt="品牌強檔"><img src="tab-d1.png" alt="品牌強檔"><img src="tab-l1.png"
+                                                                                                    alt="品牌強檔"></li>
+                        <li class="tab__item" title="服飾篇"><img src="tab-d2-m.png" alt="服飾篇"><img src="tab-l2-m.png"
+                                                                                                 alt="服飾篇"><img
+                                src="tab-d2.png" alt="服飾篇"><img src="tab-l2.png" alt="服飾篇"></li>
+                        <li class="tab__item" title="內衣篇"><img src="tab-d3-m.png" alt="內衣篇"><img src="tab-l3-m.png"
+                                                                                                 alt="內衣篇"><img
+                                src="tab-d3.png" alt="內衣篇"><img src="tab-l3.png" alt="內衣篇"></li>
+                        <li class="tab__item" title="鞋襪篇"><img src="tab-d4-m.png" alt="鞋襪篇"><img src="tab-l4-m.png"
+                                                                                                 alt="鞋襪篇"><img
+                                src="tab-d4.png" alt="鞋襪篇"><img src="tab-l4.png" alt="鞋襪篇"></li>
+                        <li class="tab__item" title="包配件篇"><img src="tab-d5-m.png" alt="包配件篇"><img src="tab-l5-m.png"
+                                                                                                   alt="包配件篇"><img
+                                src="tab-d5.png" alt="包配件篇"><img src="tab-l5.png" alt="包配件篇"></li>
+                        <li class="tab__item" title="精品手錶"><img src="tab-d6-m.png" alt="精品手錶"><img src="tab-l6-m.png"
+                                                                                                   alt="精品手錶"><img
+                                src="tab-d6.png" alt="精品手錶"><img src="tab-l6.png" alt="精品手錶"></li>
+                    </ul>
+                </li>
+                <li class="content__zone">
+                    <ul class="content__block" id="contentBlock">
+                        <li class="content__box clearfix active">
+                            <div class="content__item"><a href="https://www.etmall.com.tw/np/97107"
+                                                          title="TV熱銷現折$100"><img src="brand-promot1-1.jpg"
+                                                                                  alt="TV熱銷現折$100"></a></div>
+                            <div class="content__item"><a href="https://www.etmall.com.tw/np/100849"
+                                                          title="涼感穿搭術$299up"><img src="brand-promot1-2.jpg"
+                                                                                   alt="涼感穿搭術$299up"></a></div>
+                            <div class="content__item"><a href="https://www.etmall.com.tw/p/97147"
+                                                          title="京美獨家組6折up 滿額送能量襪"><img src="brand-promot1-3.jpg"
+                                                                                        alt="京美獨家組6折up 滿額送能量襪"></a>
+                            </div>
+                            <div class="content__item"><a
+                                    href="https://www.etmall.com.tw/XML/content/DMSetting/Final/202005/SP_1115521/w/index.html"
+                                    title="Timberland年中慶$699up"><img src="brand-promot1-4.jpg"
+                                                                     alt="Timberland年中慶$699up"></a></div>
+                            <div class="content__item"><a href="https://www.etmall.com.tw/np/74031"
+                                                          title="流行專櫃包熱銷排行199起"><img src="brand-promot1-5.jpg"
+                                                                                     alt="流行專櫃包熱銷排行199起	"></a></div>
+                            <div class="content__item"><a href="https://www.etmall.com.tw/np/79447"
+                                                          title="LV x CHANEL 出清3折起 再送吹風機"><img src="brand-promot1-6.jpg"
+                                                                                               alt="LV x CHANEL 出清3折起 再送吹風機"></a>
+                            </div>
+                        </li>
+                        <li class="content__box clearfix">
+                            <div class="content__item"><a href="https://www.etmall.com.tw/np/100956"
+                                                          title="蘭陵涼夏精選$618/組"><img src="brand-promot2-1.jpg"
+                                                                                    alt="蘭陵涼夏精選$618/組"></a></div>
+                            <div class="content__item"><a href="https://www.etmall.com.tw/np/101062"
+                                                          title="MONS蠶絲女裝限時回饋3折up"><img src="brand-promot2-2.jpg"
+                                                                                        alt="MONS蠶絲女裝限時回饋3折up"></a>
+                            </div>
+                            <div class="content__item"><a href="https://www.etmall.com.tw/np/101063"
+                                                          title="韓國kw 韓風套裝499up"><img src="brand-promot2-3.jpg"
+                                                                                      alt="韓國kw 韓風套裝499up"></a></div>
+                            <div class="content__item"><a href="https://www.etmall.com.tw/np/100809"
+                                                          title="GIORDANO夏日$199up"><img src="brand-promot2-4.jpg"
+                                                                                        alt="GIORDANO夏日$199up"></a>
+                            </div>
+                            <div class="content__item"><a href="https://www.etmall.com.tw/np/101064"
+                                                          title="夏日運動服飾 $99元起	"><img src="brand-promot2-5.jpg"
+                                                                                        alt="夏日運動服飾 $99元起	"></a>
+                            </div>
+                            <div class="content__item"><a href="https://www.etmall.com.tw/np/101065"
+                                                          title="型男休閒服飾 61折起"><img src="brand-promot2-6.jpg"
+                                                                                   alt="型男休閒服飾 61折起"></a></div>
+                        </li>
+                        <li class="content__box clearfix">
+                            <div class="content__item"><a href="https://www.etmall.com.tw/p/86877"
+                                                          title="曼黛瑪璉 內衣$500 滿額再折180"><img src="brand-promot3-1.jpg"
+                                                                                           alt="曼黛瑪璉 內衣$500 滿額再折180"></a>
+                            </div>
+                            <div class="content__item"><a href="https://www.etmall.com.tw/p/57528"
+                                                          title="思薇爾 爆款內衣褲 結帳再95折"><img src="brand-promot3-2.jpg"
+                                                                                        alt="思薇爾 爆款內衣褲 結帳再95折"></a>
+                            </div>
+                            <div class="content__item"><a href="https://www.etmall.com.tw/np/98456"
+                                                          title="熹歐禾折百 加碼$918送精品襪"><img src="brand-promot3-3.jpg"
+                                                                                        alt="熹歐禾折百 加碼$918送精品襪"></a>
+                            </div>
+                            <div class="content__item"><a href="https://www.etmall.com.tw/np/57483"
+                                                          title="伊黛爾 有氧內衣$618/組"><img src="brand-promot3-4.jpg"
+                                                                                      alt="伊黛爾 有氧內衣$618/組"></a></div>
+                            <div class="content__item"><a href="https://www.etmall.com.tw/p/97547"
+                                                          title="Young Curves 新加坡品牌 賠售$168up"><img
+                                    src="brand-promot3-5.jpg" alt="Young Curves 新加坡品牌 賠售$168up"></a></div>
+                            <div class="content__item"><a href="https://www.etmall.com.tw/c2/139106"
+                                                          title="三花內著 買三送一"><img src="brand-promot3-6.jpg"
+                                                                                 alt="三花內著 買三送一"></a></div>
+                        </li>
+                        <li class="content__box clearfix">
+                            <div class="content__item"><a href="https://www.etmall.com.tw/np/85912"
+                                                          title="ASO阿瘦真皮涼鞋$990up"><img src="brand-promot4-1.jpg"
+                                                                                       alt="ASO阿瘦真皮涼鞋$990up"></a></div>
+                            <div class="content__item"><a href="https://www.etmall.com.tw/np/99901"
+                                                          title="MIZUNO / ASICS結帳再89折	"><img
+                                    src="brand-promot4-2.jpg" alt="MIZUNO / ASICS結帳再89折"></a></div>
+                            <div class="content__item"><a href="https://www.etmall.com.tw/np/80059"
+                                                          title="SKECHERS / NIKE運動鞋7折起"><img src="brand-promot4-3.jpg"
+                                                                                             alt="SKECHERS / NIKE運動鞋7折起"></a>
+                            </div>
+                            <div class="content__item"><a href="https://www.etmall.com.tw/np/97664"
+                                                          title="涼拖鞋$299起	"><img src="brand-promot4-4.jpg"
+                                                                                    alt="涼拖鞋$299起"></a></div>
+                            <div class="content__item"><a href="https://www.etmall.com.tw/p/95682"
+                                                          title="戶外涼拖$390起"><img src="brand-promot4-5.jpg"
+                                                                                 alt="戶外涼拖$390起"></a></div>
+                            <div class="content__item"><a href="https://www.etmall.com.tw/np/100814"
+                                                          title="Alice休閒鞋$299起"><img src="brand-promot4-6.jpg"
+                                                                                     alt="Alice休閒鞋$299起"></a></div>
+                        </li>
+                        <li class="content__box clearfix">
+                            <div class="content__item"><a href="https://www.etmall.com.tw/np/72857"
+                                                          title="kangol人氣包精選499UP"><img src="brand-promot5-1.jpg"
+                                                                                        alt="kangol人氣包精選499UP"></a>
+                            </div>
+                            <div class="content__item"><a href="https://www.etmall.com.tw/p/73543"
+                                                          title="本革職人全館88折"><img src="brand-promot5-2.jpg"
+                                                                                 alt="本革職人全館88折"></a></div>
+                            <div class="content__item"><a href="https://www.etmall.com.tw/p/90675"
+                                                          title="首爾秀 防曬配件任選296up"><img src="brand-promot5-3.jpg"
+                                                                                       alt="首爾秀 防曬配件任選296up"></a></div>
+                            <div class="content__item"><a href="https://www.etmall.com.tw/c2/127118"
+                                                          title="CHENSON 包夾回饋6折起"><img src="brand-promot5-4.jpg"
+                                                                                       alt="CHENSON 包夾回饋6折起"></a></div>
+                            <div class="content__item"><a href="https://www.etmall.com.tw/np/77455"
+                                                          title="冰山袋鼠 買包換新$299起"><img src="brand-promot5-5.jpg"
+                                                                                      alt="冰山袋鼠 買包換新$299起"></a></div>
+                            <div class="content__item"><a href="https://www.etmall.com.tw/p/80455"
+                                                          title="E SHINE飾品年中大促2件7折	"><img src="brand-promot5-6.jpg"
+                                                                                             alt="E SHINE飾品年中大促2件7折"></a>
+                            </div>
+                        </li>
+                        <li class="content__box clearfix">
+                            <div class="content__item"><a href="https://www.etmall.com.tw/np/97510"
+                                                          title="COACH x MK 美系3折起	"><img src="brand-promot6-1.jpg"
+                                                                                            alt="COACH x MK 美系3折起"></a>
+                            </div>
+                            <div class="content__item"><a href="https://www.etmall.com.tw/np/98490"
+                                                          title="LV x FENDI 歐系6折起	"><img src="brand-promot6-2.jpg"
+                                                                                            alt="LV x FENDI 歐系6折起"></a>
+                            </div>
+                            <div class="content__item"><a href="https://www.etmall.com.tw/np/77843"
+                                                          title="Tiffany x 喬治傑生 配飾5折起"><img src="brand-promot6-3.jpg"
+                                                                                            alt="Tiffany x 喬治傑生 配飾5折起"></a>
+                            </div>
+                            <div class="content__item"><a href="https://www.etmall.com.tw/np/87036"
+                                                          title="Lamy x 萬寶龍 精品筆7折起	"><img src="brand-promot6-4.jpg"
+                                                                                             alt="Lamy x 萬寶龍 精品筆7折起"></a>
+                            </div>
+                            <div class="content__item"><a href="https://www.etmall.com.tw/np/100350"
+                                                          title="MIDOx天梭x浪琴 潛水錶67折up"><img src="brand-promot6-5.jpg"
+                                                                                           alt="MIDOx天梭x浪琴 潛水錶67折up"></a>
+                            </div>
+                            <div class="content__item"><a href="https://www.etmall.com.tw/np/94751"
+                                                          title="卡西歐65折up	"><img src="brand-promot6-6.jpg"
+                                                                                    alt="卡西歐65折up"></a></div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </section>
+</main>
+<script src="https://polyfill.io/v3/polyfill.min.js"></script>
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script src="https://www.etmall.com.tw/XML/content/DMSetting/Final/202005/SP_1115617/w/generateVersion20190619.js"></script>
+<script id="scriptIconFloat"
+        src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1107916/float-icon.js"></script>
+<!--[if !IE]><!-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+<!--<![endif]-->
+<!--[if IE 9]>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/2.7.6/idangerous.swiper.min.js"></script>
+<![endif]-->
+<script type="text/javascript" src="app-bundle.js"></script>
+<script>
+var promoSlider = new Swiper('#sliderScrollX2', {
+    autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+    },
+    slidesPerView: 3,
+    grabCursor: true,
+//    initialSlide: Math.floor(Math.random() * document.querySelectorAll('#sliderScrollX2 .swiper-slide').length),
+//    loop: true,
+    speed: 600,
+});
+</script>
+</body>
+</html>

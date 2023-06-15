@@ -1,0 +1,170 @@
+<meta name="viewport" content="width=device-width">
+<!-- ============== 輪播 start ============== -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+<!-- ============== 輪播 end ============== -->
+<!-- 共用CSS -->
+<link rel="stylesheet" href="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.css">
+<style>
+    /* 調整logo位置大小 */
+    /* .logo {
+      top: 1%;
+      left: 1%;
+      width: 30%;
+      max-width: 220px;
+    } */
+
+    /* 連結測試 */
+    /* .sp__visual a{
+      filter: brightness(500%);
+    } */
+
+    /* 切片測試 */
+    /* .visual__fragment::before {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      border: 1px solid #00f;
+      pointer-events: none;
+    } */
+
+    /* 設定全畫面背景 */
+    body {
+        background-color: #fff;
+    }
+
+    .sp__main {
+        background: url(bg_01.jpg) center 0 no-repeat;
+    }
+
+    .video-container {
+        z-index: 20;
+
+        position: relative;
+
+        padding-bottom: 56.25%;
+
+        padding-top: 30px;
+
+        height: 0;
+
+        overflow: hidden;
+
+    }
+
+    .video-container iframe, .video-container object, .video-container embed {
+
+        position: absolute;
+
+        top: 0;
+        left: 0;
+
+        width: 100%;
+
+        height: 100%;
+    }
+
+    .ani_wrap {
+        position: relative;
+        z-index: 1;
+    }
+
+    .ani_wrap .ani_obj {
+        position: absolute;
+        top: 150px;
+        width: auto;
+        left: calc(50% - 410px);
+
+    }
+
+    @media screen and (max-width: 960px) {
+        /* 設定手機時一列2個 */
+        .ani_wrap .ani_obj {
+            position: absolute;
+            top: 150px;
+            width: auto;
+            left: calc(50% - 410px);
+        }
+    }
+</style>
+<div class="ani_wrap">
+    <img class="ani_obj animate__animated animate__pulse animate__infinite" src="free.png">
+</div>
+<div id="iconHome"></div>
+<div id="spWrap" class="sp__wallper">
+    <!-- 主視覺 -->
+    <main class="sp__main">
+        <div class="layout--main home--logo"></div>
+        <section class="sp__visual">
+            <div class="layout--main">
+                <ul class="visual--auto clearfix">
+                    <li class="visual__fragment width--auto">
+                        <img src="index_01.jpg">
+                    </li>
+                    <li class="visual__fragment width--auto"><a href="#">
+                        <img src="index_02.jpg"></a>
+                    </li>
+                    <li class="visual__fragment width--auto">
+                        <img src="index_03.jpg" alt="">
+                    </li>
+
+
+                    <li class="visual__fragment width--auto">
+                        <img src="index_04.jpg">
+                    </li>
+                    <li class="visual__fragment width--auto" style="width: 100%;">
+                        <div class="video-container">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/sJtwMJ3lG1E"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                        </div>
+                    </li>
+                    <li class="visual__fragment width--auto"><a href="#">
+                    </a>
+                    </li>
+                    <li class="visual__fragment width--auto"><a href="#">
+                        <img src="index_07.jpg"></a>
+                    </li>
+
+                    <li class="visual__fragment width--auto"><a href="#">
+                        <img src="index_08.jpg" alt=""></a>
+                    </li>
+                    <li class="visual__fragment width--auto"><a href="#">
+                        <img src="index_09.jpg" alt=""></a>
+                    </li>
+
+
+                </ul>
+            </div>
+        </section>
+    </main>
+</div>
+<script src="https://polyfill.io/v3/polyfill.min.js"></script>
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<!-- ============== 輪播 start ============== -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+<!-- ============== 輪播 end ============== -->
+<!--<script id="generateScript" src="generate.js"></script>-->
+<!-- <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js"></script> -->
+<!-- 東森浮水印 -->
+<script id="scriptIconFloat"
+        src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105264/float-icon.js"></script>
+<!-- 森森浮水印
+<script id="scriptIconFloat" src="http://www.u-mall.com.tw/XML/content/DMSetting/Final/209901/SP_1102419/float-icon.js"></script> -->
+<!-- 共用JS -->
+<script id="generateScript"
+        src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1115354/generate_v1.js"></script>
+<script>
+    var footerSlider = new Swiper(".swiper-container", {
+        autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+        },
+        autoHeight: true,
+        grabCursor: true,
+        loop: true,
+        speed: 1000,
+    });
+</script>

@@ -1,0 +1,77 @@
+.sp-is--hide{opacity: 0;}
+.sp-fixed__nav{
+    position: fixed;
+    z-index: 600;
+    width: 195px;
+    height: 540px;
+    right: 10px;
+    top: 5%;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.sp-fixed__nav ul{
+    background: url(../menu.png) 0 0 no-repeat;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 540px;
+}
+.sp-fixed__nav a{
+    display: block;
+    white-space: nowrap;
+    text-indent: 1000%;
+    overflow: hidden;
+    height: 37px;
+}
+.sp-fixed__nav a:hover{
+    background: url(../menu_current.png) 0 0 no-repeat;
+}
+.sp-fixed__nav .sp-nav__home{
+    margin-bottom: 21px;
+}
+.sp-nav__home a{
+    width: 198px;
+    height: 110px;
+}
+.sp-fixed__nav .sp-nav__1 a:hover{
+    background-position: 0 -130px;
+}
+.sp-fixed__nav .sp-nav__2 a:hover{
+    background-position: 0 -166px;
+    
+}
+.sp-fixed__nav .sp-nav__3 a:hover{
+    background-position: 0 -204px;
+
+}
+.sp-fixed__nav .sp-nav__4 a:hover{
+    background-position: 0 -241px;
+
+}
+.sp-fixed__nav .sp-nav__5 a:hover{
+    background-position: 0 -277px;
+
+}
+.sp-fixed__nav .sp-nav__6 a:hover{
+    background-position: 0 -314px;
+
+}
+.sp-fixed__nav .sp-nav__7 a:hover{
+    background-position: 0 -352px;
+
+}
+.sp-fixed__nav .sp-nav__8 a:hover{
+    background-position: 0 -390px;
+}
+.sp-fixed__nav .sp-nav__9 a:hover{
+    background-position: 0 -424px;
+
+}
+.sp-nav__top a{
+    height: 76px;
+}
+.sp-nav__top a:hover{
+    background: url(../menu_current.png) 0 bottom no-repeat;
+} 

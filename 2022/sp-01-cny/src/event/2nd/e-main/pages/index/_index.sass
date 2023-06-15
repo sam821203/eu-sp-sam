@@ -1,0 +1,130 @@
+// ==========================================================================
+// Plugins
+// ==========================================================================
+// // @import vendors/animate
+// @import vendors/style/swiper-slider-custom
+@import vendors/style/swiper-safari-polyfill
+
+// ==========================================================================
+// first screen need
+// ==========================================================================
+// hero section
+@import event/2nd/e-main/components/hero-section/_hero-section
+@import utils/bg-decoration-instance/css-firework-2/_css-firework-2
+
+// ==========================================================================
+// components
+// ==========================================================================
+// dynamic product 假宮格共用CSS
+@import layout/dynamic-product/_dynamic-product.sass
+
+// 一般components
+@import event/2nd/e-main/components/promo-event/_promo-event
+@import event/2nd/e-main/components/dynamic-slider/_dynamic-slider
+@import event/2nd/e-main/components/tab-section/_tab-section.sass
+@import event/2nd/e-main/components/tab-section-2/_tab-section-2.sass
+@import event/2nd/e-main/components/bn-section/_bn-section
+@import event/2nd/e-main/components/bn-slider/_bn-slider
+
+
+// ==========================================================================
+// Page
+// ==========================================================================
+body
+  +pos-set(relative)
+  background-color: $main-e-background-color-2nd
+
+  .decor__bg
+    content: ''
+    +pos-set(fixed, under, 0%, 0%)
+    width: 100%
+    height: 100vh
+    transform: translatez(0)
+    transition: all 0.5s
+    +bg-set(url(event/2nd/e-main/pages/index/bg.jpg), 100%)
+    // background-attachment: fixed
+    +breakpoint-min($min-width-xl)
+      +bg-set(url(event/2nd/e-main/pages/index/bg-web.jpg), auto)
+      // background-color: $main-e-background-color-2nd
+
+
+  &.bg-fixed
+    .decor__bg
+      // background-attachment: fixed
+      +breakpoint-min($min-width-xl)
+        background-position-y: 45%
+      +breakpoint-min($min-width-5xl)
+        background-position-y: 52%
+
+
+// TODO: 修改EU nav佔位高度(影響logo距離上方高度，U每次要改)
+.navRightBar
+  // E
+  height: 39px
+  // U
+  // height: 15px
+  +breakpoint-min($min-width-xl)
+    height: auto
+
+.decoration--top,
+.decor--top
+  +pos-set(absolute)
+  pointer-events: none
+
+section:not(.note)
+  // 有parallax scroll時圖層有relative就有預設z-index可能會遮到宮格，因此使用這個讓宮格也能有預設z-index
+  +pos-set(relative)
+  a
+    display: block
+
+.firework__wrap--root
+  +pos-set(fixed, under, 0, 0)
+  width: 100%
+  height: 100vh
+  pointer-events: none
+  .decor--firework
+    width: 30%
+    +breakpoint-min($min-width-xl)
+      width: 250px
+    .firework
+      top: 0
+      left: 0
+      .js-loading &
+        animation: firework-grow 4s infinite both
+    &--1
+      top: 10%
+      left: 35%
+      .firework
+        animation-delay: 2.1s
+      +breakpoint-min($min-width-xl)
+        top: 0
+        left: calc(50% - 78px)
+        transform: translate(650px, 550px) scale(0.8)
+        .js-loading &
+          animation: random-pos-size-root 12s infinite steps(1)
+    &--2
+      top: 25%
+      left: 80%
+      .firework
+        .js-loading &
+          animation-delay: 2.6s
+      +breakpoint-min($min-width-xl)
+        top: 230px
+        left: calc(50% + 300px)
+    &--3
+      top: 60%
+      left: 0%
+      .firework
+        .js-loading &
+          animation-delay: 3.1s
+      +breakpoint-min($min-width-xl)
+        top: 380px
+        left: calc(50% - 480px)
+
+@keyframes random-pos-size-root
+    0%, 100%
+      transform: translate(0, 0) scale(0.5)
+    33%
+        transform: translate(-650px, 270px) scale(0.8)
+    66%
+        transform: translate(650px, 500px) scale(0.4)

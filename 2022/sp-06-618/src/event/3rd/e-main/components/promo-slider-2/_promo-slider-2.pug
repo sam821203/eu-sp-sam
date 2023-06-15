@@ -1,0 +1,83 @@
+-
+  var promoSliderItem = [
+    {
+      link: "https://www.etmall.com.tw/i/2894685" ,
+      imgSrc: "event/3rd/e-main/components/promo-slider-2/item/p-item-1.png",
+      alt: "買1送1 MIAU精油香氛沐浴乳2000ml",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/6088146" ,
+      imgSrc: "event/3rd/e-main/components/promo-slider-2/item/p-item-2.png",
+      alt: "(買2送2)森下仁丹晶球敏益菌+贈長益菌(3包X2組)",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3311689" ,
+      imgSrc: "event/3rd/e-main/components/promo-slider-2/item/p-item-3.png",
+      alt: "紫外線輕巧智能除菌棒",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2686375" ,
+      imgSrc: "event/3rd/e-main/components/promo-slider-2/item/p-item-4.png",
+      alt: "夏普 31L 料理烘培水波爐",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3505225" ,
+      imgSrc: "event/3rd/e-main/components/promo-slider-2/item/p-item-5.png",
+      alt: "AMD年中特典法環雙碟機【微星平台】R5六核｛年中特典｝RTX3050法環雙碟機 (B550/16G/500G M.2/1T)",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3451908" ,
+      imgSrc: "event/3rd/e-main/components/promo-slider-2/item/p-item-6.png",
+      alt: "YALE耶魯電子鎖YDM4109 A系列指紋密碼遠端控制機械鑰匙多合一電子門鎖",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/2711996" ,
+      imgSrc: "event/3rd/e-main/components/promo-slider-2/item/p-item-7.png",
+      alt: "東風3層衛生紙90抽24包",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3483277" ,
+      imgSrc: "event/3rd/e-main/components/promo-slider-2/item/p-item-8.png",
+      alt: "A&愛上新鮮 去骨雞腿排買5片送5片",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3326821" ,
+      imgSrc: "event/3rd/e-main/components/promo-slider-2/item/p-item-9.png",
+      alt: "【ECOVACS】N8掃拖機器人",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3321629" ,
+      imgSrc: "event/3rd/e-main/components/promo-slider-2/item/p-item-10.png",
+      alt: "送荷康醫用醫療平面口罩-半年份",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3430120" ,
+      imgSrc: "event/3rd/e-main/components/promo-slider-2/item/p-item-11.png",
+      alt: "SAMSUNG Galaxy M33 5G (6G/128G)",
+    },
+    {
+      link: "https://www.etmall.com.tw/i/3501330" ,
+      imgSrc: "event/3rd/e-main/components/promo-slider-2/item/p-item-12.png",
+      alt: "買一送一PP波瑟楓妮醫療級石墨烯超導襪3雙組_送抗菌濕紙巾",
+    },
+  ]
+
+
+section.promo__group.promo__group--promo-slider-2.m-bottom--lg(data-title="買一送一")
+  .layout--main
+    .decor__wrap.full-parent
+      .decor__item.decor__item--bg
+        img(src="event/3rd/e-main/components/promo-slider-2/decor-promo-2-bg.png", alt="")
+      .decor__item.decor__item--title#titlePromoSlider2
+        img(src="event/3rd/e-main/components/promo-slider-2/title-promo-slider-2.png", alt="")
+      .decor__item.decor__item--item#decorPromoSlider
+        img(src="event/3rd/e-main/components/promo-slider-2/decor-promo-2-item.png", alt="")
+    .promo__wrap
+      .promo__zone
+        .promo__block
+          .promo__slider.swiper-container#promoSlider2Item
+            ul.swiper-wrapper
+              each data in promoSliderItem
+                li.swiper-slide
+                  a(href= data.link, title=data.alt)
+                    img(src= data.imgSrc, alt=data.alt)

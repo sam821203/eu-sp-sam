@@ -1,0 +1,85 @@
+.dynamic-slider-half
+  overflow: hidden
+  .decor__wrap
+    padding-bottom: 10%
+  .decor__item
+    &--left
+      +pos-set(absolute, zero, 1%, 10%)
+      width: 25%
+      &.active
+        animation: heartBeat 2.2s ease-in infinite
+      +breakpoint-min($min-width-xl)
+        left: calc(50% - 370px)
+    &--right
+      +pos-set(absolute, zero, 0%)
+      right: 2%
+      width: 30%
+      transform-origin: bottom center
+      &.active
+        animation: rotateRightTop 1.6s linear infinite
+      +breakpoint-min($min-width-xl)
+        right: calc(50% - 470px)
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .promo__wrap
+    +bg-set(url(event/2nd/e-main/components/dynamic-slider-half/bg-dynamic-slider-half.png), 100%)
+  .promo__zone
+    +aspect-ratio(952, 1543)
+    .promo__block--wrap
+      padding: 19% 7% 0%
+    .promo__block
+      display: flex
+      justify-content: center
+      margin-bottom: 1%
+      .promo__box
+        width: 33%
+        margin-top: 1.5%
+      .slider__box
+        width: 70%
+        margin-top: .6%
+        +breakpoint-min($min-width-xl)
+          margin-top: 2%
+        .promo__slider
+          .product--dynamic
+            width: 100%
+            .product__block
+              padding: 1.5% 2%
+              .product__img
+                border: 1px solid $main-e-background-color-1st-3
+                border-bottom: none
+              .product__text
+                border: 1px solid $main-e-background-color-1st-3
+                border-top: none
+              +breakpoint-min($min-width-xl)
+                .product__img,
+                .product__text
+                  border-width: 2px
+              .product__name
+                padding-top: 4%
+                height: 9vw
+                font-size: 3.3vw
+                +breakpoint-min($min-width-xl)
+                  margin-bottom: 0
+                  padding: 3%
+                  height: 60px
+                  font-size: 22px
+              .product__price
+                padding: 3% 2%
+                +breakpoint-min($min-width-xl)
+                  span
+                    &:last-child
+                      font-size: 36px
+
+
+@keyframes rotateRightTop
+  0%, 31%, 50%
+    transform: rotate(0deg)
+  18%, 43%
+    transform: rotate(-5deg)
+
+
+@keyframes heartBeat
+  0%, 15.5%, 30%, 100%
+    transform: scale(1)
+  9%, 21.5%
+    transform: scale(1.2)

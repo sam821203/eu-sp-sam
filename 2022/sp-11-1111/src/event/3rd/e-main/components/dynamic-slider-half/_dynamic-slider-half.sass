@@ -1,0 +1,90 @@
+.dynamic-slider-half
+  overflow: hidden
+  .decor__wrap
+    padding-bottom: 3%
+  .decor__item
+    &--left1
+      +pos-set(absolute, under, 0%, 2%)
+      width: 20%
+      +breakpoint-min($min-width-xl)
+        left: calc( 50% - 465px )
+    &--left2
+      +pos-set(absolute, zero, 1%, 17%)
+      width: 12%
+      opacity: 0
+      &.active
+        animation: fadeInTopLeft .6s ease-in forwards
+      +breakpoint-min($min-width-xl)
+        left: calc( 50% - 330px )
+    &--right1
+      +pos-set(absolute, zero, 0%)
+      right: 22.5%
+      width: 20%
+      &.active
+        animation: shakeY 2s linear infinite
+      +breakpoint-min($min-width-xl)
+        right: calc(50% - 270px)
+    &--right2
+      +pos-set(absolute, under, 0%)
+      right: 0%
+      width: 20%
+      +breakpoint-min($min-width-xl)
+        right: calc(50% - 490px)
+    +breakpoint-min($min-width-xl)
+      width: auto
+  .promo__wrap
+    +bg-set(url(event/3rd/e-main/components/dynamic-slider-half/bg-dynamic-slider-half.png), 100%)
+  .promo__zone
+    +aspect-ratio(910, 1341)
+  .promo__block--wrap
+    padding-top: 22%
+    padding-right: 14%
+    +breakpoint-min($min-width-xl)
+      padding-top: 230px
+      padding-right: 120px
+  .promo__block
+    display: flex
+    justify-content: center
+    margin-bottom: 6.7%
+    +breakpoint-min($min-width-xl)
+      margin-bottom: 70px
+  .promo__box
+    width: 30%
+    margin-top: 1.5%
+  .slider__box
+    width: 70%
+    .product--dynamic
+      width: 100%
+      padding-left: 4%
+      padding-right: 4%
+    .product__name
+      padding-top: 2%
+      height: 8.2vw
+      font-size: 3.3vw
+      +breakpoint-min($min-width-xl)
+        margin-bottom: 0
+        padding: 3%
+        height: 60px
+        font-size: 22px
+    .product__price
+      padding: 1% 2%
+      +breakpoint-min($min-width-xl)
+        span
+          &:last-child
+            font-size: 36px
+
+@keyframes shakeY
+  0%, 50%, to
+    transform: translateZ(0)
+  5%, 15%, 25%, 35%, 45%
+    transform: translate3d(0, -5px, 0)
+  10%, 20%, 30%, 40%
+    transform: translate3d(0, 10px, 0)
+
+@keyframes fadeInTopLeft
+  0%
+    opacity: 0
+    transform: translate3d(-100%, -100%, 0)
+  to
+    opacity: 1
+    transform: translateZ(0)
